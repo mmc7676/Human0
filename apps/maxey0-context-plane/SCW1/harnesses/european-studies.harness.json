@@ -1,0 +1,771 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "european-studies",
+  "label": "European Studies",
+  "desc": "European Studies: the interdisciplinary study of Europe's history, politics, economies, cultures and languages, including European integration."
+ },
+ "concepts": [
+  {
+   "id": "euro-comparative-politics",
+   "label": "Comparative European Politics",
+   "desc": "Party systems, electoral rules, welfare states and democratic change across European countries.",
+   "keywords": [
+    "party",
+    "election",
+    "democracy",
+    "populism",
+    "welfare state",
+    "coalition",
+    "federalism",
+    "parliamentary"
+   ],
+   "topic": "european-studies",
+   "source": "european-studies",
+   "related": []
+  },
+  {
+   "id": "euro-culture-identity",
+   "label": "European Culture, Identity and Migration",
+   "desc": "European literatures, arts, religions and memory cultures, and how migration reshapes national and European identities.",
+   "keywords": [
+    "culture",
+    "identity",
+    "memory",
+    "migration",
+    "religion",
+    "literature",
+    "citizenship",
+    "minority"
+   ],
+   "topic": "european-studies",
+   "source": "european-studies",
+   "related": []
+  },
+  {
+   "id": "euro-eu-integration",
+   "label": "European Union and Integration",
+   "desc": "The institutions, treaties, law and policy processes of the European Union and the theories that explain integration.",
+   "keywords": [
+    "union",
+    "treaty",
+    "commission",
+    "parliament",
+    "council",
+    "integration",
+    "enlargement",
+    "sovereignty"
+   ],
+   "topic": "european-studies",
+   "source": "european-studies",
+   "related": []
+  },
+  {
+   "id": "euro-european-economy",
+   "label": "European Political Economy",
+   "desc": "The single market, the euro, trade, regional cohesion and economic governance in Europe.",
+   "keywords": [
+    "single market",
+    "euro",
+    "monetary",
+    "trade",
+    "cohesion",
+    "eurozone",
+    "fiscal",
+    "central bank"
+   ],
+   "topic": "european-studies",
+   "source": "european-studies",
+   "related": []
+  },
+  {
+   "id": "euro-languages-sources",
+   "label": "European Languages and Research Methods",
+   "desc": "Working with sources in multiple European languages and locating scholarship across disciplines.",
+   "keywords": [
+    "language",
+    "translation",
+    "multilingual",
+    "scholarship",
+    "citation",
+    "research",
+    "bibliography",
+    "terminology"
+   ],
+   "topic": "european-studies",
+   "source": "european-studies",
+   "related": []
+  },
+  {
+   "id": "euro-modern-history",
+   "label": "Modern European History",
+   "desc": "Europe from the Enlightenment and revolutions through industrialisation, the world wars, the Cold War and 1989.",
+   "keywords": [
+    "enlightenment",
+    "revolution",
+    "nationalism",
+    "empire",
+    "world war",
+    "cold war",
+    "industrialization",
+    "archive"
+   ],
+   "topic": "european-studies",
+   "source": "european-studies",
+   "related": [
+    "hist-modern-contemporary"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "euro-party-system-analysis",
+   "concept": "euro-comparative-politics",
+   "label": "Party System Analysis",
+   "desc": "Characterises a country's party system by fragmentation and polarisation and checks indices against election results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1288",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1290",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-populism-tracking",
+   "concept": "euro-comparative-politics",
+   "label": "Populist Movement Tracking",
+   "desc": "Profiles populist parties by ideology, vote share and government participation and checks figures against official results.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1288",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1291",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-welfare-regime-classification",
+   "concept": "euro-comparative-politics",
+   "label": "Welfare Regime Classification",
+   "desc": "Places a country in a welfare regime typology from spending and benefit data and checks the placement against the typology criteria.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1288",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1292",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-identity-survey-reading",
+   "concept": "euro-culture-identity",
+   "label": "European Identity Survey Reading",
+   "desc": "Interprets survey data on European and national identification and checks that conclusions respect sampling and question wording.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1291",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1288",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-memory-politics",
+   "concept": "euro-culture-identity",
+   "label": "Memory Politics Analysis",
+   "desc": "Analyses how a society commemorates a contested past and checks interpretations against monuments, laws and debates cited.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1293",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1294",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-migration-flow-analysis",
+   "concept": "euro-culture-identity",
+   "label": "Migration Flow Analysis",
+   "desc": "Describes migration and asylum flows into and within Europe and checks figures against official statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1291",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1292",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-integration-theory",
+   "concept": "euro-eu-integration",
+   "label": "Integration Theory Application",
+   "desc": "Explains an integration episode with neofunctionalist, intergovernmentalist or postfunctionalist theory and checks the fit against the evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1290",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1288",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1294",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-legislative-procedure",
+   "concept": "euro-eu-integration",
+   "label": "EU Legislative Procedure Tracing",
+   "desc": "Traces a law through Commission proposal, Parliament and Council readings and checks each stage against the official procedure file.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1290",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1288",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-treaty-comparison",
+   "concept": "euro-eu-integration",
+   "label": "Treaty Provision Comparison",
+   "desc": "Compares provisions across European treaties on competences and voting rules and checks each citation against the treaty text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1290",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1295",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-cohesion-fund-analysis",
+   "concept": "euro-european-economy",
+   "label": "Regional Cohesion Analysis",
+   "desc": "Relates cohesion funding to regional convergence and checks claims against published evaluations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1292",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1288",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-eurozone-indicators",
+   "concept": "euro-european-economy",
+   "label": "Eurozone Indicator Analysis",
+   "desc": "Compares inflation, debt and growth across eurozone members and checks figures against the stated statistical source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1292",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1290",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-monetary-policy-brief",
+   "concept": "euro-european-economy",
+   "label": "Monetary Policy Briefing",
+   "desc": "Explains a central bank decision and its expected transmission and checks the account against the official statement.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1292",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1290",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-scholarship-search",
+   "concept": "euro-languages-sources",
+   "label": "European Studies Scholarship Search",
+   "desc": "Searches peer-reviewed scholarship through Wiley Scholar Gateway and checks each citation resolves to the stated work.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1289",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1294",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1290",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-source-translation",
+   "concept": "euro-languages-sources",
+   "label": "Source Translation",
+   "desc": "Translates passages from French, German, Spanish or other European languages with DeepL and checks key terminology against a glossary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1295",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1293",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-terminology-glossary",
+   "concept": "euro-languages-sources",
+   "label": "Multilingual Terminology Glossary",
+   "desc": "Builds a glossary of EU and political terms across languages and checks each pair against official terminology.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1295",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1290",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-chronology-building",
+   "concept": "euro-modern-history",
+   "label": "Historical Chronology Building",
+   "desc": "Builds a dated sequence of events for a period or country and checks each date against at least two reference sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1294",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1288",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-historiography-review",
+   "concept": "euro-modern-history",
+   "label": "Historiographical Debate Review",
+   "desc": "Summarises competing interpretations of an event such as the origins of the First World War and checks each position against its key authors.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1294",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1293",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-source-criticism",
+   "concept": "euro-modern-history",
+   "label": "Primary Source Criticism",
+   "desc": "Evaluates a historical document for authorship, date, audience and bias and checks its claims against corroborating sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1294",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1295",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1288",
+   "name": "Comparative Politics Analyst",
+   "legacy_key": "euro-political",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1289",
+   "name": "Source and Citation Reviewer",
+   "legacy_key": "euro-reviewer",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1290",
+   "name": "EU Institutions Analyst",
+   "legacy_key": "euro-eu",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1291",
+   "name": "Migration and Identity Analyst",
+   "legacy_key": "euro-migration",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1292",
+   "name": "European Economy Analyst",
+   "legacy_key": "euro-economist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1293",
+   "name": "European Culture Scholar",
+   "legacy_key": "euro-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1294",
+   "name": "European Historian",
+   "legacy_key": "euro-historian",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1295",
+   "name": "European Language Translator",
+   "legacy_key": "euro-language",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1288",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "european-studies",
+   "score": 0.3123,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1290",
+    "skill": "euro-integration-theory"
+   }
+  },
+  {
+   "agent": "Maxey1289",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "european-studies",
+   "score": 0.2394,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1289",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "european-studies",
+   "score": 0.3417,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1290",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "european-studies",
+   "score": 0.2379,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1295",
+    "skill": "euro-terminology-glossary"
+   }
+  },
+  {
+   "agent": "Maxey1290",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "european-studies",
+   "score": 0.3123,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1294",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "european-studies",
+   "score": 0.2394,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1289",
+    "skill": "euro-scholarship-search"
+   }
+  },
+  {
+   "agent": "Maxey1294",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "european-studies",
+   "score": 0.3417,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1289",
+    "skill": "euro-scholarship-search"
+   }
+  },
+  {
+   "agent": "Maxey1295",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "european-studies",
+   "score": 0.2379,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "euro-history": "enlightenment revolution nationalism empire industrialization archive",
+  "euro-union": "treaty commission parliament council integration enlargement sovereignty",
+  "euro-politics": "party election democracy populism coalition federalism",
+  "euro-economy": "market monetary trade cohesion eurozone fiscal",
+  "euro-identity": "memory migration religion literature citizenship minority",
+  "euro-lang": "translation multilingual terminology glossary bibliography"
+ },
+ "sources": [
+  "european-studies"
+ ]
+}

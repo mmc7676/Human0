@@ -1,0 +1,501 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "design",
+ "topic": {
+  "id": "design",
+  "label": "Design",
+  "desc": "Design: shaping visual, interactive, product and spatial artifacts through research, form-making, prototyping and critique."
+ },
+ "concepts": [
+  [
+   "dsgn-design-research",
+   "Design Research and Human-Centered Methods",
+   "design",
+   "Understanding people, contexts and needs through interviews, observation and synthesis before committing to a form.",
+   [
+    "research",
+    "interview",
+    "persona",
+    "ethnography",
+    "journey map",
+    "synthesis",
+    "usability",
+    "empathy"
+   ]
+  ],
+  [
+   "dsgn-visual-communication",
+   "Visual Communication and Graphic Design",
+   "design",
+   "Composition, color, imagery and hierarchy used to communicate a message clearly in print and on screen.",
+   [
+    "graphic",
+    "composition",
+    "color",
+    "hierarchy",
+    "grid",
+    "layout",
+    "branding",
+    "contrast"
+   ]
+  ],
+  [
+   "dsgn-typography",
+   "Typography",
+   "design",
+   "The selection, pairing and setting of type for legibility, tone and rhythm across media.",
+   [
+    "typography",
+    "typeface",
+    "kerning",
+    "leading",
+    "type scale",
+    "legibility",
+    "font"
+   ]
+  ],
+  [
+   "dsgn-interaction-design",
+   "Interaction and UX Design",
+   "design",
+   "Designing how people move through digital products: flows, states, feedback and information architecture.",
+   [
+    "interaction",
+    "ux",
+    "wireframe",
+    "prototype",
+    "flow",
+    "information architecture",
+    "state",
+    "feedback"
+   ]
+  ],
+  [
+   "dsgn-product-design",
+   "Industrial and Product Design",
+   "design",
+   "Designing physical objects for function, ergonomics, materials and manufacture.",
+   [
+    "industrial",
+    "product",
+    "ergonomics",
+    "material",
+    "manufacture",
+    "sketch",
+    "form",
+    "cad"
+   ]
+  ],
+  [
+   "dsgn-design-theory-critique",
+   "Design Theory, History and Critique",
+   "design",
+   "Movements, principles and critical vocabulary used to evaluate and situate design work, including accessibility and ethics.",
+   [
+    "theory",
+    "history",
+    "critique",
+    "modernism",
+    "principle",
+    "accessibility",
+    "inclusive",
+    "ethics"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "dsgn-interview-planner",
+   "dsgn-design-research",
+   "User Interview Planner",
+   "Writes a research plan and interview guide for a design question and checks questions for leading or biased wording.",
+   "semantic",
+   [
+    [
+     "dsgn-researcher",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-interaction",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-insight-synthesizer",
+   "dsgn-design-research",
+   "Research Insight Synthesizer",
+   "Clusters interview notes into themes and personas and checks every insight against quoted evidence.",
+   "semantic",
+   [
+    [
+     "dsgn-researcher",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-product",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-usability-tester",
+   "dsgn-design-research",
+   "Usability Test Runner",
+   "Runs task-based usability tests on a prototype and checks findings by severity and frequency across participants.",
+   "procedural",
+   [
+    [
+     "dsgn-researcher",
+     "primary"
+    ],
+    [
+     "dsgn-a11y",
+     "checker"
+    ],
+    [
+     "dsgn-interaction",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-layout-composer",
+   "dsgn-visual-communication",
+   "Layout Composer",
+   "Arranges content on a grid with a clear visual hierarchy and checks alignment, spacing and reading order.",
+   "procedural",
+   [
+    [
+     "dsgn-visual",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-typographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-color-system-builder",
+   "dsgn-visual-communication",
+   "Color System Builder",
+   "Builds a color palette with semantic roles and checks contrast ratios for every foreground and background pair.",
+   "procedural",
+   [
+    [
+     "dsgn-visual",
+     "primary"
+    ],
+    [
+     "dsgn-a11y",
+     "checker"
+    ],
+    [
+     "dsgn-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-brand-identity-designer",
+   "dsgn-visual-communication",
+   "Brand Identity Designer",
+   "Develops logo, mark and identity guidelines for a brief and checks consistency across sample applications.",
+   "semantic",
+   [
+    [
+     "dsgn-visual",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-type-pairer",
+   "dsgn-typography",
+   "Typeface Pairer",
+   "Selects complementary typefaces for a brief and checks legibility at body and display sizes.",
+   "semantic",
+   [
+    [
+     "dsgn-typographer",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-visual",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-type-scale-builder",
+   "dsgn-typography",
+   "Type Scale Builder",
+   "Defines a modular type scale with line heights and checks vertical rhythm across breakpoints.",
+   "procedural",
+   [
+    [
+     "dsgn-typographer",
+     "primary"
+    ],
+    [
+     "dsgn-visual",
+     "checker"
+    ],
+    [
+     "dsgn-interaction",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-wireframer",
+   "dsgn-interaction-design",
+   "Wireframe Builder",
+   "Produces low-fidelity wireframes of screens and flows and checks that every user task has a complete path.",
+   "procedural",
+   [
+    [
+     "dsgn-interaction",
+     "primary"
+    ],
+    [
+     "dsgn-researcher",
+     "checker"
+    ],
+    [
+     "dsgn-visual",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-prototype-builder",
+   "dsgn-interaction-design",
+   "Interactive Prototype Builder",
+   "Builds clickable prototypes with states and transitions and checks them against the specified flow.",
+   "procedural",
+   [
+    [
+     "dsgn-interaction",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-visual",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-ia-mapper",
+   "dsgn-interaction-design",
+   "Information Architecture Mapper",
+   "Organizes content into navigation and labeling schemes and checks findability with card sort results.",
+   "semantic",
+   [
+    [
+     "dsgn-interaction",
+     "primary"
+    ],
+    [
+     "dsgn-researcher",
+     "checker"
+    ],
+    [
+     "dsgn-typographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-concept-sketcher",
+   "dsgn-product-design",
+   "Concept Sketcher",
+   "Generates form concepts through sketch iterations and checks each against the functional requirements list.",
+   "semantic",
+   [
+    [
+     "dsgn-product",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-ergonomics-checker",
+   "dsgn-product-design",
+   "Ergonomics Evaluator",
+   "Evaluates product dimensions against anthropometric data and checks reach, grip and posture limits.",
+   "procedural",
+   [
+    [
+     "dsgn-product",
+     "primary"
+    ],
+    [
+     "dsgn-a11y",
+     "checker"
+    ],
+    [
+     "dsgn-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-material-selector",
+   "dsgn-product-design",
+   "Material and Process Selector",
+   "Chooses materials and manufacturing processes for a part and checks cost, strength and sustainability trade-offs.",
+   "semantic",
+   [
+    [
+     "dsgn-product",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-design-critic",
+   "dsgn-design-theory-critique",
+   "Design Critique Writer",
+   "Writes structured critique of a design against its goals and principles and checks each claim against visible evidence.",
+   "semantic",
+   [
+    [
+     "dsgn-critic",
+     "primary"
+    ],
+    [
+     "dsgn-historian",
+     "checker"
+    ],
+    [
+     "dsgn-visual",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-accessibility-auditor",
+   "dsgn-design-theory-critique",
+   "Accessibility Auditor",
+   "Audits designs against WCAG criteria and checks contrast, focus order, target size and screen reader labels.",
+   "procedural",
+   [
+    [
+     "dsgn-a11y",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-interaction",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dsgn-movement-contextualizer",
+   "dsgn-design-theory-critique",
+   "Design Movement Contextualizer",
+   "Places a work within design history movements and checks attributions against cited sources.",
+   "semantic",
+   [
+    [
+     "dsgn-historian",
+     "primary"
+    ],
+    [
+     "dsgn-critic",
+     "checker"
+    ],
+    [
+     "dsgn-typographer",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "dsgn-researcher": "Design Researcher",
+  "dsgn-visual": "Visual Designer",
+  "dsgn-interaction": "Interaction Designer",
+  "dsgn-typographer": "Typography Specialist",
+  "dsgn-product": "Industrial Product Designer",
+  "dsgn-critic": "Design Critique Reviewer",
+  "dsgn-a11y": "Accessibility Auditor",
+  "dsgn-historian": "Design History Scholar"
+ },
+ "mcp": [],
+ "lexicon": {
+  "dsgn-research": "research interview persona ethnography synthesis usability empathy",
+  "dsgn-visual": "graphic composition color hierarchy grid layout branding contrast",
+  "dsgn-type": "typography typeface kerning leading legibility font",
+  "dsgn-ux": "interaction wireframe prototype flow architecture navigation",
+  "dsgn-product": "industrial ergonomics material manufacture sketch cad",
+  "dsgn-theory": "theory history critique modernism principle accessibility inclusive"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "generated"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "no verified menu server serves design practice directly; mcp left empty"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

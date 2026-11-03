@@ -1,0 +1,562 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "environmental-systems-engineering",
+ "topic": {
+  "id": "environmental-systems-engineering",
+  "label": "Environmental Systems Engineering",
+  "desc": "Environmental Systems Engineering: designing and analysing the water, air, waste and energy systems that link human activity to natural environments."
+ },
+ "concepts": [
+  [
+   "envs-water-resources",
+   "Water Resources and Hydrology",
+   "environmental-systems-engineering",
+   "Quantifying how precipitation, runoff, groundwater and storage move through watersheds, and sizing infrastructure that manages flood and supply.",
+   [
+    "hydrology",
+    "watershed",
+    "runoff",
+    "groundwater",
+    "reservoir",
+    "flood",
+    "rainfall",
+    "catchment"
+   ]
+  ],
+  [
+   "envs-water-quality",
+   "Water and Wastewater Treatment",
+   "environmental-systems-engineering",
+   "Design of physical, chemical and biological processes that remove contaminants from drinking water and wastewater to meet discharge and potability standards.",
+   [
+    "treatment",
+    "wastewater",
+    "coagulation",
+    "filtration",
+    "activated sludge",
+    "disinfection",
+    "effluent",
+    "nutrient"
+   ]
+  ],
+  [
+   "envs-air-quality",
+   "Air Quality and Atmospheric Emissions",
+   "environmental-systems-engineering",
+   "Characterising emission sources, atmospheric dispersion and control technologies for particulates and gaseous pollutants.",
+   [
+    "air",
+    "emission",
+    "dispersion",
+    "plume",
+    "particulate",
+    "pollutant",
+    "stack",
+    "scrubber"
+   ]
+  ],
+  [
+   "envs-solid-waste",
+   "Solid and Hazardous Waste Management",
+   "environmental-systems-engineering",
+   "Planning collection, recycling, composting, landfilling and hazardous waste handling as an integrated materials system.",
+   [
+    "waste",
+    "landfill",
+    "recycling",
+    "compost",
+    "leachate",
+    "hazardous",
+    "collection",
+    "circular"
+   ]
+  ],
+  [
+   "envs-sustainability-lca",
+   "Sustainability and Life Cycle Assessment",
+   "environmental-systems-engineering",
+   "Evaluating the cradle-to-grave resource use and environmental impact of products and infrastructure to compare design alternatives.",
+   [
+    "sustainability",
+    "life cycle",
+    "inventory",
+    "impact",
+    "carbon",
+    "footprint",
+    "energy",
+    "alternative"
+   ]
+  ],
+  [
+   "envs-env-risk-policy",
+   "Environmental Risk, Modelling and Regulation",
+   "environmental-systems-engineering",
+   "Linking contaminant fate, exposure and health risk to the regulatory framework and spatial data that govern environmental decisions.",
+   [
+    "risk",
+    "exposure",
+    "toxicity",
+    "regulation",
+    "permit",
+    "fate",
+    "transport",
+    "spatial"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "envs-rainfall-runoff-model",
+   "envs-water-resources",
+   "Rainfall-Runoff Modelling",
+   "Converts design storms into runoff hydrographs with curve-number or unit-hydrograph methods and checks peak flow and volume against a mass balance.",
+   "procedural",
+   [
+    [
+     "envs-hydro",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-groundwater-flow",
+   "envs-water-resources",
+   "Groundwater Flow Analysis",
+   "Solves Darcy flow toward wells and drains for given aquifer properties and checks drawdown against the Theis or Thiem solution.",
+   "procedural",
+   [
+    [
+     "envs-hydro",
+     "primary"
+    ],
+    [
+     "envs-quality",
+     "checker"
+    ],
+    [
+     "envs-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-reservoir-yield",
+   "envs-water-resources",
+   "Reservoir Yield Planning",
+   "Runs sequent-peak storage analysis on an inflow record to find firm yield and checks that storage never goes negative over the record.",
+   "procedural",
+   [
+    [
+     "envs-hydro",
+     "primary"
+    ],
+    [
+     "envs-risk",
+     "checker"
+    ],
+    [
+     "envs-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-treatment-train-design",
+   "envs-water-quality",
+   "Treatment Train Design",
+   "Sizes coagulation, sedimentation, filtration and disinfection units from flow and loading criteria and checks detention times and overflow rates against design ranges.",
+   "procedural",
+   [
+    [
+     "envs-quality",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-hydro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-activated-sludge-sizing",
+   "envs-water-quality",
+   "Activated Sludge Sizing",
+   "Computes aeration volume, sludge age and oxygen demand from influent BOD and nitrogen loads and checks the result with a steady-state biomass balance.",
+   "procedural",
+   [
+    [
+     "envs-quality",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-lca",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-river-oxygen-sag",
+   "envs-water-quality",
+   "River Oxygen Sag Analysis",
+   "Applies the Streeter-Phelps model below an effluent outfall and checks the critical dissolved oxygen deficit against the stream standard.",
+   "procedural",
+   [
+    [
+     "envs-quality",
+     "primary"
+    ],
+    [
+     "envs-risk",
+     "checker"
+    ],
+    [
+     "envs-hydro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-gaussian-plume",
+   "envs-air-quality",
+   "Gaussian Plume Dispersion",
+   "Estimates ground-level pollutant concentrations downwind of a stack using stability-class dispersion coefficients and checks maxima against ambient standards.",
+   "procedural",
+   [
+    [
+     "envs-air",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-emission-inventory",
+   "envs-air-quality",
+   "Emission Inventory Building",
+   "Compiles source emission rates from activity data and emission factors and checks totals by reconciling against reported facility data.",
+   "procedural",
+   [
+    [
+     "envs-air",
+     "primary"
+    ],
+    [
+     "envs-risk",
+     "checker"
+    ],
+    [
+     "envs-lca",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-control-device-selection",
+   "envs-air-quality",
+   "Control Device Selection",
+   "Matches cyclones, baghouses, electrostatic precipitators or scrubbers to a gas stream and checks the required removal efficiency is met.",
+   "semantic",
+   [
+    [
+     "envs-air",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-waste",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-landfill-design",
+   "envs-solid-waste",
+   "Landfill Capacity and Leachate",
+   "Computes landfill airspace, liner requirements and leachate generation with a water balance and checks capacity against projected waste tonnage.",
+   "procedural",
+   [
+    [
+     "envs-waste",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-hydro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-waste-stream-audit",
+   "envs-solid-waste",
+   "Waste Stream Characterisation",
+   "Builds a composition profile of a municipal waste stream from sorting data and checks that fractions sum to the measured total mass.",
+   "procedural",
+   [
+    [
+     "envs-waste",
+     "primary"
+    ],
+    [
+     "envs-lca",
+     "checker"
+    ],
+    [
+     "envs-risk",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-circular-material-flow",
+   "envs-solid-waste",
+   "Circular Material Flow Mapping",
+   "Maps recovery, reuse and disposal pathways for a material and checks the flow diagram for mass conservation at every node.",
+   "semantic",
+   [
+    [
+     "envs-lca",
+     "primary"
+    ],
+    [
+     "envs-waste",
+     "checker"
+    ],
+    [
+     "envs-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-lca-inventory",
+   "envs-sustainability-lca",
+   "Life Cycle Inventory Compilation",
+   "Assembles material and energy flows per functional unit for each life cycle stage and checks completeness against the declared system boundary.",
+   "procedural",
+   [
+    [
+     "envs-lca",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-waste",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-carbon-footprint",
+   "envs-sustainability-lca",
+   "Carbon Footprint Calculation",
+   "Converts inventory flows to carbon dioxide equivalents with stated characterisation factors and checks the arithmetic by recomputing per stage.",
+   "procedural",
+   [
+    [
+     "envs-lca",
+     "primary"
+    ],
+    [
+     "envs-risk",
+     "checker"
+    ],
+    [
+     "envs-air",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-alternative-comparison",
+   "envs-sustainability-lca",
+   "Design Alternative Comparison",
+   "Ranks engineering alternatives on cost, energy and impact criteria with weighted scoring and checks that the ranking holds under sensitivity analysis.",
+   "semantic",
+   [
+    [
+     "envs-lca",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-risk",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-exposure-risk-assessment",
+   "envs-env-risk-policy",
+   "Exposure and Risk Assessment",
+   "Calculates chronic daily intake and hazard quotients or cancer risk for an exposure pathway and checks inputs against standard exposure factors.",
+   "procedural",
+   [
+    [
+     "envs-risk",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-quality",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-contaminant-transport",
+   "envs-env-risk-policy",
+   "Contaminant Fate and Transport",
+   "Solves advection-dispersion with decay for a plume and checks the analytic result against a numerical solution in Wolfram.",
+   "procedural",
+   [
+    [
+     "envs-quality",
+     "primary"
+    ],
+    [
+     "envs-risk",
+     "checker"
+    ],
+    [
+     "envs-hydro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "envs-permit-compliance-map",
+   "envs-env-risk-policy",
+   "Permit and Site Compliance Mapping",
+   "Maps facilities, receptors and permit limits in a GIS layer and checks each monitored value against its regulatory limit.",
+   "semantic",
+   [
+    [
+     "envs-gis",
+     "primary"
+    ],
+    [
+     "envs-reviewer",
+     "checker"
+    ],
+    [
+     "envs-risk",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "envs-hydro": "Hydrologic Systems Engineer",
+  "envs-quality": "Water Quality Modeller",
+  "envs-air": "Air Quality Analyst",
+  "envs-waste": "Waste and Resource Engineer",
+  "envs-lca": "Life Cycle Assessment Analyst",
+  "envs-risk": "Environmental Risk Assessor",
+  "envs-gis": "Spatial Environmental Analyst",
+  "envs-reviewer": "Environmental Compliance Reviewer"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "envs-water": "hydrology watershed runoff groundwater reservoir flood rainfall catchment",
+  "envs-treat": "treatment wastewater coagulation filtration disinfection sludge effluent oxygen",
+  "envs-atmos": "air emission dispersion plume particulate pollutant stack scrubber",
+  "envs-waste": "landfill recycling compost leachate hazardous collection circular",
+  "envs-lca": "sustainability inventory footprint carbon impact energy",
+  "envs-risk": "exposure toxicity regulation permit compliance spatial"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

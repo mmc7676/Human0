@@ -1,0 +1,889 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "knowledge",
+  "label": "Knowledge",
+  "desc": "Knowledge management for people and agents: ontologies and taxonomies, knowledge graphs, entity resolution, metadata, curation and quality, retrieval and question answering, documentation and sharing. Extends the base Knowledge topic, which held only Knowledge Graph."
+ },
+ "concepts": [
+  {
+   "id": "kn-curation",
+   "label": "Curation and Quality",
+   "desc": "Keeping a knowledge base correct: review queues, contradiction checks, staleness, deprecation and change history.",
+   "keywords": [
+    "curation",
+    "contradiction",
+    "stale",
+    "review",
+    "deprecation"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-extraction",
+   "label": "Knowledge Extraction",
+   "desc": "Pulling entities, relations and claims out of documents, tables and conversations, with the source span for each.",
+   "keywords": [
+    "extraction",
+    "entity",
+    "relation",
+    "claim",
+    "span"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-metadata",
+   "label": "Metadata and Provenance",
+   "desc": "Describing knowledge with where it came from, when, under what licence and how much it can be trusted.",
+   "keywords": [
+    "metadata",
+    "provenance",
+    "schema",
+    "licence",
+    "freshness"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-ontology",
+   "label": "Ontology and Taxonomy Design",
+   "desc": "Choosing the classes, relations and naming rules a body of knowledge uses, and keeping them consistent as they grow.",
+   "keywords": [
+    "ontology",
+    "taxonomy",
+    "class",
+    "relation",
+    "naming"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-query",
+   "label": "Graph Querying and Reasoning",
+   "desc": "Asking questions of a graph: path and pattern queries, inference rules and checks for consistency.",
+   "keywords": [
+    "query",
+    "path",
+    "pattern",
+    "inference",
+    "consistency"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-resolution",
+   "label": "Entity Resolution and Linking",
+   "desc": "Deciding that two records are the same thing, merging them safely and linking mentions to canonical identifiers.",
+   "keywords": [
+    "entity",
+    "resolution",
+    "duplicate",
+    "canonical",
+    "linking"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-retrieval",
+   "label": "Retrieval and Question Answering",
+   "desc": "Finding and using knowledge to answer questions: indexing, chunking, hybrid search, reranking and answers that cite their sources.",
+   "keywords": [
+    "retrieval",
+    "chunking",
+    "rerank",
+    "citation",
+    "index"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  },
+  {
+   "id": "kn-sharing",
+   "label": "Documentation and Knowledge Sharing",
+   "desc": "Turning what is known into pages people use: wikis, notes, glossaries, onboarding material and clear handoffs.",
+   "keywords": [
+    "wiki",
+    "glossary",
+    "notes",
+    "onboarding",
+    "handoff"
+   ],
+   "topic": "knowledge",
+   "source": "knowledge",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "kn-contradiction-finder",
+   "concept": "kn-curation",
+   "label": "Contradiction Finder",
+   "desc": "Finds statements in a knowledge base that cannot both be true and shows both sources side by side.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey869",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey871",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-deprecation-planner",
+   "concept": "kn-curation",
+   "label": "Deprecation Planner",
+   "desc": "Plans how a fact or page is retired: redirect, replacement, notice and what depends on it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey869",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey872",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-review-queue-manager",
+   "concept": "kn-curation",
+   "label": "Review Queue Manager",
+   "desc": "Orders items for human review by risk and use, tracks decisions and reports review backlog.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey869",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey873",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-claim-extractor",
+   "concept": "kn-extraction",
+   "label": "Claim Extractor",
+   "desc": "Lists the factual claims a document makes in separate sentences, each with its source location and whether it is checkable.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey874",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey869",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-entity-extractor",
+   "concept": "kn-extraction",
+   "label": "Entity and Relation Extractor",
+   "desc": "Extracts entities and relations from text with the exact source sentence and a confidence for each.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey874",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey875",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-table-to-graph",
+   "concept": "kn-extraction",
+   "label": "Table to Graph Mapper",
+   "desc": "Maps columns of a table to graph nodes and edges, with a mapping file and a sample of the resulting triples.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey874",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey875",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey876",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-freshness-tracker",
+   "concept": "kn-metadata",
+   "label": "Freshness Tracker",
+   "desc": "Records when each fact was last confirmed, sets a review interval by how fast it changes and lists items past due.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey873",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey869",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-provenance-annotator",
+   "concept": "kn-metadata",
+   "label": "Provenance Annotator",
+   "desc": "Adds source, date, author and licence to each item and reports items whose origin cannot be shown.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey873",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey869",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-schema-designer",
+   "concept": "kn-metadata",
+   "label": "Metadata Schema Designer",
+   "desc": "Designs a small required metadata schema, with controlled values and which fields are mandatory, and validates a sample.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey873",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey875",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-naming-convention-writer",
+   "concept": "kn-ontology",
+   "label": "Naming Convention Writer",
+   "desc": "Writes identifier and label rules for concepts and tests them against existing names to find clashes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey875",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey869",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey876",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-ontology-modeler",
+   "concept": "kn-ontology",
+   "label": "Ontology Modeler",
+   "desc": "Proposes classes, properties and relations for a domain from sample documents and lists the competency questions the model must answer.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey875",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey869",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-taxonomy-builder",
+   "concept": "kn-ontology",
+   "label": "Taxonomy Builder",
+   "desc": "Builds a category tree with clear inclusion rules and checks that every item fits exactly one place or says why it fits several.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey875",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey869",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-consistency-checker",
+   "concept": "kn-query",
+   "label": "Graph Consistency Checker",
+   "desc": "Runs constraint checks for missing required links, cycles and impossible values and lists violating nodes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey871",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey869",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-graph-query-writer",
+   "concept": "kn-query",
+   "label": "Graph Query Writer",
+   "desc": "Writes a path or pattern query for a question about the graph and explains what each clause matches.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey871",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey877",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-inference-rule-writer",
+   "concept": "kn-query",
+   "label": "Inference Rule Writer",
+   "desc": "Writes rules that derive new facts from existing ones and tests each rule for unwanted conclusions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey871",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey875",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-duplicate-finder",
+   "concept": "kn-resolution",
+   "label": "Duplicate Record Finder",
+   "desc": "Finds likely duplicate records with similarity scores and shows the fields that agree and disagree.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey876",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey869",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-identifier-linker",
+   "concept": "kn-resolution",
+   "label": "Identifier Linker",
+   "desc": "Links mentions to canonical identifiers in an external registry and flags ambiguous mentions for a person to decide.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey876",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey874",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-merge-planner",
+   "concept": "kn-resolution",
+   "label": "Safe Merge Planner",
+   "desc": "Plans a merge of two records, decides which field wins and records enough to undo the merge later.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey876",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey869",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-chunking-designer",
+   "concept": "kn-retrieval",
+   "label": "Chunking and Index Designer",
+   "desc": "Chooses how documents are split and indexed so passages keep their meaning, and measures retrieval on sample questions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey877",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey873",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-cited-answerer",
+   "concept": "kn-retrieval",
+   "label": "Cited Answer Writer",
+   "desc": "Answers a question from retrieved passages, cites the passage behind each statement and says when the sources do not answer it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey877",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey869",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-hybrid-search-tuner",
+   "concept": "kn-retrieval",
+   "label": "Hybrid Search Tuner",
+   "desc": "Tunes keyword and vector search weights and reranking against a labelled question set and reports the gain.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey877",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey871",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-glossary-writer",
+   "concept": "kn-sharing",
+   "label": "Glossary Writer",
+   "desc": "Collects terms used across documents, writes one plain definition for each and flags terms used in conflicting senses.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey872",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey869",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey870",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-handoff-note-writer",
+   "concept": "kn-sharing",
+   "label": "Handoff Note Writer",
+   "desc": "Writes a handoff note with current state, decisions made, open questions and where the supporting files are.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey872",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey873",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  },
+  {
+   "id": "kn-onboarding-guide-builder",
+   "concept": "kn-sharing",
+   "label": "Onboarding Guide Builder",
+   "desc": "Builds a reading path for a newcomer that orders pages by what they need first and marks the essential ones.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey872",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey870",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey869",
+     "role": "support"
+    }
+   ],
+   "source": "knowledge"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey869",
+   "name": "Knowledge Curator Agent",
+   "legacy_key": "kn-curator",
+   "mcp": [
+    "5c2ae4c2-535f-4a19-a45f-a23493f28b4e"
+   ]
+  },
+  {
+   "key": "Maxey870",
+   "name": "Knowledge Skeptic Agent",
+   "legacy_key": "kn-skeptic",
+   "mcp": [
+    "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+    "local:memory-reference-server-"
+   ]
+  },
+  {
+   "key": "Maxey871",
+   "name": "Graph Reasoning Agent",
+   "legacy_key": "kn-reasoner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey872",
+   "name": "Knowledge Sharing Agent",
+   "legacy_key": "kn-sharing-writer",
+   "mcp": [
+    "5c2ae4c2-535f-4a19-a45f-a23493f28b4e"
+   ]
+  },
+  {
+   "key": "Maxey873",
+   "name": "Metadata Steward Agent",
+   "legacy_key": "kn-metadata-steward",
+   "mcp": []
+  },
+  {
+   "key": "Maxey874",
+   "name": "Knowledge Extraction Agent",
+   "legacy_key": "kn-extractor",
+   "mcp": [
+    "local:memory-reference-server-"
+   ]
+  },
+  {
+   "key": "Maxey875",
+   "name": "Ontology Agent",
+   "legacy_key": "kn-ontologist",
+   "mcp": [
+    "local:memory-reference-server-"
+   ]
+  },
+  {
+   "key": "Maxey876",
+   "name": "Entity Resolution Agent",
+   "legacy_key": "kn-resolver",
+   "mcp": []
+  },
+  {
+   "key": "Maxey877",
+   "name": "Retrieval Agent",
+   "legacy_key": "kn-retriever",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+   "name": "Evernote",
+   "desc": "Connect Evernote to search, edit, and organize your notes, create new ones, and bring your knowledge into every conversation.",
+   "tools": [
+    "create_note",
+    "create_notebook",
+    "create_space",
+    "create_tag",
+    "create_task",
+    "delete_note",
+    "delete_task",
+    "edit_note"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+   "origins": [
+    "knowledge"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Memory (reference server)",
+   "desc": "Reference MCP server: knowledge graph-based persistent memory system",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers",
+   "id": "local:memory-reference-server-",
+   "origins": [
+    "knowledge"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+  "local:memory-reference-server-",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey869",
+   "mcp": "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+   "topic": "knowledge",
+   "score": 0.1759,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey872",
+    "skill": "kn-glossary-writer"
+   }
+  },
+  {
+   "agent": "Maxey870",
+   "mcp": "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+   "topic": "knowledge",
+   "score": 0.1828,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey870",
+   "mcp": "local:memory-reference-server-",
+   "topic": "knowledge",
+   "score": 0.173,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey872",
+   "mcp": "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+   "topic": "knowledge",
+   "score": 0.1759,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey874",
+   "mcp": "local:memory-reference-server-",
+   "topic": "knowledge",
+   "score": 0.1597,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey875",
+   "mcp": "local:memory-reference-server-",
+   "topic": "knowledge",
+   "score": 0.1597,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey874",
+    "skill": "kn-table-to-graph"
+   }
+  }
+ ],
+ "lexicon": {
+  "knonto": "taxonomy class competency naming identifier relation pattern querying category clause derive unwanted required impossible",
+  "knextract": "triple entity extractor column claim extraction",
+  "knresolve": "duplicate canonical mention ambiguous registry resolution linking safe",
+  "knmeta": "freshness controlled mandatory metadata annotator",
+  "kncurate": "contradiction queue deprecation redirect curation stale",
+  "knretrieve": "rerank hybrid passage cited chunking answering tuner",
+  "knshare": "glossary wiki onboarding newcomer notes documentation sharing"
+ },
+ "sources": [
+  "knowledge"
+ ]
+}

@@ -1,0 +1,641 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "drones",
+ "topic": {
+  "id": "drones",
+  "label": "Drones",
+  "desc": "Drones (uncrewed aircraft): platforms and makers, airframe types, applications, autopilots, payloads, regulation and mission data. Drones are aerial robots; the Robotics topic holds the shared control and navigation skills. Includes planetary and extreme-environment UAVs (Moon, Mars)."
+ },
+ "concepts": [
+  [
+   "dr-platforms",
+   "Manufacturers and Platforms",
+   "drones",
+   "Makers of drones and autopilots, and the open flight-control stacks, compared from public specifications.",
+   [
+    "manufacturer",
+    "platform",
+    "firmware",
+    "autopilot",
+    "ecosystem",
+    "open"
+   ]
+  ],
+  [
+   "dr-types",
+   "Airframe Types",
+   "drones",
+   "Multirotor, fixed-wing, VTOL and helicopter airframes and what each is suited to.",
+   [
+    "multirotor",
+    "fixed-wing",
+    "vtol",
+    "helicopter",
+    "endurance"
+   ]
+  ],
+  [
+   "dr-applications",
+   "Applications and Purpose",
+   "drones",
+   "What drones are used for: survey and mapping, inspection, agriculture and similar work.",
+   [
+    "survey",
+    "inspection",
+    "agriculture",
+    "delivery",
+    "purpose"
+   ]
+  ],
+  [
+   "dr-flight",
+   "Flight Control and Autopilot",
+   "drones",
+   "Autopilot configuration, flight modes, MAVLink and failsafes.",
+   [
+    "autopilot",
+    "mavlink",
+    "px4",
+    "ardupilot",
+    "failsafe",
+    "geofence"
+   ]
+  ],
+  [
+   "dr-payload",
+   "Payloads and Sensors",
+   "drones",
+   "Cameras, gimbals, LiDAR and multispectral sensors carried by drones.",
+   [
+    "camera",
+    "gimbal",
+    "lidar",
+    "multispectral",
+    "payload"
+   ]
+  ],
+  [
+   "dr-regulation",
+   "Regulation and Airspace",
+   "drones",
+   "Airspace classes, operating rules, record keeping and risk assessment, which differ by country.",
+   [
+    "airspace",
+    "regulation",
+    "compliance",
+    "logbook",
+    "risk"
+   ]
+  ],
+  [
+   "dr-mission",
+   "Mission Planning and Data",
+   "drones",
+   "Planning waypoint missions and processing the imagery and logs they produce.",
+   [
+    "mission",
+    "waypoint",
+    "overlap",
+    "orthomosaic",
+    "flight-log"
+   ]
+  ],
+  [
+   "dr-planetary",
+   "Planetary and Extreme-Environment UAVs",
+   "drones",
+   "Unmanned aerial vehicles for the Moon, Mars and other places with little or no air: why propellers need an atmosphere, thruster-based flight, low gravity, dust and cold.",
+   [
+    "uav",
+    "moon",
+    "lunar",
+    "mars",
+    "vacuum",
+    "thruster",
+    "atmosphere"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "dr-manufacturer-comparator",
+   "dr-platforms",
+   "Manufacturer Comparator",
+   "Compares drone makers and platforms on published specifications, software support and update policy, and marks every claim with its source.",
+   "semantic",
+   [
+    [
+     "dr-fleet-analyst",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-airframe-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-open-autopilot-stacks",
+   "dr-platforms",
+   "Open Autopilot Stack Guide",
+   "Compares open autopilot software such as PX4 and ArduPilot on supported vehicles, ground-station tools and licensing, from their documentation.",
+   "semantic",
+   [
+    [
+     "dr-flight-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-fleet-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-airframe-selector",
+   "dr-types",
+   "Airframe Selector",
+   "Chooses between multirotor, fixed-wing and VTOL for a task from range, payload, landing space and wind.",
+   "semantic",
+   [
+    [
+     "dr-airframe-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-fleet-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-endurance-payload-estimator",
+   "dr-types",
+   "Endurance and Payload Estimator",
+   "Estimates flight time and usable payload from mass, battery capacity and drag and states the assumptions.",
+   "procedural",
+   [
+    [
+     "dr-airframe-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-flight-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-survey-mapping-planner",
+   "dr-applications",
+   "Survey and Mapping Mission Planner",
+   "Plans an aerial survey with altitude, image overlap and ground control for the accuracy the client needs.",
+   "procedural",
+   [
+    [
+     "dr-mission-planner",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-data-processor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-inspection-planner",
+   "dr-applications",
+   "Infrastructure Inspection Planner",
+   "Plans inspection flights for structures such as towers and roofs, with standoff distance, camera angles and what to record.",
+   "semantic",
+   [
+    [
+     "dr-mission-planner",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-sensor-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-agriculture-planner",
+   "dr-applications",
+   "Agriculture Flight Planner",
+   "Plans crop-monitoring flights with a multispectral or visual camera and the index maps to produce afterwards.",
+   "semantic",
+   [
+    [
+     "dr-mission-planner",
+     "primary"
+    ],
+    [
+     "dr-data-processor",
+     "checker"
+    ],
+    [
+     "dr-sensor-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-autopilot-configurator",
+   "dr-flight",
+   "Autopilot Configurator",
+   "Reviews autopilot parameters, flight modes and tuning for a vehicle and flags settings that need a test flight.",
+   "procedural",
+   [
+    [
+     "dr-flight-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-airframe-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-mavlink-integrator",
+   "dr-flight",
+   "MAVLink Integrator",
+   "Connects a companion computer or software to a flight controller over MAVLink and tests the messages in simulation first.",
+   "procedural",
+   [
+    [
+     "dr-flight-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-mission-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-failsafe-designer",
+   "dr-flight",
+   "Failsafe Designer",
+   "Defines geofence, return-to-home and battery or link-loss failsafes and lists how each one should be tested.",
+   "semantic",
+   [
+    [
+     "dr-safety-officer",
+     "primary"
+    ],
+    [
+     "dr-flight-engineer",
+     "checker"
+    ],
+    [
+     "dr-compliance-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-camera-gimbal-planner",
+   "dr-payload",
+   "Camera and Gimbal Planner",
+   "Chooses a camera, lens and gimbal settings for a task and computes ground sample distance.",
+   "procedural",
+   [
+    [
+     "dr-sensor-engineer",
+     "primary"
+    ],
+    [
+     "dr-data-processor",
+     "checker"
+    ],
+    [
+     "dr-airframe-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-lidar-multispectral-planner",
+   "dr-payload",
+   "LiDAR and Multispectral Planner",
+   "Matches LiDAR or multispectral sensors to a mapping or crop task and sets point density or band requirements.",
+   "semantic",
+   [
+    [
+     "dr-sensor-engineer",
+     "primary"
+    ],
+    [
+     "dr-data-processor",
+     "checker"
+    ],
+    [
+     "dr-mission-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-airspace-checker",
+   "dr-regulation",
+   "Airspace Checker",
+   "Collects airspace class, restrictions and notice requirements for a location from official sources and flags that the pilot must confirm them with the aviation authority.",
+   "semantic",
+   [
+    [
+     "dr-compliance-checker",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-mission-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-flight-record-keeper",
+   "dr-regulation",
+   "Flight Record Keeper",
+   "Keeps a flight log of aircraft, pilot, battery cycles and maintenance in the form an authority may ask for.",
+   "procedural",
+   [
+    [
+     "dr-compliance-checker",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-data-processor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-operational-risk-assessor",
+   "dr-regulation",
+   "Operational Risk Assessor",
+   "Writes a pre-flight risk assessment covering people, property, weather and equipment and lists the mitigation for each risk.",
+   "semantic",
+   [
+    [
+     "dr-safety-officer",
+     "primary"
+    ],
+    [
+     "dr-compliance-checker",
+     "checker"
+    ],
+    [
+     "dr-mission-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-waypoint-mission-planner",
+   "dr-mission",
+   "Waypoint Mission Planner",
+   "Builds a waypoint mission with altitude, speed, overlap and battery reserve and simulates it before upload.",
+   "procedural",
+   [
+    [
+     "dr-mission-planner",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-flight-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-flight-log-analyst",
+   "dr-mission",
+   "Flight Log Analyst",
+   "Reads flight logs for vibration, battery sag, GPS quality and mode changes and explains anomalies.",
+   "procedural",
+   [
+    [
+     "dr-data-processor",
+     "primary"
+    ],
+    [
+     "dr-flight-engineer",
+     "checker"
+    ],
+    [
+     "dr-safety-officer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-orthomosaic-processor",
+   "dr-mission",
+   "Orthomosaic and Point Cloud Processor",
+   "Turns survey imagery into an orthomosaic, elevation model and point cloud and reports the accuracy against check points.",
+   "procedural",
+   [
+    [
+     "dr-data-processor",
+     "primary"
+    ],
+    [
+     "dr-sensor-engineer",
+     "checker"
+    ],
+    [
+     "dr-mission-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-planetary-flight-feasibility",
+   "dr-planetary",
+   "Planetary Flight Feasibility",
+   "Decides whether an unmanned aircraft can fly on the Moon, Mars or another body from its gravity and atmosphere density: rotors and wings need air, so the airless Moon rules out propellers and calls for thrusters.",
+   "semantic",
+   [
+    [
+     "dr-planetary-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-airframe-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-vacuum-thruster-hopper",
+   "dr-planetary",
+   "Vacuum Thruster UAV Designer",
+   "Designs a thruster-driven hopper or flying UAV for an airless world such as the Moon, with lunar gravity, propellant budget, landing legs and regolith dust that must not reach the engines.",
+   "procedural",
+   [
+    [
+     "dr-planetary-engineer",
+     "primary"
+    ],
+    [
+     "dr-safety-officer",
+     "checker"
+    ],
+    [
+     "dr-flight-engineer",
+     "support"
+    ],
+    [
+     "dr-airframe-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dr-mars-rotorcraft-sizer",
+   "dr-planetary",
+   "Thin-Atmosphere Rotorcraft Sizer",
+   "Sizes rotors for the thin carbon dioxide air of Mars from gravity, air density and blade tip speed, with cold-night heating and a reference to the Ingenuity Mars helicopter.",
+   "procedural",
+   [
+    [
+     "dr-planetary-engineer",
+     "primary"
+    ],
+    [
+     "dr-airframe-engineer",
+     "checker"
+    ],
+    [
+     "dr-safety-officer",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "dr-fleet-analyst": "Drone Fleet Analyst Agent",
+  "dr-airframe-engineer": "Airframe Engineer Agent",
+  "dr-flight-engineer": "Flight Controls Engineer Agent",
+  "dr-mission-planner": "Drone Mission Planner Agent",
+  "dr-sensor-engineer": "Payload and Sensor Engineer Agent",
+  "dr-compliance-checker": "Drone Compliance Agent",
+  "dr-data-processor": "Aerial Data Processing Agent",
+  "dr-safety-officer": "Flight Safety Officer Agent",
+  "dr-planetary-engineer": "Planetary UAV Engineer Agent"
+ },
+ "mcp": [
+  [
+   "MAVLinkMCP",
+   null,
+   "MCP server for LLM to drone communication via MAVLink",
+   [
+    "get_map_view",
+    "create_survey_plan",
+    "render_plan_view",
+    "validate_plan",
+    "preflight_check",
+    "upload_plan",
+    "verify_uploaded_plan",
+    "start_mission",
+    "map_transform",
+    "prefetch_map_area",
+    "revise_plan"
+   ],
+   "web-listed",
+   "https://github.com/ion-g-ion/MAVLinkMCP"
+  ]
+ ],
+ "lexicon": {
+  "uavmakers": "manufacturer firmware ecosystem px4 ardupilot ground station drone platform autopilot open",
+  "uavairframe": "multirotor fixed wing vtol payload endurance drag battery helicopter airframe aircraft aerial",
+  "uavwork": "survey inspection agriculture crop tower standoff delivery purpose",
+  "autopilot": "mavlink failsafe geofence tuning companion flight",
+  "uavsensor": "gimbal lidar multispectral lens camera sensors",
+  "airspace": "airspace authority notice logbook risk mitigation regulation compliance",
+  "uavdata": "waypoint orthomosaic vibration overlap mission",
+  "uavplanet": "uav uas unmanned quadcopter quadrotor hexacopter propellant thruster atmosphere vacuum regolith rotorcraft ingenuity hopper"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "MAVLinkMCP": "read at https://github.com/ion-g-ion/MAVLinkMCP on 2026-10-22: described as an MCP server for LLM to drone communication via MAVLink, MIT licence stated, no archive notice seen; the README does not give a labelled tool list, so the tool names were collected from its flight-plan workflow text; it can start missions, so any use needs a human present and every flight approved by the pilot; not installed or tested",
+   "none-in-directory": "the connector directory search for drone, UAV, aerial and flight returned travel-booking servers only, so no directory row is listed"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here. Regulatory and safety skills are planning aids only: rules differ by country and the pilot must confirm them with the aviation authority.",
+  "v04_note": "v0.4 added concept dr-planetary (3 skills, 1 agent) after a user task, \"Build a UAV for the moon\", matched nothing; generated hypotheses, not mission engineering.",
+  "v04_lexicon_freed": [
+   [
+    "uavdata",
+    [
+     "check",
+     "planning"
+    ]
+   ],
+   [
+    "autopilot",
+    [
+     "control"
+    ]
+   ]
+  ]
+ }
+}

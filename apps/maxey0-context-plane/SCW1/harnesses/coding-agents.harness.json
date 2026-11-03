@@ -1,0 +1,889 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "coding-agents",
+  "label": "Coding Agents",
+  "desc": "Coding agents: the harness and tool loop, code generation and editing, repository understanding, verification, review, sandboxing, orchestration and evaluation."
+ },
+ "concepts": [
+  {
+   "id": "ca-codegen",
+   "label": "Code Generation and Editing",
+   "desc": "Turning a specification into code and making small, verifiable edits to existing code.",
+   "keywords": [
+    "generate",
+    "edit",
+    "patch",
+    "diff",
+    "refactor",
+    "specification"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-eval",
+   "label": "Evaluation of Coding Agents",
+   "desc": "Measuring a coding agent on benchmark tasks and reading its trajectories.",
+   "keywords": [
+    "benchmark",
+    "trajectory",
+    "pass-rate",
+    "evaluation",
+    "harness"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-harness",
+   "label": "Agent Harness and Tool Use",
+   "desc": "The loop that lets a model call tools, with stop conditions, tool definitions and a context budget.",
+   "keywords": [
+    "harness",
+    "loop",
+    "tool",
+    "schema",
+    "context",
+    "compaction"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-orchestration",
+   "label": "Multi-Agent Coding Orchestration",
+   "desc": "Splitting a task across agents and branches and handing results back.",
+   "keywords": [
+    "decompose",
+    "worktree",
+    "branch",
+    "handoff",
+    "parallel"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-repo",
+   "label": "Repository Understanding",
+   "desc": "Mapping a codebase: structure, entry points, dependencies and search.",
+   "keywords": [
+    "repository",
+    "index",
+    "dependency",
+    "search",
+    "entry-point"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-review",
+   "label": "Code Review and Security",
+   "desc": "Reviewing changes for correctness and security and auditing dependencies.",
+   "keywords": [
+    "review",
+    "pull-request",
+    "vulnerability",
+    "dependency",
+    "audit"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-sandbox",
+   "label": "Sandboxing and Permissions",
+   "desc": "Limiting what an agent can read, run and send, and keeping secrets out of its reach.",
+   "keywords": [
+    "sandbox",
+    "permission",
+    "secret",
+    "allowlist",
+    "isolation"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-verify",
+   "label": "Testing and Verification",
+   "desc": "Running tests, reproducing failures and checking a change against its specification.",
+   "keywords": [
+    "test",
+    "failure",
+    "reproduce",
+    "root-cause",
+    "regression"
+   ],
+   "topic": "coding-agents",
+   "source": "coding-agents",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ca-minimal-diff-editor",
+   "concept": "ca-codegen",
+   "label": "Minimal Diff Editor",
+   "desc": "Makes the smallest edit that satisfies a request, applies it and re-runs the affected checks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey802",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey804",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-refactor-planner",
+   "concept": "ca-codegen",
+   "label": "Refactor Planner",
+   "desc": "Plans a refactor as small, individually testable steps and states what behaviour must not change.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey802",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey805",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-spec-to-code-generator",
+   "concept": "ca-codegen",
+   "label": "Spec to Code Generator",
+   "desc": "Turns a written specification into code and tests together and lists what the specification left undefined.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey802",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey806",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-benchmark-runner",
+   "concept": "ca-eval",
+   "label": "Benchmark Runner",
+   "desc": "Runs a coding agent on a fixed task suite in clean environments and reports pass rate with its variance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey807",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey808",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-trajectory-analyst",
+   "concept": "ca-eval",
+   "label": "Trajectory Analyst",
+   "desc": "Reads an agent's step-by-step transcript to find where it went wrong, such as looping, ignoring errors or editing the wrong file.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey807",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-agent-loop-designer",
+   "concept": "ca-harness",
+   "label": "Agent Loop Designer",
+   "desc": "Designs the tool-calling loop with stop conditions, retry limits and a budget for steps and tokens.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey809",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey808",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-context-assembler",
+   "concept": "ca-harness",
+   "label": "Context Assembler",
+   "desc": "Chooses which files, results and messages enter the model's context and compacts the rest without losing decisions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey809",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey805",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-tool-schema-designer",
+   "concept": "ca-harness",
+   "label": "Tool Schema Designer",
+   "desc": "Defines tool names, input schemas and error messages so a model can call each tool correctly and recover from failure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey809",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-handoff-reporter",
+   "concept": "ca-orchestration",
+   "label": "Handoff Reporter",
+   "desc": "Writes a short report of what changed, what was verified and what remains, for the next agent or the human.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey806",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey808",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-task-decomposer",
+   "concept": "ca-orchestration",
+   "label": "Task Decomposer",
+   "desc": "Splits a large coding task into independent subtasks with clear inputs and outputs and an order of dependence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey808",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-worktree-coordinator",
+   "concept": "ca-orchestration",
+   "label": "Worktree Coordinator",
+   "desc": "Assigns subtasks to separate branches or worktrees, detects conflicts and merges results in a safe order.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey808",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-code-search",
+   "concept": "ca-repo",
+   "label": "Code Search",
+   "desc": "Finds definitions, call sites and similar code by name and by meaning and returns each with its file and line.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey805",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey806",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-repo-indexer",
+   "concept": "ca-repo",
+   "label": "Repository Indexer",
+   "desc": "Maps a codebase's modules, entry points and dependency graph and reports which parts it could not parse.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey805",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey806",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-dependency-auditor",
+   "concept": "ca-review",
+   "label": "Dependency Auditor",
+   "desc": "Lists dependencies, versions and known advisories and recommends upgrades with the risk of each.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey810",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-pull-request-reviewer",
+   "concept": "ca-review",
+   "label": "Pull Request Reviewer",
+   "desc": "Reviews a change for correctness, missing tests and unintended behaviour changes and ranks findings by severity.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey804",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-vulnerability-scanner",
+   "concept": "ca-review",
+   "label": "Vulnerability Scanner",
+   "desc": "Flags injection, unsafe deserialization and secret exposure in code and reports the evidence for each finding.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey810",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-permission-policy-writer",
+   "concept": "ca-sandbox",
+   "label": "Permission Policy Writer",
+   "desc": "Writes allow and deny rules for commands and paths and the approval prompts for actions that change things outside the sandbox.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey811",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-sandbox-designer",
+   "concept": "ca-sandbox",
+   "label": "Sandbox Designer",
+   "desc": "Designs the container or process boundary an agent runs in, including file, network and process limits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey811",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-secrets-guard",
+   "concept": "ca-sandbox",
+   "label": "Secrets Guard",
+   "desc": "Keeps credentials out of prompts, logs and commits by scanning for them and routing access through scoped tokens.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey810",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey811",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey803",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-failure-triager",
+   "concept": "ca-verify",
+   "label": "Failure Triager",
+   "desc": "Reproduces a failing test or bug report, narrows the cause and proposes a fix with a regression test.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey804",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey805",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-test-runner",
+   "concept": "ca-verify",
+   "label": "Test Runner",
+   "desc": "Runs the relevant tests, parses the output and reports failures with the command that reproduces them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey804",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey802",
+   "name": "Coding Engineer Agent",
+   "legacy_key": "ca-engineer",
+   "mcp": [
+    "46d6322a-5f75-4822-b739-f49261805e9c"
+   ]
+  },
+  {
+   "key": "Maxey803",
+   "name": "Code Review Agent",
+   "legacy_key": "ca-reviewer",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e",
+    "46d6322a-5f75-4822-b739-f49261805e9c",
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey804",
+   "name": "Test and Debug Agent",
+   "legacy_key": "ca-tester",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e",
+    "46d6322a-5f75-4822-b739-f49261805e9c"
+   ]
+  },
+  {
+   "key": "Maxey805",
+   "name": "Repository Analyst Agent",
+   "legacy_key": "ca-repo-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey806",
+   "name": "Technical Writer Agent",
+   "legacy_key": "ca-technical-writer",
+   "mcp": [
+    "46d6322a-5f75-4822-b739-f49261805e9c",
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey807",
+   "name": "Agent Evaluator Agent",
+   "legacy_key": "ca-evaluator",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e",
+    "46d6322a-5f75-4822-b739-f49261805e9c",
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey808",
+   "name": "Coding Orchestrator Agent",
+   "legacy_key": "ca-orchestrator",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e"
+   ]
+  },
+  {
+   "key": "Maxey809",
+   "name": "Agent Architect Agent",
+   "legacy_key": "ca-architect",
+   "mcp": []
+  },
+  {
+   "key": "Maxey810",
+   "name": "Security Review Agent",
+   "legacy_key": "ca-security-reviewer",
+   "mcp": [
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey811",
+   "name": "Sandbox Engineer Agent",
+   "legacy_key": "ca-sandbox-engineer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "name": "CircleCI",
+   "desc": "Manage CI/CD pipelines, debug failed builds, and optimize test suites directly from Claude - no terminal required.",
+   "tools": [
+    "cancel_workflow",
+    "download_usage_data",
+    "get_deploy_component",
+    "get_deploy_environment",
+    "get_job",
+    "get_job_logs",
+    "get_job_resource_usage",
+    "get_me"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "origins": [
+    "coding-agents"
+   ]
+  },
+  {
+   "uuid": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "name": "Sentry",
+   "desc": "Search, query, and debug errors intelligently",
+   "tools": [
+    "whoami",
+    "find_organizations",
+    "find_teams",
+    "find_projects",
+    "find_issues",
+    "find_releases",
+    "find_tags",
+    "get_issue_details"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "origins": [
+    "coding-agents"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "GitHub",
+   "desc": "GitHub's official MCP Server",
+   "tools": [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/github/github-mcp-server",
+   "id": "local:github",
+   "origins": [
+    "biomedical-computation",
+    "coding-agents",
+    "computer-science",
+    "electrical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:github",
+  "46d6322a-5f75-4822-b739-f49261805e9c",
+  "09103c21-59c7-480e-8fb4-69914bfa311e"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey802",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "coding-agents",
+   "score": 0.1173,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey803",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "coding-agents",
+   "score": 0.172,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey804",
+    "skill": "ca-failure-triager"
+   }
+  },
+  {
+   "agent": "Maxey803",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "coding-agents",
+   "score": 0.1173,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey802",
+    "skill": "ca-minimal-diff-editor"
+   }
+  },
+  {
+   "agent": "Maxey803",
+   "mcp": "local:github",
+   "topic": "coding-agents",
+   "score": 0.1746,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey804",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "coding-agents",
+   "score": 0.172,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey804",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "coding-agents",
+   "score": 0.1173,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey802",
+    "skill": "ca-spec-to-code-generator"
+   }
+  },
+  {
+   "agent": "Maxey806",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "coding-agents",
+   "score": 0.1183,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey806",
+   "mcp": "local:github",
+   "topic": "coding-agents",
+   "score": 0.1208,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey807",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "coding-agents",
+   "score": 0.1014,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey808",
+    "skill": "ca-task-decomposer"
+   }
+  },
+  {
+   "agent": "Maxey807",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "coding-agents",
+   "score": 0.1183,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey806",
+    "skill": "ca-handoff-reporter"
+   }
+  },
+  {
+   "agent": "Maxey807",
+   "mcp": "local:github",
+   "topic": "coding-agents",
+   "score": 0.1208,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey806",
+    "skill": "ca-handoff-reporter"
+   }
+  },
+  {
+   "agent": "Maxey808",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "coding-agents",
+   "score": 0.1014,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey810",
+   "mcp": "local:github",
+   "topic": "coding-agents",
+   "score": 0.1746,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey803",
+    "skill": "ca-pull-request-reviewer"
+   }
+  }
+ ],
+ "lexicon": {
+  "agentloop": "harness stop compaction retry transcript coding loop context",
+  "codeedit": "patch diff refactor specification regression minimal generate edit generation editing spec testable",
+  "repomap": "repository entry point call site dependency graph understanding",
+  "verifyloop": "reproduce failing command failure root cause testing verification",
+  "secreview": "injection deserialization severity vulnerability pull request security",
+  "sandboxing": "sandbox allowlist isolation credential token permission secret sandboxing container",
+  "subagents": "worktree decomposer handoff conflict merge subtask decompose branch parallel multi orchestration",
+  "agenteval": "benchmark variance trajectory looping suite pass rate evaluation"
+ },
+ "sources": [
+  "coding-agents"
+ ]
+}

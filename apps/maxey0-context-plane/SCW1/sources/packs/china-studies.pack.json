@@ -1,0 +1,561 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "china-studies",
+ "topic": {
+  "id": "china-studies",
+  "label": "China Studies",
+  "desc": "China Studies: the history, language, politics, economy, society and culture of China."
+ },
+ "concepts": [
+  [
+   "chin-imperial-history",
+   "Imperial and Premodern History",
+   "china-studies",
+   "Chinese dynasties from the Shang to the Qing, their institutions and their collapse.",
+   [
+    "dynasty",
+    "imperial",
+    "qing",
+    "ming",
+    "han",
+    "tang",
+    "bureaucracy",
+    "examination"
+   ]
+  ],
+  [
+   "chin-modern-history",
+   "Modern and Contemporary History",
+   "china-studies",
+   "Republican China, the civil war, the Mao era and the reform period.",
+   [
+    "republic",
+    "revolution",
+    "mao",
+    "civil war",
+    "cultural revolution",
+    "reform",
+    "communist",
+    "modern"
+   ]
+  ],
+  [
+   "chin-language-linguistics",
+   "Chinese Language and Linguistics",
+   "china-studies",
+   "Mandarin and other Sinitic languages, characters, tones and translation.",
+   [
+    "mandarin",
+    "character",
+    "tone",
+    "pinyin",
+    "classical chinese",
+    "translation",
+    "dialect",
+    "grammar"
+   ]
+  ],
+  [
+   "chin-politics-international",
+   "Politics and International Relations",
+   "china-studies",
+   "The party-state, governance, law and China's foreign relations.",
+   [
+    "politics",
+    "party",
+    "governance",
+    "foreign policy",
+    "state",
+    "law",
+    "international relations",
+    "diplomacy"
+   ]
+  ],
+  [
+   "chin-economy-society",
+   "Economy and Society",
+   "china-studies",
+   "Economic growth, trade, urbanization, inequality and social change.",
+   [
+    "economy",
+    "growth",
+    "trade",
+    "urbanization",
+    "inequality",
+    "hukou",
+    "migration",
+    "society"
+   ]
+  ],
+  [
+   "chin-thought-culture",
+   "Philosophy, Literature and Culture",
+   "china-studies",
+   "Confucian, Daoist and Buddhist thought, classical and modern literature, and the arts.",
+   [
+    "confucian",
+    "daoist",
+    "buddhist",
+    "philosophy",
+    "literature",
+    "poetry",
+    "art",
+    "culture"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "chin-dynasty-timeline",
+   "chin-imperial-history",
+   "Dynastic Timeline Builder",
+   "Builds a dated timeline of dynasties and key events, checked against standard chronologies.",
+   "procedural",
+   [
+    [
+     "chin-historian",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-philosopher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-exam-system",
+   "chin-imperial-history",
+   "Civil Examination System Analysis",
+   "Explains the imperial examination system and its social effects, checked against cited scholarship.",
+   "semantic",
+   [
+    [
+     "chin-historian",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-qing-collapse",
+   "chin-imperial-history",
+   "Late Qing Crisis Analysis",
+   "Analyses the Opium Wars, Taiping Rebellion and the 1911 revolution, checked against dated sources.",
+   "semantic",
+   [
+    [
+     "chin-historian",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-political",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-revolution-analysis",
+   "chin-modern-history",
+   "Revolution and Civil War Analysis",
+   "Explains the Nationalist and Communist struggle to 1949, checked against cited histories.",
+   "semantic",
+   [
+    [
+     "chin-historian",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-political",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-mao-era",
+   "chin-modern-history",
+   "Mao Era Policy Review",
+   "Reviews the Great Leap Forward and Cultural Revolution and their human cost, checked against cited demographic estimates.",
+   "semantic",
+   [
+    [
+     "chin-historian",
+     "primary"
+    ],
+    [
+     "chin-sociologist",
+     "checker"
+    ],
+    [
+     "chin-fact",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-reform-timeline",
+   "chin-modern-history",
+   "Reform Era Timeline",
+   "Builds a timeline of reform and opening policies after 1978, checked against official and scholarly sources.",
+   "procedural",
+   [
+    [
+     "chin-economist",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-translation",
+   "chin-language-linguistics",
+   "Chinese-English Translation",
+   "Translates Chinese texts into English with notes, checked by back-translation of key passages.",
+   "procedural",
+   [
+    [
+     "chin-linguist",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-literary",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-classical-reading",
+   "chin-language-linguistics",
+   "Classical Chinese Reading",
+   "Glosses and translates classical Chinese passages, checked against standard commentaries.",
+   "semantic",
+   [
+    [
+     "chin-linguist",
+     "primary"
+    ],
+    [
+     "chin-philosopher",
+     "checker"
+    ],
+    [
+     "chin-fact",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-dialect-comparison",
+   "chin-language-linguistics",
+   "Sinitic Dialect Comparison",
+   "Compares phonology of Mandarin, Cantonese and other varieties, checked against reference transcriptions.",
+   "semantic",
+   [
+    [
+     "chin-linguist",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-institution-map",
+   "chin-politics-international",
+   "Party-State Institution Mapper",
+   "Maps party and state institutions and their relationships, checked against official structure documents.",
+   "procedural",
+   [
+    [
+     "chin-political",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-foreign-policy",
+   "chin-politics-international",
+   "Foreign Policy Analysis",
+   "Analyses Chinese foreign policy toward a region, checked against cited statements and agreements.",
+   "semantic",
+   [
+    [
+     "chin-political",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-economist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-policy-document",
+   "chin-politics-international",
+   "Policy Document Analysis",
+   "Summarizes a Chinese policy document and its priorities, checked against the original text.",
+   "semantic",
+   [
+    [
+     "chin-political",
+     "primary"
+    ],
+    [
+     "chin-linguist",
+     "checker"
+    ],
+    [
+     "chin-fact",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-growth-analysis",
+   "chin-economy-society",
+   "Economic Growth Analysis",
+   "Analyses GDP growth sources and trends, checked against official and international statistics.",
+   "procedural",
+   [
+    [
+     "chin-economist",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-political",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-hukou-study",
+   "chin-economy-society",
+   "Hukou and Internal Migration Study",
+   "Explains the household registration system and rural-urban migration, checked against census data.",
+   "semantic",
+   [
+    [
+     "chin-sociologist",
+     "primary"
+    ],
+    [
+     "chin-economist",
+     "checker"
+    ],
+    [
+     "chin-fact",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-trade-review",
+   "chin-economy-society",
+   "Trade Relations Review",
+   "Reviews China trade flows and disputes, checked against trade statistics.",
+   "procedural",
+   [
+    [
+     "chin-economist",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-political",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-text-interpretation",
+   "chin-thought-culture",
+   "Classical Text Interpretation",
+   "Interprets passages from the Analects or Daodejing, checked against cited commentaries.",
+   "semantic",
+   [
+    [
+     "chin-philosopher",
+     "primary"
+    ],
+    [
+     "chin-linguist",
+     "checker"
+    ],
+    [
+     "chin-fact",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-poetry-analysis",
+   "chin-thought-culture",
+   "Chinese Poetry Analysis",
+   "Analyses Tang and Song poetry form and imagery, checked against the original text.",
+   "semantic",
+   [
+    [
+     "chin-literary",
+     "primary"
+    ],
+    [
+     "chin-linguist",
+     "checker"
+    ],
+    [
+     "chin-philosopher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chin-modern-literature",
+   "chin-thought-culture",
+   "Modern Literature Reading",
+   "Reads works by Lu Xun and later writers in context, checked by quoting and citing the text.",
+   "semantic",
+   [
+    [
+     "chin-literary",
+     "primary"
+    ],
+    [
+     "chin-fact",
+     "checker"
+    ],
+    [
+     "chin-historian",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "chin-historian": "Chinese History Scholar",
+  "chin-linguist": "Chinese Language Specialist",
+  "chin-political": "Chinese Politics Analyst",
+  "chin-economist": "Chinese Economy Analyst",
+  "chin-literary": "Chinese Literature Critic",
+  "chin-philosopher": "Chinese Thought Scholar",
+  "chin-sociologist": "Chinese Society Analyst",
+  "chin-fact": "Source Verification Checker"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "chin-imperial": "dynasty imperial qing ming han tang bureaucracy examination",
+  "chin-modern": "republic revolution mao civil war cultural reform communist modern",
+  "chin-language": "mandarin character tone pinyin classical chinese translation dialect grammar",
+  "chin-politics": "politics party governance foreign policy state law international relations diplomacy",
+  "chin-economy": "economy growth trade urbanization inequality hukou migration society",
+  "chin-thought": "confucian daoist buddhist philosophy literature poetry art culture"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

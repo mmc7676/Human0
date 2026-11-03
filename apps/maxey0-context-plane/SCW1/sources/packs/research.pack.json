@@ -1,0 +1,964 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "research",
+ "topic": {
+  "id": "research",
+  "label": "Research",
+  "desc": "Research as a working discipline: framing questions, finding and appraising literature, designing and analysing studies, replication, synthesis, writing and integrity. Extends the base Research topic, which held only Latent Space."
+ },
+ "concepts": [
+  [
+   "rs-question",
+   "Research Questions and Scoping",
+   "research",
+   "Turning a topic into answerable questions, hypotheses, scope limits and success criteria before any searching starts.",
+   [
+    "question",
+    "hypothesis",
+    "scope",
+    "criteria"
+   ]
+  ],
+  [
+   "rs-literature",
+   "Literature Search and Review",
+   "research",
+   "Searching, screening and tracking papers: search strings, citation chasing, screening rules and annotated bibliographies.",
+   [
+    "literature",
+    "search",
+    "screening",
+    "bibliography",
+    "snowballing"
+   ]
+  ],
+  [
+   "rs-appraisal",
+   "Source Appraisal and Evidence Quality",
+   "research",
+   "Judging how far a source can be trusted: study design, bias, peer review versus preprint, conflicts of interest and retraction status.",
+   [
+    "appraisal",
+    "bias",
+    "credibility",
+    "preprint",
+    "retraction"
+   ]
+  ],
+  [
+   "rs-design",
+   "Study and Experiment Design",
+   "research",
+   "Designing studies and experiments: controls, sampling, sample size, preregistration and what would count as a negative result.",
+   [
+    "experiment",
+    "control",
+    "sampling",
+    "preregistration",
+    "power"
+   ]
+  ],
+  [
+   "rs-analysis",
+   "Analysis and Replication",
+   "research",
+   "Analysing results and checking whether they hold: statistics, robustness checks, reproducible pipelines and replication attempts.",
+   [
+    "analysis",
+    "replication",
+    "reproducibility",
+    "robustness",
+    "statistics",
+    "replicable",
+    "replicate",
+    "replicated"
+   ]
+  ],
+  [
+   "rs-synthesis",
+   "Synthesis and Evidence Mapping",
+   "research",
+   "Combining many sources into one picture: evidence tables, agreement and conflict between studies, stated confidence and open gaps.",
+   [
+    "synthesis",
+    "evidence",
+    "confidence",
+    "gap",
+    "meta"
+   ]
+  ],
+  [
+   "rs-writing",
+   "Scholarly Writing and Citation",
+   "research",
+   "Writing papers and reports: structure, claims tied to evidence, related work, abstracts, figures and correct citation.",
+   [
+    "manuscript",
+    "citation",
+    "abstract",
+    "related",
+    "figure"
+   ]
+  ],
+  [
+   "rs-integrity",
+   "Research Integrity and Ethics",
+   "research",
+   "Keeping research honest and lawful: provenance, data licences, consent, authorship, disclosure of tool and AI use, and conflicts of interest.",
+   [
+    "integrity",
+    "ethics",
+    "consent",
+    "licence",
+    "authorship"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "rs-question-framer",
+   "rs-question",
+   "Research Question Framer",
+   "Turns a vague topic into a few answerable questions with a hypothesis for each and a statement of what would change the conclusion.",
+   "semantic",
+   [
+    [
+     "rs-question-agent",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-scope-boundary",
+   "rs-question",
+   "Scope and Criteria Writer",
+   "Writes inclusion and exclusion criteria, time window and success measures so the work can be judged finished.",
+   "procedural",
+   [
+    [
+     "rs-question-agent",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-librarian",
+     "support"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-prior-knowledge-map",
+   "rs-question",
+   "Prior Knowledge Mapper",
+   "Lists what is already known, what is assumed and what is disputed on a topic so new work does not repeat settled ground.",
+   "semantic",
+   [
+    [
+     "rs-librarian",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ],
+    [
+     "rs-synthesizer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-search-strategy",
+   "rs-literature",
+   "Search Strategy Builder",
+   "Builds search strings with synonyms and filters for several databases and records exactly what was run and when.",
+   "procedural",
+   [
+    [
+     "rs-librarian",
+     "primary"
+    ],
+    [
+     "rs-citation-verifier",
+     "checker"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-paper-screener",
+   "rs-literature",
+   "Paper Screener",
+   "Screens titles and abstracts against the written criteria and logs every inclusion and exclusion with its reason.",
+   "procedural",
+   [
+    [
+     "rs-librarian",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-appraiser",
+     "support"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-citation-chaser",
+   "rs-literature",
+   "Citation Chaser",
+   "Follows references forwards and backwards from key papers to find work the keyword search missed, and lists what each hop added.",
+   "procedural",
+   [
+    [
+     "rs-librarian",
+     "primary"
+    ],
+    [
+     "rs-citation-verifier",
+     "checker"
+    ],
+    [
+     "rs-synthesizer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-annotated-bibliography",
+   "rs-literature",
+   "Annotated Bibliography Maker",
+   "Summarises each source in a few lines with its method, finding and limit, kept in one shareable list.",
+   "procedural",
+   [
+    [
+     "rs-librarian",
+     "primary"
+    ],
+    [
+     "rs-citation-verifier",
+     "checker"
+    ],
+    [
+     "rs-writer",
+     "support"
+    ],
+    [
+     "rs-appraiser",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-study-design-appraiser",
+   "rs-appraisal",
+   "Study Design Appraiser",
+   "Classifies a study as trial, cohort, case study, simulation or opinion and says what that design can and cannot show.",
+   "semantic",
+   [
+    [
+     "rs-appraiser",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-bias-finder",
+   "rs-appraisal",
+   "Bias and Confounder Finder",
+   "Looks for selection bias, confounding, p-hacking and selective reporting and states how each would change the result.",
+   "semantic",
+   [
+    [
+     "rs-appraiser",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-analyst",
+     "support"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-preprint-status-checker",
+   "rs-appraisal",
+   "Preprint and Retraction Checker",
+   "Checks whether a paper is peer reviewed, revised, corrected or retracted and reports the date and source of that status.",
+   "procedural",
+   [
+    [
+     "rs-citation-verifier",
+     "primary"
+    ],
+    [
+     "rs-appraiser",
+     "checker"
+    ],
+    [
+     "rs-librarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-experiment-planner",
+   "rs-design",
+   "Experiment Planner",
+   "Writes a plan with variables, controls, procedure and the measurements that will be taken, before any data exists.",
+   "procedural",
+   [
+    [
+     "rs-methodologist",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-analyst",
+     "support"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-sample-power-calculator",
+   "rs-design",
+   "Sample Size and Power Calculator",
+   "Estimates the sample needed to detect an effect of a stated size and shows the assumptions behind the number.",
+   "procedural",
+   [
+    [
+     "rs-methodologist",
+     "primary"
+    ],
+    [
+     "rs-analyst",
+     "checker"
+    ],
+    [
+     "rs-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-preregistration-writer",
+   "rs-design",
+   "Preregistration Writer",
+   "Drafts a timestamped plan of hypotheses and analyses so later choices cannot quietly change the question.",
+   "procedural",
+   [
+    [
+     "rs-methodologist",
+     "primary"
+    ],
+    [
+     "rs-integrity-officer",
+     "checker"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ],
+    [
+     "rs-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-statistical-analyst",
+   "rs-analysis",
+   "Statistical Analysis Runner",
+   "Runs the planned tests, reports effect sizes with intervals rather than only p-values, and lists every test that was tried.",
+   "procedural",
+   [
+    [
+     "rs-analyst",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ],
+    [
+     "rs-replicator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-robustness-checker",
+   "rs-analysis",
+   "Robustness Checker",
+   "Re-runs an analysis with other reasonable choices of data cleaning, model and threshold and reports whether the finding survives.",
+   "procedural",
+   [
+    [
+     "rs-analyst",
+     "primary"
+    ],
+    [
+     "rs-replicator",
+     "checker"
+    ],
+    [
+     "rs-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-reproducible-pipeline",
+   "rs-analysis",
+   "Reproducible Pipeline Builder",
+   "Packages data, code, versions and random seeds so another person can regenerate every table and figure.",
+   "procedural",
+   [
+    [
+     "rs-replicator",
+     "primary"
+    ],
+    [
+     "rs-analyst",
+     "checker"
+    ],
+    [
+     "rs-integrity-officer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-replication-planner",
+   "rs-analysis",
+   "Replication Planner",
+   "Plans a direct or conceptual replication of a published result and says what outcome would count as failing to replicate.",
+   "semantic",
+   [
+    [
+     "rs-replicator",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ],
+    [
+     "rs-appraiser",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-evidence-table-builder",
+   "rs-synthesis",
+   "Evidence Table Builder",
+   "Builds a table of studies by population, method, measure and result so agreement and conflict are visible side by side.",
+   "procedural",
+   [
+    [
+     "rs-synthesizer",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-appraiser",
+     "support"
+    ],
+    [
+     "rs-librarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-confidence-grader",
+   "rs-synthesis",
+   "Confidence Grader",
+   "Rates how strongly the evidence supports each claim and writes the reason for the grade next to it.",
+   "semantic",
+   [
+    [
+     "rs-synthesizer",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-appraiser",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-gap-finder",
+   "rs-synthesis",
+   "Research Gap Finder",
+   "Lists questions the literature leaves open or answers only weakly, ranked by how much an answer would change decisions.",
+   "semantic",
+   [
+    [
+     "rs-synthesizer",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ],
+    [
+     "rs-librarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-paper-outliner",
+   "rs-writing",
+   "Paper Outliner",
+   "Lays out a paper with one claim per section and the evidence each section must cite.",
+   "procedural",
+   [
+    [
+     "rs-writer",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-synthesizer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-related-work-writer",
+   "rs-writing",
+   "Related Work Writer",
+   "Writes a related-work section that groups sources by idea, states how this work differs and cites each source correctly.",
+   "semantic",
+   [
+    [
+     "rs-writer",
+     "primary"
+    ],
+    [
+     "rs-citation-verifier",
+     "checker"
+    ],
+    [
+     "rs-synthesizer",
+     "support"
+    ],
+    [
+     "rs-librarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-citation-formatter",
+   "rs-writing",
+   "Citation Formatter",
+   "Formats references in a named style, checks each against its source record and flags entries that cannot be found.",
+   "procedural",
+   [
+    [
+     "rs-citation-verifier",
+     "primary"
+    ],
+    [
+     "rs-writer",
+     "checker"
+    ],
+    [
+     "rs-librarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-provenance-recorder",
+   "rs-integrity",
+   "Provenance Recorder",
+   "Records where every dataset, figure and quotation came from, under what licence and on what date it was retrieved.",
+   "procedural",
+   [
+    [
+     "rs-integrity-officer",
+     "primary"
+    ],
+    [
+     "rs-citation-verifier",
+     "checker"
+    ],
+    [
+     "rs-replicator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-ai-use-disclosure",
+   "rs-integrity",
+   "Tool and AI Use Disclosure Writer",
+   "Writes a plain statement of which tools and AI systems helped with which step and what a person checked afterwards.",
+   "semantic",
+   [
+    [
+     "rs-integrity-officer",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-conflict-consent-checker",
+   "rs-integrity",
+   "Consent and Conflict Checker",
+   "Checks that consent, ethics review, data licences and conflicts of interest are documented before data is used or published.",
+   "procedural",
+   [
+    [
+     "rs-integrity-officer",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-methodologist",
+     "support"
+    ],
+    [
+     "rs-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-feasibility-assessor",
+   "rs-question",
+   "Feasibility Assessor",
+   "Estimates the time, data access, skills and cost a question needs and says whether to narrow it before work starts.",
+   "semantic",
+   [
+    [
+     "rs-methodologist",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-data-curator",
+     "support"
+    ],
+    [
+     "rs-question-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-funding-conflict-scanner",
+   "rs-appraisal",
+   "Funding and Conflict Scanner",
+   "Reads funding statements and author disclosures and says which findings could be shaped by who paid for the work.",
+   "semantic",
+   [
+    [
+     "rs-appraiser",
+     "primary"
+    ],
+    [
+     "rs-ethics-reviewer",
+     "checker"
+    ],
+    [
+     "rs-citation-verifier",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-data-collection-protocol",
+   "rs-design",
+   "Data Collection Protocol Writer",
+   "Writes the step-by-step protocol, form fields and quality checks for gathering data so different collectors get comparable results.",
+   "procedural",
+   [
+    [
+     "rs-data-curator",
+     "primary"
+    ],
+    [
+     "rs-methodologist",
+     "checker"
+    ],
+    [
+     "rs-skeptic",
+     "support"
+    ],
+    [
+     "rs-ethics-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-meta-analysis-planner",
+   "rs-synthesis",
+   "Meta-Analysis Planner",
+   "Plans the pooling of comparable studies: effect measure, heterogeneity checks, fixed versus random effects and sensitivity analyses.",
+   "procedural",
+   [
+    [
+     "rs-meta-analyst",
+     "primary"
+    ],
+    [
+     "rs-analyst",
+     "checker"
+    ],
+    [
+     "rs-skeptic",
+     "support"
+    ],
+    [
+     "rs-synthesizer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-peer-review-responder",
+   "rs-writing",
+   "Peer Review Response Writer",
+   "Answers each reviewer comment point by point, says what changed in the manuscript and politely explains what did not.",
+   "procedural",
+   [
+    [
+     "rs-editor",
+     "primary"
+    ],
+    [
+     "rs-skeptic",
+     "checker"
+    ],
+    [
+     "rs-writer",
+     "support"
+    ],
+    [
+     "rs-citation-verifier",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rs-data-management-plan",
+   "rs-integrity",
+   "Data Management Plan Writer",
+   "Writes where research data will be stored, who may access it, how long it is kept and how sensitive records are protected.",
+   "procedural",
+   [
+    [
+     "rs-data-curator",
+     "primary"
+    ],
+    [
+     "rs-ethics-reviewer",
+     "checker"
+    ],
+    [
+     "rs-integrity-officer",
+     "support"
+    ],
+    [
+     "rs-replicator",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "rs-question-agent": "Research Question Agent",
+  "rs-librarian": "Literature Search Agent",
+  "rs-appraiser": "Evidence Appraiser Agent",
+  "rs-methodologist": "Study Design Agent",
+  "rs-analyst": "Research Analyst Agent",
+  "rs-replicator": "Replication Agent",
+  "rs-synthesizer": "Evidence Synthesizer Agent",
+  "rs-writer": "Scholarly Writer Agent",
+  "rs-citation-verifier": "Citation Verifier Agent",
+  "rs-integrity-officer": "Research Integrity Officer Agent",
+  "rs-skeptic": "Research Skeptic Agent",
+  "rs-data-curator": "Research Data Curator Agent",
+  "rs-meta-analyst": "Meta-Analysis Agent",
+  "rs-ethics-reviewer": "Research Ethics Reviewer Agent",
+  "rs-editor": "Scholarly Editor Agent"
+ },
+ "mcp": [
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "bioRxiv",
+   "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "Access bioRxiv and medRxiv preprint data",
+   [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "rsquestion": "hypothesis criteria prior assumed disputed question scoping feasibility",
+  "rssearch": "screening snowballing bibliography annotated chaser string exclusion literature",
+  "rsappraise": "bias confounder retraction preprint credibility selective trial appraisal source evidence quality",
+  "rsdesign": "preregistration control sample power variable study data",
+  "rsanalysis": "replication reproducible robustness seed interval effect replicable replicate replicated reproducibility statistics reasonable",
+  "rssynth": "synthesis grade confidence gap meta",
+  "rswrite": "manuscript citation related abstract figure scholarly writing",
+  "rsethics": "integrity disclosure consent licence authorship ethics"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "alphaXiv": "directory listing, tool names are the directory listing's visible sample; connector is not installed or tested",
+   "SciSpace": "directory listing, authless per directory; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Wiley Scholar Gateway": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "bioRxiv": "directory listing, authless per directory; covers bioRxiv and medRxiv only; tool names are the directory listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

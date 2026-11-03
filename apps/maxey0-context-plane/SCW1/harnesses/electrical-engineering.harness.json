@@ -1,0 +1,705 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "electrical-engineering",
+  "label": "Electrical Engineering",
+  "desc": "Electrical Engineering: circuits, electronics, signals, electromagnetics, power and control, from device physics to systems."
+ },
+ "concepts": [
+  {
+   "id": "ee-circuit-analysis",
+   "label": "Circuit Analysis",
+   "desc": "Applying Kirchhoff laws and network theorems to find voltages, currents and transient and frequency responses of linear circuits.",
+   "keywords": [
+    "circuit",
+    "kirchhoff",
+    "voltage",
+    "current",
+    "impedance",
+    "thevenin",
+    "transient",
+    "phasor"
+   ],
+   "topic": "electrical-engineering",
+   "source": "electrical-engineering",
+   "related": []
+  },
+  {
+   "id": "ee-digital-systems",
+   "label": "Digital Logic and Computer Engineering",
+   "desc": "Boolean logic, sequential circuits, hardware description languages, FPGAs and microcontrollers.",
+   "keywords": [
+    "digital",
+    "logic",
+    "boolean",
+    "flip-flop",
+    "fpga",
+    "verilog",
+    "microcontroller",
+    "timing"
+   ],
+   "topic": "electrical-engineering",
+   "source": "electrical-engineering",
+   "related": []
+  },
+  {
+   "id": "ee-electromagnetics",
+   "label": "Electromagnetics",
+   "desc": "Static and dynamic electric and magnetic fields, transmission lines, waves and antennas.",
+   "keywords": [
+    "electromagnetic",
+    "maxwell",
+    "field",
+    "transmission line",
+    "antenna",
+    "wave",
+    "rf"
+   ],
+   "topic": "electrical-engineering",
+   "source": "electrical-engineering",
+   "related": [
+    "cl-em"
+   ]
+  },
+  {
+   "id": "ee-electronics",
+   "label": "Analog Electronics and Devices",
+   "desc": "Semiconductor devices and amplifier, filter and converter circuits built from diodes, transistors and op-amps.",
+   "keywords": [
+    "semiconductor",
+    "diode",
+    "transistor",
+    "mosfet",
+    "amplifier",
+    "op-amp",
+    "bias",
+    "filter"
+   ],
+   "topic": "electrical-engineering",
+   "source": "electrical-engineering",
+   "related": []
+  },
+  {
+   "id": "ee-power-control",
+   "label": "Power Systems, Power Electronics and Control",
+   "desc": "Generating, converting and distributing electrical energy and controlling dynamic systems with feedback.",
+   "keywords": [
+    "power",
+    "grid",
+    "converter",
+    "motor",
+    "transformer",
+    "feedback",
+    "pid",
+    "stability"
+   ],
+   "topic": "electrical-engineering",
+   "source": "electrical-engineering",
+   "related": []
+  },
+  {
+   "id": "ee-signals-systems",
+   "label": "Signals, Systems and Communications",
+   "desc": "Representing and processing signals in time and frequency, and transmitting information over channels.",
+   "keywords": [
+    "signal",
+    "fourier",
+    "laplace",
+    "sampling",
+    "dsp",
+    "modulation",
+    "noise",
+    "communication"
+   ],
+   "topic": "electrical-engineering",
+   "source": "electrical-engineering",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ee-ac-phasor-analyzer",
+   "concept": "ee-circuit-analysis",
+   "label": "AC Phasor Analyzer",
+   "desc": "Analyses sinusoidal steady state with phasors and impedance and checks magnitude and phase against simulation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1246",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1248",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-nodal-solver",
+   "concept": "ee-circuit-analysis",
+   "label": "Nodal and Mesh Solver",
+   "desc": "Solves linear circuits with nodal and mesh analysis and checks results with power balance and simulation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1246",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1249",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-transient-analyzer",
+   "concept": "ee-circuit-analysis",
+   "label": "Transient Response Analyzer",
+   "desc": "Computes RC, RL and RLC transient responses and checks time constants and initial and final values.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1246",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1250",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-embedded-programmer",
+   "concept": "ee-digital-systems",
+   "label": "Embedded Firmware Programmer",
+   "desc": "Writes microcontroller firmware for peripherals and checks timing and interrupts on hardware traces.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1251",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1250",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-hdl-designer",
+   "concept": "ee-digital-systems",
+   "label": "HDL Module Designer",
+   "desc": "Writes synthesizable Verilog modules and checks behavior with testbenches and timing reports.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1251",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1252",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-logic-minimizer",
+   "concept": "ee-digital-systems",
+   "label": "Logic Minimizer",
+   "desc": "Minimizes Boolean functions and builds gate-level circuits and checks equivalence with truth tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1251",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1246",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-antenna-analyzer",
+   "concept": "ee-electromagnetics",
+   "label": "Antenna Analyzer",
+   "desc": "Estimates antenna gain, pattern and impedance and checks against field simulation results.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1253",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1252",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-transmission-line-matcher",
+   "concept": "ee-electromagnetics",
+   "label": "Transmission Line Matcher",
+   "desc": "Analyses transmission lines and designs impedance matching networks and checks reflection on a Smith chart.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1253",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1252",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-active-filter-designer",
+   "concept": "ee-electronics",
+   "label": "Active Filter Designer",
+   "desc": "Designs active filters to a frequency response and checks cutoff, ripple and component tolerances.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1249",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1252",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-amplifier-designer",
+   "concept": "ee-electronics",
+   "label": "Amplifier Designer",
+   "desc": "Designs transistor and op-amp amplifier stages to a gain and bandwidth spec and checks bias points and stability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1249",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1246",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-device-modeler",
+   "concept": "ee-electronics",
+   "label": "Semiconductor Device Modeler",
+   "desc": "Explains and models diode and MOSFET behavior from device physics and checks against datasheet curves.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1249",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1253",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-converter-designer",
+   "concept": "ee-power-control",
+   "label": "Power Converter Designer",
+   "desc": "Designs buck, boost and inverter stages and checks efficiency, ripple and thermal limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1248",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1249",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-load-flow-solver",
+   "concept": "ee-power-control",
+   "label": "Load Flow Solver",
+   "desc": "Solves power flow in a network and checks bus voltages and line loadings against limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1248",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1246",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-pid-tuner",
+   "concept": "ee-power-control",
+   "label": "PID Controller Tuner",
+   "desc": "Tunes feedback controllers for a plant model and checks overshoot, settling time and stability margins.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1250",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1248",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-dsp-filter-designer",
+   "concept": "ee-signals-systems",
+   "label": "Digital Filter Designer",
+   "desc": "Designs FIR and IIR digital filters and checks frequency response, phase and stability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1252",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1249",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-link-budgeter",
+   "concept": "ee-signals-systems",
+   "label": "Communication Link Budgeter",
+   "desc": "Computes link budgets, modulation choice and bit error rates and checks margin against channel noise.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1252",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1253",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  },
+  {
+   "id": "ee-spectrum-analyzer",
+   "concept": "ee-signals-systems",
+   "label": "Spectrum Analyzer",
+   "desc": "Computes Fourier transforms and spectra of signals and checks aliasing and windowing effects.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1252",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1247",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1251",
+     "role": "support"
+    }
+   ],
+   "source": "electrical-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1246",
+   "name": "Circuit Analysis Engineer",
+   "legacy_key": "ee-circuits",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1247",
+   "name": "Design Verification Reviewer",
+   "legacy_key": "ee-verifier",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1248",
+   "name": "Power Systems Engineer",
+   "legacy_key": "ee-power",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1249",
+   "name": "Analog Electronics Designer",
+   "legacy_key": "ee-electronics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1250",
+   "name": "Control Systems Engineer",
+   "legacy_key": "ee-control",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1251",
+   "name": "Digital Systems Designer",
+   "legacy_key": "ee-digital",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1252",
+   "name": "Signal Processing Engineer",
+   "legacy_key": "ee-signals",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1253",
+   "name": "Electromagnetics Engineer",
+   "legacy_key": "ee-em",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "GitHub",
+   "desc": "GitHub's official MCP Server",
+   "tools": [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/github/github-mcp-server",
+   "id": "local:github",
+   "origins": [
+    "biomedical-computation",
+    "coding-agents",
+    "computer-science",
+    "electrical-engineering"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "local:github",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "ee-circ": "circuit kirchhoff voltage current impedance thevenin transient phasor",
+  "ee-elec": "semiconductor diode transistor mosfet amplifier op bias",
+  "ee-dig": "digital logic boolean flip fpga verilog microcontroller firmware",
+  "ee-sig": "signal fourier laplace sampling dsp modulation noise",
+  "ee-em": "electromagnetic maxwell antenna wave rf smith",
+  "ee-pwr": "power grid converter motor transformer pid stability"
+ },
+ "sources": [
+  "electrical-engineering"
+ ]
+}

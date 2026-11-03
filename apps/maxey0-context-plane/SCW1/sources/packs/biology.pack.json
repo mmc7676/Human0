@@ -1,0 +1,656 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "biology",
+ "topic": {
+  "id": "biology",
+  "label": "Biology",
+  "desc": "Biology from molecules to ecosystems: molecular and cell biology, genetics and genomics, neuroscience, biochemistry, evolution and ecology, physiology and immunology. Educational and analytical support, not medical advice."
+ },
+ "concepts": [
+  [
+   "bi-molecular",
+   "Molecular Biology",
+   "biology",
+   "DNA, RNA and protein, gene expression and regulation, and common laboratory methods.",
+   [
+    "dna",
+    "rna",
+    "protein",
+    "transcription",
+    "translation",
+    "pcr"
+   ]
+  ],
+  [
+   "bi-cell",
+   "Cell Biology",
+   "biology",
+   "Cell structure, the cell cycle, signalling and membranes.",
+   [
+    "cell",
+    "organelle",
+    "membrane",
+    "signalling",
+    "mitosis"
+   ]
+  ],
+  [
+   "bi-genomics",
+   "Genetics and Genomics",
+   "biology",
+   "Inheritance, genomes, variants and population genetics.",
+   [
+    "gene",
+    "genome",
+    "variant",
+    "allele",
+    "inheritance",
+    "population"
+   ]
+  ],
+  [
+   "bi-neuro",
+   "Neuroscience",
+   "biology",
+   "Neurons, circuits, plasticity and brain imaging.",
+   [
+    "neuron",
+    "synapse",
+    "circuit",
+    "plasticity",
+    "eeg",
+    "fmri"
+   ]
+  ],
+  [
+   "bi-structural",
+   "Biochemistry and Structural Biology",
+   "biology",
+   "Proteins, enzymes and molecular structure and binding.",
+   [
+    "enzyme",
+    "kinetics",
+    "structure",
+    "folding",
+    "docking",
+    "ligand"
+   ]
+  ],
+  [
+   "bi-evolution",
+   "Evolution and Ecology",
+   "biology",
+   "Phylogenetics, population dynamics and ecosystems.",
+   [
+    "phylogeny",
+    "selection",
+    "ecosystem",
+    "biodiversity",
+    "population"
+   ]
+  ],
+  [
+   "bi-physiology",
+   "Physiology and Immunology",
+   "biology",
+   "Organ systems and the immune response.",
+   [
+    "organ",
+    "homeostasis",
+    "immune",
+    "antibody",
+    "cytokine"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "bi-central-dogma-explainer",
+   "bi-molecular",
+   "Central Dogma Explainer",
+   "Explains replication, transcription and translation with worked examples and exceptions such as reverse transcription.",
+   "semantic",
+   [
+    [
+     "bi-molecular-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-pcr-cloning-planner",
+   "bi-molecular",
+   "PCR and Cloning Planner",
+   "Plans standard PCR and cloning workflows for benign model systems, with controls and expected results, and leaves hazardous-organism work to qualified biosafety review.",
+   "procedural",
+   [
+    [
+     "bi-molecular-biologist",
+     "primary"
+    ],
+    [
+     "bi-biosafety-checker",
+     "checker"
+    ],
+    [
+     "bi-literature-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-gene-regulation-analyst",
+   "bi-molecular",
+   "Gene Regulation Analyst",
+   "Explains promoters, enhancers and transcription factors and reads expression data for regulatory patterns.",
+   "semantic",
+   [
+    [
+     "bi-molecular-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-cell-signalling-analyst",
+   "bi-cell",
+   "Cell Cycle and Signalling Analyst",
+   "Maps signalling pathways and cell-cycle checkpoints and explains the effect of perturbing a node.",
+   "semantic",
+   [
+    [
+     "bi-cell-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-molecular-biologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-membrane-organelle-explainer",
+   "bi-cell",
+   "Membrane and Organelle Explainer",
+   "Explains membrane transport, organelle function and trafficking at a level the learner chooses.",
+   "semantic",
+   [
+    [
+     "bi-cell-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-structural-biologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-culture-protocol-reviewer",
+   "bi-cell",
+   "Cell Culture Protocol Reviewer",
+   "Reviews standard cell culture protocols for missing controls, contamination risk and record keeping, and defers pathogen work to biosafety review.",
+   "procedural",
+   [
+    [
+     "bi-cell-biologist",
+     "primary"
+    ],
+    [
+     "bi-biosafety-checker",
+     "checker"
+    ],
+    [
+     "bi-literature-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-variant-interpretation",
+   "bi-genomics",
+   "Variant Interpretation Assistant",
+   "Summarizes what the literature and databases say about a genetic variant for research use and does not give clinical diagnosis.",
+   "semantic",
+   [
+    [
+     "bi-geneticist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-genome-assembly-annotation",
+   "bi-genomics",
+   "Genome Assembly and Annotation",
+   "Plans assembly and gene annotation pipelines and reports assembly quality statistics.",
+   "procedural",
+   [
+    [
+     "bi-bioinformatician",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-geneticist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-population-genetics",
+   "bi-genomics",
+   "Population Genetics Analyst",
+   "Computes allele frequencies, Hardy-Weinberg tests and measures of population structure.",
+   "procedural",
+   [
+    [
+     "bi-geneticist",
+     "primary"
+    ],
+    [
+     "bi-bioinformatician",
+     "checker"
+    ],
+    [
+     "bi-evolutionary-biologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-neuron-electrophysiology",
+   "bi-neuro",
+   "Neuron Electrophysiology Modeler",
+   "Simulates membrane potentials with Hodgkin-Huxley style models and fits parameters to recordings.",
+   "procedural",
+   [
+    [
+     "bi-neuroscientist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-neural-circuit-analyst",
+   "bi-neuro",
+   "Neural Circuit Analyst",
+   "Describes circuits from connectivity and activity data and states what the data cannot show about causation.",
+   "semantic",
+   [
+    [
+     "bi-neuroscientist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-neuroimaging-analyst",
+   "bi-neuro",
+   "Neuroimaging Analyst",
+   "Plans and reads EEG and fMRI analyses with preprocessing, statistics and multiple-comparison control.",
+   "procedural",
+   [
+    [
+     "bi-neuroscientist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-synaptic-plasticity-explainer",
+   "bi-neuro",
+   "Synaptic Plasticity Explainer",
+   "Explains long-term potentiation and depression, learning rules and their link to memory models.",
+   "semantic",
+   [
+    [
+     "bi-neuroscientist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-cell-biologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-protein-structure-analyst",
+   "bi-structural",
+   "Protein Structure Analyst",
+   "Reads protein structures and predictions for domains, active sites and confidence, and separates predicted from measured structure.",
+   "semantic",
+   [
+    [
+     "bi-structural-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-enzyme-kinetics-fitter",
+   "bi-structural",
+   "Enzyme Kinetics Fitter",
+   "Fits Michaelis-Menten and inhibition models to rate data and reports parameter uncertainty.",
+   "procedural",
+   [
+    [
+     "bi-structural-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-molecular-biologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-docking-planner",
+   "bi-structural",
+   "Molecular Docking Planner",
+   "Plans docking and binding studies with preparation, scoring caveats and validation against known binders.",
+   "procedural",
+   [
+    [
+     "bi-structural-biologist",
+     "primary"
+    ],
+    [
+     "bi-biosafety-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-phylogenetics-builder",
+   "bi-evolution",
+   "Phylogenetics Builder",
+   "Builds phylogenetic trees from sequences with alignment, model choice and support values.",
+   "procedural",
+   [
+    [
+     "bi-evolutionary-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-population-dynamics-modeler",
+   "bi-evolution",
+   "Population Dynamics Modeler",
+   "Models growth, competition and predator-prey dynamics and tests them against field data.",
+   "procedural",
+   [
+    [
+     "bi-evolutionary-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-geneticist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-ecosystem-biodiversity-analyst",
+   "bi-evolution",
+   "Ecosystem and Biodiversity Analyst",
+   "Computes diversity indices and species distributions and states the sampling limits of the data.",
+   "semantic",
+   [
+    [
+     "bi-evolutionary-biologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-organ-system-explainer",
+   "bi-physiology",
+   "Organ System Physiology Explainer",
+   "Explains how organ systems regulate homeostasis for learning and research, not for diagnosis or treatment.",
+   "semantic",
+   [
+    [
+     "bi-physiologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-cell-biologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bi-immune-response-analyst",
+   "bi-physiology",
+   "Immune Response Analyst",
+   "Explains innate and adaptive immune responses and reads immunology data such as cytokine panels for research use.",
+   "semantic",
+   [
+    [
+     "bi-physiologist",
+     "primary"
+    ],
+    [
+     "bi-literature-checker",
+     "checker"
+    ],
+    [
+     "bi-bioinformatician",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "bi-molecular-biologist": "Molecular Biology Agent",
+  "bi-cell-biologist": "Cell Biology Agent",
+  "bi-geneticist": "Genetics Agent",
+  "bi-neuroscientist": "Neuroscience Agent",
+  "bi-structural-biologist": "Structural Biology Agent",
+  "bi-evolutionary-biologist": "Evolution and Ecology Agent",
+  "bi-physiologist": "Physiology and Immunology Agent",
+  "bi-bioinformatician": "Bioinformatics Agent",
+  "bi-literature-checker": "Literature Claim Checker Agent",
+  "bi-biosafety-checker": "Biosafety Checker Agent"
+ },
+ "mcp": [
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Boltz API",
+   "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "Predict molecular structures and binding interactions, screen libraries, and design binders with the Boltz API.",
+   [
+    "boltz_estimate_protein_screen",
+    "boltz_estimate_small_molecule_screen",
+    "boltz_estimate_structure_and_binding",
+    "boltz_get_guidance",
+    "boltz_get_job_status",
+    "boltz_get_screen_results",
+    "boltz_get_structure_and_binding_prediction",
+    "boltz_start_protein_screen"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Helix GenoSphere",
+   "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "Query human genomics & longitudinal clinical data",
+   [
+    "get_variant_frequency",
+    "check_gene_availability",
+    "get_dataset_overview",
+    "search_concepts",
+    "get_patient_count"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Owkin",
+   "bd022b03-2829-47df-b07f-b50c3541c932",
+   "Interact with AI agents built for biology",
+   [
+    "list_cell_types",
+    "list_cohorts",
+    "features_description",
+    "filter_slides",
+    "get_histomics",
+    "display_slide_thumbnail",
+    "survival_analysis",
+    "histoplus_help"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "molecular": "dna rna transcription translation pcr cloning promoter protein molecular biology",
+  "cellbio": "organelle checkpoint trafficking membrane culture contamination cell signalling mitosis",
+  "genomics": "allele variant genome assembly annotation hardy weinberg gene inheritance population genetics genomics",
+  "neuroscience": "neuron hodgkin huxley eeg fmri synaptic synapse plasticity neuroscience neural connectivity",
+  "structbio": "enzyme michaelis menten docking inhibition binder folding ligand biochemistry structural",
+  "evolution": "phylogenetic alignment predator prey diversity phylogeny selection biodiversity evolution ecology",
+  "physiology": "homeostasis immune cytokine adaptive innate organ antibody physiology immunology",
+  "biosafety": "biosafety hazardous qualified diagnosis"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "PubMed": "directory listing, authless per the directory; tool names are the listing's visible sample; connector is not installed or tested",
+   "Boltz API": "directory listing; structure and binding prediction jobs; tool names are the listing's visible sample; connector is not installed or tested",
+   "Helix GenoSphere": "directory listing; the listing says it queries human genomics and longitudinal clinical data, so access and consent rules apply and it needs your own account; tool names are the listing's visible sample; connector is not installed or tested",
+   "Owkin": "directory listing; tool names are the listing's visible sample; connector is not installed or tested",
+   "none-neuroscience": "no directory server specific to neuroscience was found; PubMed covers its literature"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here. Biology skills are for education and research analysis, not medical advice or diagnosis. Hazardous-organism and pathogen-enhancement work is out of scope and the Biosafety Checker agent is there to stop it."
+ }
+}

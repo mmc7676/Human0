@@ -1,0 +1,1283 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "quantum-physics",
+  "label": "Quantum Physics",
+  "desc": "Quantum physics: foundations and measurement, wave mechanics, spin, quantum information, many-body physics, field theory, open systems and quantum optics."
+ },
+ "concepts": [
+  {
+   "id": "qm-foundations",
+   "label": "Quantum Foundations",
+   "desc": "Postulates, wavefunctions, measurement and the uncertainty principle.",
+   "keywords": [
+    "wavefunction",
+    "postulate",
+    "measurement",
+    "uncertainty",
+    "observable",
+    "quantum",
+    "qubit",
+    "circuit",
+    "entanglement",
+    "decoherence",
+    "simulator"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-info",
+   "label": "Quantum Information and Computing",
+   "desc": "Qubits, circuits, algorithms and error correction.",
+   "keywords": [
+    "qubit",
+    "circuit",
+    "gate",
+    "algorithm",
+    "error-correction",
+    "entanglement"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-manybody",
+   "label": "Many-Body and Condensed Matter",
+   "desc": "Systems of many quantum particles: bands, tensor networks and second quantization.",
+   "keywords": [
+    "band",
+    "tensor",
+    "dmrg",
+    "fermion",
+    "second-quantization",
+    "lattice"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-open",
+   "label": "Open Systems and Decoherence",
+   "desc": "Density matrices, master equations and decoherence.",
+   "keywords": [
+    "density-matrix",
+    "decoherence",
+    "master",
+    "lindblad",
+    "open"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-optics",
+   "label": "Quantum Optics and Sensing",
+   "desc": "Photons, atoms and quantum-enhanced measurement.",
+   "keywords": [
+    "photon",
+    "squeezed",
+    "atom",
+    "interferometer",
+    "sensing"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-qft",
+   "label": "Quantum Field Theory and Particles",
+   "desc": "Fields, Feynman diagrams and the Standard Model.",
+   "keywords": [
+    "feynman",
+    "field",
+    "standard-model",
+    "renormalization",
+    "boson",
+    "particle",
+    "lepton",
+    "quark",
+    "accelerator",
+    "decay",
+    "detector",
+    "beam"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-solvers",
+   "label": "Wave Mechanics and Solvers",
+   "desc": "Solving the Schrodinger equation exactly and approximately.",
+   "keywords": [
+    "schrodinger",
+    "perturbation",
+    "variational",
+    "tunneling",
+    "scattering"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  },
+  {
+   "id": "qm-spin",
+   "label": "Angular Momentum and Spin",
+   "desc": "Angular momentum algebra, spin systems and the hydrogen atom.",
+   "keywords": [
+    "spin",
+    "angular-momentum",
+    "pauli",
+    "bloch",
+    "hydrogen"
+   ],
+   "topic": "quantum-physics",
+   "source": "quantum-physics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "entanglement-entropy-analyzer",
+   "concept": "qm-foundations",
+   "label": "Entanglement Entropy Analyzer",
+   "desc": "Computes entanglement entropy, decoherence and quantum-state fidelity for multi-qubit states and master-equation dynamics.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1498",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "qm-interpretations-comparer",
+   "concept": "qm-foundations",
+   "label": "Interpretations Comparer",
+   "desc": "Compares interpretations of quantum mechanics side by side and labels what is experimentally distinguishable and what is not.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1499",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1501",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-postulates-measurement",
+   "concept": "qm-foundations",
+   "label": "Postulates and Measurement Explainer",
+   "desc": "Explains the postulates, the Born rule and measurement outcomes with worked examples and states where interpretation begins.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1499",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1502",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-uncertainty-commutator",
+   "concept": "qm-foundations",
+   "label": "Uncertainty and Commutator Analyzer",
+   "desc": "Computes commutators and uncertainty bounds for observables and shows which pairs are compatible.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1499",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1502",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "quantum-circuit-simulator",
+   "concept": "qm-foundations",
+   "label": "Quantum Circuit Simulator",
+   "desc": "Builds and runs qubit circuits with noise models and returns measurement histograms, circuit statistics and result types.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1498",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "schrodinger-solver",
+   "concept": "qm-foundations",
+   "label": "Schrodinger Equation Solver",
+   "desc": "Solves the time-independent and time-dependent Schrodinger equation for a potential and reports wavefunctions and energy levels.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1480",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1498",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "qm-algorithm-analyst",
+   "concept": "qm-info",
+   "label": "Quantum Algorithm Analyst",
+   "desc": "Explains quantum algorithms and compares their resource counts with classical methods without claiming speedups that are not proven.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1498",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-circuit-designer",
+   "concept": "qm-info",
+   "label": "Quantum Circuit Designer",
+   "desc": "Designs and simulates small qubit circuits with gates and noise models and returns measurement histograms.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1498",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-error-correction-analyzer",
+   "concept": "qm-info",
+   "label": "Error Correction Analyzer",
+   "desc": "Analyzes simple quantum error-correcting codes, their syndromes and the error types they correct.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1498",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1504",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-band-structure-analyzer",
+   "concept": "qm-manybody",
+   "label": "Band Structure Analyzer",
+   "desc": "Computes tight-binding band structures and identifies gaps, effective masses and topological features.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1505",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1502",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-second-quantization",
+   "concept": "qm-manybody",
+   "label": "Second Quantization Assistant",
+   "desc": "Writes many-particle Hamiltonians for fermions and bosons with creation and annihilation operators.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1505",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-tensor-network-simulator",
+   "concept": "qm-manybody",
+   "label": "Tensor Network Simulator",
+   "desc": "Simulates one-dimensional lattice models with matrix product states and DMRG and reports entanglement and truncation error.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1505",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-decoherence-analyst",
+   "concept": "qm-open",
+   "label": "Decoherence Analyst",
+   "desc": "Estimates decoherence times from coupling to an environment and relates them to the classical limit.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1504",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-density-matrix-analyst",
+   "concept": "qm-open",
+   "label": "Density Matrix Analyst",
+   "desc": "Builds density matrices for pure and mixed states and computes purity, entropy and partial traces.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1504",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-master-equation-simulator",
+   "concept": "qm-open",
+   "label": "Master Equation Simulator",
+   "desc": "Simulates open-system dynamics with Lindblad master equations and shows relaxation and dephasing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1504",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1498",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-atomic-sensing-designer",
+   "concept": "qm-optics",
+   "label": "Atomic Sensing Designer",
+   "desc": "Outlines atom interferometer and clock measurements and their sensitivity limits and noise sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1501",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-photon-statistics-analyst",
+   "concept": "qm-optics",
+   "label": "Photon Statistics Analyst",
+   "desc": "Analyzes coherent, thermal and squeezed light by photon-number statistics and correlation functions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1501",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1504",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "decay-chain-analyzer",
+   "concept": "qm-qft",
+   "label": "Decay Chain Analyzer",
+   "desc": "Lists decay channels and branching ratios of leptons, quarks and hadrons and follows a decay chain to stable products.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1497",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "particle-acceleration-simulator",
+   "concept": "qm-qft",
+   "label": "Particle Acceleration Simulator",
+   "desc": "Simulates charged particle tracks in electric and magnetic fields of a linear accelerator or synchrotron and reports beam energy and orbit radius.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1489",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1497",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "particle-data-lookup",
+   "concept": "qm-qft",
+   "label": "Particle Data Lookup",
+   "desc": "Looks up particle mass, charge, spin, lifetime and decay modes from particle data tables using natural language.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1497",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1618",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "qm-feynman-diagram-calculator",
+   "concept": "qm-qft",
+   "label": "Feynman Diagram Calculator",
+   "desc": "Draws diagrams and writes amplitudes for simple scattering processes at lowest order.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1506",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-renormalization-analyst",
+   "concept": "qm-qft",
+   "label": "Renormalization Analyst",
+   "desc": "Explains renormalization and running couplings and when a cutoff matters.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1506",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1505",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-standard-model-explainer",
+   "concept": "qm-qft",
+   "label": "Standard Model Explainer",
+   "desc": "Explains the particles and forces of the Standard Model and which questions it leaves open.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1506",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1501",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-perturbation-variational",
+   "concept": "qm-solvers",
+   "label": "Perturbation and Variational Methods",
+   "desc": "Applies perturbation theory and the variational principle and reports error bounds for the approximation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1502",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-scattering-tunneling",
+   "concept": "qm-solvers",
+   "label": "Scattering and Tunneling Analyzer",
+   "desc": "Computes transmission, reflection and tunneling probabilities and scattering cross sections.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1502",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-schrodinger-solver",
+   "concept": "qm-solvers",
+   "label": "Schrodinger Equation Solver",
+   "desc": "Solves the time-independent and time-dependent equation for wells, oscillators and barriers and reports energy levels and wavefunctions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1502",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-angular-momentum-algebra",
+   "concept": "qm-spin",
+   "label": "Angular Momentum Algebra",
+   "desc": "Adds angular momenta and builds Clebsch-Gordan coefficients and ladder-operator results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1499",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1502",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-hydrogen-atom-solver",
+   "concept": "qm-spin",
+   "label": "Hydrogen Atom Solver",
+   "desc": "Derives hydrogen energy levels and orbitals and the first fine-structure corrections.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1502",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-spin-systems-simulator",
+   "concept": "qm-spin",
+   "label": "Spin Systems Simulator",
+   "desc": "Simulates spin one-half systems with Pauli matrices, the Bloch sphere and precession in a magnetic field.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1502",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1503",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1480",
+   "name": "Theorist Agent",
+   "legacy_key": "phys-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1481",
+   "name": "Units Checker Agent",
+   "legacy_key": "phys-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1482",
+   "name": "Observer Agent",
+   "legacy_key": "phys-observer",
+   "mcp": [
+    "local:psi-mcp",
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1483",
+   "name": "Simulation Agent",
+   "legacy_key": "phys-simulation",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1489",
+   "name": "Engineer Agent",
+   "legacy_key": "phys-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1490",
+   "name": "Experimentalist Agent",
+   "legacy_key": "phys-experimentalist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1497",
+   "name": "Lepton Agent",
+   "legacy_key": "phys-lepton",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1498",
+   "name": "Quantum Circuit Agent",
+   "legacy_key": "phys-quantum-circuit",
+   "mcp": [
+    "local:psi-mcp",
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1499",
+   "name": "Quantum Theorist Agent",
+   "legacy_key": "qm-theorist",
+   "mcp": [
+    "local:psi-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1500",
+   "name": "Quantum Consistency Checker Agent",
+   "legacy_key": "qm-consistency-checker",
+   "mcp": [
+    "local:psi-mcp",
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1501",
+   "name": "Quantum Experiment Agent",
+   "legacy_key": "qm-experimentalist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1502",
+   "name": "Quantum Solver Agent",
+   "legacy_key": "qm-solver",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1503",
+   "name": "Numerical Accuracy Checker Agent",
+   "legacy_key": "qm-numerics-checker",
+   "mcp": [
+    "local:psi-mcp",
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1504",
+   "name": "Open Quantum Systems Agent",
+   "legacy_key": "qm-open-systems-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1505",
+   "name": "Many-Body Physics Agent",
+   "legacy_key": "qm-many-body-physicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1506",
+   "name": "Field Theory Agent",
+   "legacy_key": "qm-field-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1617",
+   "name": "Data Analyst Agent",
+   "legacy_key": "phys-data-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1618",
+   "name": "Literature Review Agent",
+   "legacy_key": "phys-literature",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "astro_mcp",
+   "desc": "mcp server for desi and other surveys (astronomical object search, astroquery, spectra, FITS conversion)",
+   "tools": [
+    "search_objects",
+    "astroquery_query",
+    "get_spectrum_by_id",
+    "list_astroquery_services",
+    "preview_data",
+    "convert_to_fits"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/SandyYuan/astro_mcp",
+   "id": "local:astro-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "chuk-mcp-physics",
+   "desc": "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   "tools": [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/IBM/chuk-mcp-physics",
+   "id": "local:chuk-mcp-physics",
+   "origins": [
+    "mechanical-engineering",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ParticlePhysics-MCP-Server",
+   "desc": "Fast particle data lookup from natural language.",
+   "tools": [
+    "search_particle",
+    "list_decays"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/uzerone/ParticlePhysics-MCP-Server",
+   "id": "local:particlephysics-mcp-server",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Psi-MCP",
+   "desc": "An Advanced Quantum Physics MCP server",
+   "tools": [
+    "create_quantum_circuit",
+    "simulate_quantum_circuit",
+    "solve_master_equation",
+    "vqe_optimization",
+    "dmrg_simulation",
+    "quantum_neural_network"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/manasp21/Psi-MCP",
+   "id": "local:psi-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "quantum-simulator-mcp",
+   "desc": "A Docker image providing a quantum circuit simulator that implements the Model Context Protocol",
+   "tools": [
+    "run_circuit",
+    "list_noise_models",
+    "list_result_types",
+    "get_circuit_stats",
+    "create_test_histogram"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/YuChenSSR/quantum-simulator-mcp",
+   "id": "local:quantum-simulator-mcp",
+   "origins": [
+    "engineering-physics",
+    "physics"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "local:particlephysics-mcp-server",
+  "local:chuk-mcp-physics",
+  "local:quantum-simulator-mcp",
+  "local:astro-mcp",
+  "local:psi-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1482",
+   "mcp": "local:psi-mcp",
+   "topic": "quantum-physics",
+   "score": 0.3932,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1498",
+    "skill": "quantum-circuit-simulator"
+   }
+  },
+  {
+   "agent": "Maxey1482",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "quantum-physics",
+   "score": 0.6298,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1498",
+    "skill": "quantum-circuit-simulator"
+   }
+  },
+  {
+   "agent": "Maxey1498",
+   "mcp": "local:psi-mcp",
+   "topic": "quantum-physics",
+   "score": 0.3932,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1498",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "quantum-physics",
+   "score": 0.6298,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1499",
+   "mcp": "local:psi-mcp",
+   "topic": "quantum-physics",
+   "score": 0.3636,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1500",
+   "mcp": "local:psi-mcp",
+   "topic": "quantum-physics",
+   "score": 0.3932,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1498",
+    "skill": "entanglement-entropy-analyzer"
+   }
+  },
+  {
+   "agent": "Maxey1500",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "quantum-physics",
+   "score": 0.6298,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1498",
+    "skill": "entanglement-entropy-analyzer"
+   }
+  },
+  {
+   "agent": "Maxey1503",
+   "mcp": "local:psi-mcp",
+   "topic": "quantum-physics",
+   "score": 0.3932,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1498",
+    "skill": "qm-circuit-designer"
+   }
+  },
+  {
+   "agent": "Maxey1503",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "quantum-physics",
+   "score": 0.6298,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1498",
+    "skill": "qm-circuit-designer"
+   }
+  }
+ ],
+ "lexicon": {
+  "foundations": "postulate born commutator observable wavefunction measurement quantum foundations",
+  "wavemech": "schrodinger barrier tunneling cross section variational levels perturbation scattering",
+  "spinphys": "pauli bloch precession clebsch gordan ladder fine structure spin angular hydrogen",
+  "qinfo": "qubit syndrome histogram resource speedup gate algorithm error correction entanglement information computing",
+  "manybody": "tight binding dmrg fermion boson lattice band tensor second quantization body condensed matter",
+  "qfield": "feynman amplitude lowest order renormalization coupling cutoff standard theory particles",
+  "opensys": "lindblad dephasing purity partial trace relaxation density decoherence master",
+  "qoptics": "squeezed photon number interferometer clock correlation atom"
+ },
+ "sources": [
+  "quantum-physics"
+ ]
+}

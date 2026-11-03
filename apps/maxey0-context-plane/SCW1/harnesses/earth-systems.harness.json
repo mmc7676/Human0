@@ -1,0 +1,777 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "earth-systems",
+  "label": "Earth Systems",
+  "desc": "Earth Systems: the coupled atmosphere, ocean, land, ice and biosphere, studied through observation, modeling and geospatial analysis."
+ },
+ "concepts": [
+  {
+   "id": "earth-biogeochemistry",
+   "label": "Biogeochemical Cycles and Ecosystems",
+   "desc": "Cycling of carbon, nitrogen and water through organisms, soils, oceans and atmosphere.",
+   "keywords": [
+    "biogeochemistry",
+    "carbon cycle",
+    "nitrogen",
+    "ecosystem",
+    "soil",
+    "biosphere",
+    "flux"
+   ],
+   "topic": "earth-systems",
+   "source": "earth-systems",
+   "related": []
+  },
+  {
+   "id": "earth-climate-atmosphere",
+   "label": "Climate and Atmospheric Science",
+   "desc": "Atmospheric circulation, radiation balance, weather and long-term climate change and its drivers.",
+   "keywords": [
+    "climate",
+    "atmosphere",
+    "radiation",
+    "greenhouse",
+    "circulation",
+    "weather",
+    "forcing",
+    "feedback"
+   ],
+   "topic": "earth-systems",
+   "source": "earth-systems",
+   "related": []
+  },
+  {
+   "id": "earth-geospatial-observation",
+   "label": "Geospatial Analysis and Remote Sensing",
+   "desc": "Satellite, aerial and field observation of Earth mapped and analysed with GIS.",
+   "keywords": [
+    "remote sensing",
+    "satellite",
+    "gis",
+    "map",
+    "raster",
+    "land cover",
+    "spatial",
+    "imagery"
+   ],
+   "topic": "earth-systems",
+   "source": "earth-systems",
+   "related": [
+    "arch-field-survey"
+   ]
+  },
+  {
+   "id": "earth-hydrology-cryosphere",
+   "label": "Hydrology and Cryosphere",
+   "desc": "Movement and storage of water through rivers, groundwater, snow and ice sheets.",
+   "keywords": [
+    "hydrology",
+    "watershed",
+    "groundwater",
+    "runoff",
+    "glacier",
+    "ice sheet",
+    "snow",
+    "drought"
+   ],
+   "topic": "earth-systems",
+   "source": "earth-systems",
+   "related": [
+    "envs-water-resources"
+   ]
+  },
+  {
+   "id": "earth-oceanography",
+   "label": "Oceanography",
+   "desc": "Physical, chemical and biological processes of the ocean, including currents, heat uptake and acidification.",
+   "keywords": [
+    "ocean",
+    "current",
+    "salinity",
+    "thermohaline",
+    "upwelling",
+    "acidification",
+    "sea level",
+    "tide"
+   ],
+   "topic": "earth-systems",
+   "source": "earth-systems",
+   "related": []
+  },
+  {
+   "id": "earth-solid-earth",
+   "label": "Solid Earth and Geology",
+   "desc": "Plate tectonics, rocks and minerals, earthquakes, volcanoes and the processes that shape landforms over geologic time.",
+   "keywords": [
+    "geology",
+    "tectonics",
+    "plate",
+    "earthquake",
+    "volcano",
+    "mineral",
+    "rock",
+    "stratigraphy"
+   ],
+   "topic": "earth-systems",
+   "source": "earth-systems",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "earth-carbon-budgeter",
+   "concept": "earth-biogeochemistry",
+   "label": "Carbon Budget Analyst",
+   "desc": "Builds carbon budgets across reservoirs and fluxes and checks that sources and sinks balance within uncertainty.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1222",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1224",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-ecosystem-responder",
+   "concept": "earth-biogeochemistry",
+   "label": "Ecosystem Response Analyst",
+   "desc": "Assesses ecosystem response to climate and land change and checks conclusions against field and satellite evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1222",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-climate-trend-analyzer",
+   "concept": "earth-climate-atmosphere",
+   "label": "Climate Trend Analyzer",
+   "desc": "Computes temperature and precipitation trends from station or reanalysis records and checks significance and homogeneity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1224",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-energy-balance-modeler",
+   "concept": "earth-climate-atmosphere",
+   "label": "Energy Balance Modeler",
+   "desc": "Builds radiative energy balance models of the climate and checks equilibrium temperature against observations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1224",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1226",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-forcing-attributor",
+   "concept": "earth-climate-atmosphere",
+   "label": "Climate Forcing Attributor",
+   "desc": "Explains observed change in terms of greenhouse, aerosol and natural forcing and checks claims against assessment literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1224",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1227",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-hazard-mapper",
+   "concept": "earth-geospatial-observation",
+   "label": "Natural Hazard Mapper",
+   "desc": "Maps flood, fire, landslide and seismic hazard zones and checks layers against recorded events.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1225",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1228",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1229",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1227",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-land-cover-classifier",
+   "concept": "earth-geospatial-observation",
+   "label": "Land Cover Classifier",
+   "desc": "Classifies satellite imagery into land cover classes and checks accuracy against reference samples.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1225",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1222",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-sustainability-planner",
+   "concept": "earth-geospatial-observation",
+   "label": "Sustainability Impact Planner",
+   "desc": "Assesses land use and resource decisions against Earth system limits and checks assumptions with cited data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1227",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-drought-assessor",
+   "concept": "earth-hydrology-cryosphere",
+   "label": "Drought Assessor",
+   "desc": "Computes drought indices from precipitation and soil moisture and checks severity classes against historical events.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1229",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1227",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-glacier-mass-balancer",
+   "concept": "earth-hydrology-cryosphere",
+   "label": "Glacier Mass Balance Analyst",
+   "desc": "Estimates glacier and ice sheet mass balance from accumulation and melt and checks against remote sensing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1229",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1224",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-watershed-modeler",
+   "concept": "earth-hydrology-cryosphere",
+   "label": "Watershed Runoff Modeler",
+   "desc": "Models rainfall-runoff response for a watershed and checks simulated discharge against gauge records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1229",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-ocean-circulation-analyst",
+   "concept": "earth-oceanography",
+   "label": "Ocean Circulation Analyst",
+   "desc": "Interprets temperature and salinity profiles to describe currents and water masses and checks density consistency.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1226",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1224",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-sea-level-estimator",
+   "concept": "earth-oceanography",
+   "label": "Sea Level Change Estimator",
+   "desc": "Decomposes sea level change into thermal expansion and ice melt contributions and checks the budget closes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1226",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1224",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-rock-identifier",
+   "concept": "earth-solid-earth",
+   "label": "Rock and Mineral Identifier",
+   "desc": "Classifies rocks and minerals from described properties and checks identification against diagnostic tests.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1228",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1222",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-seismic-locator",
+   "concept": "earth-solid-earth",
+   "label": "Earthquake Locator",
+   "desc": "Locates earthquake hypocenters from arrival times and checks residuals and magnitude estimates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1228",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1225",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  },
+  {
+   "id": "earth-stratigraphy-interpreter",
+   "concept": "earth-solid-earth",
+   "label": "Stratigraphic Interpreter",
+   "desc": "Reconstructs depositional history from rock layers and checks relative ages against superposition and dating.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1228",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1224",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1223",
+     "role": "support"
+    }
+   ],
+   "source": "earth-systems"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1222",
+   "name": "Biogeochemistry Ecologist",
+   "legacy_key": "earth-eco",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1223",
+   "name": "Earth Data Quality Reviewer",
+   "legacy_key": "earth-reviewer",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1224",
+   "name": "Climate Dynamics Modeler",
+   "legacy_key": "earth-climate",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1225",
+   "name": "Geospatial Remote Sensing Analyst",
+   "legacy_key": "earth-gis",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1226",
+   "name": "Ocean Systems Analyst",
+   "legacy_key": "earth-ocean",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1227",
+   "name": "Sustainability Policy Analyst",
+   "legacy_key": "earth-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1228",
+   "name": "Solid Earth Geologist",
+   "legacy_key": "earth-geologist",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1229",
+   "name": "Hydrology Analyst",
+   "legacy_key": "earth-hydro",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1223",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "earth-systems",
+   "score": 0.1377,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1229",
+    "skill": "earth-drought-assessor"
+   }
+  },
+  {
+   "agent": "Maxey1224",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "earth-systems",
+   "score": 0.1377,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1229",
+    "skill": "earth-glacier-mass-balancer"
+   }
+  },
+  {
+   "agent": "Maxey1225",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "earth-systems",
+   "score": 0.1946,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1228",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "earth-systems",
+   "score": 0.1946,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1225",
+    "skill": "earth-hazard-mapper"
+   }
+  },
+  {
+   "agent": "Maxey1229",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "earth-systems",
+   "score": 0.1377,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "earth-atmos": "climate atmosphere radiation greenhouse circulation weather forcing",
+  "earth-ocean": "ocean current salinity thermohaline upwelling acidification tide",
+  "earth-solid": "geology tectonics plate earthquake volcano mineral rock stratigraphy",
+  "earth-water": "hydrology watershed groundwater runoff glacier snow drought",
+  "earth-bio": "biogeochemistry carbon nitrogen ecosystem soil biosphere flux",
+  "earth-geo": "satellite gis map raster imagery spatial hazard"
+ },
+ "sources": [
+  "earth-systems"
+ ]
+}

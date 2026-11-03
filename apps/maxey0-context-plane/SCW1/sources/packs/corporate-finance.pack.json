@@ -1,0 +1,341 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "corporate-finance",
+ "topic": {
+  "id": "corporate-finance",
+  "label": "Corporate Finance",
+  "desc": "Building and financing a corporation: entity formation and governance, capital structure, valuation, mergers and acquisitions, and treasury."
+ },
+ "concepts": [
+  [
+   "cf-formation",
+   "Entity Formation and Governance",
+   "corporate-finance",
+   "Forming a corporation or LLC, jurisdictions such as Delaware, boards, bylaws, cap tables and equity grants.",
+   [
+    "corporation",
+    "incorporate",
+    "entity",
+    "llc",
+    "delaware",
+    "board",
+    "bylaws",
+    "cap",
+    "table",
+    "founder",
+    "equity"
+   ]
+  ],
+  [
+   "cf-capital",
+   "Capital Structure and Financing",
+   "corporate-finance",
+   "Debt versus equity, cost of capital, WACC, leverage and financing choices.",
+   [
+    "capital",
+    "structure",
+    "debt",
+    "equity",
+    "wacc",
+    "leverage",
+    "financing",
+    "cost",
+    "capital"
+   ]
+  ],
+  [
+   "cf-valuation",
+   "Valuation",
+   "corporate-finance",
+   "Valuing a company: discounted cash flow, comparable companies, precedent transactions and LBO.",
+   [
+    "valuation",
+    "dcf",
+    "discounted",
+    "cash",
+    "flow",
+    "comparable",
+    "multiple",
+    "precedent",
+    "lbo",
+    "enterprise",
+    "value"
+   ]
+  ],
+  [
+   "cf-mna",
+   "Mergers and Acquisitions",
+   "corporate-finance",
+   "Buying, selling and merging companies: deal process, due diligence, synergies and accretion/dilution.",
+   [
+    "merger",
+    "acquisition",
+    "deal",
+    "due",
+    "diligence",
+    "synergy",
+    "accretion",
+    "dilution",
+    "target",
+    "buyer"
+   ]
+  ],
+  [
+   "cf-treasury",
+   "Treasury and Working Capital",
+   "corporate-finance",
+   "Cash management, liquidity, working capital, hedging and dividends or buybacks.",
+   [
+    "treasury",
+    "cash",
+    "liquidity",
+    "working",
+    "capital",
+    "hedging",
+    "dividend",
+    "buyback"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cf-incorporation-planner",
+   "cf-formation",
+   "Incorporation Planner",
+   "Plans forming a corporation: entity type, jurisdiction, founders' equity, board and filings.",
+   "procedural",
+   [
+    [
+     "cf-formation",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-capital",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-cap-table-builder",
+   "cf-formation",
+   "Cap Table Builder",
+   "Builds a cap table through financing rounds with dilution and option pool.",
+   "procedural",
+   [
+    [
+     "cf-formation",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-capital",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-wacc-calculator",
+   "cf-capital",
+   "WACC Calculator",
+   "Computes weighted average cost of capital with each input's source.",
+   "procedural",
+   [
+    [
+     "cf-capital",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-valuer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-financing-options-comparator",
+   "cf-capital",
+   "Financing Options Comparator",
+   "Compares debt, equity and hybrid financing for a company's situation.",
+   "semantic",
+   [
+    [
+     "cf-capital",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-valuer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-dcf-builder",
+   "cf-valuation",
+   "DCF Builder",
+   "Builds a discounted cash flow valuation with stated assumptions and sensitivity.",
+   "procedural",
+   [
+    [
+     "cf-valuer",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-mna",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-comparable-companies-analysis",
+   "cf-valuation",
+   "Comparable Companies Analysis",
+   "Values a company from trading multiples of comparable companies.",
+   "semantic",
+   [
+    [
+     "cf-valuer",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-mna",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-accretion-dilution-analyzer",
+   "cf-mna",
+   "Accretion Dilution Analyzer",
+   "Computes whether an acquisition is accretive or dilutive to earnings per share.",
+   "procedural",
+   [
+    [
+     "cf-mna",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-treasury",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-due-diligence-checklist",
+   "cf-mna",
+   "Due Diligence Checklist",
+   "Builds a due diligence checklist for an acquisition by area.",
+   "procedural",
+   [
+    [
+     "cf-mna",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-treasury",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cf-working-capital-analyzer",
+   "cf-treasury",
+   "Working Capital Analyzer",
+   "Analyzes working capital and the cash conversion cycle.",
+   "semantic",
+   [
+    [
+     "cf-treasury",
+     "primary"
+    ],
+    [
+     "cf-checker",
+     "checker"
+    ],
+    [
+     "cf-formation",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "cf-formation": "Entity Formation Agent",
+  "cf-capital": "Capital Structure Agent",
+  "cf-valuer": "Corporate Valuation Agent",
+  "cf-mna": "M&A Agent",
+  "cf-treasury": "Treasury Agent",
+  "cf-checker": "Corporate Finance Checker Agent"
+ },
+ "mcp": [
+  [
+   "SEC EDGAR MCP",
+   null,
+   "SEC EDGAR MCP server: company filings, 10-K, 10-Q, 8-K, XBRL financial data and insider trading forms from EDGAR.",
+   [],
+   "web-listed",
+   "https://github.com/stefanoamorelli/sec-edgar-mcp"
+  ],
+  [
+   "Financial Datasets MCP",
+   null,
+   "Financial Datasets MCP server: company income statements, balance sheets, cash flow statements, stock prices and market news.",
+   [],
+   "web-listed",
+   "https://github.com/financial-datasets/mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "cfformation": "corporation incorporate entity llc delaware board bylaws cap table founder equity",
+  "cfcapital": "capital structure debt equity wacc leverage financing cost capital",
+  "cfvaluation": "valuation dcf discounted cash flow comparable multiple precedent lbo enterprise value",
+  "cfmna": "merger acquisition deal due diligence synergy accretion dilution target buyer",
+  "cftreasury": "treasury cash liquidity working capital hedging dividend buyback"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "SEC EDGAR MCP": "repository exists (git ls-remote https://github.com/stefanoamorelli/sec-edgar-mcp, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Financial Datasets MCP": "repository exists (git ls-remote https://github.com/financial-datasets/mcp-server, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

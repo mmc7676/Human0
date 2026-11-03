@@ -1,0 +1,654 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "italian",
+  "label": "Italian",
+  "desc": "Italian: the Italian language, its dialects and history, and the literature, cinema and culture of Italy from Dante to the present."
+ },
+ "concepts": [
+  {
+   "id": "ital-culture-cinema",
+   "label": "Italian Culture, Cinema and Society",
+   "desc": "Italian cinema, art, music, regional culture and contemporary society and politics.",
+   "keywords": [
+    "cinema",
+    "neorealism",
+    "art",
+    "opera",
+    "culture",
+    "society",
+    "politics",
+    "food"
+   ],
+   "topic": "italian",
+   "source": "italian",
+   "related": [
+    "ilac-film-visual-society"
+   ]
+  },
+  {
+   "id": "ital-dialects-history",
+   "label": "History of the Language and Dialects",
+   "desc": "From Latin to the questione della lingua and Tuscan standard, and the regional dialects and languages of Italy.",
+   "keywords": [
+    "latin",
+    "dialect",
+    "tuscan",
+    "questione della lingua",
+    "neapolitan",
+    "sicilian",
+    "regional",
+    "evolution"
+   ],
+   "topic": "italian",
+   "source": "italian",
+   "related": []
+  },
+  {
+   "id": "ital-grammar",
+   "label": "Italian Grammar and Syntax",
+   "desc": "Morphology and syntax of standard Italian: articles, agreement, verb conjugation, moods, tenses, clitic pronouns and word order.",
+   "keywords": [
+    "grammar",
+    "conjugation",
+    "subjunctive",
+    "congiuntivo",
+    "agreement",
+    "clitic",
+    "article",
+    "tense"
+   ],
+   "topic": "italian",
+   "source": "italian",
+   "related": [
+    "fren-grammar-language"
+   ]
+  },
+  {
+   "id": "ital-literature",
+   "label": "Italian Literature",
+   "desc": "Italian literature from Dante, Petrarch and Boccaccio through the Renaissance, Romanticism and modern writers.",
+   "keywords": [
+    "literature",
+    "dante",
+    "petrarch",
+    "boccaccio",
+    "renaissance",
+    "poetry",
+    "novel",
+    "sonnet"
+   ],
+   "topic": "italian",
+   "source": "italian",
+   "related": []
+  },
+  {
+   "id": "ital-phonology",
+   "label": "Italian Phonetics and Pronunciation",
+   "desc": "Sounds of Italian: vowels, double consonants, stress, intonation and regional pronunciation.",
+   "keywords": [
+    "pronunciation",
+    "phonetics",
+    "geminate",
+    "stress",
+    "vowel",
+    "intonation",
+    "ipa",
+    "accent"
+   ],
+   "topic": "italian",
+   "source": "italian",
+   "related": [
+    "fren-phonetics-oral",
+    "jpn-phonology"
+   ]
+  },
+  {
+   "id": "ital-translation",
+   "label": "Translation and Usage",
+   "desc": "Translation between Italian and other languages, register, idiom and specialised vocabulary.",
+   "keywords": [
+    "translation",
+    "register",
+    "idiom",
+    "vocabulary",
+    "formal",
+    "false friend",
+    "glossary",
+    "style"
+   ],
+   "topic": "italian",
+   "source": "italian",
+   "related": [
+    "fren-translation"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "ital-culture-briefing",
+   "concept": "ital-culture-cinema",
+   "label": "Culture Briefing",
+   "desc": "Explains a cultural practice, region or tradition, checked by sourcing each claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1382",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1384",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-film-analysis",
+   "concept": "ital-culture-cinema",
+   "label": "Italian Film Analysis",
+   "desc": "Analyses films such as neorealist works for style and context, checked by timestamping each cited scene.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1382",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1385",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-lesson-planner",
+   "concept": "ital-culture-cinema",
+   "label": "Italian Lesson Planner",
+   "desc": "Plans a language lesson combining grammar and culture for a proficiency level, checked against CEFR descriptors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1386",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1382",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-dialect-identify",
+   "concept": "ital-dialects-history",
+   "label": "Dialect Identifier",
+   "desc": "Identifies which regional dialect a passage comes from by its features, checked by listing the diagnostic features.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1384",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1387",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-etymology",
+   "concept": "ital-dialects-history",
+   "label": "Etymology Tracer",
+   "desc": "Traces an Italian word from Latin or other sources, checked against etymological dictionaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1384",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1385",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-language-question",
+   "concept": "ital-dialects-history",
+   "label": "Questione della Lingua Explainer",
+   "desc": "Explains the debate over a national standard from Bembo to Manzoni, checked by citing primary texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1384",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1385",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-conjugator",
+   "concept": "ital-grammar",
+   "label": "Verb Conjugator",
+   "desc": "Conjugates Italian verbs in every mood and tense including irregular forms, checked against standard conjugation tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1388",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1386",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-grammar-correction",
+   "concept": "ital-grammar",
+   "label": "Grammar Correction",
+   "desc": "Corrects errors in Italian text and explains each rule, checked by citing the rule for every change.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1388",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1389",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-subjunctive-trainer",
+   "concept": "ital-grammar",
+   "label": "Subjunctive Trainer",
+   "desc": "Generates exercises on when the congiuntivo is required, checked by an answer key with the trigger for each item.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1386",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1388",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-author-context",
+   "concept": "ital-literature",
+   "label": "Author and Period Context",
+   "desc": "Places an author in a literary movement and historical setting, checked against dated literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1385",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1382",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-close-reading",
+   "concept": "ital-literature",
+   "label": "Close Reading",
+   "desc": "Analyses a passage of Italian literature for form, imagery and theme, checked by quoting the supporting lines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1385",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1389",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-metrics",
+   "concept": "ital-literature",
+   "label": "Italian Metrics",
+   "desc": "Scans hendecasyllables and identifies rhyme schemes such as terza rima and the sonnet, checked by recounting syllables with elision rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1385",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1387",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-accent-coach",
+   "concept": "ital-phonology",
+   "label": "Pronunciation Coach",
+   "desc": "Diagnoses common learner pronunciation errors such as missing geminate consonants, checked by contrasting minimal pairs.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1386",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1387",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-ipa-transcriber",
+   "concept": "ital-phonology",
+   "label": "IPA Transcriber",
+   "desc": "Transcribes Italian words into IPA with stress and gemination, checked against dictionary transcriptions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1387",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1386",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-stress-finder",
+   "concept": "ital-phonology",
+   "label": "Stress Placement Guide",
+   "desc": "Identifies the stressed syllable of Italian words, checked against dictionary stress marks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1387",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1388",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-false-friends",
+   "concept": "ital-translation",
+   "label": "False Friend Detector",
+   "desc": "Flags false friends and calques in a translation, checked by giving the correct equivalent with dictionary support.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1389",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1386",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-glossary-builder",
+   "concept": "ital-translation",
+   "label": "Glossary Builder",
+   "desc": "Builds a bilingual glossary for a domain, checked for consistency across the source text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1389",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1382",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-translate",
+   "concept": "ital-translation",
+   "label": "Italian Translation",
+   "desc": "Translates text to or from Italian in a chosen register, checked by back-translation of key sentences.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1389",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1388",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1382",
+   "name": "Italian Culture and Cinema Agent",
+   "legacy_key": "ital-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1383",
+   "name": "Italian Accuracy Checker",
+   "legacy_key": "ital-checker",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1384",
+   "name": "Italian Dialect Agent",
+   "legacy_key": "ital-dialectologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1385",
+   "name": "Italian Literature Agent",
+   "legacy_key": "ital-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1386",
+   "name": "Italian Language Tutor",
+   "legacy_key": "ital-tutor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1387",
+   "name": "Italian Pronunciation Agent",
+   "legacy_key": "ital-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1388",
+   "name": "Italian Grammar Agent",
+   "legacy_key": "ital-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1389",
+   "name": "Italian Translation Agent",
+   "legacy_key": "ital-translator",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1383",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "italian",
+   "score": 0.2058,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1389",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "italian",
+   "score": 0.2107,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "ital-morphology": "grammar conjugation subjunctive congiuntivo agreement clitic tense",
+  "ital-sound": "pronunciation phonetics geminate stress vowel intonation ipa",
+  "ital-varieties": "latin dialect tuscan neapolitan sicilian etymology",
+  "ital-letters": "dante petrarch boccaccio renaissance poetry sonnet hendecasyllable",
+  "ital-usage": "translation register idiom vocabulary glossary",
+  "ital-culture": "cinema neorealism opera society food"
+ },
+ "sources": [
+  "italian"
+ ]
+}

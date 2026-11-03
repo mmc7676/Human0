@@ -1,0 +1,565 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "biomechanical-engineering",
+ "topic": {
+  "id": "biomechanical-engineering",
+  "label": "Biomechanical Engineering",
+  "desc": "Biomechanical Engineering: the mechanics of the human body and the design of devices that support its motion and structure."
+ },
+ "concepts": [
+  [
+   "biom-tissue-mechanics",
+   "Tissue Mechanics",
+   "biomechanical-engineering",
+   "Mechanical behavior of bone, cartilage, tendon and soft tissue, including viscoelasticity and failure.",
+   [
+    "tissue",
+    "bone",
+    "cartilage",
+    "tendon",
+    "viscoelastic",
+    "stress",
+    "strain",
+    "stiffness"
+   ]
+  ],
+  [
+   "biom-human-movement",
+   "Human Movement and Gait",
+   "biomechanical-engineering",
+   "Kinematics and kinetics of human motion from motion capture, force plates and electromyography.",
+   [
+    "gait",
+    "kinematics",
+    "kinetics",
+    "motion capture",
+    "force plate",
+    "joint",
+    "emg",
+    "movement"
+   ]
+  ],
+  [
+   "biom-musculoskeletal-modeling",
+   "Musculoskeletal Modeling",
+   "biomechanical-engineering",
+   "Rigid-body and muscle models that estimate internal forces during motion.",
+   [
+    "musculoskeletal",
+    "muscle",
+    "rigid body",
+    "model",
+    "optimization",
+    "tendon force",
+    "simulation",
+    "moment arm"
+   ]
+  ],
+  [
+   "biom-finite-element",
+   "Finite Element Analysis",
+   "biomechanical-engineering",
+   "Numerical stress analysis of anatomy and implants with finite element meshes.",
+   [
+    "finite element",
+    "mesh",
+    "boundary condition",
+    "implant",
+    "convergence",
+    "von mises",
+    "load",
+    "geometry"
+   ]
+  ],
+  [
+   "biom-biofluid-mechanics",
+   "Biofluid Mechanics",
+   "biomechanical-engineering",
+   "Blood flow, airflow and fluid transport in the body.",
+   [
+    "blood flow",
+    "hemodynamics",
+    "shear",
+    "pressure",
+    "vessel",
+    "airflow",
+    "reynolds",
+    "pulsatile"
+   ]
+  ],
+  [
+   "biom-assistive-devices",
+   "Prosthetics, Orthotics and Injury",
+   "biomechanical-engineering",
+   "Design of prostheses, orthoses and protective equipment, and the mechanics of injury.",
+   [
+    "prosthesis",
+    "orthosis",
+    "injury",
+    "impact",
+    "protective",
+    "design",
+    "exoskeleton",
+    "rehabilitation"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "biom-stress-strain",
+   "biom-tissue-mechanics",
+   "Stress-Strain Characterization",
+   "Fits stress-strain data to elastic and hyperelastic models, checked by fit residuals and physical parameter ranges.",
+   "procedural",
+   [
+    [
+     "biom-solid",
+     "primary"
+    ],
+    [
+     "biom-units",
+     "checker"
+    ],
+    [
+     "biom-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-viscoelastic-model",
+   "biom-tissue-mechanics",
+   "Viscoelastic Model Fitting",
+   "Fits creep and relaxation data to viscoelastic models, checked by cross-validation on held-out curves.",
+   "procedural",
+   [
+    [
+     "biom-solid",
+     "primary"
+    ],
+    [
+     "biom-fea",
+     "checker"
+    ],
+    [
+     "biom-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-bone-remodeling",
+   "biom-tissue-mechanics",
+   "Bone Remodeling Review",
+   "Explains bone adaptation to load under Wolff law, checked against cited experimental studies.",
+   "semantic",
+   [
+    [
+     "biom-solid",
+     "primary"
+    ],
+    [
+     "biom-lit",
+     "checker"
+    ],
+    [
+     "biom-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-gait-analysis",
+   "biom-human-movement",
+   "Gait Analysis",
+   "Computes joint angles and gait parameters from motion capture data, checked against normative ranges.",
+   "procedural",
+   [
+    [
+     "biom-motion",
+     "primary"
+    ],
+    [
+     "biom-clinical",
+     "checker"
+    ],
+    [
+     "biom-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-inverse-dynamics",
+   "biom-human-movement",
+   "Inverse Dynamics Solver",
+   "Computes joint moments from kinematics and force plate data, checked by equilibrium residuals.",
+   "procedural",
+   [
+    [
+     "biom-motion",
+     "primary"
+    ],
+    [
+     "biom-units",
+     "checker"
+    ],
+    [
+     "biom-fea",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-emg-processing",
+   "biom-human-movement",
+   "EMG Signal Processing",
+   "Filters and normalizes electromyography to estimate muscle activation, checked against maximal contraction reference.",
+   "procedural",
+   [
+    [
+     "biom-motion",
+     "primary"
+    ],
+    [
+     "biom-clinical",
+     "checker"
+    ],
+    [
+     "biom-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-muscle-force",
+   "biom-musculoskeletal-modeling",
+   "Muscle Force Estimation",
+   "Estimates muscle forces by static optimization, checked against EMG timing.",
+   "procedural",
+   [
+    [
+     "biom-motion",
+     "primary"
+    ],
+    [
+     "biom-solid",
+     "checker"
+    ],
+    [
+     "biom-fea",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-model-scaling",
+   "biom-musculoskeletal-modeling",
+   "Model Scaling and Calibration",
+   "Scales a generic musculoskeletal model to a subject, checked by marker error thresholds.",
+   "procedural",
+   [
+    [
+     "biom-motion",
+     "primary"
+    ],
+    [
+     "biom-units",
+     "checker"
+    ],
+    [
+     "biom-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-simulation-validation",
+   "biom-musculoskeletal-modeling",
+   "Simulation Validation Review",
+   "Reviews a musculoskeletal simulation against validation best practice, checked by a published checklist.",
+   "semantic",
+   [
+    [
+     "biom-lit",
+     "primary"
+    ],
+    [
+     "biom-fea",
+     "checker"
+    ],
+    [
+     "biom-motion",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-implant-fea",
+   "biom-finite-element",
+   "Implant Stress Analysis",
+   "Runs finite element stress analysis of an implant under load, checked by mesh convergence study.",
+   "procedural",
+   [
+    [
+     "biom-fea",
+     "primary"
+    ],
+    [
+     "biom-units",
+     "checker"
+    ],
+    [
+     "biom-prosthetic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-mesh-convergence",
+   "biom-finite-element",
+   "Mesh Convergence Study",
+   "Refines meshes until peak stress converges, checked by percent change below a tolerance.",
+   "procedural",
+   [
+    [
+     "biom-fea",
+     "primary"
+    ],
+    [
+     "biom-solid",
+     "checker"
+    ],
+    [
+     "biom-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-boundary-setup",
+   "biom-finite-element",
+   "Boundary Condition Setup",
+   "Specifies physiological loads and constraints for a model, checked against cited loading data.",
+   "semantic",
+   [
+    [
+     "biom-fea",
+     "primary"
+    ],
+    [
+     "biom-lit",
+     "checker"
+    ],
+    [
+     "biom-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-vessel-flow",
+   "biom-biofluid-mechanics",
+   "Vessel Flow Calculator",
+   "Computes flow, shear stress and Reynolds number in vessels, checked by Poiseuille limit comparison.",
+   "procedural",
+   [
+    [
+     "biom-fluid",
+     "primary"
+    ],
+    [
+     "biom-units",
+     "checker"
+    ],
+    [
+     "biom-fea",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-pulsatile-flow",
+   "biom-biofluid-mechanics",
+   "Pulsatile Flow Modeling",
+   "Models pulsatile blood flow with Womersley solutions, checked by mass conservation.",
+   "procedural",
+   [
+    [
+     "biom-fluid",
+     "primary"
+    ],
+    [
+     "biom-fea",
+     "checker"
+    ],
+    [
+     "biom-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-hemodynamics-review",
+   "biom-biofluid-mechanics",
+   "Hemodynamics and Disease Review",
+   "Relates wall shear stress to atherosclerosis and aneurysm, checked against cited studies.",
+   "semantic",
+   [
+    [
+     "biom-fluid",
+     "primary"
+    ],
+    [
+     "biom-lit",
+     "checker"
+    ],
+    [
+     "biom-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-prosthesis-design",
+   "biom-assistive-devices",
+   "Prosthesis Design Specification",
+   "Specifies prosthesis alignment, stiffness and mass targets, checked against user gait requirements.",
+   "semantic",
+   [
+    [
+     "biom-prosthetic",
+     "primary"
+    ],
+    [
+     "biom-clinical",
+     "checker"
+    ],
+    [
+     "biom-motion",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-impact-injury",
+   "biom-assistive-devices",
+   "Impact Injury Analysis",
+   "Estimates injury risk from impact accelerations, checked against head injury criterion thresholds.",
+   "procedural",
+   [
+    [
+     "biom-solid",
+     "primary"
+    ],
+    [
+     "biom-units",
+     "checker"
+    ],
+    [
+     "biom-fea",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "biom-exoskeleton-assist",
+   "biom-assistive-devices",
+   "Exoskeleton Assistance Planner",
+   "Plans assistive torque profiles for an exoskeleton, checked by joint power and metabolic estimates.",
+   "procedural",
+   [
+    [
+     "biom-prosthetic",
+     "primary"
+    ],
+    [
+     "biom-motion",
+     "checker"
+    ],
+    [
+     "biom-clinical",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "biom-solid": "Tissue Mechanics Analyst",
+  "biom-motion": "Motion Capture Analyst",
+  "biom-fluid": "Biofluid Dynamics Engineer",
+  "biom-fea": "Finite Element Modeler",
+  "biom-prosthetic": "Prosthetics and Orthotics Designer",
+  "biom-clinical": "Clinical Biomechanics Reviewer",
+  "biom-units": "Mechanics Units Checker",
+  "biom-lit": "Literature Evidence Checker"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "biom-tissue": "tissue bone cartilage tendon viscoelastic stress strain stiffness",
+  "biom-human": "gait kinematics kinetics motion capture force plate joint emg movement",
+  "biom-musculoskeletal": "musculoskeletal muscle rigid body model optimization simulation moment arm",
+  "biom-finite": "finite element mesh boundary condition implant convergence von mises load geometry",
+  "biom-biofluid": "blood flow hemodynamics shear pressure vessel airflow reynolds pulsatile",
+  "biom-assistive": "prosthesis orthosis injury impact protective design exoskeleton rehabilitation"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

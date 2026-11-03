@@ -1,0 +1,709 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "public-policy",
+  "label": "Public Policy",
+  "desc": "Public Policy: designing, analysing, financing, implementing and evaluating government action on public problems."
+ },
+ "concepts": [
+  {
+   "id": "pubpol-institutions-process",
+   "label": "Political Institutions and the Policy Process",
+   "desc": "How agendas form, how legislatures, agencies and courts make decisions, and how interest groups shape outcomes.",
+   "keywords": [
+    "agenda",
+    "legislature",
+    "agency",
+    "interest group",
+    "veto",
+    "coalition",
+    "implementation",
+    "federalism"
+   ],
+   "topic": "public-policy",
+   "source": "public-policy",
+   "related": []
+  },
+  {
+   "id": "pubpol-policy-analysis",
+   "label": "Policy Analysis",
+   "desc": "Structured definition of public problems, generation of policy alternatives and comparison against explicit criteria such as efficiency, equity and feasibility.",
+   "keywords": [
+    "problem definition",
+    "alternatives",
+    "criteria",
+    "tradeoff",
+    "feasibility",
+    "recommendation",
+    "memo"
+   ],
+   "topic": "public-policy",
+   "source": "public-policy",
+   "related": []
+  },
+  {
+   "id": "pubpol-program-evaluation",
+   "label": "Program Evaluation and Causal Inference",
+   "desc": "Estimating the causal effect of programs with randomized trials and quasi-experimental designs such as difference-in-differences and regression discontinuity.",
+   "keywords": [
+    "evaluation",
+    "causal",
+    "randomized",
+    "difference-in-differences",
+    "regression discontinuity",
+    "counterfactual",
+    "impact"
+   ],
+   "topic": "public-policy",
+   "source": "public-policy",
+   "related": []
+  },
+  {
+   "id": "pubpol-public-economics",
+   "label": "Public Economics",
+   "desc": "Market failure, externalities, public goods, taxation and the welfare effects of government intervention.",
+   "keywords": [
+    "market failure",
+    "externality",
+    "public good",
+    "taxation",
+    "incidence",
+    "welfare",
+    "subsidy",
+    "efficiency"
+   ],
+   "topic": "public-policy",
+   "source": "public-policy",
+   "related": [
+    "econ-public-economics"
+   ]
+  },
+  {
+   "id": "pubpol-public-finance-budgeting",
+   "label": "Public Finance and Budgeting",
+   "desc": "Revenue, expenditure, budget processes, fiscal rules and the long-run sustainability of public debt.",
+   "keywords": [
+    "budget",
+    "revenue",
+    "expenditure",
+    "deficit",
+    "debt",
+    "appropriation",
+    "fiscal",
+    "forecast"
+   ],
+   "topic": "public-policy",
+   "source": "public-policy",
+   "related": []
+  },
+  {
+   "id": "pubpol-regulation-ethics",
+   "label": "Regulation, Law and Policy Ethics",
+   "desc": "Regulatory design, administrative law, cost-benefit review and the normative principles used to justify policy choices.",
+   "keywords": [
+    "regulation",
+    "administrative law",
+    "rulemaking",
+    "cost-benefit",
+    "justice",
+    "equity",
+    "rights"
+   ],
+   "topic": "public-policy",
+   "source": "public-policy",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "pubpol-implementation-review",
+   "concept": "pubpol-institutions-process",
+   "label": "Implementation Risk Reviewer",
+   "desc": "Identifies implementation bottlenecks across agencies and levels of government, checked against comparable program histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1525",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1527",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-legislative-tracker",
+   "concept": "pubpol-institutions-process",
+   "label": "Legislative Pathway Tracer",
+   "desc": "Traces a bill or rule through the legislative and agency steps it must pass, checked against the governing procedure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1525",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1528",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1529",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-stakeholder-map",
+   "concept": "pubpol-institutions-process",
+   "label": "Stakeholder and Coalition Mapper",
+   "desc": "Maps interest groups, veto players and likely coalitions on an issue, checked against public records of positions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1525",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1529",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1528",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-alternatives-matrix",
+   "concept": "pubpol-policy-analysis",
+   "label": "Policy Alternatives Matrix",
+   "desc": "Scores each policy alternative against stated criteria and returns a matrix whose weights and evidence citations are checked for consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1529",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1531",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-policy-memo",
+   "concept": "pubpol-policy-analysis",
+   "label": "Policy Memo Drafter",
+   "desc": "Drafts a decision memo with a recommendation and its tradeoffs, checked for unsupported claims and missing alternatives.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1529",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1525",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1532",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1531",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-problem-definition",
+   "concept": "pubpol-policy-analysis",
+   "label": "Problem Definition Framer",
+   "desc": "Frames a public problem with its magnitude, affected groups and causes, checked against cited data sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1529",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1532",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-did-estimator",
+   "concept": "pubpol-program-evaluation",
+   "label": "Difference-in-Differences Estimator",
+   "desc": "Runs a difference-in-differences regression and reports the effect with a parallel-trends check.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1526",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1532",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-evidence-synthesis",
+   "concept": "pubpol-program-evaluation",
+   "label": "Evaluation Evidence Synthesizer",
+   "desc": "Collects published impact evaluations of a program type and summarizes effect sizes, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1532",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-rct-design",
+   "concept": "pubpol-program-evaluation",
+   "label": "Randomized Trial Designer",
+   "desc": "Designs a randomized evaluation with sample size and power calculation, checked by an independent power computation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1533",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1531",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-externality-pricing",
+   "concept": "pubpol-public-economics",
+   "label": "Externality Pricing Estimator",
+   "desc": "Estimates the marginal external cost of an activity and the corrective tax, with the calculation verified for units and sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1528",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-tax-incidence",
+   "concept": "pubpol-public-economics",
+   "label": "Tax Incidence Analyzer",
+   "desc": "Computes how a tax burden splits between buyers and sellers from supply and demand elasticities, checked by recomputation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1527",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-welfare-analysis",
+   "concept": "pubpol-public-economics",
+   "label": "Welfare Effect Assessor",
+   "desc": "Measures consumer surplus, producer surplus and deadweight loss of an intervention, checked against a stated market model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1529",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-budget-scoring",
+   "concept": "pubpol-public-finance-budgeting",
+   "label": "Budget Cost Scorer",
+   "desc": "Projects the multi-year cost or revenue of a proposal, with assumptions and arithmetic checked by recomputation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1527",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-debt-sustainability",
+   "concept": "pubpol-public-finance-budgeting",
+   "label": "Debt Sustainability Calculator",
+   "desc": "Projects the debt-to-GDP path under interest, growth and deficit assumptions, checked with the standard debt dynamics equation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1527",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-revenue-forecast",
+   "concept": "pubpol-public-finance-budgeting",
+   "label": "Revenue Forecast Builder",
+   "desc": "Builds a revenue forecast from economic drivers and reports error ranges, checked against historical forecast errors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1533",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1527",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-cost-benefit",
+   "concept": "pubpol-regulation-ethics",
+   "label": "Regulatory Cost-Benefit Analyzer",
+   "desc": "Monetizes costs and benefits of a regulation with discounting, checked for double counting and discount-rate sensitivity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1528",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1531",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-equity-assessment",
+   "concept": "pubpol-regulation-ethics",
+   "label": "Distributional Equity Assessor",
+   "desc": "Assesses who gains and loses from a policy by income, region and group, checked against stated normative criteria.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1531",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-rulemaking-review",
+   "concept": "pubpol-regulation-ethics",
+   "label": "Rulemaking Compliance Reviewer",
+   "desc": "Checks a proposed rule against notice-and-comment and statutory authority requirements, verified against the cited statute.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1528",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1525",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1529",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1525",
+   "name": "Political Process Agent",
+   "legacy_key": "pubpol-politics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1526",
+   "name": "Program Evaluation Agent",
+   "legacy_key": "pubpol-eval",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1527",
+   "name": "Public Budget Agent",
+   "legacy_key": "pubpol-budget",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1528",
+   "name": "Regulatory and Legal Agent",
+   "legacy_key": "pubpol-law",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1529",
+   "name": "Policy Analysis Agent",
+   "legacy_key": "pubpol-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1530",
+   "name": "Policy Economist Agent",
+   "legacy_key": "pubpol-econ",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1531",
+   "name": "Policy Ethics Agent",
+   "legacy_key": "pubpol-ethics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1532",
+   "name": "Policy Literature Agent",
+   "legacy_key": "pubpol-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1533",
+   "name": "Quantitative Methods Agent",
+   "legacy_key": "pubpol-stat",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "name": "Mantic",
+   "desc": "Explore judgemental forecasts",
+   "tools": [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "origins": [
+    "economics",
+    "international-relations",
+    "management-science-and-engineering",
+    "political-science",
+    "public-policy",
+    "reasoning"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "ccc1bcfc-193c-44b7-b443-9511aac18403"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "pubpol-analysis": "policy analysis alternatives criteria memo recommendation tradeoff",
+  "pubpol-economics": "economist externality tax incidence welfare surplus deadweight subsidy",
+  "pubpol-evaluation": "evaluation randomized causal regression trial impact counterfactual",
+  "pubpol-process": "legislature agency interest coalition veto rulemaking statute implementation",
+  "pubpol-finance": "budget revenue debt deficit fiscal forecast expenditure",
+  "pubpol-normative": "ethics equity justice rights distributional"
+ },
+ "sources": [
+  "public-policy"
+ ]
+}

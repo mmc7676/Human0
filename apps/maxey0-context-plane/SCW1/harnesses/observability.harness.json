@@ -1,0 +1,1215 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "observability",
+  "label": "Observability",
+  "desc": "Observability of software and agent systems: metrics, logs and traces, instrumentation, dashboards, alerts and SLOs, agent and LLM tracing, root-cause debugging, drift and regression monitoring, incidents and capacity. Extends the base Observability topic, which held Observability and Evaluation."
+ },
+ "concepts": [
+  {
+   "id": "ob-agent-tracing",
+   "label": "Agent and LLM Observability",
+   "desc": "Seeing what an agent actually did: traces of model calls, tool calls and handoffs, token and latency cost, prompt versions and user feedback.",
+   "keywords": [
+    "agent",
+    "llm",
+    "tool",
+    "token",
+    "prompt",
+    "latency"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-alerting",
+   "label": "Alerting and SLOs",
+   "desc": "Turning signals into pages worth waking up for: service level objectives, error budgets, burn rates, thresholds and alert routing.",
+   "keywords": [
+    "alert",
+    "slo",
+    "budget",
+    "burn",
+    "threshold",
+    "alerting",
+    "paged",
+    "paging"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-dashboards",
+   "label": "Dashboards and Visualisation",
+   "desc": "Building views that answer questions: choosing charts, queries, panels and layouts for operators and for managers.",
+   "keywords": [
+    "dashboard",
+    "panel",
+    "query",
+    "chart",
+    "layout"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-debugging",
+   "label": "Debugging and Root Cause Analysis",
+   "desc": "Finding why something broke: reading logs and traces, forming and testing hypotheses, bisecting changes and writing the finding down.",
+   "keywords": [
+    "debugging",
+    "root",
+    "cause",
+    "bisect",
+    "hypothesis",
+    "stacktrace"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-drift",
+   "label": "Drift, Quality and Regression Monitoring",
+   "desc": "Noticing when behaviour changes without a deploy: data and output drift, evaluation sets, regression gates and canary comparisons.",
+   "keywords": [
+    "drift",
+    "regression",
+    "canary",
+    "baseline",
+    "evaluation"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-incident",
+   "label": "Incident Response and Capacity",
+   "desc": "Running an incident and planning capacity: severity, roles, status updates, load, saturation, cost and forecasts.",
+   "keywords": [
+    "incident",
+    "severity",
+    "capacity",
+    "saturation",
+    "cost",
+    "stakeholder",
+    "stakeholders"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-instrumentation",
+   "label": "Instrumentation and Collection",
+   "desc": "Adding telemetry to code and pipelines: OpenTelemetry spans, context propagation, collectors and keeping cardinality under control.",
+   "keywords": [
+    "instrumentation",
+    "opentelemetry",
+    "span",
+    "collector",
+    "cardinality"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-signals",
+   "label": "Metrics, Logs and Traces",
+   "desc": "The three telemetry signals: what each answers, how to name and label them, sampling and retention.",
+   "keywords": [
+    "metric",
+    "log",
+    "trace",
+    "label",
+    "sampling"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ob-agent-feedback-linker",
+   "concept": "ob-agent-tracing",
+   "label": "Feedback to Trace Linker",
+   "desc": "Links user ratings and corrections to the traces that produced them so bad runs can be found and replayed.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-agent-trace-reader",
+   "concept": "ob-agent-tracing",
+   "label": "Agent Trace Reader",
+   "desc": "Reads a trace of an agent run and summarises the model calls, tool calls, errors and handoffs in order, with latency for each step.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-prompt-version-tracker",
+   "concept": "ob-agent-tracing",
+   "label": "Prompt Version Tracker",
+   "desc": "Ties each run to the prompt, model and tool versions used so a behaviour change can be traced to its cause.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-token-cost-analyst",
+   "concept": "ob-agent-tracing",
+   "label": "Token and Cost Analyst",
+   "desc": "Breaks token use, latency and spend down by step, tool and prompt version and shows where the money goes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey902",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-alert-noise-reducer",
+   "concept": "ob-alerting",
+   "label": "Alert Noise Reducer",
+   "desc": "Finds alerts that fire often without action, groups duplicates and proposes thresholds or routes that cut noise safely.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey903",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-burn-rate-alerter",
+   "concept": "ob-alerting",
+   "label": "Burn Rate Alert Writer",
+   "desc": "Writes multi-window burn-rate alerts for an SLO and shows how fast each alert fires for a given outage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey903",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-slo-designer",
+   "concept": "ob-alerting",
+   "label": "SLO Designer",
+   "desc": "Defines service level indicators and objectives from user-visible behaviour and sets the error budget and its window.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey903",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-synthetic-probe-designer",
+   "concept": "ob-alerting",
+   "label": "Synthetic Probe Designer",
+   "desc": "Designs scripted checks that exercise a user journey on a schedule and decides what a failure should trigger.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey906",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey903",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-dashboard-designer",
+   "concept": "ob-dashboards",
+   "label": "Dashboard Designer",
+   "desc": "Designs a dashboard around the questions an operator asks first, with the golden signals at the top and links to detail.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-dashboard-reviewer",
+   "concept": "ob-dashboards",
+   "label": "Dashboard Reviewer",
+   "desc": "Reviews an existing dashboard for panels nobody reads, misleading axes and missing context and lists what to remove.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-query-writer",
+   "concept": "ob-dashboards",
+   "label": "PromQL and LogQL Query Writer",
+   "desc": "Writes promql and logql queries over metrics and logs for a stated question and explains what each part of the query filters or aggregates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-service-overview-composer",
+   "concept": "ob-dashboards",
+   "label": "Service Overview Composer",
+   "desc": "Lays out a one-screen view of traffic, errors, latency and saturation with links down to traces and logs.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey908",
+     "role": "support"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-change-bisector",
+   "concept": "ob-debugging",
+   "label": "Change Bisector",
+   "desc": "Narrows a regression to one change by bisecting versions, flags or configuration and records each step.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey900",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-log-trace-reader",
+   "concept": "ob-debugging",
+   "label": "Log and Stack Trace Reader",
+   "desc": "Reads logs and stack traces for a failure, extracts the first error and lists what must be checked next.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey900",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-root-cause-analyst",
+   "concept": "ob-debugging",
+   "label": "Root Cause Analyst",
+   "desc": "Forms rival explanations for a failure, picks the cheapest test for each and reports which were ruled out.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey900",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-trace-latency-analyst",
+   "concept": "ob-debugging",
+   "label": "Trace Latency Analyst",
+   "desc": "Reads a distributed trace, finds the span that dominates latency and says whether it is work, waiting or retries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey908",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey900",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey909",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-canary-comparer",
+   "concept": "ob-drift",
+   "label": "Canary Comparer",
+   "desc": "Compares a canary with the baseline on stated metrics and says whether the difference is larger than noise.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey899",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-drift-detector",
+   "concept": "ob-drift",
+   "label": "Drift Detector",
+   "desc": "Compares current inputs and outputs with a baseline and reports which distributions moved and by how much.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey899",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey898",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-log-anomaly-spotter",
+   "concept": "ob-drift",
+   "label": "Log Anomaly Spotter",
+   "desc": "Compares log patterns now with a baseline period and lists new, vanished or sharply changed message types.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey909",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-regression-gate-builder",
+   "concept": "ob-drift",
+   "label": "Regression Gate Builder",
+   "desc": "Builds an evaluation set and a pass threshold that blocks a release when quality drops, runs a canary first and records every run.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey899",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-capacity-forecaster",
+   "concept": "ob-incident",
+   "label": "Capacity Forecaster",
+   "desc": "Projects load, saturation and cost from usage trends and says when a limit will be reached and with what margin.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey902",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-postmortem-writer",
+   "concept": "ob-incident",
+   "label": "Postmortem Writer",
+   "desc": "Writes the incident timeline, contributing causes, what detection missed and the follow-up actions with owners and dates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey910",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey904",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-severity-classifier",
+   "concept": "ob-incident",
+   "label": "Incident Severity Classifier",
+   "desc": "Rates an incident by user impact and spread, names the incident commander and lists who must be told.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey904",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-status-update-writer",
+   "concept": "ob-incident",
+   "label": "Status Update Writer",
+   "desc": "Writes short, dated status updates for stakeholders during an incident that say what is known, what is not, what is being done and when the next update comes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey904",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-cardinality-auditor",
+   "concept": "ob-instrumentation",
+   "label": "Cardinality Auditor",
+   "desc": "Finds labels and attributes with too many distinct values and proposes bucketing or dropping them before the bill arrives.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey902",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-collector-configurator",
+   "concept": "ob-instrumentation",
+   "label": "Collector Pipeline Configurator",
+   "desc": "Configures receivers, processors and exporters in a collector pipeline and tests that data reaches each backend.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey905",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-log-schema-designer",
+   "concept": "ob-instrumentation",
+   "label": "Structured Log Designer",
+   "desc": "Defines log fields, levels and correlation ids so logs can be searched and joined with traces.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey909",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey911",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-otel-instrumenter",
+   "concept": "ob-instrumentation",
+   "label": "OpenTelemetry Instrumenter",
+   "desc": "Adds spans, attributes and context propagation to a service and checks that a request shows as one connected trace.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-cardinality-guard",
+   "concept": "ob-signals",
+   "label": "Cardinality and Cost Guard",
+   "desc": "Finds metrics and labels that explode in number, estimates their storage cost and proposes which to drop or aggregate.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey912",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey905",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey902",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-metric-namer",
+   "concept": "ob-signals",
+   "label": "Metric Naming and Label Designer",
+   "desc": "Designs metric names, units and labels that stay consistent and flags labels that would explode the number of series.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey905",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey911",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-retention-sampler",
+   "concept": "ob-signals",
+   "label": "Retention and Sampling Planner",
+   "desc": "Sets how long each signal is kept and how traces are sampled, with the cost and the evidence that is lost at each setting.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey905",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey902",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-signal-chooser",
+   "concept": "ob-signals",
+   "label": "Signal Chooser",
+   "desc": "Says whether a question needs a metric, a log line or a trace and what the cheapest signal that answers it is.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey905",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey911",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey898",
+   "name": "Agent Observability Agent",
+   "legacy_key": "ob-agent-observer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey899",
+   "name": "Drift and Regression Agent",
+   "legacy_key": "ob-drift-monitor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey900",
+   "name": "Debugging Agent",
+   "legacy_key": "ob-debugger",
+   "mcp": []
+  },
+  {
+   "key": "Maxey901",
+   "name": "Observability Skeptic Agent",
+   "legacy_key": "ob-skeptic",
+   "mcp": [
+    "3392c633-e335-4638-bda7-5b259808c3f7",
+    "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+    "68268024-1a91-4316-a9e1-14ecb814cb18",
+    "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c"
+   ]
+  },
+  {
+   "key": "Maxey902",
+   "name": "Capacity Analyst Agent",
+   "legacy_key": "ob-capacity-analyst",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  },
+  {
+   "key": "Maxey903",
+   "name": "Alerting and SLO Agent",
+   "legacy_key": "ob-alerting-engineer",
+   "mcp": [
+    "3392c633-e335-4638-bda7-5b259808c3f7"
+   ]
+  },
+  {
+   "key": "Maxey904",
+   "name": "Incident Commander Agent",
+   "legacy_key": "ob-incident-commander",
+   "mcp": [
+    "3392c633-e335-4638-bda7-5b259808c3f7",
+    "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+    "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c"
+   ]
+  },
+  {
+   "key": "Maxey905",
+   "name": "Telemetry Signals Agent",
+   "legacy_key": "ob-signal-engineer",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  },
+  {
+   "key": "Maxey906",
+   "name": "Synthetic Monitoring Agent",
+   "legacy_key": "ob-synthetic-tester",
+   "mcp": []
+  },
+  {
+   "key": "Maxey907",
+   "name": "Dashboard Builder Agent",
+   "legacy_key": "ob-dashboard-builder",
+   "mcp": []
+  },
+  {
+   "key": "Maxey908",
+   "name": "Distributed Trace Agent",
+   "legacy_key": "ob-trace-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey909",
+   "name": "Log Analysis Agent",
+   "legacy_key": "ob-log-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey910",
+   "name": "Postmortem Agent",
+   "legacy_key": "ob-postmortem-author",
+   "mcp": []
+  },
+  {
+   "key": "Maxey911",
+   "name": "Instrumentation Engineer Agent",
+   "legacy_key": "ob-instrumentation-engineer",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  },
+  {
+   "key": "Maxey912",
+   "name": "Telemetry Cost Agent",
+   "legacy_key": "ob-cost-analyst",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "name": "Grafana Cloud",
+   "desc": "Query metrics, logs, and traces and manage dashboards and alerts",
+   "tools": [
+    "add_activity_to_incident",
+    "alerting_manage_routing",
+    "alerting_manage_rules",
+    "ask_assistant",
+    "create_annotation",
+    "create_folder",
+    "create_incident",
+    "describe_clickhouse_table"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "origins": [
+    "maxey0_base",
+    "observability"
+   ]
+  },
+  {
+   "uuid": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "name": "mcp.betterstack.com",
+   "desc": "Better Stack plugin for Claude: observability for AI agents (logs, metrics, dashboards, uptime, incidents).",
+   "tools": [
+    "acknowledge_incident",
+    "add_chart_to_dashboard",
+    "add_dashboard_section",
+    "application",
+    "applications",
+    "available_incident_escalation_policies",
+    "change_team_member_role",
+    "chart"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "origins": [
+    "observability"
+   ]
+  },
+  {
+   "uuid": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "name": "Datadog",
+   "desc": "Debug and resolve issues using Datadog telemetry",
+   "tools": [
+    "search_datadog_logs",
+    "analyze_datadog_logs",
+    "search_datadog_events",
+    "aggregate_events",
+    "get_datadog_metric",
+    "search_datadog_metrics",
+    "get_datadog_metric_context",
+    "search_datadog_monitors"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "origins": [
+    "maxey0_base",
+    "observability"
+   ]
+  },
+  {
+   "uuid": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "name": "Coralogix",
+   "desc": "Explore and debug your Coralogix observability data",
+   "tools": [
+    "get_alert_event_details_v1",
+    "read_dataprime_intro_docs_v1",
+    "get_logs_v1",
+    "get_traces_v1",
+    "get_schemas_v1",
+    "list_incidents_v1",
+    "get_incident_details_v1",
+    "metrics__list_v1"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "origins": [
+    "observability"
+   ]
+  },
+  {
+   "uuid": "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62",
+   "name": "Bronto",
+   "desc": "Query your Observability data in plain language, then turn what you find into monitors, saved searches, and Investigation Reports.",
+   "tools": [
+    "create_monitor",
+    "create_saved_search",
+    "get_all_datasets_keys",
+    "get_coverage",
+    "get_datasets",
+    "get_datasets_by_name",
+    "get_error_summary",
+    "get_key_values"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62",
+   "origins": [
+    "maxey0_base",
+    "observability"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "68268024-1a91-4316-a9e1-14ecb814cb18",
+  "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+  "3392c633-e335-4638-bda7-5b259808c3f7",
+  "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+  "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey901",
+   "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "topic": "observability",
+   "score": 0.2415,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey903",
+    "skill": "ob-alert-noise-reducer"
+   }
+  },
+  {
+   "agent": "Maxey901",
+   "mcp": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "topic": "observability",
+   "score": 0.2166,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey901",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1686,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey905",
+    "skill": "ob-signal-chooser"
+   }
+  },
+  {
+   "agent": "Maxey901",
+   "mcp": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "topic": "observability",
+   "score": 0.2313,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey902",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1686,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey905",
+    "skill": "ob-retention-sampler"
+   }
+  },
+  {
+   "agent": "Maxey903",
+   "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "topic": "observability",
+   "score": 0.2415,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey904",
+   "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "topic": "observability",
+   "score": 0.1389,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey904",
+   "mcp": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "topic": "observability",
+   "score": 0.1859,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey904",
+   "mcp": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "topic": "observability",
+   "score": 0.1923,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey905",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1686,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey911",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1686,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey905",
+    "skill": "ob-metric-namer"
+   }
+  },
+  {
+   "agent": "Maxey912",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1544,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "obsignal": "label unit series golden debugging bisect stacktrace signal chooser cheapest bisector",
+  "obinstr": "opentelemetry exporter receiver propagation attribute instrumentation cardinality collection structured",
+  "obdash": "panel layout operator promql logql chart visualisation existing",
+  "obalert": "noise threshold alerting paged paging visible window synthetic",
+  "obagent": "latency feedback llm reader behaviour traced linker",
+  "obdrift": "baseline canary distribution anomaly",
+  "obincident": "commander status saturation capacity load stakeholder stakeholders cost response classifier timeline contributing"
+ },
+ "sources": [
+  "observability"
+ ]
+}

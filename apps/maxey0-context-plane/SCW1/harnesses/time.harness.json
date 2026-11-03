@@ -1,0 +1,346 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "foundations",
+ "topic": {
+  "id": "time",
+  "label": "Time",
+  "desc": "When something happens: clocks, time zones and timestamps, calendars and scheduling, durations and deadlines, and ordering of events."
+ },
+ "concepts": [
+  {
+   "id": "tim-calendars",
+   "label": "Calendars and Scheduling",
+   "desc": "Calendars, recurring events, business days, holidays and scheduling across people and time zones.",
+   "keywords": [
+    "calendar",
+    "schedule",
+    "meeting",
+    "recurring",
+    "event",
+    "holiday",
+    "business",
+    "day",
+    "availability"
+   ],
+   "topic": "time",
+   "source": "time",
+   "related": []
+  },
+  {
+   "id": "tim-clocks",
+   "label": "Clocks, Time Zones and Timestamps",
+   "desc": "Current time, UTC and local time, IANA time zones, daylight saving, timestamp formats and conversion.",
+   "keywords": [
+    "clock",
+    "time",
+    "zone",
+    "utc",
+    "local",
+    "daylight",
+    "saving",
+    "timestamp",
+    "iso8601",
+    "epoch",
+    "convert"
+   ],
+   "topic": "time",
+   "source": "time",
+   "related": []
+  },
+  {
+   "id": "tim-durations",
+   "label": "Durations, Deadlines and Intervals",
+   "desc": "Elapsed time, deadlines, intervals, time to live and how durations are measured and stated.",
+   "keywords": [
+    "duration",
+    "deadline",
+    "interval",
+    "elapsed",
+    "countdown",
+    "ttl",
+    "period",
+    "expiry"
+   ],
+   "topic": "time",
+   "source": "time",
+   "related": []
+  },
+  {
+   "id": "tim-ordering",
+   "label": "Temporal Ordering and Event Sequencing",
+   "desc": "Ordering events in time: timelines, causality, clocks across machines, logical and vector clocks.",
+   "keywords": [
+    "order",
+    "sequence",
+    "timeline",
+    "causality",
+    "before",
+    "after",
+    "logical",
+    "clock",
+    "event",
+    "log"
+   ],
+   "topic": "time",
+   "source": "time",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "tim-business-day-calculator",
+   "concept": "tim-calendars",
+   "label": "Business Day Calculator",
+   "desc": "Computes business days between dates for a country's holiday calendar.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1645",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1647",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-meeting-scheduler",
+   "concept": "tim-calendars",
+   "label": "Meeting Scheduler",
+   "desc": "Finds meeting times that fit participants in several time zones, avoiding holidays and outside working hours.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1645",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1647",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-time-zone-converter",
+   "concept": "tim-clocks",
+   "label": "Time Zone Converter",
+   "desc": "Converts a time between time zones, accounting for daylight saving, and states the UTC offset used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1648",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1645",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-timestamp-normalizer",
+   "concept": "tim-clocks",
+   "label": "Timestamp Normalizer",
+   "desc": "Normalizes timestamps in mixed formats to ISO 8601 UTC and flags ambiguous ones.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1648",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1645",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-deadline-tracker",
+   "concept": "tim-durations",
+   "label": "Deadline Tracker",
+   "desc": "Computes time remaining to deadlines and flags those at risk.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1647",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1649",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-interval-overlap-checker",
+   "concept": "tim-durations",
+   "label": "Interval Overlap Checker",
+   "desc": "Checks whether time intervals overlap and reports the overlap.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1647",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1649",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-event-order-explainer",
+   "concept": "tim-ordering",
+   "label": "Event Order Explainer",
+   "desc": "Explains how events from different machines are ordered (timestamps, logical clocks) and where order is uncertain.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1649",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1648",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  },
+  {
+   "id": "tim-timeline-builder",
+   "concept": "tim-ordering",
+   "label": "Timeline Builder",
+   "desc": "Builds a timeline from dated events and marks gaps and conflicting dates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1649",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1646",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1648",
+     "role": "support"
+    }
+   ],
+   "source": "time"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1645",
+   "name": "Calendar Agent",
+   "legacy_key": "tim-calendar",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1646",
+   "name": "Time Checker Agent",
+   "legacy_key": "tim-checker",
+   "mcp": [
+    "local:time-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1647",
+   "name": "Duration Agent",
+   "legacy_key": "tim-duration",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1648",
+   "name": "Clock and Time Zone Agent",
+   "legacy_key": "tim-clock",
+   "mcp": [
+    "local:time-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1649",
+   "name": "Event Sequencing Agent",
+   "legacy_key": "tim-sequence",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Time MCP",
+   "desc": "Time reference MCP server: current time in any IANA time zone and conversion between time zones.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+   "id": "local:time-mcp",
+   "origins": [
+    "time"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:time-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1646",
+   "mcp": "local:time-mcp",
+   "topic": "time",
+   "score": 0.4492,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1648",
+   "mcp": "local:time-mcp",
+   "topic": "time",
+   "score": 0.47,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "timclocks": "clock time zone utc local daylight saving timestamp iso8601 epoch convert",
+  "timcalendars": "calendar schedule meeting recurring event holiday business day availability",
+  "timdurations": "duration deadline interval elapsed countdown ttl period expiry",
+  "timordering": "order sequence timeline causality before after logical clock event log"
+ },
+ "sources": [
+  "time"
+ ]
+}

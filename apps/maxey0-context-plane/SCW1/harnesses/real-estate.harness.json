@@ -1,0 +1,293 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "real-estate",
+  "label": "Real Estate and Property",
+  "desc": "Buying, selling, renting and valuing property: search and listings, valuation and comparables, transactions and closing, financing, zoning and land use."
+ },
+ "concepts": [
+  {
+   "id": "re-search",
+   "label": "Property Search and Listings",
+   "desc": "Finding homes, land and commercial property for sale or rent, listing data and local real estate markets.",
+   "keywords": [
+    "real",
+    "estate",
+    "property",
+    "home",
+    "house",
+    "listing",
+    "rent",
+    "sale",
+    "local",
+    "market",
+    "search"
+   ],
+   "topic": "real-estate",
+   "source": "real-estate",
+   "related": []
+  },
+  {
+   "id": "re-transactions",
+   "label": "Transactions, Financing and Closing",
+   "desc": "Offers, contracts, inspections, mortgages, escrow, title and closing.",
+   "keywords": [
+    "offer",
+    "contract",
+    "inspection",
+    "mortgage",
+    "escrow",
+    "title",
+    "closing",
+    "financing",
+    "down",
+    "payment"
+   ],
+   "topic": "real-estate",
+   "source": "real-estate",
+   "related": []
+  },
+  {
+   "id": "re-valuation",
+   "label": "Valuation and Comparables",
+   "desc": "What a property is worth: comparable sales, appraisal, income approach and cap rates.",
+   "keywords": [
+    "valuation",
+    "appraisal",
+    "comparable",
+    "sale",
+    "price",
+    "cap",
+    "rate",
+    "rental",
+    "income",
+    "property"
+   ],
+   "topic": "real-estate",
+   "source": "real-estate",
+   "related": []
+  },
+  {
+   "id": "re-zoning",
+   "label": "Zoning and Land Use",
+   "desc": "Zoning codes, permitted uses, permits, easements and land use rules for a parcel.",
+   "keywords": [
+    "zoning",
+    "land",
+    "use",
+    "permit",
+    "parcel",
+    "easement",
+    "setback",
+    "building",
+    "code",
+    "variance"
+   ],
+   "topic": "real-estate",
+   "source": "real-estate",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "re-local-real-estate-search",
+   "concept": "re-search",
+   "label": "Local Real Estate Search",
+   "desc": "Searches local real estate listings by location, price, size and type, and states each listing's source.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1650",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1652",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  },
+  {
+   "id": "re-market-snapshot",
+   "concept": "re-search",
+   "label": "Market Snapshot",
+   "desc": "Summarizes a local property market: prices, inventory, days on market and trend.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1650",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1652",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  },
+  {
+   "id": "re-mortgage-payment-calculator",
+   "concept": "re-transactions",
+   "label": "Mortgage Payment Calculator",
+   "desc": "Calculates mortgage payments, interest and amortization for given terms.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1653",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1654",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  },
+  {
+   "id": "re-purchase-process-guide",
+   "concept": "re-transactions",
+   "label": "Purchase Process Guide",
+   "desc": "Lays out the steps from offer to closing for a property purchase in a given jurisdiction.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1653",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1654",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  },
+  {
+   "id": "re-comparable-sales-analyzer",
+   "concept": "re-valuation",
+   "label": "Comparable Sales Analyzer",
+   "desc": "Estimates a property's value from comparable sales with adjustments shown.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1652",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1653",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  },
+  {
+   "id": "re-rental-yield-calculator",
+   "concept": "re-valuation",
+   "label": "Rental Yield Calculator",
+   "desc": "Calculates gross and net rental yield and cap rate for a property.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1652",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1653",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  },
+  {
+   "id": "re-zoning-lookup-guide",
+   "concept": "re-zoning",
+   "label": "Zoning Lookup Guide",
+   "desc": "Explains how to find a parcel's zoning and what uses and buildings it permits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1654",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1651",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1650",
+     "role": "support"
+    }
+   ],
+   "source": "real-estate"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1650",
+   "name": "Property Search Agent",
+   "legacy_key": "re-search",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1651",
+   "name": "Real Estate Checker Agent",
+   "legacy_key": "re-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1652",
+   "name": "Property Valuation Agent",
+   "legacy_key": "re-valuer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1653",
+   "name": "Real Estate Transaction Agent",
+   "legacy_key": "re-closing",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1654",
+   "name": "Zoning and Land Use Agent",
+   "legacy_key": "re-zoning",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "research": "real estate property home house listing rent sale local market search",
+  "revaluation": "valuation appraisal comparable sale price cap rate rental income property",
+  "retransactions": "offer contract inspection mortgage escrow title closing financing down payment",
+  "rezoning": "zoning land use permit parcel easement setback building code variance"
+ },
+ "sources": [
+  "real-estate"
+ ]
+}

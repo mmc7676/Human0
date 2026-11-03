@@ -1,0 +1,890 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "computer-science",
+  "label": "Computer Science",
+  "desc": "Computer Science: the theory of computation and the design of algorithms, software, systems and intelligent machines."
+ },
+ "concepts": [
+  {
+   "id": "cs-ai-ml",
+   "label": "Artificial Intelligence and Machine Learning",
+   "desc": "Search, reasoning, learning from data and neural networks.",
+   "keywords": [
+    "machine learning",
+    "neural network",
+    "training",
+    "model",
+    "evaluation",
+    "search",
+    "reasoning",
+    "dataset",
+    "ai",
+    "probabilistic",
+    "bayesian",
+    "learning",
+    "reinforcement"
+   ],
+   "topic": "computer-science",
+   "source": "computer-science",
+   "related": []
+  },
+  {
+   "id": "cs-algorithms",
+   "label": "Algorithms and Data Structures",
+   "desc": "Design and analysis of algorithms and the data structures that support them, measured by time and space complexity.",
+   "keywords": [
+    "algorithm",
+    "data structure",
+    "complexity",
+    "graph",
+    "sorting",
+    "dynamic programming",
+    "hashing",
+    "tree"
+   ],
+   "topic": "computer-science",
+   "source": "computer-science",
+   "related": [
+    "mcs-algorithms-optimization"
+   ]
+  },
+  {
+   "id": "cs-security",
+   "label": "Computer Security",
+   "desc": "Cryptography, secure software, threat modelling and vulnerability analysis.",
+   "keywords": [
+    "security",
+    "cryptography",
+    "vulnerability",
+    "threat model",
+    "authentication",
+    "encryption",
+    "exploit",
+    "privacy"
+   ],
+   "topic": "computer-science",
+   "source": "computer-science",
+   "related": []
+  },
+  {
+   "id": "cs-software-engineering",
+   "label": "Software Engineering",
+   "desc": "Requirements, design, testing, version control and maintenance of large software.",
+   "keywords": [
+    "software",
+    "testing",
+    "design pattern",
+    "version control",
+    "requirements",
+    "refactoring",
+    "code review",
+    "continuous integration"
+   ],
+   "topic": "computer-science",
+   "source": "computer-science",
+   "related": []
+  },
+  {
+   "id": "cs-systems",
+   "label": "Computer Systems and Networks",
+   "desc": "Operating systems, architecture, distributed systems and networking.",
+   "keywords": [
+    "operating system",
+    "architecture",
+    "distributed",
+    "network",
+    "concurrency",
+    "memory",
+    "protocol",
+    "cloud"
+   ],
+   "topic": "computer-science",
+   "source": "computer-science",
+   "related": []
+  },
+  {
+   "id": "cs-theory",
+   "label": "Theory of Computation",
+   "desc": "Automata, formal languages, computability and complexity classes.",
+   "keywords": [
+    "automata",
+    "formal language",
+    "computability",
+    "turing machine",
+    "complexity class",
+    "reduction",
+    "decidability",
+    "grammar"
+   ],
+   "topic": "computer-science",
+   "source": "computer-science",
+   "related": [
+    "symsys-formal-logic"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cs-model-training",
+   "concept": "cs-ai-ml",
+   "label": "Model Training Pipeline",
+   "desc": "Builds a training and evaluation pipeline with held-out data and reports metrics with variance across seeds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1181",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1182",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-paper-review",
+   "concept": "cs-ai-ml",
+   "label": "ML Paper Review",
+   "desc": "Summarises a machine learning paper's method and results and checks claims against reported experiments.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1182",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1184",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1185",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "symsys-bayes-net",
+   "concept": "cs-ai-ml",
+   "label": "Bayesian Network Builder",
+   "desc": "Builds a Bayesian network and computes posterior queries, checked by exact computation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1181",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-model-train",
+   "concept": "cs-ai-ml",
+   "label": "Learning Model Trainer",
+   "desc": "Trains a classifier or neural network and reports held-out accuracy, checked by cross-validation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1181",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1187",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1606",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-search-planner",
+   "concept": "cs-ai-ml",
+   "label": "State-Space Search Planner",
+   "desc": "Formulates a problem as state-space search and solves it with A-star or similar, checked for optimality on test cases.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1181",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1187",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey941",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "cs-algorithm-design",
+   "concept": "cs-algorithms",
+   "label": "Algorithm Design",
+   "desc": "Designs an algorithm for a specified problem with a correctness argument and checks it against test cases.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1185",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1184",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-complexity-analysis",
+   "concept": "cs-algorithms",
+   "label": "Complexity Analysis",
+   "desc": "Derives the asymptotic time and space complexity of an algorithm and checks the bound with empirical timing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1185",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1184",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-data-structure-choice",
+   "concept": "cs-algorithms",
+   "label": "Data Structure Selection",
+   "desc": "Selects data structures for an access pattern and justifies the choice with operation costs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1185",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1188",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-threat-modeling",
+   "concept": "cs-security",
+   "label": "Threat Modeling",
+   "desc": "Builds a threat model for a system listing assets, attackers and mitigations and checks coverage of each entry point.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1189",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1188",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-vulnerability-scan",
+   "concept": "cs-security",
+   "label": "Vulnerability Review",
+   "desc": "Reviews code for common vulnerability classes and confirms each finding with a proof or a failing test.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1189",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1182",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-code-review",
+   "concept": "cs-software-engineering",
+   "label": "Code Review",
+   "desc": "Reviews a change for correctness, readability and security and ties each finding to a line.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1603",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1189",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1188",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-refactor-plan",
+   "concept": "cs-software-engineering",
+   "label": "Refactoring Plan",
+   "desc": "Plans a refactoring in small safe steps and checks each step keeps tests passing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1183",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1188",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1185",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-test-suite",
+   "concept": "cs-software-engineering",
+   "label": "Test Suite Builder",
+   "desc": "Writes unit and integration tests for a module and reports coverage and failing cases.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1183",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1188",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1182",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-concurrency-debug",
+   "concept": "cs-systems",
+   "label": "Concurrency Debugging",
+   "desc": "Finds race conditions and deadlocks in concurrent code and confirms each fix with a reproducing test.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1188",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-system-design",
+   "concept": "cs-systems",
+   "label": "Distributed System Design",
+   "desc": "Designs a distributed service with stated consistency, availability and scaling choices and reviews trade-offs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1188",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1182",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-automaton-construction",
+   "concept": "cs-theory",
+   "label": "Automaton Construction",
+   "desc": "Builds a finite automaton or grammar for a language and checks it accepts and rejects given test strings.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1184",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1185",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1603",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1183",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  },
+  {
+   "id": "cs-reduction-proof",
+   "concept": "cs-theory",
+   "label": "Reduction Proof",
+   "desc": "Writes a reduction proof for decidability or hardness and checks every step for correctness.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1184",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1185",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1188",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1182",
+     "role": "support"
+    }
+   ],
+   "source": "computer-science"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1181",
+   "name": "Machine Learning Agent",
+   "legacy_key": "cs-ml-engineer",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+   ]
+  },
+  {
+   "key": "Maxey1182",
+   "name": "Research Literature Agent",
+   "legacy_key": "cs-researcher",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+   ]
+  },
+  {
+   "key": "Maxey1183",
+   "name": "Software Engineer Agent",
+   "legacy_key": "cs-software-engineer",
+   "mcp": [
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey1184",
+   "name": "Theory of Computation Agent",
+   "legacy_key": "cs-theorist",
+   "mcp": [
+    "de1d1dc7-ec10-459d-b511-797982834b43"
+   ]
+  },
+  {
+   "key": "Maxey1185",
+   "name": "Algorithms Agent",
+   "legacy_key": "cs-algorithmist",
+   "mcp": [
+    "de1d1dc7-ec10-459d-b511-797982834b43"
+   ]
+  },
+  {
+   "key": "Maxey1186",
+   "name": "Cognitive Science Agent",
+   "legacy_key": "symsys-cog",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1187",
+   "name": "Computation Theory Agent",
+   "legacy_key": "symsys-cs",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1188",
+   "name": "Systems Engineer Agent",
+   "legacy_key": "cs-systems-engineer",
+   "mcp": [
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey1189",
+   "name": "Security Analyst Agent",
+   "legacy_key": "cs-security",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1603",
+   "name": "Code Review Agent",
+   "legacy_key": "cs-code-reviewer",
+   "mcp": [
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey1606",
+   "name": "Computational Linguistics Agent",
+   "legacy_key": "symsys-ling",
+   "mcp": []
+  },
+  {
+   "key": "Maxey941",
+   "name": "Logic Agent",
+   "legacy_key": "phil-logician",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "name": "Microsoft Learn",
+   "desc": "Search trusted Microsoft docs to power your development",
+   "tools": [
+    "microsoft_docs_search",
+    "microsoft_docs_fetch",
+    "microsoft_code_sample_search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "origins": [
+    "computer-science",
+    "programming-languages"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "GitHub",
+   "desc": "GitHub's official MCP Server",
+   "tools": [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/github/github-mcp-server",
+   "id": "local:github",
+   "origins": [
+    "biomedical-computation",
+    "coding-agents",
+    "computer-science",
+    "electrical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:github",
+  "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1181",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "computer-science",
+   "score": 0.2793,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1182",
+    "skill": "cs-paper-review"
+   }
+  },
+  {
+   "agent": "Maxey1182",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "computer-science",
+   "score": 0.2793,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1183",
+   "mcp": "local:github",
+   "topic": "computer-science",
+   "score": 0.151,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1603",
+    "skill": "cs-code-review"
+   }
+  },
+  {
+   "agent": "Maxey1184",
+   "mcp": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "topic": "computer-science",
+   "score": 0.1175,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1185",
+   "mcp": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "topic": "computer-science",
+   "score": 0.1175,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1184",
+    "skill": "cs-automaton-construction"
+   }
+  },
+  {
+   "agent": "Maxey1188",
+   "mcp": "local:github",
+   "topic": "computer-science",
+   "score": 0.1058,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1603",
+   "mcp": "local:github",
+   "topic": "computer-science",
+   "score": 0.151,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "cs-algo": "algorithm data structure complexity graph sorting dynamic programming hashing tree",
+  "cs-theory": "automata formal language computability turing machine class reduction decidability grammar",
+  "cs-systems": "operating system architecture distributed network concurrency memory protocol cloud",
+  "cs-software": "software testing design pattern version control requirements refactoring code review continuous integration",
+  "cs-ml": "learning neural training model evaluation search reasoning dataset",
+  "cs-security": "security cryptography vulnerability threat authentication encryption exploit privacy"
+ },
+ "sources": [
+  "computer-science"
+ ]
+}

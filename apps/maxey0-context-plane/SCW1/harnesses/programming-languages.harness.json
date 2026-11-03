@@ -1,0 +1,645 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "programming-languages",
+  "label": "Programming Languages",
+  "desc": "Programming languages as working skills: Python, TypeScript, Go, Rust, C and C++, Java and Kotlin, SQL and shell, with the tooling around each."
+ },
+ "concepts": [
+  {
+   "id": "pl-c-cpp",
+   "label": "C and C++",
+   "desc": "C and C++ memory management, build systems and systems programming.",
+   "keywords": [
+    "cpp",
+    "cmake",
+    "pointer",
+    "sanitizer",
+    "header"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-go",
+   "label": "Go",
+   "desc": "Go modules, goroutines, channels, testing and tooling.",
+   "keywords": [
+    "golang",
+    "goroutine",
+    "channel",
+    "module",
+    "vet"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-jvm",
+   "label": "Java and Kotlin",
+   "desc": "Java and Kotlin build, dependency, concurrency and testing practice on the JVM.",
+   "keywords": [
+    "java",
+    "kotlin",
+    "gradle",
+    "maven",
+    "jvm"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-python",
+   "label": "Python",
+   "desc": "Python code, packaging, typing, testing and async work.",
+   "keywords": [
+    "python",
+    "pip",
+    "venv",
+    "pytest",
+    "asyncio",
+    "typing"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-rust",
+   "label": "Rust",
+   "desc": "Rust ownership, lifetimes, cargo, crates and safe interfaces to unsafe code.",
+   "keywords": [
+    "rust",
+    "ownership",
+    "lifetime",
+    "cargo",
+    "crate",
+    "clippy"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-shell",
+   "label": "Shell Scripting",
+   "desc": "Shell scripts that are safe, portable and automatable.",
+   "keywords": [
+    "bash",
+    "shell",
+    "script",
+    "pipeline",
+    "quoting",
+    "cron"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-sql",
+   "label": "SQL",
+   "desc": "SQL queries, schema design, indexes, migrations and query plans.",
+   "keywords": [
+    "sql",
+    "query",
+    "schema",
+    "index",
+    "migration",
+    "join"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  },
+  {
+   "id": "pl-typescript",
+   "label": "TypeScript",
+   "desc": "TypeScript types, compiler settings and Node or browser builds.",
+   "keywords": [
+    "typescript",
+    "tsconfig",
+    "node",
+    "npm",
+    "bundler",
+    "types"
+   ],
+   "topic": "programming-languages",
+   "source": "programming-languages",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "pl-c-systems-interfaces",
+   "concept": "pl-c-cpp",
+   "label": "C Systems Interfaces",
+   "desc": "Designs header files, ABI-stable interfaces and system-call wrappers and checks portability across platforms.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey913",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey915",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-cpp-memory-build",
+   "concept": "pl-c-cpp",
+   "label": "C and C++ Memory and Build",
+   "desc": "Finds memory errors with sanitizers, applies ownership idioms such as smart pointers and sets up CMake builds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey913",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey916",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-go-modules-concurrency",
+   "concept": "pl-go",
+   "label": "Go Modules and Concurrency",
+   "desc": "Structures Go modules and writes goroutine and channel code with cancellation, and checks for leaks and races.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey918",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey916",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey915",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-go-testing-tooling",
+   "concept": "pl-go",
+   "label": "Go Testing and Tooling",
+   "desc": "Writes table-driven tests, runs vet and the race detector and wires benchmarks into the build.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey918",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey916",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-jvm-build-dependencies",
+   "concept": "pl-jvm",
+   "label": "JVM Build and Dependencies",
+   "desc": "Configures Gradle or Maven builds, resolves dependency conflicts and packages Java and Kotlin artifacts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey919",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey916",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-jvm-concurrency-testing",
+   "concept": "pl-jvm",
+   "label": "JVM Concurrency and Testing",
+   "desc": "Writes thread-safe Java and Kotlin code with coroutines or executors and tests it with unit and integration tests.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey919",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey916",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-python-async-pipelines",
+   "concept": "pl-python",
+   "label": "Python Async and Data Pipelines",
+   "desc": "Writes asyncio code and data-processing pipelines, then profiles them and explains where the time goes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey920",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey915",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey916",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-python-environment-manager",
+   "concept": "pl-python",
+   "label": "Python Environment Manager",
+   "desc": "Creates virtual environments, pins dependencies in a lock file and writes packaging metadata so a project installs the same way on another machine.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey920",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-python-typing-testing",
+   "concept": "pl-python",
+   "label": "Python Typing and Testing",
+   "desc": "Adds type hints, runs a static type checker and writes pytest tests with fixtures, reporting which behaviour is still untested.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey920",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey916",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey914",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-rust-cargo-crates",
+   "concept": "pl-rust",
+   "label": "Rust Cargo and Crates",
+   "desc": "Manages Cargo workspaces, features and crate dependencies and runs clippy and tests before release.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey921",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey916",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-rust-ownership-lifetimes",
+   "concept": "pl-rust",
+   "label": "Rust Ownership and Lifetimes",
+   "desc": "Explains and fixes borrow-checker errors by redesigning ownership, lifetimes and data structures rather than cloning everything.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey921",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey913",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-rust-unsafe-ffi",
+   "concept": "pl-rust",
+   "label": "Rust Unsafe and FFI",
+   "desc": "Wraps unsafe code and foreign-function interfaces in safe APIs and documents the invariants each unsafe block relies on.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey921",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey913",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-shell-automation-pipelines",
+   "concept": "pl-shell",
+   "label": "Shell Automation Pipelines",
+   "desc": "Builds command pipelines and scheduled jobs for file, log and deployment tasks and says what each job needs permission to touch.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey922",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-shell-script-safety",
+   "concept": "pl-shell",
+   "label": "Shell Script Safety",
+   "desc": "Writes shell scripts with strict error handling and correct quoting and checks them with a linter before they run.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey922",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey916",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-sql-query-optimizer",
+   "concept": "pl-sql",
+   "label": "SQL Query Writer and Optimizer",
+   "desc": "Writes joins and aggregates, reads query plans and proposes indexes, showing the plan before and after.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey923",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey915",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey916",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-sql-schema-migrations",
+   "concept": "pl-sql",
+   "label": "SQL Schema and Migrations",
+   "desc": "Designs normalized tables and constraints and writes reversible migrations with a plan for existing data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey923",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-typescript-node-web-build",
+   "concept": "pl-typescript",
+   "label": "TypeScript Node and Web Build",
+   "desc": "Configures npm scripts, bundlers and module formats for Node services and browser apps and fixes build failures.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey924",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey916",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-typescript-types-config",
+   "concept": "pl-typescript",
+   "label": "TypeScript Types and Compiler Config",
+   "desc": "Sets strict compiler options and designs types, generics and discriminated unions so errors surface at build time.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey924",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey913",
+   "name": "Systems Programming Agent",
+   "legacy_key": "pl-systems-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey914",
+   "name": "Code Reviewer Agent",
+   "legacy_key": "pl-code-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey915",
+   "name": "Performance Analyst Agent",
+   "legacy_key": "pl-performance-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey916",
+   "name": "Test Engineer Agent",
+   "legacy_key": "pl-test-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey917",
+   "name": "Build and Packaging Agent",
+   "legacy_key": "pl-build-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey918",
+   "name": "Go Engineer Agent",
+   "legacy_key": "pl-go-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey919",
+   "name": "JVM Engineer Agent",
+   "legacy_key": "pl-jvm-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey920",
+   "name": "Python Engineer Agent",
+   "legacy_key": "pl-python-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey921",
+   "name": "Rust Engineer Agent",
+   "legacy_key": "pl-rust-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey922",
+   "name": "Shell Engineer Agent",
+   "legacy_key": "pl-shell-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey923",
+   "name": "SQL Engineer Agent",
+   "legacy_key": "pl-sql-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey924",
+   "name": "TypeScript Engineer Agent",
+   "legacy_key": "pl-typescript-engineer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "name": "Microsoft Learn",
+   "desc": "Search trusted Microsoft docs to power your development",
+   "tools": [
+    "microsoft_docs_search",
+    "microsoft_docs_fetch",
+    "microsoft_code_sample_search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "origins": [
+    "computer-science",
+    "programming-languages"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "pylang": "python pip venv pytest asyncio pipeline lock typing",
+  "tslang": "typescript tsconfig npm bundler generics discriminated node",
+  "golang": "goroutine race table driven leak golang module",
+  "rustlang": "rust ownership borrow lifetime cargo clippy crate unsafe",
+  "clang": "cmake sanitizer pointer abi header smart",
+  "jvmlang": "java kotlin gradle maven coroutine executor",
+  "sqlquery": "sql join index query migration normalized schema",
+  "shellscript": "shell quoting linter cron strict bash script scripting"
+ },
+ "sources": [
+  "programming-languages"
+ ]
+}

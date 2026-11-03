@@ -1,0 +1,268 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "fixed-income",
+ "topic": {
+  "id": "fixed-income",
+  "label": "Bonds and Fixed Income",
+  "desc": "Debt securities: government, municipal and corporate bonds, yield and duration, credit ratings and spreads, and securitized products."
+ },
+ "concepts": [
+  [
+   "fi-govt",
+   "Government Bonds and the Yield Curve",
+   "fixed-income",
+   "Treasuries and sovereign bonds, the yield curve, inflation-linked bonds and interest rate expectations.",
+   [
+    "treasury",
+    "government",
+    "bond",
+    "sovereign",
+    "yield",
+    "curve",
+    "tips",
+    "inflation",
+    "interest",
+    "rate"
+   ]
+  ],
+  [
+   "fi-math",
+   "Yield, Duration and Convexity",
+   "fixed-income",
+   "Bond pricing, yield to maturity, duration, convexity and interest rate risk.",
+   [
+    "bond",
+    "price",
+    "yield",
+    "maturity",
+    "duration",
+    "convexity",
+    "coupon",
+    "interest",
+    "rate",
+    "risk"
+   ]
+  ],
+  [
+   "fi-credit",
+   "Corporate Bonds and Credit",
+   "fixed-income",
+   "Corporate bonds, credit ratings, spreads, high yield, covenants and default risk.",
+   [
+    "corporate",
+    "bond",
+    "credit",
+    "rating",
+    "spread",
+    "high",
+    "yield",
+    "covenant",
+    "default",
+    "recovery"
+   ]
+  ],
+  [
+   "fi-muni",
+   "Municipal Bonds",
+   "fixed-income",
+   "Bonds issued by states and cities: general obligation and revenue bonds and tax exemption.",
+   [
+    "municipal",
+    "muni",
+    "bond",
+    "general",
+    "obligation",
+    "revenue",
+    "tax",
+    "exempt",
+    "city",
+    "state"
+   ]
+  ],
+  [
+   "fi-securitized",
+   "Securitized Products",
+   "fixed-income",
+   "Mortgage-backed and asset-backed securities, CLOs, tranches and prepayment.",
+   [
+    "mortgage",
+    "backed",
+    "asset",
+    "securitized",
+    "mbs",
+    "abs",
+    "clo",
+    "tranche",
+    "prepayment"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "fi-yield-curve-reader",
+   "fi-govt",
+   "Yield Curve Reader",
+   "Reads the yield curve's shape and explains what it implies about rates and growth.",
+   "semantic",
+   [
+    [
+     "fi-rates",
+     "primary"
+    ],
+    [
+     "fi-checker",
+     "checker"
+    ],
+    [
+     "fi-credit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fi-bond-pricer",
+   "fi-math",
+   "Bond Pricer",
+   "Prices a bond from its cash flows and yield and computes duration and convexity.",
+   "procedural",
+   [
+    [
+     "fi-rates",
+     "primary"
+    ],
+    [
+     "fi-checker",
+     "checker"
+    ],
+    [
+     "fi-credit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fi-rate-shock-estimator",
+   "fi-math",
+   "Rate Shock Estimator",
+   "Estimates a bond portfolio's price change for a rate shock.",
+   "procedural",
+   [
+    [
+     "fi-rates",
+     "primary"
+    ],
+    [
+     "fi-checker",
+     "checker"
+    ],
+    [
+     "fi-credit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fi-credit-analysis",
+   "fi-credit",
+   "Credit Analysis",
+   "Analyzes an issuer's credit: leverage, coverage, covenants and rating, with spread context.",
+   "semantic",
+   [
+    [
+     "fi-credit",
+     "primary"
+    ],
+    [
+     "fi-checker",
+     "checker"
+    ],
+    [
+     "fi-muni",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fi-muni-tax-equivalent-yield",
+   "fi-muni",
+   "Muni Tax-Equivalent Yield",
+   "Computes a municipal bond's tax-equivalent yield for an investor's tax bracket.",
+   "procedural",
+   [
+    [
+     "fi-muni",
+     "primary"
+    ],
+    [
+     "fi-checker",
+     "checker"
+    ],
+    [
+     "fi-struct",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fi-tranche-structure-explainer",
+   "fi-securitized",
+   "Tranche Structure Explainer",
+   "Explains a securitization's tranches, waterfall and prepayment risk.",
+   "semantic",
+   [
+    [
+     "fi-struct",
+     "primary"
+    ],
+    [
+     "fi-checker",
+     "checker"
+    ],
+    [
+     "fi-rates",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "fi-rates": "Rates Agent",
+  "fi-credit": "Credit Analyst Agent",
+  "fi-muni": "Municipal Bond Agent",
+  "fi-struct": "Securitized Products Agent",
+  "fi-checker": "Fixed Income Checker Agent"
+ },
+ "mcp": [
+  [
+   "FRED MCP",
+   null,
+   "FRED MCP server: Federal Reserve Economic Data series, interest rates, inflation, GDP, employment and economic indicators.",
+   [],
+   "web-listed",
+   "https://github.com/stefanoamorelli/fred-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "figovt": "treasury government bond sovereign yield curve tips inflation interest rate",
+  "fimath": "bond price yield maturity duration convexity coupon interest rate risk",
+  "ficredit": "corporate bond credit rating spread high yield covenant default recovery",
+  "fimuni": "municipal muni bond general obligation revenue tax exempt city state",
+  "fisecuritized": "mortgage backed asset securitized mbs abs clo tranche prepayment"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "FRED MCP": "repository exists (git ls-remote https://github.com/stefanoamorelli/fred-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

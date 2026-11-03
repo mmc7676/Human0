@@ -1,0 +1,662 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "coding-agents",
+ "topic": {
+  "id": "coding-agents",
+  "label": "Coding Agents",
+  "desc": "Coding agents: the harness and tool loop, code generation and editing, repository understanding, verification, review, sandboxing, orchestration and evaluation."
+ },
+ "concepts": [
+  [
+   "ca-harness",
+   "Agent Harness and Tool Use",
+   "coding-agents",
+   "The loop that lets a model call tools, with stop conditions, tool definitions and a context budget.",
+   [
+    "harness",
+    "loop",
+    "tool",
+    "schema",
+    "context",
+    "compaction"
+   ]
+  ],
+  [
+   "ca-codegen",
+   "Code Generation and Editing",
+   "coding-agents",
+   "Turning a specification into code and making small, verifiable edits to existing code.",
+   [
+    "generate",
+    "edit",
+    "patch",
+    "diff",
+    "refactor",
+    "specification"
+   ]
+  ],
+  [
+   "ca-repo",
+   "Repository Understanding",
+   "coding-agents",
+   "Mapping a codebase: structure, entry points, dependencies and search.",
+   [
+    "repository",
+    "index",
+    "dependency",
+    "search",
+    "entry-point"
+   ]
+  ],
+  [
+   "ca-verify",
+   "Testing and Verification",
+   "coding-agents",
+   "Running tests, reproducing failures and checking a change against its specification.",
+   [
+    "test",
+    "failure",
+    "reproduce",
+    "root-cause",
+    "regression"
+   ]
+  ],
+  [
+   "ca-review",
+   "Code Review and Security",
+   "coding-agents",
+   "Reviewing changes for correctness and security and auditing dependencies.",
+   [
+    "review",
+    "pull-request",
+    "vulnerability",
+    "dependency",
+    "audit"
+   ]
+  ],
+  [
+   "ca-sandbox",
+   "Sandboxing and Permissions",
+   "coding-agents",
+   "Limiting what an agent can read, run and send, and keeping secrets out of its reach.",
+   [
+    "sandbox",
+    "permission",
+    "secret",
+    "allowlist",
+    "isolation"
+   ]
+  ],
+  [
+   "ca-orchestration",
+   "Multi-Agent Coding Orchestration",
+   "coding-agents",
+   "Splitting a task across agents and branches and handing results back.",
+   [
+    "decompose",
+    "worktree",
+    "branch",
+    "handoff",
+    "parallel"
+   ]
+  ],
+  [
+   "ca-eval",
+   "Evaluation of Coding Agents",
+   "coding-agents",
+   "Measuring a coding agent on benchmark tasks and reading its trajectories.",
+   [
+    "benchmark",
+    "trajectory",
+    "pass-rate",
+    "evaluation",
+    "harness"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ca-agent-loop-designer",
+   "ca-harness",
+   "Agent Loop Designer",
+   "Designs the tool-calling loop with stop conditions, retry limits and a budget for steps and tokens.",
+   "semantic",
+   [
+    [
+     "ca-architect",
+     "primary"
+    ],
+    [
+     "ca-security-reviewer",
+     "checker"
+    ],
+    [
+     "ca-orchestrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-tool-schema-designer",
+   "ca-harness",
+   "Tool Schema Designer",
+   "Defines tool names, input schemas and error messages so a model can call each tool correctly and recover from failure.",
+   "procedural",
+   [
+    [
+     "ca-architect",
+     "primary"
+    ],
+    [
+     "ca-tester",
+     "checker"
+    ],
+    [
+     "ca-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-context-assembler",
+   "ca-harness",
+   "Context Assembler",
+   "Chooses which files, results and messages enter the model's context and compacts the rest without losing decisions.",
+   "semantic",
+   [
+    [
+     "ca-architect",
+     "primary"
+    ],
+    [
+     "ca-evaluator",
+     "checker"
+    ],
+    [
+     "ca-repo-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-spec-to-code-generator",
+   "ca-codegen",
+   "Spec to Code Generator",
+   "Turns a written specification into code and tests together and lists what the specification left undefined.",
+   "procedural",
+   [
+    [
+     "ca-engineer",
+     "primary"
+    ],
+    [
+     "ca-tester",
+     "checker"
+    ],
+    [
+     "ca-technical-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-minimal-diff-editor",
+   "ca-codegen",
+   "Minimal Diff Editor",
+   "Makes the smallest edit that satisfies a request, applies it and re-runs the affected checks.",
+   "procedural",
+   [
+    [
+     "ca-engineer",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-tester",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-refactor-planner",
+   "ca-codegen",
+   "Refactor Planner",
+   "Plans a refactor as small, individually testable steps and states what behaviour must not change.",
+   "semantic",
+   [
+    [
+     "ca-engineer",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-repo-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-repo-indexer",
+   "ca-repo",
+   "Repository Indexer",
+   "Maps a codebase's modules, entry points and dependency graph and reports which parts it could not parse.",
+   "procedural",
+   [
+    [
+     "ca-repo-analyst",
+     "primary"
+    ],
+    [
+     "ca-evaluator",
+     "checker"
+    ],
+    [
+     "ca-technical-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-code-search",
+   "ca-repo",
+   "Code Search",
+   "Finds definitions, call sites and similar code by name and by meaning and returns each with its file and line.",
+   "procedural",
+   [
+    [
+     "ca-repo-analyst",
+     "primary"
+    ],
+    [
+     "ca-engineer",
+     "checker"
+    ],
+    [
+     "ca-technical-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-test-runner",
+   "ca-verify",
+   "Test Runner",
+   "Runs the relevant tests, parses the output and reports failures with the command that reproduces them.",
+   "procedural",
+   [
+    [
+     "ca-tester",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-failure-triager",
+   "ca-verify",
+   "Failure Triager",
+   "Reproduces a failing test or bug report, narrows the cause and proposes a fix with a regression test.",
+   "semantic",
+   [
+    [
+     "ca-tester",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-repo-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-pull-request-reviewer",
+   "ca-review",
+   "Pull Request Reviewer",
+   "Reviews a change for correctness, missing tests and unintended behaviour changes and ranks findings by severity.",
+   "semantic",
+   [
+    [
+     "ca-reviewer",
+     "primary"
+    ],
+    [
+     "ca-security-reviewer",
+     "checker"
+    ],
+    [
+     "ca-tester",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-vulnerability-scanner",
+   "ca-review",
+   "Vulnerability Scanner",
+   "Flags injection, unsafe deserialization and secret exposure in code and reports the evidence for each finding.",
+   "semantic",
+   [
+    [
+     "ca-security-reviewer",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-dependency-auditor",
+   "ca-review",
+   "Dependency Auditor",
+   "Lists dependencies, versions and known advisories and recommends upgrades with the risk of each.",
+   "procedural",
+   [
+    [
+     "ca-security-reviewer",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-sandbox-designer",
+   "ca-sandbox",
+   "Sandbox Designer",
+   "Designs the container or process boundary an agent runs in, including file, network and process limits.",
+   "semantic",
+   [
+    [
+     "ca-sandbox-engineer",
+     "primary"
+    ],
+    [
+     "ca-security-reviewer",
+     "checker"
+    ],
+    [
+     "ca-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-permission-policy-writer",
+   "ca-sandbox",
+   "Permission Policy Writer",
+   "Writes allow and deny rules for commands and paths and the approval prompts for actions that change things outside the sandbox.",
+   "procedural",
+   [
+    [
+     "ca-sandbox-engineer",
+     "primary"
+    ],
+    [
+     "ca-security-reviewer",
+     "checker"
+    ],
+    [
+     "ca-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-secrets-guard",
+   "ca-sandbox",
+   "Secrets Guard",
+   "Keeps credentials out of prompts, logs and commits by scanning for them and routing access through scoped tokens.",
+   "procedural",
+   [
+    [
+     "ca-security-reviewer",
+     "primary"
+    ],
+    [
+     "ca-sandbox-engineer",
+     "checker"
+    ],
+    [
+     "ca-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-task-decomposer",
+   "ca-orchestration",
+   "Task Decomposer",
+   "Splits a large coding task into independent subtasks with clear inputs and outputs and an order of dependence.",
+   "semantic",
+   [
+    [
+     "ca-orchestrator",
+     "primary"
+    ],
+    [
+     "ca-evaluator",
+     "checker"
+    ],
+    [
+     "ca-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-worktree-coordinator",
+   "ca-orchestration",
+   "Worktree Coordinator",
+   "Assigns subtasks to separate branches or worktrees, detects conflicts and merges results in a safe order.",
+   "procedural",
+   [
+    [
+     "ca-orchestrator",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-handoff-reporter",
+   "ca-orchestration",
+   "Handoff Reporter",
+   "Writes a short report of what changed, what was verified and what remains, for the next agent or the human.",
+   "semantic",
+   [
+    [
+     "ca-technical-writer",
+     "primary"
+    ],
+    [
+     "ca-evaluator",
+     "checker"
+    ],
+    [
+     "ca-orchestrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-benchmark-runner",
+   "ca-eval",
+   "Benchmark Runner",
+   "Runs a coding agent on a fixed task suite in clean environments and reports pass rate with its variance.",
+   "procedural",
+   [
+    [
+     "ca-evaluator",
+     "primary"
+    ],
+    [
+     "ca-tester",
+     "checker"
+    ],
+    [
+     "ca-orchestrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ca-trajectory-analyst",
+   "ca-eval",
+   "Trajectory Analyst",
+   "Reads an agent's step-by-step transcript to find where it went wrong, such as looping, ignoring errors or editing the wrong file.",
+   "semantic",
+   [
+    [
+     "ca-evaluator",
+     "primary"
+    ],
+    [
+     "ca-reviewer",
+     "checker"
+    ],
+    [
+     "ca-architect",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ca-architect": "Agent Architect Agent",
+  "ca-engineer": "Coding Engineer Agent",
+  "ca-repo-analyst": "Repository Analyst Agent",
+  "ca-tester": "Test and Debug Agent",
+  "ca-reviewer": "Code Review Agent",
+  "ca-security-reviewer": "Security Review Agent",
+  "ca-sandbox-engineer": "Sandbox Engineer Agent",
+  "ca-orchestrator": "Coding Orchestrator Agent",
+  "ca-evaluator": "Agent Evaluator Agent",
+  "ca-technical-writer": "Technical Writer Agent"
+ },
+ "mcp": [
+  [
+   "GitHub",
+   null,
+   "GitHub's official MCP Server",
+   [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "web-listed",
+   "https://github.com/github/github-mcp-server"
+  ],
+  [
+   "Sentry",
+   "46d6322a-5f75-4822-b739-f49261805e9c",
+   "Search, query, and debug errors intelligently",
+   [
+    "whoami",
+    "find_organizations",
+    "find_teams",
+    "find_projects",
+    "find_issues",
+    "find_releases",
+    "find_tags",
+    "get_issue_details"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "CircleCI",
+   "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "Manage CI/CD pipelines, debug failed builds, and optimize test suites directly from Claude - no terminal required.",
+   [
+    "cancel_workflow",
+    "download_usage_data",
+    "get_deploy_component",
+    "get_deploy_environment",
+    "get_job",
+    "get_job_logs",
+    "get_job_resource_usage",
+    "get_me"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "agentloop": "harness stop compaction retry transcript coding loop context",
+  "codeedit": "patch diff refactor specification regression minimal generate edit generation editing spec testable",
+  "repomap": "repository entry point call site dependency graph understanding",
+  "verifyloop": "reproduce failing command failure root cause testing verification",
+  "secreview": "injection deserialization severity vulnerability pull request security",
+  "sandboxing": "sandbox allowlist isolation credential token permission secret sandboxing container",
+  "subagents": "worktree decomposer handoff conflict merge subtask decompose branch parallel multi orchestration",
+  "agenteval": "benchmark variance trajectory looping suite pass rate evaluation"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "GitHub": "read at https://github.com/github/github-mcp-server on 2026-10-22: described as GitHub's official MCP Server, MIT licence shown, no archive notice seen; the tool names are a sample of its documented tools (the page was read to its first 100000 characters only); not installed or tested",
+   "Sentry": "directory listing; tool names are the listing's visible sample; connector is not installed or tested",
+   "CircleCI": "directory listing; tool names are the listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here.",
+  "v04_lexicon_freed": [
+   [
+    "secreview",
+    [
+     "review"
+    ]
+   ]
+  ]
+ }
+}

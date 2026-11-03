@@ -1,0 +1,728 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "environmental-systems-engineering",
+  "label": "Environmental Systems Engineering",
+  "desc": "Environmental Systems Engineering: designing and analysing the water, air, waste and energy systems that link human activity to natural environments."
+ },
+ "concepts": [
+  {
+   "id": "envs-air-quality",
+   "label": "Air Quality and Atmospheric Emissions",
+   "desc": "Characterising emission sources, atmospheric dispersion and control technologies for particulates and gaseous pollutants.",
+   "keywords": [
+    "air",
+    "emission",
+    "dispersion",
+    "plume",
+    "particulate",
+    "pollutant",
+    "stack",
+    "scrubber"
+   ],
+   "topic": "environmental-systems-engineering",
+   "source": "environmental-systems-engineering",
+   "related": [
+    "atmo-air-quality-policy"
+   ]
+  },
+  {
+   "id": "envs-env-risk-policy",
+   "label": "Environmental Risk, Modelling and Regulation",
+   "desc": "Linking contaminant fate, exposure and health risk to the regulatory framework and spatial data that govern environmental decisions.",
+   "keywords": [
+    "risk",
+    "exposure",
+    "toxicity",
+    "regulation",
+    "permit",
+    "fate",
+    "transport",
+    "spatial"
+   ],
+   "topic": "environmental-systems-engineering",
+   "source": "environmental-systems-engineering",
+   "related": []
+  },
+  {
+   "id": "envs-solid-waste",
+   "label": "Solid and Hazardous Waste Management",
+   "desc": "Planning collection, recycling, composting, landfilling and hazardous waste handling as an integrated materials system.",
+   "keywords": [
+    "waste",
+    "landfill",
+    "recycling",
+    "compost",
+    "leachate",
+    "hazardous",
+    "collection",
+    "circular"
+   ],
+   "topic": "environmental-systems-engineering",
+   "source": "environmental-systems-engineering",
+   "related": []
+  },
+  {
+   "id": "envs-sustainability-lca",
+   "label": "Sustainability and Life Cycle Assessment",
+   "desc": "Evaluating the cradle-to-grave resource use and environmental impact of products and infrastructure to compare design alternatives.",
+   "keywords": [
+    "sustainability",
+    "life cycle",
+    "inventory",
+    "impact",
+    "carbon",
+    "footprint",
+    "energy",
+    "alternative"
+   ],
+   "topic": "environmental-systems-engineering",
+   "source": "environmental-systems-engineering",
+   "related": []
+  },
+  {
+   "id": "envs-water-quality",
+   "label": "Water and Wastewater Treatment",
+   "desc": "Design of physical, chemical and biological processes that remove contaminants from drinking water and wastewater to meet discharge and potability standards.",
+   "keywords": [
+    "treatment",
+    "wastewater",
+    "coagulation",
+    "filtration",
+    "activated sludge",
+    "disinfection",
+    "effluent",
+    "nutrient"
+   ],
+   "topic": "environmental-systems-engineering",
+   "source": "environmental-systems-engineering",
+   "related": []
+  },
+  {
+   "id": "envs-water-resources",
+   "label": "Water Resources and Hydrology",
+   "desc": "Quantifying how precipitation, runoff, groundwater and storage move through watersheds, and sizing infrastructure that manages flood and supply.",
+   "keywords": [
+    "hydrology",
+    "watershed",
+    "runoff",
+    "groundwater",
+    "reservoir",
+    "flood",
+    "rainfall",
+    "catchment"
+   ],
+   "topic": "environmental-systems-engineering",
+   "source": "environmental-systems-engineering",
+   "related": [
+    "civil-water-resources",
+    "earth-hydrology-cryosphere"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "envs-control-device-selection",
+   "concept": "envs-air-quality",
+   "label": "Control Device Selection",
+   "desc": "Matches cyclones, baghouses, electrostatic precipitators or scrubbers to a gas stream and checks the required removal efficiency is met.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1272",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1274",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-emission-inventory",
+   "concept": "envs-air-quality",
+   "label": "Emission Inventory Building",
+   "desc": "Compiles source emission rates from activity data and emission factors and checks totals by reconciling against reported facility data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1272",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1276",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-gaussian-plume",
+   "concept": "envs-air-quality",
+   "label": "Gaussian Plume Dispersion",
+   "desc": "Estimates ground-level pollutant concentrations downwind of a stack using stability-class dispersion coefficients and checks maxima against ambient standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1272",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1277",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-contaminant-transport",
+   "concept": "envs-env-risk-policy",
+   "label": "Contaminant Fate and Transport",
+   "desc": "Solves advection-dispersion with decay for a plume and checks the analytic result against a numerical solution in Wolfram.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1278",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1279",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-exposure-risk-assessment",
+   "concept": "envs-env-risk-policy",
+   "label": "Exposure and Risk Assessment",
+   "desc": "Calculates chronic daily intake and hazard quotients or cancer risk for an exposure pathway and checks inputs against standard exposure factors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1275",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1278",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-permit-compliance-map",
+   "concept": "envs-env-risk-policy",
+   "label": "Permit and Site Compliance Mapping",
+   "desc": "Maps facilities, receptors and permit limits in a GIS layer and checks each monitored value against its regulatory limit.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1277",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-circular-material-flow",
+   "concept": "envs-solid-waste",
+   "label": "Circular Material Flow Mapping",
+   "desc": "Maps recovery, reuse and disposal pathways for a material and checks the flow diagram for mass conservation at every node.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1274",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1277",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-landfill-design",
+   "concept": "envs-solid-waste",
+   "label": "Landfill Capacity and Leachate",
+   "desc": "Computes landfill airspace, liner requirements and leachate generation with a water balance and checks capacity against projected waste tonnage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1274",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1279",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-waste-stream-audit",
+   "concept": "envs-solid-waste",
+   "label": "Waste Stream Characterisation",
+   "desc": "Builds a composition profile of a municipal waste stream from sorting data and checks that fractions sum to the measured total mass.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1274",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1276",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-alternative-comparison",
+   "concept": "envs-sustainability-lca",
+   "label": "Design Alternative Comparison",
+   "desc": "Ranks engineering alternatives on cost, energy and impact criteria with weighted scoring and checks that the ranking holds under sensitivity analysis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-carbon-footprint",
+   "concept": "envs-sustainability-lca",
+   "label": "Carbon Footprint Calculation",
+   "desc": "Converts inventory flows to carbon dioxide equivalents with stated characterisation factors and checks the arithmetic by recomputing per stage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1272",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-lca-inventory",
+   "concept": "envs-sustainability-lca",
+   "label": "Life Cycle Inventory Compilation",
+   "desc": "Assembles material and energy flows per functional unit for each life cycle stage and checks completeness against the declared system boundary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1274",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-activated-sludge-sizing",
+   "concept": "envs-water-quality",
+   "label": "Activated Sludge Sizing",
+   "desc": "Computes aeration volume, sludge age and oxygen demand from influent BOD and nitrogen loads and checks the result with a steady-state biomass balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1278",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1276",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-river-oxygen-sag",
+   "concept": "envs-water-quality",
+   "label": "River Oxygen Sag Analysis",
+   "desc": "Applies the Streeter-Phelps model below an effluent outfall and checks the critical dissolved oxygen deficit against the stream standard.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1278",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1279",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-treatment-train-design",
+   "concept": "envs-water-quality",
+   "label": "Treatment Train Design",
+   "desc": "Sizes coagulation, sedimentation, filtration and disinfection units from flow and loading criteria and checks detention times and overflow rates against design ranges.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1278",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1279",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-groundwater-flow",
+   "concept": "envs-water-resources",
+   "label": "Groundwater Flow Analysis",
+   "desc": "Solves Darcy flow toward wells and drains for given aquifer properties and checks drawdown against the Theis or Thiem solution.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1279",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1278",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1277",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-rainfall-runoff-model",
+   "concept": "envs-water-resources",
+   "label": "Rainfall-Runoff Modelling",
+   "desc": "Converts design storms into runoff hydrographs with curve-number or unit-hydrograph methods and checks peak flow and volume against a mass balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1279",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1277",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-reservoir-yield",
+   "concept": "envs-water-resources",
+   "label": "Reservoir Yield Planning",
+   "desc": "Runs sequent-peak storage analysis on an inflow record to find firm yield and checks that storage never goes negative over the record.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1279",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1272",
+   "name": "Air Quality Analyst",
+   "legacy_key": "envs-air",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1273",
+   "name": "Environmental Compliance Reviewer",
+   "legacy_key": "envs-reviewer",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1274",
+   "name": "Waste and Resource Engineer",
+   "legacy_key": "envs-waste",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1275",
+   "name": "Environmental Risk Assessor",
+   "legacy_key": "envs-risk",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1276",
+   "name": "Life Cycle Assessment Analyst",
+   "legacy_key": "envs-lca",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1277",
+   "name": "Spatial Environmental Analyst",
+   "legacy_key": "envs-gis",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1278",
+   "name": "Water Quality Modeller",
+   "legacy_key": "envs-quality",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1279",
+   "name": "Hydrologic Systems Engineer",
+   "legacy_key": "envs-hydro",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1273",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "environmental-systems-engineering",
+   "score": 0.1562,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1275",
+    "skill": "envs-exposure-risk-assessment"
+   }
+  },
+  {
+   "agent": "Maxey1275",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "environmental-systems-engineering",
+   "score": 0.1562,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1277",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "environmental-systems-engineering",
+   "score": 0.1554,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "envs-water": "hydrology watershed runoff groundwater reservoir flood rainfall catchment",
+  "envs-treat": "treatment wastewater coagulation filtration disinfection sludge effluent oxygen",
+  "envs-atmos": "air emission dispersion plume particulate pollutant stack scrubber",
+  "envs-waste": "landfill recycling compost leachate hazardous collection circular",
+  "envs-lca": "sustainability inventory footprint carbon impact energy",
+  "envs-risk": "exposure toxicity regulation permit compliance spatial"
+ },
+ "sources": [
+  "environmental-systems-engineering"
+ ]
+}

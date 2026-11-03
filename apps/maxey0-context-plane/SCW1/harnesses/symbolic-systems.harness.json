@@ -1,0 +1,459 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "symbolic-systems",
+  "label": "Symbolic Systems",
+  "desc": "Symbolic Systems: the interdisciplinary study of minds and machines through logic, computation, linguistics, psychology and philosophy."
+ },
+ "concepts": [
+  {
+   "id": "symsys-computational-cognition",
+   "label": "Computational Models of Cognition",
+   "desc": "Bayesian, connectionist and symbolic models that explain human learning and inference.",
+   "keywords": [
+    "model",
+    "bayesian cognition",
+    "connectionist",
+    "symbolic",
+    "inference",
+    "simulation",
+    "fit"
+   ],
+   "topic": "symbolic-systems",
+   "source": "symbolic-systems",
+   "related": []
+  },
+  {
+   "id": "symsys-formal-logic",
+   "label": "Formal Logic and Computability",
+   "desc": "Propositional and first-order logic, proofs, automata, computability and complexity.",
+   "keywords": [
+    "logic",
+    "proof",
+    "first-order",
+    "automata",
+    "computability",
+    "complexity",
+    "turing"
+   ],
+   "topic": "symbolic-systems",
+   "source": "symbolic-systems",
+   "related": [
+    "cs-theory"
+   ]
+  },
+  {
+   "id": "symsys-natural-language",
+   "label": "Natural Language and Computational Linguistics",
+   "desc": "Syntax, semantics and pragmatics of natural language and their computational models.",
+   "keywords": [
+    "syntax",
+    "semantics",
+    "pragmatics",
+    "parsing",
+    "language model",
+    "grammar",
+    "meaning"
+   ],
+   "topic": "symbolic-systems",
+   "source": "symbolic-systems",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "symsys-bayesian-model",
+   "concept": "symsys-computational-cognition",
+   "label": "Bayesian Cognitive Modeler",
+   "desc": "Builds a Bayesian model of a cognitive task and fits it to data, checked by comparing fit against a baseline.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1186",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-connectionist-model",
+   "concept": "symsys-computational-cognition",
+   "label": "Connectionist Model Simulator",
+   "desc": "Simulates a connectionist model of learning and compares its error pattern to human data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1186",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-model-review",
+   "concept": "symsys-computational-cognition",
+   "label": "Cognitive Model Literature Reviewer",
+   "desc": "Summarizes competing computational models of a phenomenon, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1616",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-automata-builder",
+   "concept": "symsys-formal-logic",
+   "label": "Automaton Constructor",
+   "desc": "Constructs a finite automaton or Turing machine for a language and tests it on accepted and rejected strings.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1606",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-complexity-classify",
+   "concept": "symsys-formal-logic",
+   "label": "Complexity Classifier",
+   "desc": "Classifies a decision problem by complexity class with a reduction, checked by reviewing the reduction steps.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-proof-checker",
+   "concept": "symsys-formal-logic",
+   "label": "Natural Deduction Proof Checker",
+   "desc": "Builds or checks a natural deduction proof in propositional or first-order logic, verified rule by rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey941",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1187",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-pragmatics-analysis",
+   "concept": "symsys-natural-language",
+   "label": "Pragmatic Inference Analyzer",
+   "desc": "Explains implicatures and presuppositions of an utterance, checked against Gricean and formal accounts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1606",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-semantic-composer",
+   "concept": "symsys-natural-language",
+   "label": "Compositional Semantics Builder",
+   "desc": "Derives a logical form for a sentence with lambda calculus, checked by evaluating it in a model.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1606",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-syntax-parser",
+   "concept": "symsys-natural-language",
+   "label": "Syntactic Parse Builder",
+   "desc": "Produces a constituency or dependency parse of a sentence, checked against a treebank convention.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1606",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1181",
+   "name": "Machine Learning Agent",
+   "legacy_key": "cs-ml-engineer",
+   "mcp": [
+    "de1d1dc7-ec10-459d-b511-797982834b43"
+   ]
+  },
+  {
+   "key": "Maxey1186",
+   "name": "Cognitive Science Agent",
+   "legacy_key": "symsys-cog",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1187",
+   "name": "Computation Theory Agent",
+   "legacy_key": "symsys-cs",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1474",
+   "name": "Philosophy of Mind Agent",
+   "legacy_key": "phil-mind",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1521",
+   "name": "Cognitive Psychology Agent",
+   "legacy_key": "psych-cognitive",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1606",
+   "name": "Computational Linguistics Agent",
+   "legacy_key": "symsys-ling",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1616",
+   "name": "Research Literature Agent",
+   "legacy_key": "symsys-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey941",
+   "name": "Logic Agent",
+   "legacy_key": "phil-logician",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1181",
+   "mcp": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "topic": "symbolic-systems",
+   "score": 0.1171,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "symsys-logic": "logic proof deduction automaton turing complexity",
+  "symsys-psychology": "psychology memory attention reasoning experiment behavioral",
+  "symsys-language": "syntax semantics pragmatics parse lambda treebank",
+  "symsys-ai": "bayesian network classifier search accuracy learning",
+  "symsys-mind": "mind consciousness functionalism computationalism intentionality reference",
+  "symsys-modeling": "connectionist simulation fit baseline cognition"
+ },
+ "sources": [
+  "symbolic-systems"
+ ]
+}

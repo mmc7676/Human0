@@ -1,0 +1,521 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "art-practice",
+ "topic": {
+  "id": "art-practice",
+  "label": "Art Practice",
+  "desc": "Art Practice: making contemporary art across drawing, painting, sculpture, photography, new media and performance, with critique and professional practice."
+ },
+ "concepts": [
+  [
+   "artp-drawing",
+   "Drawing",
+   "art-practice",
+   "Observational and expressive drawing using line, value, perspective and the figure.",
+   [
+    "drawing",
+    "line",
+    "value",
+    "perspective",
+    "figure",
+    "gesture",
+    "observation",
+    "sketchbook"
+   ]
+  ],
+  [
+   "artp-painting",
+   "Painting",
+   "art-practice",
+   "Painting in oil, acrylic and watercolour with attention to colour theory, surface and composition.",
+   [
+    "painting",
+    "oil",
+    "acrylic",
+    "watercolor",
+    "color theory",
+    "palette",
+    "glaze",
+    "composition"
+   ]
+  ],
+  [
+   "artp-sculpture-installation",
+   "Sculpture and Installation",
+   "art-practice",
+   "Three-dimensional work in clay, wood, metal and found materials, and site-specific installation.",
+   [
+    "sculpture",
+    "installation",
+    "clay",
+    "wood",
+    "metal",
+    "fabrication",
+    "site-specific",
+    "casting"
+   ]
+  ],
+  [
+   "artp-photography-lens",
+   "Photography and Moving Image",
+   "art-practice",
+   "Still and moving images made with cameras, from exposure and lighting to editing and sequencing.",
+   [
+    "photography",
+    "camera",
+    "exposure",
+    "lighting",
+    "video",
+    "editing",
+    "sequence",
+    "darkroom"
+   ]
+  ],
+  [
+   "artp-new-media-performance",
+   "New Media and Performance",
+   "art-practice",
+   "Digital, interactive and time-based art including sound, code, projection and live performance.",
+   [
+    "digital",
+    "interactive",
+    "sound",
+    "code",
+    "projection",
+    "performance",
+    "time-based",
+    "generative"
+   ]
+  ],
+  [
+   "artp-critique-professional",
+   "Critique and Professional Practice",
+   "art-practice",
+   "Studio critique, artist statements, portfolios, exhibitions and grants.",
+   [
+    "critique",
+    "artist statement",
+    "portfolio",
+    "exhibition",
+    "grant",
+    "documentation",
+    "career",
+    "feedback"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "artp-observational-drawing",
+   "artp-drawing",
+   "Observational Drawing Exercise",
+   "Sets an observational drawing exercise and checks the result for proportion, value range and perspective accuracy.",
+   "procedural",
+   [
+    [
+     "artp-drawing",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-painter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-perspective-construct",
+   "artp-drawing",
+   "Perspective Construction",
+   "Constructs one, two and three point perspective for a scene and checks vanishing points and horizon consistency.",
+   "procedural",
+   [
+    [
+     "artp-drawing",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-sculptor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-figure-gesture",
+   "artp-drawing",
+   "Figure and Gesture Study",
+   "Guides timed gesture and figure studies and checks anatomy and proportion against reference.",
+   "procedural",
+   [
+    [
+     "artp-drawing",
+     "primary"
+    ],
+    [
+     "artp-painter",
+     "checker"
+    ],
+    [
+     "artp-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-color-mixing",
+   "artp-painting",
+   "Color Mixing and Palette Planning",
+   "Plans a limited palette and mixing strategy and checks value and hue relationships with a value study.",
+   "procedural",
+   [
+    [
+     "artp-painter",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-drawing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-media-technique",
+   "artp-painting",
+   "Painting Media Technique",
+   "Advises on oil, acrylic or watercolor technique such as glaze and fat over lean and checks material safety and permanence.",
+   "semantic",
+   [
+    [
+     "artp-painter",
+     "primary"
+    ],
+    [
+     "artp-safety",
+     "checker"
+    ],
+    [
+     "artp-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-composition-plan",
+   "artp-painting",
+   "Composition Planning",
+   "Develops thumbnail compositions for a painting and checks balance, focal point and value structure.",
+   "semantic",
+   [
+    [
+     "artp-painter",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-drawing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-fabrication-plan",
+   "artp-sculpture-installation",
+   "Fabrication Planning",
+   "Plans materials, joins and tools for a sculpture and checks the plan for structural soundness and shop safety.",
+   "procedural",
+   [
+    [
+     "artp-sculptor",
+     "primary"
+    ],
+    [
+     "artp-safety",
+     "checker"
+    ],
+    [
+     "artp-professional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-casting-process",
+   "artp-sculpture-installation",
+   "Mold Making and Casting",
+   "Specifies a mold and casting process in plaster, resin or metal and checks steps against safety data.",
+   "procedural",
+   [
+    [
+     "artp-sculptor",
+     "primary"
+    ],
+    [
+     "artp-safety",
+     "checker"
+    ],
+    [
+     "artp-painter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-site-installation",
+   "artp-sculpture-installation",
+   "Site-Specific Installation Design",
+   "Designs an installation for a given site and checks dimensions, load and audience flow against site constraints.",
+   "semantic",
+   [
+    [
+     "artp-sculptor",
+     "primary"
+    ],
+    [
+     "artp-professional",
+     "checker"
+    ],
+    [
+     "artp-newmedia",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-exposure-lighting",
+   "artp-photography-lens",
+   "Exposure and Lighting Setup",
+   "Sets exposure and lighting for a shoot and checks the result with histogram and test frames.",
+   "procedural",
+   [
+    [
+     "artp-photo",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-newmedia",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-photo-sequence",
+   "artp-photography-lens",
+   "Photo Series Sequencing",
+   "Edits and sequences a photo or video series and checks narrative flow with a peer critique pass.",
+   "semantic",
+   [
+    [
+     "artp-photo",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-professional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-darkroom-process",
+   "artp-photography-lens",
+   "Darkroom Processing",
+   "Guides film developing and printing and checks chemistry, timing and ventilation against safety guidance.",
+   "procedural",
+   [
+    [
+     "artp-photo",
+     "primary"
+    ],
+    [
+     "artp-safety",
+     "checker"
+    ],
+    [
+     "artp-painter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-interactive-piece",
+   "artp-new-media-performance",
+   "Interactive Piece Prototyping",
+   "Prototypes an interactive or generative artwork in code and checks it runs reliably for the intended duration.",
+   "procedural",
+   [
+    [
+     "artp-newmedia",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-sculptor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-sound-projection",
+   "artp-new-media-performance",
+   "Sound and Projection Design",
+   "Designs sound and projection for an installation and checks levels, throw distance and sync on site.",
+   "procedural",
+   [
+    [
+     "artp-newmedia",
+     "primary"
+    ],
+    [
+     "artp-safety",
+     "checker"
+    ],
+    [
+     "artp-photo",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-performance-score",
+   "artp-new-media-performance",
+   "Performance Score Writing",
+   "Writes a score for a time-based performance and checks timing, roles and documentation plans with a rehearsal.",
+   "semantic",
+   [
+    [
+     "artp-newmedia",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-professional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-studio-critique",
+   "artp-critique-professional",
+   "Studio Critique",
+   "Runs a structured critique of a work and checks that feedback addresses intent, form and context.",
+   "semantic",
+   [
+    [
+     "artp-critic",
+     "primary"
+    ],
+    [
+     "artp-professional",
+     "checker"
+    ],
+    [
+     "artp-painter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-artist-statement",
+   "artp-critique-professional",
+   "Artist Statement Writing",
+   "Drafts an artist statement and checks it for clarity and consistency with the portfolio work.",
+   "semantic",
+   [
+    [
+     "artp-professional",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-drawing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "artp-grant-portfolio",
+   "artp-critique-professional",
+   "Portfolio and Grant Preparation",
+   "Assembles a portfolio and grant application and checks documentation and requirements against the call.",
+   "procedural",
+   [
+    [
+     "artp-professional",
+     "primary"
+    ],
+    [
+     "artp-critic",
+     "checker"
+    ],
+    [
+     "artp-photo",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "artp-drawing": "Drawing Instructor",
+  "artp-painter": "Painting Studio Agent",
+  "artp-sculptor": "Sculpture and Installation Agent",
+  "artp-photo": "Photography and Lens Media Agent",
+  "artp-newmedia": "New Media Artist Agent",
+  "artp-critic": "Studio Critique Agent",
+  "artp-safety": "Studio Safety Checker",
+  "artp-professional": "Professional Practice Advisor"
+ },
+ "mcp": [],
+ "lexicon": {
+  "artp-draw": "drawing perspective figure gesture observation sketchbook",
+  "artp-paint": "painting oil acrylic watercolor palette glaze",
+  "artp-sculpt": "sculpture installation clay wood metal fabrication casting",
+  "artp-lens": "photography camera exposure lighting video darkroom",
+  "artp-media": "digital interactive sound code projection generative",
+  "artp-studio": "critique statement portfolio grant documentation feedback"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "generated"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

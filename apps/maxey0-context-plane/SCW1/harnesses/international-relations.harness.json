@@ -1,0 +1,689 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "international-relations",
+  "label": "International Relations",
+  "desc": "International Relations: how states and other actors interact through power, institutions, conflict, cooperation and the global economy."
+ },
+ "concepts": [
+  {
+   "id": "ir-area-forecasting",
+   "label": "Regional Studies and Forecasting",
+   "desc": "Region-specific expertise and the methods for forecasting geopolitical events with calibrated probabilities.",
+   "keywords": [
+    "regional",
+    "area studies",
+    "forecast",
+    "probability",
+    "scenario",
+    "geopolitics",
+    "calibration",
+    "judgemental"
+   ],
+   "topic": "international-relations",
+   "source": "international-relations",
+   "related": []
+  },
+  {
+   "id": "ir-diplomacy-foreign-policy",
+   "label": "Diplomacy and Foreign Policy",
+   "desc": "How states make and conduct foreign policy: decision making, negotiation, sanctions and statecraft.",
+   "keywords": [
+    "diplomacy",
+    "foreign policy",
+    "negotiation",
+    "sanctions",
+    "statecraft",
+    "decision making",
+    "summit",
+    "mediation"
+   ],
+   "topic": "international-relations",
+   "source": "international-relations",
+   "related": []
+  },
+  {
+   "id": "ir-international-organizations",
+   "label": "International Organizations and Law",
+   "desc": "The United Nations, regional organizations, international law and global governance.",
+   "keywords": [
+    "united nations",
+    "organization",
+    "international law",
+    "governance",
+    "security council",
+    "regime",
+    "court",
+    "sovereignty"
+   ],
+   "topic": "international-relations",
+   "source": "international-relations",
+   "related": [
+    "glob-global-governance"
+   ]
+  },
+  {
+   "id": "ir-international-political-economy",
+   "label": "International Political Economy",
+   "desc": "Trade, finance, development and the politics of globalization and economic interdependence.",
+   "keywords": [
+    "trade",
+    "finance",
+    "globalization",
+    "development",
+    "interdependence",
+    "tariff",
+    "currency",
+    "aid"
+   ],
+   "topic": "international-relations",
+   "source": "international-relations",
+   "related": []
+  },
+  {
+   "id": "ir-ir-theory",
+   "label": "International Relations Theory",
+   "desc": "Realism, liberalism, constructivism and critical theories, and the levels of analysis used to explain world politics.",
+   "keywords": [
+    "realism",
+    "liberalism",
+    "constructivism",
+    "anarchy",
+    "power",
+    "level of analysis",
+    "theory",
+    "norms"
+   ],
+   "topic": "international-relations",
+   "source": "international-relations",
+   "related": []
+  },
+  {
+   "id": "ir-security-studies",
+   "label": "Security Studies",
+   "desc": "War, deterrence, alliances, arms control, terrorism and the causes of conflict and peace.",
+   "keywords": [
+    "security",
+    "war",
+    "deterrence",
+    "alliance",
+    "arms control",
+    "nuclear",
+    "terrorism",
+    "conflict"
+   ],
+   "topic": "international-relations",
+   "source": "international-relations",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ir-geopolitical-forecast",
+   "concept": "ir-area-forecasting",
+   "label": "Geopolitical Forecast",
+   "desc": "Produces a calibrated probability for a geopolitical question with base rates, checked against existing judgemental forecasts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1374",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-region-briefing",
+   "concept": "ir-area-forecasting",
+   "label": "Regional Briefing",
+   "desc": "Summarises the political, economic and security situation in a region, checked by dating and sourcing each fact.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1376",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1377",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-scenario-planning",
+   "concept": "ir-area-forecasting",
+   "label": "Scenario Planning",
+   "desc": "Builds alternative scenarios with drivers and signposts, checked by confirming the scenarios are distinct and cover key uncertainties.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1374",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1378",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-negotiation-prep",
+   "concept": "ir-diplomacy-foreign-policy",
+   "label": "Negotiation Preparation",
+   "desc": "Prepares positions, interests and fallback options for a negotiation, checked by testing each option against both sides' interests.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1379",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1380",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-policy-brief",
+   "concept": "ir-diplomacy-foreign-policy",
+   "label": "Foreign Policy Brief",
+   "desc": "Writes a policy brief with options and recommendations, checked by tying each claim to a cited source.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1379",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-sanctions-assessment",
+   "concept": "ir-diplomacy-foreign-policy",
+   "label": "Sanctions Assessment",
+   "desc": "Assesses the design and likely effect of sanctions, checked against documented outcomes of comparable cases.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1379",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1377",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-regime-effectiveness",
+   "concept": "ir-international-organizations",
+   "label": "Regime Effectiveness Review",
+   "desc": "Evaluates whether an international regime changed state behaviour, checked against compliance data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1381",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1380",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-sovereignty-case",
+   "concept": "ir-international-organizations",
+   "label": "Sovereignty and Intervention Case",
+   "desc": "Analyses an intervention under sovereignty and responsibility to protect norms, checked by citing the legal basis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1381",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1378",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-un-process",
+   "concept": "ir-international-organizations",
+   "label": "UN Process Explainer",
+   "desc": "Explains how a resolution moves through the General Assembly or Security Council, checked against the UN charter and rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1381",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1379",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-development-strategy",
+   "concept": "ir-international-political-economy",
+   "label": "Development Strategy Comparison",
+   "desc": "Compares development strategies across countries, checked by sourcing each indicator.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1377",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-interdependence-risk",
+   "concept": "ir-international-political-economy",
+   "label": "Interdependence Risk Mapping",
+   "desc": "Maps economic dependencies that create leverage between states, checked against trade and investment figures.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1377",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1378",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-trade-policy",
+   "concept": "ir-international-political-economy",
+   "label": "Trade Policy Analysis",
+   "desc": "Analyses tariffs and trade agreements and who gains and loses, checked against published trade data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1377",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1381",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-hypothesis-design",
+   "concept": "ir-ir-theory",
+   "label": "IR Hypothesis Design",
+   "desc": "Turns a research question into testable hypotheses with variables and cases, checked for falsifiability and case selection bias.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1380",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1374",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-level-analysis",
+   "concept": "ir-ir-theory",
+   "label": "Levels of Analysis",
+   "desc": "Separates individual, state and system level explanations of a decision, checked by sourcing each level's evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1380",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1379",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-theory-application",
+   "concept": "ir-ir-theory",
+   "label": "Theory Application",
+   "desc": "Explains an event through realist, liberal and constructivist lenses, checked by naming the causal mechanism and evidence for each.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1380",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-alliance-mapping",
+   "concept": "ir-security-studies",
+   "label": "Alliance Mapping",
+   "desc": "Maps alliance commitments and treaty obligations among states, checked against treaty texts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1378",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1381",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-conflict-analysis",
+   "concept": "ir-security-studies",
+   "label": "Conflict Analysis",
+   "desc": "Analyses a conflict's actors, interests and escalation risks, checked by dating and sourcing each event.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1378",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-deterrence-model",
+   "concept": "ir-security-studies",
+   "label": "Deterrence Model",
+   "desc": "Models deterrence credibility and capability for a dyad, checked by stating assumptions and testing them against past crises.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1378",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1380",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1374",
+   "name": "Geopolitical Forecasting Agent",
+   "legacy_key": "ir-forecaster",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1375",
+   "name": "Evidence and Method Checker",
+   "legacy_key": "ir-checker",
+   "mcp": [
+    "ccc1bcfc-193c-44b7-b443-9511aac18403"
+   ]
+  },
+  {
+   "key": "Maxey1376",
+   "name": "Area Studies Agent",
+   "legacy_key": "ir-regional",
+   "mcp": [
+    "ccc1bcfc-193c-44b7-b443-9511aac18403"
+   ]
+  },
+  {
+   "key": "Maxey1377",
+   "name": "International Political Economy Agent",
+   "legacy_key": "ir-economist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1378",
+   "name": "Security Studies Agent",
+   "legacy_key": "ir-security",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1379",
+   "name": "Diplomacy and Negotiation Agent",
+   "legacy_key": "ir-diplomat",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1380",
+   "name": "IR Theory Agent",
+   "legacy_key": "ir-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1381",
+   "name": "International Organizations Agent",
+   "legacy_key": "ir-institutions",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "name": "Mantic",
+   "desc": "Explore judgemental forecasts",
+   "tools": [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "origins": [
+    "economics",
+    "international-relations",
+    "management-science-and-engineering",
+    "political-science",
+    "public-policy",
+    "reasoning"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ccc1bcfc-193c-44b7-b443-9511aac18403",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1375",
+   "mcp": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "topic": "international-relations",
+   "score": 0.3372,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1376",
+   "mcp": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "topic": "international-relations",
+   "score": 0.333,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "ir-theory": "realism liberalism constructivism anarchy power norms",
+  "ir-security": "security war deterrence alliance nuclear terrorism conflict",
+  "ir-statecraft": "diplomacy negotiation sanctions statecraft summit mediation",
+  "ir-economy": "trade finance globalization interdependence tariff currency aid",
+  "ir-governance": "united nations governance council regime sovereignty",
+  "ir-foresight": "forecast probability scenario geopolitics calibration judgemental"
+ },
+ "sources": [
+  "international-relations"
+ ]
+}

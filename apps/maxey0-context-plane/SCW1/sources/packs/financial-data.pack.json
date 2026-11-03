@@ -1,0 +1,316 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "financial-data",
+ "topic": {
+  "id": "financial-data",
+  "label": "Financial Data and Models",
+  "desc": "The data and models finance runs on: market and reference data, fundamentals and filings data, economic data, financial modeling in spreadsheets and code, and data quality."
+ },
+ "concepts": [
+  [
+   "fd-market-data",
+   "Market and Reference Data",
+   "financial-data",
+   "Prices, quotes, trades, corporate actions, identifiers (ticker, CUSIP, ISIN, FIGI) and data vendors.",
+   [
+    "market",
+    "data",
+    "price",
+    "quote",
+    "trade",
+    "identifier",
+    "ticker",
+    "cusip",
+    "isin",
+    "vendor",
+    "reference"
+   ]
+  ],
+  [
+   "fd-fundamentals",
+   "Fundamentals and Filings Data",
+   "financial-data",
+   "Standardized financial statements, XBRL, estimates and transcripts.",
+   [
+    "fundamentals",
+    "xbrl",
+    "financial",
+    "statement",
+    "estimate",
+    "transcript",
+    "filing",
+    "data",
+    "standardized"
+   ]
+  ],
+  [
+   "fd-economic",
+   "Economic Data",
+   "financial-data",
+   "GDP, inflation, employment, interest rates and other macro series and their release calendars.",
+   [
+    "economic",
+    "gdp",
+    "inflation",
+    "cpi",
+    "employment",
+    "rate",
+    "macro",
+    "series",
+    "release",
+    "fred"
+   ]
+  ],
+  [
+   "fd-models",
+   "Financial Models",
+   "financial-data",
+   "Three-statement models, DCF, LBO, merger and budget models, in spreadsheets and code, with assumptions and checks.",
+   [
+    "financial",
+    "model",
+    "spreadsheet",
+    "three",
+    "statement",
+    "dcf",
+    "lbo",
+    "assumption",
+    "scenario",
+    "excel"
+   ]
+  ],
+  [
+   "fd-quality",
+   "Data Quality and Lineage",
+   "financial-data",
+   "Checking financial data: gaps, outliers, restatements, survivorship and lineage.",
+   [
+    "data",
+    "quality",
+    "outlier",
+    "gap",
+    "restatement",
+    "survivorship",
+    "lineage",
+    "validation"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "fd-identifier-mapper",
+   "fd-market-data",
+   "Identifier Mapper",
+   "Maps a security between ticker, CUSIP, ISIN and FIGI and flags mismatches.",
+   "procedural",
+   [
+    [
+     "fd-market",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-fundamentals",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fd-market-data-source-selector",
+   "fd-market-data",
+   "Market Data Source Selector",
+   "Chooses a market data source by coverage, latency, history and cost.",
+   "semantic",
+   [
+    [
+     "fd-market",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-fundamentals",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fd-xbrl-extractor",
+   "fd-fundamentals",
+   "XBRL Extractor",
+   "Extracts financial statement values from XBRL filings with their tags and periods.",
+   "semantic",
+   [
+    [
+     "fd-fundamentals",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-macro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fd-economic-series-finder",
+   "fd-economic",
+   "Economic Series Finder",
+   "Finds the official series for an economic indicator and its release schedule.",
+   "semantic",
+   [
+    [
+     "fd-macro",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fd-three-statement-model-builder",
+   "fd-models",
+   "Three-Statement Model Builder",
+   "Builds a linked three-statement model with assumptions separated from formulas.",
+   "procedural",
+   [
+    [
+     "fd-modeler",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-quality",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fd-model-auditor",
+   "fd-models",
+   "Model Auditor",
+   "Audits a financial model for broken links, hard-coded numbers and balance sheet that does not balance.",
+   "semantic",
+   [
+    [
+     "fd-modeler",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-quality",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fd-price-data-validator",
+   "fd-quality",
+   "Price Data Validator",
+   "Checks a price series for gaps, outliers, splits and stale values.",
+   "procedural",
+   [
+    [
+     "fd-quality",
+     "primary"
+    ],
+    [
+     "fd-checker",
+     "checker"
+    ],
+    [
+     "fd-market",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "fd-market": "Market Data Agent",
+  "fd-fundamentals": "Fundamentals Data Agent",
+  "fd-macro": "Economic Data Agent",
+  "fd-modeler": "Financial Modeling Agent",
+  "fd-quality": "Data Quality Agent",
+  "fd-checker": "Financial Data Checker Agent"
+ },
+ "mcp": [
+  [
+   "Financial Datasets MCP",
+   null,
+   "Financial Datasets MCP server: company income statements, balance sheets, cash flow statements, stock prices and market news.",
+   [],
+   "web-listed",
+   "https://github.com/financial-datasets/mcp-server"
+  ],
+  [
+   "FRED MCP",
+   null,
+   "FRED MCP server: Federal Reserve Economic Data series, interest rates, inflation, GDP, employment and economic indicators.",
+   [],
+   "web-listed",
+   "https://github.com/stefanoamorelli/fred-mcp-server"
+  ],
+  [
+   "SEC EDGAR MCP",
+   null,
+   "SEC EDGAR MCP server: company filings, 10-K, 10-Q, 8-K, XBRL financial data and insider trading forms from EDGAR.",
+   [],
+   "web-listed",
+   "https://github.com/stefanoamorelli/sec-edgar-mcp"
+  ],
+  [
+   "Polygon MCP",
+   null,
+   "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   [],
+   "web-listed",
+   "https://github.com/polygon-io/mcp_polygon"
+  ]
+ ],
+ "lexicon": {
+  "fdmarketdata": "market data price quote trade identifier ticker cusip isin vendor reference",
+  "fdfundamentals": "fundamentals xbrl financial statement estimate transcript filing data standardized",
+  "fdeconomic": "economic gdp inflation cpi employment rate macro series release fred",
+  "fdmodels": "financial model spreadsheet three statement dcf lbo assumption scenario excel",
+  "fdquality": "data quality outlier gap restatement survivorship lineage validation"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Financial Datasets MCP": "repository exists (git ls-remote https://github.com/financial-datasets/mcp-server, 2026-10-31); description summarises its public README; tool list not re-read",
+   "FRED MCP": "repository exists (git ls-remote https://github.com/stefanoamorelli/fred-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read",
+   "SEC EDGAR MCP": "repository exists (git ls-remote https://github.com/stefanoamorelli/sec-edgar-mcp, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Polygon MCP": "repository exists (git ls-remote https://github.com/polygon-io/mcp_polygon, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

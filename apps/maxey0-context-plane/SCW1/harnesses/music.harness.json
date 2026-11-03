@@ -1,0 +1,728 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "music",
+  "label": "Music",
+  "desc": "Music: theory, history, performance, composition, technology and the study of music in culture and the mind."
+ },
+ "concepts": [
+  {
+   "id": "music-composition-arranging",
+   "label": "Composition and Arranging",
+   "desc": "Creating original music and arranging existing music for voices, instruments and ensembles.",
+   "keywords": [
+    "composition",
+    "arranging",
+    "orchestration",
+    "melody",
+    "instrumentation",
+    "range",
+    "texture",
+    "score"
+   ],
+   "topic": "music",
+   "source": "music",
+   "related": []
+  },
+  {
+   "id": "music-ethnomusicology",
+   "label": "Ethnomusicology and Popular Music",
+   "desc": "Music as culture: global traditions, fieldwork, popular music industries and identity.",
+   "keywords": [
+    "ethnomusicology",
+    "culture",
+    "tradition",
+    "fieldwork",
+    "popular music",
+    "ritual",
+    "identity",
+    "global"
+   ],
+   "topic": "music",
+   "source": "music",
+   "related": []
+  },
+  {
+   "id": "music-music-history",
+   "label": "Music History and Repertoire",
+   "desc": "Western and global music history, styles, genres, composers and the sources that document them.",
+   "keywords": [
+    "history",
+    "repertoire",
+    "style",
+    "period",
+    "genre",
+    "composer",
+    "baroque",
+    "jazz"
+   ],
+   "topic": "music",
+   "source": "music",
+   "related": []
+  },
+  {
+   "id": "music-music-technology-cognition",
+   "label": "Music Technology and Cognition",
+   "desc": "Audio, acoustics, digital production and how listeners perceive rhythm, pitch and emotion in music.",
+   "keywords": [
+    "audio",
+    "acoustics",
+    "production",
+    "midi",
+    "synthesis",
+    "perception",
+    "rhythm",
+    "emotion"
+   ],
+   "topic": "music",
+   "source": "music",
+   "related": []
+  },
+  {
+   "id": "music-music-theory",
+   "label": "Music Theory and Analysis",
+   "desc": "Harmony, counterpoint, form and the analytical methods used to explain how pieces work.",
+   "keywords": [
+    "harmony",
+    "counterpoint",
+    "chord",
+    "cadence",
+    "form",
+    "roman numeral",
+    "voice leading",
+    "analysis"
+   ],
+   "topic": "music",
+   "source": "music",
+   "related": []
+  },
+  {
+   "id": "music-performance-practice",
+   "label": "Performance and Practice",
+   "desc": "Technique, interpretation, ensemble skills and historically informed performance.",
+   "keywords": [
+    "performance",
+    "technique",
+    "interpretation",
+    "practice",
+    "ensemble",
+    "tempo",
+    "intonation",
+    "rehearsal"
+   ],
+   "topic": "music",
+   "source": "music",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "music-melody-harmonizer",
+   "concept": "music-composition-arranging",
+   "label": "Melody Harmonizer",
+   "desc": "Harmonises a melody in a chosen style and checks the result for voice leading errors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1463",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1465",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-notation-engraver",
+   "concept": "music-composition-arranging",
+   "label": "Notation Engraver",
+   "desc": "Produces engraved score notation from sketches and checks beaming, spelling and part extraction.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1466",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1463",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1467",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-orchestration-checker",
+   "concept": "music-composition-arranging",
+   "label": "Orchestration Range Checker",
+   "desc": "Arranges parts for an ensemble and checks every note lies in the playable range of its instrument.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1463",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1468",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-cultural-context-analyst",
+   "concept": "music-ethnomusicology",
+   "label": "Cultural Context Analyst",
+   "desc": "Interprets the social meaning of a musical practice and checks the reading against ethnographic literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1469",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1470",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1465",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-field-recording-annotator",
+   "concept": "music-ethnomusicology",
+   "label": "Field Recording Annotator",
+   "desc": "Annotates field recordings with performer, context and genre metadata and checks entries with community and archive sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1469",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1466",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1467",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-lyric-translator",
+   "concept": "music-ethnomusicology",
+   "label": "Lyric Translator",
+   "desc": "Translates song lyrics for study and checks meaning and singability with a native speaker review.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1469",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1468",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1463",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-repertoire-program-builder",
+   "concept": "music-music-history",
+   "label": "Repertoire Program Builder",
+   "desc": "Builds concert programs that fit a theme and duration and checks timings and instrumentation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1468",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1470",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1466",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-source-criticism-reviewer",
+   "concept": "music-music-history",
+   "label": "Source Criticism Reviewer",
+   "desc": "Compares manuscript and edition variants of a score and checks claims of authorship and date against archive records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1466",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1470",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-style-period-identifier",
+   "concept": "music-music-history",
+   "label": "Style Period Identifier",
+   "desc": "Places a work in a style period from its musical features and checks the attribution against documented sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1470",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1466",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-audio-feature-extractor",
+   "concept": "music-music-technology-cognition",
+   "label": "Audio Feature Extractor",
+   "desc": "Extracts tempo, key and spectral features from audio and checks estimates against annotated ground truth.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1467",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1465",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-listening-experiment-designer",
+   "concept": "music-music-technology-cognition",
+   "label": "Listening Experiment Designer",
+   "desc": "Designs perception experiments on rhythm or emotion and checks stimuli and statistics for confounds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1465",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1467",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-mix-balance-reviewer",
+   "concept": "music-music-technology-cognition",
+   "label": "Mix Balance Reviewer",
+   "desc": "Reviews loudness, equalisation and stereo balance of a mix and checks metering against delivery standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1467",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1468",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1463",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-counterpoint-checker",
+   "concept": "music-music-theory",
+   "label": "Species Counterpoint Checker",
+   "desc": "Writes and checks species counterpoint for parallel fifths, octaves and dissonance treatment.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1463",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1468",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-form-mapper",
+   "concept": "music-music-theory",
+   "label": "Musical Form Mapper",
+   "desc": "Segments a piece into sections such as sonata or rondo form and checks boundaries against thematic and key evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1464",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1470",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1466",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-harmonic-analyzer",
+   "concept": "music-music-theory",
+   "label": "Roman Numeral Harmonic Analyzer",
+   "desc": "Labels chords and cadences with Roman numerals and checks the analysis against voice leading and key context.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1464",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1463",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1466",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-interpretation-comparer",
+   "concept": "music-performance-practice",
+   "label": "Recording Interpretation Comparer",
+   "desc": "Compares tempo and dynamic choices across recordings and checks measurements against the score.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1468",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1467",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1470",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-intonation-analyzer",
+   "concept": "music-performance-practice",
+   "label": "Intonation Analyzer",
+   "desc": "Measures pitch accuracy in recordings in cents and checks it against the chosen temperament.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1467",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1468",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1465",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  },
+  {
+   "id": "music-practice-plan-designer",
+   "concept": "music-performance-practice",
+   "label": "Practice Plan Designer",
+   "desc": "Designs deliberate practice plans for a piece and checks progress against tempo and accuracy targets.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1468",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1465",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1464",
+     "role": "support"
+    }
+   ],
+   "source": "music"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1463",
+   "name": "Composition Agent",
+   "legacy_key": "music-composer",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1464",
+   "name": "Music Theory Agent",
+   "legacy_key": "music-theorist",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1465",
+   "name": "Music Cognition Agent",
+   "legacy_key": "music-cognition",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1466",
+   "name": "Score and Source Archivist",
+   "legacy_key": "music-archivist",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1467",
+   "name": "Music Technology Agent",
+   "legacy_key": "music-technologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1468",
+   "name": "Performance Coach Agent",
+   "legacy_key": "music-performer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1469",
+   "name": "Ethnomusicology Agent",
+   "legacy_key": "music-ethno",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1470",
+   "name": "Music History Agent",
+   "legacy_key": "music-historian",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1463",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "music",
+   "score": 0.1477,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1466",
+    "skill": "music-notation-engraver"
+   }
+  },
+  {
+   "agent": "Maxey1464",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "music",
+   "score": 0.1308,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1470",
+    "skill": "music-style-period-identifier"
+   }
+  },
+  {
+   "agent": "Maxey1466",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "music",
+   "score": 0.1477,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1470",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "music",
+   "score": 0.1308,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "music-theory": "harmony counterpoint chord cadence form roman voice analysis fifth",
+  "music-past": "history repertoire style period genre composer baroque jazz manuscript",
+  "music-create": "composition arranging orchestration melody instrumentation range texture score notation",
+  "music-play": "performance technique interpretation practice ensemble tempo intonation rehearsal",
+  "music-culture": "ethnomusicology culture tradition fieldwork popular ritual identity global lyric",
+  "music-sound": "audio acoustic production midi synthesis perception rhythm emotion loudness spectral"
+ },
+ "sources": [
+  "music"
+ ]
+}

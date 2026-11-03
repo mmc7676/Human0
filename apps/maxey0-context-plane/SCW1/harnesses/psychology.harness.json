@@ -1,0 +1,1053 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "psychology",
+  "label": "Psychology",
+  "desc": "Psychology: the scientific study of mind, brain and behaviour across development, society and mental health."
+ },
+ "concepts": [
+  {
+   "id": "psych-biological-psychology",
+   "label": "Biological Psychology and Neuroscience",
+   "desc": "Brain, nervous system, hormones and genetics as the biological basis of behaviour.",
+   "keywords": [
+    "neuroscience",
+    "brain",
+    "neuron",
+    "neurotransmitter",
+    "fmri",
+    "eeg",
+    "hormone",
+    "genetics"
+   ],
+   "topic": "psychology",
+   "source": "psychology",
+   "related": [
+    "bi-neuro"
+   ]
+  },
+  {
+   "id": "psych-clinical-psychology",
+   "label": "Clinical and Health Psychology",
+   "desc": "Assessment, diagnosis and evidence-based treatment of psychological disorders and health behaviour.",
+   "keywords": [
+    "clinical",
+    "disorder",
+    "diagnosis",
+    "dsm",
+    "therapy",
+    "cbt",
+    "assessment",
+    "wellbeing"
+   ],
+   "topic": "psychology",
+   "source": "psychology",
+   "related": []
+  },
+  {
+   "id": "psych-cognitive-psychology",
+   "label": "Cognitive Psychology",
+   "desc": "Perception, attention, memory, language, reasoning and decision making studied experimentally.",
+   "keywords": [
+    "cognition",
+    "perception",
+    "attention",
+    "memory",
+    "reasoning",
+    "decision making",
+    "reaction time",
+    "experiment",
+    "decision"
+   ],
+   "topic": "psychology",
+   "source": "psychology",
+   "related": []
+  },
+  {
+   "id": "psych-developmental-psychology",
+   "label": "Developmental Psychology",
+   "desc": "Change across the lifespan in cognition, language, emotion and social relationships.",
+   "keywords": [
+    "development",
+    "lifespan",
+    "infant",
+    "child",
+    "adolescent",
+    "attachment",
+    "aging",
+    "milestone"
+   ],
+   "topic": "psychology",
+   "source": "psychology",
+   "related": []
+  },
+  {
+   "id": "psych-research-methods",
+   "label": "Research Methods and Statistics",
+   "desc": "Experimental design, measurement, statistics, open science and literature synthesis in psychology.",
+   "keywords": [
+    "methods",
+    "statistics",
+    "experimental design",
+    "power analysis",
+    "meta-analysis",
+    "preregistration",
+    "effect size",
+    "literature"
+   ],
+   "topic": "psychology",
+   "source": "psychology",
+   "related": []
+  },
+  {
+   "id": "psych-social-personality",
+   "label": "Social and Personality Psychology",
+   "desc": "How people think about and influence each other, and stable individual differences in traits.",
+   "keywords": [
+    "social",
+    "attitude",
+    "persuasion",
+    "group",
+    "stereotype",
+    "personality",
+    "trait",
+    "big five"
+   ],
+   "topic": "psychology",
+   "source": "psychology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "psych-neuroimaging-result-reviewer",
+   "concept": "psych-biological-psychology",
+   "label": "Neuroimaging Result Reviewer",
+   "desc": "Reviews fMRI and EEG findings and checks multiple-comparison correction and reported coordinates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1516",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-neurotransmitter-mapper",
+   "concept": "psych-biological-psychology",
+   "label": "Neurotransmitter Function Mapper",
+   "desc": "Maps neurotransmitter systems to behaviours and drug effects and checks claims against biomedical literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1516",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1519",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-diagnostic-criteria-mapper",
+   "concept": "psych-clinical-psychology",
+   "label": "Diagnostic Criteria Mapper",
+   "desc": "Maps a symptom description to DSM criteria for study purposes and checks each criterion is met or not met explicitly.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1519",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1520",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-psychometric-validator",
+   "concept": "psych-clinical-psychology",
+   "label": "Psychometric Validator",
+   "desc": "Validates clinical scales with factor analysis and checks reliability and validity coefficients.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1520",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1519",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-treatment-evidence-reviewer",
+   "concept": "psych-clinical-psychology",
+   "label": "Treatment Evidence Reviewer",
+   "desc": "Summarises trial evidence for therapies such as CBT and checks against registered clinical trials and meta-analyses.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1519",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-cognitive-task-designer",
+   "concept": "psych-cognitive-psychology",
+   "label": "Cognitive Task Designer",
+   "desc": "Designs attention or memory tasks with counterbalanced trials and checks timing and trial balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-memory-model-fitter",
+   "concept": "psych-cognitive-psychology",
+   "label": "Memory Model Fitter",
+   "desc": "Fits signal detection and forgetting models to recall data and checks parameter recovery.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1516",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-reaction-time-analyzer",
+   "concept": "psych-cognitive-psychology",
+   "label": "Reaction Time Analyzer",
+   "desc": "Cleans and models reaction time data with mixed models and checks outlier rules and model fit.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1517",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "symsys-bias-review",
+   "concept": "psych-cognitive-psychology",
+   "label": "Reasoning Bias Reviewer",
+   "desc": "Explains a reasoning or decision bias and the evidence for it, checked against replication results.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1616",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-data-analysis",
+   "concept": "psych-cognitive-psychology",
+   "label": "Behavioral Data Analyzer",
+   "desc": "Analyzes behavioral data with mixed-effects models, checked by rerunning the analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-experiment-design",
+   "concept": "psych-cognitive-psychology",
+   "label": "Cognitive Experiment Designer",
+   "desc": "Designs a reaction-time or memory experiment with conditions and power analysis, checked by an independent power computation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "psych-attachment-coder",
+   "concept": "psych-developmental-psychology",
+   "label": "Attachment Classification Coder",
+   "desc": "Codes attachment behaviour from observation protocols and checks inter-rater reliability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1523",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1524",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-developmental-milestone-checker",
+   "concept": "psych-developmental-psychology",
+   "label": "Developmental Milestone Checker",
+   "desc": "Compares a child profile to normative milestones and checks each against published norms.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1523",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1519",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-longitudinal-design-planner",
+   "concept": "psych-developmental-psychology",
+   "label": "Longitudinal Design Planner",
+   "desc": "Plans longitudinal and cross-sectional developmental studies and checks attrition and cohort effects.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1522",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1523",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-meta-analysis-runner",
+   "concept": "psych-research-methods",
+   "label": "Meta-Analysis Runner",
+   "desc": "Pools effect sizes with random-effects models and checks heterogeneity and publication bias.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1517",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-power-analysis-calculator",
+   "concept": "psych-research-methods",
+   "label": "Power Analysis Calculator",
+   "desc": "Computes required sample sizes for planned tests and checks assumptions about effect size.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1517",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-psych-literature-search",
+   "concept": "psych-research-methods",
+   "label": "Psychology Literature Search",
+   "desc": "Searches journals and preprints on a question and checks each cited finding against its source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1518",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1519",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-attitude-survey-builder",
+   "concept": "psych-social-personality",
+   "label": "Attitude Survey Builder",
+   "desc": "Builds attitude and persuasion surveys and checks scale reliability with Cronbach alpha.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1524",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1520",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-personality-profile-scorer",
+   "concept": "psych-social-personality",
+   "label": "Personality Profile Scorer",
+   "desc": "Scores Big Five inventories and checks scoring keys, reverse items and norms.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1520",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1519",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-replication-assessor",
+   "concept": "psych-social-personality",
+   "label": "Replication Assessor",
+   "desc": "Evaluates the replicability of a social psychology finding and checks effect sizes and preregistration status.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1522",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1524",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1518",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1181",
+   "name": "Machine Learning Agent",
+   "legacy_key": "cs-ml-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1186",
+   "name": "Cognitive Science Agent",
+   "legacy_key": "symsys-cog",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1474",
+   "name": "Philosophy of Mind Agent",
+   "legacy_key": "phil-mind",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1516",
+   "name": "Behavioral Neuroscience Agent",
+   "legacy_key": "psych-neuro",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1517",
+   "name": "Psychological Statistics Agent",
+   "legacy_key": "psych-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1518",
+   "name": "Psychology Literature Agent",
+   "legacy_key": "psych-literature",
+   "mcp": [
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "81cc5080-a204-4aa1-a694-fa868a3c8721",
+    "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3"
+   ]
+  },
+  {
+   "key": "Maxey1519",
+   "name": "Clinical Psychology Agent",
+   "legacy_key": "psych-clinical",
+   "mcp": [
+    "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3"
+   ]
+  },
+  {
+   "key": "Maxey1520",
+   "name": "Personality and Assessment Agent",
+   "legacy_key": "psych-personality",
+   "mcp": [
+    "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3"
+   ]
+  },
+  {
+   "key": "Maxey1521",
+   "name": "Cognitive Psychology Agent",
+   "legacy_key": "psych-cognitive",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1522",
+   "name": "Research Methods Agent",
+   "legacy_key": "psych-methods",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "81cc5080-a204-4aa1-a694-fa868a3c8721",
+    "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3"
+   ]
+  },
+  {
+   "key": "Maxey1523",
+   "name": "Developmental Psychology Agent",
+   "legacy_key": "psych-developmental",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925"
+   ]
+  },
+  {
+   "key": "Maxey1524",
+   "name": "Social Psychology Agent",
+   "legacy_key": "psych-social",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925"
+   ]
+  },
+  {
+   "key": "Maxey1616",
+   "name": "Research Literature Agent",
+   "legacy_key": "symsys-lit",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "name": "bioRxiv",
+   "desc": "Access bioRxiv and medRxiv preprint data",
+   "tools": [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "origins": [
+    "bioengineering",
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology",
+    "research"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "name": "Clinical Trials",
+   "desc": "Access ClinicalTrials.gov data",
+   "tools": [
+    "get_trial_details",
+    "search_by_eligibility",
+    "analyze_endpoints",
+    "search_investigators",
+    "search_trials",
+    "search_by_sponsor"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-24)",
+   "id": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "origins": [
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+  "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1518",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "psychology",
+   "score": 0.1759,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1518",
+   "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "topic": "psychology",
+   "score": 0.1009,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1518",
+   "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "topic": "psychology",
+   "score": 0.2528,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1519",
+   "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "topic": "psychology",
+   "score": 0.283,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1520",
+   "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "topic": "psychology",
+   "score": 0.283,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1519",
+    "skill": "psych-diagnostic-criteria-mapper"
+   }
+  },
+  {
+   "agent": "Maxey1522",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "psychology",
+   "score": 0.1062,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1522",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "psychology",
+   "score": 0.1941,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1522",
+   "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "topic": "psychology",
+   "score": 0.1009,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1518",
+    "skill": "psych-psych-literature-search"
+   }
+  },
+  {
+   "agent": "Maxey1522",
+   "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "topic": "psychology",
+   "score": 0.2528,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1518",
+    "skill": "psych-psych-literature-search"
+   }
+  },
+  {
+   "agent": "Maxey1523",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "psychology",
+   "score": 0.1062,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1522",
+    "skill": "psych-longitudinal-design-planner"
+   }
+  },
+  {
+   "agent": "Maxey1523",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "psychology",
+   "score": 0.1941,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1522",
+    "skill": "psych-longitudinal-design-planner"
+   }
+  },
+  {
+   "agent": "Maxey1524",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "psychology",
+   "score": 0.1062,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1522",
+    "skill": "psych-replication-assessor"
+   }
+  },
+  {
+   "agent": "Maxey1524",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "psychology",
+   "score": 0.1941,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1522",
+    "skill": "psych-replication-assessor"
+   }
+  }
+ ],
+ "lexicon": {
+  "psych-cognition": "cognition perception attention memory reasoning decision reaction experiment",
+  "psych-brain": "neuroscience brain neuron neurotransmitter fmri eeg hormone genetic",
+  "psych-growth": "development lifespan infant child adolescent attachment aging milestone longitudinal",
+  "psych-people": "social attitude persuasion group stereotype personality trait big five",
+  "psych-care": "clinical disorder diagnosis dsm therapy cbt assessment wellbeing",
+  "psych-evidence": "method statistic power meta preregistration effect literature trial"
+ },
+ "sources": [
+  "psychology"
+ ]
+}

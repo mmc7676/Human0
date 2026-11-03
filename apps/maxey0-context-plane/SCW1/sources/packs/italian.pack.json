@@ -1,0 +1,539 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "italian",
+ "topic": {
+  "id": "italian",
+  "label": "Italian",
+  "desc": "Italian: the Italian language, its dialects and history, and the literature, cinema and culture of Italy from Dante to the present."
+ },
+ "concepts": [
+  [
+   "ital-grammar",
+   "Italian Grammar and Syntax",
+   "italian",
+   "Morphology and syntax of standard Italian: articles, agreement, verb conjugation, moods, tenses, clitic pronouns and word order.",
+   [
+    "grammar",
+    "conjugation",
+    "subjunctive",
+    "congiuntivo",
+    "agreement",
+    "clitic",
+    "article",
+    "tense"
+   ]
+  ],
+  [
+   "ital-phonology",
+   "Italian Phonetics and Pronunciation",
+   "italian",
+   "Sounds of Italian: vowels, double consonants, stress, intonation and regional pronunciation.",
+   [
+    "pronunciation",
+    "phonetics",
+    "geminate",
+    "stress",
+    "vowel",
+    "intonation",
+    "ipa",
+    "accent"
+   ]
+  ],
+  [
+   "ital-dialects-history",
+   "History of the Language and Dialects",
+   "italian",
+   "From Latin to the questione della lingua and Tuscan standard, and the regional dialects and languages of Italy.",
+   [
+    "latin",
+    "dialect",
+    "tuscan",
+    "questione della lingua",
+    "neapolitan",
+    "sicilian",
+    "regional",
+    "evolution"
+   ]
+  ],
+  [
+   "ital-literature",
+   "Italian Literature",
+   "italian",
+   "Italian literature from Dante, Petrarch and Boccaccio through the Renaissance, Romanticism and modern writers.",
+   [
+    "literature",
+    "dante",
+    "petrarch",
+    "boccaccio",
+    "renaissance",
+    "poetry",
+    "novel",
+    "sonnet"
+   ]
+  ],
+  [
+   "ital-translation",
+   "Translation and Usage",
+   "italian",
+   "Translation between Italian and other languages, register, idiom and specialised vocabulary.",
+   [
+    "translation",
+    "register",
+    "idiom",
+    "vocabulary",
+    "formal",
+    "false friend",
+    "glossary",
+    "style"
+   ]
+  ],
+  [
+   "ital-culture-cinema",
+   "Italian Culture, Cinema and Society",
+   "italian",
+   "Italian cinema, art, music, regional culture and contemporary society and politics.",
+   [
+    "cinema",
+    "neorealism",
+    "art",
+    "opera",
+    "culture",
+    "society",
+    "politics",
+    "food"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ital-conjugator",
+   "ital-grammar",
+   "Verb Conjugator",
+   "Conjugates Italian verbs in every mood and tense including irregular forms, checked against standard conjugation tables.",
+   "procedural",
+   [
+    [
+     "ital-grammarian",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-tutor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-grammar-correction",
+   "ital-grammar",
+   "Grammar Correction",
+   "Corrects errors in Italian text and explains each rule, checked by citing the rule for every change.",
+   "procedural",
+   [
+    [
+     "ital-grammarian",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-subjunctive-trainer",
+   "ital-grammar",
+   "Subjunctive Trainer",
+   "Generates exercises on when the congiuntivo is required, checked by an answer key with the trigger for each item.",
+   "procedural",
+   [
+    [
+     "ital-tutor",
+     "primary"
+    ],
+    [
+     "ital-grammarian",
+     "checker"
+    ],
+    [
+     "ital-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-ipa-transcriber",
+   "ital-phonology",
+   "IPA Transcriber",
+   "Transcribes Italian words into IPA with stress and gemination, checked against dictionary transcriptions.",
+   "procedural",
+   [
+    [
+     "ital-phonetician",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-tutor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-stress-finder",
+   "ital-phonology",
+   "Stress Placement Guide",
+   "Identifies the stressed syllable of Italian words, checked against dictionary stress marks.",
+   "procedural",
+   [
+    [
+     "ital-phonetician",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-accent-coach",
+   "ital-phonology",
+   "Pronunciation Coach",
+   "Diagnoses common learner pronunciation errors such as missing geminate consonants, checked by contrasting minimal pairs.",
+   "procedural",
+   [
+    [
+     "ital-tutor",
+     "primary"
+    ],
+    [
+     "ital-phonetician",
+     "checker"
+    ],
+    [
+     "ital-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-dialect-identify",
+   "ital-dialects-history",
+   "Dialect Identifier",
+   "Identifies which regional dialect a passage comes from by its features, checked by listing the diagnostic features.",
+   "semantic",
+   [
+    [
+     "ital-dialectologist",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-phonetician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-etymology",
+   "ital-dialects-history",
+   "Etymology Tracer",
+   "Traces an Italian word from Latin or other sources, checked against etymological dictionaries.",
+   "semantic",
+   [
+    [
+     "ital-dialectologist",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-literary",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-language-question",
+   "ital-dialects-history",
+   "Questione della Lingua Explainer",
+   "Explains the debate over a national standard from Bembo to Manzoni, checked by citing primary texts.",
+   "semantic",
+   [
+    [
+     "ital-dialectologist",
+     "primary"
+    ],
+    [
+     "ital-literary",
+     "checker"
+    ],
+    [
+     "ital-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-close-reading",
+   "ital-literature",
+   "Close Reading",
+   "Analyses a passage of Italian literature for form, imagery and theme, checked by quoting the supporting lines.",
+   "semantic",
+   [
+    [
+     "ital-literary",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-metrics",
+   "ital-literature",
+   "Italian Metrics",
+   "Scans hendecasyllables and identifies rhyme schemes such as terza rima and the sonnet, checked by recounting syllables with elision rules.",
+   "procedural",
+   [
+    [
+     "ital-literary",
+     "primary"
+    ],
+    [
+     "ital-phonetician",
+     "checker"
+    ],
+    [
+     "ital-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-author-context",
+   "ital-literature",
+   "Author and Period Context",
+   "Places an author in a literary movement and historical setting, checked against dated literary histories.",
+   "semantic",
+   [
+    [
+     "ital-literary",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-translate",
+   "ital-translation",
+   "Italian Translation",
+   "Translates text to or from Italian in a chosen register, checked by back-translation of key sentences.",
+   "procedural",
+   [
+    [
+     "ital-translator",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-false-friends",
+   "ital-translation",
+   "False Friend Detector",
+   "Flags false friends and calques in a translation, checked by giving the correct equivalent with dictionary support.",
+   "procedural",
+   [
+    [
+     "ital-translator",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-tutor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-glossary-builder",
+   "ital-translation",
+   "Glossary Builder",
+   "Builds a bilingual glossary for a domain, checked for consistency across the source text.",
+   "procedural",
+   [
+    [
+     "ital-translator",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-film-analysis",
+   "ital-culture-cinema",
+   "Italian Film Analysis",
+   "Analyses films such as neorealist works for style and context, checked by timestamping each cited scene.",
+   "semantic",
+   [
+    [
+     "ital-culture",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-literary",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-culture-briefing",
+   "ital-culture-cinema",
+   "Culture Briefing",
+   "Explains a cultural practice, region or tradition, checked by sourcing each claim.",
+   "semantic",
+   [
+    [
+     "ital-culture",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-dialectologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ital-lesson-planner",
+   "ital-culture-cinema",
+   "Italian Lesson Planner",
+   "Plans a language lesson combining grammar and culture for a proficiency level, checked against CEFR descriptors.",
+   "procedural",
+   [
+    [
+     "ital-tutor",
+     "primary"
+    ],
+    [
+     "ital-checker",
+     "checker"
+    ],
+    [
+     "ital-culture",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ital-grammarian": "Italian Grammar Agent",
+  "ital-phonetician": "Italian Pronunciation Agent",
+  "ital-dialectologist": "Italian Dialect Agent",
+  "ital-literary": "Italian Literature Agent",
+  "ital-translator": "Italian Translation Agent",
+  "ital-culture": "Italian Culture and Cinema Agent",
+  "ital-tutor": "Italian Language Tutor",
+  "ital-checker": "Italian Accuracy Checker"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "ital-morphology": "grammar conjugation subjunctive congiuntivo agreement clitic tense",
+  "ital-sound": "pronunciation phonetics geminate stress vowel intonation ipa",
+  "ital-varieties": "latin dialect tuscan neapolitan sicilian etymology",
+  "ital-letters": "dante petrarch boccaccio renaissance poetry sonnet hendecasyllable",
+  "ital-usage": "translation register idiom vocabulary glossary",
+  "ital-culture": "cinema neorealism opera society food"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

@@ -1,0 +1,672 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "mapping",
+ "topic": {
+  "id": "mapping",
+  "label": "Mapping",
+  "desc": "Mapping: map types, dimensions, coordinate systems, survey methods, SLAM (simultaneous localization and mapping), spatial data and web mapping."
+ },
+ "concepts": [
+  [
+   "mp-types",
+   "Map Types",
+   "mapping",
+   "Kinds of map: topographic, thematic, road network, indoor and occupancy maps.",
+   [
+    "topographic",
+    "thematic",
+    "road",
+    "indoor",
+    "occupancy",
+    "floor-plan"
+   ]
+  ],
+  [
+   "mp-dimensions",
+   "Dimensions",
+   "mapping",
+   "Mapping in two, two-and-a-half, three and four dimensions.",
+   [
+    "2d",
+    "3d",
+    "elevation",
+    "point-cloud",
+    "mesh",
+    "temporal"
+   ]
+  ],
+  [
+   "mp-coords",
+   "Coordinate Systems and Projections",
+   "mapping",
+   "Datums, coordinate reference systems and map projections.",
+   [
+    "datum",
+    "projection",
+    "crs",
+    "epsg",
+    "transform",
+    "wgs84"
+   ]
+  ],
+  [
+   "mp-survey",
+   "Survey and Capture Methods",
+   "mapping",
+   "How spatial data is captured: GNSS and RTK, photogrammetry, LiDAR scanning and remote sensing.",
+   [
+    "gnss",
+    "rtk",
+    "photogrammetry",
+    "lidar",
+    "remote-sensing",
+    "satellite"
+   ]
+  ],
+  [
+   "mp-slam",
+   "SLAM - Simultaneous Localization and Mapping",
+   "mapping",
+   "Building a map of an unknown place while estimating the sensor's own position in it, with visual and LiDAR methods.",
+   [
+    "slam",
+    "localization",
+    "loop-closure",
+    "pose-graph",
+    "odometry",
+    "keyframe"
+   ]
+  ],
+  [
+   "mp-gis",
+   "Spatial Data and GIS",
+   "mapping",
+   "Spatial file formats, queries and cartographic design.",
+   [
+    "gis",
+    "geojson",
+    "shapefile",
+    "geotiff",
+    "geopackage",
+    "layer"
+   ]
+  ],
+  [
+   "mp-web",
+   "Web Mapping and Geocoding",
+   "mapping",
+   "Geocoding, map tiles and routing services for web and mobile maps.",
+   [
+    "geocode",
+    "tiles",
+    "routing",
+    "webmap",
+    "basemap"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "mp-topographic-thematic-mapper",
+   "mp-types",
+   "Topographic and Thematic Mapper",
+   "Chooses map type, scale and symbology for a purpose and builds thematic maps from attribute data.",
+   "semantic",
+   [
+    [
+     "mp-cartographer",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-road-network-builder",
+   "mp-types",
+   "Road Network Builder",
+   "Builds a routable road network graph with turn restrictions and speed attributes and checks connectivity.",
+   "procedural",
+   [
+    [
+     "mp-gis-analyst",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-web-map-developer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-indoor-occupancy-mapper",
+   "mp-types",
+   "Indoor and Occupancy Mapper",
+   "Builds indoor floor plans and occupancy grids from scans or sensor data and marks unknown space explicitly.",
+   "procedural",
+   [
+    [
+     "mp-slam-engineer",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-surveyor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-surface-model-builder",
+   "mp-dimensions",
+   "Elevation Surface Model Builder",
+   "Builds elevation and surface models from points or imagery and separates ground from objects.",
+   "procedural",
+   [
+    [
+     "mp-photogrammetrist",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-geodesist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-point-cloud-mesh-processor",
+   "mp-dimensions",
+   "Point Cloud and Mesh Processor",
+   "Filters, registers and meshes three-dimensional point clouds and reports density and noise.",
+   "procedural",
+   [
+    [
+     "mp-photogrammetrist",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-slam-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-temporal-change-detector",
+   "mp-dimensions",
+   "Temporal Change Detector",
+   "Compares maps or scans from different dates to find real change and separates it from registration error.",
+   "semantic",
+   [
+    [
+     "mp-gis-analyst",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-photogrammetrist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-crs-transformer",
+   "mp-coords",
+   "Coordinate Reference System Transformer",
+   "Transforms coordinates between datums and projections and reports the expected error of each transformation.",
+   "procedural",
+   [
+    [
+     "mp-geodesist",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-projection-selector",
+   "mp-coords",
+   "Projection Selector",
+   "Selects a projection for a region and purpose by which distortion matters, such as area, distance or shape.",
+   "semantic",
+   [
+    [
+     "mp-geodesist",
+     "primary"
+    ],
+    [
+     "mp-cartographer",
+     "checker"
+    ],
+    [
+     "mp-map-quality-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-gnss-rtk-surveyor",
+   "mp-survey",
+   "GNSS and RTK Surveyor",
+   "Plans GNSS and RTK surveys with base station setup, occupation time and ground control points and reports accuracy.",
+   "procedural",
+   [
+    [
+     "mp-surveyor",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-geodesist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-photogrammetry-planner",
+   "mp-survey",
+   "Photogrammetry Planner",
+   "Plans image capture and processing for a three-dimensional model with overlap, camera calibration and check points.",
+   "procedural",
+   [
+    [
+     "mp-photogrammetrist",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-surveyor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-lidar-scan-planner",
+   "mp-survey",
+   "LiDAR Scan Planner",
+   "Plans terrestrial, mobile or airborne LiDAR scans for point density and coverage and notes occlusions.",
+   "procedural",
+   [
+    [
+     "mp-surveyor",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-photogrammetrist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-remote-sensing-analyst",
+   "mp-survey",
+   "Remote Sensing Analyst",
+   "Works with satellite and aerial imagery for land cover, change and indices and states resolution limits.",
+   "semantic",
+   [
+    [
+     "mp-gis-analyst",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-geodesist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-visual-slam",
+   "mp-slam",
+   "Visual SLAM",
+   "Estimates camera motion and builds a sparse or dense map from monocular, stereo or depth images using features and keyframes, and states the scale ambiguity of a single camera.",
+   "semantic",
+   [
+    [
+     "mp-slam-engineer",
+     "primary"
+    ],
+    [
+     "mp-localization-evaluator",
+     "checker"
+    ],
+    [
+     "mp-photogrammetrist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-lidar-slam",
+   "mp-slam",
+   "LiDAR SLAM",
+   "Registers successive LiDAR scans into a map and a trajectory with scan matching and optional inertial data.",
+   "semantic",
+   [
+    [
+     "mp-slam-engineer",
+     "primary"
+    ],
+    [
+     "mp-localization-evaluator",
+     "checker"
+    ],
+    [
+     "mp-surveyor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-loop-closure-pose-graph",
+   "mp-slam",
+   "Loop Closure and Pose Graph Optimization",
+   "Detects revisited places and optimizes the pose graph to remove accumulated drift, rejecting false loop closures.",
+   "semantic",
+   [
+    [
+     "mp-slam-engineer",
+     "primary"
+    ],
+    [
+     "mp-localization-evaluator",
+     "checker"
+    ],
+    [
+     "mp-geodesist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-slam-evaluator",
+   "mp-slam",
+   "SLAM Evaluation",
+   "Evaluates a SLAM run against ground truth with absolute and relative trajectory error and map accuracy.",
+   "procedural",
+   [
+    [
+     "mp-localization-evaluator",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-slam-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-spatial-format-converter",
+   "mp-gis",
+   "Spatial Format Converter",
+   "Converts between GeoJSON, shapefile, GeoTIFF and GeoPackage and reports attributes or precision lost in conversion.",
+   "procedural",
+   [
+    [
+     "mp-gis-analyst",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-web-map-developer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-spatial-query-analyst",
+   "mp-gis",
+   "Spatial Query Analyst",
+   "Runs overlay, buffer, join and proximity analysis on layers and explains the result with its caveats.",
+   "procedural",
+   [
+    [
+     "mp-gis-analyst",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-geodesist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-cartographic-designer",
+   "mp-gis",
+   "Cartographic Designer",
+   "Designs a legible map layout with labels, color and legend for a stated audience.",
+   "semantic",
+   [
+    [
+     "mp-cartographer",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-geocoder",
+   "mp-web",
+   "Geocoder",
+   "Converts addresses to coordinates and back and returns the match quality of each result.",
+   "procedural",
+   [
+    [
+     "mp-web-map-developer",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-tile-publisher",
+   "mp-web",
+   "Map Tile Publisher",
+   "Prepares vector or raster tiles and a basemap style for web display and sets zoom levels and caching.",
+   "procedural",
+   [
+    [
+     "mp-web-map-developer",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-cartographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mp-routing-integrator",
+   "mp-web",
+   "Routing Service Integrator",
+   "Integrates a routing service for directions and travel times and tests edge cases such as closures and one-way streets.",
+   "procedural",
+   [
+    [
+     "mp-web-map-developer",
+     "primary"
+    ],
+    [
+     "mp-map-quality-checker",
+     "checker"
+    ],
+    [
+     "mp-gis-analyst",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "mp-cartographer": "Cartographer Agent",
+  "mp-geodesist": "Geodesy Agent",
+  "mp-surveyor": "Survey Agent",
+  "mp-photogrammetrist": "Photogrammetry Agent",
+  "mp-slam-engineer": "SLAM Engineer Agent",
+  "mp-gis-analyst": "GIS Analyst Agent",
+  "mp-web-map-developer": "Web Map Developer Agent",
+  "mp-localization-evaluator": "Localization Evaluation Agent",
+  "mp-map-quality-checker": "Map Quality Checker Agent"
+ },
+ "mcp": [
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Felt Maps",
+   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "Map and analyze your geospatial data",
+   [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "TomTom Maps",
+   "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "TomTom maps, routing, geocoding & traffic data",
+   [
+    "tomtom-geocode",
+    "tomtom-reverse-geocode",
+    "tomtom-fuzzy-search",
+    "tomtom-poi-search",
+    "tomtom-nearby",
+    "tomtom-poi-categories",
+    "tomtom-area-search",
+    "tomtom-ev-search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "maptypes": "topographic thematic symbology occupancy floor basemap road indoor network",
+  "surfaces": "elevation surface cloud mesh registration temporal",
+  "crs": "datum projection epsg wgs84 transformation distortion transform coordinate",
+  "capture": "gnss rtk photogrammetry calibration occlusion satellite sensing capture",
+  "slam": "slam odometry keyframe closure drift scan matching localization pose simultaneous mapping absolute",
+  "spatialdata": "geojson shapefile geotiff geopackage overlay buffer layer spatial cartographic legible",
+  "webmap": "geocoder tiles routing zoom directions geocode webmap geocoding"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "GIS Cloud": "directory listing; tool names are the listing's visible sample; connector is not installed or tested",
+   "Felt Maps": "directory listing; tool names are the listing's visible sample; connector is not installed or tested",
+   "TomTom Maps": "directory listing; tool names are the listing's visible sample; connector is not installed or tested",
+   "slam-terminology": "you wrote 'Simultaneous Local Area Mapping'; the standard expansion of SLAM is Simultaneous Localization and Mapping, and the pack uses that",
+   "no-slam-server": "no directory or verified repository server for SLAM itself was found, so SLAM skills have no direct server"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here.",
+  "v04_lexicon_freed": [
+   [
+    "capture",
+    [
+     "remote"
+    ]
+   ]
+  ]
+ }
+}

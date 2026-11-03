@@ -1,0 +1,929 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "reasoning",
+ "topic": {
+  "id": "reasoning",
+  "label": "Reasoning",
+  "desc": "Reasoning as a set of checkable skills: logic, argument analysis, causal and probabilistic reasoning, decisions under uncertainty, planning, abduction and self-verification. Extends the base Reasoning topic."
+ },
+ "concepts": [
+  [
+   "rn-logic",
+   "Logic and Inference",
+   "reasoning",
+   "Formal and informal logic: valid and sound arguments, propositional and predicate logic, proof steps and counterexamples.",
+   [
+    "logic",
+    "inference",
+    "proof",
+    "counterexample",
+    "validity"
+   ]
+  ],
+  [
+   "rn-argument",
+   "Argument Analysis",
+   "reasoning",
+   "Taking apart an argument into premises, conclusion and hidden assumptions, and naming fallacies without name-calling.",
+   [
+    "argument",
+    "premise",
+    "conclusion",
+    "fallacy",
+    "assumption"
+   ]
+  ],
+  [
+   "rn-causal",
+   "Causal Reasoning",
+   "reasoning",
+   "Telling correlation from cause: confounders, interventions, counterfactuals and causal diagrams.",
+   [
+    "causal",
+    "confounder",
+    "intervention",
+    "counterfactual",
+    "diagram"
+   ]
+  ],
+  [
+   "rn-probabilistic",
+   "Probabilistic and Bayesian Reasoning",
+   "reasoning",
+   "Updating beliefs with evidence: priors, likelihoods, base rates, Bayes rule and the common errors people make with probability.",
+   [
+    "probability",
+    "bayes",
+    "prior",
+    "likelihood",
+    "baserate"
+   ]
+  ],
+  [
+   "rn-decision",
+   "Decision Making under Uncertainty",
+   "reasoning",
+   "Choosing among options when outcomes are uncertain: expected value, risk, regret, reversibility and value of information.",
+   [
+    "decision",
+    "utility",
+    "risk",
+    "regret",
+    "option"
+   ]
+  ],
+  [
+   "rn-planning",
+   "Planning and Problem Decomposition",
+   "reasoning",
+   "Breaking a goal into steps, ordering by dependency, finding the critical path and planning for failure.",
+   [
+    "planning",
+    "decomposition",
+    "dependency",
+    "subgoal",
+    "contingency",
+    "goal",
+    "critical",
+    "milestone",
+    "prerequisite",
+    "dependencies"
+   ]
+  ],
+  [
+   "rn-abduction",
+   "Abductive and Analogical Reasoning",
+   "reasoning",
+   "Inference to the best explanation and reasoning by analogy: generating rivals, comparing them and stating where an analogy breaks.",
+   [
+    "abduction",
+    "hypothesis",
+    "explanation",
+    "analogy",
+    "rival"
+   ]
+  ],
+  [
+   "rn-calibration",
+   "Self-Verification and Calibration",
+   "reasoning",
+   "Checking one's own reasoning: step audits, confidence calibration, adversarial review and knowing when to stop or ask.",
+   [
+    "calibration",
+    "verification",
+    "audit",
+    "confidence",
+    "overconfidence",
+    "forecast",
+    "forecasts",
+    "calibrated",
+    "brier"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "rn-validity-checker",
+   "rn-logic",
+   "Validity Checker",
+   "Checks whether a conclusion follows from its premises, shows the inference rule used and builds a counterexample when it does not.",
+   "procedural",
+   [
+    [
+     "rn-logician",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-proof-sketcher",
+   "rn-logic",
+   "Proof Sketcher",
+   "Writes a proof as numbered steps with the justification for each and marks any step that is only plausible.",
+   "procedural",
+   [
+    [
+     "rn-logician",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ],
+    [
+     "rn-calibrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-formalizer",
+   "rn-logic",
+   "Natural Language Formalizer",
+   "Rewrites an English statement in logic notation and lists the ambiguities that had to be resolved to do it.",
+   "semantic",
+   [
+    [
+     "rn-logician",
+     "primary"
+    ],
+    [
+     "rn-argument-analyst",
+     "checker"
+    ],
+    [
+     "rn-red-teamer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-argument-mapper",
+   "rn-argument",
+   "Argument Mapper",
+   "Maps premises, intermediate claims and the conclusion as a tree and marks which premises carry the most weight.",
+   "procedural",
+   [
+    [
+     "rn-argument-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-logician",
+     "support"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-fallacy-detector",
+   "rn-argument",
+   "Fallacy Detector",
+   "Finds reasoning errors such as equivocation, false dilemma or circularity and quotes the sentence where each occurs.",
+   "semantic",
+   [
+    [
+     "rn-argument-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-logician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-hidden-assumption-finder",
+   "rn-argument",
+   "Hidden Assumption Finder",
+   "States the unstated premises an argument needs and asks which of them the audience would reject.",
+   "semantic",
+   [
+    [
+     "rn-argument-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-decision-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-causal-diagram-builder",
+   "rn-causal",
+   "Causal Diagram Builder",
+   "Draws a causal graph of the variables, marks confounders and mediators and says what data would test each arrow.",
+   "procedural",
+   [
+    [
+     "rn-causal-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-confounder-hunter",
+   "rn-causal",
+   "Confounder Hunter",
+   "Lists third factors that could explain an observed association and how each could be measured or controlled.",
+   "semantic",
+   [
+    [
+     "rn-causal-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-argument-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-counterfactual-analyst",
+   "rn-causal",
+   "Counterfactual Analyst",
+   "Asks what would have happened without the intervention and says which parts of that answer are data and which are assumption.",
+   "semantic",
+   [
+    [
+     "rn-causal-analyst",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-bayes-updater",
+   "rn-probabilistic",
+   "Bayesian Updater",
+   "Combines a prior with new evidence by Bayes rule, shows the arithmetic and reports how much the belief moved.",
+   "procedural",
+   [
+    [
+     "rn-bayesian-analyst",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-base-rate-checker",
+   "rn-probabilistic",
+   "Base Rate Checker",
+   "Finds the base rate a claim ignores and recomputes the probability with it, for example in a test with false positives.",
+   "procedural",
+   [
+    [
+     "rn-bayesian-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-probability-estimator",
+   "rn-probabilistic",
+   "Probability Estimator",
+   "Turns a forecasting question into a number by reference classes and adjustments and records the reasoning behind each adjustment.",
+   "semantic",
+   [
+    [
+     "rn-bayesian-analyst",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-decision-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-option-evaluator",
+   "rn-decision",
+   "Option Evaluator",
+   "Scores options on stated criteria with weights, shows how the ranking changes when the weights change and names the decision rule.",
+   "procedural",
+   [
+    [
+     "rn-decision-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-expected-value-calculator",
+   "rn-decision",
+   "Expected Value Calculator",
+   "Computes expected value and downside for each option from probabilities and payoffs and flags numbers that are guesses.",
+   "procedural",
+   [
+    [
+     "rn-decision-analyst",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-reversibility-assessor",
+   "rn-decision",
+   "Reversibility Assessor",
+   "Separates choices that can be undone cheaply from those that cannot and recommends how much evidence each deserves.",
+   "semantic",
+   [
+    [
+     "rn-decision-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-goal-decomposer",
+   "rn-planning",
+   "Goal Decomposer",
+   "Breaks a goal into subgoals and tasks with a done-test for each so progress can be checked.",
+   "procedural",
+   [
+    [
+     "rn-planner",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-decision-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-critical-path-planner",
+   "rn-planning",
+   "Dependency and Critical Path Planner",
+   "Orders tasks by dependency, finds the critical path and shows which delay moves the finish date.",
+   "procedural",
+   [
+    [
+     "rn-planner",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-contingency-planner",
+   "rn-planning",
+   "Contingency Planner",
+   "Lists how each step can fail, the early signal and the fallback, so the plan survives its first surprise.",
+   "semantic",
+   [
+    [
+     "rn-planner",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-decision-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-hypothesis-generator",
+   "rn-abduction",
+   "Rival Hypothesis Generator",
+   "Produces several competing explanations for an observation and the test that would separate them.",
+   "semantic",
+   [
+    [
+     "rn-abductive-reasoner",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-causal-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-best-explanation-ranker",
+   "rn-abduction",
+   "Best Explanation Ranker",
+   "Ranks explanations by fit, simplicity and prior plausibility and says what new fact would reverse the ranking.",
+   "semantic",
+   [
+    [
+     "rn-abductive-reasoner",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-analogy-tester",
+   "rn-abduction",
+   "Analogy Tester",
+   "Maps the parts of an analogy one to one and lists where the comparison fails before it is used as evidence.",
+   "semantic",
+   [
+    [
+     "rn-abductive-reasoner",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-argument-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-step-auditor",
+   "rn-calibration",
+   "Reasoning Step Auditor",
+   "Re-reads a chain of reasoning step by step, marks unsupported jumps and arithmetic slips and gives a corrected chain.",
+   "procedural",
+   [
+    [
+     "rn-calibrator",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-logician",
+     "support"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-confidence-calibrator",
+   "rn-calibration",
+   "Confidence Calibrator",
+   "Compares stated confidence with outcomes in a track record and recommends adjusting up or down.",
+   "procedural",
+   [
+    [
+     "rn-calibrator",
+     "primary"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "checker"
+    ],
+    [
+     "rn-red-teamer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-adversarial-reviewer",
+   "rn-calibration",
+   "Adversarial Reviewer",
+   "Argues the strongest case against a conclusion and reports which objections the original reasoning cannot answer.",
+   "semantic",
+   [
+    [
+     "rn-red-teamer",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-argument-analyst",
+     "support"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-stop-or-ask-judge",
+   "rn-calibration",
+   "Stop or Ask Judge",
+   "Decides whether to continue, ask for missing information or hand the question to a person, and says why.",
+   "semantic",
+   [
+    [
+     "rn-calibrator",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-decision-analyst",
+     "support"
+    ],
+    [
+     "rn-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-consistency-checker",
+   "rn-logic",
+   "Consistency Checker",
+   "Checks a set of statements for contradiction, shows the smallest conflicting subset and suggests which statement to drop.",
+   "procedural",
+   [
+    [
+     "rn-model-checker",
+     "primary"
+    ],
+    [
+     "rn-logician",
+     "checker"
+    ],
+    [
+     "rn-red-teamer",
+     "support"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-steelman-writer",
+   "rn-argument",
+   "Steelman Writer",
+   "Rewrites an opposing argument in its strongest honest form before it is answered and checks the original author would accept it.",
+   "semantic",
+   [
+    [
+     "rn-argument-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ],
+    [
+     "rn-logician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-intervention-designer",
+   "rn-causal",
+   "Intervention Designer",
+   "Proposes an experiment or natural experiment that could separate cause from correlation and lists what could still confound it.",
+   "procedural",
+   [
+    [
+     "rn-causal-analyst",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-hypothesis-ranker",
+     "support"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-forecast-builder",
+   "rn-probabilistic",
+   "Forecast Builder",
+   "Builds a probability forecast from base rates and evidence, states the reference class used and the update that would change it.",
+   "procedural",
+   [
+    [
+     "rn-forecaster",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ],
+    [
+     "rn-red-teamer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-game-analysis",
+   "rn-decision",
+   "Game and Incentive Analyst",
+   "Maps players, options and payoffs, finds stable outcomes and says how the answer changes if players cooperate or deceive.",
+   "semantic",
+   [
+    [
+     "rn-game-theorist",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-decision-analyst",
+     "support"
+    ],
+    [
+     "rn-explainer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-scenario-builder",
+   "rn-planning",
+   "Scenario Planner",
+   "Builds a few distinct futures from the main uncertainties, tests a plan against each and names early signals to watch.",
+   "procedural",
+   [
+    [
+     "rn-scenario-planner",
+     "primary"
+    ],
+    [
+     "rn-red-teamer",
+     "checker"
+    ],
+    [
+     "rn-planner",
+     "support"
+    ],
+    [
+     "rn-forecaster",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rn-explanation-ranker",
+   "rn-abduction",
+   "Explanation Ranker",
+   "Scores rival explanations on fit, simplicity and prior plausibility and says which new observation would separate them.",
+   "semantic",
+   [
+    [
+     "rn-hypothesis-ranker",
+     "primary"
+    ],
+    [
+     "rn-calibrator",
+     "checker"
+    ],
+    [
+     "rn-abductive-reasoner",
+     "support"
+    ],
+    [
+     "rn-bayesian-analyst",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "rn-logician": "Logic Agent",
+  "rn-argument-analyst": "Argument Analysis Agent",
+  "rn-causal-analyst": "Causal Reasoning Agent",
+  "rn-bayesian-analyst": "Bayesian Reasoning Agent",
+  "rn-decision-analyst": "Decision Analysis Agent",
+  "rn-planner": "Planning Agent",
+  "rn-abductive-reasoner": "Abductive Reasoning Agent",
+  "rn-calibrator": "Calibration Agent",
+  "rn-red-teamer": "Adversarial Reviewer Agent",
+  "rn-explainer": "Reasoning Explainer Agent",
+  "rn-model-checker": "Model Checking Agent",
+  "rn-forecaster": "Forecasting Agent",
+  "rn-game-theorist": "Game Theory Agent",
+  "rn-scenario-planner": "Scenario Planning Agent",
+  "rn-hypothesis-ranker": "Hypothesis Ranking Agent"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Mantic",
+   "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "Explore judgemental forecasts",
+   [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Sequential Thinking",
+   null,
+   "Reference MCP server for dynamic and reflective problem-solving through thought sequences",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers"
+  ]
+ ],
+ "lexicon": {
+  "rnlogic": "logic inference proof premise conclusion validity counterexample notation consistency",
+  "rnargument": "argument fallacy assumption equivocation circularity dilemma steelman",
+  "rncausal": "causal mediator counterfactual intervention association diagram",
+  "rnprob": "bayes likelihood base probability forecast baserate probabilistic bayesian",
+  "rndecision": "decision utility expected regret option reversibility making uncertainty",
+  "rnplan": "subgoal decomposition critical contingency fallback goal milestone prerequisite dependencies planning distinct",
+  "rnabduct": "abduction rival analogy explanation abductive analogical",
+  "rncalib": "overconfidence adversarial calibrated brier self unsupported arithmetic calibrator stated judge whether"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "Wolfram": "directory listing, authless per directory; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Mantic": "directory listing; forecasting data service; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Sequential Thinking": "the repository page github.com/modelcontextprotocol/servers was opened 2026-10-23 and lists Sequential Thinking (src/sequentialthinking) as a reference server, not archived; repo licence stated as Apache 2.0 for new contributions and MIT for existing code; the server's README could not be opened (robots), so tools are left empty"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

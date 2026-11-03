@@ -1,0 +1,397 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "accounting",
+  "label": "Accounting",
+  "desc": "Recording and reporting money: bookkeeping and the general ledger, financial statements, GAAP and IFRS, audit, and management accounting."
+ },
+ "concepts": [
+  {
+   "id": "acc-audit",
+   "label": "Audit and Internal Controls",
+   "desc": "External audit, internal controls, SOX, materiality and audit evidence.",
+   "keywords": [
+    "audit",
+    "internal",
+    "control",
+    "sox",
+    "materiality",
+    "evidence",
+    "assurance",
+    "auditor",
+    "opinion"
+   ],
+   "topic": "accounting",
+   "source": "accounting",
+   "related": []
+  },
+  {
+   "id": "acc-ledger",
+   "label": "Bookkeeping and the General Ledger",
+   "desc": "Double-entry bookkeeping, chart of accounts, journal entries, reconciliation and closing the books.",
+   "keywords": [
+    "bookkeeping",
+    "ledger",
+    "journal",
+    "entry",
+    "debit",
+    "credit",
+    "chart",
+    "account",
+    "reconciliation",
+    "close"
+   ],
+   "topic": "accounting",
+   "source": "accounting",
+   "related": []
+  },
+  {
+   "id": "acc-management",
+   "label": "Management and Cost Accounting",
+   "desc": "Budgets, cost allocation, unit economics and variance analysis for decisions.",
+   "keywords": [
+    "budget",
+    "cost",
+    "allocation",
+    "unit",
+    "economics",
+    "variance",
+    "margin",
+    "forecast",
+    "management"
+   ],
+   "topic": "accounting",
+   "source": "accounting",
+   "related": []
+  },
+  {
+   "id": "acc-standards",
+   "label": "GAAP and IFRS",
+   "desc": "Accounting standards: US GAAP, IFRS, revenue recognition, leases and differences between them.",
+   "keywords": [
+    "gaap",
+    "ifrs",
+    "standard",
+    "revenue",
+    "recognition",
+    "lease",
+    "asc",
+    "fasb",
+    "iasb"
+   ],
+   "topic": "accounting",
+   "source": "accounting",
+   "related": []
+  },
+  {
+   "id": "acc-statements",
+   "label": "Financial Statements",
+   "desc": "Income statement, balance sheet, cash flow statement and how they link.",
+   "keywords": [
+    "financial",
+    "statement",
+    "income",
+    "balance",
+    "sheet",
+    "cash",
+    "flow",
+    "revenue",
+    "expense",
+    "asset",
+    "liability",
+    "equity"
+   ],
+   "topic": "accounting",
+   "source": "accounting",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "acc-control-gap-finder",
+   "concept": "acc-audit",
+   "label": "Control Gap Finder",
+   "desc": "Finds gaps in internal controls over a financial process.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1676",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1678",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-bank-reconciliation",
+   "concept": "acc-ledger",
+   "label": "Bank Reconciliation",
+   "desc": "Reconciles a bank statement to the ledger and lists unmatched items.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1679",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1680",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-journal-entry-builder",
+   "concept": "acc-ledger",
+   "label": "Journal Entry Builder",
+   "desc": "Builds double-entry journal entries for a transaction and checks debits equal credits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1679",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1680",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-unit-economics-calculator",
+   "concept": "acc-management",
+   "label": "Unit Economics Calculator",
+   "desc": "Computes contribution margin, CAC, LTV and payback for a business.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1678",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1679",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-variance-analyzer",
+   "concept": "acc-management",
+   "label": "Variance Analyzer",
+   "desc": "Explains budget versus actual variances by driver.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1678",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1679",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-gaap-vs-ifrs-comparator",
+   "concept": "acc-standards",
+   "label": "GAAP vs IFRS Comparator",
+   "desc": "Compares the GAAP and IFRS treatment of an item and its effect on reported numbers.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1681",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1676",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-revenue-recognition-guide",
+   "concept": "acc-standards",
+   "label": "Revenue Recognition Guide",
+   "desc": "Applies the five-step revenue recognition model to a contract.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1681",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1676",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-financial-statement-reader",
+   "concept": "acc-statements",
+   "label": "Financial Statement Reader",
+   "desc": "Reads a company's financial statements and summarizes profitability, liquidity and leverage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1680",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1681",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  },
+  {
+   "id": "acc-three-statement-linker",
+   "concept": "acc-statements",
+   "label": "Three-Statement Linker",
+   "desc": "Shows how a transaction flows through the income statement, balance sheet and cash flow statement.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1680",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1677",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1681",
+     "role": "support"
+    }
+   ],
+   "source": "accounting"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1676",
+   "name": "Audit Agent",
+   "legacy_key": "acc-auditor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1677",
+   "name": "Accounting Checker Agent",
+   "legacy_key": "acc-checker",
+   "mcp": [
+    "local:quickbooks-online-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1678",
+   "name": "Management Accounting Agent",
+   "legacy_key": "acc-mgmt",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1679",
+   "name": "Bookkeeping Agent",
+   "legacy_key": "acc-bookkeeper",
+   "mcp": [
+    "local:quickbooks-online-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1680",
+   "name": "Financial Reporting Agent",
+   "legacy_key": "acc-reporter",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1681",
+   "name": "Accounting Standards Agent",
+   "legacy_key": "acc-standards",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "QuickBooks Online MCP",
+   "desc": "Intuit QuickBooks Online MCP server: accounting records, accounts, customers, vendors, invoices, bills and journal entries.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/intuit/quickbooks-online-mcp-server",
+   "id": "local:quickbooks-online-mcp",
+   "origins": [
+    "accounting",
+    "taxes"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:quickbooks-online-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1677",
+   "mcp": "local:quickbooks-online-mcp",
+   "topic": "accounting",
+   "score": 0.2114,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1679",
+   "mcp": "local:quickbooks-online-mcp",
+   "topic": "accounting",
+   "score": 0.149,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "accledger": "bookkeeping ledger journal entry debit credit chart account reconciliation close",
+  "accstatements": "financial statement income balance sheet cash flow revenue expense asset liability equity",
+  "accstandards": "gaap ifrs standard revenue recognition lease asc fasb iasb",
+  "accaudit": "audit internal control sox materiality evidence assurance auditor opinion",
+  "accmanagement": "budget cost allocation unit economics variance margin forecast management"
+ },
+ "sources": [
+  "accounting"
+ ]
+}

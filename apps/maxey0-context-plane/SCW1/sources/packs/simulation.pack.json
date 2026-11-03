@@ -1,0 +1,215 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "simulation",
+ "topic": {
+  "id": "simulation",
+  "label": "Simulation and Digital Twins",
+  "desc": "Simulating systems before acting on them: physics and flight simulation, digital twins, and scenario and Monte Carlo analysis. Robot simulation is in Robotics."
+ },
+ "concepts": [
+  [
+   "sim-physics",
+   "Physics and Flight Simulation",
+   "simulation",
+   "Simulating motion and forces: rigid body dynamics, flight simulators, drone simulators and solver step size.",
+   [
+    "simulation",
+    "simulator",
+    "physics",
+    "flight",
+    "drone",
+    "dynamics",
+    "solver",
+    "step",
+    "model"
+   ]
+  ],
+  [
+   "sim-twins",
+   "Digital Twins",
+   "simulation",
+   "A live model of a physical asset fed by its data, used to monitor and test changes.",
+   [
+    "digital",
+    "twin",
+    "asset",
+    "model",
+    "sensor",
+    "live",
+    "mirror",
+    "3d",
+    "scene"
+   ]
+  ],
+  [
+   "sim-scenarios",
+   "Scenario and Monte Carlo Analysis",
+   "simulation",
+   "Running many what-if scenarios with random inputs to see the spread of outcomes.",
+   [
+    "scenario",
+    "monte",
+    "carlo",
+    "random",
+    "distribution",
+    "what",
+    "sensitivity",
+    "outcome",
+    "stress"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "sim-drone-simulator-setup",
+   "sim-physics",
+   "Drone Simulator Setup",
+   "Sets up a drone or flight simulator with vehicle model, environment and autopilot in the loop.",
+   "procedural",
+   [
+    [
+     "sim-physics",
+     "primary"
+    ],
+    [
+     "sim-checker",
+     "checker"
+    ],
+    [
+     "sim-twin",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sim-solver-stability-checker",
+   "sim-physics",
+   "Solver Stability Checker",
+   "Checks a simulation's step size and solver for stability and energy drift.",
+   "procedural",
+   [
+    [
+     "sim-physics",
+     "primary"
+    ],
+    [
+     "sim-checker",
+     "checker"
+    ],
+    [
+     "sim-twin",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sim-digital-twin-designer",
+   "sim-twins",
+   "Digital Twin Designer",
+   "Designs a digital twin: what is modeled, which data feeds it, and how it is validated against the real asset.",
+   "procedural",
+   [
+    [
+     "sim-twin",
+     "primary"
+    ],
+    [
+     "sim-checker",
+     "checker"
+    ],
+    [
+     "sim-scenario",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sim-monte-carlo-runner",
+   "sim-scenarios",
+   "Monte Carlo Runner",
+   "Designs a Monte Carlo analysis: inputs and distributions, runs, and how results are summarized.",
+   "procedural",
+   [
+    [
+     "sim-scenario",
+     "primary"
+    ],
+    [
+     "sim-checker",
+     "checker"
+    ],
+    [
+     "sim-physics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sim-sensitivity-analyzer",
+   "sim-scenarios",
+   "Sensitivity Analyzer",
+   "Finds which inputs move an outcome most.",
+   "semantic",
+   [
+    [
+     "sim-scenario",
+     "primary"
+    ],
+    [
+     "sim-checker",
+     "checker"
+    ],
+    [
+     "sim-physics",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "sim-physics": "Physics Simulation Agent",
+  "sim-twin": "Digital Twin Agent",
+  "sim-scenario": "Scenario Analysis Agent",
+  "sim-checker": "Simulation Checker Agent"
+ },
+ "mcp": [
+  [
+   "Blender MCP",
+   null,
+   "Blender MCP: control Blender for 3D modeling, scene construction and rendering of models and digital twin scenes.",
+   [],
+   "web-listed",
+   "https://github.com/ahujasid/blender-mcp"
+  ],
+  [
+   "MAVLinkMCP",
+   null,
+   "MCP server for LLM to drone communication via MAVLink",
+   [],
+   "web-listed",
+   "https://github.com/ion-g-ion/MAVLinkMCP"
+  ]
+ ],
+ "lexicon": {
+  "simphysics": "simulation simulator physics flight drone dynamics solver step model",
+  "simtwins": "digital twin asset model sensor live mirror 3d scene",
+  "simscenarios": "scenario monte carlo random distribution what sensitivity outcome stress"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Blender MCP": "repository exists (git ls-remote https://github.com/ahujasid/blender-mcp, 2026-10-31); description summarises its public README; tool list not re-read",
+   "MAVLinkMCP": "repository exists (git ls-remote https://github.com/ion-g-ion/MAVLinkMCP, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

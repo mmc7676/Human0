@@ -1,0 +1,782 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "anthropology",
+  "label": "Anthropology",
+  "desc": "Anthropology: the study of human beings across time and place, spanning cultural, biological, linguistic and archaeological approaches."
+ },
+ "concepts": [
+  {
+   "id": "anth-biological-anthropology",
+   "label": "Biological Anthropology",
+   "desc": "Human evolution, primatology, skeletal biology and human genetic and physiological variation.",
+   "keywords": [
+    "evolution",
+    "hominin",
+    "primate",
+    "skeletal",
+    "osteology",
+    "genetic",
+    "variation",
+    "fossil"
+   ],
+   "topic": "anthropology",
+   "source": "anthropology",
+   "related": [
+    "hbio-evolution-variation"
+   ]
+  },
+  {
+   "id": "anth-economic-political-anthropology",
+   "label": "Economic and Political Anthropology",
+   "desc": "Livelihoods, markets, globalization, state power and development studied ethnographically.",
+   "keywords": [
+    "economy",
+    "market",
+    "globalization",
+    "development",
+    "state",
+    "migration",
+    "livelihood",
+    "inequality"
+   ],
+   "topic": "anthropology",
+   "source": "anthropology",
+   "related": []
+  },
+  {
+   "id": "anth-ethnography",
+   "label": "Ethnographic Methods",
+   "desc": "Participant observation, interviewing and field notes used to describe and interpret a community's way of life.",
+   "keywords": [
+    "ethnography",
+    "fieldwork",
+    "participant observation",
+    "interview",
+    "field notes",
+    "informant",
+    "coding",
+    "ethics"
+   ],
+   "topic": "anthropology",
+   "source": "anthropology",
+   "related": []
+  },
+  {
+   "id": "anth-linguistic-anthropology",
+   "label": "Linguistic Anthropology",
+   "desc": "Language as social practice, including language ideology, speech communities and endangered languages.",
+   "keywords": [
+    "language",
+    "speech community",
+    "discourse",
+    "ideology",
+    "endangered",
+    "sociolinguistic",
+    "transcription",
+    "indexicality"
+   ],
+   "topic": "anthropology",
+   "source": "anthropology",
+   "related": []
+  },
+  {
+   "id": "anth-medical-anthropology",
+   "label": "Medical Anthropology",
+   "desc": "Cultural understandings of health, illness and healing, and the social determinants of disease.",
+   "keywords": [
+    "health",
+    "illness",
+    "healing",
+    "biomedicine",
+    "epidemic",
+    "global health",
+    "embodiment",
+    "suffering"
+   ],
+   "topic": "anthropology",
+   "source": "anthropology",
+   "related": []
+  },
+  {
+   "id": "anth-social-cultural-theory",
+   "label": "Social and Cultural Theory",
+   "desc": "Theories of kinship, exchange, ritual, power and meaning, from functionalism and structuralism to practice theory.",
+   "keywords": [
+    "kinship",
+    "exchange",
+    "ritual",
+    "structuralism",
+    "symbolic",
+    "power",
+    "practice",
+    "gift"
+   ],
+   "topic": "anthropology",
+   "source": "anthropology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "anth-genetic-variation",
+   "concept": "anth-biological-anthropology",
+   "label": "Human Genetic Variation Review",
+   "desc": "Summarises population genetic variation studies and checks interpretations for race and ancestry misuse.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1012",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1014",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-hominin-comparison",
+   "concept": "anth-biological-anthropology",
+   "label": "Hominin Fossil Comparison",
+   "desc": "Compares hominin fossil traits and dates and checks placements against the published phylogenetic literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1012",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-skeletal-profile",
+   "concept": "anth-biological-anthropology",
+   "label": "Skeletal Biological Profile",
+   "desc": "Estimates age, sex and stature from skeletal measurements and checks the estimates against reference standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1012",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1016",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-livelihood-survey",
+   "concept": "anth-economic-political-anthropology",
+   "label": "Livelihood Survey Analysis",
+   "desc": "Analyses household livelihood survey data and checks results against ethnographic observation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1017",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1016",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-market-ethnography",
+   "concept": "anth-economic-political-anthropology",
+   "label": "Market and Globalization Ethnography",
+   "desc": "Interprets local markets under globalization and checks the account against economic anthropology literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1018",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-migration-mapping",
+   "concept": "anth-economic-political-anthropology",
+   "label": "Migration and Field Site Mapping",
+   "desc": "Maps field sites and migration routes and checks the layers against census and survey data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1016",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-field-protocol",
+   "concept": "anth-ethnography",
+   "label": "Fieldwork Protocol Design",
+   "desc": "Designs a participant observation and interview protocol and checks it against research ethics and consent standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1017",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1016",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-interview-coding",
+   "concept": "anth-ethnography",
+   "label": "Interview Coding",
+   "desc": "Codes interview transcripts into themes and checks coding reliability with a second independent pass.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1017",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1018",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-thick-description",
+   "concept": "anth-ethnography",
+   "label": "Thick Description Writing",
+   "desc": "Turns field notes into an interpretive ethnographic account and checks each claim against the notes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1017",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1018",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-discourse-transcription",
+   "concept": "anth-linguistic-anthropology",
+   "label": "Discourse Transcription and Analysis",
+   "desc": "Transcribes and analyses a speech event and checks transcription accuracy and interpretation with a second listener pass.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1019",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-language-ideology",
+   "concept": "anth-linguistic-anthropology",
+   "label": "Language Ideology Analysis",
+   "desc": "Identifies language ideologies in talk or policy and checks the analysis against sociolinguistic scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1019",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1018",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-revitalization-plan",
+   "concept": "anth-linguistic-anthropology",
+   "label": "Endangered Language Documentation",
+   "desc": "Plans documentation of an endangered language with translation support and checks the plan against community ethics guidance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1019",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-epidemic-response",
+   "concept": "anth-medical-anthropology",
+   "label": "Epidemic Response Review",
+   "desc": "Reviews cultural factors in an epidemic response and checks findings against biomedical and global health literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1014",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1016",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-healing-systems",
+   "concept": "anth-medical-anthropology",
+   "label": "Healing Systems Comparison",
+   "desc": "Compares biomedicine and local healing systems in a setting and checks the comparison against ethnographic sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1014",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1018",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-illness-narrative",
+   "concept": "anth-medical-anthropology",
+   "label": "Illness Narrative Analysis",
+   "desc": "Analyses patient and healer narratives of illness and checks themes against the interview data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1014",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-exchange-analysis",
+   "concept": "anth-social-cultural-theory",
+   "label": "Gift and Exchange Analysis",
+   "desc": "Analyses gift and exchange relations and checks the interpretation against classic and recent theory.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1018",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-kinship-diagram",
+   "concept": "anth-social-cultural-theory",
+   "label": "Kinship Diagramming",
+   "desc": "Builds a kinship diagram from genealogical data and checks terms and descent rules for internal consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1018",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-ritual-analysis",
+   "concept": "anth-social-cultural-theory",
+   "label": "Ritual and Symbol Analysis",
+   "desc": "Interprets a ritual using symbolic and structural theory and checks the reading against ethnographic literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1018",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1012",
+   "name": "Biological Anthropologist",
+   "legacy_key": "anth-bioanth",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1013",
+   "name": "Anthropological Literature Reviewer",
+   "legacy_key": "anth-literature",
+   "mcp": [
+    "81cc5080-a204-4aa1-a694-fa868a3c8721"
+   ]
+  },
+  {
+   "key": "Maxey1014",
+   "name": "Medical Anthropologist",
+   "legacy_key": "anth-medical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1015",
+   "name": "Fieldwork Methods Checker",
+   "legacy_key": "anth-methods",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1016",
+   "name": "Field Site Mapper",
+   "legacy_key": "anth-mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1017",
+   "name": "Ethnographer",
+   "legacy_key": "anth-ethnographer",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1018",
+   "name": "Social Theory Analyst",
+   "legacy_key": "anth-theorist",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1019",
+   "name": "Linguistic Anthropologist",
+   "legacy_key": "anth-linguist",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1013",
+   "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "topic": "anthropology",
+   "score": 0.1018,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1015",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "anthropology",
+   "score": 0.1564,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1017",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "anthropology",
+   "score": 0.1739,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1018",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "anthropology",
+   "score": 0.1739,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1017",
+    "skill": "anth-thick-description"
+   }
+  }
+ ],
+ "lexicon": {
+  "anth-field": "ethnography fieldwork participant observation interview notes coding",
+  "anth-theory": "kinship ritual exchange structuralism symbolic gift",
+  "anth-bio": "evolution hominin primate skeletal fossil genetic",
+  "anth-speech": "language discourse ideology endangered transcription sociolinguistic",
+  "anth-health": "illness healing biomedicine epidemic narrative",
+  "anth-economy": "market globalization livelihood migration development"
+ },
+ "sources": [
+  "anthropology"
+ ]
+}

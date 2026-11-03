@@ -1,0 +1,559 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "design",
+  "label": "Design",
+  "desc": "Design: shaping visual, interactive, product and spatial artifacts through research, form-making, prototyping and critique."
+ },
+ "concepts": [
+  {
+   "id": "dsgn-design-research",
+   "label": "Design Research and Human-Centered Methods",
+   "desc": "Understanding people, contexts and needs through interviews, observation and synthesis before committing to a form.",
+   "keywords": [
+    "research",
+    "interview",
+    "persona",
+    "ethnography",
+    "journey map",
+    "synthesis",
+    "usability",
+    "empathy"
+   ],
+   "topic": "design",
+   "source": "design",
+   "related": []
+  },
+  {
+   "id": "dsgn-design-theory-critique",
+   "label": "Design Theory, History and Critique",
+   "desc": "Movements, principles and critical vocabulary used to evaluate and situate design work, including accessibility and ethics.",
+   "keywords": [
+    "theory",
+    "history",
+    "critique",
+    "modernism",
+    "principle",
+    "accessibility",
+    "inclusive",
+    "ethics"
+   ],
+   "topic": "design",
+   "source": "design",
+   "related": []
+  },
+  {
+   "id": "dsgn-interaction-design",
+   "label": "Interaction and UX Design",
+   "desc": "Designing how people move through digital products: flows, states, feedback and information architecture.",
+   "keywords": [
+    "interaction",
+    "ux",
+    "wireframe",
+    "prototype",
+    "flow",
+    "information architecture",
+    "state",
+    "feedback"
+   ],
+   "topic": "design",
+   "source": "design",
+   "related": []
+  },
+  {
+   "id": "dsgn-product-design",
+   "label": "Industrial and Product Design",
+   "desc": "Designing physical objects for function, ergonomics, materials and manufacture.",
+   "keywords": [
+    "industrial",
+    "product",
+    "ergonomics",
+    "material",
+    "manufacture",
+    "sketch",
+    "form",
+    "cad"
+   ],
+   "topic": "design",
+   "source": "design",
+   "related": []
+  },
+  {
+   "id": "dsgn-typography",
+   "label": "Typography",
+   "desc": "The selection, pairing and setting of type for legibility, tone and rhythm across media.",
+   "keywords": [
+    "typography",
+    "typeface",
+    "kerning",
+    "leading",
+    "type scale",
+    "legibility",
+    "font"
+   ],
+   "topic": "design",
+   "source": "design",
+   "related": []
+  },
+  {
+   "id": "dsgn-visual-communication",
+   "label": "Visual Communication and Graphic Design",
+   "desc": "Composition, color, imagery and hierarchy used to communicate a message clearly in print and on screen.",
+   "keywords": [
+    "graphic",
+    "composition",
+    "color",
+    "hierarchy",
+    "grid",
+    "layout",
+    "branding",
+    "contrast"
+   ],
+   "topic": "design",
+   "source": "design",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "dsgn-insight-synthesizer",
+   "concept": "dsgn-design-research",
+   "label": "Research Insight Synthesizer",
+   "desc": "Clusters interview notes into themes and personas and checks every insight against quoted evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1214",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1216",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-interview-planner",
+   "concept": "dsgn-design-research",
+   "label": "User Interview Planner",
+   "desc": "Writes a research plan and interview guide for a design question and checks questions for leading or biased wording.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1214",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1217",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-usability-tester",
+   "concept": "dsgn-design-research",
+   "label": "Usability Test Runner",
+   "desc": "Runs task-based usability tests on a prototype and checks findings by severity and frequency across participants.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1214",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1218",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1217",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-accessibility-auditor",
+   "concept": "dsgn-design-theory-critique",
+   "label": "Accessibility Auditor",
+   "desc": "Audits designs against WCAG criteria and checks contrast, focus order, target size and screen reader labels.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1218",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1217",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-design-critic",
+   "concept": "dsgn-design-theory-critique",
+   "label": "Design Critique Writer",
+   "desc": "Writes structured critique of a design against its goals and principles and checks each claim against visible evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1215",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1219",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1220",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-movement-contextualizer",
+   "concept": "dsgn-design-theory-critique",
+   "label": "Design Movement Contextualizer",
+   "desc": "Places a work within design history movements and checks attributions against cited sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1219",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1221",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-ia-mapper",
+   "concept": "dsgn-interaction-design",
+   "label": "Information Architecture Mapper",
+   "desc": "Organizes content into navigation and labeling schemes and checks findability with card sort results.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1217",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1214",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1221",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-prototype-builder",
+   "concept": "dsgn-interaction-design",
+   "label": "Interactive Prototype Builder",
+   "desc": "Builds clickable prototypes with states and transitions and checks them against the specified flow.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1217",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1220",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-wireframer",
+   "concept": "dsgn-interaction-design",
+   "label": "Wireframe Builder",
+   "desc": "Produces low-fidelity wireframes of screens and flows and checks that every user task has a complete path.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1217",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1214",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1220",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-concept-sketcher",
+   "concept": "dsgn-product-design",
+   "label": "Concept Sketcher",
+   "desc": "Generates form concepts through sketch iterations and checks each against the functional requirements list.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1216",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1214",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-ergonomics-checker",
+   "concept": "dsgn-product-design",
+   "label": "Ergonomics Evaluator",
+   "desc": "Evaluates product dimensions against anthropometric data and checks reach, grip and posture limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1216",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1218",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1214",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-material-selector",
+   "concept": "dsgn-product-design",
+   "label": "Material and Process Selector",
+   "desc": "Chooses materials and manufacturing processes for a part and checks cost, strength and sustainability trade-offs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1216",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1219",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-type-pairer",
+   "concept": "dsgn-typography",
+   "label": "Typeface Pairer",
+   "desc": "Selects complementary typefaces for a brief and checks legibility at body and display sizes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1221",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1220",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-type-scale-builder",
+   "concept": "dsgn-typography",
+   "label": "Type Scale Builder",
+   "desc": "Defines a modular type scale with line heights and checks vertical rhythm across breakpoints.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1221",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1220",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1217",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-brand-identity-designer",
+   "concept": "dsgn-visual-communication",
+   "label": "Brand Identity Designer",
+   "desc": "Develops logo, mark and identity guidelines for a brief and checks consistency across sample applications.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1220",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1219",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-color-system-builder",
+   "concept": "dsgn-visual-communication",
+   "label": "Color System Builder",
+   "desc": "Builds a color palette with semantic roles and checks contrast ratios for every foreground and background pair.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1220",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1218",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  },
+  {
+   "id": "dsgn-layout-composer",
+   "concept": "dsgn-visual-communication",
+   "label": "Layout Composer",
+   "desc": "Arranges content on a grid with a clear visual hierarchy and checks alignment, spacing and reading order.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1220",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1215",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1221",
+     "role": "support"
+    }
+   ],
+   "source": "design"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1214",
+   "name": "Design Researcher",
+   "legacy_key": "dsgn-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1215",
+   "name": "Design Critique Reviewer",
+   "legacy_key": "dsgn-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1216",
+   "name": "Industrial Product Designer",
+   "legacy_key": "dsgn-product",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1217",
+   "name": "Interaction Designer",
+   "legacy_key": "dsgn-interaction",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1218",
+   "name": "Accessibility Auditor",
+   "legacy_key": "dsgn-a11y",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1219",
+   "name": "Design History Scholar",
+   "legacy_key": "dsgn-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1220",
+   "name": "Visual Designer",
+   "legacy_key": "dsgn-visual",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1221",
+   "name": "Typography Specialist",
+   "legacy_key": "dsgn-typographer",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "dsgn-research": "research interview persona ethnography synthesis usability empathy",
+  "dsgn-visual": "graphic composition color hierarchy grid layout branding contrast",
+  "dsgn-type": "typography typeface kerning leading legibility font",
+  "dsgn-ux": "interaction wireframe prototype flow architecture navigation",
+  "dsgn-product": "industrial ergonomics material manufacture sketch cad",
+  "dsgn-theory": "theory history critique modernism principle accessibility inclusive"
+ },
+ "sources": [
+  "design"
+ ]
+}

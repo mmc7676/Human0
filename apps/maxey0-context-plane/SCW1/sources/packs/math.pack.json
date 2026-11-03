@@ -1,0 +1,739 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "math",
+ "topic": {
+  "id": "math",
+  "label": "Math",
+  "desc": "Mathematics as working skills: algebra, calculus and differential equations, linear algebra, probability and statistics, discrete mathematics, proof and foundations, numerical methods and optimisation, and geometry and topology."
+ },
+ "concepts": [
+  [
+   "ma-algebra",
+   "Algebra",
+   "math",
+   "Solving and simplifying equations and inequalities, polynomials, functions, exponentials and logarithms, and abstract structures such as groups and rings.",
+   [
+    "algebra",
+    "equation",
+    "polynomial",
+    "function",
+    "group"
+   ]
+  ],
+  [
+   "ma-calculus",
+   "Calculus and Differential Equations",
+   "math",
+   "Limits, derivatives, integrals, series and ordinary and partial differential equations, with their physical meaning.",
+   [
+    "calculus",
+    "derivative",
+    "integral",
+    "series",
+    "differential",
+    "differentiate",
+    "differentiation",
+    "integrate",
+    "integration",
+    "antiderivative",
+    "gradient",
+    "slope"
+   ]
+  ],
+  [
+   "ma-linear",
+   "Linear Algebra",
+   "math",
+   "Vectors, matrices, linear systems, eigenvalues, decompositions and vector spaces.",
+   [
+    "matrix",
+    "vector",
+    "eigenvalue",
+    "decomposition",
+    "linear",
+    "determinant",
+    "inverse",
+    "transpose"
+   ]
+  ],
+  [
+   "ma-probstat",
+   "Probability and Statistics",
+   "math",
+   "Random variables, distributions, estimation, hypothesis tests, regression and the limits of what a sample shows.",
+   [
+    "probability",
+    "distribution",
+    "estimation",
+    "regression",
+    "hypothesis",
+    "variance",
+    "deviation",
+    "median",
+    "mean",
+    "pvalue",
+    "anova",
+    "nonparametric",
+    "goodness"
+   ]
+  ],
+  [
+   "ma-discrete",
+   "Discrete Mathematics and Combinatorics",
+   "math",
+   "Counting, graphs, number theory, recurrences and algorithms on finite structures.",
+   [
+    "combinatorics",
+    "graph",
+    "counting",
+    "recurrence",
+    "number",
+    "arrange",
+    "arrangement",
+    "ways",
+    "factorial"
+   ]
+  ],
+  [
+   "ma-proof",
+   "Proof and Foundations",
+   "math",
+   "Logic, sets, proof techniques such as induction and contradiction, and how to read and write a rigorous argument.",
+   [
+    "proof",
+    "induction",
+    "set",
+    "logic",
+    "theorem",
+    "prove",
+    "irrational",
+    "rational",
+    "corollary",
+    "square",
+    "sqrt",
+    "axiom",
+    "lemma",
+    "conjecture"
+   ]
+  ],
+  [
+   "ma-numerical",
+   "Numerical Methods and Optimisation",
+   "math",
+   "Computing answers approximately and checking the error: root finding, integration, linear solvers, floating point and optimisation.",
+   [
+    "numerical",
+    "optimisation",
+    "error",
+    "iteration",
+    "convergence"
+   ]
+  ],
+  [
+   "ma-geometry",
+   "Geometry and Topology",
+   "math",
+   "Shapes, transformations, coordinates, curves and surfaces, and properties that survive stretching.",
+   [
+    "geometry",
+    "topology",
+    "curve",
+    "surface",
+    "transformation"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ma-equation-solver",
+   "ma-algebra",
+   "Equation and Inequality Solver",
+   "Solves equations and inequalities step by step, checks each solution by substitution and lists any that were introduced by the method.",
+   "procedural",
+   [
+    [
+     "ma-algebra-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-proof-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-polynomial-analyzer",
+   "ma-algebra",
+   "Polynomial and Function Analyzer",
+   "Factors polynomials, finds roots, asymptotes and symmetries and sketches the function from them.",
+   "procedural",
+   [
+    [
+     "ma-algebra-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-calculus-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-abstract-structure-explainer",
+   "ma-algebra",
+   "Abstract Algebra Explainer",
+   "Explains groups, rings and fields with small worked examples and checks that a given set meets the axioms.",
+   "semantic",
+   [
+    [
+     "ma-algebra-agent",
+     "primary"
+    ],
+    [
+     "ma-proof-agent",
+     "checker"
+    ],
+    [
+     "ma-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-differentiator-integrator",
+   "ma-calculus",
+   "Differentiation and Integration Assistant",
+   "Differentiates and integrates a function by named rules, shows each step and verifies the result by differentiating back.",
+   "procedural",
+   [
+    [
+     "ma-calculus-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-numerical-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-series-limit-analyst",
+   "ma-calculus",
+   "Limits and Series Analyst",
+   "Evaluates limits and decides whether a series converges, naming the test used and why it applies.",
+   "semantic",
+   [
+    [
+     "ma-calculus-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-proof-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-ode-solver",
+   "ma-calculus",
+   "Differential Equation Solver",
+   "Solves ordinary and simple partial differential equations analytically or numerically and states the initial and boundary conditions used.",
+   "procedural",
+   [
+    [
+     "ma-calculus-agent",
+     "primary"
+    ],
+    [
+     "ma-numerical-agent",
+     "checker"
+    ],
+    [
+     "ma-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-linear-system-solver",
+   "ma-linear",
+   "Linear System Solver",
+   "Solves linear systems by elimination, reports whether the solution is unique, absent or free, and checks the residual.",
+   "procedural",
+   [
+    [
+     "ma-linear-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-numerical-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-eigen-analyst",
+   "ma-linear",
+   "Eigenvalue and Decomposition Analyst",
+   "Computes eigenvalues, eigenvectors and decompositions such as SVD and explains what they say about the matrix.",
+   "procedural",
+   [
+    [
+     "ma-linear-agent",
+     "primary"
+    ],
+    [
+     "ma-numerical-agent",
+     "checker"
+    ],
+    [
+     "ma-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-vector-space-explainer",
+   "ma-linear",
+   "Vector Space Explainer",
+   "Explains basis, span, rank and projection with small examples in two and three dimensions.",
+   "semantic",
+   [
+    [
+     "ma-linear-agent",
+     "primary"
+    ],
+    [
+     "ma-geometry-agent",
+     "checker"
+    ],
+    [
+     "ma-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-distribution-fitter",
+   "ma-probstat",
+   "Distribution Fitter",
+   "Fits candidate distributions to data, compares them with goodness of fit and states which assumptions each requires.",
+   "procedural",
+   [
+    [
+     "ma-statistician",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-numerical-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-hypothesis-test-selector",
+   "ma-probstat",
+   "Hypothesis Test Selector",
+   "Chooses a test such as ANOVA, a chi-square test or a nonparametric test from the data type and design, runs it, and reports effect size and interval along with the p-value.",
+   "procedural",
+   [
+    [
+     "ma-statistician",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-proof-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-regression-analyst",
+   "ma-probstat",
+   "Regression Analyst",
+   "Fits linear and generalised regression models, checks residuals and warns when the fit is driven by a few points.",
+   "procedural",
+   [
+    [
+     "ma-statistician",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-linear-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-counting-solver",
+   "ma-discrete",
+   "Counting and Combinatorics Solver",
+   "Counts arrangements and selections with permutations, combinations and inclusion and exclusion and checks small cases by listing.",
+   "procedural",
+   [
+    [
+     "ma-discrete-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-proof-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-graph-algorithm-analyst",
+   "ma-discrete",
+   "Graph Theory Analyst",
+   "Analyses paths, connectivity, colouring and flows on a graph and states the algorithm and its running time.",
+   "semantic",
+   [
+    [
+     "ma-discrete-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-numerical-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-number-theory-helper",
+   "ma-discrete",
+   "Number Theory Helper",
+   "Works with primes, divisibility, modular arithmetic and congruences, with a worked check for each result.",
+   "procedural",
+   [
+    [
+     "ma-discrete-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-algebra-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-proof-writer",
+   "ma-proof",
+   "Proof Writer",
+   "Writes a proof by induction, contradiction or construction, with every step justified and the claim restated at the end.",
+   "procedural",
+   [
+    [
+     "ma-proof-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-algebra-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-proof-checker",
+   "ma-proof",
+   "Proof Checker",
+   "Reads a proof line by line, marks gaps and unjustified steps and says whether the argument proves the stated claim.",
+   "semantic",
+   [
+    [
+     "ma-proof-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-discrete-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-counterexample-finder",
+   "ma-proof",
+   "Counterexample Finder",
+   "Searches for small cases that break a conjecture or lemma and reports what the failure says about the claim.",
+   "semantic",
+   [
+    [
+     "ma-proof-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-discrete-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-root-integration-solver",
+   "ma-numerical",
+   "Root Finding and Numerical Integration",
+   "Applies bisection, Newton or quadrature rules and reports the error estimate and the iteration count.",
+   "procedural",
+   [
+    [
+     "ma-numerical-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-calculus-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-floating-point-auditor",
+   "ma-numerical",
+   "Floating Point Auditor",
+   "Finds rounding, cancellation and overflow problems in a computation and proposes a stabler form.",
+   "semantic",
+   [
+    [
+     "ma-numerical-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-linear-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-optimization-planner",
+   "ma-numerical",
+   "Optimization Planner",
+   "Sets up an optimisation problem with objective, variables and constraints, picks a method and checks the result is a true optimum.",
+   "procedural",
+   [
+    [
+     "ma-numerical-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-calculus-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-coordinate-transformer",
+   "ma-geometry",
+   "Coordinate and Transformation Helper",
+   "Converts between coordinate systems and applies rotations, scalings and translations with matrices.",
+   "procedural",
+   [
+    [
+     "ma-geometry-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-linear-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-curve-surface-analyst",
+   "ma-geometry",
+   "Curve and Surface Analyst",
+   "Computes length, area, curvature and tangents of curves and surfaces from a parametrisation.",
+   "procedural",
+   [
+    [
+     "ma-geometry-agent",
+     "primary"
+    ],
+    [
+     "ma-checker",
+     "checker"
+    ],
+    [
+     "ma-calculus-agent",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ma-topology-explainer",
+   "ma-geometry",
+   "Topology Explainer",
+   "Explains open sets, continuity, connectedness and homeomorphism with simple spaces and checks which properties are preserved.",
+   "semantic",
+   [
+    [
+     "ma-geometry-agent",
+     "primary"
+    ],
+    [
+     "ma-proof-agent",
+     "checker"
+    ],
+    [
+     "ma-checker",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ma-algebra-agent": "Algebra Agent",
+  "ma-calculus-agent": "Calculus Agent",
+  "ma-linear-agent": "Linear Algebra Agent",
+  "ma-statistician": "Statistics Agent",
+  "ma-discrete-agent": "Discrete Mathematics Agent",
+  "ma-proof-agent": "Proof and Foundations Agent",
+  "ma-numerical-agent": "Numerical Methods Agent",
+  "ma-geometry-agent": "Geometry and Topology Agent",
+  "ma-checker": "Mathematical Result Checker Agent"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "sympy-mcp",
+   null,
+   "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "web-listed",
+   "https://github.com/sdiehl/sympy-mcp"
+  ],
+  [
+   "Coteach",
+   "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "Create classroom-ready K-12 math diagrams in Claude",
+   [
+    "CreateDiagrams"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "maalg": "equation inequality polynomial factor substitution group ring axiom algebra function",
+  "macalc": "derivative integral limit convergence ode pde differentiate differentiation integrate antiderivative gradient slope calculus differential",
+  "malinear": "matrix eigenvalue eigenvector svd rank basis determinant inverse transpose linear solver",
+  "mastat": "deviation median mean pvalue anova nonparametric goodness estimation candidate generalised",
+  "madiscrete": "combinatorics permutation combination modular prime congruence colouring arrange arrangement ways factorial counting recurrence discrete mathematics",
+  "maproof": "conjecture theorem lemma prove irrational rational corollary square sqrt construction justified unjustified",
+  "manum": "bisection quadrature rounding optimisation numerical iteration methods",
+  "mageom": "rotation tangent homeomorphism parametrisation geometry curve"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "Wolfram": "directory listing, authless per directory, also listed by the Reasoning pack; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "sympy-mcp": "repository page github.com/sdiehl/sympy-mcp opened 2026-10-23: README documents 31 tool ids (the first 15 are recorded here), Apache-2.0 licence stated, no archived or deprecated notice seen",
+   "Coteach": "directory listing; K-12 diagram generator, narrow scope; tool names are the directory listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

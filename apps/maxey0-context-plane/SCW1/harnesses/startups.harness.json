@@ -1,0 +1,913 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "startups",
+  "label": "Startups",
+  "desc": "Startups: idea validation, product and MVP, growth analytics, finance and runway, fundraising, and company operations."
+ },
+ "concepts": [
+  {
+   "id": "su-company",
+   "label": "Company Operations",
+   "desc": "Hiring plans, objectives and investor updates that keep a small team aligned.",
+   "keywords": [
+    "hiring",
+    "objective",
+    "okr",
+    "investor",
+    "update",
+    "team",
+    "plan"
+   ],
+   "topic": "startups",
+   "source": "startups",
+   "related": []
+  },
+  {
+   "id": "su-finance",
+   "label": "Finance and Metrics",
+   "desc": "Burn, runway, unit economics and revenue monitoring.",
+   "keywords": [
+    "burn",
+    "runway",
+    "revenue",
+    "subscription",
+    "margin",
+    "cac",
+    "unit",
+    "economics",
+    "invoice"
+   ],
+   "topic": "startups",
+   "source": "startups",
+   "related": []
+  },
+  {
+   "id": "su-fundraising",
+   "label": "Fundraising",
+   "desc": "Investor research, pitch narrative and data-room preparation.",
+   "keywords": [
+    "investor",
+    "funding",
+    "round",
+    "pitch",
+    "deck",
+    "valuation",
+    "data",
+    "room"
+   ],
+   "topic": "startups",
+   "source": "startups",
+   "related": []
+  },
+  {
+   "id": "su-growth",
+   "label": "Growth and Analytics",
+   "desc": "Funnels, retention and experiments from product analytics.",
+   "keywords": [
+    "funnel",
+    "retention",
+    "cohort",
+    "activation",
+    "experiment",
+    "event",
+    "metric",
+    "churn"
+   ],
+   "topic": "startups",
+   "source": "startups",
+   "related": []
+  },
+  {
+   "id": "su-product",
+   "label": "Product and MVP",
+   "desc": "Scoping a minimum viable product, prioritizing a roadmap and running the issue tracker.",
+   "keywords": [
+    "mvp",
+    "scope",
+    "roadmap",
+    "backlog",
+    "priority",
+    "issue",
+    "sprint",
+    "release"
+   ],
+   "topic": "startups",
+   "source": "startups",
+   "related": []
+  },
+  {
+   "id": "su-validation",
+   "label": "Idea Validation",
+   "desc": "Testing whether a problem is real and a market is large enough before building.",
+   "keywords": [
+    "problem",
+    "interview",
+    "customer",
+    "market",
+    "size",
+    "competitor",
+    "hypothesis",
+    "demand",
+    "validation"
+   ],
+   "topic": "startups",
+   "source": "startups",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "su-hiring-plan-builder",
+   "concept": "su-company",
+   "label": "Hiring Plan Builder",
+   "desc": "Sequences the first hires by what they unblock and what each costs against runway.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey973",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey974",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    },
+    {
+     "key": "Maxey976",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-investor-update-writer",
+   "concept": "su-company",
+   "label": "Investor Update Writer",
+   "desc": "Writes a monthly investor update from metrics and decisions, stating what went wrong as plainly as what went right.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey977",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey974",
+     "role": "support"
+    },
+    {
+     "key": "Maxey979",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-okr-planner",
+   "concept": "su-company",
+   "label": "Objectives Planner",
+   "desc": "Drafts quarterly objectives and measurable key results and checks that each key result has an owner and a data source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey973",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    },
+    {
+     "key": "Maxey979",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-revenue-monitor",
+   "concept": "su-finance",
+   "label": "Revenue Monitor",
+   "desc": "Reads billing data for balance, new subscriptions, refunds and failed payments and reports changes against last month.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey974",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey979",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey973",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-runway-modeler",
+   "concept": "su-finance",
+   "label": "Burn and Runway Modeler",
+   "desc": "Models monthly burn and runway under base, slow and fast cases and shows the month cash reaches zero in each.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey974",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    },
+    {
+     "key": "Maxey973",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-unit-economics-analyst",
+   "concept": "su-finance",
+   "label": "Unit Economics Analyst",
+   "desc": "Computes acquisition cost, margin and payback per customer segment from billing and spend data and flags thin samples.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey974",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey979",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-data-room-organizer",
+   "concept": "su-fundraising",
+   "label": "Data Room Organizer",
+   "desc": "Lists the documents an investor will request, tracks which exist and who owns the missing ones.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey973",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey980",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey974",
+     "role": "support"
+    },
+    {
+     "key": "Maxey977",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-investor-targeter",
+   "concept": "su-fundraising",
+   "label": "Investor Targeter",
+   "desc": "Builds an investor list by stage, sector and recent deals from company data, with the source of each fit claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey980",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1590",
+     "role": "support"
+    },
+    {
+     "key": "Maxey977",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-pitch-deck-architect",
+   "concept": "su-fundraising",
+   "label": "Pitch Deck Architect",
+   "desc": "Structures the pitch narrative and slide list, tying every claim to a metric or source.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey977",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey980",
+     "role": "support"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-funnel-analyst",
+   "concept": "su-growth",
+   "label": "Funnel Analyst",
+   "desc": "Builds the signup-to-activation funnel from product events and finds the biggest drop-off with its sample size.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey979",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey976",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-growth-experiment-runner",
+   "concept": "su-growth",
+   "label": "Growth Experiment Runner",
+   "desc": "Designs a growth experiment with a hypothesis, metric and stopping rule and reads the result without peeking early.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey979",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey976",
+     "role": "support"
+    },
+    {
+     "key": "Maxey981",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-retention-cohort-analyst",
+   "concept": "su-growth",
+   "label": "Retention Cohort Analyst",
+   "desc": "Computes retention by signup cohort and reports whether the curve flattens, with the cohort sizes behind each line.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey979",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey976",
+     "role": "support"
+    },
+    {
+     "key": "Maxey974",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-issue-tracker-manager",
+   "concept": "su-product",
+   "label": "Issue Tracker Manager",
+   "desc": "Creates, labels and triages issues and sprint cycles in the team's tracker and reports what is blocked.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey981",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey976",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey973",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-mvp-scope-planner",
+   "concept": "su-product",
+   "label": "MVP Scope Planner",
+   "desc": "Cuts a product idea down to the smallest release that tests the riskiest assumption, with what is deliberately left out.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey976",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    },
+    {
+     "key": "Maxey981",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-roadmap-prioritizer",
+   "concept": "su-product",
+   "label": "Roadmap Prioritizer",
+   "desc": "Ranks backlog items by impact, effort and risk and shows the scoring so the founders can overrule it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey976",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey981",
+     "role": "support"
+    },
+    {
+     "key": "Maxey979",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-competitor-landscape-mapper",
+   "concept": "su-validation",
+   "label": "Competitor Landscape Mapper",
+   "desc": "Maps direct and indirect competitors, their funding and positioning from company data, and the gap the startup targets.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1590",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey980",
+     "role": "support"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-market-sizer",
+   "concept": "su-validation",
+   "label": "Market Sizer",
+   "desc": "Estimates market size top-down and bottom-up with every assumption listed and a range instead of one number.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1590",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey974",
+     "role": "support"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  },
+  {
+   "id": "su-problem-interview-synthesizer",
+   "concept": "su-validation",
+   "label": "Problem Interview Synthesizer",
+   "desc": "Turns customer-interview notes into recurring problems, current workarounds and quotes, and marks which findings rest on one interview only.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1590",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey978",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey975",
+     "role": "support"
+    }
+   ],
+   "source": "startups"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1590",
+   "name": "Market Research Agent",
+   "legacy_key": "su-researcher",
+   "mcp": [
+    "e7952077-b4e6-49f7-8670-ca53f8d50c40"
+   ]
+  },
+  {
+   "key": "Maxey973",
+   "name": "Operations Planner Agent",
+   "legacy_key": "su-ops-planner",
+   "mcp": [
+    "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+    "fa50c30c-9f62-4f94-b851-217868185db6"
+   ]
+  },
+  {
+   "key": "Maxey974",
+   "name": "Finance Modeler Agent",
+   "legacy_key": "su-finance-modeler",
+   "mcp": [
+    "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+    "fa50c30c-9f62-4f94-b851-217868185db6"
+   ]
+  },
+  {
+   "key": "Maxey975",
+   "name": "Founder Advisor Agent",
+   "legacy_key": "su-founder-advisor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey976",
+   "name": "Product Manager Agent",
+   "legacy_key": "su-product-manager",
+   "mcp": [
+    "fa50c30c-9f62-4f94-b851-217868185db6"
+   ]
+  },
+  {
+   "key": "Maxey977",
+   "name": "Narrative Writer Agent",
+   "legacy_key": "su-writer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey978",
+   "name": "Assumption Checker Agent",
+   "legacy_key": "su-assumption-checker",
+   "mcp": [
+    "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+    "e7952077-b4e6-49f7-8670-ca53f8d50c40",
+    "fa50c30c-9f62-4f94-b851-217868185db6"
+   ]
+  },
+  {
+   "key": "Maxey979",
+   "name": "Growth Analyst Agent",
+   "legacy_key": "su-growth-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey980",
+   "name": "Fundraising Strategist Agent",
+   "legacy_key": "su-fundraising-strategist",
+   "mcp": [
+    "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+    "fa50c30c-9f62-4f94-b851-217868185db6"
+   ]
+  },
+  {
+   "key": "Maxey981",
+   "name": "Engineering Agent",
+   "legacy_key": "su-engineer",
+   "mcp": [
+    "fa50c30c-9f62-4f94-b851-217868185db6"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "29d60a67-6f16-489b-8a1e-efdcece8d1f6",
+   "name": "Mixpanel",
+   "desc": "Analyze, query, and manage your Mixpanel data",
+   "tools": [
+    "Get-Projects",
+    "Get-Events",
+    "Get-Event-Details",
+    "Get-Property-Names",
+    "Get-Property-Values",
+    "Edit-Event",
+    "Edit-Property",
+    "Create-Tag"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "29d60a67-6f16-489b-8a1e-efdcece8d1f6",
+   "origins": [
+    "startups"
+   ]
+  },
+  {
+   "uuid": "50688846-553c-4a12-bc21-df94d2173734",
+   "name": "PostHog",
+   "desc": "Query, analyze, and manage your PostHog insights",
+   "tools": [
+    "query-run",
+    "query-generate-hogql-from-question",
+    "insight-create-from-query",
+    "insight-get",
+    "insights-get-all",
+    "insight-update",
+    "insight-delete",
+    "insight-query"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "50688846-553c-4a12-bc21-df94d2173734",
+   "origins": [
+    "startups"
+   ]
+  },
+  {
+   "uuid": "81b11acd-1115-4354-9142-91e2a2c13b0b",
+   "name": "Crunchbase",
+   "desc": "Access reliable company data, market signals, and forward-looking predictions to research organizations, compare performance, uncover emerging trends, and make faster, more informed business decisions",
+   "tools": [
+    "cb_entity_autocomplete",
+    "cb_entity_get",
+    "cb_expert_build_search",
+    "cb_expert_query_answer",
+    "cb_expert_query_domain",
+    "cb_expert_resolve_entity",
+    "cb_expert_submit_feedback",
+    "cb_expert_submit_search_feedback"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81b11acd-1115-4354-9142-91e2a2c13b0b",
+   "origins": [
+    "startups"
+   ]
+  },
+  {
+   "uuid": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "name": "Stripe",
+   "desc": "Payment processing and financial infrastructure tools",
+   "tools": [
+    "stripe_implementation_planner",
+    "send_stripe_mcp_feedback",
+    "search_stripe_documentation",
+    "stripe_api_search",
+    "stripe_api_details",
+    "stripe_api_read",
+    "stripe_api_write",
+    "get_balance_summary"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "origins": [
+    "startups"
+   ]
+  },
+  {
+   "uuid": "e7952077-b4e6-49f7-8670-ca53f8d50c40",
+   "name": "CB Insights",
+   "desc": "Predictive intelligence on private companies",
+   "tools": [
+    "api_chatcbi",
+    "api_rag",
+    "company_advanced_search",
+    "get_company_acquisitions",
+    "get_company_competitors",
+    "get_company_exits",
+    "get_company_funding",
+    "get_company_investments"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "e7952077-b4e6-49f7-8670-ca53f8d50c40",
+   "origins": [
+    "startups"
+   ]
+  },
+  {
+   "uuid": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "name": "Linear",
+   "desc": "Manage issues, projects & team workflows in Linear",
+   "tools": [
+    "list_comments",
+    "create_comment",
+    "list_cycles",
+    "get_document",
+    "list_documents",
+    "get_issue",
+    "list_issues",
+    "create_issue"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "origins": [
+    "startups"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+  "fa50c30c-9f62-4f94-b851-217868185db6",
+  "50688846-553c-4a12-bc21-df94d2173734",
+  "29d60a67-6f16-489b-8a1e-efdcece8d1f6",
+  "81b11acd-1115-4354-9142-91e2a2c13b0b",
+  "e7952077-b4e6-49f7-8670-ca53f8d50c40"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1590",
+   "mcp": "e7952077-b4e6-49f7-8670-ca53f8d50c40",
+   "topic": "startups",
+   "score": 0.2415,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey973",
+   "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "topic": "startups",
+   "score": 0.1141,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey973",
+   "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "topic": "startups",
+   "score": 0.323,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey974",
+   "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "topic": "startups",
+   "score": 0.1141,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey973",
+    "skill": "su-hiring-plan-builder"
+   }
+  },
+  {
+   "agent": "Maxey974",
+   "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "topic": "startups",
+   "score": 0.323,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey973",
+    "skill": "su-hiring-plan-builder"
+   }
+  },
+  {
+   "agent": "Maxey976",
+   "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "topic": "startups",
+   "score": 0.3321,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey981",
+    "skill": "su-issue-tracker-manager"
+   }
+  },
+  {
+   "agent": "Maxey978",
+   "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "topic": "startups",
+   "score": 0.1141,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey973",
+    "skill": "su-okr-planner"
+   }
+  },
+  {
+   "agent": "Maxey978",
+   "mcp": "e7952077-b4e6-49f7-8670-ca53f8d50c40",
+   "topic": "startups",
+   "score": 0.2392,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey978",
+   "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "topic": "startups",
+   "score": 0.323,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey973",
+    "skill": "su-okr-planner"
+   }
+  },
+  {
+   "agent": "Maxey980",
+   "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "topic": "startups",
+   "score": 0.1141,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey973",
+    "skill": "su-data-room-organizer"
+   }
+  },
+  {
+   "agent": "Maxey980",
+   "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "topic": "startups",
+   "score": 0.323,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey973",
+    "skill": "su-data-room-organizer"
+   }
+  },
+  {
+   "agent": "Maxey981",
+   "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
+   "topic": "startups",
+   "score": 0.3321,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "validation": "problem customer market size validation workaround",
+  "productops": "mvp scope roadmap backlog priority issue sprint release",
+  "growthloop": "retention cohort activation event churn signup",
+  "runwaymath": "burn runway revenue subscription margin payment balance",
+  "raising": "investor funding round pitch deck valuation room",
+  "teamops": "hiring objective objectives team plan quarterly"
+ },
+ "sources": [
+  "startups"
+ ]
+}

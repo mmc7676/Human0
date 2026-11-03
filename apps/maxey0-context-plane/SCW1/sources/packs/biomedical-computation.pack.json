@@ -1,0 +1,606 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "biomedical-computation",
+ "topic": {
+  "id": "biomedical-computation",
+  "label": "Biomedical Computation",
+  "desc": "Biomedical Computation: computational methods for genomics, molecules, imaging, clinical data and physiology."
+ },
+ "concepts": [
+  [
+   "bmc-genomics-bioinformatics",
+   "Genomics and Bioinformatics",
+   "biomedical-computation",
+   "Sequence alignment, variant calling and expression analysis of high-throughput sequencing data.",
+   [
+    "genomics",
+    "sequencing",
+    "alignment",
+    "variant",
+    "expression",
+    "rna-seq",
+    "genome",
+    "pipeline"
+   ]
+  ],
+  [
+   "bmc-molecular-modeling",
+   "Molecular Modeling and Drug Discovery",
+   "biomedical-computation",
+   "Structure prediction, docking and molecular dynamics for understanding and designing drugs.",
+   [
+    "molecular",
+    "docking",
+    "structure",
+    "dynamics",
+    "ligand",
+    "drug",
+    "protein",
+    "binding"
+   ]
+  ],
+  [
+   "bmc-biomedical-ml",
+   "Biomedical Machine Learning",
+   "biomedical-computation",
+   "Statistical learning on biomedical data with attention to validation, bias and interpretability.",
+   [
+    "machine learning",
+    "classifier",
+    "validation",
+    "bias",
+    "interpretability",
+    "feature",
+    "deep learning",
+    "prediction"
+   ]
+  ],
+  [
+   "bmc-clinical-informatics",
+   "Clinical Informatics",
+   "biomedical-computation",
+   "Electronic health records, clinical terminologies and trial data for research and care.",
+   [
+    "clinical",
+    "ehr",
+    "phenotype",
+    "terminology",
+    "trial",
+    "cohort",
+    "outcome",
+    "interoperability"
+   ]
+  ],
+  [
+   "bmc-medical-imaging",
+   "Medical Image Computing",
+   "biomedical-computation",
+   "Segmentation, registration and quantitative analysis of CT, MRI and microscopy.",
+   [
+    "imaging",
+    "segmentation",
+    "registration",
+    "mri",
+    "ct",
+    "radiomics",
+    "image",
+    "annotation"
+   ]
+  ],
+  [
+   "bmc-physiological-modeling",
+   "Physiological Modeling",
+   "biomedical-computation",
+   "Mechanistic simulation of organs and pharmacokinetics across scales.",
+   [
+    "physiology",
+    "pharmacokinetics",
+    "compartment",
+    "simulation",
+    "cardiac",
+    "multiscale",
+    "dose",
+    "differential equation"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "bmc-variant-calling",
+   "bmc-genomics-bioinformatics",
+   "Variant Calling Pipeline",
+   "Runs alignment and variant calling on sequencing reads, checked against a truth set for precision and recall.",
+   "procedural",
+   [
+    [
+     "bmc-genomics",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-differential-expression",
+   "bmc-genomics-bioinformatics",
+   "Differential Expression Analysis",
+   "Finds differentially expressed genes from RNA-seq counts, checked by false discovery rate control.",
+   "procedural",
+   [
+    [
+     "bmc-genomics",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-variant-interpretation",
+   "bmc-genomics-bioinformatics",
+   "Variant Interpretation",
+   "Interprets variant pathogenicity from databases and literature, checked against ACMG criteria.",
+   "semantic",
+   [
+    [
+     "bmc-genomics",
+     "primary"
+    ],
+    [
+     "bmc-lit",
+     "checker"
+    ],
+    [
+     "bmc-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-structure-prediction",
+   "bmc-molecular-modeling",
+   "Structure Prediction",
+   "Predicts protein and complex structures, checked by confidence metrics and experimental structure comparison.",
+   "procedural",
+   [
+    [
+     "bmc-structural",
+     "primary"
+    ],
+    [
+     "bmc-lit",
+     "checker"
+    ],
+    [
+     "bmc-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-ligand-docking",
+   "bmc-molecular-modeling",
+   "Ligand Docking Screen",
+   "Docks ligand libraries to a target and ranks poses, checked by redocking a known ligand.",
+   "procedural",
+   [
+    [
+     "bmc-structural",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-md-simulation",
+   "bmc-molecular-modeling",
+   "Molecular Dynamics Analysis",
+   "Runs and analyses molecular dynamics trajectories, checked by energy and RMSD stability.",
+   "procedural",
+   [
+    [
+     "bmc-structural",
+     "primary"
+    ],
+    [
+     "bmc-physio",
+     "checker"
+    ],
+    [
+     "bmc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-model-training",
+   "bmc-biomedical-ml",
+   "Predictive Model Training",
+   "Trains and tunes a biomedical classifier, checked by held-out cross-validation metrics.",
+   "procedural",
+   [
+    [
+     "bmc-ml",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-bias-audit",
+   "bmc-biomedical-ml",
+   "Model Bias Audit",
+   "Audits model performance across patient subgroups, checked by stratified metric gaps.",
+   "procedural",
+   [
+    [
+     "bmc-ml",
+     "primary"
+    ],
+    [
+     "bmc-clinical",
+     "checker"
+    ],
+    [
+     "bmc-stats",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-feature-interpretation",
+   "bmc-biomedical-ml",
+   "Feature Interpretation",
+   "Explains model predictions with attribution methods, checked by perturbation consistency.",
+   "semantic",
+   [
+    [
+     "bmc-ml",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-cohort-definition",
+   "bmc-clinical-informatics",
+   "Cohort Phenotyping",
+   "Defines a patient cohort from EHR codes and rules, checked by chart review sample.",
+   "procedural",
+   [
+    [
+     "bmc-clinical",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-trial-search",
+   "bmc-clinical-informatics",
+   "Clinical Trial Search",
+   "Finds relevant clinical trials by condition and eligibility, checked against registry identifiers.",
+   "procedural",
+   [
+    [
+     "bmc-clinical",
+     "primary"
+    ],
+    [
+     "bmc-lit",
+     "checker"
+    ],
+    [
+     "bmc-genomics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-terminology-mapping",
+   "bmc-clinical-informatics",
+   "Terminology Mapping",
+   "Maps local codes to standard terminologies, checked by validated crosswalk coverage.",
+   "procedural",
+   [
+    [
+     "bmc-clinical",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-image-segmentation",
+   "bmc-medical-imaging",
+   "Medical Image Segmentation",
+   "Segments organs or lesions in scans, checked by Dice overlap with expert annotation.",
+   "procedural",
+   [
+    [
+     "bmc-imaging",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-image-registration",
+   "bmc-medical-imaging",
+   "Image Registration",
+   "Aligns images across time or modality, checked by landmark registration error.",
+   "procedural",
+   [
+    [
+     "bmc-imaging",
+     "primary"
+    ],
+    [
+     "bmc-physio",
+     "checker"
+    ],
+    [
+     "bmc-stats",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-radiomics",
+   "bmc-medical-imaging",
+   "Radiomics Feature Extraction",
+   "Extracts quantitative image features for outcome models, checked by test-retest reproducibility.",
+   "procedural",
+   [
+    [
+     "bmc-imaging",
+     "primary"
+    ],
+    [
+     "bmc-ml",
+     "checker"
+    ],
+    [
+     "bmc-stats",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-pk-model",
+   "bmc-physiological-modeling",
+   "Pharmacokinetic Model",
+   "Fits compartment pharmacokinetic models to concentration data, checked by residual and parameter plausibility.",
+   "procedural",
+   [
+    [
+     "bmc-physio",
+     "primary"
+    ],
+    [
+     "bmc-stats",
+     "checker"
+    ],
+    [
+     "bmc-clinical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-cardiac-sim",
+   "bmc-physiological-modeling",
+   "Cardiac Electrophysiology Simulation",
+   "Simulates cardiac action potentials with ionic models, checked against published waveform features.",
+   "procedural",
+   [
+    [
+     "bmc-physio",
+     "primary"
+    ],
+    [
+     "bmc-lit",
+     "checker"
+    ],
+    [
+     "bmc-imaging",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bmc-multiscale-review",
+   "bmc-physiological-modeling",
+   "Multiscale Model Review",
+   "Reviews a multiscale physiology model for assumptions and validation, checked by a credibility checklist.",
+   "semantic",
+   [
+    [
+     "bmc-physio",
+     "primary"
+    ],
+    [
+     "bmc-lit",
+     "checker"
+    ],
+    [
+     "bmc-stats",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "bmc-genomics": "Genomics Pipeline Engineer",
+  "bmc-structural": "Structural Bioinformatician",
+  "bmc-ml": "Biomedical Machine Learning Engineer",
+  "bmc-clinical": "Clinical Informatics Analyst",
+  "bmc-imaging": "Medical Image Analyst",
+  "bmc-physio": "Physiology Simulation Modeler",
+  "bmc-stats": "Biostatistics Checker",
+  "bmc-lit": "Literature Evidence Checker"
+ },
+ "mcp": [
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "bioRxiv",
+   "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "Access bioRxiv and medRxiv preprint data",
+   [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Boltz API",
+   "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "Predict molecular structures and binding interactions, screen libraries, and design binders with the Boltz API.",
+   [
+    "boltz_estimate_protein_screen",
+    "boltz_estimate_small_molecule_screen",
+    "boltz_estimate_structure_and_binding",
+    "boltz_get_guidance",
+    "boltz_get_job_status",
+    "boltz_get_screen_results",
+    "boltz_get_structure_and_binding_prediction",
+    "boltz_start_protein_screen"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Clinical Trials",
+   "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "Access ClinicalTrials.gov data",
+   [
+    "get_trial_details",
+    "search_by_eligibility",
+    "analyze_endpoints",
+    "search_investigators",
+    "search_trials",
+    "search_by_sponsor"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-24)"
+  ],
+  [
+   "GitHub",
+   null,
+   "GitHub's official MCP Server",
+   [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "web-listed",
+   "https://github.com/github/github-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "bmc-genomics": "genomics sequencing alignment variant expression rna seq genome pipeline",
+  "bmc-molecular": "molecular docking structure dynamics ligand drug protein binding",
+  "bmc-biomedical": "machine learning classifier validation bias interpretability feature deep prediction",
+  "bmc-clinical": "clinical ehr phenotype terminology trial cohort outcome interoperability",
+  "bmc-medical": "imaging segmentation registration mri radiomics image annotation",
+  "bmc-physiological": "physiology pharmacokinetics compartment simulation cardiac multiscale dose differential equation"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

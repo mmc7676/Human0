@@ -1,0 +1,1243 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "governance",
+  "label": "Governance",
+  "desc": "Governance of agent systems and the organisations that run them: policy, risk, compliance frameworks, access and approval, audit and provenance, privacy, safety cases and incident accountability. Extends the base Governance topic."
+ },
+ "concepts": [
+  {
+   "id": "gv-access",
+   "label": "Access and Approval Control",
+   "desc": "Deciding who and which agent may do what: least privilege, approval gates, human sign-off and separation of duties.",
+   "keywords": [
+    "access",
+    "privilege",
+    "approval",
+    "signoff",
+    "duties",
+    "approve",
+    "approver",
+    "approving"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-accountability",
+   "label": "Incident Accountability and Change Control",
+   "desc": "Owning failures: incident review, blameless postmortems, decision records, change approval and rollback.",
+   "keywords": [
+    "accountability",
+    "incident",
+    "postmortem",
+    "change",
+    "rollback"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-audit",
+   "label": "Audit and Provenance",
+   "desc": "Keeping tamper-evident records of decisions and actions: logs, signatures, lineage and the questions an audit trail must answer.",
+   "keywords": [
+    "audit",
+    "provenance",
+    "lineage",
+    "trail",
+    "tamper"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-compliance",
+   "label": "Compliance Frameworks",
+   "desc": "Mapping controls to frameworks such as SOC 2, ISO 27001, GDPR and HIPAA and collecting the evidence an auditor asks for.",
+   "keywords": [
+    "compliance",
+    "framework",
+    "soc2",
+    "gdpr",
+    "evidence",
+    "soc"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-policy",
+   "label": "Policy and Rules",
+   "desc": "Writing and maintaining machine-checkable policies: scope, rules, exceptions, versioning and who owns each rule.",
+   "keywords": [
+    "policy",
+    "rule",
+    "exception",
+    "versioning",
+    "owner",
+    "contradict",
+    "prevail"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-privacy",
+   "label": "Privacy and Data Protection",
+   "desc": "Protecting personal data: lawful basis, minimisation, retention, consent, data subject requests and breach notice.",
+   "keywords": [
+    "privacy",
+    "personal",
+    "retention",
+    "consent",
+    "breach"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-risk",
+   "label": "Risk Management",
+   "desc": "Identifying, rating and treating risks: registers, likelihood and impact, controls, residual risk and acceptance.",
+   "keywords": [
+    "risk",
+    "register",
+    "likelihood",
+    "impact",
+    "residual"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  },
+  {
+   "id": "gv-safety",
+   "label": "Safety Cases and Agent Oversight",
+   "desc": "Arguing and testing that an agent is safe enough for its use: boundaries, red lines, monitoring, kill switches and escalation.",
+   "keywords": [
+    "safety",
+    "oversight",
+    "boundary",
+    "escalation",
+    "killswitch",
+    "assurance",
+    "gsn",
+    "jailbreak",
+    "red"
+   ],
+   "topic": "governance",
+   "source": "governance",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "gv-access-review-runner",
+   "concept": "gv-access",
+   "label": "Access Review Runner",
+   "desc": "Lists who holds which permission, asks each owner to confirm or revoke it, and records the outcome and date.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey830",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey832",
+     "role": "support"
+    },
+    {
+     "key": "Maxey833",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-approval-gate-designer",
+   "concept": "gv-access",
+   "label": "Approval Gate Designer",
+   "desc": "Decides which actions need a human approval, who approves, what they see and how long a request may wait.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey830",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey834",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-duty-separation-checker",
+   "concept": "gv-access",
+   "label": "Separation of Duties Checker",
+   "desc": "Checks that no one person or agent can both request and approve a risky action, and lists the conflicts found.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey830",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey835",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-least-privilege-reviewer",
+   "concept": "gv-access",
+   "label": "Least Privilege Reviewer",
+   "desc": "Reviews what each user and agent can reach, flags permissions never used and proposes narrower roles.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey830",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-change-approver",
+   "concept": "gv-accountability",
+   "label": "Change Approval Planner",
+   "desc": "Defines which changes need review, tests and a rollback plan before release and tracks approvals against them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey837",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey830",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-corrective-action-tracker",
+   "concept": "gv-accountability",
+   "label": "Corrective Action Tracker",
+   "desc": "Tracks each follow-up action from an incident or audit to closure, with its owner, due date and evidence that it was fixed.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey838",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey837",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey833",
+     "role": "support"
+    },
+    {
+     "key": "Maxey839",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-decision-recorder",
+   "concept": "gv-accountability",
+   "label": "Decision Record Keeper",
+   "desc": "Records each significant decision with options, reasons, who decided and when it should be revisited.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey837",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey840",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-incident-reviewer",
+   "concept": "gv-accountability",
+   "label": "Incident Review Writer",
+   "desc": "Writes a blameless review with timeline, causes, what worked and actions with owners and dates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey837",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey831",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-audit-sampler",
+   "concept": "gv-audit",
+   "label": "Audit Sampler",
+   "desc": "Chooses a defensible sample of events or records for review and states the sampling method and the confidence it supports.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey831",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-audit-trail-designer",
+   "concept": "gv-audit",
+   "label": "Audit Trail Designer",
+   "desc": "Defines which events are logged, with what fields, for how long and who may read them, so the trail answers who, what, when and why.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey831",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey842",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-lineage-tracer",
+   "concept": "gv-audit",
+   "label": "Lineage Tracer",
+   "desc": "Traces an output back through the data, prompts, tools and decisions that produced it and marks any link that is missing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey831",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-log-integrity-checker",
+   "concept": "gv-audit",
+   "label": "Log Integrity Checker",
+   "desc": "Checks logs for gaps, reordering and edits using hashes or signatures and reports what could not be verified.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey831",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey830",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey837",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-control-mapper",
+   "concept": "gv-compliance",
+   "label": "Control Framework Mapper",
+   "desc": "Maps one set of controls to several frameworks so one piece of evidence can serve more than one audit.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey841",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey831",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-control-monitor",
+   "concept": "gv-compliance",
+   "label": "Control Test Scheduler",
+   "desc": "Schedules recurring tests of each control, records pass or fail with the date and opens a ticket when a control drifts out of compliance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey841",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey832",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-evidence-collector",
+   "concept": "gv-compliance",
+   "label": "Compliance Evidence Collector",
+   "desc": "Lists the evidence each control needs, who holds it, how fresh it is and which items are missing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey841",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-gap-assessor",
+   "concept": "gv-compliance",
+   "label": "Compliance Gap Assessor",
+   "desc": "Compares current practice with a framework requirement by requirement and ranks gaps by risk and effort.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey841",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-exception-register",
+   "concept": "gv-policy",
+   "label": "Policy Exception Tracker",
+   "desc": "Records each approved exception with its owner, reason and expiry date and flags exceptions that have lapsed.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey840",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey832",
+     "role": "support"
+    },
+    {
+     "key": "Maxey837",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-policy-conflict-checker",
+   "concept": "gv-policy",
+   "label": "Policy Conflict Checker",
+   "desc": "Finds rules that contradict each other or overlap and proposes which one should prevail and why.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey835",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey840",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-policy-drafter",
+   "concept": "gv-policy",
+   "label": "Policy Drafter",
+   "desc": "Drafts a policy with scope, rules, named exceptions and an owner, written so a program could check each rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey840",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-policy-version-tracker",
+   "concept": "gv-policy",
+   "label": "Policy Version Tracker",
+   "desc": "Tracks each change to a policy with date, author and reason, and shows which agents ran under which version.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey840",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey835",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-data-inventory-builder",
+   "concept": "gv-privacy",
+   "label": "Personal Data Inventory Builder",
+   "desc": "Lists what personal data is held, where, why and for how long, and who it is shared with.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey842",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey841",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey831",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-data-request-handler",
+   "concept": "gv-privacy",
+   "label": "Data Subject Request Handler",
+   "desc": "Walks a person's access or deletion request through verification, search, redaction and reply within the deadline.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey842",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey831",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-retention-planner",
+   "concept": "gv-privacy",
+   "label": "Retention and Minimisation Planner",
+   "desc": "Sets how long each kind of data is kept, what is deleted or anonymised afterwards and how deletion is proven.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey842",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-retention-scheduler",
+   "concept": "gv-privacy",
+   "label": "Retention and Deletion Scheduler",
+   "desc": "Sets how long each class of data is kept, who approves deletion and how deletion is proved afterward.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey832",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey842",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    },
+    {
+     "key": "Maxey831",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-risk-register-builder",
+   "concept": "gv-risk",
+   "label": "Risk Register Builder",
+   "desc": "Builds a register of risks with owner, likelihood, impact and current controls, and keeps every rating next to its evidence.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey836",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-risk-scorer",
+   "concept": "gv-risk",
+   "label": "Risk Scorer",
+   "desc": "Rates likelihood and impact on a stated scale and shows how the score changes if a control fails.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey836",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey834",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-risk-treatment-planner",
+   "concept": "gv-risk",
+   "label": "Risk Treatment Planner",
+   "desc": "Chooses to avoid, reduce, transfer or accept each risk, records who accepted what and sets a review date.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey836",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey835",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey837",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-vendor-risk-assessor",
+   "concept": "gv-risk",
+   "label": "Third-Party Risk Assessor",
+   "desc": "Rates a supplier or model provider on data handling, security posture and concentration risk and lists the questions it still must answer.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey843",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    },
+    {
+     "key": "Maxey841",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-boundary-definer",
+   "concept": "gv-safety",
+   "label": "Agent Boundary Definer",
+   "desc": "Lists what an agent may observe, decide, change and call, and what stays with the host system.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey834",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey830",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey835",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-oversight-planner",
+   "concept": "gv-safety",
+   "label": "Oversight and Escalation Planner",
+   "desc": "Defines what is monitored, which signals page a person and how an agent is stopped or rolled back.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey834",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey837",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-red-team-planner",
+   "concept": "gv-safety",
+   "label": "AI Red Team Planner",
+   "desc": "Plans adversarial tests, such as jailbreak attempts, of an agent against its stated limits, with scenarios, pass criteria and how findings are reported.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey844",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    },
+    {
+     "key": "Maxey834",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  },
+  {
+   "id": "gv-safety-case-writer",
+   "concept": "gv-safety",
+   "label": "Safety Case Writer",
+   "desc": "Writes the assurance argument, in GSN style, that an agent is safe for a stated use, with the claims, evidence and known limits laid out.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey834",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey833",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey836",
+     "role": "support"
+    }
+   ],
+   "source": "governance"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey830",
+   "name": "Access Control Agent",
+   "legacy_key": "gv-access-controller",
+   "mcp": [
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
+   ]
+  },
+  {
+   "key": "Maxey831",
+   "name": "Audit and Provenance Agent",
+   "legacy_key": "gv-audit-officer",
+   "mcp": [
+    "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
+   ]
+  },
+  {
+   "key": "Maxey832",
+   "name": "Records Management Agent",
+   "legacy_key": "gv-records-manager",
+   "mcp": []
+  },
+  {
+   "key": "Maxey833",
+   "name": "Governance Skeptic Agent",
+   "legacy_key": "gv-skeptic",
+   "mcp": [
+    "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
+   ]
+  },
+  {
+   "key": "Maxey834",
+   "name": "Safety Case Agent",
+   "legacy_key": "gv-safety-case-writer-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey835",
+   "name": "Policy Auditor Agent",
+   "legacy_key": "gv-policy-auditor",
+   "mcp": [
+    "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+    "a847d0cb-319e-4c0a-a70d-5278ee7e5f13"
+   ]
+  },
+  {
+   "key": "Maxey836",
+   "name": "Risk Officer Agent",
+   "legacy_key": "gv-risk-officer",
+   "mcp": [
+    "42dbc617-e23b-4319-8e27-6a2c72e3c444"
+   ]
+  },
+  {
+   "key": "Maxey837",
+   "name": "Accountability Agent",
+   "legacy_key": "gv-accountability-lead",
+   "mcp": [
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
+   ]
+  },
+  {
+   "key": "Maxey838",
+   "name": "Incident Review Agent",
+   "legacy_key": "gv-incident-review-agent",
+   "mcp": [
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
+   ]
+  },
+  {
+   "key": "Maxey839",
+   "name": "Governance Training Agent",
+   "legacy_key": "gv-training-lead",
+   "mcp": []
+  },
+  {
+   "key": "Maxey840",
+   "name": "Policy Author Agent",
+   "legacy_key": "gv-policy-author",
+   "mcp": [
+    "a847d0cb-319e-4c0a-a70d-5278ee7e5f13"
+   ]
+  },
+  {
+   "key": "Maxey841",
+   "name": "Compliance Analyst Agent",
+   "legacy_key": "gv-compliance-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey842",
+   "name": "Privacy Officer Agent",
+   "legacy_key": "gv-privacy-officer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey843",
+   "name": "Third-Party Risk Agent",
+   "legacy_key": "gv-vendor-risk-analyst",
+   "mcp": [
+    "42dbc617-e23b-4319-8e27-6a2c72e3c444"
+   ]
+  },
+  {
+   "key": "Maxey844",
+   "name": "AI Red Team Agent",
+   "legacy_key": "gv-red-team-lead",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+   "name": "D&B Risk Analytics",
+   "desc": "Risk workflows powered by the D&B Commercial Graph for third-party and counterparty risk",
+   "tools": [
+    "RAPortfolioTool",
+    "RASearchTool",
+    "RAOverviewTool",
+    "RAScoreAndRAtingsTool",
+    "RACompositeRiskScorecardTool"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+   "origins": [
+    "governance"
+   ]
+  },
+  {
+   "uuid": "7fc51aa2-cf7e-4429-9ed8-623b92395e60",
+   "name": "PaperOffice",
+   "desc": "Headless document management: search, read, extract, approve, send for signing and archive documents with the account's permissions",
+   "tools": [
+    "po_analytics_audit_center_get",
+    "po_analytics_document_activity_get",
+    "po_analytics_distribution_get",
+    "po_aiocr_analyze"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7fc51aa2-cf7e-4429-9ed8-623b92395e60",
+   "origins": [
+    "governance"
+   ]
+  },
+  {
+   "uuid": "a06a16f0-182d-43c1-a20d-0f95aee6027e",
+   "name": "Vanta",
+   "desc": "Connect to Vanta's trust management platform",
+   "tools": [
+    "addAnswerLibraryTags",
+    "addDocumentsToEvidenceRequest",
+    "addKnowledgeBaseResource",
+    "addKnowledgeBaseTags",
+    "addPendingAnswerLibraryQuestionAnswers",
+    "addTagsToCategory",
+    "approvePendingAnswerLibraryQuestionAnswers",
+    "assignTestOwnership"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "a06a16f0-182d-43c1-a20d-0f95aee6027e",
+   "origins": [
+    "governance",
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "a448a6de-6440-420a-a7fe-1cace7e65f5f",
+   "name": "iubenda: Privacy policy & cookie banner",
+   "desc": "GDPR and CCPA compliance: cookie consent, cookie scanner, and terms and conditions",
+   "tools": [
+    "create_cookie_solution",
+    "create_privacy_cookie_policy",
+    "create_site",
+    "create_site_pcp_service",
+    "create_terms_conditions",
+    "delete_cookie_solution",
+    "delete_privacy_cookie_policy",
+    "delete_site"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "a448a6de-6440-420a-a7fe-1cace7e65f5f",
+   "origins": [
+    "governance"
+   ]
+  },
+  {
+   "uuid": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+   "name": "MuleSoft",
+   "desc": "Govern, manage, and observe your entire Agent ecosystem",
+   "tools": [
+    "apply_policy_to_instance",
+    "check_control_scope_targets",
+    "check_policy_conformance",
+    "create_automated_policy_strategy",
+    "create_control",
+    "create_omni_gateway",
+    "create_scanner",
+    "delete_automated_policy_strategy"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+   "origins": [
+    "governance",
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "name": "Sprinto MCP",
+   "desc": "Manage trust workflows",
+   "tools": [
+    "action__ACCESS_USER_REVIEW_ACTION",
+    "action__ADD_BULK_ORG_RISK_ITEMS",
+    "action__ADD_CONTROL_FRAMEWORK_MAP",
+    "action__ADD_CONTROL_TO_AUDIT",
+    "action__ADD_CUSTOM_CHECK",
+    "action__ADD_CUSTOM_ORG_RISK_ITEM",
+    "action__ADD_FRAMEWORK_PRINCIPLE"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "origins": [
+    "governance",
+    "maxey0_base"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "a06a16f0-182d-43c1-a20d-0f95aee6027e",
+  "d1e853bb-e524-4771-bb2c-21cef5c67805",
+  "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+  "a448a6de-6440-420a-a7fe-1cace7e65f5f",
+  "7fc51aa2-cf7e-4429-9ed8-623b92395e60",
+  "42dbc617-e23b-4319-8e27-6a2c72e3c444"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey830",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "governance",
+   "score": 0.2161,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey831",
+    "skill": "gv-log-integrity-checker"
+   }
+  },
+  {
+   "agent": "Maxey831",
+   "mcp": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+   "topic": "governance",
+   "score": 0.2031,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey840",
+    "skill": "gv-policy-version-tracker"
+   }
+  },
+  {
+   "agent": "Maxey831",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "governance",
+   "score": 0.2161,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey833",
+   "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+   "topic": "governance",
+   "score": 0.2578,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey836",
+    "skill": "gv-risk-scorer"
+   }
+  },
+  {
+   "agent": "Maxey833",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "governance",
+   "score": 0.2161,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey831",
+    "skill": "gv-audit-sampler"
+   }
+  },
+  {
+   "agent": "Maxey835",
+   "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+   "topic": "governance",
+   "score": 0.2578,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey836",
+    "skill": "gv-risk-register-builder"
+   }
+  },
+  {
+   "agent": "Maxey835",
+   "mcp": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+   "topic": "governance",
+   "score": 0.203,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey836",
+   "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+   "topic": "governance",
+   "score": 0.2578,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey837",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "governance",
+   "score": 0.2016,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey838",
+    "skill": "gv-corrective-action-tracker"
+   }
+  },
+  {
+   "agent": "Maxey838",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "governance",
+   "score": 0.2016,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey840",
+   "mcp": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+   "topic": "governance",
+   "score": 0.2031,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey843",
+   "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
+   "topic": "governance",
+   "score": 0.3106,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "gvpolicy": "exception owner contradict prevail versioning version author",
+  "gvrisk": "register impact residual treatment accept transfer management scorer third",
+  "gvcompliance": "soc2 gdpr hipaa framework soc mapper collector missing assessor scheduler",
+  "gvaccess": "privilege approval signoff duties approve approver approving access",
+  "gvaudit": "tamper signature trail lineage logged reordering sampler",
+  "gvprivacy": "personal minimisation subject deletion anonymised privacy breach protection",
+  "gvsafety": "oversight escalation boundary rollback killswitch assurance gsn jailbreak red definer",
+  "gvaccount": "postmortem accountability blameless record"
+ },
+ "sources": [
+  "governance"
+ ]
+}

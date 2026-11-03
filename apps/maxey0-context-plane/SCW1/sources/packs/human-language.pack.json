@@ -1,0 +1,715 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "human-language",
+ "topic": {
+  "id": "human-language",
+  "label": "Human Language",
+  "desc": "Human languages as a subject and a working domain: sounds, words, grammar, meaning, vocabulary, translation and localisation, writing systems and Unicode, computational linguistics, and language variation and learning."
+ },
+ "concepts": [
+  [
+   "hl-sound",
+   "Phonetics and Phonology",
+   "human-language",
+   "The sounds of speech and how a language organises them: phonemes, stress, tone, transcription and pronunciation.",
+   [
+    "phoneme",
+    "phonetics",
+    "stress",
+    "tone",
+    "transcription"
+   ]
+  ],
+  [
+   "hl-grammar",
+   "Morphology and Syntax",
+   "human-language",
+   "How words are built and combined: affixes, inflection, parts of speech, phrase structure, word order and agreement.",
+   [
+    "morphology",
+    "syntax",
+    "inflection",
+    "agreement",
+    "grammar",
+    "sentence",
+    "tree",
+    "parse",
+    "clause",
+    "noun",
+    "verb"
+   ]
+  ],
+  [
+   "hl-meaning",
+   "Semantics and Pragmatics",
+   "human-language",
+   "Meaning of words and sentences and meaning in use: ambiguity, reference, implicature, politeness and tone.",
+   [
+    "semantics",
+    "pragmatics",
+    "ambiguity",
+    "implicature",
+    "register"
+   ]
+  ],
+  [
+   "hl-lexicon",
+   "Vocabulary and Lexicography",
+   "human-language",
+   "Words and their histories: etymology, senses, collocations, dictionaries, glossaries and terminology.",
+   [
+    "etymology",
+    "lexicon",
+    "dictionary",
+    "collocation",
+    "terminology"
+   ]
+  ],
+  [
+   "hl-translation",
+   "Translation and Localization",
+   "human-language",
+   "Moving meaning between languages: translation quality, terminology consistency, cultural adaptation and locale formats.",
+   [
+    "translation",
+    "localization",
+    "locale",
+    "terminology",
+    "interpretation",
+    "translate",
+    "translated",
+    "translating",
+    "localize",
+    "localise",
+    "i18n",
+    "l10n",
+    "japanese",
+    "german",
+    "french",
+    "spanish",
+    "chinese",
+    "language"
+   ]
+  ],
+  [
+   "hl-writing",
+   "Writing Systems and Text Encoding",
+   "human-language",
+   "Scripts and their handling in software: alphabets, syllabaries and logographs, Unicode, normalisation and text direction.",
+   [
+    "script",
+    "unicode",
+    "encoding",
+    "normalisation",
+    "bidirectional"
+   ]
+  ],
+  [
+   "hl-computational",
+   "Computational Linguistics",
+   "human-language",
+   "Language processing: tokenisation, tagging, parsing, language identification, corpora and evaluation of language models.",
+   [
+    "tokenisation",
+    "parsing",
+    "corpus",
+    "tagging",
+    "language"
+   ]
+  ],
+  [
+   "hl-variation",
+   "Language Variation and Learning",
+   "human-language",
+   "Dialects, registers and change over time, how people learn second languages and how endangered languages are documented.",
+   [
+    "dialect",
+    "register",
+    "acquisition",
+    "endangered",
+    "sociolinguistics"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "hl-phoneme-transcriber",
+   "hl-sound",
+   "Phonetic Transcriber",
+   "Transcribes words in a phonetic alphabet, marks stress and tone and notes where the transcription is a regional choice.",
+   "procedural",
+   [
+    [
+     "hl-phonologist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-lexicographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-sound-pattern-analyst",
+   "hl-sound",
+   "Sound Pattern Analyst",
+   "Finds the sound rules in a set of words, such as assimilation or vowel harmony, and states each rule in plain terms.",
+   "semantic",
+   [
+    [
+     "hl-phonologist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-pronunciation-coach",
+   "hl-sound",
+   "Pronunciation Coach",
+   "Compares a learner's target and attempt, names the sound that differs and gives a practice order from easiest to hardest.",
+   "procedural",
+   [
+    [
+     "hl-phonologist",
+     "primary"
+    ],
+    [
+     "hl-learning-coach",
+     "checker"
+    ],
+    [
+     "hl-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-morphology-analyzer",
+   "hl-grammar",
+   "Morphological Analyzer",
+   "Splits words into roots and affixes, labels each part and lists the inflected forms of a word.",
+   "procedural",
+   [
+    [
+     "hl-grammarian",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-computational-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-sentence-parser",
+   "hl-grammar",
+   "Sentence Structure Parser",
+   "Draws the phrase structure of a sentence, marks subject, verb and object and explains how word order carries meaning.",
+   "procedural",
+   [
+    [
+     "hl-grammarian",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-computational-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-grammar-explainer",
+   "hl-grammar",
+   "Grammar Rule Explainer",
+   "Explains a grammar rule with examples and exceptions and checks a learner's sentence against it.",
+   "semantic",
+   [
+    [
+     "hl-grammarian",
+     "primary"
+    ],
+    [
+     "hl-learning-coach",
+     "checker"
+    ],
+    [
+     "hl-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-ambiguity-resolver",
+   "hl-meaning",
+   "Ambiguity Resolver",
+   "Lists the readings of an ambiguous sentence and says what context would select each one.",
+   "semantic",
+   [
+    [
+     "hl-semanticist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-implicature-reader",
+   "hl-meaning",
+   "Implicature and Tone Reader",
+   "Reads what a message implies beyond its words, including politeness, irony and indirect requests, and marks where it is uncertain.",
+   "semantic",
+   [
+    [
+     "hl-semanticist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-sociolinguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-register-adapter",
+   "hl-meaning",
+   "Register Adapter",
+   "Rewrites text for a stated audience and level of formality while keeping its meaning, and lists what changed.",
+   "procedural",
+   [
+    [
+     "hl-semanticist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-etymology-tracer",
+   "hl-lexicon",
+   "Etymology Tracer",
+   "Traces a word's history through earlier forms and related languages and separates documented steps from guesses.",
+   "semantic",
+   [
+    [
+     "hl-lexicographer",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-sociolinguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-sense-disambiguator",
+   "hl-lexicon",
+   "Word Sense Disambiguator",
+   "Lists the senses of a word with examples and chooses the one that fits a given sentence, with the clue used.",
+   "procedural",
+   [
+    [
+     "hl-lexicographer",
+     "primary"
+    ],
+    [
+     "hl-semanticist",
+     "checker"
+    ],
+    [
+     "hl-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-glossary-builder",
+   "hl-lexicon",
+   "Terminology Glossary Builder",
+   "Collects domain terms with approved translations and definitions and flags terms used inconsistently.",
+   "procedural",
+   [
+    [
+     "hl-lexicographer",
+     "primary"
+    ],
+    [
+     "hl-translator",
+     "checker"
+    ],
+    [
+     "hl-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-text-translator",
+   "hl-translation",
+   "Text Translator",
+   "Translates a passage, keeps names and terminology consistent and marks sentences where more than one translation is reasonable.",
+   "procedural",
+   [
+    [
+     "hl-translator",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-lexicographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-translation-reviewer",
+   "hl-translation",
+   "Translation Quality Reviewer",
+   "Reviews a translation against its source for omissions, mistranslations and tone and scores each issue by severity.",
+   "semantic",
+   [
+    [
+     "hl-checker",
+     "primary"
+    ],
+    [
+     "hl-translator",
+     "checker"
+    ],
+    [
+     "hl-semanticist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-locale-formatter",
+   "hl-translation",
+   "Locale and Format Localizer",
+   "Adapts dates, numbers, currencies, units and text length for a locale and finds strings that do not fit.",
+   "procedural",
+   [
+    [
+     "hl-localization-engineer",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-script-identifier",
+   "hl-writing",
+   "Script and Encoding Identifier",
+   "Identifies the script and encoding of a text, detects broken encodings and proposes the conversion.",
+   "procedural",
+   [
+    [
+     "hl-text-engineer",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-computational-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-unicode-normalizer",
+   "hl-writing",
+   "Unicode Normalization Advisor",
+   "Explains and applies normalisation forms and case folding so equal-looking strings compare equal.",
+   "procedural",
+   [
+    [
+     "hl-text-engineer",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-localization-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-bidi-layout-checker",
+   "hl-writing",
+   "Text Direction Checker",
+   "Checks mixed left to right and right to left text for ordering and punctuation problems and suggests markup fixes.",
+   "procedural",
+   [
+    [
+     "hl-text-engineer",
+     "primary"
+    ],
+    [
+     "hl-localization-engineer",
+     "checker"
+    ],
+    [
+     "hl-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-tokenizer-designer",
+   "hl-computational",
+   "Tokenisation Designer",
+   "Chooses word, subword or character tokenisation for a language and shows how it splits sample text.",
+   "semantic",
+   [
+    [
+     "hl-computational-linguist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-text-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-language-identifier",
+   "hl-computational",
+   "Language Identifier",
+   "Identifies the language of a text, reports confidence and warns on short or mixed-language input.",
+   "procedural",
+   [
+    [
+     "hl-computational-linguist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-text-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-corpus-evaluator",
+   "hl-computational",
+   "Corpus and Evaluation Designer",
+   "Builds a labelled test set for a language task, picks metrics and reports where scores hide weak languages or dialects.",
+   "procedural",
+   [
+    [
+     "hl-computational-linguist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-sociolinguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-dialect-profiler",
+   "hl-variation",
+   "Dialect and Variety Profiler",
+   "Describes the features that mark a dialect or variety and cautions against stereotyping speakers from a few features.",
+   "semantic",
+   [
+    [
+     "hl-sociolinguist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-phonologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-learning-planner",
+   "hl-variation",
+   "Language Learning Planner",
+   "Plans study for a learner by level and goal, ordering vocabulary, grammar and listening practice with checkpoints.",
+   "procedural",
+   [
+    [
+     "hl-learning-coach",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hl-language-documenter",
+   "hl-variation",
+   "Language Documentation Planner",
+   "Plans recordings, transcription and glossing for an under-documented language with consent and community ownership recorded.",
+   "procedural",
+   [
+    [
+     "hl-sociolinguist",
+     "primary"
+    ],
+    [
+     "hl-checker",
+     "checker"
+    ],
+    [
+     "hl-phonologist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "hl-phonologist": "Phonetics and Phonology Agent",
+  "hl-grammarian": "Grammar Agent",
+  "hl-semanticist": "Semantics and Pragmatics Agent",
+  "hl-lexicographer": "Lexicography Agent",
+  "hl-translator": "Translation Agent",
+  "hl-localization-engineer": "Localization Engineer Agent",
+  "hl-text-engineer": "Writing Systems and Encoding Agent",
+  "hl-computational-linguist": "Computational Linguistics Agent",
+  "hl-sociolinguist": "Sociolinguistics Agent",
+  "hl-learning-coach": "Language Learning Agent",
+  "hl-checker": "Language Quality Checker Agent"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Smartling",
+   "493d699b-dd21-43ae-afec-c47c914bae9c",
+   "Translate content and manage Smartling projects, jobs, and quality issues directly from your AI assistant.",
+   [
+    "smartling_add_issue_comment",
+    "smartling_add_strings_to_job",
+    "smartling_add_tags_to_strings",
+    "smartling_authorize_job",
+    "smartling_count_account_issues",
+    "smartling_count_project_issues",
+    "smartling_create_issue",
+    "smartling_create_job"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "hlsound": "phoneme phonetic stress tone assimilation harmony pronunciation phonology",
+  "hlgrammar": "morphology inflection syntax agreement phrase word sentence tree noun grammar",
+  "hlmeaning": "ambiguity implicature pragmatic politeness irony reading formality",
+  "hllexicon": "etymology sense collocation dictionary terminology lexicon vocabulary lexicography",
+  "hltranslate": "translator locale omission mistranslation translate translated translating localize localise i18n l10n japanese german french spanish chinese language interpretation",
+  "hlscript": "unicode encoding normalisation bidirectional text ordering",
+  "hlcomput": "tokenisation corpus identification parser tagging parsing computational linguistics",
+  "hlvariety": "dialect variety acquisition learner endangered sociolinguistics variation learning"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "DeepL": "directory listing; translation sends text to a third party: check data policy before use; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Smartling": "directory listing; has job-creation tools: treat use as human-approved; tool names are the directory listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

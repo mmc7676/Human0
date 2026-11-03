@@ -1,0 +1,546 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "political-science",
+ "topic": {
+  "id": "political-science",
+  "label": "Political Science",
+  "desc": "Political Science: the study of power, institutions, behaviour, conflict and policy within and between states."
+ },
+ "concepts": [
+  [
+   "polisci-political-theory",
+   "Political Theory",
+   "political-science",
+   "Normative and historical theories of legitimacy, justice, democracy, rights and authority.",
+   [
+    "political theory",
+    "democracy",
+    "legitimacy",
+    "justice",
+    "rights",
+    "authority",
+    "liberalism",
+    "sovereignty"
+   ]
+  ],
+  [
+   "polisci-comparative-politics",
+   "Comparative Politics",
+   "political-science",
+   "Regimes, parties, states and political change compared across countries.",
+   [
+    "comparative",
+    "regime",
+    "authoritarian",
+    "party system",
+    "state capacity",
+    "democratization",
+    "federalism",
+    "case study"
+   ]
+  ],
+  [
+   "polisci-elections-behavior",
+   "Elections, Institutions and Behavior",
+   "political-science",
+   "Voting, public opinion, legislatures, courts and the rules that shape political choices.",
+   [
+    "election",
+    "voting",
+    "public opinion",
+    "legislature",
+    "electoral system",
+    "turnout",
+    "polarization",
+    "district"
+   ]
+  ],
+  [
+   "polisci-international-relations",
+   "International Relations",
+   "political-science",
+   "War, peace, cooperation, international institutions and the global political economy.",
+   [
+    "international relations",
+    "conflict",
+    "war",
+    "alliance",
+    "institution",
+    "trade",
+    "realism",
+    "security"
+   ]
+  ],
+  [
+   "polisci-political-methodology",
+   "Political Methodology",
+   "political-science",
+   "Research design, causal inference, surveys, text-as-data and statistics for political questions.",
+   [
+    "methodology",
+    "causal inference",
+    "regression",
+    "survey",
+    "experiment",
+    "text as data",
+    "dataset",
+    "statistics"
+   ]
+  ],
+  [
+   "polisci-public-policy",
+   "Public Policy and Administration",
+   "political-science",
+   "How policy is made, implemented and evaluated by governments and bureaucracies.",
+   [
+    "policy",
+    "public administration",
+    "bureaucracy",
+    "implementation",
+    "evaluation",
+    "agenda",
+    "regulation",
+    "budget"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "polisci-theory-argument-mapper",
+   "polisci-political-theory",
+   "Theory Argument Mapper",
+   "Reconstructs a theorist argument about legitimacy or justice and checks the reconstruction against the primary text.",
+   "semantic",
+   [
+    [
+     "polisci-theorist",
+     "primary"
+    ],
+    [
+     "polisci-methodologist",
+     "checker"
+    ],
+    [
+     "polisci-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-democracy-concept-coder",
+   "polisci-political-theory",
+   "Democracy Concept Coder",
+   "Applies minimalist and substantive definitions of democracy to a case and checks codings against index data.",
+   "semantic",
+   [
+    [
+     "polisci-theorist",
+     "primary"
+    ],
+    [
+     "polisci-comparativist",
+     "checker"
+    ],
+    [
+     "polisci-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-regime-classifier",
+   "polisci-comparative-politics",
+   "Regime Type Classifier",
+   "Classifies regimes with established democracy indices and checks classification against multiple datasets.",
+   "procedural",
+   [
+    [
+     "polisci-comparativist",
+     "primary"
+    ],
+    [
+     "polisci-methodologist",
+     "checker"
+    ],
+    [
+     "polisci-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-case-comparison-designer",
+   "polisci-comparative-politics",
+   "Case Comparison Designer",
+   "Selects cases using most-similar or most-different designs and checks that controls are actually matched.",
+   "semantic",
+   [
+    [
+     "polisci-comparativist",
+     "primary"
+    ],
+    [
+     "polisci-methodologist",
+     "checker"
+    ],
+    [
+     "polisci-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-foreign-press-analyzer",
+   "polisci-comparative-politics",
+   "Foreign Press Analyzer",
+   "Translates and summarises foreign-language political coverage and checks the translation by back-translation.",
+   "procedural",
+   [
+    [
+     "polisci-translator",
+     "primary"
+    ],
+    [
+     "polisci-comparativist",
+     "checker"
+    ],
+    [
+     "polisci-ir",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-electoral-system-simulator",
+   "polisci-elections-behavior",
+   "Electoral System Simulator",
+   "Converts vote shares into seats under different electoral rules and checks totals and disproportionality indices.",
+   "procedural",
+   [
+    [
+     "polisci-americanist",
+     "primary"
+    ],
+    [
+     "polisci-methodologist",
+     "checker"
+    ],
+    [
+     "polisci-mapper",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-opinion-poll-analyzer",
+   "polisci-elections-behavior",
+   "Opinion Poll Analyzer",
+   "Weights and aggregates opinion polls and checks margins of error and house effects.",
+   "procedural",
+   [
+    [
+     "polisci-americanist",
+     "primary"
+    ],
+    [
+     "polisci-forecaster",
+     "checker"
+    ],
+    [
+     "polisci-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-district-map-analyzer",
+   "polisci-elections-behavior",
+   "District Map Analyzer",
+   "Analyses district boundaries for compactness and partisan bias and checks metrics on the geographic data.",
+   "procedural",
+   [
+    [
+     "polisci-mapper",
+     "primary"
+    ],
+    [
+     "polisci-americanist",
+     "checker"
+    ],
+    [
+     "polisci-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-conflict-event-analyzer",
+   "polisci-international-relations",
+   "Conflict Event Analyzer",
+   "Codes and maps conflict events from reports and checks codings against an event dataset.",
+   "procedural",
+   [
+    [
+     "polisci-ir",
+     "primary"
+    ],
+    [
+     "polisci-mapper",
+     "checker"
+    ],
+    [
+     "polisci-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-ir-theory-applier",
+   "polisci-international-relations",
+   "IR Theory Applier",
+   "Explains a foreign policy event through realist, liberal and constructivist lenses and checks each against evidence.",
+   "semantic",
+   [
+    [
+     "polisci-ir",
+     "primary"
+    ],
+    [
+     "polisci-theorist",
+     "checker"
+    ],
+    [
+     "polisci-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-geopolitical-forecaster",
+   "polisci-international-relations",
+   "Geopolitical Forecaster",
+   "Produces probabilistic forecasts on international events and checks them with calibration and Brier scores.",
+   "semantic",
+   [
+    [
+     "polisci-forecaster",
+     "primary"
+    ],
+    [
+     "polisci-ir",
+     "checker"
+    ],
+    [
+     "polisci-methodologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-causal-design-reviewer",
+   "polisci-political-methodology",
+   "Causal Design Reviewer",
+   "Assesses identification strategies such as difference-in-differences and regression discontinuity and checks assumptions with placebo tests.",
+   "semantic",
+   [
+    [
+     "polisci-methodologist",
+     "primary"
+    ],
+    [
+     "polisci-policy",
+     "checker"
+    ],
+    [
+     "polisci-americanist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-survey-experiment-builder",
+   "polisci-political-methodology",
+   "Survey Experiment Builder",
+   "Designs survey experiments with randomised treatments and checks balance and power.",
+   "procedural",
+   [
+    [
+     "polisci-methodologist",
+     "primary"
+    ],
+    [
+     "polisci-americanist",
+     "checker"
+    ],
+    [
+     "polisci-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-political-dataset-query",
+   "polisci-political-methodology",
+   "Political Dataset Query",
+   "Queries election and country-year datasets with SQL and checks merges and counts against codebooks.",
+   "procedural",
+   [
+    [
+     "polisci-methodologist",
+     "primary"
+    ],
+    [
+     "polisci-comparativist",
+     "checker"
+    ],
+    [
+     "polisci-mapper",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-policy-evaluation-planner",
+   "polisci-public-policy",
+   "Policy Evaluation Planner",
+   "Plans impact evaluations of programmes and checks outcome measures and comparison groups.",
+   "procedural",
+   [
+    [
+     "polisci-policy",
+     "primary"
+    ],
+    [
+     "polisci-methodologist",
+     "checker"
+    ],
+    [
+     "polisci-forecaster",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "polisci-policy-process-tracer",
+   "polisci-public-policy",
+   "Policy Process Tracer",
+   "Traces agenda setting and implementation for a policy and checks each step against documents.",
+   "semantic",
+   [
+    [
+     "polisci-policy",
+     "primary"
+    ],
+    [
+     "polisci-americanist",
+     "checker"
+    ],
+    [
+     "polisci-comparativist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "polisci-theorist": "Political Theory Agent",
+  "polisci-comparativist": "Comparative Politics Agent",
+  "polisci-americanist": "Elections and Institutions Agent",
+  "polisci-ir": "International Relations Agent",
+  "polisci-methodologist": "Political Methodology Agent",
+  "polisci-policy": "Public Policy Analyst",
+  "polisci-forecaster": "Political Forecasting Agent",
+  "polisci-mapper": "Electoral Geography Agent",
+  "polisci-translator": "Foreign Source Translator"
+ },
+ "mcp": [
+  [
+   "Mantic",
+   "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "Explore judgemental forecasts",
+   [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Felt Maps",
+   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "Map and analyze your geospatial data",
+   [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "polisci-normative": "theory democracy legitimacy justice rights authority liberalism sovereignty",
+  "polisci-regimes": "comparative regime authoritarian party capacity democratization federalism",
+  "polisci-voters": "election voting opinion legislature electoral turnout polarization district poll",
+  "polisci-world": "international conflict war alliance trade realism security geopolitical",
+  "polisci-methods": "methodology causal regression survey experiment dataset statistic sql",
+  "polisci-govern": "policy administration bureaucracy implementation evaluation agenda regulation budget"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

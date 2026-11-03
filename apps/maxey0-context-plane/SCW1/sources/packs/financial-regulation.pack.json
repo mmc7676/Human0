@@ -1,0 +1,256 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "financial-regulation",
+ "topic": {
+  "id": "financial-regulation",
+  "label": "Financial Regulation, AML and Compliance",
+  "desc": "Rules for finance: securities regulators and rules, anti-money laundering and KYC, sanctions, onshore and offshore regimes, and compliance programs."
+ },
+ "concepts": [
+  [
+   "frg-securities",
+   "Securities Regulators and Rules",
+   "financial-regulation",
+   "SEC, FINRA, CFTC and foreign regulators, registration, disclosure and market conduct rules.",
+   [
+    "sec",
+    "finra",
+    "cftc",
+    "regulator",
+    "securities",
+    "law",
+    "registration",
+    "disclosure",
+    "conduct",
+    "rule"
+   ]
+  ],
+  [
+   "frg-aml",
+   "Anti-Money Laundering",
+   "financial-regulation",
+   "AML programs, suspicious activity monitoring, SARs, placement, layering and integration.",
+   [
+    "aml",
+    "anti",
+    "money",
+    "laundering",
+    "suspicious",
+    "activity",
+    "sar",
+    "monitoring",
+    "layering",
+    "bsa"
+   ]
+  ],
+  [
+   "frg-kyc",
+   "KYC and Beneficial Ownership",
+   "financial-regulation",
+   "Know your customer, customer due diligence, enhanced due diligence and beneficial ownership.",
+   [
+    "kyc",
+    "know",
+    "customer",
+    "due",
+    "diligence",
+    "beneficial",
+    "ownership",
+    "edd",
+    "identity",
+    "verification"
+   ]
+  ],
+  [
+   "frg-sanctions",
+   "Sanctions and Offshore Regimes",
+   "financial-regulation",
+   "Sanctions lists, screening, offshore financial centers and onshore versus offshore compliance.",
+   [
+    "sanctions",
+    "ofac",
+    "screening",
+    "offshore",
+    "onshore",
+    "jurisdiction",
+    "cayman",
+    "bvi",
+    "list"
+   ]
+  ],
+  [
+   "frg-program",
+   "Compliance Programs and Reporting",
+   "financial-regulation",
+   "Policies, surveillance, regulatory reporting, recordkeeping and exams.",
+   [
+    "compliance",
+    "policy",
+    "surveillance",
+    "reporting",
+    "recordkeeping",
+    "exam",
+    "audit",
+    "trail"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "frg-regulator-mapper",
+   "frg-securities",
+   "Regulator Mapper",
+   "Maps which regulator and rules apply to an activity and jurisdiction.",
+   "procedural",
+   [
+    [
+     "frg-securities",
+     "primary"
+    ],
+    [
+     "frg-checker",
+     "checker"
+    ],
+    [
+     "frg-aml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "frg-aml-red-flag-reviewer",
+   "frg-aml",
+   "AML Red Flag Reviewer",
+   "Reviews a pattern of transactions for money laundering red flags and states each one.",
+   "semantic",
+   [
+    [
+     "frg-aml",
+     "primary"
+    ],
+    [
+     "frg-checker",
+     "checker"
+    ],
+    [
+     "frg-kyc",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "frg-aml-program-outline",
+   "frg-aml",
+   "AML Program Outline",
+   "Outlines the parts of an AML program for a firm type.",
+   "semantic",
+   [
+    [
+     "frg-aml",
+     "primary"
+    ],
+    [
+     "frg-checker",
+     "checker"
+    ],
+    [
+     "frg-kyc",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "frg-kyc-checklist-builder",
+   "frg-kyc",
+   "KYC Checklist Builder",
+   "Builds the KYC and CDD checklist for a customer type, including beneficial owners.",
+   "procedural",
+   [
+    [
+     "frg-kyc",
+     "primary"
+    ],
+    [
+     "frg-checker",
+     "checker"
+    ],
+    [
+     "frg-sanctions",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "frg-sanctions-screening-explainer",
+   "frg-sanctions",
+   "Sanctions Screening Explainer",
+   "Explains how sanctions screening works and how a match is resolved.",
+   "semantic",
+   [
+    [
+     "frg-sanctions",
+     "primary"
+    ],
+    [
+     "frg-checker",
+     "checker"
+    ],
+    [
+     "frg-program",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "frg-regulatory-report-calendar",
+   "frg-program",
+   "Regulatory Report Calendar",
+   "Lists a firm's recurring regulatory filings with deadlines.",
+   "semantic",
+   [
+    [
+     "frg-program",
+     "primary"
+    ],
+    [
+     "frg-checker",
+     "checker"
+    ],
+    [
+     "frg-securities",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "frg-securities": "Securities Regulation Agent",
+  "frg-aml": "AML Agent",
+  "frg-kyc": "KYC Agent",
+  "frg-sanctions": "Sanctions Agent",
+  "frg-program": "Compliance Program Agent",
+  "frg-checker": "Compliance Checker Agent"
+ },
+ "mcp": [],
+ "lexicon": {
+  "frgsecurities": "sec finra cftc regulator securities law registration disclosure conduct rule",
+  "frgaml": "aml anti money laundering suspicious activity sar monitoring layering bsa",
+  "frgkyc": "kyc know customer due diligence beneficial ownership edd identity verification",
+  "frgsanctions": "sanctions ofac screening offshore onshore jurisdiction cayman bvi list",
+  "frgprogram": "compliance policy surveillance reporting recordkeeping exam audit trail"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "none"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {},
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

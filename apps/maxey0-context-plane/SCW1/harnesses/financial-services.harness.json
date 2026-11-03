@@ -1,0 +1,320 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "financial-services",
+  "label": "Financial Services and Banking",
+  "desc": "Firms and services that move and hold money: banking and lending, payments, insurance, wealth management and brokerage, and the structure of investment banks."
+ },
+ "concepts": [
+  {
+   "id": "fs-banking",
+   "label": "Banking and Lending",
+   "desc": "Deposits, loans, credit cards, underwriting, interest and bank capital.",
+   "keywords": [
+    "bank",
+    "deposit",
+    "loan",
+    "lending",
+    "credit",
+    "card",
+    "underwriting",
+    "interest",
+    "capital"
+   ],
+   "topic": "financial-services",
+   "source": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-ib",
+   "label": "Investment Banks and Their Divisions",
+   "desc": "How investment banks are organized: banking, sales and trading, research, prime services and asset management.",
+   "keywords": [
+    "investment",
+    "bank",
+    "division",
+    "sales",
+    "trading",
+    "research",
+    "prime",
+    "services",
+    "asset",
+    "management",
+    "front",
+    "office"
+   ],
+   "topic": "financial-services",
+   "source": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-insurance",
+   "label": "Insurance",
+   "desc": "Life, property, casualty and health insurance, premiums, underwriting and claims.",
+   "keywords": [
+    "insurance",
+    "life",
+    "property",
+    "casualty",
+    "premium",
+    "underwriting",
+    "claim",
+    "policy",
+    "coverage"
+   ],
+   "topic": "financial-services",
+   "source": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-payments",
+   "label": "Payments",
+   "desc": "Card networks, ACH, wires, real-time payments, processors and fees.",
+   "keywords": [
+    "payment",
+    "card",
+    "ach",
+    "wire",
+    "real",
+    "time",
+    "processor",
+    "merchant",
+    "fee",
+    "transfer"
+   ],
+   "topic": "financial-services",
+   "source": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-wealth",
+   "label": "Wealth Management and Brokerage",
+   "desc": "Advisors, brokerage accounts, fiduciary duty, account types and fees.",
+   "keywords": [
+    "wealth",
+    "advisor",
+    "brokerage",
+    "account",
+    "fiduciary",
+    "ira",
+    "401k",
+    "fee"
+   ],
+   "topic": "financial-services",
+   "source": "financial-services",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "fs-loan-comparator",
+   "concept": "fs-banking",
+   "label": "Loan Comparator",
+   "desc": "Compares loans by APR, fees and terms, and computes total cost.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1730",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1732",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-investment-bank-map",
+   "concept": "fs-ib",
+   "label": "Investment Bank Map",
+   "desc": "Maps an investment bank's divisions, what each does and how they interact on a deal.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1733",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1730",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-coverage-reviewer",
+   "concept": "fs-insurance",
+   "label": "Coverage Reviewer",
+   "desc": "Reviews an insurance policy's coverage, exclusions and deductibles.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1734",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1735",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-payment-flow-explainer",
+   "concept": "fs-payments",
+   "label": "Payment Flow Explainer",
+   "desc": "Explains how a payment moves between payer, processor, network and payee, with fees and timing.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1732",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1734",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-account-type-guide",
+   "concept": "fs-wealth",
+   "label": "Account Type Guide",
+   "desc": "Explains brokerage and retirement account types and their tax treatment.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1735",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1733",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1730",
+   "name": "Banking Agent",
+   "legacy_key": "fs-bank",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1731",
+   "name": "Financial Services Checker Agent",
+   "legacy_key": "fs-checker",
+   "mcp": [
+    "local:stripe-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1732",
+   "name": "Payments Agent",
+   "legacy_key": "fs-payments",
+   "mcp": [
+    "local:stripe-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1733",
+   "name": "Investment Banking Agent",
+   "legacy_key": "fs-ib",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1734",
+   "name": "Insurance Agent",
+   "legacy_key": "fs-insurance",
+   "mcp": [
+    "local:stripe-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1735",
+   "name": "Wealth Management Agent",
+   "legacy_key": "fs-wealth",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Stripe MCP",
+   "desc": "Stripe agent toolkit and MCP server: payments, customers, invoices, subscriptions, refunds and payment links.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/stripe/agent-toolkit",
+   "id": "local:stripe-mcp",
+   "origins": [
+    "financial-services"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:stripe-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1731",
+   "mcp": "local:stripe-mcp",
+   "topic": "financial-services",
+   "score": 0.2055,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1734",
+    "skill": "fs-coverage-reviewer"
+   }
+  },
+  {
+   "agent": "Maxey1732",
+   "mcp": "local:stripe-mcp",
+   "topic": "financial-services",
+   "score": 0.2472,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1734",
+   "mcp": "local:stripe-mcp",
+   "topic": "financial-services",
+   "score": 0.2055,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "fsbanking": "bank deposit loan lending credit card underwriting interest capital",
+  "fspayments": "payment card ach wire real time processor merchant fee transfer",
+  "fsinsurance": "insurance life property casualty premium underwriting claim policy coverage",
+  "fswealth": "wealth advisor brokerage account fiduciary ira 401k fee",
+  "fsib": "investment bank division sales trading research prime services asset management front office"
+ },
+ "sources": [
+  "financial-services"
+ ]
+}

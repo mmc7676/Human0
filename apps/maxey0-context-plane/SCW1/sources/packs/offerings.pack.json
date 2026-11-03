@@ -1,0 +1,331 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "offerings",
+ "topic": {
+  "id": "offerings",
+  "label": "Securities Offerings and Going Public",
+  "desc": "Raising capital and taking a company public: IPOs, follow-on and secondary offerings, private placements and exempt offerings, bookbuilding and allocation, SPACs and direct listings, and how investors participate."
+ },
+ "concepts": [
+  [
+   "ofr-ipo",
+   "Initial Public Offerings",
+   "offerings",
+   "Taking a company public: readiness, underwriters, S-1 registration, SEC review, roadshow, pricing and listing.",
+   [
+    "ipo",
+    "initial",
+    "public",
+    "offering",
+    "underwriter",
+    "s-1",
+    "registration",
+    "roadshow",
+    "pricing",
+    "listing",
+    "prospectus"
+   ]
+  ],
+  [
+   "ofr-followon",
+   "Follow-On, Secondary and Shelf Offerings",
+   "offerings",
+   "Offerings after the IPO: follow-ons, secondary sales by holders, shelf registrations, at-the-market programs and block trades.",
+   [
+    "follow",
+    "secondary",
+    "shelf",
+    "registration",
+    "atm",
+    "block",
+    "trade",
+    "offering",
+    "overnight"
+   ]
+  ],
+  [
+   "ofr-exempt",
+   "Private Placements and Exempt Offerings",
+   "offerings",
+   "Raising capital without full registration: Reg D, Rule 144A, Reg S, Reg A+, PIPEs and accredited investors.",
+   [
+    "private",
+    "placement",
+    "reg",
+    "rule",
+    "144a",
+    "regulation",
+    "exempt",
+    "pipe",
+    "accredited",
+    "investor",
+    "qib"
+   ]
+  ],
+  [
+   "ofr-bookbuilding",
+   "Bookbuilding, Allocation and Participation",
+   "offerings",
+   "How an offering is marketed, the order book built, priced and allocated, and how institutional and retail investors participate.",
+   [
+    "bookbuilding",
+    "allocation",
+    "order",
+    "book",
+    "participate",
+    "investor",
+    "institutional",
+    "retail",
+    "syndicate",
+    "greenshoe"
+   ]
+  ],
+  [
+   "ofr-alt-listings",
+   "SPACs and Direct Listings",
+   "offerings",
+   "Alternative paths to public markets: SPAC mergers, direct listings and uplistings.",
+   [
+    "spac",
+    "direct",
+    "listing",
+    "merger",
+    "alternative",
+    "public",
+    "uplisting",
+    "de-spac"
+   ]
+  ],
+  [
+   "ofr-debt",
+   "Debt Offerings",
+   "offerings",
+   "Issuing bonds and notes: investment grade and high yield deals, indentures, ratings and syndication.",
+   [
+    "debt",
+    "offering",
+    "bond",
+    "note",
+    "issuance",
+    "indenture",
+    "rating",
+    "high",
+    "yield",
+    "investment",
+    "grade"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ofr-ipo-readiness-plan",
+   "ofr-ipo",
+   "IPO Readiness Plan",
+   "Plans IPO readiness: audits, governance, reporting, underwriters and timeline.",
+   "procedural",
+   [
+    [
+     "ofr-ipo",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-ecm",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-prospectus-reader",
+   "ofr-ipo",
+   "Prospectus Reader",
+   "Reads an S-1 or prospectus and summarizes the business, risks, use of proceeds and terms.",
+   "semantic",
+   [
+    [
+     "ofr-ipo",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-ecm",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-offering-type-explainer",
+   "ofr-followon",
+   "Offering Type Explainer",
+   "Explains follow-on, secondary, shelf, ATM and block trade offerings and when each is used.",
+   "semantic",
+   [
+    [
+     "ofr-ecm",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-private",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-exemption-selector",
+   "ofr-exempt",
+   "Exemption Selector",
+   "Compares Reg D, 144A, Reg S and Reg A+ for a raise by investor type, limits and resale rules.",
+   "semantic",
+   [
+    [
+     "ofr-private",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-syndicate",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-participation-guide",
+   "ofr-bookbuilding",
+   "Participation Guide",
+   "Explains how an investor participates in an offering: indications of interest, eligibility, allocation and settlement.",
+   "semantic",
+   [
+    [
+     "ofr-syndicate",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-ecm",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-greenshoe-explainer",
+   "ofr-bookbuilding",
+   "Greenshoe Explainer",
+   "Explains the overallotment option and stabilization after pricing.",
+   "semantic",
+   [
+    [
+     "ofr-syndicate",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-ecm",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-path-to-public-comparator",
+   "ofr-alt-listings",
+   "Path to Public Comparator",
+   "Compares IPO, SPAC and direct listing by cost, time, dilution and certainty.",
+   "semantic",
+   [
+    [
+     "ofr-ecm",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-dcm",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ofr-bond-deal-explainer",
+   "ofr-debt",
+   "Bond Deal Explainer",
+   "Explains a bond offering's process, documents, rating and pricing versus benchmark.",
+   "semantic",
+   [
+    [
+     "ofr-dcm",
+     "primary"
+    ],
+    [
+     "ofr-checker",
+     "checker"
+    ],
+    [
+     "ofr-ipo",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ofr-ipo": "IPO Agent",
+  "ofr-ecm": "Equity Capital Markets Agent",
+  "ofr-dcm": "Debt Capital Markets Agent",
+  "ofr-private": "Private Placement Agent",
+  "ofr-syndicate": "Syndicate Agent",
+  "ofr-checker": "Offering Checker Agent"
+ },
+ "mcp": [
+  [
+   "SEC EDGAR MCP",
+   null,
+   "SEC EDGAR MCP server: company filings, 10-K, 10-Q, 8-K, XBRL financial data and insider trading forms from EDGAR.",
+   [],
+   "web-listed",
+   "https://github.com/stefanoamorelli/sec-edgar-mcp"
+  ]
+ ],
+ "lexicon": {
+  "ofripo": "ipo initial public offering underwriter s-1 registration roadshow pricing listing prospectus",
+  "ofrfollowon": "follow secondary shelf registration atm block trade offering overnight",
+  "ofrexempt": "private placement reg rule 144a regulation exempt pipe accredited investor qib",
+  "ofrbookbuilding": "bookbuilding allocation order book participate investor institutional retail syndicate greenshoe",
+  "ofraltlistings": "spac direct listing merger alternative public uplisting de-spac",
+  "ofrdebt": "debt offering bond note issuance indenture rating high yield investment grade"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "SEC EDGAR MCP": "repository exists (git ls-remote https://github.com/stefanoamorelli/sec-edgar-mcp, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

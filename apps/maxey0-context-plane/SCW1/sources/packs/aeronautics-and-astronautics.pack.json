@@ -1,0 +1,573 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "aeronautics-and-astronautics",
+ "topic": {
+  "id": "aeronautics-and-astronautics",
+  "label": "Aeronautics and Astronautics",
+  "desc": "Aeronautics and Astronautics: the science and engineering of aircraft and spacecraft, from aerodynamics and propulsion to orbital mechanics, structures and flight control."
+ },
+ "concepts": [
+  [
+   "aero-aerodynamics",
+   "Aerodynamics",
+   "aeronautics-and-astronautics",
+   "Flow of air over wings, bodies and inlets, covering lift, drag, boundary layers and compressible shock behaviour at subsonic to hypersonic speeds.",
+   [
+    "aerodynamics",
+    "lift",
+    "drag",
+    "airfoil",
+    "boundary layer",
+    "compressible",
+    "shock",
+    "mach"
+   ]
+  ],
+  [
+   "aero-propulsion",
+   "Propulsion",
+   "aeronautics-and-astronautics",
+   "Generation of thrust by air-breathing engines and rockets, analysed through thermodynamic cycles, nozzle flow and specific impulse.",
+   [
+    "propulsion",
+    "thrust",
+    "turbofan",
+    "rocket",
+    "nozzle",
+    "combustion",
+    "specific impulse",
+    "cycle"
+   ]
+  ],
+  [
+   "aero-aerospace-structures",
+   "Aerospace Structures and Materials",
+   "aeronautics-and-astronautics",
+   "Lightweight airframe and spacecraft structures, their loads, stresses, buckling, fatigue and composite materials.",
+   [
+    "structures",
+    "stress",
+    "buckling",
+    "fatigue",
+    "composite",
+    "airframe",
+    "finite element",
+    "loads"
+   ]
+  ],
+  [
+   "aero-flight-dynamics-control",
+   "Flight Dynamics and Control",
+   "aeronautics-and-astronautics",
+   "Aircraft equations of motion, stability derivatives and feedback control laws that keep vehicles stable and on path.",
+   [
+    "stability",
+    "control",
+    "autopilot",
+    "feedback",
+    "trim",
+    "handling",
+    "equations of motion",
+    "drone"
+   ]
+  ],
+  [
+   "aero-astrodynamics",
+   "Astrodynamics",
+   "aeronautics-and-astronautics",
+   "Motion of spacecraft under gravity, including Keplerian orbits, transfers, perturbations and rendezvous.",
+   [
+    "orbit",
+    "kepler",
+    "transfer",
+    "delta-v",
+    "trajectory",
+    "perturbation",
+    "rendezvous",
+    "launch"
+   ]
+  ],
+  [
+   "aero-spacecraft-systems",
+   "Spacecraft Systems Engineering",
+   "aeronautics-and-astronautics",
+   "Design of spacecraft subsystems such as power, thermal, attitude and communications, integrated against mission requirements.",
+   [
+    "spacecraft",
+    "subsystem",
+    "attitude",
+    "thermal",
+    "power",
+    "mission",
+    "requirements",
+    "budget"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "aero-airfoil-polar",
+   "aero-aerodynamics",
+   "Airfoil Polar Analysis",
+   "Computes lift and drag coefficients across angle of attack for an airfoil and checks them against thin-airfoil theory and published wind tunnel polars.",
+   "procedural",
+   [
+    [
+     "aero-aerodynamicist",
+     "primary"
+    ],
+    [
+     "aero-flight-test",
+     "checker"
+    ],
+    [
+     "aero-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-compressible-flow",
+   "aero-aerodynamics",
+   "Compressible Flow Calculator",
+   "Solves isentropic, normal shock and oblique shock relations for a given Mach number and checks results for conservation of mass, momentum and energy.",
+   "procedural",
+   [
+    [
+     "aero-aerodynamicist",
+     "primary"
+    ],
+    [
+     "aero-propulsion",
+     "checker"
+    ],
+    [
+     "aero-orbital",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-wing-design",
+   "aero-aerodynamics",
+   "Wing Planform Sizing",
+   "Sizes wing area, aspect ratio and sweep for a cruise condition and checks induced drag and stall margin against the requirements.",
+   "semantic",
+   [
+    [
+     "aero-aerodynamicist",
+     "primary"
+    ],
+    [
+     "aero-structures",
+     "checker"
+    ],
+    [
+     "aero-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-engine-cycle",
+   "aero-propulsion",
+   "Gas Turbine Cycle Analysis",
+   "Runs an ideal and real Brayton cycle for a turbojet or turbofan and reports thrust and fuel consumption, checked by an energy balance.",
+   "procedural",
+   [
+    [
+     "aero-propulsion",
+     "primary"
+    ],
+    [
+     "aero-aerodynamicist",
+     "checker"
+    ],
+    [
+     "aero-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-rocket-performance",
+   "aero-propulsion",
+   "Rocket Performance Estimator",
+   "Computes specific impulse, nozzle expansion and delta-v from propellant data and checks the result with the rocket equation.",
+   "procedural",
+   [
+    [
+     "aero-propulsion",
+     "primary"
+    ],
+    [
+     "aero-orbital",
+     "checker"
+    ],
+    [
+     "aero-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-combustor-review",
+   "aero-propulsion",
+   "Combustion Stability Review",
+   "Reviews a combustor or injector design for instability risks and checks the findings against documented test literature.",
+   "semantic",
+   [
+    [
+     "aero-propulsion",
+     "primary"
+    ],
+    [
+     "aero-flight-test",
+     "checker"
+    ],
+    [
+     "aero-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-beam-stress",
+   "aero-aerospace-structures",
+   "Wing Box Stress Analysis",
+   "Calculates bending and shear stresses in a wing box under flight loads and checks margins of safety against material allowables.",
+   "procedural",
+   [
+    [
+     "aero-structures",
+     "primary"
+    ],
+    [
+     "aero-aerodynamicist",
+     "checker"
+    ],
+    [
+     "aero-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-buckling-check",
+   "aero-aerospace-structures",
+   "Panel Buckling Check",
+   "Estimates critical buckling loads for stiffened panels and checks them against finite element results or handbook curves.",
+   "procedural",
+   [
+    [
+     "aero-structures",
+     "primary"
+    ],
+    [
+     "aero-flight-test",
+     "checker"
+    ],
+    [
+     "aero-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-composite-layup",
+   "aero-aerospace-structures",
+   "Composite Layup Selection",
+   "Recommends a composite ply layup for a part and checks stiffness and failure indices with laminate theory.",
+   "semantic",
+   [
+    [
+     "aero-structures",
+     "primary"
+    ],
+    [
+     "aero-systems",
+     "checker"
+    ],
+    [
+     "aero-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-stability-derivatives",
+   "aero-flight-dynamics-control",
+   "Stability Derivative Analysis",
+   "Derives longitudinal and lateral modes from stability derivatives and checks damping and frequency against handling qualities criteria.",
+   "procedural",
+   [
+    [
+     "aero-guidance",
+     "primary"
+    ],
+    [
+     "aero-flight-test",
+     "checker"
+    ],
+    [
+     "aero-aerodynamicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-autopilot-design",
+   "aero-flight-dynamics-control",
+   "Autopilot Loop Design",
+   "Designs a feedback controller for pitch or heading hold and checks gain and phase margins in a simulated step response.",
+   "procedural",
+   [
+    [
+     "aero-guidance",
+     "primary"
+    ],
+    [
+     "aero-aerodynamicist",
+     "checker"
+    ],
+    [
+     "aero-flight-test",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-drone-mission",
+   "aero-flight-dynamics-control",
+   "Drone Mission Planning",
+   "Plans and validates a drone survey mission through the MAVLink interface, with preflight checks reviewed before upload.",
+   "procedural",
+   [
+    [
+     "aero-flight-test",
+     "primary"
+    ],
+    [
+     "aero-guidance",
+     "checker"
+    ],
+    [
+     "aero-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-hohmann-transfer",
+   "aero-astrodynamics",
+   "Orbit Transfer Design",
+   "Computes Hohmann and bi-elliptic transfer delta-v between orbits and checks the totals by energy and vis-viva equations.",
+   "procedural",
+   [
+    [
+     "aero-orbital",
+     "primary"
+    ],
+    [
+     "aero-guidance",
+     "checker"
+    ],
+    [
+     "aero-propulsion",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-orbit-propagation",
+   "aero-astrodynamics",
+   "Orbit Propagation",
+   "Propagates a spacecraft trajectory with J2 and drag perturbations and checks the drift against analytic secular rates.",
+   "procedural",
+   [
+    [
+     "aero-orbital",
+     "primary"
+    ],
+    [
+     "aero-systems",
+     "checker"
+    ],
+    [
+     "aero-guidance",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-launch-window",
+   "aero-astrodynamics",
+   "Launch Window Analysis",
+   "Identifies launch windows and rendezvous opportunities for a target orbit and checks the timing against published mission data.",
+   "semantic",
+   [
+    [
+     "aero-orbital",
+     "primary"
+    ],
+    [
+     "aero-literature",
+     "checker"
+    ],
+    [
+     "aero-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-power-budget",
+   "aero-spacecraft-systems",
+   "Power and Mass Budget",
+   "Builds power and mass budgets for spacecraft subsystems and checks the totals for margin against mission requirements.",
+   "procedural",
+   [
+    [
+     "aero-systems",
+     "primary"
+    ],
+    [
+     "aero-structures",
+     "checker"
+    ],
+    [
+     "aero-propulsion",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-thermal-balance",
+   "aero-spacecraft-systems",
+   "Thermal Balance Analysis",
+   "Computes equilibrium temperatures from solar, albedo and internal heat loads and checks them against component limits.",
+   "procedural",
+   [
+    [
+     "aero-systems",
+     "primary"
+    ],
+    [
+     "aero-structures",
+     "checker"
+    ],
+    [
+     "aero-orbital",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "aero-mission-review",
+   "aero-spacecraft-systems",
+   "Mission Requirements Review",
+   "Traces mission requirements to subsystem design choices and checks each trace against prior missions and literature.",
+   "semantic",
+   [
+    [
+     "aero-systems",
+     "primary"
+    ],
+    [
+     "aero-literature",
+     "checker"
+    ],
+    [
+     "aero-guidance",
+     "support"
+    ],
+    [
+     "aero-orbital",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "aero-aerodynamicist": "Aerodynamics Analyst",
+  "aero-propulsion": "Propulsion Engineer",
+  "aero-structures": "Aerospace Structures Analyst",
+  "aero-guidance": "Guidance and Control Engineer",
+  "aero-orbital": "Orbital Dynamics Analyst",
+  "aero-systems": "Spacecraft Systems Engineer",
+  "aero-flight-test": "Flight Test Engineer",
+  "aero-literature": "Aerospace Literature Reviewer"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "MAVLinkMCP",
+   null,
+   "MCP server for LLM to drone communication via MAVLink",
+   [
+    "get_map_view",
+    "create_survey_plan",
+    "render_plan_view",
+    "validate_plan",
+    "preflight_check",
+    "upload_plan",
+    "verify_uploaded_plan",
+    "start_mission",
+    "map_transform",
+    "prefetch_map_area",
+    "revise_plan"
+   ],
+   "web-listed",
+   "https://github.com/ion-g-ion/MAVLinkMCP"
+  ]
+ ],
+ "lexicon": {
+  "aero-flow": "aerodynamics airfoil lift drag compressible shock mach boundary",
+  "aero-engine": "propulsion thrust turbofan rocket nozzle combustion impulse cycle",
+  "aero-airframe": "structures stress buckling fatigue composite panel layup",
+  "aero-flight": "stability autopilot feedback drone handling damping gain",
+  "aero-orbit": "orbit transfer trajectory perturbation rendezvous launch hohmann",
+  "aero-mission": "spacecraft subsystem attitude thermal power requirements budget"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

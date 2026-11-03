@@ -1,0 +1,1100 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "marketing",
+  "label": "Marketing",
+  "desc": "Marketing: strategy and positioning, content and social, search, email and lifecycle, paid media, and measurement."
+ },
+ "concepts": [
+  {
+   "id": "mk-content",
+   "label": "Content and Social",
+   "desc": "Content planning, social posts and brand-voice review across channels.",
+   "keywords": [
+    "content",
+    "calendar",
+    "social",
+    "post",
+    "brand",
+    "voice",
+    "copy",
+    "channel",
+    "schedule"
+   ],
+   "topic": "marketing",
+   "source": "marketing",
+   "related": []
+  },
+  {
+   "id": "mk-email",
+   "label": "Email and Lifecycle",
+   "desc": "Email campaigns, lifecycle journeys and performance review.",
+   "keywords": [
+    "email",
+    "campaign",
+    "newsletter",
+    "lifecycle",
+    "journey",
+    "subscriber",
+    "template",
+    "open"
+   ],
+   "topic": "marketing",
+   "source": "marketing",
+   "related": []
+  },
+  {
+   "id": "mk-measure",
+   "label": "Measurement and Attribution",
+   "desc": "Attribution, dashboards and experiments that show which marketing works.",
+   "keywords": [
+    "attribution",
+    "dashboard",
+    "metric",
+    "experiment",
+    "conversion",
+    "funnel",
+    "report",
+    "test"
+   ],
+   "topic": "marketing",
+   "source": "marketing",
+   "related": []
+  },
+  {
+   "id": "mk-paid",
+   "label": "Paid Media",
+   "desc": "Paid search and paid social campaign planning, creative testing and budget pacing.",
+   "keywords": [
+    "paid",
+    "ads",
+    "campaign",
+    "budget",
+    "creative",
+    "bid",
+    "audience",
+    "conversion",
+    "pacing"
+   ],
+   "topic": "marketing",
+   "source": "marketing",
+   "related": []
+  },
+  {
+   "id": "mk-seo",
+   "label": "Search and SEO",
+   "desc": "Keyword research, site audits and backlink gaps for organic search visibility.",
+   "keywords": [
+    "keyword",
+    "seo",
+    "audit",
+    "backlink",
+    "ranking",
+    "organic",
+    "serp",
+    "competitor"
+   ],
+   "topic": "marketing",
+   "source": "marketing",
+   "related": []
+  },
+  {
+   "id": "mk-strategy",
+   "label": "Positioning and Strategy",
+   "desc": "Audience segments, positioning, messaging and competitor analysis that set what a campaign says and to whom.",
+   "keywords": [
+    "audience",
+    "segment",
+    "positioning",
+    "messaging",
+    "competitor",
+    "persona",
+    "brand"
+   ],
+   "topic": "marketing",
+   "source": "marketing",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "mk-brand-voice-reviewer",
+   "concept": "mk-content",
+   "label": "Brand Voice Reviewer",
+   "desc": "Reviews drafts against the brand voice and claims rules and returns specific before and after edits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey887",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-content-calendar-planner",
+   "concept": "mk-content",
+   "label": "Content Calendar Planner",
+   "desc": "Plans a channel-by-channel content calendar tied to campaign goals, with owners and dates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey889",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey887",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    },
+    {
+     "key": "Maxey891",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-social-post-scheduler",
+   "concept": "mk-content",
+   "label": "Social Post Scheduler",
+   "desc": "Drafts social posts for each network, picks posting times from engagement data and schedules them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey891",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey887",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    },
+    {
+     "key": "Maxey892",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-email-campaign-builder",
+   "concept": "mk-email",
+   "label": "Email Campaign Builder",
+   "desc": "Plans and drafts an email campaign with subject lines, templates and send schedule, and checks consent and unsubscribe rules before sending.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey893",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    },
+    {
+     "key": "Maxey887",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-email-performance-analyst",
+   "concept": "mk-email",
+   "label": "Email Performance Analyst",
+   "desc": "Reports open, click and conversion results by segment and recommends what to test next.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey892",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey894",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey893",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-lifecycle-journey-designer",
+   "concept": "mk-email",
+   "label": "Lifecycle Journey Designer",
+   "desc": "Designs welcome, onboarding and win-back journeys with triggers, branching and exit conditions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey893",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey892",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-attribution-analyst",
+   "concept": "mk-measure",
+   "label": "Attribution Analyst",
+   "desc": "Compares attribution models for the same conversions and states how much each channel's credit depends on the model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey892",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey894",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    },
+    {
+     "key": "Maxey895",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-dashboard-builder",
+   "concept": "mk-measure",
+   "label": "Marketing Dashboard Builder",
+   "desc": "Pulls metrics from several marketing sources into one report with definitions and refresh times.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey892",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    },
+    {
+     "key": "Maxey896",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-experiment-designer",
+   "concept": "mk-measure",
+   "label": "Experiment Designer",
+   "desc": "Designs an A/B test with hypothesis, sample size, duration and decision rule before it starts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey894",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey892",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey893",
+     "role": "support"
+    },
+    {
+     "key": "Maxey895",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-ad-campaign-planner",
+   "concept": "mk-paid",
+   "label": "Ad Campaign Planner",
+   "desc": "Plans paid search and paid social campaigns with audiences, budgets, bids and conversion tracking.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey895",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    },
+    {
+     "key": "Maxey892",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-ad-creative-tester",
+   "concept": "mk-paid",
+   "label": "Ad Creative Tester",
+   "desc": "Sets up creative variants, runs a test and reports which ads win and by how much.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey895",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey894",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    },
+    {
+     "key": "Maxey892",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-budget-pacing-monitor",
+   "concept": "mk-paid",
+   "label": "Budget Pacing Monitor",
+   "desc": "Tracks spend against plan across ad accounts and flags overspend and underspend early.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey892",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey895",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-backlink-gap-analyst",
+   "concept": "mk-seo",
+   "label": "Backlink Gap Analyst",
+   "desc": "Compares backlink profiles with competitors and lists realistic link opportunities.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey896",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey897",
+     "role": "support"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-keyword-researcher",
+   "concept": "mk-seo",
+   "label": "Keyword Researcher",
+   "desc": "Finds keywords by volume, difficulty and intent and groups them into topics for content.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey896",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey892",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey897",
+     "role": "support"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-site-auditor",
+   "concept": "mk-seo",
+   "label": "SEO Site Auditor",
+   "desc": "Audits a site for crawl, indexing, speed and on-page issues and ranks fixes by expected impact.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey896",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey892",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey897",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-audience-segmenter",
+   "concept": "mk-strategy",
+   "label": "Audience Segmenter",
+   "desc": "Builds audience segments and personas from customer data and states the evidence behind each segment.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey890",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey897",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-competitor-scanner",
+   "concept": "mk-strategy",
+   "label": "Competitor Scanner",
+   "desc": "Compares competitors' positioning, pricing, channels and ads from public data and reports gaps and unverified items.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey897",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey890",
+     "role": "support"
+    },
+    {
+     "key": "Maxey895",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  },
+  {
+   "id": "mk-messaging-architect",
+   "concept": "mk-strategy",
+   "label": "Positioning and Messaging Architect",
+   "desc": "Writes a positioning statement and a message hierarchy per segment, with proof points the company can substantiate.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey890",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey888",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey889",
+     "role": "support"
+    },
+    {
+     "key": "Maxey897",
+     "role": "support"
+    }
+   ],
+   "source": "marketing"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey887",
+   "name": "Brand Voice Checker Agent",
+   "legacy_key": "mk-brand-checker",
+   "mcp": [
+    "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+    "b1a89151-dc5f-4d75-baa7-9da291b81a0c"
+   ]
+  },
+  {
+   "key": "Maxey888",
+   "name": "Claims and Compliance Checker Agent",
+   "legacy_key": "mk-claims-checker",
+   "mcp": [
+    "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+    "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+    "875dee50-9b3f-452b-af8c-fbc839966273",
+    "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+    "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+    "cd33c38a-66e7-41a4-8777-bec24d4bba3a"
+   ]
+  },
+  {
+   "key": "Maxey889",
+   "name": "Copywriter Agent",
+   "legacy_key": "mk-copywriter",
+   "mcp": [
+    "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+    "b1a89151-dc5f-4d75-baa7-9da291b81a0c"
+   ]
+  },
+  {
+   "key": "Maxey890",
+   "name": "Marketing Strategist Agent",
+   "legacy_key": "mk-strategist",
+   "mcp": [
+    "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+    "875dee50-9b3f-452b-af8c-fbc839966273",
+    "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+    "cd33c38a-66e7-41a4-8777-bec24d4bba3a"
+   ]
+  },
+  {
+   "key": "Maxey891",
+   "name": "Social Media Manager Agent",
+   "legacy_key": "mk-social-manager",
+   "mcp": [
+    "70ba6d62-7e98-4ef4-9073-d161d900a95f"
+   ]
+  },
+  {
+   "key": "Maxey892",
+   "name": "Marketing Analyst Agent",
+   "legacy_key": "mk-analyst",
+   "mcp": [
+    "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+    "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+    "875dee50-9b3f-452b-af8c-fbc839966273",
+    "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+    "cd33c38a-66e7-41a4-8777-bec24d4bba3a"
+   ]
+  },
+  {
+   "key": "Maxey893",
+   "name": "Email Marketing Agent",
+   "legacy_key": "mk-email-marketer",
+   "mcp": [
+    "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+    "875dee50-9b3f-452b-af8c-fbc839966273"
+   ]
+  },
+  {
+   "key": "Maxey894",
+   "name": "Experimentation Agent",
+   "legacy_key": "mk-experimenter",
+   "mcp": [
+    "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+    "cd33c38a-66e7-41a4-8777-bec24d4bba3a"
+   ]
+  },
+  {
+   "key": "Maxey895",
+   "name": "Paid Media Agent",
+   "legacy_key": "mk-paid-media",
+   "mcp": [
+    "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+    "cd33c38a-66e7-41a4-8777-bec24d4bba3a"
+   ]
+  },
+  {
+   "key": "Maxey896",
+   "name": "SEO Specialist Agent",
+   "legacy_key": "mk-seo-specialist",
+   "mcp": [
+    "8194f7ea-e733-4e80-bd77-e504fd4ed5e5"
+   ]
+  },
+  {
+   "key": "Maxey897",
+   "name": "Market Research Agent",
+   "legacy_key": "mk-researcher",
+   "mcp": [
+    "8194f7ea-e733-4e80-bd77-e504fd4ed5e5"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "name": "Intuit Mailchimp",
+   "desc": "Create marketing campaigns",
+   "tools": [
+    "campaign-planner",
+    "edit-campaign",
+    "save-to-mailchimp",
+    "get-email-themes",
+    "replace-image",
+    "edit-text",
+    "apply-theme",
+    "set-active-campaign"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "origins": [
+    "marketing"
+   ]
+  },
+  {
+   "uuid": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+   "name": "Metricool Social Media Management",
+   "desc": "Schedule posts, analyze, and manage social media with AI",
+   "tools": [
+    "createScheduledPost",
+    "getAnalyticsAvailableMetrics",
+    "getAnalyticsDataByMetrics",
+    "getBestTimeToPostByNetwork",
+    "getBrandSettings",
+    "getScheduledPosts",
+    "updateScheduledPost"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+   "origins": [
+    "marketing"
+   ]
+  },
+  {
+   "uuid": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "name": "Semrush",
+   "desc": "SEO, keyword research, competitor analysis, traffic and market analytics, backlink analysis, domain analysis, and PPC",
+   "tools": [
+    "execute_report",
+    "get_report_schema",
+    "audience_research",
+    "backlinks_research",
+    "competitors_research",
+    "domain_overview",
+    "keyword_research",
+    "organic_research"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "origins": [
+    "marketing"
+   ]
+  },
+  {
+   "uuid": "875dee50-9b3f-452b-af8c-fbc839966273",
+   "name": "HubSpot",
+   "desc": "CRM context for every answer, insight, and action",
+   "tools": [
+    "get_aeo_metrics",
+    "get_campaign_attribution_reports",
+    "get_content_analytics_report",
+    "get_conversation_channel_metadata",
+    "get_crm_objects",
+    "get_marketing_email_analytics",
+    "get_organization_details",
+    "get_properties"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "875dee50-9b3f-452b-af8c-fbc839966273",
+   "origins": [
+    "marketing"
+   ]
+  },
+  {
+   "uuid": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+   "name": "Klaviyo",
+   "desc": "Report, strategize & create with real-time Klaviyo data",
+   "tools": [
+    "get_account_details",
+    "get_campaigns",
+    "get_campaign",
+    "create_campaign",
+    "assign_template_to_campaign_message",
+    "get_catalog_items",
+    "get_events",
+    "get_metrics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+   "origins": [
+    "marketing"
+   ]
+  },
+  {
+   "uuid": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "name": "Supermetrics Marketing Analytics",
+   "desc": "Google Ads, Facebook Ads, Google Analytics, TikTok, LinkedIn, Instagram, YouTube & 200+ sources",
+   "tools": [
+    "data_source_discovery",
+    "accounts_discovery",
+    "field_discovery",
+    "data_query",
+    "get_async_query_results",
+    "get_today",
+    "contact_supermetrics",
+    "manage_user_and_team"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "origins": [
+    "marketing"
+   ]
+  },
+  {
+   "uuid": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "name": "Adspirer Ads & Performance Marketing Agent",
+   "desc": "Your performance marketing and paid media agent: plans, launches, and autonomously runs your ad campaigns across Google, Meta, LinkedIn, TikTok, and more.",
+   "tools": [
+    "amazon_ads",
+    "audit_conversion_tracking",
+    "chatgpt_ads",
+    "get_campaign_performance",
+    "get_connections_status",
+    "get_meta_campaign_performance",
+    "get_tool_schema",
+    "get_usage_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "origins": [
+    "marketing"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "875dee50-9b3f-452b-af8c-fbc839966273",
+  "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+  "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+  "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+  "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+  "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+  "cd33c38a-66e7-41a4-8777-bec24d4bba3a"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey887",
+   "mcp": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+   "topic": "marketing",
+   "score": 0.2603,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey889",
+    "skill": "mk-content-calendar-planner"
+   }
+  },
+  {
+   "agent": "Maxey887",
+   "mcp": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+   "topic": "marketing",
+   "score": 0.2341,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey889",
+    "skill": "mk-content-calendar-planner"
+   }
+  },
+  {
+   "agent": "Maxey888",
+   "mcp": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "topic": "marketing",
+   "score": 0.2735,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey890",
+    "skill": "mk-audience-segmenter"
+   }
+  },
+  {
+   "agent": "Maxey888",
+   "mcp": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "topic": "marketing",
+   "score": 0.3249,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey896",
+    "skill": "mk-backlink-gap-analyst"
+   }
+  },
+  {
+   "agent": "Maxey888",
+   "mcp": "875dee50-9b3f-452b-af8c-fbc839966273",
+   "topic": "marketing",
+   "score": 0.2253,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey890",
+    "skill": "mk-audience-segmenter"
+   }
+  },
+  {
+   "agent": "Maxey888",
+   "mcp": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+   "topic": "marketing",
+   "score": 0.2221,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey888",
+   "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "topic": "marketing",
+   "score": 0.132,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey890",
+    "skill": "mk-audience-segmenter"
+   }
+  },
+  {
+   "agent": "Maxey888",
+   "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "topic": "marketing",
+   "score": 0.3898,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey890",
+    "skill": "mk-audience-segmenter"
+   }
+  },
+  {
+   "agent": "Maxey889",
+   "mcp": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+   "topic": "marketing",
+   "score": 0.2603,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey889",
+   "mcp": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+   "topic": "marketing",
+   "score": 0.2341,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey890",
+   "mcp": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "topic": "marketing",
+   "score": 0.2735,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey890",
+   "mcp": "875dee50-9b3f-452b-af8c-fbc839966273",
+   "topic": "marketing",
+   "score": 0.2253,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey890",
+   "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "topic": "marketing",
+   "score": 0.132,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey890",
+   "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "topic": "marketing",
+   "score": 0.3898,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey891",
+   "mcp": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+   "topic": "marketing",
+   "score": 0.3256,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey892",
+   "mcp": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "topic": "marketing",
+   "score": 0.3033,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey893",
+    "skill": "mk-lifecycle-journey-designer"
+   }
+  },
+  {
+   "agent": "Maxey892",
+   "mcp": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "topic": "marketing",
+   "score": 0.3249,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey896",
+    "skill": "mk-keyword-researcher"
+   }
+  },
+  {
+   "agent": "Maxey892",
+   "mcp": "875dee50-9b3f-452b-af8c-fbc839966273",
+   "topic": "marketing",
+   "score": 0.2003,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey893",
+    "skill": "mk-lifecycle-journey-designer"
+   }
+  },
+  {
+   "agent": "Maxey892",
+   "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "topic": "marketing",
+   "score": 0.1348,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey892",
+   "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "topic": "marketing",
+   "score": 0.382,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey893",
+   "mcp": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "topic": "marketing",
+   "score": 0.3033,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey893",
+   "mcp": "875dee50-9b3f-452b-af8c-fbc839966273",
+   "topic": "marketing",
+   "score": 0.2003,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey894",
+   "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "topic": "marketing",
+   "score": 0.1348,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey892",
+    "skill": "mk-attribution-analyst"
+   }
+  },
+  {
+   "agent": "Maxey894",
+   "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "topic": "marketing",
+   "score": 0.382,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey892",
+    "skill": "mk-attribution-analyst"
+   }
+  },
+  {
+   "agent": "Maxey895",
+   "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "topic": "marketing",
+   "score": 0.1348,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey892",
+    "skill": "mk-budget-pacing-monitor"
+   }
+  },
+  {
+   "agent": "Maxey895",
+   "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "topic": "marketing",
+   "score": 0.382,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey892",
+    "skill": "mk-budget-pacing-monitor"
+   }
+  },
+  {
+   "agent": "Maxey896",
+   "mcp": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "topic": "marketing",
+   "score": 0.3249,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey897",
+   "mcp": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "topic": "marketing",
+   "score": 0.3716,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "positioning": "audience segment positioning messaging persona brand competitor",
+  "contentops": "content calendar social post schedule copy voice channel",
+  "searchseo": "keyword seo audit backlink organic ranking domain",
+  "emailops": "email newsletter lifecycle journey template subscriber unsubscribe",
+  "adspend": "ads campaign budget creative bid conversion pacing paid",
+  "measurement": "attribution dashboard metric experiment funnel report test"
+ },
+ "sources": [
+  "marketing"
+ ]
+}

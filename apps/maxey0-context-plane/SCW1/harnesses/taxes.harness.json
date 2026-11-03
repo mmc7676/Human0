@@ -1,0 +1,304 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "taxes",
+  "label": "Taxes and Personal Finance",
+  "desc": "Personal money: income tax preparation and filing, deductions and credits, investment and crypto taxes, budgeting and saving, and retirement planning."
+ },
+ "concepts": [
+  {
+   "id": "tax-budgeting",
+   "label": "Budgeting and Saving",
+   "desc": "Budgets, cash flow, emergency funds, debt payoff and saving goals.",
+   "keywords": [
+    "budget",
+    "saving",
+    "cash",
+    "flow",
+    "expense",
+    "emergency",
+    "fund",
+    "debt",
+    "payoff",
+    "goal"
+   ],
+   "topic": "taxes",
+   "source": "taxes",
+   "related": []
+  },
+  {
+   "id": "tax-deductions",
+   "label": "Deductions, Credits and Tax Planning",
+   "desc": "Standard and itemized deductions, credits, brackets and planning to reduce tax legally.",
+   "keywords": [
+    "deduction",
+    "credit",
+    "bracket",
+    "itemized",
+    "standard",
+    "planning",
+    "tax",
+    "liability"
+   ],
+   "topic": "taxes",
+   "source": "taxes",
+   "related": []
+  },
+  {
+   "id": "tax-filing",
+   "label": "Tax Preparation and Filing",
+   "desc": "Preparing and filing income tax returns: forms, documents, deadlines and e-filing.",
+   "keywords": [
+    "tax",
+    "taxes",
+    "return",
+    "filing",
+    "form",
+    "w-2",
+    "1099",
+    "deadline",
+    "irs",
+    "prepare"
+   ],
+   "topic": "taxes",
+   "source": "taxes",
+   "related": []
+  },
+  {
+   "id": "tax-investment-tax",
+   "label": "Investment and Crypto Taxes",
+   "desc": "Capital gains, cost basis, wash sales, dividends and crypto tax reporting.",
+   "keywords": [
+    "capital",
+    "gain",
+    "cost",
+    "basis",
+    "wash",
+    "sale",
+    "dividend",
+    "crypto",
+    "tax",
+    "reporting"
+   ],
+   "topic": "taxes",
+   "source": "taxes",
+   "related": []
+  },
+  {
+   "id": "tax-retirement",
+   "label": "Retirement Planning",
+   "desc": "Retirement accounts, contribution limits, withdrawals and projecting retirement income.",
+   "keywords": [
+    "retirement",
+    "401k",
+    "ira",
+    "roth",
+    "contribution",
+    "withdrawal",
+    "pension",
+    "social",
+    "security"
+   ],
+   "topic": "taxes",
+   "source": "taxes",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "tax-budget-builder",
+   "concept": "tax-budgeting",
+   "label": "Budget Builder",
+   "desc": "Builds a monthly budget from income and expenses and shows savings rate.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1759",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1760",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1761",
+     "role": "support"
+    }
+   ],
+   "source": "taxes"
+  },
+  {
+   "id": "tax-deduction-finder",
+   "concept": "tax-deductions",
+   "label": "Deduction Finder",
+   "desc": "Finds deductions and credits that may apply and the evidence each needs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1762",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1760",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1763",
+     "role": "support"
+    }
+   ],
+   "source": "taxes"
+  },
+  {
+   "id": "tax-filing-deadline-tracker",
+   "concept": "tax-filing",
+   "label": "Filing Deadline Tracker",
+   "desc": "Lists federal and state tax filing and estimated payment deadlines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1763",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1760",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1762",
+     "role": "support"
+    }
+   ],
+   "source": "taxes"
+  },
+  {
+   "id": "tax-tax-return-prep-checklist",
+   "concept": "tax-filing",
+   "label": "Tax Return Prep Checklist",
+   "desc": "Helps prepare and file your taxes: lists the forms and documents needed to prepare a tax return for a situation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1763",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1760",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1762",
+     "role": "support"
+    }
+   ],
+   "source": "taxes"
+  },
+  {
+   "id": "tax-capital-gains-calculator",
+   "concept": "tax-investment-tax",
+   "label": "Capital Gains Calculator",
+   "desc": "Computes short and long term capital gains from trades with cost basis method stated.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1762",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1760",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1759",
+     "role": "support"
+    }
+   ],
+   "source": "taxes"
+  },
+  {
+   "id": "tax-retirement-projection",
+   "concept": "tax-retirement",
+   "label": "Retirement Projection",
+   "desc": "Projects retirement savings and income under stated assumptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1761",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1760",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1763",
+     "role": "support"
+    }
+   ],
+   "source": "taxes"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1759",
+   "name": "Budgeting Agent",
+   "legacy_key": "tax-budget",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1760",
+   "name": "Tax Checker Agent",
+   "legacy_key": "tax-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1761",
+   "name": "Retirement Planning Agent",
+   "legacy_key": "tax-retirement",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1762",
+   "name": "Tax Planning Agent",
+   "legacy_key": "tax-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1763",
+   "name": "Tax Preparation Agent",
+   "legacy_key": "tax-preparer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "QuickBooks Online MCP",
+   "desc": "Intuit QuickBooks Online MCP server: accounting records, accounts, customers, vendors, invoices, bills and journal entries.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/intuit/quickbooks-online-mcp-server",
+   "id": "local:quickbooks-online-mcp",
+   "origins": [
+    "accounting",
+    "taxes"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:quickbooks-online-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "taxfiling": "tax taxes return filing form w-2 1099 deadline irs prepare",
+  "taxdeductions": "deduction credit bracket itemized standard planning tax liability",
+  "taxinvestmenttax": "capital gain cost basis wash sale dividend crypto tax reporting",
+  "taxbudgeting": "budget saving cash flow expense emergency fund debt payoff goal",
+  "taxretirement": "retirement 401k ira roth contribution withdrawal pension social security"
+ },
+ "sources": [
+  "taxes"
+ ]
+}

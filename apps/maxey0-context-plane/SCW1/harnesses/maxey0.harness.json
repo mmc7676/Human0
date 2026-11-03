@@ -1,0 +1,3534 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "maxey0-system",
+ "topic": {
+  "id": "maxey0",
+  "label": "Maxey0",
+  "desc": "How Maxey0 itself runs: orchestration of MaxeyN agents (loops, superposition), runtime infrastructure, message contracts, Structured Context Windows, tiered memory and the OKF knowledge graph, latent space, policy gates and evaluation, and structured reasoning with claim verification."
+ },
+ "concepts": [
+  {
+   "id": "mx-context-management",
+   "label": "Structured Context Windows",
+   "desc": "Structured Context Windows (SCW): their engineering, packing, lineage, persisten",
+   "keywords": [
+    "context",
+    "scw",
+    "packing",
+    "lineage",
+    "boundary",
+    "token-budget"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-governance",
+   "label": "Policy Gates, Tracing and Evaluation",
+   "desc": "Policy gates, constraints, and egress control over agent actions.",
+   "keywords": [
+    "governance",
+    "policy",
+    "constraint",
+    "egress",
+    "compliance",
+    "constitution",
+    "observability",
+    "trace",
+    "telemetry",
+    "span",
+    "audit",
+    "monitor",
+    "evaluation",
+    "score",
+    "drift",
+    "shadow",
+    "benchmark",
+    "kpi"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-infrastructure",
+   "label": "Runtime Infrastructure",
+   "desc": "Runtime execution, containerization, sandboxing, and resource enforcement for ag",
+   "keywords": [
+    "infrastructure",
+    "runtime",
+    "sandbox",
+    "container",
+    "execution",
+    "isolation"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-io-contract",
+   "label": "I/O, A2A and MCP Contracts",
+   "desc": "Typed input/output contracts on every agent and tool boundary.",
+   "keywords": [
+    "io",
+    "contract",
+    "schema",
+    "endpoint",
+    "negotiation",
+    "api",
+    "protocol",
+    "a2a",
+    "mcp",
+    "handoff",
+    "envelope"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-latent",
+   "label": "Latent Space",
+   "desc": "Embedding geometry, measurement, and interpretability — workspace-aware: dual-tr",
+   "keywords": [
+    "latent",
+    "embedding",
+    "anchor",
+    "subspace",
+    "disclosed-approximation",
+    "trilateration"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-memory",
+   "label": "Tiered Memory and OKF Knowledge Graph",
+   "desc": "Tiered memory lifecycle across working, episodic, semantic, and persistent tiers",
+   "keywords": [
+    "memory",
+    "tier",
+    "promotion",
+    "lifecycle",
+    "consolidation",
+    "episodic",
+    "graph",
+    "node",
+    "edge",
+    "okf",
+    "link",
+    "ontology"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-orchestration",
+   "label": "Orchestration, Loops and Superposition",
+   "desc": "Routing, delegation, and hierarchical coordination of the agent network.",
+   "keywords": [
+    "orchestrate",
+    "route",
+    "delegate",
+    "hierarchy",
+    "plan",
+    "swarm",
+    "loop",
+    "chain",
+    "pipeline",
+    "scw",
+    "partition",
+    "isolation",
+    "superposition",
+    "tick",
+    "mirror",
+    "parallel",
+    "arbitration",
+    "shared-state"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  },
+  {
+   "id": "mx-reasoning",
+   "label": "Reasoning and Claim Verification",
+   "desc": "Frames, anchors, and structured cognition for agent reasoning passes.",
+   "keywords": [
+    "reasoning",
+    "frame",
+    "anchor",
+    "context",
+    "recursion",
+    "meta",
+    "claim",
+    "provenance",
+    "citation",
+    "lineage",
+    "evidence",
+    "hallucination"
+   ],
+   "topic": "maxey0",
+   "source": "maxey0_base",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "context-boundary-engineering",
+   "concept": "mx-context-management",
+   "label": "Context Boundary Engineering",
+   "desc": "Engineers the boundaries between contexts: isolation between agents, scopes, and tenants; declared crossings only; leakage as a first-class failure.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey54",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey33",
+     "role": "support"
+    },
+    {
+     "key": "Maxey128",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "context-lineage-tracking",
+   "concept": "mx-context-management",
+   "label": "Context Lineage Tracking",
+   "desc": "Tracks where every context element came from: source, transformation chain, inclusion rationale — so any packed context can answer provenance queries ",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey110",
+     "role": "support"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "context-packing-optimization",
+   "concept": "mx-context-management",
+   "label": "Context Packing Optimization",
+   "desc": "Optimizes what enters a context window against token budgets: selection, compression, ordering — every exclusion justified, every compression lossless",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey180",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey52",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    },
+    {
+     "key": "Maxey364",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "context-persistence-engineering",
+   "concept": "mx-context-management",
+   "label": "Context Persistence Engineering",
+   "desc": "Persists and restores context state across sessions: what survives session close, in which tier, and how restoration reconstructs a working context fa",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey128",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey127",
+     "role": "support"
+    },
+    {
+     "key": "Maxey96",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "structured-context-world-engineering",
+   "concept": "mx-context-management",
+   "label": "Structured Context World Engineering",
+   "desc": "Designs and builds SCWs: schema-governed context packages with declared sections, budgets, and inclusion rationale. Primary mechanism for 75-85% per-t",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey10",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey364",
+     "role": "support"
+    },
+    {
+     "key": "Maxey180",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-evaluation",
+   "concept": "mx-governance",
+   "label": "Agent Evaluation",
+   "desc": "Mirrors runs read-only to produce evidence-chained EvalReports and frame-labeled DriftSignals across reference frames A, B, and D.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey00",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey98",
+     "role": "support"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-trace-analysis",
+   "concept": "mx-governance",
+   "label": "Agent Trace Analysis",
+   "desc": "Consumes trace trees and produces causal diagnoses: failing paths, root causes, and minimal reproductions.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey74",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey145",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey160",
+     "role": "support"
+    },
+    {
+     "key": "Maxey164",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "ai-observability",
+   "concept": "mx-governance",
+   "label": "AI Observability",
+   "desc": "Instruments every boundary with spans under the a2a.* and maxey0.okf.* namespaces, assembles replayable trace trees, and diagnoses from them.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey145",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey74",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey160",
+     "role": "support"
+    },
+    {
+     "key": "Maxey164",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "constitutional-constraint-enforcement",
+   "concept": "mx-governance",
+   "label": "Constitutional Constraint Enforcement",
+   "desc": "Gates every proposed action against a versioned policy registry with cited allow/deny verdicts and audited enforcement.",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey54",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey33",
+     "role": "support"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "context-utilization-analytics",
+   "concept": "mx-governance",
+   "label": "Context Utilization Analytics",
+   "desc": "Measures what entered a context window and how much of it was actually used: utilization ratios, dead-weight identification, and packing efficiency si",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey74",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey145",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    },
+    {
+     "key": "Maxey180",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "cross-organization-policy-negotiation",
+   "concept": "mx-governance",
+   "label": "Cross-Organization Policy Negotiation",
+   "desc": "Negotiates compatible policy scopes between organizations sharing agents or data: intersection finding, conflict resolution, escalation.",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey54",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey33",
+     "role": "support"
+    },
+    {
+     "key": "Maxey193",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "enterprise-agent-governance",
+   "concept": "mx-governance",
+   "label": "Enterprise Agent Governance",
+   "desc": "Governs agent deployments at organizational scale: approval workflows, audit logs, policy versioning, and rollback.",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey54",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey33",
+     "role": "support"
+    },
+    {
+     "key": "Maxey0",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "enterprise-constitution-evaluation",
+   "concept": "mx-governance",
+   "label": "Enterprise Constitution Evaluation",
+   "desc": "Evaluates whether deployed agents conform to their declared constitutional constraints — live compliance scoring, not just design-time analysis.",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey00",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey54",
+     "role": "support"
+    },
+    {
+     "key": "Maxey17",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "enterprise-constitution-modeling",
+   "concept": "mx-governance",
+   "label": "Enterprise Constitution Modeling",
+   "desc": "Authors and versions the policy documents that enforcement gates read: law definitions, scope declarations, exception protocols.",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey88",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey54",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey33",
+     "role": "support"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "enterprise-memory-isolation",
+   "concept": "mx-governance",
+   "label": "Enterprise Memory Isolation",
+   "desc": "Enforces memory isolation between organizational tenants: scope separation, access controls, and audit of cross-tenant operations.",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey54",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey128",
+     "role": "support"
+    },
+    {
+     "key": "Maxey65",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "memory-access-telemetry",
+   "concept": "mx-governance",
+   "label": "Memory Access Telemetry",
+   "desc": "Instruments tier reads and writes: access patterns, promotion events, and tier-crossing latencies — the data that makes memory policy auditable.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey145",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey74",
+     "role": "support"
+    },
+    {
+     "key": "Maxey109",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "retrieval-attribution-evaluation",
+   "concept": "mx-governance",
+   "label": "Retrieval Attribution Evaluation",
+   "desc": "Scores retrieval quality by tracing outputs back to their sources: did the system surface the right items, were they actually used, were attributions ",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey00",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey109",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey110",
+     "role": "support"
+    },
+    {
+     "key": "Maxey17",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "swarm-evaluation",
+   "concept": "mx-governance",
+   "label": "Swarm Evaluation",
+   "desc": "Evaluates swarm outputs: coverage, contradiction rate, and convergence quality across the collected set.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey00",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    },
+    {
+     "key": "Maxey79",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-infrastructure-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Agent Infrastructure Engineering",
+   "desc": "Designs and provisions the infrastructure layer for agent deployments: compute, networking, secret management, and health monitoring.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey70",
+     "role": "support"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-platform-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Agent Platform Engineering",
+   "desc": "Builds the platform abstractions agents run on: scheduling, load balancing, autoscaling, and the observability integrations the platform provides.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    },
+    {
+     "key": "Maxey80",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-runtime-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Agent Runtime Engineering",
+   "desc": "Executes agent code inside enforced resource and isolation contracts, priced by risk budget, with purge-on-completion state discipline.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey35",
+     "role": "support"
+    },
+    {
+     "key": "Maxey55",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "distributed-agent-runtime-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Distributed Agent Runtime Engineering",
+   "desc": "Operates agent runtimes across distributed compute: work distribution, fault tolerance, state coherence, and split-brain prevention.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey55",
+     "role": "support"
+    },
+    {
+     "key": "Maxey80",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "multi-tenant-agent-infrastructure",
+   "concept": "mx-infrastructure",
+   "label": "Multi-Tenant Agent Infrastructure",
+   "desc": "Provisions and isolates agent infrastructure across tenants: resource quotas, network separation, and tenant-scoped secret stores.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey187",
+     "role": "support"
+    },
+    {
+     "key": "Maxey54",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-to-agent-protocol-engineering",
+   "concept": "mx-io-contract",
+   "label": "Agent-to-Agent Protocol Engineering",
+   "desc": "Defines, validates, versions, and adapts schema-checked A2A envelopes so any conformant agent can exchange work with the network.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey0",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey193",
+     "role": "support"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "ai-platform-engineering",
+   "concept": "mx-io-contract",
+   "label": "AI Platform Engineering",
+   "desc": "Engineers the end-to-end AI platform: model serving, tool integration, agent orchestration endpoints, and platform-level observability.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "context-infrastructure-engineering",
+   "concept": "mx-io-contract",
+   "label": "Context Infrastructure Engineering",
+   "desc": "Engineers the infrastructure that serves context to agents: retrieval endpoints, caching layers, and contract-validated context APIs.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey10",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "inference-pipeline-engineering",
+   "concept": "mx-io-contract",
+   "label": "Inference Pipeline Engineering",
+   "desc": "Engineers the pipeline from request to model inference: batching, routing, caching, and contract-validated responses.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey30",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    },
+    {
+     "key": "Maxey187",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "model-context-protocol-engineering",
+   "concept": "mx-io-contract",
+   "label": "Model Context Protocol Engineering",
+   "desc": "Builds and operates MCP servers: tool registration, capability advertisement, auth, and the lazy-load manifest pattern.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "multi-mcp-federation",
+   "concept": "mx-io-contract",
+   "label": "Multi-MCP Federation",
+   "desc": "Federates multiple MCP servers behind a unified discovery surface; routes tool calls to the right server without exposing federation internals to call",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey0",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "protocol-translation",
+   "concept": "mx-io-contract",
+   "label": "Protocol Translation",
+   "desc": "Translates between A2A, MCP, and foreign agent frameworks' message shapes without loss of contract fields.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey193",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey32",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "tool-capability-discovery",
+   "concept": "mx-io-contract",
+   "label": "Tool Capability Discovery",
+   "desc": "Discovers what tools and capabilities are available in the current environment: MCP servers, APIs, and local capabilities.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey30",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey32",
+     "role": "support"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "tool-schema-negotiation",
+   "concept": "mx-io-contract",
+   "label": "Tool Schema Negotiation",
+   "desc": "Publishes owned, versioned service contracts; discovers and negotiates capabilities before first call; tests contracts in both directions.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey30",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    },
+    {
+     "key": "Maxey32",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "latent-feature-attribution",
+   "concept": "mx-latent",
+   "label": "Latent Feature Attribution",
+   "desc": "Attributes model behavior to latent features with causal grading: interventional evidence outranks correlational saliency; every attribution declares ",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey118",
+     "role": "support"
+    },
+    {
+     "key": "Maxey26",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "latent-space-engineering",
+   "concept": "mx-latent",
+   "label": "Latent Space Engineering",
+   "desc": "Builds and maintains the embedding-space substrate: vector stores, snapshot capture with metadata, cross-modal alignment — that all latent measurement",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey127",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey121",
+     "role": "support"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "latent-space-mapping",
+   "concept": "mx-latent",
+   "label": "Latent Space Mapping",
+   "desc": "Produces navigable maps of latent regions via projection methods (PCA/SVD, UMAP) with distortion budgets declared per map and disclosed-approximation ",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey120",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey21",
+     "role": "support"
+    },
+    {
+     "key": "Maxey22",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "latent-topology-analysis",
+   "concept": "mx-latent",
+   "label": "Latent Topology Analysis",
+   "desc": "Characterizes latent region shape — neighborhoods, manifold structure, connectivity — from geometry-preserving graph constructions rather than raw pro",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey28",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey24",
+     "role": "support"
+    },
+    {
+     "key": "Maxey22",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "latent-triangulation",
+   "concept": "mx-latent",
+   "label": "Latent Triangulation",
+   "desc": "Estimates latent position and movement from anchor-relative distances over matched pre/post snapshots — disclosed-approximation (full-stream and subsp",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey16",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey20",
+     "role": "support"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "latent-world-construction",
+   "concept": "mx-latent",
+   "label": "Latent World Construction",
+   "desc": "Constructs bounded scenario representations in latent terms with declared assumptions, tracked divergence, and disclosed-approximation state.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey796",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey121",
+     "role": "support"
+    },
+    {
+     "key": "Maxey15",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "magnitude-spectrum-analysis",
+   "concept": "mx-latent",
+   "label": "Magnitude Spectrum Analysis",
+   "desc": "Analyzes magnitude distributions across latent dimensions under the superposition/polysemanticity discipline: variance ≠ causal weight, controls manda",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey20",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey21",
+     "role": "support"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "sparse-autoencoder-interpretability",
+   "concept": "mx-latent",
+   "label": "Sparse Autoencoder Interpretability",
+   "desc": "Trains and curates SAE feature dictionaries with the workspace caveat built in: SAE decoder directions are not automatically report-available.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey26",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey117",
+     "role": "support"
+    },
+    {
+     "key": "Maxey118",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "episodic-memory-engineering",
+   "concept": "mx-memory",
+   "label": "Episodic Memory Engineering",
+   "desc": "Engineers the episodic tier: turn chains, session summaries, handoff state, and drift snapshots — all resumable, time-stamped, and summarized at sessi",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey244",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey245",
+     "role": "support"
+    },
+    {
+     "key": "Maxey304",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "graph-memory-construction",
+   "concept": "mx-memory",
+   "label": "Graph Memory Construction",
+   "desc": "Constructs graph memories from raw agent outputs: entity extraction, relationship inference, and deduplication.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey27",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey394",
+     "role": "support"
+    },
+    {
+     "key": "Maxey109",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "graph-neural-network-routing",
+   "concept": "mx-memory",
+   "label": "Graph Neural Network Routing",
+   "desc": "Routes agent selection and skill matching using GNN features over the knowledge graph: neighborhood density, hub centrality, path distance.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey116",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey27",
+     "role": "support"
+    },
+    {
+     "key": "Maxey28",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "hybrid-vector-graph-memory",
+   "concept": "mx-memory",
+   "label": "Hybrid Vector-Graph Memory",
+   "desc": "Combines vector search (fast approximate retrieval) with graph traversal (exact relational queries) into a unified memory access layer.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey127",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey394",
+     "role": "support"
+    },
+    {
+     "key": "Maxey28",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "knowledge-graph-engineering",
+   "concept": "mx-memory",
+   "label": "Knowledge Graph Engineering",
+   "desc": "Maintains the OKF-serialized graph through diffable document edits, integrity verification, alias normalization, and structure-informed routing.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey27",
+     "role": "support"
+    },
+    {
+     "key": "Maxey28",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "knowledge-graph-federation",
+   "concept": "mx-memory",
+   "label": "Knowledge Graph Federation",
+   "desc": "Owns OKF-to-external-KG interoperability: node/edge/property mapping contracts, sync direction, and the MCP host/client bridge pattern with Claude as ",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey126",
+     "role": "support"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "memory-context-compress",
+   "concept": "mx-memory",
+   "label": "Memory Context Compress — Memory Concept Extraction & Context Window Compression",
+   "desc": "Compiles a session transcript or account memory surface into a normalized, deduplicated memory checkpoint and a token-budgeted resume packet, so a fre",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey11",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey52",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    },
+    {
+     "key": "Maxey307",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "memory-graph-evolution",
+   "concept": "mx-memory",
+   "label": "Memory Graph Evolution",
+   "desc": "Engineers how the knowledge graph grows and prunes over time: addition protocols, deprecation, and garbage collection.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey27",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey71",
+     "role": "support"
+    },
+    {
+     "key": "Maxey394",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "memory-promotion-policy-engineering",
+   "concept": "mx-memory",
+   "label": "Memory Promotion Policy Engineering",
+   "desc": "Designs and enforces the gates that move items between tiers: relevance, evidence, consistency, reuse, and policy checks — with quarantine and repair ",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey307",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    },
+    {
+     "key": "Maxey109",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "multi-tier-memory-management",
+   "concept": "mx-memory",
+   "label": "Multi-Tier Memory Management",
+   "desc": "Classifies, stores, summarizes, and promotes memory items across the five tiers through typed API contracts with evidence-gated promotion.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey11",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey128",
+     "role": "support"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "persistent-memory-management",
+   "concept": "mx-memory",
+   "label": "Persistent Memory Management",
+   "desc": "Manages the persistent tier: durable agent facts, versioned preferences, long-term observations — written rarely, always with a promotion evidence cha",
+   "type": "persistent",
+   "agents": [
+    {
+     "key": "Maxey65",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey126",
+     "role": "support"
+    },
+    {
+     "key": "Maxey127",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "procedural-memory-engineering",
+   "concept": "mx-memory",
+   "label": "Procedural Memory Engineering",
+   "desc": "Engineers the procedural tier - the skill bundles as memory: creation = memorization, revision = consolidation, deprecation = forgetting, git history ",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey11",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey307",
+     "role": "support"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "property-graph-memory-engineering",
+   "concept": "mx-memory",
+   "label": "Property Graph Memory Engineering",
+   "desc": "Engineers property graph representations for agent memory: node schemas, edge semantics, and traversal patterns.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey126",
+     "role": "support"
+    },
+    {
+     "key": "Maxey27",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "research-paper-integration",
+   "concept": "mx-memory",
+   "label": "Research Paper Integration",
+   "desc": "Integrates a new research paper into the bundle: extract concepts, derive skills, map registry agents or propose new ones, enumerate operational topic",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey00",
+     "role": "support"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "semantic-memory-engineering",
+   "concept": "mx-memory",
+   "label": "Semantic Memory Engineering",
+   "desc": "Engineers the semantic tier — the OKF bundle itself: concept extraction, graph construction, alias normalization, and the promotion gate that admits i",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey71",
+     "role": "support"
+    },
+    {
+     "key": "Maxey27",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "temporal-knowledge-graph-management",
+   "concept": "mx-memory",
+   "label": "Temporal Knowledge Graph Management",
+   "desc": "Manages time-stamped knowledge graph evolution: versioned edges, temporal queries, and change-event propagation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey27",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    },
+    {
+     "key": "Maxey394",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "working-memory-management",
+   "concept": "mx-memory",
+   "label": "Working Memory Management",
+   "desc": "Manages the working (scratchpad) tier: volatile in-flight state, TTL enforcement, and guaranteed purge at session close.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey128",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey307",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey304",
+     "role": "support"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "actor-critic-parallelism",
+   "concept": "mx-orchestration",
+   "label": "Actor-Critic Parallelism",
+   "desc": "Runs propose/critique agent pairs and symmetric mirror-mode parallels under an arbiter: one agent proposes, one critiques, promotion only through reco",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey0",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey00",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey463",
+     "role": "support"
+    },
+    {
+     "key": "Maxey71",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-registry-management",
+   "concept": "mx-orchestration",
+   "label": "Agent Registry Management",
+   "desc": "Manages the 777-agent registry: hydration, search, role-based filtering, and the serving layer that skill-selection queries hit.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey0",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey8",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agentic-deep-search",
+   "concept": "mx-orchestration",
+   "label": "Agentic Deep Search",
+   "desc": "Superactivation deep search - the original $Maxey0: parallel multi-corpus retrieval lanes, per-SCW overlays, superimpose validation, multi-hop refinem",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey14",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey00",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey120",
+     "role": "support"
+    },
+    {
+     "key": "Maxey17",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "hierarchical-agent-orchestration",
+   "concept": "mx-orchestration",
+   "label": "Hierarchical Agent Orchestration",
+   "desc": "Decomposes tasks into DAG-shaped unit plans and routes each unit to a primary+checker specialist pair under budget and policy constraints.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey0",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey52",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    },
+    {
+     "key": "Maxey79",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "loop-composition-battery",
+   "concept": "mx-orchestration",
+   "label": "Loop Composition Battery",
+   "desc": "The live multi-agent battery and the loop-dataset build pipeline that hardens the 74 Maxey0-native loops into real SCW harnesses.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey0",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey00",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    },
+    {
+     "key": "Maxey88",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "orbital-selection",
+   "concept": "mx-orchestration",
+   "label": "Orbital Selection",
+   "desc": "Hierarchical routing across the concept/skill/agent orbital planes - each an anchor field touched in one superposed pass per level, with cross-plane c",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey27",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey00",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "same-tick-arbitration",
+   "concept": "mx-orchestration",
+   "label": "Same-Tick Arbitration",
+   "desc": "Receives outputs from two or more agents on the exact same logical tick and evaluates them against one shared state to test which output does X accord",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey00",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey187",
+     "role": "support"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "scw-partition-isolation",
+   "concept": "mx-orchestration",
+   "label": "SCW Partition Isolation",
+   "desc": "The two architectures that partition a loop's context: in-window (typed regions, tool-layer refusal) and cross-window (one model call per agent, isola",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey10",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey364",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey180",
+     "role": "support"
+    },
+    {
+     "key": "Maxey797",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "shared-state-synchronization",
+   "concept": "mx-orchestration",
+   "label": "Shared-State Synchronization",
+   "desc": "Engineers the tick discipline that makes agentic superposition real: parallel and multithreaded GPU execution such that compute ticks are shorter than",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey800",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey00",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey466",
+     "role": "support"
+    },
+    {
+     "key": "Maxey187",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "superposition-coordinate-mapping",
+   "concept": "mx-orchestration",
+   "label": "Superposition Coordinate Mapping",
+   "desc": "Logs, maps, and learns superposition coordinates from latent state transitions using state-vector-machine models, so simultaneous states become a navi",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey20",
+     "role": "support"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "superposition-observation",
+   "concept": "mx-orchestration",
+   "label": "Superposition Observation",
+   "desc": "Maxey00's standing mirror: read-only shadow observation of every run, annotating quality, latency, cost, and drift without touching the observed workf",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey00",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey98",
+     "role": "support"
+    },
+    {
+     "key": "Maxey122",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "swarm-intelligence",
+   "concept": "mx-orchestration",
+   "label": "Swarm Intelligence",
+   "desc": "Coordinates agent swarms for embarrassingly parallel tasks: spawn, collect, reconcile — with convergence gates and contradiction resolution.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey0",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey00",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey79",
+     "role": "support"
+    },
+    {
+     "key": "Maxey52",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "anchor-based-reasoning",
+   "concept": "mx-reasoning",
+   "label": "Anchor-Based Reasoning",
+   "desc": "Executes reasoning passes anchored to declared reference points; conclusions carry the anchor set that produced them.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey15",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    },
+    {
+     "key": "Maxey20",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "claim-lineage-analysis",
+   "concept": "mx-reasoning",
+   "label": "Claim Lineage Analysis",
+   "desc": "Records signed generation-time provenance, classifies every claim by its support, and answers lineage queries end to end.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    },
+    {
+     "key": "Maxey13",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "cognitive-anchor-extraction",
+   "concept": "mx-reasoning",
+   "label": "Cognitive Anchor Extraction",
+   "desc": "Mines stable reference points from behavioral evidence: the anchors that reasoning frames are built around.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey16",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey15",
+     "role": "support"
+    },
+    {
+     "key": "Maxey20",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "cognitive-architecture-engineering",
+   "concept": "mx-reasoning",
+   "label": "Cognitive Architecture Engineering",
+   "desc": "Designs the overall cognitive layout of an agent: which reasoning passes run in sequence, which in parallel, and how results compose.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey15",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "hallucination-attribution",
+   "concept": "mx-reasoning",
+   "label": "Hallucination Attribution",
+   "desc": "Attributes hallucinations to their cause: retrieval failure, inference error, context gap, or compression loss.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey110",
+     "role": "support"
+    },
+    {
+     "key": "Maxey13",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "hallucination-localization",
+   "concept": "mx-reasoning",
+   "label": "Hallucination Localization",
+   "desc": "Localizes hallucinations to specific spans: which part of the output is unsupported, at what evidence level.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey88",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey110",
+     "role": "support"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "meta-reasoning",
+   "concept": "mx-reasoning",
+   "label": "Meta-Reasoning",
+   "desc": "Reasons about reasoning: selects frames, evaluates which anchor sets are appropriate, and decides when to recurse or stop.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey15",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "multi-world-reasoning",
+   "concept": "mx-reasoning",
+   "label": "Multi-World Reasoning",
+   "desc": "Runs parallel reasoning passes in multiple worlds; compares and reconciles conclusions across worlds.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey796",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey15",
+     "role": "support"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "reasoning-frame-engineering",
+   "concept": "mx-reasoning",
+   "label": "Reasoning Frame Engineering",
+   "desc": "Binds reasoning passes to versioned frames with mined anchors and rationale-complete context packages, recursing under discipline.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey15",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "reasoning-path-instrumentation",
+   "concept": "mx-reasoning",
+   "label": "Reasoning Path Instrumentation",
+   "desc": "Instruments the reasoning path: which steps led to which claims, so reasoning audits are replayable.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey74",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey109",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey145",
+     "role": "support"
+    },
+    {
+     "key": "Maxey50",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "recursive-self-reflection",
+   "concept": "mx-reasoning",
+   "label": "Recursive Self-Reflection",
+   "desc": "Implements bounded self-reflection loops: depth-limited, summary-gated, stopping when marginal value falls below epsilon.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey15",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey10",
+     "role": "support"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "world-based-reasoning",
+   "concept": "mx-reasoning",
+   "label": "World-Based Reasoning",
+   "desc": "Reasons inside a declared world model: assumptions explicit, conclusions scoped to the world, divergence from base world tracked.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey15",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey17",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey796",
+     "role": "support"
+    },
+    {
+     "key": "Maxey16",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey0",
+   "name": "SuperAgent Orchestrator",
+   "mcp": [
+    "session:Maxey0"
+   ]
+  },
+  {
+   "key": "Maxey00",
+   "name": "Superposition Agent",
+   "mcp": [
+    "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "254e954c-da06-44e1-8f83-e0c599a1a495",
+    "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+    "session:Maxey0"
+   ]
+  },
+  {
+   "key": "Maxey10",
+   "name": "Context Window Architect",
+   "mcp": [
+    "d0585e82-4190-4588-ab31-b1afd254cf0f"
+   ]
+  },
+  {
+   "key": "Maxey109",
+   "name": "Provenance Logger",
+   "mcp": [
+    "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "session:memory"
+   ]
+  },
+  {
+   "key": "Maxey11",
+   "name": "Memory Manager",
+   "mcp": [
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+    "session:memory"
+   ]
+  },
+  {
+   "key": "Maxey110",
+   "name": "Provenance Querier",
+   "mcp": []
+  },
+  {
+   "key": "Maxey116",
+   "name": "Latent GNN Router",
+   "mcp": []
+  },
+  {
+   "key": "Maxey117",
+   "name": "SAE Trainer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey118",
+   "name": "Feature Set Curator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey120",
+   "name": "Latent Mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey121",
+   "name": "Cross-Modality Mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey122",
+   "name": "Temporal Drift Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey126",
+   "name": "Graph Store Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey127",
+   "name": "Vector Store Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey128",
+   "name": "Working Memory Manager",
+   "mcp": []
+  },
+  {
+   "key": "Maxey13",
+   "name": "Conversation Ingestor",
+   "mcp": [
+    "d7e0c27c-a722-420a-ae2c-e4fb16ea853e"
+   ]
+  },
+  {
+   "key": "Maxey14",
+   "name": "Retrieval Orchestrator",
+   "mcp": [
+    "254e954c-da06-44e1-8f83-e0c599a1a495"
+   ]
+  },
+  {
+   "key": "Maxey145",
+   "name": "OTel Collector Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey15",
+   "name": "Frames Steward",
+   "mcp": []
+  },
+  {
+   "key": "Maxey16",
+   "name": "Anchor Miner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey160",
+   "name": "OTel Module Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey164",
+   "name": "Grafana Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey17",
+   "name": "Anchor Metrics",
+   "mcp": [
+    "1e23b148-2355-4ead-95e9-9b9b359985f7"
+   ]
+  },
+  {
+   "key": "Maxey180",
+   "name": "SCW Packing Schema Agent",
+   "mcp": [
+    "a6a88aa0-b038-43ba-ac83-912f459bf576",
+    "session:Maxey0"
+   ]
+  },
+  {
+   "key": "Maxey187",
+   "name": "Code Interpreter Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey193",
+   "name": "LangChain Adapter Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey20",
+   "name": "Magnitude Spectrum Mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey21",
+   "name": "PCA Cartographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey22",
+   "name": "UMAP Navigator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey24",
+   "name": "Isomap Surveyor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey244",
+   "name": "Conversation Importer Agent",
+   "mcp": [
+    "48ba489e-160f-4965-913b-667cce063da2",
+    "d7e0c27c-a722-420a-ae2c-e4fb16ea853e"
+   ]
+  },
+  {
+   "key": "Maxey245",
+   "name": "Conversation Store Agent",
+   "mcp": [
+    "48ba489e-160f-4965-913b-667cce063da2"
+   ]
+  },
+  {
+   "key": "Maxey26",
+   "name": "SAE Engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey27",
+   "name": "Graph GNN Router",
+   "mcp": [
+    "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25"
+   ]
+  },
+  {
+   "key": "Maxey28",
+   "name": "Neighborhood Graph Builder",
+   "mcp": []
+  },
+  {
+   "key": "Maxey30",
+   "name": "Memory API Keeper",
+   "mcp": [
+    "b9049585-f39b-45e8-8626-6ca78d9d7d22"
+   ]
+  },
+  {
+   "key": "Maxey304",
+   "name": "Session Store Manager",
+   "mcp": []
+  },
+  {
+   "key": "Maxey307",
+   "name": "Promotion Policy Agent",
+   "mcp": [
+    "3119bc71-0dfd-48f8-a764-c2fca895325c",
+    "48ba489e-160f-4965-913b-667cce063da2",
+    "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+    "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+    "session:memory"
+   ]
+  },
+  {
+   "key": "Maxey31",
+   "name": "Runner API Keeper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey32",
+   "name": "MCP Bridge",
+   "mcp": []
+  },
+  {
+   "key": "Maxey33",
+   "name": "Policy Proxy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey35",
+   "name": "Sandbox Runner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey364",
+   "name": "SCW ReasoningFrame Schema Agent",
+   "mcp": [
+    "a6a88aa0-b038-43ba-ac83-912f459bf576",
+    "d0585e82-4190-4588-ab31-b1afd254cf0f",
+    "session:Maxey0"
+   ]
+  },
+  {
+   "key": "Maxey394",
+   "name": "Seed Agent Graph Agent",
+   "mcp": [
+    "3119bc71-0dfd-48f8-a764-c2fca895325c",
+    "78db989f-19e7-4ff3-8b66-5b5abf5208b2"
+   ]
+  },
+  {
+   "key": "Maxey463",
+   "name": "Agentic Runner Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey466",
+   "name": "MCP Runner Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey50",
+   "name": "Provenance Signer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey52",
+   "name": "Cost Guard",
+   "mcp": [
+    "254e954c-da06-44e1-8f83-e0c599a1a495",
+    "a6a88aa0-b038-43ba-ac83-912f459bf576",
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+    "session:Maxey0",
+    "session:memory"
+   ]
+  },
+  {
+   "key": "Maxey54",
+   "name": "Security Sentinel",
+   "mcp": [
+    "c703ddc2-743d-4677-b37e-4f58476c6a60"
+   ]
+  },
+  {
+   "key": "Maxey55",
+   "name": "Backup & Restore",
+   "mcp": []
+  },
+  {
+   "key": "Maxey65",
+   "name": "Database Architect",
+   "mcp": []
+  },
+  {
+   "key": "Maxey66",
+   "name": "API Gateway Agent",
+   "mcp": [
+    "2d60210c-dd92-4be0-b09c-3662f10445c9"
+   ]
+  },
+  {
+   "key": "Maxey70",
+   "name": "Integration Engineer",
+   "mcp": [
+    "9ed5afff-a8dc-4f68-b97b-61dae12de3a5"
+   ]
+  },
+  {
+   "key": "Maxey71",
+   "name": "QA Agent",
+   "mcp": [
+    "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "3119bc71-0dfd-48f8-a764-c2fca895325c",
+    "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+    "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+    "d0585e82-4190-4588-ab31-b1afd254cf0f",
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+    "session:memory"
+   ]
+  },
+  {
+   "key": "Maxey74",
+   "name": "Debugger Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey79",
+   "name": "DR Coordinator",
+   "mcp": [
+    "1e23b148-2355-4ead-95e9-9b9b359985f7"
+   ]
+  },
+  {
+   "key": "Maxey795",
+   "name": "Feature Attribution Analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey796",
+   "name": "Latent World Constructor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey797",
+   "name": "Context Boundary Warden",
+   "mcp": []
+  },
+  {
+   "key": "Maxey8",
+   "name": "API Gateway Engineer",
+   "mcp": [
+    "session:Maxey0"
+   ]
+  },
+  {
+   "key": "Maxey80",
+   "name": "Incident Commander",
+   "mcp": []
+  },
+  {
+   "key": "Maxey800",
+   "name": "Superposition Runtime Engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey801",
+   "name": "State Vector Cartographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey85",
+   "name": "Security Scanner",
+   "mcp": [
+    "2d60210c-dd92-4be0-b09c-3662f10445c9",
+    "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+    "c703ddc2-743d-4677-b37e-4f58476c6a60"
+   ]
+  },
+  {
+   "key": "Maxey88",
+   "name": "Compliance Auditor",
+   "mcp": [
+    "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "c703ddc2-743d-4677-b37e-4f58476c6a60",
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+    "session:memory"
+   ]
+  },
+  {
+   "key": "Maxey96",
+   "name": "Artifact Store",
+   "mcp": []
+  },
+  {
+   "key": "Maxey98",
+   "name": "Drift Detector",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "name": "Extend",
+   "desc": "Turn documents into structured data",
+   "tools": [
+    "classify_document",
+    "create_classifier",
+    "create_evaluation_set"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "name": "Control Plane",
+   "desc": "Deploy, scale, and debug cloud apps from one platform",
+   "tools": [
+    "add_database",
+    "build_image",
+    "convert_to_terraform",
+    "allow_workload_access"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "name": "Cloudflare Developer Platform",
+   "desc": "Build applications with compute, storage, and AI",
+   "tools": [
+    "workers_list",
+    "kv_namespaces_list",
+    "r2_buckets_list",
+    "d1_databases_list"
+   ],
+   "state": "connected",
+   "source": "Maxey0 base graph MCP table",
+   "id": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "name": "Mem0",
+   "desc": "Persistent memory for AI agents & assistants",
+   "tools": [
+    "add_memory",
+    "search_memories",
+    "get_memories",
+    "update_memory",
+    "delete_memory",
+    "list_entities"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "48ba489e-160f-4965-913b-667cce063da2",
+   "name": "Chatbase",
+   "desc": "Manage Chatbase agents, sources, conversations, tickets.",
+   "tools": [
+    "chatbase_chat",
+    "chatbase_create_agent",
+    "chatbase_create_source",
+    "chatbase_export_conversations"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "48ba489e-160f-4965-913b-667cce063da2",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "name": "DevRev",
+   "desc": "Search and update your company's knowledge graph",
+   "tools": [
+    "create_issue",
+    "get_issue",
+    "list_issues",
+    "create_ticket",
+    "get_enhancement"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "name": "Railway",
+   "desc": "Deploy, manage, and debug your apps and infrastructure on Railway",
+   "tools": [
+    "create-deployment",
+    "deploy-artifact",
+    "get-logs",
+    "get-status"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "name": "JupiterOne",
+   "desc": "Ask questions about your JupiterOne agentic security and it asset graph and manage alerts, rules, and dashboards",
+   "tools": [
+    "execute-j1ql-query",
+    "get-active-alerts",
+    "create-dashboard",
+    "evaluate-rule"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "a6a88aa0-b038-43ba-ac83-912f459bf576",
+   "name": "Blaze SQL",
+   "desc": "Let claude query any SQL Database or warehouse with accuracy, context, governance, and observability.",
+   "tools": [
+    "describe_tables",
+    "execute_sql",
+    "list_schemas",
+    "list_tables"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "a6a88aa0-b038-43ba-ac83-912f459bf576",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "name": "Postman",
+   "desc": "Give API context to your coding agents",
+   "tools": [
+    "createCollection",
+    "getCollection",
+    "getAllCollections",
+    "createFolder"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "name": "Pi Security",
+   "desc": "Agentic product security platform",
+   "tools": [
+    "pi_design_review_get",
+    "pi_finding_get",
+    "pi_findings_list",
+    "pi_gatekeeper_issues_list"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "name": "LlamaParse",
+   "desc": "Turn your documents into agent-ready context for Claude",
+   "tools": [
+    "createIndex",
+    "extractFile",
+    "findFilesInIndex",
+    "classifyFile"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "name": "Vertiso Memory",
+   "desc": "Portable, durable memory for every AI agent you use",
+   "tools": [
+    "archive_memory",
+    "forget",
+    "get_memory",
+    "handoff",
+    "handoff_resume",
+    "list_recent"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "name": "Meko",
+   "desc": "Shared context for agents that work and learn together.",
+   "tools": [
+    "artifact_get",
+    "artifact_put",
+    "conversation_add_message",
+    "conversation_create",
+    "conversation_get",
+    "conversation_list"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "session:Maxey0",
+   "name": "Maxey0 (artifact + SCW store)",
+   "desc": "Maxey0 manages Structured Context Worlds (SCWs) and stored artifacts: SCW create, files, artifact upsert, plans, runs",
+   "tools": [
+    "scw_create",
+    "scw_add_file",
+    "scw_read_file",
+    "artifact_upsert",
+    "maxey0_open_app",
+    "maxey0_record_run"
+   ],
+   "state": "session",
+   "source": "Maxey0 base graph MCP table",
+   "id": "session:Maxey0",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "session:memory",
+   "name": "Memory (user memory store)",
+   "desc": "Persistent memory documents: read, write, append, list across sessions",
+   "tools": [
+    "memory_read",
+    "memory_write",
+    "memory_append",
+    "memory_list",
+    "memory_str_replace"
+   ],
+   "state": "session",
+   "source": "Maxey0 base graph MCP table",
+   "id": "session:memory",
+   "origins": [
+    "maxey0_base"
+   ]
+  }
+ ],
+ "topic_mcp": [],
+ "agent_mcp": [
+  {
+   "agent": "Maxey0",
+   "mcp": "session:Maxey0",
+   "topic": null,
+   "score": null,
+   "basis": "declared:spec"
+  },
+  {
+   "agent": "Maxey00",
+   "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "topic": null,
+   "score": 0.1101,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey00",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": "maxey0",
+   "score": 0.1526,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey14",
+    "skill": "agentic-deep-search"
+   }
+  },
+  {
+   "agent": "Maxey00",
+   "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "topic": "maxey0",
+   "score": 0.1486,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey27",
+    "skill": "orbital-selection"
+   }
+  },
+  {
+   "agent": "Maxey00",
+   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "topic": "maxey0",
+   "score": 0.1021,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey27",
+    "skill": "orbital-selection"
+   }
+  },
+  {
+   "agent": "Maxey00",
+   "mcp": "session:Maxey0",
+   "topic": "maxey0",
+   "score": null,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey0",
+    "skill": "actor-critic-parallelism"
+   }
+  },
+  {
+   "agent": "Maxey10",
+   "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "topic": null,
+   "score": 0.1046,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey109",
+   "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "topic": "maxey0",
+   "score": 0.1101,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "retrieval-attribution-evaluation"
+   }
+  },
+  {
+   "agent": "Maxey109",
+   "mcp": "session:memory",
+   "topic": null,
+   "score": 0.2463,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey11",
+   "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "topic": null,
+   "score": 0.2199,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey11",
+   "mcp": "session:memory",
+   "topic": null,
+   "score": 0.2466,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey13",
+   "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "topic": null,
+   "score": 0.185,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey14",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": null,
+   "score": 0.1526,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey17",
+   "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "topic": "maxey0",
+   "score": 0.1101,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "agent-evaluation"
+   }
+  },
+  {
+   "agent": "Maxey180",
+   "mcp": "a6a88aa0-b038-43ba-ac83-912f459bf576",
+   "topic": null,
+   "score": 0.1065,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey180",
+   "mcp": "session:Maxey0",
+   "topic": null,
+   "score": 0.2654,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey244",
+   "mcp": "48ba489e-160f-4965-913b-667cce063da2",
+   "topic": null,
+   "score": 0.1129,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey244",
+   "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "topic": null,
+   "score": 0.1447,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey245",
+   "mcp": "48ba489e-160f-4965-913b-667cce063da2",
+   "topic": null,
+   "score": 0.1105,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey27",
+   "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "topic": null,
+   "score": 0.1486,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey27",
+   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "topic": null,
+   "score": 0.1021,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey30",
+   "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "topic": null,
+   "score": 0.1894,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "topic": "maxey0",
+   "score": 0.2873,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey394",
+    "skill": "semantic-memory-engineering"
+   }
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "48ba489e-160f-4965-913b-667cce063da2",
+   "topic": "maxey0",
+   "score": 0.1129,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey244",
+    "skill": "episodic-memory-engineering"
+   }
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "topic": "maxey0",
+   "score": 0.1486,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey27",
+    "skill": "memory-graph-evolution"
+   }
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "topic": "maxey0",
+   "score": 0.1021,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey27",
+    "skill": "memory-graph-evolution"
+   }
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "topic": null,
+   "score": 0.2257,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "topic": "maxey0",
+   "score": 0.1447,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey244",
+    "skill": "episodic-memory-engineering"
+   }
+  },
+  {
+   "agent": "Maxey307",
+   "mcp": "session:memory",
+   "topic": "maxey0",
+   "score": 0.2466,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey11",
+    "skill": "multi-tier-memory-management"
+   }
+  },
+  {
+   "agent": "Maxey364",
+   "mcp": "a6a88aa0-b038-43ba-ac83-912f459bf576",
+   "topic": null,
+   "score": 0.1098,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey364",
+   "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "topic": "maxey0",
+   "score": 0.1046,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey10",
+    "skill": "scw-partition-isolation"
+   }
+  },
+  {
+   "agent": "Maxey364",
+   "mcp": "session:Maxey0",
+   "topic": null,
+   "score": 0.2737,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey394",
+   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "topic": null,
+   "score": 0.2873,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey394",
+   "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "topic": null,
+   "score": 0.1448,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey52",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": null,
+   "score": 0.1486,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey52",
+   "mcp": "a6a88aa0-b038-43ba-ac83-912f459bf576",
+   "topic": "maxey0",
+   "score": 0.1065,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey180",
+    "skill": "context-packing-optimization"
+   }
+  },
+  {
+   "agent": "Maxey52",
+   "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "topic": "maxey0",
+   "score": 0.2199,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey11",
+    "skill": "memory-context-compress"
+   }
+  },
+  {
+   "agent": "Maxey52",
+   "mcp": "session:Maxey0",
+   "topic": "maxey0",
+   "score": 0.2654,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey180",
+    "skill": "context-packing-optimization"
+   }
+  },
+  {
+   "agent": "Maxey52",
+   "mcp": "session:memory",
+   "topic": "maxey0",
+   "score": 0.2466,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey11",
+    "skill": "memory-context-compress"
+   }
+  },
+  {
+   "agent": "Maxey54",
+   "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "topic": null,
+   "score": 0.1672,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey66",
+   "mcp": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "topic": null,
+   "score": 0.1323,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey70",
+   "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "topic": null,
+   "score": 0.1529,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "topic": "maxey0",
+   "score": 0.1101,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "same-tick-arbitration"
+   }
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "topic": null,
+   "score": 0.3032,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "topic": "maxey0",
+   "score": 0.1486,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey27",
+    "skill": "graph-memory-construction"
+   }
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "topic": "maxey0",
+   "score": 0.1021,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey27",
+    "skill": "graph-memory-construction"
+   }
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "topic": null,
+   "score": 0.1885,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "topic": null,
+   "score": 0.1249,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "topic": "maxey0",
+   "score": 0.2199,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey11",
+    "skill": "procedural-memory-engineering"
+   }
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "session:memory",
+   "topic": "maxey0",
+   "score": 0.2466,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey11",
+    "skill": "procedural-memory-engineering"
+   }
+  },
+  {
+   "agent": "Maxey79",
+   "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "topic": null,
+   "score": 0.1099,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey8",
+   "mcp": "session:Maxey0",
+   "topic": "maxey0",
+   "score": null,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey0",
+    "skill": "agent-registry-management"
+   }
+  },
+  {
+   "agent": "Maxey85",
+   "mcp": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "topic": null,
+   "score": 0.1332,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey85",
+   "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "topic": null,
+   "score": 0.1526,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey85",
+   "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "topic": null,
+   "score": 0.2082,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey88",
+   "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "topic": "maxey0",
+   "score": 0.1101,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "enterprise-constitution-evaluation"
+   }
+  },
+  {
+   "agent": "Maxey88",
+   "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "topic": "maxey0",
+   "score": 0.1672,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey54",
+    "skill": "constitutional-constraint-enforcement"
+   }
+  },
+  {
+   "agent": "Maxey88",
+   "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "topic": "maxey0",
+   "score": 0.2257,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey307",
+    "skill": "memory-promotion-policy-engineering"
+   }
+  },
+  {
+   "agent": "Maxey88",
+   "mcp": "session:memory",
+   "topic": "maxey0",
+   "score": 0.2463,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey109",
+    "skill": "claim-lineage-analysis"
+   }
+  }
+ ],
+ "lexicon": {
+  "memory": "memory memories remember context session episodic handoff persistent working semantic tier consolidation",
+  "graph": "graph knowledge ontology node edge relationship neighborhood topology",
+  "vector": "vector embedding similarity retrieval retrieve search index semantic latent anchor subspace",
+  "observability": "observability trace tracing telemetry metric log monitor monitoring otel grafana drift alert dashboard debug slo span",
+  "security": "security compliance audit policy governance secret sentinel scanner risk trust constitution constraint enforcement isolation provenance",
+  "data": "database sql postgres storage store backup restore query warehouse dataset table schema cluster",
+  "runtime": "deploy deployment runtime sandbox execution container infrastructure platform cloud incident scaling worker hosting interpreter",
+  "orchestration": "orchestrate orchestration orchestrator router routing delegate delegation workflow coordinator swarm agent pipeline",
+  "protocol": "protocol mcp a2a api gateway integration adapter bridge contract langchain negotiation tool capability",
+  "docs": "document file page parse extract conversation import ingest artifact doc library",
+  "messaging": "message chat slack notification email channel",
+  "research": "research paper arxiv analysis interpretability reasoning frame world"
+ },
+ "sources": [
+  "maxey0_base"
+ ]
+}

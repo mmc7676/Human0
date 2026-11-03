@@ -1,0 +1,737 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "german-studies",
+  "label": "German Studies",
+  "desc": "German Studies: the German language and the literatures, thought, history and cultures of the German-speaking countries."
+ },
+ "concepts": [
+  {
+   "id": "germ-culture-media",
+   "label": "Contemporary German-Speaking Culture",
+   "desc": "Film, media, politics and society in Germany, Austria and Switzerland today.",
+   "keywords": [
+    "culture",
+    "film",
+    "media",
+    "society",
+    "austria",
+    "switzerland",
+    "migration",
+    "politics"
+   ],
+   "topic": "german-studies",
+   "source": "german-studies",
+   "related": [
+    "ilac-film-visual-society"
+   ]
+  },
+  {
+   "id": "germ-german-history",
+   "label": "German History",
+   "desc": "The German-speaking lands from the Holy Roman Empire through unification, the world wars, National Socialism, division and reunification.",
+   "keywords": [
+    "history",
+    "empire",
+    "unification",
+    "weimar",
+    "national socialism",
+    "holocaust",
+    "division",
+    "reunification"
+   ],
+   "topic": "german-studies",
+   "source": "german-studies",
+   "related": []
+  },
+  {
+   "id": "germ-german-literature",
+   "label": "German Literature",
+   "desc": "Literature in German from the Middle Ages through Sturm und Drang, classicism, romanticism, realism and modernism to the present.",
+   "keywords": [
+    "literature",
+    "romanticism",
+    "classicism",
+    "novella",
+    "poetry",
+    "drama",
+    "modernism",
+    "close reading"
+   ],
+   "topic": "german-studies",
+   "source": "german-studies",
+   "related": [
+    "fren-french-literature"
+   ]
+  },
+  {
+   "id": "germ-german-thought",
+   "label": "German Philosophy and Critical Theory",
+   "desc": "German intellectual traditions from Kant, Hegel, Marx and Nietzsche to the Frankfurt School and beyond.",
+   "keywords": [
+    "philosophy",
+    "idealism",
+    "kant",
+    "hegel",
+    "marx",
+    "nietzsche",
+    "frankfurt school",
+    "critical theory"
+   ],
+   "topic": "german-studies",
+   "source": "german-studies",
+   "related": []
+  },
+  {
+   "id": "germ-grammar-language",
+   "label": "German Grammar and Usage",
+   "desc": "German morphology and syntax: cases, declension, verb position, separable verbs, modal verbs and the subjunctive.",
+   "keywords": [
+    "grammar",
+    "case",
+    "declension",
+    "word order",
+    "separable verb",
+    "konjunktiv",
+    "gender",
+    "syntax"
+   ],
+   "topic": "german-studies",
+   "source": "german-studies",
+   "related": []
+  },
+  {
+   "id": "germ-translation",
+   "label": "Translation and Linguistics",
+   "desc": "Translating between German and English and describing German phonology, dialects and language history.",
+   "keywords": [
+    "translation",
+    "compound",
+    "dialect",
+    "phonology",
+    "pronunciation",
+    "idiom",
+    "false friend",
+    "linguistics"
+   ],
+   "topic": "german-studies",
+   "source": "german-studies",
+   "related": [
+    "engl-english-language"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "germ-film-analysis",
+   "concept": "germ-culture-media",
+   "label": "German Film Analysis",
+   "desc": "Analyses a German-language film from Expressionism to the Berlin School in its historical context and checks claims against the film and sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1323",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1325",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-media-comprehension",
+   "concept": "germ-culture-media",
+   "label": "Authentic Media Comprehension",
+   "desc": "Builds comprehension questions on German-language news and checks that answers are supported by the source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1323",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1326",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-society-brief",
+   "concept": "germ-culture-media",
+   "label": "Society and Politics Brief",
+   "desc": "Explains a feature of contemporary German, Austrian or Swiss society and checks factual claims against official sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1323",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1325",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-chronology-building",
+   "concept": "germ-german-history",
+   "label": "History Chronology Building",
+   "desc": "Builds a dated chronology of a period such as the Weimar Republic and checks each date against reference works.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1325",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1323",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-memory-culture",
+   "concept": "germ-german-history",
+   "label": "Memory Culture Analysis",
+   "desc": "Analyses Vergangenheitsbewaltigung and commemoration practices and checks examples against documented memorials and debates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1325",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1323",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-source-criticism",
+   "concept": "germ-german-history",
+   "label": "Historical Source Criticism",
+   "desc": "Evaluates a German historical document for author, audience and context and checks claims against corroborating sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1325",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1327",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-close-reading",
+   "concept": "germ-german-literature",
+   "label": "Close Reading",
+   "desc": "Produces a close reading of a German poem or prose passage and checks every interpretive claim is anchored in a quotation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1328",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1326",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-movement-profile",
+   "concept": "germ-german-literature",
+   "label": "Literary Movement Profile",
+   "desc": "Profiles a period such as Weimar classicism or Romanticism with authors, works and aesthetics and checks dates and attributions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1328",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1325",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-scholarship-search",
+   "concept": "germ-german-literature",
+   "label": "German Studies Scholarship Search",
+   "desc": "Searches peer-reviewed German studies scholarship through Wiley Scholar Gateway and checks each citation resolves to the stated work.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1324",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1328",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1329",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-argument-reconstruction",
+   "concept": "germ-german-thought",
+   "label": "Argument Reconstruction",
+   "desc": "Reconstructs a philosophical argument from a German text as premises and conclusion and checks validity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1329",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1327",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-concept-explication",
+   "concept": "germ-german-thought",
+   "label": "Philosophical Concept Explication",
+   "desc": "Explains a concept such as Aufklarung or Dialektik in its original context and checks the account against the primary text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1329",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1328",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-critical-theory-application",
+   "concept": "germ-german-thought",
+   "label": "Critical Theory Application",
+   "desc": "Applies a Frankfurt School concept such as the culture industry to a cultural object and checks fidelity to the source text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1329",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1323",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-declension-drill",
+   "concept": "germ-grammar-language",
+   "label": "Case and Declension Drill",
+   "desc": "Generates article and adjective endings across nominative, accusative, dative and genitive and checks each against declension tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1326",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1330",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-konjunktiv-usage",
+   "concept": "germ-grammar-language",
+   "label": "Subjunctive Usage Practice",
+   "desc": "Builds Konjunktiv I and II sentences for reported speech and hypotheticals and checks forms against conjugation tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1326",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1330",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-word-order-correction",
+   "concept": "germ-grammar-language",
+   "label": "Word Order Correction",
+   "desc": "Corrects verb-second, verb-final and separable verb placement in learner sentences and checks each fix with the rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1326",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1327",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-compound-analysis",
+   "concept": "germ-translation",
+   "label": "Compound Noun Analysis",
+   "desc": "Splits German compound nouns into components with linking elements and checks the gender rule of the head noun.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1330",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1327",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-dialect-description",
+   "concept": "germ-translation",
+   "label": "Dialect Feature Description",
+   "desc": "Describes features of a German dialect or national variety such as Swiss or Austrian German and checks examples against documented usage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1330",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1323",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-text-translation",
+   "concept": "germ-translation",
+   "label": "Text Translation",
+   "desc": "Translates passages between German and English with DeepL and checks meaning, compounds and false friends.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1327",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1326",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1323",
+   "name": "German Culture and Media Analyst",
+   "legacy_key": "germ-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1324",
+   "name": "German Language Reviewer",
+   "legacy_key": "germ-reviewer",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1325",
+   "name": "German History Analyst",
+   "legacy_key": "germ-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1326",
+   "name": "German Grammar Tutor",
+   "legacy_key": "germ-grammar",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1327",
+   "name": "German Translator",
+   "legacy_key": "germ-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1328",
+   "name": "German Literature Scholar",
+   "legacy_key": "germ-literature",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1329",
+   "name": "German Philosophy Analyst",
+   "legacy_key": "germ-thought",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1330",
+   "name": "German Linguist",
+   "legacy_key": "germ-linguist",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1324",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "german-studies",
+   "score": 0.167,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1324",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "german-studies",
+   "score": 0.2765,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1326",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "german-studies",
+   "score": 0.1239,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1328",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "german-studies",
+   "score": 0.167,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1324",
+    "skill": "germ-scholarship-search"
+   }
+  },
+  {
+   "agent": "Maxey1328",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "german-studies",
+   "score": 0.3096,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "germ-grammar": "case declension order separable konjunktiv syntax",
+  "germ-ling": "translation compound dialect phonology pronunciation idiom",
+  "germ-lit": "romanticism classicism novella poetry drama modernism",
+  "germ-thought": "philosophy idealism kant hegel marx nietzsche",
+  "germ-history": "empire unification weimar holocaust reunification",
+  "germ-culture": "film media society austria switzerland politics"
+ },
+ "sources": [
+  "german-studies"
+ ]
+}

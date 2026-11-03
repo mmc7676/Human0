@@ -1,0 +1,277 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "systems",
+ "topic": {
+  "id": "systems",
+  "label": "Systems",
+  "desc": "Systems in general: systems thinking and feedback, boundaries and interfaces, modeling and architecture, reliability and failure modes, and emergence."
+ },
+ "concepts": [
+  [
+   "sys-feedback",
+   "Systems Thinking and Feedback",
+   "systems",
+   "Stocks and flows, feedback loops, delays, leverage points and emergent behavior of systems.",
+   [
+    "system",
+    "thinking",
+    "feedback",
+    "loop",
+    "stock",
+    "flow",
+    "delay",
+    "leverage",
+    "emergence",
+    "dynamics"
+   ]
+  ],
+  [
+   "sys-interfaces",
+   "Boundaries and Interfaces",
+   "systems",
+   "Where a system ends, what crosses its boundary, and the interfaces and contracts between components.",
+   [
+    "boundary",
+    "interface",
+    "contract",
+    "component",
+    "input",
+    "output",
+    "dependency",
+    "coupling"
+   ]
+  ],
+  [
+   "sys-architecture",
+   "Systems Modeling and Architecture",
+   "systems",
+   "Modeling a system's structure and behavior: components, data flow, decomposition and architecture views.",
+   [
+    "architecture",
+    "model",
+    "component",
+    "decomposition",
+    "diagram",
+    "data",
+    "flow",
+    "subsystem",
+    "modular"
+   ]
+  ],
+  [
+   "sys-reliability",
+   "Reliability and Failure Modes",
+   "systems",
+   "How systems fail: failure modes, redundancy, single points of failure, cascading failure and resilience.",
+   [
+    "reliability",
+    "failure",
+    "mode",
+    "redundancy",
+    "resilience",
+    "cascade",
+    "fault",
+    "tolerance",
+    "availability"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "sys-feedback-loop-mapper",
+   "sys-feedback",
+   "Feedback Loop Mapper",
+   "Maps the feedback loops in a system and labels each reinforcing or balancing, with its delays.",
+   "procedural",
+   [
+    [
+     "sys-thinker",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-interface",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-leverage-point-finder",
+   "sys-feedback",
+   "Leverage Point Finder",
+   "Names where a small change to a system would have large effect, with reasoning.",
+   "semantic",
+   [
+    [
+     "sys-thinker",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-interface",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-interface-contract-writer",
+   "sys-interfaces",
+   "Interface Contract Writer",
+   "Writes the contract for an interface between components: inputs, outputs, errors and guarantees.",
+   "semantic",
+   [
+    [
+     "sys-interface",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-boundary-definer",
+   "sys-interfaces",
+   "Boundary Definer",
+   "Defines what is inside and outside a system and what crosses the boundary.",
+   "semantic",
+   [
+    [
+     "sys-interface",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-system-decomposer",
+   "sys-architecture",
+   "System Decomposer",
+   "Decomposes a system into subsystems and components with their responsibilities and data flow.",
+   "semantic",
+   [
+    [
+     "sys-architect",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-reliability",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-architecture-view-builder",
+   "sys-architecture",
+   "Architecture View Builder",
+   "Builds architecture views of a system (context, containers, components) from a description.",
+   "procedural",
+   [
+    [
+     "sys-architect",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-reliability",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-failure-mode-analyzer",
+   "sys-reliability",
+   "Failure Mode Analyzer",
+   "Lists a system's failure modes, their effects and detection, ranked by severity.",
+   "semantic",
+   [
+    [
+     "sys-reliability",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-thinker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sys-single-point-of-failure-finder",
+   "sys-reliability",
+   "Single Point of Failure Finder",
+   "Finds single points of failure in a system design and suggests redundancy.",
+   "semantic",
+   [
+    [
+     "sys-reliability",
+     "primary"
+    ],
+    [
+     "sys-checker",
+     "checker"
+    ],
+    [
+     "sys-thinker",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "sys-thinker": "Systems Thinking Agent",
+  "sys-interface": "Interface Agent",
+  "sys-architect": "Systems Architect Agent",
+  "sys-reliability": "Reliability Agent",
+  "sys-checker": "Systems Checker Agent"
+ },
+ "mcp": [],
+ "lexicon": {
+  "sysfeedback": "system thinking feedback loop stock flow delay leverage emergence dynamics",
+  "sysinterfaces": "boundary interface contract component input output dependency coupling",
+  "sysarchitecture": "architecture model component decomposition diagram data flow subsystem modular",
+  "sysreliability": "reliability failure mode redundancy resilience cascade fault tolerance availability"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "none"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {},
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

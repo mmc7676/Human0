@@ -1,0 +1,699 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "startups",
+ "topic": {
+  "id": "startups",
+  "label": "Startups",
+  "desc": "Startups: idea validation, product and MVP, growth analytics, finance and runway, fundraising, and company operations."
+ },
+ "concepts": [
+  [
+   "su-validation",
+   "Idea Validation",
+   "startups",
+   "Testing whether a problem is real and a market is large enough before building.",
+   [
+    "problem",
+    "interview",
+    "customer",
+    "market",
+    "size",
+    "competitor",
+    "hypothesis",
+    "demand",
+    "validation"
+   ]
+  ],
+  [
+   "su-product",
+   "Product and MVP",
+   "startups",
+   "Scoping a minimum viable product, prioritizing a roadmap and running the issue tracker.",
+   [
+    "mvp",
+    "scope",
+    "roadmap",
+    "backlog",
+    "priority",
+    "issue",
+    "sprint",
+    "release"
+   ]
+  ],
+  [
+   "su-growth",
+   "Growth and Analytics",
+   "startups",
+   "Funnels, retention and experiments from product analytics.",
+   [
+    "funnel",
+    "retention",
+    "cohort",
+    "activation",
+    "experiment",
+    "event",
+    "metric",
+    "churn"
+   ]
+  ],
+  [
+   "su-finance",
+   "Finance and Metrics",
+   "startups",
+   "Burn, runway, unit economics and revenue monitoring.",
+   [
+    "burn",
+    "runway",
+    "revenue",
+    "subscription",
+    "margin",
+    "cac",
+    "unit",
+    "economics",
+    "invoice"
+   ]
+  ],
+  [
+   "su-fundraising",
+   "Fundraising",
+   "startups",
+   "Investor research, pitch narrative and data-room preparation.",
+   [
+    "investor",
+    "funding",
+    "round",
+    "pitch",
+    "deck",
+    "valuation",
+    "data",
+    "room"
+   ]
+  ],
+  [
+   "su-company",
+   "Company Operations",
+   "startups",
+   "Hiring plans, objectives and investor updates that keep a small team aligned.",
+   [
+    "hiring",
+    "objective",
+    "okr",
+    "investor",
+    "update",
+    "team",
+    "plan"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "su-problem-interview-synthesizer",
+   "su-validation",
+   "Problem Interview Synthesizer",
+   "Turns customer-interview notes into recurring problems, current workarounds and quotes, and marks which findings rest on one interview only.",
+   "semantic",
+   [
+    [
+     "su-researcher",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-market-sizer",
+   "su-validation",
+   "Market Sizer",
+   "Estimates market size top-down and bottom-up with every assumption listed and a range instead of one number.",
+   "procedural",
+   [
+    [
+     "su-researcher",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-finance-modeler",
+     "support"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-competitor-landscape-mapper",
+   "su-validation",
+   "Competitor Landscape Mapper",
+   "Maps direct and indirect competitors, their funding and positioning from company data, and the gap the startup targets.",
+   "semantic",
+   [
+    [
+     "su-researcher",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-fundraising-strategist",
+     "support"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-mvp-scope-planner",
+   "su-product",
+   "MVP Scope Planner",
+   "Cuts a product idea down to the smallest release that tests the riskiest assumption, with what is deliberately left out.",
+   "semantic",
+   [
+    [
+     "su-product-manager",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ],
+    [
+     "su-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-roadmap-prioritizer",
+   "su-product",
+   "Roadmap Prioritizer",
+   "Ranks backlog items by impact, effort and risk and shows the scoring so the founders can overrule it.",
+   "procedural",
+   [
+    [
+     "su-product-manager",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-engineer",
+     "support"
+    ],
+    [
+     "su-growth-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-issue-tracker-manager",
+   "su-product",
+   "Issue Tracker Manager",
+   "Creates, labels and triages issues and sprint cycles in the team's tracker and reports what is blocked.",
+   "procedural",
+   [
+    [
+     "su-engineer",
+     "primary"
+    ],
+    [
+     "su-product-manager",
+     "checker"
+    ],
+    [
+     "su-ops-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-funnel-analyst",
+   "su-growth",
+   "Funnel Analyst",
+   "Builds the signup-to-activation funnel from product events and finds the biggest drop-off with its sample size.",
+   "procedural",
+   [
+    [
+     "su-growth-analyst",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-product-manager",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-retention-cohort-analyst",
+   "su-growth",
+   "Retention Cohort Analyst",
+   "Computes retention by signup cohort and reports whether the curve flattens, with the cohort sizes behind each line.",
+   "procedural",
+   [
+    [
+     "su-growth-analyst",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-product-manager",
+     "support"
+    ],
+    [
+     "su-finance-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-growth-experiment-runner",
+   "su-growth",
+   "Growth Experiment Runner",
+   "Designs a growth experiment with a hypothesis, metric and stopping rule and reads the result without peeking early.",
+   "semantic",
+   [
+    [
+     "su-growth-analyst",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-product-manager",
+     "support"
+    ],
+    [
+     "su-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-runway-modeler",
+   "su-finance",
+   "Burn and Runway Modeler",
+   "Models monthly burn and runway under base, slow and fast cases and shows the month cash reaches zero in each.",
+   "procedural",
+   [
+    [
+     "su-finance-modeler",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ],
+    [
+     "su-ops-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-unit-economics-analyst",
+   "su-finance",
+   "Unit Economics Analyst",
+   "Computes acquisition cost, margin and payback per customer segment from billing and spend data and flags thin samples.",
+   "procedural",
+   [
+    [
+     "su-finance-modeler",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-growth-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-revenue-monitor",
+   "su-finance",
+   "Revenue Monitor",
+   "Reads billing data for balance, new subscriptions, refunds and failed payments and reports changes against last month.",
+   "procedural",
+   [
+    [
+     "su-finance-modeler",
+     "primary"
+    ],
+    [
+     "su-growth-analyst",
+     "checker"
+    ],
+    [
+     "su-ops-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-investor-targeter",
+   "su-fundraising",
+   "Investor Targeter",
+   "Builds an investor list by stage, sector and recent deals from company data, with the source of each fit claim.",
+   "semantic",
+   [
+    [
+     "su-fundraising-strategist",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-researcher",
+     "support"
+    ],
+    [
+     "su-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-pitch-deck-architect",
+   "su-fundraising",
+   "Pitch Deck Architect",
+   "Structures the pitch narrative and slide list, tying every claim to a metric or source.",
+   "semantic",
+   [
+    [
+     "su-writer",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-fundraising-strategist",
+     "support"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-data-room-organizer",
+   "su-fundraising",
+   "Data Room Organizer",
+   "Lists the documents an investor will request, tracks which exist and who owns the missing ones.",
+   "procedural",
+   [
+    [
+     "su-ops-planner",
+     "primary"
+    ],
+    [
+     "su-fundraising-strategist",
+     "checker"
+    ],
+    [
+     "su-finance-modeler",
+     "support"
+    ],
+    [
+     "su-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-hiring-plan-builder",
+   "su-company",
+   "Hiring Plan Builder",
+   "Sequences the first hires by what they unblock and what each costs against runway.",
+   "semantic",
+   [
+    [
+     "su-ops-planner",
+     "primary"
+    ],
+    [
+     "su-finance-modeler",
+     "checker"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ],
+    [
+     "su-product-manager",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-okr-planner",
+   "su-company",
+   "Objectives Planner",
+   "Drafts quarterly objectives and measurable key results and checks that each key result has an owner and a data source.",
+   "procedural",
+   [
+    [
+     "su-ops-planner",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-founder-advisor",
+     "support"
+    ],
+    [
+     "su-growth-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "su-investor-update-writer",
+   "su-company",
+   "Investor Update Writer",
+   "Writes a monthly investor update from metrics and decisions, stating what went wrong as plainly as what went right.",
+   "semantic",
+   [
+    [
+     "su-writer",
+     "primary"
+    ],
+    [
+     "su-assumption-checker",
+     "checker"
+    ],
+    [
+     "su-finance-modeler",
+     "support"
+    ],
+    [
+     "su-growth-analyst",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "su-founder-advisor": "Founder Advisor Agent",
+  "su-researcher": "Market Research Agent",
+  "su-product-manager": "Product Manager Agent",
+  "su-engineer": "Engineering Agent",
+  "su-growth-analyst": "Growth Analyst Agent",
+  "su-finance-modeler": "Finance Modeler Agent",
+  "su-fundraising-strategist": "Fundraising Strategist Agent",
+  "su-writer": "Narrative Writer Agent",
+  "su-ops-planner": "Operations Planner Agent",
+  "su-assumption-checker": "Assumption Checker Agent"
+ },
+ "mcp": [
+  [
+   "Stripe",
+   "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "Payment processing and financial infrastructure tools",
+   [
+    "stripe_implementation_planner",
+    "send_stripe_mcp_feedback",
+    "search_stripe_documentation",
+    "stripe_api_search",
+    "stripe_api_details",
+    "stripe_api_read",
+    "stripe_api_write",
+    "get_balance_summary"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Linear",
+   "fa50c30c-9f62-4f94-b851-217868185db6",
+   "Manage issues, projects & team workflows in Linear",
+   [
+    "list_comments",
+    "create_comment",
+    "list_cycles",
+    "get_document",
+    "list_documents",
+    "get_issue",
+    "list_issues",
+    "create_issue"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "PostHog",
+   "50688846-553c-4a12-bc21-df94d2173734",
+   "Query, analyze, and manage your PostHog insights",
+   [
+    "query-run",
+    "query-generate-hogql-from-question",
+    "insight-create-from-query",
+    "insight-get",
+    "insights-get-all",
+    "insight-update",
+    "insight-delete",
+    "insight-query"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Mixpanel",
+   "29d60a67-6f16-489b-8a1e-efdcece8d1f6",
+   "Analyze, query, and manage your Mixpanel data",
+   [
+    "Get-Projects",
+    "Get-Events",
+    "Get-Event-Details",
+    "Get-Property-Names",
+    "Get-Property-Values",
+    "Edit-Event",
+    "Edit-Property",
+    "Create-Tag"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Crunchbase",
+   "81b11acd-1115-4354-9142-91e2a2c13b0b",
+   "Access reliable company data, market signals, and forward-looking predictions to research organizations, compare performance, uncover emerging trends, and make faster, more informed business decisions",
+   [
+    "cb_entity_autocomplete",
+    "cb_entity_get",
+    "cb_expert_build_search",
+    "cb_expert_query_answer",
+    "cb_expert_query_domain",
+    "cb_expert_resolve_entity",
+    "cb_expert_submit_feedback",
+    "cb_expert_submit_search_feedback"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "CB Insights",
+   "e7952077-b4e6-49f7-8670-ca53f8d50c40",
+   "Predictive intelligence on private companies",
+   [
+    "api_chatcbi",
+    "api_rag",
+    "company_advanced_search",
+    "get_company_acquisitions",
+    "get_company_competitors",
+    "get_company_exits",
+    "get_company_funding",
+    "get_company_investments"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "validation": "problem customer market size validation workaround",
+  "productops": "mvp scope roadmap backlog priority issue sprint release",
+  "growthloop": "retention cohort activation event churn signup",
+  "runwaymath": "burn runway revenue subscription margin payment balance",
+  "raising": "investor funding round pitch deck valuation room",
+  "teamops": "hiring objective objectives team plan quarterly"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "Stripe": "directory listing; payment tools include write actions: treat any use as human-approved; tool names are the directory's visible sample; connector is not installed or tested",
+   "Linear": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "PostHog": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Mixpanel": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Crunchbase": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "CB Insights": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "excluded": "Notion was seen in the directory but is already in the base MCP directory, so it is not repeated here"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified directory listings only: not connected, not authenticated, not called. Tool lists are the directory's sample (the listing shows more). Agent-to-MCP gates are derived by the app, not declared here.",
+  "v04_lexicon_freed": [
+   [
+    "raising",
+    [
+     "data"
+    ]
+   ],
+   [
+    "validation",
+    [
+     "hypothesis"
+    ]
+   ]
+  ]
+ }
+}

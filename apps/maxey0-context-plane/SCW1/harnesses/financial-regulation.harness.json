@@ -1,0 +1,294 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "financial-regulation",
+  "label": "Financial Regulation, AML and Compliance",
+  "desc": "Rules for finance: securities regulators and rules, anti-money laundering and KYC, sanctions, onshore and offshore regimes, and compliance programs."
+ },
+ "concepts": [
+  {
+   "id": "frg-aml",
+   "label": "Anti-Money Laundering",
+   "desc": "AML programs, suspicious activity monitoring, SARs, placement, layering and integration.",
+   "keywords": [
+    "aml",
+    "anti",
+    "money",
+    "laundering",
+    "suspicious",
+    "activity",
+    "sar",
+    "monitoring",
+    "layering",
+    "bsa"
+   ],
+   "topic": "financial-regulation",
+   "source": "financial-regulation",
+   "related": []
+  },
+  {
+   "id": "frg-kyc",
+   "label": "KYC and Beneficial Ownership",
+   "desc": "Know your customer, customer due diligence, enhanced due diligence and beneficial ownership.",
+   "keywords": [
+    "kyc",
+    "know",
+    "customer",
+    "due",
+    "diligence",
+    "beneficial",
+    "ownership",
+    "edd",
+    "identity",
+    "verification"
+   ],
+   "topic": "financial-regulation",
+   "source": "financial-regulation",
+   "related": []
+  },
+  {
+   "id": "frg-program",
+   "label": "Compliance Programs and Reporting",
+   "desc": "Policies, surveillance, regulatory reporting, recordkeeping and exams.",
+   "keywords": [
+    "compliance",
+    "policy",
+    "surveillance",
+    "reporting",
+    "recordkeeping",
+    "exam",
+    "audit",
+    "trail"
+   ],
+   "topic": "financial-regulation",
+   "source": "financial-regulation",
+   "related": []
+  },
+  {
+   "id": "frg-sanctions",
+   "label": "Sanctions and Offshore Regimes",
+   "desc": "Sanctions lists, screening, offshore financial centers and onshore versus offshore compliance.",
+   "keywords": [
+    "sanctions",
+    "ofac",
+    "screening",
+    "offshore",
+    "onshore",
+    "jurisdiction",
+    "cayman",
+    "bvi",
+    "list"
+   ],
+   "topic": "financial-regulation",
+   "source": "financial-regulation",
+   "related": []
+  },
+  {
+   "id": "frg-securities",
+   "label": "Securities Regulators and Rules",
+   "desc": "SEC, FINRA, CFTC and foreign regulators, registration, disclosure and market conduct rules.",
+   "keywords": [
+    "sec",
+    "finra",
+    "cftc",
+    "regulator",
+    "securities",
+    "law",
+    "registration",
+    "disclosure",
+    "conduct",
+    "rule"
+   ],
+   "topic": "financial-regulation",
+   "source": "financial-regulation",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "frg-aml-program-outline",
+   "concept": "frg-aml",
+   "label": "AML Program Outline",
+   "desc": "Outlines the parts of an AML program for a firm type.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1724",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1725",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1726",
+     "role": "support"
+    }
+   ],
+   "source": "financial-regulation"
+  },
+  {
+   "id": "frg-aml-red-flag-reviewer",
+   "concept": "frg-aml",
+   "label": "AML Red Flag Reviewer",
+   "desc": "Reviews a pattern of transactions for money laundering red flags and states each one.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1724",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1725",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1726",
+     "role": "support"
+    }
+   ],
+   "source": "financial-regulation"
+  },
+  {
+   "id": "frg-kyc-checklist-builder",
+   "concept": "frg-kyc",
+   "label": "KYC Checklist Builder",
+   "desc": "Builds the KYC and CDD checklist for a customer type, including beneficial owners.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1726",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1725",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1727",
+     "role": "support"
+    }
+   ],
+   "source": "financial-regulation"
+  },
+  {
+   "id": "frg-regulatory-report-calendar",
+   "concept": "frg-program",
+   "label": "Regulatory Report Calendar",
+   "desc": "Lists a firm's recurring regulatory filings with deadlines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1728",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1725",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1729",
+     "role": "support"
+    }
+   ],
+   "source": "financial-regulation"
+  },
+  {
+   "id": "frg-sanctions-screening-explainer",
+   "concept": "frg-sanctions",
+   "label": "Sanctions Screening Explainer",
+   "desc": "Explains how sanctions screening works and how a match is resolved.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1727",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1725",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1728",
+     "role": "support"
+    }
+   ],
+   "source": "financial-regulation"
+  },
+  {
+   "id": "frg-regulator-mapper",
+   "concept": "frg-securities",
+   "label": "Regulator Mapper",
+   "desc": "Maps which regulator and rules apply to an activity and jurisdiction.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1729",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1725",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1724",
+     "role": "support"
+    }
+   ],
+   "source": "financial-regulation"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1724",
+   "name": "AML Agent",
+   "legacy_key": "frg-aml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1725",
+   "name": "Compliance Checker Agent",
+   "legacy_key": "frg-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1726",
+   "name": "KYC Agent",
+   "legacy_key": "frg-kyc",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1727",
+   "name": "Sanctions Agent",
+   "legacy_key": "frg-sanctions",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1728",
+   "name": "Compliance Program Agent",
+   "legacy_key": "frg-program",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1729",
+   "name": "Securities Regulation Agent",
+   "legacy_key": "frg-securities",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "frgsecurities": "sec finra cftc regulator securities law registration disclosure conduct rule",
+  "frgaml": "aml anti money laundering suspicious activity sar monitoring layering bsa",
+  "frgkyc": "kyc know customer due diligence beneficial ownership edd identity verification",
+  "frgsanctions": "sanctions ofac screening offshore onshore jurisdiction cayman bvi list",
+  "frgprogram": "compliance policy surveillance reporting recordkeeping exam audit trail"
+ },
+ "sources": [
+  "financial-regulation"
+ ]
+}

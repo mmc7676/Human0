@@ -1,0 +1,696 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "knowledge",
+ "topic": {
+  "id": "knowledge",
+  "label": "Knowledge",
+  "desc": "Knowledge management for people and agents: ontologies and taxonomies, knowledge graphs, entity resolution, metadata, curation and quality, retrieval and question answering, documentation and sharing. Extends the base Knowledge topic, which held only Knowledge Graph."
+ },
+ "concepts": [
+  [
+   "kn-ontology",
+   "Ontology and Taxonomy Design",
+   "knowledge",
+   "Choosing the classes, relations and naming rules a body of knowledge uses, and keeping them consistent as they grow.",
+   [
+    "ontology",
+    "taxonomy",
+    "class",
+    "relation",
+    "naming"
+   ]
+  ],
+  [
+   "kn-extraction",
+   "Knowledge Extraction",
+   "knowledge",
+   "Pulling entities, relations and claims out of documents, tables and conversations, with the source span for each.",
+   [
+    "extraction",
+    "entity",
+    "relation",
+    "claim",
+    "span"
+   ]
+  ],
+  [
+   "kn-resolution",
+   "Entity Resolution and Linking",
+   "knowledge",
+   "Deciding that two records are the same thing, merging them safely and linking mentions to canonical identifiers.",
+   [
+    "entity",
+    "resolution",
+    "duplicate",
+    "canonical",
+    "linking"
+   ]
+  ],
+  [
+   "kn-metadata",
+   "Metadata and Provenance",
+   "knowledge",
+   "Describing knowledge with where it came from, when, under what licence and how much it can be trusted.",
+   [
+    "metadata",
+    "provenance",
+    "schema",
+    "licence",
+    "freshness"
+   ]
+  ],
+  [
+   "kn-curation",
+   "Curation and Quality",
+   "knowledge",
+   "Keeping a knowledge base correct: review queues, contradiction checks, staleness, deprecation and change history.",
+   [
+    "curation",
+    "contradiction",
+    "stale",
+    "review",
+    "deprecation"
+   ]
+  ],
+  [
+   "kn-retrieval",
+   "Retrieval and Question Answering",
+   "knowledge",
+   "Finding and using knowledge to answer questions: indexing, chunking, hybrid search, reranking and answers that cite their sources.",
+   [
+    "retrieval",
+    "chunking",
+    "rerank",
+    "citation",
+    "index"
+   ]
+  ],
+  [
+   "kn-query",
+   "Graph Querying and Reasoning",
+   "knowledge",
+   "Asking questions of a graph: path and pattern queries, inference rules and checks for consistency.",
+   [
+    "query",
+    "path",
+    "pattern",
+    "inference",
+    "consistency"
+   ]
+  ],
+  [
+   "kn-sharing",
+   "Documentation and Knowledge Sharing",
+   "knowledge",
+   "Turning what is known into pages people use: wikis, notes, glossaries, onboarding material and clear handoffs.",
+   [
+    "wiki",
+    "glossary",
+    "notes",
+    "onboarding",
+    "handoff"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "kn-ontology-modeler",
+   "kn-ontology",
+   "Ontology Modeler",
+   "Proposes classes, properties and relations for a domain from sample documents and lists the competency questions the model must answer.",
+   "semantic",
+   [
+    [
+     "kn-ontologist",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-curator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-taxonomy-builder",
+   "kn-ontology",
+   "Taxonomy Builder",
+   "Builds a category tree with clear inclusion rules and checks that every item fits exactly one place or says why it fits several.",
+   "procedural",
+   [
+    [
+     "kn-ontologist",
+     "primary"
+    ],
+    [
+     "kn-curator",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-naming-convention-writer",
+   "kn-ontology",
+   "Naming Convention Writer",
+   "Writes identifier and label rules for concepts and tests them against existing names to find clashes.",
+   "procedural",
+   [
+    [
+     "kn-ontologist",
+     "primary"
+    ],
+    [
+     "kn-curator",
+     "checker"
+    ],
+    [
+     "kn-resolver",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-entity-extractor",
+   "kn-extraction",
+   "Entity and Relation Extractor",
+   "Extracts entities and relations from text with the exact source sentence and a confidence for each.",
+   "procedural",
+   [
+    [
+     "kn-extractor",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-ontologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-table-to-graph",
+   "kn-extraction",
+   "Table to Graph Mapper",
+   "Maps columns of a table to graph nodes and edges, with a mapping file and a sample of the resulting triples.",
+   "procedural",
+   [
+    [
+     "kn-extractor",
+     "primary"
+    ],
+    [
+     "kn-ontologist",
+     "checker"
+    ],
+    [
+     "kn-resolver",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-claim-extractor",
+   "kn-extraction",
+   "Claim Extractor",
+   "Lists the factual claims a document makes in separate sentences, each with its source location and whether it is checkable.",
+   "semantic",
+   [
+    [
+     "kn-extractor",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-curator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-duplicate-finder",
+   "kn-resolution",
+   "Duplicate Record Finder",
+   "Finds likely duplicate records with similarity scores and shows the fields that agree and disagree.",
+   "procedural",
+   [
+    [
+     "kn-resolver",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-curator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-merge-planner",
+   "kn-resolution",
+   "Safe Merge Planner",
+   "Plans a merge of two records, decides which field wins and records enough to undo the merge later.",
+   "procedural",
+   [
+    [
+     "kn-resolver",
+     "primary"
+    ],
+    [
+     "kn-curator",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-identifier-linker",
+   "kn-resolution",
+   "Identifier Linker",
+   "Links mentions to canonical identifiers in an external registry and flags ambiguous mentions for a person to decide.",
+   "semantic",
+   [
+    [
+     "kn-resolver",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-extractor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-provenance-annotator",
+   "kn-metadata",
+   "Provenance Annotator",
+   "Adds source, date, author and licence to each item and reports items whose origin cannot be shown.",
+   "procedural",
+   [
+    [
+     "kn-metadata-steward",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-curator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-schema-designer",
+   "kn-metadata",
+   "Metadata Schema Designer",
+   "Designs a small required metadata schema, with controlled values and which fields are mandatory, and validates a sample.",
+   "procedural",
+   [
+    [
+     "kn-metadata-steward",
+     "primary"
+    ],
+    [
+     "kn-ontologist",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-freshness-tracker",
+   "kn-metadata",
+   "Freshness Tracker",
+   "Records when each fact was last confirmed, sets a review interval by how fast it changes and lists items past due.",
+   "procedural",
+   [
+    [
+     "kn-metadata-steward",
+     "primary"
+    ],
+    [
+     "kn-curator",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-contradiction-finder",
+   "kn-curation",
+   "Contradiction Finder",
+   "Finds statements in a knowledge base that cannot both be true and shows both sources side by side.",
+   "semantic",
+   [
+    [
+     "kn-curator",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-reasoner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-review-queue-manager",
+   "kn-curation",
+   "Review Queue Manager",
+   "Orders items for human review by risk and use, tracks decisions and reports review backlog.",
+   "procedural",
+   [
+    [
+     "kn-curator",
+     "primary"
+    ],
+    [
+     "kn-metadata-steward",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-deprecation-planner",
+   "kn-curation",
+   "Deprecation Planner",
+   "Plans how a fact or page is retired: redirect, replacement, notice and what depends on it.",
+   "procedural",
+   [
+    [
+     "kn-curator",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-sharing-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-chunking-designer",
+   "kn-retrieval",
+   "Chunking and Index Designer",
+   "Chooses how documents are split and indexed so passages keep their meaning, and measures retrieval on sample questions.",
+   "procedural",
+   [
+    [
+     "kn-retriever",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-metadata-steward",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-hybrid-search-tuner",
+   "kn-retrieval",
+   "Hybrid Search Tuner",
+   "Tunes keyword and vector search weights and reranking against a labelled question set and reports the gain.",
+   "procedural",
+   [
+    [
+     "kn-retriever",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-reasoner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-cited-answerer",
+   "kn-retrieval",
+   "Cited Answer Writer",
+   "Answers a question from retrieved passages, cites the passage behind each statement and says when the sources do not answer it.",
+   "semantic",
+   [
+    [
+     "kn-retriever",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-curator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-graph-query-writer",
+   "kn-query",
+   "Graph Query Writer",
+   "Writes a path or pattern query for a question about the graph and explains what each clause matches.",
+   "procedural",
+   [
+    [
+     "kn-reasoner",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-inference-rule-writer",
+   "kn-query",
+   "Inference Rule Writer",
+   "Writes rules that derive new facts from existing ones and tests each rule for unwanted conclusions.",
+   "semantic",
+   [
+    [
+     "kn-reasoner",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-ontologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-consistency-checker",
+   "kn-query",
+   "Graph Consistency Checker",
+   "Runs constraint checks for missing required links, cycles and impossible values and lists violating nodes.",
+   "procedural",
+   [
+    [
+     "kn-reasoner",
+     "primary"
+    ],
+    [
+     "kn-curator",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-glossary-writer",
+   "kn-sharing",
+   "Glossary Writer",
+   "Collects terms used across documents, writes one plain definition for each and flags terms used in conflicting senses.",
+   "procedural",
+   [
+    [
+     "kn-sharing-writer",
+     "primary"
+    ],
+    [
+     "kn-curator",
+     "checker"
+    ],
+    [
+     "kn-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-onboarding-guide-builder",
+   "kn-sharing",
+   "Onboarding Guide Builder",
+   "Builds a reading path for a newcomer that orders pages by what they need first and marks the essential ones.",
+   "semantic",
+   [
+    [
+     "kn-sharing-writer",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-curator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kn-handoff-note-writer",
+   "kn-sharing",
+   "Handoff Note Writer",
+   "Writes a handoff note with current state, decisions made, open questions and where the supporting files are.",
+   "procedural",
+   [
+    [
+     "kn-sharing-writer",
+     "primary"
+    ],
+    [
+     "kn-skeptic",
+     "checker"
+    ],
+    [
+     "kn-metadata-steward",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "kn-ontologist": "Ontology Agent",
+  "kn-extractor": "Knowledge Extraction Agent",
+  "kn-resolver": "Entity Resolution Agent",
+  "kn-metadata-steward": "Metadata Steward Agent",
+  "kn-curator": "Knowledge Curator Agent",
+  "kn-retriever": "Retrieval Agent",
+  "kn-reasoner": "Graph Reasoning Agent",
+  "kn-sharing-writer": "Knowledge Sharing Agent",
+  "kn-skeptic": "Knowledge Skeptic Agent"
+ },
+ "mcp": [
+  [
+   "Evernote",
+   "5c2ae4c2-535f-4a19-a45f-a23493f28b4e",
+   "Connect Evernote to search, edit, and organize your notes, create new ones, and bring your knowledge into every conversation.",
+   [
+    "create_note",
+    "create_notebook",
+    "create_space",
+    "create_tag",
+    "create_task",
+    "delete_note",
+    "delete_task",
+    "edit_note"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Memory (reference server)",
+   null,
+   "Reference MCP server: knowledge graph-based persistent memory system",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "knonto": "taxonomy class competency naming identifier relation pattern querying category clause derive unwanted required impossible",
+  "knextract": "triple entity extractor column claim extraction",
+  "knresolve": "duplicate canonical mention ambiguous registry resolution linking safe",
+  "knmeta": "freshness controlled mandatory metadata annotator",
+  "kncurate": "contradiction queue deprecation redirect curation stale",
+  "knretrieve": "rerank hybrid passage cited chunking answering tuner",
+  "knshare": "glossary wiki onboarding newcomer notes documentation sharing"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "Evernote": "directory listing; has delete tools; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Memory (reference server)": "repository page github.com/modelcontextprotocol/servers opened 2026-10-23: lists Memory (src/memory) as a reference server described as a knowledge graph-based persistent memory system, not archived; licence stated as Apache 2.0 for new contributions and MIT for existing code; the server README could not be opened (robots), so tools are left empty",
+   "Wiley Scholar Gateway": "directory listing, also used by the Research pack; tool names are the directory listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

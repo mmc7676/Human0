@@ -1,0 +1,603 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "mathematical-and-computational-science",
+ "topic": {
+  "id": "mathematical-and-computational-science",
+  "label": "Mathematical and Computational Science",
+  "desc": "Mathematical and Computational Science: mathematics, statistics and computing combined to model and analyse data and systems."
+ },
+ "concepts": [
+  [
+   "mcs-real-analysis-calculus",
+   "Calculus and Real Analysis",
+   "mathematical-and-computational-science",
+   "Limits, derivatives, integrals, series and the rigorous foundations of continuous mathematics.",
+   [
+    "calculus",
+    "analysis",
+    "limit",
+    "derivative",
+    "integral",
+    "series",
+    "convergence",
+    "proof"
+   ]
+  ],
+  [
+   "mcs-linear-algebra",
+   "Linear Algebra and Matrix Methods",
+   "mathematical-and-computational-science",
+   "Vector spaces, matrices, eigenvalues and decompositions that underpin data analysis and computation.",
+   [
+    "linear algebra",
+    "matrix",
+    "vector",
+    "eigenvalue",
+    "decomposition",
+    "svd",
+    "least squares",
+    "rank"
+   ]
+  ],
+  [
+   "mcs-probability-statistics",
+   "Probability and Statistical Inference",
+   "mathematical-and-computational-science",
+   "Random variables, distributions, estimation, hypothesis testing and Bayesian inference for data.",
+   [
+    "probability",
+    "statistics",
+    "distribution",
+    "estimation",
+    "hypothesis test",
+    "bayesian",
+    "regression",
+    "confidence interval"
+   ]
+  ],
+  [
+   "mcs-numerical-methods",
+   "Numerical Methods and Scientific Computing",
+   "mathematical-and-computational-science",
+   "Algorithms for approximating solutions to continuous problems with controlled error and stability.",
+   [
+    "numerical",
+    "approximation",
+    "root finding",
+    "quadrature",
+    "stability",
+    "floating point",
+    "finite difference",
+    "error"
+   ]
+  ],
+  [
+   "mcs-algorithms-optimization",
+   "Algorithms and Optimization",
+   "mathematical-and-computational-science",
+   "Design and analysis of algorithms, complexity, graphs and continuous and discrete optimization.",
+   [
+    "algorithm",
+    "complexity",
+    "graph",
+    "optimization",
+    "gradient descent",
+    "dynamic programming",
+    "combinatorial",
+    "runtime"
+   ]
+  ],
+  [
+   "mcs-machine-learning-data",
+   "Machine Learning and Data Science",
+   "mathematical-and-computational-science",
+   "Statistical learning, model validation and reproducible data pipelines for prediction and discovery.",
+   [
+    "machine learning",
+    "data science",
+    "classification",
+    "cross validation",
+    "overfitting",
+    "feature",
+    "model",
+    "sql"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "mcs-symbolic-calculus-solver",
+   "mcs-real-analysis-calculus",
+   "Symbolic Calculus Solver",
+   "Computes derivatives, integrals and series expansions symbolically and checks them by differentiation or numeric evaluation.",
+   "procedural",
+   [
+    [
+     "mcs-analyst",
+     "primary"
+    ],
+    [
+     "mcs-numerics",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-convergence-prover",
+   "mcs-real-analysis-calculus",
+   "Convergence Proof Builder",
+   "Writes epsilon-delta and series convergence proofs and has every step checked for valid inference.",
+   "semantic",
+   [
+    [
+     "mcs-analyst",
+     "primary"
+    ],
+    [
+     "mcs-prover",
+     "checker"
+    ],
+    [
+     "mcs-probabilist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-ode-solver",
+   "mcs-real-analysis-calculus",
+   "Differential Equation Solver",
+   "Solves ordinary differential equations analytically and checks solutions by substitution and numeric integration.",
+   "procedural",
+   [
+    [
+     "mcs-analyst",
+     "primary"
+    ],
+    [
+     "mcs-numerics",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-matrix-decomposer",
+   "mcs-linear-algebra",
+   "Matrix Decomposer",
+   "Computes LU, QR, eigen and SVD decompositions and checks reconstruction error and orthogonality.",
+   "procedural",
+   [
+    [
+     "mcs-linalg",
+     "primary"
+    ],
+    [
+     "mcs-numerics",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-least-squares-fitter",
+   "mcs-linear-algebra",
+   "Least Squares Fitter",
+   "Solves overdetermined systems by least squares and checks residuals and conditioning.",
+   "procedural",
+   [
+    [
+     "mcs-linalg",
+     "primary"
+    ],
+    [
+     "mcs-statistician",
+     "checker"
+    ],
+    [
+     "mcs-numerics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-dimension-reducer",
+   "mcs-linear-algebra",
+   "PCA Dimension Reducer",
+   "Projects data onto principal components and checks explained variance and reconstruction quality.",
+   "procedural",
+   [
+    [
+     "mcs-linalg",
+     "primary"
+    ],
+    [
+     "mcs-ml",
+     "checker"
+    ],
+    [
+     "mcs-statistician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-hypothesis-tester",
+   "mcs-probability-statistics",
+   "Hypothesis Tester",
+   "Selects and runs the appropriate statistical test and checks its assumptions and effect size.",
+   "procedural",
+   [
+    [
+     "mcs-statistician",
+     "primary"
+    ],
+    [
+     "mcs-probabilist",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-regression-modeler",
+   "mcs-probability-statistics",
+   "Regression Modeler",
+   "Fits linear and generalised linear models and checks residual diagnostics and out-of-sample error.",
+   "procedural",
+   [
+    [
+     "mcs-statistician",
+     "primary"
+    ],
+    [
+     "mcs-ml",
+     "checker"
+    ],
+    [
+     "mcs-linalg",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-bayesian-inferencer",
+   "mcs-probability-statistics",
+   "Bayesian Inferencer",
+   "Specifies priors and likelihoods, samples posteriors and checks MCMC convergence diagnostics.",
+   "procedural",
+   [
+    [
+     "mcs-probabilist",
+     "primary"
+    ],
+    [
+     "mcs-statistician",
+     "checker"
+    ],
+    [
+     "mcs-numerics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-root-finder",
+   "mcs-numerical-methods",
+   "Root Finder",
+   "Finds roots with bisection, Newton and secant methods and checks residuals and convergence order.",
+   "procedural",
+   [
+    [
+     "mcs-numerics",
+     "primary"
+    ],
+    [
+     "mcs-analyst",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-pde-discretizer",
+   "mcs-numerical-methods",
+   "PDE Discretizer",
+   "Discretises partial differential equations with finite differences and checks stability conditions and grid convergence.",
+   "procedural",
+   [
+    [
+     "mcs-numerics",
+     "primary"
+    ],
+    [
+     "mcs-analyst",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-error-propagation-auditor",
+   "mcs-numerical-methods",
+   "Floating Point Error Auditor",
+   "Analyses rounding and truncation error in a computation and checks results with higher-precision reruns.",
+   "semantic",
+   [
+    [
+     "mcs-numerics",
+     "primary"
+    ],
+    [
+     "mcs-prover",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-complexity-analyzer",
+   "mcs-algorithms-optimization",
+   "Algorithm Complexity Analyzer",
+   "Derives time and space complexity of algorithms and checks bounds with empirical runtime scaling.",
+   "semantic",
+   [
+    [
+     "mcs-algorithms",
+     "primary"
+    ],
+    [
+     "mcs-prover",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-graph-algorithm-runner",
+   "mcs-algorithms-optimization",
+   "Graph Algorithm Runner",
+   "Runs shortest path, flow and matching algorithms and checks optimality certificates.",
+   "procedural",
+   [
+    [
+     "mcs-algorithms",
+     "primary"
+    ],
+    [
+     "mcs-programmer",
+     "checker"
+    ],
+    [
+     "mcs-linalg",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-convex-optimizer",
+   "mcs-algorithms-optimization",
+   "Convex Optimizer",
+   "Solves convex problems with gradient and interior-point methods and checks KKT conditions at the solution.",
+   "procedural",
+   [
+    [
+     "mcs-numerics",
+     "primary"
+    ],
+    [
+     "mcs-algorithms",
+     "checker"
+    ],
+    [
+     "mcs-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-model-validator",
+   "mcs-machine-learning-data",
+   "Cross Validation Runner",
+   "Trains models with k-fold cross validation and checks for leakage and overfitting.",
+   "procedural",
+   [
+    [
+     "mcs-ml",
+     "primary"
+    ],
+    [
+     "mcs-statistician",
+     "checker"
+    ],
+    [
+     "mcs-programmer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-classifier-builder",
+   "mcs-machine-learning-data",
+   "Classifier Builder",
+   "Builds and tunes classification models and checks calibration and confusion matrices on held-out data.",
+   "procedural",
+   [
+    [
+     "mcs-ml",
+     "primary"
+    ],
+    [
+     "mcs-statistician",
+     "checker"
+    ],
+    [
+     "mcs-linalg",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mcs-data-query-pipeline",
+   "mcs-machine-learning-data",
+   "Data Query Pipeline",
+   "Writes SQL and dataframe pipelines over analytic databases and checks row counts and aggregates against source tables.",
+   "procedural",
+   [
+    [
+     "mcs-programmer",
+     "primary"
+    ],
+    [
+     "mcs-statistician",
+     "checker"
+    ],
+    [
+     "mcs-ml",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "mcs-analyst": "Mathematical Analysis Agent",
+  "mcs-linalg": "Linear Algebra Agent",
+  "mcs-statistician": "Statistician Agent",
+  "mcs-probabilist": "Probability Agent",
+  "mcs-numerics": "Numerical Methods Agent",
+  "mcs-algorithms": "Algorithms Agent",
+  "mcs-ml": "Machine Learning Agent",
+  "mcs-prover": "Proof Checker Agent",
+  "mcs-programmer": "Scientific Programmer Agent"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "sympy-mcp",
+   null,
+   "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "web-listed",
+   "https://github.com/sdiehl/sympy-mcp"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "mcp-server-motherduck",
+   null,
+   "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "web-listed",
+   "https://github.com/motherduckdb/mcp-server-motherduck"
+  ]
+ ],
+ "lexicon": {
+  "mcs-analysis": "calculus analysis limit derivative integral series convergence differential",
+  "mcs-matrix": "linear algebra matrix vector eigenvalue decomposition svd rank pca orthogonality",
+  "mcs-inference": "probability statistic distribution estimation hypothesis bayesian regression confidence posterior mcmc",
+  "mcs-numerics": "numerical approximation root quadrature stability floating finite error discretise",
+  "mcs-algorithmic": "algorithm complexity graph optimization gradient dynamic combinatorial runtime kkt",
+  "mcs-learning": "machine learning data science classification validation overfitting feature sql"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

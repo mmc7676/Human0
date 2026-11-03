@@ -1,0 +1,261 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "real-estate",
+ "topic": {
+  "id": "real-estate",
+  "label": "Real Estate and Property",
+  "desc": "Buying, selling, renting and valuing property: search and listings, valuation and comparables, transactions and closing, financing, zoning and land use."
+ },
+ "concepts": [
+  [
+   "re-search",
+   "Property Search and Listings",
+   "real-estate",
+   "Finding homes, land and commercial property for sale or rent, listing data and local real estate markets.",
+   [
+    "real",
+    "estate",
+    "property",
+    "home",
+    "house",
+    "listing",
+    "rent",
+    "sale",
+    "local",
+    "market",
+    "search"
+   ]
+  ],
+  [
+   "re-valuation",
+   "Valuation and Comparables",
+   "real-estate",
+   "What a property is worth: comparable sales, appraisal, income approach and cap rates.",
+   [
+    "valuation",
+    "appraisal",
+    "comparable",
+    "sale",
+    "price",
+    "cap",
+    "rate",
+    "rental",
+    "income",
+    "property"
+   ]
+  ],
+  [
+   "re-transactions",
+   "Transactions, Financing and Closing",
+   "real-estate",
+   "Offers, contracts, inspections, mortgages, escrow, title and closing.",
+   [
+    "offer",
+    "contract",
+    "inspection",
+    "mortgage",
+    "escrow",
+    "title",
+    "closing",
+    "financing",
+    "down",
+    "payment"
+   ]
+  ],
+  [
+   "re-zoning",
+   "Zoning and Land Use",
+   "real-estate",
+   "Zoning codes, permitted uses, permits, easements and land use rules for a parcel.",
+   [
+    "zoning",
+    "land",
+    "use",
+    "permit",
+    "parcel",
+    "easement",
+    "setback",
+    "building",
+    "code",
+    "variance"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "re-local-real-estate-search",
+   "re-search",
+   "Local Real Estate Search",
+   "Searches local real estate listings by location, price, size and type, and states each listing's source.",
+   "semantic",
+   [
+    [
+     "re-search",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-valuer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "re-market-snapshot",
+   "re-search",
+   "Market Snapshot",
+   "Summarizes a local property market: prices, inventory, days on market and trend.",
+   "semantic",
+   [
+    [
+     "re-search",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-valuer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "re-comparable-sales-analyzer",
+   "re-valuation",
+   "Comparable Sales Analyzer",
+   "Estimates a property's value from comparable sales with adjustments shown.",
+   "procedural",
+   [
+    [
+     "re-valuer",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-closing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "re-rental-yield-calculator",
+   "re-valuation",
+   "Rental Yield Calculator",
+   "Calculates gross and net rental yield and cap rate for a property.",
+   "procedural",
+   [
+    [
+     "re-valuer",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-closing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "re-purchase-process-guide",
+   "re-transactions",
+   "Purchase Process Guide",
+   "Lays out the steps from offer to closing for a property purchase in a given jurisdiction.",
+   "semantic",
+   [
+    [
+     "re-closing",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-zoning",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "re-mortgage-payment-calculator",
+   "re-transactions",
+   "Mortgage Payment Calculator",
+   "Calculates mortgage payments, interest and amortization for given terms.",
+   "procedural",
+   [
+    [
+     "re-closing",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-zoning",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "re-zoning-lookup-guide",
+   "re-zoning",
+   "Zoning Lookup Guide",
+   "Explains how to find a parcel's zoning and what uses and buildings it permits.",
+   "semantic",
+   [
+    [
+     "re-zoning",
+     "primary"
+    ],
+    [
+     "re-checker",
+     "checker"
+    ],
+    [
+     "re-search",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "re-search": "Property Search Agent",
+  "re-valuer": "Property Valuation Agent",
+  "re-closing": "Real Estate Transaction Agent",
+  "re-zoning": "Zoning and Land Use Agent",
+  "re-checker": "Real Estate Checker Agent"
+ },
+ "mcp": [],
+ "lexicon": {
+  "research": "real estate property home house listing rent sale local market search",
+  "revaluation": "valuation appraisal comparable sale price cap rate rental income property",
+  "retransactions": "offer contract inspection mortgage escrow title closing financing down payment",
+  "rezoning": "zoning land use permit parcel easement setback building code variance"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "none"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {},
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

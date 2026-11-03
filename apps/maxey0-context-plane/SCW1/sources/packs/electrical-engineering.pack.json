@@ -1,0 +1,573 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "electrical-engineering",
+ "topic": {
+  "id": "electrical-engineering",
+  "label": "Electrical Engineering",
+  "desc": "Electrical Engineering: circuits, electronics, signals, electromagnetics, power and control, from device physics to systems."
+ },
+ "concepts": [
+  [
+   "ee-circuit-analysis",
+   "Circuit Analysis",
+   "electrical-engineering",
+   "Applying Kirchhoff laws and network theorems to find voltages, currents and transient and frequency responses of linear circuits.",
+   [
+    "circuit",
+    "kirchhoff",
+    "voltage",
+    "current",
+    "impedance",
+    "thevenin",
+    "transient",
+    "phasor"
+   ]
+  ],
+  [
+   "ee-electronics",
+   "Analog Electronics and Devices",
+   "electrical-engineering",
+   "Semiconductor devices and amplifier, filter and converter circuits built from diodes, transistors and op-amps.",
+   [
+    "semiconductor",
+    "diode",
+    "transistor",
+    "mosfet",
+    "amplifier",
+    "op-amp",
+    "bias",
+    "filter"
+   ]
+  ],
+  [
+   "ee-digital-systems",
+   "Digital Logic and Computer Engineering",
+   "electrical-engineering",
+   "Boolean logic, sequential circuits, hardware description languages, FPGAs and microcontrollers.",
+   [
+    "digital",
+    "logic",
+    "boolean",
+    "flip-flop",
+    "fpga",
+    "verilog",
+    "microcontroller",
+    "timing"
+   ]
+  ],
+  [
+   "ee-signals-systems",
+   "Signals, Systems and Communications",
+   "electrical-engineering",
+   "Representing and processing signals in time and frequency, and transmitting information over channels.",
+   [
+    "signal",
+    "fourier",
+    "laplace",
+    "sampling",
+    "dsp",
+    "modulation",
+    "noise",
+    "communication"
+   ]
+  ],
+  [
+   "ee-electromagnetics",
+   "Electromagnetics",
+   "electrical-engineering",
+   "Static and dynamic electric and magnetic fields, transmission lines, waves and antennas.",
+   [
+    "electromagnetic",
+    "maxwell",
+    "field",
+    "transmission line",
+    "antenna",
+    "wave",
+    "rf"
+   ]
+  ],
+  [
+   "ee-power-control",
+   "Power Systems, Power Electronics and Control",
+   "electrical-engineering",
+   "Generating, converting and distributing electrical energy and controlling dynamic systems with feedback.",
+   [
+    "power",
+    "grid",
+    "converter",
+    "motor",
+    "transformer",
+    "feedback",
+    "pid",
+    "stability"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ee-nodal-solver",
+   "ee-circuit-analysis",
+   "Nodal and Mesh Solver",
+   "Solves linear circuits with nodal and mesh analysis and checks results with power balance and simulation.",
+   "procedural",
+   [
+    [
+     "ee-circuits",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-electronics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-transient-analyzer",
+   "ee-circuit-analysis",
+   "Transient Response Analyzer",
+   "Computes RC, RL and RLC transient responses and checks time constants and initial and final values.",
+   "procedural",
+   [
+    [
+     "ee-circuits",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-control",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-ac-phasor-analyzer",
+   "ee-circuit-analysis",
+   "AC Phasor Analyzer",
+   "Analyses sinusoidal steady state with phasors and impedance and checks magnitude and phase against simulation.",
+   "procedural",
+   [
+    [
+     "ee-circuits",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-power",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-amplifier-designer",
+   "ee-electronics",
+   "Amplifier Designer",
+   "Designs transistor and op-amp amplifier stages to a gain and bandwidth spec and checks bias points and stability.",
+   "procedural",
+   [
+    [
+     "ee-electronics",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-circuits",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-active-filter-designer",
+   "ee-electronics",
+   "Active Filter Designer",
+   "Designs active filters to a frequency response and checks cutoff, ripple and component tolerances.",
+   "procedural",
+   [
+    [
+     "ee-electronics",
+     "primary"
+    ],
+    [
+     "ee-signals",
+     "checker"
+    ],
+    [
+     "ee-verifier",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-device-modeler",
+   "ee-electronics",
+   "Semiconductor Device Modeler",
+   "Explains and models diode and MOSFET behavior from device physics and checks against datasheet curves.",
+   "semantic",
+   [
+    [
+     "ee-electronics",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-em",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-logic-minimizer",
+   "ee-digital-systems",
+   "Logic Minimizer",
+   "Minimizes Boolean functions and builds gate-level circuits and checks equivalence with truth tables.",
+   "procedural",
+   [
+    [
+     "ee-digital",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-circuits",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-hdl-designer",
+   "ee-digital-systems",
+   "HDL Module Designer",
+   "Writes synthesizable Verilog modules and checks behavior with testbenches and timing reports.",
+   "procedural",
+   [
+    [
+     "ee-digital",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-signals",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-embedded-programmer",
+   "ee-digital-systems",
+   "Embedded Firmware Programmer",
+   "Writes microcontroller firmware for peripherals and checks timing and interrupts on hardware traces.",
+   "procedural",
+   [
+    [
+     "ee-digital",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-control",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-spectrum-analyzer",
+   "ee-signals-systems",
+   "Spectrum Analyzer",
+   "Computes Fourier transforms and spectra of signals and checks aliasing and windowing effects.",
+   "procedural",
+   [
+    [
+     "ee-signals",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-digital",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-dsp-filter-designer",
+   "ee-signals-systems",
+   "Digital Filter Designer",
+   "Designs FIR and IIR digital filters and checks frequency response, phase and stability.",
+   "procedural",
+   [
+    [
+     "ee-signals",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-electronics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-link-budgeter",
+   "ee-signals-systems",
+   "Communication Link Budgeter",
+   "Computes link budgets, modulation choice and bit error rates and checks margin against channel noise.",
+   "procedural",
+   [
+    [
+     "ee-signals",
+     "primary"
+    ],
+    [
+     "ee-em",
+     "checker"
+    ],
+    [
+     "ee-verifier",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-transmission-line-matcher",
+   "ee-electromagnetics",
+   "Transmission Line Matcher",
+   "Analyses transmission lines and designs impedance matching networks and checks reflection on a Smith chart.",
+   "procedural",
+   [
+    [
+     "ee-em",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-signals",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-antenna-analyzer",
+   "ee-electromagnetics",
+   "Antenna Analyzer",
+   "Estimates antenna gain, pattern and impedance and checks against field simulation results.",
+   "semantic",
+   [
+    [
+     "ee-em",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-signals",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-load-flow-solver",
+   "ee-power-control",
+   "Load Flow Solver",
+   "Solves power flow in a network and checks bus voltages and line loadings against limits.",
+   "procedural",
+   [
+    [
+     "ee-power",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-circuits",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-converter-designer",
+   "ee-power-control",
+   "Power Converter Designer",
+   "Designs buck, boost and inverter stages and checks efficiency, ripple and thermal limits.",
+   "procedural",
+   [
+    [
+     "ee-power",
+     "primary"
+    ],
+    [
+     "ee-electronics",
+     "checker"
+    ],
+    [
+     "ee-verifier",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ee-pid-tuner",
+   "ee-power-control",
+   "PID Controller Tuner",
+   "Tunes feedback controllers for a plant model and checks overshoot, settling time and stability margins.",
+   "procedural",
+   [
+    [
+     "ee-control",
+     "primary"
+    ],
+    [
+     "ee-verifier",
+     "checker"
+    ],
+    [
+     "ee-power",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ee-circuits": "Circuit Analysis Engineer",
+  "ee-electronics": "Analog Electronics Designer",
+  "ee-digital": "Digital Systems Designer",
+  "ee-signals": "Signal Processing Engineer",
+  "ee-em": "Electromagnetics Engineer",
+  "ee-power": "Power Systems Engineer",
+  "ee-control": "Control Systems Engineer",
+  "ee-verifier": "Design Verification Reviewer"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "sympy-mcp",
+   null,
+   "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "web-listed",
+   "https://github.com/sdiehl/sympy-mcp"
+  ],
+  [
+   "GitHub",
+   null,
+   "GitHub's official MCP Server",
+   [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "web-listed",
+   "https://github.com/github/github-mcp-server"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "ee-circ": "circuit kirchhoff voltage current impedance thevenin transient phasor",
+  "ee-elec": "semiconductor diode transistor mosfet amplifier op bias",
+  "ee-dig": "digital logic boolean flip fpga verilog microcontroller firmware",
+  "ee-sig": "signal fourier laplace sampling dsp modulation noise",
+  "ee-em": "electromagnetic maxwell antenna wave rf smith",
+  "ee-pwr": "power grid converter motor transformer pid stability"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "rows reused verbatim from the verified Human0 MCP menu; working order not re-checked in this session"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

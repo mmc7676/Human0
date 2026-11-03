@@ -1,0 +1,248 @@
+{
+ "spec": "maxey0.scw1-ontology/3",
+ "principle": "The Maxey0 Context Plane: one graph, one rule set, served by the Maxey0 Context Plane MCP server, which feeds the Human0 app. Maxey0 orchestrates; every specialised agent is a MaxeyN agent. Every thread runs Domain -> Topic -> Concept -> Skill with exactly one parent per node. Differentiation happens below the skill: a skill has several MaxeyN agents (roles primary/checker/support), an agent may hold MCP servers. Agents and MCP servers are global entities, not per-topic copies.",
+ "domains": [
+  {
+   "id": "maxey0-system",
+   "label": "Maxey0 System",
+   "desc": "How Maxey0 itself runs (the system that feeds the Human0 app): one topic, Maxey0."
+  },
+  {
+   "id": "foundations",
+   "label": "Foundations",
+   "desc": "The basic dimensions every task has: where it is (location, environment), when (time), what holds (state), what it is part of (systems) and what it runs on (infrastructure)."
+  },
+  {
+   "id": "work",
+   "label": "Work Domains",
+   "desc": "Areas of applied work a user brings a task from."
+  },
+  {
+   "id": "finance",
+   "label": "Finance",
+   "desc": "Everything needed to understand financial activity, from accounting and corporate finance to offerings, markets, instruments, crypto, funds, regulation and data. Context only: nothing here executes a transaction."
+  },
+  {
+   "id": "disciplines",
+   "label": "Academic Disciplines",
+   "desc": "Fields of study, one topic per field."
+  }
+ ],
+ "removed_topics": {
+  "digestion": "v0.5 one-off for a friend; reads as a concept, not a topic",
+  "nutrition": "v0.5 one-off for a friend; reads as a concept, not a topic",
+  "medical-conditions": "v0.5 one-off for a friend; reads as a concept, not a topic"
+ },
+ "work_topics": [
+  "jobseeker",
+  "marketing",
+  "startups",
+  "programming-languages",
+  "coding-agents",
+  "drones",
+  "mapping",
+  "robotics",
+  "research",
+  "reasoning",
+  "governance",
+  "observability",
+  "knowledge",
+  "protocol",
+  "human-language",
+  "data",
+  "ui-frontend",
+  "security-identity",
+  "real-estate",
+  "simulation",
+  "travel-outdoors"
+ ],
+ "discipline_default": "every pack topic not listed in work_topics and not merged away is a discipline",
+ "maxey0_topics": {
+  "maxey0": {
+   "label": "Maxey0",
+   "desc": "How Maxey0 itself runs: orchestration of MaxeyN agents (loops, superposition), runtime infrastructure, message contracts, Structured Context Windows, tiered memory and the OKF knowledge graph, latent space, policy gates and evaluation, and structured reasoning with claim verification.",
+   "concepts": [
+    "orchestration",
+    "infrastructure",
+    "agentic-loops",
+    "superposition",
+    "protocol",
+    "io-contract",
+    "memory",
+    "context-management",
+    "knowledge-graph",
+    "latent",
+    "governance",
+    "observability",
+    "evaluation",
+    "reasoning",
+    "claim-verification"
+   ]
+  }
+ },
+ "maxey0_concept_labels": {
+  "orchestration": "Agent Orchestration",
+  "infrastructure": "Runtime Infrastructure",
+  "protocol": "A2A and MCP Message Contracts",
+  "memory": "Tiered Memory",
+  "context-management": "Structured Context Windows",
+  "knowledge-graph": "OKF Knowledge Graph",
+  "governance": "Policy Gates and Egress Control",
+  "observability": "Run Tracing and Telemetry",
+  "evaluation": "Run Evaluation and Drift",
+  "reasoning": "Structured Reasoning Frames"
+ },
+ "maxey0_concept_descs": {},
+ "topic_merges": {
+  "physics-foundations": {
+   "from": [
+    "physics"
+   ],
+   "label": "Physics Foundations",
+   "desc": "Cross-cutting physics: relativity and spacetime, astrophysics and cosmology, and the literature and methods of physics.",
+   "reason": "the overview 'physics' pack duplicated classical-physics and quantum-physics; its overlapping concepts merge into those topics, and what remains (plus relativity) forms a normal-size third topic"
+  }
+ },
+ "concept_merges": {
+  "quantum-physics": "qm-foundations",
+  "classical-physics": "cl-mechanics",
+  "relativity": "cl-relativity",
+  "particle-physics": "qm-qft",
+  "thermodynamics": "cl-thermo",
+  "electromagnetism-optics": "cl-em",
+  "engp-instrumentation-measurement": "apph-instrumentation-measurement",
+  "film-digital-media": "comm-digital",
+  "symsys-cognitive-psychology": "psych-cognitive-psychology",
+  "span-latin-american-literature": "ilac-latin-american-literature",
+  "atmo-renewable-resources": "ese-renewable-energy",
+  "hl-sound": "ling-phonetics-phonology",
+  "hl-grammar": "ling-morphology-syntax",
+  "hl-meaning": "ling-semantics",
+  "symsys-artificial-intelligence": "cs-ai-ml",
+  "symsys-philosophy-mind": "phil-philosophy-of-mind",
+  "mx-agentic-loops": "mx-orchestration",
+  "mx-superposition": "mx-orchestration",
+  "mx-protocol": "mx-io-contract",
+  "mx-knowledge-graph": "mx-memory",
+  "mx-observability": "mx-governance",
+  "mx-evaluation": "mx-governance",
+  "mx-claim-verification": "mx-reasoning"
+ },
+ "concept_merge_rule": "skills of the source concept move into the target concept; a moved skill whose label already exists in the target is dropped as a duplicate",
+ "concept_renames": {
+  "jpn-translation-culture": "Japanese Translation, History and Culture",
+  "kor-translation-culture": "Korean Translation, History and Culture",
+  "chin-modern-history": "Modern and Contemporary China",
+  "polisci-international-relations": "International Politics",
+  "rb-simulation": "Robot Simulation and Sim-to-Real",
+  "mx-orchestration": "Orchestration, Loops and Superposition",
+  "mx-io-contract": "I/O, A2A and MCP Contracts",
+  "mx-memory": "Tiered Memory and OKF Knowledge Graph",
+  "mx-governance": "Policy Gates, Tracing and Evaluation",
+  "mx-reasoning": "Reasoning and Claim Verification"
+ },
+ "dropped_skills": {
+  "repo-decomp": "no agents assigned in the base graph; cannot be executed",
+  "anchor-field-engineering": "no agents assigned in the base graph; cannot be executed"
+ },
+ "agent_merge_rule": "agents with the same name (case-insensitive) are one agent only within the same home topic (the topic of the pack that defined them; topic merges count as one topic; all base-graph agents share the home 'maxey0_base'). The same name in different topics stays separate agents, because a generic role such as 'Data Analyst Agent' means different work in different fields.",
+ "mcp_rule": "MCP servers form one registry keyed by directory uuid (rows without one get 'local:<name>'). A server a pack lists is listed on every topic that received that pack's concepts: the pack's own topic plus the topics its concepts were merged or moved into (topic_mcp). A server is attached to an agent when the cosine between the server and one of the agent's skills (skill text + agent name) is >= similarity.thresholds.mcp_link; the top mcp_link_top_k agents qualify, among the agents of those topics (or among Maxey0 System agents for base-graph rows). Links are DERIVED and carry their cosine. No fallback links are invented. A base-graph server with no qualifying agent is trimmed as unused.",
+ "related_rule": "concepts in different topics with cosine >= similarity.thresholds.related get a 'related' link (kept as separate concepts)",
+ "dropped_concepts": {
+  "registry": "its only skill (repo-decomp) has no agents; nothing left to run"
+ },
+ "id_rules": {
+  "maxey0_concept_prefix": "mx-",
+  "reason": "every id is unique across all levels so trace(node_id) is unambiguous",
+  "maxey_agent_key": {
+   "pattern": "Maxey\\d+",
+   "rule": "every agent key is MaxeyN. Base-graph keys (Maxey0 orchestrator, Maxey00 superposition, ... up to Maxey801) are kept. Every other agent's key comes from SCW1/maxey_registry.json (source key -> MaxeyN, seeded from the v3 deployment), so keys never change between builds; agents new to the registry get the next free number in graph order and are appended. The source key is kept as legacy_key."
+  }
+ },
+ "similarity": {
+  "method": "tfidf-cosine",
+  "definition": "One tokenizer (lowercase, [a-z0-9]+ words, stop-words and words of <=2 letters removed, trailing plural 's' stripped). Corpus = every concept (label + desc + keywords), skill (label + desc) and MCP row (name + desc + tool names). Weight = (1 + ln tf) * idf, idf = ln((N + 1)/(df + 1)) + 1, vectors L2-normalised; similarity = cosine. The same method scores search/route_task, agent->MCP links and related concepts; only the threshold differs by use. A pair only counts as similar when the two sides share at least min(2, number of terms in the shorter side) terms, so one rare shared word is not evidence.",
+  "thresholds": {
+   "mcp_link": 0.1,
+   "mcp_link_top_k": 2,
+   "related": 0.4,
+   "search_min": 0.08
+  },
+  "calibration": {
+   "related": "0.40: 57 cross-topic pairs. At 0.40 the pairs are still genuine (Mathematical Methods ~ Linear Algebra; Language Variation ~ Psycholinguistics); 0.45 would keep 33.",
+   "mcp_link": "0.10: below it, links are mixed (SciSpace -> Separations Process Engineer 0.089, Microsoft Learn -> Logic Agent 0.094); from 0.10 up, mostly right (DeepL -> Japanese Translation Agent 0.119, Felt Maps -> Electoral Geography Agent 0.116). Cost: some correct low-scoring links are lost (DeepL -> Hebrew and Yiddish Language Agent 0.094).",
+   "search_min": "0.08, the matched/unmatched threshold the Context Plane page used; checked against sample queries in tests.",
+   "status": "JUDGMENT: thresholds were read off score distributions by inspection, not fitted to labelled data.",
+   "coverage_rule": "added after a routing check: without it, 'hello there friend' routed to False Friend Detector (0.30) and 'IBS versus Crohn disease' to a Korean grammar skill (0.23) on one shared word, scoring above true matches such as 'differentiate x squared times sine x' (0.24)."
+  }
+ },
+ "declared_mcp_links": [
+  {
+   "agent": "Maxey0",
+   "mcp": "session:Maxey0",
+   "reason": "Maxey0 is the orchestrator and the 'Maxey0 (artifact + SCW store)' server is Maxey0's own SCW/artifact store; the orchestrator holds it by design, not by text similarity."
+  }
+ ],
+ "declared_mcp_rule": "links in declared_mcp_links are added as basis 'declared:spec' (score null) in addition to the derived links; the build fails if either end is missing.",
+ "concept_moves": {
+  "cl-relativity": "physics-foundations",
+  "mp-coords": "location",
+  "mp-web": "location"
+ },
+ "concept_move_rule": "a moved concept keeps its id, label and skills; only its topic changes",
+ "topic_priority": {
+  "source": "stated by Human0 on 2026-10-29: physics is the most important topic outside the Work and Maxey0 System domains",
+  "use": "declared, visible and optional: route_task and search use it only to break exact score ties, and only when use_priority is true (default). It never changes scores or structure.",
+  "topics": {
+   "classical-physics": 1,
+   "quantum-physics": 1,
+   "physics-foundations": 1
+  },
+  "default": 0
+ },
+ "skill_agent_overrides": [
+  {
+   "skill": "entanglement-entropy-analyzer",
+   "role": "checker",
+   "from": "Maxey1617",
+   "to": "Maxey1500",
+   "reason": "found in the live test chat: the Quantum Consistency Checker Agent fits a quantum checker role better than a Data Analyst Agent"
+  }
+ ],
+ "skill_agent_override_rule": "applied after MaxeyN keys are assigned; the build fails if the skill, the 'from' agent in that role, or the 'to' agent is missing",
+ "checker_rule": "On every skill, each checker agent also holds the MCP servers its primary agent holds for that skill's topic, so the checker can re-run the primary's work independently instead of verifying by reasoning alone. These links have basis 'inherited:checker-of-primary', carry the primary's score and a 'via' field naming the primary and the skill. A checker that already holds a server by its own derived or declared link keeps that link. Stated by Human0 on 2026-10-29.",
+ "domain_topics": {
+  "foundations": [
+   "location",
+   "environments",
+   "time",
+   "state",
+   "systems",
+   "infrastructure"
+  ],
+  "finance": [
+   "accounting",
+   "corporate-finance",
+   "offerings",
+   "capital-markets",
+   "equities",
+   "fixed-income",
+   "derivatives",
+   "commodities",
+   "currencies",
+   "crypto",
+   "investing",
+   "hedge-funds",
+   "financial-regulation",
+   "financial-data",
+   "financial-services",
+   "taxes"
+  ]
+ },
+ "domain_topics_rule": "a topic listed under domain_topics[d] belongs to domain d; otherwise Maxey0 topics -> maxey0-system, work_topics -> work, the rest -> disciplines",
+ "open_questions": {
+  "location-resolution": "Is an MCP server a location? Hypothesis: an MCP server is an address (endpoint); a location is host + region + environment. Placeholder concept env-human0-dev; no rule reads it.",
+  "dev-server-name": "The Human0 development server needs a new name (owner)."
+ },
+ "maxey0_topic_rule": "Maxey0 is one topic (owner decision 2026-10-31). Its 15 base concepts are merged to 8: orchestration+agentic loops+superposition; I/O contract+A2A/MCP message contracts; tiered memory+OKF knowledge graph; policy gates+run tracing+run evaluation; structured reasoning+claim verification; runtime infrastructure, Structured Context Windows and latent space stay. Former topic ids maxey0-runtime, maxey0-memory-context, maxey0-assurance no longer exist."
+}

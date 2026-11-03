@@ -1,0 +1,306 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "state",
+ "topic": {
+  "id": "state",
+  "label": "State",
+  "desc": "What holds at a time and place: state models and state machines, persistence and storage, snapshots, versions and provenance, and keeping copies consistent."
+ },
+ "concepts": [
+  [
+   "sta-machines",
+   "State Models and State Machines",
+   "state",
+   "Representing state explicitly: finite state machines, statecharts, transitions, guards and invalid states.",
+   [
+    "state",
+    "machine",
+    "transition",
+    "statechart",
+    "guard",
+    "status",
+    "lifecycle",
+    "model"
+   ]
+  ],
+  [
+   "sta-persistence",
+   "Persistence and Storage",
+   "state",
+   "Where state is kept: memory, files, databases, key value stores, caches, and durability.",
+   [
+    "persistence",
+    "storage",
+    "database",
+    "key",
+    "value",
+    "cache",
+    "durable",
+    "file",
+    "save",
+    "restore"
+   ]
+  ],
+  [
+   "sta-versions",
+   "Snapshots, Versioning and Provenance",
+   "state",
+   "Snapshots, versions, digests, history and provenance: knowing which state a result came from.",
+   [
+    "snapshot",
+    "version",
+    "digest",
+    "history",
+    "provenance",
+    "hash",
+    "diff",
+    "commit",
+    "audit"
+   ]
+  ],
+  [
+   "sta-consistency",
+   "Synchronization and Consistency",
+   "state",
+   "Keeping copies of state consistent: replication, conflicts, eventual and strong consistency, locks and merges.",
+   [
+    "synchronization",
+    "consistency",
+    "replication",
+    "conflict",
+    "merge",
+    "lock",
+    "eventual",
+    "strong",
+    "concurrent"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "sta-state-machine-designer",
+   "sta-machines",
+   "State Machine Designer",
+   "Designs a state machine for a workflow, listing states, transitions, guards and unreachable or dead-end states.",
+   "procedural",
+   [
+    [
+     "sta-modeler",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-store",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-lifecycle-explainer",
+   "sta-machines",
+   "Lifecycle Explainer",
+   "Explains the lifecycle states of an object or process and what moves it between them.",
+   "semantic",
+   [
+    [
+     "sta-modeler",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-store",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-storage-selector",
+   "sta-persistence",
+   "Storage Selector",
+   "Chooses a store for a kind of state by durability, latency, size and sharing needs.",
+   "semantic",
+   [
+    [
+     "sta-store",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-version",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-save-and-restore-planner",
+   "sta-persistence",
+   "Save and Restore Planner",
+   "Plans how application state is saved, exported, imported and restored safely.",
+   "procedural",
+   [
+    [
+     "sta-store",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-version",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-snapshot-differ",
+   "sta-versions",
+   "Snapshot Differ",
+   "Compares two snapshots or versions of state and lists what changed.",
+   "semantic",
+   [
+    [
+     "sta-version",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-sync",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-provenance-recorder",
+   "sta-versions",
+   "Provenance Recorder",
+   "Records which inputs and version a result came from, with digests, so it can be reproduced.",
+   "semantic",
+   [
+    [
+     "sta-version",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-sync",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-conflict-resolver",
+   "sta-consistency",
+   "Conflict Resolver",
+   "Explains conflicting copies of state and proposes a merge with the rule used.",
+   "semantic",
+   [
+    [
+     "sta-sync",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sta-consistency-model-explainer",
+   "sta-consistency",
+   "Consistency Model Explainer",
+   "Explains the consistency guarantee a system gives and what a reader may observe.",
+   "semantic",
+   [
+    [
+     "sta-sync",
+     "primary"
+    ],
+    [
+     "sta-checker",
+     "checker"
+    ],
+    [
+     "sta-modeler",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "sta-modeler": "State Modeling Agent",
+  "sta-store": "Persistence Agent",
+  "sta-version": "Versioning Agent",
+  "sta-sync": "Synchronization Agent",
+  "sta-checker": "State Checker Agent"
+ },
+ "mcp": [
+  [
+   "Memory MCP",
+   null,
+   "Memory reference MCP server: persistent knowledge graph memory of entities, relations and observations stored across sessions.",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers/tree/main/src/memory"
+  ],
+  [
+   "Git MCP",
+   null,
+   "Git reference MCP server: read, search and manipulate git repositories, commits, diffs, branches and version history.",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+  ],
+  [
+   "Redis MCP",
+   null,
+   "Redis official MCP server: store, read and search data in Redis, key value state, streams, hashes and vectors.",
+   [],
+   "web-listed",
+   "https://github.com/redis/mcp-redis"
+  ]
+ ],
+ "lexicon": {
+  "stamachines": "state machine transition statechart guard status lifecycle model",
+  "stapersistence": "persistence storage database key value cache durable file save restore",
+  "staversions": "snapshot version digest history provenance hash diff commit audit",
+  "staconsistency": "synchronization consistency replication conflict merge lock eventual strong concurrent"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Memory MCP": "repository exists (git ls-remote https://github.com/modelcontextprotocol/servers, 2026-10-31); description summarises its public README; tool list not re-read; reference server",
+   "Git MCP": "repository exists (git ls-remote https://github.com/modelcontextprotocol/servers, 2026-10-31); description summarises its public README; tool list not re-read; reference server",
+   "Redis MCP": "repository exists (git ls-remote https://github.com/redis/mcp-redis, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

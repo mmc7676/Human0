@@ -1,0 +1,290 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "time",
+ "topic": {
+  "id": "time",
+  "label": "Time",
+  "desc": "When something happens: clocks, time zones and timestamps, calendars and scheduling, durations and deadlines, and ordering of events."
+ },
+ "concepts": [
+  [
+   "tim-clocks",
+   "Clocks, Time Zones and Timestamps",
+   "time",
+   "Current time, UTC and local time, IANA time zones, daylight saving, timestamp formats and conversion.",
+   [
+    "clock",
+    "time",
+    "zone",
+    "utc",
+    "local",
+    "daylight",
+    "saving",
+    "timestamp",
+    "iso8601",
+    "epoch",
+    "convert"
+   ]
+  ],
+  [
+   "tim-calendars",
+   "Calendars and Scheduling",
+   "time",
+   "Calendars, recurring events, business days, holidays and scheduling across people and time zones.",
+   [
+    "calendar",
+    "schedule",
+    "meeting",
+    "recurring",
+    "event",
+    "holiday",
+    "business",
+    "day",
+    "availability"
+   ]
+  ],
+  [
+   "tim-durations",
+   "Durations, Deadlines and Intervals",
+   "time",
+   "Elapsed time, deadlines, intervals, time to live and how durations are measured and stated.",
+   [
+    "duration",
+    "deadline",
+    "interval",
+    "elapsed",
+    "countdown",
+    "ttl",
+    "period",
+    "expiry"
+   ]
+  ],
+  [
+   "tim-ordering",
+   "Temporal Ordering and Event Sequencing",
+   "time",
+   "Ordering events in time: timelines, causality, clocks across machines, logical and vector clocks.",
+   [
+    "order",
+    "sequence",
+    "timeline",
+    "causality",
+    "before",
+    "after",
+    "logical",
+    "clock",
+    "event",
+    "log"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "tim-time-zone-converter",
+   "tim-clocks",
+   "Time Zone Converter",
+   "Converts a time between time zones, accounting for daylight saving, and states the UTC offset used.",
+   "procedural",
+   [
+    [
+     "tim-clock",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-calendar",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-timestamp-normalizer",
+   "tim-clocks",
+   "Timestamp Normalizer",
+   "Normalizes timestamps in mixed formats to ISO 8601 UTC and flags ambiguous ones.",
+   "semantic",
+   [
+    [
+     "tim-clock",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-calendar",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-meeting-scheduler",
+   "tim-calendars",
+   "Meeting Scheduler",
+   "Finds meeting times that fit participants in several time zones, avoiding holidays and outside working hours.",
+   "semantic",
+   [
+    [
+     "tim-calendar",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-duration",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-business-day-calculator",
+   "tim-calendars",
+   "Business Day Calculator",
+   "Computes business days between dates for a country's holiday calendar.",
+   "procedural",
+   [
+    [
+     "tim-calendar",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-duration",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-deadline-tracker",
+   "tim-durations",
+   "Deadline Tracker",
+   "Computes time remaining to deadlines and flags those at risk.",
+   "procedural",
+   [
+    [
+     "tim-duration",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-sequence",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-interval-overlap-checker",
+   "tim-durations",
+   "Interval Overlap Checker",
+   "Checks whether time intervals overlap and reports the overlap.",
+   "procedural",
+   [
+    [
+     "tim-duration",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-sequence",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-timeline-builder",
+   "tim-ordering",
+   "Timeline Builder",
+   "Builds a timeline from dated events and marks gaps and conflicting dates.",
+   "procedural",
+   [
+    [
+     "tim-sequence",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-clock",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tim-event-order-explainer",
+   "tim-ordering",
+   "Event Order Explainer",
+   "Explains how events from different machines are ordered (timestamps, logical clocks) and where order is uncertain.",
+   "semantic",
+   [
+    [
+     "tim-sequence",
+     "primary"
+    ],
+    [
+     "tim-checker",
+     "checker"
+    ],
+    [
+     "tim-clock",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "tim-clock": "Clock and Time Zone Agent",
+  "tim-calendar": "Calendar Agent",
+  "tim-duration": "Duration Agent",
+  "tim-sequence": "Event Sequencing Agent",
+  "tim-checker": "Time Checker Agent"
+ },
+ "mcp": [
+  [
+   "Time MCP",
+   null,
+   "Time reference MCP server: current time in any IANA time zone and conversion between time zones.",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers/tree/main/src/time"
+  ]
+ ],
+ "lexicon": {
+  "timclocks": "clock time zone utc local daylight saving timestamp iso8601 epoch convert",
+  "timcalendars": "calendar schedule meeting recurring event holiday business day availability",
+  "timdurations": "duration deadline interval elapsed countdown ttl period expiry",
+  "timordering": "order sequence timeline causality before after logical clock event log"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Time MCP": "repository exists (git ls-remote https://github.com/modelcontextprotocol/servers, 2026-10-31); description summarises its public README; tool list not re-read; reference server"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

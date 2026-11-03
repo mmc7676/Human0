@@ -1,0 +1,539 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "japanese",
+ "topic": {
+  "id": "japanese",
+  "label": "Japanese",
+  "desc": "Japanese: the Japanese language and writing system, its grammar and honorifics, and Japanese literature, history and culture."
+ },
+ "concepts": [
+  [
+   "jpn-writing-system",
+   "Japanese Writing System",
+   "japanese",
+   "Hiragana, katakana and kanji: stroke order, on and kun readings, radicals and romanization.",
+   [
+    "hiragana",
+    "katakana",
+    "kanji",
+    "stroke order",
+    "reading",
+    "radical",
+    "furigana",
+    "romanization"
+   ]
+  ],
+  [
+   "jpn-grammar",
+   "Japanese Grammar",
+   "japanese",
+   "Particles, verb and adjective conjugation, sentence-final forms, clause linking and word order.",
+   [
+    "grammar",
+    "particle",
+    "conjugation",
+    "verb",
+    "adjective",
+    "te-form",
+    "clause",
+    "sentence"
+   ]
+  ],
+  [
+   "jpn-honorifics-pragmatics",
+   "Honorifics and Pragmatics",
+   "japanese",
+   "Keigo, politeness levels, in-group and out-group speech and register in social context.",
+   [
+    "keigo",
+    "honorific",
+    "humble",
+    "polite",
+    "register",
+    "politeness",
+    "pragmatics",
+    "business"
+   ]
+  ],
+  [
+   "jpn-phonology",
+   "Japanese Phonology and Pronunciation",
+   "japanese",
+   "Mora timing, pitch accent, long vowels and geminates, and dialect variation.",
+   [
+    "pronunciation",
+    "mora",
+    "pitch accent",
+    "long vowel",
+    "geminate",
+    "dialect",
+    "ipa",
+    "intonation"
+   ]
+  ],
+  [
+   "jpn-literature",
+   "Japanese Literature",
+   "japanese",
+   "Classical to modern literature: the Tale of Genji, haiku and waka, and modern novelists.",
+   [
+    "literature",
+    "genji",
+    "haiku",
+    "waka",
+    "classical",
+    "novel",
+    "poetry",
+    "modern"
+   ]
+  ],
+  [
+   "jpn-translation-culture",
+   "Translation, History and Culture",
+   "japanese",
+   "Translation between Japanese and other languages, and Japanese history, society and popular culture.",
+   [
+    "translation",
+    "history",
+    "culture",
+    "society",
+    "anime",
+    "edo",
+    "meiji",
+    "localization"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "jpn-kanji-breakdown",
+   "jpn-writing-system",
+   "Kanji Breakdown",
+   "Gives a kanji's radicals, on and kun readings, meanings and stroke count, checked against a standard kanji dictionary.",
+   "procedural",
+   [
+    [
+     "jpn-script",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-furigana",
+   "jpn-writing-system",
+   "Furigana Annotator",
+   "Adds furigana readings to kanji in a passage, checked against dictionary readings in context.",
+   "procedural",
+   [
+    [
+     "jpn-script",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-phonetician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-romanizer",
+   "jpn-writing-system",
+   "Romanization Converter",
+   "Converts Japanese text to Hepburn romanization, checked for long vowels and particle spelling rules.",
+   "procedural",
+   [
+    [
+     "jpn-script",
+     "primary"
+    ],
+    [
+     "jpn-phonetician",
+     "checker"
+    ],
+    [
+     "jpn-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-particle-explainer",
+   "jpn-grammar",
+   "Particle Explainer",
+   "Explains particle choice such as wa versus ga in a sentence, checked by giving contrasting example sentences.",
+   "semantic",
+   [
+    [
+     "jpn-grammarian",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-keigo",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-conjugator",
+   "jpn-grammar",
+   "Verb and Adjective Conjugator",
+   "Conjugates Japanese verbs and adjectives into each form, checked against conjugation class rules.",
+   "procedural",
+   [
+    [
+     "jpn-grammarian",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-script",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-grammar-correction",
+   "jpn-grammar",
+   "Grammar Correction",
+   "Corrects errors in Japanese sentences and explains each fix, checked by citing the rule used.",
+   "procedural",
+   [
+    [
+     "jpn-grammarian",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-keigo-converter",
+   "jpn-honorifics-pragmatics",
+   "Keigo Converter",
+   "Rewrites a sentence in plain, polite, honorific and humble registers, checked by naming the form used for each verb.",
+   "procedural",
+   [
+    [
+     "jpn-keigo",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-business-email",
+   "jpn-honorifics-pragmatics",
+   "Business Japanese Writing",
+   "Drafts business emails with correct greetings and keigo, checked against standard business correspondence conventions.",
+   "procedural",
+   [
+    [
+     "jpn-keigo",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-register-check",
+   "jpn-honorifics-pragmatics",
+   "Register Appropriateness Check",
+   "Assesses whether speech fits the social relationship described, checked by explaining the in-group and out-group reasoning.",
+   "semantic",
+   [
+    [
+     "jpn-keigo",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-pitch-accent",
+   "jpn-phonology",
+   "Pitch Accent Guide",
+   "Marks pitch accent patterns for words and phrases, checked against an accent dictionary.",
+   "procedural",
+   [
+    [
+     "jpn-phonetician",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-script",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-mora-counter",
+   "jpn-phonology",
+   "Mora Counter",
+   "Counts morae in words and verse lines, checked by recounting long vowels, geminates and the moraic nasal.",
+   "procedural",
+   [
+    [
+     "jpn-phonetician",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-literary",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-dialect-notes",
+   "jpn-phonology",
+   "Dialect Notes",
+   "Explains features of dialects such as Kansai speech, checked against dialect descriptions.",
+   "semantic",
+   [
+    [
+     "jpn-phonetician",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-haiku-analysis",
+   "jpn-literature",
+   "Haiku and Waka Analysis",
+   "Analyses a poem's seasonal word, cutting word and imagery, checked by mora count and cited conventions.",
+   "semantic",
+   [
+    [
+     "jpn-literary",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-phonetician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-classical-reading",
+   "jpn-literature",
+   "Classical Japanese Reader",
+   "Explains classical grammar forms in a passage, checked against classical grammar references.",
+   "semantic",
+   [
+    [
+     "jpn-literary",
+     "primary"
+    ],
+    [
+     "jpn-grammarian",
+     "checker"
+    ],
+    [
+     "jpn-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-author-context",
+   "jpn-literature",
+   "Author and Period Context",
+   "Places a work in its literary period and movement, checked against dated literary histories.",
+   "semantic",
+   [
+    [
+     "jpn-literary",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-translate",
+   "jpn-translation-culture",
+   "Japanese Translation",
+   "Translates text to or from Japanese preserving register and nuance, checked by back-translation of key sentences.",
+   "procedural",
+   [
+    [
+     "jpn-translator",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-keigo",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-localization",
+   "jpn-translation-culture",
+   "Localization Review",
+   "Reviews localized text for cultural fit and consistent terminology, checked against a glossary.",
+   "procedural",
+   [
+    [
+     "jpn-translator",
+     "primary"
+    ],
+    [
+     "jpn-culture",
+     "checker"
+    ],
+    [
+     "jpn-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "jpn-history-briefing",
+   "jpn-translation-culture",
+   "Japanese History Briefing",
+   "Summarises a period such as Edo or Meiji with key events and dates, checked against historical sources.",
+   "semantic",
+   [
+    [
+     "jpn-culture",
+     "primary"
+    ],
+    [
+     "jpn-checker",
+     "checker"
+    ],
+    [
+     "jpn-literary",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "jpn-grammarian": "Japanese Grammar Agent",
+  "jpn-script": "Kanji and Writing System Agent",
+  "jpn-phonetician": "Japanese Pronunciation Agent",
+  "jpn-keigo": "Honorifics and Pragmatics Agent",
+  "jpn-literary": "Japanese Literature Agent",
+  "jpn-translator": "Japanese Translation Agent",
+  "jpn-culture": "Japanese Culture and History Agent",
+  "jpn-checker": "Japanese Accuracy Checker"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "jpn-script": "hiragana katakana kanji radical furigana romanization",
+  "jpn-grammar": "grammar particle conjugation verb adjective clause",
+  "jpn-politeness": "keigo honorific humble polite register pragmatics business",
+  "jpn-sound": "pronunciation mora pitch geminate dialect intonation",
+  "jpn-letters": "literature genji haiku waka classical poetry",
+  "jpn-culture": "translation history society anime edo meiji localization"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

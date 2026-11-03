@@ -1,0 +1,266 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "taxes",
+ "topic": {
+  "id": "taxes",
+  "label": "Taxes and Personal Finance",
+  "desc": "Personal money: income tax preparation and filing, deductions and credits, investment and crypto taxes, budgeting and saving, and retirement planning."
+ },
+ "concepts": [
+  [
+   "tax-filing",
+   "Tax Preparation and Filing",
+   "taxes",
+   "Preparing and filing income tax returns: forms, documents, deadlines and e-filing.",
+   [
+    "tax",
+    "taxes",
+    "return",
+    "filing",
+    "form",
+    "w-2",
+    "1099",
+    "deadline",
+    "irs",
+    "prepare"
+   ]
+  ],
+  [
+   "tax-deductions",
+   "Deductions, Credits and Tax Planning",
+   "taxes",
+   "Standard and itemized deductions, credits, brackets and planning to reduce tax legally.",
+   [
+    "deduction",
+    "credit",
+    "bracket",
+    "itemized",
+    "standard",
+    "planning",
+    "tax",
+    "liability"
+   ]
+  ],
+  [
+   "tax-investment-tax",
+   "Investment and Crypto Taxes",
+   "taxes",
+   "Capital gains, cost basis, wash sales, dividends and crypto tax reporting.",
+   [
+    "capital",
+    "gain",
+    "cost",
+    "basis",
+    "wash",
+    "sale",
+    "dividend",
+    "crypto",
+    "tax",
+    "reporting"
+   ]
+  ],
+  [
+   "tax-budgeting",
+   "Budgeting and Saving",
+   "taxes",
+   "Budgets, cash flow, emergency funds, debt payoff and saving goals.",
+   [
+    "budget",
+    "saving",
+    "cash",
+    "flow",
+    "expense",
+    "emergency",
+    "fund",
+    "debt",
+    "payoff",
+    "goal"
+   ]
+  ],
+  [
+   "tax-retirement",
+   "Retirement Planning",
+   "taxes",
+   "Retirement accounts, contribution limits, withdrawals and projecting retirement income.",
+   [
+    "retirement",
+    "401k",
+    "ira",
+    "roth",
+    "contribution",
+    "withdrawal",
+    "pension",
+    "social",
+    "security"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "tax-tax-return-prep-checklist",
+   "tax-filing",
+   "Tax Return Prep Checklist",
+   "Helps prepare and file your taxes: lists the forms and documents needed to prepare a tax return for a situation.",
+   "semantic",
+   [
+    [
+     "tax-preparer",
+     "primary"
+    ],
+    [
+     "tax-checker",
+     "checker"
+    ],
+    [
+     "tax-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tax-filing-deadline-tracker",
+   "tax-filing",
+   "Filing Deadline Tracker",
+   "Lists federal and state tax filing and estimated payment deadlines.",
+   "semantic",
+   [
+    [
+     "tax-preparer",
+     "primary"
+    ],
+    [
+     "tax-checker",
+     "checker"
+    ],
+    [
+     "tax-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tax-deduction-finder",
+   "tax-deductions",
+   "Deduction Finder",
+   "Finds deductions and credits that may apply and the evidence each needs.",
+   "semantic",
+   [
+    [
+     "tax-planner",
+     "primary"
+    ],
+    [
+     "tax-checker",
+     "checker"
+    ],
+    [
+     "tax-preparer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tax-capital-gains-calculator",
+   "tax-investment-tax",
+   "Capital Gains Calculator",
+   "Computes short and long term capital gains from trades with cost basis method stated.",
+   "procedural",
+   [
+    [
+     "tax-planner",
+     "primary"
+    ],
+    [
+     "tax-checker",
+     "checker"
+    ],
+    [
+     "tax-budget",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tax-budget-builder",
+   "tax-budgeting",
+   "Budget Builder",
+   "Builds a monthly budget from income and expenses and shows savings rate.",
+   "procedural",
+   [
+    [
+     "tax-budget",
+     "primary"
+    ],
+    [
+     "tax-checker",
+     "checker"
+    ],
+    [
+     "tax-retirement",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "tax-retirement-projection",
+   "tax-retirement",
+   "Retirement Projection",
+   "Projects retirement savings and income under stated assumptions.",
+   "semantic",
+   [
+    [
+     "tax-retirement",
+     "primary"
+    ],
+    [
+     "tax-checker",
+     "checker"
+    ],
+    [
+     "tax-preparer",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "tax-preparer": "Tax Preparation Agent",
+  "tax-planner": "Tax Planning Agent",
+  "tax-budget": "Budgeting Agent",
+  "tax-retirement": "Retirement Planning Agent",
+  "tax-checker": "Tax Checker Agent"
+ },
+ "mcp": [
+  [
+   "QuickBooks Online MCP",
+   null,
+   "Intuit QuickBooks Online MCP server: accounting records, accounts, customers, vendors, invoices, bills and journal entries.",
+   [],
+   "web-listed",
+   "https://github.com/intuit/quickbooks-online-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "taxfiling": "tax taxes return filing form w-2 1099 deadline irs prepare",
+  "taxdeductions": "deduction credit bracket itemized standard planning tax liability",
+  "taxinvestmenttax": "capital gain cost basis wash sale dividend crypto tax reporting",
+  "taxbudgeting": "budget saving cash flow expense emergency fund debt payoff goal",
+  "taxretirement": "retirement 401k ira roth contribution withdrawal pension social security"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "QuickBooks Online MCP": "repository exists (git ls-remote https://github.com/intuit/quickbooks-online-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read; writes to a ledger: context only here"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

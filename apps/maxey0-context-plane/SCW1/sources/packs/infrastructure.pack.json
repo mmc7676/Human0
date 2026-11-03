@@ -1,0 +1,382 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "infrastructure",
+ "topic": {
+  "id": "infrastructure",
+  "label": "Infrastructure",
+  "desc": "What software runs on: compute and runtimes, networking and DNS, infrastructure as code, containers and orchestration, and CI/CD pipelines."
+ },
+ "concepts": [
+  [
+   "inf-compute",
+   "Compute and Runtimes",
+   "infrastructure",
+   "Servers, virtual machines, serverless functions, edge workers and language runtimes, and sizing them.",
+   [
+    "compute",
+    "server",
+    "virtual",
+    "machine",
+    "serverless",
+    "function",
+    "worker",
+    "runtime",
+    "cpu",
+    "memory",
+    "sizing"
+   ]
+  ],
+  [
+   "inf-networking",
+   "Networking and DNS",
+   "infrastructure",
+   "Networks, DNS, load balancers, TLS certificates, firewalls and content delivery.",
+   [
+    "network",
+    "dns",
+    "load",
+    "balancer",
+    "tls",
+    "certificate",
+    "firewall",
+    "cdn",
+    "latency",
+    "subnet"
+   ]
+  ],
+  [
+   "inf-iac",
+   "Infrastructure as Code",
+   "infrastructure",
+   "Declaring infrastructure in code: Terraform, modules, providers, state files and drift.",
+   [
+    "terraform",
+    "infrastructure",
+    "code",
+    "module",
+    "provider",
+    "plan",
+    "apply",
+    "drift",
+    "declarative"
+   ]
+  ],
+  [
+   "inf-containers",
+   "Containers and Orchestration",
+   "infrastructure",
+   "Container images, registries, Kubernetes clusters, pods, deployments and scaling.",
+   [
+    "container",
+    "image",
+    "docker",
+    "kubernetes",
+    "cluster",
+    "pod",
+    "deployment",
+    "scaling",
+    "helm",
+    "registry"
+   ]
+  ],
+  [
+   "inf-cicd",
+   "CI/CD Pipelines",
+   "infrastructure",
+   "Continuous integration and delivery: build, test and deploy pipelines, artifacts and release gates.",
+   [
+    "pipeline",
+    "continuous",
+    "integration",
+    "delivery",
+    "build",
+    "test",
+    "deploy",
+    "artifact",
+    "release",
+    "gate",
+    "workflow"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "inf-compute-sizer",
+   "inf-compute",
+   "Compute Sizer",
+   "Sizes compute for a workload (CPU, memory, instances or functions) and estimates cost.",
+   "semantic",
+   [
+    [
+     "inf-compute",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-network",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-runtime-selector",
+   "inf-compute",
+   "Runtime Selector",
+   "Chooses a runtime (VM, container, serverless, edge) for a service and names the limits of each.",
+   "semantic",
+   [
+    [
+     "inf-compute",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-network",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-network-path-tracer",
+   "inf-networking",
+   "Network Path Tracer",
+   "Traces the network path of a request from client to service and names where it can fail.",
+   "procedural",
+   [
+    [
+     "inf-network",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-iac",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-tls-and-dns-checker",
+   "inf-networking",
+   "TLS and DNS Checker",
+   "Checks the DNS records and TLS certificate setup for a domain.",
+   "procedural",
+   [
+    [
+     "inf-network",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-iac",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-terraform-plan-reviewer",
+   "inf-iac",
+   "Terraform Plan Reviewer",
+   "Reviews an infrastructure plan for destructive changes, drift and security issues before it is applied.",
+   "semantic",
+   [
+    [
+     "inf-iac",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-container",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-module-designer",
+   "inf-iac",
+   "Module Designer",
+   "Designs reusable infrastructure modules with inputs, outputs and defaults.",
+   "procedural",
+   [
+    [
+     "inf-iac",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-container",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-kubernetes-manifest-reviewer",
+   "inf-containers",
+   "Kubernetes Manifest Reviewer",
+   "Reviews Kubernetes manifests for resource limits, probes, security context and scaling.",
+   "semantic",
+   [
+    [
+     "inf-container",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-cicd",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-container-image-planner",
+   "inf-containers",
+   "Container Image Planner",
+   "Plans a container image build: base image, layers, size and vulnerabilities.",
+   "procedural",
+   [
+    [
+     "inf-container",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-cicd",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-pipeline-designer",
+   "inf-cicd",
+   "Pipeline Designer",
+   "Designs a build, test and deploy pipeline with gates between stages.",
+   "procedural",
+   [
+    [
+     "inf-cicd",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-compute",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inf-failed-build-diagnoser",
+   "inf-cicd",
+   "Failed Build Diagnoser",
+   "Diagnoses a failed pipeline run from its logs and names the likely cause.",
+   "semantic",
+   [
+    [
+     "inf-cicd",
+     "primary"
+    ],
+    [
+     "inf-checker",
+     "checker"
+    ],
+    [
+     "inf-compute",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "inf-compute": "Compute Agent",
+  "inf-network": "Network Agent",
+  "inf-iac": "Infrastructure as Code Agent",
+  "inf-container": "Container Platform Agent",
+  "inf-cicd": "CI/CD Agent",
+  "inf-checker": "Infrastructure Checker Agent"
+ },
+ "mcp": [
+  [
+   "Cloudflare MCP",
+   null,
+   "Cloudflare MCP servers: Workers deployment and bindings, DNS, observability logs, edge compute and platform documentation.",
+   [],
+   "web-listed",
+   "https://github.com/cloudflare/mcp-server-cloudflare"
+  ],
+  [
+   "Terraform MCP",
+   null,
+   "HashiCorp Terraform MCP server: Terraform registry providers, modules and policies for infrastructure as code workflows.",
+   [],
+   "web-listed",
+   "https://github.com/hashicorp/terraform-mcp-server"
+  ],
+  [
+   "Kubernetes MCP Server",
+   null,
+   "Kubernetes MCP server: inspect and manage cluster resources, pods, deployments, namespaces, logs and Helm releases.",
+   [],
+   "web-listed",
+   "https://github.com/containers/kubernetes-mcp-server"
+  ],
+  [
+   "AWS MCP Servers",
+   null,
+   "AWS Labs MCP servers: AWS documentation, infrastructure as code, cloud compute, serverless, cost and pricing analysis.",
+   [],
+   "web-listed",
+   "https://github.com/awslabs/mcp"
+  ]
+ ],
+ "lexicon": {
+  "infcompute": "compute server virtual machine serverless function worker runtime cpu memory sizing",
+  "infnetworking": "network dns load balancer tls certificate firewall cdn latency subnet",
+  "infiac": "terraform infrastructure code module provider plan apply drift declarative",
+  "infcontainers": "container image docker kubernetes cluster pod deployment scaling helm registry",
+  "infcicd": "pipeline continuous integration delivery build test deploy artifact release gate workflow"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Cloudflare MCP": "repository exists (git ls-remote https://github.com/cloudflare/mcp-server-cloudflare, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Terraform MCP": "repository exists (git ls-remote https://github.com/hashicorp/terraform-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Kubernetes MCP Server": "repository exists (git ls-remote https://github.com/containers/kubernetes-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read",
+   "AWS MCP Servers": "repository exists (git ls-remote https://github.com/awslabs/mcp, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

@@ -1,0 +1,586 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "mechanical-engineering",
+ "topic": {
+  "id": "mechanical-engineering",
+  "label": "Mechanical Engineering",
+  "desc": "Mechanical Engineering: analysis and design of machines, structures, thermal-fluid systems and controls."
+ },
+ "concepts": [
+  [
+   "me-solid-mechanics",
+   "Statics and Solid Mechanics",
+   "mechanical-engineering",
+   "Forces, equilibrium, stress, strain and deflection in bars, beams, shafts and pressure vessels.",
+   [
+    "statics",
+    "equilibrium",
+    "free body diagram",
+    "stress",
+    "strain",
+    "beam",
+    "deflection",
+    "torsion"
+   ]
+  ],
+  [
+   "me-dynamics-vibration",
+   "Dynamics and Vibrations",
+   "mechanical-engineering",
+   "Kinematics and kinetics of particles, rigid bodies and mechanisms, and vibration of mechanical systems.",
+   [
+    "dynamics",
+    "kinematics",
+    "mechanism",
+    "vibration",
+    "natural frequency",
+    "damping",
+    "resonance",
+    "linkage"
+   ]
+  ],
+  [
+   "me-thermodynamics-fluids",
+   "Thermodynamics and Fluid Mechanics",
+   "mechanical-engineering",
+   "Energy conversion, power and refrigeration cycles, fluid statics and internal and external flows.",
+   [
+    "thermodynamics",
+    "cycle",
+    "efficiency",
+    "fluid",
+    "pressure",
+    "flow",
+    "pipe",
+    "turbine"
+   ]
+  ],
+  [
+   "me-heat-transfer",
+   "Heat Transfer",
+   "mechanical-engineering",
+   "Conduction, convection and radiation and the design of heat exchangers and thermal management.",
+   [
+    "heat transfer",
+    "conduction",
+    "convection",
+    "radiation",
+    "heat exchanger",
+    "fin",
+    "thermal resistance",
+    "temperature"
+   ]
+  ],
+  [
+   "me-machine-design",
+   "Machine Design and Manufacturing",
+   "mechanical-engineering",
+   "Design of machine elements, tolerancing, materials selection and manufacturing processes.",
+   [
+    "machine design",
+    "gear",
+    "bearing",
+    "fastener",
+    "tolerance",
+    "safety factor",
+    "manufacturing",
+    "cad"
+   ]
+  ],
+  [
+   "me-controls-mechatronics",
+   "Controls and Mechatronics",
+   "mechanical-engineering",
+   "Modelling and feedback control of dynamic systems with sensors, actuators and embedded code.",
+   [
+    "control",
+    "feedback",
+    "pid",
+    "transfer function",
+    "sensor",
+    "actuator",
+    "robot",
+    "stability"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "me-free-body-solver",
+   "me-solid-mechanics",
+   "Free Body Diagram Solver",
+   "Resolves forces and moments on rigid bodies and trusses and checks that every equilibrium equation sums to zero.",
+   "procedural",
+   [
+    [
+     "me-statics",
+     "primary"
+    ],
+    [
+     "me-units",
+     "checker"
+    ],
+    [
+     "me-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-beam-deflection-calculator",
+   "me-solid-mechanics",
+   "Beam Deflection Calculator",
+   "Computes shear, moment and deflection for beams and checks maxima against superposition tables.",
+   "procedural",
+   [
+    [
+     "me-statics",
+     "primary"
+    ],
+    [
+     "me-fea",
+     "checker"
+    ],
+    [
+     "me-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-fea-stress-analyzer",
+   "me-solid-mechanics",
+   "FEA Stress Analyzer",
+   "Runs finite element stress models of parts and checks mesh convergence and hand-calculation agreement.",
+   "procedural",
+   [
+    [
+     "me-fea",
+     "primary"
+    ],
+    [
+     "me-statics",
+     "checker"
+    ],
+    [
+     "me-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-mechanism-kinematics-solver",
+   "me-dynamics-vibration",
+   "Mechanism Kinematics Solver",
+   "Computes positions, velocities and accelerations of linkages and checks loop-closure equations.",
+   "procedural",
+   [
+    [
+     "me-dynamics",
+     "primary"
+    ],
+    [
+     "me-designer",
+     "checker"
+    ],
+    [
+     "me-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-modal-analyzer",
+   "me-dynamics-vibration",
+   "Modal Vibration Analyzer",
+   "Finds natural frequencies and mode shapes of multi-degree-of-freedom systems and checks them against FEA modal results.",
+   "procedural",
+   [
+    [
+     "me-dynamics",
+     "primary"
+    ],
+    [
+     "me-fea",
+     "checker"
+    ],
+    [
+     "me-controls",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-vibration-isolation-designer",
+   "me-dynamics-vibration",
+   "Vibration Isolation Designer",
+   "Selects stiffness and damping to isolate vibration and checks transmissibility at operating frequency.",
+   "semantic",
+   [
+    [
+     "me-dynamics",
+     "primary"
+    ],
+    [
+     "me-designer",
+     "checker"
+    ],
+    [
+     "me-controls",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-cycle-efficiency-calculator",
+   "me-thermodynamics-fluids",
+   "Cycle Efficiency Calculator",
+   "Analyses Rankine, Brayton and refrigeration cycles with property tables and checks first and second law balances.",
+   "procedural",
+   [
+    [
+     "me-thermofluids",
+     "primary"
+    ],
+    [
+     "me-units",
+     "checker"
+    ],
+    [
+     "me-heat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-pipe-flow-sizer",
+   "me-thermodynamics-fluids",
+   "Pipe Flow Sizer",
+   "Sizes pipes and pumps with Darcy friction and minor losses and checks Reynolds regime and head balance.",
+   "procedural",
+   [
+    [
+     "me-thermofluids",
+     "primary"
+    ],
+    [
+     "me-units",
+     "checker"
+    ],
+    [
+     "me-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-cfd-flow-checker",
+   "me-thermodynamics-fluids",
+   "CFD Flow Checker",
+   "Sets up computational flow simulations and checks mesh independence and conservation of mass and momentum.",
+   "procedural",
+   [
+    [
+     "me-thermofluids",
+     "primary"
+    ],
+    [
+     "me-fea",
+     "checker"
+    ],
+    [
+     "me-heat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-thermal-resistance-network",
+   "me-heat-transfer",
+   "Thermal Resistance Network Solver",
+   "Models conduction and convection paths as resistance networks and checks the heat balance at each node.",
+   "procedural",
+   [
+    [
+     "me-heat",
+     "primary"
+    ],
+    [
+     "me-units",
+     "checker"
+    ],
+    [
+     "me-thermofluids",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-heat-exchanger-sizer",
+   "me-heat-transfer",
+   "Heat Exchanger Sizer",
+   "Sizes exchangers by LMTD and effectiveness-NTU methods and checks both methods agree.",
+   "procedural",
+   [
+    [
+     "me-heat",
+     "primary"
+    ],
+    [
+     "me-thermofluids",
+     "checker"
+    ],
+    [
+     "me-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-electronics-cooling-designer",
+   "me-heat-transfer",
+   "Electronics Cooling Designer",
+   "Designs fins and airflow to keep component temperatures within limits and checks results with a transient thermal model.",
+   "semantic",
+   [
+    [
+     "me-heat",
+     "primary"
+    ],
+    [
+     "me-fea",
+     "checker"
+    ],
+    [
+     "me-controls",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-gear-bearing-selector",
+   "me-machine-design",
+   "Gear and Bearing Selector",
+   "Selects gears and bearings for load and life and checks bending, contact stress and L10 life.",
+   "procedural",
+   [
+    [
+     "me-designer",
+     "primary"
+    ],
+    [
+     "me-statics",
+     "checker"
+    ],
+    [
+     "me-manufacturing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-tolerance-stackup",
+   "me-machine-design",
+   "Tolerance Stack-up Analyzer",
+   "Computes worst-case and statistical tolerance stacks and checks fit requirements against GD and T callouts.",
+   "procedural",
+   [
+    [
+     "me-manufacturing",
+     "primary"
+    ],
+    [
+     "me-units",
+     "checker"
+    ],
+    [
+     "me-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-process-planner",
+   "me-machine-design",
+   "Manufacturing Process Planner",
+   "Chooses machining, casting or additive routes and checks cycle time, cost and achievable tolerance.",
+   "semantic",
+   [
+    [
+     "me-manufacturing",
+     "primary"
+    ],
+    [
+     "me-designer",
+     "checker"
+    ],
+    [
+     "me-fea",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-pid-tuner",
+   "me-controls-mechatronics",
+   "PID Controller Tuner",
+   "Tunes PID gains for a plant model and checks step response, overshoot and stability margins.",
+   "procedural",
+   [
+    [
+     "me-controls",
+     "primary"
+    ],
+    [
+     "me-dynamics",
+     "checker"
+    ],
+    [
+     "me-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-state-space-modeler",
+   "me-controls-mechatronics",
+   "State Space Modeler",
+   "Builds state space models from equations of motion and checks controllability and observability.",
+   "procedural",
+   [
+    [
+     "me-controls",
+     "primary"
+    ],
+    [
+     "me-dynamics",
+     "checker"
+    ],
+    [
+     "me-fea",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "me-robot-motion-planner",
+   "me-controls-mechatronics",
+   "Robot Motion Planner",
+   "Plans robot arm or mobile robot trajectories over ROS and checks joint limits and collision clearance.",
+   "procedural",
+   [
+    [
+     "me-controls",
+     "primary"
+    ],
+    [
+     "me-designer",
+     "checker"
+    ],
+    [
+     "me-dynamics",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "me-statics": "Statics and Solid Mechanics Agent",
+  "me-dynamics": "Dynamics and Vibration Agent",
+  "me-thermofluids": "Thermofluids Agent",
+  "me-heat": "Heat Transfer Agent",
+  "me-designer": "Machine Design Agent",
+  "me-controls": "Controls and Mechatronics Agent",
+  "me-manufacturing": "Manufacturing Engineer Agent",
+  "me-fea": "Finite Element Analyst",
+  "me-units": "Units and Standards Checker"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "sympy-mcp",
+   null,
+   "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "web-listed",
+   "https://github.com/sdiehl/sympy-mcp"
+  ],
+  [
+   "ros-mcp-server",
+   null,
+   "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+   [],
+   "web-listed",
+   "https://github.com/robotmcp/ros-mcp-server"
+  ],
+  [
+   "chuk-mcp-physics",
+   null,
+   "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "web-listed",
+   "https://github.com/IBM/chuk-mcp-physics"
+  ]
+ ],
+ "lexicon": {
+  "me-solid": "statics equilibrium free stress strain beam deflection torsion shear",
+  "me-motion": "dynamics kinematics mechanism vibration frequency damping resonance linkage modal transmissibility",
+  "me-energy": "thermodynamic cycle efficiency fluid pressure flow pipe turbine rankine pump",
+  "me-thermal": "heat conduction convection radiation exchanger fin resistance temperature cooling",
+  "me-design": "machine gear bearing fastener tolerance safety manufacturing cad machining",
+  "me-control": "control feedback pid transfer sensor actuator robot stability"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

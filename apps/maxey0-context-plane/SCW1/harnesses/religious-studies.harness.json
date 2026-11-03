@@ -1,0 +1,635 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "religious-studies",
+  "label": "Religious Studies",
+  "desc": "Religious Studies: the academic, non-confessional study of religious traditions, texts, practices and theories of religion."
+ },
+ "concepts": [
+  {
+   "id": "rel-philosophy-ethics",
+   "label": "Philosophy of Religion and Religious Ethics",
+   "desc": "Arguments about God, evil, religious experience and the moral reasoning of religious traditions.",
+   "keywords": [
+    "philosophy",
+    "argument",
+    "theodicy",
+    "experience",
+    "ethics",
+    "moral",
+    "reason"
+   ],
+   "topic": "religious-studies",
+   "source": "religious-studies",
+   "related": []
+  },
+  {
+   "id": "rel-religion-society",
+   "label": "Religion, Politics and Society",
+   "desc": "Religion in public life: secularism, law, nationalism, migration, gender and new religious movements.",
+   "keywords": [
+    "secularism",
+    "politics",
+    "law",
+    "nationalism",
+    "gender",
+    "movement",
+    "pluralism"
+   ],
+   "topic": "religious-studies",
+   "source": "religious-studies",
+   "related": []
+  },
+  {
+   "id": "rel-ritual-practice",
+   "label": "Ritual, Practice and Material Religion",
+   "desc": "Ritual, pilgrimage, sacred space, objects and the bodily practices through which religion is lived, studied ethnographically.",
+   "keywords": [
+    "ritual",
+    "pilgrimage",
+    "sacred space",
+    "material",
+    "practice",
+    "fieldwork",
+    "ethnography"
+   ],
+   "topic": "religious-studies",
+   "source": "religious-studies",
+   "related": []
+  },
+  {
+   "id": "rel-scripture-texts",
+   "label": "Scripture and Textual Interpretation",
+   "desc": "Critical study of sacred texts: canon formation, manuscripts, translation and historical-critical and literary interpretation.",
+   "keywords": [
+    "scripture",
+    "canon",
+    "manuscript",
+    "exegesis",
+    "hermeneutics",
+    "translation",
+    "commentary"
+   ],
+   "topic": "religious-studies",
+   "source": "religious-studies",
+   "related": []
+  },
+  {
+   "id": "rel-theory-method",
+   "label": "Theory and Method in the Study of Religion",
+   "desc": "Definitions of religion and the analytic approaches of sociology, anthropology, psychology and phenomenology used to study it.",
+   "keywords": [
+    "definition",
+    "phenomenology",
+    "functionalism",
+    "secularization",
+    "insider",
+    "outsider",
+    "method"
+   ],
+   "topic": "religious-studies",
+   "source": "religious-studies",
+   "related": []
+  },
+  {
+   "id": "rel-world-traditions",
+   "label": "World Religious Traditions",
+   "desc": "Comparative study of Judaism, Christianity, Islam, Hinduism, Buddhism, East Asian and Indigenous traditions in their historical development.",
+   "keywords": [
+    "tradition",
+    "judaism",
+    "christianity",
+    "islam",
+    "hinduism",
+    "buddhism",
+    "indigenous",
+    "comparative"
+   ],
+   "topic": "religious-studies",
+   "source": "religious-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "rel-argument-map",
+   "concept": "rel-philosophy-ethics",
+   "label": "Religious Argument Mapper",
+   "desc": "Maps premises and objections of an argument such as the cosmological argument or the problem of evil, checked for validity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1534",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1535",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-ethics-compare",
+   "concept": "rel-philosophy-ethics",
+   "label": "Religious Ethics Comparator",
+   "desc": "Compares the moral reasoning of traditions on an issue, checked against primary sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1534",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1538",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-experience-review",
+   "concept": "rel-philosophy-ethics",
+   "label": "Religious Experience Reviewer",
+   "desc": "Summarizes philosophical and psychological accounts of religious experience, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1536",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1534",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1539",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-church-state",
+   "concept": "rel-religion-society",
+   "label": "Religion and Law Analyzer",
+   "desc": "Analyzes how a legal system regulates religion, checked against the cited constitutional or statutory text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1540",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1535",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-movement-profile",
+   "concept": "rel-religion-society",
+   "label": "New Religious Movement Profiler",
+   "desc": "Profiles a new religious movement with origins, membership and controversies, checked against scholarly sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1539",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1540",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-pluralism-survey",
+   "concept": "rel-religion-society",
+   "label": "Religious Pluralism Survey Analyzer",
+   "desc": "Summarizes survey data on affiliation and belief by country, checked against the published dataset.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1535",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-fieldwork-plan",
+   "concept": "rel-ritual-practice",
+   "label": "Religious Fieldwork Planner",
+   "desc": "Plans ethnographic fieldwork at a religious site with consent and access steps, checked against research ethics requirements.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1539",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1534",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1535",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-ritual-analysis",
+   "concept": "rel-ritual-practice",
+   "label": "Ritual Structure Analyzer",
+   "desc": "Analyzes a ritual into phases, roles and symbols using ritual theory, checked against ethnographic descriptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1539",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1535",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-sacred-space",
+   "concept": "rel-ritual-practice",
+   "label": "Sacred Space Describer",
+   "desc": "Describes the layout and use of a sacred site and its pilgrimage routes, checked against site documentation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1539",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1540",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-canon-history",
+   "concept": "rel-scripture-texts",
+   "label": "Canon Formation Tracer",
+   "desc": "Traces when and how a text entered a canon, checked against dated manuscript and council evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1540",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1538",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-passage-exegesis",
+   "concept": "rel-scripture-texts",
+   "label": "Passage Exegesis Builder",
+   "desc": "Produces a historical-critical reading of a passage with context, genre and variants, checked against scholarly commentary.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1538",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1541",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1540",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-translation-compare",
+   "concept": "rel-scripture-texts",
+   "label": "Scripture Translation Comparator",
+   "desc": "Aligns several translations of a passage with the source language and flags divergent renderings, checked by a sacred languages review.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1541",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1538",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-definition-compare",
+   "concept": "rel-theory-method",
+   "label": "Definition of Religion Comparator",
+   "desc": "Compares substantive and functional definitions of religion against a case and reports which features each captures, checked against cited theorists.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1535",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-method-audit",
+   "concept": "rel-theory-method",
+   "label": "Insider-Outsider Method Auditor",
+   "desc": "Reviews a study for confessional bias and insider-outsider positioning, checked against stated disciplinary norms.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1535",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1539",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1534",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-secularization-review",
+   "concept": "rel-theory-method",
+   "label": "Secularization Thesis Reviewer",
+   "desc": "Summarizes evidence for and against secularization theories in a region, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1536",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1535",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1540",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-cross-tradition",
+   "concept": "rel-world-traditions",
+   "label": "Cross-Tradition Theme Comparator",
+   "desc": "Compares how several traditions treat a theme such as death or salvation, checked for flattening of differences.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1537",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1535",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1534",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-timeline-builder",
+   "concept": "rel-world-traditions",
+   "label": "Religious History Timeline Builder",
+   "desc": "Builds a dated timeline of events in a tradition, with every date checked against a cited source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1540",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-tradition-profile",
+   "concept": "rel-world-traditions",
+   "label": "Tradition Profile Builder",
+   "desc": "Builds a profile of a tradition with founders, schools, texts and practices, checked against reference scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1537",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1540",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1538",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1534",
+   "name": "Philosophy of Religion Agent",
+   "legacy_key": "rel-phil",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1535",
+   "name": "Theory and Method Agent",
+   "legacy_key": "rel-theory",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1536",
+   "name": "Religion Literature Agent",
+   "legacy_key": "rel-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1537",
+   "name": "Comparative Religion Agent",
+   "legacy_key": "rel-comp",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1538",
+   "name": "Scripture and Text Agent",
+   "legacy_key": "rel-text",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1539",
+   "name": "Ethnography of Religion Agent",
+   "legacy_key": "rel-ethno",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1540",
+   "name": "Religious History Agent",
+   "legacy_key": "rel-hist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1541",
+   "name": "Sacred Languages Agent",
+   "legacy_key": "rel-lang",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "rel-theory": "theory method definition phenomenology secularization functional",
+  "rel-text": "scripture passage exegesis canon manuscript translation commentary",
+  "rel-tradition": "tradition judaism christianity islam hinduism buddhism comparative",
+  "rel-practice": "ritual pilgrimage sacred ethnography fieldwork site",
+  "rel-society": "law pluralism movement politics secularism gender"
+ },
+ "sources": [
+  "religious-studies"
+ ]
+}

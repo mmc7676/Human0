@@ -1,0 +1,306 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "fixed-income",
+  "label": "Bonds and Fixed Income",
+  "desc": "Debt securities: government, municipal and corporate bonds, yield and duration, credit ratings and spreads, and securitized products."
+ },
+ "concepts": [
+  {
+   "id": "fi-credit",
+   "label": "Corporate Bonds and Credit",
+   "desc": "Corporate bonds, credit ratings, spreads, high yield, covenants and default risk.",
+   "keywords": [
+    "corporate",
+    "bond",
+    "credit",
+    "rating",
+    "spread",
+    "high",
+    "yield",
+    "covenant",
+    "default",
+    "recovery"
+   ],
+   "topic": "fixed-income",
+   "source": "fixed-income",
+   "related": []
+  },
+  {
+   "id": "fi-govt",
+   "label": "Government Bonds and the Yield Curve",
+   "desc": "Treasuries and sovereign bonds, the yield curve, inflation-linked bonds and interest rate expectations.",
+   "keywords": [
+    "treasury",
+    "government",
+    "bond",
+    "sovereign",
+    "yield",
+    "curve",
+    "tips",
+    "inflation",
+    "interest",
+    "rate"
+   ],
+   "topic": "fixed-income",
+   "source": "fixed-income",
+   "related": []
+  },
+  {
+   "id": "fi-math",
+   "label": "Yield, Duration and Convexity",
+   "desc": "Bond pricing, yield to maturity, duration, convexity and interest rate risk.",
+   "keywords": [
+    "bond",
+    "price",
+    "yield",
+    "maturity",
+    "duration",
+    "convexity",
+    "coupon",
+    "interest",
+    "rate",
+    "risk"
+   ],
+   "topic": "fixed-income",
+   "source": "fixed-income",
+   "related": []
+  },
+  {
+   "id": "fi-muni",
+   "label": "Municipal Bonds",
+   "desc": "Bonds issued by states and cities: general obligation and revenue bonds and tax exemption.",
+   "keywords": [
+    "municipal",
+    "muni",
+    "bond",
+    "general",
+    "obligation",
+    "revenue",
+    "tax",
+    "exempt",
+    "city",
+    "state"
+   ],
+   "topic": "fixed-income",
+   "source": "fixed-income",
+   "related": []
+  },
+  {
+   "id": "fi-securitized",
+   "label": "Securitized Products",
+   "desc": "Mortgage-backed and asset-backed securities, CLOs, tranches and prepayment.",
+   "keywords": [
+    "mortgage",
+    "backed",
+    "asset",
+    "securitized",
+    "mbs",
+    "abs",
+    "clo",
+    "tranche",
+    "prepayment"
+   ],
+   "topic": "fixed-income",
+   "source": "fixed-income",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "fi-credit-analysis",
+   "concept": "fi-credit",
+   "label": "Credit Analysis",
+   "desc": "Analyzes an issuer's credit: leverage, coverage, covenants and rating, with spread context.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1736",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1737",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1738",
+     "role": "support"
+    }
+   ],
+   "source": "fixed-income"
+  },
+  {
+   "id": "fi-yield-curve-reader",
+   "concept": "fi-govt",
+   "label": "Yield Curve Reader",
+   "desc": "Reads the yield curve's shape and explains what it implies about rates and growth.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1739",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1737",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1736",
+     "role": "support"
+    }
+   ],
+   "source": "fixed-income"
+  },
+  {
+   "id": "fi-bond-pricer",
+   "concept": "fi-math",
+   "label": "Bond Pricer",
+   "desc": "Prices a bond from its cash flows and yield and computes duration and convexity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1739",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1737",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1736",
+     "role": "support"
+    }
+   ],
+   "source": "fixed-income"
+  },
+  {
+   "id": "fi-rate-shock-estimator",
+   "concept": "fi-math",
+   "label": "Rate Shock Estimator",
+   "desc": "Estimates a bond portfolio's price change for a rate shock.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1739",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1737",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1736",
+     "role": "support"
+    }
+   ],
+   "source": "fixed-income"
+  },
+  {
+   "id": "fi-muni-tax-equivalent-yield",
+   "concept": "fi-muni",
+   "label": "Muni Tax-Equivalent Yield",
+   "desc": "Computes a municipal bond's tax-equivalent yield for an investor's tax bracket.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1738",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1737",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1740",
+     "role": "support"
+    }
+   ],
+   "source": "fixed-income"
+  },
+  {
+   "id": "fi-tranche-structure-explainer",
+   "concept": "fi-securitized",
+   "label": "Tranche Structure Explainer",
+   "desc": "Explains a securitization's tranches, waterfall and prepayment risk.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1740",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1737",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1739",
+     "role": "support"
+    }
+   ],
+   "source": "fixed-income"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1736",
+   "name": "Credit Analyst Agent",
+   "legacy_key": "fi-credit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1737",
+   "name": "Fixed Income Checker Agent",
+   "legacy_key": "fi-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1738",
+   "name": "Municipal Bond Agent",
+   "legacy_key": "fi-muni",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1739",
+   "name": "Rates Agent",
+   "legacy_key": "fi-rates",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1740",
+   "name": "Securitized Products Agent",
+   "legacy_key": "fi-struct",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "FRED MCP",
+   "desc": "FRED MCP server: Federal Reserve Economic Data series, interest rates, inflation, GDP, employment and economic indicators.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/stefanoamorelli/fred-mcp-server",
+   "id": "local:fred-mcp",
+   "origins": [
+    "financial-data",
+    "fixed-income"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:fred-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "figovt": "treasury government bond sovereign yield curve tips inflation interest rate",
+  "fimath": "bond price yield maturity duration convexity coupon interest rate risk",
+  "ficredit": "corporate bond credit rating spread high yield covenant default recovery",
+  "fimuni": "municipal muni bond general obligation revenue tax exempt city state",
+  "fisecuritized": "mortgage backed asset securitized mbs abs clo tranche prepayment"
+ },
+ "sources": [
+  "fixed-income"
+ ]
+}

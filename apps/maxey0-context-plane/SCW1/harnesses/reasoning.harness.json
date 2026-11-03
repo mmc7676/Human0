@@ -1,0 +1,1089 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "reasoning",
+  "label": "Reasoning",
+  "desc": "Reasoning as a set of checkable skills: logic, argument analysis, causal and probabilistic reasoning, decisions under uncertainty, planning, abduction and self-verification. Extends the base Reasoning topic."
+ },
+ "concepts": [
+  {
+   "id": "rn-abduction",
+   "label": "Abductive and Analogical Reasoning",
+   "desc": "Inference to the best explanation and reasoning by analogy: generating rivals, comparing them and stating where an analogy breaks.",
+   "keywords": [
+    "abduction",
+    "hypothesis",
+    "explanation",
+    "analogy",
+    "rival"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": []
+  },
+  {
+   "id": "rn-argument",
+   "label": "Argument Analysis",
+   "desc": "Taking apart an argument into premises, conclusion and hidden assumptions, and naming fallacies without name-calling.",
+   "keywords": [
+    "argument",
+    "premise",
+    "conclusion",
+    "fallacy",
+    "assumption"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": []
+  },
+  {
+   "id": "rn-calibration",
+   "label": "Self-Verification and Calibration",
+   "desc": "Checking one's own reasoning: step audits, confidence calibration, adversarial review and knowing when to stop or ask.",
+   "keywords": [
+    "calibration",
+    "verification",
+    "audit",
+    "confidence",
+    "overconfidence",
+    "forecast",
+    "forecasts",
+    "calibrated",
+    "brier"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": []
+  },
+  {
+   "id": "rn-causal",
+   "label": "Causal Reasoning",
+   "desc": "Telling correlation from cause: confounders, interventions, counterfactuals and causal diagrams.",
+   "keywords": [
+    "causal",
+    "confounder",
+    "intervention",
+    "counterfactual",
+    "diagram"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": []
+  },
+  {
+   "id": "rn-decision",
+   "label": "Decision Making under Uncertainty",
+   "desc": "Choosing among options when outcomes are uncertain: expected value, risk, regret, reversibility and value of information.",
+   "keywords": [
+    "decision",
+    "utility",
+    "risk",
+    "regret",
+    "option"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": [
+    "mse-decision-analysis"
+   ]
+  },
+  {
+   "id": "rn-logic",
+   "label": "Logic and Inference",
+   "desc": "Formal and informal logic: valid and sound arguments, propositional and predicate logic, proof steps and counterexamples.",
+   "keywords": [
+    "logic",
+    "inference",
+    "proof",
+    "counterexample",
+    "validity"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": [
+    "phil-logic"
+   ]
+  },
+  {
+   "id": "rn-planning",
+   "label": "Planning and Problem Decomposition",
+   "desc": "Breaking a goal into steps, ordering by dependency, finding the critical path and planning for failure.",
+   "keywords": [
+    "planning",
+    "decomposition",
+    "dependency",
+    "subgoal",
+    "contingency",
+    "goal",
+    "critical",
+    "milestone",
+    "prerequisite",
+    "dependencies"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": []
+  },
+  {
+   "id": "rn-probabilistic",
+   "label": "Probabilistic and Bayesian Reasoning",
+   "desc": "Updating beliefs with evidence: priors, likelihoods, base rates, Bayes rule and the common errors people make with probability.",
+   "keywords": [
+    "probability",
+    "bayes",
+    "prior",
+    "likelihood",
+    "baserate"
+   ],
+   "topic": "reasoning",
+   "source": "reasoning",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "rn-analogy-tester",
+   "concept": "rn-abduction",
+   "label": "Analogy Tester",
+   "desc": "Maps the parts of an analogy one to one and lists where the comparison fails before it is used as evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey934",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey936",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-best-explanation-ranker",
+   "concept": "rn-abduction",
+   "label": "Best Explanation Ranker",
+   "desc": "Ranks explanations by fit, simplicity and prior plausibility and says what new fact would reverse the ranking.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey934",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-explanation-ranker",
+   "concept": "rn-abduction",
+   "label": "Explanation Ranker",
+   "desc": "Scores rival explanations on fit, simplicity and prior plausibility and says which new observation would separate them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey939",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey934",
+     "role": "support"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-hypothesis-generator",
+   "concept": "rn-abduction",
+   "label": "Rival Hypothesis Generator",
+   "desc": "Produces several competing explanations for an observation and the test that would separate them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey934",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey940",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-argument-mapper",
+   "concept": "rn-argument",
+   "label": "Argument Mapper",
+   "desc": "Maps premises, intermediate claims and the conclusion as a tree and marks which premises carry the most weight.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey936",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1589",
+     "role": "support"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-fallacy-detector",
+   "concept": "rn-argument",
+   "label": "Fallacy Detector",
+   "desc": "Finds reasoning errors such as equivocation, false dilemma or circularity and quotes the sentence where each occurs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey936",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1589",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-hidden-assumption-finder",
+   "concept": "rn-argument",
+   "label": "Hidden Assumption Finder",
+   "desc": "States the unstated premises an argument needs and asks which of them the audience would reject.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey936",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey943",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-steelman-writer",
+   "concept": "rn-argument",
+   "label": "Steelman Writer",
+   "desc": "Rewrites an opposing argument in its strongest honest form before it is answered and checks the original author would accept it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey936",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1589",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-adversarial-reviewer",
+   "concept": "rn-calibration",
+   "label": "Adversarial Reviewer",
+   "desc": "Argues the strongest case against a conclusion and reports which objections the original reasoning cannot answer.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey935",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey936",
+     "role": "support"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-confidence-calibrator",
+   "concept": "rn-calibration",
+   "label": "Confidence Calibrator",
+   "desc": "Compares stated confidence with outcomes in a track record and recommends adjusting up or down.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey937",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey938",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey935",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-step-auditor",
+   "concept": "rn-calibration",
+   "label": "Reasoning Step Auditor",
+   "desc": "Re-reads a chain of reasoning step by step, marks unsupported jumps and arithmetic slips and gives a corrected chain.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey937",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1589",
+     "role": "support"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-stop-or-ask-judge",
+   "concept": "rn-calibration",
+   "label": "Stop or Ask Judge",
+   "desc": "Decides whether to continue, ask for missing information or hand the question to a person, and says why.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey937",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey943",
+     "role": "support"
+    },
+    {
+     "key": "Maxey944",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-causal-diagram-builder",
+   "concept": "rn-causal",
+   "label": "Causal Diagram Builder",
+   "desc": "Draws a causal graph of the variables, marks confounders and mediators and says what data would test each arrow.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey940",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-confounder-hunter",
+   "concept": "rn-causal",
+   "label": "Confounder Hunter",
+   "desc": "Lists third factors that could explain an observed association and how each could be measured or controlled.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey940",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey936",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-counterfactual-analyst",
+   "concept": "rn-causal",
+   "label": "Counterfactual Analyst",
+   "desc": "Asks what would have happened without the intervention and says which parts of that answer are data and which are assumption.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey940",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-intervention-designer",
+   "concept": "rn-causal",
+   "label": "Intervention Designer",
+   "desc": "Proposes an experiment or natural experiment that could separate cause from correlation and lists what could still confound it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey940",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey939",
+     "role": "support"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-expected-value-calculator",
+   "concept": "rn-decision",
+   "label": "Expected Value Calculator",
+   "desc": "Computes expected value and downside for each option from probabilities and payoffs and flags numbers that are guesses.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey943",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-game-analysis",
+   "concept": "rn-decision",
+   "label": "Game and Incentive Analyst",
+   "desc": "Maps players, options and payoffs, finds stable outcomes and says how the answer changes if players cooperate or deceive.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey945",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey943",
+     "role": "support"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-option-evaluator",
+   "concept": "rn-decision",
+   "label": "Option Evaluator",
+   "desc": "Scores options on stated criteria with weights, shows how the ranking changes when the weights change and names the decision rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey943",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey944",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-reversibility-assessor",
+   "concept": "rn-decision",
+   "label": "Reversibility Assessor",
+   "desc": "Separates choices that can be undone cheaply from those that cannot and recommends how much evidence each deserves.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey943",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey944",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-consistency-checker",
+   "concept": "rn-logic",
+   "label": "Consistency Checker",
+   "desc": "Checks a set of statements for contradiction, shows the smallest conflicting subset and suggests which statement to drop.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey946",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1589",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey935",
+     "role": "support"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-formalizer",
+   "concept": "rn-logic",
+   "label": "Natural Language Formalizer",
+   "desc": "Rewrites an English statement in logic notation and lists the ambiguities that had to be resolved to do it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1589",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey936",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey935",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-proof-sketcher",
+   "concept": "rn-logic",
+   "label": "Proof Sketcher",
+   "desc": "Writes a proof as numbered steps with the justification for each and marks any step that is only plausible.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1589",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    },
+    {
+     "key": "Maxey937",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-validity-checker",
+   "concept": "rn-logic",
+   "label": "Validity Checker",
+   "desc": "Checks whether a conclusion follows from its premises, shows the inference rule used and builds a counterexample when it does not.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1589",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-contingency-planner",
+   "concept": "rn-planning",
+   "label": "Contingency Planner",
+   "desc": "Lists how each step can fail, the early signal and the fallback, so the plan survives its first surprise.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey944",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey943",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-critical-path-planner",
+   "concept": "rn-planning",
+   "label": "Dependency and Critical Path Planner",
+   "desc": "Orders tasks by dependency, finds the critical path and shows which delay moves the finish date.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey944",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-goal-decomposer",
+   "concept": "rn-planning",
+   "label": "Goal Decomposer",
+   "desc": "Breaks a goal into subgoals and tasks with a done-test for each so progress can be checked.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey944",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey943",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-scenario-builder",
+   "concept": "rn-planning",
+   "label": "Scenario Planner",
+   "desc": "Builds a few distinct futures from the main uncertainties, tests a plan against each and names early signals to watch.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey947",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey944",
+     "role": "support"
+    },
+    {
+     "key": "Maxey948",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-base-rate-checker",
+   "concept": "rn-probabilistic",
+   "label": "Base Rate Checker",
+   "desc": "Finds the base rate a claim ignores and recomputes the probability with it, for example in a test with false positives.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey938",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey935",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-bayes-updater",
+   "concept": "rn-probabilistic",
+   "label": "Bayesian Updater",
+   "desc": "Combines a prior with new evidence by Bayes rule, shows the arithmetic and reports how much the belief moved.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey938",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey942",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-forecast-builder",
+   "concept": "rn-probabilistic",
+   "label": "Forecast Builder",
+   "desc": "Builds a probability forecast from base rates and evidence, states the reference class used and the update that would change it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey948",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey938",
+     "role": "support"
+    },
+    {
+     "key": "Maxey935",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  },
+  {
+   "id": "rn-probability-estimator",
+   "concept": "rn-probabilistic",
+   "label": "Probability Estimator",
+   "desc": "Turns a forecasting question into a number by reference classes and adjustments and records the reasoning behind each adjustment.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey938",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey937",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey943",
+     "role": "support"
+    }
+   ],
+   "source": "reasoning"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1589",
+   "name": "Logic Agent",
+   "legacy_key": "rn-logician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey934",
+   "name": "Abductive Reasoning Agent",
+   "legacy_key": "rn-abductive-reasoner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey935",
+   "name": "Adversarial Reviewer Agent",
+   "legacy_key": "rn-red-teamer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey936",
+   "name": "Argument Analysis Agent",
+   "legacy_key": "rn-argument-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey937",
+   "name": "Calibration Agent",
+   "legacy_key": "rn-calibrator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey938",
+   "name": "Bayesian Reasoning Agent",
+   "legacy_key": "rn-bayesian-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey939",
+   "name": "Hypothesis Ranking Agent",
+   "legacy_key": "rn-hypothesis-ranker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey940",
+   "name": "Causal Reasoning Agent",
+   "legacy_key": "rn-causal-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey942",
+   "name": "Reasoning Explainer Agent",
+   "legacy_key": "rn-explainer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey943",
+   "name": "Decision Analysis Agent",
+   "legacy_key": "rn-decision-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey944",
+   "name": "Planning Agent",
+   "legacy_key": "rn-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey945",
+   "name": "Game Theory Agent",
+   "legacy_key": "rn-game-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey946",
+   "name": "Model Checking Agent",
+   "legacy_key": "rn-model-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey947",
+   "name": "Scenario Planning Agent",
+   "legacy_key": "rn-scenario-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey948",
+   "name": "Forecasting Agent",
+   "legacy_key": "rn-forecaster",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "name": "Mantic",
+   "desc": "Explore judgemental forecasts",
+   "tools": [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "origins": [
+    "economics",
+    "international-relations",
+    "management-science-and-engineering",
+    "political-science",
+    "public-policy",
+    "reasoning"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Sequential Thinking",
+   "desc": "Reference MCP server for dynamic and reflective problem-solving through thought sequences",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers",
+   "id": "local:sequential-thinking",
+   "origins": [
+    "reasoning"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "ccc1bcfc-193c-44b7-b443-9511aac18403",
+  "local:sequential-thinking"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "rnlogic": "logic inference proof premise conclusion validity counterexample notation consistency",
+  "rnargument": "argument fallacy assumption equivocation circularity dilemma steelman",
+  "rncausal": "causal mediator counterfactual intervention association diagram",
+  "rnprob": "bayes likelihood base probability forecast baserate probabilistic bayesian",
+  "rndecision": "decision utility expected regret option reversibility making uncertainty",
+  "rnplan": "subgoal decomposition critical contingency fallback goal milestone prerequisite dependencies planning distinct",
+  "rnabduct": "abduction rival analogy explanation abductive analogical",
+  "rncalib": "overconfidence adversarial calibrated brier self unsupported arithmetic calibrator stated judge whether"
+ },
+ "sources": [
+  "reasoning"
+ ]
+}

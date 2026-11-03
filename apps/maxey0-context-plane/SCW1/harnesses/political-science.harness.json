@@ -1,0 +1,723 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "political-science",
+  "label": "Political Science",
+  "desc": "Political Science: the study of power, institutions, behaviour, conflict and policy within and between states."
+ },
+ "concepts": [
+  {
+   "id": "polisci-comparative-politics",
+   "label": "Comparative Politics",
+   "desc": "Regimes, parties, states and political change compared across countries.",
+   "keywords": [
+    "comparative",
+    "regime",
+    "authoritarian",
+    "party system",
+    "state capacity",
+    "democratization",
+    "federalism",
+    "case study"
+   ],
+   "topic": "political-science",
+   "source": "political-science",
+   "related": []
+  },
+  {
+   "id": "polisci-elections-behavior",
+   "label": "Elections, Institutions and Behavior",
+   "desc": "Voting, public opinion, legislatures, courts and the rules that shape political choices.",
+   "keywords": [
+    "election",
+    "voting",
+    "public opinion",
+    "legislature",
+    "electoral system",
+    "turnout",
+    "polarization",
+    "district"
+   ],
+   "topic": "political-science",
+   "source": "political-science",
+   "related": []
+  },
+  {
+   "id": "polisci-international-relations",
+   "label": "International Politics",
+   "desc": "War, peace, cooperation, international institutions and the global political economy.",
+   "keywords": [
+    "international relations",
+    "conflict",
+    "war",
+    "alliance",
+    "institution",
+    "trade",
+    "realism",
+    "security"
+   ],
+   "topic": "political-science",
+   "source": "political-science",
+   "related": []
+  },
+  {
+   "id": "polisci-political-methodology",
+   "label": "Political Methodology",
+   "desc": "Research design, causal inference, surveys, text-as-data and statistics for political questions.",
+   "keywords": [
+    "methodology",
+    "causal inference",
+    "regression",
+    "survey",
+    "experiment",
+    "text as data",
+    "dataset",
+    "statistics"
+   ],
+   "topic": "political-science",
+   "source": "political-science",
+   "related": []
+  },
+  {
+   "id": "polisci-political-theory",
+   "label": "Political Theory",
+   "desc": "Normative and historical theories of legitimacy, justice, democracy, rights and authority.",
+   "keywords": [
+    "political theory",
+    "democracy",
+    "legitimacy",
+    "justice",
+    "rights",
+    "authority",
+    "liberalism",
+    "sovereignty"
+   ],
+   "topic": "political-science",
+   "source": "political-science",
+   "related": []
+  },
+  {
+   "id": "polisci-public-policy",
+   "label": "Public Policy and Administration",
+   "desc": "How policy is made, implemented and evaluated by governments and bureaucracies.",
+   "keywords": [
+    "policy",
+    "public administration",
+    "bureaucracy",
+    "implementation",
+    "evaluation",
+    "agenda",
+    "regulation",
+    "budget"
+   ],
+   "topic": "political-science",
+   "source": "political-science",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "polisci-case-comparison-designer",
+   "concept": "polisci-comparative-politics",
+   "label": "Case Comparison Designer",
+   "desc": "Selects cases using most-similar or most-different designs and checks that controls are actually matched.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1507",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1509",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-foreign-press-analyzer",
+   "concept": "polisci-comparative-politics",
+   "label": "Foreign Press Analyzer",
+   "desc": "Translates and summarises foreign-language political coverage and checks the translation by back-translation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1510",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1507",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1511",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-regime-classifier",
+   "concept": "polisci-comparative-politics",
+   "label": "Regime Type Classifier",
+   "desc": "Classifies regimes with established democracy indices and checks classification against multiple datasets.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1507",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1510",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-district-map-analyzer",
+   "concept": "polisci-elections-behavior",
+   "label": "District Map Analyzer",
+   "desc": "Analyses district boundaries for compactness and partisan bias and checks metrics on the geographic data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1512",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1513",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-electoral-system-simulator",
+   "concept": "polisci-elections-behavior",
+   "label": "Electoral System Simulator",
+   "desc": "Converts vote shares into seats under different electoral rules and checks totals and disproportionality indices.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1513",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1512",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-opinion-poll-analyzer",
+   "concept": "polisci-elections-behavior",
+   "label": "Opinion Poll Analyzer",
+   "desc": "Weights and aggregates opinion polls and checks margins of error and house effects.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1513",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1514",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-conflict-event-analyzer",
+   "concept": "polisci-international-relations",
+   "label": "Conflict Event Analyzer",
+   "desc": "Codes and maps conflict events from reports and checks codings against an event dataset.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1511",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1512",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1510",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-geopolitical-forecaster",
+   "concept": "polisci-international-relations",
+   "label": "Geopolitical Forecaster",
+   "desc": "Produces probabilistic forecasts on international events and checks them with calibration and Brier scores.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1514",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1511",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-ir-theory-applier",
+   "concept": "polisci-international-relations",
+   "label": "IR Theory Applier",
+   "desc": "Explains a foreign policy event through realist, liberal and constructivist lenses and checks each against evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1511",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1509",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1515",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-causal-design-reviewer",
+   "concept": "polisci-political-methodology",
+   "label": "Causal Design Reviewer",
+   "desc": "Assesses identification strategies such as difference-in-differences and regression discontinuity and checks assumptions with placebo tests.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1508",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1515",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1513",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-political-dataset-query",
+   "concept": "polisci-political-methodology",
+   "label": "Political Dataset Query",
+   "desc": "Queries election and country-year datasets with SQL and checks merges and counts against codebooks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1508",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1507",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1512",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-survey-experiment-builder",
+   "concept": "polisci-political-methodology",
+   "label": "Survey Experiment Builder",
+   "desc": "Designs survey experiments with randomised treatments and checks balance and power.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1508",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1513",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1515",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-democracy-concept-coder",
+   "concept": "polisci-political-theory",
+   "label": "Democracy Concept Coder",
+   "desc": "Applies minimalist and substantive definitions of democracy to a case and checks codings against index data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1509",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1507",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-theory-argument-mapper",
+   "concept": "polisci-political-theory",
+   "label": "Theory Argument Mapper",
+   "desc": "Reconstructs a theorist argument about legitimacy or justice and checks the reconstruction against the primary text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1509",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1510",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-policy-evaluation-planner",
+   "concept": "polisci-public-policy",
+   "label": "Policy Evaluation Planner",
+   "desc": "Plans impact evaluations of programmes and checks outcome measures and comparison groups.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1515",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1508",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1514",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-policy-process-tracer",
+   "concept": "polisci-public-policy",
+   "label": "Policy Process Tracer",
+   "desc": "Traces agenda setting and implementation for a policy and checks each step against documents.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1515",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1513",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1507",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1507",
+   "name": "Comparative Politics Agent",
+   "legacy_key": "polisci-comparativist",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1508",
+   "name": "Political Methodology Agent",
+   "legacy_key": "polisci-methodologist",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1509",
+   "name": "Political Theory Agent",
+   "legacy_key": "polisci-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1510",
+   "name": "Foreign Source Translator",
+   "legacy_key": "polisci-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1511",
+   "name": "International Relations Agent",
+   "legacy_key": "polisci-ir",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1512",
+   "name": "Electoral Geography Agent",
+   "legacy_key": "polisci-mapper",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1513",
+   "name": "Elections and Institutions Agent",
+   "legacy_key": "polisci-americanist",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1514",
+   "name": "Political Forecasting Agent",
+   "legacy_key": "polisci-forecaster",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1515",
+   "name": "Public Policy Analyst",
+   "legacy_key": "polisci-policy",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "name": "Mantic",
+   "desc": "Explore judgemental forecasts",
+   "tools": [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "origins": [
+    "economics",
+    "international-relations",
+    "management-science-and-engineering",
+    "political-science",
+    "public-policy",
+    "reasoning"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ccc1bcfc-193c-44b7-b443-9511aac18403",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1507",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "political-science",
+   "score": 0.1953,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1508",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "political-science",
+   "score": 0.1953,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1507",
+    "skill": "polisci-case-comparison-designer"
+   }
+  },
+  {
+   "agent": "Maxey1512",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "political-science",
+   "score": 0.1987,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1513",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "political-science",
+   "score": 0.1987,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1512",
+    "skill": "polisci-district-map-analyzer"
+   }
+  }
+ ],
+ "lexicon": {
+  "polisci-normative": "theory democracy legitimacy justice rights authority liberalism sovereignty",
+  "polisci-regimes": "comparative regime authoritarian party capacity democratization federalism",
+  "polisci-voters": "election voting opinion legislature electoral turnout polarization district poll",
+  "polisci-world": "international conflict war alliance trade realism security geopolitical",
+  "polisci-methods": "methodology causal regression survey experiment dataset statistic sql",
+  "polisci-govern": "policy administration bureaucracy implementation evaluation agenda regulation budget"
+ },
+ "sources": [
+  "political-science"
+ ]
+}

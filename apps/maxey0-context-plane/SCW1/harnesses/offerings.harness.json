@@ -1,0 +1,380 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "offerings",
+  "label": "Securities Offerings and Going Public",
+  "desc": "Raising capital and taking a company public: IPOs, follow-on and secondary offerings, private placements and exempt offerings, bookbuilding and allocation, SPACs and direct listings, and how investors participate."
+ },
+ "concepts": [
+  {
+   "id": "ofr-alt-listings",
+   "label": "SPACs and Direct Listings",
+   "desc": "Alternative paths to public markets: SPAC mergers, direct listings and uplistings.",
+   "keywords": [
+    "spac",
+    "direct",
+    "listing",
+    "merger",
+    "alternative",
+    "public",
+    "uplisting",
+    "de-spac"
+   ],
+   "topic": "offerings",
+   "source": "offerings",
+   "related": []
+  },
+  {
+   "id": "ofr-bookbuilding",
+   "label": "Bookbuilding, Allocation and Participation",
+   "desc": "How an offering is marketed, the order book built, priced and allocated, and how institutional and retail investors participate.",
+   "keywords": [
+    "bookbuilding",
+    "allocation",
+    "order",
+    "book",
+    "participate",
+    "investor",
+    "institutional",
+    "retail",
+    "syndicate",
+    "greenshoe"
+   ],
+   "topic": "offerings",
+   "source": "offerings",
+   "related": []
+  },
+  {
+   "id": "ofr-debt",
+   "label": "Debt Offerings",
+   "desc": "Issuing bonds and notes: investment grade and high yield deals, indentures, ratings and syndication.",
+   "keywords": [
+    "debt",
+    "offering",
+    "bond",
+    "note",
+    "issuance",
+    "indenture",
+    "rating",
+    "high",
+    "yield",
+    "investment",
+    "grade"
+   ],
+   "topic": "offerings",
+   "source": "offerings",
+   "related": []
+  },
+  {
+   "id": "ofr-exempt",
+   "label": "Private Placements and Exempt Offerings",
+   "desc": "Raising capital without full registration: Reg D, Rule 144A, Reg S, Reg A+, PIPEs and accredited investors.",
+   "keywords": [
+    "private",
+    "placement",
+    "reg",
+    "rule",
+    "144a",
+    "regulation",
+    "exempt",
+    "pipe",
+    "accredited",
+    "investor",
+    "qib"
+   ],
+   "topic": "offerings",
+   "source": "offerings",
+   "related": []
+  },
+  {
+   "id": "ofr-followon",
+   "label": "Follow-On, Secondary and Shelf Offerings",
+   "desc": "Offerings after the IPO: follow-ons, secondary sales by holders, shelf registrations, at-the-market programs and block trades.",
+   "keywords": [
+    "follow",
+    "secondary",
+    "shelf",
+    "registration",
+    "atm",
+    "block",
+    "trade",
+    "offering",
+    "overnight"
+   ],
+   "topic": "offerings",
+   "source": "offerings",
+   "related": []
+  },
+  {
+   "id": "ofr-ipo",
+   "label": "Initial Public Offerings",
+   "desc": "Taking a company public: readiness, underwriters, S-1 registration, SEC review, roadshow, pricing and listing.",
+   "keywords": [
+    "ipo",
+    "initial",
+    "public",
+    "offering",
+    "underwriter",
+    "s-1",
+    "registration",
+    "roadshow",
+    "pricing",
+    "listing",
+    "prospectus"
+   ],
+   "topic": "offerings",
+   "source": "offerings",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ofr-path-to-public-comparator",
+   "concept": "ofr-alt-listings",
+   "label": "Path to Public Comparator",
+   "desc": "Compares IPO, SPAC and direct listing by cost, time, dilution and certainty.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1753",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1755",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-greenshoe-explainer",
+   "concept": "ofr-bookbuilding",
+   "label": "Greenshoe Explainer",
+   "desc": "Explains the overallotment option and stabilization after pricing.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1756",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1753",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-participation-guide",
+   "concept": "ofr-bookbuilding",
+   "label": "Participation Guide",
+   "desc": "Explains how an investor participates in an offering: indications of interest, eligibility, allocation and settlement.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1756",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1753",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-bond-deal-explainer",
+   "concept": "ofr-debt",
+   "label": "Bond Deal Explainer",
+   "desc": "Explains a bond offering's process, documents, rating and pricing versus benchmark.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1755",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1757",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-exemption-selector",
+   "concept": "ofr-exempt",
+   "label": "Exemption Selector",
+   "desc": "Compares Reg D, 144A, Reg S and Reg A+ for a raise by investor type, limits and resale rules.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1758",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1756",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-offering-type-explainer",
+   "concept": "ofr-followon",
+   "label": "Offering Type Explainer",
+   "desc": "Explains follow-on, secondary, shelf, ATM and block trade offerings and when each is used.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1753",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1758",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-ipo-readiness-plan",
+   "concept": "ofr-ipo",
+   "label": "IPO Readiness Plan",
+   "desc": "Plans IPO readiness: audits, governance, reporting, underwriters and timeline.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1757",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1753",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  },
+  {
+   "id": "ofr-prospectus-reader",
+   "concept": "ofr-ipo",
+   "label": "Prospectus Reader",
+   "desc": "Reads an S-1 or prospectus and summarizes the business, risks, use of proceeds and terms.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1757",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1754",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1753",
+     "role": "support"
+    }
+   ],
+   "source": "offerings"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1753",
+   "name": "Equity Capital Markets Agent",
+   "legacy_key": "ofr-ecm",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1754",
+   "name": "Offering Checker Agent",
+   "legacy_key": "ofr-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1755",
+   "name": "Debt Capital Markets Agent",
+   "legacy_key": "ofr-dcm",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1756",
+   "name": "Syndicate Agent",
+   "legacy_key": "ofr-syndicate",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1757",
+   "name": "IPO Agent",
+   "legacy_key": "ofr-ipo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1758",
+   "name": "Private Placement Agent",
+   "legacy_key": "ofr-private",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "SEC EDGAR MCP",
+   "desc": "SEC EDGAR MCP server: company filings, 10-K, 10-Q, 8-K, XBRL financial data and insider trading forms from EDGAR.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/stefanoamorelli/sec-edgar-mcp",
+   "id": "local:sec-edgar-mcp",
+   "origins": [
+    "corporate-finance",
+    "equities",
+    "financial-data",
+    "offerings"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:sec-edgar-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "ofripo": "ipo initial public offering underwriter s-1 registration roadshow pricing listing prospectus",
+  "ofrfollowon": "follow secondary shelf registration atm block trade offering overnight",
+  "ofrexempt": "private placement reg rule 144a regulation exempt pipe accredited investor qib",
+  "ofrbookbuilding": "bookbuilding allocation order book participate investor institutional retail syndicate greenshoe",
+  "ofraltlistings": "spac direct listing merger alternative public uplisting de-spac",
+  "ofrdebt": "debt offering bond note issuance indenture rating high yield investment grade"
+ },
+ "sources": [
+  "offerings"
+ ]
+}

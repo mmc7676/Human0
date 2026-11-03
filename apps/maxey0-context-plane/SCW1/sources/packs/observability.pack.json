@@ -1,0 +1,956 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "observability",
+ "topic": {
+  "id": "observability",
+  "label": "Observability",
+  "desc": "Observability of software and agent systems: metrics, logs and traces, instrumentation, dashboards, alerts and SLOs, agent and LLM tracing, root-cause debugging, drift and regression monitoring, incidents and capacity. Extends the base Observability topic, which held Observability and Evaluation."
+ },
+ "concepts": [
+  [
+   "ob-signals",
+   "Metrics, Logs and Traces",
+   "observability",
+   "The three telemetry signals: what each answers, how to name and label them, sampling and retention.",
+   [
+    "metric",
+    "log",
+    "trace",
+    "label",
+    "sampling"
+   ]
+  ],
+  [
+   "ob-instrumentation",
+   "Instrumentation and Collection",
+   "observability",
+   "Adding telemetry to code and pipelines: OpenTelemetry spans, context propagation, collectors and keeping cardinality under control.",
+   [
+    "instrumentation",
+    "opentelemetry",
+    "span",
+    "collector",
+    "cardinality"
+   ]
+  ],
+  [
+   "ob-dashboards",
+   "Dashboards and Visualisation",
+   "observability",
+   "Building views that answer questions: choosing charts, queries, panels and layouts for operators and for managers.",
+   [
+    "dashboard",
+    "panel",
+    "query",
+    "chart",
+    "layout"
+   ]
+  ],
+  [
+   "ob-alerting",
+   "Alerting and SLOs",
+   "observability",
+   "Turning signals into pages worth waking up for: service level objectives, error budgets, burn rates, thresholds and alert routing.",
+   [
+    "alert",
+    "slo",
+    "budget",
+    "burn",
+    "threshold",
+    "alerting",
+    "paged",
+    "paging"
+   ]
+  ],
+  [
+   "ob-agent-tracing",
+   "Agent and LLM Observability",
+   "observability",
+   "Seeing what an agent actually did: traces of model calls, tool calls and handoffs, token and latency cost, prompt versions and user feedback.",
+   [
+    "agent",
+    "llm",
+    "tool",
+    "token",
+    "prompt",
+    "latency"
+   ]
+  ],
+  [
+   "ob-debugging",
+   "Debugging and Root Cause Analysis",
+   "observability",
+   "Finding why something broke: reading logs and traces, forming and testing hypotheses, bisecting changes and writing the finding down.",
+   [
+    "debugging",
+    "root",
+    "cause",
+    "bisect",
+    "hypothesis",
+    "stacktrace"
+   ]
+  ],
+  [
+   "ob-drift",
+   "Drift, Quality and Regression Monitoring",
+   "observability",
+   "Noticing when behaviour changes without a deploy: data and output drift, evaluation sets, regression gates and canary comparisons.",
+   [
+    "drift",
+    "regression",
+    "canary",
+    "baseline",
+    "evaluation"
+   ]
+  ],
+  [
+   "ob-incident",
+   "Incident Response and Capacity",
+   "observability",
+   "Running an incident and planning capacity: severity, roles, status updates, load, saturation, cost and forecasts.",
+   [
+    "incident",
+    "severity",
+    "capacity",
+    "saturation",
+    "cost",
+    "stakeholder",
+    "stakeholders"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ob-signal-chooser",
+   "ob-signals",
+   "Signal Chooser",
+   "Says whether a question needs a metric, a log line or a trace and what the cheapest signal that answers it is.",
+   "semantic",
+   [
+    [
+     "ob-signal-engineer",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-instrumentation-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-metric-namer",
+   "ob-signals",
+   "Metric Naming and Label Designer",
+   "Designs metric names, units and labels that stay consistent and flags labels that would explode the number of series.",
+   "procedural",
+   [
+    [
+     "ob-signal-engineer",
+     "primary"
+    ],
+    [
+     "ob-instrumentation-engineer",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-retention-sampler",
+   "ob-signals",
+   "Retention and Sampling Planner",
+   "Sets how long each signal is kept and how traces are sampled, with the cost and the evidence that is lost at each setting.",
+   "semantic",
+   [
+    [
+     "ob-signal-engineer",
+     "primary"
+    ],
+    [
+     "ob-capacity-analyst",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-otel-instrumenter",
+   "ob-instrumentation",
+   "OpenTelemetry Instrumenter",
+   "Adds spans, attributes and context propagation to a service and checks that a request shows as one connected trace.",
+   "procedural",
+   [
+    [
+     "ob-instrumentation-engineer",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-collector-configurator",
+   "ob-instrumentation",
+   "Collector Pipeline Configurator",
+   "Configures receivers, processors and exporters in a collector pipeline and tests that data reaches each backend.",
+   "procedural",
+   [
+    [
+     "ob-instrumentation-engineer",
+     "primary"
+    ],
+    [
+     "ob-signal-engineer",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-cardinality-auditor",
+   "ob-instrumentation",
+   "Cardinality Auditor",
+   "Finds labels and attributes with too many distinct values and proposes bucketing or dropping them before the bill arrives.",
+   "procedural",
+   [
+    [
+     "ob-instrumentation-engineer",
+     "primary"
+    ],
+    [
+     "ob-capacity-analyst",
+     "checker"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-dashboard-designer",
+   "ob-dashboards",
+   "Dashboard Designer",
+   "Designs a dashboard around the questions an operator asks first, with the golden signals at the top and links to detail.",
+   "semantic",
+   [
+    [
+     "ob-dashboard-builder",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-query-writer",
+   "ob-dashboards",
+   "PromQL and LogQL Query Writer",
+   "Writes promql and logql queries over metrics and logs for a stated question and explains what each part of the query filters or aggregates.",
+   "procedural",
+   [
+    [
+     "ob-dashboard-builder",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-debugger",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-dashboard-reviewer",
+   "ob-dashboards",
+   "Dashboard Reviewer",
+   "Reviews an existing dashboard for panels nobody reads, misleading axes and missing context and lists what to remove.",
+   "semantic",
+   [
+    [
+     "ob-dashboard-builder",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-alerting-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-slo-designer",
+   "ob-alerting",
+   "SLO Designer",
+   "Defines service level indicators and objectives from user-visible behaviour and sets the error budget and its window.",
+   "semantic",
+   [
+    [
+     "ob-alerting-engineer",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-burn-rate-alerter",
+   "ob-alerting",
+   "Burn Rate Alert Writer",
+   "Writes multi-window burn-rate alerts for an SLO and shows how fast each alert fires for a given outage.",
+   "procedural",
+   [
+    [
+     "ob-alerting-engineer",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-incident-commander",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-alert-noise-reducer",
+   "ob-alerting",
+   "Alert Noise Reducer",
+   "Finds alerts that fire often without action, groups duplicates and proposes thresholds or routes that cut noise safely.",
+   "semantic",
+   [
+    [
+     "ob-alerting-engineer",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-incident-commander",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-agent-trace-reader",
+   "ob-agent-tracing",
+   "Agent Trace Reader",
+   "Reads a trace of an agent run and summarises the model calls, tool calls, errors and handoffs in order, with latency for each step.",
+   "procedural",
+   [
+    [
+     "ob-agent-observer",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-debugger",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-token-cost-analyst",
+   "ob-agent-tracing",
+   "Token and Cost Analyst",
+   "Breaks token use, latency and spend down by step, tool and prompt version and shows where the money goes.",
+   "procedural",
+   [
+    [
+     "ob-agent-observer",
+     "primary"
+    ],
+    [
+     "ob-capacity-analyst",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-prompt-version-tracker",
+   "ob-agent-tracing",
+   "Prompt Version Tracker",
+   "Ties each run to the prompt, model and tool versions used so a behaviour change can be traced to its cause.",
+   "procedural",
+   [
+    [
+     "ob-agent-observer",
+     "primary"
+    ],
+    [
+     "ob-drift-monitor",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-agent-feedback-linker",
+   "ob-agent-tracing",
+   "Feedback to Trace Linker",
+   "Links user ratings and corrections to the traces that produced them so bad runs can be found and replayed.",
+   "semantic",
+   [
+    [
+     "ob-agent-observer",
+     "primary"
+    ],
+    [
+     "ob-drift-monitor",
+     "checker"
+    ],
+    [
+     "ob-debugger",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-log-trace-reader",
+   "ob-debugging",
+   "Log and Stack Trace Reader",
+   "Reads logs and stack traces for a failure, extracts the first error and lists what must be checked next.",
+   "procedural",
+   [
+    [
+     "ob-debugger",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-root-cause-analyst",
+   "ob-debugging",
+   "Root Cause Analyst",
+   "Forms rival explanations for a failure, picks the cheapest test for each and reports which were ruled out.",
+   "semantic",
+   [
+    [
+     "ob-debugger",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-incident-commander",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-change-bisector",
+   "ob-debugging",
+   "Change Bisector",
+   "Narrows a regression to one change by bisecting versions, flags or configuration and records each step.",
+   "procedural",
+   [
+    [
+     "ob-debugger",
+     "primary"
+    ],
+    [
+     "ob-drift-monitor",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-drift-detector",
+   "ob-drift",
+   "Drift Detector",
+   "Compares current inputs and outputs with a baseline and reports which distributions moved and by how much.",
+   "procedural",
+   [
+    [
+     "ob-drift-monitor",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-agent-observer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-regression-gate-builder",
+   "ob-drift",
+   "Regression Gate Builder",
+   "Builds an evaluation set and a pass threshold that blocks a release when quality drops, runs a canary first and records every run.",
+   "procedural",
+   [
+    [
+     "ob-drift-monitor",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-alerting-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-canary-comparer",
+   "ob-drift",
+   "Canary Comparer",
+   "Compares a canary with the baseline on stated metrics and says whether the difference is larger than noise.",
+   "semantic",
+   [
+    [
+     "ob-drift-monitor",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-alerting-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-severity-classifier",
+   "ob-incident",
+   "Incident Severity Classifier",
+   "Rates an incident by user impact and spread, names the incident commander and lists who must be told.",
+   "semantic",
+   [
+    [
+     "ob-incident-commander",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-alerting-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-status-update-writer",
+   "ob-incident",
+   "Status Update Writer",
+   "Writes short, dated status updates for stakeholders during an incident that say what is known, what is not, what is being done and when the next update comes.",
+   "procedural",
+   [
+    [
+     "ob-incident-commander",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-debugger",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-capacity-forecaster",
+   "ob-incident",
+   "Capacity Forecaster",
+   "Projects load, saturation and cost from usage trends and says when a limit will be reached and with what margin.",
+   "procedural",
+   [
+    [
+     "ob-capacity-analyst",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-cardinality-guard",
+   "ob-signals",
+   "Cardinality and Cost Guard",
+   "Finds metrics and labels that explode in number, estimates their storage cost and proposes which to drop or aggregate.",
+   "procedural",
+   [
+    [
+     "ob-cost-analyst",
+     "primary"
+    ],
+    [
+     "ob-signal-engineer",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ],
+    [
+     "ob-capacity-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-log-schema-designer",
+   "ob-instrumentation",
+   "Structured Log Designer",
+   "Defines log fields, levels and correlation ids so logs can be searched and joined with traces.",
+   "procedural",
+   [
+    [
+     "ob-log-analyst",
+     "primary"
+    ],
+    [
+     "ob-instrumentation-engineer",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ],
+    [
+     "ob-signal-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-service-overview-composer",
+   "ob-dashboards",
+   "Service Overview Composer",
+   "Lays out a one-screen view of traffic, errors, latency and saturation with links down to traces and logs.",
+   "procedural",
+   [
+    [
+     "ob-dashboard-builder",
+     "primary"
+    ],
+    [
+     "ob-skeptic",
+     "checker"
+    ],
+    [
+     "ob-trace-analyst",
+     "support"
+    ],
+    [
+     "ob-alerting-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-synthetic-probe-designer",
+   "ob-alerting",
+   "Synthetic Probe Designer",
+   "Designs scripted checks that exercise a user journey on a schedule and decides what a failure should trigger.",
+   "procedural",
+   [
+    [
+     "ob-synthetic-tester",
+     "primary"
+    ],
+    [
+     "ob-alerting-engineer",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ],
+    [
+     "ob-incident-commander",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-trace-latency-analyst",
+   "ob-debugging",
+   "Trace Latency Analyst",
+   "Reads a distributed trace, finds the span that dominates latency and says whether it is work, waiting or retries.",
+   "semantic",
+   [
+    [
+     "ob-trace-analyst",
+     "primary"
+    ],
+    [
+     "ob-debugger",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ],
+    [
+     "ob-log-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-log-anomaly-spotter",
+   "ob-drift",
+   "Log Anomaly Spotter",
+   "Compares log patterns now with a baseline period and lists new, vanished or sharply changed message types.",
+   "semantic",
+   [
+    [
+     "ob-log-analyst",
+     "primary"
+    ],
+    [
+     "ob-drift-monitor",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ],
+    [
+     "ob-debugger",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ob-postmortem-writer",
+   "ob-incident",
+   "Postmortem Writer",
+   "Writes the incident timeline, contributing causes, what detection missed and the follow-up actions with owners and dates.",
+   "semantic",
+   [
+    [
+     "ob-postmortem-author",
+     "primary"
+    ],
+    [
+     "ob-incident-commander",
+     "checker"
+    ],
+    [
+     "ob-skeptic",
+     "support"
+    ],
+    [
+     "ob-debugger",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ob-signal-engineer": "Telemetry Signals Agent",
+  "ob-instrumentation-engineer": "Instrumentation Engineer Agent",
+  "ob-dashboard-builder": "Dashboard Builder Agent",
+  "ob-alerting-engineer": "Alerting and SLO Agent",
+  "ob-agent-observer": "Agent Observability Agent",
+  "ob-debugger": "Debugging Agent",
+  "ob-drift-monitor": "Drift and Regression Agent",
+  "ob-incident-commander": "Incident Commander Agent",
+  "ob-capacity-analyst": "Capacity Analyst Agent",
+  "ob-skeptic": "Observability Skeptic Agent",
+  "ob-log-analyst": "Log Analysis Agent",
+  "ob-trace-analyst": "Distributed Trace Agent",
+  "ob-cost-analyst": "Telemetry Cost Agent",
+  "ob-synthetic-tester": "Synthetic Monitoring Agent",
+  "ob-postmortem-author": "Postmortem Agent"
+ },
+ "mcp": [
+  [
+   "Datadog",
+   "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "Debug and resolve issues using Datadog telemetry",
+   [
+    "search_datadog_logs",
+    "analyze_datadog_logs",
+    "search_datadog_events",
+    "aggregate_events",
+    "get_datadog_metric",
+    "search_datadog_metrics",
+    "get_datadog_metric_context",
+    "search_datadog_monitors"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "mcp.betterstack.com",
+   "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "Better Stack plugin for Claude: observability for AI agents (logs, metrics, dashboards, uptime, incidents).",
+   [
+    "acknowledge_incident",
+    "add_chart_to_dashboard",
+    "add_dashboard_section",
+    "application",
+    "applications",
+    "available_incident_escalation_policies",
+    "change_team_member_role",
+    "chart"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Grafana Cloud",
+   "3392c633-e335-4638-bda7-5b259808c3f7",
+   "Query metrics, logs, and traces and manage dashboards and alerts",
+   [
+    "add_activity_to_incident",
+    "alerting_manage_routing",
+    "alerting_manage_rules",
+    "ask_assistant",
+    "create_annotation",
+    "create_folder",
+    "create_incident",
+    "describe_clickhouse_table"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Coralogix",
+   "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "Explore and debug your Coralogix observability data",
+   [
+    "get_alert_event_details_v1",
+    "read_dataprime_intro_docs_v1",
+    "get_logs_v1",
+    "get_traces_v1",
+    "get_schemas_v1",
+    "list_incidents_v1",
+    "get_incident_details_v1",
+    "metrics__list_v1"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Bronto",
+   "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62",
+   "Query your Observability data in plain language, then turn what you find into monitors, saved searches, and Investigation Reports.",
+   [
+    "create_monitor",
+    "create_saved_search",
+    "get_all_datasets_keys",
+    "get_coverage",
+    "get_datasets",
+    "get_datasets_by_name",
+    "get_error_summary",
+    "get_key_values"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "obsignal": "label unit series golden debugging bisect stacktrace signal chooser cheapest bisector",
+  "obinstr": "opentelemetry exporter receiver propagation attribute instrumentation cardinality collection structured",
+  "obdash": "panel layout operator promql logql chart visualisation existing",
+  "obalert": "noise threshold alerting paged paging visible window synthetic",
+  "obagent": "latency feedback llm reader behaviour traced linker",
+  "obdrift": "baseline canary distribution anomaly",
+  "obincident": "commander status saturation capacity load stakeholder stakeholders cost response classifier timeline contributing"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "Datadog": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "mcp.betterstack.com": "directory listing; listing name is mcp.betterstack.com; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Grafana Cloud": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Coralogix": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Bronto": "directory listing; creates monitors: treat as human-approved; tool names are the directory listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

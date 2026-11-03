@@ -1,0 +1,581 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "chemistry",
+ "topic": {
+  "id": "chemistry",
+  "label": "Chemistry",
+  "desc": "Chemistry: the structure, properties and reactions of matter, from atoms to materials and living systems."
+ },
+ "concepts": [
+  [
+   "chem-organic-chemistry",
+   "Organic Chemistry",
+   "chemistry",
+   "Structure, reactivity and synthesis of carbon compounds through functional groups and mechanisms.",
+   [
+    "organic",
+    "functional group",
+    "mechanism",
+    "synthesis",
+    "stereochemistry",
+    "nucleophile",
+    "carbonyl",
+    "retrosynthesis"
+   ]
+  ],
+  [
+   "chem-inorganic-chemistry",
+   "Inorganic Chemistry",
+   "chemistry",
+   "Main group and transition metal chemistry, coordination complexes and solid-state structure.",
+   [
+    "inorganic",
+    "coordination",
+    "ligand",
+    "transition metal",
+    "crystal field",
+    "oxidation state",
+    "solid state",
+    "periodic"
+   ]
+  ],
+  [
+   "chem-physical-chemistry",
+   "Physical Chemistry",
+   "chemistry",
+   "Thermodynamics, kinetics and quantum mechanics applied to chemical systems.",
+   [
+    "physical",
+    "thermodynamics",
+    "kinetics",
+    "quantum",
+    "spectroscopy",
+    "rate constant",
+    "entropy",
+    "equilibrium"
+   ]
+  ],
+  [
+   "chem-analytical-chemistry",
+   "Analytical Chemistry",
+   "chemistry",
+   "Separation and spectroscopic methods for identifying and quantifying substances.",
+   [
+    "analytical",
+    "chromatography",
+    "mass spectrometry",
+    "nmr",
+    "calibration",
+    "titration",
+    "detection limit",
+    "spectrum"
+   ]
+  ],
+  [
+   "chem-computational-chemistry",
+   "Computational Chemistry",
+   "chemistry",
+   "Electronic structure, molecular simulation and cheminformatics for predicting properties.",
+   [
+    "computational",
+    "dft",
+    "molecular dynamics",
+    "cheminformatics",
+    "basis set",
+    "conformer",
+    "simulation",
+    "property"
+   ]
+  ],
+  [
+   "chem-biochemistry",
+   "Biochemistry",
+   "chemistry",
+   "Chemistry of biomolecules: proteins, nucleic acids, enzymes and metabolism.",
+   [
+    "biochemistry",
+    "enzyme",
+    "protein",
+    "metabolism",
+    "nucleic acid",
+    "michaelis",
+    "buffer",
+    "lipid"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "chem-retrosynthesis",
+   "chem-organic-chemistry",
+   "Retrosynthesis Planner",
+   "Proposes retrosynthetic routes to a target molecule, checked by reaction precedent and step count.",
+   "semantic",
+   [
+    [
+     "chem-organic",
+     "primary"
+    ],
+    [
+     "chem-safety",
+     "checker"
+    ],
+    [
+     "chem-computational",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-mechanism-arrows",
+   "chem-organic-chemistry",
+   "Reaction Mechanism Writer",
+   "Writes arrow-pushing mechanisms for a reaction, checked by electron and charge balance.",
+   "procedural",
+   [
+    [
+     "chem-organic",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-physical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-stereo-assign",
+   "chem-organic-chemistry",
+   "Stereochemistry Assignment",
+   "Assigns R and S configuration and predicts stereochemical outcomes, checked by priority rules.",
+   "procedural",
+   [
+    [
+     "chem-organic",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-computational",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-crystal-field",
+   "chem-inorganic-chemistry",
+   "Crystal Field Analysis",
+   "Predicts d-orbital splitting, spin state and color of complexes, checked against spectra.",
+   "procedural",
+   [
+    [
+     "chem-inorganic",
+     "primary"
+    ],
+    [
+     "chem-physical",
+     "checker"
+    ],
+    [
+     "chem-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-oxidation-states",
+   "chem-inorganic-chemistry",
+   "Oxidation State Assigner",
+   "Assigns oxidation states and electron counts, checked by charge sum.",
+   "procedural",
+   [
+    [
+     "chem-inorganic",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-organic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-solid-structure",
+   "chem-inorganic-chemistry",
+   "Solid-State Structure Review",
+   "Describes lattice types and unit cells, checked by density and stoichiometry calculation.",
+   "semantic",
+   [
+    [
+     "chem-inorganic",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-computational",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-rate-law",
+   "chem-physical-chemistry",
+   "Rate Law Determination",
+   "Determines reaction order and rate constants from kinetic data, checked by linearized fits.",
+   "procedural",
+   [
+    [
+     "chem-physical",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-analytical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-thermo-calc",
+   "chem-physical-chemistry",
+   "Thermochemistry Calculator",
+   "Computes enthalpy, entropy and Gibbs energy changes, checked by Hess law consistency.",
+   "procedural",
+   [
+    [
+     "chem-physical",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-inorganic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-quantum-levels",
+   "chem-physical-chemistry",
+   "Quantum Energy Level Calculator",
+   "Computes energy levels for model systems, checked against spectroscopic transitions.",
+   "procedural",
+   [
+    [
+     "chem-physical",
+     "primary"
+    ],
+    [
+     "chem-computational",
+     "checker"
+    ],
+    [
+     "chem-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-nmr-interpretation",
+   "chem-analytical-chemistry",
+   "NMR Spectrum Interpretation",
+   "Assigns structure from NMR shifts and couplings, checked against predicted spectra.",
+   "semantic",
+   [
+    [
+     "chem-analytical",
+     "primary"
+    ],
+    [
+     "chem-organic",
+     "checker"
+    ],
+    [
+     "chem-computational",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-calibration-curve",
+   "chem-analytical-chemistry",
+   "Calibration and Quantification",
+   "Builds calibration curves and detection limits, checked by regression statistics.",
+   "procedural",
+   [
+    [
+     "chem-analytical",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-physical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-method-selection",
+   "chem-analytical-chemistry",
+   "Analytical Method Selection",
+   "Selects chromatography or spectrometry for an analyte, checked against sensitivity needs.",
+   "semantic",
+   [
+    [
+     "chem-analytical",
+     "primary"
+    ],
+    [
+     "chem-safety",
+     "checker"
+    ],
+    [
+     "chem-biochem",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-dft-calc",
+   "chem-computational-chemistry",
+   "DFT Property Calculation",
+   "Sets up DFT calculations for geometry and energy, checked by convergence and frequency analysis.",
+   "procedural",
+   [
+    [
+     "chem-computational",
+     "primary"
+    ],
+    [
+     "chem-physical",
+     "checker"
+    ],
+    [
+     "chem-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-conformer-search",
+   "chem-computational-chemistry",
+   "Conformer Search",
+   "Generates and ranks conformers by energy, checked by duplicate removal and energy window.",
+   "procedural",
+   [
+    [
+     "chem-computational",
+     "primary"
+    ],
+    [
+     "chem-organic",
+     "checker"
+    ],
+    [
+     "chem-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-property-prediction",
+   "chem-computational-chemistry",
+   "Molecular Property Prediction",
+   "Predicts solubility and similar properties from descriptors, checked against measured data.",
+   "procedural",
+   [
+    [
+     "chem-computational",
+     "primary"
+    ],
+    [
+     "chem-analytical",
+     "checker"
+    ],
+    [
+     "chem-biochem",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-enzyme-kinetics",
+   "chem-biochemistry",
+   "Enzyme Kinetics Fitting",
+   "Fits Michaelis-Menten parameters to rate data, checked by nonlinear fit residuals.",
+   "procedural",
+   [
+    [
+     "chem-biochem",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-physical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-buffer-design",
+   "chem-biochemistry",
+   "Buffer Preparation Calculator",
+   "Computes buffer recipes for a target pH, checked by Henderson-Hasselbalch and ionic strength.",
+   "procedural",
+   [
+    [
+     "chem-biochem",
+     "primary"
+    ],
+    [
+     "chem-checker",
+     "checker"
+    ],
+    [
+     "chem-safety",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chem-pathway-explainer",
+   "chem-biochemistry",
+   "Metabolic Pathway Explainer",
+   "Explains metabolic pathways and their regulation, checked against cited literature.",
+   "semantic",
+   [
+    [
+     "chem-biochem",
+     "primary"
+    ],
+    [
+     "chem-analytical",
+     "checker"
+    ],
+    [
+     "chem-organic",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "chem-organic": "Organic Synthesis Chemist",
+  "chem-inorganic": "Inorganic Chemist",
+  "chem-physical": "Physical Chemist",
+  "chem-analytical": "Analytical Chemist",
+  "chem-computational": "Computational Chemist",
+  "chem-biochem": "Biochemist",
+  "chem-safety": "Laboratory Safety Reviewer",
+  "chem-checker": "Stoichiometry and Units Checker"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "SandboxAQ",
+   "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "Large Quantitative Models for scientific discovery",
+   [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "chem-organic": "organic functional group mechanism synthesis stereochemistry nucleophile carbonyl retrosynthesis",
+  "chem-inorganic": "inorganic coordination ligand transition metal crystal field oxidation state solid periodic",
+  "chem-physical": "physical thermodynamics kinetics quantum spectroscopy rate constant entropy equilibrium",
+  "chem-analytical": "analytical chromatography mass spectrometry nmr calibration titration detection limit spectrum",
+  "chem-computational": "computational dft molecular dynamics cheminformatics basis set conformer simulation property",
+  "chem-biochemistry": "biochemistry enzyme protein metabolism nucleic acid michaelis buffer lipid"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

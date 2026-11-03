@@ -1,0 +1,679 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "quantum-physics",
+ "topic": {
+  "id": "quantum-physics",
+  "label": "Quantum Physics",
+  "desc": "Quantum physics: foundations and measurement, wave mechanics, spin, quantum information, many-body physics, field theory, open systems and quantum optics."
+ },
+ "concepts": [
+  [
+   "qm-foundations",
+   "Quantum Foundations",
+   "quantum-physics",
+   "Postulates, wavefunctions, measurement and the uncertainty principle.",
+   [
+    "wavefunction",
+    "postulate",
+    "measurement",
+    "uncertainty",
+    "observable"
+   ]
+  ],
+  [
+   "qm-solvers",
+   "Wave Mechanics and Solvers",
+   "quantum-physics",
+   "Solving the Schrodinger equation exactly and approximately.",
+   [
+    "schrodinger",
+    "perturbation",
+    "variational",
+    "tunneling",
+    "scattering"
+   ]
+  ],
+  [
+   "qm-spin",
+   "Angular Momentum and Spin",
+   "quantum-physics",
+   "Angular momentum algebra, spin systems and the hydrogen atom.",
+   [
+    "spin",
+    "angular-momentum",
+    "pauli",
+    "bloch",
+    "hydrogen"
+   ]
+  ],
+  [
+   "qm-info",
+   "Quantum Information and Computing",
+   "quantum-physics",
+   "Qubits, circuits, algorithms and error correction.",
+   [
+    "qubit",
+    "circuit",
+    "gate",
+    "algorithm",
+    "error-correction",
+    "entanglement"
+   ]
+  ],
+  [
+   "qm-manybody",
+   "Many-Body and Condensed Matter",
+   "quantum-physics",
+   "Systems of many quantum particles: bands, tensor networks and second quantization.",
+   [
+    "band",
+    "tensor",
+    "dmrg",
+    "fermion",
+    "second-quantization",
+    "lattice"
+   ]
+  ],
+  [
+   "qm-qft",
+   "Quantum Field Theory and Particles",
+   "quantum-physics",
+   "Fields, Feynman diagrams and the Standard Model.",
+   [
+    "feynman",
+    "field",
+    "standard-model",
+    "renormalization",
+    "boson"
+   ]
+  ],
+  [
+   "qm-open",
+   "Open Systems and Decoherence",
+   "quantum-physics",
+   "Density matrices, master equations and decoherence.",
+   [
+    "density-matrix",
+    "decoherence",
+    "master",
+    "lindblad",
+    "open"
+   ]
+  ],
+  [
+   "qm-optics",
+   "Quantum Optics and Sensing",
+   "quantum-physics",
+   "Photons, atoms and quantum-enhanced measurement.",
+   [
+    "photon",
+    "squeezed",
+    "atom",
+    "interferometer",
+    "sensing"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "qm-postulates-measurement",
+   "qm-foundations",
+   "Postulates and Measurement Explainer",
+   "Explains the postulates, the Born rule and measurement outcomes with worked examples and states where interpretation begins.",
+   "semantic",
+   [
+    [
+     "qm-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-solver",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-uncertainty-commutator",
+   "qm-foundations",
+   "Uncertainty and Commutator Analyzer",
+   "Computes commutators and uncertainty bounds for observables and shows which pairs are compatible.",
+   "procedural",
+   [
+    [
+     "qm-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-solver",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-interpretations-comparer",
+   "qm-foundations",
+   "Interpretations Comparer",
+   "Compares interpretations of quantum mechanics side by side and labels what is experimentally distinguishable and what is not.",
+   "semantic",
+   [
+    [
+     "qm-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-experimentalist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-schrodinger-solver",
+   "qm-solvers",
+   "Schrodinger Equation Solver",
+   "Solves the time-independent and time-dependent equation for wells, oscillators and barriers and reports energy levels and wavefunctions.",
+   "procedural",
+   [
+    [
+     "qm-solver",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-perturbation-variational",
+   "qm-solvers",
+   "Perturbation and Variational Methods",
+   "Applies perturbation theory and the variational principle and reports error bounds for the approximation.",
+   "semantic",
+   [
+    [
+     "qm-solver",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-scattering-tunneling",
+   "qm-solvers",
+   "Scattering and Tunneling Analyzer",
+   "Computes transmission, reflection and tunneling probabilities and scattering cross sections.",
+   "procedural",
+   [
+    [
+     "qm-solver",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-numerics-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-angular-momentum-algebra",
+   "qm-spin",
+   "Angular Momentum Algebra",
+   "Adds angular momenta and builds Clebsch-Gordan coefficients and ladder-operator results.",
+   "procedural",
+   [
+    [
+     "qm-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-solver",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-spin-systems-simulator",
+   "qm-spin",
+   "Spin Systems Simulator",
+   "Simulates spin one-half systems with Pauli matrices, the Bloch sphere and precession in a magnetic field.",
+   "procedural",
+   [
+    [
+     "qm-solver",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-hydrogen-atom-solver",
+   "qm-spin",
+   "Hydrogen Atom Solver",
+   "Derives hydrogen energy levels and orbitals and the first fine-structure corrections.",
+   "semantic",
+   [
+    [
+     "qm-solver",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-circuit-designer",
+   "qm-info",
+   "Quantum Circuit Designer",
+   "Designs and simulates small qubit circuits with gates and noise models and returns measurement histograms.",
+   "procedural",
+   [
+    [
+     "qm-circuit-engineer",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-error-correction-analyzer",
+   "qm-info",
+   "Error Correction Analyzer",
+   "Analyzes simple quantum error-correcting codes, their syndromes and the error types they correct.",
+   "semantic",
+   [
+    [
+     "qm-circuit-engineer",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-open-systems-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-algorithm-analyst",
+   "qm-info",
+   "Quantum Algorithm Analyst",
+   "Explains quantum algorithms and compares their resource counts with classical methods without claiming speedups that are not proven.",
+   "semantic",
+   [
+    [
+     "qm-circuit-engineer",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-band-structure-analyzer",
+   "qm-manybody",
+   "Band Structure Analyzer",
+   "Computes tight-binding band structures and identifies gaps, effective masses and topological features.",
+   "procedural",
+   [
+    [
+     "qm-many-body-physicist",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-solver",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-tensor-network-simulator",
+   "qm-manybody",
+   "Tensor Network Simulator",
+   "Simulates one-dimensional lattice models with matrix product states and DMRG and reports entanglement and truncation error.",
+   "procedural",
+   [
+    [
+     "qm-many-body-physicist",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-second-quantization",
+   "qm-manybody",
+   "Second Quantization Assistant",
+   "Writes many-particle Hamiltonians for fermions and bosons with creation and annihilation operators.",
+   "semantic",
+   [
+    [
+     "qm-many-body-physicist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-feynman-diagram-calculator",
+   "qm-qft",
+   "Feynman Diagram Calculator",
+   "Draws diagrams and writes amplitudes for simple scattering processes at lowest order.",
+   "semantic",
+   [
+    [
+     "qm-field-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-standard-model-explainer",
+   "qm-qft",
+   "Standard Model Explainer",
+   "Explains the particles and forces of the Standard Model and which questions it leaves open.",
+   "semantic",
+   [
+    [
+     "qm-field-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-experimentalist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-renormalization-analyst",
+   "qm-qft",
+   "Renormalization Analyst",
+   "Explains renormalization and running couplings and when a cutoff matters.",
+   "semantic",
+   [
+    [
+     "qm-field-theorist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-many-body-physicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-density-matrix-analyst",
+   "qm-open",
+   "Density Matrix Analyst",
+   "Builds density matrices for pure and mixed states and computes purity, entropy and partial traces.",
+   "procedural",
+   [
+    [
+     "qm-open-systems-analyst",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-master-equation-simulator",
+   "qm-open",
+   "Master Equation Simulator",
+   "Simulates open-system dynamics with Lindblad master equations and shows relaxation and dephasing.",
+   "procedural",
+   [
+    [
+     "qm-open-systems-analyst",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-circuit-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-decoherence-analyst",
+   "qm-open",
+   "Decoherence Analyst",
+   "Estimates decoherence times from coupling to an environment and relates them to the classical limit.",
+   "semantic",
+   [
+    [
+     "qm-open-systems-analyst",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-photon-statistics-analyst",
+   "qm-optics",
+   "Photon Statistics Analyst",
+   "Analyzes coherent, thermal and squeezed light by photon-number statistics and correlation functions.",
+   "semantic",
+   [
+    [
+     "qm-experimentalist",
+     "primary"
+    ],
+    [
+     "qm-consistency-checker",
+     "checker"
+    ],
+    [
+     "qm-open-systems-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "qm-atomic-sensing-designer",
+   "qm-optics",
+   "Atomic Sensing Designer",
+   "Outlines atom interferometer and clock measurements and their sensitivity limits and noise sources.",
+   "semantic",
+   [
+    [
+     "qm-experimentalist",
+     "primary"
+    ],
+    [
+     "qm-numerics-checker",
+     "checker"
+    ],
+    [
+     "qm-theorist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "qm-theorist": "Quantum Theorist Agent",
+  "qm-solver": "Quantum Solver Agent",
+  "qm-circuit-engineer": "Quantum Circuit Agent",
+  "qm-many-body-physicist": "Many-Body Physics Agent",
+  "qm-field-theorist": "Field Theory Agent",
+  "qm-open-systems-analyst": "Open Quantum Systems Agent",
+  "qm-experimentalist": "Quantum Experiment Agent",
+  "qm-consistency-checker": "Quantum Consistency Checker Agent",
+  "qm-numerics-checker": "Numerical Accuracy Checker Agent"
+ },
+ "mcp": [
+  [
+   "SandboxAQ",
+   "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "Large Quantitative Models for scientific discovery",
+   [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "foundations": "postulate born commutator observable wavefunction measurement quantum foundations",
+  "wavemech": "schrodinger barrier tunneling cross section variational levels perturbation scattering",
+  "spinphys": "pauli bloch precession clebsch gordan ladder fine structure spin angular hydrogen",
+  "qinfo": "qubit syndrome histogram resource speedup gate algorithm error correction entanglement information computing",
+  "manybody": "tight binding dmrg fermion boson lattice band tensor second quantization body condensed matter",
+  "qfield": "feynman amplitude lowest order renormalization coupling cutoff standard theory particles",
+  "opensys": "lindblad dephasing purity partial trace relaxation density decoherence master",
+  "qoptics": "squeezed photon number interferometer clock correlation atom"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "SandboxAQ": "directory listing: 'Large Quantitative Models for scientific discovery'; the listing does not say it is a quantum-mechanics tool, so its relevance here is my inference; also listed by the optional Physics example pack, so it is reused by uuid if both are added; tool 'Check Job Status' and 'Check Job Results' are written with underscores here because the pack format allows no spaces in names; tool names are the listing's visible sample; connector is not installed or tested",
+   "none-in-directory": "no directory server for quantum computing or quantum chemistry was found beyond this one"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here.",
+  "v04_lexicon_freed": [
+   [
+    "foundations",
+    [
+     "rule",
+     "uncertainty",
+     "interpretation"
+    ]
+   ],
+   [
+    "opensys",
+    [
+     "matrix"
+    ]
+   ],
+   [
+    "wavemech",
+    [
+     "well"
+    ]
+   ]
+  ]
+ }
+}

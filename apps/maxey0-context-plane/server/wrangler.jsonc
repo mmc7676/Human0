@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maxey0-context-plane-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "vars": {
+    // Origins allowed when a request carries an Origin header (DNS-rebinding guard).
+    // Requests without Origin (server-to-server MCP clients) are accepted.
+    "ALLOWED_ORIGINS": "https://claude.ai,https://claude.com"
+  },
+  "observability": { "enabled": true }
+}

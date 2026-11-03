@@ -1,0 +1,583 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "management-science-and-engineering",
+ "topic": {
+  "id": "management-science-and-engineering",
+  "label": "Management Science and Engineering",
+  "desc": "Management Science and Engineering: quantitative methods for decisions, operations, finance, organisations and technology strategy."
+ },
+ "concepts": [
+  [
+   "mse-optimization",
+   "Optimization",
+   "management-science-and-engineering",
+   "Formulating and solving linear, integer, network and convex programs that allocate scarce resources under constraints.",
+   [
+    "optimization",
+    "linear programming",
+    "integer",
+    "convex",
+    "constraint",
+    "objective",
+    "duality",
+    "solver"
+   ]
+  ],
+  [
+   "mse-stochastic-modeling",
+   "Stochastic Modeling and Simulation",
+   "management-science-and-engineering",
+   "Probability models of uncertain systems, including Markov chains, queues and discrete-event simulation.",
+   [
+    "stochastic",
+    "probability",
+    "markov",
+    "queue",
+    "simulation",
+    "monte carlo",
+    "random",
+    "variance"
+   ]
+  ],
+  [
+   "mse-decision-analysis",
+   "Decision and Risk Analysis",
+   "management-science-and-engineering",
+   "Structuring choices under uncertainty with decision trees, utility, value of information and risk preferences.",
+   [
+    "decision",
+    "risk",
+    "utility",
+    "decision tree",
+    "value of information",
+    "uncertainty",
+    "preference",
+    "expected value"
+   ]
+  ],
+  [
+   "mse-operations-supply-chain",
+   "Operations and Supply Chain",
+   "management-science-and-engineering",
+   "Design and control of production, inventory, logistics and service operations.",
+   [
+    "operations",
+    "supply chain",
+    "inventory",
+    "logistics",
+    "capacity",
+    "forecast",
+    "lead time",
+    "production"
+   ]
+  ],
+  [
+   "mse-financial-engineering",
+   "Financial Engineering",
+   "management-science-and-engineering",
+   "Valuation, portfolio construction and risk measurement for investments, projects and derivatives.",
+   [
+    "finance",
+    "valuation",
+    "portfolio",
+    "derivative",
+    "npv",
+    "option",
+    "risk measure",
+    "cash flow"
+   ]
+  ],
+  [
+   "mse-organizations-strategy",
+   "Organizations, Technology and Strategy",
+   "management-science-and-engineering",
+   "How firms organise people, adopt technology, innovate and compete, studied with organisation theory and strategy frameworks.",
+   [
+    "organization",
+    "strategy",
+    "innovation",
+    "technology",
+    "entrepreneurship",
+    "incentive",
+    "team",
+    "competition"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "mse-lp-formulator",
+   "mse-optimization",
+   "Linear Program Formulator",
+   "Turns a business problem into decision variables, objective and constraints, solves it and checks feasibility and dual prices.",
+   "procedural",
+   [
+    [
+     "mse-optimizer",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-operations",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-integer-scheduler",
+   "mse-optimization",
+   "Integer Scheduling Solver",
+   "Builds mixed-integer models for scheduling and assignment and verifies the returned schedule satisfies every constraint.",
+   "procedural",
+   [
+    [
+     "mse-optimizer",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-operations",
+     "support"
+    ],
+    [
+     "mse-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-sensitivity-reporter",
+   "mse-optimization",
+   "Sensitivity Analysis Reporter",
+   "Reports reduced costs, shadow prices and allowable ranges and checks them by re-solving with perturbed parameters.",
+   "semantic",
+   [
+    [
+     "mse-optimizer",
+     "primary"
+    ],
+    [
+     "mse-decision",
+     "checker"
+    ],
+    [
+     "mse-finance",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-queue-analyzer",
+   "mse-stochastic-modeling",
+   "Queueing System Analyzer",
+   "Computes waiting times and utilisation for M/M/c and related queues and checks closed-form results against simulation.",
+   "procedural",
+   [
+    [
+     "mse-stochastic",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-operations",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-markov-chain-solver",
+   "mse-stochastic-modeling",
+   "Markov Chain Solver",
+   "Builds transition matrices, solves steady-state and absorption probabilities and checks rows sum to one and results converge.",
+   "procedural",
+   [
+    [
+     "mse-stochastic",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-discrete-event-simulator",
+   "mse-stochastic-modeling",
+   "Discrete Event Simulator",
+   "Simulates process flows with random arrivals and reports confidence intervals checked by replication count and variance.",
+   "procedural",
+   [
+    [
+     "mse-stochastic",
+     "primary"
+    ],
+    [
+     "mse-data",
+     "checker"
+    ],
+    [
+     "mse-operations",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-decision-tree-evaluator",
+   "mse-decision-analysis",
+   "Decision Tree Evaluator",
+   "Builds and rolls back decision trees to expected value or utility and checks probabilities and payoffs are coherent.",
+   "procedural",
+   [
+    [
+     "mse-decision",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-finance",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-voi-calculator",
+   "mse-decision-analysis",
+   "Value of Information Calculator",
+   "Computes expected value of perfect and sample information and checks it never exceeds the value of perfect information.",
+   "procedural",
+   [
+    [
+     "mse-decision",
+     "primary"
+    ],
+    [
+     "mse-stochastic",
+     "checker"
+    ],
+    [
+     "mse-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-risk-preference-elicitor",
+   "mse-decision-analysis",
+   "Risk Preference Elicitor",
+   "Elicits utility curves and risk tolerance from stakeholders and checks answers for consistency across lotteries.",
+   "semantic",
+   [
+    [
+     "mse-decision",
+     "primary"
+    ],
+    [
+     "mse-org",
+     "checker"
+    ],
+    [
+     "mse-finance",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-inventory-policy-designer",
+   "mse-operations-supply-chain",
+   "Inventory Policy Designer",
+   "Sets EOQ, reorder point and safety stock for items and checks fill rates by simulation against the target service level.",
+   "procedural",
+   [
+    [
+     "mse-operations",
+     "primary"
+    ],
+    [
+     "mse-stochastic",
+     "checker"
+    ],
+    [
+     "mse-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-demand-forecaster",
+   "mse-operations-supply-chain",
+   "Demand Forecaster",
+   "Fits time-series forecasts to demand history and checks accuracy with holdout error metrics.",
+   "procedural",
+   [
+    [
+     "mse-data",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-operations",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-network-design-planner",
+   "mse-operations-supply-chain",
+   "Supply Network Design Planner",
+   "Chooses facility locations and flows to minimise cost and checks capacity and demand balance in the solution.",
+   "procedural",
+   [
+    [
+     "mse-optimizer",
+     "primary"
+    ],
+    [
+     "mse-operations",
+     "checker"
+    ],
+    [
+     "mse-validator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-project-npv-valuer",
+   "mse-financial-engineering",
+   "Project NPV Valuer",
+   "Discounts project cash flows to NPV and IRR and checks results under alternative discount rates.",
+   "procedural",
+   [
+    [
+     "mse-finance",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-decision",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-portfolio-optimizer",
+   "mse-financial-engineering",
+   "Mean-Variance Portfolio Optimizer",
+   "Computes efficient frontiers and optimal weights and checks the covariance matrix is positive semidefinite.",
+   "procedural",
+   [
+    [
+     "mse-finance",
+     "primary"
+    ],
+    [
+     "mse-optimizer",
+     "checker"
+    ],
+    [
+     "mse-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-option-pricer",
+   "mse-financial-engineering",
+   "Option Pricer",
+   "Prices options with binomial and Black-Scholes models and checks the two methods converge and satisfy put-call parity.",
+   "procedural",
+   [
+    [
+     "mse-finance",
+     "primary"
+    ],
+    [
+     "mse-validator",
+     "checker"
+    ],
+    [
+     "mse-stochastic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-org-design-assessor",
+   "mse-organizations-strategy",
+   "Organization Design Assessor",
+   "Maps structure, incentives and coordination in a team or firm and checks findings against interview or survey evidence.",
+   "semantic",
+   [
+    [
+     "mse-org",
+     "primary"
+    ],
+    [
+     "mse-data",
+     "checker"
+    ],
+    [
+     "mse-decision",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-technology-adoption-analyst",
+   "mse-organizations-strategy",
+   "Technology Adoption Analyst",
+   "Fits diffusion curves to adoption data and checks fit quality and forecast plausibility.",
+   "semantic",
+   [
+    [
+     "mse-org",
+     "primary"
+    ],
+    [
+     "mse-data",
+     "checker"
+    ],
+    [
+     "mse-validator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mse-competitive-strategy-mapper",
+   "mse-organizations-strategy",
+   "Competitive Strategy Mapper",
+   "Analyses industry structure and competitive positioning and checks claims against market and firm data.",
+   "semantic",
+   [
+    [
+     "mse-org",
+     "primary"
+    ],
+    [
+     "mse-finance",
+     "checker"
+    ],
+    [
+     "mse-data",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "mse-optimizer": "Optimization Modeler",
+  "mse-stochastic": "Stochastic Systems Analyst",
+  "mse-decision": "Decision Analyst",
+  "mse-operations": "Operations and Supply Chain Agent",
+  "mse-finance": "Financial Engineering Agent",
+  "mse-org": "Organizations and Strategy Agent",
+  "mse-data": "Business Data Analyst",
+  "mse-validator": "Model Validation Agent"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "mcp-server-motherduck",
+   null,
+   "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "web-listed",
+   "https://github.com/motherduckdb/mcp-server-motherduck"
+  ],
+  [
+   "Mantic",
+   "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "Explore judgemental forecasts",
+   [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "mse-optimize": "optimization linear integer convex constraint objective duality solver schedule shadow",
+  "mse-uncertain": "stochastic probability markov queue simulation random variance replication arrival",
+  "mse-choice": "decision risk utility tree information preference expected",
+  "mse-ops": "operations supply inventory logistics capacity forecast lead production demand facility",
+  "mse-money": "finance valuation portfolio derivative npv option cash discount covariance",
+  "mse-firm": "organization strategy innovation technology entrepreneurship incentive team competition industry"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

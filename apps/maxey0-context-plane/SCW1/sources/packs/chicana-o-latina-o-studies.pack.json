@@ -1,0 +1,561 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "chicana-o-latina-o-studies",
+ "topic": {
+  "id": "chicana-o-latina-o-studies",
+  "label": "Chicana/o - Latina/o Studies",
+  "desc": "Chicana/o - Latina/o Studies: the histories, cultures, politics and communities of Mexican Americans and Latinas/os in the United States."
+ },
+ "concepts": [
+  [
+   "chla-borderlands-history",
+   "Borderlands History",
+   "chicana-o-latina-o-studies",
+   "History of the US-Mexico borderlands from Spanish colonization through the Mexican-American War to the present.",
+   [
+    "borderlands",
+    "border",
+    "colonization",
+    "treaty",
+    "annexation",
+    "mexican-american war",
+    "history",
+    "region"
+   ]
+  ],
+  [
+   "chla-immigration-labor",
+   "Immigration, Labor and Policy",
+   "chicana-o-latina-o-studies",
+   "Migration from Mexico and Latin America, farm labor, the Bracero Program and immigration law.",
+   [
+    "immigration",
+    "labor",
+    "bracero",
+    "farmworker",
+    "deportation",
+    "policy",
+    "undocumented",
+    "daca"
+   ]
+  ],
+  [
+   "chla-chicano-movement",
+   "Chicano Movement and Civil Rights",
+   "chicana-o-latina-o-studies",
+   "The Chicano Movement, school walkouts, litigation against segregation and political organizing.",
+   [
+    "chicano movement",
+    "civil rights",
+    "walkout",
+    "segregation",
+    "activism",
+    "litigation",
+    "organizing",
+    "political"
+   ]
+  ],
+  [
+   "chla-literature-arts",
+   "Literature, Art and Culture",
+   "chicana-o-latina-o-studies",
+   "Chicana/o and Latina/o literature, murals, music, film and cultural production.",
+   [
+    "literature",
+    "art",
+    "mural",
+    "music",
+    "film",
+    "poetry",
+    "culture",
+    "performance"
+   ]
+  ],
+  [
+   "chla-gender-identity",
+   "Gender, Feminism and Identity",
+   "chicana-o-latina-o-studies",
+   "Chicana feminism, borderlands theory, mestizaje and intersecting identities.",
+   [
+    "gender",
+    "feminism",
+    "chicana",
+    "identity",
+    "mestizaje",
+    "intersectionality",
+    "sexuality",
+    "theory"
+   ]
+  ],
+  [
+   "chla-language-community",
+   "Language, Education and Community",
+   "chicana-o-latina-o-studies",
+   "Spanish and bilingualism, education access and community-based research.",
+   [
+    "language",
+    "spanish",
+    "bilingual",
+    "education",
+    "community",
+    "oral history",
+    "translation",
+    "research"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "chla-treaty-analysis",
+   "chla-borderlands-history",
+   "Treaty of Guadalupe Hidalgo Analysis",
+   "Analyses the 1848 treaty and its land and citizenship effects, checked against the treaty text.",
+   "semantic",
+   [
+    [
+     "chla-historian",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-archivist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-border-timeline",
+   "chla-borderlands-history",
+   "Border History Timeline",
+   "Builds a dated timeline of border policy and events, checked against cited sources.",
+   "procedural",
+   [
+    [
+     "chla-historian",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-land-grant",
+   "chla-borderlands-history",
+   "Land Grant Dispossession Study",
+   "Explains loss of Mexican land grants after annexation, checked against court and archival records.",
+   "semantic",
+   [
+    [
+     "chla-historian",
+     "primary"
+    ],
+    [
+     "chla-archivist",
+     "checker"
+    ],
+    [
+     "chla-fact",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-bracero-study",
+   "chla-immigration-labor",
+   "Bracero Program Study",
+   "Explains the 1942-1964 Bracero Program and its legacy, checked against government records.",
+   "semantic",
+   [
+    [
+     "chla-historian",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-policy-mapper",
+   "chla-immigration-labor",
+   "Immigration Policy Mapper",
+   "Maps immigration laws and programs affecting Latinos, checked for statute names and dates.",
+   "procedural",
+   [
+    [
+     "chla-policy",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-demographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-farmworker-organizing",
+   "chla-immigration-labor",
+   "Farmworker Organizing History",
+   "Summarizes UFW organizing and boycotts, checked against dated primary accounts.",
+   "semantic",
+   [
+    [
+     "chla-historian",
+     "primary"
+    ],
+    [
+     "chla-archivist",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-walkout-history",
+   "chla-chicano-movement",
+   "School Walkout History",
+   "Explains the 1968 East Los Angeles walkouts and demands, checked against primary sources.",
+   "semantic",
+   [
+    [
+     "chla-historian",
+     "primary"
+    ],
+    [
+     "chla-archivist",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-case-briefing",
+   "chla-chicano-movement",
+   "Civil Rights Case Briefing",
+   "Briefs cases such as Mendez v. Westminster and Hernandez v. Texas, checked against the opinion.",
+   "procedural",
+   [
+    [
+     "chla-policy",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-political-participation",
+   "chla-chicano-movement",
+   "Latino Political Participation",
+   "Analyses Latino voter registration and turnout by group, checked against survey and census data.",
+   "procedural",
+   [
+    [
+     "chla-demographer",
+     "primary"
+    ],
+    [
+     "chla-policy",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-close-reading",
+   "chla-literature-arts",
+   "Literary Close Reading",
+   "Produces a close reading of a Chicana/o or Latina/o text, checked by quoting and citing the text.",
+   "semantic",
+   [
+    [
+     "chla-literary",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-mural-analysis",
+   "chla-literature-arts",
+   "Mural and Visual Art Analysis",
+   "Analyses murals and visual art in historical context, checked against artist and date records.",
+   "semantic",
+   [
+    [
+     "chla-literary",
+     "primary"
+    ],
+    [
+     "chla-archivist",
+     "checker"
+    ],
+    [
+     "chla-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-music-history",
+   "chla-literature-arts",
+   "Music and Performance History",
+   "Traces corridos, Tejano and other genres and their social meaning, checked against cited scholarship.",
+   "semantic",
+   [
+    [
+     "chla-literary",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-feminist-theory",
+   "chla-gender-identity",
+   "Chicana Feminist Theory",
+   "Explains Anzaldua and Chicana feminist thought, checked against cited primary texts.",
+   "semantic",
+   [
+    [
+     "chla-literary",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-identity-terms",
+   "chla-gender-identity",
+   "Identity Terminology Analysis",
+   "Explains Hispanic, Latino, Latinx and Chicano labels and their usage, checked against survey data.",
+   "semantic",
+   [
+    [
+     "chla-sociologist",
+     "primary"
+    ],
+    [
+     "chla-demographer",
+     "checker"
+    ],
+    [
+     "chla-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-intersectional-review",
+   "chla-gender-identity",
+   "Intersectional Outcomes Review",
+   "Reviews outcomes by gender and ethnicity, checked against disaggregated data tables.",
+   "procedural",
+   [
+    [
+     "chla-sociologist",
+     "primary"
+    ],
+    [
+     "chla-demographer",
+     "checker"
+    ],
+    [
+     "chla-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-bilingual-education",
+   "chla-language-community",
+   "Bilingual Education Policy",
+   "Analyses bilingual education law and outcomes, checked against cited statutes and studies.",
+   "semantic",
+   [
+    [
+     "chla-linguist",
+     "primary"
+    ],
+    [
+     "chla-policy",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-source-translation",
+   "chla-language-community",
+   "Spanish Source Translation",
+   "Translates Spanish-language primary sources, checked by back-translation of key passages.",
+   "procedural",
+   [
+    [
+     "chla-linguist",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-archivist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chla-oral-history-protocol",
+   "chla-language-community",
+   "Oral History Protocol",
+   "Designs a community oral history project with consent procedures, checked against oral history ethics standards.",
+   "procedural",
+   [
+    [
+     "chla-archivist",
+     "primary"
+    ],
+    [
+     "chla-fact",
+     "checker"
+    ],
+    [
+     "chla-sociologist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "chla-historian": "Borderlands Historian",
+  "chla-sociologist": "Latino Community Sociologist",
+  "chla-literary": "Literary and Cultural Critic",
+  "chla-policy": "Immigration Policy Analyst",
+  "chla-linguist": "Bilingualism Linguist",
+  "chla-archivist": "Oral History Archivist",
+  "chla-demographer": "Census Demographer",
+  "chla-fact": "Source Verification Checker"
+ },
+ "mcp": [
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "chla-borderlands": "borderlands border colonization treaty annexation mexican american war history region",
+  "chla-immigration": "immigration labor bracero farmworker deportation policy undocumented daca",
+  "chla-chicano": "chicano movement civil rights walkout segregation activism litigation organizing political",
+  "chla-literature": "literature art mural music film poetry culture performance",
+  "chla-gender": "gender feminism chicana identity mestizaje intersectionality sexuality theory",
+  "chla-language": "language spanish bilingual education community oral translation research"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

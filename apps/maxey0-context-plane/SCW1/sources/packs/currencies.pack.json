@@ -1,0 +1,235 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "currencies",
+ "topic": {
+  "id": "currencies",
+  "label": "Currencies and Foreign Exchange",
+  "desc": "Money across borders: currency pairs and FX markets, exchange rate drivers and central banks, cross-border payments, and hedging currency risk."
+ },
+ "concepts": [
+  [
+   "fx-pairs",
+   "Currency Pairs and FX Markets",
+   "currencies",
+   "Spot FX, currency pairs, quotes, pips and the over-the-counter FX market.",
+   [
+    "currency",
+    "pair",
+    "forex",
+    "fx",
+    "spot",
+    "quote",
+    "pip",
+    "exchange",
+    "rate",
+    "dollar",
+    "euro",
+    "yen"
+   ]
+  ],
+  [
+   "fx-drivers",
+   "Exchange Rate Drivers and Central Banks",
+   "currencies",
+   "Interest rate differentials, inflation, trade balances, central bank policy and intervention.",
+   [
+    "central",
+    "bank",
+    "interest",
+    "rate",
+    "inflation",
+    "policy",
+    "intervention",
+    "fed",
+    "ecb",
+    "differential"
+   ]
+  ],
+  [
+   "fx-payments",
+   "Cross-Border Payments",
+   "currencies",
+   "Sending money across borders: SWIFT, correspondent banking, remittances, fees and timing.",
+   [
+    "cross",
+    "border",
+    "payment",
+    "swift",
+    "correspondent",
+    "remittance",
+    "wire",
+    "transfer",
+    "fee"
+   ]
+  ],
+  [
+   "fx-fx-hedging",
+   "Currency Risk Hedging",
+   "currencies",
+   "Hedging FX exposure with forwards, options and natural hedges.",
+   [
+    "currency",
+    "risk",
+    "hedge",
+    "forward",
+    "exposure",
+    "translation",
+    "transaction"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "fx-fx-quote-explainer",
+   "fx-pairs",
+   "FX Quote Explainer",
+   "Explains a currency quote, base and quote currency, pips and cross rates.",
+   "semantic",
+   [
+    [
+     "fx-trader",
+     "primary"
+    ],
+    [
+     "fx-checker",
+     "checker"
+    ],
+    [
+     "fx-macro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fx-currency-converter",
+   "fx-pairs",
+   "Currency Converter",
+   "Converts amounts between currencies at a stated rate and source.",
+   "procedural",
+   [
+    [
+     "fx-trader",
+     "primary"
+    ],
+    [
+     "fx-checker",
+     "checker"
+    ],
+    [
+     "fx-macro",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fx-rate-differential-analyzer",
+   "fx-drivers",
+   "Rate Differential Analyzer",
+   "Explains a currency move by rate differentials and central bank policy.",
+   "semantic",
+   [
+    [
+     "fx-macro",
+     "primary"
+    ],
+    [
+     "fx-checker",
+     "checker"
+    ],
+    [
+     "fx-payments",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fx-cross-border-payment-planner",
+   "fx-payments",
+   "Cross-Border Payment Planner",
+   "Plans a cross-border payment route with fees, timing and compliance checks.",
+   "procedural",
+   [
+    [
+     "fx-payments",
+     "primary"
+    ],
+    [
+     "fx-checker",
+     "checker"
+    ],
+    [
+     "fx-trader",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "fx-fx-exposure-hedger",
+   "fx-fx-hedging",
+   "FX Exposure Hedger",
+   "Measures a company's currency exposure and proposes a hedge.",
+   "semantic",
+   [
+    [
+     "fx-trader",
+     "primary"
+    ],
+    [
+     "fx-checker",
+     "checker"
+    ],
+    [
+     "fx-macro",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "fx-trader": "FX Markets Agent",
+  "fx-macro": "Central Bank Agent",
+  "fx-payments": "Cross-Border Payments Agent",
+  "fx-checker": "FX Checker Agent"
+ },
+ "mcp": [
+  [
+   "Polygon MCP",
+   null,
+   "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   [],
+   "web-listed",
+   "https://github.com/polygon-io/mcp_polygon"
+  ],
+  [
+   "Twelve Data MCP",
+   null,
+   "Twelve Data MCP server: real time and historical prices for stocks, forex, crypto, ETFs and indices, technical indicators.",
+   [],
+   "web-listed",
+   "https://github.com/twelvedata/mcp"
+  ]
+ ],
+ "lexicon": {
+  "fxpairs": "currency pair forex fx spot quote pip exchange rate dollar euro yen",
+  "fxdrivers": "central bank interest rate inflation policy intervention fed ecb differential",
+  "fxpayments": "cross border payment swift correspondent remittance wire transfer fee",
+  "fxfxhedging": "currency risk hedge forward exposure translation transaction"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Polygon MCP": "repository exists (git ls-remote https://github.com/polygon-io/mcp_polygon, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Twelve Data MCP": "repository exists (git ls-remote https://github.com/twelvedata/mcp, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

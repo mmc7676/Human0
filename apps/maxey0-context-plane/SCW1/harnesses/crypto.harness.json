@@ -1,0 +1,359 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "crypto",
+  "label": "Cryptocurrencies and Digital Assets",
+  "desc": "Digital money and assets: blockchains and consensus, cryptocurrencies and tokens, wallets and custody, crypto exchanges and DeFi, stablecoins and central bank digital currencies, and crypto regulation."
+ },
+ "concepts": [
+  {
+   "id": "cry-chains",
+   "label": "Blockchains and Consensus",
+   "desc": "How blockchains work: blocks, consensus (proof of work, proof of stake), nodes and smart contracts.",
+   "keywords": [
+    "blockchain",
+    "consensus",
+    "proof",
+    "work",
+    "stake",
+    "node",
+    "block",
+    "smart",
+    "contract",
+    "ledger"
+   ],
+   "topic": "crypto",
+   "source": "crypto",
+   "related": []
+  },
+  {
+   "id": "cry-custody",
+   "label": "Wallets and Custody",
+   "desc": "Wallets, private keys, seed phrases, self custody versus custodians, and security.",
+   "keywords": [
+    "wallet",
+    "private",
+    "key",
+    "seed",
+    "phrase",
+    "custody",
+    "hardware",
+    "self",
+    "custodian"
+   ],
+   "topic": "crypto",
+   "source": "crypto",
+   "related": []
+  },
+  {
+   "id": "cry-defi",
+   "label": "Crypto Exchanges and DeFi",
+   "desc": "Centralized exchanges, decentralized exchanges, liquidity pools, lending and their risks.",
+   "keywords": [
+    "exchange",
+    "defi",
+    "decentralized",
+    "liquidity",
+    "pool",
+    "lending",
+    "yield",
+    "swap",
+    "amm"
+   ],
+   "topic": "crypto",
+   "source": "crypto",
+   "related": []
+  },
+  {
+   "id": "cry-digital-currencies",
+   "label": "Stablecoins and Central Bank Digital Currencies",
+   "desc": "Fiat-backed and algorithmic stablecoins, reserves, and central bank digital currencies.",
+   "keywords": [
+    "stablecoin",
+    "cbdc",
+    "digital",
+    "currency",
+    "reserve",
+    "fiat",
+    "peg",
+    "central",
+    "bank"
+   ],
+   "topic": "crypto",
+   "source": "crypto",
+   "related": []
+  },
+  {
+   "id": "cry-regulation",
+   "label": "Crypto Regulation and Tax",
+   "desc": "How crypto is regulated and taxed by jurisdiction: securities status, licensing, travel rule and reporting.",
+   "keywords": [
+    "crypto",
+    "regulation",
+    "tax",
+    "securities",
+    "license",
+    "travel",
+    "rule",
+    "reporting",
+    "jurisdiction"
+   ],
+   "topic": "crypto",
+   "source": "crypto",
+   "related": []
+  },
+  {
+   "id": "cry-tokens",
+   "label": "Cryptocurrencies and Tokens",
+   "desc": "Bitcoin, Ether, tokens, token standards, supply schedules and tokenomics.",
+   "keywords": [
+    "cryptocurrency",
+    "bitcoin",
+    "ether",
+    "token",
+    "erc",
+    "supply",
+    "tokenomics",
+    "coin"
+   ],
+   "topic": "crypto",
+   "source": "crypto",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cry-blockchain-explainer",
+   "concept": "cry-chains",
+   "label": "Blockchain Explainer",
+   "desc": "Explains how a blockchain records and confirms transactions and its trust assumptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1698",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1699",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1700",
+     "role": "support"
+    }
+   ],
+   "source": "crypto"
+  },
+  {
+   "id": "cry-custody-option-comparator",
+   "concept": "cry-custody",
+   "label": "Custody Option Comparator",
+   "desc": "Compares self custody, hardware wallets and custodians by risk and control.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1701",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1699",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1702",
+     "role": "support"
+    }
+   ],
+   "source": "crypto"
+  },
+  {
+   "id": "cry-defi-risk-reviewer",
+   "concept": "cry-defi",
+   "label": "DeFi Risk Reviewer",
+   "desc": "Reviews a DeFi protocol's smart contract, liquidity and counterparty risks.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1702",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1699",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1703",
+     "role": "support"
+    }
+   ],
+   "source": "crypto"
+  },
+  {
+   "id": "cry-stablecoin-reserve-checker",
+   "concept": "cry-digital-currencies",
+   "label": "Stablecoin Reserve Checker",
+   "desc": "Explains a stablecoin's peg mechanism and how its reserves are attested.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1703",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1699",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1698",
+     "role": "support"
+    }
+   ],
+   "source": "crypto"
+  },
+  {
+   "id": "cry-crypto-regulatory-map",
+   "concept": "cry-regulation",
+   "label": "Crypto Regulatory Map",
+   "desc": "Maps how a crypto activity is regulated in a jurisdiction and what must be reported.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1703",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1699",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1698",
+     "role": "support"
+    }
+   ],
+   "source": "crypto"
+  },
+  {
+   "id": "cry-token-analyzer",
+   "concept": "cry-tokens",
+   "label": "Token Analyzer",
+   "desc": "Analyzes a token's supply, distribution, utility and risks.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1700",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1699",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1701",
+     "role": "support"
+    }
+   ],
+   "source": "crypto"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1698",
+   "name": "Blockchain Agent",
+   "legacy_key": "cry-chain",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1699",
+   "name": "Crypto Checker Agent",
+   "legacy_key": "cry-checker",
+   "mcp": [
+    "local:coinbase-agentkit"
+   ]
+  },
+  {
+   "key": "Maxey1700",
+   "name": "Token Agent",
+   "legacy_key": "cry-token",
+   "mcp": [
+    "local:coinbase-agentkit"
+   ]
+  },
+  {
+   "key": "Maxey1701",
+   "name": "Wallet and Custody Agent",
+   "legacy_key": "cry-custody",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1702",
+   "name": "DeFi Agent",
+   "legacy_key": "cry-defi",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1703",
+   "name": "Digital Currency Agent",
+   "legacy_key": "cry-cbdc",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "CCXT MCP",
+   "desc": "CCXT MCP server: cryptocurrency exchange market data, tickers, order books, trades and accounts across many crypto exchanges.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/doggybee/mcp-server-ccxt",
+   "id": "local:ccxt-mcp",
+   "origins": [
+    "crypto"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Coinbase AgentKit",
+   "desc": "Coinbase AgentKit: onchain wallets, token transfers, swaps and smart contract actions on crypto blockchains, with an MCP extension.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/coinbase/agentkit",
+   "id": "local:coinbase-agentkit",
+   "origins": [
+    "crypto"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:ccxt-mcp",
+  "local:coinbase-agentkit"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1699",
+   "mcp": "local:coinbase-agentkit",
+   "topic": "crypto",
+   "score": 0.1963,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1700",
+   "mcp": "local:coinbase-agentkit",
+   "topic": "crypto",
+   "score": 0.2021,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "crychains": "blockchain consensus proof work stake node block smart contract ledger",
+  "crytokens": "cryptocurrency bitcoin ether token erc supply tokenomics coin",
+  "crycustody": "wallet private key seed phrase custody hardware self custodian",
+  "crydefi": "exchange defi decentralized liquidity pool lending yield swap amm",
+  "crydigitalcurrencies": "stablecoin cbdc digital currency reserve fiat peg central bank",
+  "cryregulation": "crypto regulation tax securities license travel rule reporting jurisdiction"
+ },
+ "sources": [
+  "crypto"
+ ]
+}

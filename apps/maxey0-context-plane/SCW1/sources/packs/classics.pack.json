@@ -1,0 +1,566 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "classics",
+ "topic": {
+  "id": "classics",
+  "label": "Classics",
+  "desc": "Classics: the languages, literature, history, philosophy and material culture of ancient Greece and Rome."
+ },
+ "concepts": [
+  [
+   "clas-greek-language",
+   "Ancient Greek Language",
+   "classics",
+   "Grammar, syntax and vocabulary of Attic, Homeric and Koine Greek as the basis for reading original texts.",
+   [
+    "greek",
+    "attic",
+    "homeric",
+    "koine",
+    "grammar",
+    "syntax",
+    "morphology",
+    "parsing"
+   ]
+  ],
+  [
+   "clas-latin-language",
+   "Latin Language",
+   "classics",
+   "Grammar, syntax and style of classical and post-classical Latin prose and verse.",
+   [
+    "latin",
+    "grammar",
+    "syntax",
+    "declension",
+    "conjugation",
+    "prose",
+    "composition",
+    "lexicon"
+   ]
+  ],
+  [
+   "clas-literature",
+   "Greek and Latin Literature",
+   "classics",
+   "Epic, drama, lyric, history and oratory read in their genres, traditions and reception.",
+   [
+    "epic",
+    "tragedy",
+    "comedy",
+    "lyric",
+    "oratory",
+    "genre",
+    "reception",
+    "commentary"
+   ]
+  ],
+  [
+   "clas-ancient-history",
+   "Ancient History",
+   "classics",
+   "Political, social and economic history of the Greek and Roman world from the Bronze Age to late antiquity.",
+   [
+    "history",
+    "polis",
+    "republic",
+    "empire",
+    "chronology",
+    "source",
+    "historiography",
+    "prosopography"
+   ]
+  ],
+  [
+   "clas-archaeology",
+   "Classical Archaeology and Art",
+   "classics",
+   "Material remains of Greek and Roman sites, architecture, sculpture, pottery and coins.",
+   [
+    "archaeology",
+    "excavation",
+    "architecture",
+    "sculpture",
+    "pottery",
+    "coin",
+    "site",
+    "stratigraphy"
+   ]
+  ],
+  [
+   "clas-ancient-philosophy",
+   "Ancient Philosophy",
+   "classics",
+   "Presocratic, Platonic, Aristotelian, Stoic and Epicurean thought in ethics, metaphysics and logic.",
+   [
+    "philosophy",
+    "plato",
+    "aristotle",
+    "stoic",
+    "epicurean",
+    "presocratic",
+    "ethics",
+    "metaphysics"
+   ]
+  ],
+  [
+   "clas-epigraphy",
+   "Epigraphy and Papyrology",
+   "classics",
+   "Reading, restoring and dating inscriptions and papyri as primary documentary evidence.",
+   [
+    "epigraphy",
+    "inscription",
+    "papyrus",
+    "papyrology",
+    "restoration",
+    "edition",
+    "documentary",
+    "abbreviation"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "clas-greek-parsing",
+   "clas-greek-language",
+   "Greek Morphological Parsing",
+   "Parses each Greek word for lemma, case, tense, mood and voice and checks the analysis against standard grammars.",
+   "procedural",
+   [
+    [
+     "clas-philologist",
+     "primary"
+    ],
+    [
+     "clas-translator",
+     "checker"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-greek-translation",
+   "clas-greek-language",
+   "Greek Prose Translation",
+   "Produces a literal and a readable translation of a Greek passage and checks every clause against the parsed original.",
+   "semantic",
+   [
+    [
+     "clas-translator",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-latin-parsing",
+   "clas-latin-language",
+   "Latin Morphological Parsing",
+   "Identifies declension, conjugation and syntactic function for each Latin word and verifies agreement across the sentence.",
+   "procedural",
+   [
+    [
+     "clas-philologist",
+     "primary"
+    ],
+    [
+     "clas-translator",
+     "checker"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-latin-composition",
+   "clas-latin-language",
+   "Latin Prose Composition",
+   "Renders English sentences into idiomatic classical Latin and checks grammar and word choice against attested usage.",
+   "procedural",
+   [
+    [
+     "clas-translator",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-close-reading",
+   "clas-literature",
+   "Literary Close Reading",
+   "Writes a close reading of a passage that ties diction, imagery and structure to genre, with every claim tied to a line reference.",
+   "semantic",
+   [
+    [
+     "clas-philologist",
+     "primary"
+    ],
+    [
+     "clas-translator",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-meter-scansion",
+   "clas-literature",
+   "Meter Scansion",
+   "Scans hexameter, elegiac and lyric lines into long and short syllables and flags lines that do not fit the meter.",
+   "procedural",
+   [
+    [
+     "clas-metrist",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ],
+    [
+     "clas-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-reception-study",
+   "clas-literature",
+   "Reception Study",
+   "Traces how a classical text was read and adapted in later periods and checks each claimed adaptation against a cited source.",
+   "semantic",
+   [
+    [
+     "clas-philologist",
+     "primary"
+    ],
+    [
+     "clas-bibliographer",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-source-criticism",
+   "clas-ancient-history",
+   "Source Criticism",
+   "Assesses the reliability, bias and date of an ancient historical source and compares its account with independent evidence.",
+   "semantic",
+   [
+    [
+     "clas-historian",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-epigrapher",
+     "support"
+    ],
+    [
+     "clas-archaeologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-chronology-builder",
+   "clas-ancient-history",
+   "Chronology Builder",
+   "Builds a dated timeline of events, rulers and magistracies and reconciles conflicting dating systems.",
+   "procedural",
+   [
+    [
+     "clas-historian",
+     "primary"
+    ],
+    [
+     "clas-archaeologist",
+     "checker"
+    ],
+    [
+     "clas-epigrapher",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-artifact-dating",
+   "clas-archaeology",
+   "Artifact Dating",
+   "Dates pottery, coins and sculpture by style, context and stratigraphy and states the evidence for each date range.",
+   "semantic",
+   [
+    [
+     "clas-archaeologist",
+     "primary"
+    ],
+    [
+     "clas-epigrapher",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-site-interpretation",
+   "clas-archaeology",
+   "Site Interpretation",
+   "Interprets the plan and phases of an excavated site and checks the reading against published excavation reports.",
+   "semantic",
+   [
+    [
+     "clas-archaeologist",
+     "primary"
+    ],
+    [
+     "clas-historian",
+     "checker"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ],
+    [
+     "clas-epigrapher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-argument-reconstruction",
+   "clas-ancient-philosophy",
+   "Argument Reconstruction",
+   "Reconstructs an argument from an ancient philosophical text as numbered premises and conclusion and checks validity and textual fidelity.",
+   "semantic",
+   [
+    [
+     "clas-philosopher",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-translator",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-doctrine-comparison",
+   "clas-ancient-philosophy",
+   "Doctrine Comparison",
+   "Compares positions of two schools on one question and checks each attribution against primary passages.",
+   "semantic",
+   [
+    [
+     "clas-philosopher",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-inscription-reading",
+   "clas-epigraphy",
+   "Inscription Reading",
+   "Transcribes and expands abbreviations in an inscription using standard editorial signs and checks restorations against parallels.",
+   "procedural",
+   [
+    [
+     "clas-epigrapher",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ],
+    [
+     "clas-bibliographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "clas-papyrus-edition",
+   "clas-epigraphy",
+   "Papyrus Edition",
+   "Produces a diplomatic and normalised text of a papyrus fragment and records every uncertain reading.",
+   "procedural",
+   [
+    [
+     "clas-epigrapher",
+     "primary"
+    ],
+    [
+     "clas-philologist",
+     "checker"
+    ],
+    [
+     "clas-translator",
+     "support"
+    ],
+    [
+     "clas-historian",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "clas-philologist": "Philologist Agent",
+  "clas-translator": "Translation Agent",
+  "clas-historian": "Ancient Historian Agent",
+  "clas-archaeologist": "Archaeologist Agent",
+  "clas-philosopher": "Ancient Philosophy Agent",
+  "clas-epigrapher": "Epigraphy and Papyrology Agent",
+  "clas-metrist": "Meter and Prosody Agent",
+  "clas-bibliographer": "Classics Bibliographer Agent"
+ },
+ "mcp": [
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "clas-greek": "greek attic homeric koine grammar syntax morphology parsing",
+  "clas-latin": "latin declension conjugation prose composition lexicon",
+  "clas-literature": "epic tragedy comedy lyric oratory genre reception commentary",
+  "clas-history": "history polis republic empire chronology source historiography prosopography",
+  "clas-material": "archaeology excavation architecture sculpture pottery coin site stratigraphy",
+  "clas-philosophy": "philosophy plato aristotle stoic epicurean presocratic ethics metaphysics"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "Wiley Scholar Gateway": "scholarly articles and citations",
+   "DeepL": "modern-language scholarship only; does not translate Ancient Greek or Latin"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

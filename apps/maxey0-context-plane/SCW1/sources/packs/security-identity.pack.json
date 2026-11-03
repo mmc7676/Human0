@@ -1,0 +1,277 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "security-identity",
+ "topic": {
+  "id": "security-identity",
+  "label": "Security and Identity",
+  "desc": "Keeping systems and people safe: authentication and authorization, secrets and keys, vulnerability scanning and threat modeling."
+ },
+ "concepts": [
+  [
+   "sec-authn",
+   "Authentication and Authorization",
+   "security-identity",
+   "Who a user is and what they may do: login, OAuth, single sign-on, roles, permissions and sessions.",
+   [
+    "authentication",
+    "authorization",
+    "oauth",
+    "login",
+    "sso",
+    "role",
+    "permission",
+    "session",
+    "token",
+    "identity"
+   ]
+  ],
+  [
+   "sec-secrets",
+   "Secrets and Keys",
+   "security-identity",
+   "API keys, passwords, certificates and encryption keys: storage, rotation and leak response.",
+   [
+    "secret",
+    "key",
+    "password",
+    "certificate",
+    "encryption",
+    "rotation",
+    "vault",
+    "leak",
+    "credential"
+   ]
+  ],
+  [
+   "sec-vulns",
+   "Vulnerability Scanning",
+   "security-identity",
+   "Finding vulnerabilities in code, dependencies and configuration with static analysis and scanners.",
+   [
+    "vulnerability",
+    "scan",
+    "static",
+    "analysis",
+    "dependency",
+    "cve",
+    "injection",
+    "insecure",
+    "code"
+   ]
+  ],
+  [
+   "sec-threats",
+   "Threat Modeling",
+   "security-identity",
+   "Who might attack a system, how, and what to defend first.",
+   [
+    "threat",
+    "model",
+    "attacker",
+    "attack",
+    "surface",
+    "risk",
+    "mitigation",
+    "stride",
+    "abuse"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "sec-access-policy-designer",
+   "sec-authn",
+   "Access Policy Designer",
+   "Designs roles and permissions for an application with least privilege.",
+   "procedural",
+   [
+    [
+     "sec-auth",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-secrets",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sec-oauth-flow-explainer",
+   "sec-authn",
+   "OAuth Flow Explainer",
+   "Explains which OAuth flow fits an application and the steps of that flow.",
+   "semantic",
+   [
+    [
+     "sec-auth",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-secrets",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sec-secret-leak-responder",
+   "sec-secrets",
+   "Secret Leak Responder",
+   "Lists the steps after a secret is leaked: revoke, rotate, audit use and prevent recurrence.",
+   "semantic",
+   [
+    [
+     "sec-secrets",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-scanner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sec-key-rotation-planner",
+   "sec-secrets",
+   "Key Rotation Planner",
+   "Plans rotation of keys and certificates without downtime.",
+   "procedural",
+   [
+    [
+     "sec-secrets",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-scanner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sec-code-vulnerability-reviewer",
+   "sec-vulns",
+   "Code Vulnerability Reviewer",
+   "Reviews code for injection, insecure deserialization, auth bypass and other common vulnerabilities.",
+   "semantic",
+   [
+    [
+     "sec-scanner",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-threat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sec-dependency-risk-checker",
+   "sec-vulns",
+   "Dependency Risk Checker",
+   "Checks dependencies for known vulnerabilities and outdated versions.",
+   "procedural",
+   [
+    [
+     "sec-scanner",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-threat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sec-threat-model-builder",
+   "sec-threats",
+   "Threat Model Builder",
+   "Builds a threat model for a system: assets, attackers, attack paths and mitigations ranked by risk.",
+   "procedural",
+   [
+    [
+     "sec-threat",
+     "primary"
+    ],
+    [
+     "sec-checker",
+     "checker"
+    ],
+    [
+     "sec-auth",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "sec-auth": "Identity and Access Agent",
+  "sec-secrets": "Secrets Agent",
+  "sec-scanner": "Vulnerability Scanner Agent",
+  "sec-threat": "Threat Modeling Agent",
+  "sec-checker": "Security Checker Agent"
+ },
+ "mcp": [
+  [
+   "Semgrep MCP",
+   null,
+   "Semgrep MCP server: static analysis security scanning of source code for vulnerabilities and insecure patterns.",
+   [],
+   "web-listed",
+   "https://github.com/semgrep/mcp"
+  ],
+  [
+   "Auth0 MCP Server",
+   null,
+   "Auth0 MCP server: manage Auth0 identity tenants, applications, authentication and authorization configuration.",
+   [],
+   "web-listed",
+   "https://github.com/auth0/auth0-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "secauthn": "authentication authorization oauth login sso role permission session token identity",
+  "secsecrets": "secret key password certificate encryption rotation vault leak credential",
+  "secvulns": "vulnerability scan static analysis dependency cve injection insecure code",
+  "secthreats": "threat model attacker attack surface risk mitigation stride abuse"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Semgrep MCP": "repository exists (git ls-remote https://github.com/semgrep/mcp, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Auth0 MCP Server": "repository exists (git ls-remote https://github.com/auth0/auth0-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

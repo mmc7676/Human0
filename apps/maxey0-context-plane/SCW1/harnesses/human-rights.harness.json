@@ -1,0 +1,646 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "human-rights",
+  "label": "Human Rights",
+  "desc": "Human Rights: the law, philosophy, institutions and practice of protecting human dignity, from treaties to monitoring and advocacy."
+ },
+ "concepts": [
+  {
+   "id": "hr-institutions-mechanisms",
+   "label": "Institutions and Enforcement Mechanisms",
+   "desc": "UN charter and treaty bodies, regional courts and commissions, and national institutions that monitor and enforce rights.",
+   "keywords": [
+    "treaty body",
+    "court",
+    "commission",
+    "universal periodic review",
+    "complaint",
+    "jurisprudence",
+    "regional",
+    "ombudsman"
+   ],
+   "topic": "human-rights",
+   "source": "human-rights",
+   "related": []
+  },
+  {
+   "id": "hr-international-law",
+   "label": "International Human Rights Law",
+   "desc": "The treaty and customary framework: the UDHR, the ICCPR and ICESCR, core conventions, state obligations and derogations.",
+   "keywords": [
+    "treaty",
+    "convention",
+    "udhr",
+    "iccpr",
+    "icescr",
+    "obligation",
+    "derogation",
+    "reservation"
+   ],
+   "topic": "human-rights",
+   "source": "human-rights",
+   "related": []
+  },
+  {
+   "id": "hr-monitoring-documentation",
+   "label": "Monitoring, Documentation and Investigation",
+   "desc": "Methods for documenting violations: interviews, open-source evidence, chain of custody and reporting standards.",
+   "keywords": [
+    "monitoring",
+    "documentation",
+    "testimony",
+    "evidence",
+    "open source",
+    "chain of custody",
+    "verification",
+    "report"
+   ],
+   "topic": "human-rights",
+   "source": "human-rights",
+   "related": []
+  },
+  {
+   "id": "hr-specific-rights",
+   "label": "Specific Rights and Groups",
+   "desc": "Civil, political, economic, social and cultural rights, and protection of women, children, refugees, minorities and indigenous peoples.",
+   "keywords": [
+    "civil",
+    "political",
+    "economic",
+    "cultural",
+    "refugee",
+    "children",
+    "women",
+    "indigenous",
+    "minority"
+   ],
+   "topic": "human-rights",
+   "source": "human-rights",
+   "related": []
+  },
+  {
+   "id": "hr-theory-foundations",
+   "label": "Foundations and Theory of Rights",
+   "desc": "Philosophical and historical foundations of human rights: dignity, universality, relativism and the generations of rights.",
+   "keywords": [
+    "dignity",
+    "universality",
+    "relativism",
+    "natural rights",
+    "philosophy",
+    "generations",
+    "history",
+    "liberty"
+   ],
+   "topic": "human-rights",
+   "source": "human-rights",
+   "related": []
+  },
+  {
+   "id": "hr-transitional-justice",
+   "label": "Transitional Justice and Accountability",
+   "desc": "Responses to mass violations: criminal trials, truth commissions, reparations and institutional reform.",
+   "keywords": [
+    "transitional justice",
+    "accountability",
+    "truth commission",
+    "reparations",
+    "tribunal",
+    "atrocity",
+    "impunity",
+    "reconciliation"
+   ],
+   "topic": "human-rights",
+   "source": "human-rights",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "hr-case-law-summary",
+   "concept": "hr-institutions-mechanisms",
+   "label": "Jurisprudence Summary",
+   "desc": "Summarises regional court jurisprudence on a right, checked by citing each case and holding.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1354",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-forum-selection",
+   "concept": "hr-institutions-mechanisms",
+   "label": "Complaint Forum Selection",
+   "desc": "Recommends which court, commission or treaty body can hear a complaint, checked against admissibility rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1354",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-upr-review",
+   "concept": "hr-institutions-mechanisms",
+   "label": "Universal Periodic Review Tracker",
+   "desc": "Tracks recommendations made to a state in the universal periodic review and its responses, checked against the official documents.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1354",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1357",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-derogation-test",
+   "concept": "hr-international-law",
+   "label": "Limitation and Derogation Test",
+   "desc": "Tests a restriction for legality, necessity and proportionality, checked by applying each step to the facts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1355",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1358",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-obligation-analysis",
+   "concept": "hr-international-law",
+   "label": "State Obligation Analysis",
+   "desc": "Analyses a situation under the duties to respect, protect and fulfil, checked by citing the article and general comment used.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1355",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1359",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-treaty-lookup",
+   "concept": "hr-international-law",
+   "label": "Treaty Provision Finder",
+   "desc": "Identifies which treaty articles protect a right and whether a state has ratified them, checked against the official ratification status.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1355",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1354",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-evidence-verification",
+   "concept": "hr-monitoring-documentation",
+   "label": "Open-Source Evidence Verification",
+   "desc": "Verifies the date, location and authenticity of images and videos, checked by recording each verification step.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1360",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1357",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-testimony-protocol",
+   "concept": "hr-monitoring-documentation",
+   "label": "Testimony Interview Protocol",
+   "desc": "Prepares a trauma-informed interview plan with informed consent, checked against documentation ethics standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1360",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1357",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-violation-report",
+   "concept": "hr-monitoring-documentation",
+   "label": "Violation Report Drafter",
+   "desc": "Drafts a monitoring report linking documented incidents to legal standards, checked by tracing every claim to evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1357",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1360",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-advocacy-plan",
+   "concept": "hr-specific-rights",
+   "label": "Advocacy Strategy Plan",
+   "desc": "Builds an advocacy plan with targets, messages and channels for a rights issue, checked by tying each step to a measurable outcome.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1361",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1357",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1354",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-esc-rights",
+   "concept": "hr-specific-rights",
+   "label": "Economic and Social Rights Assessment",
+   "desc": "Assesses progressive realisation of a right using indicators and budgets, checked by recomputing each indicator.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1357",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-group-protection",
+   "concept": "hr-specific-rights",
+   "label": "Group Protection Analyst",
+   "desc": "Identifies the instruments protecting a specific group such as refugees or children, checked against the relevant convention text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1355",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1361",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-rights-history",
+   "concept": "hr-theory-foundations",
+   "label": "History of Rights Timeline",
+   "desc": "Dates key texts and movements in the history of rights, checked against the documents themselves.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1359",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1354",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-rights-justification",
+   "concept": "hr-theory-foundations",
+   "label": "Rights Justification Analysis",
+   "desc": "Compares justifications for a right from dignity, natural law and capability theories, checked by citing the theorist for each argument.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1359",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-universality-debate",
+   "concept": "hr-theory-foundations",
+   "label": "Universality and Relativism Debate",
+   "desc": "Lays out universalist and cultural relativist positions on a practice, checked by sourcing each position.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1359",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1361",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-atrocity-elements",
+   "concept": "hr-transitional-justice",
+   "label": "Atrocity Crime Elements",
+   "desc": "Maps facts to the legal elements of genocide, crimes against humanity or war crimes, checked against statute definitions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1358",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1355",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1360",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-mechanism-comparison",
+   "concept": "hr-transitional-justice",
+   "label": "Accountability Mechanism Comparison",
+   "desc": "Compares trials, truth commissions and reparations programs for a context, checked by citing precedents for each option.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1358",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1354",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  },
+  {
+   "id": "hr-reparations-design",
+   "concept": "hr-transitional-justice",
+   "label": "Reparations Program Design",
+   "desc": "Designs eligibility and benefit forms for a reparations program, checked against international reparations principles.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1358",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1356",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1361",
+     "role": "support"
+    }
+   ],
+   "source": "human-rights"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1354",
+   "name": "Treaty Body and Courts Agent",
+   "legacy_key": "hr-institutions",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1355",
+   "name": "International Human Rights Lawyer",
+   "legacy_key": "hr-lawyer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1356",
+   "name": "Legal Accuracy Checker",
+   "legacy_key": "hr-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1357",
+   "name": "Human Rights Monitoring Agent",
+   "legacy_key": "hr-monitor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1358",
+   "name": "Transitional Justice Agent",
+   "legacy_key": "hr-justice",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1359",
+   "name": "Rights Theory Agent",
+   "legacy_key": "hr-philosopher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1360",
+   "name": "Documentation and Investigation Agent",
+   "legacy_key": "hr-investigator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1361",
+   "name": "Advocacy Strategy Agent",
+   "legacy_key": "hr-advocate",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "hr-theory": "dignity universality relativism philosophy generations liberty",
+  "hr-law": "treaty convention udhr iccpr icescr obligation derogation reservation",
+  "hr-mechanisms": "court commission complaint jurisprudence regional ombudsman",
+  "hr-evidence": "monitoring documentation testimony verification report",
+  "hr-groups": "civil political refugee children women indigenous minority",
+  "hr-justice": "accountability reparations tribunal atrocity impunity reconciliation"
+ },
+ "sources": [
+  "human-rights"
+ ]
+}

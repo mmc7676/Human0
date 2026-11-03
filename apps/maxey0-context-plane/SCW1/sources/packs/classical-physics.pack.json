@@ -1,0 +1,582 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "classical-physics",
+ "topic": {
+  "id": "classical-physics",
+  "label": "Classical Physics",
+  "desc": "Classical physics: Newtonian mechanics, conservation laws, oscillations and waves, thermodynamics, electromagnetism, optics, fluids and relativity."
+ },
+ "concepts": [
+  [
+   "cl-mechanics",
+   "Newtonian Mechanics",
+   "classical-physics",
+   "Motion, forces, rotation and orbits under Newton's laws.",
+   [
+    "newton",
+    "force",
+    "acceleration",
+    "torque",
+    "orbit",
+    "kinematics"
+   ]
+  ],
+  [
+   "cl-conservation",
+   "Energy, Momentum and Conservation",
+   "classical-physics",
+   "Work, energy, momentum and the conservation laws used to solve problems.",
+   [
+    "energy",
+    "work",
+    "momentum",
+    "collision",
+    "conservation",
+    "impulse"
+   ]
+  ],
+  [
+   "cl-waves",
+   "Oscillations and Waves",
+   "classical-physics",
+   "Oscillators, damping, resonance, wave propagation and interference.",
+   [
+    "oscillator",
+    "damping",
+    "resonance",
+    "wave",
+    "interference",
+    "fourier"
+   ]
+  ],
+  [
+   "cl-thermo",
+   "Thermodynamics and Statistical Mechanics",
+   "classical-physics",
+   "Heat, entropy, thermodynamic cycles and the kinetic theory of gases.",
+   [
+    "heat",
+    "entropy",
+    "cycle",
+    "carnot",
+    "kinetic",
+    "temperature"
+   ]
+  ],
+  [
+   "cl-em",
+   "Electromagnetism",
+   "classical-physics",
+   "Electric and magnetic fields, circuits and Maxwell's equations.",
+   [
+    "electric",
+    "magnetic",
+    "maxwell",
+    "circuit",
+    "field",
+    "capacitance"
+   ]
+  ],
+  [
+   "cl-optics",
+   "Optics",
+   "classical-physics",
+   "Geometric and wave optics: lenses, mirrors, diffraction and polarization.",
+   [
+    "lens",
+    "mirror",
+    "diffraction",
+    "polarization",
+    "refraction"
+   ]
+  ],
+  [
+   "cl-fluids",
+   "Fluid Mechanics",
+   "classical-physics",
+   "Fluid statics and flow: pressure, viscosity, turbulence and scaling.",
+   [
+    "fluid",
+    "pressure",
+    "viscosity",
+    "turbulence",
+    "reynolds"
+   ]
+  ],
+  [
+   "cl-relativity",
+   "Special and General Relativity",
+   "classical-physics",
+   "Spacetime, time dilation and gravity as curvature, treated as classical field theory.",
+   [
+    "relativity",
+    "spacetime",
+    "lorentz",
+    "curvature",
+    "geodesic"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-kinematics-dynamics-solver",
+   "cl-mechanics",
+   "Kinematics and Dynamics Solver",
+   "Solves motion problems with forces, constraints and friction and checks the answer against limiting cases.",
+   "procedural",
+   [
+    [
+     "cl-mechanician",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-rigid-body-rotation",
+   "cl-mechanics",
+   "Rigid Body Rotation Analyzer",
+   "Computes torque, moment of inertia and angular momentum for rotating bodies and tops.",
+   "procedural",
+   [
+    [
+     "cl-mechanician",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-orbital-mechanics",
+   "cl-mechanics",
+   "Orbital Mechanics Calculator",
+   "Computes orbits, transfer maneuvers and periods under gravity with Kepler's laws and numerical integration, for example orbits around the Moon or a planet and the surface gravity there.",
+   "procedural",
+   [
+    [
+     "cl-mechanician",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-energy-work-analyzer",
+   "cl-conservation",
+   "Energy and Work Analyzer",
+   "Applies work-energy and potential energy methods and accounts for dissipated energy explicitly.",
+   "procedural",
+   [
+    [
+     "cl-mechanician",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-units-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-collision-momentum-solver",
+   "cl-conservation",
+   "Collision and Momentum Solver",
+   "Solves elastic and inelastic collisions in one and two dimensions from momentum and energy balance.",
+   "procedural",
+   [
+    [
+     "cl-mechanician",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-harmonic-oscillator-solver",
+   "cl-waves",
+   "Harmonic Oscillator Solver",
+   "Solves driven and damped oscillators and finds resonance frequency and quality factor.",
+   "procedural",
+   [
+    [
+     "cl-wave-physicist",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-wave-propagation-analyzer",
+   "cl-waves",
+   "Wave Propagation Analyzer",
+   "Analyzes superposition, standing waves, dispersion and interference with Fourier decomposition.",
+   "semantic",
+   [
+    [
+     "cl-wave-physicist",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-optician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-thermodynamic-cycle-analyzer",
+   "cl-thermo",
+   "Thermodynamic Cycle Analyzer",
+   "Analyzes engines and refrigerators on pressure-volume diagrams and computes efficiency against the Carnot limit.",
+   "procedural",
+   [
+    [
+     "cl-thermodynamicist",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-units-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-heat-transfer-solver",
+   "cl-thermo",
+   "Heat Transfer Solver",
+   "Solves conduction, convection and radiation problems with boundary conditions and reports the dominant mode.",
+   "procedural",
+   [
+    [
+     "cl-thermodynamicist",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-fluid-dynamicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-kinetic-theory-statistics",
+   "cl-thermo",
+   "Kinetic Theory and Statistics",
+   "Derives gas properties from molecular statistics and connects entropy to counting of states.",
+   "semantic",
+   [
+    [
+     "cl-thermodynamicist",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-mechanician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-electrostatics-solver",
+   "cl-em",
+   "Electrostatics Solver",
+   "Computes fields and potentials of charge distributions with Gauss's law, symmetry and image methods.",
+   "procedural",
+   [
+    [
+     "cl-electromagnetician",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-circuit-analyzer",
+   "cl-em",
+   "Circuit Analyzer",
+   "Analyzes resistor, capacitor and inductor circuits in steady state and in transients.",
+   "procedural",
+   [
+    [
+     "cl-electromagnetician",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-maxwell-field-solver",
+   "cl-em",
+   "Maxwell Field Solver",
+   "Applies Maxwell's equations to waves, radiation and induction and checks boundary conditions.",
+   "semantic",
+   [
+    [
+     "cl-electromagnetician",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-wave-physicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-geometric-optics-designer",
+   "cl-optics",
+   "Geometric Optics Designer",
+   "Traces rays through lenses and mirrors and designs simple optical systems with aberration estimates.",
+   "procedural",
+   [
+    [
+     "cl-optician",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-wave-optics-analyzer",
+   "cl-optics",
+   "Wave Optics Analyzer",
+   "Analyzes diffraction, interference and polarization patterns from slits, gratings and thin films.",
+   "semantic",
+   [
+    [
+     "cl-optician",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-wave-physicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-fluid-flow-solver",
+   "cl-fluids",
+   "Fluid Flow Solver",
+   "Solves pressure, Bernoulli and pipe-flow problems and identifies laminar or turbulent regimes.",
+   "procedural",
+   [
+    [
+     "cl-fluid-dynamicist",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-numerical-integrator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-dimensional-analysis-scaler",
+   "cl-fluids",
+   "Dimensional Analysis and Scaling",
+   "Builds dimensionless numbers such as the Reynolds number and uses them to scale models to full size.",
+   "semantic",
+   [
+    [
+     "cl-fluid-dynamicist",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-thermodynamicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-special-relativity-calculator",
+   "cl-relativity",
+   "Special Relativity Calculator",
+   "Computes time dilation, length contraction and relativistic energy and momentum with Lorentz transformations.",
+   "procedural",
+   [
+    [
+     "cl-relativist",
+     "primary"
+    ],
+    [
+     "cl-units-checker",
+     "checker"
+    ],
+    [
+     "cl-conservation-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-gravitation-curvature-explainer",
+   "cl-relativity",
+   "Gravitation and Curvature Explainer",
+   "Explains gravity as spacetime curvature, geodesics and gravitational time dilation and separates the weak-field limit from the full theory Compares weight and surface gravity on the Moon, Mars and Earth.",
+   "semantic",
+   [
+    [
+     "cl-relativist",
+     "primary"
+    ],
+    [
+     "cl-conservation-checker",
+     "checker"
+    ],
+    [
+     "cl-mechanician",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "cl-mechanician": "Mechanics Agent",
+  "cl-wave-physicist": "Waves and Oscillations Agent",
+  "cl-thermodynamicist": "Thermodynamics Agent",
+  "cl-electromagnetician": "Electromagnetism Agent",
+  "cl-optician": "Optics Agent",
+  "cl-fluid-dynamicist": "Fluid Dynamics Agent",
+  "cl-relativist": "Relativity Agent",
+  "cl-numerical-integrator": "Numerical Integration Agent",
+  "cl-units-checker": "Units and Dimensions Checker Agent",
+  "cl-conservation-checker": "Conservation Law Checker Agent"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "newtonian": "newton torque friction kepler constraint inertia force acceleration orbit kinematics newtonian mechanics moon lunar mars planetary gravity weight surface",
+  "conservation": "energy dissipated impulse elastic inelastic momentum collision conservation",
+  "wavemotion": "oscillator damping resonance standing dispersion grating wave interference fourier oscillations",
+  "thermoclass": "entropy carnot efficiency conduction convection radiation heat cycle kinetic temperature thermodynamics statistical",
+  "fieldtheory": "gauss maxwell induction capacitor inductor potential electric magnetic circuit field capacitance electromagnetism",
+  "raytrace": "ray mirror aberration diffraction polarization refraction optics",
+  "flowmech": "bernoulli laminar turbulent reynolds pipe viscosity fluid pressure turbulence",
+  "relativistic": "lorentz dilation contraction geodesic curvature relativity spacetime special general"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "Wolfram": "directory listing, authless per the directory; also listed by the optional Physics example pack, so it is reused by uuid if both are added; tool names are the listing's visible sample; connector is not installed or tested",
+   "overlap": "the optional 'Add example: Physics' pack also contains classical and quantum concepts; the two are independent and can both be added"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here.",
+  "v04_note": "v0.4: Moon, Mars and gravity terms added so planetary tasks reach Classical Physics.",
+  "v04_lexicon_freed": [
+   [
+    "conservation",
+    [
+     "work"
+    ]
+   ]
+  ]
+ }
+}
