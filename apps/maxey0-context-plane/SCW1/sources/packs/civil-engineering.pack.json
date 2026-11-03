@@ -1,0 +1,619 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "civil-engineering",
+ "topic": {
+  "id": "civil-engineering",
+  "label": "Civil Engineering",
+  "desc": "Civil Engineering: the analysis, design and construction of structures, foundations, water systems and transportation networks."
+ },
+ "concepts": [
+  [
+   "civil-structural",
+   "Structural Engineering",
+   "civil-engineering",
+   "Analysis and design of beams, frames, trusses and slabs so that load paths, stresses and deflections stay within code limits.",
+   [
+    "structural",
+    "beam",
+    "truss",
+    "frame",
+    "load",
+    "deflection",
+    "stress",
+    "moment"
+   ]
+  ],
+  [
+   "civil-geotechnical",
+   "Geotechnical Engineering",
+   "civil-engineering",
+   "Behaviour of soil and rock as engineering materials, covering site investigation, bearing capacity, settlement and slope stability.",
+   [
+    "geotechnical",
+    "soil",
+    "foundation",
+    "bearing",
+    "settlement",
+    "slope",
+    "consolidation",
+    "borehole"
+   ]
+  ],
+  [
+   "civil-water-resources",
+   "Water Resources and Hydraulics",
+   "civil-engineering",
+   "Flow of water in pipes, channels and catchments, used to design drainage, flood control and water supply systems.",
+   [
+    "hydraulic",
+    "hydrology",
+    "pipe",
+    "channel",
+    "drainage",
+    "flood",
+    "runoff",
+    "catchment"
+   ]
+  ],
+  [
+   "civil-transportation",
+   "Transportation Engineering",
+   "civil-engineering",
+   "Planning, geometric design and operation of roads, rail and transit so that traffic moves safely and efficiently.",
+   [
+    "transportation",
+    "traffic",
+    "highway",
+    "pavement",
+    "intersection",
+    "capacity",
+    "geometric",
+    "transit"
+   ]
+  ],
+  [
+   "civil-construction",
+   "Construction Engineering and Management",
+   "civil-engineering",
+   "Planning, scheduling, costing and safe execution of civil works from tender to handover.",
+   [
+    "construction",
+    "schedule",
+    "cost",
+    "estimate",
+    "contract",
+    "safety",
+    "critical path",
+    "quantity"
+   ]
+  ],
+  [
+   "civil-materials",
+   "Civil Engineering Materials",
+   "civil-engineering",
+   "Properties and testing of concrete, steel, asphalt and timber used in civil infrastructure.",
+   [
+    "materials",
+    "concrete",
+    "steel",
+    "asphalt",
+    "timber",
+    "strength",
+    "mix",
+    "durability"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "civil-frame-analysis",
+   "civil-structural",
+   "Frame and Truss Analysis",
+   "Computes member forces, moments and deflections for a frame or truss under specified load combinations and checks equilibrium at every joint.",
+   "procedural",
+   [
+    [
+     "civil-structural-analyst",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ],
+    [
+     "civil-transport-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-member-design",
+   "civil-structural",
+   "Steel and Concrete Member Design",
+   "Sizes steel and reinforced concrete members for bending, shear and axial load and checks each against the governing design code clauses.",
+   "procedural",
+   [
+    [
+     "civil-structural-analyst",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ],
+    [
+     "civil-transport-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-load-combination",
+   "civil-structural",
+   "Load Combination Builder",
+   "Assembles dead, live, wind and seismic load cases into factored combinations and verifies factors against the referenced standard.",
+   "semantic",
+   [
+    [
+     "civil-code-checker",
+     "primary"
+    ],
+    [
+     "civil-structural-analyst",
+     "checker"
+    ],
+    [
+     "civil-construction-manager",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-bearing-capacity",
+   "civil-geotechnical",
+   "Bearing Capacity Calculator",
+   "Calculates allowable bearing pressure for shallow foundations from soil strength parameters and checks the factor of safety.",
+   "procedural",
+   [
+    [
+     "civil-geotechnical",
+     "primary"
+    ],
+    [
+     "civil-structural-analyst",
+     "checker"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-settlement-estimate",
+   "civil-geotechnical",
+   "Settlement Estimator",
+   "Estimates immediate and consolidation settlement from borehole and laboratory data and compares totals with tolerable limits.",
+   "procedural",
+   [
+    [
+     "civil-geotechnical",
+     "primary"
+    ],
+    [
+     "civil-materials",
+     "checker"
+    ],
+    [
+     "civil-structural-analyst",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-slope-stability",
+   "civil-geotechnical",
+   "Slope Stability Review",
+   "Evaluates slope stability with limit-equilibrium methods and reports the critical slip surface and factor of safety for review.",
+   "semantic",
+   [
+    [
+     "civil-geotechnical",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-pipe-network",
+   "civil-water-resources",
+   "Pipe Network Solver",
+   "Solves flows and pressures in a water distribution network and checks that continuity and energy balance close at every node.",
+   "procedural",
+   [
+    [
+     "civil-hydraulics",
+     "primary"
+    ],
+    [
+     "civil-structural-analyst",
+     "checker"
+    ],
+    [
+     "civil-code-checker",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-runoff-model",
+   "civil-water-resources",
+   "Catchment Runoff Model",
+   "Estimates peak runoff from a catchment using rainfall intensity and land cover and checks results against a second method.",
+   "procedural",
+   [
+    [
+     "civil-hydraulics",
+     "primary"
+    ],
+    [
+     "civil-gis-analyst",
+     "checker"
+    ],
+    [
+     "civil-code-checker",
+     "support"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-channel-design",
+   "civil-water-resources",
+   "Open Channel Design",
+   "Sizes open channels and culverts with Manning flow relations and checks velocity and freeboard limits.",
+   "procedural",
+   [
+    [
+     "civil-hydraulics",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-transport-planner",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-traffic-capacity",
+   "civil-transportation",
+   "Traffic Capacity Analysis",
+   "Computes level of service and delay at intersections and road segments from traffic counts and checks inputs for consistency.",
+   "procedural",
+   [
+    [
+     "civil-transport-planner",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-structural-analyst",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-geometric-design",
+   "civil-transportation",
+   "Highway Geometric Design",
+   "Lays out horizontal and vertical alignment with curve radii and sight distances and checks each element against design speed rules.",
+   "procedural",
+   [
+    [
+     "civil-transport-planner",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-pavement-design",
+   "civil-transportation",
+   "Pavement Design",
+   "Selects pavement layer thicknesses from traffic loading and subgrade strength and verifies the design life calculation.",
+   "procedural",
+   [
+    [
+     "civil-transport-planner",
+     "primary"
+    ],
+    [
+     "civil-materials",
+     "checker"
+    ],
+    [
+     "civil-geotechnical",
+     "support"
+    ],
+    [
+     "civil-code-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-critical-path",
+   "civil-construction",
+   "Critical Path Scheduler",
+   "Builds an activity network, computes the critical path and float, and checks that logic links and durations are complete.",
+   "procedural",
+   [
+    [
+     "civil-construction-manager",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-structural-analyst",
+     "support"
+    ],
+    [
+     "civil-gis-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-cost-estimate",
+   "civil-construction",
+   "Quantity and Cost Estimator",
+   "Takes off quantities from drawings, prices them and reconciles the total against unit-rate benchmarks.",
+   "procedural",
+   [
+    [
+     "civil-construction-manager",
+     "primary"
+    ],
+    [
+     "civil-materials",
+     "checker"
+    ],
+    [
+     "civil-structural-analyst",
+     "support"
+    ],
+    [
+     "civil-code-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-site-safety",
+   "civil-construction",
+   "Site Safety Planner",
+   "Identifies construction hazards for each work stage and checks the safety plan against applicable regulations.",
+   "semantic",
+   [
+    [
+     "civil-construction-manager",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-materials",
+     "support"
+    ],
+    [
+     "civil-geotechnical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-concrete-mix",
+   "civil-materials",
+   "Concrete Mix Design",
+   "Proportions cement, water, aggregate and admixtures for a target strength and checks the water-cement ratio and durability limits.",
+   "procedural",
+   [
+    [
+     "civil-materials",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-geotechnical",
+     "support"
+    ],
+    [
+     "civil-construction-manager",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "civil-test-interpretation",
+   "civil-materials",
+   "Material Test Interpretation",
+   "Interprets cylinder, tensile and asphalt test results and flags samples that fall below specified strength.",
+   "semantic",
+   [
+    [
+     "civil-materials",
+     "primary"
+    ],
+    [
+     "civil-code-checker",
+     "checker"
+    ],
+    [
+     "civil-structural-analyst",
+     "support"
+    ],
+    [
+     "civil-construction-manager",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "civil-structural-analyst": "Structural Analyst Agent",
+  "civil-geotechnical": "Geotechnical Engineer Agent",
+  "civil-hydraulics": "Hydraulics Engineer Agent",
+  "civil-transport-planner": "Transportation Planner Agent",
+  "civil-construction-manager": "Construction Manager Agent",
+  "civil-code-checker": "Design Code Checker Agent",
+  "civil-materials": "Materials Testing Agent",
+  "civil-gis-analyst": "Spatial Site Analyst Agent"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Felt Maps",
+   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "Map and analyze your geospatial data",
+   [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "civil-structure": "structural beam truss frame load deflection stress moment",
+  "civil-soil": "geotechnical soil foundation bearing settlement slope consolidation borehole",
+  "civil-water": "hydraulic hydrology pipe channel drainage flood runoff catchment",
+  "civil-transport": "transportation traffic highway pavement intersection capacity geometric transit",
+  "civil-construct": "construction schedule cost estimate contract safety critical path quantity",
+  "civil-material": "materials concrete steel asphalt timber strength mix durability"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "Wolfram": "used for engineering computation",
+   "GIS Cloud": "used for site and network mapping",
+   "Felt Maps": "used for spatial analysis of sites"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

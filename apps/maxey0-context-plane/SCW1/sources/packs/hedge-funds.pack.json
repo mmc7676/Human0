@@ -1,0 +1,260 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "hedge-funds",
+ "topic": {
+  "id": "hedge-funds",
+  "label": "Hedge Funds and Alternative Investments",
+  "desc": "Alternative investment vehicles: hedge fund strategies and structures (onshore and offshore, master-feeder), private equity and venture capital, prime brokerage and fund operations, and how investors subscribe and track them."
+ },
+ "concepts": [
+  [
+   "hf-strategies",
+   "Hedge Fund Strategies",
+   "hedge-funds",
+   "Long/short equity, global macro, event driven, relative value, credit and quant strategies.",
+   [
+    "hedge",
+    "fund",
+    "strategy",
+    "long",
+    "short",
+    "macro",
+    "event",
+    "driven",
+    "arbitrage",
+    "relative",
+    "value"
+   ]
+  ],
+  [
+   "hf-structures",
+   "Fund Structures: Onshore and Offshore",
+   "hedge-funds",
+   "Delaware LPs, Cayman funds, master-feeder structures, side pockets and why each is used.",
+   [
+    "onshore",
+    "offshore",
+    "cayman",
+    "delaware",
+    "master",
+    "feeder",
+    "limited",
+    "partnership",
+    "side",
+    "pocket",
+    "structure"
+   ]
+  ],
+  [
+   "hf-private-markets",
+   "Private Equity and Venture Capital",
+   "hedge-funds",
+   "Buyouts, growth and venture funds, capital calls, J-curve, carried interest and exits.",
+   [
+    "private",
+    "equity",
+    "venture",
+    "capital",
+    "buyout",
+    "fund",
+    "capital",
+    "call",
+    "carried",
+    "interest",
+    "exit"
+   ]
+  ],
+  [
+   "hf-operations",
+   "Prime Brokerage and Fund Operations",
+   "hedge-funds",
+   "Prime brokers, fund administrators, NAV calculation, custody, margin and securities lending.",
+   [
+    "prime",
+    "brokerage",
+    "administrator",
+    "nav",
+    "custody",
+    "margin",
+    "securities",
+    "lending",
+    "operations"
+   ]
+  ],
+  [
+   "hf-subscriptions",
+   "Subscribing, Reporting and Tracking",
+   "hedge-funds",
+   "How investors subscribe and redeem: eligibility, subscription documents, lockups, gates, and investor reporting.",
+   [
+    "subscription",
+    "redemption",
+    "lockup",
+    "gate",
+    "investor",
+    "reporting",
+    "eligibility",
+    "qualified",
+    "purchaser"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "hf-strategy-explainer",
+   "hf-strategies",
+   "Strategy Explainer",
+   "Explains a hedge fund strategy's return sources, risks and typical leverage.",
+   "semantic",
+   [
+    [
+     "hf-strategy",
+     "primary"
+    ],
+    [
+     "hf-checker",
+     "checker"
+    ],
+    [
+     "hf-structure",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hf-master-feeder-explainer",
+   "hf-structures",
+   "Master-Feeder Explainer",
+   "Explains a master-feeder structure, which investors use which feeder and why.",
+   "semantic",
+   [
+    [
+     "hf-structure",
+     "primary"
+    ],
+    [
+     "hf-checker",
+     "checker"
+    ],
+    [
+     "hf-pe",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hf-fund-structure-selector",
+   "hf-structures",
+   "Fund Structure Selector",
+   "Compares onshore, offshore and parallel fund structures for an investor base.",
+   "semantic",
+   [
+    [
+     "hf-structure",
+     "primary"
+    ],
+    [
+     "hf-checker",
+     "checker"
+    ],
+    [
+     "hf-pe",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hf-pe-fund-terms-explainer",
+   "hf-private-markets",
+   "PE Fund Terms Explainer",
+   "Explains fund terms: management fee, carry, hurdle, waterfall and capital calls.",
+   "semantic",
+   [
+    [
+     "hf-pe",
+     "primary"
+    ],
+    [
+     "hf-checker",
+     "checker"
+    ],
+    [
+     "hf-ops",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hf-fund-ops-map",
+   "hf-operations",
+   "Fund Ops Map",
+   "Maps a fund's service providers (prime broker, administrator, auditor, custodian) and what each does.",
+   "procedural",
+   [
+    [
+     "hf-ops",
+     "primary"
+    ],
+    [
+     "hf-checker",
+     "checker"
+    ],
+    [
+     "hf-investor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hf-subscription-guide",
+   "hf-subscriptions",
+   "Subscription Guide",
+   "Explains how an investor subscribes to a fund: eligibility, documents, KYC, lockups and redemptions.",
+   "semantic",
+   [
+    [
+     "hf-investor",
+     "primary"
+    ],
+    [
+     "hf-checker",
+     "checker"
+    ],
+    [
+     "hf-strategy",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "hf-strategy": "Hedge Fund Strategy Agent",
+  "hf-structure": "Fund Structuring Agent",
+  "hf-pe": "Private Equity Agent",
+  "hf-ops": "Fund Operations Agent",
+  "hf-investor": "Investor Relations Agent",
+  "hf-checker": "Alternatives Checker Agent"
+ },
+ "mcp": [],
+ "lexicon": {
+  "hfstrategies": "hedge fund strategy long short macro event driven arbitrage relative value",
+  "hfstructures": "onshore offshore cayman delaware master feeder limited partnership side pocket structure",
+  "hfprivatemarkets": "private equity venture capital buyout fund capital call carried interest exit",
+  "hfoperations": "prime brokerage administrator nav custody margin securities lending operations",
+  "hfsubscriptions": "subscription redemption lockup gate investor reporting eligibility qualified purchaser"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "none"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {},
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

@@ -1,0 +1,539 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "korean",
+ "topic": {
+  "id": "korean",
+  "label": "Korean",
+  "desc": "Korean: the Korean language and Hangul, its grammar and speech levels, and Korean literature, history and contemporary culture."
+ },
+ "concepts": [
+  [
+   "kor-hangul-writing",
+   "Hangul and the Writing System",
+   "korean",
+   "Hangul letters and syllable blocks, spelling, hanja and romanization of Korean.",
+   [
+    "hangul",
+    "jamo",
+    "syllable block",
+    "spelling",
+    "hanja",
+    "romanization",
+    "sejong",
+    "orthography"
+   ]
+  ],
+  [
+   "kor-grammar",
+   "Korean Grammar",
+   "korean",
+   "Particles, verb endings, conjugation, connective endings and sentence structure in Korean.",
+   [
+    "grammar",
+    "particle",
+    "ending",
+    "conjugation",
+    "connective",
+    "verb",
+    "tense",
+    "sentence"
+   ]
+  ],
+  [
+   "kor-speech-levels",
+   "Speech Levels and Honorifics",
+   "korean",
+   "Korean speech levels, honorific verbs and nouns, and register in social relationships.",
+   [
+    "speech level",
+    "honorific",
+    "polite",
+    "formal",
+    "banmal",
+    "jondaetmal",
+    "register",
+    "hierarchy"
+   ]
+  ],
+  [
+   "kor-phonology",
+   "Korean Phonology and Pronunciation",
+   "korean",
+   "Consonant tension, sound change rules such as liaison and nasalization, and dialects.",
+   [
+    "pronunciation",
+    "phonology",
+    "sound change",
+    "nasalization",
+    "liaison",
+    "tense consonant",
+    "dialect",
+    "ipa"
+   ]
+  ],
+  [
+   "kor-literature",
+   "Korean Literature",
+   "korean",
+   "Classical poetry such as sijo, premodern fiction and modern and contemporary Korean literature.",
+   [
+    "literature",
+    "sijo",
+    "classical",
+    "poetry",
+    "novel",
+    "modern",
+    "fiction",
+    "pansori"
+   ]
+  ],
+  [
+   "kor-translation-culture",
+   "Translation, History and Culture",
+   "korean",
+   "Translation between Korean and other languages, Korean history, and contemporary culture and media.",
+   [
+    "translation",
+    "history",
+    "culture",
+    "joseon",
+    "division",
+    "media",
+    "hallyu",
+    "society"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "kor-block-decomposer",
+   "kor-hangul-writing",
+   "Syllable Block Decomposer",
+   "Splits Hangul syllables into initial, medial and final jamo, checked by recomposing the blocks.",
+   "procedural",
+   [
+    [
+     "kor-hangul",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-phonetician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-romanizer",
+   "kor-hangul-writing",
+   "Revised Romanization Converter",
+   "Converts Korean to Revised Romanization, checked against the official romanization rules.",
+   "procedural",
+   [
+    [
+     "kor-hangul",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-phonetician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-hanja-lookup",
+   "kor-hangul-writing",
+   "Hanja Lookup",
+   "Gives the hanja and meaning behind Sino-Korean words, checked against a hanja dictionary.",
+   "procedural",
+   [
+    [
+     "kor-hangul",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-literary",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-particle-explainer",
+   "kor-grammar",
+   "Particle Explainer",
+   "Explains particle choice such as eun versus i in context, checked with contrasting example sentences.",
+   "semantic",
+   [
+    [
+     "kor-grammarian",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-honorifics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-conjugator",
+   "kor-grammar",
+   "Verb Conjugator",
+   "Conjugates Korean verbs and adjectives with endings and irregular stems, checked against conjugation rules.",
+   "procedural",
+   [
+    [
+     "kor-grammarian",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-hangul",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-grammar-correction",
+   "kor-grammar",
+   "Grammar Correction",
+   "Corrects errors in Korean sentences and explains each fix, checked by citing the rule used.",
+   "procedural",
+   [
+    [
+     "kor-grammarian",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-level-converter",
+   "kor-speech-levels",
+   "Speech Level Converter",
+   "Rewrites a sentence across formal, polite and plain speech levels, checked by naming the ending used.",
+   "procedural",
+   [
+    [
+     "kor-honorifics",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-honorific-check",
+   "kor-speech-levels",
+   "Honorific Appropriateness Check",
+   "Assesses whether honorifics fit the relationship and hierarchy described, checked by explaining each choice.",
+   "semantic",
+   [
+    [
+     "kor-honorifics",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-formal-writing",
+   "kor-speech-levels",
+   "Formal Korean Writing",
+   "Drafts formal emails and documents in correct register, checked against business correspondence conventions.",
+   "procedural",
+   [
+    [
+     "kor-honorifics",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-sound-change",
+   "kor-phonology",
+   "Sound Change Applier",
+   "Applies liaison, nasalization and other rules to give actual pronunciation, checked by naming each rule applied.",
+   "procedural",
+   [
+    [
+     "kor-phonetician",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-hangul",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-ipa-transcriber",
+   "kor-phonology",
+   "IPA Transcriber",
+   "Transcribes Korean into IPA distinguishing lax, tense and aspirated consonants, checked against references.",
+   "procedural",
+   [
+    [
+     "kor-phonetician",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-grammarian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-dialect-notes",
+   "kor-phonology",
+   "Dialect Notes",
+   "Explains features of dialects such as Gyeongsang speech, checked against dialect descriptions.",
+   "semantic",
+   [
+    [
+     "kor-phonetician",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-sijo-analysis",
+   "kor-literature",
+   "Sijo Analysis",
+   "Analyses a sijo's structure and imagery, checked by syllable count per line and cited conventions.",
+   "semantic",
+   [
+    [
+     "kor-literary",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-phonetician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-close-reading",
+   "kor-literature",
+   "Close Reading",
+   "Analyses a passage of Korean fiction for form and theme, checked by quoting supporting lines.",
+   "semantic",
+   [
+    [
+     "kor-literary",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-author-context",
+   "kor-literature",
+   "Author and Period Context",
+   "Places a work in its period and movement, checked against dated literary histories.",
+   "semantic",
+   [
+    [
+     "kor-literary",
+     "primary"
+    ],
+    [
+     "kor-culture",
+     "checker"
+    ],
+    [
+     "kor-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-translate",
+   "kor-translation-culture",
+   "Korean Translation",
+   "Translates text to or from Korean preserving speech level and nuance, checked by back-translation of key sentences.",
+   "procedural",
+   [
+    [
+     "kor-translator",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-honorifics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-subtitle-review",
+   "kor-translation-culture",
+   "Subtitle Review",
+   "Reviews subtitles for media for accuracy, timing and cultural notes, checked against the source dialogue.",
+   "procedural",
+   [
+    [
+     "kor-translator",
+     "primary"
+    ],
+    [
+     "kor-culture",
+     "checker"
+    ],
+    [
+     "kor-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "kor-history-briefing",
+   "kor-translation-culture",
+   "Korean History Briefing",
+   "Summarises a period such as Joseon or the division with key events, checked against historical sources.",
+   "semantic",
+   [
+    [
+     "kor-culture",
+     "primary"
+    ],
+    [
+     "kor-checker",
+     "checker"
+    ],
+    [
+     "kor-literary",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "kor-grammarian": "Korean Grammar Agent",
+  "kor-hangul": "Hangul and Writing Agent",
+  "kor-phonetician": "Korean Pronunciation Agent",
+  "kor-honorifics": "Speech Levels and Honorifics Agent",
+  "kor-literary": "Korean Literature Agent",
+  "kor-translator": "Korean Translation Agent",
+  "kor-culture": "Korean Culture and History Agent",
+  "kor-checker": "Korean Accuracy Checker"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "kor-script": "hangul jamo hanja romanization sejong orthography",
+  "kor-grammar": "grammar particle ending conjugation connective verb",
+  "kor-politeness": "honorific polite formal banmal jondaetmal hierarchy",
+  "kor-sound": "pronunciation phonology nasalization liaison dialect ipa",
+  "kor-letters": "literature sijo classical poetry pansori fiction",
+  "kor-culture": "translation history joseon division media hallyu"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

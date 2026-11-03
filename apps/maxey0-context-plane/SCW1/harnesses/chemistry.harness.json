@@ -1,0 +1,717 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "chemistry",
+  "label": "Chemistry",
+  "desc": "Chemistry: the structure, properties and reactions of matter, from atoms to materials and living systems."
+ },
+ "concepts": [
+  {
+   "id": "chem-analytical-chemistry",
+   "label": "Analytical Chemistry",
+   "desc": "Separation and spectroscopic methods for identifying and quantifying substances.",
+   "keywords": [
+    "analytical",
+    "chromatography",
+    "mass spectrometry",
+    "nmr",
+    "calibration",
+    "titration",
+    "detection limit",
+    "spectrum"
+   ],
+   "topic": "chemistry",
+   "source": "chemistry",
+   "related": []
+  },
+  {
+   "id": "chem-biochemistry",
+   "label": "Biochemistry",
+   "desc": "Chemistry of biomolecules: proteins, nucleic acids, enzymes and metabolism.",
+   "keywords": [
+    "biochemistry",
+    "enzyme",
+    "protein",
+    "metabolism",
+    "nucleic acid",
+    "michaelis",
+    "buffer",
+    "lipid"
+   ],
+   "topic": "chemistry",
+   "source": "chemistry",
+   "related": []
+  },
+  {
+   "id": "chem-computational-chemistry",
+   "label": "Computational Chemistry",
+   "desc": "Electronic structure, molecular simulation and cheminformatics for predicting properties.",
+   "keywords": [
+    "computational",
+    "dft",
+    "molecular dynamics",
+    "cheminformatics",
+    "basis set",
+    "conformer",
+    "simulation",
+    "property"
+   ],
+   "topic": "chemistry",
+   "source": "chemistry",
+   "related": []
+  },
+  {
+   "id": "chem-inorganic-chemistry",
+   "label": "Inorganic Chemistry",
+   "desc": "Main group and transition metal chemistry, coordination complexes and solid-state structure.",
+   "keywords": [
+    "inorganic",
+    "coordination",
+    "ligand",
+    "transition metal",
+    "crystal field",
+    "oxidation state",
+    "solid state",
+    "periodic"
+   ],
+   "topic": "chemistry",
+   "source": "chemistry",
+   "related": []
+  },
+  {
+   "id": "chem-organic-chemistry",
+   "label": "Organic Chemistry",
+   "desc": "Structure, reactivity and synthesis of carbon compounds through functional groups and mechanisms.",
+   "keywords": [
+    "organic",
+    "functional group",
+    "mechanism",
+    "synthesis",
+    "stereochemistry",
+    "nucleophile",
+    "carbonyl",
+    "retrosynthesis"
+   ],
+   "topic": "chemistry",
+   "source": "chemistry",
+   "related": []
+  },
+  {
+   "id": "chem-physical-chemistry",
+   "label": "Physical Chemistry",
+   "desc": "Thermodynamics, kinetics and quantum mechanics applied to chemical systems.",
+   "keywords": [
+    "physical",
+    "thermodynamics",
+    "kinetics",
+    "quantum",
+    "spectroscopy",
+    "rate constant",
+    "entropy",
+    "equilibrium"
+   ],
+   "topic": "chemistry",
+   "source": "chemistry",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "chem-calibration-curve",
+   "concept": "chem-analytical-chemistry",
+   "label": "Calibration and Quantification",
+   "desc": "Builds calibration curves and detection limits, checked by regression statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1110",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1112",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-method-selection",
+   "concept": "chem-analytical-chemistry",
+   "label": "Analytical Method Selection",
+   "desc": "Selects chromatography or spectrometry for an analyte, checked against sensitivity needs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1110",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1113",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1114",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-nmr-interpretation",
+   "concept": "chem-analytical-chemistry",
+   "label": "NMR Spectrum Interpretation",
+   "desc": "Assigns structure from NMR shifts and couplings, checked against predicted spectra.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1110",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1115",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1116",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-buffer-design",
+   "concept": "chem-biochemistry",
+   "label": "Buffer Preparation Calculator",
+   "desc": "Computes buffer recipes for a target pH, checked by Henderson-Hasselbalch and ionic strength.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1114",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1113",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-enzyme-kinetics",
+   "concept": "chem-biochemistry",
+   "label": "Enzyme Kinetics Fitting",
+   "desc": "Fits Michaelis-Menten parameters to rate data, checked by nonlinear fit residuals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1114",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1112",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-pathway-explainer",
+   "concept": "chem-biochemistry",
+   "label": "Metabolic Pathway Explainer",
+   "desc": "Explains metabolic pathways and their regulation, checked against cited literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1114",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1110",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1115",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-conformer-search",
+   "concept": "chem-computational-chemistry",
+   "label": "Conformer Search",
+   "desc": "Generates and ranks conformers by energy, checked by duplicate removal and energy window.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1116",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1115",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-dft-calc",
+   "concept": "chem-computational-chemistry",
+   "label": "DFT Property Calculation",
+   "desc": "Sets up DFT calculations for geometry and energy, checked by convergence and frequency analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1116",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1112",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-property-prediction",
+   "concept": "chem-computational-chemistry",
+   "label": "Molecular Property Prediction",
+   "desc": "Predicts solubility and similar properties from descriptors, checked against measured data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1116",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1110",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1114",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-crystal-field",
+   "concept": "chem-inorganic-chemistry",
+   "label": "Crystal Field Analysis",
+   "desc": "Predicts d-orbital splitting, spin state and color of complexes, checked against spectra.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1117",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1112",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-oxidation-states",
+   "concept": "chem-inorganic-chemistry",
+   "label": "Oxidation State Assigner",
+   "desc": "Assigns oxidation states and electron counts, checked by charge sum.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1117",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1115",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-solid-structure",
+   "concept": "chem-inorganic-chemistry",
+   "label": "Solid-State Structure Review",
+   "desc": "Describes lattice types and unit cells, checked by density and stoichiometry calculation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1117",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1116",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-mechanism-arrows",
+   "concept": "chem-organic-chemistry",
+   "label": "Reaction Mechanism Writer",
+   "desc": "Writes arrow-pushing mechanisms for a reaction, checked by electron and charge balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1115",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1112",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-retrosynthesis",
+   "concept": "chem-organic-chemistry",
+   "label": "Retrosynthesis Planner",
+   "desc": "Proposes retrosynthetic routes to a target molecule, checked by reaction precedent and step count.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1115",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1113",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1116",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-stereo-assign",
+   "concept": "chem-organic-chemistry",
+   "label": "Stereochemistry Assignment",
+   "desc": "Assigns R and S configuration and predicts stereochemical outcomes, checked by priority rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1115",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1116",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-quantum-levels",
+   "concept": "chem-physical-chemistry",
+   "label": "Quantum Energy Level Calculator",
+   "desc": "Computes energy levels for model systems, checked against spectroscopic transitions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1116",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-rate-law",
+   "concept": "chem-physical-chemistry",
+   "label": "Rate Law Determination",
+   "desc": "Determines reaction order and rate constants from kinetic data, checked by linearized fits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1110",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-thermo-calc",
+   "concept": "chem-physical-chemistry",
+   "label": "Thermochemistry Calculator",
+   "desc": "Computes enthalpy, entropy and Gibbs energy changes, checked by Hess law consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1117",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1110",
+   "name": "Analytical Chemist",
+   "legacy_key": "chem-analytical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1111",
+   "name": "Stoichiometry and Units Checker",
+   "legacy_key": "chem-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1112",
+   "name": "Physical Chemist",
+   "legacy_key": "chem-physical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1113",
+   "name": "Laboratory Safety Reviewer",
+   "legacy_key": "chem-safety",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1114",
+   "name": "Biochemist",
+   "legacy_key": "chem-biochem",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1115",
+   "name": "Organic Synthesis Chemist",
+   "legacy_key": "chem-organic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1116",
+   "name": "Computational Chemist",
+   "legacy_key": "chem-computational",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1117",
+   "name": "Inorganic Chemist",
+   "legacy_key": "chem-inorganic",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "chem-organic": "organic functional group mechanism synthesis stereochemistry nucleophile carbonyl retrosynthesis",
+  "chem-inorganic": "inorganic coordination ligand transition metal crystal field oxidation state solid periodic",
+  "chem-physical": "physical thermodynamics kinetics quantum spectroscopy rate constant entropy equilibrium",
+  "chem-analytical": "analytical chromatography mass spectrometry nmr calibration titration detection limit spectrum",
+  "chem-computational": "computational dft molecular dynamics cheminformatics basis set conformer simulation property",
+  "chem-biochemistry": "biochemistry enzyme protein metabolism nucleic acid michaelis buffer lipid"
+ },
+ "sources": [
+  "chemistry"
+ ]
+}

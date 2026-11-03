@@ -1,0 +1,914 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "physics",
+ "topic": {
+  "id": "physics",
+  "label": "Physics",
+  "desc": "Physics: from fundamental theory to simulation, instrumentation and astronomy."
+ },
+ "concepts": [
+  [
+   "quantum-physics",
+   "Quantum Physics",
+   "physics",
+   "Quantum states, qubits, wavefunctions, entanglement and decoherence, simulated and analysed numerically.",
+   [
+    "quantum",
+    "qubit",
+    "circuit",
+    "wavefunction",
+    "entanglement",
+    "decoherence",
+    "simulator"
+   ]
+  ],
+  [
+   "classical-physics",
+   "Classical Physics",
+   "physics",
+   "Newtonian mechanics: motion, forces, momentum, energy, collisions and orbits.",
+   [
+    "classical",
+    "mechanics",
+    "projectile",
+    "momentum",
+    "energy",
+    "collision",
+    "orbit",
+    "force"
+   ]
+  ],
+  [
+   "relativity",
+   "Relativity",
+   "physics",
+   "Special and general relativity: Lorentz transformations, four-momentum and curved spacetime.",
+   [
+    "relativity",
+    "lorentz",
+    "spacetime",
+    "geodesic",
+    "four-momentum",
+    "time dilation"
+   ]
+  ],
+  [
+   "particle-physics",
+   "Particle Physics",
+   "physics",
+   "Elementary particles, leptons and quarks, accelerators, detectors and decay chains.",
+   [
+    "particle",
+    "lepton",
+    "quark",
+    "accelerator",
+    "decay",
+    "detector",
+    "beam"
+   ]
+  ],
+  [
+   "thermodynamics",
+   "Thermodynamics and Statistical Physics",
+   "physics",
+   "Heat, entropy, engines, ensembles and phase transitions.",
+   [
+    "thermodynamics",
+    "entropy",
+    "heat",
+    "ensemble",
+    "partition",
+    "phase transition",
+    "diffusion"
+   ]
+  ],
+  [
+   "electromagnetism-optics",
+   "Electromagnetism and Optics",
+   "physics",
+   "Maxwell fields, circuits, waves, interference and ray optics.",
+   [
+    "electromagnetic",
+    "maxwell",
+    "field",
+    "optics",
+    "interference",
+    "diffraction",
+    "circuit"
+   ]
+  ],
+  [
+   "astrophysics-cosmology",
+   "Astrophysics and Cosmology",
+   "physics",
+   "Stars, galaxies, spectra, redshift and the expansion of the universe.",
+   [
+    "astrophysics",
+    "cosmology",
+    "spectrum",
+    "redshift",
+    "survey",
+    "galaxy",
+    "star",
+    "astronomy"
+   ]
+  ],
+  [
+   "physics-literature-methods",
+   "Physics Literature and Methods",
+   "physics",
+   "Finding preprints, symbolic derivation and unit checking across all physics.",
+   [
+    "arxiv",
+    "preprint",
+    "literature",
+    "symbolic",
+    "derivation",
+    "units",
+    "dimensional analysis"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "quantum-circuit-simulator",
+   "quantum-physics",
+   "Quantum Circuit Simulator",
+   "Builds and runs qubit circuits with noise models and returns measurement histograms, circuit statistics and result types.",
+   "procedural",
+   [
+    [
+     "phys-quantum-circuit",
+     "primary"
+    ],
+    [
+     "phys-observer",
+     "checker"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ],
+    [
+     "phys-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "schrodinger-solver",
+   "quantum-physics",
+   "Schrodinger Equation Solver",
+   "Solves the time-independent and time-dependent Schrodinger equation for a potential and reports wavefunctions and energy levels.",
+   "semantic",
+   [
+    [
+     "phys-theorist",
+     "primary"
+    ],
+    [
+     "phys-simulation",
+     "checker"
+    ],
+    [
+     "phys-quantum-circuit",
+     "support"
+    ],
+    [
+     "phys-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "entanglement-entropy-analyzer",
+   "quantum-physics",
+   "Entanglement Entropy Analyzer",
+   "Computes entanglement entropy, decoherence and quantum-state fidelity for multi-qubit states and master-equation dynamics.",
+   "semantic",
+   [
+    [
+     "phys-quantum-circuit",
+     "primary"
+    ],
+    [
+     "phys-data-analyst",
+     "checker"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "projectile-trajectory-calculator",
+   "classical-physics",
+   "Projectile Trajectory Calculator",
+   "Calculates projectile motion with and without drag, fits trajectories and checks energy and momentum conservation.",
+   "procedural",
+   [
+    [
+     "phys-simulation",
+     "primary"
+    ],
+    [
+     "phys-units",
+     "checker"
+    ],
+    [
+     "phys-engineer",
+     "support"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rigid-body-dynamics-simulator",
+   "classical-physics",
+   "Rigid Body Dynamics Simulator",
+   "Simulates rigid bodies, joints, collisions, torque and angular momentum and records trajectories with events.",
+   "procedural",
+   [
+    [
+     "phys-simulation",
+     "primary"
+    ],
+    [
+     "phys-engineer",
+     "checker"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ],
+    [
+     "phys-experimentalist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "orbital-period-estimator",
+   "classical-physics",
+   "Orbital Period Estimator",
+   "Estimates circular orbit period, escape velocity and orbital energy from mass and radius.",
+   "semantic",
+   [
+    [
+     "phys-astronomer",
+     "primary"
+    ],
+    [
+     "phys-units",
+     "checker"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ],
+    [
+     "phys-simulation",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "lorentz-transformation-calculator",
+   "relativity",
+   "Lorentz Transformation Calculator",
+   "Applies Lorentz transformations for time dilation, length contraction and relativistic velocity addition.",
+   "semantic",
+   [
+    [
+     "phys-theorist",
+     "primary"
+    ],
+    [
+     "phys-units",
+     "checker"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ],
+    [
+     "phys-lepton",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "spacetime-geodesic-tracer",
+   "relativity",
+   "Spacetime Geodesic Tracer",
+   "Traces geodesics of massive and light-like bodies in a Schwarzschild spacetime and reports proper time.",
+   "procedural",
+   [
+    [
+     "phys-theorist",
+     "primary"
+    ],
+    [
+     "phys-simulation",
+     "checker"
+    ],
+    [
+     "phys-astronomer",
+     "support"
+    ],
+    [
+     "phys-data-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "relativistic-collision-kinematics",
+   "relativity",
+   "Relativistic Collision Kinematics",
+   "Computes four-momentum, invariant mass and energy thresholds for relativistic particle collisions.",
+   "semantic",
+   [
+    [
+     "phys-lepton",
+     "primary"
+    ],
+    [
+     "phys-theorist",
+     "checker"
+    ],
+    [
+     "phys-experimentalist",
+     "support"
+    ],
+    [
+     "phys-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "particle-acceleration-simulator",
+   "particle-physics",
+   "Particle Acceleration Simulator",
+   "Simulates charged particle tracks in electric and magnetic fields of a linear accelerator or synchrotron and reports beam energy and orbit radius.",
+   "procedural",
+   [
+    [
+     "phys-engineer",
+     "primary"
+    ],
+    [
+     "phys-lepton",
+     "checker"
+    ],
+    [
+     "phys-simulation",
+     "support"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "particle-data-lookup",
+   "particle-physics",
+   "Particle Data Lookup",
+   "Looks up particle mass, charge, spin, lifetime and decay modes from particle data tables using natural language.",
+   "semantic",
+   [
+    [
+     "phys-lepton",
+     "primary"
+    ],
+    [
+     "phys-literature",
+     "checker"
+    ],
+    [
+     "phys-data-analyst",
+     "support"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "decay-chain-analyzer",
+   "particle-physics",
+   "Decay Chain Analyzer",
+   "Lists decay channels and branching ratios of leptons, quarks and hadrons and follows a decay chain to stable products.",
+   "semantic",
+   [
+    [
+     "phys-lepton",
+     "primary"
+    ],
+    [
+     "phys-experimentalist",
+     "checker"
+    ],
+    [
+     "phys-data-analyst",
+     "support"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "heat-engine-cycle-analyzer",
+   "thermodynamics",
+   "Heat Engine Cycle Analyzer",
+   "Analyses Carnot and Otto cycles for work, heat flow, entropy production and efficiency.",
+   "procedural",
+   [
+    [
+     "phys-thermal",
+     "primary"
+    ],
+    [
+     "phys-engineer",
+     "checker"
+    ],
+    [
+     "phys-units",
+     "support"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "statistical-ensemble-calculator",
+   "thermodynamics",
+   "Statistical Ensemble Calculator",
+   "Computes partition functions and Boltzmann distributions and detects phase transitions in model systems.",
+   "semantic",
+   [
+    [
+     "phys-theorist",
+     "primary"
+    ],
+    [
+     "phys-thermal",
+     "checker"
+    ],
+    [
+     "phys-simulation",
+     "support"
+    ],
+    [
+     "phys-data-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "thermal-transport-simulator",
+   "thermodynamics",
+   "Thermal Transport Simulator",
+   "Simulates heat conduction and diffusion on a mesh with boundary conditions and reports temperature fields.",
+   "procedural",
+   [
+    [
+     "phys-thermal",
+     "primary"
+    ],
+    [
+     "phys-simulation",
+     "checker"
+    ],
+    [
+     "phys-engineer",
+     "support"
+    ],
+    [
+     "phys-experimentalist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "electromagnetic-field-solver",
+   "electromagnetism-optics",
+   "Electromagnetic Field Solver",
+   "Solves Maxwell equations and electrostatic and magnetostatic fields for a geometry and reports field maps.",
+   "procedural",
+   [
+    [
+     "phys-engineer",
+     "primary"
+    ],
+    [
+     "phys-simulation",
+     "checker"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "wave-optics-simulator",
+   "electromagnetism-optics",
+   "Wave Optics Simulator",
+   "Models interference, diffraction and lens ray tracing and renders intensity patterns.",
+   "procedural",
+   [
+    [
+     "phys-experimentalist",
+     "primary"
+    ],
+    [
+     "phys-simulation",
+     "checker"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ],
+    [
+     "phys-units",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "circuit-transient-analyzer",
+   "electromagnetism-optics",
+   "Circuit Transient Analyzer",
+   "Computes transient and steady-state response of resistor, inductor and capacitor circuits.",
+   "procedural",
+   [
+    [
+     "phys-engineer",
+     "primary"
+    ],
+    [
+     "phys-units",
+     "checker"
+    ],
+    [
+     "phys-simulation",
+     "support"
+    ],
+    [
+     "phys-experimentalist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sky-survey-spectrum-query",
+   "astrophysics-cosmology",
+   "Sky Survey Spectrum Query",
+   "Queries astronomical survey catalogs for objects, retrieves spectra and converts data to FITS.",
+   "semantic",
+   [
+    [
+     "phys-astronomer",
+     "primary"
+    ],
+    [
+     "phys-data-analyst",
+     "checker"
+    ],
+    [
+     "phys-observer",
+     "support"
+    ],
+    [
+     "phys-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cosmology-distance-calculator",
+   "astrophysics-cosmology",
+   "Cosmology Distance Calculator",
+   "Converts redshift to luminosity and comoving distance under a Hubble expansion model.",
+   "semantic",
+   [
+    [
+     "phys-astronomer",
+     "primary"
+    ],
+    [
+     "phys-theorist",
+     "checker"
+    ],
+    [
+     "phys-units",
+     "support"
+    ],
+    [
+     "phys-data-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "stellar-structure-modeler",
+   "astrophysics-cosmology",
+   "Stellar Structure Modeler",
+   "Models stellar interior structure, luminosity and evolution from mass and composition.",
+   "procedural",
+   [
+    [
+     "phys-astronomer",
+     "primary"
+    ],
+    [
+     "phys-simulation",
+     "checker"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ],
+    [
+     "phys-thermal",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "preprint-literature-reviewer",
+   "physics-literature-methods",
+   "Preprint Literature Reviewer",
+   "Searches arXiv preprints, reads full text and summarises what is known about a physics question with citations.",
+   "semantic",
+   [
+    [
+     "phys-literature",
+     "primary"
+    ],
+    [
+     "phys-observer",
+     "checker"
+    ],
+    [
+     "phys-theorist",
+     "support"
+    ],
+    [
+     "phys-data-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "symbolic-derivation-assistant",
+   "physics-literature-methods",
+   "Symbolic Derivation Assistant",
+   "Derives and checks equations symbolically and numerically with a computational knowledge engine.",
+   "procedural",
+   [
+    [
+     "phys-theorist",
+     "primary"
+    ],
+    [
+     "phys-units",
+     "checker"
+    ],
+    [
+     "phys-simulation",
+     "support"
+    ],
+    [
+     "phys-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "unit-consistency-checker",
+   "physics-literature-methods",
+   "Unit Consistency Checker",
+   "Checks dimensional analysis and unit conversions across a derivation or simulation input.",
+   "procedural",
+   [
+    [
+     "phys-units",
+     "primary"
+    ],
+    [
+     "phys-observer",
+     "checker"
+    ],
+    [
+     "phys-engineer",
+     "support"
+    ],
+    [
+     "phys-simulation",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "phys-observer": "Observer Agent",
+  "phys-engineer": "Engineer Agent",
+  "phys-lepton": "Lepton Agent",
+  "phys-theorist": "Theorist Agent",
+  "phys-experimentalist": "Experimentalist Agent",
+  "phys-quantum-circuit": "Quantum Circuit Agent",
+  "phys-simulation": "Simulation Agent",
+  "phys-data-analyst": "Data Analyst Agent",
+  "phys-literature": "Literature Review Agent",
+  "phys-units": "Units Checker Agent",
+  "phys-astronomer": "Astronomer Agent",
+  "phys-thermal": "Thermal Systems Agent"
+ },
+ "lexicon": {
+  "physics": "physics physical science scientific simulation simulator simulate quantitative experiment experimental observer theory theoretical",
+  "quantum": "quantum qubit circuit wavefunction schrodinger entanglement decoherence hamiltonian vqe noise histogram superposition fidelity master equation dmrg",
+  "particle": "particle lepton quark hadron decay accelerator acceleration synchrotron beam detector collider boson fermion branching mass spin",
+  "mechanics": "mechanics classical projectile trajectory momentum collision rigid body torque force orbit orbital kinematic dynamic velocity friction pendulum fluid joint",
+  "thermal": "thermodynamics thermal heat entropy carnot otto engine ensemble partition boltzmann diffusion conduction temperature",
+  "em-optics": "electromagnetic maxwell optics interference diffraction lens ray electrostatic magnetostatic wave relativity lorentz spacetime geodesic",
+  "astro": "astrophysics astronomy astronomical cosmology redshift spectrum survey galaxy stellar star hubble luminosity desi fits catalog astroquery",
+  "symbolic": "symbolic derivation algebra calculus computation computational wolfram unit dimensional conversion numerical derive",
+  "literature": "literature preprint review citation xiv pre print"
+ },
+ "mcp": [
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "SandboxAQ",
+   "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "Large Quantitative Models for scientific discovery",
+   [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check Job Status",
+    "Check Job Results"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "ParticlePhysics-MCP-Server",
+   null,
+   "Fast particle data lookup from natural language.",
+   [
+    "search_particle",
+    "list_decays"
+   ],
+   "web-listed",
+   "https://github.com/uzerone/ParticlePhysics-MCP-Server"
+  ],
+  [
+   "chuk-mcp-physics",
+   null,
+   "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "web-listed",
+   "https://github.com/IBM/chuk-mcp-physics"
+  ],
+  [
+   "quantum-simulator-mcp",
+   null,
+   "A Docker image providing a quantum circuit simulator that implements the Model Context Protocol",
+   [
+    "run_circuit",
+    "list_noise_models",
+    "list_result_types",
+    "get_circuit_stats",
+    "create_test_histogram"
+   ],
+   "web-listed",
+   "https://github.com/YuChenSSR/quantum-simulator-mcp"
+  ],
+  [
+   "astro_mcp",
+   null,
+   "mcp server for desi and other surveys (astronomical object search, astroquery, spectra, FITS conversion)",
+   [
+    "search_objects",
+    "astroquery_query",
+    "get_spectrum_by_id",
+    "list_astroquery_services",
+    "preview_data",
+    "convert_to_fits"
+   ],
+   "web-listed",
+   "https://github.com/SandyYuan/astro_mcp"
+  ],
+  [
+   "Psi-MCP",
+   null,
+   "An Advanced Quantum Physics MCP server",
+   [
+    "create_quantum_circuit",
+    "simulate_quantum_circuit",
+    "solve_master_equation",
+    "vqe_optimization",
+    "dmrg_simulation",
+    "quantum_neural_network"
+   ],
+   "web-listed",
+   "https://github.com/manasp21/Psi-MCP"
+  ]
+ ],
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic and the example concepts/skills/agents",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "alphaXiv": "directory listing; already present in the base MCP directory (reused by uuid, not duplicated)",
+   "chuk-mcp-physics": "GitHub page states the repository was archived by its owner on 2026-09-26 (read-only); licence Apache-2.0",
+   "ParticlePhysics-MCP-Server": "licence MIT; tools from README",
+   "quantum-simulator-mcp": "licence MIT; distributed as a Docker image; tools from README",
+   "astro_mcp": "README states no licence (placeholder text); tools from README",
+   "Psi-MCP": "licence MIT; README lists more tool names than its core table, only the core table is recorded here",
+   "all": "existence verified; working order NOT verified - none was connected or run"
+  },
+  "limitations": [
+   "The lexicon (semantic space for this topic) is generated; gates derived from it are cosine candidates (HYPOTHESIS), not verified fits.",
+   "Concepts, skills, agents and agent roles are generated, not curated by a physicist.",
+   "Agent-to-MCP gates are not in this file: the app derives them as cosine candidates (cos^2-weighted field position).",
+   "Tool lists of web-listed servers are copied from README text, not from a live tools/list call."
+  ]
+ }
+}

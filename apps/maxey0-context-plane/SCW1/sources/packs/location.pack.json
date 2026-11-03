@@ -1,0 +1,308 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "location",
+ "topic": {
+  "id": "location",
+  "label": "Location and Place",
+  "desc": "Where something is: geographic coordinates, place names, addresses, distances and routes on Earth, and the regions and jurisdictions that a place falls in. Physical location; digital locations (where software runs) are in Environments and Deployment."
+ },
+ "concepts": [
+  [
+   "loc-places",
+   "Place Names and Gazetteers",
+   "location",
+   "Named places on Earth (cities, mountains, parks, rivers, landmarks) and how gazetteers resolve a place name to coordinates and a unique place.",
+   [
+    "place",
+    "name",
+    "gazetteer",
+    "city",
+    "town",
+    "landmark",
+    "mountain",
+    "park",
+    "river",
+    "toponym"
+   ]
+  ],
+  [
+   "loc-distance",
+   "Distance, Routing and Navigation",
+   "location",
+   "Distance between places (great-circle and travel distance), routes, bearings and travel time by mode.",
+   [
+    "distance",
+    "route",
+    "routing",
+    "navigation",
+    "bearing",
+    "travel",
+    "time",
+    "directions",
+    "walking",
+    "driving"
+   ]
+  ],
+  [
+   "loc-regions",
+   "Regions and Jurisdictions",
+   "location",
+   "Which country, state, county, city, time zone and legal jurisdiction a location falls in, and the boundaries that decide it.",
+   [
+    "region",
+    "country",
+    "state",
+    "county",
+    "jurisdiction",
+    "boundary",
+    "border",
+    "administrative",
+    "zone"
+   ]
+  ],
+  [
+   "loc-planetary",
+   "Planetary and Off-Earth Location",
+   "location",
+   "Location beyond Earth: celestial coordinates, planetary surface coordinates and the reference frames used for the Moon, Mars and spacecraft.",
+   [
+    "planetary",
+    "celestial",
+    "coordinate",
+    "frame",
+    "moon",
+    "mars",
+    "orbit",
+    "selenographic",
+    "location"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "loc-geographic-coordinate-lookup",
+   "loc-places",
+   "Geographic Coordinate Lookup",
+   "Gets the geographic coordinates (latitude and longitude) of a place, address or landmark, and the place at given coordinates.",
+   "semantic",
+   [
+    [
+     "loc-gazetteer",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-navigator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-place-name-resolver",
+   "loc-places",
+   "Place Name Resolver",
+   "Resolves a place name to one place with its coordinates, type and country, and lists the alternatives when the name is ambiguous.",
+   "semantic",
+   [
+    [
+     "loc-gazetteer",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-navigator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-nearby-places-finder",
+   "loc-places",
+   "Nearby Places Finder",
+   "Finds places near a coordinate or place name within a radius, by type, with distances.",
+   "semantic",
+   [
+    [
+     "loc-gazetteer",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-navigator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-distance-calculator",
+   "loc-distance",
+   "Distance Calculator",
+   "Computes great-circle distance and bearing between two coordinates or places, and travel distance when a route is known.",
+   "procedural",
+   [
+    [
+     "loc-navigator",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-jurisdiction",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-route-planner",
+   "loc-distance",
+   "Route Planner",
+   "Plans a route between places for a travel mode and reports distance, time and waypoints.",
+   "procedural",
+   [
+    [
+     "loc-navigator",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-jurisdiction",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-jurisdiction-locator",
+   "loc-regions",
+   "Jurisdiction Locator",
+   "Maps a location to its country, state, county, municipality and time zone, and names the authority that governs it.",
+   "procedural",
+   [
+    [
+     "loc-jurisdiction",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-geographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-boundary-explainer",
+   "loc-regions",
+   "Boundary Explainer",
+   "Explains an administrative or legal boundary and which places fall on each side.",
+   "semantic",
+   [
+    [
+     "loc-jurisdiction",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-geographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "loc-planetary-coordinate-explainer",
+   "loc-planetary",
+   "Planetary Coordinate Explainer",
+   "Explains surface coordinates and reference frames for the Moon, Mars and other bodies, and how they differ from Earth latitude and longitude.",
+   "semantic",
+   [
+    [
+     "loc-geographer",
+     "primary"
+    ],
+    [
+     "loc-checker",
+     "checker"
+    ],
+    [
+     "loc-gazetteer",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "loc-geographer": "Geographer Agent",
+  "loc-gazetteer": "Gazetteer Agent",
+  "loc-navigator": "Navigation Agent",
+  "loc-jurisdiction": "Jurisdiction Agent",
+  "loc-checker": "Location Checker Agent"
+ },
+ "mcp": [
+  [
+   "Google Maps MCP",
+   null,
+   "Google Maps Platform MCP server: geocoding and reverse geocoding of addresses and coordinates, place search and place details, distance matrix, elevation and directions.",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/google-maps"
+  ],
+  [
+   "Mapbox MCP Server",
+   null,
+   "Mapbox location MCP server: forward and reverse geocoding, points of interest search, directions and travel-time isochrones, static map images.",
+   [],
+   "web-listed",
+   "https://github.com/mapbox/mcp-server"
+  ],
+  [
+   "OpenStreetMap MCP",
+   null,
+   "OpenStreetMap MCP server: geocode addresses and place names to coordinates, find nearby places, route between locations, explore neighborhoods from open map data.",
+   [],
+   "web-listed",
+   "https://github.com/jagan-shanmugam/open-streetmap-mcp"
+  ]
+ ],
+ "lexicon": {
+  "locplaces": "place name gazetteer city town landmark mountain park river toponym",
+  "locdistance": "distance route routing navigation bearing travel time directions walking driving",
+  "locregions": "region country state county jurisdiction boundary border administrative zone",
+  "locplanetary": "planetary celestial coordinate frame moon mars orbit selenographic location"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Google Maps MCP": "repository exists (git ls-remote https://github.com/modelcontextprotocol/servers-archived, 2026-10-31); description summarises its public README; tool list not re-read; reference server, archived by its maintainers",
+   "Mapbox MCP Server": "repository exists (git ls-remote https://github.com/mapbox/mcp-server, 2026-10-31); description summarises its public README; tool list not re-read",
+   "OpenStreetMap MCP": "repository exists (git ls-remote https://github.com/jagan-shanmugam/open-streetmap-mcp, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

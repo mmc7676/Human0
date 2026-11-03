@@ -1,0 +1,1121 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "classical-physics",
+  "label": "Classical Physics",
+  "desc": "Classical physics: Newtonian mechanics, conservation laws, oscillations and waves, thermodynamics, electromagnetism, optics, fluids and relativity."
+ },
+ "concepts": [
+  {
+   "id": "cl-conservation",
+   "label": "Energy, Momentum and Conservation",
+   "desc": "Work, energy, momentum and the conservation laws used to solve problems.",
+   "keywords": [
+    "energy",
+    "work",
+    "momentum",
+    "collision",
+    "conservation",
+    "impulse"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "cl-em",
+   "label": "Electromagnetism",
+   "desc": "Electric and magnetic fields, circuits and Maxwell's equations.",
+   "keywords": [
+    "electric",
+    "magnetic",
+    "maxwell",
+    "circuit",
+    "field",
+    "capacitance",
+    "electromagnetic",
+    "optics",
+    "interference",
+    "diffraction"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": [
+    "ee-electromagnetics"
+   ]
+  },
+  {
+   "id": "cl-fluids",
+   "label": "Fluid Mechanics",
+   "desc": "Fluid statics and flow: pressure, viscosity, turbulence and scaling.",
+   "keywords": [
+    "fluid",
+    "pressure",
+    "viscosity",
+    "turbulence",
+    "reynolds"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": [
+    "me-thermodynamics-fluids"
+   ]
+  },
+  {
+   "id": "cl-mechanics",
+   "label": "Newtonian Mechanics",
+   "desc": "Motion, forces, rotation and orbits under Newton's laws.",
+   "keywords": [
+    "newton",
+    "force",
+    "acceleration",
+    "torque",
+    "orbit",
+    "kinematics",
+    "classical",
+    "mechanics",
+    "projectile",
+    "momentum",
+    "energy",
+    "collision"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "cl-optics",
+   "label": "Optics",
+   "desc": "Geometric and wave optics: lenses, mirrors, diffraction and polarization.",
+   "keywords": [
+    "lens",
+    "mirror",
+    "diffraction",
+    "polarization",
+    "refraction"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "cl-thermo",
+   "label": "Thermodynamics and Statistical Mechanics",
+   "desc": "Heat, entropy, thermodynamic cycles and the kinetic theory of gases.",
+   "keywords": [
+    "heat",
+    "entropy",
+    "cycle",
+    "carnot",
+    "kinetic",
+    "temperature",
+    "thermodynamics",
+    "ensemble",
+    "partition",
+    "phase transition",
+    "diffusion"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "cl-waves",
+   "label": "Oscillations and Waves",
+   "desc": "Oscillators, damping, resonance, wave propagation and interference.",
+   "keywords": [
+    "oscillator",
+    "damping",
+    "resonance",
+    "wave",
+    "interference",
+    "fourier"
+   ],
+   "topic": "classical-physics",
+   "source": "classical-physics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-collision-momentum-solver",
+   "concept": "cl-conservation",
+   "label": "Collision and Momentum Solver",
+   "desc": "Solves elastic and inelastic collisions in one and two dimensions from momentum and energy balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1485",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-energy-work-analyzer",
+   "concept": "cl-conservation",
+   "label": "Energy and Work Analyzer",
+   "desc": "Applies work-energy and potential energy methods and accounts for dissipated energy explicitly.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1485",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "circuit-transient-analyzer",
+   "concept": "cl-em",
+   "label": "Circuit Transient Analyzer",
+   "desc": "Computes transient and steady-state response of resistor, inductor and capacitor circuits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1489",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "cl-circuit-analyzer",
+   "concept": "cl-em",
+   "label": "Circuit Analyzer",
+   "desc": "Analyzes resistor, capacitor and inductor circuits in steady state and in transients.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1491",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-electrostatics-solver",
+   "concept": "cl-em",
+   "label": "Electrostatics Solver",
+   "desc": "Computes fields and potentials of charge distributions with Gauss's law, symmetry and image methods.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1491",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-maxwell-field-solver",
+   "concept": "cl-em",
+   "label": "Maxwell Field Solver",
+   "desc": "Applies Maxwell's equations to waves, radiation and induction and checks boundary conditions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1491",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1492",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "electromagnetic-field-solver",
+   "concept": "cl-em",
+   "label": "Electromagnetic Field Solver",
+   "desc": "Solves Maxwell equations and electrostatic and magnetostatic fields for a geometry and reports field maps.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1489",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "wave-optics-simulator",
+   "concept": "cl-em",
+   "label": "Wave Optics Simulator",
+   "desc": "Models interference, diffraction and lens ray tracing and renders intensity patterns.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1490",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "cl-dimensional-analysis-scaler",
+   "concept": "cl-fluids",
+   "label": "Dimensional Analysis and Scaling",
+   "desc": "Builds dimensionless numbers such as the Reynolds number and uses them to scale models to full size.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1493",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1494",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-fluid-flow-solver",
+   "concept": "cl-fluids",
+   "label": "Fluid Flow Solver",
+   "desc": "Solves pressure, Bernoulli and pipe-flow problems and identifies laminar or turbulent regimes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1493",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-kinematics-dynamics-solver",
+   "concept": "cl-mechanics",
+   "label": "Kinematics and Dynamics Solver",
+   "desc": "Solves motion problems with forces, constraints and friction and checks the answer against limiting cases.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1485",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-orbital-mechanics",
+   "concept": "cl-mechanics",
+   "label": "Orbital Mechanics Calculator",
+   "desc": "Computes orbits, transfer maneuvers and periods under gravity with Kepler's laws and numerical integration, for example orbits around the Moon or a planet and the surface gravity there.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1485",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-rigid-body-rotation",
+   "concept": "cl-mechanics",
+   "label": "Rigid Body Rotation Analyzer",
+   "desc": "Computes torque, moment of inertia and angular momentum for rotating bodies and tops.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1485",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "orbital-period-estimator",
+   "concept": "cl-mechanics",
+   "label": "Orbital Period Estimator",
+   "desc": "Estimates circular orbit period, escape velocity and orbital energy from mass and radius.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1479",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "projectile-trajectory-calculator",
+   "concept": "cl-mechanics",
+   "label": "Projectile Trajectory Calculator",
+   "desc": "Calculates projectile motion with and without drag, fits trajectories and checks energy and momentum conservation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1483",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "rigid-body-dynamics-simulator",
+   "concept": "cl-mechanics",
+   "label": "Rigid Body Dynamics Simulator",
+   "desc": "Simulates rigid bodies, joints, collisions, torque and angular momentum and records trajectories with events.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1483",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "cl-geometric-optics-designer",
+   "concept": "cl-optics",
+   "label": "Geometric Optics Designer",
+   "desc": "Traces rays through lenses and mirrors and designs simple optical systems with aberration estimates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1495",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-wave-optics-analyzer",
+   "concept": "cl-optics",
+   "label": "Wave Optics Analyzer",
+   "desc": "Analyzes diffraction, interference and polarization patterns from slits, gratings and thin films.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1495",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1492",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-heat-transfer-solver",
+   "concept": "cl-thermo",
+   "label": "Heat Transfer Solver",
+   "desc": "Solves conduction, convection and radiation problems with boundary conditions and reports the dominant mode.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1494",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1493",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-kinetic-theory-statistics",
+   "concept": "cl-thermo",
+   "label": "Kinetic Theory and Statistics",
+   "desc": "Derives gas properties from molecular statistics and connects entropy to counting of states.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1494",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1485",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-thermodynamic-cycle-analyzer",
+   "concept": "cl-thermo",
+   "label": "Thermodynamic Cycle Analyzer",
+   "desc": "Analyzes engines and refrigerators on pressure-volume diagrams and computes efficiency against the Carnot limit.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1494",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "heat-engine-cycle-analyzer",
+   "concept": "cl-thermo",
+   "label": "Heat Engine Cycle Analyzer",
+   "desc": "Analyses Carnot and Otto cycles for work, heat flow, entropy production and efficiency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1484",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "statistical-ensemble-calculator",
+   "concept": "cl-thermo",
+   "label": "Statistical Ensemble Calculator",
+   "desc": "Computes partition functions and Boltzmann distributions and detects phase transitions in model systems.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1480",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1484",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "thermal-transport-simulator",
+   "concept": "cl-thermo",
+   "label": "Thermal Transport Simulator",
+   "desc": "Simulates heat conduction and diffusion on a mesh with boundary conditions and reports temperature fields.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1484",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "cl-harmonic-oscillator-solver",
+   "concept": "cl-waves",
+   "label": "Harmonic Oscillator Solver",
+   "desc": "Solves driven and damped oscillators and finds resonance frequency and quality factor.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1492",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-wave-propagation-analyzer",
+   "concept": "cl-waves",
+   "label": "Wave Propagation Analyzer",
+   "desc": "Analyzes superposition, standing waves, dispersion and interference with Fourier decomposition.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1492",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1495",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1479",
+   "name": "Astronomer Agent",
+   "legacy_key": "phys-astronomer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1480",
+   "name": "Theorist Agent",
+   "legacy_key": "phys-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1481",
+   "name": "Units Checker Agent",
+   "legacy_key": "phys-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1482",
+   "name": "Observer Agent",
+   "legacy_key": "phys-observer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1483",
+   "name": "Simulation Agent",
+   "legacy_key": "phys-simulation",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1484",
+   "name": "Thermal Systems Agent",
+   "legacy_key": "phys-thermal",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1485",
+   "name": "Mechanics Agent",
+   "legacy_key": "cl-mechanician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1486",
+   "name": "Conservation Law Checker Agent",
+   "legacy_key": "cl-conservation-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1487",
+   "name": "Numerical Integration Agent",
+   "legacy_key": "cl-numerical-integrator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1488",
+   "name": "Units and Dimensions Checker Agent",
+   "legacy_key": "cl-units-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1489",
+   "name": "Engineer Agent",
+   "legacy_key": "phys-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1490",
+   "name": "Experimentalist Agent",
+   "legacy_key": "phys-experimentalist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1491",
+   "name": "Electromagnetism Agent",
+   "legacy_key": "cl-electromagnetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1492",
+   "name": "Waves and Oscillations Agent",
+   "legacy_key": "cl-wave-physicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1493",
+   "name": "Fluid Dynamics Agent",
+   "legacy_key": "cl-fluid-dynamicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1494",
+   "name": "Thermodynamics Agent",
+   "legacy_key": "cl-thermodynamicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1495",
+   "name": "Optics Agent",
+   "legacy_key": "cl-optician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1617",
+   "name": "Data Analyst Agent",
+   "legacy_key": "phys-data-analyst",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "astro_mcp",
+   "desc": "mcp server for desi and other surveys (astronomical object search, astroquery, spectra, FITS conversion)",
+   "tools": [
+    "search_objects",
+    "astroquery_query",
+    "get_spectrum_by_id",
+    "list_astroquery_services",
+    "preview_data",
+    "convert_to_fits"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/SandyYuan/astro_mcp",
+   "id": "local:astro-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "chuk-mcp-physics",
+   "desc": "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   "tools": [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/IBM/chuk-mcp-physics",
+   "id": "local:chuk-mcp-physics",
+   "origins": [
+    "mechanical-engineering",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ParticlePhysics-MCP-Server",
+   "desc": "Fast particle data lookup from natural language.",
+   "tools": [
+    "search_particle",
+    "list_decays"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/uzerone/ParticlePhysics-MCP-Server",
+   "id": "local:particlephysics-mcp-server",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Psi-MCP",
+   "desc": "An Advanced Quantum Physics MCP server",
+   "tools": [
+    "create_quantum_circuit",
+    "simulate_quantum_circuit",
+    "solve_master_equation",
+    "vqe_optimization",
+    "dmrg_simulation",
+    "quantum_neural_network"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/manasp21/Psi-MCP",
+   "id": "local:psi-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "quantum-simulator-mcp",
+   "desc": "A Docker image providing a quantum circuit simulator that implements the Model Context Protocol",
+   "tools": [
+    "run_circuit",
+    "list_noise_models",
+    "list_result_types",
+    "get_circuit_stats",
+    "create_test_histogram"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/YuChenSSR/quantum-simulator-mcp",
+   "id": "local:quantum-simulator-mcp",
+   "origins": [
+    "engineering-physics",
+    "physics"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "local:particlephysics-mcp-server",
+  "local:chuk-mcp-physics",
+  "local:quantum-simulator-mcp",
+  "local:astro-mcp",
+  "local:psi-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "newtonian": "newton torque friction kepler constraint inertia force acceleration orbit kinematics newtonian mechanics moon lunar mars planetary gravity weight surface",
+  "conservation": "energy dissipated impulse elastic inelastic momentum collision conservation",
+  "wavemotion": "oscillator damping resonance standing dispersion grating wave interference fourier oscillations",
+  "thermoclass": "entropy carnot efficiency conduction convection radiation heat cycle kinetic temperature thermodynamics statistical",
+  "fieldtheory": "gauss maxwell induction capacitor inductor potential electric magnetic circuit field capacitance electromagnetism",
+  "raytrace": "ray mirror aberration diffraction polarization refraction optics",
+  "flowmech": "bernoulli laminar turbulent reynolds pipe viscosity fluid pressure turbulence",
+  "relativistic": "lorentz dilation contraction geodesic curvature relativity spacetime special general"
+ },
+ "sources": [
+  "classical-physics"
+ ]
+}

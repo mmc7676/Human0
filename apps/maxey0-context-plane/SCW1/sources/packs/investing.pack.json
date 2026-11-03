@@ -1,0 +1,295 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "investing",
+ "topic": {
+  "id": "investing",
+  "label": "Investing and Portfolio Management",
+  "desc": "Building and running portfolios: asset allocation, funds and ETFs, risk and return, performance tracking, and quantitative strategies and backtesting."
+ },
+ "concepts": [
+  [
+   "inv-allocation",
+   "Asset Allocation",
+   "investing",
+   "Mixing stocks, bonds, cash and alternatives for a goal, horizon and risk tolerance, and rebalancing.",
+   [
+    "asset",
+    "allocation",
+    "portfolio",
+    "diversification",
+    "rebalance",
+    "risk",
+    "tolerance",
+    "horizon",
+    "goal"
+   ]
+  ],
+  [
+   "inv-funds",
+   "Funds and ETFs",
+   "investing",
+   "Mutual funds, ETFs, index funds, expense ratios, tracking error and fund structures.",
+   [
+    "fund",
+    "etf",
+    "mutual",
+    "index",
+    "expense",
+    "ratio",
+    "tracking",
+    "error",
+    "holdings",
+    "nav"
+   ]
+  ],
+  [
+   "inv-risk",
+   "Risk and Return",
+   "investing",
+   "Volatility, drawdown, correlation, beta, Sharpe ratio, value at risk and factor exposure.",
+   [
+    "risk",
+    "return",
+    "volatility",
+    "drawdown",
+    "correlation",
+    "beta",
+    "sharpe",
+    "var",
+    "factor"
+   ]
+  ],
+  [
+   "inv-tracking",
+   "Performance Tracking",
+   "investing",
+   "Tracking holdings and performance: time-weighted and money-weighted returns, benchmarks and attribution.",
+   [
+    "performance",
+    "tracking",
+    "return",
+    "benchmark",
+    "attribution",
+    "holding",
+    "position",
+    "watchlist"
+   ]
+  ],
+  [
+   "inv-quant",
+   "Quantitative Strategies and Backtesting",
+   "investing",
+   "Systematic strategies, factor models, backtesting and overfitting.",
+   [
+    "quantitative",
+    "strategy",
+    "backtest",
+    "factor",
+    "model",
+    "systematic",
+    "algorithm",
+    "overfitting",
+    "signal"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "inv-allocation-planner",
+   "inv-allocation",
+   "Allocation Planner",
+   "Proposes an asset allocation for a goal and horizon and explains its risk.",
+   "semantic",
+   [
+    [
+     "inv-allocator",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-funds",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inv-rebalancing-planner",
+   "inv-allocation",
+   "Rebalancing Planner",
+   "Plans rebalancing back to target weights with tax and cost notes.",
+   "procedural",
+   [
+    [
+     "inv-allocator",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-funds",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inv-fund-comparator",
+   "inv-funds",
+   "Fund Comparator",
+   "Compares funds by holdings, fees, tracking error and structure.",
+   "semantic",
+   [
+    [
+     "inv-funds",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-risk",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inv-portfolio-risk-report",
+   "inv-risk",
+   "Portfolio Risk Report",
+   "Reports a portfolio's volatility, drawdown, beta, VaR and concentration.",
+   "semantic",
+   [
+    [
+     "inv-risk",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-tracker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inv-performance-attribution",
+   "inv-tracking",
+   "Performance Attribution",
+   "Attributes a portfolio's return to allocation and selection versus its benchmark.",
+   "semantic",
+   [
+    [
+     "inv-tracker",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-quant",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inv-position-tracker",
+   "inv-tracking",
+   "Position Tracker",
+   "Tracks positions, cost basis and unrealized gains for a portfolio.",
+   "semantic",
+   [
+    [
+     "inv-tracker",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-quant",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "inv-backtest-reviewer",
+   "inv-quant",
+   "Backtest Reviewer",
+   "Reviews a backtest for look-ahead bias, survivorship bias, costs and overfitting.",
+   "semantic",
+   [
+    [
+     "inv-quant",
+     "primary"
+    ],
+    [
+     "inv-checker",
+     "checker"
+    ],
+    [
+     "inv-allocator",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "inv-allocator": "Asset Allocation Agent",
+  "inv-funds": "Fund Analyst Agent",
+  "inv-risk": "Portfolio Risk Agent",
+  "inv-tracker": "Performance Tracking Agent",
+  "inv-quant": "Quant Strategy Agent",
+  "inv-checker": "Investment Checker Agent"
+ },
+ "mcp": [
+  [
+   "QuantConnect MCP",
+   null,
+   "QuantConnect MCP server: algorithmic trading research, backtests, projects and quantitative strategy code on the LEAN engine.",
+   [],
+   "web-listed",
+   "https://github.com/QuantConnect/mcp-server"
+  ],
+  [
+   "Yahoo Finance MCP",
+   null,
+   "Yahoo Finance MCP server: stock prices, historical quotes, company financial statements, holders, options chains and news.",
+   [],
+   "web-listed",
+   "https://github.com/Alex2Yang97/yahoo-finance-mcp"
+  ]
+ ],
+ "lexicon": {
+  "invallocation": "asset allocation portfolio diversification rebalance risk tolerance horizon goal",
+  "invfunds": "fund etf mutual index expense ratio tracking error holdings nav",
+  "invrisk": "risk return volatility drawdown correlation beta sharpe var factor",
+  "invtracking": "performance tracking return benchmark attribution holding position watchlist",
+  "invquant": "quantitative strategy backtest factor model systematic algorithm overfitting signal"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "QuantConnect MCP": "repository exists (git ls-remote https://github.com/QuantConnect/mcp-server, 2026-10-31); description summarises its public README; tool list not re-read; can deploy live algorithms: context only here",
+   "Yahoo Finance MCP": "repository exists (git ls-remote https://github.com/Alex2Yang97/yahoo-finance-mcp, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

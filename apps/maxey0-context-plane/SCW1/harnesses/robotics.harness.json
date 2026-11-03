@@ -1,0 +1,701 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "robotics",
+  "label": "Robotics",
+  "desc": "Robotics: kinematics and dynamics, perception, motion planning and navigation, control, manipulation, robot software (ROS), simulation, and safety and human-robot interaction. Ontology: Robotics is its own topic; Drones are aerial robots, and Mapping holds SLAM, which robots use for navigation."
+ },
+ "concepts": [
+  {
+   "id": "rb-control",
+   "label": "Control",
+   "desc": "Feedback control of robot joints and vehicles: PID, state-space and model-predictive control.",
+   "keywords": [
+    "pid",
+    "lqr",
+    "mpc",
+    "controller",
+    "actuator",
+    "tuning"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": [
+    "cheme-process-control",
+    "me-controls-mechatronics"
+   ]
+  },
+  {
+   "id": "rb-kinematics",
+   "label": "Kinematics and Dynamics",
+   "desc": "Robot geometry and motion: joints, frames, Jacobians and equations of motion.",
+   "keywords": [
+    "kinematics",
+    "dynamics",
+    "joint",
+    "jacobian",
+    "frame",
+    "lagrange"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  },
+  {
+   "id": "rb-manipulation",
+   "label": "Manipulation and Grasping",
+   "desc": "Picking, placing and handling objects with arms and grippers.",
+   "keywords": [
+    "grasp",
+    "gripper",
+    "end-effector",
+    "manipulator",
+    "pick-and-place"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  },
+  {
+   "id": "rb-perception",
+   "label": "Perception",
+   "desc": "Sensing and estimating the world: sensor fusion, detection and pose estimation.",
+   "keywords": [
+    "sensor-fusion",
+    "kalman",
+    "imu",
+    "detection",
+    "pose",
+    "depth"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  },
+  {
+   "id": "rb-planning",
+   "label": "Motion Planning and Navigation",
+   "desc": "Finding collision-free paths and trajectories and navigating to goals.",
+   "keywords": [
+    "planner",
+    "rrt",
+    "trajectory",
+    "costmap",
+    "navigation",
+    "obstacle"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  },
+  {
+   "id": "rb-safety",
+   "label": "Safety and Human-Robot Interaction",
+   "desc": "Safe operation near people, safety cases and interaction design.",
+   "keywords": [
+    "safety",
+    "hri",
+    "collaborative",
+    "stop-zone",
+    "risk"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  },
+  {
+   "id": "rb-simulation",
+   "label": "Robot Simulation and Sim-to-Real",
+   "desc": "Physics simulation of robots and the gap between simulation and reality.",
+   "keywords": [
+    "simulator",
+    "digital-twin",
+    "sim-to-real",
+    "physics-engine"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  },
+  {
+   "id": "rb-software",
+   "label": "Robot Software and ROS",
+   "desc": "Robot middleware: nodes, topics, services, actions and bridges to AI models.",
+   "keywords": [
+    "ros",
+    "node",
+    "topic",
+    "service",
+    "rosbridge",
+    "launch"
+   ],
+   "topic": "robotics",
+   "source": "robotics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "rb-actuator-motor-driver",
+   "concept": "rb-control",
+   "label": "Actuator and Motor Driver Selector",
+   "desc": "Selects motors, drivers and gearing for torque, speed and duty cycle and checks thermal limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey964",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey966",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-pid-tuner",
+   "concept": "rb-control",
+   "label": "PID Tuner",
+   "desc": "Tunes PID gains from step responses and reports overshoot, settling time and stability margin.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey964",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey967",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-state-space-controller",
+   "concept": "rb-control",
+   "label": "State-Space and Predictive Controller",
+   "desc": "Designs LQR or model-predictive controllers from a linear model and checks constraint handling.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey964",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey966",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-dynamics-modeler",
+   "concept": "rb-kinematics",
+   "label": "Dynamics Modeler",
+   "desc": "Builds equations of motion with Lagrangian or Newton-Euler methods and identifies inertial parameters.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey966",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey967",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-forward-inverse-kinematics",
+   "concept": "rb-kinematics",
+   "label": "Forward and Inverse Kinematics",
+   "desc": "Computes end-effector pose from joint angles and the reverse, and reports singularities and multiple solutions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey966",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey964",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-end-effector-selector",
+   "concept": "rb-manipulation",
+   "label": "Gripper and End-Effector Selector",
+   "desc": "Chooses a gripper type for the objects and forces involved and lists payload and compliance limits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey969",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey964",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-grasp-planner",
+   "concept": "rb-manipulation",
+   "label": "Grasp Planner",
+   "desc": "Plans grasps from object shape and gripper geometry and ranks them by stability and reachability.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey969",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey970",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-depth-3d-perception",
+   "concept": "rb-perception",
+   "label": "Depth and 3D Perception",
+   "desc": "Builds depth maps and point clouds from stereo, time-of-flight or LiDAR sensors and filters noise.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey970",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey971",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-object-detection-pose",
+   "concept": "rb-perception",
+   "label": "Object Detection and Pose Estimation",
+   "desc": "Detects objects and estimates their six-degree-of-freedom pose for grasping or avoidance and reports failure cases.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey970",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey969",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-sensor-fusion-engineer",
+   "concept": "rb-perception",
+   "label": "Sensor Fusion Engineer",
+   "desc": "Fuses IMU, wheel, camera and LiDAR data with Kalman-type filters and reports the estimate's uncertainty.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey970",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey971",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-navigation-stack-integrator",
+   "concept": "rb-planning",
+   "label": "Navigation Stack Integrator",
+   "desc": "Configures localization, costmaps and a local planner for a mobile robot and tests recovery behaviours.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey971",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey972",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-path-planner",
+   "concept": "rb-planning",
+   "label": "Path Planner",
+   "desc": "Plans collision-free paths with graph search and sampling-based planners and compares their completeness and cost.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey971",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey970",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-trajectory-optimizer",
+   "concept": "rb-planning",
+   "label": "Trajectory Optimizer",
+   "desc": "Turns a path into a smooth, time-parameterized trajectory within velocity, acceleration and torque limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey971",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey964",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-hri-designer",
+   "concept": "rb-safety",
+   "label": "Human-Robot Interaction Designer",
+   "desc": "Designs how a robot signals intent and responds to people nearby, with speed and separation rules.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey965",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey971",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-safety-case-assessor",
+   "concept": "rb-safety",
+   "label": "Safety Case Assessor",
+   "desc": "Drafts a hazard analysis and safety argument for a robot cell or mobile robot and lists which standards a qualified assessor must check.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey965",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey964",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-sim-to-real-validator",
+   "concept": "rb-simulation",
+   "label": "Sim-to-Real Validator",
+   "desc": "Compares simulated and real robot behaviour and lists the parameters that explain the gap.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey967",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey964",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-simulation-builder",
+   "concept": "rb-simulation",
+   "label": "Simulation Builder",
+   "desc": "Builds a physics simulation of a robot and its world with sensor models and repeatable test scenarios.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey967",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey966",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-launch-config-debugger",
+   "concept": "rb-software",
+   "label": "Launch and Config Debugger",
+   "desc": "Debugs launch files, parameters and transforms and explains why a node does not start or communicate.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey972",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey971",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-ros-bridge-integrator",
+   "concept": "rb-software",
+   "label": "ROS Bridge Integrator",
+   "desc": "Connects an AI model to a ROS robot through a bridge, restricts which topics and services it may use and keeps a human stop in the loop.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey972",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey968",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-ros-node-developer",
+   "concept": "rb-software",
+   "label": "ROS Node Developer",
+   "desc": "Writes ROS nodes with topics, services and actions and tests message types and timing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey972",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey968",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey964",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey964",
+   "name": "Robot Controls Agent",
+   "legacy_key": "rb-controls-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey965",
+   "name": "Robot Safety Agent",
+   "legacy_key": "rb-safety-engineer",
+   "mcp": [
+    "local:ros-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey966",
+   "name": "Kinematics and Dynamics Agent",
+   "legacy_key": "rb-kinematics-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey967",
+   "name": "Robot Simulation Agent",
+   "legacy_key": "rb-simulation-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey968",
+   "name": "Robot Integration Test Agent",
+   "legacy_key": "rb-integration-tester",
+   "mcp": [
+    "local:ros-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey969",
+   "name": "Manipulation Agent",
+   "legacy_key": "rb-manipulation-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey970",
+   "name": "Robot Perception Agent",
+   "legacy_key": "rb-perception-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey971",
+   "name": "Motion Planning Agent",
+   "legacy_key": "rb-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey972",
+   "name": "ROS Engineer Agent",
+   "legacy_key": "rb-ros-engineer",
+   "mcp": [
+    "local:ros-mcp-server"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "ros-mcp-server",
+   "desc": "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/robotmcp/ros-mcp-server",
+   "id": "local:ros-mcp-server",
+   "origins": [
+    "mechanical-engineering",
+    "robotics"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:ros-mcp-server"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey965",
+   "mcp": "local:ros-mcp-server",
+   "topic": "robotics",
+   "score": 0.3855,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey968",
+   "mcp": "local:ros-mcp-server",
+   "topic": "robotics",
+   "score": 0.3855,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey965",
+    "skill": "rb-hri-designer"
+   }
+  },
+  {
+   "agent": "Maxey972",
+   "mcp": "local:ros-mcp-server",
+   "topic": "robotics",
+   "score": 0.3941,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "robotkin": "jacobian lagrange euler frame joint robot robotic arm manipulator dynamics",
+  "robotsense": "imu kalman six degree stereo time fusion detection depth perception",
+  "robotplan": "rrt costmap sampling based recovery navigation obstacle motion smooth",
+  "robotctl": "pid lqr overshoot settling gearing duty controller actuator",
+  "grasping": "gripper grasp reachability effector pick place manipulation grasping",
+  "rosware": "ros rosbridge topic launch service software",
+  "robotsim": "simulator digital twin scenario sim real physics engine simulation",
+  "robotsafe": "hazard separation intent collaborative safety zone human interaction"
+ },
+ "sources": [
+  "robotics"
+ ]
+}

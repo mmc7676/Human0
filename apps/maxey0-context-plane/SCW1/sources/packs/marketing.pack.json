@@ -1,0 +1,702 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "marketing",
+ "topic": {
+  "id": "marketing",
+  "label": "Marketing",
+  "desc": "Marketing: strategy and positioning, content and social, search, email and lifecycle, paid media, and measurement."
+ },
+ "concepts": [
+  [
+   "mk-strategy",
+   "Positioning and Strategy",
+   "marketing",
+   "Audience segments, positioning, messaging and competitor analysis that set what a campaign says and to whom.",
+   [
+    "audience",
+    "segment",
+    "positioning",
+    "messaging",
+    "competitor",
+    "persona",
+    "brand"
+   ]
+  ],
+  [
+   "mk-content",
+   "Content and Social",
+   "marketing",
+   "Content planning, social posts and brand-voice review across channels.",
+   [
+    "content",
+    "calendar",
+    "social",
+    "post",
+    "brand",
+    "voice",
+    "copy",
+    "channel",
+    "schedule"
+   ]
+  ],
+  [
+   "mk-seo",
+   "Search and SEO",
+   "marketing",
+   "Keyword research, site audits and backlink gaps for organic search visibility.",
+   [
+    "keyword",
+    "seo",
+    "audit",
+    "backlink",
+    "ranking",
+    "organic",
+    "serp",
+    "competitor"
+   ]
+  ],
+  [
+   "mk-email",
+   "Email and Lifecycle",
+   "marketing",
+   "Email campaigns, lifecycle journeys and performance review.",
+   [
+    "email",
+    "campaign",
+    "newsletter",
+    "lifecycle",
+    "journey",
+    "subscriber",
+    "template",
+    "open"
+   ]
+  ],
+  [
+   "mk-paid",
+   "Paid Media",
+   "marketing",
+   "Paid search and paid social campaign planning, creative testing and budget pacing.",
+   [
+    "paid",
+    "ads",
+    "campaign",
+    "budget",
+    "creative",
+    "bid",
+    "audience",
+    "conversion",
+    "pacing"
+   ]
+  ],
+  [
+   "mk-measure",
+   "Measurement and Attribution",
+   "marketing",
+   "Attribution, dashboards and experiments that show which marketing works.",
+   [
+    "attribution",
+    "dashboard",
+    "metric",
+    "experiment",
+    "conversion",
+    "funnel",
+    "report",
+    "test"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "mk-audience-segmenter",
+   "mk-strategy",
+   "Audience Segmenter",
+   "Builds audience segments and personas from customer data and states the evidence behind each segment.",
+   "semantic",
+   [
+    [
+     "mk-strategist",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-messaging-architect",
+   "mk-strategy",
+   "Positioning and Messaging Architect",
+   "Writes a positioning statement and a message hierarchy per segment, with proof points the company can substantiate.",
+   "semantic",
+   [
+    [
+     "mk-strategist",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ],
+    [
+     "mk-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-competitor-scanner",
+   "mk-strategy",
+   "Competitor Scanner",
+   "Compares competitors' positioning, pricing, channels and ads from public data and reports gaps and unverified items.",
+   "procedural",
+   [
+    [
+     "mk-researcher",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ],
+    [
+     "mk-paid-media",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-content-calendar-planner",
+   "mk-content",
+   "Content Calendar Planner",
+   "Plans a channel-by-channel content calendar tied to campaign goals, with owners and dates.",
+   "procedural",
+   [
+    [
+     "mk-copywriter",
+     "primary"
+    ],
+    [
+     "mk-brand-checker",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ],
+    [
+     "mk-social-manager",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-social-post-scheduler",
+   "mk-content",
+   "Social Post Scheduler",
+   "Drafts social posts for each network, picks posting times from engagement data and schedules them.",
+   "procedural",
+   [
+    [
+     "mk-social-manager",
+     "primary"
+    ],
+    [
+     "mk-brand-checker",
+     "checker"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ],
+    [
+     "mk-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-brand-voice-reviewer",
+   "mk-content",
+   "Brand Voice Reviewer",
+   "Reviews drafts against the brand voice and claims rules and returns specific before and after edits.",
+   "semantic",
+   [
+    [
+     "mk-brand-checker",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-keyword-researcher",
+   "mk-seo",
+   "Keyword Researcher",
+   "Finds keywords by volume, difficulty and intent and groups them into topics for content.",
+   "procedural",
+   [
+    [
+     "mk-seo-specialist",
+     "primary"
+    ],
+    [
+     "mk-analyst",
+     "checker"
+    ],
+    [
+     "mk-researcher",
+     "support"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-site-auditor",
+   "mk-seo",
+   "SEO Site Auditor",
+   "Audits a site for crawl, indexing, speed and on-page issues and ranks fixes by expected impact.",
+   "procedural",
+   [
+    [
+     "mk-seo-specialist",
+     "primary"
+    ],
+    [
+     "mk-analyst",
+     "checker"
+    ],
+    [
+     "mk-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-backlink-gap-analyst",
+   "mk-seo",
+   "Backlink Gap Analyst",
+   "Compares backlink profiles with competitors and lists realistic link opportunities.",
+   "semantic",
+   [
+    [
+     "mk-seo-specialist",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-researcher",
+     "support"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-email-campaign-builder",
+   "mk-email",
+   "Email Campaign Builder",
+   "Plans and drafts an email campaign with subject lines, templates and send schedule, and checks consent and unsubscribe rules before sending.",
+   "procedural",
+   [
+    [
+     "mk-email-marketer",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ],
+    [
+     "mk-brand-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-lifecycle-journey-designer",
+   "mk-email",
+   "Lifecycle Journey Designer",
+   "Designs welcome, onboarding and win-back journeys with triggers, branching and exit conditions.",
+   "semantic",
+   [
+    [
+     "mk-email-marketer",
+     "primary"
+    ],
+    [
+     "mk-analyst",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-email-performance-analyst",
+   "mk-email",
+   "Email Performance Analyst",
+   "Reports open, click and conversion results by segment and recommends what to test next.",
+   "procedural",
+   [
+    [
+     "mk-analyst",
+     "primary"
+    ],
+    [
+     "mk-experimenter",
+     "checker"
+    ],
+    [
+     "mk-email-marketer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-ad-campaign-planner",
+   "mk-paid",
+   "Ad Campaign Planner",
+   "Plans paid search and paid social campaigns with audiences, budgets, bids and conversion tracking.",
+   "procedural",
+   [
+    [
+     "mk-paid-media",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ],
+    [
+     "mk-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-ad-creative-tester",
+   "mk-paid",
+   "Ad Creative Tester",
+   "Sets up creative variants, runs a test and reports which ads win and by how much.",
+   "procedural",
+   [
+    [
+     "mk-paid-media",
+     "primary"
+    ],
+    [
+     "mk-experimenter",
+     "checker"
+    ],
+    [
+     "mk-copywriter",
+     "support"
+    ],
+    [
+     "mk-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-budget-pacing-monitor",
+   "mk-paid",
+   "Budget Pacing Monitor",
+   "Tracks spend against plan across ad accounts and flags overspend and underspend early.",
+   "procedural",
+   [
+    [
+     "mk-analyst",
+     "primary"
+    ],
+    [
+     "mk-paid-media",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-attribution-analyst",
+   "mk-measure",
+   "Attribution Analyst",
+   "Compares attribution models for the same conversions and states how much each channel's credit depends on the model.",
+   "semantic",
+   [
+    [
+     "mk-analyst",
+     "primary"
+    ],
+    [
+     "mk-experimenter",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ],
+    [
+     "mk-paid-media",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-dashboard-builder",
+   "mk-measure",
+   "Marketing Dashboard Builder",
+   "Pulls metrics from several marketing sources into one report with definitions and refresh times.",
+   "procedural",
+   [
+    [
+     "mk-analyst",
+     "primary"
+    ],
+    [
+     "mk-claims-checker",
+     "checker"
+    ],
+    [
+     "mk-strategist",
+     "support"
+    ],
+    [
+     "mk-seo-specialist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "mk-experiment-designer",
+   "mk-measure",
+   "Experiment Designer",
+   "Designs an A/B test with hypothesis, sample size, duration and decision rule before it starts.",
+   "semantic",
+   [
+    [
+     "mk-experimenter",
+     "primary"
+    ],
+    [
+     "mk-analyst",
+     "checker"
+    ],
+    [
+     "mk-email-marketer",
+     "support"
+    ],
+    [
+     "mk-paid-media",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "mk-strategist": "Marketing Strategist Agent",
+  "mk-researcher": "Market Research Agent",
+  "mk-copywriter": "Copywriter Agent",
+  "mk-social-manager": "Social Media Manager Agent",
+  "mk-seo-specialist": "SEO Specialist Agent",
+  "mk-email-marketer": "Email Marketing Agent",
+  "mk-paid-media": "Paid Media Agent",
+  "mk-analyst": "Marketing Analyst Agent",
+  "mk-experimenter": "Experimentation Agent",
+  "mk-brand-checker": "Brand Voice Checker Agent",
+  "mk-claims-checker": "Claims and Compliance Checker Agent"
+ },
+ "mcp": [
+  [
+   "HubSpot",
+   "875dee50-9b3f-452b-af8c-fbc839966273",
+   "CRM context for every answer, insight, and action",
+   [
+    "get_aeo_metrics",
+    "get_campaign_attribution_reports",
+    "get_content_analytics_report",
+    "get_conversation_channel_metadata",
+    "get_crm_objects",
+    "get_marketing_email_analytics",
+    "get_organization_details",
+    "get_properties"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Intuit Mailchimp",
+   "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
+   "Create marketing campaigns",
+   [
+    "campaign-planner",
+    "edit-campaign",
+    "save-to-mailchimp",
+    "get-email-themes",
+    "replace-image",
+    "edit-text",
+    "apply-theme",
+    "set-active-campaign"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Klaviyo",
+   "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
+   "Report, strategize & create with real-time Klaviyo data",
+   [
+    "get_account_details",
+    "get_campaigns",
+    "get_campaign",
+    "create_campaign",
+    "assign_template_to_campaign_message",
+    "get_catalog_items",
+    "get_events",
+    "get_metrics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Semrush",
+   "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
+   "SEO, keyword research, competitor analysis, traffic and market analytics, backlink analysis, domain analysis, and PPC",
+   [
+    "execute_report",
+    "get_report_schema",
+    "audience_research",
+    "backlinks_research",
+    "competitors_research",
+    "domain_overview",
+    "keyword_research",
+    "organic_research"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Metricool Social Media Management",
+   "70ba6d62-7e98-4ef4-9073-d161d900a95f",
+   "Schedule posts, analyze, and manage social media with AI",
+   [
+    "createScheduledPost",
+    "getAnalyticsAvailableMetrics",
+    "getAnalyticsDataByMetrics",
+    "getBestTimeToPostByNetwork",
+    "getBrandSettings",
+    "getScheduledPosts",
+    "updateScheduledPost"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Supermetrics Marketing Analytics",
+   "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
+   "Google Ads, Facebook Ads, Google Analytics, TikTok, LinkedIn, Instagram, YouTube & 200+ sources",
+   [
+    "data_source_discovery",
+    "accounts_discovery",
+    "field_discovery",
+    "data_query",
+    "get_async_query_results",
+    "get_today",
+    "contact_supermetrics",
+    "manage_user_and_team"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Adspirer Ads & Performance Marketing Agent",
+   "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
+   "Your performance marketing and paid media agent: plans, launches, and autonomously runs your ad campaigns across Google, Meta, LinkedIn, TikTok, and more.",
+   [
+    "amazon_ads",
+    "audit_conversion_tracking",
+    "chatgpt_ads",
+    "get_campaign_performance",
+    "get_connections_status",
+    "get_meta_campaign_performance",
+    "get_tool_schema",
+    "get_usage_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "positioning": "audience segment positioning messaging persona brand competitor",
+  "contentops": "content calendar social post schedule copy voice channel",
+  "searchseo": "keyword seo audit backlink organic ranking domain",
+  "emailops": "email newsletter lifecycle journey template subscriber unsubscribe",
+  "adspend": "ads campaign budget creative bid conversion pacing paid",
+  "measurement": "attribution dashboard metric experiment funnel report test"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "HubSpot": "directory listing; CRM and marketing analytics; tool names are the directory's visible sample; connector is not installed or tested",
+   "Intuit Mailchimp": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Klaviyo": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Semrush": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Metricool Social Media Management": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Supermetrics Marketing Analytics": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Adspirer Ads & Performance Marketing Agent": "directory listing; the listing describes an agent that can launch and run ad campaigns autonomously: in Human0 it is a candidate only, any launch or spend needs your own approval; tool names are the directory's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified directory listings only: not connected, not authenticated, not called. Tool lists are the directory's sample (the listing shows more). Agent-to-MCP gates are derived by the app, not declared here."
+ }
+}

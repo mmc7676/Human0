@@ -1,0 +1,233 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "commodities",
+  "label": "Commodities",
+  "desc": "Raw materials that trade: energy, metals and agriculture, physical and futures markets, and supply and demand drivers."
+ },
+ "concepts": [
+  {
+   "id": "cmd-ags",
+   "label": "Agriculture",
+   "desc": "Grains, softs and livestock: corn, wheat, soybeans, coffee, sugar, cattle, seasonality and crop reports.",
+   "keywords": [
+    "agriculture",
+    "grain",
+    "corn",
+    "wheat",
+    "soybean",
+    "coffee",
+    "sugar",
+    "livestock",
+    "crop"
+   ],
+   "topic": "commodities",
+   "source": "commodities",
+   "related": []
+  },
+  {
+   "id": "cmd-drivers",
+   "label": "Physical Markets and Supply Chains",
+   "desc": "Physical delivery, storage, transport, grades and how physical and futures prices connect.",
+   "keywords": [
+    "physical",
+    "delivery",
+    "storage",
+    "transport",
+    "grade",
+    "basis",
+    "supply",
+    "chain",
+    "spot"
+   ],
+   "topic": "commodities",
+   "source": "commodities",
+   "related": []
+  },
+  {
+   "id": "cmd-energy",
+   "label": "Energy",
+   "desc": "Crude oil, natural gas, refined products and power, benchmarks such as WTI and Brent.",
+   "keywords": [
+    "energy",
+    "crude",
+    "oil",
+    "natural",
+    "gas",
+    "wti",
+    "brent",
+    "refined",
+    "power",
+    "barrel"
+   ],
+   "topic": "commodities",
+   "source": "commodities",
+   "related": []
+  },
+  {
+   "id": "cmd-metals",
+   "label": "Metals",
+   "desc": "Precious and industrial metals: gold, silver, copper, aluminum and their markets.",
+   "keywords": [
+    "metal",
+    "gold",
+    "silver",
+    "copper",
+    "aluminum",
+    "precious",
+    "industrial",
+    "ounce"
+   ],
+   "topic": "commodities",
+   "source": "commodities",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cmd-crop-report-reader",
+   "concept": "cmd-ags",
+   "label": "Crop Report Reader",
+   "desc": "Reads a crop report and explains its effect on supply and prices.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1688",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1689",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1690",
+     "role": "support"
+    }
+   ],
+   "source": "commodities"
+  },
+  {
+   "id": "cmd-basis-explainer",
+   "concept": "cmd-drivers",
+   "label": "Basis Explainer",
+   "desc": "Explains basis between a physical location and the futures price.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1690",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1689",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1691",
+     "role": "support"
+    }
+   ],
+   "source": "commodities"
+  },
+  {
+   "id": "cmd-oil-market-brief",
+   "concept": "cmd-energy",
+   "label": "Oil Market Brief",
+   "desc": "Summarizes crude oil supply, demand, inventories and the benchmark spread.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1690",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1689",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1691",
+     "role": "support"
+    }
+   ],
+   "source": "commodities"
+  },
+  {
+   "id": "cmd-metals-driver-explainer",
+   "concept": "cmd-metals",
+   "label": "Metals Driver Explainer",
+   "desc": "Explains what drives a metal's price: industrial demand, safe haven flows, currency and supply.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1691",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1689",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1688",
+     "role": "support"
+    }
+   ],
+   "source": "commodities"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1688",
+   "name": "Agricultural Commodities Agent",
+   "legacy_key": "cmd-ags",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1689",
+   "name": "Commodities Checker Agent",
+   "legacy_key": "cmd-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1690",
+   "name": "Energy Commodities Agent",
+   "legacy_key": "cmd-energy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1691",
+   "name": "Metals Agent",
+   "legacy_key": "cmd-metals",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Twelve Data MCP",
+   "desc": "Twelve Data MCP server: real time and historical prices for stocks, forex, crypto, ETFs and indices, technical indicators.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/twelvedata/mcp",
+   "id": "local:twelve-data-mcp",
+   "origins": [
+    "capital-markets",
+    "commodities",
+    "currencies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:twelve-data-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "cmdenergy": "energy crude oil natural gas wti brent refined power barrel",
+  "cmdmetals": "metal gold silver copper aluminum precious industrial ounce",
+  "cmdags": "agriculture grain corn wheat soybean coffee sugar livestock crop",
+  "cmddrivers": "physical delivery storage transport grade basis supply chain spot"
+ },
+ "sources": [
+  "commodities"
+ ]
+}

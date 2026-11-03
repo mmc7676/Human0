@@ -1,0 +1,391 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "equities",
+  "label": "Stocks and Equities",
+  "desc": "Shares in companies: common and preferred stock, fundamental and technical analysis, corporate actions, and reading company filings."
+ },
+ "concepts": [
+  {
+   "id": "eq-actions",
+   "label": "Corporate Actions",
+   "desc": "Splits, dividends, buybacks, spinoffs, tender offers and their effect on shareholders.",
+   "keywords": [
+    "corporate",
+    "action",
+    "split",
+    "dividend",
+    "buyback",
+    "spinoff",
+    "tender",
+    "offer",
+    "record",
+    "date"
+   ],
+   "topic": "equities",
+   "source": "equities",
+   "related": []
+  },
+  {
+   "id": "eq-filings",
+   "label": "Reading Company Filings",
+   "desc": "10-K, 10-Q, 8-K, proxy statements, 13F and insider Form 4 filings.",
+   "keywords": [
+    "filing",
+    "10-k",
+    "10-q",
+    "8-k",
+    "proxy",
+    "13f",
+    "form",
+    "insider",
+    "edgar",
+    "annual",
+    "report"
+   ],
+   "topic": "equities",
+   "source": "equities",
+   "related": []
+  },
+  {
+   "id": "eq-fundamental",
+   "label": "Fundamental Analysis",
+   "desc": "Valuing a stock from its business: earnings, ratios, growth, margins and multiples.",
+   "keywords": [
+    "fundamental",
+    "analysis",
+    "earnings",
+    "ratio",
+    "pe",
+    "growth",
+    "margin",
+    "multiple",
+    "stock"
+   ],
+   "topic": "equities",
+   "source": "equities",
+   "related": []
+  },
+  {
+   "id": "eq-stocks",
+   "label": "Stocks and Share Classes",
+   "desc": "Common and preferred stock, share classes, voting rights, dividends and ADRs.",
+   "keywords": [
+    "stock",
+    "share",
+    "common",
+    "preferred",
+    "class",
+    "voting",
+    "dividend",
+    "adr",
+    "equity"
+   ],
+   "topic": "equities",
+   "source": "equities",
+   "related": []
+  },
+  {
+   "id": "eq-technical",
+   "label": "Technical Analysis",
+   "desc": "Price and volume patterns, moving averages, momentum and indicators, and their limits.",
+   "keywords": [
+    "technical",
+    "analysis",
+    "price",
+    "volume",
+    "moving",
+    "average",
+    "momentum",
+    "indicator",
+    "chart",
+    "rsi"
+   ],
+   "topic": "equities",
+   "source": "equities",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "eq-corporate-action-explainer",
+   "concept": "eq-actions",
+   "label": "Corporate Action Explainer",
+   "desc": "Explains a corporate action and its effect on a holder's shares and cost basis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1713",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1715",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  },
+  {
+   "id": "eq-10-k-reader",
+   "concept": "eq-filings",
+   "label": "10-K Reader",
+   "desc": "Read a 10-K annual filing and extract business, risk factors, MD&A and key financials.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1715",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1716",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  },
+  {
+   "id": "eq-insider-and-13f-tracker",
+   "concept": "eq-filings",
+   "label": "Insider and 13F Tracker",
+   "desc": "Tracks insider Form 4 trades and institutional 13F holdings for a company.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1715",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1716",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  },
+  {
+   "id": "eq-earnings-report-reader",
+   "concept": "eq-fundamental",
+   "label": "Earnings Report Reader",
+   "desc": "Reads an earnings release and summarizes results versus expectations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1716",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1717",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  },
+  {
+   "id": "eq-stock-fundamentals-summary",
+   "concept": "eq-fundamental",
+   "label": "Stock Fundamentals Summary",
+   "desc": "Summarizes a stock's fundamentals: revenue, earnings, margins, valuation multiples and peers.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1716",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1717",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  },
+  {
+   "id": "eq-share-class-explainer",
+   "concept": "eq-stocks",
+   "label": "Share Class Explainer",
+   "desc": "Explains a company's share classes, voting rights and dividend terms.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1716",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1717",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  },
+  {
+   "id": "eq-indicator-calculator",
+   "concept": "eq-technical",
+   "label": "Indicator Calculator",
+   "desc": "Computes technical indicators for a price series and states what they do and do not show.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1717",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1714",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1713",
+     "role": "support"
+    }
+   ],
+   "source": "equities"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1713",
+   "name": "Corporate Actions Agent",
+   "legacy_key": "eq-actions",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1714",
+   "name": "Equity Checker Agent",
+   "legacy_key": "eq-checker",
+   "mcp": [
+    "local:sec-edgar-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1715",
+   "name": "Filings Analyst Agent",
+   "legacy_key": "eq-filings",
+   "mcp": [
+    "local:sec-edgar-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1716",
+   "name": "Equity Research Agent",
+   "legacy_key": "eq-analyst",
+   "mcp": [
+    "local:sec-edgar-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1717",
+   "name": "Technical Analysis Agent",
+   "legacy_key": "eq-technical",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Financial Datasets MCP",
+   "desc": "Financial Datasets MCP server: company income statements, balance sheets, cash flow statements, stock prices and market news.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/financial-datasets/mcp-server",
+   "id": "local:financial-datasets-mcp",
+   "origins": [
+    "corporate-finance",
+    "equities",
+    "financial-data"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "SEC EDGAR MCP",
+   "desc": "SEC EDGAR MCP server: company filings, 10-K, 10-Q, 8-K, XBRL financial data and insider trading forms from EDGAR.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/stefanoamorelli/sec-edgar-mcp",
+   "id": "local:sec-edgar-mcp",
+   "origins": [
+    "corporate-finance",
+    "equities",
+    "financial-data",
+    "offerings"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Yahoo Finance MCP",
+   "desc": "Yahoo Finance MCP server: stock prices, historical quotes, company financial statements, holders, options chains and news.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/Alex2Yang97/yahoo-finance-mcp",
+   "id": "local:yahoo-finance-mcp",
+   "origins": [
+    "equities",
+    "investing"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:sec-edgar-mcp",
+  "local:yahoo-finance-mcp",
+  "local:financial-datasets-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1714",
+   "mcp": "local:sec-edgar-mcp",
+   "topic": "equities",
+   "score": 0.252,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1715",
+    "skill": "eq-10-k-reader"
+   }
+  },
+  {
+   "agent": "Maxey1715",
+   "mcp": "local:sec-edgar-mcp",
+   "topic": "equities",
+   "score": 0.252,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1716",
+   "mcp": "local:sec-edgar-mcp",
+   "topic": "equities",
+   "score": 0.1934,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "eqstocks": "stock share common preferred class voting dividend adr equity",
+  "eqfundamental": "fundamental analysis earnings ratio pe growth margin multiple stock",
+  "eqtechnical": "technical analysis price volume moving average momentum indicator chart rsi",
+  "eqactions": "corporate action split dividend buyback spinoff tender offer record date",
+  "eqfilings": "filing 10-k 10-q 8-k proxy 13f form insider edgar annual report"
+ },
+ "sources": [
+  "equities"
+ ]
+}

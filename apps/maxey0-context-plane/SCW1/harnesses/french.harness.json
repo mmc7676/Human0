@@ -1,0 +1,752 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "french",
+  "label": "French",
+  "desc": "French: the French language and the literatures, cultures and histories of France and the francophone world."
+ },
+ "concepts": [
+  {
+   "id": "fren-culture-society",
+   "label": "French Culture, History and Society",
+   "desc": "French history, institutions, the Republic, laicite and contemporary culture.",
+   "keywords": [
+    "culture",
+    "history",
+    "republic",
+    "laicite",
+    "revolution",
+    "institution",
+    "cinema",
+    "society"
+   ],
+   "topic": "french",
+   "source": "french",
+   "related": []
+  },
+  {
+   "id": "fren-francophone",
+   "label": "Francophone Studies",
+   "desc": "Languages, literatures and cultures of the francophone world in Africa, the Caribbean, Quebec, the Maghreb and beyond, and their colonial histories.",
+   "keywords": [
+    "francophone",
+    "colonial",
+    "postcolonial",
+    "quebec",
+    "maghreb",
+    "caribbean",
+    "africa",
+    "creole"
+   ],
+   "topic": "french",
+   "source": "french",
+   "related": []
+  },
+  {
+   "id": "fren-french-literature",
+   "label": "French Literature",
+   "desc": "French literature from the medieval period through classicism, the Enlightenment, romanticism, realism and modernism to today.",
+   "keywords": [
+    "literature",
+    "novel",
+    "poetry",
+    "theatre",
+    "enlightenment",
+    "romanticism",
+    "realism",
+    "explication"
+   ],
+   "topic": "french",
+   "source": "french",
+   "related": [
+    "germ-german-literature"
+   ]
+  },
+  {
+   "id": "fren-grammar-language",
+   "label": "French Grammar and Usage",
+   "desc": "Morphology and syntax of French: verb conjugation, tense and mood, agreement, pronouns and register.",
+   "keywords": [
+    "grammar",
+    "conjugation",
+    "subjunctive",
+    "agreement",
+    "pronoun",
+    "tense",
+    "syntax",
+    "register"
+   ],
+   "topic": "french",
+   "source": "french",
+   "related": [
+    "ital-grammar"
+   ]
+  },
+  {
+   "id": "fren-phonetics-oral",
+   "label": "French Phonetics and Oral Expression",
+   "desc": "The sound system of French including nasal vowels, liaison and intonation, and spoken communication.",
+   "keywords": [
+    "phonetics",
+    "pronunciation",
+    "nasal",
+    "liaison",
+    "intonation",
+    "ipa",
+    "oral",
+    "listening"
+   ],
+   "topic": "french",
+   "source": "french",
+   "related": [
+    "ital-phonology"
+   ]
+  },
+  {
+   "id": "fren-translation",
+   "label": "Translation and Stylistics",
+   "desc": "Translating between French and English with attention to idiom, style and cultural reference.",
+   "keywords": [
+    "translation",
+    "idiom",
+    "stylistics",
+    "equivalence",
+    "false friend",
+    "glossary",
+    "localization",
+    "version"
+   ],
+   "topic": "french",
+   "source": "french",
+   "related": [
+    "ital-translation"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "fren-civilisation-brief",
+   "concept": "fren-culture-society",
+   "label": "Civilisation Brief",
+   "desc": "Explains a feature of French society such as laicite or the education system and checks factual claims against official or scholarly sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1307",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1309",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-history-chronology",
+   "concept": "fren-culture-society",
+   "label": "French History Chronology",
+   "desc": "Builds a dated chronology for a period such as the Revolution or the Fifth Republic and checks each date.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1307",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1310",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-media-comprehension",
+   "concept": "fren-culture-society",
+   "label": "Authentic Media Comprehension",
+   "desc": "Builds comprehension questions on French news or film and checks answers are supported by the source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1307",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1311",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-colonial-history-brief",
+   "concept": "fren-francophone",
+   "label": "Colonial History Brief",
+   "desc": "Summarises the colonial and independence history of a francophone country and checks dates against reference works.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1309",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1307",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-francophone-text-analysis",
+   "concept": "fren-francophone",
+   "label": "Francophone Text Analysis",
+   "desc": "Analyses a francophone work in its colonial or postcolonial context and checks historical claims against sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1309",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1310",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-language-variation",
+   "concept": "fren-francophone",
+   "label": "Francophone Language Variation",
+   "desc": "Describes lexical and phonetic features of a regional French and checks examples against documented usage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1312",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1309",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-explication-de-texte",
+   "concept": "fren-french-literature",
+   "label": "Explication de Texte",
+   "desc": "Produces a close reading of a passage organised by theme, structure and style and checks every claim is anchored in a quotation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1310",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1311",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-period-movement",
+   "concept": "fren-french-literature",
+   "label": "Literary Movement Profile",
+   "desc": "Profiles a literary movement with authors, works and aesthetics and checks dates and attributions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1310",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1307",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-scholarship-search",
+   "concept": "fren-french-literature",
+   "label": "French Studies Scholarship Search",
+   "desc": "Searches peer-reviewed French studies scholarship through Wiley Scholar Gateway and checks each citation resolves to the stated work.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1308",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1310",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1309",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-conjugation-drill",
+   "concept": "fren-grammar-language",
+   "label": "Conjugation Drill",
+   "desc": "Generates conjugations across tenses and moods for regular and irregular verbs and checks every form against a reference conjugation table.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1311",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1312",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-error-correction",
+   "concept": "fren-grammar-language",
+   "label": "Written Error Correction",
+   "desc": "Corrects agreement, tense and pronoun errors in a learner text and checks each correction with an explained grammar rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1311",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1313",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-register-adjustment",
+   "concept": "fren-grammar-language",
+   "label": "Register Adjustment",
+   "desc": "Rewrites a text between familiar, standard and formal French and checks vocabulary and tu or vous usage match the target register.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1311",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1307",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-ipa-transcription",
+   "concept": "fren-phonetics-oral",
+   "label": "IPA Transcription",
+   "desc": "Transcribes French words and phrases into IPA including liaison and elision and checks against a pronunciation dictionary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1314",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1312",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-liaison-rules",
+   "concept": "fren-phonetics-oral",
+   "label": "Liaison and Enchainement Practice",
+   "desc": "Marks obligatory, optional and forbidden liaisons in sentences and checks each mark against the liaison rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1314",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1311",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-oral-presentation",
+   "concept": "fren-phonetics-oral",
+   "label": "Oral Presentation Preparation",
+   "desc": "Prepares a structured spoken presentation in French and checks it for clarity, register and pronunciation notes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1314",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1311",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-comparative-stylistics",
+   "concept": "fren-translation",
+   "label": "Comparative Stylistics",
+   "desc": "Applies translation procedures such as transposition and modulation to a passage and checks each choice is justified.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1313",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1310",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-glossary-building",
+   "concept": "fren-translation",
+   "label": "Bilingual Glossary Building",
+   "desc": "Builds a French-English glossary for a domain and checks each pair against usage in authoritative sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1313",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1312",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-text-translation",
+   "concept": "fren-translation",
+   "label": "Text Translation",
+   "desc": "Translates passages between French and English with DeepL and checks the output for meaning, idiom and false friends.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1313",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1311",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1307",
+   "name": "French Culture and History Analyst",
+   "legacy_key": "fren-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1308",
+   "name": "French Language Reviewer",
+   "legacy_key": "fren-reviewer",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1309",
+   "name": "Francophone Studies Analyst",
+   "legacy_key": "fren-franco",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1310",
+   "name": "French Literature Scholar",
+   "legacy_key": "fren-literature",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1311",
+   "name": "French Grammar Tutor",
+   "legacy_key": "fren-grammar",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1312",
+   "name": "French Linguist",
+   "legacy_key": "fren-linguist",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1313",
+   "name": "French Translator",
+   "legacy_key": "fren-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1314",
+   "name": "French Phonetics Coach",
+   "legacy_key": "fren-phon",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1308",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "french",
+   "score": 0.1733,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1308",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "french",
+   "score": 0.2765,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1309",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "french",
+   "score": 0.1364,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1312",
+    "skill": "fren-language-variation"
+   }
+  },
+  {
+   "agent": "Maxey1310",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "french",
+   "score": 0.1733,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1308",
+    "skill": "fren-scholarship-search"
+   }
+  },
+  {
+   "agent": "Maxey1310",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "french",
+   "score": 0.3096,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1312",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "french",
+   "score": 0.1364,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "fren-grammar": "conjugation subjunctive agreement pronoun tense syntax",
+  "fren-sound": "phonetics pronunciation nasal liaison intonation ipa",
+  "fren-trans": "translation idiom stylistics glossary friend",
+  "fren-lit": "novel poetry theatre romanticism realism explication",
+  "fren-franco": "francophone colonial postcolonial quebec maghreb caribbean creole",
+  "fren-civ": "republic laicite revolution institution cinema society"
+ },
+ "sources": [
+  "french"
+ ]
+}

@@ -1,0 +1,627 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "education",
+  "label": "Education",
+  "desc": "Education: how people learn and how teaching, curriculum, assessment and institutions can support that learning."
+ },
+ "concepts": [
+  {
+   "id": "edu-assessment",
+   "label": "Assessment and Measurement",
+   "desc": "Designing formative and summative assessments and judging their validity, reliability and fairness.",
+   "keywords": [
+    "assessment",
+    "formative",
+    "summative",
+    "rubric",
+    "validity",
+    "reliability",
+    "feedback",
+    "grading"
+   ],
+   "topic": "education",
+   "source": "education",
+   "related": []
+  },
+  {
+   "id": "edu-curriculum-design",
+   "label": "Curriculum and Instructional Design",
+   "desc": "Sequencing objectives, content and activities into coherent courses and units.",
+   "keywords": [
+    "curriculum",
+    "objective",
+    "backward design",
+    "unit",
+    "lesson plan",
+    "scaffolding",
+    "standards",
+    "alignment"
+   ],
+   "topic": "education",
+   "source": "education",
+   "related": []
+  },
+  {
+   "id": "edu-education-policy",
+   "label": "Education Policy and Systems",
+   "desc": "Funding, governance, accountability and reform of schools and higher education, informed by evidence.",
+   "keywords": [
+    "policy",
+    "funding",
+    "accountability",
+    "reform",
+    "equity gap",
+    "evaluation",
+    "school",
+    "higher education"
+   ],
+   "topic": "education",
+   "source": "education",
+   "related": []
+  },
+  {
+   "id": "edu-inclusive-education",
+   "label": "Inclusive and Special Education",
+   "desc": "Supporting learners with disabilities, language needs and diverse backgrounds through equitable design.",
+   "keywords": [
+    "inclusive",
+    "special education",
+    "disability",
+    "universal design",
+    "equity",
+    "accommodation",
+    "multilingual"
+   ],
+   "topic": "education",
+   "source": "education",
+   "related": []
+  },
+  {
+   "id": "edu-learning-sciences",
+   "label": "Learning Sciences and Educational Psychology",
+   "desc": "Cognitive, social and motivational processes by which people acquire knowledge and skills.",
+   "keywords": [
+    "learning",
+    "cognition",
+    "memory",
+    "motivation",
+    "constructivism",
+    "metacognition",
+    "development",
+    "retrieval practice"
+   ],
+   "topic": "education",
+   "source": "education",
+   "related": []
+  },
+  {
+   "id": "edu-pedagogy",
+   "label": "Pedagogy and Teaching Practice",
+   "desc": "Classroom methods, discussion, active learning and management that make instruction effective.",
+   "keywords": [
+    "pedagogy",
+    "active learning",
+    "classroom",
+    "discussion",
+    "differentiation",
+    "inquiry",
+    "teaching"
+   ],
+   "topic": "education",
+   "source": "education",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "edu-feedback-writer",
+   "concept": "edu-assessment",
+   "label": "Formative Feedback Writer",
+   "desc": "Writes actionable feedback on student work and checks it targets the stated criteria.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1238",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1239",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1240",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-item-analyst",
+   "concept": "edu-assessment",
+   "label": "Test Item Analyst",
+   "desc": "Computes item difficulty, discrimination and reliability statistics and checks for biased items.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1239",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1242",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-rubric-builder",
+   "concept": "edu-assessment",
+   "label": "Rubric Builder",
+   "desc": "Constructs analytic rubrics with performance levels and checks inter-rater agreement on sample work.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1239",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1238",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-objective-writer",
+   "concept": "edu-curriculum-design",
+   "label": "Learning Objective Writer",
+   "desc": "Writes measurable learning objectives at chosen cognitive levels and checks each verb against Bloom taxonomy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1243",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1239",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1238",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-standards-aligner",
+   "concept": "edu-curriculum-design",
+   "label": "Standards Alignment Checker",
+   "desc": "Maps lessons to curriculum standards and checks coverage gaps and duplication.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1243",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1244",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-unit-planner",
+   "concept": "edu-curriculum-design",
+   "label": "Backward Design Unit Planner",
+   "desc": "Builds units from goals to evidence to activities and checks alignment among objectives, assessments and lessons.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1243",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1239",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1240",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-edtech-evaluator",
+   "concept": "edu-education-policy",
+   "label": "Educational Technology Evaluator",
+   "desc": "Assesses a learning tool for pedagogical fit, accessibility and evidence and checks claims against research.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1245",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1242",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-policy-evaluator",
+   "concept": "edu-education-policy",
+   "label": "Education Policy Evaluator",
+   "desc": "Evaluates a reform using causal studies and checks effect sizes and study quality.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1244",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1239",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-accommodation-planner",
+   "concept": "edu-inclusive-education",
+   "label": "Accommodation Planner",
+   "desc": "Proposes accommodations for documented learner needs and checks them against legal and assessment requirements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1242",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1244",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1239",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-udl-reviewer",
+   "concept": "edu-inclusive-education",
+   "label": "Universal Design for Learning Reviewer",
+   "desc": "Reviews materials against UDL guidelines and checks multiple means of engagement, representation and expression.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1242",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1245",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-cognitive-load-reviewer",
+   "concept": "edu-learning-sciences",
+   "label": "Cognitive Load Reviewer",
+   "desc": "Analyses materials for intrinsic and extraneous load and checks revisions against cognitive load principles.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1240",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1238",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1245",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-learning-theory-mapper",
+   "concept": "edu-learning-sciences",
+   "label": "Learning Theory Mapper",
+   "desc": "Matches an instructional situation to relevant learning theories and checks claims against empirical studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1240",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1238",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-motivation-diagnoser",
+   "concept": "edu-learning-sciences",
+   "label": "Motivation Diagnoser",
+   "desc": "Identifies motivational barriers for learners and checks proposed supports against self-determination research.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1240",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1241",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1242",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-differentiation-planner",
+   "concept": "edu-pedagogy",
+   "label": "Differentiation Planner",
+   "desc": "Adapts tasks for varied readiness and interest and checks every variant still meets the objective.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1242",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1238",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1243",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  },
+  {
+   "id": "edu-lesson-designer",
+   "concept": "edu-pedagogy",
+   "label": "Active Learning Lesson Designer",
+   "desc": "Designs lessons with active learning structures and checks time, roles and student tasks are explicit.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1238",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1243",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1245",
+     "role": "support"
+    }
+   ],
+   "source": "education"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1238",
+   "name": "Instructional Coach",
+   "legacy_key": "edu-instructor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1239",
+   "name": "Assessment Specialist",
+   "legacy_key": "edu-assessor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1240",
+   "name": "Learning Sciences Researcher",
+   "legacy_key": "edu-learning",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1241",
+   "name": "Education Evidence Reviewer",
+   "legacy_key": "edu-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1242",
+   "name": "Inclusive Education Specialist",
+   "legacy_key": "edu-inclusion",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1243",
+   "name": "Curriculum Designer",
+   "legacy_key": "edu-curriculum",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1244",
+   "name": "Education Policy Analyst",
+   "legacy_key": "edu-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1245",
+   "name": "Educational Technology Designer",
+   "legacy_key": "edu-edtech",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "name": "Coteach",
+   "desc": "Create classroom-ready K-12 math diagrams in Claude",
+   "tools": [
+    "CreateDiagrams"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "origins": [
+    "education",
+    "math"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "8f5a51c6-5664-40c8-8043-f0441252c878",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "edu-learn": "learning cognition memory motivation metacognition constructivism",
+  "edu-curr": "curriculum objective unit lesson scaffolding standards alignment",
+  "edu-assess": "assessment formative summative rubric validity reliability grading",
+  "edu-teach": "pedagogy classroom discussion differentiation inquiry teaching",
+  "edu-incl": "inclusive disability universal equity accommodation multilingual",
+  "edu-pol": "policy funding accountability reform school"
+ },
+ "sources": [
+  "education"
+ ]
+}

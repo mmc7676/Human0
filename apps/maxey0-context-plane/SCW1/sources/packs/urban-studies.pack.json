@@ -1,0 +1,582 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "urban-studies",
+ "topic": {
+  "id": "urban-studies",
+  "label": "Urban Studies",
+  "desc": "Urban Studies: how cities form, function and change, and how they are planned, governed and lived in."
+ },
+ "concepts": [
+  [
+   "urban-urban-planning",
+   "Urban Planning and Land Use",
+   "urban-studies",
+   "Comprehensive plans, zoning, land-use regulation and urban design that shape city form.",
+   [
+    "planning",
+    "zoning",
+    "land use",
+    "comprehensive plan",
+    "urban design",
+    "density",
+    "permitting"
+   ]
+  ],
+  [
+   "urban-urban-economics",
+   "Urban Economics and Development",
+   "urban-studies",
+   "Agglomeration, land markets, local public finance and economic development of cities and regions.",
+   [
+    "economics",
+    "agglomeration",
+    "land value",
+    "rent",
+    "development",
+    "local finance",
+    "growth"
+   ]
+  ],
+  [
+   "urban-housing-community",
+   "Housing and Community Development",
+   "urban-studies",
+   "Housing markets, affordability, gentrification, displacement and community development policy.",
+   [
+    "housing",
+    "affordability",
+    "gentrification",
+    "displacement",
+    "rent burden",
+    "community development",
+    "eviction"
+   ]
+  ],
+  [
+   "urban-transportation-mobility",
+   "Transportation and Mobility",
+   "urban-studies",
+   "Transit, streets, travel behavior and accessibility in metropolitan regions.",
+   [
+    "transit",
+    "transportation",
+    "accessibility",
+    "commute",
+    "traffic",
+    "route",
+    "mobility"
+   ]
+  ],
+  [
+   "urban-urban-society-history",
+   "Urban Sociology and History",
+   "urban-studies",
+   "Segregation, neighborhoods, inequality and the historical development of cities.",
+   [
+    "segregation",
+    "neighborhood",
+    "inequality",
+    "urbanization",
+    "history",
+    "suburbanization",
+    "race"
+   ]
+  ],
+  [
+   "urban-spatial-analysis-environment",
+   "Urban Spatial Analysis and Environment",
+   "urban-studies",
+   "GIS mapping of urban data and the environmental challenges of cities, from heat to climate resilience.",
+   [
+    "gis",
+    "map",
+    "spatial",
+    "census tract",
+    "heat island",
+    "resilience",
+    "sustainability"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "urban-zoning-review",
+   "urban-urban-planning",
+   "Zoning Capacity Analyzer",
+   "Computes buildable capacity of parcels under zoning rules, checked by recomputing floor area and height limits.",
+   "procedural",
+   [
+    [
+     "urban-planner",
+     "primary"
+    ],
+    [
+     "urban-gis",
+     "checker"
+    ],
+    [
+     "urban-housing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-plan-review",
+   "urban-urban-planning",
+   "Comprehensive Plan Reviewer",
+   "Reviews a comprehensive plan for internal consistency and stated goals, checked against the plan text.",
+   "semantic",
+   [
+    [
+     "urban-planner",
+     "primary"
+    ],
+    [
+     "urban-env",
+     "checker"
+    ],
+    [
+     "urban-soc",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-site-design",
+   "urban-urban-planning",
+   "Urban Design Site Assessor",
+   "Assesses a site for walkability, frontage and public space, checked against design guidelines.",
+   "semantic",
+   [
+    [
+     "urban-planner",
+     "primary"
+    ],
+    [
+     "urban-transport",
+     "checker"
+    ],
+    [
+     "urban-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-agglomeration-measure",
+   "urban-urban-economics",
+   "Agglomeration Effect Estimator",
+   "Estimates productivity gains from city size or density using regression, checked by robustness specifications.",
+   "procedural",
+   [
+    [
+     "urban-econ",
+     "primary"
+    ],
+    [
+     "urban-data",
+     "checker"
+    ],
+    [
+     "urban-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-land-value",
+   "urban-urban-economics",
+   "Land Value Gradient Analyzer",
+   "Estimates how land values fall with distance from centers or transit, checked against assessor data.",
+   "procedural",
+   [
+    [
+     "urban-econ",
+     "primary"
+    ],
+    [
+     "urban-gis",
+     "checker"
+    ],
+    [
+     "urban-transport",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-local-finance",
+   "urban-urban-economics",
+   "Municipal Finance Analyzer",
+   "Analyzes a city's revenues, expenditures and debt, checked against published budget documents.",
+   "procedural",
+   [
+    [
+     "urban-econ",
+     "primary"
+    ],
+    [
+     "urban-planner",
+     "checker"
+    ],
+    [
+     "urban-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-affordability-index",
+   "urban-housing-community",
+   "Housing Affordability Calculator",
+   "Computes rent burden and affordability ratios by area, checked against census source tables.",
+   "procedural",
+   [
+    [
+     "urban-housing",
+     "primary"
+    ],
+    [
+     "urban-data",
+     "checker"
+    ],
+    [
+     "urban-econ",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-gentrification-map",
+   "urban-housing-community",
+   "Gentrification Risk Mapper",
+   "Identifies tracts at risk of gentrification and displacement from indicators, checked for indicator definitions and mapped output.",
+   "procedural",
+   [
+    [
+     "urban-gis",
+     "primary"
+    ],
+    [
+     "urban-housing",
+     "checker"
+    ],
+    [
+     "urban-soc",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-housing-policy",
+   "urban-housing-community",
+   "Housing Policy Option Reviewer",
+   "Compares housing policies such as inclusionary zoning or vouchers, checked against evaluation evidence.",
+   "semantic",
+   [
+    [
+     "urban-housing",
+     "primary"
+    ],
+    [
+     "urban-econ",
+     "checker"
+    ],
+    [
+     "urban-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-accessibility-analysis",
+   "urban-transportation-mobility",
+   "Transit Accessibility Analyzer",
+   "Computes jobs reachable within a travel time by transit or car, checked against routing results.",
+   "procedural",
+   [
+    [
+     "urban-transport",
+     "primary"
+    ],
+    [
+     "urban-gis",
+     "checker"
+    ],
+    [
+     "urban-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-route-plan",
+   "urban-transportation-mobility",
+   "Route and Traffic Analyzer",
+   "Retrieves routes and traffic conditions between places and summarizes travel times, checked by repeating the query.",
+   "procedural",
+   [
+    [
+     "urban-transport",
+     "primary"
+    ],
+    [
+     "urban-data",
+     "checker"
+    ],
+    [
+     "urban-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-street-safety",
+   "urban-transportation-mobility",
+   "Street Safety Reviewer",
+   "Analyzes crash data and street design for safety improvements, checked against the source crash records.",
+   "semantic",
+   [
+    [
+     "urban-transport",
+     "primary"
+    ],
+    [
+     "urban-planner",
+     "checker"
+    ],
+    [
+     "urban-data",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-segregation-index",
+   "urban-urban-society-history",
+   "Segregation Index Calculator",
+   "Computes dissimilarity and isolation indices for a metropolitan area, checked by recomputation from tract data.",
+   "procedural",
+   [
+    [
+     "urban-soc",
+     "primary"
+    ],
+    [
+     "urban-data",
+     "checker"
+    ],
+    [
+     "urban-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-neighborhood-history",
+   "urban-urban-society-history",
+   "Neighborhood History Builder",
+   "Builds a sourced history of a neighborhood including redlining and renewal, with dates checked against archives.",
+   "semantic",
+   [
+    [
+     "urban-hist",
+     "primary"
+    ],
+    [
+     "urban-soc",
+     "checker"
+    ],
+    [
+     "urban-housing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-urbanization-trends",
+   "urban-urban-society-history",
+   "Urbanization Trend Analyzer",
+   "Summarizes urbanization and suburbanization trends for a country, checked against official statistics.",
+   "procedural",
+   [
+    [
+     "urban-data",
+     "primary"
+    ],
+    [
+     "urban-hist",
+     "checker"
+    ],
+    [
+     "urban-econ",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-tract-mapping",
+   "urban-spatial-analysis-environment",
+   "Census Tract Mapper",
+   "Maps census tract indicators as a thematic map with classification, checked for joins and missing values.",
+   "procedural",
+   [
+    [
+     "urban-gis",
+     "primary"
+    ],
+    [
+     "urban-data",
+     "checker"
+    ],
+    [
+     "urban-soc",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-heat-island",
+   "urban-spatial-analysis-environment",
+   "Urban Heat Island Assessor",
+   "Assesses heat exposure by neighborhood using temperature and tree canopy layers, checked against source layers.",
+   "procedural",
+   [
+    [
+     "urban-env",
+     "primary"
+    ],
+    [
+     "urban-gis",
+     "checker"
+    ],
+    [
+     "urban-housing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "urban-resilience-plan",
+   "urban-spatial-analysis-environment",
+   "Climate Resilience Plan Reviewer",
+   "Reviews a city resilience plan for hazards, assets and equity, checked against hazard data.",
+   "semantic",
+   [
+    [
+     "urban-env",
+     "primary"
+    ],
+    [
+     "urban-planner",
+     "checker"
+    ],
+    [
+     "urban-soc",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "urban-planner": "Urban Planning Agent",
+  "urban-gis": "Urban GIS Agent",
+  "urban-econ": "Urban Economics Agent",
+  "urban-housing": "Housing Policy Agent",
+  "urban-transport": "Transportation Agent",
+  "urban-soc": "Urban Sociology Agent",
+  "urban-env": "Urban Environment Agent",
+  "urban-data": "Urban Data Agent",
+  "urban-hist": "Urban History Agent"
+ },
+ "mcp": [
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Felt Maps",
+   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "Map and analyze your geospatial data",
+   [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "TomTom Maps",
+   "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "TomTom maps, routing, geocoding & traffic data",
+   [
+    "tomtom-geocode",
+    "tomtom-reverse-geocode",
+    "tomtom-fuzzy-search",
+    "tomtom-poi-search",
+    "tomtom-nearby",
+    "tomtom-poi-categories",
+    "tomtom-area-search",
+    "tomtom-ev-search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "urban-planning": "planning zoning density design comprehensive",
+  "urban-economics": "agglomeration productivity municipal economics value",
+  "urban-housing": "housing affordability gentrification displacement rent",
+  "urban-mobility": "transit routing traffic accessibility crash",
+  "urban-society": "segregation neighborhood redlining urbanization suburbanization",
+  "urban-spatial": "gis tract heat canopy resilience geospatial"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

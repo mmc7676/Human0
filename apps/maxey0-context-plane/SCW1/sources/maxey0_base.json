@@ -1,0 +1,2904 @@
+{
+ "source": "53b9e248-Human0_-_Context_Plane_Control_Graph_v0.6.html",
+ "D": {
+  "concepts": [
+   [
+    "memory",
+    "Memory",
+    "architecture",
+    "Tiered memory lifecycle across working, episodic, semantic, and persistent tiers",
+    [
+     "memory",
+     "tier",
+     "promotion",
+     "lifecycle",
+     "consolidation",
+     "episodic"
+    ]
+   ],
+   [
+    "orchestration",
+    "Orchestration",
+    "architecture",
+    "Routing, delegation, and hierarchical coordination of the agent network.",
+    [
+     "orchestrate",
+     "route",
+     "delegate",
+     "hierarchy",
+     "plan",
+     "swarm"
+    ]
+   ],
+   [
+    "protocol",
+    "Protocol",
+    "protocol",
+    "A2A and MCP message contracts between agents and tool servers.",
+    [
+     "protocol",
+     "a2a",
+     "mcp",
+     "handoff",
+     "envelope",
+     "schema"
+    ]
+   ],
+   [
+    "observability",
+    "Observability",
+    "observability",
+    "Tracing, telemetry, and audit signals across agent runs.",
+    [
+     "observability",
+     "trace",
+     "telemetry",
+     "span",
+     "audit",
+     "monitor"
+    ]
+   ],
+   [
+    "evaluation",
+    "Evaluation",
+    "observability",
+    "Scoring, drift analytics, and shadow evaluation of agent runs.",
+    [
+     "evaluation",
+     "score",
+     "drift",
+     "shadow",
+     "benchmark",
+     "kpi"
+    ]
+   ],
+   [
+    "governance",
+    "Governance",
+    "governance",
+    "Policy gates, constraints, and egress control over agent actions.",
+    [
+     "governance",
+     "policy",
+     "constraint",
+     "egress",
+     "compliance",
+     "constitution"
+    ]
+   ],
+   [
+    "latent",
+    "Latent Space",
+    "research",
+    "Embedding geometry, measurement, and interpretability — workspace-aware: dual-tr",
+    [
+     "latent",
+     "embedding",
+     "anchor",
+     "subspace",
+     "disclosed-approximation",
+     "trilateration"
+    ]
+   ],
+   [
+    "knowledge-graph",
+    "Knowledge Graph",
+    "knowledge",
+    "Linked concept structure serialized as OKF markdown — documents are nodes, links",
+    [
+     "graph",
+     "node",
+     "edge",
+     "okf",
+     "link",
+     "ontology"
+    ]
+   ],
+   [
+    "reasoning",
+    "Reasoning",
+    "reasoning",
+    "Frames, anchors, and structured cognition for agent reasoning passes.",
+    [
+     "reasoning",
+     "frame",
+     "anchor",
+     "context",
+     "recursion",
+     "meta"
+    ]
+   ],
+   [
+    "claim-verification",
+    "Claim Verification",
+    "reasoning",
+    "Provenance, citation, and lineage of claims made by agents.",
+    [
+     "claim",
+     "provenance",
+     "citation",
+     "lineage",
+     "evidence",
+     "hallucination"
+    ]
+   ],
+   [
+    "infrastructure",
+    "Infrastructure",
+    "architecture",
+    "Runtime execution, containerization, sandboxing, and resource enforcement for ag",
+    [
+     "infrastructure",
+     "runtime",
+     "sandbox",
+     "container",
+     "execution",
+     "isolation"
+    ]
+   ],
+   [
+    "io-contract",
+    "I/O Contract",
+    "protocol",
+    "Typed input/output contracts on every agent and tool boundary.",
+    [
+     "io",
+     "contract",
+     "schema",
+     "endpoint",
+     "negotiation",
+     "api"
+    ]
+   ],
+   [
+    "context-management",
+    "Context Management",
+    "architecture",
+    "Structured Context Windows (SCW): their engineering, packing, lineage, persisten",
+    [
+     "context",
+     "scw",
+     "packing",
+     "lineage",
+     "boundary",
+     "token-budget"
+    ]
+   ],
+   [
+    "superposition",
+    "Superposition",
+    "architecture",
+    "Simultaneous multi-output observation against one shared state: Maxey00 mirrors",
+    [
+     "superposition",
+     "tick",
+     "mirror",
+     "parallel",
+     "arbitration",
+     "shared-state"
+    ]
+   ],
+   [
+    "registry",
+    "Registry",
+    "architecture",
+    "",
+    [
+     "registry",
+     "agents",
+     "roster",
+     "capability",
+     "repo",
+     "index"
+    ]
+   ],
+   [
+    "agentic-loops",
+    "Agentic Loops",
+    "architecture",
+    "Closed multi-agent skill chains: concept → skill chain → ordered agent sequence, hardened against a real SCW runtime.",
+    [
+     "loop",
+     "chain",
+     "pipeline",
+     "scw",
+     "partition",
+     "isolation"
+    ]
+   ]
+  ],
+  "skills": [
+   [
+    "multi-tier-memory-management",
+    "memory",
+    "Multi-Tier Memory Management",
+    "Classifies, stores, summarizes, and promotes memory items across the five tiers through typed API contracts with evidence-gated promotion.",
+    "semantic",
+    [
+     [
+      "Maxey11",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey128",
+      "support"
+     ],
+     [
+      "Maxey30",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "episodic-memory-engineering",
+    "memory",
+    "Episodic Memory Engineering",
+    "Engineers the episodic tier: turn chains, session summaries, handoff state, and drift snapshots — all resumable, time-stamped, and summarized at sessi",
+    "episodic",
+    [
+     [
+      "Maxey244",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey245",
+      "support"
+     ],
+     [
+      "Maxey304",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "working-memory-management",
+    "memory",
+    "Working Memory Management",
+    "Manages the working (scratchpad) tier: volatile in-flight state, TTL enforcement, and guaranteed purge at session close.",
+    "working",
+    [
+     [
+      "Maxey128",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey304",
+      "support"
+     ],
+     [
+      "Maxey30",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "semantic-memory-engineering",
+    "memory",
+    "Semantic Memory Engineering",
+    "Engineers the semantic tier — the OKF bundle itself: concept extraction, graph construction, alias normalization, and the promotion gate that admits i",
+    "semantic",
+    [
+     [
+      "Maxey394",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey71",
+      "support"
+     ],
+     [
+      "Maxey27",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "persistent-memory-management",
+    "memory",
+    "Persistent Memory Management",
+    "Manages the persistent tier: durable agent facts, versioned preferences, long-term observations — written rarely, always with a promotion evidence cha",
+    "persistent",
+    [
+     [
+      "Maxey65",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey126",
+      "support"
+     ],
+     [
+      "Maxey127",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "memory-promotion-policy-engineering",
+    "memory",
+    "Memory Promotion Policy Engineering",
+    "Designs and enforces the gates that move items between tiers: relevance, evidence, consistency, reuse, and policy checks — with quarantine and repair ",
+    "episodic",
+    [
+     [
+      "Maxey307",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey50",
+      "support"
+     ],
+     [
+      "Maxey109",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "hierarchical-agent-orchestration",
+    "orchestration",
+    "Hierarchical Agent Orchestration",
+    "Decomposes tasks into DAG-shaped unit plans and routes each unit to a primary+checker specialist pair under budget and policy constraints.",
+    "episodic",
+    [
+     [
+      "Maxey0",
+      "primary"
+     ],
+     [
+      "Maxey52",
+      "checker"
+     ],
+     [
+      "Maxey14",
+      "support"
+     ],
+     [
+      "Maxey79",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-registry-management",
+    "orchestration",
+    "Agent Registry Management",
+    "Manages the 777-agent registry: hydration, search, role-based filtering, and the serving layer that skill-selection queries hit.",
+    "episodic",
+    [
+     [
+      "Maxey0",
+      "primary"
+     ],
+     [
+      "Maxey8",
+      "checker"
+     ],
+     [
+      "Maxey14",
+      "support"
+     ],
+     [
+      "Maxey52",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "swarm-intelligence",
+    "orchestration",
+    "Swarm Intelligence",
+    "Coordinates agent swarms for embarrassingly parallel tasks: spawn, collect, reconcile — with convergence gates and contradiction resolution.",
+    "episodic",
+    [
+     [
+      "Maxey0",
+      "primary"
+     ],
+     [
+      "Maxey00",
+      "checker"
+     ],
+     [
+      "Maxey79",
+      "support"
+     ],
+     [
+      "Maxey52",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-to-agent-protocol-engineering",
+    "protocol",
+    "Agent-to-Agent Protocol Engineering",
+    "Defines, validates, versions, and adapts schema-checked A2A envelopes so any conformant agent can exchange work with the network.",
+    "episodic",
+    [
+     [
+      "Maxey32",
+      "primary"
+     ],
+     [
+      "Maxey0",
+      "checker"
+     ],
+     [
+      "Maxey193",
+      "support"
+     ],
+     [
+      "Maxey14",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "model-context-protocol-engineering",
+    "protocol",
+    "Model Context Protocol Engineering",
+    "Builds and operates MCP servers: tool registration, capability advertisement, auth, and the lazy-load manifest pattern.",
+    "episodic",
+    [
+     [
+      "Maxey32",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey30",
+      "support"
+     ],
+     [
+      "Maxey31",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "multi-mcp-federation",
+    "protocol",
+    "Multi-MCP Federation",
+    "Federates multiple MCP servers behind a unified discovery surface; routes tool calls to the right server without exposing federation internals to call",
+    "episodic",
+    [
+     [
+      "Maxey32",
+      "primary"
+     ],
+     [
+      "Maxey0",
+      "checker"
+     ],
+     [
+      "Maxey31",
+      "support"
+     ],
+     [
+      "Maxey14",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "protocol-translation",
+    "protocol",
+    "Protocol Translation",
+    "Translates between A2A, MCP, and foreign agent frameworks' message shapes without loss of contract fields.",
+    "episodic",
+    [
+     [
+      "Maxey193",
+      "primary"
+     ],
+     [
+      "Maxey32",
+      "checker"
+     ],
+     [
+      "Maxey31",
+      "support"
+     ],
+     [
+      "Maxey30",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "ai-observability",
+    "observability",
+    "AI Observability",
+    "Instruments every boundary with spans under the a2a.* and maxey0.okf.* namespaces, assembles replayable trace trees, and diagnoses from them.",
+    "episodic",
+    [
+     [
+      "Maxey145",
+      "primary"
+     ],
+     [
+      "Maxey74",
+      "checker"
+     ],
+     [
+      "Maxey160",
+      "support"
+     ],
+     [
+      "Maxey164",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-trace-analysis",
+    "observability",
+    "Agent Trace Analysis",
+    "Consumes trace trees and produces causal diagnoses: failing paths, root causes, and minimal reproductions.",
+    "episodic",
+    [
+     [
+      "Maxey74",
+      "primary"
+     ],
+     [
+      "Maxey145",
+      "checker"
+     ],
+     [
+      "Maxey160",
+      "support"
+     ],
+     [
+      "Maxey164",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "memory-access-telemetry",
+    "observability",
+    "Memory Access Telemetry",
+    "Instruments tier reads and writes: access patterns, promotion events, and tier-crossing latencies — the data that makes memory policy auditable.",
+    "episodic",
+    [
+     [
+      "Maxey145",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey74",
+      "support"
+     ],
+     [
+      "Maxey109",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "context-utilization-analytics",
+    "observability",
+    "Context Utilization Analytics",
+    "Measures what entered a context window and how much of it was actually used: utilization ratios, dead-weight identification, and packing efficiency si",
+    "episodic",
+    [
+     [
+      "Maxey74",
+      "primary"
+     ],
+     [
+      "Maxey145",
+      "checker"
+     ],
+     [
+      "Maxey10",
+      "support"
+     ],
+     [
+      "Maxey180",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-evaluation",
+    "evaluation",
+    "Agent Evaluation",
+    "Mirrors runs read-only to produce evidence-chained EvalReports and frame-labeled DriftSignals across reference frames A, B, and D.",
+    "episodic",
+    [
+     [
+      "Maxey00",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey98",
+      "support"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "swarm-evaluation",
+    "evaluation",
+    "Swarm Evaluation",
+    "Evaluates swarm outputs: coverage, contradiction rate, and convergence quality across the collected set.",
+    "episodic",
+    [
+     [
+      "Maxey00",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey52",
+      "support"
+     ],
+     [
+      "Maxey79",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "enterprise-constitution-evaluation",
+    "evaluation",
+    "Enterprise Constitution Evaluation",
+    "Evaluates whether deployed agents conform to their declared constitutional constraints — live compliance scoring, not just design-time analysis.",
+    "persistent",
+    [
+     [
+      "Maxey00",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey54",
+      "support"
+     ],
+     [
+      "Maxey17",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "retrieval-attribution-evaluation",
+    "evaluation",
+    "Retrieval Attribution Evaluation",
+    "Scores retrieval quality by tracing outputs back to their sources: did the system surface the right items, were they actually used, were attributions ",
+    "episodic",
+    [
+     [
+      "Maxey00",
+      "primary"
+     ],
+     [
+      "Maxey109",
+      "checker"
+     ],
+     [
+      "Maxey110",
+      "support"
+     ],
+     [
+      "Maxey17",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "constitutional-constraint-enforcement",
+    "governance",
+    "Constitutional Constraint Enforcement",
+    "Gates every proposed action against a versioned policy registry with cited allow/deny verdicts and audited enforcement.",
+    "persistent",
+    [
+     [
+      "Maxey54",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey33",
+      "support"
+     ],
+     [
+      "Maxey52",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "enterprise-agent-governance",
+    "governance",
+    "Enterprise Agent Governance",
+    "Governs agent deployments at organizational scale: approval workflows, audit logs, policy versioning, and rollback.",
+    "persistent",
+    [
+     [
+      "Maxey54",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey33",
+      "support"
+     ],
+     [
+      "Maxey0",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "enterprise-constitution-modeling",
+    "governance",
+    "Enterprise Constitution Modeling",
+    "Authors and versions the policy documents that enforcement gates read: law definitions, scope declarations, exception protocols.",
+    "persistent",
+    [
+     [
+      "Maxey88",
+      "primary"
+     ],
+     [
+      "Maxey54",
+      "checker"
+     ],
+     [
+      "Maxey33",
+      "support"
+     ],
+     [
+      "Maxey50",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "cross-organization-policy-negotiation",
+    "governance",
+    "Cross-Organization Policy Negotiation",
+    "Negotiates compatible policy scopes between organizations sharing agents or data: intersection finding, conflict resolution, escalation.",
+    "persistent",
+    [
+     [
+      "Maxey54",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey33",
+      "support"
+     ],
+     [
+      "Maxey193",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "enterprise-memory-isolation",
+    "governance",
+    "Enterprise Memory Isolation",
+    "Enforces memory isolation between organizational tenants: scope separation, access controls, and audit of cross-tenant operations.",
+    "persistent",
+    [
+     [
+      "Maxey54",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey128",
+      "support"
+     ],
+     [
+      "Maxey65",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "latent-triangulation",
+    "latent",
+    "Latent Triangulation",
+    "Estimates latent position and movement from anchor-relative distances over matched pre/post snapshots — disclosed-approximation (full-stream and subsp",
+    "semantic",
+    [
+     [
+      "Maxey16",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey20",
+      "support"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "latent-space-engineering",
+    "latent",
+    "Latent Space Engineering",
+    "Builds and maintains the embedding-space substrate: vector stores, snapshot capture with metadata, cross-modal alignment — that all latent measurement",
+    "semantic",
+    [
+     [
+      "Maxey127",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey121",
+      "support"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "latent-space-mapping",
+    "latent",
+    "Latent Space Mapping",
+    "Produces navigable maps of latent regions via projection methods (PCA/SVD, UMAP) with distortion budgets declared per map and disclosed-approximation ",
+    "semantic",
+    [
+     [
+      "Maxey120",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey21",
+      "support"
+     ],
+     [
+      "Maxey22",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "latent-topology-analysis",
+    "latent",
+    "Latent Topology Analysis",
+    "Characterizes latent region shape — neighborhoods, manifold structure, connectivity — from geometry-preserving graph constructions rather than raw pro",
+    "semantic",
+    [
+     [
+      "Maxey28",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey24",
+      "support"
+     ],
+     [
+      "Maxey22",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "magnitude-spectrum-analysis",
+    "latent",
+    "Magnitude Spectrum Analysis",
+    "Analyzes magnitude distributions across latent dimensions under the superposition/polysemanticity discipline: variance ≠ causal weight, controls manda",
+    "semantic",
+    [
+     [
+      "Maxey20",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey21",
+      "support"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "sparse-autoencoder-interpretability",
+    "latent",
+    "Sparse Autoencoder Interpretability",
+    "Trains and curates SAE feature dictionaries with the workspace caveat built in: SAE decoder directions are not automatically report-available.",
+    "semantic",
+    [
+     [
+      "Maxey26",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey117",
+      "support"
+     ],
+     [
+      "Maxey118",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "latent-feature-attribution",
+    "latent",
+    "Latent Feature Attribution",
+    "Attributes model behavior to latent features with causal grading: interventional evidence outranks correlational saliency; every attribution declares ",
+    "semantic",
+    [
+     [
+      "Maxey795",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey118",
+      "support"
+     ],
+     [
+      "Maxey26",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "latent-world-construction",
+    "latent",
+    "Latent World Construction",
+    "Constructs bounded scenario representations in latent terms with declared assumptions, tracked divergence, and disclosed-approximation state.",
+    "semantic",
+    [
+     [
+      "Maxey796",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey121",
+      "support"
+     ],
+     [
+      "Maxey15",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "knowledge-graph-engineering",
+    "knowledge-graph",
+    "Knowledge Graph Engineering",
+    "Maintains the OKF-serialized graph through diffable document edits, integrity verification, alias normalization, and structure-informed routing.",
+    "semantic",
+    [
+     [
+      "Maxey394",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey27",
+      "support"
+     ],
+     [
+      "Maxey28",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "property-graph-memory-engineering",
+    "knowledge-graph",
+    "Property Graph Memory Engineering",
+    "Engineers property graph representations for agent memory: node schemas, edge semantics, and traversal patterns.",
+    "semantic",
+    [
+     [
+      "Maxey394",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey126",
+      "support"
+     ],
+     [
+      "Maxey27",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "graph-memory-construction",
+    "knowledge-graph",
+    "Graph Memory Construction",
+    "Constructs graph memories from raw agent outputs: entity extraction, relationship inference, and deduplication.",
+    "semantic",
+    [
+     [
+      "Maxey27",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey394",
+      "support"
+     ],
+     [
+      "Maxey109",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "graph-neural-network-routing",
+    "knowledge-graph",
+    "Graph Neural Network Routing",
+    "Routes agent selection and skill matching using GNN features over the knowledge graph: neighborhood density, hub centrality, path distance.",
+    "semantic",
+    [
+     [
+      "Maxey116",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey27",
+      "support"
+     ],
+     [
+      "Maxey28",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "temporal-knowledge-graph-management",
+    "knowledge-graph",
+    "Temporal Knowledge Graph Management",
+    "Manages time-stamped knowledge graph evolution: versioned edges, temporal queries, and change-event propagation.",
+    "semantic",
+    [
+     [
+      "Maxey27",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ],
+     [
+      "Maxey394",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "memory-graph-evolution",
+    "knowledge-graph",
+    "Memory Graph Evolution",
+    "Engineers how the knowledge graph grows and prunes over time: addition protocols, deprecation, and garbage collection.",
+    "semantic",
+    [
+     [
+      "Maxey27",
+      "primary"
+     ],
+     [
+      "Maxey307",
+      "checker"
+     ],
+     [
+      "Maxey71",
+      "support"
+     ],
+     [
+      "Maxey394",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "hybrid-vector-graph-memory",
+    "knowledge-graph",
+    "Hybrid Vector-Graph Memory",
+    "Combines vector search (fast approximate retrieval) with graph traversal (exact relational queries) into a unified memory access layer.",
+    "semantic",
+    [
+     [
+      "Maxey127",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey394",
+      "support"
+     ],
+     [
+      "Maxey28",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "research-paper-integration",
+    "knowledge-graph",
+    "Research Paper Integration",
+    "Integrates a new research paper into the bundle: extract concepts, derive skills, map registry agents or propose new ones, enumerate operational topic",
+    "semantic",
+    [
+     [
+      "Maxey394",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey00",
+      "support"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "superposition-observation",
+    "superposition",
+    "Superposition Observation",
+    "Maxey00's standing mirror: read-only shadow observation of every run, annotating quality, latency, cost, and drift without touching the observed workf",
+    "episodic",
+    [
+     [
+      "Maxey00",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey98",
+      "support"
+     ],
+     [
+      "Maxey122",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "same-tick-arbitration",
+    "superposition",
+    "Same-Tick Arbitration",
+    "Receives outputs from two or more agents on the exact same logical tick and evaluates them against one shared state to test which output does X accord",
+    "episodic",
+    [
+     [
+      "Maxey00",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey187",
+      "support"
+     ],
+     [
+      "Maxey52",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "actor-critic-parallelism",
+    "superposition",
+    "Actor-Critic Parallelism",
+    "Runs propose/critique agent pairs and symmetric mirror-mode parallels under an arbiter: one agent proposes, one critiques, promotion only through reco",
+    "episodic",
+    [
+     [
+      "Maxey0",
+      "primary"
+     ],
+     [
+      "Maxey00",
+      "checker"
+     ],
+     [
+      "Maxey463",
+      "support"
+     ],
+     [
+      "Maxey71",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "shared-state-synchronization",
+    "superposition",
+    "Shared-State Synchronization",
+    "Engineers the tick discipline that makes agentic superposition real: parallel and multithreaded GPU execution such that compute ticks are shorter than",
+    "working",
+    [
+     [
+      "Maxey800",
+      "primary"
+     ],
+     [
+      "Maxey00",
+      "checker"
+     ],
+     [
+      "Maxey466",
+      "support"
+     ],
+     [
+      "Maxey187",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "superposition-coordinate-mapping",
+    "superposition",
+    "Superposition Coordinate Mapping",
+    "Logs, maps, and learns superposition coordinates from latent state transitions using state-vector-machine models, so simultaneous states become a navi",
+    "semantic",
+    [
+     [
+      "Maxey801",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey20",
+      "support"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "reasoning-frame-engineering",
+    "reasoning",
+    "Reasoning Frame Engineering",
+    "Binds reasoning passes to versioned frames with mined anchors and rationale-complete context packages, recursing under discipline.",
+    "working",
+    [
+     [
+      "Maxey15",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ],
+     [
+      "Maxey10",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "cognitive-architecture-engineering",
+    "reasoning",
+    "Cognitive Architecture Engineering",
+    "Designs the overall cognitive layout of an agent: which reasoning passes run in sequence, which in parallel, and how results compose.",
+    "working",
+    [
+     [
+      "Maxey15",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey10",
+      "support"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "cognitive-anchor-extraction",
+    "reasoning",
+    "Cognitive Anchor Extraction",
+    "Mines stable reference points from behavioral evidence: the anchors that reasoning frames are built around.",
+    "working",
+    [
+     [
+      "Maxey16",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey15",
+      "support"
+     ],
+     [
+      "Maxey20",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "anchor-based-reasoning",
+    "reasoning",
+    "Anchor-Based Reasoning",
+    "Executes reasoning passes anchored to declared reference points; conclusions carry the anchor set that produced them.",
+    "working",
+    [
+     [
+      "Maxey15",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ],
+     [
+      "Maxey20",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "recursive-self-reflection",
+    "reasoning",
+    "Recursive Self-Reflection",
+    "Implements bounded self-reflection loops: depth-limited, summary-gated, stopping when marginal value falls below epsilon.",
+    "working",
+    [
+     [
+      "Maxey15",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey10",
+      "support"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "world-based-reasoning",
+    "reasoning",
+    "World-Based Reasoning",
+    "Reasons inside a declared world model: assumptions explicit, conclusions scoped to the world, divergence from base world tracked.",
+    "working",
+    [
+     [
+      "Maxey15",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey796",
+      "support"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "multi-world-reasoning",
+    "reasoning",
+    "Multi-World Reasoning",
+    "Runs parallel reasoning passes in multiple worlds; compares and reconciles conclusions across worlds.",
+    "working",
+    [
+     [
+      "Maxey796",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey15",
+      "support"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "meta-reasoning",
+    "reasoning",
+    "Meta-Reasoning",
+    "Reasons about reasoning: selects frames, evaluates which anchor sets are appropriate, and decides when to recurse or stop.",
+    "working",
+    [
+     [
+      "Maxey15",
+      "primary"
+     ],
+     [
+      "Maxey17",
+      "checker"
+     ],
+     [
+      "Maxey10",
+      "support"
+     ],
+     [
+      "Maxey16",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "claim-lineage-analysis",
+    "claim-verification",
+    "Claim Lineage Analysis",
+    "Records signed generation-time provenance, classifies every claim by its support, and answers lineage queries end to end.",
+    "episodic",
+    [
+     [
+      "Maxey109",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey50",
+      "support"
+     ],
+     [
+      "Maxey13",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "hallucination-localization",
+    "claim-verification",
+    "Hallucination Localization",
+    "Localizes hallucinations to specific spans: which part of the output is unsupported, at what evidence level.",
+    "episodic",
+    [
+     [
+      "Maxey109",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey110",
+      "support"
+     ],
+     [
+      "Maxey50",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "hallucination-attribution",
+    "claim-verification",
+    "Hallucination Attribution",
+    "Attributes hallucinations to their cause: retrieval failure, inference error, context gap, or compression loss.",
+    "episodic",
+    [
+     [
+      "Maxey109",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey110",
+      "support"
+     ],
+     [
+      "Maxey13",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "reasoning-path-instrumentation",
+    "claim-verification",
+    "Reasoning Path Instrumentation",
+    "Instruments the reasoning path: which steps led to which claims, so reasoning audits are replayable.",
+    "episodic",
+    [
+     [
+      "Maxey74",
+      "primary"
+     ],
+     [
+      "Maxey109",
+      "checker"
+     ],
+     [
+      "Maxey145",
+      "support"
+     ],
+     [
+      "Maxey50",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-runtime-engineering",
+    "infrastructure",
+    "Agent Runtime Engineering",
+    "Executes agent code inside enforced resource and isolation contracts, priced by risk budget, with purge-on-completion state discipline.",
+    "working",
+    [
+     [
+      "Maxey187",
+      "primary"
+     ],
+     [
+      "Maxey85",
+      "checker"
+     ],
+     [
+      "Maxey35",
+      "support"
+     ],
+     [
+      "Maxey55",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-infrastructure-engineering",
+    "infrastructure",
+    "Agent Infrastructure Engineering",
+    "Designs and provisions the infrastructure layer for agent deployments: compute, networking, secret management, and health monitoring.",
+    "working",
+    [
+     [
+      "Maxey187",
+      "primary"
+     ],
+     [
+      "Maxey85",
+      "checker"
+     ],
+     [
+      "Maxey70",
+      "support"
+     ],
+     [
+      "Maxey66",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agent-platform-engineering",
+    "infrastructure",
+    "Agent Platform Engineering",
+    "Builds the platform abstractions agents run on: scheduling, load balancing, autoscaling, and the observability integrations the platform provides.",
+    "working",
+    [
+     [
+      "Maxey187",
+      "primary"
+     ],
+     [
+      "Maxey85",
+      "checker"
+     ],
+     [
+      "Maxey66",
+      "support"
+     ],
+     [
+      "Maxey80",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "multi-tenant-agent-infrastructure",
+    "infrastructure",
+    "Multi-Tenant Agent Infrastructure",
+    "Provisions and isolates agent infrastructure across tenants: resource quotas, network separation, and tenant-scoped secret stores.",
+    "working",
+    [
+     [
+      "Maxey797",
+      "primary"
+     ],
+     [
+      "Maxey85",
+      "checker"
+     ],
+     [
+      "Maxey187",
+      "support"
+     ],
+     [
+      "Maxey54",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "distributed-agent-runtime-engineering",
+    "infrastructure",
+    "Distributed Agent Runtime Engineering",
+    "Operates agent runtimes across distributed compute: work distribution, fault tolerance, state coherence, and split-brain prevention.",
+    "working",
+    [
+     [
+      "Maxey187",
+      "primary"
+     ],
+     [
+      "Maxey85",
+      "checker"
+     ],
+     [
+      "Maxey55",
+      "support"
+     ],
+     [
+      "Maxey80",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "tool-schema-negotiation",
+    "io-contract",
+    "Tool Schema Negotiation",
+    "Publishes owned, versioned service contracts; discovers and negotiates capabilities before first call; tests contracts in both directions.",
+    "episodic",
+    [
+     [
+      "Maxey30",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey31",
+      "support"
+     ],
+     [
+      "Maxey32",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "tool-capability-discovery",
+    "io-contract",
+    "Tool Capability Discovery",
+    "Discovers what tools and capabilities are available in the current environment: MCP servers, APIs, and local capabilities.",
+    "episodic",
+    [
+     [
+      "Maxey30",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey32",
+      "support"
+     ],
+     [
+      "Maxey31",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "context-infrastructure-engineering",
+    "io-contract",
+    "Context Infrastructure Engineering",
+    "Engineers the infrastructure that serves context to agents: retrieval endpoints, caching layers, and contract-validated context APIs.",
+    "episodic",
+    [
+     [
+      "Maxey10",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey14",
+      "support"
+     ],
+     [
+      "Maxey30",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "inference-pipeline-engineering",
+    "io-contract",
+    "Inference Pipeline Engineering",
+    "Engineers the pipeline from request to model inference: batching, routing, caching, and contract-validated responses.",
+    "episodic",
+    [
+     [
+      "Maxey30",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey66",
+      "support"
+     ],
+     [
+      "Maxey187",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "ai-platform-engineering",
+    "io-contract",
+    "AI Platform Engineering",
+    "Engineers the end-to-end AI platform: model serving, tool integration, agent orchestration endpoints, and platform-level observability.",
+    "episodic",
+    [
+     [
+      "Maxey187",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey30",
+      "support"
+     ],
+     [
+      "Maxey66",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "structured-context-world-engineering",
+    "context-management",
+    "Structured Context World Engineering",
+    "Designs and builds SCWs: schema-governed context packages with declared sections, budgets, and inclusion rationale. Primary mechanism for 75-85% per-t",
+    "working",
+    [
+     [
+      "Maxey10",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey364",
+      "support"
+     ],
+     [
+      "Maxey180",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "context-packing-optimization",
+    "context-management",
+    "Context Packing Optimization",
+    "Optimizes what enters a context window against token budgets: selection, compression, ordering — every exclusion justified, every compression lossless",
+    "working",
+    [
+     [
+      "Maxey180",
+      "primary"
+     ],
+     [
+      "Maxey52",
+      "checker"
+     ],
+     [
+      "Maxey10",
+      "support"
+     ],
+     [
+      "Maxey364",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "context-lineage-tracking",
+    "context-management",
+    "Context Lineage Tracking",
+    "Tracks where every context element came from: source, transformation chain, inclusion rationale — so any packed context can answer provenance queries ",
+    "episodic",
+    [
+     [
+      "Maxey109",
+      "primary"
+     ],
+     [
+      "Maxey88",
+      "checker"
+     ],
+     [
+      "Maxey110",
+      "support"
+     ],
+     [
+      "Maxey50",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "context-persistence-engineering",
+    "context-management",
+    "Context Persistence Engineering",
+    "Persists and restores context state across sessions: what survives session close, in which tier, and how restoration reconstructs a working context fa",
+    "episodic",
+    [
+     [
+      "Maxey128",
+      "primary"
+     ],
+     [
+      "Maxey71",
+      "checker"
+     ],
+     [
+      "Maxey127",
+      "support"
+     ],
+     [
+      "Maxey96",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "context-boundary-engineering",
+    "context-management",
+    "Context Boundary Engineering",
+    "Engineers the boundaries between contexts: isolation between agents, scopes, and tenants; declared crossings only; leakage as a first-class failure.",
+    "working",
+    [
+     [
+      "Maxey797",
+      "primary"
+     ],
+     [
+      "Maxey54",
+      "checker"
+     ],
+     [
+      "Maxey33",
+      "support"
+     ],
+     [
+      "Maxey128",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "memory-context-compress",
+    "memory",
+    "Memory Context Compress — Memory Concept Extraction & Context Window Compression",
+    "Compiles a session transcript or account memory surface into a normalized, deduplicated memory checkpoint and a token-budgeted resume packet, so a fre",
+    "episodic",
+    [
+     [
+      "memory-manager",
+      "primary"
+     ],
+     [
+      "cost-guard",
+      "checker"
+     ],
+     [
+      "context-window-architect",
+      "support"
+     ],
+     [
+      "promotion-policy-agent",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "repo-decomp",
+    "registry",
+    "Repo Decomposition Tree",
+    "Generates the full labeled decomposition of the OKF repo - every .md/.py/.json across all concept/skill/agent/asset levels, labeled L0-L5.",
+    "working",
+    []
+   ],
+   [
+    "anchor-field-engineering",
+    "latent",
+    "Anchor Field Engineering",
+    "Defines and binds the field space an anchor set lives in: node-property binding, same-sync-same-scale invariants, named field registration under data/",
+    "semantic",
+    []
+   ],
+   [
+    "procedural-memory-engineering",
+    "memory",
+    "Procedural Memory Engineering",
+    "Engineers the procedural tier - the skill bundles as memory: creation = memorization, revision = consolidation, deprecation = forgetting, git history ",
+    "procedural",
+    [
+     [
+      "memory-manager",
+      "primary"
+     ],
+     [
+      "qa-agent",
+      "checker"
+     ],
+     [
+      "promotion-policy-agent",
+      "support"
+     ],
+     [
+      "provenance-signer",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "knowledge-graph-federation",
+    "knowledge-graph",
+    "Knowledge Graph Federation",
+    "Owns OKF-to-external-KG interoperability: node/edge/property mapping contracts, sync direction, and the MCP host/client bridge pattern with Claude as ",
+    "semantic",
+    [
+     [
+      "mcp-bridge",
+      "primary"
+     ],
+     [
+      "qa-agent",
+      "checker"
+     ],
+     [
+      "graph-store-agent",
+      "support"
+     ],
+     [
+      "retrieval-orchestrator",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "agentic-deep-search",
+    "orchestration",
+    "Agentic Deep Search",
+    "Superactivation deep search - the original $Maxey0: parallel multi-corpus retrieval lanes, per-SCW overlays, superimpose validation, multi-hop refinem",
+    "episodic",
+    [
+     [
+      "retrieval-orchestrator",
+      "primary"
+     ],
+     [
+      "superposition-agent",
+      "checker"
+     ],
+     [
+      "latent-mapper",
+      "support"
+     ],
+     [
+      "anchor-metrics",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "orbital-selection",
+    "orchestration",
+    "Orbital Selection",
+    "Hierarchical routing across the concept/skill/agent orbital planes - each an anchor field touched in one superposed pass per level, with cross-plane c",
+    "working",
+    [
+     [
+      "graph-gnn-router",
+      "primary"
+     ],
+     [
+      "superposition-agent",
+      "checker"
+     ],
+     [
+      "retrieval-orchestrator",
+      "support"
+     ],
+     [
+      "cost-guard",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "scw-partition-isolation",
+    "agentic-loops",
+    "SCW Partition Isolation",
+    "The two architectures that partition a loop's context: in-window (typed regions, tool-layer refusal) and cross-window (one model call per agent, isola",
+    "working",
+    [
+     [
+      "Maxey10",
+      "primary"
+     ],
+     [
+      "Maxey364",
+      "checker"
+     ],
+     [
+      "Maxey180",
+      "support"
+     ],
+     [
+      "Maxey797",
+      "support"
+     ]
+    ]
+   ],
+   [
+    "loop-composition-battery",
+    "agentic-loops",
+    "Loop Composition Battery",
+    "The live multi-agent battery and the loop-dataset build pipeline that hardens the 74 Maxey0-native loops into real SCW harnesses.",
+    "working",
+    [
+     [
+      "Maxey0",
+      "primary"
+     ],
+     [
+      "Maxey00",
+      "checker"
+     ],
+     [
+      "Maxey52",
+      "support"
+     ],
+     [
+      "Maxey88",
+      "support"
+     ]
+    ]
+   ]
+  ],
+  "agents": {
+   "Maxey11": "Memory Manager",
+   "Maxey307": "Promotion Policy Agent",
+   "Maxey128": "Working Memory Manager",
+   "Maxey30": "Memory API Keeper",
+   "Maxey244": "Conversation Importer Agent",
+   "Maxey245": "Conversation Store Agent",
+   "Maxey304": "Session Store Manager",
+   "Maxey394": "Seed Agent Graph Agent",
+   "Maxey71": "QA Agent",
+   "Maxey27": "Graph GNN Router",
+   "Maxey65": "Database Architect",
+   "Maxey126": "Graph Store Agent",
+   "Maxey127": "Vector Store Agent",
+   "Maxey88": "Compliance Auditor",
+   "Maxey50": "Provenance Signer",
+   "Maxey109": "Provenance Logger",
+   "Maxey0": "SuperAgent Orchestrator",
+   "Maxey52": "Cost Guard",
+   "Maxey14": "Retrieval Orchestrator",
+   "Maxey79": "DR Coordinator",
+   "Maxey8": "API Gateway Engineer",
+   "Maxey00": "Superposition Agent",
+   "Maxey32": "MCP Bridge",
+   "Maxey193": "LangChain Adapter Agent",
+   "Maxey31": "Runner API Keeper",
+   "Maxey145": "OTel Collector Agent",
+   "Maxey74": "Debugger Agent",
+   "Maxey160": "OTel Module Agent",
+   "Maxey164": "Grafana Agent",
+   "Maxey10": "Context Window Architect",
+   "Maxey180": "SCW Packing Schema Agent",
+   "Maxey17": "Anchor Metrics",
+   "Maxey98": "Drift Detector",
+   "Maxey122": "Temporal Drift Agent",
+   "Maxey54": "Security Sentinel",
+   "Maxey110": "Provenance Querier",
+   "Maxey33": "Policy Proxy",
+   "Maxey16": "Anchor Miner",
+   "Maxey20": "Magnitude Spectrum Mapper",
+   "Maxey121": "Cross-Modality Mapper",
+   "Maxey120": "Latent Mapper",
+   "Maxey21": "PCA Cartographer",
+   "Maxey22": "UMAP Navigator",
+   "Maxey28": "Neighborhood Graph Builder",
+   "Maxey24": "Isomap Surveyor",
+   "Maxey26": "SAE Engineer",
+   "Maxey117": "SAE Trainer",
+   "Maxey118": "Feature Set Curator",
+   "Maxey795": "Feature Attribution Analyst",
+   "Maxey796": "Latent World Constructor",
+   "Maxey15": "Frames Steward",
+   "Maxey116": "Latent GNN Router",
+   "Maxey13": "Conversation Ingestor",
+   "Maxey187": "Code Interpreter Agent",
+   "Maxey85": "Security Scanner",
+   "Maxey35": "Sandbox Runner",
+   "Maxey55": "Backup & Restore",
+   "Maxey70": "Integration Engineer",
+   "Maxey66": "API Gateway Agent",
+   "Maxey80": "Incident Commander",
+   "Maxey797": "Context Boundary Warden",
+   "Maxey364": "SCW ReasoningFrame Schema Agent",
+   "Maxey96": "Artifact Store",
+   "Maxey463": "Agentic Runner Agent",
+   "Maxey800": "Superposition Runtime Engineer",
+   "Maxey466": "MCP Runner Agent",
+   "Maxey801": "State Vector Cartographer"
+  },
+  "version": "1.7.0"
+ },
+ "M": [
+  [
+   "Vertiso Memory",
+   "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
+   "Portable, durable memory for every AI agent you use",
+   [
+    "archive_memory",
+    "forget",
+    "get_memory",
+    "handoff",
+    "handoff_resume",
+    "list_recent"
+   ],
+   "registry"
+  ],
+  [
+   "Mem0",
+   "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "Persistent memory for AI agents & assistants",
+   [
+    "add_memory",
+    "search_memories",
+    "get_memories",
+    "update_memory",
+    "delete_memory",
+    "list_entities"
+   ],
+   "registry"
+  ],
+  [
+   "Meko",
+   "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "Shared context for agents that work and learn together.",
+   [
+    "artifact_get",
+    "artifact_put",
+    "conversation_add_message",
+    "conversation_create",
+    "conversation_get",
+    "conversation_list"
+   ],
+   "registry"
+  ],
+  [
+   "DevRev",
+   "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
+   "Search and update your company's knowledge graph",
+   [
+    "create_issue",
+    "get_issue",
+    "list_issues",
+    "create_ticket",
+    "get_enhancement"
+   ],
+   "registry"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry"
+  ],
+  [
+   "Elastic Cloud Serverless",
+   "116f9db2-2c37-4b1b-89de-c5519a95ae9c",
+   "Search, Observe, and Protect your Elasticsearch Data",
+   [
+    "platform_core_execute_esql",
+    "platform_core_execute_workflow",
+    "platform_core_get_index_mapping",
+    "platform_core_index_explorer"
+   ],
+   "registry"
+  ],
+  [
+   "JupiterOne",
+   "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "Ask questions about your JupiterOne agentic security and it asset graph and manage alerts, rules, and dashboards",
+   [
+    "execute-j1ql-query",
+    "get-active-alerts",
+    "create-dashboard",
+    "evaluate-rule"
+   ],
+   "registry"
+  ],
+  [
+   "Grafana Cloud",
+   "3392c633-e335-4638-bda7-5b259808c3f7",
+   "Query metrics, logs, and traces and manage dashboards and alerts",
+   [
+    "alerting_manage_rules",
+    "create_annotation",
+    "create_incident",
+    "describe_clickhouse_table"
+   ],
+   "registry"
+  ],
+  [
+   "Datadog",
+   "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "Debug and resolve issues using Datadog telemetry",
+   [
+    "search_datadog_logs",
+    "analyze_datadog_logs",
+    "get_datadog_metric",
+    "search_datadog_monitors"
+   ],
+   "registry"
+  ],
+  [
+   "Honeycomb",
+   "63125588-06e1-4567-8130-f5a26ed1d20f",
+   "Query and explore observability data and SLOs",
+   [
+    "get_dataset",
+    "get_slos",
+    "get_trace",
+    "get_query_history"
+   ],
+   "registry"
+  ],
+  [
+   "Bronto",
+   "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62",
+   "Query your Observability data in plain language, then turn what you find into monitors, saved searches, and Investigation Reports.",
+   [
+    "create_monitor",
+    "create_saved_search",
+    "get_error_summary",
+    "get_coverage"
+   ],
+   "registry"
+  ],
+  [
+   "Monte Carlo",
+   "54c8ca93-5e6e-4f30-89ca-207c3d3a438b",
+   "Data & AI observability",
+   [
+    "getAlerts",
+    "updateAlert",
+    "getTable",
+    "getQueryData"
+   ],
+   "registry"
+  ],
+  [
+   "MuleSoft",
+   "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+   "Govern, manage, and observe your entire Agent ecosystem",
+   [
+    "apply_policy_to_instance",
+    "check_policy_conformance",
+    "create_omni_gateway",
+    "create_scanner"
+   ],
+   "registry"
+  ],
+  [
+   "Pi Security",
+   "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "Agentic product security platform",
+   [
+    "pi_design_review_get",
+    "pi_finding_get",
+    "pi_findings_list",
+    "pi_gatekeeper_issues_list"
+   ],
+   "registry"
+  ],
+  [
+   "Sprinto MCP",
+   "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "Manage trust workflows",
+   [
+    "action__ADD_CONTROL_TO_AUDIT",
+    "action__ADD_CUSTOM_CHECK",
+    "action__ACCESS_USER_REVIEW_ACTION"
+   ],
+   "registry"
+  ],
+  [
+   "Vanta",
+   "a06a16f0-182d-43c1-a20d-0f95aee6027e",
+   "Connect to Vanta's trust management platform",
+   [
+    "addDocumentsToEvidenceRequest",
+    "assignTestOwnership",
+    "addKnowledgeBaseResource"
+   ],
+   "registry"
+  ],
+  [
+   "Drata",
+   "930ec419-a0ea-4790-8946-88344426d7f8",
+   "Agentic Trust Management on demand.",
+   [
+    "Drata_createControl",
+    "Drata_createEvidence",
+    "Drata_createRisk",
+    "Drata_createVendor"
+   ],
+   "registry"
+  ],
+  [
+   "Reco",
+   "1909d426-4e25-4993-9323-fa8b157c71fa",
+   "SaaS & AI security context for AI-native investigations",
+   [
+    "list_events",
+    "list_threat_alerts",
+    "list_posture_issues",
+    "list_identities"
+   ],
+   "registry"
+  ],
+  [
+   "Blaze SQL",
+   "a6a88aa0-b038-43ba-ac83-912f459bf576",
+   "Let claude query any SQL Database or warehouse with accuracy, context, governance, and observability.",
+   [
+    "describe_tables",
+    "execute_sql",
+    "list_schemas",
+    "list_tables"
+   ],
+   "registry"
+  ],
+  [
+   "Supabase",
+   "11ca66fc-1e98-49d5-ab9b-7cb4672a8f10",
+   "Manage databases, authentication, and storage",
+   [
+    "list_projects",
+    "get_project",
+    "create_project",
+    "pause_project"
+   ],
+   "registry"
+  ],
+  [
+   "Neon",
+   "33e1b084-f45e-4fa3-951a-b08ad61101c9",
+   "Postgres, Object Storage, Managed Better Auth, and more",
+   [
+    "compare_database_schema",
+    "create_branch",
+    "create_project",
+    "complete_database_migration"
+   ],
+   "registry"
+  ],
+  [
+   "ClickHouse",
+   "01adc2b5-5676-4dda-9e32-2cce63929d5c",
+   "Query and explore your ClickHouse Cloud data",
+   [
+    "run_select_query",
+    "list_databases",
+    "list_tables",
+    "get_services_list"
+   ],
+   "registry"
+  ],
+  [
+   "PlanetScale",
+   "97efeba5-ffd8-4b9c-a1d9-35978d0fdb9f",
+   "Authenticated access to your Postgres and MySQL DB's",
+   [
+    "planetscale_list_databases",
+    "planetscale_get_branch_schema",
+    "planetscale_execute_read_query"
+   ],
+   "registry"
+  ],
+  [
+   "MongoDB Atlas",
+   "c700435a-e86b-41f6-a377-ee226164a909",
+   "Manage MongoDB Atlas resources and read & write cluster data",
+   [
+    "aggregate",
+    "atlas-create-cluster",
+    "atlas-create-db-user",
+    "atlas-get-performance-advisor"
+   ],
+   "registry"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry"
+  ],
+  [
+   "Cloudflare Developer Platform",
+   "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "Build applications with compute, storage, and AI",
+   [
+    "workers_list",
+    "kv_namespaces_list",
+    "r2_buckets_list",
+    "d1_databases_list"
+   ],
+   "connected"
+  ],
+  [
+   "Control Plane",
+   "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "Deploy, scale, and debug cloud apps from one platform",
+   [
+    "add_database",
+    "build_image",
+    "convert_to_terraform",
+    "allow_workload_access"
+   ],
+   "registry"
+  ],
+  [
+   "CloudBees Unify MCP Server",
+   "cd12e050-6c36-4d6a-8865-95e7d2743c41",
+   "Connect AI agents to CloudBees Unify: feature flags, CI/CD, release orchestration, and security",
+   [
+    "automation_trigger_by_branch",
+    "automation_approve_manual_gate",
+    "automation_rerun"
+   ],
+   "registry"
+  ],
+  [
+   "incident.io",
+   "1f80285c-87b3-496f-91b3-07ea8fc86488",
+   "See and manage everything in incident.io",
+   [
+    "alert_list",
+    "ask_incident",
+    "ask_telemetry",
+    "analysis_start"
+   ],
+   "registry"
+  ],
+  [
+   "Railway",
+   "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "Deploy, manage, and debug your apps and infrastructure on Railway",
+   [
+    "create-deployment",
+    "deploy-artifact",
+    "get-logs",
+    "get-status"
+   ],
+   "registry"
+  ],
+  [
+   "Render",
+   "045e9791-ed0d-4dfb-8271-a2f1ff62f9f0",
+   "Create, deploy, and manage your Render cloud infrastructure with natural language.",
+   [
+    "create_web_service",
+    "create_postgres",
+    "get_deploy",
+    "get_metrics"
+   ],
+   "registry"
+  ],
+  [
+   "Vercel",
+   "7eb42afe-0087-4493-a105-da2b021d5c03",
+   "Analyze, debug, and manage projects and deployments",
+   [
+    "list_projects",
+    "list_deployments",
+    "get_deployment_events"
+   ],
+   "registry"
+  ],
+  [
+   "Macaly Cloud",
+   "db272bc3-0c46-43e9-bb09-3562f9965014",
+   "Claude writes the code, Macaly runs it - a git repo, cloud sandbox, database, live preview and production hosting for the apps you build in chat.",
+   [
+    "create_app",
+    "get_deployment",
+    "get_logs",
+    "list_files"
+   ],
+   "registry"
+  ],
+  [
+   "Postman",
+   "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "Give API context to your coding agents",
+   [
+    "createCollection",
+    "getCollection",
+    "getAllCollections",
+    "createFolder"
+   ],
+   "registry"
+  ],
+  [
+   "Context7",
+   "37153cd7-b17c-470e-8b46-007e2859e0f3",
+   "Up-to-date docs for LLMs and AI code editors",
+   [
+    "resolve-library-id",
+    "query-docs"
+   ],
+   "registry"
+  ],
+  [
+   "Slack",
+   "597f662f-36de-437e-836e-5a81013cbfbe",
+   "Send messages, create canvases, and fetch Slack data",
+   [
+    "slack_send_message",
+    "slack_search_public_and_private",
+    "slack_read_channel",
+    "slack_read_thread"
+   ],
+   "registry"
+  ],
+  [
+   "Notion",
+   "69f3a300-cc60-48c4-b237-dfac56530dbf",
+   "Connect your Notion workspace to search, update, and power workflows across tools",
+   [
+    "search",
+    "fetch",
+    "create-pages",
+    "update-page"
+   ],
+   "registry"
+  ],
+  [
+   "Google Drive",
+   "b89f7865-a755-4f86-8062-c3bd651740ce",
+   "Search, read, and upload files instantly",
+   [
+    "search_files",
+    "read_file_content",
+    "create_file",
+    "get_file_metadata"
+   ],
+   "registry"
+  ],
+  [
+   "LlamaParse",
+   "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "Turn your documents into agent-ready context for Claude",
+   [
+    "createIndex",
+    "extractFile",
+    "findFilesInIndex",
+    "classifyFile"
+   ],
+   "registry"
+  ],
+  [
+   "Extend",
+   "1e23b148-2355-4ead-95e9-9b9b359985f7",
+   "Turn documents into structured data",
+   [
+    "classify_document",
+    "create_classifier",
+    "create_evaluation_set"
+   ],
+   "registry"
+  ],
+  [
+   "Chatbase",
+   "48ba489e-160f-4965-913b-667cce063da2",
+   "Manage Chatbase agents, sources, conversations, tickets.",
+   [
+    "chatbase_chat",
+    "chatbase_create_agent",
+    "chatbase_create_source",
+    "chatbase_export_conversations"
+   ],
+   "registry"
+  ],
+  [
+   "Maxey0 (artifact + SCW store)",
+   "session:Maxey0",
+   "Maxey0 manages Structured Context Worlds (SCWs) and stored artifacts: SCW create, files, artifact upsert, plans, runs",
+   [
+    "scw_create",
+    "scw_add_file",
+    "scw_read_file",
+    "artifact_upsert",
+    "maxey0_open_app",
+    "maxey0_record_run"
+   ],
+   "session"
+  ],
+  [
+   "Memory (user memory store)",
+   "session:memory",
+   "Persistent memory documents: read, write, append, list across sessions",
+   [
+    "memory_read",
+    "memory_write",
+    "memory_append",
+    "memory_list",
+    "memory_str_replace"
+   ],
+   "session"
+  ],
+  [
+   "Claude Docs",
+   "session:Claude_Docs",
+   "Living documents created and edited with comments, tabs, charts and sharing",
+   [
+    "batch",
+    "update",
+    "guide",
+    "read",
+    "query"
+   ],
+   "session"
+  ],
+  [
+   "Claude Code Remote",
+   "session:claude-code-remote",
+   "Attach GitHub repositories to a session and schedule tasks and triggers",
+   [
+    "add_repo",
+    "list_repos",
+    "create_trigger",
+    "send_later",
+    "register_repo_root"
+   ],
+   "session"
+  ]
+ ],
+ "LEX": {
+  "memory": "memory memories remember context session episodic handoff persistent working semantic tier consolidation",
+  "graph": "graph knowledge ontology node edge relationship neighborhood topology",
+  "vector": "vector embedding similarity retrieval retrieve search index semantic latent anchor subspace",
+  "observability": "observability trace tracing telemetry metric log monitor monitoring otel grafana drift alert dashboard debug slo span",
+  "security": "security compliance audit policy governance secret sentinel scanner risk trust constitution constraint enforcement isolation provenance",
+  "data": "database sql postgres storage store backup restore query warehouse dataset table schema cluster",
+  "runtime": "deploy deployment runtime sandbox execution container infrastructure platform cloud incident scaling worker hosting interpreter",
+  "orchestration": "orchestrate orchestration orchestrator router routing delegate delegation workflow coordinator swarm agent pipeline",
+  "protocol": "protocol mcp a2a api gateway integration adapter bridge contract langchain negotiation tool capability",
+  "docs": "document file page parse extract conversation import ingest artifact doc library",
+  "messaging": "message chat slack notification email channel",
+  "research": "research paper arxiv analysis interpretability reasoning frame world"
+ }
+}

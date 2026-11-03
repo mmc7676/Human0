@@ -1,0 +1,550 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "international-relations",
+ "topic": {
+  "id": "international-relations",
+  "label": "International Relations",
+  "desc": "International Relations: how states and other actors interact through power, institutions, conflict, cooperation and the global economy."
+ },
+ "concepts": [
+  [
+   "ir-ir-theory",
+   "International Relations Theory",
+   "international-relations",
+   "Realism, liberalism, constructivism and critical theories, and the levels of analysis used to explain world politics.",
+   [
+    "realism",
+    "liberalism",
+    "constructivism",
+    "anarchy",
+    "power",
+    "level of analysis",
+    "theory",
+    "norms"
+   ]
+  ],
+  [
+   "ir-security-studies",
+   "Security Studies",
+   "international-relations",
+   "War, deterrence, alliances, arms control, terrorism and the causes of conflict and peace.",
+   [
+    "security",
+    "war",
+    "deterrence",
+    "alliance",
+    "arms control",
+    "nuclear",
+    "terrorism",
+    "conflict"
+   ]
+  ],
+  [
+   "ir-diplomacy-foreign-policy",
+   "Diplomacy and Foreign Policy",
+   "international-relations",
+   "How states make and conduct foreign policy: decision making, negotiation, sanctions and statecraft.",
+   [
+    "diplomacy",
+    "foreign policy",
+    "negotiation",
+    "sanctions",
+    "statecraft",
+    "decision making",
+    "summit",
+    "mediation"
+   ]
+  ],
+  [
+   "ir-international-political-economy",
+   "International Political Economy",
+   "international-relations",
+   "Trade, finance, development and the politics of globalization and economic interdependence.",
+   [
+    "trade",
+    "finance",
+    "globalization",
+    "development",
+    "interdependence",
+    "tariff",
+    "currency",
+    "aid"
+   ]
+  ],
+  [
+   "ir-international-organizations",
+   "International Organizations and Law",
+   "international-relations",
+   "The United Nations, regional organizations, international law and global governance.",
+   [
+    "united nations",
+    "organization",
+    "international law",
+    "governance",
+    "security council",
+    "regime",
+    "court",
+    "sovereignty"
+   ]
+  ],
+  [
+   "ir-area-forecasting",
+   "Regional Studies and Forecasting",
+   "international-relations",
+   "Region-specific expertise and the methods for forecasting geopolitical events with calibrated probabilities.",
+   [
+    "regional",
+    "area studies",
+    "forecast",
+    "probability",
+    "scenario",
+    "geopolitics",
+    "calibration",
+    "judgemental"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ir-theory-application",
+   "ir-ir-theory",
+   "Theory Application",
+   "Explains an event through realist, liberal and constructivist lenses, checked by naming the causal mechanism and evidence for each.",
+   "semantic",
+   [
+    [
+     "ir-theorist",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-regional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-level-analysis",
+   "ir-ir-theory",
+   "Levels of Analysis",
+   "Separates individual, state and system level explanations of a decision, checked by sourcing each level's evidence.",
+   "semantic",
+   [
+    [
+     "ir-theorist",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-diplomat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-hypothesis-design",
+   "ir-ir-theory",
+   "IR Hypothesis Design",
+   "Turns a research question into testable hypotheses with variables and cases, checked for falsifiability and case selection bias.",
+   "procedural",
+   [
+    [
+     "ir-theorist",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-forecaster",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-conflict-analysis",
+   "ir-security-studies",
+   "Conflict Analysis",
+   "Analyses a conflict's actors, interests and escalation risks, checked by dating and sourcing each event.",
+   "semantic",
+   [
+    [
+     "ir-security",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-regional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-deterrence-model",
+   "ir-security-studies",
+   "Deterrence Model",
+   "Models deterrence credibility and capability for a dyad, checked by stating assumptions and testing them against past crises.",
+   "procedural",
+   [
+    [
+     "ir-security",
+     "primary"
+    ],
+    [
+     "ir-theorist",
+     "checker"
+    ],
+    [
+     "ir-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-alliance-mapping",
+   "ir-security-studies",
+   "Alliance Mapping",
+   "Maps alliance commitments and treaty obligations among states, checked against treaty texts.",
+   "procedural",
+   [
+    [
+     "ir-security",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-institutions",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-negotiation-prep",
+   "ir-diplomacy-foreign-policy",
+   "Negotiation Preparation",
+   "Prepares positions, interests and fallback options for a negotiation, checked by testing each option against both sides' interests.",
+   "procedural",
+   [
+    [
+     "ir-diplomat",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-sanctions-assessment",
+   "ir-diplomacy-foreign-policy",
+   "Sanctions Assessment",
+   "Assesses the design and likely effect of sanctions, checked against documented outcomes of comparable cases.",
+   "semantic",
+   [
+    [
+     "ir-diplomat",
+     "primary"
+    ],
+    [
+     "ir-economist",
+     "checker"
+    ],
+    [
+     "ir-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-policy-brief",
+   "ir-diplomacy-foreign-policy",
+   "Foreign Policy Brief",
+   "Writes a policy brief with options and recommendations, checked by tying each claim to a cited source.",
+   "semantic",
+   [
+    [
+     "ir-diplomat",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-regional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-trade-policy",
+   "ir-international-political-economy",
+   "Trade Policy Analysis",
+   "Analyses tariffs and trade agreements and who gains and loses, checked against published trade data.",
+   "procedural",
+   [
+    [
+     "ir-economist",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-institutions",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-development-strategy",
+   "ir-international-political-economy",
+   "Development Strategy Comparison",
+   "Compares development strategies across countries, checked by sourcing each indicator.",
+   "semantic",
+   [
+    [
+     "ir-economist",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-regional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-interdependence-risk",
+   "ir-international-political-economy",
+   "Interdependence Risk Mapping",
+   "Maps economic dependencies that create leverage between states, checked against trade and investment figures.",
+   "procedural",
+   [
+    [
+     "ir-economist",
+     "primary"
+    ],
+    [
+     "ir-security",
+     "checker"
+    ],
+    [
+     "ir-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-un-process",
+   "ir-international-organizations",
+   "UN Process Explainer",
+   "Explains how a resolution moves through the General Assembly or Security Council, checked against the UN charter and rules.",
+   "procedural",
+   [
+    [
+     "ir-institutions",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-diplomat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-regime-effectiveness",
+   "ir-international-organizations",
+   "Regime Effectiveness Review",
+   "Evaluates whether an international regime changed state behaviour, checked against compliance data.",
+   "semantic",
+   [
+    [
+     "ir-institutions",
+     "primary"
+    ],
+    [
+     "ir-theorist",
+     "checker"
+    ],
+    [
+     "ir-checker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-sovereignty-case",
+   "ir-international-organizations",
+   "Sovereignty and Intervention Case",
+   "Analyses an intervention under sovereignty and responsibility to protect norms, checked by citing the legal basis.",
+   "semantic",
+   [
+    [
+     "ir-institutions",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-security",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-geopolitical-forecast",
+   "ir-area-forecasting",
+   "Geopolitical Forecast",
+   "Produces a calibrated probability for a geopolitical question with base rates, checked against existing judgemental forecasts.",
+   "procedural",
+   [
+    [
+     "ir-forecaster",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-regional",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-scenario-planning",
+   "ir-area-forecasting",
+   "Scenario Planning",
+   "Builds alternative scenarios with drivers and signposts, checked by confirming the scenarios are distinct and cover key uncertainties.",
+   "procedural",
+   [
+    [
+     "ir-forecaster",
+     "primary"
+    ],
+    [
+     "ir-regional",
+     "checker"
+    ],
+    [
+     "ir-security",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ir-region-briefing",
+   "ir-area-forecasting",
+   "Regional Briefing",
+   "Summarises the political, economic and security situation in a region, checked by dating and sourcing each fact.",
+   "semantic",
+   [
+    [
+     "ir-regional",
+     "primary"
+    ],
+    [
+     "ir-checker",
+     "checker"
+    ],
+    [
+     "ir-economist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ir-theorist": "IR Theory Agent",
+  "ir-security": "Security Studies Agent",
+  "ir-diplomat": "Diplomacy and Negotiation Agent",
+  "ir-economist": "International Political Economy Agent",
+  "ir-institutions": "International Organizations Agent",
+  "ir-regional": "Area Studies Agent",
+  "ir-forecaster": "Geopolitical Forecasting Agent",
+  "ir-checker": "Evidence and Method Checker"
+ },
+ "mcp": [
+  [
+   "Mantic",
+   "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "Explore judgemental forecasts",
+   [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "ir-theory": "realism liberalism constructivism anarchy power norms",
+  "ir-security": "security war deterrence alliance nuclear terrorism conflict",
+  "ir-statecraft": "diplomacy negotiation sanctions statecraft summit mediation",
+  "ir-economy": "trade finance globalization interdependence tariff currency aid",
+  "ir-governance": "united nations governance council regime sovereignty",
+  "ir-foresight": "forecast probability scenario geopolitics calibration judgemental"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

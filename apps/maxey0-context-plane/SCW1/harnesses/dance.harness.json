@@ -1,0 +1,524 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "dance",
+  "label": "Dance",
+  "desc": "Dance: the practice, choreography, history and analysis of movement as an art form."
+ },
+ "concepts": [
+  {
+   "id": "dance-choreography",
+   "label": "Choreography and Composition",
+   "desc": "Creating dances through motif, phrase, structure, space, time and dynamics.",
+   "keywords": [
+    "choreography",
+    "composition",
+    "motif",
+    "phrase",
+    "structure",
+    "space",
+    "dynamics",
+    "improvisation"
+   ],
+   "topic": "dance",
+   "source": "dance",
+   "related": []
+  },
+  {
+   "id": "dance-culture-performance",
+   "label": "Dance, Culture and Performance",
+   "desc": "Dance as social and cultural practice, criticism and production for the stage.",
+   "keywords": [
+    "culture",
+    "ritual",
+    "social dance",
+    "criticism",
+    "performance",
+    "production",
+    "lighting",
+    "costume"
+   ],
+   "topic": "dance",
+   "source": "dance",
+   "related": []
+  },
+  {
+   "id": "dance-history",
+   "label": "Dance History",
+   "desc": "Development of court, theatrical, modern and contemporary dance and its key artists.",
+   "keywords": [
+    "history",
+    "court",
+    "romantic",
+    "modern dance",
+    "contemporary",
+    "repertory",
+    "choreographer",
+    "era"
+   ],
+   "topic": "dance",
+   "source": "dance",
+   "related": []
+  },
+  {
+   "id": "dance-kinesiology",
+   "label": "Dance Science and Kinesiology",
+   "desc": "Anatomy, biomechanics, conditioning and injury prevention for dancers.",
+   "keywords": [
+    "kinesiology",
+    "anatomy",
+    "biomechanics",
+    "conditioning",
+    "injury",
+    "prevention",
+    "flexibility",
+    "strength"
+   ],
+   "topic": "dance",
+   "source": "dance",
+   "related": []
+  },
+  {
+   "id": "dance-notation",
+   "label": "Notation and Movement Analysis",
+   "desc": "Recording and analysing movement through Labanotation and Laban Movement Analysis.",
+   "keywords": [
+    "notation",
+    "labanotation",
+    "laban",
+    "effort",
+    "shape",
+    "score",
+    "movement analysis",
+    "reconstruction"
+   ],
+   "topic": "dance",
+   "source": "dance",
+   "related": []
+  },
+  {
+   "id": "dance-technique",
+   "label": "Dance Technique",
+   "desc": "Training in ballet, modern, jazz and other techniques for alignment, control and vocabulary.",
+   "keywords": [
+    "technique",
+    "ballet",
+    "modern",
+    "jazz",
+    "alignment",
+    "turnout",
+    "vocabulary",
+    "class"
+   ],
+   "topic": "dance",
+   "source": "dance",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "dance-dance-structure",
+   "concept": "dance-choreography",
+   "label": "Dance Structure Design",
+   "desc": "Designs the structure of a piece in sections and checks transitions, contrast and timing against the music.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1198",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1200",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-phrase-build",
+   "concept": "dance-choreography",
+   "label": "Phrase Construction",
+   "desc": "Builds a movement phrase from a motif with stated counts and checks it against the intended dynamics and spatial pattern.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1198",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1202",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-ethnographic-study",
+   "concept": "dance-culture-performance",
+   "label": "Dance Ethnography",
+   "desc": "Plans an ethnographic study of a dance community with consent and documentation methods.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1203",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1204",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-performance-review",
+   "concept": "dance-culture-performance",
+   "label": "Performance Criticism",
+   "desc": "Writes a review of a performance describing choreography, performers and production with specific moments.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1199",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1204",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1200",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-production-plan",
+   "concept": "dance-culture-performance",
+   "label": "Production Plan",
+   "desc": "Plans lighting, costume and stage cues for a piece and checks cue timing against the score.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1200",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-history-survey",
+   "concept": "dance-history",
+   "label": "Historical Survey",
+   "desc": "Summarises a period of dance history and checks dates, works and choreographers against reference sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1204",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1203",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-work-analysis",
+   "concept": "dance-history",
+   "label": "Repertory Work Analysis",
+   "desc": "Analyses a historical dance work's context and choreography and ties each claim to sources or recordings.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1204",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1202",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-conditioning-plan",
+   "concept": "dance-kinesiology",
+   "label": "Conditioning Plan",
+   "desc": "Designs a conditioning program for a dancer's goals and checks load and rest against injury prevention guidance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1205",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1200",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-injury-review",
+   "concept": "dance-kinesiology",
+   "label": "Injury Risk Review",
+   "desc": "Reviews a movement or schedule for injury risk factors and cites the evidence behind each flag.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1205",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1204",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-effort-analysis",
+   "concept": "dance-notation",
+   "label": "Effort and Shape Analysis",
+   "desc": "Describes movement in effort and shape terms and checks the coding against a recording.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1202",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-score-transcription",
+   "concept": "dance-notation",
+   "label": "Notation Transcription",
+   "desc": "Transcribes a described phrase into notation symbols and checks counts and body parts against the source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1202",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1204",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1201",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-class-plan",
+   "concept": "dance-technique",
+   "label": "Technique Class Planning",
+   "desc": "Plans a technique class from warm-up to combinations and checks progression and safe loading.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1201",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1205",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1204",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  },
+  {
+   "id": "dance-technique-correction",
+   "concept": "dance-technique",
+   "label": "Technique Correction",
+   "desc": "Identifies alignment and execution faults in a described movement and pairs each with a correction cue.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1201",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1205",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1198",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1199",
+     "role": "support"
+    }
+   ],
+   "source": "dance"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1198",
+   "name": "Choreographer Agent",
+   "legacy_key": "dance-choreographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1199",
+   "name": "Dance Critic Agent",
+   "legacy_key": "dance-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1200",
+   "name": "Production and Lighting Agent",
+   "legacy_key": "dance-producer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1201",
+   "name": "Technique Coach Agent",
+   "legacy_key": "dance-technique-coach",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1202",
+   "name": "Dance Notation Agent",
+   "legacy_key": "dance-notator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1203",
+   "name": "Dance Ethnographer Agent",
+   "legacy_key": "dance-ethnographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1204",
+   "name": "Dance Historian Agent",
+   "legacy_key": "dance-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1205",
+   "name": "Dance Kinesiology Agent",
+   "legacy_key": "dance-kinesiologist",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "dance-technique": "technique ballet modern jazz alignment turnout vocabulary class",
+  "dance-choreo": "choreography composition motif phrase structure space dynamics improvisation",
+  "dance-history": "history court romantic dance contemporary repertory choreographer era",
+  "dance-notation": "notation labanotation laban effort shape score movement analysis reconstruction",
+  "dance-science": "kinesiology anatomy biomechanics conditioning injury prevention flexibility strength",
+  "dance-culture": "culture ritual social criticism performance production lighting costume"
+ },
+ "sources": [
+  "dance"
+ ]
+}

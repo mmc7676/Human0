@@ -1,0 +1,568 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "linguistics",
+ "topic": {
+  "id": "linguistics",
+  "label": "Linguistics",
+  "desc": "Linguistics: the scientific study of language structure, meaning, use, change and acquisition."
+ },
+ "concepts": [
+  [
+   "ling-phonetics-phonology",
+   "Phonetics and Phonology",
+   "linguistics",
+   "How speech sounds are produced, perceived and transcribed, and how languages organise them into phoneme inventories and sound patterns.",
+   [
+    "phonetics",
+    "phonology",
+    "phoneme",
+    "allophone",
+    "ipa",
+    "syllable",
+    "stress",
+    "tone",
+    "acoustic"
+   ]
+  ],
+  [
+   "ling-morphology-syntax",
+   "Morphology and Syntax",
+   "linguistics",
+   "The internal structure of words and the rules that combine words into phrases and sentences, from morphemes to constituent trees.",
+   [
+    "morphology",
+    "syntax",
+    "morpheme",
+    "affix",
+    "constituent",
+    "tree",
+    "agreement",
+    "case",
+    "word order"
+   ]
+  ],
+  [
+   "ling-semantics",
+   "Semantics",
+   "linguistics",
+   "Literal meaning of words and sentences, modelled with truth conditions, compositional rules, lexical relations and logical form.",
+   [
+    "semantics",
+    "meaning",
+    "truth condition",
+    "compositional",
+    "lexical",
+    "quantifier",
+    "entailment",
+    "logical form"
+   ]
+  ],
+  [
+   "ling-pragmatics-discourse",
+   "Pragmatics and Discourse",
+   "linguistics",
+   "Meaning in context: implicature, presupposition, speech acts, politeness and the structure of conversation and texts.",
+   [
+    "pragmatics",
+    "discourse",
+    "implicature",
+    "presupposition",
+    "speech act",
+    "politeness",
+    "conversation",
+    "context"
+   ]
+  ],
+  [
+   "ling-historical-sociolinguistics",
+   "Historical and Sociolinguistics",
+   "linguistics",
+   "How languages change over time and vary across speakers, regions and social groups, including reconstruction and language contact.",
+   [
+    "historical",
+    "comparative",
+    "reconstruction",
+    "sound change",
+    "variation",
+    "dialect",
+    "contact",
+    "sociolinguistics"
+   ]
+  ],
+  [
+   "ling-psycholinguistics-acquisition",
+   "Psycholinguistics and Acquisition",
+   "linguistics",
+   "How people learn, process and produce language, studied through experiments, child acquisition data and second language learning.",
+   [
+    "psycholinguistics",
+    "acquisition",
+    "processing",
+    "experiment",
+    "child",
+    "second language",
+    "reaction time",
+    "bilingual"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ling-ipa-transcriber",
+   "ling-phonetics-phonology",
+   "IPA Transcriber",
+   "Transcribes speech or orthographic forms into broad and narrow IPA and is checked against a reference pronunciation inventory.",
+   "procedural",
+   [
+    [
+     "ling-phonetician",
+     "primary"
+    ],
+    [
+     "ling-fieldworker",
+     "checker"
+    ],
+    [
+     "ling-corpus",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-phonological-rule-finder",
+   "ling-phonetics-phonology",
+   "Phonological Rule Finder",
+   "Infers allophonic and alternation rules from minimal pairs and data sets and verifies each rule predicts every listed surface form.",
+   "semantic",
+   [
+    [
+     "ling-phonetician",
+     "primary"
+    ],
+    [
+     "ling-morphosyntax",
+     "checker"
+    ],
+    [
+     "ling-fieldworker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-acoustic-formant-analyzer",
+   "ling-phonetics-phonology",
+   "Acoustic Formant Analyzer",
+   "Measures formants, pitch and duration from recordings and checks values against expected vowel space ranges for the speaker group.",
+   "procedural",
+   [
+    [
+     "ling-phonetician",
+     "primary"
+    ],
+    [
+     "ling-corpus",
+     "checker"
+    ],
+    [
+     "ling-psycholing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-morpheme-glosser",
+   "ling-morphology-syntax",
+   "Interlinear Morpheme Glosser",
+   "Segments words into morphemes and produces Leipzig-style interlinear glosses checked for consistent segmentation across the text.",
+   "procedural",
+   [
+    [
+     "ling-morphosyntax",
+     "primary"
+    ],
+    [
+     "ling-fieldworker",
+     "checker"
+    ],
+    [
+     "ling-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-syntactic-tree-builder",
+   "ling-morphology-syntax",
+   "Syntactic Tree Builder",
+   "Builds constituency or dependency trees for sentences and checks them with standard constituency tests and treebank conventions.",
+   "semantic",
+   [
+    [
+     "ling-morphosyntax",
+     "primary"
+    ],
+    [
+     "ling-semanticist",
+     "checker"
+    ],
+    [
+     "ling-corpus",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-typology-feature-coder",
+   "ling-morphology-syntax",
+   "Typology Feature Coder",
+   "Codes word order, case and agreement features for a language and cross-checks codings against grammar descriptions.",
+   "semantic",
+   [
+    [
+     "ling-morphosyntax",
+     "primary"
+    ],
+    [
+     "ling-historical",
+     "checker"
+    ],
+    [
+     "ling-fieldworker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-truth-condition-composer",
+   "ling-semantics",
+   "Truth Condition Composer",
+   "Derives compositional truth conditions in lambda notation and checks the result against stated entailment judgements.",
+   "semantic",
+   [
+    [
+     "ling-semanticist",
+     "primary"
+    ],
+    [
+     "ling-morphosyntax",
+     "checker"
+    ],
+    [
+     "ling-pragmatics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-lexical-relation-mapper",
+   "ling-semantics",
+   "Lexical Relation Mapper",
+   "Maps synonymy, antonymy, hyponymy and polysemy for a word set and checks the relations against dictionary and corpus evidence.",
+   "semantic",
+   [
+    [
+     "ling-semanticist",
+     "primary"
+    ],
+    [
+     "ling-corpus",
+     "checker"
+    ],
+    [
+     "ling-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-scope-ambiguity-resolver",
+   "ling-semantics",
+   "Quantifier Scope Resolver",
+   "Enumerates quantifier and negation scope readings for a sentence and verifies each reading with a distinguishing scenario.",
+   "semantic",
+   [
+    [
+     "ling-semanticist",
+     "primary"
+    ],
+    [
+     "ling-pragmatics",
+     "checker"
+    ],
+    [
+     "ling-morphosyntax",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-implicature-analyzer",
+   "ling-pragmatics-discourse",
+   "Implicature Analyzer",
+   "Identifies conversational implicatures and presuppositions in an exchange and tests each with cancellation and projection diagnostics.",
+   "semantic",
+   [
+    [
+     "ling-pragmatics",
+     "primary"
+    ],
+    [
+     "ling-semanticist",
+     "checker"
+    ],
+    [
+     "ling-psycholing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-conversation-analysis-coder",
+   "ling-pragmatics-discourse",
+   "Conversation Analysis Coder",
+   "Codes turns, repairs and adjacency pairs in transcripts and checks coding reliability against a second coder.",
+   "procedural",
+   [
+    [
+     "ling-pragmatics",
+     "primary"
+    ],
+    [
+     "ling-corpus",
+     "checker"
+    ],
+    [
+     "ling-fieldworker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-register-politeness-assessor",
+   "ling-pragmatics-discourse",
+   "Register and Politeness Assessor",
+   "Rates register and politeness strategies in a text and checks the rating against translation into a target language.",
+   "semantic",
+   [
+    [
+     "ling-pragmatics",
+     "primary"
+    ],
+    [
+     "ling-translator",
+     "checker"
+    ],
+    [
+     "ling-corpus",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-comparative-reconstructor",
+   "ling-historical-sociolinguistics",
+   "Comparative Method Reconstructor",
+   "Aligns cognates, proposes regular sound correspondences and reconstructs proto-forms checked for exceptionless correspondence sets.",
+   "semantic",
+   [
+    [
+     "ling-historical",
+     "primary"
+    ],
+    [
+     "ling-phonetician",
+     "checker"
+    ],
+    [
+     "ling-corpus",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-dialect-variation-mapper",
+   "ling-historical-sociolinguistics",
+   "Dialect Variation Mapper",
+   "Maps variable features across speakers or regions and checks distributions with a statistical test of social or regional effect.",
+   "procedural",
+   [
+    [
+     "ling-fieldworker",
+     "primary"
+    ],
+    [
+     "ling-corpus",
+     "checker"
+    ],
+    [
+     "ling-historical",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-loanword-detector",
+   "ling-historical-sociolinguistics",
+   "Loanword and Contact Detector",
+   "Flags borrowed vocabulary and contact-induced structure and verifies source language etymology in reference dictionaries.",
+   "semantic",
+   [
+    [
+     "ling-historical",
+     "primary"
+    ],
+    [
+     "ling-translator",
+     "checker"
+    ],
+    [
+     "ling-fieldworker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-psycholing-experiment-designer",
+   "ling-psycholinguistics-acquisition",
+   "Psycholinguistic Experiment Designer",
+   "Designs reading time or priming experiments with counterbalanced items and checks the item lists for confounds.",
+   "procedural",
+   [
+    [
+     "ling-psycholing",
+     "primary"
+    ],
+    [
+     "ling-corpus",
+     "checker"
+    ],
+    [
+     "ling-semanticist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-acquisition-milestone-tracker",
+   "ling-psycholinguistics-acquisition",
+   "Acquisition Milestone Tracker",
+   "Scores child speech samples for MLU and grammatical milestones and checks scores against published norms.",
+   "procedural",
+   [
+    [
+     "ling-psycholing",
+     "primary"
+    ],
+    [
+     "ling-morphosyntax",
+     "checker"
+    ],
+    [
+     "ling-fieldworker",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ling-multilingual-translation-checker",
+   "ling-psycholinguistics-acquisition",
+   "Multilingual Translation Checker",
+   "Translates stimuli and example sentences across languages and back-translates to verify meaning and register are preserved.",
+   "procedural",
+   [
+    [
+     "ling-translator",
+     "primary"
+    ],
+    [
+     "ling-semanticist",
+     "checker"
+    ],
+    [
+     "ling-pragmatics",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ling-phonetician": "Phonetics and Phonology Analyst",
+  "ling-morphosyntax": "Morphosyntax Analyst",
+  "ling-semanticist": "Formal Semantics Agent",
+  "ling-pragmatics": "Pragmatics and Discourse Agent",
+  "ling-fieldworker": "Field Linguist Agent",
+  "ling-historical": "Historical Comparative Agent",
+  "ling-corpus": "Corpus Linguistics Agent",
+  "ling-psycholing": "Psycholinguistics Agent",
+  "ling-translator": "Translation Checker Agent"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "ling-sound": "phonetics phonology phoneme allophone ipa syllable stress tone acoustic formant pitch vowel",
+  "ling-structure": "morphology syntax morpheme affix constituent tree agreement case treebank dependency typology",
+  "ling-meaning": "semantics truth lexical quantifier entailment lambda scope synonymy polysemy negation",
+  "ling-use": "pragmatics discourse implicature presupposition politeness conversation register turn repair",
+  "ling-change": "historical comparative reconstruction cognate dialect variation contact loanword etymology",
+  "ling-mind": "psycholinguistic acquisition processing experiment child bilingual priming translate translation"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

@@ -1,0 +1,539 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "energy-science-and-engineering",
+ "topic": {
+  "id": "energy-science-and-engineering",
+  "label": "Energy Science and Engineering",
+  "desc": "Energy Science and Engineering: converting, storing, delivering and managing energy, and assessing its economic and environmental impact."
+ },
+ "concepts": [
+  [
+   "ese-thermodynamics-conversion",
+   "Thermodynamics and Energy Conversion",
+   "energy-science-and-engineering",
+   "Laws of thermodynamics applied to power cycles, heat engines, heat pumps and efficiency limits.",
+   [
+    "thermodynamics",
+    "efficiency",
+    "cycle",
+    "rankine",
+    "heat engine",
+    "heat pump",
+    "exergy",
+    "turbine"
+   ]
+  ],
+  [
+   "ese-renewable-energy",
+   "Renewable Energy Resources",
+   "energy-science-and-engineering",
+   "Solar, wind, hydro and geothermal resources, their variability and the technologies that harvest them.",
+   [
+    "renewable",
+    "solar",
+    "photovoltaic",
+    "wind",
+    "hydro",
+    "geothermal",
+    "capacity factor",
+    "resource"
+   ]
+  ],
+  [
+   "ese-energy-storage",
+   "Energy Storage and Electrochemistry",
+   "energy-science-and-engineering",
+   "Batteries, fuel cells, hydrogen and other storage technologies and their performance and degradation.",
+   [
+    "storage",
+    "battery",
+    "lithium-ion",
+    "electrochemistry",
+    "fuel cell",
+    "hydrogen",
+    "degradation",
+    "state of charge"
+   ]
+  ],
+  [
+   "ese-power-grids",
+   "Power Grids and Integration",
+   "energy-science-and-engineering",
+   "Transmission, distribution, dispatch and integrating variable renewables while keeping the grid reliable.",
+   [
+    "grid",
+    "transmission",
+    "dispatch",
+    "demand response",
+    "reliability",
+    "frequency",
+    "microgrid"
+   ]
+  ],
+  [
+   "ese-fuels-combustion",
+   "Fuels, Combustion and Nuclear Energy",
+   "energy-science-and-engineering",
+   "Fossil, bio and nuclear fuels, combustion chemistry, emissions and reactor fundamentals.",
+   [
+    "fuel",
+    "combustion",
+    "emissions",
+    "biofuel",
+    "nuclear",
+    "reactor",
+    "fission",
+    "natural gas"
+   ]
+  ],
+  [
+   "ese-energy-systems-policy",
+   "Energy Systems Analysis, Economics and Policy",
+   "energy-science-and-engineering",
+   "Life cycle assessment, levelized cost, decarbonization pathways and the policy that shapes energy transitions.",
+   [
+    "lcoe",
+    "life cycle",
+    "decarbonization",
+    "carbon",
+    "policy",
+    "pathway",
+    "economics",
+    "efficiency standard"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ese-cycle-analyzer",
+   "ese-thermodynamics-conversion",
+   "Power Cycle Analyzer",
+   "Computes efficiency and work of Rankine, Brayton and combined cycles and checks energy balance closure.",
+   "procedural",
+   [
+    [
+     "ese-thermo",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-fuels",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-heat-pump-sizer",
+   "ese-thermodynamics-conversion",
+   "Heat Pump Sizer",
+   "Sizes heat pumps from load and climate data and checks coefficient of performance across temperatures.",
+   "procedural",
+   [
+    [
+     "ese-thermo",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-exergy-auditor",
+   "ese-thermodynamics-conversion",
+   "Exergy Auditor",
+   "Locates exergy destruction in a process and checks totals against first and second law balances.",
+   "procedural",
+   [
+    [
+     "ese-thermo",
+     "primary"
+    ],
+    [
+     "ese-analyst",
+     "checker"
+    ],
+    [
+     "ese-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-pv-yield-estimator",
+   "ese-renewable-energy",
+   "PV Yield Estimator",
+   "Estimates photovoltaic energy yield from irradiance and system design and checks losses and capacity factor.",
+   "procedural",
+   [
+    [
+     "ese-solar",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-grid",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-wind-resource-assessor",
+   "ese-renewable-energy",
+   "Wind Resource Assessor",
+   "Fits wind speed distributions and turbine power curves and checks annual energy against measured data.",
+   "procedural",
+   [
+    [
+     "ese-solar",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-site-screener",
+   "ese-renewable-energy",
+   "Renewable Site Screener",
+   "Screens candidate sites by resource, land and grid access and checks layers with spatial data.",
+   "semantic",
+   [
+    [
+     "ese-solar",
+     "primary"
+    ],
+    [
+     "ese-analyst",
+     "checker"
+    ],
+    [
+     "ese-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-battery-sizer",
+   "ese-energy-storage",
+   "Battery System Sizer",
+   "Sizes battery storage for a load and duty cycle and checks depth of discharge and degradation limits.",
+   "procedural",
+   [
+    [
+     "ese-storage",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-grid",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-cell-chemistry-comparer",
+   "ese-energy-storage",
+   "Cell Chemistry Comparer",
+   "Compares electrochemical storage chemistries by energy density, cost and lifetime and checks figures against literature.",
+   "semantic",
+   [
+    [
+     "ese-storage",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-dispatch-optimizer",
+   "ese-power-grids",
+   "Economic Dispatch Optimizer",
+   "Solves unit commitment and dispatch problems and checks constraint satisfaction and marginal prices.",
+   "procedural",
+   [
+    [
+     "ese-grid",
+     "primary"
+    ],
+    [
+     "ese-analyst",
+     "checker"
+    ],
+    [
+     "ese-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-integration-studier",
+   "ese-power-grids",
+   "Renewable Integration Studier",
+   "Assesses hosting capacity and curtailment for added renewables and checks frequency and voltage limits.",
+   "procedural",
+   [
+    [
+     "ese-grid",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-solar",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-microgrid-designer",
+   "ese-power-grids",
+   "Microgrid Designer",
+   "Designs microgrids with generation, storage and controls and checks reliability under outage scenarios.",
+   "semantic",
+   [
+    [
+     "ese-grid",
+     "primary"
+    ],
+    [
+     "ese-storage",
+     "checker"
+    ],
+    [
+     "ese-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-combustion-calculator",
+   "ese-fuels-combustion",
+   "Combustion Calculator",
+   "Computes stoichiometry, adiabatic flame temperature and emissions and checks mass balance.",
+   "procedural",
+   [
+    [
+     "ese-fuels",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-thermo",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-reactor-explainer",
+   "ese-fuels-combustion",
+   "Nuclear Reactor Explainer",
+   "Explains reactor physics, fuel cycles and safety systems and checks claims against technical references.",
+   "semantic",
+   [
+    [
+     "ese-fuels",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-lcoe-calculator",
+   "ese-energy-systems-policy",
+   "LCOE Calculator",
+   "Computes levelized cost of energy with discounting and checks sensitivity to capital cost and capacity factor.",
+   "procedural",
+   [
+    [
+     "ese-analyst",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-lca-assessor",
+   "ese-energy-systems-policy",
+   "Life Cycle Assessor",
+   "Performs life cycle carbon accounting for an energy technology and checks system boundaries and inventory data.",
+   "procedural",
+   [
+    [
+     "ese-analyst",
+     "primary"
+    ],
+    [
+     "ese-reviewer",
+     "checker"
+    ],
+    [
+     "ese-fuels",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ese-pathway-evaluator",
+   "ese-energy-systems-policy",
+   "Decarbonization Pathway Evaluator",
+   "Evaluates energy transition scenarios against emissions targets and checks assumptions with cited data.",
+   "semantic",
+   [
+    [
+     "ese-policy",
+     "primary"
+    ],
+    [
+     "ese-analyst",
+     "checker"
+    ],
+    [
+     "ese-grid",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ese-thermo": "Thermal Energy Engineer",
+  "ese-solar": "Solar and Wind Analyst",
+  "ese-storage": "Energy Storage Engineer",
+  "ese-grid": "Grid Integration Engineer",
+  "ese-fuels": "Fuels and Combustion Engineer",
+  "ese-analyst": "Energy Systems Analyst",
+  "ese-reviewer": "Energy Data Reviewer",
+  "ese-policy": "Energy Policy Analyst"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "ese-thermo": "thermodynamics cycle rankine brayton heat turbine exergy",
+  "ese-renew": "renewable solar photovoltaic wind hydro geothermal irradiance",
+  "ese-store": "storage battery lithium electrochemistry hydrogen degradation",
+  "ese-grid": "grid transmission dispatch reliability frequency microgrid curtailment",
+  "ese-fuel": "fuel combustion emissions biofuel nuclear reactor fission",
+  "ese-sys": "lcoe life decarbonization carbon policy pathway economics"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "rows reused verbatim from the verified Human0 MCP menu; working order not re-checked in this session"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

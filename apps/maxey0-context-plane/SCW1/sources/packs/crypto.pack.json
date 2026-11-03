@@ -1,0 +1,292 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "crypto",
+ "topic": {
+  "id": "crypto",
+  "label": "Cryptocurrencies and Digital Assets",
+  "desc": "Digital money and assets: blockchains and consensus, cryptocurrencies and tokens, wallets and custody, crypto exchanges and DeFi, stablecoins and central bank digital currencies, and crypto regulation."
+ },
+ "concepts": [
+  [
+   "cry-chains",
+   "Blockchains and Consensus",
+   "crypto",
+   "How blockchains work: blocks, consensus (proof of work, proof of stake), nodes and smart contracts.",
+   [
+    "blockchain",
+    "consensus",
+    "proof",
+    "work",
+    "stake",
+    "node",
+    "block",
+    "smart",
+    "contract",
+    "ledger"
+   ]
+  ],
+  [
+   "cry-tokens",
+   "Cryptocurrencies and Tokens",
+   "crypto",
+   "Bitcoin, Ether, tokens, token standards, supply schedules and tokenomics.",
+   [
+    "cryptocurrency",
+    "bitcoin",
+    "ether",
+    "token",
+    "erc",
+    "supply",
+    "tokenomics",
+    "coin"
+   ]
+  ],
+  [
+   "cry-custody",
+   "Wallets and Custody",
+   "crypto",
+   "Wallets, private keys, seed phrases, self custody versus custodians, and security.",
+   [
+    "wallet",
+    "private",
+    "key",
+    "seed",
+    "phrase",
+    "custody",
+    "hardware",
+    "self",
+    "custodian"
+   ]
+  ],
+  [
+   "cry-defi",
+   "Crypto Exchanges and DeFi",
+   "crypto",
+   "Centralized exchanges, decentralized exchanges, liquidity pools, lending and their risks.",
+   [
+    "exchange",
+    "defi",
+    "decentralized",
+    "liquidity",
+    "pool",
+    "lending",
+    "yield",
+    "swap",
+    "amm"
+   ]
+  ],
+  [
+   "cry-digital-currencies",
+   "Stablecoins and Central Bank Digital Currencies",
+   "crypto",
+   "Fiat-backed and algorithmic stablecoins, reserves, and central bank digital currencies.",
+   [
+    "stablecoin",
+    "cbdc",
+    "digital",
+    "currency",
+    "reserve",
+    "fiat",
+    "peg",
+    "central",
+    "bank"
+   ]
+  ],
+  [
+   "cry-regulation",
+   "Crypto Regulation and Tax",
+   "crypto",
+   "How crypto is regulated and taxed by jurisdiction: securities status, licensing, travel rule and reporting.",
+   [
+    "crypto",
+    "regulation",
+    "tax",
+    "securities",
+    "license",
+    "travel",
+    "rule",
+    "reporting",
+    "jurisdiction"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cry-blockchain-explainer",
+   "cry-chains",
+   "Blockchain Explainer",
+   "Explains how a blockchain records and confirms transactions and its trust assumptions.",
+   "semantic",
+   [
+    [
+     "cry-chain",
+     "primary"
+    ],
+    [
+     "cry-checker",
+     "checker"
+    ],
+    [
+     "cry-token",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cry-token-analyzer",
+   "cry-tokens",
+   "Token Analyzer",
+   "Analyzes a token's supply, distribution, utility and risks.",
+   "semantic",
+   [
+    [
+     "cry-token",
+     "primary"
+    ],
+    [
+     "cry-checker",
+     "checker"
+    ],
+    [
+     "cry-custody",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cry-custody-option-comparator",
+   "cry-custody",
+   "Custody Option Comparator",
+   "Compares self custody, hardware wallets and custodians by risk and control.",
+   "semantic",
+   [
+    [
+     "cry-custody",
+     "primary"
+    ],
+    [
+     "cry-checker",
+     "checker"
+    ],
+    [
+     "cry-defi",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cry-defi-risk-reviewer",
+   "cry-defi",
+   "DeFi Risk Reviewer",
+   "Reviews a DeFi protocol's smart contract, liquidity and counterparty risks.",
+   "semantic",
+   [
+    [
+     "cry-defi",
+     "primary"
+    ],
+    [
+     "cry-checker",
+     "checker"
+    ],
+    [
+     "cry-cbdc",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cry-stablecoin-reserve-checker",
+   "cry-digital-currencies",
+   "Stablecoin Reserve Checker",
+   "Explains a stablecoin's peg mechanism and how its reserves are attested.",
+   "semantic",
+   [
+    [
+     "cry-cbdc",
+     "primary"
+    ],
+    [
+     "cry-checker",
+     "checker"
+    ],
+    [
+     "cry-chain",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cry-crypto-regulatory-map",
+   "cry-regulation",
+   "Crypto Regulatory Map",
+   "Maps how a crypto activity is regulated in a jurisdiction and what must be reported.",
+   "procedural",
+   [
+    [
+     "cry-cbdc",
+     "primary"
+    ],
+    [
+     "cry-checker",
+     "checker"
+    ],
+    [
+     "cry-chain",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "cry-chain": "Blockchain Agent",
+  "cry-token": "Token Agent",
+  "cry-custody": "Wallet and Custody Agent",
+  "cry-defi": "DeFi Agent",
+  "cry-cbdc": "Digital Currency Agent",
+  "cry-checker": "Crypto Checker Agent"
+ },
+ "mcp": [
+  [
+   "CCXT MCP",
+   null,
+   "CCXT MCP server: cryptocurrency exchange market data, tickers, order books, trades and accounts across many crypto exchanges.",
+   [],
+   "web-listed",
+   "https://github.com/doggybee/mcp-server-ccxt"
+  ],
+  [
+   "Coinbase AgentKit",
+   null,
+   "Coinbase AgentKit: onchain wallets, token transfers, swaps and smart contract actions on crypto blockchains, with an MCP extension.",
+   [],
+   "web-listed",
+   "https://github.com/coinbase/agentkit"
+  ]
+ ],
+ "lexicon": {
+  "crychains": "blockchain consensus proof work stake node block smart contract ledger",
+  "crytokens": "cryptocurrency bitcoin ether token erc supply tokenomics coin",
+  "crycustody": "wallet private key seed phrase custody hardware self custodian",
+  "crydefi": "exchange defi decentralized liquidity pool lending yield swap amm",
+  "crydigitalcurrencies": "stablecoin cbdc digital currency reserve fiat peg central bank",
+  "cryregulation": "crypto regulation tax securities license travel rule reporting jurisdiction"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "CCXT MCP": "repository exists (git ls-remote https://github.com/doggybee/mcp-server-ccxt, 2026-10-31); description summarises its public README; tool list not re-read; can trade on exchanges: context only here",
+   "Coinbase AgentKit": "repository exists (git ls-remote https://github.com/coinbase/agentkit, 2026-10-31); description summarises its public README; tool list not re-read; can move crypto: context only here"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

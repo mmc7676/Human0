@@ -1,0 +1,649 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "jobseeker",
+ "topic": {
+  "id": "jobseeker",
+  "label": "JobSeeker",
+  "desc": "Job seeking end to end: target roles, resume and profile, search, applications, interviews and offers."
+ },
+ "concepts": [
+  [
+   "js-targeting",
+   "Role Targeting",
+   "jobseeker",
+   "Defining the roles, industries, seniority, location and pay a candidate is aiming for, and where demand for them is.",
+   [
+    "target",
+    "role",
+    "title",
+    "seniority",
+    "industry",
+    "location",
+    "salary",
+    "preference",
+    "demand"
+   ]
+  ],
+  [
+   "js-resume",
+   "Resume and Profile",
+   "jobseeker",
+   "Resume and professional-profile content tailored to a posting, truthful, readable by applicant tracking systems.",
+   [
+    "resume",
+    "cv",
+    "profile",
+    "headline",
+    "keyword",
+    "ats",
+    "formatting",
+    "achievement"
+   ]
+  ],
+  [
+   "js-search",
+   "Job Search",
+   "jobseeker",
+   "Finding, filtering and ranking postings across job boards and removing duplicates and weak listings.",
+   [
+    "job",
+    "board",
+    "posting",
+    "listing",
+    "search",
+    "filter",
+    "remote",
+    "duplicate"
+   ]
+  ],
+  [
+   "js-application",
+   "Applications and Outreach",
+   "jobseeker",
+   "Cover letters, application tracking, recruiter and referral outreach and follow-ups.",
+   [
+    "application",
+    "cover",
+    "letter",
+    "tracker",
+    "referral",
+    "recruiter",
+    "follow-up",
+    "outreach"
+   ]
+  ],
+  [
+   "js-interview",
+   "Interview Preparation",
+   "jobseeker",
+   "Scheduling, story preparation and practice for behavioral and technical interviews.",
+   [
+    "interview",
+    "schedule",
+    "behavioral",
+    "star",
+    "story",
+    "practice",
+    "question",
+    "feedback"
+   ]
+  ],
+  [
+   "js-offer",
+   "Offers and Negotiation",
+   "jobseeker",
+   "Comparing offers, researching the employer and planning a counter-offer.",
+   [
+    "offer",
+    "compensation",
+    "equity",
+    "benefits",
+    "negotiation",
+    "counter",
+    "employer"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "js-role-profile-builder",
+   "js-targeting",
+   "Target Role Profile Builder",
+   "Builds a target-role profile from the candidate's background, preferences, location and salary range, listing titles to search and deal-breakers.",
+   "semantic",
+   [
+    [
+     "js-strategist",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-market-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-market-demand-scanner",
+   "js-targeting",
+   "Market Demand Scanner",
+   "Reads current postings to report which titles, required skills and salary ranges are in demand for the target role and location.",
+   "semantic",
+   [
+    [
+     "js-market-analyst",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-job-searcher",
+     "support"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-employer-shortlister",
+   "js-targeting",
+   "Employer Shortlister",
+   "Builds a ranked shortlist of employers by fit, size, hiring activity and funding signals from company data.",
+   "procedural",
+   [
+    [
+     "js-employer-researcher",
+     "primary"
+    ],
+    [
+     "js-strategist",
+     "checker"
+    ],
+    [
+     "js-market-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-resume-tailor",
+   "js-resume",
+   "Resume Tailor",
+   "Rewrites resume bullets to match a posting's requirements using only achievements the candidate can support, and maps each keyword to evidence.",
+   "procedural",
+   [
+    [
+     "js-resume-writer",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-ats-checker",
+     "support"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-ats-keyword-checker",
+   "js-resume",
+   "ATS Keyword Checker",
+   "Checks keyword coverage and formatting risks that applicant tracking systems parse badly, such as tables, columns and images.",
+   "procedural",
+   [
+    [
+     "js-ats-checker",
+     "primary"
+    ],
+    [
+     "js-resume-writer",
+     "checker"
+    ],
+    [
+     "js-job-searcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-profile-optimizer",
+   "js-resume",
+   "Professional Profile Optimizer",
+   "Rewrites the headline, about section and experience entries of an online professional profile so they match the target role.",
+   "semantic",
+   [
+    [
+     "js-resume-writer",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ],
+    [
+     "js-market-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-job-board-searcher",
+   "js-search",
+   "Job Board Searcher",
+   "Runs saved search criteria against job boards and returns postings with title, company, location and a link to the original listing.",
+   "procedural",
+   [
+    [
+     "js-job-searcher",
+     "primary"
+    ],
+    [
+     "js-listing-triager",
+     "checker"
+    ],
+    [
+     "js-market-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-posting-triage",
+   "js-search",
+   "Posting Triage",
+   "Scores each posting against the target-role profile and flags vague pay, unrealistic requirements and repeated reposts.",
+   "semantic",
+   [
+    [
+     "js-listing-triager",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-job-searcher",
+     "support"
+    ],
+    [
+     "js-employer-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-listing-deduplicator",
+   "js-search",
+   "Listing Deduplicator",
+   "Detects the same job reposted across boards or dates and keeps one record with every source link.",
+   "procedural",
+   [
+    [
+     "js-job-searcher",
+     "primary"
+    ],
+    [
+     "js-application-tracker",
+     "checker"
+    ],
+    [
+     "js-listing-triager",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-cover-letter-writer",
+   "js-application",
+   "Cover Letter Writer",
+   "Drafts a short cover letter for one posting from the tailored resume and the employer research, without inventing experience.",
+   "semantic",
+   [
+    [
+     "js-outreach-writer",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-resume-writer",
+     "support"
+    ],
+    [
+     "js-employer-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-application-tracker-keeper",
+   "js-application",
+   "Application Tracker Keeper",
+   "Records each application with stage, date, contact and next follow-up in a tracker database and lists what is overdue.",
+   "procedural",
+   [
+    [
+     "js-application-tracker",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-interview-scheduler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-networking-outreach-drafter",
+   "js-application",
+   "Networking Outreach Drafter",
+   "Drafts referral requests, recruiter messages and follow-ups, each short, specific and easy to decline.",
+   "semantic",
+   [
+    [
+     "js-outreach-writer",
+     "primary"
+    ],
+    [
+     "js-application-tracker",
+     "checker"
+    ],
+    [
+     "js-employer-researcher",
+     "support"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-interview-scheduler-planner",
+   "js-interview",
+   "Interview Scheduler",
+   "Finds free time on the calendar, creates interview events with preparation reminders and avoids clashes with other interviews.",
+   "procedural",
+   [
+    [
+     "js-interview-scheduler",
+     "primary"
+    ],
+    [
+     "js-application-tracker",
+     "checker"
+    ],
+    [
+     "js-outreach-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-behavioral-story-coach",
+   "js-interview",
+   "Behavioral Story Coach",
+   "Turns the candidate's real experience into situation, action, result stories and rehearses them against common behavioral questions.",
+   "semantic",
+   [
+    [
+     "js-interview-coach",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-resume-writer",
+     "support"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-technical-interview-prep",
+   "js-interview",
+   "Technical Interview Prep",
+   "Builds a practice plan of role-specific questions with mock-interview feedback and a list of weak topics to revisit.",
+   "procedural",
+   [
+    [
+     "js-interview-coach",
+     "primary"
+    ],
+    [
+     "js-market-analyst",
+     "checker"
+    ],
+    [
+     "js-employer-researcher",
+     "support"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-offer-comparator",
+   "js-offer",
+   "Offer Comparator",
+   "Compares offers on base pay, bonus, equity, benefits and commute using the candidate's own weights, and shows the assumptions.",
+   "procedural",
+   [
+    [
+     "js-offer-analyst",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-strategist",
+     "support"
+    ],
+    [
+     "js-employer-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-negotiation-planner",
+   "js-offer",
+   "Negotiation Planner",
+   "Plans a counter-offer with a target, a floor and ranked trade-offs, and drafts the message and call talking points.",
+   "semantic",
+   [
+    [
+     "js-offer-analyst",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-outreach-writer",
+     "support"
+    ],
+    [
+     "js-market-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "js-employer-due-diligence",
+   "js-offer",
+   "Employer Due Diligence",
+   "Researches an employer's stability, funding, reviews and recent news before an offer is accepted and reports what could not be verified.",
+   "semantic",
+   [
+    [
+     "js-employer-researcher",
+     "primary"
+    ],
+    [
+     "js-claim-verifier",
+     "checker"
+    ],
+    [
+     "js-offer-analyst",
+     "support"
+    ],
+    [
+     "js-market-analyst",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "js-strategist": "Career Strategist Agent",
+  "js-market-analyst": "Market Intelligence Agent",
+  "js-resume-writer": "Resume Writer Agent",
+  "js-ats-checker": "ATS Compliance Checker Agent",
+  "js-job-searcher": "Job Search Agent",
+  "js-listing-triager": "Listing Triage Agent",
+  "js-application-tracker": "Application Tracker Agent",
+  "js-outreach-writer": "Outreach Writer Agent",
+  "js-interview-scheduler": "Interview Scheduler Agent",
+  "js-interview-coach": "Interview Coach Agent",
+  "js-offer-analyst": "Offer Analyst Agent",
+  "js-employer-researcher": "Employer Research Agent",
+  "js-claim-verifier": "Claim Verifier Agent"
+ },
+ "mcp": [
+  [
+   "Indeed",
+   "78cb9092-b837-4439-845d-fdccd5723e7f",
+   "Search for jobs on Indeed",
+   [
+    "search_jobs",
+    "get_job_details"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "ZipRecruiter",
+   "8f48727e-897b-4012-8427-147b4ce5719a",
+   "Job search made easy",
+   [
+    "search_jobs"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Dice",
+   "3035842b-464b-45f0-b8f0-1ddc01fb2eb2",
+   "Find active tech jobs on Dice",
+   [
+    "search_jobs"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Google Calendar",
+   "2a838eaa-f7b4-4bc2-bd47-c326f3c813c5",
+   "Manage your schedule and coordinate meetings effortlessly",
+   [
+    "create_event",
+    "delete_event",
+    "get_event",
+    "list_calendars",
+    "list_events",
+    "respond_to_event",
+    "search_events",
+    "suggest_time"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Crustdata",
+   "f9db3929-fb0b-4f1c-bcce-41d8cf014257",
+   "Search and enrich B2B company and people data",
+   [
+    "crustdata_company_identify",
+    "crustdata_company_enrich",
+    "crustdata_company_search_db",
+    "crustdata_company_search",
+    "crustdata_company_linkedin_posts",
+    "crustdata_job_search",
+    "crustdata_job_search_live",
+    "crustdata_batch_job_search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "jobtarget": "target role title seniority industry demand shortlist employer",
+  "resumecraft": "resume tailor bullets ats formatting profile headline achievement",
+  "postings": "job board posting listing search triage deduplicator repost salary",
+  "outreach": "cover letter application tracker referral recruiter follow outreach",
+  "interviewprep": "interview reminders behavioral story practice mock",
+  "offerdesk": "offer compensation equity benefits negotiation counter diligence"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "Indeed": "directory listing; job-seeker search tools; tool names are the directory's visible sample; connector is not installed or tested",
+   "ZipRecruiter": "directory listing, authless per the directory; tool names are the directory's visible sample; connector is not installed or tested",
+   "Dice": "directory listing, tech jobs, authless per the directory; tool names are the directory's visible sample; connector is not installed or tested",
+   "Google Calendar": "directory listing; tool names are the directory's visible sample; connector is not installed or tested",
+   "Crustdata": "directory listing, B2B company and people data; used here for employer research; tool names are the directory's visible sample; connector is not installed or tested",
+   "excluded": "Greenhouse, Ashby, Teamtailor and LinkedIn Hiring Pro were seen in the directory but are employer-side recruiting tools, not job-seeker tools, so they are not listed"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified directory listings only: not connected, not authenticated, not called. Tool lists are the directory's sample (the listing shows more). Agent-to-MCP gates are derived by the app, not declared here.",
+  "v04_lexicon_freed": [
+   [
+    "interviewprep",
+    [
+     "question"
+    ]
+   ]
+  ]
+ }
+}

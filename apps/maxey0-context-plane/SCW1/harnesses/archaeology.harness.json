@@ -1,0 +1,773 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "archaeology",
+  "label": "Archaeology",
+  "desc": "Archaeology: the study of the human past through material remains, excavation, dating and spatial analysis."
+ },
+ "concepts": [
+  {
+   "id": "arch-bioarchaeology",
+   "label": "Bioarchaeology and Environmental Archaeology",
+   "desc": "Human remains, animal bones and plant remains used to reconstruct diet, health and environment.",
+   "keywords": [
+    "human remains",
+    "zooarchaeology",
+    "archaeobotany",
+    "isotope",
+    "diet",
+    "health",
+    "pollen",
+    "environment"
+   ],
+   "topic": "archaeology",
+   "source": "archaeology",
+   "related": []
+  },
+  {
+   "id": "arch-dating-chronology",
+   "label": "Dating and Chronology",
+   "desc": "Relative and absolute dating methods, including seriation, radiocarbon, dendrochronology and luminescence.",
+   "keywords": [
+    "radiocarbon",
+    "calibration",
+    "dendrochronology",
+    "seriation",
+    "luminescence",
+    "chronology",
+    "typology",
+    "bayesian"
+   ],
+   "topic": "archaeology",
+   "source": "archaeology",
+   "related": []
+  },
+  {
+   "id": "arch-excavation-stratigraphy",
+   "label": "Excavation and Stratigraphy",
+   "desc": "Controlled excavation, context recording and stratigraphic sequencing of deposits.",
+   "keywords": [
+    "excavation",
+    "stratigraphy",
+    "context",
+    "trench",
+    "harris matrix",
+    "recording",
+    "deposit",
+    "feature"
+   ],
+   "topic": "archaeology",
+   "source": "archaeology",
+   "related": []
+  },
+  {
+   "id": "arch-field-survey",
+   "label": "Field Survey and Remote Sensing",
+   "desc": "Locating sites through pedestrian survey, aerial and satellite imagery, lidar and geophysics, managed in GIS.",
+   "keywords": [
+    "survey",
+    "remote sensing",
+    "lidar",
+    "geophysics",
+    "gis",
+    "site",
+    "landscape",
+    "satellite"
+   ],
+   "topic": "archaeology",
+   "source": "archaeology",
+   "related": [
+    "earth-geospatial-observation"
+   ]
+  },
+  {
+   "id": "arch-heritage-theory",
+   "label": "Archaeological Theory and Heritage",
+   "desc": "Interpretive frameworks and the ethics and law of cultural heritage management.",
+   "keywords": [
+    "theory",
+    "processual",
+    "post-processual",
+    "heritage",
+    "ethics",
+    "repatriation",
+    "conservation",
+    "community"
+   ],
+   "topic": "archaeology",
+   "source": "archaeology",
+   "related": []
+  },
+  {
+   "id": "arch-material-culture",
+   "label": "Material Culture and Artifact Analysis",
+   "desc": "Classification and analysis of lithics, ceramics, metals and other artifacts for technology and exchange.",
+   "keywords": [
+    "artifact",
+    "ceramic",
+    "lithic",
+    "metal",
+    "typology",
+    "provenance",
+    "residue",
+    "exchange"
+   ],
+   "topic": "archaeology",
+   "source": "archaeology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "arch-faunal-analysis",
+   "concept": "arch-bioarchaeology",
+   "label": "Zooarchaeological Analysis",
+   "desc": "Quantifies animal bone assemblages and checks counts and taphonomy with standard indices.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1030",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1031",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-isotope-diet",
+   "concept": "arch-bioarchaeology",
+   "label": "Isotope Diet Reconstruction",
+   "desc": "Reconstructs diet and mobility from stable isotope values and checks them against regional baselines.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1030",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-paleo-health",
+   "concept": "arch-bioarchaeology",
+   "label": "Skeletal Health Assessment",
+   "desc": "Assesses health indicators on human remains and checks diagnoses against bioarchaeology literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1030",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1034",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-chronology-synthesis",
+   "concept": "arch-dating-chronology",
+   "label": "Regional Chronology Synthesis",
+   "desc": "Synthesises a regional chronology from published dates and checks it for outliers and source quality.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1035",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1036",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-radiocarbon-calibrate",
+   "concept": "arch-dating-chronology",
+   "label": "Radiocarbon Calibration",
+   "desc": "Calibrates radiocarbon ages with a current curve and checks the ranges with Bayesian modeling against stratigraphy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1035",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1037",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-seriation",
+   "concept": "arch-dating-chronology",
+   "label": "Seriation and Typological Dating",
+   "desc": "Orders assemblages by seriation and checks the sequence against independent absolute dates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1035",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1031",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-context-recording",
+   "concept": "arch-excavation-stratigraphy",
+   "label": "Context Recording",
+   "desc": "Records excavation contexts with standard forms and checks completeness and consistency of the record.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1037",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1031",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-harris-matrix",
+   "concept": "arch-excavation-stratigraphy",
+   "label": "Harris Matrix Construction",
+   "desc": "Builds a Harris matrix from stratigraphic relationships and checks it for cycles and contradictions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1037",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1035",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-trench-strategy",
+   "concept": "arch-excavation-stratigraphy",
+   "label": "Excavation Strategy Design",
+   "desc": "Designs trench placement and sampling for research questions and checks the plan against survey data and literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1037",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1036",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-geophysics-plan",
+   "concept": "arch-field-survey",
+   "label": "Geophysical Survey Planning",
+   "desc": "Plans magnetometry or ground-penetrating radar survey grids and checks coverage and resolution against targets.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1036",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1037",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-lidar-review",
+   "concept": "arch-field-survey",
+   "label": "Lidar and Imagery Interpretation",
+   "desc": "Interprets lidar and satellite imagery for features and checks each identification by ground truth or second review.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1036",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1037",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-site-prediction",
+   "concept": "arch-field-survey",
+   "label": "Site Location Mapping",
+   "desc": "Maps survey results and candidate sites in GIS and checks predicted locations against known site records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1036",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1034",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-heritage-assessment",
+   "concept": "arch-heritage-theory",
+   "label": "Heritage Impact Assessment",
+   "desc": "Assesses development impacts on heritage sites using GIS and checks the assessment against legal and ethics standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1034",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1036",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-interpretive-framework",
+   "concept": "arch-heritage-theory",
+   "label": "Interpretive Framework Comparison",
+   "desc": "Compares processual and post-processual interpretations of a site and checks arguments against evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1033",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1037",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-repatriation-review",
+   "concept": "arch-heritage-theory",
+   "label": "Repatriation and Community Review",
+   "desc": "Reviews repatriation claims and community consultation and checks them against law and ethics codes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1034",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1030",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-ceramic-typology",
+   "concept": "arch-material-culture",
+   "label": "Ceramic Typology Classification",
+   "desc": "Classifies ceramic sherds by fabric and form and checks classification against reference collections.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1031",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1032",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1035",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-lithic-analysis",
+   "concept": "arch-material-culture",
+   "label": "Lithic Technology Analysis",
+   "desc": "Analyses lithic reduction sequences and checks interpretations against experimental and published data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1031",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1037",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  },
+  {
+   "id": "arch-provenance-study",
+   "concept": "arch-material-culture",
+   "label": "Provenance and Exchange Study",
+   "desc": "Interprets compositional provenance data for artifacts and checks exchange routes on a map against source locations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1031",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1036",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1033",
+     "role": "support"
+    }
+   ],
+   "source": "archaeology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1030",
+   "name": "Bioarchaeologist",
+   "legacy_key": "arch-bioarch",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1031",
+   "name": "Artifact Analyst",
+   "legacy_key": "arch-artifacts",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1032",
+   "name": "Archaeological Methods Checker",
+   "legacy_key": "arch-methods",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1033",
+   "name": "Archaeological Literature Reviewer",
+   "legacy_key": "arch-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1034",
+   "name": "Heritage Management Advisor",
+   "legacy_key": "arch-heritage",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1035",
+   "name": "Chronology and Dating Specialist",
+   "legacy_key": "arch-dating",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1036",
+   "name": "Archaeological Survey Mapper",
+   "legacy_key": "arch-surveyor",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1037",
+   "name": "Excavation Director",
+   "legacy_key": "arch-excavator",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1032",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "archaeology",
+   "score": 0.1134,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1036",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "archaeology",
+   "score": 0.1114,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1037",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "archaeology",
+   "score": 0.1114,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1036",
+    "skill": "arch-lidar-review"
+   }
+  }
+ ],
+ "lexicon": {
+  "arch-survey": "survey lidar geophysics gis satellite landscape",
+  "arch-dig": "excavation stratigraphy context trench matrix recording",
+  "arch-date": "radiocarbon calibration dendrochronology seriation luminescence chronology bayesian",
+  "arch-object": "artifact ceramic lithic metal provenance residue",
+  "arch-remains": "zooarchaeology archaeobotany isotope diet pollen skeletal",
+  "arch-heritage": "heritage processual repatriation conservation community ethics"
+ },
+ "sources": [
+  "archaeology"
+ ]
+}

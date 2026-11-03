@@ -1,0 +1,805 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "energy-science-and-engineering",
+  "label": "Energy Science and Engineering",
+  "desc": "Energy Science and Engineering: converting, storing, delivering and managing energy, and assessing its economic and environmental impact."
+ },
+ "concepts": [
+  {
+   "id": "ese-energy-storage",
+   "label": "Energy Storage and Electrochemistry",
+   "desc": "Batteries, fuel cells, hydrogen and other storage technologies and their performance and degradation.",
+   "keywords": [
+    "storage",
+    "battery",
+    "lithium-ion",
+    "electrochemistry",
+    "fuel cell",
+    "hydrogen",
+    "degradation",
+    "state of charge"
+   ],
+   "topic": "energy-science-and-engineering",
+   "source": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-energy-systems-policy",
+   "label": "Energy Systems Analysis, Economics and Policy",
+   "desc": "Life cycle assessment, levelized cost, decarbonization pathways and the policy that shapes energy transitions.",
+   "keywords": [
+    "lcoe",
+    "life cycle",
+    "decarbonization",
+    "carbon",
+    "policy",
+    "pathway",
+    "economics",
+    "efficiency standard"
+   ],
+   "topic": "energy-science-and-engineering",
+   "source": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-fuels-combustion",
+   "label": "Fuels, Combustion and Nuclear Energy",
+   "desc": "Fossil, bio and nuclear fuels, combustion chemistry, emissions and reactor fundamentals.",
+   "keywords": [
+    "fuel",
+    "combustion",
+    "emissions",
+    "biofuel",
+    "nuclear",
+    "reactor",
+    "fission",
+    "natural gas"
+   ],
+   "topic": "energy-science-and-engineering",
+   "source": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-power-grids",
+   "label": "Power Grids and Integration",
+   "desc": "Transmission, distribution, dispatch and integrating variable renewables while keeping the grid reliable.",
+   "keywords": [
+    "grid",
+    "transmission",
+    "dispatch",
+    "demand response",
+    "reliability",
+    "frequency",
+    "microgrid"
+   ],
+   "topic": "energy-science-and-engineering",
+   "source": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-renewable-energy",
+   "label": "Renewable Energy Resources",
+   "desc": "Solar, wind, hydro and geothermal resources, their variability and the technologies that harvest them.",
+   "keywords": [
+    "renewable",
+    "solar",
+    "photovoltaic",
+    "wind",
+    "hydro",
+    "geothermal",
+    "capacity factor",
+    "resource",
+    "wind turbine",
+    "variability"
+   ],
+   "topic": "energy-science-and-engineering",
+   "source": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-thermodynamics-conversion",
+   "label": "Thermodynamics and Energy Conversion",
+   "desc": "Laws of thermodynamics applied to power cycles, heat engines, heat pumps and efficiency limits.",
+   "keywords": [
+    "thermodynamics",
+    "efficiency",
+    "cycle",
+    "rankine",
+    "heat engine",
+    "heat pump",
+    "exergy",
+    "turbine"
+   ],
+   "topic": "energy-science-and-engineering",
+   "source": "energy-science-and-engineering",
+   "related": [
+    "me-thermodynamics-fluids"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "ese-battery-sizer",
+   "concept": "ese-energy-storage",
+   "label": "Battery System Sizer",
+   "desc": "Sizes battery storage for a load and duty cycle and checks depth of discharge and degradation limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1254",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1256",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-cell-chemistry-comparer",
+   "concept": "ese-energy-storage",
+   "label": "Cell Chemistry Comparer",
+   "desc": "Compares electrochemical storage chemistries by energy density, cost and lifetime and checks figures against literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1254",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-lca-assessor",
+   "concept": "ese-energy-systems-policy",
+   "label": "Life Cycle Assessor",
+   "desc": "Performs life cycle carbon accounting for an energy technology and checks system boundaries and inventory data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1257",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1258",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-lcoe-calculator",
+   "concept": "ese-energy-systems-policy",
+   "label": "LCOE Calculator",
+   "desc": "Computes levelized cost of energy with discounting and checks sensitivity to capital cost and capacity factor.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1257",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-pathway-evaluator",
+   "concept": "ese-energy-systems-policy",
+   "label": "Decarbonization Pathway Evaluator",
+   "desc": "Evaluates energy transition scenarios against emissions targets and checks assumptions with cited data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1062",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1256",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-combustion-calculator",
+   "concept": "ese-fuels-combustion",
+   "label": "Combustion Calculator",
+   "desc": "Computes stoichiometry, adiabatic flame temperature and emissions and checks mass balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1258",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1259",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-reactor-explainer",
+   "concept": "ese-fuels-combustion",
+   "label": "Nuclear Reactor Explainer",
+   "desc": "Explains reactor physics, fuel cycles and safety systems and checks claims against technical references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1258",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-dispatch-optimizer",
+   "concept": "ese-power-grids",
+   "label": "Economic Dispatch Optimizer",
+   "desc": "Solves unit commitment and dispatch problems and checks constraint satisfaction and marginal prices.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1256",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-integration-studier",
+   "concept": "ese-power-grids",
+   "label": "Renewable Integration Studier",
+   "desc": "Assesses hosting capacity and curtailment for added renewables and checks frequency and voltage limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1256",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1260",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-microgrid-designer",
+   "concept": "ese-power-grids",
+   "label": "Microgrid Designer",
+   "desc": "Designs microgrids with generation, storage and controls and checks reliability under outage scenarios.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1256",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1254",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "atmo-site-mapping",
+   "concept": "ese-renewable-energy",
+   "label": "Renewable Site Mapper",
+   "desc": "Maps candidate renewable sites against resource and land constraints, checked by layer overlay rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1069",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1066",
+     "role": "support"
+    }
+   ],
+   "source": "atmosphere-energy"
+  },
+  {
+   "id": "atmo-solar-yield",
+   "concept": "ese-renewable-energy",
+   "label": "Solar Yield Estimator",
+   "desc": "Estimates photovoltaic yield from irradiance and panel parameters, checked against capacity factor benchmarks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1069",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1065",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1066",
+     "role": "support"
+    }
+   ],
+   "source": "atmosphere-energy"
+  },
+  {
+   "id": "atmo-wind-resource",
+   "concept": "ese-renewable-energy",
+   "label": "Wind Resource Assessment",
+   "desc": "Fits wind speed distributions and turbine power curves to estimate annual output, checked by Weibull fit quality.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1069",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1066",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1067",
+     "role": "support"
+    }
+   ],
+   "source": "atmosphere-energy"
+  },
+  {
+   "id": "ese-pv-yield-estimator",
+   "concept": "ese-renewable-energy",
+   "label": "PV Yield Estimator",
+   "desc": "Estimates photovoltaic energy yield from irradiance and system design and checks losses and capacity factor.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1260",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1256",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-site-screener",
+   "concept": "ese-renewable-energy",
+   "label": "Renewable Site Screener",
+   "desc": "Screens candidate sites by resource, land and grid access and checks layers with spatial data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1260",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-wind-resource-assessor",
+   "concept": "ese-renewable-energy",
+   "label": "Wind Resource Assessor",
+   "desc": "Fits wind speed distributions and turbine power curves and checks annual energy against measured data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1260",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-cycle-analyzer",
+   "concept": "ese-thermodynamics-conversion",
+   "label": "Power Cycle Analyzer",
+   "desc": "Computes efficiency and work of Rankine, Brayton and combined cycles and checks energy balance closure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1259",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1258",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-exergy-auditor",
+   "concept": "ese-thermodynamics-conversion",
+   "label": "Exergy Auditor",
+   "desc": "Locates exergy destruction in a process and checks totals against first and second law balances.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1259",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-heat-pump-sizer",
+   "concept": "ese-thermodynamics-conversion",
+   "label": "Heat Pump Sizer",
+   "desc": "Sizes heat pumps from load and climate data and checks coefficient of performance across temperatures.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1259",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1062",
+   "name": "Energy Policy Analyst",
+   "legacy_key": "atmo-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1065",
+   "name": "Units and Balance Checker",
+   "legacy_key": "atmo-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1066",
+   "name": "Climate Data Analyst",
+   "legacy_key": "atmo-data",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1067",
+   "name": "Atmospheric Dynamics Analyst",
+   "legacy_key": "atmo-meteorologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1069",
+   "name": "Renewable Resource Analyst",
+   "legacy_key": "atmo-renewables",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1254",
+   "name": "Energy Storage Engineer",
+   "legacy_key": "ese-storage",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1255",
+   "name": "Energy Data Reviewer",
+   "legacy_key": "ese-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1256",
+   "name": "Grid Integration Engineer",
+   "legacy_key": "ese-grid",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1257",
+   "name": "Energy Systems Analyst",
+   "legacy_key": "ese-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1258",
+   "name": "Fuels and Combustion Engineer",
+   "legacy_key": "ese-fuels",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1259",
+   "name": "Thermal Energy Engineer",
+   "legacy_key": "ese-thermo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1260",
+   "name": "Solar and Wind Analyst",
+   "legacy_key": "ese-solar",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "ese-thermo": "thermodynamics cycle rankine brayton heat turbine exergy",
+  "ese-renew": "renewable solar photovoltaic wind hydro geothermal irradiance",
+  "ese-store": "storage battery lithium electrochemistry hydrogen degradation",
+  "ese-grid": "grid transmission dispatch reliability frequency microgrid curtailment",
+  "ese-fuel": "fuel combustion emissions biofuel nuclear reactor fission",
+  "ese-sys": "lcoe life decarbonization carbon policy pathway economics"
+ },
+ "sources": [
+  "energy-science-and-engineering"
+ ]
+}

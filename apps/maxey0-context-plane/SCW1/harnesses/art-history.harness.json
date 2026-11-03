@@ -1,0 +1,679 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "art-history",
+  "label": "Art History",
+  "desc": "Art History: the study of visual art and architecture across periods and cultures through formal, contextual and theoretical analysis."
+ },
+ "concepts": [
+  {
+   "id": "arth-architecture-history",
+   "label": "History of Architecture",
+   "desc": "Buildings, urban spaces and architectural theory from ancient temples to modern design.",
+   "keywords": [
+    "architecture",
+    "building",
+    "plan",
+    "elevation",
+    "gothic",
+    "urban",
+    "architect",
+    "structure"
+   ],
+   "topic": "art-history",
+   "source": "art-history",
+   "related": []
+  },
+  {
+   "id": "arth-formal-analysis",
+   "label": "Formal and Visual Analysis",
+   "desc": "Description and analysis of composition, line, colour, space and medium in a work of art.",
+   "keywords": [
+    "composition",
+    "line",
+    "color",
+    "space",
+    "medium",
+    "technique",
+    "visual",
+    "description"
+   ],
+   "topic": "art-history",
+   "source": "art-history",
+   "related": []
+  },
+  {
+   "id": "arth-global-art",
+   "label": "Global and Non-Western Art",
+   "desc": "Art of Asia, Africa, the Americas, Oceania and the Islamic world studied in its own terms and contexts.",
+   "keywords": [
+    "global",
+    "asian",
+    "african",
+    "islamic",
+    "indigenous",
+    "oceanic",
+    "colonial",
+    "cross-cultural"
+   ],
+   "topic": "art-history",
+   "source": "art-history",
+   "related": []
+  },
+  {
+   "id": "arth-iconography-meaning",
+   "label": "Iconography and Iconology",
+   "desc": "Identification of subjects, symbols and attributes and interpretation of their cultural meaning.",
+   "keywords": [
+    "iconography",
+    "iconology",
+    "symbol",
+    "attribute",
+    "allegory",
+    "religious",
+    "myth",
+    "panofsky"
+   ],
+   "topic": "art-history",
+   "source": "art-history",
+   "related": []
+  },
+  {
+   "id": "arth-museums-provenance-theory",
+   "label": "Museums, Provenance and Theory",
+   "desc": "Collecting, provenance research, display and theoretical approaches such as feminism, social history and postcolonialism.",
+   "keywords": [
+    "museum",
+    "provenance",
+    "collecting",
+    "exhibition",
+    "feminist",
+    "postcolonial",
+    "social history",
+    "theory"
+   ],
+   "topic": "art-history",
+   "source": "art-history",
+   "related": []
+  },
+  {
+   "id": "arth-periods-styles",
+   "label": "Western Periods and Styles",
+   "desc": "Major Western art periods from antiquity through the Renaissance, Baroque and modernism.",
+   "keywords": [
+    "renaissance",
+    "baroque",
+    "medieval",
+    "classical",
+    "modernism",
+    "impressionism",
+    "style",
+    "period"
+   ],
+   "topic": "art-history",
+   "source": "art-history",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "arth-building-analysis",
+   "concept": "arth-architecture-history",
+   "label": "Building Plan and Elevation Analysis",
+   "desc": "Analyses a building's plan, elevation and structure and checks measurements against survey drawings.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1038",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1039",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-style-architecture",
+   "concept": "arth-architecture-history",
+   "label": "Architectural Style Identification",
+   "desc": "Identifies architectural styles such as Gothic or modernist and checks diagnostic features against reference works.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1038",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1041",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-urban-history",
+   "concept": "arth-architecture-history",
+   "label": "Urban Space History",
+   "desc": "Traces the history of an urban space and checks phases against maps and building records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1038",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1042",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1043",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-comparative-analysis",
+   "concept": "arth-formal-analysis",
+   "label": "Comparative Visual Analysis",
+   "desc": "Compares two works side by side for form and technique and checks the comparison against catalog data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1039",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1041",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-formal-description",
+   "concept": "arth-formal-analysis",
+   "label": "Formal Description",
+   "desc": "Writes a formal description of an artwork and checks every visual claim against the image.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1039",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1041",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1044",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-technique-identification",
+   "concept": "arth-formal-analysis",
+   "label": "Medium and Technique Identification",
+   "desc": "Identifies medium and technique from visual and technical evidence and checks it against conservation reports.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1039",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1042",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-cross-cultural",
+   "concept": "arth-global-art",
+   "label": "Cross-Cultural Exchange Analysis",
+   "desc": "Analyses artistic exchange along trade and colonial routes and checks the claims against dated objects.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1043",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1041",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1042",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-islamic-ornament",
+   "concept": "arth-global-art",
+   "label": "Islamic Ornament and Calligraphy Analysis",
+   "desc": "Analyses geometric ornament and calligraphy and checks inscriptions and patterns against published readings.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1043",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1045",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-non-western-context",
+   "concept": "arth-global-art",
+   "label": "Cultural Context Interpretation",
+   "desc": "Interprets a non-Western work within its own cultural categories and checks the account against specialist scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1043",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1045",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-allegory-analysis",
+   "concept": "arth-iconography-meaning",
+   "label": "Allegory and Myth Analysis",
+   "desc": "Analyses allegorical and mythological programs and checks sources against classical and religious texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1045",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1041",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-iconological-reading",
+   "concept": "arth-iconography-meaning",
+   "label": "Iconological Interpretation",
+   "desc": "Interprets an artwork's cultural meaning in Panofsky's sense and checks the reading against period texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1045",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1044",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1041",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-subject-identification",
+   "concept": "arth-iconography-meaning",
+   "label": "Subject and Symbol Identification",
+   "desc": "Identifies subjects, saints, deities and attributes in an image and checks them against iconographic dictionaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1045",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1043",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-exhibition-critique",
+   "concept": "arth-museums-provenance-theory",
+   "label": "Exhibition Critique",
+   "desc": "Critiques an exhibition's display and narrative and checks claims against the catalog and labels.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1044",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1042",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1039",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-provenance-chain",
+   "concept": "arth-museums-provenance-theory",
+   "label": "Provenance Chain Research",
+   "desc": "Reconstructs an object's ownership history and checks every link against sale catalogs and archives, flagging gaps.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1042",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1043",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-theory-application",
+   "concept": "arth-museums-provenance-theory",
+   "label": "Critical Theory Application",
+   "desc": "Applies feminist, social history or postcolonial theory to a work and checks the argument for evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1044",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1043",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-movement-timeline",
+   "concept": "arth-periods-styles",
+   "label": "Movement Timeline Builder",
+   "desc": "Builds a timeline of artists and movements and checks dates against reference sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1041",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1040",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1043",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-patronage-context",
+   "concept": "arth-periods-styles",
+   "label": "Patronage Context Analysis",
+   "desc": "Analyses patronage and commission context for a work and checks facts against archival documents.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1041",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1042",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1044",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  },
+  {
+   "id": "arth-style-attribution",
+   "concept": "arth-periods-styles",
+   "label": "Style and Period Attribution",
+   "desc": "Attributes an unknown work to a period, school or artist by style and checks it against dated comparanda.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1041",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1039",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1042",
+     "role": "support"
+    }
+   ],
+   "source": "art-history"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1038",
+   "name": "Architectural Historian",
+   "legacy_key": "arth-architecture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1039",
+   "name": "Formal Analysis Agent",
+   "legacy_key": "arth-formalist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1040",
+   "name": "Art Historical Literature Reviewer",
+   "legacy_key": "arth-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1041",
+   "name": "Period and Style Historian",
+   "legacy_key": "arth-period",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1042",
+   "name": "Provenance Researcher",
+   "legacy_key": "arth-provenance",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1043",
+   "name": "Global Art Historian",
+   "legacy_key": "arth-global",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1044",
+   "name": "Art Theory Critic",
+   "legacy_key": "arth-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1045",
+   "name": "Iconography Specialist",
+   "legacy_key": "arth-iconographer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "arth-form": "composition color medium technique visual description",
+  "arth-icon": "iconography iconology symbol attribute allegory panofsky",
+  "arth-period": "renaissance baroque medieval classical modernism impressionism",
+  "arth-building": "architecture building plan elevation gothic urban",
+  "arth-global": "asian african islamic indigenous oceanic calligraphy",
+  "arth-museum": "museum provenance collecting exhibition feminist postcolonial"
+ },
+ "sources": [
+  "art-history"
+ ]
+}

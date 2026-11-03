@@ -1,0 +1,727 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "slavic-languages-and-literatures",
+  "label": "Slavic Languages and Literatures",
+  "desc": "Slavic Languages and Literatures: Russian and other Slavic languages, their literatures, linguistics and cultural history."
+ },
+ "concepts": [
+  {
+   "id": "slav-culture-history",
+   "label": "Slavic Culture, Film and History",
+   "desc": "Intellectual, visual and political culture of Russia and Eastern Europe, including Orthodoxy, the avant-garde, Soviet film and post-Soviet media.",
+   "keywords": [
+    "culture",
+    "avant-garde",
+    "film",
+    "orthodoxy",
+    "socialist realism",
+    "post-soviet",
+    "media"
+   ],
+   "topic": "slavic-languages-and-literatures",
+   "source": "slavic-languages-and-literatures",
+   "related": []
+  },
+  {
+   "id": "slav-other-slavic",
+   "label": "Polish, Czech, Ukrainian and South Slavic Literatures",
+   "desc": "Literatures and cultures of the West, East and South Slavic peoples beyond Russia.",
+   "keywords": [
+    "polish",
+    "czech",
+    "ukrainian",
+    "serbian",
+    "croatian",
+    "bulgarian",
+    "comparative"
+   ],
+   "topic": "slavic-languages-and-literatures",
+   "source": "slavic-languages-and-literatures",
+   "related": []
+  },
+  {
+   "id": "slav-russian-language",
+   "label": "Russian Language Acquisition",
+   "desc": "Learning Russian pronunciation, Cyrillic script, case grammar and verbal aspect from beginning to advanced proficiency.",
+   "keywords": [
+    "russian",
+    "cyrillic",
+    "case",
+    "aspect",
+    "pronunciation",
+    "vocabulary",
+    "proficiency"
+   ],
+   "topic": "slavic-languages-and-literatures",
+   "source": "slavic-languages-and-literatures",
+   "related": []
+  },
+  {
+   "id": "slav-russian-literature",
+   "label": "Russian Literature",
+   "desc": "Russian literature from the medieval period through Pushkin, the nineteenth-century novel, Soviet literature and the present.",
+   "keywords": [
+    "literature",
+    "pushkin",
+    "tolstoy",
+    "dostoevsky",
+    "novel",
+    "poetry",
+    "soviet"
+   ],
+   "topic": "slavic-languages-and-literatures",
+   "source": "slavic-languages-and-literatures",
+   "related": []
+  },
+  {
+   "id": "slav-slavic-linguistics",
+   "label": "Slavic Linguistics",
+   "desc": "The structure and history of the Slavic languages: Proto-Slavic, Old Church Slavonic, phonology, morphology and dialects.",
+   "keywords": [
+    "linguistics",
+    "proto-slavic",
+    "old church slavonic",
+    "phonology",
+    "morphology",
+    "dialect",
+    "etymology"
+   ],
+   "topic": "slavic-languages-and-literatures",
+   "source": "slavic-languages-and-literatures",
+   "related": []
+  },
+  {
+   "id": "slav-translation-studies",
+   "label": "Slavic Translation Studies",
+   "desc": "Translating Slavic literary and non-literary texts into English and analyzing translation choices.",
+   "keywords": [
+    "translation",
+    "equivalence",
+    "style",
+    "register",
+    "rendering",
+    "glossary"
+   ],
+   "topic": "slavic-languages-and-literatures",
+   "source": "slavic-languages-and-literatures",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "slav-avant-garde",
+   "concept": "slav-culture-history",
+   "label": "Avant-Garde Movement Mapper",
+   "desc": "Maps artists, manifestos and works of a Slavic avant-garde movement, checked against dated sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1550",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1551",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1552",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-film-analysis",
+   "concept": "slav-culture-history",
+   "label": "Soviet and Eastern European Film Analyzer",
+   "desc": "Analyzes form and politics of a Slavic film, checked against film scholarship and production history.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1551",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1550",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-media-analysis",
+   "concept": "slav-culture-history",
+   "label": "Post-Soviet Media Analyzer",
+   "desc": "Analyzes post-Soviet media narratives on a topic, checked against the original-language sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1551",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1550",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-author-profile",
+   "concept": "slav-other-slavic",
+   "label": "Slavic Author Profiler",
+   "desc": "Builds a profile of a Polish, Czech, Ukrainian or South Slavic author with works and reception, checked against reference sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1554",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1550",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1555",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-comparative-reading",
+   "concept": "slav-other-slavic",
+   "label": "Comparative Slavic Literature Reader",
+   "desc": "Compares works from two Slavic literatures on a shared theme, checked against primary texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1554",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1552",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-national-canon",
+   "concept": "slav-other-slavic",
+   "label": "National Literary Canon Mapper",
+   "desc": "Maps the formation of a national literary canon and its political context, checked against literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1550",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1554",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-aspect-coach",
+   "concept": "slav-russian-language",
+   "label": "Verbal Aspect Coach",
+   "desc": "Explains perfective and imperfective choice in sentences and corrects learner errors, checked against grammar references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1556",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1555",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-case-drill",
+   "concept": "slav-russian-language",
+   "label": "Russian Case Drill Generator",
+   "desc": "Generates case-ending exercises for nouns and adjectives with answer keys checked against standard declension tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1553",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1556",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1557",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-reading-gloss",
+   "concept": "slav-russian-language",
+   "label": "Graded Reading Glosser",
+   "desc": "Glosses a Russian text with stress marks, vocabulary and grammar notes for a proficiency level, checked for gloss accuracy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1553",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1557",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1552",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-close-reading",
+   "concept": "slav-russian-literature",
+   "label": "Russian Close Reading Builder",
+   "desc": "Produces a close reading of a poem or passage with meter, imagery and context, checked against the original text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1370",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1552",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-novel-analysis",
+   "concept": "slav-russian-literature",
+   "label": "Russian Novel Analyzer",
+   "desc": "Analyzes themes, narrative form and characters of a Russian novel, checked against cited criticism.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1552",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1550",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-period-survey",
+   "concept": "slav-russian-literature",
+   "label": "Literary Period Survey",
+   "desc": "Surveys a period of Russian literature with authors, movements and dated works, checked against literary histories.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1552",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1550",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-dialect-compare",
+   "concept": "slav-slavic-linguistics",
+   "label": "Slavic Dialect Comparator",
+   "desc": "Compares phonology and morphology across Slavic languages and dialects, checked against cited descriptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1554",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1557",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-ocs-parser",
+   "concept": "slav-slavic-linguistics",
+   "label": "Old Church Slavonic Parser",
+   "desc": "Parses Old Church Slavonic forms for morphology and translates them, checked against a reference grammar.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1557",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1556",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1550",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-sound-change",
+   "concept": "slav-slavic-linguistics",
+   "label": "Slavic Sound Change Tracer",
+   "desc": "Derives modern Slavic word forms from Proto-Slavic reconstructions through dated sound changes, checked against etymological dictionaries.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1557",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1554",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1556",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-glossary-builder",
+   "concept": "slav-translation-studies",
+   "label": "Translation Glossary Builder",
+   "desc": "Builds a terminology glossary for a Slavic text with consistent renderings, checked for consistency across the text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1555",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1556",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-literary-translation",
+   "concept": "slav-translation-studies",
+   "label": "Literary Translation Drafter",
+   "desc": "Translates a Slavic literary passage into English preserving style and register, checked by back-translation against the source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1555",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-translation-critique",
+   "concept": "slav-translation-studies",
+   "label": "Translation Comparison Critic",
+   "desc": "Compares published English translations of a passage and evaluates choices, checked against the source text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1370",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1555",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1557",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1370",
+   "name": "Literary Criticism Agent",
+   "legacy_key": "slav-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1550",
+   "name": "Slavic Cultural History Agent",
+   "legacy_key": "slav-hist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1551",
+   "name": "Film and Media Agent",
+   "legacy_key": "slav-film",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1552",
+   "name": "Russian Literature Agent",
+   "legacy_key": "slav-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1553",
+   "name": "Russian Language Agent",
+   "legacy_key": "slav-lang",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1554",
+   "name": "Comparative Slavic Agent",
+   "legacy_key": "slav-comp",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1555",
+   "name": "Literary Translation Agent",
+   "legacy_key": "slav-trans",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1556",
+   "name": "Slavic Grammar Agent",
+   "legacy_key": "slav-gram",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1557",
+   "name": "Slavic Linguistics Agent",
+   "legacy_key": "slav-ling",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1553",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "slavic-languages-and-literatures",
+   "score": 0.2349,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1555",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "slavic-languages-and-literatures",
+   "score": 0.1864,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1556",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "slavic-languages-and-literatures",
+   "score": 0.2349,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1553",
+    "skill": "slav-case-drill"
+   }
+  },
+  {
+   "agent": "Maxey1557",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "slavic-languages-and-literatures",
+   "score": 0.2349,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1553",
+    "skill": "slav-reading-gloss"
+   }
+  }
+ ],
+ "lexicon": {
+  "slav-language": "russian cyrillic case aspect declension proficiency vocabulary",
+  "slav-linguistics": "linguistics phonology morphology dialect etymological reconstruction",
+  "slav-literature": "literature novel poetry poem pushkin tolstoy dostoevsky",
+  "slav-translation": "translation glossary register rendering style",
+  "slav-culture": "film avant garde soviet media orthodoxy",
+  "slav-regional": "polish czech ukrainian serbian croatian bulgarian"
+ },
+ "sources": [
+  "slavic-languages-and-literatures"
+ ]
+}

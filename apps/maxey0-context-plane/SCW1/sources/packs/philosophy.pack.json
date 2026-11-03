@@ -1,0 +1,551 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "philosophy",
+ "topic": {
+  "id": "philosophy",
+  "label": "Philosophy",
+  "desc": "Philosophy: rigorous inquiry into knowledge, reality, mind, value, reasoning and the history of these questions."
+ },
+ "concepts": [
+  [
+   "phil-logic",
+   "Logic and Critical Reasoning",
+   "philosophy",
+   "Formal and informal reasoning: propositional and predicate logic, validity, proof and fallacies.",
+   [
+    "logic",
+    "validity",
+    "soundness",
+    "propositional",
+    "predicate",
+    "proof",
+    "fallacy",
+    "modal"
+   ]
+  ],
+  [
+   "phil-epistemology",
+   "Epistemology",
+   "philosophy",
+   "The nature, sources and limits of knowledge, justification, belief and scepticism.",
+   [
+    "epistemology",
+    "knowledge",
+    "justification",
+    "belief",
+    "scepticism",
+    "evidence",
+    "testimony",
+    "gettier"
+   ]
+  ],
+  [
+   "phil-metaphysics",
+   "Metaphysics",
+   "philosophy",
+   "The nature of reality: existence, identity, causation, time, modality and free will.",
+   [
+    "metaphysics",
+    "existence",
+    "identity",
+    "causation",
+    "time",
+    "modality",
+    "free will",
+    "ontology"
+   ]
+  ],
+  [
+   "phil-philosophy-of-mind",
+   "Philosophy of Mind and Language",
+   "philosophy",
+   "Consciousness, mental content, the mind-body problem, meaning and reference.",
+   [
+    "mind",
+    "consciousness",
+    "mental content",
+    "dualism",
+    "physicalism",
+    "reference",
+    "meaning",
+    "intentionality"
+   ]
+  ],
+  [
+   "phil-ethics-value",
+   "Ethics and Value Theory",
+   "philosophy",
+   "Normative ethics, metaethics and applied ethics, including consequentialism, deontology and virtue.",
+   [
+    "ethics",
+    "moral",
+    "consequentialism",
+    "deontology",
+    "virtue",
+    "metaethics",
+    "applied ethics",
+    "value"
+   ]
+  ],
+  [
+   "phil-history-political",
+   "History of Philosophy and Political Philosophy",
+   "philosophy",
+   "Major figures and traditions from ancient to contemporary, and theories of justice, rights and the state.",
+   [
+    "history",
+    "ancient",
+    "modern",
+    "justice",
+    "rights",
+    "social contract",
+    "liberty",
+    "text"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "phil-argument-formalizer",
+   "phil-logic",
+   "Argument Formalizer",
+   "Translates natural language arguments into propositional or predicate logic and checks validity with a truth table or derivation.",
+   "procedural",
+   [
+    [
+     "phil-logician",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-natural-deduction-prover",
+   "phil-logic",
+   "Natural Deduction Prover",
+   "Constructs natural deduction proofs and checks each line cites a valid rule.",
+   "procedural",
+   [
+    [
+     "phil-logician",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-metaphysician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-fallacy-detector",
+   "phil-logic",
+   "Fallacy Detector",
+   "Identifies informal fallacies in texts and checks each label against a standard definition and the passage.",
+   "semantic",
+   [
+    [
+     "phil-critic",
+     "primary"
+    ],
+    [
+     "phil-logician",
+     "checker"
+    ],
+    [
+     "phil-ethicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-justification-theory-mapper",
+   "phil-epistemology",
+   "Justification Theory Mapper",
+   "Classifies a view as foundationalist, coherentist or reliabilist and checks the classification against its primary text.",
+   "semantic",
+   [
+    [
+     "phil-epistemologist",
+     "primary"
+    ],
+    [
+     "phil-historian",
+     "checker"
+    ],
+    [
+     "phil-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-gettier-case-builder",
+   "phil-epistemology",
+   "Gettier Case Builder",
+   "Constructs counterexamples to analyses of knowledge and checks each case meets the analysis but intuitively fails.",
+   "semantic",
+   [
+    [
+     "phil-epistemologist",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-logician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-skeptical-argument-evaluator",
+   "phil-epistemology",
+   "Skeptical Argument Evaluator",
+   "Reconstructs sceptical arguments premise by premise and checks responses address a specific premise.",
+   "semantic",
+   [
+    [
+     "phil-epistemologist",
+     "primary"
+    ],
+    [
+     "phil-logician",
+     "checker"
+    ],
+    [
+     "phil-mind",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-ontology-commitment-analyzer",
+   "phil-metaphysics",
+   "Ontological Commitment Analyzer",
+   "Identifies what entities a theory commits to and checks the claim using quantifier paraphrase.",
+   "semantic",
+   [
+    [
+     "phil-metaphysician",
+     "primary"
+    ],
+    [
+     "phil-logician",
+     "checker"
+    ],
+    [
+     "phil-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-thought-experiment-analyzer",
+   "phil-metaphysics",
+   "Thought Experiment Analyzer",
+   "Sets out the cases and intuitions in a thought experiment and checks the conclusion follows from them.",
+   "semantic",
+   [
+    [
+     "phil-metaphysician",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-mind",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-free-will-position-mapper",
+   "phil-metaphysics",
+   "Free Will Position Mapper",
+   "Maps compatibilist, libertarian and hard determinist positions on a question and checks each against cited sources.",
+   "semantic",
+   [
+    [
+     "phil-metaphysician",
+     "primary"
+    ],
+    [
+     "phil-ethicist",
+     "checker"
+    ],
+    [
+     "phil-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-mind-body-argument-reconstructor",
+   "phil-philosophy-of-mind",
+   "Mind-Body Argument Reconstructor",
+   "Reconstructs arguments for dualism and physicalism in standard form and checks premise dependence.",
+   "semantic",
+   [
+    [
+     "phil-mind",
+     "primary"
+    ],
+    [
+     "phil-logician",
+     "checker"
+    ],
+    [
+     "phil-metaphysician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-reference-theory-tester",
+   "phil-philosophy-of-mind",
+   "Reference Theory Tester",
+   "Applies descriptivist and causal theories of reference to cases and checks predictions against the case facts.",
+   "semantic",
+   [
+    [
+     "phil-mind",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-ai-mind-assessor",
+   "phil-philosophy-of-mind",
+   "Machine Mind Assessor",
+   "Evaluates claims about machine consciousness and understanding and checks each claim against named criteria.",
+   "semantic",
+   [
+    [
+     "phil-mind",
+     "primary"
+    ],
+    [
+     "phil-epistemologist",
+     "checker"
+    ],
+    [
+     "phil-ethicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-normative-theory-applier",
+   "phil-ethics-value",
+   "Normative Theory Applier",
+   "Applies consequentialist, deontological and virtue analyses to a case and checks each verdict follows from the theory.",
+   "semantic",
+   [
+    [
+     "phil-ethicist",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-political",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-applied-ethics-briefer",
+   "phil-ethics-value",
+   "Applied Ethics Briefer",
+   "Writes balanced briefs on bioethics or technology ethics questions and checks both sides are stated at full strength.",
+   "semantic",
+   [
+    [
+     "phil-ethicist",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-epistemologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-metaethics-classifier",
+   "phil-ethics-value",
+   "Metaethics Classifier",
+   "Classifies a position as realist, expressivist or error theoretic and checks against the author text.",
+   "semantic",
+   [
+    [
+     "phil-ethicist",
+     "primary"
+    ],
+    [
+     "phil-historian",
+     "checker"
+    ],
+    [
+     "phil-logician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-primary-text-explicator",
+   "phil-history-political",
+   "Primary Text Explicator",
+   "Explains a passage from a primary text in context and checks the reading against the original language and scholarship.",
+   "semantic",
+   [
+    [
+     "phil-historian",
+     "primary"
+    ],
+    [
+     "phil-translator",
+     "checker"
+    ],
+    [
+     "phil-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-justice-theory-comparer",
+   "phil-history-political",
+   "Justice Theory Comparer",
+   "Compares theories of justice such as Rawls and Nozick on a policy question and checks fidelity to each text.",
+   "semantic",
+   [
+    [
+     "phil-political",
+     "primary"
+    ],
+    [
+     "phil-historian",
+     "checker"
+    ],
+    [
+     "phil-ethicist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "phil-philosophy-literature-search",
+   "phil-history-political",
+   "Philosophy Literature Search",
+   "Finds journal articles on a debate and checks each citation exists and supports the attributed claim.",
+   "procedural",
+   [
+    [
+     "phil-historian",
+     "primary"
+    ],
+    [
+     "phil-critic",
+     "checker"
+    ],
+    [
+     "phil-epistemologist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "phil-logician": "Logic Agent",
+  "phil-epistemologist": "Epistemology Agent",
+  "phil-metaphysician": "Metaphysics Agent",
+  "phil-mind": "Philosophy of Mind Agent",
+  "phil-ethicist": "Ethics Agent",
+  "phil-political": "Political Philosophy Agent",
+  "phil-historian": "History of Philosophy Agent",
+  "phil-critic": "Argument Critic Agent",
+  "phil-translator": "Source Text Translator"
+ },
+ "mcp": [
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "phil-reason": "logic validity soundness propositional predicate proof fallacy modal deduction truth",
+  "phil-know": "epistemology knowledge justification belief scepticism evidence testimony gettier",
+  "phil-reality": "metaphysics existence identity causation time modality ontology determinist",
+  "phil-minds": "mind consciousness mental dualism physicalism reference intentionality machine",
+  "phil-good": "ethics moral consequentialism deontology virtue metaethics value bioethics",
+  "phil-tradition": "history ancient modern justice rights social liberty text"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

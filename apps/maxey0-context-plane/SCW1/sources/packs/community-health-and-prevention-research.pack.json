@@ -1,0 +1,546 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "community-health-and-prevention-research",
+ "topic": {
+  "id": "community-health-and-prevention-research",
+  "label": "Community Health and Prevention Research",
+  "desc": "Community Health and Prevention Research: designing, testing and scaling interventions that prevent disease and promote health in communities."
+ },
+ "concepts": [
+  [
+   "chpr-epidemiology",
+   "Epidemiology",
+   "community-health-and-prevention-research",
+   "Distribution and determinants of disease in populations, measured through incidence, prevalence and risk.",
+   [
+    "epidemiology",
+    "incidence",
+    "prevalence",
+    "risk",
+    "cohort",
+    "case-control",
+    "exposure",
+    "surveillance"
+   ]
+  ],
+  [
+   "chpr-prevention-science",
+   "Prevention Science",
+   "community-health-and-prevention-research",
+   "Theory and evidence for primary, secondary and tertiary prevention of disease and injury.",
+   [
+    "prevention",
+    "primary",
+    "secondary",
+    "tertiary",
+    "risk factor",
+    "protective",
+    "screening",
+    "injury"
+   ]
+  ],
+  [
+   "chpr-behavior-change",
+   "Health Behavior Change",
+   "community-health-and-prevention-research",
+   "Behavioural theories and techniques used to change diet, activity, substance use and other health behaviours.",
+   [
+    "behavior",
+    "theory",
+    "motivation",
+    "self-efficacy",
+    "habit",
+    "technique",
+    "adherence",
+    "lifestyle"
+   ]
+  ],
+  [
+   "chpr-intervention",
+   "Intervention Design and Trials",
+   "community-health-and-prevention-research",
+   "Designing community interventions and testing them in randomised and cluster trials.",
+   [
+    "intervention",
+    "trial",
+    "randomized",
+    "cluster",
+    "protocol",
+    "outcome",
+    "fidelity",
+    "pilot"
+   ]
+  ],
+  [
+   "chpr-community-engagement",
+   "Community-Based Participatory Research",
+   "community-health-and-prevention-research",
+   "Partnering with communities to set questions, design studies and share results equitably.",
+   [
+    "community",
+    "participatory",
+    "partnership",
+    "equity",
+    "engagement",
+    "stakeholder",
+    "disparities",
+    "culturally"
+   ]
+  ],
+  [
+   "chpr-evaluation-policy",
+   "Program Evaluation and Health Policy",
+   "community-health-and-prevention-research",
+   "Evaluating prevention programs and translating evidence into policy and practice.",
+   [
+    "evaluation",
+    "logic model",
+    "policy",
+    "implementation",
+    "cost-effectiveness",
+    "dissemination",
+    "scale-up",
+    "indicator"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "chpr-rate-calculation",
+   "chpr-epidemiology",
+   "Disease Rate Calculation",
+   "Computes incidence, prevalence and age-adjusted rates with confidence intervals and checks denominators against population data.",
+   "procedural",
+   [
+    [
+     "chpr-epidemiologist",
+     "primary"
+    ],
+    [
+     "chpr-biostatistician",
+     "checker"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-study-design-review",
+   "chpr-epidemiology",
+   "Observational Study Review",
+   "Appraises a cohort or case-control study for bias and confounding and checks each judgement against a standard appraisal checklist.",
+   "semantic",
+   [
+    [
+     "chpr-epidemiologist",
+     "primary"
+    ],
+    [
+     "chpr-literature",
+     "checker"
+    ],
+    [
+     "chpr-biostatistician",
+     "support"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-risk-factor-mapping",
+   "chpr-prevention-science",
+   "Risk and Protective Factor Mapping",
+   "Maps risk and protective factors for a health outcome and ties each to cited evidence.",
+   "semantic",
+   [
+    [
+     "chpr-epidemiologist",
+     "primary"
+    ],
+    [
+     "chpr-behavioral-scientist",
+     "checker"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-screening-evaluation",
+   "chpr-prevention-science",
+   "Screening Program Evaluation",
+   "Computes sensitivity, specificity and predictive values of a screening test and checks them against trial data.",
+   "procedural",
+   [
+    [
+     "chpr-biostatistician",
+     "primary"
+    ],
+    [
+     "chpr-epidemiologist",
+     "checker"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ],
+    [
+     "chpr-evaluator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-theory-selection",
+   "chpr-behavior-change",
+   "Behavior Theory Selection",
+   "Selects a behaviour change theory for a target behaviour and lists the constructs the intervention must address.",
+   "semantic",
+   [
+    [
+     "chpr-behavioral-scientist",
+     "primary"
+    ],
+    [
+     "chpr-intervention-designer",
+     "checker"
+    ],
+    [
+     "chpr-community-partner",
+     "support"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-technique-coding",
+   "chpr-behavior-change",
+   "Behavior Change Technique Coding",
+   "Codes intervention content against a behaviour change technique taxonomy and reports agreement between coders.",
+   "procedural",
+   [
+    [
+     "chpr-behavioral-scientist",
+     "primary"
+    ],
+    [
+     "chpr-evaluator",
+     "checker"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-trial-protocol",
+   "chpr-intervention",
+   "Trial Protocol Drafting",
+   "Drafts a trial protocol with aims, outcomes, sample size and randomisation and checks it against reporting guidelines.",
+   "procedural",
+   [
+    [
+     "chpr-intervention-designer",
+     "primary"
+    ],
+    [
+     "chpr-biostatistician",
+     "checker"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ],
+    [
+     "chpr-community-partner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-sample-size",
+   "chpr-intervention",
+   "Sample Size Calculation",
+   "Calculates sample size for individual or cluster randomised designs and checks assumptions on effect size and intraclass correlation.",
+   "procedural",
+   [
+    [
+     "chpr-biostatistician",
+     "primary"
+    ],
+    [
+     "chpr-epidemiologist",
+     "checker"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-fidelity-check",
+   "chpr-intervention",
+   "Implementation Fidelity Check",
+   "Measures whether an intervention was delivered as designed and flags deviations by site.",
+   "procedural",
+   [
+    [
+     "chpr-evaluator",
+     "primary"
+    ],
+    [
+     "chpr-intervention-designer",
+     "checker"
+    ],
+    [
+     "chpr-community-partner",
+     "support"
+    ],
+    [
+     "chpr-policy-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-partnership-plan",
+   "chpr-community-engagement",
+   "Partnership Planning",
+   "Drafts a community partnership plan with roles, governance and benefit sharing and checks it against participatory research principles.",
+   "semantic",
+   [
+    [
+     "chpr-community-partner",
+     "primary"
+    ],
+    [
+     "chpr-policy-analyst",
+     "checker"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ],
+    [
+     "chpr-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-disparities-analysis",
+   "chpr-community-engagement",
+   "Health Disparities Analysis",
+   "Compares outcomes across population groups and reports gaps with uncertainty and data limitations.",
+   "procedural",
+   [
+    [
+     "chpr-epidemiologist",
+     "primary"
+    ],
+    [
+     "chpr-biostatistician",
+     "checker"
+    ],
+    [
+     "chpr-community-partner",
+     "support"
+    ],
+    [
+     "chpr-policy-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-logic-model",
+   "chpr-evaluation-policy",
+   "Logic Model Builder",
+   "Builds a logic model linking inputs, activities, outputs and outcomes and checks every outcome has a measurable indicator.",
+   "procedural",
+   [
+    [
+     "chpr-evaluator",
+     "primary"
+    ],
+    [
+     "chpr-intervention-designer",
+     "checker"
+    ],
+    [
+     "chpr-policy-analyst",
+     "support"
+    ],
+    [
+     "chpr-community-partner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-cost-effectiveness",
+   "chpr-evaluation-policy",
+   "Cost-Effectiveness Analysis",
+   "Computes cost per outcome gained for a prevention program and runs sensitivity analysis on key assumptions.",
+   "procedural",
+   [
+    [
+     "chpr-policy-analyst",
+     "primary"
+    ],
+    [
+     "chpr-biostatistician",
+     "checker"
+    ],
+    [
+     "chpr-evaluator",
+     "support"
+    ],
+    [
+     "chpr-intervention-designer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "chpr-evidence-brief",
+   "chpr-evaluation-policy",
+   "Policy Evidence Brief",
+   "Writes a policy brief summarising prevention evidence and checks each claim against cited studies.",
+   "semantic",
+   [
+    [
+     "chpr-policy-analyst",
+     "primary"
+    ],
+    [
+     "chpr-literature",
+     "checker"
+    ],
+    [
+     "chpr-epidemiologist",
+     "support"
+    ],
+    [
+     "chpr-evaluator",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "chpr-epidemiologist": "Epidemiologist Agent",
+  "chpr-biostatistician": "Biostatistician Agent",
+  "chpr-intervention-designer": "Intervention Designer Agent",
+  "chpr-community-partner": "Community Engagement Agent",
+  "chpr-evaluator": "Program Evaluator Agent",
+  "chpr-policy-analyst": "Health Policy Analyst Agent",
+  "chpr-behavioral-scientist": "Behavioral Scientist Agent",
+  "chpr-literature": "Biomedical Literature Agent"
+ },
+ "mcp": [
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Clinical Trials",
+   "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "Access ClinicalTrials.gov data",
+   [
+    "get_trial_details",
+    "search_by_eligibility",
+    "analyze_endpoints",
+    "search_investigators",
+    "search_trials",
+    "search_by_sponsor"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-24)"
+  ],
+  [
+   "bioRxiv",
+   "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "Access bioRxiv and medRxiv preprint data",
+   [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "chpr-epi": "epidemiology incidence prevalence risk cohort exposure surveillance",
+  "chpr-prevent": "prevention primary secondary tertiary factor protective screening injury",
+  "chpr-behavior": "behavior theory motivation habit technique adherence lifestyle",
+  "chpr-trial": "intervention trial randomized cluster protocol outcome fidelity pilot",
+  "chpr-community": "community participatory partnership equity engagement stakeholder disparities culturally",
+  "chpr-policy": "evaluation logic model policy implementation dissemination indicator"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "PubMed": "biomedical literature",
+   "Clinical Trials": "prevention trial registry data",
+   "bioRxiv": "medRxiv public health preprints"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

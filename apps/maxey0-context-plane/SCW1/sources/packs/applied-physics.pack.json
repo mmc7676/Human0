@@ -1,0 +1,574 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "applied-physics",
+ "topic": {
+  "id": "applied-physics",
+  "label": "Applied Physics",
+  "desc": "Applied Physics: physical principles applied to devices, materials, measurement and engineered systems."
+ },
+ "concepts": [
+  [
+   "apph-solid-state-devices",
+   "Solid State and Semiconductor Physics",
+   "applied-physics",
+   "Band structure, carriers and junctions underlying transistors, diodes, sensors and solar cells.",
+   [
+    "semiconductor",
+    "band gap",
+    "carrier",
+    "junction",
+    "transistor",
+    "doping",
+    "solar cell",
+    "mobility"
+   ]
+  ],
+  [
+   "apph-optics-photonics",
+   "Optics and Photonics",
+   "applied-physics",
+   "Lasers, waveguides, fibre optics and optical systems for communication, sensing and imaging.",
+   [
+    "laser",
+    "photonics",
+    "waveguide",
+    "fiber",
+    "optical",
+    "interferometer",
+    "imaging",
+    "spectroscopy"
+   ]
+  ],
+  [
+   "apph-materials-physics",
+   "Materials and Condensed Matter Physics",
+   "applied-physics",
+   "Structure and properties of crystals, thin films, magnetic and superconducting materials.",
+   [
+    "crystal",
+    "lattice",
+    "thin film",
+    "magnetic",
+    "superconductor",
+    "diffraction",
+    "phonon",
+    "nanomaterial"
+   ]
+  ],
+  [
+   "apph-instrumentation-measurement",
+   "Instrumentation and Measurement",
+   "applied-physics",
+   "Sensors, signal conditioning, noise and calibration in physical measurement.",
+   [
+    "sensor",
+    "measurement",
+    "noise",
+    "calibration",
+    "signal",
+    "uncertainty",
+    "detector",
+    "electronics"
+   ]
+  ],
+  [
+   "apph-computational-physics",
+   "Computational and Mathematical Physics",
+   "applied-physics",
+   "Numerical and symbolic methods for solving the differential equations of applied physics.",
+   [
+    "numerical",
+    "differential equation",
+    "finite element",
+    "symbolic",
+    "monte carlo",
+    "solver",
+    "model",
+    "eigenvalue"
+   ]
+  ],
+  [
+   "apph-fluids-plasmas",
+   "Fluids, Acoustics and Plasmas",
+   "applied-physics",
+   "Continuum flow, sound and ionised gases in engineered devices and processes.",
+   [
+    "fluid",
+    "navier-stokes",
+    "turbulence",
+    "acoustics",
+    "plasma",
+    "heat transfer",
+    "viscosity",
+    "wave"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "apph-band-diagram",
+   "apph-solid-state-devices",
+   "Band Diagram Analysis",
+   "Constructs energy band diagrams for a junction and checks built-in potential and depletion width with Wolfram computation.",
+   "procedural",
+   [
+    [
+     "apph-solid-state",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-device-iv",
+   "apph-solid-state-devices",
+   "Device Current-Voltage Modeling",
+   "Models diode or transistor current-voltage curves and checks them against measured data or datasheet values.",
+   "procedural",
+   [
+    [
+     "apph-solid-state",
+     "primary"
+    ],
+    [
+     "apph-instrumentation",
+     "checker"
+    ],
+    [
+     "apph-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-solar-efficiency",
+   "apph-solid-state-devices",
+   "Solar Cell Efficiency Analysis",
+   "Estimates solar cell efficiency limits from band gap and losses and checks the result against the detailed balance limit.",
+   "procedural",
+   [
+    [
+     "apph-solid-state",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-gaussian-beam",
+   "apph-optics-photonics",
+   "Laser Beam Propagation",
+   "Propagates Gaussian laser beams through optical systems and checks waist and divergence with ABCD matrices.",
+   "procedural",
+   [
+    [
+     "apph-photonics",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-waveguide-modes",
+   "apph-optics-photonics",
+   "Waveguide Mode Solver",
+   "Finds guided modes of a slab or fiber waveguide and checks the cutoff conditions analytically.",
+   "procedural",
+   [
+    [
+     "apph-photonics",
+     "primary"
+    ],
+    [
+     "apph-modeler",
+     "checker"
+    ],
+    [
+     "apph-materials",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-spectroscopy-design",
+   "apph-optics-photonics",
+   "Optical Spectroscopy Design",
+   "Designs a spectroscopy or interferometer setup and checks resolution and throughput against requirements and literature.",
+   "semantic",
+   [
+    [
+     "apph-photonics",
+     "primary"
+    ],
+    [
+     "apph-instrumentation",
+     "checker"
+    ],
+    [
+     "apph-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-diffraction-index",
+   "apph-materials-physics",
+   "Crystal Diffraction Indexing",
+   "Indexes X-ray diffraction peaks to a crystal lattice and checks lattice constants against reference data.",
+   "procedural",
+   [
+    [
+     "apph-materials",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-instrumentation",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-thin-film",
+   "apph-materials-physics",
+   "Thin Film Property Analysis",
+   "Estimates optical and electrical properties of thin films and checks them against measurement and literature values.",
+   "semantic",
+   [
+    [
+     "apph-materials",
+     "primary"
+    ],
+    [
+     "apph-literature",
+     "checker"
+    ],
+    [
+     "apph-photonics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-magnet-super",
+   "apph-materials-physics",
+   "Magnetic and Superconducting Material Review",
+   "Reviews magnetic or superconducting material candidates and checks critical parameters against published studies.",
+   "semantic",
+   [
+    [
+     "apph-materials",
+     "primary"
+    ],
+    [
+     "apph-literature",
+     "checker"
+    ],
+    [
+     "apph-solid-state",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-noise-budget",
+   "apph-instrumentation-measurement",
+   "Noise Budget Analysis",
+   "Builds a noise budget for a sensor chain and checks thermal, shot and flicker terms for unit and magnitude consistency.",
+   "procedural",
+   [
+    [
+     "apph-instrumentation",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-solid-state",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-calibration",
+   "apph-instrumentation-measurement",
+   "Calibration and Uncertainty",
+   "Fits a calibration curve and propagates measurement uncertainty, checked by residual analysis.",
+   "procedural",
+   [
+    [
+     "apph-instrumentation",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-detector-selection",
+   "apph-instrumentation-measurement",
+   "Detector Selection",
+   "Selects a detector or sensor for a measurement and checks sensitivity and bandwidth against specifications.",
+   "semantic",
+   [
+    [
+     "apph-instrumentation",
+     "primary"
+    ],
+    [
+     "apph-photonics",
+     "checker"
+    ],
+    [
+     "apph-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-ode-pde-solve",
+   "apph-computational-physics",
+   "Differential Equation Solving",
+   "Solves ordinary and partial differential equations symbolically or numerically and checks solutions by substitution.",
+   "procedural",
+   [
+    [
+     "apph-modeler",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-fluids",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-fem-model",
+   "apph-computational-physics",
+   "Finite Element Modeling",
+   "Sets up a finite element model of a field problem and checks convergence under mesh refinement.",
+   "procedural",
+   [
+    [
+     "apph-modeler",
+     "primary"
+    ],
+    [
+     "apph-instrumentation",
+     "checker"
+    ],
+    [
+     "apph-materials",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-monte-carlo",
+   "apph-computational-physics",
+   "Monte Carlo Simulation",
+   "Runs Monte Carlo simulation of a physical process and checks statistical convergence and known limits.",
+   "procedural",
+   [
+    [
+     "apph-modeler",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-flow-analysis",
+   "apph-fluids-plasmas",
+   "Flow and Heat Transfer Analysis",
+   "Estimates flow regimes and heat transfer using dimensionless numbers and checks them against correlations.",
+   "procedural",
+   [
+    [
+     "apph-fluids",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-acoustic-design",
+   "apph-fluids-plasmas",
+   "Acoustic Wave Analysis",
+   "Computes acoustic wave propagation and resonances in a device and checks them against analytic modes.",
+   "procedural",
+   [
+    [
+     "apph-fluids",
+     "primary"
+    ],
+    [
+     "apph-modeler",
+     "checker"
+    ],
+    [
+     "apph-instrumentation",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "apph-plasma-params",
+   "apph-fluids-plasmas",
+   "Plasma Parameter Calculation",
+   "Computes Debye length, plasma frequency and collision rates and checks regime assumptions for consistency.",
+   "procedural",
+   [
+    [
+     "apph-fluids",
+     "primary"
+    ],
+    [
+     "apph-units",
+     "checker"
+    ],
+    [
+     "apph-literature",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "apph-solid-state": "Solid State Device Physicist",
+  "apph-photonics": "Photonics Engineer",
+  "apph-materials": "Materials Physicist",
+  "apph-instrumentation": "Instrumentation Engineer",
+  "apph-modeler": "Computational Physics Modeler",
+  "apph-fluids": "Fluid and Plasma Physicist",
+  "apph-units": "Units and Error Checker",
+  "apph-literature": "Applied Physics Literature Reviewer"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "sympy-mcp",
+   null,
+   "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "web-listed",
+   "https://github.com/sdiehl/sympy-mcp"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "apph-device": "semiconductor carrier junction transistor doping solar",
+  "apph-light": "laser photonics waveguide fiber optical interferometer spectroscopy",
+  "apph-matter": "crystal lattice film magnetic superconductor diffraction",
+  "apph-measure": "sensor measurement noise calibration uncertainty detector",
+  "apph-compute": "numerical differential symbolic monte carlo solver",
+  "apph-flow": "fluid turbulence acoustics plasma viscosity"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

@@ -1,0 +1,789 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "china-studies",
+  "label": "China Studies",
+  "desc": "China Studies: the history, language, politics, economy, society and culture of China."
+ },
+ "concepts": [
+  {
+   "id": "chin-economy-society",
+   "label": "Economy and Society",
+   "desc": "Economic growth, trade, urbanization, inequality and social change.",
+   "keywords": [
+    "economy",
+    "growth",
+    "trade",
+    "urbanization",
+    "inequality",
+    "hukou",
+    "migration",
+    "society"
+   ],
+   "topic": "china-studies",
+   "source": "china-studies",
+   "related": []
+  },
+  {
+   "id": "chin-imperial-history",
+   "label": "Imperial and Premodern History",
+   "desc": "Chinese dynasties from the Shang to the Qing, their institutions and their collapse.",
+   "keywords": [
+    "dynasty",
+    "imperial",
+    "qing",
+    "ming",
+    "han",
+    "tang",
+    "bureaucracy",
+    "examination"
+   ],
+   "topic": "china-studies",
+   "source": "china-studies",
+   "related": []
+  },
+  {
+   "id": "chin-language-linguistics",
+   "label": "Chinese Language and Linguistics",
+   "desc": "Mandarin and other Sinitic languages, characters, tones and translation.",
+   "keywords": [
+    "mandarin",
+    "character",
+    "tone",
+    "pinyin",
+    "classical chinese",
+    "translation",
+    "dialect",
+    "grammar"
+   ],
+   "topic": "china-studies",
+   "source": "china-studies",
+   "related": []
+  },
+  {
+   "id": "chin-modern-history",
+   "label": "Modern and Contemporary China",
+   "desc": "Republican China, the civil war, the Mao era and the reform period.",
+   "keywords": [
+    "republic",
+    "revolution",
+    "mao",
+    "civil war",
+    "cultural revolution",
+    "reform",
+    "communist",
+    "modern"
+   ],
+   "topic": "china-studies",
+   "source": "china-studies",
+   "related": [
+    "hist-modern-contemporary"
+   ]
+  },
+  {
+   "id": "chin-politics-international",
+   "label": "Politics and International Relations",
+   "desc": "The party-state, governance, law and China's foreign relations.",
+   "keywords": [
+    "politics",
+    "party",
+    "governance",
+    "foreign policy",
+    "state",
+    "law",
+    "international relations",
+    "diplomacy"
+   ],
+   "topic": "china-studies",
+   "source": "china-studies",
+   "related": []
+  },
+  {
+   "id": "chin-thought-culture",
+   "label": "Philosophy, Literature and Culture",
+   "desc": "Confucian, Daoist and Buddhist thought, classical and modern literature, and the arts.",
+   "keywords": [
+    "confucian",
+    "daoist",
+    "buddhist",
+    "philosophy",
+    "literature",
+    "poetry",
+    "art",
+    "culture"
+   ],
+   "topic": "china-studies",
+   "source": "china-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "chin-growth-analysis",
+   "concept": "chin-economy-society",
+   "label": "Economic Growth Analysis",
+   "desc": "Analyses GDP growth sources and trends, checked against official and international statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1122",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1123",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-hukou-study",
+   "concept": "chin-economy-society",
+   "label": "Hukou and Internal Migration Study",
+   "desc": "Explains the household registration system and rural-urban migration, checked against census data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1124",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1122",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-trade-review",
+   "concept": "chin-economy-society",
+   "label": "Trade Relations Review",
+   "desc": "Reviews China trade flows and disputes, checked against trade statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1122",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1123",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-dynasty-timeline",
+   "concept": "chin-imperial-history",
+   "label": "Dynastic Timeline Builder",
+   "desc": "Builds a dated timeline of dynasties and key events, checked against standard chronologies.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1125",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1126",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-exam-system",
+   "concept": "chin-imperial-history",
+   "label": "Civil Examination System Analysis",
+   "desc": "Explains the imperial examination system and its social effects, checked against cited scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1125",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1124",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-qing-collapse",
+   "concept": "chin-imperial-history",
+   "label": "Late Qing Crisis Analysis",
+   "desc": "Analyses the Opium Wars, Taiping Rebellion and the 1911 revolution, checked against dated sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1125",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1123",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-classical-reading",
+   "concept": "chin-language-linguistics",
+   "label": "Classical Chinese Reading",
+   "desc": "Glosses and translates classical Chinese passages, checked against standard commentaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1127",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1126",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-dialect-comparison",
+   "concept": "chin-language-linguistics",
+   "label": "Sinitic Dialect Comparison",
+   "desc": "Compares phonology of Mandarin, Cantonese and other varieties, checked against reference transcriptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1127",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1124",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-translation",
+   "concept": "chin-language-linguistics",
+   "label": "Chinese-English Translation",
+   "desc": "Translates Chinese texts into English with notes, checked by back-translation of key passages.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1127",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1128",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-mao-era",
+   "concept": "chin-modern-history",
+   "label": "Mao Era Policy Review",
+   "desc": "Reviews the Great Leap Forward and Cultural Revolution and their human cost, checked against cited demographic estimates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1125",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1124",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-reform-timeline",
+   "concept": "chin-modern-history",
+   "label": "Reform Era Timeline",
+   "desc": "Builds a timeline of reform and opening policies after 1978, checked against official and scholarly sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1122",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1125",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-revolution-analysis",
+   "concept": "chin-modern-history",
+   "label": "Revolution and Civil War Analysis",
+   "desc": "Explains the Nationalist and Communist struggle to 1949, checked against cited histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1125",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1123",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-foreign-policy",
+   "concept": "chin-politics-international",
+   "label": "Foreign Policy Analysis",
+   "desc": "Analyses Chinese foreign policy toward a region, checked against cited statements and agreements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1123",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1122",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-institution-map",
+   "concept": "chin-politics-international",
+   "label": "Party-State Institution Mapper",
+   "desc": "Maps party and state institutions and their relationships, checked against official structure documents.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1123",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1125",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-policy-document",
+   "concept": "chin-politics-international",
+   "label": "Policy Document Analysis",
+   "desc": "Summarizes a Chinese policy document and its priorities, checked against the original text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1123",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1127",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-modern-literature",
+   "concept": "chin-thought-culture",
+   "label": "Modern Literature Reading",
+   "desc": "Reads works by Lu Xun and later writers in context, checked by quoting and citing the text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1128",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1125",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-poetry-analysis",
+   "concept": "chin-thought-culture",
+   "label": "Chinese Poetry Analysis",
+   "desc": "Analyses Tang and Song poetry form and imagery, checked against the original text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1128",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1127",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1126",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  },
+  {
+   "id": "chin-text-interpretation",
+   "concept": "chin-thought-culture",
+   "label": "Classical Text Interpretation",
+   "desc": "Interprets passages from the Analects or Daodejing, checked against cited commentaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1126",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1127",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1602",
+     "role": "support"
+    }
+   ],
+   "source": "china-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1122",
+   "name": "Chinese Economy Analyst",
+   "legacy_key": "chin-economist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1123",
+   "name": "Chinese Politics Analyst",
+   "legacy_key": "chin-political",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1124",
+   "name": "Chinese Society Analyst",
+   "legacy_key": "chin-sociologist",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1125",
+   "name": "Chinese History Scholar",
+   "legacy_key": "chin-historian",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1126",
+   "name": "Chinese Thought Scholar",
+   "legacy_key": "chin-philosopher",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1127",
+   "name": "Chinese Language Specialist",
+   "legacy_key": "chin-linguist",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1128",
+   "name": "Chinese Literature Critic",
+   "legacy_key": "chin-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1602",
+   "name": "Source Verification Checker",
+   "legacy_key": "chin-fact",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1124",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "china-studies",
+   "score": 0.1088,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1125",
+    "skill": "chin-mao-era"
+   }
+  },
+  {
+   "agent": "Maxey1125",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "china-studies",
+   "score": 0.1088,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1126",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "china-studies",
+   "score": 0.1988,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1127",
+    "skill": "chin-classical-reading"
+   }
+  },
+  {
+   "agent": "Maxey1127",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "china-studies",
+   "score": 0.1988,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1602",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "china-studies",
+   "score": 0.1876,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1602",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "china-studies",
+   "score": 0.1088,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1125",
+    "skill": "chin-dynasty-timeline"
+   }
+  }
+ ],
+ "lexicon": {
+  "chin-imperial": "dynasty imperial qing ming han tang bureaucracy examination",
+  "chin-modern": "republic revolution mao civil war cultural reform communist modern",
+  "chin-language": "mandarin character tone pinyin classical chinese translation dialect grammar",
+  "chin-politics": "politics party governance foreign policy state law international relations diplomacy",
+  "chin-economy": "economy growth trade urbanization inequality hukou migration society",
+  "chin-thought": "confucian daoist buddhist philosophy literature poetry art culture"
+ },
+ "sources": [
+  "china-studies"
+ ]
+}

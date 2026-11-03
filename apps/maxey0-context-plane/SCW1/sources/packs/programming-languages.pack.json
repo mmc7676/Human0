@@ -1,0 +1,554 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "programming-languages",
+ "topic": {
+  "id": "programming-languages",
+  "label": "Programming Languages",
+  "desc": "Programming languages as working skills: Python, TypeScript, Go, Rust, C and C++, Java and Kotlin, SQL and shell, with the tooling around each."
+ },
+ "concepts": [
+  [
+   "pl-python",
+   "Python",
+   "programming-languages",
+   "Python code, packaging, typing, testing and async work.",
+   [
+    "python",
+    "pip",
+    "venv",
+    "pytest",
+    "asyncio",
+    "typing"
+   ]
+  ],
+  [
+   "pl-typescript",
+   "TypeScript",
+   "programming-languages",
+   "TypeScript types, compiler settings and Node or browser builds.",
+   [
+    "typescript",
+    "tsconfig",
+    "node",
+    "npm",
+    "bundler",
+    "types"
+   ]
+  ],
+  [
+   "pl-go",
+   "Go",
+   "programming-languages",
+   "Go modules, goroutines, channels, testing and tooling.",
+   [
+    "golang",
+    "goroutine",
+    "channel",
+    "module",
+    "vet"
+   ]
+  ],
+  [
+   "pl-rust",
+   "Rust",
+   "programming-languages",
+   "Rust ownership, lifetimes, cargo, crates and safe interfaces to unsafe code.",
+   [
+    "rust",
+    "ownership",
+    "lifetime",
+    "cargo",
+    "crate",
+    "clippy"
+   ]
+  ],
+  [
+   "pl-c-cpp",
+   "C and C++",
+   "programming-languages",
+   "C and C++ memory management, build systems and systems programming.",
+   [
+    "cpp",
+    "cmake",
+    "pointer",
+    "sanitizer",
+    "header"
+   ]
+  ],
+  [
+   "pl-jvm",
+   "Java and Kotlin",
+   "programming-languages",
+   "Java and Kotlin build, dependency, concurrency and testing practice on the JVM.",
+   [
+    "java",
+    "kotlin",
+    "gradle",
+    "maven",
+    "jvm"
+   ]
+  ],
+  [
+   "pl-sql",
+   "SQL",
+   "programming-languages",
+   "SQL queries, schema design, indexes, migrations and query plans.",
+   [
+    "sql",
+    "query",
+    "schema",
+    "index",
+    "migration",
+    "join"
+   ]
+  ],
+  [
+   "pl-shell",
+   "Shell Scripting",
+   "programming-languages",
+   "Shell scripts that are safe, portable and automatable.",
+   [
+    "bash",
+    "shell",
+    "script",
+    "pipeline",
+    "quoting",
+    "cron"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "pl-python-environment-manager",
+   "pl-python",
+   "Python Environment Manager",
+   "Creates virtual environments, pins dependencies in a lock file and writes packaging metadata so a project installs the same way on another machine.",
+   "procedural",
+   [
+    [
+     "pl-python-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-python-typing-testing",
+   "pl-python",
+   "Python Typing and Testing",
+   "Adds type hints, runs a static type checker and writes pytest tests with fixtures, reporting which behaviour is still untested.",
+   "procedural",
+   [
+    [
+     "pl-python-engineer",
+     "primary"
+    ],
+    [
+     "pl-test-engineer",
+     "checker"
+    ],
+    [
+     "pl-code-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-python-async-pipelines",
+   "pl-python",
+   "Python Async and Data Pipelines",
+   "Writes asyncio code and data-processing pipelines, then profiles them and explains where the time goes.",
+   "semantic",
+   [
+    [
+     "pl-python-engineer",
+     "primary"
+    ],
+    [
+     "pl-performance-analyst",
+     "checker"
+    ],
+    [
+     "pl-test-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-typescript-types-config",
+   "pl-typescript",
+   "TypeScript Types and Compiler Config",
+   "Sets strict compiler options and designs types, generics and discriminated unions so errors surface at build time.",
+   "semantic",
+   [
+    [
+     "pl-typescript-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-typescript-node-web-build",
+   "pl-typescript",
+   "TypeScript Node and Web Build",
+   "Configures npm scripts, bundlers and module formats for Node services and browser apps and fixes build failures.",
+   "procedural",
+   [
+    [
+     "pl-typescript-engineer",
+     "primary"
+    ],
+    [
+     "pl-test-engineer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-go-modules-concurrency",
+   "pl-go",
+   "Go Modules and Concurrency",
+   "Structures Go modules and writes goroutine and channel code with cancellation, and checks for leaks and races.",
+   "procedural",
+   [
+    [
+     "pl-go-engineer",
+     "primary"
+    ],
+    [
+     "pl-test-engineer",
+     "checker"
+    ],
+    [
+     "pl-performance-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-go-testing-tooling",
+   "pl-go",
+   "Go Testing and Tooling",
+   "Writes table-driven tests, runs vet and the race detector and wires benchmarks into the build.",
+   "procedural",
+   [
+    [
+     "pl-go-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-test-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-rust-ownership-lifetimes",
+   "pl-rust",
+   "Rust Ownership and Lifetimes",
+   "Explains and fixes borrow-checker errors by redesigning ownership, lifetimes and data structures rather than cloning everything.",
+   "semantic",
+   [
+    [
+     "pl-rust-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-systems-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-rust-cargo-crates",
+   "pl-rust",
+   "Rust Cargo and Crates",
+   "Manages Cargo workspaces, features and crate dependencies and runs clippy and tests before release.",
+   "procedural",
+   [
+    [
+     "pl-rust-engineer",
+     "primary"
+    ],
+    [
+     "pl-test-engineer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-rust-unsafe-ffi",
+   "pl-rust",
+   "Rust Unsafe and FFI",
+   "Wraps unsafe code and foreign-function interfaces in safe APIs and documents the invariants each unsafe block relies on.",
+   "semantic",
+   [
+    [
+     "pl-rust-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-systems-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-cpp-memory-build",
+   "pl-c-cpp",
+   "C and C++ Memory and Build",
+   "Finds memory errors with sanitizers, applies ownership idioms such as smart pointers and sets up CMake builds.",
+   "procedural",
+   [
+    [
+     "pl-systems-engineer",
+     "primary"
+    ],
+    [
+     "pl-test-engineer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-c-systems-interfaces",
+   "pl-c-cpp",
+   "C Systems Interfaces",
+   "Designs header files, ABI-stable interfaces and system-call wrappers and checks portability across platforms.",
+   "semantic",
+   [
+    [
+     "pl-systems-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-performance-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-jvm-build-dependencies",
+   "pl-jvm",
+   "JVM Build and Dependencies",
+   "Configures Gradle or Maven builds, resolves dependency conflicts and packages Java and Kotlin artifacts.",
+   "procedural",
+   [
+    [
+     "pl-jvm-engineer",
+     "primary"
+    ],
+    [
+     "pl-test-engineer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-jvm-concurrency-testing",
+   "pl-jvm",
+   "JVM Concurrency and Testing",
+   "Writes thread-safe Java and Kotlin code with coroutines or executors and tests it with unit and integration tests.",
+   "semantic",
+   [
+    [
+     "pl-jvm-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-test-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-sql-query-optimizer",
+   "pl-sql",
+   "SQL Query Writer and Optimizer",
+   "Writes joins and aggregates, reads query plans and proposes indexes, showing the plan before and after.",
+   "procedural",
+   [
+    [
+     "pl-sql-engineer",
+     "primary"
+    ],
+    [
+     "pl-performance-analyst",
+     "checker"
+    ],
+    [
+     "pl-test-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-sql-schema-migrations",
+   "pl-sql",
+   "SQL Schema and Migrations",
+   "Designs normalized tables and constraints and writes reversible migrations with a plan for existing data.",
+   "procedural",
+   [
+    [
+     "pl-sql-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-shell-script-safety",
+   "pl-shell",
+   "Shell Script Safety",
+   "Writes shell scripts with strict error handling and correct quoting and checks them with a linter before they run.",
+   "procedural",
+   [
+    [
+     "pl-shell-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-test-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pl-shell-automation-pipelines",
+   "pl-shell",
+   "Shell Automation Pipelines",
+   "Builds command pipelines and scheduled jobs for file, log and deployment tasks and says what each job needs permission to touch.",
+   "procedural",
+   [
+    [
+     "pl-shell-engineer",
+     "primary"
+    ],
+    [
+     "pl-code-reviewer",
+     "checker"
+    ],
+    [
+     "pl-build-engineer",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "pl-python-engineer": "Python Engineer Agent",
+  "pl-typescript-engineer": "TypeScript Engineer Agent",
+  "pl-go-engineer": "Go Engineer Agent",
+  "pl-rust-engineer": "Rust Engineer Agent",
+  "pl-systems-engineer": "Systems Programming Agent",
+  "pl-jvm-engineer": "JVM Engineer Agent",
+  "pl-sql-engineer": "SQL Engineer Agent",
+  "pl-shell-engineer": "Shell Engineer Agent",
+  "pl-build-engineer": "Build and Packaging Agent",
+  "pl-performance-analyst": "Performance Analyst Agent",
+  "pl-test-engineer": "Test Engineer Agent",
+  "pl-code-reviewer": "Code Reviewer Agent"
+ },
+ "mcp": [
+  [
+   "Microsoft Learn",
+   "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "Search trusted Microsoft docs to power your development",
+   [
+    "microsoft_docs_search",
+    "microsoft_docs_fetch",
+    "microsoft_code_sample_search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "pylang": "python pip venv pytest asyncio pipeline lock typing",
+  "tslang": "typescript tsconfig npm bundler generics discriminated node",
+  "golang": "goroutine race table driven leak golang module",
+  "rustlang": "rust ownership borrow lifetime cargo clippy crate unsafe",
+  "clang": "cmake sanitizer pointer abi header smart",
+  "jvmlang": "java kotlin gradle maven coroutine executor",
+  "sqlquery": "sql join index query migration normalized schema",
+  "shellscript": "shell quoting linter cron strict bash script scripting"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "Microsoft Learn": "directory listing, authless per the directory; documentation and code samples for Microsoft technologies only, so it covers .NET, C# and TypeScript tooling but not the other languages; tool names are the listing's visible sample; connector is not installed or tested",
+   "all": "only one directory server was relevant to language work; other language ecosystems have no verified server here"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here."
+ }
+}

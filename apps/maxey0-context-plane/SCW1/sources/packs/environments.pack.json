@@ -1,0 +1,312 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "environments",
+ "topic": {
+  "id": "environments",
+  "label": "Environments and Deployment",
+  "desc": "Where software is built and runs: development environments, local, cloud and edge targets, endpoints and addresses, and promotion from development to production. Includes the Human0 development environment (name to be decided), an MCP app that would deploy a development server in one step."
+ },
+ "concepts": [
+  [
+   "env-human0-dev",
+   "Human0 Development Environment",
+   "environments",
+   "Placeholder for the Human0 development environment (name to be decided): an MCP app where one click on a harness starts the development server. Open question: whether an MCP server is a location.",
+   [
+    "human0",
+    "development",
+    "environment",
+    "dev",
+    "server",
+    "harness",
+    "mcp",
+    "app",
+    "workspace",
+    "click",
+    "deploy"
+   ]
+  ],
+  [
+   "env-targets",
+   "Local, Cloud and Edge Targets",
+   "environments",
+   "Choosing where an application or website runs: a local machine, a cloud region, an edge network, or a container host.",
+   [
+    "local",
+    "cloud",
+    "edge",
+    "region",
+    "host",
+    "target",
+    "website",
+    "hosting",
+    "serverless",
+    "container"
+   ]
+  ],
+  [
+   "env-promotion",
+   "Environment Promotion",
+   "environments",
+   "Development, staging and production environments, configuration per environment, and promoting a release between them.",
+   [
+    "development",
+    "staging",
+    "production",
+    "environment",
+    "promotion",
+    "release",
+    "configuration",
+    "rollback",
+    "preview"
+   ]
+  ],
+  [
+   "env-endpoints",
+   "Endpoints and Addresses",
+   "environments",
+   "Digital addresses: URLs, domains, DNS records, ports and MCP endpoints, and how an address differs from where the code runs.",
+   [
+    "endpoint",
+    "address",
+    "url",
+    "domain",
+    "dns",
+    "port",
+    "mcp",
+    "server",
+    "route"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "env-dev-environment-planner",
+   "env-human0-dev",
+   "Dev Environment Planner",
+   "Plans a development environment for a project: runtime, dependencies, dev server, and how it is opened from the Human0 harness.",
+   "procedural",
+   [
+    [
+     "env-devenv",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-target",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-location-resolution-placeholder",
+   "env-human0-dev",
+   "Location Resolution Placeholder",
+   "Records the open question of where a piece of software is located (host, region, environment, endpoint, or MCP server) until the rule is decided; returns the candidates without choosing.",
+   "semantic",
+   [
+    [
+     "env-devenv",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-target",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-hosting-target-selector",
+   "env-targets",
+   "Hosting Target Selector",
+   "Compares hosting targets for a website or service by latency, cost, region and operations burden, and names the trade-offs.",
+   "semantic",
+   [
+    [
+     "env-target",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-release",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-website-hosting-planner",
+   "env-targets",
+   "Website Hosting Planner",
+   "Plans where a website should be built and hosted, from repository to live address.",
+   "procedural",
+   [
+    [
+     "env-target",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-release",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-promotion-planner",
+   "env-promotion",
+   "Promotion Planner",
+   "Plans promotion of a release from development to staging to production with checks and rollback at each step.",
+   "procedural",
+   [
+    [
+     "env-release",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-endpoint",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-environment-config-auditor",
+   "env-promotion",
+   "Environment Config Auditor",
+   "Checks that configuration and secrets differ correctly between environments and none leak into the wrong one.",
+   "procedural",
+   [
+    [
+     "env-release",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-endpoint",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-endpoint-mapper",
+   "env-endpoints",
+   "Endpoint Mapper",
+   "Maps a service to its addresses (domain, URL, MCP endpoint) and to where it actually runs.",
+   "procedural",
+   [
+    [
+     "env-endpoint",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-devenv",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "env-dns-record-explainer",
+   "env-endpoints",
+   "DNS Record Explainer",
+   "Explains the DNS records a domain needs for a deployment and what each one does.",
+   "semantic",
+   [
+    [
+     "env-endpoint",
+     "primary"
+    ],
+    [
+     "env-checker",
+     "checker"
+    ],
+    [
+     "env-devenv",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "env-devenv": "Development Environment Agent",
+  "env-target": "Deployment Target Agent",
+  "env-release": "Release Agent",
+  "env-endpoint": "Endpoint Agent",
+  "env-checker": "Deployment Checker Agent"
+ },
+ "mcp": [
+  [
+   "GitHub MCP Server",
+   null,
+   "GitHub's official MCP server: repositories, code, issues, pull requests, Actions workflows and deployment pipelines, security alerts.",
+   [],
+   "web-listed",
+   "https://github.com/github/github-mcp-server"
+  ],
+  [
+   "Cloudflare MCP",
+   null,
+   "Cloudflare MCP servers: Workers deployment and bindings, DNS, observability logs, edge compute and platform documentation.",
+   [],
+   "web-listed",
+   "https://github.com/cloudflare/mcp-server-cloudflare"
+  ],
+  [
+   "Docker MCP Gateway",
+   null,
+   "Docker MCP Gateway: runs MCP servers in isolated containers, manages environment configuration, secrets and the catalog of servers.",
+   [],
+   "web-listed",
+   "https://github.com/docker/mcp-gateway"
+  ]
+ ],
+ "lexicon": {
+  "envhuman0dev": "human0 development environment dev server harness mcp app workspace click deploy",
+  "envtargets": "local cloud edge region host target website hosting serverless container",
+  "envpromotion": "development staging production environment promotion release configuration rollback preview",
+  "envendpoints": "endpoint address url domain dns port mcp server route"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "GitHub MCP Server": "repository exists (git ls-remote https://github.com/github/github-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Cloudflare MCP": "repository exists (git ls-remote https://github.com/cloudflare/mcp-server-cloudflare, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Docker MCP Gateway": "repository exists (git ls-remote https://github.com/docker/mcp-gateway, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {
+   "location-resolution": "Is an MCP server a location? Working hypothesis: an MCP server is an address (an endpoint); a location is host + region + environment. Undecided by the owner; recorded as concept env-human0-dev, skill env-location-resolution-placeholder, no rule reads it.",
+   "dev-server-name": "The Human0 development server needs a new name (owner to decide)."
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

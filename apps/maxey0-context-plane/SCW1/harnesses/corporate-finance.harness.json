@@ -1,0 +1,443 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "corporate-finance",
+  "label": "Corporate Finance",
+  "desc": "Building and financing a corporation: entity formation and governance, capital structure, valuation, mergers and acquisitions, and treasury."
+ },
+ "concepts": [
+  {
+   "id": "cf-capital",
+   "label": "Capital Structure and Financing",
+   "desc": "Debt versus equity, cost of capital, WACC, leverage and financing choices.",
+   "keywords": [
+    "capital",
+    "structure",
+    "debt",
+    "equity",
+    "wacc",
+    "leverage",
+    "financing",
+    "cost",
+    "capital"
+   ],
+   "topic": "corporate-finance",
+   "source": "corporate-finance",
+   "related": []
+  },
+  {
+   "id": "cf-formation",
+   "label": "Entity Formation and Governance",
+   "desc": "Forming a corporation or LLC, jurisdictions such as Delaware, boards, bylaws, cap tables and equity grants.",
+   "keywords": [
+    "corporation",
+    "incorporate",
+    "entity",
+    "llc",
+    "delaware",
+    "board",
+    "bylaws",
+    "cap",
+    "table",
+    "founder",
+    "equity"
+   ],
+   "topic": "corporate-finance",
+   "source": "corporate-finance",
+   "related": []
+  },
+  {
+   "id": "cf-mna",
+   "label": "Mergers and Acquisitions",
+   "desc": "Buying, selling and merging companies: deal process, due diligence, synergies and accretion/dilution.",
+   "keywords": [
+    "merger",
+    "acquisition",
+    "deal",
+    "due",
+    "diligence",
+    "synergy",
+    "accretion",
+    "dilution",
+    "target",
+    "buyer"
+   ],
+   "topic": "corporate-finance",
+   "source": "corporate-finance",
+   "related": []
+  },
+  {
+   "id": "cf-treasury",
+   "label": "Treasury and Working Capital",
+   "desc": "Cash management, liquidity, working capital, hedging and dividends or buybacks.",
+   "keywords": [
+    "treasury",
+    "cash",
+    "liquidity",
+    "working",
+    "capital",
+    "hedging",
+    "dividend",
+    "buyback"
+   ],
+   "topic": "corporate-finance",
+   "source": "corporate-finance",
+   "related": []
+  },
+  {
+   "id": "cf-valuation",
+   "label": "Valuation",
+   "desc": "Valuing a company: discounted cash flow, comparable companies, precedent transactions and LBO.",
+   "keywords": [
+    "valuation",
+    "dcf",
+    "discounted",
+    "cash",
+    "flow",
+    "comparable",
+    "multiple",
+    "precedent",
+    "lbo",
+    "enterprise",
+    "value"
+   ],
+   "topic": "corporate-finance",
+   "source": "corporate-finance",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cf-financing-options-comparator",
+   "concept": "cf-capital",
+   "label": "Financing Options Comparator",
+   "desc": "Compares debt, equity and hybrid financing for a company's situation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1692",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1694",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-wacc-calculator",
+   "concept": "cf-capital",
+   "label": "WACC Calculator",
+   "desc": "Computes weighted average cost of capital with each input's source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1692",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1694",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-cap-table-builder",
+   "concept": "cf-formation",
+   "label": "Cap Table Builder",
+   "desc": "Builds a cap table through financing rounds with dilution and option pool.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1695",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1692",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-incorporation-planner",
+   "concept": "cf-formation",
+   "label": "Incorporation Planner",
+   "desc": "Plans forming a corporation: entity type, jurisdiction, founders' equity, board and filings.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1695",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1692",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-accretion-dilution-analyzer",
+   "concept": "cf-mna",
+   "label": "Accretion Dilution Analyzer",
+   "desc": "Computes whether an acquisition is accretive or dilutive to earnings per share.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1696",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1697",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-due-diligence-checklist",
+   "concept": "cf-mna",
+   "label": "Due Diligence Checklist",
+   "desc": "Builds a due diligence checklist for an acquisition by area.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1696",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1697",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-working-capital-analyzer",
+   "concept": "cf-treasury",
+   "label": "Working Capital Analyzer",
+   "desc": "Analyzes working capital and the cash conversion cycle.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1697",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1695",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-comparable-companies-analysis",
+   "concept": "cf-valuation",
+   "label": "Comparable Companies Analysis",
+   "desc": "Values a company from trading multiples of comparable companies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1694",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1696",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  },
+  {
+   "id": "cf-dcf-builder",
+   "concept": "cf-valuation",
+   "label": "DCF Builder",
+   "desc": "Builds a discounted cash flow valuation with stated assumptions and sensitivity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1694",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1693",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1696",
+     "role": "support"
+    }
+   ],
+   "source": "corporate-finance"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1692",
+   "name": "Capital Structure Agent",
+   "legacy_key": "cf-capital",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1693",
+   "name": "Corporate Finance Checker Agent",
+   "legacy_key": "cf-checker",
+   "mcp": [
+    "local:financial-datasets-mcp",
+    "local:sec-edgar-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1694",
+   "name": "Corporate Valuation Agent",
+   "legacy_key": "cf-valuer",
+   "mcp": [
+    "local:sec-edgar-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1695",
+   "name": "Entity Formation Agent",
+   "legacy_key": "cf-formation",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1696",
+   "name": "M&A Agent",
+   "legacy_key": "cf-mna",
+   "mcp": [
+    "local:financial-datasets-mcp",
+    "local:sec-edgar-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1697",
+   "name": "Treasury Agent",
+   "legacy_key": "cf-treasury",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Financial Datasets MCP",
+   "desc": "Financial Datasets MCP server: company income statements, balance sheets, cash flow statements, stock prices and market news.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/financial-datasets/mcp-server",
+   "id": "local:financial-datasets-mcp",
+   "origins": [
+    "corporate-finance",
+    "equities",
+    "financial-data"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "SEC EDGAR MCP",
+   "desc": "SEC EDGAR MCP server: company filings, 10-K, 10-Q, 8-K, XBRL financial data and insider trading forms from EDGAR.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/stefanoamorelli/sec-edgar-mcp",
+   "id": "local:sec-edgar-mcp",
+   "origins": [
+    "corporate-finance",
+    "equities",
+    "financial-data",
+    "offerings"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:sec-edgar-mcp",
+  "local:financial-datasets-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1693",
+   "mcp": "local:financial-datasets-mcp",
+   "topic": "corporate-finance",
+   "score": 0.1041,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1693",
+   "mcp": "local:sec-edgar-mcp",
+   "topic": "corporate-finance",
+   "score": 0.1297,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1696",
+    "skill": "cf-accretion-dilution-analyzer"
+   }
+  },
+  {
+   "agent": "Maxey1694",
+   "mcp": "local:sec-edgar-mcp",
+   "topic": "corporate-finance",
+   "score": 0.1171,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1696",
+   "mcp": "local:financial-datasets-mcp",
+   "topic": "corporate-finance",
+   "score": 0.1205,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1696",
+   "mcp": "local:sec-edgar-mcp",
+   "topic": "corporate-finance",
+   "score": 0.1297,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "cfformation": "corporation incorporate entity llc delaware board bylaws cap table founder equity",
+  "cfcapital": "capital structure debt equity wacc leverage financing cost capital",
+  "cfvaluation": "valuation dcf discounted cash flow comparable multiple precedent lbo enterprise value",
+  "cfmna": "merger acquisition deal due diligence synergy accretion dilution target buyer",
+  "cftreasury": "treasury cash liquidity working capital hedging dividend buyback"
+ },
+ "sources": [
+  "corporate-finance"
+ ]
+}

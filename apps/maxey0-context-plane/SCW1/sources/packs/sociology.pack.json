@@ -1,0 +1,553 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "sociology",
+ "topic": {
+  "id": "sociology",
+  "label": "Sociology",
+  "desc": "Sociology: the scientific study of social structure, groups, institutions, inequality and social change."
+ },
+ "concepts": [
+  [
+   "soc-social-theory",
+   "Social Theory",
+   "sociology",
+   "Classical and contemporary theories of society from Marx, Weber and Durkheim to Bourdieu, Giddens and feminist theory.",
+   [
+    "theory",
+    "marx",
+    "weber",
+    "durkheim",
+    "bourdieu",
+    "structure",
+    "agency"
+   ]
+  ],
+  [
+   "soc-research-methods",
+   "Sociological Research Methods",
+   "sociology",
+   "Survey design, regression analysis, interviews, ethnography and comparative-historical methods.",
+   [
+    "survey",
+    "regression",
+    "interview",
+    "ethnography",
+    "sampling",
+    "coding",
+    "mixed methods"
+   ]
+  ],
+  [
+   "soc-stratification-inequality",
+   "Stratification and Inequality",
+   "sociology",
+   "Class, race, gender and their intersection in the distribution of income, wealth, education and mobility.",
+   [
+    "inequality",
+    "class",
+    "race",
+    "gender",
+    "mobility",
+    "intersectionality",
+    "poverty"
+   ]
+  ],
+  [
+   "soc-demography-family",
+   "Demography, Population and Family",
+   "sociology",
+   "Fertility, mortality, migration, household structure and the life course.",
+   [
+    "demography",
+    "fertility",
+    "mortality",
+    "migration",
+    "family",
+    "life course",
+    "population"
+   ]
+  ],
+  [
+   "soc-networks-organizations",
+   "Social Networks and Organizations",
+   "sociology",
+   "Patterns of ties among actors and the structure of firms, bureaucracies and institutions.",
+   [
+    "network",
+    "tie",
+    "centrality",
+    "organization",
+    "bureaucracy",
+    "institution",
+    "diffusion"
+   ]
+  ],
+  [
+   "soc-culture-movements",
+   "Culture, Deviance and Social Movements",
+   "sociology",
+   "Meaning, norms, deviance, collective action and protest in social life.",
+   [
+    "culture",
+    "norm",
+    "deviance",
+    "movement",
+    "protest",
+    "collective action",
+    "identity"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "soc-theory-apply",
+   "soc-social-theory",
+   "Social Theory Applier",
+   "Applies a named theory to an empirical case and states the predictions it makes, checked against the theorist's own texts.",
+   "semantic",
+   [
+    [
+     "soc-theory",
+     "primary"
+    ],
+    [
+     "soc-lit",
+     "checker"
+    ],
+    [
+     "soc-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-theory-compare",
+   "soc-social-theory",
+   "Theory Comparison Builder",
+   "Compares how two theories explain a phenomenon such as religion or inequality, checked for fidelity to primary sources.",
+   "semantic",
+   [
+    [
+     "soc-theory",
+     "primary"
+    ],
+    [
+     "soc-qual",
+     "checker"
+    ],
+    [
+     "soc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-concept-operationalize",
+   "soc-social-theory",
+   "Concept Operationalizer",
+   "Turns an abstract concept such as social capital into measurable indicators, checked for validity by a methods review.",
+   "procedural",
+   [
+    [
+     "soc-quant",
+     "primary"
+    ],
+    [
+     "soc-theory",
+     "checker"
+    ],
+    [
+     "soc-qual",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-survey-design",
+   "soc-research-methods",
+   "Survey Instrument Designer",
+   "Drafts survey questions and a sampling plan, checked for leading wording and sample-size adequacy.",
+   "procedural",
+   [
+    [
+     "soc-quant",
+     "primary"
+    ],
+    [
+     "soc-qual",
+     "checker"
+    ],
+    [
+     "soc-demo",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-regression-analysis",
+   "soc-research-methods",
+   "Sociological Regression Analyzer",
+   "Runs regression models on survey data and interprets coefficients, checked by rerunning with robustness specifications.",
+   "procedural",
+   [
+    [
+     "soc-quant",
+     "primary"
+    ],
+    [
+     "soc-demo",
+     "checker"
+    ],
+    [
+     "soc-strat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-interview-coding",
+   "soc-research-methods",
+   "Interview Coding Assistant",
+   "Codes interview transcripts into themes with a codebook, checked by inter-coder agreement.",
+   "procedural",
+   [
+    [
+     "soc-qual",
+     "primary"
+    ],
+    [
+     "soc-culture",
+     "checker"
+    ],
+    [
+     "soc-theory",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-mobility-table",
+   "soc-stratification-inequality",
+   "Social Mobility Table Analyzer",
+   "Computes absolute and relative intergenerational mobility from a mobility table, checked by recomputation.",
+   "procedural",
+   [
+    [
+     "soc-strat",
+     "primary"
+    ],
+    [
+     "soc-quant",
+     "checker"
+    ],
+    [
+     "soc-demo",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-gap-decomposition",
+   "soc-stratification-inequality",
+   "Inequality Gap Decomposer",
+   "Decomposes a wage or wealth gap into explained and unexplained parts, checked against the model output.",
+   "procedural",
+   [
+    [
+     "soc-quant",
+     "primary"
+    ],
+    [
+     "soc-strat",
+     "checker"
+    ],
+    [
+     "soc-theory",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-intersection-review",
+   "soc-stratification-inequality",
+   "Intersectional Inequality Reviewer",
+   "Reviews how race, class and gender jointly shape an outcome, checked against cited empirical studies.",
+   "semantic",
+   [
+    [
+     "soc-strat",
+     "primary"
+    ],
+    [
+     "soc-lit",
+     "checker"
+    ],
+    [
+     "soc-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-life-table",
+   "soc-demography-family",
+   "Life Table Builder",
+   "Builds a period life table from mortality rates and reports life expectancy, checked against standard demographic formulas.",
+   "procedural",
+   [
+    [
+     "soc-demo",
+     "primary"
+    ],
+    [
+     "soc-quant",
+     "checker"
+    ],
+    [
+     "soc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-fertility-trends",
+   "soc-demography-family",
+   "Fertility Trend Analyzer",
+   "Computes total fertility rates and explains trends, checked against official population statistics.",
+   "procedural",
+   [
+    [
+     "soc-demo",
+     "primary"
+    ],
+    [
+     "soc-strat",
+     "checker"
+    ],
+    [
+     "soc-quant",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-migration-profile",
+   "soc-demography-family",
+   "Migration Flow Profiler",
+   "Profiles migration flows and their causes for a region, checked against census and survey data.",
+   "semantic",
+   [
+    [
+     "soc-demo",
+     "primary"
+    ],
+    [
+     "soc-network",
+     "checker"
+    ],
+    [
+     "soc-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-network-metrics",
+   "soc-networks-organizations",
+   "Social Network Metrics Calculator",
+   "Computes centrality, density and community structure for a network, checked by an independent recomputation.",
+   "procedural",
+   [
+    [
+     "soc-network",
+     "primary"
+    ],
+    [
+     "soc-quant",
+     "checker"
+    ],
+    [
+     "soc-org",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-diffusion-model",
+   "soc-networks-organizations",
+   "Diffusion Through Networks Modeler",
+   "Simulates diffusion of a behavior through a network, checked against observed adoption data.",
+   "procedural",
+   [
+    [
+     "soc-network",
+     "primary"
+    ],
+    [
+     "soc-quant",
+     "checker"
+    ],
+    [
+     "soc-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-org-analysis",
+   "soc-networks-organizations",
+   "Organizational Structure Analyzer",
+   "Analyzes the structure and institutional environment of an organization, checked against organizational theory.",
+   "semantic",
+   [
+    [
+     "soc-org",
+     "primary"
+    ],
+    [
+     "soc-theory",
+     "checker"
+    ],
+    [
+     "soc-network",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-frame-analysis",
+   "soc-culture-movements",
+   "Movement Frame Analyzer",
+   "Identifies collective action frames in movement texts, checked by a second coder.",
+   "semantic",
+   [
+    [
+     "soc-culture",
+     "primary"
+    ],
+    [
+     "soc-qual",
+     "checker"
+    ],
+    [
+     "soc-theory",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-protest-events",
+   "soc-culture-movements",
+   "Protest Event Data Builder",
+   "Builds a protest event dataset from news reports with coded fields, checked for duplicates and coding consistency.",
+   "procedural",
+   [
+    [
+     "soc-culture",
+     "primary"
+    ],
+    [
+     "soc-quant",
+     "checker"
+    ],
+    [
+     "soc-org",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "soc-deviance-review",
+   "soc-culture-movements",
+   "Deviance and Norms Reviewer",
+   "Summarizes theories and evidence on a form of deviance, checked for citation accuracy.",
+   "semantic",
+   [
+    [
+     "soc-lit",
+     "primary"
+    ],
+    [
+     "soc-culture",
+     "checker"
+    ],
+    [
+     "soc-theory",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "soc-theory": "Social Theory Agent",
+  "soc-quant": "Quantitative Sociology Agent",
+  "soc-qual": "Qualitative Methods Agent",
+  "soc-strat": "Stratification Agent",
+  "soc-demo": "Demography Agent",
+  "soc-network": "Social Network Agent",
+  "soc-culture": "Sociology of Culture Agent",
+  "soc-org": "Organizations Agent",
+  "soc-lit": "Sociology Literature Agent"
+ },
+ "mcp": [
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "soc-theory": "theory weber durkheim bourdieu agency structure",
+  "soc-methods": "survey regression interview coding sampling ethnography",
+  "soc-inequality": "inequality class race gender mobility intersectional wealth",
+  "soc-population": "demography fertility mortality migration life expectancy census",
+  "soc-networks": "network centrality diffusion organization institutional density",
+  "soc-culture": "culture norm deviance movement protest frame"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

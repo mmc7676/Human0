@@ -1,0 +1,566 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "public-policy",
+ "topic": {
+  "id": "public-policy",
+  "label": "Public Policy",
+  "desc": "Public Policy: designing, analysing, financing, implementing and evaluating government action on public problems."
+ },
+ "concepts": [
+  [
+   "pubpol-policy-analysis",
+   "Policy Analysis",
+   "public-policy",
+   "Structured definition of public problems, generation of policy alternatives and comparison against explicit criteria such as efficiency, equity and feasibility.",
+   [
+    "problem definition",
+    "alternatives",
+    "criteria",
+    "tradeoff",
+    "feasibility",
+    "recommendation",
+    "memo"
+   ]
+  ],
+  [
+   "pubpol-public-economics",
+   "Public Economics",
+   "public-policy",
+   "Market failure, externalities, public goods, taxation and the welfare effects of government intervention.",
+   [
+    "market failure",
+    "externality",
+    "public good",
+    "taxation",
+    "incidence",
+    "welfare",
+    "subsidy",
+    "efficiency"
+   ]
+  ],
+  [
+   "pubpol-program-evaluation",
+   "Program Evaluation and Causal Inference",
+   "public-policy",
+   "Estimating the causal effect of programs with randomized trials and quasi-experimental designs such as difference-in-differences and regression discontinuity.",
+   [
+    "evaluation",
+    "causal",
+    "randomized",
+    "difference-in-differences",
+    "regression discontinuity",
+    "counterfactual",
+    "impact"
+   ]
+  ],
+  [
+   "pubpol-institutions-process",
+   "Political Institutions and the Policy Process",
+   "public-policy",
+   "How agendas form, how legislatures, agencies and courts make decisions, and how interest groups shape outcomes.",
+   [
+    "agenda",
+    "legislature",
+    "agency",
+    "interest group",
+    "veto",
+    "coalition",
+    "implementation",
+    "federalism"
+   ]
+  ],
+  [
+   "pubpol-public-finance-budgeting",
+   "Public Finance and Budgeting",
+   "public-policy",
+   "Revenue, expenditure, budget processes, fiscal rules and the long-run sustainability of public debt.",
+   [
+    "budget",
+    "revenue",
+    "expenditure",
+    "deficit",
+    "debt",
+    "appropriation",
+    "fiscal",
+    "forecast"
+   ]
+  ],
+  [
+   "pubpol-regulation-ethics",
+   "Regulation, Law and Policy Ethics",
+   "public-policy",
+   "Regulatory design, administrative law, cost-benefit review and the normative principles used to justify policy choices.",
+   [
+    "regulation",
+    "administrative law",
+    "rulemaking",
+    "cost-benefit",
+    "justice",
+    "equity",
+    "rights"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "pubpol-alternatives-matrix",
+   "pubpol-policy-analysis",
+   "Policy Alternatives Matrix",
+   "Scores each policy alternative against stated criteria and returns a matrix whose weights and evidence citations are checked for consistency.",
+   "procedural",
+   [
+    [
+     "pubpol-analyst",
+     "primary"
+    ],
+    [
+     "pubpol-econ",
+     "checker"
+    ],
+    [
+     "pubpol-ethics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-problem-definition",
+   "pubpol-policy-analysis",
+   "Problem Definition Framer",
+   "Frames a public problem with its magnitude, affected groups and causes, checked against cited data sources.",
+   "semantic",
+   [
+    [
+     "pubpol-analyst",
+     "primary"
+    ],
+    [
+     "pubpol-stat",
+     "checker"
+    ],
+    [
+     "pubpol-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-policy-memo",
+   "pubpol-policy-analysis",
+   "Policy Memo Drafter",
+   "Drafts a decision memo with a recommendation and its tradeoffs, checked for unsupported claims and missing alternatives.",
+   "semantic",
+   [
+    [
+     "pubpol-analyst",
+     "primary"
+    ],
+    [
+     "pubpol-politics",
+     "checker"
+    ],
+    [
+     "pubpol-lit",
+     "support"
+    ],
+    [
+     "pubpol-ethics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-externality-pricing",
+   "pubpol-public-economics",
+   "Externality Pricing Estimator",
+   "Estimates the marginal external cost of an activity and the corrective tax, with the calculation verified for units and sources.",
+   "procedural",
+   [
+    [
+     "pubpol-econ",
+     "primary"
+    ],
+    [
+     "pubpol-stat",
+     "checker"
+    ],
+    [
+     "pubpol-law",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-tax-incidence",
+   "pubpol-public-economics",
+   "Tax Incidence Analyzer",
+   "Computes how a tax burden splits between buyers and sellers from supply and demand elasticities, checked by recomputation.",
+   "procedural",
+   [
+    [
+     "pubpol-econ",
+     "primary"
+    ],
+    [
+     "pubpol-budget",
+     "checker"
+    ],
+    [
+     "pubpol-stat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-welfare-analysis",
+   "pubpol-public-economics",
+   "Welfare Effect Assessor",
+   "Measures consumer surplus, producer surplus and deadweight loss of an intervention, checked against a stated market model.",
+   "semantic",
+   [
+    [
+     "pubpol-econ",
+     "primary"
+    ],
+    [
+     "pubpol-eval",
+     "checker"
+    ],
+    [
+     "pubpol-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-did-estimator",
+   "pubpol-program-evaluation",
+   "Difference-in-Differences Estimator",
+   "Runs a difference-in-differences regression and reports the effect with a parallel-trends check.",
+   "procedural",
+   [
+    [
+     "pubpol-eval",
+     "primary"
+    ],
+    [
+     "pubpol-stat",
+     "checker"
+    ],
+    [
+     "pubpol-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-rct-design",
+   "pubpol-program-evaluation",
+   "Randomized Trial Designer",
+   "Designs a randomized evaluation with sample size and power calculation, checked by an independent power computation.",
+   "procedural",
+   [
+    [
+     "pubpol-stat",
+     "primary"
+    ],
+    [
+     "pubpol-eval",
+     "checker"
+    ],
+    [
+     "pubpol-ethics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-evidence-synthesis",
+   "pubpol-program-evaluation",
+   "Evaluation Evidence Synthesizer",
+   "Collects published impact evaluations of a program type and summarizes effect sizes, checked for citation accuracy.",
+   "semantic",
+   [
+    [
+     "pubpol-lit",
+     "primary"
+    ],
+    [
+     "pubpol-eval",
+     "checker"
+    ],
+    [
+     "pubpol-stat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-stakeholder-map",
+   "pubpol-institutions-process",
+   "Stakeholder and Coalition Mapper",
+   "Maps interest groups, veto players and likely coalitions on an issue, checked against public records of positions.",
+   "semantic",
+   [
+    [
+     "pubpol-politics",
+     "primary"
+    ],
+    [
+     "pubpol-analyst",
+     "checker"
+    ],
+    [
+     "pubpol-law",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-legislative-tracker",
+   "pubpol-institutions-process",
+   "Legislative Pathway Tracer",
+   "Traces a bill or rule through the legislative and agency steps it must pass, checked against the governing procedure.",
+   "procedural",
+   [
+    [
+     "pubpol-politics",
+     "primary"
+    ],
+    [
+     "pubpol-law",
+     "checker"
+    ],
+    [
+     "pubpol-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-implementation-review",
+   "pubpol-institutions-process",
+   "Implementation Risk Reviewer",
+   "Identifies implementation bottlenecks across agencies and levels of government, checked against comparable program histories.",
+   "semantic",
+   [
+    [
+     "pubpol-politics",
+     "primary"
+    ],
+    [
+     "pubpol-eval",
+     "checker"
+    ],
+    [
+     "pubpol-budget",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-budget-scoring",
+   "pubpol-public-finance-budgeting",
+   "Budget Cost Scorer",
+   "Projects the multi-year cost or revenue of a proposal, with assumptions and arithmetic checked by recomputation.",
+   "procedural",
+   [
+    [
+     "pubpol-budget",
+     "primary"
+    ],
+    [
+     "pubpol-stat",
+     "checker"
+    ],
+    [
+     "pubpol-econ",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-debt-sustainability",
+   "pubpol-public-finance-budgeting",
+   "Debt Sustainability Calculator",
+   "Projects the debt-to-GDP path under interest, growth and deficit assumptions, checked with the standard debt dynamics equation.",
+   "procedural",
+   [
+    [
+     "pubpol-budget",
+     "primary"
+    ],
+    [
+     "pubpol-econ",
+     "checker"
+    ],
+    [
+     "pubpol-stat",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-revenue-forecast",
+   "pubpol-public-finance-budgeting",
+   "Revenue Forecast Builder",
+   "Builds a revenue forecast from economic drivers and reports error ranges, checked against historical forecast errors.",
+   "procedural",
+   [
+    [
+     "pubpol-stat",
+     "primary"
+    ],
+    [
+     "pubpol-budget",
+     "checker"
+    ],
+    [
+     "pubpol-econ",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-cost-benefit",
+   "pubpol-regulation-ethics",
+   "Regulatory Cost-Benefit Analyzer",
+   "Monetizes costs and benefits of a regulation with discounting, checked for double counting and discount-rate sensitivity.",
+   "procedural",
+   [
+    [
+     "pubpol-econ",
+     "primary"
+    ],
+    [
+     "pubpol-law",
+     "checker"
+    ],
+    [
+     "pubpol-ethics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-rulemaking-review",
+   "pubpol-regulation-ethics",
+   "Rulemaking Compliance Reviewer",
+   "Checks a proposed rule against notice-and-comment and statutory authority requirements, verified against the cited statute.",
+   "semantic",
+   [
+    [
+     "pubpol-law",
+     "primary"
+    ],
+    [
+     "pubpol-politics",
+     "checker"
+    ],
+    [
+     "pubpol-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pubpol-equity-assessment",
+   "pubpol-regulation-ethics",
+   "Distributional Equity Assessor",
+   "Assesses who gains and loses from a policy by income, region and group, checked against stated normative criteria.",
+   "semantic",
+   [
+    [
+     "pubpol-ethics",
+     "primary"
+    ],
+    [
+     "pubpol-stat",
+     "checker"
+    ],
+    [
+     "pubpol-econ",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "pubpol-analyst": "Policy Analysis Agent",
+  "pubpol-econ": "Policy Economist Agent",
+  "pubpol-eval": "Program Evaluation Agent",
+  "pubpol-stat": "Quantitative Methods Agent",
+  "pubpol-law": "Regulatory and Legal Agent",
+  "pubpol-budget": "Public Budget Agent",
+  "pubpol-politics": "Political Process Agent",
+  "pubpol-ethics": "Policy Ethics Agent",
+  "pubpol-lit": "Policy Literature Agent"
+ },
+ "mcp": [
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Mantic",
+   "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "Explore judgemental forecasts",
+   [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "pubpol-analysis": "policy analysis alternatives criteria memo recommendation tradeoff",
+  "pubpol-economics": "economist externality tax incidence welfare surplus deadweight subsidy",
+  "pubpol-evaluation": "evaluation randomized causal regression trial impact counterfactual",
+  "pubpol-process": "legislature agency interest coalition veto rulemaking statute implementation",
+  "pubpol-finance": "budget revenue debt deficit fiscal forecast expenditure",
+  "pubpol-normative": "ethics equity justice rights distributional"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

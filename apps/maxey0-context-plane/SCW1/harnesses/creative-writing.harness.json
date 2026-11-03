@@ -1,0 +1,526 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "creative-writing",
+  "label": "Creative Writing",
+  "desc": "Creative Writing: the craft of fiction, poetry, creative nonfiction and dramatic writing, developed through drafting, workshop and revision."
+ },
+ "concepts": [
+  {
+   "id": "cw-craft-revision",
+   "label": "Craft, Workshop and Revision",
+   "desc": "Giving and using critique and revising drafts at structural and line level.",
+   "keywords": [
+    "revision",
+    "workshop",
+    "critique",
+    "feedback",
+    "draft",
+    "line edit",
+    "structure",
+    "prose"
+   ],
+   "topic": "creative-writing",
+   "source": "creative-writing",
+   "related": []
+  },
+  {
+   "id": "cw-drama",
+   "label": "Dramatic Writing",
+   "desc": "Plays and screenplays built from dialogue, action, structure and stage or screen format.",
+   "keywords": [
+    "drama",
+    "play",
+    "screenplay",
+    "dialogue",
+    "act",
+    "stage",
+    "format",
+    "action"
+   ],
+   "topic": "creative-writing",
+   "source": "creative-writing",
+   "related": []
+  },
+  {
+   "id": "cw-fiction",
+   "label": "Fiction",
+   "desc": "Short stories and novels built from character, plot, point of view, setting and scene.",
+   "keywords": [
+    "fiction",
+    "character",
+    "plot",
+    "point of view",
+    "scene",
+    "setting",
+    "short story",
+    "novel"
+   ],
+   "topic": "creative-writing",
+   "source": "creative-writing",
+   "related": []
+  },
+  {
+   "id": "cw-nonfiction",
+   "label": "Creative Nonfiction",
+   "desc": "Memoir, personal essay and literary journalism using narrative craft on true material.",
+   "keywords": [
+    "nonfiction",
+    "memoir",
+    "essay",
+    "literary journalism",
+    "truth",
+    "research",
+    "voice",
+    "reflection"
+   ],
+   "topic": "creative-writing",
+   "source": "creative-writing",
+   "related": []
+  },
+  {
+   "id": "cw-poetry",
+   "label": "Poetry",
+   "desc": "Verse built from image, line, sound, form and meter.",
+   "keywords": [
+    "poetry",
+    "poem",
+    "image",
+    "line break",
+    "meter",
+    "form",
+    "sonnet",
+    "free verse"
+   ],
+   "topic": "creative-writing",
+   "source": "creative-writing",
+   "related": [
+    "engl-poetry-poetics"
+   ]
+  },
+  {
+   "id": "cw-publishing",
+   "label": "Literary Publishing",
+   "desc": "Submitting to magazines, agents and presses and the conventions of the literary market.",
+   "keywords": [
+    "publishing",
+    "submission",
+    "query letter",
+    "agent",
+    "magazine",
+    "press",
+    "manuscript",
+    "market"
+   ],
+   "topic": "creative-writing",
+   "source": "creative-writing",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cw-line-edit",
+   "concept": "cw-craft-revision",
+   "label": "Line Editing",
+   "desc": "Edits prose for clarity, rhythm and concision and lists every change with its reason.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1190",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1193",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-workshop-critique",
+   "concept": "cw-craft-revision",
+   "label": "Workshop Critique",
+   "desc": "Writes a critique naming strengths and the most important problem and ties each point to a passage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1192",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1194",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-dialogue-draft",
+   "concept": "cw-drama",
+   "label": "Dialogue Drafting",
+   "desc": "Writes dialogue with subtext and distinct voices and checks each line advances conflict or character.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1195",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1193",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-script-format",
+   "concept": "cw-drama",
+   "label": "Script Formatting",
+   "desc": "Formats a play or screenplay to industry conventions and flags format errors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1195",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1196",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-character-profile",
+   "concept": "cw-fiction",
+   "label": "Character Development",
+   "desc": "Builds a character's desire, flaw and arc and checks the arc against scenes in the draft.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1193",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1194",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-plot-outline",
+   "concept": "cw-fiction",
+   "label": "Plot Outline",
+   "desc": "Outlines a story's structure by scene and checks that causes, stakes and resolution connect.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1193",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1194",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-scene-draft",
+   "concept": "cw-fiction",
+   "label": "Scene Drafting",
+   "desc": "Drafts a scene with a clear goal, conflict and turn and checks that point of view stays consistent.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1193",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-essay-draft",
+   "concept": "cw-nonfiction",
+   "label": "Personal Essay Drafting",
+   "desc": "Drafts a personal essay that moves between scene and reflection and checks factual claims are marked and sourced.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1197",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-fact-check",
+   "concept": "cw-nonfiction",
+   "label": "Nonfiction Fact Check",
+   "desc": "Checks names, dates and events in a nonfiction draft and lists claims that need a source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1191",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1196",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1197",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1193",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-poem-draft",
+   "concept": "cw-poetry",
+   "label": "Poem Drafting",
+   "desc": "Drafts a poem in a requested form and checks the line, rhyme and meter rules of that form.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1194",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-scansion-check",
+   "concept": "cw-poetry",
+   "label": "Meter and Sound Check",
+   "desc": "Scans a poem for meter and sound patterns and flags lines that break the intended pattern.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1190",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1194",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-query-letter",
+   "concept": "cw-publishing",
+   "label": "Query Letter",
+   "desc": "Drafts a query letter for a manuscript and checks it against agent submission guidelines.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1196",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1193",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-submission-plan",
+   "concept": "cw-publishing",
+   "label": "Submission Plan",
+   "desc": "Builds a list of venues matched to a manuscript with deadlines and guidelines and flags mismatches.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1196",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1193",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1190",
+   "name": "Line Editor Agent",
+   "legacy_key": "cw-line-editor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1191",
+   "name": "Close Reader Agent",
+   "legacy_key": "cw-reader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1192",
+   "name": "Workshop Editor Agent",
+   "legacy_key": "cw-workshop-editor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1193",
+   "name": "Fiction Writer Agent",
+   "legacy_key": "cw-fiction-writer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1194",
+   "name": "Poet Agent",
+   "legacy_key": "cw-poet",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1195",
+   "name": "Playwright and Screenwriter Agent",
+   "legacy_key": "cw-dramatist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1196",
+   "name": "Publishing Advisor Agent",
+   "legacy_key": "cw-publishing",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1197",
+   "name": "Creative Nonfiction Agent",
+   "legacy_key": "cw-essayist",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "cw-fiction": "fiction character plot point of view scene setting short story novel",
+  "cw-poetry": "poetry poem image line break meter form sonnet free verse",
+  "cw-nonfiction": "nonfiction memoir essay literary journalism truth research voice reflection",
+  "cw-drama": "drama play screenplay dialogue act stage format action",
+  "cw-craft": "revision workshop critique feedback draft edit structure prose",
+  "cw-publish": "publishing submission query letter agent magazine press manuscript market"
+ },
+ "sources": [
+  "creative-writing"
+ ]
+}

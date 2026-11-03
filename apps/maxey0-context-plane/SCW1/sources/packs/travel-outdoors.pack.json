@@ -1,0 +1,233 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "travel-outdoors",
+ "topic": {
+  "id": "travel-outdoors",
+  "label": "Travel and Outdoors",
+  "desc": "Getting somewhere and being outside: trip and route planning, hiking, trails and parks, weather and conditions, bookings and permits."
+ },
+ "concepts": [
+  [
+   "trv-trips",
+   "Trip and Route Planning",
+   "travel-outdoors",
+   "Planning trips: destinations, itineraries, transport and routes between places.",
+   [
+    "trip",
+    "travel",
+    "itinerary",
+    "destination",
+    "transport",
+    "route",
+    "plan",
+    "journey"
+   ]
+  ],
+  [
+   "trv-hiking",
+   "Hiking, Trails and Parks",
+   "travel-outdoors",
+   "Hikes and trails: finding a hike, distance, elevation gain, difficulty, trailheads and parks.",
+   [
+    "hike",
+    "hiking",
+    "trail",
+    "park",
+    "trailhead",
+    "elevation",
+    "gain",
+    "difficulty",
+    "outdoor",
+    "nature"
+   ]
+  ],
+  [
+   "trv-conditions",
+   "Weather and Conditions",
+   "travel-outdoors",
+   "Weather forecasts, seasons, daylight and conditions that affect travel and outdoor plans.",
+   [
+    "weather",
+    "forecast",
+    "condition",
+    "season",
+    "daylight",
+    "temperature",
+    "rain",
+    "snow",
+    "wind"
+   ]
+  ],
+  [
+   "trv-bookings",
+   "Bookings and Permits",
+   "travel-outdoors",
+   "Reservations, campsites, park permits, passes and entry requirements.",
+   [
+    "booking",
+    "reservation",
+    "campsite",
+    "permit",
+    "pass",
+    "entry",
+    "visa",
+    "ticket"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "trv-itinerary-planner",
+   "trv-trips",
+   "Itinerary Planner",
+   "Plans a day-by-day itinerary with travel times between stops.",
+   "procedural",
+   [
+    [
+     "trv-planner",
+     "primary"
+    ],
+    [
+     "trv-checker",
+     "checker"
+    ],
+    [
+     "trv-trail",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "trv-hike-finder",
+   "trv-hiking",
+   "Hike Finder",
+   "Finds hikes near a place by distance, elevation gain and difficulty, with trailhead coordinates.",
+   "semantic",
+   [
+    [
+     "trv-trail",
+     "primary"
+    ],
+    [
+     "trv-checker",
+     "checker"
+    ],
+    [
+     "trv-weather",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "trv-trail-safety-briefing",
+   "trv-hiking",
+   "Trail Safety Briefing",
+   "Briefs the safety needs of a hike: water, daylight, weather, terrain and turnaround time.",
+   "semantic",
+   [
+    [
+     "trv-trail",
+     "primary"
+    ],
+    [
+     "trv-checker",
+     "checker"
+    ],
+    [
+     "trv-weather",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "trv-conditions-check",
+   "trv-conditions",
+   "Conditions Check",
+   "Checks forecast, daylight and seasonal conditions for a place and date.",
+   "procedural",
+   [
+    [
+     "trv-weather",
+     "primary"
+    ],
+    [
+     "trv-checker",
+     "checker"
+    ],
+    [
+     "trv-booking",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "trv-permit-requirement-finder",
+   "trv-bookings",
+   "Permit Requirement Finder",
+   "Finds whether a park, trail or campsite needs a permit or reservation and how to get it.",
+   "semantic",
+   [
+    [
+     "trv-booking",
+     "primary"
+    ],
+    [
+     "trv-checker",
+     "checker"
+    ],
+    [
+     "trv-planner",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "trv-planner": "Trip Planning Agent",
+  "trv-trail": "Trail and Hiking Agent",
+  "trv-weather": "Conditions Agent",
+  "trv-booking": "Bookings and Permits Agent",
+  "trv-checker": "Travel Checker Agent"
+ },
+ "mcp": [
+  [
+   "Google Maps MCP",
+   null,
+   "Google Maps Platform MCP server: geocoding and reverse geocoding of addresses and coordinates, place search and place details, distance matrix, elevation and directions.",
+   [],
+   "web-listed",
+   "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/google-maps"
+  ],
+  [
+   "OpenStreetMap MCP",
+   null,
+   "OpenStreetMap MCP server: geocode addresses and place names to coordinates, find nearby places, route between locations, explore neighborhoods from open map data.",
+   [],
+   "web-listed",
+   "https://github.com/jagan-shanmugam/open-streetmap-mcp"
+  ]
+ ],
+ "lexicon": {
+  "trvtrips": "trip travel itinerary destination transport route plan journey",
+  "trvhiking": "hike hiking trail park trailhead elevation gain difficulty outdoor nature",
+  "trvconditions": "weather forecast condition season daylight temperature rain snow wind",
+  "trvbookings": "booking reservation campsite permit pass entry visa ticket"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Google Maps MCP": "repository exists (git ls-remote https://github.com/modelcontextprotocol/servers-archived, 2026-10-31); description summarises its public README; tool list not re-read; reference server, archived by its maintainers",
+   "OpenStreetMap MCP": "repository exists (git ls-remote https://github.com/jagan-shanmugam/open-streetmap-mcp, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

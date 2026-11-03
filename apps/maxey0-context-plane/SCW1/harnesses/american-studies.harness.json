@@ -1,0 +1,689 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "american-studies",
+  "label": "American Studies",
+  "desc": "American Studies: interdisciplinary study of the culture, history, politics and identities of the United States and its place in the world."
+ },
+ "concepts": [
+  {
+   "id": "amst-american-cultural-history",
+   "label": "American Cultural History",
+   "desc": "Changing ideas, values and everyday life in the United States from the colonial era to the present.",
+   "keywords": [
+    "history",
+    "colonial",
+    "republic",
+    "frontier",
+    "industrialization",
+    "progressive",
+    "cold war",
+    "everyday life"
+   ],
+   "topic": "american-studies",
+   "source": "american-studies",
+   "related": []
+  },
+  {
+   "id": "amst-gender-class",
+   "label": "Gender, Sexuality and Class",
+   "desc": "Gender roles, sexuality and class formation in American society and culture.",
+   "keywords": [
+    "gender",
+    "sexuality",
+    "class",
+    "labor",
+    "family",
+    "feminism",
+    "work",
+    "inequality"
+   ],
+   "topic": "american-studies",
+   "source": "american-studies",
+   "related": []
+  },
+  {
+   "id": "amst-literature-texts",
+   "label": "American Literature and Texts",
+   "desc": "Novels, poetry, essays and documents read as evidence of American culture and ideology.",
+   "keywords": [
+    "literature",
+    "novel",
+    "poetry",
+    "essay",
+    "document",
+    "ideology",
+    "myth",
+    "canon"
+   ],
+   "topic": "american-studies",
+   "source": "american-studies",
+   "related": []
+  },
+  {
+   "id": "amst-place-empire",
+   "label": "Place, Region and Empire",
+   "desc": "American regions, cities, landscapes and the United States as a global and imperial power.",
+   "keywords": [
+    "region",
+    "city",
+    "suburb",
+    "landscape",
+    "empire",
+    "transnational",
+    "foreign policy",
+    "south"
+   ],
+   "topic": "american-studies",
+   "source": "american-studies",
+   "related": []
+  },
+  {
+   "id": "amst-popular-culture-media",
+   "label": "Popular Culture and Media",
+   "desc": "Film, television, music, advertising and digital media as producers of American meaning.",
+   "keywords": [
+    "popular culture",
+    "film",
+    "television",
+    "advertising",
+    "digital media",
+    "celebrity",
+    "audience",
+    "consumer"
+   ],
+   "topic": "american-studies",
+   "source": "american-studies",
+   "related": []
+  },
+  {
+   "id": "amst-race-ethnicity-immigration",
+   "label": "Race, Ethnicity and Immigration",
+   "desc": "How race, ethnicity, Indigeneity and immigration have shaped American identity and citizenship.",
+   "keywords": [
+    "race",
+    "ethnicity",
+    "immigration",
+    "indigenous",
+    "citizenship",
+    "assimilation",
+    "borderlands",
+    "identity"
+   ],
+   "topic": "american-studies",
+   "source": "american-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "amst-myth-analysis",
+   "concept": "amst-american-cultural-history",
+   "label": "National Myth Analysis",
+   "desc": "Examines a national myth such as the frontier or the American dream and checks the reading against scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1006",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1007",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1008",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-period-synthesis",
+   "concept": "amst-american-cultural-history",
+   "label": "Period Synthesis",
+   "desc": "Writes a synthesis of an American historical period and checks every claim against cited primary and secondary sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1006",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1592",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-primary-source",
+   "concept": "amst-american-cultural-history",
+   "label": "Primary Source Analysis",
+   "desc": "Analyses a letter, speech or artifact for context and meaning and checks dating and provenance against archival records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1592",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1008",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-family-data",
+   "concept": "amst-gender-class",
+   "label": "Family and Work Data Review",
+   "desc": "Summarises historical data on family and work patterns and checks figures against census series.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1009",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1007",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-gender-analysis",
+   "concept": "amst-gender-class",
+   "label": "Gender and Sexuality Analysis",
+   "desc": "Applies feminist and queer analysis to a cultural text and checks claims against the text and scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1009",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1008",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-labor-history",
+   "concept": "amst-gender-class",
+   "label": "Labor and Class Analysis",
+   "desc": "Analyses class formation and labor struggles and checks the analysis against labor history sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1009",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1592",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-canon-review",
+   "concept": "amst-literature-texts",
+   "label": "Canon Formation Review",
+   "desc": "Traces how a work entered or left the American canon and checks the account against publishing and teaching records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1008",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1592",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-close-reading",
+   "concept": "amst-literature-texts",
+   "label": "Close Reading",
+   "desc": "Produces a close reading of an American literary text and checks each claim against textual evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1008",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-ideology-critique",
+   "concept": "amst-literature-texts",
+   "label": "Ideology Critique",
+   "desc": "Identifies ideological assumptions in a text or document and checks the critique for evidence and counter-readings.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1008",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1007",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1009",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-empire-analysis",
+   "concept": "amst-place-empire",
+   "label": "American Empire Analysis",
+   "desc": "Analyses United States foreign policy as empire and checks the claims against diplomatic records and scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1006",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1010",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-regional-study",
+   "concept": "amst-place-empire",
+   "label": "Regional Culture Study",
+   "desc": "Characterises the culture of an American region such as the South and checks the profile against regional scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1010",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-urban-suburban",
+   "concept": "amst-place-empire",
+   "label": "City and Suburb Mapping",
+   "desc": "Maps urban and suburban change and checks the map against census and planning data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1010",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1007",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1009",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-advertising-study",
+   "concept": "amst-popular-culture-media",
+   "label": "Advertising and Consumer Culture Study",
+   "desc": "Analyses advertisements as evidence of consumer culture and checks dates and sources in archives.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1011",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1592",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1009",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-audience-research",
+   "concept": "amst-popular-culture-media",
+   "label": "Audience Reception Research",
+   "desc": "Summarises audience reception of a media text and checks the summary against survey and review evidence.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1011",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1007",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-film-analysis",
+   "concept": "amst-popular-culture-media",
+   "label": "Film and Television Analysis",
+   "desc": "Analyses a film or television series for themes and form and checks interpretation against production context.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1011",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1008",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-citizenship-law",
+   "concept": "amst-race-ethnicity-immigration",
+   "label": "Citizenship and Law Review",
+   "desc": "Reviews laws and court cases on citizenship and race and checks holdings against the case text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1009",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1007",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-immigration-history",
+   "concept": "amst-race-ethnicity-immigration",
+   "label": "Immigration History Analysis",
+   "desc": "Analyses an immigration wave and its policy context and checks figures against census and legal records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1009",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1006",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1592",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  },
+  {
+   "id": "amst-indigenous-perspective",
+   "concept": "amst-race-ethnicity-immigration",
+   "label": "Indigenous Perspectives Review",
+   "desc": "Reviews Indigenous histories and perspectives on a topic and checks the account against Indigenous scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1009",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1591",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1010",
+     "role": "support"
+    }
+   ],
+   "source": "american-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1006",
+   "name": "American Cultural Historian",
+   "legacy_key": "amst-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1007",
+   "name": "Interdisciplinary Methods Checker",
+   "legacy_key": "amst-methods",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1008",
+   "name": "Cultural Texts Critic",
+   "legacy_key": "amst-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1009",
+   "name": "Identity and Society Analyst",
+   "legacy_key": "amst-social",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1010",
+   "name": "Place and Region Analyst",
+   "legacy_key": "amst-space",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1011",
+   "name": "Popular Culture and Media Analyst",
+   "legacy_key": "amst-media",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1591",
+   "name": "Scholarly Literature Reviewer",
+   "legacy_key": "amst-literature",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1592",
+   "name": "Archival Research Agent",
+   "legacy_key": "amst-archivist",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1591",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "american-studies",
+   "score": 0.107,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "amst-past": "history colonial republic frontier industrialization progressive",
+  "amst-text": "literature novel poetry essay ideology myth canon",
+  "amst-media": "film television advertising digital celebrity audience consumer",
+  "amst-identity": "race ethnicity immigration indigenous citizenship assimilation borderlands",
+  "amst-social": "gender sexuality class labor family feminism",
+  "amst-place": "region city suburb landscape empire transnational"
+ },
+ "sources": [
+  "american-studies"
+ ]
+}

@@ -1,0 +1,732 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "civil-engineering",
+  "label": "Civil Engineering",
+  "desc": "Civil Engineering: the analysis, design and construction of structures, foundations, water systems and transportation networks."
+ },
+ "concepts": [
+  {
+   "id": "civil-construction",
+   "label": "Construction Engineering and Management",
+   "desc": "Planning, scheduling, costing and safe execution of civil works from tender to handover.",
+   "keywords": [
+    "construction",
+    "schedule",
+    "cost",
+    "estimate",
+    "contract",
+    "safety",
+    "critical path",
+    "quantity"
+   ],
+   "topic": "civil-engineering",
+   "source": "civil-engineering",
+   "related": []
+  },
+  {
+   "id": "civil-geotechnical",
+   "label": "Geotechnical Engineering",
+   "desc": "Behaviour of soil and rock as engineering materials, covering site investigation, bearing capacity, settlement and slope stability.",
+   "keywords": [
+    "geotechnical",
+    "soil",
+    "foundation",
+    "bearing",
+    "settlement",
+    "slope",
+    "consolidation",
+    "borehole"
+   ],
+   "topic": "civil-engineering",
+   "source": "civil-engineering",
+   "related": []
+  },
+  {
+   "id": "civil-materials",
+   "label": "Civil Engineering Materials",
+   "desc": "Properties and testing of concrete, steel, asphalt and timber used in civil infrastructure.",
+   "keywords": [
+    "materials",
+    "concrete",
+    "steel",
+    "asphalt",
+    "timber",
+    "strength",
+    "mix",
+    "durability"
+   ],
+   "topic": "civil-engineering",
+   "source": "civil-engineering",
+   "related": []
+  },
+  {
+   "id": "civil-structural",
+   "label": "Structural Engineering",
+   "desc": "Analysis and design of beams, frames, trusses and slabs so that load paths, stresses and deflections stay within code limits.",
+   "keywords": [
+    "structural",
+    "beam",
+    "truss",
+    "frame",
+    "load",
+    "deflection",
+    "stress",
+    "moment"
+   ],
+   "topic": "civil-engineering",
+   "source": "civil-engineering",
+   "related": []
+  },
+  {
+   "id": "civil-transportation",
+   "label": "Transportation Engineering",
+   "desc": "Planning, geometric design and operation of roads, rail and transit so that traffic moves safely and efficiently.",
+   "keywords": [
+    "transportation",
+    "traffic",
+    "highway",
+    "pavement",
+    "intersection",
+    "capacity",
+    "geometric",
+    "transit"
+   ],
+   "topic": "civil-engineering",
+   "source": "civil-engineering",
+   "related": []
+  },
+  {
+   "id": "civil-water-resources",
+   "label": "Water Resources and Hydraulics",
+   "desc": "Flow of water in pipes, channels and catchments, used to design drainage, flood control and water supply systems.",
+   "keywords": [
+    "hydraulic",
+    "hydrology",
+    "pipe",
+    "channel",
+    "drainage",
+    "flood",
+    "runoff",
+    "catchment"
+   ],
+   "topic": "civil-engineering",
+   "source": "civil-engineering",
+   "related": [
+    "envs-water-resources"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "civil-cost-estimate",
+   "concept": "civil-construction",
+   "label": "Quantity and Cost Estimator",
+   "desc": "Takes off quantities from drawings, prices them and reconciles the total against unit-rate benchmarks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1129",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-critical-path",
+   "concept": "civil-construction",
+   "label": "Critical Path Scheduler",
+   "desc": "Builds an activity network, computes the critical path and float, and checks that logic links and durations are complete.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1129",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-site-safety",
+   "concept": "civil-construction",
+   "label": "Site Safety Planner",
+   "desc": "Identifies construction hazards for each work stage and checks the safety plan against applicable regulations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1129",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1134",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-bearing-capacity",
+   "concept": "civil-geotechnical",
+   "label": "Bearing Capacity Calculator",
+   "desc": "Calculates allowable bearing pressure for shallow foundations from soil strength parameters and checks the factor of safety.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1134",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-settlement-estimate",
+   "concept": "civil-geotechnical",
+   "label": "Settlement Estimator",
+   "desc": "Estimates immediate and consolidation settlement from borehole and laboratory data and compares totals with tolerable limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1134",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-slope-stability",
+   "concept": "civil-geotechnical",
+   "label": "Slope Stability Review",
+   "desc": "Evaluates slope stability with limit-equilibrium methods and reports the critical slip surface and factor of safety for review.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1134",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-concrete-mix",
+   "concept": "civil-materials",
+   "label": "Concrete Mix Design",
+   "desc": "Proportions cement, water, aggregate and admixtures for a target strength and checks the water-cement ratio and durability limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1130",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1134",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1129",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-test-interpretation",
+   "concept": "civil-materials",
+   "label": "Material Test Interpretation",
+   "desc": "Interprets cylinder, tensile and asphalt test results and flags samples that fall below specified strength.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1130",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1129",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-frame-analysis",
+   "concept": "civil-structural",
+   "label": "Frame and Truss Analysis",
+   "desc": "Computes member forces, moments and deflections for a frame or truss under specified load combinations and checks equilibrium at every joint.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1131",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1135",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-load-combination",
+   "concept": "civil-structural",
+   "label": "Load Combination Builder",
+   "desc": "Assembles dead, live, wind and seismic load cases into factored combinations and verifies factors against the referenced standard.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1132",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1129",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-member-design",
+   "concept": "civil-structural",
+   "label": "Steel and Concrete Member Design",
+   "desc": "Sizes steel and reinforced concrete members for bending, shear and axial load and checks each against the governing design code clauses.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1131",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1135",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-geometric-design",
+   "concept": "civil-transportation",
+   "label": "Highway Geometric Design",
+   "desc": "Lays out horizontal and vertical alignment with curve radii and sight distances and checks each element against design speed rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1135",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-pavement-design",
+   "concept": "civil-transportation",
+   "label": "Pavement Design",
+   "desc": "Selects pavement layer thicknesses from traffic loading and subgrade strength and verifies the design life calculation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1135",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1134",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-traffic-capacity",
+   "concept": "civil-transportation",
+   "label": "Traffic Capacity Analysis",
+   "desc": "Computes level of service and delay at intersections and road segments from traffic counts and checks inputs for consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1135",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-channel-design",
+   "concept": "civil-water-resources",
+   "label": "Open Channel Design",
+   "desc": "Sizes open channels and culverts with Manning flow relations and checks velocity and freeboard limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1136",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1135",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-pipe-network",
+   "concept": "civil-water-resources",
+   "label": "Pipe Network Solver",
+   "desc": "Solves flows and pressures in a water distribution network and checks that continuity and energy balance close at every node.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1136",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1131",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  },
+  {
+   "id": "civil-runoff-model",
+   "concept": "civil-water-resources",
+   "label": "Catchment Runoff Model",
+   "desc": "Estimates peak runoff from a catchment using rainfall intensity and land cover and checks results against a second method.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1136",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1133",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1132",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1130",
+     "role": "support"
+    }
+   ],
+   "source": "civil-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1129",
+   "name": "Construction Manager Agent",
+   "legacy_key": "civil-construction-manager",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1130",
+   "name": "Materials Testing Agent",
+   "legacy_key": "civil-materials",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1131",
+   "name": "Structural Analyst Agent",
+   "legacy_key": "civil-structural-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1132",
+   "name": "Design Code Checker Agent",
+   "legacy_key": "civil-code-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1133",
+   "name": "Spatial Site Analyst Agent",
+   "legacy_key": "civil-gis-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1134",
+   "name": "Geotechnical Engineer Agent",
+   "legacy_key": "civil-geotechnical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1135",
+   "name": "Transportation Planner Agent",
+   "legacy_key": "civil-transport-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1136",
+   "name": "Hydraulics Engineer Agent",
+   "legacy_key": "civil-hydraulics",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "civil-structure": "structural beam truss frame load deflection stress moment",
+  "civil-soil": "geotechnical soil foundation bearing settlement slope consolidation borehole",
+  "civil-water": "hydraulic hydrology pipe channel drainage flood runoff catchment",
+  "civil-transport": "transportation traffic highway pavement intersection capacity geometric transit",
+  "civil-construct": "construction schedule cost estimate contract safety critical path quantity",
+  "civil-material": "materials concrete steel asphalt timber strength mix durability"
+ },
+ "sources": [
+  "civil-engineering"
+ ]
+}

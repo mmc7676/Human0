@@ -1,0 +1,560 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "earth-systems",
+ "topic": {
+  "id": "earth-systems",
+  "label": "Earth Systems",
+  "desc": "Earth Systems: the coupled atmosphere, ocean, land, ice and biosphere, studied through observation, modeling and geospatial analysis."
+ },
+ "concepts": [
+  [
+   "earth-climate-atmosphere",
+   "Climate and Atmospheric Science",
+   "earth-systems",
+   "Atmospheric circulation, radiation balance, weather and long-term climate change and its drivers.",
+   [
+    "climate",
+    "atmosphere",
+    "radiation",
+    "greenhouse",
+    "circulation",
+    "weather",
+    "forcing",
+    "feedback"
+   ]
+  ],
+  [
+   "earth-oceanography",
+   "Oceanography",
+   "earth-systems",
+   "Physical, chemical and biological processes of the ocean, including currents, heat uptake and acidification.",
+   [
+    "ocean",
+    "current",
+    "salinity",
+    "thermohaline",
+    "upwelling",
+    "acidification",
+    "sea level",
+    "tide"
+   ]
+  ],
+  [
+   "earth-solid-earth",
+   "Solid Earth and Geology",
+   "earth-systems",
+   "Plate tectonics, rocks and minerals, earthquakes, volcanoes and the processes that shape landforms over geologic time.",
+   [
+    "geology",
+    "tectonics",
+    "plate",
+    "earthquake",
+    "volcano",
+    "mineral",
+    "rock",
+    "stratigraphy"
+   ]
+  ],
+  [
+   "earth-hydrology-cryosphere",
+   "Hydrology and Cryosphere",
+   "earth-systems",
+   "Movement and storage of water through rivers, groundwater, snow and ice sheets.",
+   [
+    "hydrology",
+    "watershed",
+    "groundwater",
+    "runoff",
+    "glacier",
+    "ice sheet",
+    "snow",
+    "drought"
+   ]
+  ],
+  [
+   "earth-biogeochemistry",
+   "Biogeochemical Cycles and Ecosystems",
+   "earth-systems",
+   "Cycling of carbon, nitrogen and water through organisms, soils, oceans and atmosphere.",
+   [
+    "biogeochemistry",
+    "carbon cycle",
+    "nitrogen",
+    "ecosystem",
+    "soil",
+    "biosphere",
+    "flux"
+   ]
+  ],
+  [
+   "earth-geospatial-observation",
+   "Geospatial Analysis and Remote Sensing",
+   "earth-systems",
+   "Satellite, aerial and field observation of Earth mapped and analysed with GIS.",
+   [
+    "remote sensing",
+    "satellite",
+    "gis",
+    "map",
+    "raster",
+    "land cover",
+    "spatial",
+    "imagery"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "earth-energy-balance-modeler",
+   "earth-climate-atmosphere",
+   "Energy Balance Modeler",
+   "Builds radiative energy balance models of the climate and checks equilibrium temperature against observations.",
+   "procedural",
+   [
+    [
+     "earth-climate",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-ocean",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-climate-trend-analyzer",
+   "earth-climate-atmosphere",
+   "Climate Trend Analyzer",
+   "Computes temperature and precipitation trends from station or reanalysis records and checks significance and homogeneity.",
+   "procedural",
+   [
+    [
+     "earth-climate",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-forcing-attributor",
+   "earth-climate-atmosphere",
+   "Climate Forcing Attributor",
+   "Explains observed change in terms of greenhouse, aerosol and natural forcing and checks claims against assessment literature.",
+   "semantic",
+   [
+    [
+     "earth-climate",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-ocean-circulation-analyst",
+   "earth-oceanography",
+   "Ocean Circulation Analyst",
+   "Interprets temperature and salinity profiles to describe currents and water masses and checks density consistency.",
+   "semantic",
+   [
+    [
+     "earth-ocean",
+     "primary"
+    ],
+    [
+     "earth-climate",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-sea-level-estimator",
+   "earth-oceanography",
+   "Sea Level Change Estimator",
+   "Decomposes sea level change into thermal expansion and ice melt contributions and checks the budget closes.",
+   "procedural",
+   [
+    [
+     "earth-ocean",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-climate",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-seismic-locator",
+   "earth-solid-earth",
+   "Earthquake Locator",
+   "Locates earthquake hypocenters from arrival times and checks residuals and magnitude estimates.",
+   "procedural",
+   [
+    [
+     "earth-geologist",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-rock-identifier",
+   "earth-solid-earth",
+   "Rock and Mineral Identifier",
+   "Classifies rocks and minerals from described properties and checks identification against diagnostic tests.",
+   "semantic",
+   [
+    [
+     "earth-geologist",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-eco",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-stratigraphy-interpreter",
+   "earth-solid-earth",
+   "Stratigraphic Interpreter",
+   "Reconstructs depositional history from rock layers and checks relative ages against superposition and dating.",
+   "semantic",
+   [
+    [
+     "earth-geologist",
+     "primary"
+    ],
+    [
+     "earth-climate",
+     "checker"
+    ],
+    [
+     "earth-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-watershed-modeler",
+   "earth-hydrology-cryosphere",
+   "Watershed Runoff Modeler",
+   "Models rainfall-runoff response for a watershed and checks simulated discharge against gauge records.",
+   "procedural",
+   [
+    [
+     "earth-hydro",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-glacier-mass-balancer",
+   "earth-hydrology-cryosphere",
+   "Glacier Mass Balance Analyst",
+   "Estimates glacier and ice sheet mass balance from accumulation and melt and checks against remote sensing.",
+   "procedural",
+   [
+    [
+     "earth-hydro",
+     "primary"
+    ],
+    [
+     "earth-climate",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-drought-assessor",
+   "earth-hydrology-cryosphere",
+   "Drought Assessor",
+   "Computes drought indices from precipitation and soil moisture and checks severity classes against historical events.",
+   "procedural",
+   [
+    [
+     "earth-hydro",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-carbon-budgeter",
+   "earth-biogeochemistry",
+   "Carbon Budget Analyst",
+   "Builds carbon budgets across reservoirs and fluxes and checks that sources and sinks balance within uncertainty.",
+   "procedural",
+   [
+    [
+     "earth-eco",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-climate",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-ecosystem-responder",
+   "earth-biogeochemistry",
+   "Ecosystem Response Analyst",
+   "Assesses ecosystem response to climate and land change and checks conclusions against field and satellite evidence.",
+   "semantic",
+   [
+    [
+     "earth-eco",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-land-cover-classifier",
+   "earth-geospatial-observation",
+   "Land Cover Classifier",
+   "Classifies satellite imagery into land cover classes and checks accuracy against reference samples.",
+   "procedural",
+   [
+    [
+     "earth-gis",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-eco",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-hazard-mapper",
+   "earth-geospatial-observation",
+   "Natural Hazard Mapper",
+   "Maps flood, fire, landslide and seismic hazard zones and checks layers against recorded events.",
+   "procedural",
+   [
+    [
+     "earth-gis",
+     "primary"
+    ],
+    [
+     "earth-geologist",
+     "checker"
+    ],
+    [
+     "earth-hydro",
+     "support"
+    ],
+    [
+     "earth-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "earth-sustainability-planner",
+   "earth-geospatial-observation",
+   "Sustainability Impact Planner",
+   "Assesses land use and resource decisions against Earth system limits and checks assumptions with cited data.",
+   "semantic",
+   [
+    [
+     "earth-policy",
+     "primary"
+    ],
+    [
+     "earth-reviewer",
+     "checker"
+    ],
+    [
+     "earth-gis",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "earth-climate": "Climate Dynamics Modeler",
+  "earth-ocean": "Ocean Systems Analyst",
+  "earth-geologist": "Solid Earth Geologist",
+  "earth-hydro": "Hydrology Analyst",
+  "earth-eco": "Biogeochemistry Ecologist",
+  "earth-gis": "Geospatial Remote Sensing Analyst",
+  "earth-reviewer": "Earth Data Quality Reviewer",
+  "earth-policy": "Sustainability Policy Analyst"
+ },
+ "mcp": [
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Felt Maps",
+   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "Map and analyze your geospatial data",
+   [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "earth-atmos": "climate atmosphere radiation greenhouse circulation weather forcing",
+  "earth-ocean": "ocean current salinity thermohaline upwelling acidification tide",
+  "earth-solid": "geology tectonics plate earthquake volcano mineral rock stratigraphy",
+  "earth-water": "hydrology watershed groundwater runoff glacier snow drought",
+  "earth-bio": "biogeochemistry carbon nitrogen ecosystem soil biosphere flux",
+  "earth-geo": "satellite gis map raster imagery spatial hazard"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "rows reused verbatim from the verified Human0 MCP menu; working order not re-checked in this session"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

@@ -1,0 +1,742 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "data",
+ "topic": {
+  "id": "data",
+  "label": "Data",
+  "desc": "Data work end to end: modelling and schemas, ingestion and pipelines, warehouses and analytics engineering, data quality, catalogues and lineage, exploration and visualisation, streaming, and dataset preparation for machine learning."
+ },
+ "concepts": [
+  [
+   "da-modeling",
+   "Data Modeling and Schemas",
+   "data",
+   "Designing tables and entities: normal forms, keys, dimensional models, types and evolving a schema without breaking users.",
+   [
+    "schema",
+    "table",
+    "normalization",
+    "dimensional",
+    "key",
+    "data",
+    "star",
+    "sales"
+   ]
+  ],
+  [
+   "da-pipelines",
+   "Ingestion and Pipelines",
+   "data",
+   "Moving data in and out: extract, load and transform jobs, scheduling, idempotent reruns, backfills and failure handling.",
+   [
+    "ingestion",
+    "etl",
+    "pipeline",
+    "scheduling",
+    "backfill",
+    "idempotent",
+    "retries"
+   ]
+  ],
+  [
+   "da-warehouse",
+   "Warehouses and Analytics Engineering",
+   "data",
+   "Querying and modelling data at scale: SQL warehouses, partitioning, incremental models, metrics definitions and cost control.",
+   [
+    "warehouse",
+    "partition",
+    "incremental",
+    "metric",
+    "sql",
+    "dbt"
+   ]
+  ],
+  [
+   "da-quality",
+   "Data Quality and Validation",
+   "data",
+   "Knowing whether data can be trusted: expectations, freshness and volume checks, anomalies, missing values and reconciliation.",
+   [
+    "quality",
+    "validation",
+    "freshness",
+    "anomaly",
+    "reconciliation",
+    "checksum",
+    "mismatch",
+    "mismatched",
+    "check",
+    "checks",
+    "dbt"
+   ]
+  ],
+  [
+   "da-catalog",
+   "Catalogs, Lineage and Metadata",
+   "data",
+   "Finding and understanding data: catalogues, column descriptions, owners, lineage graphs and impact analysis.",
+   [
+    "catalog",
+    "lineage",
+    "owner",
+    "impact",
+    "glossary"
+   ]
+  ],
+  [
+   "da-exploration",
+   "Exploration and Visualisation",
+   "data",
+   "Looking at data to learn from it: profiling, summaries, charts that tell the truth and sharing findings.",
+   [
+    "exploration",
+    "profiling",
+    "visualization",
+    "chart",
+    "summary"
+   ]
+  ],
+  [
+   "da-streaming",
+   "Streaming and Real-time Data",
+   "data",
+   "Event data and low-latency processing: logs, queues, windows, ordering, late events and exactly-once claims.",
+   [
+    "streaming",
+    "event",
+    "window",
+    "queue",
+    "latency",
+    "kafka",
+    "stream",
+    "flink"
+   ]
+  ],
+  [
+   "da-ml-datasets",
+   "Datasets for Machine Learning",
+   "data",
+   "Preparing data for models: labelling, splits, leakage, class balance, versioning and dataset documentation.",
+   [
+    "dataset",
+    "labelling",
+    "split",
+    "leakage",
+    "balance"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "da-entity-modeler",
+   "da-modeling",
+   "Entity and Table Modeler",
+   "Turns a business description into entities, keys and relationships and shows the resulting tables with sample rows.",
+   "procedural",
+   [
+    [
+     "da-modeler",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-analytics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-dimensional-designer",
+   "da-modeling",
+   "Dimensional Model Designer",
+   "Designs fact and dimension tables for reporting questions and states the grain of each fact table.",
+   "semantic",
+   [
+    [
+     "da-modeler",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-analytics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-schema-evolution-planner",
+   "da-modeling",
+   "Schema Evolution Planner",
+   "Plans an additive or breaking schema change with a migration, a backfill and a list of downstream users.",
+   "procedural",
+   [
+    [
+     "da-modeler",
+     "primary"
+    ],
+    [
+     "da-catalog-steward",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-etl-job-designer",
+   "da-pipelines",
+   "ETL Job Designer",
+   "Designs a job that extracts, transforms and loads a source, with the schedule, retries, idempotent writes and what happens on partial failure.",
+   "procedural",
+   [
+    [
+     "da-pipeline-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-quality-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-idempotent-rerun-checker",
+   "da-pipelines",
+   "Idempotent Rerun Checker",
+   "Checks that rerunning a job gives the same result with no duplicates and fixes steps that append blindly.",
+   "procedural",
+   [
+    [
+     "da-pipeline-engineer",
+     "primary"
+    ],
+    [
+     "da-quality-analyst",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-backfill-planner",
+   "da-pipelines",
+   "Backfill Planner",
+   "Plans a historical reload in batches, with checkpoints, cost estimate and a comparison with the old numbers.",
+   "procedural",
+   [
+    [
+     "da-pipeline-engineer",
+     "primary"
+    ],
+    [
+     "da-quality-analyst",
+     "checker"
+    ],
+    [
+     "da-analytics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-sql-optimizer",
+   "da-warehouse",
+   "Warehouse SQL Optimizer",
+   "Reads a query plan in a warehouse, finds scans and skew and rewrites the query with partition pruning or clustering.",
+   "procedural",
+   [
+    [
+     "da-analytics-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-incremental-model-builder",
+   "da-warehouse",
+   "Incremental Model Builder",
+   "Builds an incremental model with a unique key and a late-data window and tests it against a full rebuild.",
+   "procedural",
+   [
+    [
+     "da-analytics-engineer",
+     "primary"
+    ],
+    [
+     "da-quality-analyst",
+     "checker"
+    ],
+    [
+     "da-pipeline-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-metric-definer",
+   "da-warehouse",
+   "Metric Definition Writer",
+   "Defines a business metric in one place with its formula, filters and owner so every report gives the same number.",
+   "semantic",
+   [
+    [
+     "da-analytics-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-catalog-steward",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-expectation-writer",
+   "da-quality",
+   "Data Expectation Writer",
+   "Writes checks for ranges, uniqueness, nulls and allowed values, and ranks them by the harm of a failure.",
+   "procedural",
+   [
+    [
+     "da-quality-analyst",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-freshness-volume-monitor",
+   "da-quality",
+   "Freshness and Volume Monitor",
+   "Sets expected arrival time and row counts for each table and reports late or abnormal loads.",
+   "procedural",
+   [
+    [
+     "da-quality-analyst",
+     "primary"
+    ],
+    [
+     "da-pipeline-engineer",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-reconciliation-auditor",
+   "da-quality",
+   "Reconciliation Auditor",
+   "Compares totals and checksums between a source and its copy, locates the mismatched rows and explains the cause.",
+   "procedural",
+   [
+    [
+     "da-quality-analyst",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-pipeline-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-catalog-documenter",
+   "da-catalog",
+   "Catalog Documenter",
+   "Writes table and column descriptions with owner and sensitivity from the data and its use, marking guesses.",
+   "procedural",
+   [
+    [
+     "da-catalog-steward",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-modeler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-lineage-mapper",
+   "da-catalog",
+   "Lineage Mapper",
+   "Maps which tables and jobs feed each report so the reach of a change or an outage can be seen.",
+   "procedural",
+   [
+    [
+     "da-catalog-steward",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-pipeline-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-impact-analyst",
+   "da-catalog",
+   "Change Impact Analyst",
+   "Lists dashboards, models and teams affected by a planned change and ranks them by how much they depend on it.",
+   "semantic",
+   [
+    [
+     "da-catalog-steward",
+     "primary"
+    ],
+    [
+     "da-analytics-engineer",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-data-profiler",
+   "da-exploration",
+   "Data Profiler",
+   "Profiles columns for types, ranges, missing values and outliers and lists the first questions the profile raises.",
+   "procedural",
+   [
+    [
+     "da-analyst",
+     "primary"
+    ],
+    [
+     "da-quality-analyst",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-chart-designer",
+   "da-exploration",
+   "Honest Chart Designer",
+   "Chooses a chart for the question, sets axes and scales that do not mislead and writes the title as the finding.",
+   "semantic",
+   [
+    [
+     "da-analyst",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-analytics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-insight-reporter",
+   "da-exploration",
+   "Insight Reporter",
+   "Writes up a finding with the number, the comparison, the caveats and what decision it should or should not drive.",
+   "semantic",
+   [
+    [
+     "da-analyst",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-quality-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-event-schema-designer",
+   "da-streaming",
+   "Event Schema Designer",
+   "Designs event types with ids, timestamps and versions so streams can be ordered, deduplicated and replayed.",
+   "semantic",
+   [
+    [
+     "da-streaming-engineer",
+     "primary"
+    ],
+    [
+     "da-modeler",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-window-aggregation-builder",
+   "da-streaming",
+   "Windowed Aggregation Builder",
+   "Builds tumbling and sliding window aggregates, handles late events with a watermark and states the delay it adds.",
+   "procedural",
+   [
+    [
+     "da-streaming-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-analytics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-delivery-guarantee-reviewer",
+   "da-streaming",
+   "Delivery Guarantee Reviewer",
+   "Checks claims of at-least-once or exactly-once delivery against how consumers actually commit and deduplicate.",
+   "semantic",
+   [
+    [
+     "da-streaming-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-pipeline-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-label-schema-designer",
+   "da-ml-datasets",
+   "Labeling Guide Designer",
+   "Writes labelling instructions with examples and edge cases and measures how often two labellers agree.",
+   "procedural",
+   [
+    [
+     "da-ml-data-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-quality-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-split-leakage-checker",
+   "da-ml-datasets",
+   "Split and Leakage Checker",
+   "Builds train, validation and test splits by the right unit and checks for duplicates and future information crossing them.",
+   "procedural",
+   [
+    [
+     "da-ml-data-engineer",
+     "primary"
+    ],
+    [
+     "da-skeptic",
+     "checker"
+    ],
+    [
+     "da-analyst",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "da-dataset-card-writer",
+   "da-ml-datasets",
+   "Dataset Card Writer",
+   "Documents a dataset's source, collection method, labelling process, licence, balance and known gaps in one page.",
+   "procedural",
+   [
+    [
+     "da-ml-data-engineer",
+     "primary"
+    ],
+    [
+     "da-catalog-steward",
+     "checker"
+    ],
+    [
+     "da-skeptic",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "da-modeler": "Data Modeling Agent",
+  "da-pipeline-engineer": "Data Pipeline Agent",
+  "da-analytics-engineer": "Analytics Engineering Agent",
+  "da-quality-analyst": "Data Quality Agent",
+  "da-catalog-steward": "Data Catalog and Lineage Agent",
+  "da-analyst": "Data Analyst Agent",
+  "da-streaming-engineer": "Streaming Data Agent",
+  "da-ml-data-engineer": "ML Dataset Agent",
+  "da-skeptic": "Data Skeptic Agent"
+ },
+ "mcp": [
+  [
+   "Snowflake",
+   "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "Retrieve both structured and unstructured data",
+   [
+    "Cortex Agents",
+    "Cortex Search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Omni Analytics",
+   "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "Query your data using natural language through Omni's semantic model",
+   [
+    "pickModel",
+    "pickTopic",
+    "getData"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "MoSPI",
+   "49a84267-c5d5-4c7b-8070-ab6b0875d886",
+   "India's official statistics via natural language",
+   [
+    "step1_know_about_mospi_api",
+    "step2_get_indicators",
+    "step3_get_metadata",
+    "step4_get_data"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "mcp-server-motherduck",
+   null,
+   "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "web-listed",
+   "https://github.com/motherduckdb/mcp-server-motherduck"
+  ]
+ ],
+ "lexicon": {
+  "daschema": "normalization dimensional grain fact dimension keys star sales modeling",
+  "dapipe": "etl backfill idempotent scheduling retries ingestion historical",
+  "dawh": "partition clustering incremental dbt analytics engineering definition formula",
+  "daqual": "expectation volume reconciliation null uniqueness checksum mismatch mismatched check checks",
+  "dacat": "sensitivity catalog downstream outage affected",
+  "daviz": "profiling outlier insight summary exploration visualization honest",
+  "dastream": "watermark late deduplicate kafka stream flink ordered",
+  "dalabel": "labelling leakage split card machine labeling"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "Snowflake": "directory listing; tools shown are the two named agent services; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Google Cloud BigQuery": "directory listing; execute_sql can write: treat use as human-approved; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Omni Analytics": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "MoSPI": "directory listing, authless per directory; official statistics of India only; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "mcp-server-motherduck": "repository page github.com/motherduckdb/mcp-server-motherduck opened 2026-10-23: described as a local MCP server for DuckDB and MotherDuck, README documents five tools, MIT licence, no archived or deprecated notice seen; one tool needs an explicit flag; execute_query can write: treat use as human-approved"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

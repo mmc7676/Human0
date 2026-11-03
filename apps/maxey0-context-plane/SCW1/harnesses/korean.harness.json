@@ -1,0 +1,668 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "korean",
+  "label": "Korean",
+  "desc": "Korean: the Korean language and Hangul, its grammar and speech levels, and Korean literature, history and contemporary culture."
+ },
+ "concepts": [
+  {
+   "id": "kor-grammar",
+   "label": "Korean Grammar",
+   "desc": "Particles, verb endings, conjugation, connective endings and sentence structure in Korean.",
+   "keywords": [
+    "grammar",
+    "particle",
+    "ending",
+    "conjugation",
+    "connective",
+    "verb",
+    "tense",
+    "sentence"
+   ],
+   "topic": "korean",
+   "source": "korean",
+   "related": [
+    "jpn-grammar"
+   ]
+  },
+  {
+   "id": "kor-hangul-writing",
+   "label": "Hangul and the Writing System",
+   "desc": "Hangul letters and syllable blocks, spelling, hanja and romanization of Korean.",
+   "keywords": [
+    "hangul",
+    "jamo",
+    "syllable block",
+    "spelling",
+    "hanja",
+    "romanization",
+    "sejong",
+    "orthography"
+   ],
+   "topic": "korean",
+   "source": "korean",
+   "related": []
+  },
+  {
+   "id": "kor-literature",
+   "label": "Korean Literature",
+   "desc": "Classical poetry such as sijo, premodern fiction and modern and contemporary Korean literature.",
+   "keywords": [
+    "literature",
+    "sijo",
+    "classical",
+    "poetry",
+    "novel",
+    "modern",
+    "fiction",
+    "pansori"
+   ],
+   "topic": "korean",
+   "source": "korean",
+   "related": []
+  },
+  {
+   "id": "kor-phonology",
+   "label": "Korean Phonology and Pronunciation",
+   "desc": "Consonant tension, sound change rules such as liaison and nasalization, and dialects.",
+   "keywords": [
+    "pronunciation",
+    "phonology",
+    "sound change",
+    "nasalization",
+    "liaison",
+    "tense consonant",
+    "dialect",
+    "ipa"
+   ],
+   "topic": "korean",
+   "source": "korean",
+   "related": []
+  },
+  {
+   "id": "kor-speech-levels",
+   "label": "Speech Levels and Honorifics",
+   "desc": "Korean speech levels, honorific verbs and nouns, and register in social relationships.",
+   "keywords": [
+    "speech level",
+    "honorific",
+    "polite",
+    "formal",
+    "banmal",
+    "jondaetmal",
+    "register",
+    "hierarchy"
+   ],
+   "topic": "korean",
+   "source": "korean",
+   "related": [
+    "jpn-honorifics-pragmatics"
+   ]
+  },
+  {
+   "id": "kor-translation-culture",
+   "label": "Korean Translation, History and Culture",
+   "desc": "Translation between Korean and other languages, Korean history, and contemporary culture and media.",
+   "keywords": [
+    "translation",
+    "history",
+    "culture",
+    "joseon",
+    "division",
+    "media",
+    "hallyu",
+    "society"
+   ],
+   "topic": "korean",
+   "source": "korean",
+   "related": [
+    "jpn-translation-culture"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "kor-conjugator",
+   "concept": "kor-grammar",
+   "label": "Verb Conjugator",
+   "desc": "Conjugates Korean verbs and adjectives with endings and irregular stems, checked against conjugation rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1406",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1408",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-grammar-correction",
+   "concept": "kor-grammar",
+   "label": "Grammar Correction",
+   "desc": "Corrects errors in Korean sentences and explains each fix, checked by citing the rule used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1406",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1409",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-particle-explainer",
+   "concept": "kor-grammar",
+   "label": "Particle Explainer",
+   "desc": "Explains particle choice such as eun versus i in context, checked with contrasting example sentences.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1406",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1410",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-block-decomposer",
+   "concept": "kor-hangul-writing",
+   "label": "Syllable Block Decomposer",
+   "desc": "Splits Hangul syllables into initial, medial and final jamo, checked by recomposing the blocks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1408",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1411",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-hanja-lookup",
+   "concept": "kor-hangul-writing",
+   "label": "Hanja Lookup",
+   "desc": "Gives the hanja and meaning behind Sino-Korean words, checked against a hanja dictionary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1408",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1412",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-romanizer",
+   "concept": "kor-hangul-writing",
+   "label": "Revised Romanization Converter",
+   "desc": "Converts Korean to Revised Romanization, checked against the official romanization rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1408",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1411",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-author-context",
+   "concept": "kor-literature",
+   "label": "Author and Period Context",
+   "desc": "Places a work in its period and movement, checked against dated literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1412",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-close-reading",
+   "concept": "kor-literature",
+   "label": "Close Reading",
+   "desc": "Analyses a passage of Korean fiction for form and theme, checked by quoting supporting lines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1412",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1409",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-sijo-analysis",
+   "concept": "kor-literature",
+   "label": "Sijo Analysis",
+   "desc": "Analyses a sijo's structure and imagery, checked by syllable count per line and cited conventions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1412",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1411",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-dialect-notes",
+   "concept": "kor-phonology",
+   "label": "Dialect Notes",
+   "desc": "Explains features of dialects such as Gyeongsang speech, checked against dialect descriptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1411",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-ipa-transcriber",
+   "concept": "kor-phonology",
+   "label": "IPA Transcriber",
+   "desc": "Transcribes Korean into IPA distinguishing lax, tense and aspirated consonants, checked against references.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1411",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1406",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-sound-change",
+   "concept": "kor-phonology",
+   "label": "Sound Change Applier",
+   "desc": "Applies liaison, nasalization and other rules to give actual pronunciation, checked by naming each rule applied.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1411",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1408",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-formal-writing",
+   "concept": "kor-speech-levels",
+   "label": "Formal Korean Writing",
+   "desc": "Drafts formal emails and documents in correct register, checked against business correspondence conventions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1410",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1409",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-honorific-check",
+   "concept": "kor-speech-levels",
+   "label": "Honorific Appropriateness Check",
+   "desc": "Assesses whether honorifics fit the relationship and hierarchy described, checked by explaining each choice.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1410",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-level-converter",
+   "concept": "kor-speech-levels",
+   "label": "Speech Level Converter",
+   "desc": "Rewrites a sentence across formal, polite and plain speech levels, checked by naming the ending used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1410",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1406",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-history-briefing",
+   "concept": "kor-translation-culture",
+   "label": "Korean History Briefing",
+   "desc": "Summarises a period such as Joseon or the division with key events, checked against historical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1413",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1412",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-subtitle-review",
+   "concept": "kor-translation-culture",
+   "label": "Subtitle Review",
+   "desc": "Reviews subtitles for media for accuracy, timing and cultural notes, checked against the source dialogue.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1409",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-translate",
+   "concept": "kor-translation-culture",
+   "label": "Korean Translation",
+   "desc": "Translates text to or from Korean preserving speech level and nuance, checked by back-translation of key sentences.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1409",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1410",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1406",
+   "name": "Korean Grammar Agent",
+   "legacy_key": "kor-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1407",
+   "name": "Korean Accuracy Checker",
+   "legacy_key": "kor-checker",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1408",
+   "name": "Hangul and Writing Agent",
+   "legacy_key": "kor-hangul",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1409",
+   "name": "Korean Translation Agent",
+   "legacy_key": "kor-translator",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1410",
+   "name": "Speech Levels and Honorifics Agent",
+   "legacy_key": "kor-honorifics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1411",
+   "name": "Korean Pronunciation Agent",
+   "legacy_key": "kor-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1412",
+   "name": "Korean Literature Agent",
+   "legacy_key": "kor-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1413",
+   "name": "Korean Culture and History Agent",
+   "legacy_key": "kor-culture",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1407",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "korean",
+   "score": 0.1011,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1409",
+    "skill": "kor-translate"
+   }
+  },
+  {
+   "agent": "Maxey1409",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "korean",
+   "score": 0.1011,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1413",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "korean",
+   "score": 0.1011,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1409",
+    "skill": "kor-subtitle-review"
+   }
+  }
+ ],
+ "lexicon": {
+  "kor-script": "hangul jamo hanja romanization sejong orthography",
+  "kor-grammar": "grammar particle ending conjugation connective verb",
+  "kor-politeness": "honorific polite formal banmal jondaetmal hierarchy",
+  "kor-sound": "pronunciation phonology nasalization liaison dialect ipa",
+  "kor-letters": "literature sijo classical poetry pansori fiction",
+  "kor-culture": "translation history joseon division media hallyu"
+ },
+ "sources": [
+  "korean"
+ ]
+}

@@ -1,0 +1,735 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "urban-studies",
+  "label": "Urban Studies",
+  "desc": "Urban Studies: how cities form, function and change, and how they are planned, governed and lived in."
+ },
+ "concepts": [
+  {
+   "id": "urban-housing-community",
+   "label": "Housing and Community Development",
+   "desc": "Housing markets, affordability, gentrification, displacement and community development policy.",
+   "keywords": [
+    "housing",
+    "affordability",
+    "gentrification",
+    "displacement",
+    "rent burden",
+    "community development",
+    "eviction"
+   ],
+   "topic": "urban-studies",
+   "source": "urban-studies",
+   "related": []
+  },
+  {
+   "id": "urban-spatial-analysis-environment",
+   "label": "Urban Spatial Analysis and Environment",
+   "desc": "GIS mapping of urban data and the environmental challenges of cities, from heat to climate resilience.",
+   "keywords": [
+    "gis",
+    "map",
+    "spatial",
+    "census tract",
+    "heat island",
+    "resilience",
+    "sustainability"
+   ],
+   "topic": "urban-studies",
+   "source": "urban-studies",
+   "related": []
+  },
+  {
+   "id": "urban-transportation-mobility",
+   "label": "Transportation and Mobility",
+   "desc": "Transit, streets, travel behavior and accessibility in metropolitan regions.",
+   "keywords": [
+    "transit",
+    "transportation",
+    "accessibility",
+    "commute",
+    "traffic",
+    "route",
+    "mobility"
+   ],
+   "topic": "urban-studies",
+   "source": "urban-studies",
+   "related": []
+  },
+  {
+   "id": "urban-urban-economics",
+   "label": "Urban Economics and Development",
+   "desc": "Agglomeration, land markets, local public finance and economic development of cities and regions.",
+   "keywords": [
+    "economics",
+    "agglomeration",
+    "land value",
+    "rent",
+    "development",
+    "local finance",
+    "growth"
+   ],
+   "topic": "urban-studies",
+   "source": "urban-studies",
+   "related": []
+  },
+  {
+   "id": "urban-urban-planning",
+   "label": "Urban Planning and Land Use",
+   "desc": "Comprehensive plans, zoning, land-use regulation and urban design that shape city form.",
+   "keywords": [
+    "planning",
+    "zoning",
+    "land use",
+    "comprehensive plan",
+    "urban design",
+    "density",
+    "permitting"
+   ],
+   "topic": "urban-studies",
+   "source": "urban-studies",
+   "related": []
+  },
+  {
+   "id": "urban-urban-society-history",
+   "label": "Urban Sociology and History",
+   "desc": "Segregation, neighborhoods, inequality and the historical development of cities.",
+   "keywords": [
+    "segregation",
+    "neighborhood",
+    "inequality",
+    "urbanization",
+    "history",
+    "suburbanization",
+    "race"
+   ],
+   "topic": "urban-studies",
+   "source": "urban-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "urban-affordability-index",
+   "concept": "urban-housing-community",
+   "label": "Housing Affordability Calculator",
+   "desc": "Computes rent burden and affordability ratios by area, checked against census source tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1579",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1581",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-gentrification-map",
+   "concept": "urban-housing-community",
+   "label": "Gentrification Risk Mapper",
+   "desc": "Identifies tracts at risk of gentrification and displacement from indicators, checked for indicator definitions and mapped output.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1582",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1579",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1583",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-housing-policy",
+   "concept": "urban-housing-community",
+   "label": "Housing Policy Option Reviewer",
+   "desc": "Compares housing policies such as inclusionary zoning or vouchers, checked against evaluation evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1579",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1581",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1584",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-heat-island",
+   "concept": "urban-spatial-analysis-environment",
+   "label": "Urban Heat Island Assessor",
+   "desc": "Assesses heat exposure by neighborhood using temperature and tree canopy layers, checked against source layers.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1585",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1579",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-resilience-plan",
+   "concept": "urban-spatial-analysis-environment",
+   "label": "Climate Resilience Plan Reviewer",
+   "desc": "Reviews a city resilience plan for hazards, assets and equity, checked against hazard data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1585",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1584",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1583",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-tract-mapping",
+   "concept": "urban-spatial-analysis-environment",
+   "label": "Census Tract Mapper",
+   "desc": "Maps census tract indicators as a thematic map with classification, checked for joins and missing values.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1582",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1583",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-accessibility-analysis",
+   "concept": "urban-transportation-mobility",
+   "label": "Transit Accessibility Analyzer",
+   "desc": "Computes jobs reachable within a travel time by transit or car, checked against routing results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1586",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-route-plan",
+   "concept": "urban-transportation-mobility",
+   "label": "Route and Traffic Analyzer",
+   "desc": "Retrieves routes and traffic conditions between places and summarizes travel times, checked by repeating the query.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1586",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-street-safety",
+   "concept": "urban-transportation-mobility",
+   "label": "Street Safety Reviewer",
+   "desc": "Analyzes crash data and street design for safety improvements, checked against the source crash records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1586",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1584",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-agglomeration-measure",
+   "concept": "urban-urban-economics",
+   "label": "Agglomeration Effect Estimator",
+   "desc": "Estimates productivity gains from city size or density using regression, checked by robustness specifications.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1581",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1584",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-land-value",
+   "concept": "urban-urban-economics",
+   "label": "Land Value Gradient Analyzer",
+   "desc": "Estimates how land values fall with distance from centers or transit, checked against assessor data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1581",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1586",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-local-finance",
+   "concept": "urban-urban-economics",
+   "label": "Municipal Finance Analyzer",
+   "desc": "Analyzes a city's revenues, expenditures and debt, checked against published budget documents.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1581",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1584",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-plan-review",
+   "concept": "urban-urban-planning",
+   "label": "Comprehensive Plan Reviewer",
+   "desc": "Reviews a comprehensive plan for internal consistency and stated goals, checked against the plan text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1584",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1585",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1583",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-site-design",
+   "concept": "urban-urban-planning",
+   "label": "Urban Design Site Assessor",
+   "desc": "Assesses a site for walkability, frontage and public space, checked against design guidelines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1584",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1586",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-zoning-review",
+   "concept": "urban-urban-planning",
+   "label": "Zoning Capacity Analyzer",
+   "desc": "Computes buildable capacity of parcels under zoning rules, checked by recomputing floor area and height limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1584",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1579",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-neighborhood-history",
+   "concept": "urban-urban-society-history",
+   "label": "Neighborhood History Builder",
+   "desc": "Builds a sourced history of a neighborhood including redlining and renewal, with dates checked against archives.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1587",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1583",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1579",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-segregation-index",
+   "concept": "urban-urban-society-history",
+   "label": "Segregation Index Calculator",
+   "desc": "Computes dissimilarity and isolation indices for a metropolitan area, checked by recomputation from tract data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1583",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1580",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1582",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  },
+  {
+   "id": "urban-urbanization-trends",
+   "concept": "urban-urban-society-history",
+   "label": "Urbanization Trend Analyzer",
+   "desc": "Summarizes urbanization and suburbanization trends for a country, checked against official statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1580",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1587",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1581",
+     "role": "support"
+    }
+   ],
+   "source": "urban-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1579",
+   "name": "Housing Policy Agent",
+   "legacy_key": "urban-housing",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1580",
+   "name": "Urban Data Agent",
+   "legacy_key": "urban-data",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1581",
+   "name": "Urban Economics Agent",
+   "legacy_key": "urban-econ",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1582",
+   "name": "Urban GIS Agent",
+   "legacy_key": "urban-gis",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey1583",
+   "name": "Urban Sociology Agent",
+   "legacy_key": "urban-soc",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1584",
+   "name": "Urban Planning Agent",
+   "legacy_key": "urban-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1585",
+   "name": "Urban Environment Agent",
+   "legacy_key": "urban-env",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1586",
+   "name": "Transportation Agent",
+   "legacy_key": "urban-transport",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1587",
+   "name": "Urban History Agent",
+   "legacy_key": "urban-hist",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "name": "TomTom Maps",
+   "desc": "TomTom maps, routing, geocoding & traffic data",
+   "tools": [
+    "tomtom-geocode",
+    "tomtom-reverse-geocode",
+    "tomtom-fuzzy-search",
+    "tomtom-poi-search",
+    "tomtom-nearby",
+    "tomtom-poi-categories",
+    "tomtom-area-search",
+    "tomtom-ev-search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "origins": [
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1579",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "urban-studies",
+   "score": 0.1605,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1582",
+    "skill": "urban-gentrification-map"
+   }
+  },
+  {
+   "agent": "Maxey1580",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "urban-studies",
+   "score": 0.1605,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1582",
+    "skill": "urban-tract-mapping"
+   }
+  },
+  {
+   "agent": "Maxey1582",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "urban-studies",
+   "score": 0.1605,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "urban-planning": "planning zoning density design comprehensive",
+  "urban-economics": "agglomeration productivity municipal economics value",
+  "urban-housing": "housing affordability gentrification displacement rent",
+  "urban-mobility": "transit routing traffic accessibility crash",
+  "urban-society": "segregation neighborhood redlining urbanization suburbanization",
+  "urban-spatial": "gis tract heat canopy resilience geospatial"
+ },
+ "sources": [
+  "urban-studies"
+ ]
+}

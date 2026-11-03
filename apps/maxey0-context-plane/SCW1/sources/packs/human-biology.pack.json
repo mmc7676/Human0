@@ -1,0 +1,569 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "human-biology",
+ "topic": {
+  "id": "human-biology",
+  "label": "Human Biology",
+  "desc": "Human Biology: the structure, function, genetics, development and evolution of the human body, from cells to populations."
+ },
+ "concepts": [
+  [
+   "hbio-anatomy",
+   "Human Anatomy",
+   "human-biology",
+   "The gross and microscopic structure of the human body: organs, tissues and organ systems and their spatial relationships.",
+   [
+    "anatomy",
+    "organ",
+    "tissue",
+    "skeleton",
+    "muscle",
+    "histology",
+    "organ system",
+    "landmark"
+   ]
+  ],
+  [
+   "hbio-physiology",
+   "Human Physiology",
+   "human-biology",
+   "How organ systems work and are regulated: cardiovascular, respiratory, renal, endocrine and nervous function and homeostasis.",
+   [
+    "physiology",
+    "homeostasis",
+    "cardiovascular",
+    "respiratory",
+    "renal",
+    "endocrine",
+    "nervous",
+    "feedback"
+   ]
+  ],
+  [
+   "hbio-cell-molecular",
+   "Cell and Molecular Biology",
+   "human-biology",
+   "The cell as the unit of life: membranes, organelles, metabolism, signalling, the cell cycle and gene expression.",
+   [
+    "cell",
+    "membrane",
+    "organelle",
+    "metabolism",
+    "signaling",
+    "cell cycle",
+    "protein",
+    "transcription"
+   ]
+  ],
+  [
+   "hbio-human-genetics",
+   "Human Genetics and Genomics",
+   "human-biology",
+   "Inheritance, variation and the human genome: Mendelian and complex traits, variants and population genetics.",
+   [
+    "genetics",
+    "genome",
+    "variant",
+    "inheritance",
+    "allele",
+    "mendelian",
+    "population",
+    "genomics"
+   ]
+  ],
+  [
+   "hbio-development-aging",
+   "Human Development and Aging",
+   "human-biology",
+   "Growth from fertilisation through embryonic development, childhood, puberty and aging across the life course.",
+   [
+    "development",
+    "embryo",
+    "fertilization",
+    "growth",
+    "puberty",
+    "aging",
+    "life course",
+    "differentiation"
+   ]
+  ],
+  [
+   "hbio-evolution-variation",
+   "Human Evolution and Variation",
+   "human-biology",
+   "Hominin evolution, adaptation and the biological diversity of living human populations.",
+   [
+    "evolution",
+    "hominin",
+    "adaptation",
+    "fossil",
+    "selection",
+    "diversity",
+    "ancestry",
+    "preprint"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "hbio-organ-system-map",
+   "hbio-anatomy",
+   "Organ System Mapper",
+   "Maps an organ to its system, location, blood supply and innervation, checked against standard anatomical references.",
+   "semantic",
+   [
+    [
+     "hbio-anatomist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-physiologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-histology-identify",
+   "hbio-anatomy",
+   "Histology Identifier",
+   "Identifies tissue types from described microscopic features, checked by listing the diagnostic features for each tissue.",
+   "semantic",
+   [
+    [
+     "hbio-anatomist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-cell",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-anatomical-terms",
+   "hbio-anatomy",
+   "Anatomical Terminology",
+   "Translates descriptions into correct anatomical planes, directions and landmark terms, checked against the standard terminology.",
+   "procedural",
+   [
+    [
+     "hbio-anatomist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-homeostasis-loop",
+   "hbio-physiology",
+   "Homeostasis Loop Analyst",
+   "Describes the sensor, control centre and effector of a feedback loop, checked by tracing the response to a perturbation.",
+   "semantic",
+   [
+    [
+     "hbio-physiologist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-anatomist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-physiology-calc",
+   "hbio-physiology",
+   "Physiological Calculator",
+   "Computes quantities such as cardiac output, clearance and ventilation from inputs, checked by units and plausible reference ranges.",
+   "procedural",
+   [
+    [
+     "hbio-physiologist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-hormone-pathway",
+   "hbio-physiology",
+   "Endocrine Pathway Tracer",
+   "Traces a hormone from secretion to target and feedback, checked against the literature for each step.",
+   "semantic",
+   [
+    [
+     "hbio-physiologist",
+     "primary"
+    ],
+    [
+     "hbio-literature",
+     "checker"
+    ],
+    [
+     "hbio-cell",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-pathway-explain",
+   "hbio-cell-molecular",
+   "Signaling Pathway Explainer",
+   "Explains a signaling or metabolic pathway step by step, checked by naming the enzyme or receptor and source for each step.",
+   "semantic",
+   [
+    [
+     "hbio-cell",
+     "primary"
+    ],
+    [
+     "hbio-literature",
+     "checker"
+    ],
+    [
+     "hbio-physiologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-gene-expression",
+   "hbio-cell-molecular",
+   "Gene Expression Walkthrough",
+   "Walks through transcription, processing and translation for a given gene, checked against the gene's documented structure.",
+   "semantic",
+   [
+    [
+     "hbio-cell",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-geneticist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-cell-cycle",
+   "hbio-cell-molecular",
+   "Cell Cycle Analyst",
+   "Explains cell cycle phases and checkpoints and what goes wrong in disease, checked against cited literature.",
+   "semantic",
+   [
+    [
+     "hbio-cell",
+     "primary"
+    ],
+    [
+     "hbio-literature",
+     "checker"
+    ],
+    [
+     "hbio-development",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-pedigree-analysis",
+   "hbio-human-genetics",
+   "Pedigree Analysis",
+   "Infers inheritance mode and genotype probabilities from a pedigree, checked by recomputing each probability.",
+   "procedural",
+   [
+    [
+     "hbio-geneticist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-development",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-variant-frequency",
+   "hbio-human-genetics",
+   "Variant Frequency Lookup",
+   "Looks up variant and allele frequency in genomics datasets, checked by reporting dataset, cohort size and query.",
+   "procedural",
+   [
+    [
+     "hbio-geneticist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-hardy-weinberg",
+   "hbio-human-genetics",
+   "Hardy-Weinberg Tester",
+   "Tests genotype counts against Hardy-Weinberg equilibrium for a population, checked by recomputing the chi-square statistic.",
+   "procedural",
+   [
+    [
+     "hbio-geneticist",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-evolution",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-embryo-timeline",
+   "hbio-development-aging",
+   "Embryonic Development Timeline",
+   "Lays out embryonic stages and when organ systems form, checked against standard embryology staging.",
+   "semantic",
+   [
+    [
+     "hbio-development",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-anatomist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-growth-assessment",
+   "hbio-development-aging",
+   "Growth Curve Assessment",
+   "Places a measurement on a growth reference and reports the percentile, checked by recomputing the percentile.",
+   "procedural",
+   [
+    [
+     "hbio-development",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-physiologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-aging-biology",
+   "hbio-development-aging",
+   "Biology of Aging Review",
+   "Summarises cellular and systemic mechanisms of aging, checked by citing a primary study for each mechanism.",
+   "semantic",
+   [
+    [
+     "hbio-development",
+     "primary"
+    ],
+    [
+     "hbio-literature",
+     "checker"
+    ],
+    [
+     "hbio-cell",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-hominin-timeline",
+   "hbio-evolution-variation",
+   "Hominin Timeline",
+   "Orders hominin species by date and key traits, checked against dated fossil evidence.",
+   "semantic",
+   [
+    [
+     "hbio-evolution",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-adaptation-case",
+   "hbio-evolution-variation",
+   "Adaptation Case Study",
+   "Explains a human adaptation with its selection pressure and genetic basis, checked against published studies.",
+   "semantic",
+   [
+    [
+     "hbio-evolution",
+     "primary"
+    ],
+    [
+     "hbio-literature",
+     "checker"
+    ],
+    [
+     "hbio-geneticist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "hbio-literature-search",
+   "hbio-evolution-variation",
+   "Biomedical Literature Search",
+   "Finds peer-reviewed articles and preprints on a human biology question, checked by verifying identifiers and publication status.",
+   "procedural",
+   [
+    [
+     "hbio-literature",
+     "primary"
+    ],
+    [
+     "hbio-checker",
+     "checker"
+    ],
+    [
+     "hbio-evolution",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "hbio-anatomist": "Human Anatomy Agent",
+  "hbio-physiologist": "Physiology Agent",
+  "hbio-cell": "Cell and Molecular Biology Agent",
+  "hbio-geneticist": "Human Genetics Agent",
+  "hbio-evolution": "Human Evolution Agent",
+  "hbio-development": "Developmental Biology Agent",
+  "hbio-literature": "Biomedical Literature Agent",
+  "hbio-checker": "Evidence and Accuracy Checker"
+ },
+ "mcp": [
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "bioRxiv",
+   "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "Access bioRxiv and medRxiv preprint data",
+   [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Helix GenoSphere",
+   "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "Query human genomics & longitudinal clinical data",
+   [
+    "get_variant_frequency",
+    "check_gene_availability",
+    "get_dataset_overview",
+    "search_concepts",
+    "get_patient_count"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "hbio-structure": "anatomy organ tissue skeleton muscle histology landmark",
+  "hbio-function": "physiology homeostasis cardiovascular respiratory renal endocrine nervous feedback",
+  "hbio-cellular": "cell membrane organelle metabolism signaling protein transcription",
+  "hbio-heredity": "genetics genome variant inheritance allele mendelian genomics",
+  "hbio-lifespan": "development embryo fertilization growth puberty aging differentiation",
+  "hbio-origins": "evolution hominin adaptation fossil selection diversity ancestry"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

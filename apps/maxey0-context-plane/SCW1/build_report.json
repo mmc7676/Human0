@@ -1,0 +1,624 @@
+{
+ "before_sources": {
+  "topics": 127,
+  "concepts": 735,
+  "skills": 2000,
+  "agents": 1030,
+  "mcp_rows": 363
+ },
+ "after": {
+  "domains": 5,
+  "topics": 121,
+  "concepts": 711,
+  "skills": 1998,
+  "agents": 1021,
+  "mcp_servers": 117,
+  "agent_mcp_links": 556,
+  "related_links": 57,
+  "mcp_without_agent": 21
+ },
+ "removed_topics": {
+  "digestion": "v0.5 one-off for a friend; reads as a concept, not a topic",
+  "nutrition": "v0.5 one-off for a friend; reads as a concept, not a topic",
+  "medical-conditions": "v0.5 one-off for a friend; reads as a concept, not a topic"
+ },
+ "topic_merges": [
+  {
+   "into": "physics-foundations",
+   "from": [
+    "physics"
+   ],
+   "reason": "the overview 'physics' pack duplicated classical-physics and quantum-physics; its overlapping concepts merge into those topics, and what remains (plus relativity) forms a normal-size third topic"
+  }
+ ],
+ "dropped_concepts": [
+  {
+   "id": "registry",
+   "reason": "its only skill (repo-decomp) has no agents; nothing left to run"
+  }
+ ],
+ "dropped_skills": [
+  {
+   "id": "repo-decomp",
+   "reason": "no agents assigned in the base graph; cannot be executed"
+  },
+  {
+   "id": "anchor-field-engineering",
+   "reason": "no agents assigned in the base graph; cannot be executed"
+  }
+ ],
+ "concept_merges": [
+  {
+   "from": "quantum-physics",
+   "from_label": "Quantum Physics",
+   "from_topic": "physics-foundations",
+   "into": "qm-foundations",
+   "into_label": "Quantum Foundations",
+   "skills_moved": [
+    "quantum-circuit-simulator",
+    "schrodinger-solver",
+    "entanglement-entropy-analyzer"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "classical-physics",
+   "from_label": "Classical Physics",
+   "from_topic": "physics-foundations",
+   "into": "cl-mechanics",
+   "into_label": "Newtonian Mechanics",
+   "skills_moved": [
+    "projectile-trajectory-calculator",
+    "rigid-body-dynamics-simulator",
+    "orbital-period-estimator"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "relativity",
+   "from_label": "Relativity",
+   "from_topic": "physics-foundations",
+   "into": "cl-relativity",
+   "into_label": "Special and General Relativity",
+   "skills_moved": [
+    "lorentz-transformation-calculator",
+    "spacetime-geodesic-tracer",
+    "relativistic-collision-kinematics"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "particle-physics",
+   "from_label": "Particle Physics",
+   "from_topic": "physics-foundations",
+   "into": "qm-qft",
+   "into_label": "Quantum Field Theory and Particles",
+   "skills_moved": [
+    "particle-acceleration-simulator",
+    "particle-data-lookup",
+    "decay-chain-analyzer"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "thermodynamics",
+   "from_label": "Thermodynamics and Statistical Physics",
+   "from_topic": "physics-foundations",
+   "into": "cl-thermo",
+   "into_label": "Thermodynamics and Statistical Mechanics",
+   "skills_moved": [
+    "heat-engine-cycle-analyzer",
+    "statistical-ensemble-calculator",
+    "thermal-transport-simulator"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "electromagnetism-optics",
+   "from_label": "Electromagnetism and Optics",
+   "from_topic": "physics-foundations",
+   "into": "cl-em",
+   "into_label": "Electromagnetism",
+   "skills_moved": [
+    "electromagnetic-field-solver",
+    "wave-optics-simulator",
+    "circuit-transient-analyzer"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "engp-instrumentation-measurement",
+   "from_label": "Instrumentation and Measurement",
+   "from_topic": "engineering-physics",
+   "into": "apph-instrumentation-measurement",
+   "into_label": "Instrumentation and Measurement",
+   "skills_moved": [
+    "engp-uncertainty-propagator",
+    "engp-sensor-designer",
+    "engp-calibration-planner"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "film-digital-media",
+   "from_label": "Digital and Social Media",
+   "from_topic": "film-and-media-studies",
+   "into": "comm-digital",
+   "into_label": "Digital and Social Media",
+   "skills_moved": [
+    "film-platform-content-analysis",
+    "film-algorithmic-culture",
+    "film-game-analysis"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "symsys-cognitive-psychology",
+   "from_label": "Cognitive Psychology",
+   "from_topic": "symbolic-systems",
+   "into": "psych-cognitive-psychology",
+   "into_label": "Cognitive Psychology",
+   "skills_moved": [
+    "symsys-experiment-design",
+    "symsys-bias-review",
+    "symsys-data-analysis"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "span-latin-american-literature",
+   "from_label": "Latin American Literature",
+   "from_topic": "spanish",
+   "into": "ilac-latin-american-literature",
+   "into_label": "Latin American Literature",
+   "skills_moved": [
+    "span-boom-analysis",
+    "span-poetry-reading",
+    "span-colonial-chronicle"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "atmo-renewable-resources",
+   "from_label": "Renewable Energy Resources",
+   "from_topic": "atmosphere-energy",
+   "into": "ese-renewable-energy",
+   "into_label": "Renewable Energy Resources",
+   "skills_moved": [
+    "atmo-solar-yield",
+    "atmo-wind-resource",
+    "atmo-site-mapping"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "hl-sound",
+   "from_label": "Phonetics and Phonology",
+   "from_topic": "human-language",
+   "into": "ling-phonetics-phonology",
+   "into_label": "Phonetics and Phonology",
+   "skills_moved": [
+    "hl-phoneme-transcriber",
+    "hl-sound-pattern-analyst",
+    "hl-pronunciation-coach"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "hl-grammar",
+   "from_label": "Morphology and Syntax",
+   "from_topic": "human-language",
+   "into": "ling-morphology-syntax",
+   "into_label": "Morphology and Syntax",
+   "skills_moved": [
+    "hl-morphology-analyzer",
+    "hl-sentence-parser",
+    "hl-grammar-explainer"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "hl-meaning",
+   "from_label": "Semantics and Pragmatics",
+   "from_topic": "human-language",
+   "into": "ling-semantics",
+   "into_label": "Semantics",
+   "skills_moved": [
+    "hl-ambiguity-resolver",
+    "hl-implicature-reader",
+    "hl-register-adapter"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "symsys-artificial-intelligence",
+   "from_label": "Artificial Intelligence and Machine Learning",
+   "from_topic": "symbolic-systems",
+   "into": "cs-ai-ml",
+   "into_label": "Artificial Intelligence and Machine Learning",
+   "skills_moved": [
+    "symsys-search-planner",
+    "symsys-bayes-net",
+    "symsys-model-train"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "symsys-philosophy-mind",
+   "from_label": "Philosophy of Mind and Language",
+   "from_topic": "symbolic-systems",
+   "into": "phil-philosophy-of-mind",
+   "into_label": "Philosophy of Mind and Language",
+   "skills_moved": [
+    "symsys-argument-map",
+    "symsys-theory-compare",
+    "symsys-reference-analysis"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-agentic-loops",
+   "from_label": "Agentic Loops",
+   "from_topic": "maxey0",
+   "into": "mx-orchestration",
+   "into_label": "Agent Orchestration",
+   "skills_moved": [
+    "scw-partition-isolation",
+    "loop-composition-battery"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-superposition",
+   "from_label": "Superposition",
+   "from_topic": "maxey0",
+   "into": "mx-orchestration",
+   "into_label": "Agent Orchestration",
+   "skills_moved": [
+    "superposition-observation",
+    "same-tick-arbitration",
+    "actor-critic-parallelism",
+    "shared-state-synchronization",
+    "superposition-coordinate-mapping"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-protocol",
+   "from_label": "A2A and MCP Message Contracts",
+   "from_topic": "maxey0",
+   "into": "mx-io-contract",
+   "into_label": "I/O Contract",
+   "skills_moved": [
+    "agent-to-agent-protocol-engineering",
+    "model-context-protocol-engineering",
+    "multi-mcp-federation",
+    "protocol-translation"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-knowledge-graph",
+   "from_label": "OKF Knowledge Graph",
+   "from_topic": "maxey0",
+   "into": "mx-memory",
+   "into_label": "Tiered Memory",
+   "skills_moved": [
+    "knowledge-graph-engineering",
+    "property-graph-memory-engineering",
+    "graph-memory-construction",
+    "graph-neural-network-routing",
+    "temporal-knowledge-graph-management",
+    "memory-graph-evolution",
+    "hybrid-vector-graph-memory",
+    "research-paper-integration",
+    "knowledge-graph-federation"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-observability",
+   "from_label": "Run Tracing and Telemetry",
+   "from_topic": "maxey0",
+   "into": "mx-governance",
+   "into_label": "Policy Gates and Egress Control",
+   "skills_moved": [
+    "ai-observability",
+    "agent-trace-analysis",
+    "memory-access-telemetry",
+    "context-utilization-analytics"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-evaluation",
+   "from_label": "Run Evaluation and Drift",
+   "from_topic": "maxey0",
+   "into": "mx-governance",
+   "into_label": "Policy Gates and Egress Control",
+   "skills_moved": [
+    "agent-evaluation",
+    "swarm-evaluation",
+    "enterprise-constitution-evaluation",
+    "retrieval-attribution-evaluation"
+   ],
+   "skills_dropped_as_duplicate": []
+  },
+  {
+   "from": "mx-claim-verification",
+   "from_label": "Claim Verification",
+   "from_topic": "maxey0",
+   "into": "mx-reasoning",
+   "into_label": "Structured Reasoning Frames",
+   "skills_moved": [
+    "claim-lineage-analysis",
+    "hallucination-localization",
+    "hallucination-attribution",
+    "reasoning-path-instrumentation"
+   ],
+   "skills_dropped_as_duplicate": []
+  }
+ ],
+ "concept_moves": [
+  {
+   "id": "cl-relativity",
+   "from": "classical-physics",
+   "to": "physics-foundations"
+  },
+  {
+   "id": "mp-coords",
+   "from": "mapping",
+   "to": "location"
+  },
+  {
+   "id": "mp-web",
+   "from": "mapping",
+   "to": "location"
+  }
+ ],
+ "concept_renames": [
+  {
+   "id": "jpn-translation-culture",
+   "from": "Translation, History and Culture",
+   "to": "Japanese Translation, History and Culture"
+  },
+  {
+   "id": "kor-translation-culture",
+   "from": "Translation, History and Culture",
+   "to": "Korean Translation, History and Culture"
+  },
+  {
+   "id": "chin-modern-history",
+   "from": "Modern and Contemporary History",
+   "to": "Modern and Contemporary China"
+  },
+  {
+   "id": "polisci-international-relations",
+   "from": "International Relations",
+   "to": "International Politics"
+  },
+  {
+   "id": "rb-simulation",
+   "from": "Simulation and Digital Twins",
+   "to": "Robot Simulation and Sim-to-Real"
+  },
+  {
+   "id": "mx-orchestration",
+   "from": "Agent Orchestration",
+   "to": "Orchestration, Loops and Superposition"
+  },
+  {
+   "id": "mx-io-contract",
+   "from": "I/O Contract",
+   "to": "I/O, A2A and MCP Contracts"
+  },
+  {
+   "id": "mx-memory",
+   "from": "Tiered Memory",
+   "to": "Tiered Memory and OKF Knowledge Graph"
+  },
+  {
+   "id": "mx-governance",
+   "from": "Policy Gates and Egress Control",
+   "to": "Policy Gates, Tracing and Evaluation"
+  },
+  {
+   "id": "mx-reasoning",
+   "from": "Structured Reasoning Frames",
+   "to": "Reasoning and Claim Verification"
+  }
+ ],
+ "agent_merges": [
+  {
+   "merged": "ese-policy",
+   "into": "atmo-policy",
+   "name": "Energy Policy Analyst",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "engp-photonics",
+   "into": "apph-photonics",
+   "name": "Photonics Engineer",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "engp-instrument",
+   "into": "apph-instrumentation",
+   "name": "Instrumentation Engineer",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "engp-sim",
+   "into": "apph-modeler",
+   "name": "Computational Physics Modeler",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "qm-circuit-engineer",
+   "into": "phys-quantum-circuit",
+   "name": "Quantum Circuit Agent",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "symsys-logic",
+   "into": "phil-logician",
+   "name": "Logic Agent",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "symsys-ml",
+   "into": "cs-ml-engineer",
+   "name": "Machine Learning Agent",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "symsys-phil",
+   "into": "phil-mind",
+   "name": "Philosophy of Mind Agent",
+   "reason": "same name, shared topic after concept merges"
+  },
+  {
+   "merged": "symsys-psych",
+   "into": "psych-cognitive",
+   "name": "Cognitive Psychology Agent",
+   "reason": "same name, shared topic after concept merges"
+  }
+ ],
+ "agents_trimmed_unused": [
+  {
+   "key": "ese-policy",
+   "name": "Energy Policy Analyst"
+  },
+  {
+   "key": "engp-photonics",
+   "name": "Photonics Engineer"
+  },
+  {
+   "key": "engp-instrument",
+   "name": "Instrumentation Engineer"
+  },
+  {
+   "key": "engp-sim",
+   "name": "Computational Physics Modeler"
+  },
+  {
+   "key": "qm-circuit-engineer",
+   "name": "Quantum Circuit Agent"
+  },
+  {
+   "key": "symsys-logic",
+   "name": "Logic Agent"
+  },
+  {
+   "key": "symsys-ml",
+   "name": "Machine Learning Agent"
+  },
+  {
+   "key": "symsys-phil",
+   "name": "Philosophy of Mind Agent"
+  },
+  {
+   "key": "symsys-psych",
+   "name": "Cognitive Psychology Agent"
+  }
+ ],
+ "maxey_keys": {
+  "from_registry": 954,
+  "newly_assigned": []
+ },
+ "skill_agent_overrides": [
+  {
+   "skill": "entanglement-entropy-analyzer",
+   "role": "checker",
+   "from": "Maxey1617",
+   "to": "Maxey1500",
+   "reason": "found in the live test chat: the Quantum Consistency Checker Agent fits a quantum checker role better than a Data Analyst Agent"
+  }
+ ],
+ "mcp_trimmed_unused": [
+  {
+   "id": "116f9db2-2c37-4b1b-89de-c5519a95ae9c",
+   "name": "Elastic Cloud Serverless"
+  },
+  {
+   "id": "63125588-06e1-4567-8130-f5a26ed1d20f",
+   "name": "Honeycomb"
+  },
+  {
+   "id": "54c8ca93-5e6e-4f30-89ca-207c3d3a438b",
+   "name": "Monte Carlo"
+  },
+  {
+   "id": "930ec419-a0ea-4790-8946-88344426d7f8",
+   "name": "Drata"
+  },
+  {
+   "id": "1909d426-4e25-4993-9323-fa8b157c71fa",
+   "name": "Reco"
+  },
+  {
+   "id": "11ca66fc-1e98-49d5-ab9b-7cb4672a8f10",
+   "name": "Supabase"
+  },
+  {
+   "id": "33e1b084-f45e-4fa3-951a-b08ad61101c9",
+   "name": "Neon"
+  },
+  {
+   "id": "01adc2b5-5676-4dda-9e32-2cce63929d5c",
+   "name": "ClickHouse"
+  },
+  {
+   "id": "97efeba5-ffd8-4b9c-a1d9-35978d0fdb9f",
+   "name": "PlanetScale"
+  },
+  {
+   "id": "c700435a-e86b-41f6-a377-ee226164a909",
+   "name": "MongoDB Atlas"
+  },
+  {
+   "id": "cd12e050-6c36-4d6a-8865-95e7d2743c41",
+   "name": "CloudBees Unify MCP Server"
+  },
+  {
+   "id": "1f80285c-87b3-496f-91b3-07ea8fc86488",
+   "name": "incident.io"
+  },
+  {
+   "id": "045e9791-ed0d-4dfb-8271-a2f1ff62f9f0",
+   "name": "Render"
+  },
+  {
+   "id": "7eb42afe-0087-4493-a105-da2b021d5c03",
+   "name": "Vercel"
+  },
+  {
+   "id": "db272bc3-0c46-43e9-bb09-3562f9965014",
+   "name": "Macaly Cloud"
+  },
+  {
+   "id": "37153cd7-b17c-470e-8b46-007e2859e0f3",
+   "name": "Context7"
+  },
+  {
+   "id": "597f662f-36de-437e-836e-5a81013cbfbe",
+   "name": "Slack"
+  },
+  {
+   "id": "69f3a300-cc60-48c4-b237-dfac56530dbf",
+   "name": "Notion"
+  },
+  {
+   "id": "b89f7865-a755-4f86-8062-c3bd651740ce",
+   "name": "Google Drive"
+  },
+  {
+   "id": "session:Claude_Docs",
+   "name": "Claude Docs"
+  },
+  {
+   "id": "session:claude-code-remote",
+   "name": "Claude Code Remote"
+  }
+ ]
+}

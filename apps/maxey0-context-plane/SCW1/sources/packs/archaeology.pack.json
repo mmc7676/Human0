@@ -1,0 +1,578 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "archaeology",
+ "topic": {
+  "id": "archaeology",
+  "label": "Archaeology",
+  "desc": "Archaeology: the study of the human past through material remains, excavation, dating and spatial analysis."
+ },
+ "concepts": [
+  [
+   "arch-field-survey",
+   "Field Survey and Remote Sensing",
+   "archaeology",
+   "Locating sites through pedestrian survey, aerial and satellite imagery, lidar and geophysics, managed in GIS.",
+   [
+    "survey",
+    "remote sensing",
+    "lidar",
+    "geophysics",
+    "gis",
+    "site",
+    "landscape",
+    "satellite"
+   ]
+  ],
+  [
+   "arch-excavation-stratigraphy",
+   "Excavation and Stratigraphy",
+   "archaeology",
+   "Controlled excavation, context recording and stratigraphic sequencing of deposits.",
+   [
+    "excavation",
+    "stratigraphy",
+    "context",
+    "trench",
+    "harris matrix",
+    "recording",
+    "deposit",
+    "feature"
+   ]
+  ],
+  [
+   "arch-dating-chronology",
+   "Dating and Chronology",
+   "archaeology",
+   "Relative and absolute dating methods, including seriation, radiocarbon, dendrochronology and luminescence.",
+   [
+    "radiocarbon",
+    "calibration",
+    "dendrochronology",
+    "seriation",
+    "luminescence",
+    "chronology",
+    "typology",
+    "bayesian"
+   ]
+  ],
+  [
+   "arch-material-culture",
+   "Material Culture and Artifact Analysis",
+   "archaeology",
+   "Classification and analysis of lithics, ceramics, metals and other artifacts for technology and exchange.",
+   [
+    "artifact",
+    "ceramic",
+    "lithic",
+    "metal",
+    "typology",
+    "provenance",
+    "residue",
+    "exchange"
+   ]
+  ],
+  [
+   "arch-bioarchaeology",
+   "Bioarchaeology and Environmental Archaeology",
+   "archaeology",
+   "Human remains, animal bones and plant remains used to reconstruct diet, health and environment.",
+   [
+    "human remains",
+    "zooarchaeology",
+    "archaeobotany",
+    "isotope",
+    "diet",
+    "health",
+    "pollen",
+    "environment"
+   ]
+  ],
+  [
+   "arch-heritage-theory",
+   "Archaeological Theory and Heritage",
+   "archaeology",
+   "Interpretive frameworks and the ethics and law of cultural heritage management.",
+   [
+    "theory",
+    "processual",
+    "post-processual",
+    "heritage",
+    "ethics",
+    "repatriation",
+    "conservation",
+    "community"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "arch-site-prediction",
+   "arch-field-survey",
+   "Site Location Mapping",
+   "Maps survey results and candidate sites in GIS and checks predicted locations against known site records.",
+   "procedural",
+   [
+    [
+     "arch-surveyor",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-heritage",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-lidar-review",
+   "arch-field-survey",
+   "Lidar and Imagery Interpretation",
+   "Interprets lidar and satellite imagery for features and checks each identification by ground truth or second review.",
+   "semantic",
+   [
+    [
+     "arch-surveyor",
+     "primary"
+    ],
+    [
+     "arch-excavator",
+     "checker"
+    ],
+    [
+     "arch-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-geophysics-plan",
+   "arch-field-survey",
+   "Geophysical Survey Planning",
+   "Plans magnetometry or ground-penetrating radar survey grids and checks coverage and resolution against targets.",
+   "procedural",
+   [
+    [
+     "arch-surveyor",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-excavator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-context-recording",
+   "arch-excavation-stratigraphy",
+   "Context Recording",
+   "Records excavation contexts with standard forms and checks completeness and consistency of the record.",
+   "procedural",
+   [
+    [
+     "arch-excavator",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-artifacts",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-harris-matrix",
+   "arch-excavation-stratigraphy",
+   "Harris Matrix Construction",
+   "Builds a Harris matrix from stratigraphic relationships and checks it for cycles and contradictions.",
+   "procedural",
+   [
+    [
+     "arch-excavator",
+     "primary"
+    ],
+    [
+     "arch-dating",
+     "checker"
+    ],
+    [
+     "arch-methods",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-trench-strategy",
+   "arch-excavation-stratigraphy",
+   "Excavation Strategy Design",
+   "Designs trench placement and sampling for research questions and checks the plan against survey data and literature.",
+   "semantic",
+   [
+    [
+     "arch-excavator",
+     "primary"
+    ],
+    [
+     "arch-surveyor",
+     "checker"
+    ],
+    [
+     "arch-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-radiocarbon-calibrate",
+   "arch-dating-chronology",
+   "Radiocarbon Calibration",
+   "Calibrates radiocarbon ages with a current curve and checks the ranges with Bayesian modeling against stratigraphy.",
+   "procedural",
+   [
+    [
+     "arch-dating",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-excavator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-seriation",
+   "arch-dating-chronology",
+   "Seriation and Typological Dating",
+   "Orders assemblages by seriation and checks the sequence against independent absolute dates.",
+   "procedural",
+   [
+    [
+     "arch-dating",
+     "primary"
+    ],
+    [
+     "arch-artifacts",
+     "checker"
+    ],
+    [
+     "arch-methods",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-chronology-synthesis",
+   "arch-dating-chronology",
+   "Regional Chronology Synthesis",
+   "Synthesises a regional chronology from published dates and checks it for outliers and source quality.",
+   "semantic",
+   [
+    [
+     "arch-dating",
+     "primary"
+    ],
+    [
+     "arch-literature",
+     "checker"
+    ],
+    [
+     "arch-surveyor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-ceramic-typology",
+   "arch-material-culture",
+   "Ceramic Typology Classification",
+   "Classifies ceramic sherds by fabric and form and checks classification against reference collections.",
+   "procedural",
+   [
+    [
+     "arch-artifacts",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-dating",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-lithic-analysis",
+   "arch-material-culture",
+   "Lithic Technology Analysis",
+   "Analyses lithic reduction sequences and checks interpretations against experimental and published data.",
+   "semantic",
+   [
+    [
+     "arch-artifacts",
+     "primary"
+    ],
+    [
+     "arch-literature",
+     "checker"
+    ],
+    [
+     "arch-excavator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-provenance-study",
+   "arch-material-culture",
+   "Provenance and Exchange Study",
+   "Interprets compositional provenance data for artifacts and checks exchange routes on a map against source locations.",
+   "semantic",
+   [
+    [
+     "arch-artifacts",
+     "primary"
+    ],
+    [
+     "arch-surveyor",
+     "checker"
+    ],
+    [
+     "arch-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-isotope-diet",
+   "arch-bioarchaeology",
+   "Isotope Diet Reconstruction",
+   "Reconstructs diet and mobility from stable isotope values and checks them against regional baselines.",
+   "procedural",
+   [
+    [
+     "arch-bioarch",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-faunal-analysis",
+   "arch-bioarchaeology",
+   "Zooarchaeological Analysis",
+   "Quantifies animal bone assemblages and checks counts and taphonomy with standard indices.",
+   "procedural",
+   [
+    [
+     "arch-bioarch",
+     "primary"
+    ],
+    [
+     "arch-artifacts",
+     "checker"
+    ],
+    [
+     "arch-methods",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-paleo-health",
+   "arch-bioarchaeology",
+   "Skeletal Health Assessment",
+   "Assesses health indicators on human remains and checks diagnoses against bioarchaeology literature.",
+   "semantic",
+   [
+    [
+     "arch-bioarch",
+     "primary"
+    ],
+    [
+     "arch-literature",
+     "checker"
+    ],
+    [
+     "arch-heritage",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-interpretive-framework",
+   "arch-heritage-theory",
+   "Interpretive Framework Comparison",
+   "Compares processual and post-processual interpretations of a site and checks arguments against evidence.",
+   "semantic",
+   [
+    [
+     "arch-literature",
+     "primary"
+    ],
+    [
+     "arch-methods",
+     "checker"
+    ],
+    [
+     "arch-excavator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-heritage-assessment",
+   "arch-heritage-theory",
+   "Heritage Impact Assessment",
+   "Assesses development impacts on heritage sites using GIS and checks the assessment against legal and ethics standards.",
+   "procedural",
+   [
+    [
+     "arch-heritage",
+     "primary"
+    ],
+    [
+     "arch-surveyor",
+     "checker"
+    ],
+    [
+     "arch-methods",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arch-repatriation-review",
+   "arch-heritage-theory",
+   "Repatriation and Community Review",
+   "Reviews repatriation claims and community consultation and checks them against law and ethics codes.",
+   "semantic",
+   [
+    [
+     "arch-heritage",
+     "primary"
+    ],
+    [
+     "arch-literature",
+     "checker"
+    ],
+    [
+     "arch-bioarch",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "arch-excavator": "Excavation Director",
+  "arch-surveyor": "Archaeological Survey Mapper",
+  "arch-dating": "Chronology and Dating Specialist",
+  "arch-artifacts": "Artifact Analyst",
+  "arch-bioarch": "Bioarchaeologist",
+  "arch-heritage": "Heritage Management Advisor",
+  "arch-methods": "Archaeological Methods Checker",
+  "arch-literature": "Archaeological Literature Reviewer"
+ },
+ "mcp": [
+  [
+   "GIS Cloud",
+   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Felt Maps",
+   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "Map and analyze your geospatial data",
+   [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "arch-survey": "survey lidar geophysics gis satellite landscape",
+  "arch-dig": "excavation stratigraphy context trench matrix recording",
+  "arch-date": "radiocarbon calibration dendrochronology seriation luminescence chronology bayesian",
+  "arch-object": "artifact ceramic lithic metal provenance residue",
+  "arch-remains": "zooarchaeology archaeobotany isotope diet pollen skeletal",
+  "arch-heritage": "heritage processual repatriation conservation community ethics"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

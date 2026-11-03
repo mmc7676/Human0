@@ -1,0 +1,593 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "data-science",
+ "topic": {
+  "id": "data-science",
+  "label": "Data Science",
+  "desc": "Data Science: extracting reliable knowledge from data through statistics, machine learning, data engineering and clear communication."
+ },
+ "concepts": [
+  [
+   "ds-statistical-inference",
+   "Statistical Inference",
+   "data-science",
+   "Estimating population quantities and testing hypotheses from samples, with explicit uncertainty through confidence intervals, p-values and posterior distributions.",
+   [
+    "inference",
+    "estimation",
+    "hypothesis",
+    "confidence interval",
+    "p-value",
+    "bayesian",
+    "bootstrap",
+    "regression"
+   ]
+  ],
+  [
+   "ds-machine-learning",
+   "Machine Learning",
+   "data-science",
+   "Building predictive models that learn patterns from data, from supervised classification and regression to unsupervised clustering and deep learning.",
+   [
+    "supervised",
+    "unsupervised",
+    "classification",
+    "clustering",
+    "neural network",
+    "feature",
+    "training",
+    "hyperparameter"
+   ]
+  ],
+  [
+   "ds-data-engineering",
+   "Data Engineering and Wrangling",
+   "data-science",
+   "Acquiring, cleaning, joining and storing data so it is consistent, documented and queryable at scale.",
+   [
+    "pipeline",
+    "cleaning",
+    "etl",
+    "warehouse",
+    "sql",
+    "schema",
+    "missing data",
+    "join"
+   ]
+  ],
+  [
+   "ds-visualization-communication",
+   "Data Visualization and Communication",
+   "data-science",
+   "Turning analyses into honest charts, dashboards and narratives that decision makers can read correctly.",
+   [
+    "visualization",
+    "chart",
+    "dashboard",
+    "storytelling",
+    "encoding",
+    "exploratory",
+    "report"
+   ]
+  ],
+  [
+   "ds-experimentation-causal",
+   "Experimentation and Causal Inference",
+   "data-science",
+   "Designing controlled experiments and using observational methods to estimate causal effects rather than mere correlation.",
+   [
+    "experiment",
+    "a/b test",
+    "causal",
+    "randomization",
+    "power",
+    "treatment",
+    "confounding",
+    "counterfactual"
+   ]
+  ],
+  [
+   "ds-data-ethics-governance",
+   "Data Ethics and Governance",
+   "data-science",
+   "Privacy, fairness, consent and reproducibility obligations that govern how data is collected, modeled and shared.",
+   [
+    "ethics",
+    "privacy",
+    "fairness",
+    "bias",
+    "governance",
+    "reproducibility",
+    "consent",
+    "audit"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ds-hypothesis-tester",
+   "ds-statistical-inference",
+   "Hypothesis Test Runner",
+   "Selects and runs the appropriate significance test for a stated question and checks its assumptions and effect size before reporting.",
+   "procedural",
+   [
+    [
+     "ds-statistician",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-experiment",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-regression-modeler",
+   "ds-statistical-inference",
+   "Regression Modeler",
+   "Fits linear and generalized linear regression models and checks residual diagnostics, multicollinearity and coefficient intervals.",
+   "procedural",
+   [
+    [
+     "ds-statistician",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-bayesian-estimator",
+   "ds-statistical-inference",
+   "Bayesian Estimator",
+   "Specifies priors and likelihoods, samples posterior distributions and checks convergence diagnostics and posterior predictive fit.",
+   "semantic",
+   [
+    [
+     "ds-statistician",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-classifier-trainer",
+   "ds-machine-learning",
+   "Classifier Trainer",
+   "Trains and tunes classification models with cross-validation and checks held-out accuracy, calibration and class balance.",
+   "procedural",
+   [
+    [
+     "ds-ml",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-wrangler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-clustering-explorer",
+   "ds-machine-learning",
+   "Clustering Explorer",
+   "Groups unlabeled records with clustering algorithms and checks cluster stability and silhouette scores across seeds.",
+   "procedural",
+   [
+    [
+     "ds-ml",
+     "primary"
+    ],
+    [
+     "ds-statistician",
+     "checker"
+    ],
+    [
+     "ds-viz",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-feature-engineer",
+   "ds-machine-learning",
+   "Feature Engineer",
+   "Derives, encodes and selects predictive features and checks for target leakage and train-test drift.",
+   "semantic",
+   [
+    [
+     "ds-ml",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-wrangler",
+     "support"
+    ],
+    [
+     "ds-sql",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-data-cleaner",
+   "ds-data-engineering",
+   "Data Cleaner",
+   "Detects and repairs missing values, duplicates, outliers and type errors and checks row counts and null rates before and after.",
+   "procedural",
+   [
+    [
+     "ds-wrangler",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-sql",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-sql-query-writer",
+   "ds-data-engineering",
+   "SQL Query Writer",
+   "Writes analytical SQL against warehouse tables and checks results against independent aggregate counts.",
+   "procedural",
+   [
+    [
+     "ds-sql",
+     "primary"
+    ],
+    [
+     "ds-wrangler",
+     "checker"
+    ],
+    [
+     "ds-statistician",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-pipeline-builder",
+   "ds-data-engineering",
+   "ETL Pipeline Builder",
+   "Designs extract-transform-load pipelines with schema contracts and checks each run with data quality assertions.",
+   "procedural",
+   [
+    [
+     "ds-wrangler",
+     "primary"
+    ],
+    [
+     "ds-sql",
+     "checker"
+    ],
+    [
+     "ds-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-chart-designer",
+   "ds-visualization-communication",
+   "Chart Designer",
+   "Chooses chart forms and visual encodings for a dataset and checks that axes, scales and colors do not distort the data.",
+   "semantic",
+   [
+    [
+     "ds-viz",
+     "primary"
+    ],
+    [
+     "ds-statistician",
+     "checker"
+    ],
+    [
+     "ds-ethics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-eda-explorer",
+   "ds-visualization-communication",
+   "Exploratory Data Analyst",
+   "Profiles distributions, correlations and anomalies in a new dataset and checks findings against summary statistics.",
+   "procedural",
+   [
+    [
+     "ds-viz",
+     "primary"
+    ],
+    [
+     "ds-statistician",
+     "checker"
+    ],
+    [
+     "ds-wrangler",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-dashboard-builder",
+   "ds-visualization-communication",
+   "Dashboard Builder",
+   "Assembles metric dashboards from warehouse queries and checks every tile against its source query.",
+   "procedural",
+   [
+    [
+     "ds-viz",
+     "primary"
+    ],
+    [
+     "ds-sql",
+     "checker"
+    ],
+    [
+     "ds-experiment",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-ab-test-designer",
+   "ds-experimentation-causal",
+   "A/B Test Designer",
+   "Plans randomized experiments with power calculations and guardrail metrics and checks sample ratio and pre-period balance.",
+   "procedural",
+   [
+    [
+     "ds-experiment",
+     "primary"
+    ],
+    [
+     "ds-statistician",
+     "checker"
+    ],
+    [
+     "ds-sql",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-causal-estimator",
+   "ds-experimentation-causal",
+   "Causal Effect Estimator",
+   "Estimates treatment effects with matching, difference-in-differences or instrumental variables and checks robustness to confounding.",
+   "semantic",
+   [
+    [
+     "ds-experiment",
+     "primary"
+    ],
+    [
+     "ds-statistician",
+     "checker"
+    ],
+    [
+     "ds-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-forecast-modeler",
+   "ds-experimentation-causal",
+   "Time Series Forecaster",
+   "Builds seasonal time series forecasts and checks backtest error against naive baselines.",
+   "procedural",
+   [
+    [
+     "ds-statistician",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-experiment",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-fairness-auditor",
+   "ds-data-ethics-governance",
+   "Model Fairness Auditor",
+   "Measures disparate performance of a model across groups and checks results against stated fairness criteria.",
+   "semantic",
+   [
+    [
+     "ds-ethics",
+     "primary"
+    ],
+    [
+     "ds-validator",
+     "checker"
+    ],
+    [
+     "ds-ml",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-privacy-reviewer",
+   "ds-data-ethics-governance",
+   "Privacy Risk Reviewer",
+   "Identifies personal data and re-identification risk in a dataset and checks proposed anonymization against it.",
+   "semantic",
+   [
+    [
+     "ds-ethics",
+     "primary"
+    ],
+    [
+     "ds-wrangler",
+     "checker"
+    ],
+    [
+     "ds-sql",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ds-reproducibility-checker",
+   "ds-data-ethics-governance",
+   "Reproducibility Checker",
+   "Reruns an analysis from versioned code and data and checks that reported numbers are reproduced exactly.",
+   "procedural",
+   [
+    [
+     "ds-validator",
+     "primary"
+    ],
+    [
+     "ds-ethics",
+     "checker"
+    ],
+    [
+     "ds-wrangler",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ds-statistician": "Statistical Inference Analyst",
+  "ds-ml": "Machine Learning Engineer",
+  "ds-wrangler": "Data Wrangling Specialist",
+  "ds-sql": "SQL and Warehouse Analyst",
+  "ds-viz": "Visualization Designer",
+  "ds-validator": "Model Validation Auditor",
+  "ds-ethics": "Data Ethics Reviewer",
+  "ds-experiment": "Experimentation Analyst"
+ },
+ "mcp": [
+  [
+   "Google Cloud BigQuery",
+   "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "BigQuery: Advanced analytical insights for agents",
+   [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Snowflake",
+   "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "Retrieve both structured and unstructured data",
+   [
+    "Cortex Agents",
+    "Cortex Search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "mcp-server-motherduck",
+   null,
+   "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "web-listed",
+   "https://github.com/motherduckdb/mcp-server-motherduck"
+  ],
+  [
+   "Omni Analytics",
+   "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "Query your data using natural language through Omni's semantic model",
+   [
+    "pickModel",
+    "pickTopic",
+    "getData"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "ds-stats": "statistical inference estimation hypothesis bayesian bootstrap regression posterior",
+  "ds-ml": "machine learning supervised unsupervised classification clustering neural feature training hyperparameter",
+  "ds-eng": "pipeline cleaning etl warehouse sql schema join wrangling",
+  "ds-viz": "visualization chart dashboard storytelling encoding exploratory",
+  "ds-causal": "experiment causal randomization power treatment confounding counterfactual",
+  "ds-gov": "ethics privacy fairness bias governance reproducibility consent"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "rows reused verbatim from the verified Human0 MCP menu; working order not re-checked in this session"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

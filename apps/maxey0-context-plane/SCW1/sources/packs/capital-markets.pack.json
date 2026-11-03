@@ -1,0 +1,310 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "capital-markets",
+ "topic": {
+  "id": "capital-markets",
+  "label": "Capital Markets and Exchanges",
+  "desc": "Where securities trade: exchanges and trading venues, market structure, order types and execution concepts, clearing and settlement, indices, and trading platforms. Context only; no execution."
+ },
+ "concepts": [
+  [
+   "cm-exchanges",
+   "Exchanges and Trading Venues",
+   "capital-markets",
+   "Stock, futures and options exchanges, alternative trading systems, dark pools and their listing rules and hours.",
+   [
+    "exchange",
+    "nyse",
+    "nasdaq",
+    "cme",
+    "venue",
+    "ats",
+    "dark",
+    "pool",
+    "listing",
+    "trading",
+    "hours"
+   ]
+  ],
+  [
+   "cm-structure",
+   "Market Structure and Orders",
+   "capital-markets",
+   "Order types, order books, bid-ask spread, market makers, liquidity and best execution.",
+   [
+    "order",
+    "type",
+    "limit",
+    "market",
+    "stop",
+    "book",
+    "bid",
+    "ask",
+    "spread",
+    "market",
+    "maker",
+    "liquidity",
+    "execution"
+   ]
+  ],
+  [
+   "cm-clearing",
+   "Clearing, Settlement and Custody",
+   "capital-markets",
+   "What happens after a trade: clearing houses, settlement cycles, custody and prime brokerage.",
+   [
+    "clearing",
+    "settlement",
+    "custody",
+    "prime",
+    "broker",
+    "dtcc",
+    "t+1",
+    "counterparty",
+    "margin"
+   ]
+  ],
+  [
+   "cm-indices",
+   "Indices and Benchmarks",
+   "capital-markets",
+   "Market indices such as the S&P 500, how they are built, weighted and rebalanced, and index funds that track them.",
+   [
+    "index",
+    "indices",
+    "benchmark",
+    "s&p",
+    "dow",
+    "weighting",
+    "rebalance",
+    "constituent",
+    "etf"
+   ]
+  ],
+  [
+   "cm-platforms",
+   "Trading Platforms and Market Data",
+   "capital-markets",
+   "Brokerages, trading platforms, terminals and market data feeds, and what each provides.",
+   [
+    "platform",
+    "brokerage",
+    "broker",
+    "terminal",
+    "market",
+    "data",
+    "feed",
+    "quote",
+    "api"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cm-venue-explainer",
+   "cm-exchanges",
+   "Venue Explainer",
+   "Explains a trading venue's role, listing rules, hours and which instruments trade there.",
+   "semantic",
+   [
+    [
+     "cm-exchange",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-structure",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm-order-type-explainer",
+   "cm-structure",
+   "Order Type Explainer",
+   "Explains order types and which to use for a goal, with risks.",
+   "semantic",
+   [
+    [
+     "cm-structure",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-clearing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm-liquidity-assessor",
+   "cm-structure",
+   "Liquidity Assessor",
+   "Assesses an instrument's liquidity from spread, depth and volume.",
+   "semantic",
+   [
+    [
+     "cm-structure",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-clearing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm-trade-lifecycle-tracer",
+   "cm-clearing",
+   "Trade Lifecycle Tracer",
+   "Traces a trade from order to settlement, naming each party and step.",
+   "procedural",
+   [
+    [
+     "cm-clearing",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-index",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm-index-methodology-explainer",
+   "cm-indices",
+   "Index Methodology Explainer",
+   "Explains how an index is constructed, weighted and rebalanced.",
+   "semantic",
+   [
+    [
+     "cm-index",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-platform",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm-platform-comparator",
+   "cm-platforms",
+   "Platform Comparator",
+   "Compares brokerages and trading platforms by instruments, fees, data and API access.",
+   "semantic",
+   [
+    [
+     "cm-platform",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-exchange",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm-market-data-explainer",
+   "cm-platforms",
+   "Market Data Explainer",
+   "Explains market data types (quotes, trades, bars, depth) and their sources.",
+   "semantic",
+   [
+    [
+     "cm-platform",
+     "primary"
+    ],
+    [
+     "cm-checker",
+     "checker"
+    ],
+    [
+     "cm-exchange",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "cm-exchange": "Exchange Agent",
+  "cm-structure": "Market Structure Agent",
+  "cm-clearing": "Clearing and Settlement Agent",
+  "cm-index": "Index Agent",
+  "cm-platform": "Trading Platform Agent",
+  "cm-checker": "Markets Checker Agent"
+ },
+ "mcp": [
+  [
+   "Polygon MCP",
+   null,
+   "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   [],
+   "web-listed",
+   "https://github.com/polygon-io/mcp_polygon"
+  ],
+  [
+   "Twelve Data MCP",
+   null,
+   "Twelve Data MCP server: real time and historical prices for stocks, forex, crypto, ETFs and indices, technical indicators.",
+   [],
+   "web-listed",
+   "https://github.com/twelvedata/mcp"
+  ],
+  [
+   "Alpaca MCP",
+   null,
+   "Alpaca MCP server: stock, options and crypto market data, account positions and order placement through a brokerage API.",
+   [],
+   "web-listed",
+   "https://github.com/alpacahq/alpaca-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "cmexchanges": "exchange nyse nasdaq cme venue ats dark pool listing trading hours",
+  "cmstructure": "order type limit market stop book bid ask spread market maker liquidity execution",
+  "cmclearing": "clearing settlement custody prime broker dtcc t+1 counterparty margin",
+  "cmindices": "index indices benchmark s&p dow weighting rebalance constituent etf",
+  "cmplatforms": "platform brokerage broker terminal market data feed quote api"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Polygon MCP": "repository exists (git ls-remote https://github.com/polygon-io/mcp_polygon, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Twelve Data MCP": "repository exists (git ls-remote https://github.com/twelvedata/mcp, 2026-10-31); description summarises its public README; tool list not re-read",
+   "Alpaca MCP": "repository exists (git ls-remote https://github.com/alpacahq/alpaca-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read; can place orders: context only here, never execution"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

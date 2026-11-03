@@ -1,0 +1,544 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "art-history",
+ "topic": {
+  "id": "art-history",
+  "label": "Art History",
+  "desc": "Art History: the study of visual art and architecture across periods and cultures through formal, contextual and theoretical analysis."
+ },
+ "concepts": [
+  [
+   "arth-formal-analysis",
+   "Formal and Visual Analysis",
+   "art-history",
+   "Description and analysis of composition, line, colour, space and medium in a work of art.",
+   [
+    "composition",
+    "line",
+    "color",
+    "space",
+    "medium",
+    "technique",
+    "visual",
+    "description"
+   ]
+  ],
+  [
+   "arth-iconography-meaning",
+   "Iconography and Iconology",
+   "art-history",
+   "Identification of subjects, symbols and attributes and interpretation of their cultural meaning.",
+   [
+    "iconography",
+    "iconology",
+    "symbol",
+    "attribute",
+    "allegory",
+    "religious",
+    "myth",
+    "panofsky"
+   ]
+  ],
+  [
+   "arth-periods-styles",
+   "Western Periods and Styles",
+   "art-history",
+   "Major Western art periods from antiquity through the Renaissance, Baroque and modernism.",
+   [
+    "renaissance",
+    "baroque",
+    "medieval",
+    "classical",
+    "modernism",
+    "impressionism",
+    "style",
+    "period"
+   ]
+  ],
+  [
+   "arth-architecture-history",
+   "History of Architecture",
+   "art-history",
+   "Buildings, urban spaces and architectural theory from ancient temples to modern design.",
+   [
+    "architecture",
+    "building",
+    "plan",
+    "elevation",
+    "gothic",
+    "urban",
+    "architect",
+    "structure"
+   ]
+  ],
+  [
+   "arth-global-art",
+   "Global and Non-Western Art",
+   "art-history",
+   "Art of Asia, Africa, the Americas, Oceania and the Islamic world studied in its own terms and contexts.",
+   [
+    "global",
+    "asian",
+    "african",
+    "islamic",
+    "indigenous",
+    "oceanic",
+    "colonial",
+    "cross-cultural"
+   ]
+  ],
+  [
+   "arth-museums-provenance-theory",
+   "Museums, Provenance and Theory",
+   "art-history",
+   "Collecting, provenance research, display and theoretical approaches such as feminism, social history and postcolonialism.",
+   [
+    "museum",
+    "provenance",
+    "collecting",
+    "exhibition",
+    "feminist",
+    "postcolonial",
+    "social history",
+    "theory"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "arth-formal-description",
+   "arth-formal-analysis",
+   "Formal Description",
+   "Writes a formal description of an artwork and checks every visual claim against the image.",
+   "semantic",
+   [
+    [
+     "arth-formalist",
+     "primary"
+    ],
+    [
+     "arth-period",
+     "checker"
+    ],
+    [
+     "arth-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-comparative-analysis",
+   "arth-formal-analysis",
+   "Comparative Visual Analysis",
+   "Compares two works side by side for form and technique and checks the comparison against catalog data.",
+   "semantic",
+   [
+    [
+     "arth-formalist",
+     "primary"
+    ],
+    [
+     "arth-literature",
+     "checker"
+    ],
+    [
+     "arth-period",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-technique-identification",
+   "arth-formal-analysis",
+   "Medium and Technique Identification",
+   "Identifies medium and technique from visual and technical evidence and checks it against conservation reports.",
+   "semantic",
+   [
+    [
+     "arth-formalist",
+     "primary"
+    ],
+    [
+     "arth-provenance",
+     "checker"
+    ],
+    [
+     "arth-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-subject-identification",
+   "arth-iconography-meaning",
+   "Subject and Symbol Identification",
+   "Identifies subjects, saints, deities and attributes in an image and checks them against iconographic dictionaries.",
+   "semantic",
+   [
+    [
+     "arth-iconographer",
+     "primary"
+    ],
+    [
+     "arth-literature",
+     "checker"
+    ],
+    [
+     "arth-global",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-iconological-reading",
+   "arth-iconography-meaning",
+   "Iconological Interpretation",
+   "Interprets an artwork's cultural meaning in Panofsky's sense and checks the reading against period texts.",
+   "semantic",
+   [
+    [
+     "arth-iconographer",
+     "primary"
+    ],
+    [
+     "arth-theorist",
+     "checker"
+    ],
+    [
+     "arth-period",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-allegory-analysis",
+   "arth-iconography-meaning",
+   "Allegory and Myth Analysis",
+   "Analyses allegorical and mythological programs and checks sources against classical and religious texts.",
+   "semantic",
+   [
+    [
+     "arth-iconographer",
+     "primary"
+    ],
+    [
+     "arth-period",
+     "checker"
+    ],
+    [
+     "arth-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-style-attribution",
+   "arth-periods-styles",
+   "Style and Period Attribution",
+   "Attributes an unknown work to a period, school or artist by style and checks it against dated comparanda.",
+   "semantic",
+   [
+    [
+     "arth-period",
+     "primary"
+    ],
+    [
+     "arth-formalist",
+     "checker"
+    ],
+    [
+     "arth-provenance",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-movement-timeline",
+   "arth-periods-styles",
+   "Movement Timeline Builder",
+   "Builds a timeline of artists and movements and checks dates against reference sources.",
+   "procedural",
+   [
+    [
+     "arth-period",
+     "primary"
+    ],
+    [
+     "arth-literature",
+     "checker"
+    ],
+    [
+     "arth-global",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-patronage-context",
+   "arth-periods-styles",
+   "Patronage Context Analysis",
+   "Analyses patronage and commission context for a work and checks facts against archival documents.",
+   "semantic",
+   [
+    [
+     "arth-period",
+     "primary"
+    ],
+    [
+     "arth-provenance",
+     "checker"
+    ],
+    [
+     "arth-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-building-analysis",
+   "arth-architecture-history",
+   "Building Plan and Elevation Analysis",
+   "Analyses a building's plan, elevation and structure and checks measurements against survey drawings.",
+   "semantic",
+   [
+    [
+     "arth-architecture",
+     "primary"
+    ],
+    [
+     "arth-formalist",
+     "checker"
+    ],
+    [
+     "arth-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-style-architecture",
+   "arth-architecture-history",
+   "Architectural Style Identification",
+   "Identifies architectural styles such as Gothic or modernist and checks diagnostic features against reference works.",
+   "semantic",
+   [
+    [
+     "arth-architecture",
+     "primary"
+    ],
+    [
+     "arth-period",
+     "checker"
+    ],
+    [
+     "arth-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-urban-history",
+   "arth-architecture-history",
+   "Urban Space History",
+   "Traces the history of an urban space and checks phases against maps and building records.",
+   "semantic",
+   [
+    [
+     "arth-architecture",
+     "primary"
+    ],
+    [
+     "arth-provenance",
+     "checker"
+    ],
+    [
+     "arth-global",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-non-western-context",
+   "arth-global-art",
+   "Cultural Context Interpretation",
+   "Interprets a non-Western work within its own cultural categories and checks the account against specialist scholarship.",
+   "semantic",
+   [
+    [
+     "arth-global",
+     "primary"
+    ],
+    [
+     "arth-literature",
+     "checker"
+    ],
+    [
+     "arth-iconographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-cross-cultural",
+   "arth-global-art",
+   "Cross-Cultural Exchange Analysis",
+   "Analyses artistic exchange along trade and colonial routes and checks the claims against dated objects.",
+   "semantic",
+   [
+    [
+     "arth-global",
+     "primary"
+    ],
+    [
+     "arth-period",
+     "checker"
+    ],
+    [
+     "arth-provenance",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-islamic-ornament",
+   "arth-global-art",
+   "Islamic Ornament and Calligraphy Analysis",
+   "Analyses geometric ornament and calligraphy and checks inscriptions and patterns against published readings.",
+   "semantic",
+   [
+    [
+     "arth-global",
+     "primary"
+    ],
+    [
+     "arth-iconographer",
+     "checker"
+    ],
+    [
+     "arth-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-provenance-chain",
+   "arth-museums-provenance-theory",
+   "Provenance Chain Research",
+   "Reconstructs an object's ownership history and checks every link against sale catalogs and archives, flagging gaps.",
+   "procedural",
+   [
+    [
+     "arth-provenance",
+     "primary"
+    ],
+    [
+     "arth-literature",
+     "checker"
+    ],
+    [
+     "arth-global",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-exhibition-critique",
+   "arth-museums-provenance-theory",
+   "Exhibition Critique",
+   "Critiques an exhibition's display and narrative and checks claims against the catalog and labels.",
+   "semantic",
+   [
+    [
+     "arth-theorist",
+     "primary"
+    ],
+    [
+     "arth-provenance",
+     "checker"
+    ],
+    [
+     "arth-formalist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "arth-theory-application",
+   "arth-museums-provenance-theory",
+   "Critical Theory Application",
+   "Applies feminist, social history or postcolonial theory to a work and checks the argument for evidence.",
+   "semantic",
+   [
+    [
+     "arth-theorist",
+     "primary"
+    ],
+    [
+     "arth-literature",
+     "checker"
+    ],
+    [
+     "arth-global",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "arth-formalist": "Formal Analysis Agent",
+  "arth-iconographer": "Iconography Specialist",
+  "arth-period": "Period and Style Historian",
+  "arth-architecture": "Architectural Historian",
+  "arth-global": "Global Art Historian",
+  "arth-provenance": "Provenance Researcher",
+  "arth-theorist": "Art Theory Critic",
+  "arth-literature": "Art Historical Literature Reviewer"
+ },
+ "mcp": [
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "arth-form": "composition color medium technique visual description",
+  "arth-icon": "iconography iconology symbol attribute allegory panofsky",
+  "arth-period": "renaissance baroque medieval classical modernism impressionism",
+  "arth-building": "architecture building plan elevation gothic urban",
+  "arth-global": "asian african islamic indigenous oceanic calligraphy",
+  "arth-museum": "museum provenance collecting exhibition feminist postcolonial"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

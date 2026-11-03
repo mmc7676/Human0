@@ -1,0 +1,468 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "creative-writing",
+ "topic": {
+  "id": "creative-writing",
+  "label": "Creative Writing",
+  "desc": "Creative Writing: the craft of fiction, poetry, creative nonfiction and dramatic writing, developed through drafting, workshop and revision."
+ },
+ "concepts": [
+  [
+   "cw-fiction",
+   "Fiction",
+   "creative-writing",
+   "Short stories and novels built from character, plot, point of view, setting and scene.",
+   [
+    "fiction",
+    "character",
+    "plot",
+    "point of view",
+    "scene",
+    "setting",
+    "short story",
+    "novel"
+   ]
+  ],
+  [
+   "cw-poetry",
+   "Poetry",
+   "creative-writing",
+   "Verse built from image, line, sound, form and meter.",
+   [
+    "poetry",
+    "poem",
+    "image",
+    "line break",
+    "meter",
+    "form",
+    "sonnet",
+    "free verse"
+   ]
+  ],
+  [
+   "cw-nonfiction",
+   "Creative Nonfiction",
+   "creative-writing",
+   "Memoir, personal essay and literary journalism using narrative craft on true material.",
+   [
+    "nonfiction",
+    "memoir",
+    "essay",
+    "literary journalism",
+    "truth",
+    "research",
+    "voice",
+    "reflection"
+   ]
+  ],
+  [
+   "cw-drama",
+   "Dramatic Writing",
+   "creative-writing",
+   "Plays and screenplays built from dialogue, action, structure and stage or screen format.",
+   [
+    "drama",
+    "play",
+    "screenplay",
+    "dialogue",
+    "act",
+    "stage",
+    "format",
+    "action"
+   ]
+  ],
+  [
+   "cw-craft-revision",
+   "Craft, Workshop and Revision",
+   "creative-writing",
+   "Giving and using critique and revising drafts at structural and line level.",
+   [
+    "revision",
+    "workshop",
+    "critique",
+    "feedback",
+    "draft",
+    "line edit",
+    "structure",
+    "prose"
+   ]
+  ],
+  [
+   "cw-publishing",
+   "Literary Publishing",
+   "creative-writing",
+   "Submitting to magazines, agents and presses and the conventions of the literary market.",
+   [
+    "publishing",
+    "submission",
+    "query letter",
+    "agent",
+    "magazine",
+    "press",
+    "manuscript",
+    "market"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cw-scene-draft",
+   "cw-fiction",
+   "Scene Drafting",
+   "Drafts a scene with a clear goal, conflict and turn and checks that point of view stays consistent.",
+   "procedural",
+   [
+    [
+     "cw-fiction-writer",
+     "primary"
+    ],
+    [
+     "cw-workshop-editor",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-line-editor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-plot-outline",
+   "cw-fiction",
+   "Plot Outline",
+   "Outlines a story's structure by scene and checks that causes, stakes and resolution connect.",
+   "procedural",
+   [
+    [
+     "cw-fiction-writer",
+     "primary"
+    ],
+    [
+     "cw-workshop-editor",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-poet",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-character-profile",
+   "cw-fiction",
+   "Character Development",
+   "Builds a character's desire, flaw and arc and checks the arc against scenes in the draft.",
+   "semantic",
+   [
+    [
+     "cw-fiction-writer",
+     "primary"
+    ],
+    [
+     "cw-reader",
+     "checker"
+    ],
+    [
+     "cw-workshop-editor",
+     "support"
+    ],
+    [
+     "cw-poet",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-poem-draft",
+   "cw-poetry",
+   "Poem Drafting",
+   "Drafts a poem in a requested form and checks the line, rhyme and meter rules of that form.",
+   "procedural",
+   [
+    [
+     "cw-poet",
+     "primary"
+    ],
+    [
+     "cw-line-editor",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-workshop-editor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-scansion-check",
+   "cw-poetry",
+   "Meter and Sound Check",
+   "Scans a poem for meter and sound patterns and flags lines that break the intended pattern.",
+   "procedural",
+   [
+    [
+     "cw-line-editor",
+     "primary"
+    ],
+    [
+     "cw-reader",
+     "checker"
+    ],
+    [
+     "cw-poet",
+     "support"
+    ],
+    [
+     "cw-workshop-editor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-essay-draft",
+   "cw-nonfiction",
+   "Personal Essay Drafting",
+   "Drafts a personal essay that moves between scene and reflection and checks factual claims are marked and sourced.",
+   "procedural",
+   [
+    [
+     "cw-essayist",
+     "primary"
+    ],
+    [
+     "cw-workshop-editor",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-line-editor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-fact-check",
+   "cw-nonfiction",
+   "Nonfiction Fact Check",
+   "Checks names, dates and events in a nonfiction draft and lists claims that need a source.",
+   "procedural",
+   [
+    [
+     "cw-reader",
+     "primary"
+    ],
+    [
+     "cw-publishing",
+     "checker"
+    ],
+    [
+     "cw-essayist",
+     "support"
+    ],
+    [
+     "cw-fiction-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-dialogue-draft",
+   "cw-drama",
+   "Dialogue Drafting",
+   "Writes dialogue with subtext and distinct voices and checks each line advances conflict or character.",
+   "procedural",
+   [
+    [
+     "cw-dramatist",
+     "primary"
+    ],
+    [
+     "cw-workshop-editor",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-fiction-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-script-format",
+   "cw-drama",
+   "Script Formatting",
+   "Formats a play or screenplay to industry conventions and flags format errors.",
+   "procedural",
+   [
+    [
+     "cw-dramatist",
+     "primary"
+    ],
+    [
+     "cw-line-editor",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-publishing",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-workshop-critique",
+   "cw-craft-revision",
+   "Workshop Critique",
+   "Writes a critique naming strengths and the most important problem and ties each point to a passage.",
+   "semantic",
+   [
+    [
+     "cw-workshop-editor",
+     "primary"
+    ],
+    [
+     "cw-reader",
+     "checker"
+    ],
+    [
+     "cw-line-editor",
+     "support"
+    ],
+    [
+     "cw-poet",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-line-edit",
+   "cw-craft-revision",
+   "Line Editing",
+   "Edits prose for clarity, rhythm and concision and lists every change with its reason.",
+   "procedural",
+   [
+    [
+     "cw-line-editor",
+     "primary"
+    ],
+    [
+     "cw-reader",
+     "checker"
+    ],
+    [
+     "cw-workshop-editor",
+     "support"
+    ],
+    [
+     "cw-fiction-writer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-query-letter",
+   "cw-publishing",
+   "Query Letter",
+   "Drafts a query letter for a manuscript and checks it against agent submission guidelines.",
+   "procedural",
+   [
+    [
+     "cw-publishing",
+     "primary"
+    ],
+    [
+     "cw-workshop-editor",
+     "checker"
+    ],
+    [
+     "cw-fiction-writer",
+     "support"
+    ],
+    [
+     "cw-line-editor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cw-submission-plan",
+   "cw-publishing",
+   "Submission Plan",
+   "Builds a list of venues matched to a manuscript with deadlines and guidelines and flags mismatches.",
+   "procedural",
+   [
+    [
+     "cw-publishing",
+     "primary"
+    ],
+    [
+     "cw-fiction-writer",
+     "checker"
+    ],
+    [
+     "cw-reader",
+     "support"
+    ],
+    [
+     "cw-workshop-editor",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "cw-fiction-writer": "Fiction Writer Agent",
+  "cw-poet": "Poet Agent",
+  "cw-essayist": "Creative Nonfiction Agent",
+  "cw-dramatist": "Playwright and Screenwriter Agent",
+  "cw-workshop-editor": "Workshop Editor Agent",
+  "cw-line-editor": "Line Editor Agent",
+  "cw-reader": "Close Reader Agent",
+  "cw-publishing": "Publishing Advisor Agent"
+ },
+ "mcp": [],
+ "lexicon": {
+  "cw-fiction": "fiction character plot point of view scene setting short story novel",
+  "cw-poetry": "poetry poem image line break meter form sonnet free verse",
+  "cw-nonfiction": "nonfiction memoir essay literary journalism truth research voice reflection",
+  "cw-drama": "drama play screenplay dialogue act stage format action",
+  "cw-craft": "revision workshop critique feedback draft edit structure prose",
+  "cw-publish": "publishing submission query letter agent magazine press manuscript market"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "generated"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

@@ -1,0 +1,784 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "mechanical-engineering",
+  "label": "Mechanical Engineering",
+  "desc": "Mechanical Engineering: analysis and design of machines, structures, thermal-fluid systems and controls."
+ },
+ "concepts": [
+  {
+   "id": "me-controls-mechatronics",
+   "label": "Controls and Mechatronics",
+   "desc": "Modelling and feedback control of dynamic systems with sensors, actuators and embedded code.",
+   "keywords": [
+    "control",
+    "feedback",
+    "pid",
+    "transfer function",
+    "sensor",
+    "actuator",
+    "robot",
+    "stability"
+   ],
+   "topic": "mechanical-engineering",
+   "source": "mechanical-engineering",
+   "related": [
+    "cheme-process-control",
+    "rb-control"
+   ]
+  },
+  {
+   "id": "me-dynamics-vibration",
+   "label": "Dynamics and Vibrations",
+   "desc": "Kinematics and kinetics of particles, rigid bodies and mechanisms, and vibration of mechanical systems.",
+   "keywords": [
+    "dynamics",
+    "kinematics",
+    "mechanism",
+    "vibration",
+    "natural frequency",
+    "damping",
+    "resonance",
+    "linkage"
+   ],
+   "topic": "mechanical-engineering",
+   "source": "mechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "me-heat-transfer",
+   "label": "Heat Transfer",
+   "desc": "Conduction, convection and radiation and the design of heat exchangers and thermal management.",
+   "keywords": [
+    "heat transfer",
+    "conduction",
+    "convection",
+    "radiation",
+    "heat exchanger",
+    "fin",
+    "thermal resistance",
+    "temperature"
+   ],
+   "topic": "mechanical-engineering",
+   "source": "mechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "me-machine-design",
+   "label": "Machine Design and Manufacturing",
+   "desc": "Design of machine elements, tolerancing, materials selection and manufacturing processes.",
+   "keywords": [
+    "machine design",
+    "gear",
+    "bearing",
+    "fastener",
+    "tolerance",
+    "safety factor",
+    "manufacturing",
+    "cad"
+   ],
+   "topic": "mechanical-engineering",
+   "source": "mechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "me-solid-mechanics",
+   "label": "Statics and Solid Mechanics",
+   "desc": "Forces, equilibrium, stress, strain and deflection in bars, beams, shafts and pressure vessels.",
+   "keywords": [
+    "statics",
+    "equilibrium",
+    "free body diagram",
+    "stress",
+    "strain",
+    "beam",
+    "deflection",
+    "torsion"
+   ],
+   "topic": "mechanical-engineering",
+   "source": "mechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "me-thermodynamics-fluids",
+   "label": "Thermodynamics and Fluid Mechanics",
+   "desc": "Energy conversion, power and refrigeration cycles, fluid statics and internal and external flows.",
+   "keywords": [
+    "thermodynamics",
+    "cycle",
+    "efficiency",
+    "fluid",
+    "pressure",
+    "flow",
+    "pipe",
+    "turbine"
+   ],
+   "topic": "mechanical-engineering",
+   "source": "mechanical-engineering",
+   "related": [
+    "cl-fluids",
+    "ese-thermodynamics-conversion"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "me-pid-tuner",
+   "concept": "me-controls-mechatronics",
+   "label": "PID Controller Tuner",
+   "desc": "Tunes PID gains for a plant model and checks step response, overshoot and stability margins.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1454",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1455",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-robot-motion-planner",
+   "concept": "me-controls-mechatronics",
+   "label": "Robot Motion Planner",
+   "desc": "Plans robot arm or mobile robot trajectories over ROS and checks joint limits and collision clearance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1454",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1455",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-state-space-modeler",
+   "concept": "me-controls-mechatronics",
+   "label": "State Space Modeler",
+   "desc": "Builds state space models from equations of motion and checks controllability and observability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1454",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1455",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-mechanism-kinematics-solver",
+   "concept": "me-dynamics-vibration",
+   "label": "Mechanism Kinematics Solver",
+   "desc": "Computes positions, velocities and accelerations of linkages and checks loop-closure equations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1455",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-modal-analyzer",
+   "concept": "me-dynamics-vibration",
+   "label": "Modal Vibration Analyzer",
+   "desc": "Finds natural frequencies and mode shapes of multi-degree-of-freedom systems and checks them against FEA modal results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1455",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1454",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-vibration-isolation-designer",
+   "concept": "me-dynamics-vibration",
+   "label": "Vibration Isolation Designer",
+   "desc": "Selects stiffness and damping to isolate vibration and checks transmissibility at operating frequency.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1455",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1454",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-electronics-cooling-designer",
+   "concept": "me-heat-transfer",
+   "label": "Electronics Cooling Designer",
+   "desc": "Designs fins and airflow to keep component temperatures within limits and checks results with a transient thermal model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1459",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1454",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-heat-exchanger-sizer",
+   "concept": "me-heat-transfer",
+   "label": "Heat Exchanger Sizer",
+   "desc": "Sizes exchangers by LMTD and effectiveness-NTU methods and checks both methods agree.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1459",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1460",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-thermal-resistance-network",
+   "concept": "me-heat-transfer",
+   "label": "Thermal Resistance Network Solver",
+   "desc": "Models conduction and convection paths as resistance networks and checks the heat balance at each node.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1459",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1460",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-gear-bearing-selector",
+   "concept": "me-machine-design",
+   "label": "Gear and Bearing Selector",
+   "desc": "Selects gears and bearings for load and life and checks bending, contact stress and L10 life.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1457",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1461",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1462",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-process-planner",
+   "concept": "me-machine-design",
+   "label": "Manufacturing Process Planner",
+   "desc": "Chooses machining, casting or additive routes and checks cycle time, cost and achievable tolerance.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1462",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-tolerance-stackup",
+   "concept": "me-machine-design",
+   "label": "Tolerance Stack-up Analyzer",
+   "desc": "Computes worst-case and statistical tolerance stacks and checks fit requirements against GD and T callouts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1462",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-beam-deflection-calculator",
+   "concept": "me-solid-mechanics",
+   "label": "Beam Deflection Calculator",
+   "desc": "Computes shear, moment and deflection for beams and checks maxima against superposition tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1461",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-fea-stress-analyzer",
+   "concept": "me-solid-mechanics",
+   "label": "FEA Stress Analyzer",
+   "desc": "Runs finite element stress models of parts and checks mesh convergence and hand-calculation agreement.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1458",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1461",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-free-body-solver",
+   "concept": "me-solid-mechanics",
+   "label": "Free Body Diagram Solver",
+   "desc": "Resolves forces and moments on rigid bodies and trusses and checks that every equilibrium equation sums to zero.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1461",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-cfd-flow-checker",
+   "concept": "me-thermodynamics-fluids",
+   "label": "CFD Flow Checker",
+   "desc": "Sets up computational flow simulations and checks mesh independence and conservation of mass and momentum.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1460",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1459",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-cycle-efficiency-calculator",
+   "concept": "me-thermodynamics-fluids",
+   "label": "Cycle Efficiency Calculator",
+   "desc": "Analyses Rankine, Brayton and refrigeration cycles with property tables and checks first and second law balances.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1460",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1459",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-pipe-flow-sizer",
+   "concept": "me-thermodynamics-fluids",
+   "label": "Pipe Flow Sizer",
+   "desc": "Sizes pipes and pumps with Darcy friction and minor losses and checks Reynolds regime and head balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1460",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1454",
+   "name": "Controls and Mechatronics Agent",
+   "legacy_key": "me-controls",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1455",
+   "name": "Dynamics and Vibration Agent",
+   "legacy_key": "me-dynamics",
+   "mcp": [
+    "local:ros-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey1456",
+   "name": "Units and Standards Checker",
+   "legacy_key": "me-units",
+   "mcp": [
+    "local:chuk-mcp-physics"
+   ]
+  },
+  {
+   "key": "Maxey1457",
+   "name": "Machine Design Agent",
+   "legacy_key": "me-designer",
+   "mcp": [
+    "local:ros-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey1458",
+   "name": "Finite Element Analyst",
+   "legacy_key": "me-fea",
+   "mcp": [
+    "local:chuk-mcp-physics",
+    "local:ros-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey1459",
+   "name": "Heat Transfer Agent",
+   "legacy_key": "me-heat",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1460",
+   "name": "Thermofluids Agent",
+   "legacy_key": "me-thermofluids",
+   "mcp": [
+    "local:chuk-mcp-physics"
+   ]
+  },
+  {
+   "key": "Maxey1461",
+   "name": "Statics and Solid Mechanics Agent",
+   "legacy_key": "me-statics",
+   "mcp": [
+    "local:ros-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey1462",
+   "name": "Manufacturing Engineer Agent",
+   "legacy_key": "me-manufacturing",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "chuk-mcp-physics",
+   "desc": "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   "tools": [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/IBM/chuk-mcp-physics",
+   "id": "local:chuk-mcp-physics",
+   "origins": [
+    "mechanical-engineering",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ros-mcp-server",
+   "desc": "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/robotmcp/ros-mcp-server",
+   "id": "local:ros-mcp-server",
+   "origins": [
+    "mechanical-engineering",
+    "robotics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "local:ros-mcp-server",
+  "local:chuk-mcp-physics"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1455",
+   "mcp": "local:ros-mcp-server",
+   "topic": "mechanical-engineering",
+   "score": 0.2808,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1456",
+   "mcp": "local:chuk-mcp-physics",
+   "topic": "mechanical-engineering",
+   "score": 0.1537,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1457",
+   "mcp": "local:ros-mcp-server",
+   "topic": "mechanical-engineering",
+   "score": 0.2876,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1458",
+   "mcp": "local:chuk-mcp-physics",
+   "topic": "mechanical-engineering",
+   "score": 0.1452,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1460",
+    "skill": "me-cfd-flow-checker"
+   }
+  },
+  {
+   "agent": "Maxey1458",
+   "mcp": "local:ros-mcp-server",
+   "topic": "mechanical-engineering",
+   "score": 0.2808,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1455",
+    "skill": "me-modal-analyzer"
+   }
+  },
+  {
+   "agent": "Maxey1460",
+   "mcp": "local:chuk-mcp-physics",
+   "topic": "mechanical-engineering",
+   "score": 0.1452,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1461",
+   "mcp": "local:ros-mcp-server",
+   "topic": "mechanical-engineering",
+   "score": 0.2876,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1457",
+    "skill": "me-gear-bearing-selector"
+   }
+  }
+ ],
+ "lexicon": {
+  "me-solid": "statics equilibrium free stress strain beam deflection torsion shear",
+  "me-motion": "dynamics kinematics mechanism vibration frequency damping resonance linkage modal transmissibility",
+  "me-energy": "thermodynamic cycle efficiency fluid pressure flow pipe turbine rankine pump",
+  "me-thermal": "heat conduction convection radiation exchanger fin resistance temperature cooling",
+  "me-design": "machine gear bearing fastener tolerance safety manufacturing cad machining",
+  "me-control": "control feedback pid transfer sensor actuator robot stability"
+ },
+ "sources": [
+  "mechanical-engineering"
+ ]
+}

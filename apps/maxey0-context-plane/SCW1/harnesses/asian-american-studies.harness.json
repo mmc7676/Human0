@@ -1,0 +1,710 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "asian-american-studies",
+  "label": "Asian American Studies",
+  "desc": "Asian American Studies: the history, communities, law, culture and politics of people of Asian descent in the United States."
+ },
+ "concepts": [
+  {
+   "id": "asam-community-identity",
+   "label": "Community and Identity",
+   "desc": "Ethnic enclaves, panethnic identity, multiracial experience and the model minority myth as studied by sociologists.",
+   "keywords": [
+    "community",
+    "identity",
+    "panethnic",
+    "enclave",
+    "model minority",
+    "multiracial",
+    "ethnicity",
+    "assimilation"
+   ],
+   "topic": "asian-american-studies",
+   "source": "asian-american-studies",
+   "related": []
+  },
+  {
+   "id": "asam-immigration-history",
+   "label": "Immigration History",
+   "desc": "Migration from Asia to the United States from the nineteenth century to the present, shaped by labor demand, war and changing immigration law.",
+   "keywords": [
+    "immigration",
+    "migration",
+    "labor",
+    "exclusion",
+    "refugee",
+    "diaspora",
+    "settlement",
+    "generation"
+   ],
+   "topic": "asian-american-studies",
+   "source": "asian-american-studies",
+   "related": []
+  },
+  {
+   "id": "asam-law-citizenship",
+   "label": "Law, Citizenship and Civil Rights",
+   "desc": "Court cases, exclusion acts, incarceration and civil rights struggles that defined Asian American legal status and citizenship.",
+   "keywords": [
+    "citizenship",
+    "exclusion act",
+    "incarceration",
+    "naturalization",
+    "court",
+    "civil rights",
+    "redress",
+    "case law"
+   ],
+   "topic": "asian-american-studies",
+   "source": "asian-american-studies",
+   "related": []
+  },
+  {
+   "id": "asam-literature-culture",
+   "label": "Literature, Media and Culture",
+   "desc": "Asian American literature, film, theater and media representation, read in historical and critical context.",
+   "keywords": [
+    "literature",
+    "novel",
+    "film",
+    "theater",
+    "representation",
+    "media",
+    "memoir",
+    "criticism"
+   ],
+   "topic": "asian-american-studies",
+   "source": "asian-american-studies",
+   "related": [
+    "csre-culture"
+   ]
+  },
+  {
+   "id": "asam-oral-history-methods",
+   "label": "Oral History and Research Methods",
+   "desc": "Interviews, archives, community-based research and data disaggregation used to document Asian American lives.",
+   "keywords": [
+    "oral history",
+    "interview",
+    "archive",
+    "methods",
+    "disaggregation",
+    "survey",
+    "census",
+    "ethics"
+   ],
+   "topic": "asian-american-studies",
+   "source": "asian-american-studies",
+   "related": [
+    "csre-methods"
+   ]
+  },
+  {
+   "id": "asam-politics-activism",
+   "label": "Politics and Activism",
+   "desc": "The Asian American movement, electoral participation, coalition building and responses to anti-Asian violence.",
+   "keywords": [
+    "activism",
+    "movement",
+    "coalition",
+    "electoral",
+    "voting",
+    "hate crime",
+    "organizing",
+    "advocacy"
+   ],
+   "topic": "asian-american-studies",
+   "source": "asian-american-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "asam-enclave-profile",
+   "concept": "asam-community-identity",
+   "label": "Ethnic Enclave Profile",
+   "desc": "Profiles a Chinatown, Koreatown or Little Saigon through history and demographics, checked against census tables and cited studies.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1054",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1055",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-identity-formation",
+   "concept": "asam-community-identity",
+   "label": "Panethnic Identity Analysis",
+   "desc": "Explains how panethnic Asian American identity formed after 1968, checked against cited movement histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1054",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1058",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-model-minority-critique",
+   "concept": "asam-community-identity",
+   "label": "Model Minority Critique",
+   "desc": "Analyses the model minority stereotype and its disaggregated outcomes, checked for data sources and subgroup breakdowns.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1054",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1055",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1059",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-labor-history",
+   "concept": "asam-immigration-history",
+   "label": "Asian Labor History Review",
+   "desc": "Summarizes plantation, railroad and agricultural labor organizing by Asian workers, checked against archival and scholarly citations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1056",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1060",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-migration-timeline",
+   "concept": "asam-immigration-history",
+   "label": "Migration Timeline Builder",
+   "desc": "Builds a dated timeline of migration waves and the laws that shaped them, checked against cited primary and secondary sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1056",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1060",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-refugee-resettlement",
+   "concept": "asam-immigration-history",
+   "label": "Refugee Resettlement Analysis",
+   "desc": "Explains Southeast Asian refugee resettlement after 1975 and its community effects, checked for cited program dates and figures.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1056",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1055",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-case-briefing",
+   "concept": "asam-law-citizenship",
+   "label": "Landmark Case Briefing",
+   "desc": "Briefs cases such as Wong Kim Ark and Korematsu with holding, reasoning and legacy, checked against the published opinion.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1061",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-citizenship-law-mapper",
+   "concept": "asam-law-citizenship",
+   "label": "Citizenship Law Mapper",
+   "desc": "Maps changes in naturalization and immigration statutes affecting Asian immigrants, checked for statute names and enactment years.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1061",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1059",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-incarceration-redress",
+   "concept": "asam-law-citizenship",
+   "label": "Incarceration and Redress Study",
+   "desc": "Traces wartime Japanese American incarceration and the redress movement, checked against commission reports and dated legislation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1061",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1060",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-close-reading",
+   "concept": "asam-literature-culture",
+   "label": "Literary Close Reading",
+   "desc": "Produces a close reading of an Asian American novel or memoir tied to its context, checked by quoting and citing the text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1058",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-media-representation",
+   "concept": "asam-literature-culture",
+   "label": "Media Representation Audit",
+   "desc": "Audits film and television representation of Asian Americans, checked against stated sample criteria and counts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1058",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1055",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-theater-history",
+   "concept": "asam-literature-culture",
+   "label": "Asian American Theater History",
+   "desc": "Summarizes theater companies and playwrights and their reception, checked against production records and reviews.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1058",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1060",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-archive-finding",
+   "concept": "asam-oral-history-methods",
+   "label": "Archive and Source Finder",
+   "desc": "Locates archival collections and scholarly literature for a research question, checked by confirming each citation resolves.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1060",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1058",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-data-disaggregation",
+   "concept": "asam-oral-history-methods",
+   "label": "Data Disaggregation Analysis",
+   "desc": "Disaggregates census data by Asian subgroup to show hidden disparities, checked by reproducing the table totals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1055",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1059",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-interview-protocol",
+   "concept": "asam-oral-history-methods",
+   "label": "Oral History Interview Protocol",
+   "desc": "Designs an oral history protocol with consent and question guides, checked against oral history ethics standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1060",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-hate-incident-review",
+   "concept": "asam-politics-activism",
+   "label": "Anti-Asian Violence Review",
+   "desc": "Reviews documented anti-Asian hate incidents and policy responses, checked for source reliability and reporting dates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1059",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1061",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-movement-history",
+   "concept": "asam-politics-activism",
+   "label": "Asian American Movement History",
+   "desc": "Explains student strikes, ethnic studies founding and movement organizations, checked against dated primary accounts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1056",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1060",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-voting-analysis",
+   "concept": "asam-politics-activism",
+   "label": "Electoral Participation Analysis",
+   "desc": "Analyses Asian American voter registration and turnout by subgroup, checked against survey and census sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1059",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1055",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1054",
+   "name": "Community Sociologist",
+   "legacy_key": "asam-sociologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1055",
+   "name": "Census Demographer",
+   "legacy_key": "asam-demographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1056",
+   "name": "Immigration Historian",
+   "legacy_key": "asam-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1057",
+   "name": "Source Verification Checker",
+   "legacy_key": "asam-fact",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1058",
+   "name": "Literary and Cultural Critic",
+   "legacy_key": "asam-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1059",
+   "name": "Civic Policy Analyst",
+   "legacy_key": "asam-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1060",
+   "name": "Oral History Archivist",
+   "legacy_key": "asam-archivist",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1061",
+   "name": "Legal History Analyst",
+   "legacy_key": "asam-legal",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1057",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "asian-american-studies",
+   "score": 0.1569,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1060",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "asian-american-studies",
+   "score": 0.1635,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "asam-immigration": "immigration migration labor exclusion refugee diaspora settlement generation",
+  "asam-law": "citizenship act incarceration naturalization court civil rights redress case law",
+  "asam-community": "community identity panethnic enclave model minority multiracial ethnicity assimilation",
+  "asam-literature": "literature novel film theater representation media memoir criticism",
+  "asam-politics": "activism movement coalition electoral voting hate crime organizing advocacy",
+  "asam-oral": "oral history interview archive methods disaggregation survey census ethics"
+ },
+ "sources": [
+  "asian-american-studies"
+ ]
+}

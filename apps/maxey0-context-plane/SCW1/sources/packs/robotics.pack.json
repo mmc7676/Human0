@@ -1,0 +1,588 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "robotics",
+ "topic": {
+  "id": "robotics",
+  "label": "Robotics",
+  "desc": "Robotics: kinematics and dynamics, perception, motion planning and navigation, control, manipulation, robot software (ROS), simulation, and safety and human-robot interaction. Ontology: Robotics is its own topic; Drones are aerial robots, and Mapping holds SLAM, which robots use for navigation."
+ },
+ "concepts": [
+  [
+   "rb-kinematics",
+   "Kinematics and Dynamics",
+   "robotics",
+   "Robot geometry and motion: joints, frames, Jacobians and equations of motion.",
+   [
+    "kinematics",
+    "dynamics",
+    "joint",
+    "jacobian",
+    "frame",
+    "lagrange"
+   ]
+  ],
+  [
+   "rb-perception",
+   "Perception",
+   "robotics",
+   "Sensing and estimating the world: sensor fusion, detection and pose estimation.",
+   [
+    "sensor-fusion",
+    "kalman",
+    "imu",
+    "detection",
+    "pose",
+    "depth"
+   ]
+  ],
+  [
+   "rb-planning",
+   "Motion Planning and Navigation",
+   "robotics",
+   "Finding collision-free paths and trajectories and navigating to goals.",
+   [
+    "planner",
+    "rrt",
+    "trajectory",
+    "costmap",
+    "navigation",
+    "obstacle"
+   ]
+  ],
+  [
+   "rb-control",
+   "Control",
+   "robotics",
+   "Feedback control of robot joints and vehicles: PID, state-space and model-predictive control.",
+   [
+    "pid",
+    "lqr",
+    "mpc",
+    "controller",
+    "actuator",
+    "tuning"
+   ]
+  ],
+  [
+   "rb-manipulation",
+   "Manipulation and Grasping",
+   "robotics",
+   "Picking, placing and handling objects with arms and grippers.",
+   [
+    "grasp",
+    "gripper",
+    "end-effector",
+    "manipulator",
+    "pick-and-place"
+   ]
+  ],
+  [
+   "rb-software",
+   "Robot Software and ROS",
+   "robotics",
+   "Robot middleware: nodes, topics, services, actions and bridges to AI models.",
+   [
+    "ros",
+    "node",
+    "topic",
+    "service",
+    "rosbridge",
+    "launch"
+   ]
+  ],
+  [
+   "rb-simulation",
+   "Simulation and Digital Twins",
+   "robotics",
+   "Physics simulation of robots and the gap between simulation and reality.",
+   [
+    "simulator",
+    "digital-twin",
+    "sim-to-real",
+    "physics-engine"
+   ]
+  ],
+  [
+   "rb-safety",
+   "Safety and Human-Robot Interaction",
+   "robotics",
+   "Safe operation near people, safety cases and interaction design.",
+   [
+    "safety",
+    "hri",
+    "collaborative",
+    "stop-zone",
+    "risk"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "rb-forward-inverse-kinematics",
+   "rb-kinematics",
+   "Forward and Inverse Kinematics",
+   "Computes end-effector pose from joint angles and the reverse, and reports singularities and multiple solutions.",
+   "procedural",
+   [
+    [
+     "rb-kinematics-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-controls-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-dynamics-modeler",
+   "rb-kinematics",
+   "Dynamics Modeler",
+   "Builds equations of motion with Lagrangian or Newton-Euler methods and identifies inertial parameters.",
+   "procedural",
+   [
+    [
+     "rb-kinematics-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-simulation-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-sensor-fusion-engineer",
+   "rb-perception",
+   "Sensor Fusion Engineer",
+   "Fuses IMU, wheel, camera and LiDAR data with Kalman-type filters and reports the estimate's uncertainty.",
+   "procedural",
+   [
+    [
+     "rb-perception-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-object-detection-pose",
+   "rb-perception",
+   "Object Detection and Pose Estimation",
+   "Detects objects and estimates their six-degree-of-freedom pose for grasping or avoidance and reports failure cases.",
+   "semantic",
+   [
+    [
+     "rb-perception-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-manipulation-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-depth-3d-perception",
+   "rb-perception",
+   "Depth and 3D Perception",
+   "Builds depth maps and point clouds from stereo, time-of-flight or LiDAR sensors and filters noise.",
+   "procedural",
+   [
+    [
+     "rb-perception-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-path-planner",
+   "rb-planning",
+   "Path Planner",
+   "Plans collision-free paths with graph search and sampling-based planners and compares their completeness and cost.",
+   "procedural",
+   [
+    [
+     "rb-planner",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-perception-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-trajectory-optimizer",
+   "rb-planning",
+   "Trajectory Optimizer",
+   "Turns a path into a smooth, time-parameterized trajectory within velocity, acceleration and torque limits.",
+   "procedural",
+   [
+    [
+     "rb-planner",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-controls-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-navigation-stack-integrator",
+   "rb-planning",
+   "Navigation Stack Integrator",
+   "Configures localization, costmaps and a local planner for a mobile robot and tests recovery behaviours.",
+   "procedural",
+   [
+    [
+     "rb-planner",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-ros-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-pid-tuner",
+   "rb-control",
+   "PID Tuner",
+   "Tunes PID gains from step responses and reports overshoot, settling time and stability margin.",
+   "procedural",
+   [
+    [
+     "rb-controls-engineer",
+     "primary"
+    ],
+    [
+     "rb-safety-engineer",
+     "checker"
+    ],
+    [
+     "rb-simulation-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-state-space-controller",
+   "rb-control",
+   "State-Space and Predictive Controller",
+   "Designs LQR or model-predictive controllers from a linear model and checks constraint handling.",
+   "semantic",
+   [
+    [
+     "rb-controls-engineer",
+     "primary"
+    ],
+    [
+     "rb-safety-engineer",
+     "checker"
+    ],
+    [
+     "rb-kinematics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-actuator-motor-driver",
+   "rb-control",
+   "Actuator and Motor Driver Selector",
+   "Selects motors, drivers and gearing for torque, speed and duty cycle and checks thermal limits.",
+   "procedural",
+   [
+    [
+     "rb-controls-engineer",
+     "primary"
+    ],
+    [
+     "rb-safety-engineer",
+     "checker"
+    ],
+    [
+     "rb-kinematics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-grasp-planner",
+   "rb-manipulation",
+   "Grasp Planner",
+   "Plans grasps from object shape and gripper geometry and ranks them by stability and reachability.",
+   "semantic",
+   [
+    [
+     "rb-manipulation-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-perception-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-end-effector-selector",
+   "rb-manipulation",
+   "Gripper and End-Effector Selector",
+   "Chooses a gripper type for the objects and forces involved and lists payload and compliance limits.",
+   "semantic",
+   [
+    [
+     "rb-manipulation-engineer",
+     "primary"
+    ],
+    [
+     "rb-safety-engineer",
+     "checker"
+    ],
+    [
+     "rb-controls-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-ros-node-developer",
+   "rb-software",
+   "ROS Node Developer",
+   "Writes ROS nodes with topics, services and actions and tests message types and timing.",
+   "procedural",
+   [
+    [
+     "rb-ros-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-controls-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-ros-bridge-integrator",
+   "rb-software",
+   "ROS Bridge Integrator",
+   "Connects an AI model to a ROS robot through a bridge, restricts which topics and services it may use and keeps a human stop in the loop.",
+   "procedural",
+   [
+    [
+     "rb-ros-engineer",
+     "primary"
+    ],
+    [
+     "rb-safety-engineer",
+     "checker"
+    ],
+    [
+     "rb-integration-tester",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-launch-config-debugger",
+   "rb-software",
+   "Launch and Config Debugger",
+   "Debugs launch files, parameters and transforms and explains why a node does not start or communicate.",
+   "procedural",
+   [
+    [
+     "rb-ros-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-planner",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-simulation-builder",
+   "rb-simulation",
+   "Simulation Builder",
+   "Builds a physics simulation of a robot and its world with sensor models and repeatable test scenarios.",
+   "procedural",
+   [
+    [
+     "rb-simulation-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-kinematics-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-sim-to-real-validator",
+   "rb-simulation",
+   "Sim-to-Real Validator",
+   "Compares simulated and real robot behaviour and lists the parameters that explain the gap.",
+   "semantic",
+   [
+    [
+     "rb-simulation-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-controls-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-safety-case-assessor",
+   "rb-safety",
+   "Safety Case Assessor",
+   "Drafts a hazard analysis and safety argument for a robot cell or mobile robot and lists which standards a qualified assessor must check.",
+   "semantic",
+   [
+    [
+     "rb-safety-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-controls-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "rb-hri-designer",
+   "rb-safety",
+   "Human-Robot Interaction Designer",
+   "Designs how a robot signals intent and responds to people nearby, with speed and separation rules.",
+   "semantic",
+   [
+    [
+     "rb-safety-engineer",
+     "primary"
+    ],
+    [
+     "rb-integration-tester",
+     "checker"
+    ],
+    [
+     "rb-planner",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "rb-kinematics-engineer": "Kinematics and Dynamics Agent",
+  "rb-perception-engineer": "Robot Perception Agent",
+  "rb-planner": "Motion Planning Agent",
+  "rb-controls-engineer": "Robot Controls Agent",
+  "rb-manipulation-engineer": "Manipulation Agent",
+  "rb-ros-engineer": "ROS Engineer Agent",
+  "rb-simulation-engineer": "Robot Simulation Agent",
+  "rb-safety-engineer": "Robot Safety Agent",
+  "rb-integration-tester": "Robot Integration Test Agent"
+ },
+ "mcp": [
+  [
+   "ros-mcp-server",
+   null,
+   "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+   [],
+   "web-listed",
+   "https://github.com/robotmcp/ros-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "robotkin": "jacobian lagrange euler frame joint robot robotic arm manipulator dynamics",
+  "robotsense": "imu kalman six degree stereo time fusion detection depth perception",
+  "robotplan": "rrt costmap sampling based recovery navigation obstacle motion smooth",
+  "robotctl": "pid lqr overshoot settling gearing duty controller actuator",
+  "grasping": "gripper grasp reachability effector pick place manipulation grasping",
+  "rosware": "ros rosbridge topic launch service software",
+  "robotsim": "simulator digital twin scenario sim real physics engine simulation",
+  "robotsafe": "hazard separation intent collaborative safety zone human interaction"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-22; user supplied the topic name and example concepts only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22",
+  "mcp_notes": {
+   "ros-mcp-server": "read at https://github.com/robotmcp/ros-mcp-server on 2026-10-22: described as connecting AI models with robots using MCP and ROS, Apache-2.0 licence stated, no archive notice seen; the README documents capabilities (publish and subscribe to topics, call services and actions) but no named tools, so the tool list is empty; it can command a robot, so any use needs a human stop in the loop; not installed or tested",
+   "none-in-directory": "the connector directory search for robot, robotics, ROS and simulation returned no robotics server"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app, not declared here. Safety skills are planning aids: a qualified assessor must confirm standards compliance."
+ }
+}

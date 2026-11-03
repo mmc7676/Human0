@@ -1,0 +1,550 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "music",
+ "topic": {
+  "id": "music",
+  "label": "Music",
+  "desc": "Music: theory, history, performance, composition, technology and the study of music in culture and the mind."
+ },
+ "concepts": [
+  [
+   "music-music-theory",
+   "Music Theory and Analysis",
+   "music",
+   "Harmony, counterpoint, form and the analytical methods used to explain how pieces work.",
+   [
+    "harmony",
+    "counterpoint",
+    "chord",
+    "cadence",
+    "form",
+    "roman numeral",
+    "voice leading",
+    "analysis"
+   ]
+  ],
+  [
+   "music-music-history",
+   "Music History and Repertoire",
+   "music",
+   "Western and global music history, styles, genres, composers and the sources that document them.",
+   [
+    "history",
+    "repertoire",
+    "style",
+    "period",
+    "genre",
+    "composer",
+    "baroque",
+    "jazz"
+   ]
+  ],
+  [
+   "music-composition-arranging",
+   "Composition and Arranging",
+   "music",
+   "Creating original music and arranging existing music for voices, instruments and ensembles.",
+   [
+    "composition",
+    "arranging",
+    "orchestration",
+    "melody",
+    "instrumentation",
+    "range",
+    "texture",
+    "score"
+   ]
+  ],
+  [
+   "music-performance-practice",
+   "Performance and Practice",
+   "music",
+   "Technique, interpretation, ensemble skills and historically informed performance.",
+   [
+    "performance",
+    "technique",
+    "interpretation",
+    "practice",
+    "ensemble",
+    "tempo",
+    "intonation",
+    "rehearsal"
+   ]
+  ],
+  [
+   "music-ethnomusicology",
+   "Ethnomusicology and Popular Music",
+   "music",
+   "Music as culture: global traditions, fieldwork, popular music industries and identity.",
+   [
+    "ethnomusicology",
+    "culture",
+    "tradition",
+    "fieldwork",
+    "popular music",
+    "ritual",
+    "identity",
+    "global"
+   ]
+  ],
+  [
+   "music-music-technology-cognition",
+   "Music Technology and Cognition",
+   "music",
+   "Audio, acoustics, digital production and how listeners perceive rhythm, pitch and emotion in music.",
+   [
+    "audio",
+    "acoustics",
+    "production",
+    "midi",
+    "synthesis",
+    "perception",
+    "rhythm",
+    "emotion"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "music-harmonic-analyzer",
+   "music-music-theory",
+   "Roman Numeral Harmonic Analyzer",
+   "Labels chords and cadences with Roman numerals and checks the analysis against voice leading and key context.",
+   "semantic",
+   [
+    [
+     "music-theorist",
+     "primary"
+    ],
+    [
+     "music-composer",
+     "checker"
+    ],
+    [
+     "music-archivist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-counterpoint-checker",
+   "music-music-theory",
+   "Species Counterpoint Checker",
+   "Writes and checks species counterpoint for parallel fifths, octaves and dissonance treatment.",
+   "procedural",
+   [
+    [
+     "music-composer",
+     "primary"
+    ],
+    [
+     "music-theorist",
+     "checker"
+    ],
+    [
+     "music-performer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-form-mapper",
+   "music-music-theory",
+   "Musical Form Mapper",
+   "Segments a piece into sections such as sonata or rondo form and checks boundaries against thematic and key evidence.",
+   "semantic",
+   [
+    [
+     "music-theorist",
+     "primary"
+    ],
+    [
+     "music-historian",
+     "checker"
+    ],
+    [
+     "music-archivist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-style-period-identifier",
+   "music-music-history",
+   "Style Period Identifier",
+   "Places a work in a style period from its musical features and checks the attribution against documented sources.",
+   "semantic",
+   [
+    [
+     "music-historian",
+     "primary"
+    ],
+    [
+     "music-theorist",
+     "checker"
+    ],
+    [
+     "music-archivist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-source-criticism-reviewer",
+   "music-music-history",
+   "Source Criticism Reviewer",
+   "Compares manuscript and edition variants of a score and checks claims of authorship and date against archive records.",
+   "semantic",
+   [
+    [
+     "music-archivist",
+     "primary"
+    ],
+    [
+     "music-historian",
+     "checker"
+    ],
+    [
+     "music-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-repertoire-program-builder",
+   "music-music-history",
+   "Repertoire Program Builder",
+   "Builds concert programs that fit a theme and duration and checks timings and instrumentation.",
+   "procedural",
+   [
+    [
+     "music-performer",
+     "primary"
+    ],
+    [
+     "music-historian",
+     "checker"
+    ],
+    [
+     "music-archivist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-orchestration-checker",
+   "music-composition-arranging",
+   "Orchestration Range Checker",
+   "Arranges parts for an ensemble and checks every note lies in the playable range of its instrument.",
+   "procedural",
+   [
+    [
+     "music-composer",
+     "primary"
+    ],
+    [
+     "music-performer",
+     "checker"
+    ],
+    [
+     "music-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-melody-harmonizer",
+   "music-composition-arranging",
+   "Melody Harmonizer",
+   "Harmonises a melody in a chosen style and checks the result for voice leading errors.",
+   "procedural",
+   [
+    [
+     "music-composer",
+     "primary"
+    ],
+    [
+     "music-theorist",
+     "checker"
+    ],
+    [
+     "music-cognition",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-notation-engraver",
+   "music-composition-arranging",
+   "Notation Engraver",
+   "Produces engraved score notation from sketches and checks beaming, spelling and part extraction.",
+   "procedural",
+   [
+    [
+     "music-archivist",
+     "primary"
+    ],
+    [
+     "music-composer",
+     "checker"
+    ],
+    [
+     "music-technologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-practice-plan-designer",
+   "music-performance-practice",
+   "Practice Plan Designer",
+   "Designs deliberate practice plans for a piece and checks progress against tempo and accuracy targets.",
+   "procedural",
+   [
+    [
+     "music-performer",
+     "primary"
+    ],
+    [
+     "music-cognition",
+     "checker"
+    ],
+    [
+     "music-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-interpretation-comparer",
+   "music-performance-practice",
+   "Recording Interpretation Comparer",
+   "Compares tempo and dynamic choices across recordings and checks measurements against the score.",
+   "semantic",
+   [
+    [
+     "music-performer",
+     "primary"
+    ],
+    [
+     "music-technologist",
+     "checker"
+    ],
+    [
+     "music-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-intonation-analyzer",
+   "music-performance-practice",
+   "Intonation Analyzer",
+   "Measures pitch accuracy in recordings in cents and checks it against the chosen temperament.",
+   "procedural",
+   [
+    [
+     "music-technologist",
+     "primary"
+    ],
+    [
+     "music-performer",
+     "checker"
+    ],
+    [
+     "music-cognition",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-field-recording-annotator",
+   "music-ethnomusicology",
+   "Field Recording Annotator",
+   "Annotates field recordings with performer, context and genre metadata and checks entries with community and archive sources.",
+   "procedural",
+   [
+    [
+     "music-ethno",
+     "primary"
+    ],
+    [
+     "music-archivist",
+     "checker"
+    ],
+    [
+     "music-technologist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-cultural-context-analyst",
+   "music-ethnomusicology",
+   "Cultural Context Analyst",
+   "Interprets the social meaning of a musical practice and checks the reading against ethnographic literature.",
+   "semantic",
+   [
+    [
+     "music-ethno",
+     "primary"
+    ],
+    [
+     "music-historian",
+     "checker"
+    ],
+    [
+     "music-cognition",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-lyric-translator",
+   "music-ethnomusicology",
+   "Lyric Translator",
+   "Translates song lyrics for study and checks meaning and singability with a native speaker review.",
+   "semantic",
+   [
+    [
+     "music-ethno",
+     "primary"
+    ],
+    [
+     "music-performer",
+     "checker"
+    ],
+    [
+     "music-composer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-audio-feature-extractor",
+   "music-music-technology-cognition",
+   "Audio Feature Extractor",
+   "Extracts tempo, key and spectral features from audio and checks estimates against annotated ground truth.",
+   "procedural",
+   [
+    [
+     "music-technologist",
+     "primary"
+    ],
+    [
+     "music-cognition",
+     "checker"
+    ],
+    [
+     "music-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-mix-balance-reviewer",
+   "music-music-technology-cognition",
+   "Mix Balance Reviewer",
+   "Reviews loudness, equalisation and stereo balance of a mix and checks metering against delivery standards.",
+   "procedural",
+   [
+    [
+     "music-technologist",
+     "primary"
+    ],
+    [
+     "music-performer",
+     "checker"
+    ],
+    [
+     "music-composer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "music-listening-experiment-designer",
+   "music-music-technology-cognition",
+   "Listening Experiment Designer",
+   "Designs perception experiments on rhythm or emotion and checks stimuli and statistics for confounds.",
+   "procedural",
+   [
+    [
+     "music-cognition",
+     "primary"
+    ],
+    [
+     "music-technologist",
+     "checker"
+    ],
+    [
+     "music-theorist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "music-theorist": "Music Theory Agent",
+  "music-historian": "Music History Agent",
+  "music-composer": "Composition Agent",
+  "music-performer": "Performance Coach Agent",
+  "music-ethno": "Ethnomusicology Agent",
+  "music-technologist": "Music Technology Agent",
+  "music-cognition": "Music Cognition Agent",
+  "music-archivist": "Score and Source Archivist"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "music-theory": "harmony counterpoint chord cadence form roman voice analysis fifth",
+  "music-past": "history repertoire style period genre composer baroque jazz manuscript",
+  "music-create": "composition arranging orchestration melody instrumentation range texture score notation",
+  "music-play": "performance technique interpretation practice ensemble tempo intonation rehearsal",
+  "music-culture": "ethnomusicology culture tradition fieldwork popular ritual identity global lyric",
+  "music-sound": "audio acoustic production midi synthesis perception rhythm emotion loudness spectral"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

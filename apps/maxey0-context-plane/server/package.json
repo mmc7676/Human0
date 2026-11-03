@@ -1,0 +1,19 @@
+{
+  "name": "maxey0-context-plane-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "python3 ../tools/build_scw1.py build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/mcp.test.mjs test/ontology.test.mjs test/sim.test.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261023.1",
+    "esbuild": "0.28.2",
+    "typescript": "5.9.3",
+    "wrangler": "4.156.0"
+  }
+}

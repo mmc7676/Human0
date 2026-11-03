@@ -1,0 +1,500 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "english",
+ "topic": {
+  "id": "english",
+  "label": "English",
+  "desc": "English: the study of literature, language and writing in English, from close reading and literary history to rhetoric and composition."
+ },
+ "concepts": [
+  [
+   "engl-literary-analysis",
+   "Literary Analysis and Close Reading",
+   "english",
+   "Interpreting texts through attention to diction, imagery, form, narrative and figurative language.",
+   [
+    "close reading",
+    "interpretation",
+    "imagery",
+    "symbolism",
+    "narrative",
+    "diction",
+    "theme",
+    "figurative"
+   ]
+  ],
+  [
+   "engl-literary-history",
+   "Literary History and Periods",
+   "english",
+   "English-language literature from Old English through contemporary global Anglophone writing, in historical context.",
+   [
+    "literary history",
+    "medieval",
+    "renaissance",
+    "romanticism",
+    "victorian",
+    "modernism",
+    "postcolonial",
+    "canon"
+   ]
+  ],
+  [
+   "engl-poetry-poetics",
+   "Poetry and Poetics",
+   "english",
+   "Meter, rhyme, sound and form in poetry and the vocabulary for describing them.",
+   [
+    "poetry",
+    "meter",
+    "scansion",
+    "rhyme",
+    "sonnet",
+    "stanza",
+    "prosody",
+    "verse"
+   ]
+  ],
+  [
+   "engl-critical-theory",
+   "Critical Theory",
+   "english",
+   "Frameworks such as formalism, structuralism, feminism, Marxism, psychoanalysis and postcolonial theory used to read texts.",
+   [
+    "theory",
+    "formalism",
+    "structuralism",
+    "feminist",
+    "marxist",
+    "psychoanalytic",
+    "deconstruction",
+    "ideology"
+   ]
+  ],
+  [
+   "engl-english-language",
+   "English Language and Linguistics",
+   "english",
+   "Grammar, usage, phonology, semantics and the history and varieties of the English language.",
+   [
+    "grammar",
+    "syntax",
+    "usage",
+    "phonology",
+    "etymology",
+    "dialect",
+    "semantics",
+    "history of english"
+   ]
+  ],
+  [
+   "engl-rhetoric-writing",
+   "Rhetoric, Composition and Creative Writing",
+   "english",
+   "Argument, persuasion, academic and creative writing, revision and editing.",
+   [
+    "rhetoric",
+    "argument",
+    "thesis",
+    "composition",
+    "essay",
+    "revision",
+    "creative writing",
+    "editing"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "engl-close-reader",
+   "engl-literary-analysis",
+   "Close Reader",
+   "Produces line-level interpretations of a passage and checks every claim against quoted textual evidence.",
+   "semantic",
+   [
+    [
+     "engl-reader",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-narrative-analyzer",
+   "engl-literary-analysis",
+   "Narrative Structure Analyzer",
+   "Analyses point of view, plot and character in fiction and checks the account against the text.",
+   "semantic",
+   [
+    [
+     "engl-reader",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-creative",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-theme-tracer",
+   "engl-literary-analysis",
+   "Theme Tracer",
+   "Traces a theme or motif across a work and checks each instance with cited passages.",
+   "semantic",
+   [
+    [
+     "engl-reader",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-period-contextualizer",
+   "engl-literary-history",
+   "Period Contextualizer",
+   "Situates a text within its literary period and historical context and checks dates and attributions against sources.",
+   "semantic",
+   [
+    [
+     "engl-historian",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-reader",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-influence-mapper",
+   "engl-literary-history",
+   "Literary Influence Mapper",
+   "Maps influence and allusion between authors and checks each link against documented evidence.",
+   "semantic",
+   [
+    [
+     "engl-historian",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-scansion-marker",
+   "engl-poetry-poetics",
+   "Scansion Marker",
+   "Scans lines of verse for meter and stress and checks foot counts and variations line by line.",
+   "procedural",
+   [
+    [
+     "engl-reader",
+     "primary"
+    ],
+    [
+     "engl-linguist",
+     "checker"
+    ],
+    [
+     "engl-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-form-identifier",
+   "engl-poetry-poetics",
+   "Poetic Form Identifier",
+   "Identifies fixed forms and rhyme schemes and checks them against the formal definition.",
+   "procedural",
+   [
+    [
+     "engl-reader",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-lens-applier",
+   "engl-critical-theory",
+   "Critical Lens Applier",
+   "Reads a text through a chosen theoretical framework and checks that the framework is represented accurately.",
+   "semantic",
+   [
+    [
+     "engl-theorist",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-reader",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-theory-comparer",
+   "engl-critical-theory",
+   "Theory Comparer",
+   "Compares how different critical frameworks interpret the same text and checks each reading against its sources.",
+   "semantic",
+   [
+    [
+     "engl-theorist",
+     "primary"
+    ],
+    [
+     "engl-historian",
+     "checker"
+    ],
+    [
+     "engl-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-grammar-analyzer",
+   "engl-english-language",
+   "Grammar Analyzer",
+   "Parses sentence structure and identifies grammatical functions and checks analysis against a reference grammar.",
+   "procedural",
+   [
+    [
+     "engl-linguist",
+     "primary"
+    ],
+    [
+     "engl-editor",
+     "checker"
+    ],
+    [
+     "engl-rhetor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-etymology-tracer",
+   "engl-english-language",
+   "Etymology Tracer",
+   "Traces word origins and semantic change and checks each step against dictionary evidence.",
+   "semantic",
+   [
+    [
+     "engl-linguist",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-dialect-describer",
+   "engl-english-language",
+   "Dialect Describer",
+   "Describes features of English varieties and checks examples against linguistic documentation.",
+   "semantic",
+   [
+    [
+     "engl-linguist",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-reader",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-thesis-builder",
+   "engl-rhetoric-writing",
+   "Thesis and Argument Builder",
+   "Develops a thesis and argument outline and checks claims, evidence and counterargument for coherence.",
+   "semantic",
+   [
+    [
+     "engl-rhetor",
+     "primary"
+    ],
+    [
+     "engl-reviewer",
+     "checker"
+    ],
+    [
+     "engl-reader",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-essay-editor",
+   "engl-rhetoric-writing",
+   "Essay Editor",
+   "Edits drafts for clarity, structure, grammar and citation style and checks against the assignment rubric.",
+   "procedural",
+   [
+    [
+     "engl-editor",
+     "primary"
+    ],
+    [
+     "engl-rhetor",
+     "checker"
+    ],
+    [
+     "engl-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engl-creative-workshop",
+   "engl-rhetoric-writing",
+   "Creative Writing Workshop",
+   "Gives craft feedback on fiction and poetry drafts and checks suggestions against the writer's stated goals.",
+   "semantic",
+   [
+    [
+     "engl-creative",
+     "primary"
+    ],
+    [
+     "engl-editor",
+     "checker"
+    ],
+    [
+     "engl-reader",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "engl-reader": "Close Reading Critic",
+  "engl-historian": "Literary Historian",
+  "engl-theorist": "Literary Theory Analyst",
+  "engl-linguist": "English Language Linguist",
+  "engl-rhetor": "Rhetoric and Composition Instructor",
+  "engl-creative": "Creative Writing Mentor",
+  "engl-editor": "Manuscript Editor",
+  "engl-reviewer": "Textual Evidence Reviewer"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "SciSpace",
+   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "Discover scientific research papers",
+   [
+    "search-papers",
+    "add-column"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "engl-read": "interpretation imagery symbolism narrative diction theme figurative",
+  "engl-hist": "medieval renaissance romanticism victorian modernism postcolonial canon",
+  "engl-poet": "poetry meter scansion rhyme sonnet stanza verse",
+  "engl-crit": "theory formalism structuralism feminist marxist psychoanalytic ideology",
+  "engl-lang": "grammar syntax usage phonology etymology dialect semantics",
+  "engl-write": "rhetoric argument thesis composition essay revision editing"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "rows reused verbatim from the verified Human0 MCP menu; working order not re-checked in this session"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

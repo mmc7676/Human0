@@ -1,0 +1,763 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "work",
+ "topic": {
+  "id": "drones",
+  "label": "Drones",
+  "desc": "Drones (uncrewed aircraft): platforms and makers, airframe types, applications, autopilots, payloads, regulation and mission data. Drones are aerial robots; the Robotics topic holds the shared control and navigation skills. Includes planetary and extreme-environment UAVs (Moon, Mars)."
+ },
+ "concepts": [
+  {
+   "id": "dr-applications",
+   "label": "Applications and Purpose",
+   "desc": "What drones are used for: survey and mapping, inspection, agriculture and similar work.",
+   "keywords": [
+    "survey",
+    "inspection",
+    "agriculture",
+    "delivery",
+    "purpose"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-flight",
+   "label": "Flight Control and Autopilot",
+   "desc": "Autopilot configuration, flight modes, MAVLink and failsafes.",
+   "keywords": [
+    "autopilot",
+    "mavlink",
+    "px4",
+    "ardupilot",
+    "failsafe",
+    "geofence"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-mission",
+   "label": "Mission Planning and Data",
+   "desc": "Planning waypoint missions and processing the imagery and logs they produce.",
+   "keywords": [
+    "mission",
+    "waypoint",
+    "overlap",
+    "orthomosaic",
+    "flight-log"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-payload",
+   "label": "Payloads and Sensors",
+   "desc": "Cameras, gimbals, LiDAR and multispectral sensors carried by drones.",
+   "keywords": [
+    "camera",
+    "gimbal",
+    "lidar",
+    "multispectral",
+    "payload"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-planetary",
+   "label": "Planetary and Extreme-Environment UAVs",
+   "desc": "Unmanned aerial vehicles for the Moon, Mars and other places with little or no air: why propellers need an atmosphere, thruster-based flight, low gravity, dust and cold.",
+   "keywords": [
+    "uav",
+    "moon",
+    "lunar",
+    "mars",
+    "vacuum",
+    "thruster",
+    "atmosphere"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-platforms",
+   "label": "Manufacturers and Platforms",
+   "desc": "Makers of drones and autopilots, and the open flight-control stacks, compared from public specifications.",
+   "keywords": [
+    "manufacturer",
+    "platform",
+    "firmware",
+    "autopilot",
+    "ecosystem",
+    "open"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-regulation",
+   "label": "Regulation and Airspace",
+   "desc": "Airspace classes, operating rules, record keeping and risk assessment, which differ by country.",
+   "keywords": [
+    "airspace",
+    "regulation",
+    "compliance",
+    "logbook",
+    "risk"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  },
+  {
+   "id": "dr-types",
+   "label": "Airframe Types",
+   "desc": "Multirotor, fixed-wing, VTOL and helicopter airframes and what each is suited to.",
+   "keywords": [
+    "multirotor",
+    "fixed-wing",
+    "vtol",
+    "helicopter",
+    "endurance"
+   ],
+   "topic": "drones",
+   "source": "drones",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "dr-agriculture-planner",
+   "concept": "dr-applications",
+   "label": "Agriculture Flight Planner",
+   "desc": "Plans crop-monitoring flights with a multispectral or visual camera and the index maps to produce afterwards.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey821",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey822",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey823",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-inspection-planner",
+   "concept": "dr-applications",
+   "label": "Infrastructure Inspection Planner",
+   "desc": "Plans inspection flights for structures such as towers and roofs, with standoff distance, camera angles and what to record.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey821",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey823",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-survey-mapping-planner",
+   "concept": "dr-applications",
+   "label": "Survey and Mapping Mission Planner",
+   "desc": "Plans an aerial survey with altitude, image overlap and ground control for the accuracy the client needs.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey821",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey822",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-autopilot-configurator",
+   "concept": "dr-flight",
+   "label": "Autopilot Configurator",
+   "desc": "Reviews autopilot parameters, flight modes and tuning for a vehicle and flags settings that need a test flight.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey825",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey826",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-failsafe-designer",
+   "concept": "dr-flight",
+   "label": "Failsafe Designer",
+   "desc": "Defines geofence, return-to-home and battery or link-loss failsafes and lists how each one should be tested.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey824",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey825",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey827",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-mavlink-integrator",
+   "concept": "dr-flight",
+   "label": "MAVLink Integrator",
+   "desc": "Connects a companion computer or software to a flight controller over MAVLink and tests the messages in simulation first.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey825",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey821",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-flight-log-analyst",
+   "concept": "dr-mission",
+   "label": "Flight Log Analyst",
+   "desc": "Reads flight logs for vibration, battery sag, GPS quality and mode changes and explains anomalies.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey822",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey825",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey824",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-orthomosaic-processor",
+   "concept": "dr-mission",
+   "label": "Orthomosaic and Point Cloud Processor",
+   "desc": "Turns survey imagery into an orthomosaic, elevation model and point cloud and reports the accuracy against check points.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey822",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey823",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey821",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-waypoint-mission-planner",
+   "concept": "dr-mission",
+   "label": "Waypoint Mission Planner",
+   "desc": "Builds a waypoint mission with altitude, speed, overlap and battery reserve and simulates it before upload.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey821",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey825",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-camera-gimbal-planner",
+   "concept": "dr-payload",
+   "label": "Camera and Gimbal Planner",
+   "desc": "Chooses a camera, lens and gimbal settings for a task and computes ground sample distance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey823",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey822",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey826",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-lidar-multispectral-planner",
+   "concept": "dr-payload",
+   "label": "LiDAR and Multispectral Planner",
+   "desc": "Matches LiDAR or multispectral sensors to a mapping or crop task and sets point density or band requirements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey823",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey822",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey821",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-mars-rotorcraft-sizer",
+   "concept": "dr-planetary",
+   "label": "Thin-Atmosphere Rotorcraft Sizer",
+   "desc": "Sizes rotors for the thin carbon dioxide air of Mars from gravity, air density and blade tip speed, with cold-night heating and a reference to the Ingenuity Mars helicopter.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey828",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey826",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey824",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-planetary-flight-feasibility",
+   "concept": "dr-planetary",
+   "label": "Planetary Flight Feasibility",
+   "desc": "Decides whether an unmanned aircraft can fly on the Moon, Mars or another body from its gravity and atmosphere density: rotors and wings need air, so the airless Moon rules out propellers and calls for thrusters.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey828",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey826",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-vacuum-thruster-hopper",
+   "concept": "dr-planetary",
+   "label": "Vacuum Thruster UAV Designer",
+   "desc": "Designs a thruster-driven hopper or flying UAV for an airless world such as the Moon, with lunar gravity, propellant budget, landing legs and regolith dust that must not reach the engines.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey828",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey825",
+     "role": "support"
+    },
+    {
+     "key": "Maxey826",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-manufacturer-comparator",
+   "concept": "dr-platforms",
+   "label": "Manufacturer Comparator",
+   "desc": "Compares drone makers and platforms on published specifications, software support and update policy, and marks every claim with its source.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey829",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey826",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-open-autopilot-stacks",
+   "concept": "dr-platforms",
+   "label": "Open Autopilot Stack Guide",
+   "desc": "Compares open autopilot software such as PX4 and ArduPilot on supported vehicles, ground-station tools and licensing, from their documentation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey825",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey829",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-airspace-checker",
+   "concept": "dr-regulation",
+   "label": "Airspace Checker",
+   "desc": "Collects airspace class, restrictions and notice requirements for a location from official sources and flags that the pilot must confirm them with the aviation authority.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey827",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey821",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-flight-record-keeper",
+   "concept": "dr-regulation",
+   "label": "Flight Record Keeper",
+   "desc": "Keeps a flight log of aircraft, pilot, battery cycles and maintenance in the form an authority may ask for.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey827",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey822",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-operational-risk-assessor",
+   "concept": "dr-regulation",
+   "label": "Operational Risk Assessor",
+   "desc": "Writes a pre-flight risk assessment covering people, property, weather and equipment and lists the mitigation for each risk.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey824",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey827",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey821",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-airframe-selector",
+   "concept": "dr-types",
+   "label": "Airframe Selector",
+   "desc": "Chooses between multirotor, fixed-wing and VTOL for a task from range, payload, landing space and wind.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey826",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey829",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  },
+  {
+   "id": "dr-endurance-payload-estimator",
+   "concept": "dr-types",
+   "label": "Endurance and Payload Estimator",
+   "desc": "Estimates flight time and usable payload from mass, battery capacity and drag and states the assumptions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey826",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey824",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey825",
+     "role": "support"
+    }
+   ],
+   "source": "drones"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey821",
+   "name": "Drone Mission Planner Agent",
+   "legacy_key": "dr-mission-planner",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey822",
+   "name": "Aerial Data Processing Agent",
+   "legacy_key": "dr-data-processor",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey823",
+   "name": "Payload and Sensor Engineer Agent",
+   "legacy_key": "dr-sensor-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey824",
+   "name": "Flight Safety Officer Agent",
+   "legacy_key": "dr-safety-officer",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey825",
+   "name": "Flight Controls Engineer Agent",
+   "legacy_key": "dr-flight-engineer",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey826",
+   "name": "Airframe Engineer Agent",
+   "legacy_key": "dr-airframe-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey827",
+   "name": "Drone Compliance Agent",
+   "legacy_key": "dr-compliance-checker",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey828",
+   "name": "Planetary UAV Engineer Agent",
+   "legacy_key": "dr-planetary-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey829",
+   "name": "Drone Fleet Analyst Agent",
+   "legacy_key": "dr-fleet-analyst",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "MAVLinkMCP",
+   "desc": "MCP server for LLM to drone communication via MAVLink",
+   "tools": [
+    "get_map_view",
+    "create_survey_plan",
+    "render_plan_view",
+    "validate_plan",
+    "preflight_check",
+    "upload_plan",
+    "verify_uploaded_plan",
+    "start_mission",
+    "map_transform",
+    "prefetch_map_area",
+    "revise_plan"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/ion-g-ion/MAVLinkMCP",
+   "id": "local:mavlinkmcp",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "drones",
+    "simulation"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:mavlinkmcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey821",
+   "mcp": "local:mavlinkmcp",
+   "topic": "drones",
+   "score": 0.2128,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey822",
+   "mcp": "local:mavlinkmcp",
+   "topic": "drones",
+   "score": 0.2128,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey821",
+    "skill": "dr-agriculture-planner"
+   }
+  },
+  {
+   "agent": "Maxey824",
+   "mcp": "local:mavlinkmcp",
+   "topic": "drones",
+   "score": 0.1489,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey825",
+   "mcp": "local:mavlinkmcp",
+   "topic": "drones",
+   "score": 0.1489,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey824",
+    "skill": "dr-failsafe-designer"
+   }
+  },
+  {
+   "agent": "Maxey827",
+   "mcp": "local:mavlinkmcp",
+   "topic": "drones",
+   "score": 0.1489,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey824",
+    "skill": "dr-operational-risk-assessor"
+   }
+  }
+ ],
+ "lexicon": {
+  "uavmakers": "manufacturer firmware ecosystem px4 ardupilot ground station drone platform autopilot open",
+  "uavairframe": "multirotor fixed wing vtol payload endurance drag battery helicopter airframe aircraft aerial",
+  "uavwork": "survey inspection agriculture crop tower standoff delivery purpose",
+  "autopilot": "mavlink failsafe geofence tuning companion flight",
+  "uavsensor": "gimbal lidar multispectral lens camera sensors",
+  "airspace": "airspace authority notice logbook risk mitigation regulation compliance",
+  "uavdata": "waypoint orthomosaic vibration overlap mission",
+  "uavplanet": "uav uas unmanned quadcopter quadrotor hexacopter propellant thruster atmosphere vacuum regolith rotorcraft ingenuity hopper"
+ },
+ "sources": [
+  "drones"
+ ]
+}

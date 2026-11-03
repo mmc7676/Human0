@@ -1,0 +1,332 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "accounting",
+ "topic": {
+  "id": "accounting",
+  "label": "Accounting",
+  "desc": "Recording and reporting money: bookkeeping and the general ledger, financial statements, GAAP and IFRS, audit, and management accounting."
+ },
+ "concepts": [
+  [
+   "acc-ledger",
+   "Bookkeeping and the General Ledger",
+   "accounting",
+   "Double-entry bookkeeping, chart of accounts, journal entries, reconciliation and closing the books.",
+   [
+    "bookkeeping",
+    "ledger",
+    "journal",
+    "entry",
+    "debit",
+    "credit",
+    "chart",
+    "account",
+    "reconciliation",
+    "close"
+   ]
+  ],
+  [
+   "acc-statements",
+   "Financial Statements",
+   "accounting",
+   "Income statement, balance sheet, cash flow statement and how they link.",
+   [
+    "financial",
+    "statement",
+    "income",
+    "balance",
+    "sheet",
+    "cash",
+    "flow",
+    "revenue",
+    "expense",
+    "asset",
+    "liability",
+    "equity"
+   ]
+  ],
+  [
+   "acc-standards",
+   "GAAP and IFRS",
+   "accounting",
+   "Accounting standards: US GAAP, IFRS, revenue recognition, leases and differences between them.",
+   [
+    "gaap",
+    "ifrs",
+    "standard",
+    "revenue",
+    "recognition",
+    "lease",
+    "asc",
+    "fasb",
+    "iasb"
+   ]
+  ],
+  [
+   "acc-audit",
+   "Audit and Internal Controls",
+   "accounting",
+   "External audit, internal controls, SOX, materiality and audit evidence.",
+   [
+    "audit",
+    "internal",
+    "control",
+    "sox",
+    "materiality",
+    "evidence",
+    "assurance",
+    "auditor",
+    "opinion"
+   ]
+  ],
+  [
+   "acc-management",
+   "Management and Cost Accounting",
+   "accounting",
+   "Budgets, cost allocation, unit economics and variance analysis for decisions.",
+   [
+    "budget",
+    "cost",
+    "allocation",
+    "unit",
+    "economics",
+    "variance",
+    "margin",
+    "forecast",
+    "management"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "acc-journal-entry-builder",
+   "acc-ledger",
+   "Journal Entry Builder",
+   "Builds double-entry journal entries for a transaction and checks debits equal credits.",
+   "procedural",
+   [
+    [
+     "acc-bookkeeper",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-reporter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-bank-reconciliation",
+   "acc-ledger",
+   "Bank Reconciliation",
+   "Reconciles a bank statement to the ledger and lists unmatched items.",
+   "procedural",
+   [
+    [
+     "acc-bookkeeper",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-reporter",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-three-statement-linker",
+   "acc-statements",
+   "Three-Statement Linker",
+   "Shows how a transaction flows through the income statement, balance sheet and cash flow statement.",
+   "semantic",
+   [
+    [
+     "acc-reporter",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-standards",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-financial-statement-reader",
+   "acc-statements",
+   "Financial Statement Reader",
+   "Reads a company's financial statements and summarizes profitability, liquidity and leverage.",
+   "semantic",
+   [
+    [
+     "acc-reporter",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-standards",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-revenue-recognition-guide",
+   "acc-standards",
+   "Revenue Recognition Guide",
+   "Applies the five-step revenue recognition model to a contract.",
+   "semantic",
+   [
+    [
+     "acc-standards",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-auditor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-gaap-vs-ifrs-comparator",
+   "acc-standards",
+   "GAAP vs IFRS Comparator",
+   "Compares the GAAP and IFRS treatment of an item and its effect on reported numbers.",
+   "semantic",
+   [
+    [
+     "acc-standards",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-auditor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-control-gap-finder",
+   "acc-audit",
+   "Control Gap Finder",
+   "Finds gaps in internal controls over a financial process.",
+   "semantic",
+   [
+    [
+     "acc-auditor",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-mgmt",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-variance-analyzer",
+   "acc-management",
+   "Variance Analyzer",
+   "Explains budget versus actual variances by driver.",
+   "semantic",
+   [
+    [
+     "acc-mgmt",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-bookkeeper",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "acc-unit-economics-calculator",
+   "acc-management",
+   "Unit Economics Calculator",
+   "Computes contribution margin, CAC, LTV and payback for a business.",
+   "procedural",
+   [
+    [
+     "acc-mgmt",
+     "primary"
+    ],
+    [
+     "acc-checker",
+     "checker"
+    ],
+    [
+     "acc-bookkeeper",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "acc-bookkeeper": "Bookkeeping Agent",
+  "acc-reporter": "Financial Reporting Agent",
+  "acc-standards": "Accounting Standards Agent",
+  "acc-auditor": "Audit Agent",
+  "acc-mgmt": "Management Accounting Agent",
+  "acc-checker": "Accounting Checker Agent"
+ },
+ "mcp": [
+  [
+   "QuickBooks Online MCP",
+   null,
+   "Intuit QuickBooks Online MCP server: accounting records, accounts, customers, vendors, invoices, bills and journal entries.",
+   [],
+   "web-listed",
+   "https://github.com/intuit/quickbooks-online-mcp-server"
+  ]
+ ],
+ "lexicon": {
+  "accledger": "bookkeeping ledger journal entry debit credit chart account reconciliation close",
+  "accstatements": "financial statement income balance sheet cash flow revenue expense asset liability equity",
+  "accstandards": "gaap ifrs standard revenue recognition lease asc fasb iasb",
+  "accaudit": "audit internal control sox materiality evidence assurance auditor opinion",
+  "accmanagement": "budget cost allocation unit economics variance margin forecast management"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "QuickBooks Online MCP": "repository exists (git ls-remote https://github.com/intuit/quickbooks-online-mcp-server, 2026-10-31); description summarises its public README; tool list not re-read; writes to a ledger: context only here"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

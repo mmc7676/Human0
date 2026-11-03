@@ -1,0 +1,266 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "derivatives",
+ "topic": {
+  "id": "derivatives",
+  "label": "Derivatives and Options",
+  "desc": "Contracts whose value derives from something else: options, futures and forwards, swaps, pricing and Greeks, and hedging strategies."
+ },
+ "concepts": [
+  [
+   "dv-options",
+   "Options",
+   "derivatives",
+   "Calls and puts, strikes and expiries, intrinsic and time value, and options chains.",
+   [
+    "option",
+    "call",
+    "put",
+    "strike",
+    "expiry",
+    "premium",
+    "chain",
+    "intrinsic",
+    "time",
+    "value"
+   ]
+  ],
+  [
+   "dv-futures",
+   "Futures and Forwards",
+   "derivatives",
+   "Futures and forward contracts, margin, contango and backwardation, and roll.",
+   [
+    "future",
+    "forward",
+    "contract",
+    "margin",
+    "contango",
+    "backwardation",
+    "roll",
+    "expiry"
+   ]
+  ],
+  [
+   "dv-swaps",
+   "Swaps",
+   "derivatives",
+   "Interest rate swaps, credit default swaps, currency swaps and total return swaps.",
+   [
+    "swap",
+    "interest",
+    "rate",
+    "credit",
+    "default",
+    "currency",
+    "total",
+    "return",
+    "notional"
+   ]
+  ],
+  [
+   "dv-pricing",
+   "Pricing and Greeks",
+   "derivatives",
+   "Black-Scholes and binomial pricing, implied volatility and the Greeks.",
+   [
+    "pricing",
+    "black",
+    "scholes",
+    "binomial",
+    "implied",
+    "volatility",
+    "greek",
+    "delta",
+    "gamma",
+    "vega",
+    "theta"
+   ]
+  ],
+  [
+   "dv-hedging",
+   "Hedging Strategies",
+   "derivatives",
+   "Using derivatives to hedge: protective puts, collars, futures hedges and delta hedging.",
+   [
+    "hedge",
+    "hedging",
+    "protective",
+    "put",
+    "collar",
+    "delta",
+    "neutral",
+    "risk",
+    "exposure"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "dv-option-payoff-builder",
+   "dv-options",
+   "Option Payoff Builder",
+   "Builds the payoff and break-even for an option or multi-leg options strategy.",
+   "procedural",
+   [
+    [
+     "dv-options",
+     "primary"
+    ],
+    [
+     "dv-checker",
+     "checker"
+    ],
+    [
+     "dv-futures",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dv-options-chain-reader",
+   "dv-options",
+   "Options Chain Reader",
+   "Reads an options chain and explains open interest, implied volatility and skew.",
+   "semantic",
+   [
+    [
+     "dv-options",
+     "primary"
+    ],
+    [
+     "dv-checker",
+     "checker"
+    ],
+    [
+     "dv-futures",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dv-futures-roll-explainer",
+   "dv-futures",
+   "Futures Roll Explainer",
+   "Explains futures roll, contango and backwardation and their cost.",
+   "semantic",
+   [
+    [
+     "dv-futures",
+     "primary"
+    ],
+    [
+     "dv-checker",
+     "checker"
+    ],
+    [
+     "dv-swaps",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dv-swap-valuation-explainer",
+   "dv-swaps",
+   "Swap Valuation Explainer",
+   "Explains how a swap's legs are valued and what moves its value.",
+   "semantic",
+   [
+    [
+     "dv-swaps",
+     "primary"
+    ],
+    [
+     "dv-checker",
+     "checker"
+    ],
+    [
+     "dv-quant",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dv-option-pricer",
+   "dv-pricing",
+   "Option Pricer",
+   "Prices a call or put option and computes its Greeks with Black-Scholes and states the assumptions.",
+   "procedural",
+   [
+    [
+     "dv-quant",
+     "primary"
+    ],
+    [
+     "dv-checker",
+     "checker"
+    ],
+    [
+     "dv-options",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dv-hedge-designer",
+   "dv-hedging",
+   "Hedge Designer",
+   "Designs a hedge for an exposure and compares cost and residual risk.",
+   "procedural",
+   [
+    [
+     "dv-options",
+     "primary"
+    ],
+    [
+     "dv-checker",
+     "checker"
+    ],
+    [
+     "dv-futures",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "dv-options": "Options Agent",
+  "dv-futures": "Futures Agent",
+  "dv-swaps": "Swaps Agent",
+  "dv-quant": "Derivatives Pricing Agent",
+  "dv-checker": "Derivatives Checker Agent"
+ },
+ "mcp": [
+  [
+   "Polygon MCP",
+   null,
+   "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   [],
+   "web-listed",
+   "https://github.com/polygon-io/mcp_polygon"
+  ]
+ ],
+ "lexicon": {
+  "dvoptions": "option call put strike expiry premium chain intrinsic time value",
+  "dvfutures": "future forward contract margin contango backwardation roll expiry",
+  "dvswaps": "swap interest rate credit default currency total return notional",
+  "dvpricing": "pricing black scholes binomial implied volatility greek delta gamma vega theta",
+  "dvhedging": "hedge hedging protective put collar delta neutral risk exposure"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-opus-5-5) in the Human0 session of 2026-10-31; Human0 supplied the topic names and direction",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-31",
+  "mcp_notes": {
+   "Polygon MCP": "repository exists (git ls-remote https://github.com/polygon-io/mcp_polygon, 2026-10-31); description summarises its public README; tool list not re-read"
+  },
+  "open_questions": {},
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Context only: nothing here executes or authorizes a transaction, deployment or trade."
+ }
+}

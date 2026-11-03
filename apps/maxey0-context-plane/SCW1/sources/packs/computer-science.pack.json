@@ -1,0 +1,544 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "computer-science",
+ "topic": {
+  "id": "computer-science",
+  "label": "Computer Science",
+  "desc": "Computer Science: the theory of computation and the design of algorithms, software, systems and intelligent machines."
+ },
+ "concepts": [
+  [
+   "cs-algorithms",
+   "Algorithms and Data Structures",
+   "computer-science",
+   "Design and analysis of algorithms and the data structures that support them, measured by time and space complexity.",
+   [
+    "algorithm",
+    "data structure",
+    "complexity",
+    "graph",
+    "sorting",
+    "dynamic programming",
+    "hashing",
+    "tree"
+   ]
+  ],
+  [
+   "cs-theory",
+   "Theory of Computation",
+   "computer-science",
+   "Automata, formal languages, computability and complexity classes.",
+   [
+    "automata",
+    "formal language",
+    "computability",
+    "turing machine",
+    "complexity class",
+    "reduction",
+    "decidability",
+    "grammar"
+   ]
+  ],
+  [
+   "cs-systems",
+   "Computer Systems and Networks",
+   "computer-science",
+   "Operating systems, architecture, distributed systems and networking.",
+   [
+    "operating system",
+    "architecture",
+    "distributed",
+    "network",
+    "concurrency",
+    "memory",
+    "protocol",
+    "cloud"
+   ]
+  ],
+  [
+   "cs-software-engineering",
+   "Software Engineering",
+   "computer-science",
+   "Requirements, design, testing, version control and maintenance of large software.",
+   [
+    "software",
+    "testing",
+    "design pattern",
+    "version control",
+    "requirements",
+    "refactoring",
+    "code review",
+    "continuous integration"
+   ]
+  ],
+  [
+   "cs-ai-ml",
+   "Artificial Intelligence and Machine Learning",
+   "computer-science",
+   "Search, reasoning, learning from data and neural networks.",
+   [
+    "machine learning",
+    "neural network",
+    "training",
+    "model",
+    "evaluation",
+    "search",
+    "reasoning",
+    "dataset"
+   ]
+  ],
+  [
+   "cs-security",
+   "Computer Security",
+   "computer-science",
+   "Cryptography, secure software, threat modelling and vulnerability analysis.",
+   [
+    "security",
+    "cryptography",
+    "vulnerability",
+    "threat model",
+    "authentication",
+    "encryption",
+    "exploit",
+    "privacy"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cs-complexity-analysis",
+   "cs-algorithms",
+   "Complexity Analysis",
+   "Derives the asymptotic time and space complexity of an algorithm and checks the bound with empirical timing.",
+   "procedural",
+   [
+    [
+     "cs-algorithmist",
+     "primary"
+    ],
+    [
+     "cs-theorist",
+     "checker"
+    ],
+    [
+     "cs-code-reviewer",
+     "support"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-algorithm-design",
+   "cs-algorithms",
+   "Algorithm Design",
+   "Designs an algorithm for a specified problem with a correctness argument and checks it against test cases.",
+   "procedural",
+   [
+    [
+     "cs-algorithmist",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-theorist",
+     "support"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-data-structure-choice",
+   "cs-algorithms",
+   "Data Structure Selection",
+   "Selects data structures for an access pattern and justifies the choice with operation costs.",
+   "semantic",
+   [
+    [
+     "cs-algorithmist",
+     "primary"
+    ],
+    [
+     "cs-software-engineer",
+     "checker"
+    ],
+    [
+     "cs-code-reviewer",
+     "support"
+    ],
+    [
+     "cs-systems-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-automaton-construction",
+   "cs-theory",
+   "Automaton Construction",
+   "Builds a finite automaton or grammar for a language and checks it accepts and rejects given test strings.",
+   "procedural",
+   [
+    [
+     "cs-theorist",
+     "primary"
+    ],
+    [
+     "cs-algorithmist",
+     "checker"
+    ],
+    [
+     "cs-code-reviewer",
+     "support"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-reduction-proof",
+   "cs-theory",
+   "Reduction Proof",
+   "Writes a reduction proof for decidability or hardness and checks every step for correctness.",
+   "semantic",
+   [
+    [
+     "cs-theorist",
+     "primary"
+    ],
+    [
+     "cs-algorithmist",
+     "checker"
+    ],
+    [
+     "cs-systems-engineer",
+     "support"
+    ],
+    [
+     "cs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-concurrency-debug",
+   "cs-systems",
+   "Concurrency Debugging",
+   "Finds race conditions and deadlocks in concurrent code and confirms each fix with a reproducing test.",
+   "procedural",
+   [
+    [
+     "cs-systems-engineer",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ],
+    [
+     "cs-ml-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-system-design",
+   "cs-systems",
+   "Distributed System Design",
+   "Designs a distributed service with stated consistency, availability and scaling choices and reviews trade-offs.",
+   "semantic",
+   [
+    [
+     "cs-systems-engineer",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ],
+    [
+     "cs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-test-suite",
+   "cs-software-engineering",
+   "Test Suite Builder",
+   "Writes unit and integration tests for a module and reports coverage and failing cases.",
+   "procedural",
+   [
+    [
+     "cs-software-engineer",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-systems-engineer",
+     "support"
+    ],
+    [
+     "cs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-code-review",
+   "cs-software-engineering",
+   "Code Review",
+   "Reviews a change for correctness, readability and security and ties each finding to a line.",
+   "semantic",
+   [
+    [
+     "cs-code-reviewer",
+     "primary"
+    ],
+    [
+     "cs-software-engineer",
+     "checker"
+    ],
+    [
+     "cs-security",
+     "support"
+    ],
+    [
+     "cs-systems-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-refactor-plan",
+   "cs-software-engineering",
+   "Refactoring Plan",
+   "Plans a refactoring in small safe steps and checks each step keeps tests passing.",
+   "procedural",
+   [
+    [
+     "cs-software-engineer",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-systems-engineer",
+     "support"
+    ],
+    [
+     "cs-algorithmist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-model-training",
+   "cs-ai-ml",
+   "Model Training Pipeline",
+   "Builds a training and evaluation pipeline with held-out data and reports metrics with variance across seeds.",
+   "procedural",
+   [
+    [
+     "cs-ml-engineer",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-researcher",
+     "support"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-paper-review",
+   "cs-ai-ml",
+   "ML Paper Review",
+   "Summarises a machine learning paper's method and results and checks claims against reported experiments.",
+   "semantic",
+   [
+    [
+     "cs-researcher",
+     "primary"
+    ],
+    [
+     "cs-ml-engineer",
+     "checker"
+    ],
+    [
+     "cs-theorist",
+     "support"
+    ],
+    [
+     "cs-algorithmist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-threat-modeling",
+   "cs-security",
+   "Threat Modeling",
+   "Builds a threat model for a system listing assets, attackers and mitigations and checks coverage of each entry point.",
+   "semantic",
+   [
+    [
+     "cs-security",
+     "primary"
+    ],
+    [
+     "cs-systems-engineer",
+     "checker"
+    ],
+    [
+     "cs-code-reviewer",
+     "support"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cs-vulnerability-scan",
+   "cs-security",
+   "Vulnerability Review",
+   "Reviews code for common vulnerability classes and confirms each finding with a proof or a failing test.",
+   "procedural",
+   [
+    [
+     "cs-security",
+     "primary"
+    ],
+    [
+     "cs-code-reviewer",
+     "checker"
+    ],
+    [
+     "cs-software-engineer",
+     "support"
+    ],
+    [
+     "cs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "cs-algorithmist": "Algorithms Agent",
+  "cs-theorist": "Theory of Computation Agent",
+  "cs-systems-engineer": "Systems Engineer Agent",
+  "cs-software-engineer": "Software Engineer Agent",
+  "cs-ml-engineer": "Machine Learning Agent",
+  "cs-security": "Security Analyst Agent",
+  "cs-code-reviewer": "Code Review Agent",
+  "cs-researcher": "Research Literature Agent"
+ },
+ "mcp": [
+  [
+   "GitHub",
+   null,
+   "GitHub's official MCP Server",
+   [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "web-listed",
+   "https://github.com/github/github-mcp-server"
+  ],
+  [
+   "Microsoft Learn",
+   "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "Search trusted Microsoft docs to power your development",
+   [
+    "microsoft_docs_search",
+    "microsoft_docs_fetch",
+    "microsoft_code_sample_search"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "cs-algo": "algorithm data structure complexity graph sorting dynamic programming hashing tree",
+  "cs-theory": "automata formal language computability turing machine class reduction decidability grammar",
+  "cs-systems": "operating system architecture distributed network concurrency memory protocol cloud",
+  "cs-software": "software testing design pattern version control requirements refactoring code review continuous integration",
+  "cs-ml": "learning neural training model evaluation search reasoning dataset",
+  "cs-security": "security cryptography vulnerability threat authentication encryption exploit privacy"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "GitHub": "repository, code and CI access",
+   "Microsoft Learn": "platform documentation",
+   "alphaXiv": "computer science preprints"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

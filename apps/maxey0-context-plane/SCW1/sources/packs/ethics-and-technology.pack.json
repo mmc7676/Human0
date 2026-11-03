@@ -1,0 +1,548 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "ethics-and-technology",
+ "topic": {
+  "id": "ethics-and-technology",
+  "label": "Ethics and Technology",
+  "desc": "Ethics and Technology: the moral, social and political evaluation of how technologies are designed, governed and used."
+ },
+ "concepts": [
+  [
+   "etht-moral-theory",
+   "Ethical Theory for Technology",
+   "ethics-and-technology",
+   "The normative frameworks of consequentialism, deontology, virtue ethics and care ethics applied to choices about building and using technology.",
+   [
+    "consequentialism",
+    "deontology",
+    "virtue",
+    "care",
+    "utility",
+    "duty",
+    "normative",
+    "dilemma"
+   ]
+  ],
+  [
+   "etht-ai-ethics",
+   "AI and Algorithmic Ethics",
+   "ethics-and-technology",
+   "Fairness, accountability, transparency and safety in machine learning and automated decision systems.",
+   [
+    "algorithm",
+    "fairness",
+    "bias",
+    "accountability",
+    "transparency",
+    "explainability",
+    "automation",
+    "alignment"
+   ]
+  ],
+  [
+   "etht-privacy-data",
+   "Privacy, Surveillance and Data Ethics",
+   "ethics-and-technology",
+   "The ethics of collecting, aggregating and inferring from personal data, including consent, surveillance and data ownership.",
+   [
+    "privacy",
+    "surveillance",
+    "consent",
+    "personal data",
+    "anonymization",
+    "tracking",
+    "ownership",
+    "inference"
+   ]
+  ],
+  [
+   "etht-tech-governance",
+   "Technology Policy and Governance",
+   "ethics-and-technology",
+   "How law, regulation, standards and institutions shape technology development and deployment.",
+   [
+    "policy",
+    "governance",
+    "regulation",
+    "standard",
+    "liability",
+    "law",
+    "institution",
+    "oversight"
+   ]
+  ],
+  [
+   "etht-sts-society",
+   "Science, Technology and Society",
+   "ethics-and-technology",
+   "Historical and social study of how technologies co-evolve with institutions, labour, inequality and culture.",
+   [
+    "society",
+    "history",
+    "labor",
+    "inequality",
+    "sociotechnical",
+    "culture",
+    "innovation",
+    "diffusion"
+   ]
+  ],
+  [
+   "etht-design-bioethics",
+   "Responsible Design and Emerging Technologies",
+   "ethics-and-technology",
+   "Building values into design and assessing emerging fields such as biotechnology, neurotechnology and robotics before harms occur.",
+   [
+    "design",
+    "value",
+    "responsible",
+    "biotechnology",
+    "robotics",
+    "neurotechnology",
+    "anticipatory",
+    "precaution"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "etht-framework-analysis",
+   "etht-moral-theory",
+   "Multi-Framework Case Analysis",
+   "Analyses a technology case under consequentialist, deontological and virtue frameworks and checks that each conclusion follows from that framework's stated principles.",
+   "semantic",
+   [
+    [
+     "etht-theorist",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-sts",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-argument-mapping",
+   "etht-moral-theory",
+   "Moral Argument Mapping",
+   "Reconstructs an ethical argument as premises and conclusion and checks validity and the plausibility of each premise.",
+   "procedural",
+   [
+    [
+     "etht-critic",
+     "primary"
+    ],
+    [
+     "etht-theorist",
+     "checker"
+    ],
+    [
+     "etht-policy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-dilemma-resolution",
+   "etht-moral-theory",
+   "Dilemma Resolution",
+   "Identifies the conflicting values in a design dilemma and checks the proposed resolution against reflective equilibrium with comparable cases.",
+   "semantic",
+   [
+    [
+     "etht-theorist",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-design",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-fairness-audit",
+   "etht-ai-ethics",
+   "Algorithmic Fairness Audit",
+   "Computes group fairness metrics such as demographic parity and equalized odds on model outputs and checks which fairness definitions conflict for the data.",
+   "procedural",
+   [
+    [
+     "etht-ai",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-privacy",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-model-documentation",
+   "etht-ai-ethics",
+   "Model Card and Impact Documentation",
+   "Drafts a model card covering intended use, limitations and evaluation and checks every claim against reported test results.",
+   "procedural",
+   [
+    [
+     "etht-ai",
+     "primary"
+    ],
+    [
+     "etht-policy",
+     "checker"
+    ],
+    [
+     "etht-design",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-ai-research-review",
+   "etht-ai-ethics",
+   "AI Ethics Literature Review",
+   "Retrieves preprints on alignment, bias and explainability through alphaXiv and checks each summarised finding against the source paper.",
+   "semantic",
+   [
+    [
+     "etht-ai",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-sts",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-privacy-impact-assessment",
+   "etht-privacy-data",
+   "Privacy Impact Assessment",
+   "Maps personal data flows in a system, rates risks to data subjects and checks mitigations against data protection principles.",
+   "procedural",
+   [
+    [
+     "etht-privacy",
+     "primary"
+    ],
+    [
+     "etht-policy",
+     "checker"
+    ],
+    [
+     "etht-design",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-reidentification-risk",
+   "etht-privacy-data",
+   "Re-identification Risk Check",
+   "Evaluates anonymization of a dataset with k-anonymity style reasoning and checks whether quasi-identifiers allow linkage.",
+   "procedural",
+   [
+    [
+     "etht-privacy",
+     "primary"
+    ],
+    [
+     "etht-ai",
+     "checker"
+    ],
+    [
+     "etht-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-consent-design-review",
+   "etht-privacy-data",
+   "Consent Design Review",
+   "Reviews a consent flow for informed, specific and revocable agreement and checks it for dark patterns.",
+   "semantic",
+   [
+    [
+     "etht-design",
+     "primary"
+    ],
+    [
+     "etht-privacy",
+     "checker"
+    ],
+    [
+     "etht-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-regulatory-comparison",
+   "etht-tech-governance",
+   "Regulatory Regime Comparison",
+   "Compares how jurisdictions regulate a technology on scope, obligations and enforcement and checks each entry against the primary legal text.",
+   "semantic",
+   [
+    [
+     "etht-policy",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-sts",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-risk-tiering",
+   "etht-tech-governance",
+   "Risk-Based Governance Tiering",
+   "Classifies applications into risk tiers with matching oversight duties and checks the classification against stated criteria.",
+   "procedural",
+   [
+    [
+     "etht-policy",
+     "primary"
+    ],
+    [
+     "etht-ai",
+     "checker"
+    ],
+    [
+     "etht-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-stakeholder-analysis",
+   "etht-tech-governance",
+   "Stakeholder and Power Analysis",
+   "Identifies affected parties, their interests and influence over a technology decision and checks for omitted or unheard groups.",
+   "semantic",
+   [
+    [
+     "etht-sts",
+     "primary"
+    ],
+    [
+     "etht-policy",
+     "checker"
+    ],
+    [
+     "etht-design",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-sociotechnical-analysis",
+   "etht-sts-society",
+   "Sociotechnical System Analysis",
+   "Describes a technology as a network of artefacts, people and rules and checks the account with historical evidence.",
+   "semantic",
+   [
+    [
+     "etht-sts",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-labor-impact",
+   "etht-sts-society",
+   "Labour and Automation Impact",
+   "Assesses how automation reshapes tasks, wages and skills in a sector and checks claims against cited empirical studies.",
+   "semantic",
+   [
+    [
+     "etht-sts",
+     "primary"
+    ],
+    [
+     "etht-policy",
+     "checker"
+    ],
+    [
+     "etht-ai",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-scholarship-search",
+   "etht-sts-society",
+   "Ethics Scholarship Search",
+   "Searches peer-reviewed technology ethics scholarship through Wiley Scholar Gateway and checks every citation resolves to the stated work.",
+   "procedural",
+   [
+    [
+     "etht-sts",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-bio",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-value-sensitive-design",
+   "etht-design-bioethics",
+   "Value Sensitive Design",
+   "Elicits stakeholder values, translates them into design requirements and checks each requirement traces to a stated value.",
+   "procedural",
+   [
+    [
+     "etht-design",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-sts",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-anticipatory-assessment",
+   "etht-design-bioethics",
+   "Anticipatory Technology Assessment",
+   "Builds plausible future scenarios for an emerging technology and checks risk claims for precautionary proportionality.",
+   "semantic",
+   [
+    [
+     "etht-bio",
+     "primary"
+    ],
+    [
+     "etht-policy",
+     "checker"
+    ],
+    [
+     "etht-theorist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "etht-bioethics-case-review",
+   "etht-design-bioethics",
+   "Bioethics Case Review",
+   "Applies autonomy, beneficence, non-maleficence and justice to a biotechnology case and checks the weighing is made explicit.",
+   "semantic",
+   [
+    [
+     "etht-bio",
+     "primary"
+    ],
+    [
+     "etht-critic",
+     "checker"
+    ],
+    [
+     "etht-theorist",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "etht-theorist": "Moral Theory Analyst",
+  "etht-ai": "AI Ethics Auditor",
+  "etht-privacy": "Privacy and Data Ethics Analyst",
+  "etht-policy": "Technology Policy Analyst",
+  "etht-sts": "Science and Technology Studies Scholar",
+  "etht-design": "Value Sensitive Design Practitioner",
+  "etht-bio": "Bioethics Analyst",
+  "etht-critic": "Ethics Argument Reviewer"
+ },
+ "mcp": [
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "etht-theory": "consequentialism deontology virtue care duty normative dilemma moral",
+  "etht-ai": "algorithm fairness bias accountability transparency explainability alignment",
+  "etht-data": "privacy surveillance consent anonymization tracking identifier",
+  "etht-govern": "policy governance regulation standard liability law oversight",
+  "etht-society": "society history labor inequality sociotechnical culture innovation",
+  "etht-design": "responsible biotechnology robotics neurotechnology anticipatory precaution"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

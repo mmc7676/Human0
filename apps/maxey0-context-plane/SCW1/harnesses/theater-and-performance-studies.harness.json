@@ -1,0 +1,642 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "theater-and-performance-studies",
+  "label": "Theater and Performance Studies",
+  "desc": "Theater and Performance Studies: the history, theory, making and analysis of theater, dance and performance."
+ },
+ "concepts": [
+  {
+   "id": "taps-acting-directing",
+   "label": "Acting and Directing",
+   "desc": "Actor training methods such as Stanislavski and Viewpoints, voice and movement, and the director's interpretive and staging work.",
+   "keywords": [
+    "acting",
+    "directing",
+    "stanislavski",
+    "viewpoints",
+    "voice",
+    "movement",
+    "blocking",
+    "rehearsal"
+   ],
+   "topic": "theater-and-performance-studies",
+   "source": "theater-and-performance-studies",
+   "related": []
+  },
+  {
+   "id": "taps-design-technical",
+   "label": "Design and Technical Theater",
+   "desc": "Scenic, lighting, costume and sound design, and the stage management that runs a production.",
+   "keywords": [
+    "design",
+    "scenic",
+    "lighting",
+    "costume",
+    "sound",
+    "stage management",
+    "cue"
+   ],
+   "topic": "theater-and-performance-studies",
+   "source": "theater-and-performance-studies",
+   "related": []
+  },
+  {
+   "id": "taps-dramatic-literature",
+   "label": "Dramatic Literature and Dramaturgy",
+   "desc": "Reading plays for structure, character and production history, and preparing dramaturgical research for productions.",
+   "keywords": [
+    "play",
+    "dramaturgy",
+    "structure",
+    "character",
+    "script",
+    "adaptation",
+    "production history"
+   ],
+   "topic": "theater-and-performance-studies",
+   "source": "theater-and-performance-studies",
+   "related": []
+  },
+  {
+   "id": "taps-performance-theory",
+   "label": "Performance Studies Theory",
+   "desc": "Performance as a lens on ritual, everyday life, identity and protest, drawing on Schechner, Turner and Butler.",
+   "keywords": [
+    "performance",
+    "performativity",
+    "ritual",
+    "liminality",
+    "embodiment",
+    "identity",
+    "spectatorship"
+   ],
+   "topic": "theater-and-performance-studies",
+   "source": "theater-and-performance-studies",
+   "related": []
+  },
+  {
+   "id": "taps-playwriting-devising",
+   "label": "Playwriting and Devised Performance",
+   "desc": "Writing new plays and creating performance collaboratively through devising and improvisation.",
+   "keywords": [
+    "playwriting",
+    "devising",
+    "improvisation",
+    "dialogue",
+    "scene",
+    "workshop",
+    "new work"
+   ],
+   "topic": "theater-and-performance-studies",
+   "source": "theater-and-performance-studies",
+   "related": []
+  },
+  {
+   "id": "taps-theater-history",
+   "label": "Theater History",
+   "desc": "Theater from Greek tragedy and Noh through Shakespeare, modern realism and contemporary global performance.",
+   "keywords": [
+    "history",
+    "greek tragedy",
+    "noh",
+    "shakespeare",
+    "realism",
+    "modernism",
+    "global"
+   ],
+   "topic": "theater-and-performance-studies",
+   "source": "theater-and-performance-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "taps-blocking-plan",
+   "concept": "taps-acting-directing",
+   "label": "Blocking Plan Builder",
+   "desc": "Produces a blocking plan for a scene on a given stage configuration, checked for sightlines and traffic.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1570",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1571",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1572",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-character-work",
+   "concept": "taps-acting-directing",
+   "label": "Character Analysis Builder",
+   "desc": "Builds an actor's character analysis with objectives, obstacles and tactics, checked against the script.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1573",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1574",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-rehearsal-schedule",
+   "concept": "taps-acting-directing",
+   "label": "Rehearsal Schedule Planner",
+   "desc": "Builds a rehearsal schedule from scene breakdowns and actor availability, checked for conflicts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1572",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1573",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-costume-research",
+   "concept": "taps-design-technical",
+   "label": "Costume Research Builder",
+   "desc": "Assembles period costume research and renderings notes for characters, checked against historical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1571",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1575",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1574",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-lighting-plot",
+   "concept": "taps-design-technical",
+   "label": "Lighting Plot Planner",
+   "desc": "Drafts a lighting plot and cue list for a scene, checked for coverage and cue sequencing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1571",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1572",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-prompt-book",
+   "concept": "taps-design-technical",
+   "label": "Stage Management Prompt Book Builder",
+   "desc": "Builds a prompt book with blocking notation and calling cues, checked against the latest script and cue sheets.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1572",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1571",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-adaptation-review",
+   "concept": "taps-dramatic-literature",
+   "label": "Adaptation Comparator",
+   "desc": "Compares a stage adaptation with its source text and records changes, checked against both texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1574",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1576",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-dramaturg-packet",
+   "concept": "taps-dramatic-literature",
+   "label": "Dramaturgy Packet Builder",
+   "desc": "Compiles a production dramaturgy packet with context, glossary and production history, checked for source accuracy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1574",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1575",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1577",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-script-analysis",
+   "concept": "taps-dramatic-literature",
+   "label": "Script Structure Analyzer",
+   "desc": "Breaks a play into beats, units and given circumstances, checked against the script text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1574",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1573",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-performance-analysis",
+   "concept": "taps-performance-theory",
+   "label": "Performance Event Analyzer",
+   "desc": "Analyzes a performance or ritual event with performance studies concepts, checked against the cited theory.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1578",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1577",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1574",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-performativity-review",
+   "concept": "taps-performance-theory",
+   "label": "Performativity Concept Reviewer",
+   "desc": "Explains performativity and applies it to a case of identity performance, checked against primary texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1578",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1577",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1573",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-spectator-study",
+   "concept": "taps-performance-theory",
+   "label": "Spectatorship Study Designer",
+   "desc": "Designs an audience response study for a production, checked for method and consent requirements.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1578",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1572",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-devising-plan",
+   "concept": "taps-playwriting-devising",
+   "label": "Devising Workshop Planner",
+   "desc": "Plans devising exercises and a generative structure for an ensemble, checked against stated goals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1576",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1570",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1578",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-dialogue-review",
+   "concept": "taps-playwriting-devising",
+   "label": "Dialogue Feedback Reviewer",
+   "desc": "Reviews dialogue for voice, clarity and stakes, checked by a dramaturgical second read.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1574",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1576",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1573",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-scene-draft",
+   "concept": "taps-playwriting-devising",
+   "label": "Scene Drafter",
+   "desc": "Drafts a dramatic scene with conflict and subtext from a premise, checked for structure in a workshop reading.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1576",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1574",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1573",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-global-forms",
+   "concept": "taps-theater-history",
+   "label": "Global Performance Form Profiler",
+   "desc": "Profiles a performance form such as Noh or kathakali with conventions and history, checked against scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1575",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1578",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1577",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-period-staging",
+   "concept": "taps-theater-history",
+   "label": "Period Staging Reconstructor",
+   "desc": "Reconstructs original staging conditions of a historical play, checked against archaeological and documentary evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1575",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1574",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1571",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  },
+  {
+   "id": "taps-theater-timeline",
+   "concept": "taps-theater-history",
+   "label": "Theater History Timeline Builder",
+   "desc": "Builds a dated timeline of a theatrical tradition, with every date checked against a cited source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1575",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1577",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1574",
+     "role": "support"
+    }
+   ],
+   "source": "theater-and-performance-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1570",
+   "name": "Directing Agent",
+   "legacy_key": "taps-dir",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1571",
+   "name": "Scenic and Lighting Design Agent",
+   "legacy_key": "taps-design",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1572",
+   "name": "Stage Management Agent",
+   "legacy_key": "taps-prod",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1573",
+   "name": "Acting and Voice Agent",
+   "legacy_key": "taps-act",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1574",
+   "name": "Dramaturgy Agent",
+   "legacy_key": "taps-dram",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1575",
+   "name": "Theater History Agent",
+   "legacy_key": "taps-hist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1576",
+   "name": "Playwriting Agent",
+   "legacy_key": "taps-play",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1577",
+   "name": "Performance Literature Agent",
+   "legacy_key": "taps-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1578",
+   "name": "Performance Theory Agent",
+   "legacy_key": "taps-perf",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "taps-history": "history tragedy shakespeare realism noh timeline",
+  "taps-dramaturgy": "dramaturgy script adaptation beats packet",
+  "taps-theory": "performativity ritual spectatorship identity embodiment",
+  "taps-stagecraft": "acting directing blocking rehearsal character stanislavski",
+  "taps-design": "lighting costume scenic cue prompt",
+  "taps-writing": "playwriting devising dialogue workshop improvisation"
+ },
+ "sources": [
+  "theater-and-performance-studies"
+ ]
+}

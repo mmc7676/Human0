@@ -1,0 +1,550 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "german-studies",
+ "topic": {
+  "id": "german-studies",
+  "label": "German Studies",
+  "desc": "German Studies: the German language and the literatures, thought, history and cultures of the German-speaking countries."
+ },
+ "concepts": [
+  [
+   "germ-grammar-language",
+   "German Grammar and Usage",
+   "german-studies",
+   "German morphology and syntax: cases, declension, verb position, separable verbs, modal verbs and the subjunctive.",
+   [
+    "grammar",
+    "case",
+    "declension",
+    "word order",
+    "separable verb",
+    "konjunktiv",
+    "gender",
+    "syntax"
+   ]
+  ],
+  [
+   "germ-translation",
+   "Translation and Linguistics",
+   "german-studies",
+   "Translating between German and English and describing German phonology, dialects and language history.",
+   [
+    "translation",
+    "compound",
+    "dialect",
+    "phonology",
+    "pronunciation",
+    "idiom",
+    "false friend",
+    "linguistics"
+   ]
+  ],
+  [
+   "germ-german-literature",
+   "German Literature",
+   "german-studies",
+   "Literature in German from the Middle Ages through Sturm und Drang, classicism, romanticism, realism and modernism to the present.",
+   [
+    "literature",
+    "romanticism",
+    "classicism",
+    "novella",
+    "poetry",
+    "drama",
+    "modernism",
+    "close reading"
+   ]
+  ],
+  [
+   "germ-german-thought",
+   "German Philosophy and Critical Theory",
+   "german-studies",
+   "German intellectual traditions from Kant, Hegel, Marx and Nietzsche to the Frankfurt School and beyond.",
+   [
+    "philosophy",
+    "idealism",
+    "kant",
+    "hegel",
+    "marx",
+    "nietzsche",
+    "frankfurt school",
+    "critical theory"
+   ]
+  ],
+  [
+   "germ-german-history",
+   "German History",
+   "german-studies",
+   "The German-speaking lands from the Holy Roman Empire through unification, the world wars, National Socialism, division and reunification.",
+   [
+    "history",
+    "empire",
+    "unification",
+    "weimar",
+    "national socialism",
+    "holocaust",
+    "division",
+    "reunification"
+   ]
+  ],
+  [
+   "germ-culture-media",
+   "Contemporary German-Speaking Culture",
+   "german-studies",
+   "Film, media, politics and society in Germany, Austria and Switzerland today.",
+   [
+    "culture",
+    "film",
+    "media",
+    "society",
+    "austria",
+    "switzerland",
+    "migration",
+    "politics"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "germ-declension-drill",
+   "germ-grammar-language",
+   "Case and Declension Drill",
+   "Generates article and adjective endings across nominative, accusative, dative and genitive and checks each against declension tables.",
+   "procedural",
+   [
+    [
+     "germ-grammar",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-word-order-correction",
+   "germ-grammar-language",
+   "Word Order Correction",
+   "Corrects verb-second, verb-final and separable verb placement in learner sentences and checks each fix with the rule.",
+   "procedural",
+   [
+    [
+     "germ-grammar",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-konjunktiv-usage",
+   "germ-grammar-language",
+   "Subjunctive Usage Practice",
+   "Builds Konjunktiv I and II sentences for reported speech and hypotheticals and checks forms against conjugation tables.",
+   "procedural",
+   [
+    [
+     "germ-grammar",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-linguist",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-text-translation",
+   "germ-translation",
+   "Text Translation",
+   "Translates passages between German and English with DeepL and checks meaning, compounds and false friends.",
+   "procedural",
+   [
+    [
+     "germ-translator",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-grammar",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-compound-analysis",
+   "germ-translation",
+   "Compound Noun Analysis",
+   "Splits German compound nouns into components with linking elements and checks the gender rule of the head noun.",
+   "procedural",
+   [
+    [
+     "germ-linguist",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-dialect-description",
+   "germ-translation",
+   "Dialect Feature Description",
+   "Describes features of a German dialect or national variety such as Swiss or Austrian German and checks examples against documented usage.",
+   "semantic",
+   [
+    [
+     "germ-linguist",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-close-reading",
+   "germ-german-literature",
+   "Close Reading",
+   "Produces a close reading of a German poem or prose passage and checks every interpretive claim is anchored in a quotation.",
+   "semantic",
+   [
+    [
+     "germ-literature",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-grammar",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-movement-profile",
+   "germ-german-literature",
+   "Literary Movement Profile",
+   "Profiles a period such as Weimar classicism or Romanticism with authors, works and aesthetics and checks dates and attributions.",
+   "semantic",
+   [
+    [
+     "germ-literature",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-scholarship-search",
+   "germ-german-literature",
+   "German Studies Scholarship Search",
+   "Searches peer-reviewed German studies scholarship through Wiley Scholar Gateway and checks each citation resolves to the stated work.",
+   "procedural",
+   [
+    [
+     "germ-reviewer",
+     "primary"
+    ],
+    [
+     "germ-literature",
+     "checker"
+    ],
+    [
+     "germ-thought",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-concept-explication",
+   "germ-german-thought",
+   "Philosophical Concept Explication",
+   "Explains a concept such as Aufklarung or Dialektik in its original context and checks the account against the primary text.",
+   "semantic",
+   [
+    [
+     "germ-thought",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-literature",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-argument-reconstruction",
+   "germ-german-thought",
+   "Argument Reconstruction",
+   "Reconstructs a philosophical argument from a German text as premises and conclusion and checks validity.",
+   "procedural",
+   [
+    [
+     "germ-thought",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-critical-theory-application",
+   "germ-german-thought",
+   "Critical Theory Application",
+   "Applies a Frankfurt School concept such as the culture industry to a cultural object and checks fidelity to the source text.",
+   "semantic",
+   [
+    [
+     "germ-thought",
+     "primary"
+    ],
+    [
+     "germ-culture",
+     "checker"
+    ],
+    [
+     "germ-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-source-criticism",
+   "germ-german-history",
+   "Historical Source Criticism",
+   "Evaluates a German historical document for author, audience and context and checks claims against corroborating sources.",
+   "semantic",
+   [
+    [
+     "germ-historian",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-translator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-chronology-building",
+   "germ-german-history",
+   "History Chronology Building",
+   "Builds a dated chronology of a period such as the Weimar Republic and checks each date against reference works.",
+   "procedural",
+   [
+    [
+     "germ-historian",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-culture",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-memory-culture",
+   "germ-german-history",
+   "Memory Culture Analysis",
+   "Analyses Vergangenheitsbewaltigung and commemoration practices and checks examples against documented memorials and debates.",
+   "semantic",
+   [
+    [
+     "germ-historian",
+     "primary"
+    ],
+    [
+     "germ-culture",
+     "checker"
+    ],
+    [
+     "germ-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-film-analysis",
+   "germ-culture-media",
+   "German Film Analysis",
+   "Analyses a German-language film from Expressionism to the Berlin School in its historical context and checks claims against the film and sources.",
+   "semantic",
+   [
+    [
+     "germ-culture",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-society-brief",
+   "germ-culture-media",
+   "Society and Politics Brief",
+   "Explains a feature of contemporary German, Austrian or Swiss society and checks factual claims against official sources.",
+   "semantic",
+   [
+    [
+     "germ-culture",
+     "primary"
+    ],
+    [
+     "germ-reviewer",
+     "checker"
+    ],
+    [
+     "germ-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "germ-media-comprehension",
+   "germ-culture-media",
+   "Authentic Media Comprehension",
+   "Builds comprehension questions on German-language news and checks that answers are supported by the source.",
+   "procedural",
+   [
+    [
+     "germ-culture",
+     "primary"
+    ],
+    [
+     "germ-grammar",
+     "checker"
+    ],
+    [
+     "germ-reviewer",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "germ-grammar": "German Grammar Tutor",
+  "germ-translator": "German Translator",
+  "germ-literature": "German Literature Scholar",
+  "germ-thought": "German Philosophy Analyst",
+  "germ-historian": "German History Analyst",
+  "germ-culture": "German Culture and Media Analyst",
+  "germ-linguist": "German Linguist",
+  "germ-reviewer": "German Language Reviewer"
+ },
+ "mcp": [
+  [
+   "DeepL",
+   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "Translate text and documents across 100+ languages, with your preferred styles applied",
+   [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Wiley Scholar Gateway",
+   "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "Enhance responses with scholarly research and citations",
+   [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "germ-grammar": "case declension order separable konjunktiv syntax",
+  "germ-ling": "translation compound dialect phonology pronunciation idiom",
+  "germ-lit": "romanticism classicism novella poetry drama modernism",
+  "germ-thought": "philosophy idealism kant hegel marx nietzsche",
+  "germ-history": "empire unification weimar holocaust reunification",
+  "germ-culture": "film media society austria switzerland politics"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

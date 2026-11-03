@@ -1,0 +1,860 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "biology",
+  "label": "Biology",
+  "desc": "Biology from molecules to ecosystems: molecular and cell biology, genetics and genomics, neuroscience, biochemistry, evolution and ecology, physiology and immunology. Educational and analytical support, not medical advice."
+ },
+ "concepts": [
+  {
+   "id": "bi-cell",
+   "label": "Cell Biology",
+   "desc": "Cell structure, the cell cycle, signalling and membranes.",
+   "keywords": [
+    "cell",
+    "organelle",
+    "membrane",
+    "signalling",
+    "mitosis"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": [
+    "hbio-cell-molecular"
+   ]
+  },
+  {
+   "id": "bi-evolution",
+   "label": "Evolution and Ecology",
+   "desc": "Phylogenetics, population dynamics and ecosystems.",
+   "keywords": [
+    "phylogeny",
+    "selection",
+    "ecosystem",
+    "biodiversity",
+    "population"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": []
+  },
+  {
+   "id": "bi-genomics",
+   "label": "Genetics and Genomics",
+   "desc": "Inheritance, genomes, variants and population genetics.",
+   "keywords": [
+    "gene",
+    "genome",
+    "variant",
+    "allele",
+    "inheritance",
+    "population"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": [
+    "hbio-human-genetics"
+   ]
+  },
+  {
+   "id": "bi-molecular",
+   "label": "Molecular Biology",
+   "desc": "DNA, RNA and protein, gene expression and regulation, and common laboratory methods.",
+   "keywords": [
+    "dna",
+    "rna",
+    "protein",
+    "transcription",
+    "translation",
+    "pcr"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": []
+  },
+  {
+   "id": "bi-neuro",
+   "label": "Neuroscience",
+   "desc": "Neurons, circuits, plasticity and brain imaging.",
+   "keywords": [
+    "neuron",
+    "synapse",
+    "circuit",
+    "plasticity",
+    "eeg",
+    "fmri"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": [
+    "psych-biological-psychology"
+   ]
+  },
+  {
+   "id": "bi-physiology",
+   "label": "Physiology and Immunology",
+   "desc": "Organ systems and the immune response.",
+   "keywords": [
+    "organ",
+    "homeostasis",
+    "immune",
+    "antibody",
+    "cytokine"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": []
+  },
+  {
+   "id": "bi-structural",
+   "label": "Biochemistry and Structural Biology",
+   "desc": "Proteins, enzymes and molecular structure and binding.",
+   "keywords": [
+    "enzyme",
+    "kinetics",
+    "structure",
+    "folding",
+    "docking",
+    "ligand"
+   ],
+   "topic": "biology",
+   "source": "biology",
+   "related": [
+    "bioe-biomolecular-engineering",
+    "bmc-molecular-modeling"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "bi-cell-signalling-analyst",
+   "concept": "bi-cell",
+   "label": "Cell Cycle and Signalling Analyst",
+   "desc": "Maps signalling pathways and cell-cycle checkpoints and explains the effect of perturbing a node.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1078",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1080",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-culture-protocol-reviewer",
+   "concept": "bi-cell",
+   "label": "Cell Culture Protocol Reviewer",
+   "desc": "Reviews standard cell culture protocols for missing controls, contamination risk and record keeping, and defers pathogen work to biosafety review.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1078",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1081",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-membrane-organelle-explainer",
+   "concept": "bi-cell",
+   "label": "Membrane and Organelle Explainer",
+   "desc": "Explains membrane transport, organelle function and trafficking at a level the learner chooses.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1078",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1082",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-ecosystem-biodiversity-analyst",
+   "concept": "bi-evolution",
+   "label": "Ecosystem and Biodiversity Analyst",
+   "desc": "Computes diversity indices and species distributions and states the sampling limits of the data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1083",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-phylogenetics-builder",
+   "concept": "bi-evolution",
+   "label": "Phylogenetics Builder",
+   "desc": "Builds phylogenetic trees from sequences with alignment, model choice and support values.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1083",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-population-dynamics-modeler",
+   "concept": "bi-evolution",
+   "label": "Population Dynamics Modeler",
+   "desc": "Models growth, competition and predator-prey dynamics and tests them against field data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1083",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1085",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-genome-assembly-annotation",
+   "concept": "bi-genomics",
+   "label": "Genome Assembly and Annotation",
+   "desc": "Plans assembly and gene annotation pipelines and reports assembly quality statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1084",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1085",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-population-genetics",
+   "concept": "bi-genomics",
+   "label": "Population Genetics Analyst",
+   "desc": "Computes allele frequencies, Hardy-Weinberg tests and measures of population structure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1085",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1083",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-variant-interpretation",
+   "concept": "bi-genomics",
+   "label": "Variant Interpretation Assistant",
+   "desc": "Summarizes what the literature and databases say about a genetic variant for research use and does not give clinical diagnosis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1085",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-central-dogma-explainer",
+   "concept": "bi-molecular",
+   "label": "Central Dogma Explainer",
+   "desc": "Explains replication, transcription and translation with worked examples and exceptions such as reverse transcription.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1080",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-gene-regulation-analyst",
+   "concept": "bi-molecular",
+   "label": "Gene Regulation Analyst",
+   "desc": "Explains promoters, enhancers and transcription factors and reads expression data for regulatory patterns.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1080",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-pcr-cloning-planner",
+   "concept": "bi-molecular",
+   "label": "PCR and Cloning Planner",
+   "desc": "Plans standard PCR and cloning workflows for benign model systems, with controls and expected results, and leaves hazardous-organism work to qualified biosafety review.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1080",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1081",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-neural-circuit-analyst",
+   "concept": "bi-neuro",
+   "label": "Neural Circuit Analyst",
+   "desc": "Describes circuits from connectivity and activity data and states what the data cannot show about causation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1086",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-neuroimaging-analyst",
+   "concept": "bi-neuro",
+   "label": "Neuroimaging Analyst",
+   "desc": "Plans and reads EEG and fMRI analyses with preprocessing, statistics and multiple-comparison control.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1086",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-neuron-electrophysiology",
+   "concept": "bi-neuro",
+   "label": "Neuron Electrophysiology Modeler",
+   "desc": "Simulates membrane potentials with Hodgkin-Huxley style models and fits parameters to recordings.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1086",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-synaptic-plasticity-explainer",
+   "concept": "bi-neuro",
+   "label": "Synaptic Plasticity Explainer",
+   "desc": "Explains long-term potentiation and depression, learning rules and their link to memory models.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1086",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1078",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-immune-response-analyst",
+   "concept": "bi-physiology",
+   "label": "Immune Response Analyst",
+   "desc": "Explains innate and adaptive immune responses and reads immunology data such as cytokine panels for research use.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1087",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-organ-system-explainer",
+   "concept": "bi-physiology",
+   "label": "Organ System Physiology Explainer",
+   "desc": "Explains how organ systems regulate homeostasis for learning and research, not for diagnosis or treatment.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1087",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1078",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-docking-planner",
+   "concept": "bi-structural",
+   "label": "Molecular Docking Planner",
+   "desc": "Plans docking and binding studies with preparation, scoring caveats and validation against known binders.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1082",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1081",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-enzyme-kinetics-fitter",
+   "concept": "bi-structural",
+   "label": "Enzyme Kinetics Fitter",
+   "desc": "Fits Michaelis-Menten and inhibition models to rate data and reports parameter uncertainty.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1082",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1080",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-protein-structure-analyst",
+   "concept": "bi-structural",
+   "label": "Protein Structure Analyst",
+   "desc": "Reads protein structures and predictions for domains, active sites and confidence, and separates predicted from measured structure.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1082",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1078",
+   "name": "Cell Biology Agent",
+   "legacy_key": "bi-cell-biologist",
+   "mcp": [
+    "bd022b03-2829-47df-b07f-b50c3541c932"
+   ]
+  },
+  {
+   "key": "Maxey1079",
+   "name": "Literature Claim Checker Agent",
+   "legacy_key": "bi-literature-checker",
+   "mcp": [
+    "8c1da671-b40e-465b-9bc4-bff40398221f",
+    "bd022b03-2829-47df-b07f-b50c3541c932",
+    "cc609c18-f6f5-44a0-ac77-6150b9d7b439"
+   ]
+  },
+  {
+   "key": "Maxey1080",
+   "name": "Molecular Biology Agent",
+   "legacy_key": "bi-molecular-biologist",
+   "mcp": [
+    "bd022b03-2829-47df-b07f-b50c3541c932"
+   ]
+  },
+  {
+   "key": "Maxey1081",
+   "name": "Biosafety Checker Agent",
+   "legacy_key": "bi-biosafety-checker",
+   "mcp": [
+    "bd022b03-2829-47df-b07f-b50c3541c932"
+   ]
+  },
+  {
+   "key": "Maxey1082",
+   "name": "Structural Biology Agent",
+   "legacy_key": "bi-structural-biologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1083",
+   "name": "Evolution and Ecology Agent",
+   "legacy_key": "bi-evolutionary-biologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1084",
+   "name": "Bioinformatics Agent",
+   "legacy_key": "bi-bioinformatician",
+   "mcp": [
+    "8c1da671-b40e-465b-9bc4-bff40398221f",
+    "cc609c18-f6f5-44a0-ac77-6150b9d7b439"
+   ]
+  },
+  {
+   "key": "Maxey1085",
+   "name": "Genetics Agent",
+   "legacy_key": "bi-geneticist",
+   "mcp": [
+    "cc609c18-f6f5-44a0-ac77-6150b9d7b439"
+   ]
+  },
+  {
+   "key": "Maxey1086",
+   "name": "Neuroscience Agent",
+   "legacy_key": "bi-neuroscientist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1087",
+   "name": "Physiology and Immunology Agent",
+   "legacy_key": "bi-physiologist",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "name": "Boltz API",
+   "desc": "Predict molecular structures and binding interactions, screen libraries, and design binders with the Boltz API.",
+   "tools": [
+    "boltz_estimate_protein_screen",
+    "boltz_estimate_small_molecule_screen",
+    "boltz_estimate_structure_and_binding",
+    "boltz_get_guidance",
+    "boltz_get_job_status",
+    "boltz_get_screen_results",
+    "boltz_get_structure_and_binding_prediction",
+    "boltz_start_protein_screen"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "origins": [
+    "bioengineering",
+    "biology",
+    "biomedical-computation"
+   ]
+  },
+  {
+   "uuid": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "name": "Owkin",
+   "desc": "Interact with AI agents built for biology",
+   "tools": [
+    "list_cell_types",
+    "list_cohorts",
+    "features_description",
+    "filter_slides",
+    "get_histomics",
+    "display_slide_thumbnail",
+    "survival_analysis",
+    "histoplus_help"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "origins": [
+    "biology"
+   ]
+  },
+  {
+   "uuid": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "name": "Helix GenoSphere",
+   "desc": "Query human genomics & longitudinal clinical data",
+   "tools": [
+    "get_variant_frequency",
+    "check_gene_availability",
+    "get_dataset_overview",
+    "search_concepts",
+    "get_patient_count"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "origins": [
+    "biology",
+    "human-biology"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "8c1da671-b40e-465b-9bc4-bff40398221f",
+  "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+  "bd022b03-2829-47df-b07f-b50c3541c932"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1078",
+   "mcp": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "topic": "biology",
+   "score": 0.1566,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1079",
+   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "topic": "biology",
+   "score": 0.2023,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1079",
+   "mcp": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "topic": "biology",
+   "score": 0.1566,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1078",
+    "skill": "bi-cell-signalling-analyst"
+   }
+  },
+  {
+   "agent": "Maxey1079",
+   "mcp": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "topic": "biology",
+   "score": 0.1479,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1084",
+    "skill": "bi-genome-assembly-annotation"
+   }
+  },
+  {
+   "agent": "Maxey1080",
+   "mcp": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "topic": "biology",
+   "score": 0.1418,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1081",
+   "mcp": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "topic": "biology",
+   "score": 0.1566,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1078",
+    "skill": "bi-culture-protocol-reviewer"
+   }
+  },
+  {
+   "agent": "Maxey1084",
+   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "topic": "biology",
+   "score": 0.2023,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1084",
+   "mcp": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "topic": "biology",
+   "score": 0.1479,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1085",
+   "mcp": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "topic": "biology",
+   "score": 0.1466,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "molecular": "dna rna transcription translation pcr cloning promoter protein molecular biology",
+  "cellbio": "organelle checkpoint trafficking membrane culture contamination cell signalling mitosis",
+  "genomics": "allele variant genome assembly annotation hardy weinberg gene inheritance population genetics genomics",
+  "neuroscience": "neuron hodgkin huxley eeg fmri synaptic synapse plasticity neuroscience neural connectivity",
+  "structbio": "enzyme michaelis menten docking inhibition binder folding ligand biochemistry structural",
+  "evolution": "phylogenetic alignment predator prey diversity phylogeny selection biodiversity evolution ecology",
+  "physiology": "homeostasis immune cytokine adaptive innate organ antibody physiology immunology",
+  "biosafety": "biosafety hazardous qualified diagnosis"
+ },
+ "sources": [
+  "biology"
+ ]
+}

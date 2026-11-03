@@ -1,0 +1,725 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "protocol",
+ "topic": {
+  "id": "protocol",
+  "label": "Protocol",
+  "desc": "Protocols and interfaces between agents, tools and services: MCP servers and clients, agent-to-agent protocols, API design, schemas and contracts, authentication flows, transports, versioning and conformance testing. Extends the base Protocol topic, which held I/O Contract and Protocol."
+ },
+ "concepts": [
+  [
+   "pr-mcp",
+   "MCP Servers and Clients",
+   "protocol",
+   "Building and consuming Model Context Protocol servers: tools, resources, prompts, capability negotiation and client configuration.",
+   [
+    "mcp",
+    "tool",
+    "resource",
+    "prompt",
+    "capability",
+    "annotations",
+    "hints"
+   ]
+  ],
+  [
+   "pr-a2a",
+   "Agent-to-Agent Protocols",
+   "protocol",
+   "How agents find and call each other: agent cards, task lifecycles, messages, artifacts and handoff between agents.",
+   [
+    "a2a",
+    "agentcard",
+    "task",
+    "handoff",
+    "artifact"
+   ]
+  ],
+  [
+   "pr-api",
+   "API Design and OpenAPI",
+   "protocol",
+   "Designing HTTP and RPC interfaces: resources, verbs, errors, pagination, idempotency and OpenAPI descriptions.",
+   [
+    "api",
+    "openapi",
+    "endpoint",
+    "pagination",
+    "idempotency"
+   ]
+  ],
+  [
+   "pr-schema",
+   "Schemas and Contracts",
+   "protocol",
+   "Describing data exactly: JSON Schema, typed contracts, validation at the boundary and clear error messages.",
+   [
+    "schema",
+    "jsonschema",
+    "validation",
+    "contract",
+    "type"
+   ]
+  ],
+  [
+   "pr-auth",
+   "Authentication and Authorization Flows",
+   "protocol",
+   "Who may call what: API keys, OAuth flows, scopes, token storage and consent screens, without putting secrets in code.",
+   [
+    "oauth",
+    "token",
+    "scope",
+    "credential",
+    "consent"
+   ]
+  ],
+  [
+   "pr-transport",
+   "Transports and Streaming",
+   "protocol",
+   "Moving messages: stdio, HTTP, server-sent events, WebSockets, streaming responses, timeouts and retries.",
+   [
+    "transport",
+    "stdio",
+    "sse",
+    "websocket",
+    "streaming"
+   ]
+  ],
+  [
+   "pr-versioning",
+   "Versioning and Compatibility",
+   "protocol",
+   "Changing an interface without breaking its users: semantic versions, deprecation, feature flags and migration guides.",
+   [
+    "versioning",
+    "compatibility",
+    "deprecation",
+    "migration",
+    "breaking",
+    "sunset",
+    "changelog",
+    "removed",
+    "narrowed"
+   ]
+  ],
+  [
+   "pr-conformance",
+   "Conformance and Contract Testing",
+   "protocol",
+   "Proving an implementation follows the protocol: contract tests, mock servers, fuzzing of messages and test reports.",
+   [
+    "conformance",
+    "contracttest",
+    "mock",
+    "fuzz",
+    "interoperability"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "pr-mcp-server-builder",
+   "pr-mcp",
+   "MCP Server Builder",
+   "Designs the tools, inputs and outputs of an MCP server for a service and writes the server skeleton with descriptions the model can use.",
+   "procedural",
+   [
+    [
+     "pr-mcp-engineer",
+     "primary"
+    ],
+    [
+     "pr-conformance-tester",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-mcp-client-configurator",
+   "pr-mcp",
+   "MCP Client Configurator",
+   "Configures a client to connect to chosen servers, lists the tools it will expose and the permission each one needs.",
+   "procedural",
+   [
+    [
+     "pr-mcp-engineer",
+     "primary"
+    ],
+    [
+     "pr-security-reviewer",
+     "checker"
+    ],
+    [
+     "pr-transport-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-tool-description-writer",
+   "pr-mcp",
+   "Tool Description Writer",
+   "Writes tool names and descriptions so a model picks the right tool, and tests them with sample requests; adds annotations such as read-only hints.",
+   "semantic",
+   [
+    [
+     "pr-mcp-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-agent-card-writer",
+   "pr-a2a",
+   "Agent Card Writer",
+   "Writes an agent card that states skills, endpoint, input and output types and authentication so other agents can find and call it.",
+   "procedural",
+   [
+    [
+     "pr-a2a-engineer",
+     "primary"
+    ],
+    [
+     "pr-schema-engineer",
+     "checker"
+    ],
+    [
+     "pr-security-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-task-lifecycle-designer",
+   "pr-a2a",
+   "Task Lifecycle Designer",
+   "Defines task states, updates and cancellation between agents and what each side must do on failure or timeout.",
+   "semantic",
+   [
+    [
+     "pr-a2a-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-transport-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-handoff-contract-writer",
+   "pr-a2a",
+   "Handoff Contract Writer",
+   "Specifies what context, files and authority pass from one agent to another and what stays behind.",
+   "semantic",
+   [
+    [
+     "pr-a2a-engineer",
+     "primary"
+    ],
+    [
+     "pr-security-reviewer",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-resource-modeler",
+   "pr-api",
+   "API Resource Modeler",
+   "Models resources and relations as endpoints, with names, verbs and status codes chosen to match common practice.",
+   "procedural",
+   [
+    [
+     "pr-api-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-openapi-writer",
+   "pr-api",
+   "OpenAPI Document Writer",
+   "Writes an OpenAPI description from an API, with examples and error shapes, and validates it with a linter.",
+   "procedural",
+   [
+    [
+     "pr-api-engineer",
+     "primary"
+    ],
+    [
+     "pr-conformance-tester",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-error-pagination-designer",
+   "pr-api",
+   "Error and Pagination Designer",
+   "Designs error bodies, pagination, rate-limit signals and idempotency keys so clients can retry safely.",
+   "semantic",
+   [
+    [
+     "pr-api-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-transport-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-json-schema-author",
+   "pr-schema",
+   "JSON Schema Author",
+   "Writes a JSON Schema for a message, with required fields and formats, and tests it against valid and invalid samples.",
+   "procedural",
+   [
+    [
+     "pr-schema-engineer",
+     "primary"
+    ],
+    [
+     "pr-conformance-tester",
+     "checker"
+    ],
+    [
+     "pr-api-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-boundary-validator",
+   "pr-schema",
+   "Boundary Validator",
+   "Places validation where data enters the system and makes each failure return a message that says which field is wrong and why.",
+   "procedural",
+   [
+    [
+     "pr-schema-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-security-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-contract-differ",
+   "pr-schema",
+   "Contract Differ",
+   "Compares two versions of a schema and lists breaking changes, such as removed fields and narrowed types, that would break existing producers or consumers.",
+   "procedural",
+   [
+    [
+     "pr-schema-engineer",
+     "primary"
+    ],
+    [
+     "pr-versioning-steward",
+     "checker"
+    ],
+    [
+     "pr-conformance-tester",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-oauth-flow-designer",
+   "pr-auth",
+   "OAuth Flow Designer",
+   "Chooses the OAuth flow for a client, lists scopes and redirect handling and says where tokens are stored.",
+   "semantic",
+   [
+    [
+     "pr-security-reviewer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-api-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-scope-minimizer",
+   "pr-auth",
+   "Scope Minimizer",
+   "Reviews requested scopes against what the feature uses and proposes the smallest set that still works.",
+   "procedural",
+   [
+    [
+     "pr-security-reviewer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-mcp-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-secret-handling-checker",
+   "pr-auth",
+   "Secret Handling Checker",
+   "Checks that keys and tokens come from the environment or a secret store, never from code or logs, and lists leaks found.",
+   "procedural",
+   [
+    [
+     "pr-security-reviewer",
+     "primary"
+    ],
+    [
+     "pr-conformance-tester",
+     "checker"
+    ],
+    [
+     "pr-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-transport-selector",
+   "pr-transport",
+   "Transport Selector",
+   "Chooses between stdio, HTTP, server-sent events and WebSockets for a use and states what each costs in complexity.",
+   "semantic",
+   [
+    [
+     "pr-transport-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-mcp-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-streaming-designer",
+   "pr-transport",
+   "Streaming Response Designer",
+   "Designs how partial results stream, how a client resumes after a drop and how backpressure is handled.",
+   "procedural",
+   [
+    [
+     "pr-transport-engineer",
+     "primary"
+    ],
+    [
+     "pr-conformance-tester",
+     "checker"
+    ],
+    [
+     "pr-api-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-timeout-retry-planner",
+   "pr-transport",
+   "Timeout and Retry Planner",
+   "Sets timeouts, retry rules with backoff and limits and shows which calls are safe to repeat.",
+   "procedural",
+   [
+    [
+     "pr-transport-engineer",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-api-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-semver-advisor",
+   "pr-versioning",
+   "Version Number Advisor",
+   "Decides whether a change is a major, minor or patch release from the interface diff and explains the call.",
+   "semantic",
+   [
+    [
+     "pr-versioning-steward",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-deprecation-notice-writer",
+   "pr-versioning",
+   "Deprecation Notice Writer",
+   "Writes a deprecation notice with the sunset date, replacement and a migration path, and finds callers still using the old form.",
+   "procedural",
+   [
+    [
+     "pr-versioning-steward",
+     "primary"
+    ],
+    [
+     "pr-api-engineer",
+     "checker"
+    ],
+    [
+     "pr-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-migration-guide-writer",
+   "pr-versioning",
+   "Migration Guide Writer",
+   "Writes step by step migration instructions and a changelog between two versions with before and after examples.",
+   "procedural",
+   [
+    [
+     "pr-versioning-steward",
+     "primary"
+    ],
+    [
+     "pr-conformance-tester",
+     "checker"
+    ],
+    [
+     "pr-api-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-contract-test-writer",
+   "pr-conformance",
+   "Contract Test Writer",
+   "Writes tests that check an implementation against the written contract, with one test per rule.",
+   "procedural",
+   [
+    [
+     "pr-conformance-tester",
+     "primary"
+    ],
+    [
+     "pr-skeptic",
+     "checker"
+    ],
+    [
+     "pr-schema-engineer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-mock-server-builder",
+   "pr-conformance",
+   "Mock Server Builder",
+   "Builds a mock server from a schema that returns valid and error responses so clients can be tested offline.",
+   "procedural",
+   [
+    [
+     "pr-conformance-tester",
+     "primary"
+    ],
+    [
+     "pr-api-engineer",
+     "checker"
+    ],
+    [
+     "pr-skeptic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "pr-message-fuzzer",
+   "pr-conformance",
+   "Protocol Message Fuzzer",
+   "Sends malformed and boundary-case messages to an endpoint and reports crashes, hangs and unsafe behaviour.",
+   "procedural",
+   [
+    [
+     "pr-conformance-tester",
+     "primary"
+    ],
+    [
+     "pr-security-reviewer",
+     "checker"
+    ],
+    [
+     "pr-skeptic",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "pr-mcp-engineer": "MCP Engineer Agent",
+  "pr-a2a-engineer": "Agent-to-Agent Protocol Agent",
+  "pr-api-engineer": "API Design Agent",
+  "pr-schema-engineer": "Schema and Contract Agent",
+  "pr-security-reviewer": "Protocol Security Agent",
+  "pr-transport-engineer": "Transport Engineer Agent",
+  "pr-versioning-steward": "Versioning Steward Agent",
+  "pr-conformance-tester": "Conformance Tester Agent",
+  "pr-skeptic": "Protocol Skeptic Agent"
+ },
+ "mcp": [
+  [
+   "Swagger",
+   "653a5f84-8819-4215-9ba7-9b384eb2ddc2",
+   "Build, govern, and document APIs",
+   [
+    "list_portals",
+    "get_portal",
+    "create_portal",
+    "update_portal",
+    "list_portal_products",
+    "get_portal_product",
+    "create_portal_product",
+    "update_portal_product"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Jentic",
+   "a133f422-ff03-478f-a208-ddc460db8826",
+   "Search 10,000+ APIs and get the one you need",
+   [
+    "search_apis",
+    "load_execution_info",
+    "execute"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Alpic",
+   "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
+   "Manage your MCP Servers and MCP Apps hosted on Alpic",
+   [
+    "deployment-logs",
+    "get-analytics",
+    "list-projects",
+    "list-teams",
+    "show-analytics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Manufact",
+   "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
+   "Deploy and monitor MCP servers",
+   [
+    "cancel_org_invitation",
+    "deploy",
+    "get_deployment",
+    "get_deployment_build_logs",
+    "get_deployment_runtime_logs",
+    "get_observability_overview",
+    "get_organization_stats",
+    "get_server"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "prmcp": "skeleton server client hints agentcard jsonschema type oauth authentication authorization flows description cancellation another behind json invalid validator return minimizer requested handling environment",
+  "prapi": "openapi endpoint verb pagination idempotency",
+  "prtransport": "stdio sse websocket streaming backpressure timeout backoff transport",
+  "prversion": "breaking sunset changelog removed narrowed compatibility advisor interface replacement guide",
+  "prconform": "conformance fuzz interoperability contracttest implementation"
+ },
+ "provenance": {
+  "generated_by": "Claude (claude-sonnet-5-5) in the Human0 session of 2026-10-23; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-23",
+  "mcp_notes": {
+   "Swagger": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Jentic": "directory listing; has an execute tool: treat use as human-approved; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Alpic": "directory listing; tool names are the directory listing's visible sample; connector is not installed or tested",
+   "Manufact": "directory listing; has a deploy tool: treat use as human-approved; tool names are the directory listing's visible sample; connector is not installed or tested"
+  },
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. MCP rows are existence-verified listings only: not connected, not authenticated, not called; tool lists are the directory's visible sample or the README's text. Agent-to-MCP gates are derived by the app (HYPOTHESIS), never declared here."
+ }
+}

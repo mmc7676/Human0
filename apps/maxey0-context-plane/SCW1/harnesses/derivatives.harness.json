@@ -1,0 +1,308 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "finance",
+ "topic": {
+  "id": "derivatives",
+  "label": "Derivatives and Options",
+  "desc": "Contracts whose value derives from something else: options, futures and forwards, swaps, pricing and Greeks, and hedging strategies."
+ },
+ "concepts": [
+  {
+   "id": "dv-futures",
+   "label": "Futures and Forwards",
+   "desc": "Futures and forward contracts, margin, contango and backwardation, and roll.",
+   "keywords": [
+    "future",
+    "forward",
+    "contract",
+    "margin",
+    "contango",
+    "backwardation",
+    "roll",
+    "expiry"
+   ],
+   "topic": "derivatives",
+   "source": "derivatives",
+   "related": []
+  },
+  {
+   "id": "dv-hedging",
+   "label": "Hedging Strategies",
+   "desc": "Using derivatives to hedge: protective puts, collars, futures hedges and delta hedging.",
+   "keywords": [
+    "hedge",
+    "hedging",
+    "protective",
+    "put",
+    "collar",
+    "delta",
+    "neutral",
+    "risk",
+    "exposure"
+   ],
+   "topic": "derivatives",
+   "source": "derivatives",
+   "related": [
+    "fx-fx-hedging"
+   ]
+  },
+  {
+   "id": "dv-options",
+   "label": "Options",
+   "desc": "Calls and puts, strikes and expiries, intrinsic and time value, and options chains.",
+   "keywords": [
+    "option",
+    "call",
+    "put",
+    "strike",
+    "expiry",
+    "premium",
+    "chain",
+    "intrinsic",
+    "time",
+    "value"
+   ],
+   "topic": "derivatives",
+   "source": "derivatives",
+   "related": []
+  },
+  {
+   "id": "dv-pricing",
+   "label": "Pricing and Greeks",
+   "desc": "Black-Scholes and binomial pricing, implied volatility and the Greeks.",
+   "keywords": [
+    "pricing",
+    "black",
+    "scholes",
+    "binomial",
+    "implied",
+    "volatility",
+    "greek",
+    "delta",
+    "gamma",
+    "vega",
+    "theta"
+   ],
+   "topic": "derivatives",
+   "source": "derivatives",
+   "related": []
+  },
+  {
+   "id": "dv-swaps",
+   "label": "Swaps",
+   "desc": "Interest rate swaps, credit default swaps, currency swaps and total return swaps.",
+   "keywords": [
+    "swap",
+    "interest",
+    "rate",
+    "credit",
+    "default",
+    "currency",
+    "total",
+    "return",
+    "notional"
+   ],
+   "topic": "derivatives",
+   "source": "derivatives",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "dv-futures-roll-explainer",
+   "concept": "dv-futures",
+   "label": "Futures Roll Explainer",
+   "desc": "Explains futures roll, contango and backwardation and their cost.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1708",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1709",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1710",
+     "role": "support"
+    }
+   ],
+   "source": "derivatives"
+  },
+  {
+   "id": "dv-hedge-designer",
+   "concept": "dv-hedging",
+   "label": "Hedge Designer",
+   "desc": "Designs a hedge for an exposure and compares cost and residual risk.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1711",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1709",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1708",
+     "role": "support"
+    }
+   ],
+   "source": "derivatives"
+  },
+  {
+   "id": "dv-option-payoff-builder",
+   "concept": "dv-options",
+   "label": "Option Payoff Builder",
+   "desc": "Builds the payoff and break-even for an option or multi-leg options strategy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1711",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1709",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1708",
+     "role": "support"
+    }
+   ],
+   "source": "derivatives"
+  },
+  {
+   "id": "dv-options-chain-reader",
+   "concept": "dv-options",
+   "label": "Options Chain Reader",
+   "desc": "Reads an options chain and explains open interest, implied volatility and skew.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1711",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1709",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1708",
+     "role": "support"
+    }
+   ],
+   "source": "derivatives"
+  },
+  {
+   "id": "dv-option-pricer",
+   "concept": "dv-pricing",
+   "label": "Option Pricer",
+   "desc": "Prices a call or put option and computes its Greeks with Black-Scholes and states the assumptions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1712",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1709",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1711",
+     "role": "support"
+    }
+   ],
+   "source": "derivatives"
+  },
+  {
+   "id": "dv-swap-valuation-explainer",
+   "concept": "dv-swaps",
+   "label": "Swap Valuation Explainer",
+   "desc": "Explains how a swap's legs are valued and what moves its value.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1710",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1709",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1712",
+     "role": "support"
+    }
+   ],
+   "source": "derivatives"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1708",
+   "name": "Futures Agent",
+   "legacy_key": "dv-futures",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1709",
+   "name": "Derivatives Checker Agent",
+   "legacy_key": "dv-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1710",
+   "name": "Swaps Agent",
+   "legacy_key": "dv-swaps",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1711",
+   "name": "Options Agent",
+   "legacy_key": "dv-options",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1712",
+   "name": "Derivatives Pricing Agent",
+   "legacy_key": "dv-quant",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Polygon MCP",
+   "desc": "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/polygon-io/mcp_polygon",
+   "id": "local:polygon-mcp",
+   "origins": [
+    "capital-markets",
+    "currencies",
+    "derivatives",
+    "financial-data"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:polygon-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "dvoptions": "option call put strike expiry premium chain intrinsic time value",
+  "dvfutures": "future forward contract margin contango backwardation roll expiry",
+  "dvswaps": "swap interest rate credit default currency total return notional",
+  "dvpricing": "pricing black scholes binomial implied volatility greek delta gamma vega theta",
+  "dvhedging": "hedge hedging protective put collar delta neutral risk exposure"
+ },
+ "sources": [
+  "derivatives"
+ ]
+}

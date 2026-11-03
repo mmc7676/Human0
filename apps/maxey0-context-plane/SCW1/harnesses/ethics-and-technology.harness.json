@@ -1,0 +1,770 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "ethics-and-technology",
+  "label": "Ethics and Technology",
+  "desc": "Ethics and Technology: the moral, social and political evaluation of how technologies are designed, governed and used."
+ },
+ "concepts": [
+  {
+   "id": "etht-ai-ethics",
+   "label": "AI and Algorithmic Ethics",
+   "desc": "Fairness, accountability, transparency and safety in machine learning and automated decision systems.",
+   "keywords": [
+    "algorithm",
+    "fairness",
+    "bias",
+    "accountability",
+    "transparency",
+    "explainability",
+    "automation",
+    "alignment"
+   ],
+   "topic": "ethics-and-technology",
+   "source": "ethics-and-technology",
+   "related": []
+  },
+  {
+   "id": "etht-design-bioethics",
+   "label": "Responsible Design and Emerging Technologies",
+   "desc": "Building values into design and assessing emerging fields such as biotechnology, neurotechnology and robotics before harms occur.",
+   "keywords": [
+    "design",
+    "value",
+    "responsible",
+    "biotechnology",
+    "robotics",
+    "neurotechnology",
+    "anticipatory",
+    "precaution"
+   ],
+   "topic": "ethics-and-technology",
+   "source": "ethics-and-technology",
+   "related": []
+  },
+  {
+   "id": "etht-moral-theory",
+   "label": "Ethical Theory for Technology",
+   "desc": "The normative frameworks of consequentialism, deontology, virtue ethics and care ethics applied to choices about building and using technology.",
+   "keywords": [
+    "consequentialism",
+    "deontology",
+    "virtue",
+    "care",
+    "utility",
+    "duty",
+    "normative",
+    "dilemma"
+   ],
+   "topic": "ethics-and-technology",
+   "source": "ethics-and-technology",
+   "related": [
+    "phil-ethics-value"
+   ]
+  },
+  {
+   "id": "etht-privacy-data",
+   "label": "Privacy, Surveillance and Data Ethics",
+   "desc": "The ethics of collecting, aggregating and inferring from personal data, including consent, surveillance and data ownership.",
+   "keywords": [
+    "privacy",
+    "surveillance",
+    "consent",
+    "personal data",
+    "anonymization",
+    "tracking",
+    "ownership",
+    "inference"
+   ],
+   "topic": "ethics-and-technology",
+   "source": "ethics-and-technology",
+   "related": []
+  },
+  {
+   "id": "etht-sts-society",
+   "label": "Science, Technology and Society",
+   "desc": "Historical and social study of how technologies co-evolve with institutions, labour, inequality and culture.",
+   "keywords": [
+    "society",
+    "history",
+    "labor",
+    "inequality",
+    "sociotechnical",
+    "culture",
+    "innovation",
+    "diffusion"
+   ],
+   "topic": "ethics-and-technology",
+   "source": "ethics-and-technology",
+   "related": []
+  },
+  {
+   "id": "etht-tech-governance",
+   "label": "Technology Policy and Governance",
+   "desc": "How law, regulation, standards and institutions shape technology development and deployment.",
+   "keywords": [
+    "policy",
+    "governance",
+    "regulation",
+    "standard",
+    "liability",
+    "law",
+    "institution",
+    "oversight"
+   ],
+   "topic": "ethics-and-technology",
+   "source": "ethics-and-technology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "etht-ai-research-review",
+   "concept": "etht-ai-ethics",
+   "label": "AI Ethics Literature Review",
+   "desc": "Retrieves preprints on alignment, bias and explainability through alphaXiv and checks each summarised finding against the source paper.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1280",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1282",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-fairness-audit",
+   "concept": "etht-ai-ethics",
+   "label": "Algorithmic Fairness Audit",
+   "desc": "Computes group fairness metrics such as demographic parity and equalized odds on model outputs and checks which fairness definitions conflict for the data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1280",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1283",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-model-documentation",
+   "concept": "etht-ai-ethics",
+   "label": "Model Card and Impact Documentation",
+   "desc": "Drafts a model card covering intended use, limitations and evaluation and checks every claim against reported test results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1280",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1285",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-anticipatory-assessment",
+   "concept": "etht-design-bioethics",
+   "label": "Anticipatory Technology Assessment",
+   "desc": "Builds plausible future scenarios for an emerging technology and checks risk claims for precautionary proportionality.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1286",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1287",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-bioethics-case-review",
+   "concept": "etht-design-bioethics",
+   "label": "Bioethics Case Review",
+   "desc": "Applies autonomy, beneficence, non-maleficence and justice to a biotechnology case and checks the weighing is made explicit.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1286",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1287",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-value-sensitive-design",
+   "concept": "etht-design-bioethics",
+   "label": "Value Sensitive Design",
+   "desc": "Elicits stakeholder values, translates them into design requirements and checks each requirement traces to a stated value.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1285",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1282",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-argument-mapping",
+   "concept": "etht-moral-theory",
+   "label": "Moral Argument Mapping",
+   "desc": "Reconstructs an ethical argument as premises and conclusion and checks validity and the plausibility of each premise.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1281",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1287",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-dilemma-resolution",
+   "concept": "etht-moral-theory",
+   "label": "Dilemma Resolution",
+   "desc": "Identifies the conflicting values in a design dilemma and checks the proposed resolution against reflective equilibrium with comparable cases.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1287",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1285",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-framework-analysis",
+   "concept": "etht-moral-theory",
+   "label": "Multi-Framework Case Analysis",
+   "desc": "Analyses a technology case under consequentialist, deontological and virtue frameworks and checks that each conclusion follows from that framework's stated principles.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1287",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1282",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-consent-design-review",
+   "concept": "etht-privacy-data",
+   "label": "Consent Design Review",
+   "desc": "Reviews a consent flow for informed, specific and revocable agreement and checks it for dark patterns.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1285",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1283",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-privacy-impact-assessment",
+   "concept": "etht-privacy-data",
+   "label": "Privacy Impact Assessment",
+   "desc": "Maps personal data flows in a system, rates risks to data subjects and checks mitigations against data protection principles.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1283",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1285",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-reidentification-risk",
+   "concept": "etht-privacy-data",
+   "label": "Re-identification Risk Check",
+   "desc": "Evaluates anonymization of a dataset with k-anonymity style reasoning and checks whether quasi-identifiers allow linkage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1283",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1280",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-labor-impact",
+   "concept": "etht-sts-society",
+   "label": "Labour and Automation Impact",
+   "desc": "Assesses how automation reshapes tasks, wages and skills in a sector and checks claims against cited empirical studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1282",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1280",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-scholarship-search",
+   "concept": "etht-sts-society",
+   "label": "Ethics Scholarship Search",
+   "desc": "Searches peer-reviewed technology ethics scholarship through Wiley Scholar Gateway and checks every citation resolves to the stated work.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1282",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1286",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-sociotechnical-analysis",
+   "concept": "etht-sts-society",
+   "label": "Sociotechnical System Analysis",
+   "desc": "Describes a technology as a network of artefacts, people and rules and checks the account with historical evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1282",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1287",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-regulatory-comparison",
+   "concept": "etht-tech-governance",
+   "label": "Regulatory Regime Comparison",
+   "desc": "Compares how jurisdictions regulate a technology on scope, obligations and enforcement and checks each entry against the primary legal text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1284",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1282",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-risk-tiering",
+   "concept": "etht-tech-governance",
+   "label": "Risk-Based Governance Tiering",
+   "desc": "Classifies applications into risk tiers with matching oversight duties and checks the classification against stated criteria.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1284",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1280",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-stakeholder-analysis",
+   "concept": "etht-tech-governance",
+   "label": "Stakeholder and Power Analysis",
+   "desc": "Identifies affected parties, their interests and influence over a technology decision and checks for omitted or unheard groups.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1282",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1285",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1280",
+   "name": "AI Ethics Auditor",
+   "legacy_key": "etht-ai",
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey1281",
+   "name": "Ethics Argument Reviewer",
+   "legacy_key": "etht-critic",
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1282",
+   "name": "Science and Technology Studies Scholar",
+   "legacy_key": "etht-sts",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1283",
+   "name": "Privacy and Data Ethics Analyst",
+   "legacy_key": "etht-privacy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1284",
+   "name": "Technology Policy Analyst",
+   "legacy_key": "etht-policy",
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1285",
+   "name": "Value Sensitive Design Practitioner",
+   "legacy_key": "etht-design",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1286",
+   "name": "Bioethics Analyst",
+   "legacy_key": "etht-bio",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1287",
+   "name": "Moral Theory Analyst",
+   "legacy_key": "etht-theorist",
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1280",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "ethics-and-technology",
+   "score": 0.1242,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1281",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "ethics-and-technology",
+   "score": 0.122,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1281",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "ethics-and-technology",
+   "score": 0.289,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1286",
+    "skill": "etht-bioethics-case-review"
+   }
+  },
+  {
+   "agent": "Maxey1282",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "ethics-and-technology",
+   "score": 0.3076,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1284",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "ethics-and-technology",
+   "score": 0.1242,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1280",
+    "skill": "etht-model-documentation"
+   }
+  },
+  {
+   "agent": "Maxey1284",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "ethics-and-technology",
+   "score": 0.289,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1286",
+    "skill": "etht-anticipatory-assessment"
+   }
+  },
+  {
+   "agent": "Maxey1286",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "ethics-and-technology",
+   "score": 0.289,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey1287",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "ethics-and-technology",
+   "score": 0.122,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1281",
+    "skill": "etht-argument-mapping"
+   }
+  }
+ ],
+ "lexicon": {
+  "etht-theory": "consequentialism deontology virtue care duty normative dilemma moral",
+  "etht-ai": "algorithm fairness bias accountability transparency explainability alignment",
+  "etht-data": "privacy surveillance consent anonymization tracking identifier",
+  "etht-govern": "policy governance regulation standard liability law oversight",
+  "etht-society": "society history labor inequality sociotechnical culture innovation",
+  "etht-design": "responsible biotechnology robotics neurotechnology anticipatory precaution"
+ },
+ "sources": [
+  "ethics-and-technology"
+ ]
+}

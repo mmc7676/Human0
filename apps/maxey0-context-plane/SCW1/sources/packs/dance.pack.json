@@ -1,0 +1,468 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "dance",
+ "topic": {
+  "id": "dance",
+  "label": "Dance",
+  "desc": "Dance: the practice, choreography, history and analysis of movement as an art form."
+ },
+ "concepts": [
+  [
+   "dance-technique",
+   "Dance Technique",
+   "dance",
+   "Training in ballet, modern, jazz and other techniques for alignment, control and vocabulary.",
+   [
+    "technique",
+    "ballet",
+    "modern",
+    "jazz",
+    "alignment",
+    "turnout",
+    "vocabulary",
+    "class"
+   ]
+  ],
+  [
+   "dance-choreography",
+   "Choreography and Composition",
+   "dance",
+   "Creating dances through motif, phrase, structure, space, time and dynamics.",
+   [
+    "choreography",
+    "composition",
+    "motif",
+    "phrase",
+    "structure",
+    "space",
+    "dynamics",
+    "improvisation"
+   ]
+  ],
+  [
+   "dance-history",
+   "Dance History",
+   "dance",
+   "Development of court, theatrical, modern and contemporary dance and its key artists.",
+   [
+    "history",
+    "court",
+    "romantic",
+    "modern dance",
+    "contemporary",
+    "repertory",
+    "choreographer",
+    "era"
+   ]
+  ],
+  [
+   "dance-notation",
+   "Notation and Movement Analysis",
+   "dance",
+   "Recording and analysing movement through Labanotation and Laban Movement Analysis.",
+   [
+    "notation",
+    "labanotation",
+    "laban",
+    "effort",
+    "shape",
+    "score",
+    "movement analysis",
+    "reconstruction"
+   ]
+  ],
+  [
+   "dance-kinesiology",
+   "Dance Science and Kinesiology",
+   "dance",
+   "Anatomy, biomechanics, conditioning and injury prevention for dancers.",
+   [
+    "kinesiology",
+    "anatomy",
+    "biomechanics",
+    "conditioning",
+    "injury",
+    "prevention",
+    "flexibility",
+    "strength"
+   ]
+  ],
+  [
+   "dance-culture-performance",
+   "Dance, Culture and Performance",
+   "dance",
+   "Dance as social and cultural practice, criticism and production for the stage.",
+   [
+    "culture",
+    "ritual",
+    "social dance",
+    "criticism",
+    "performance",
+    "production",
+    "lighting",
+    "costume"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "dance-class-plan",
+   "dance-technique",
+   "Technique Class Planning",
+   "Plans a technique class from warm-up to combinations and checks progression and safe loading.",
+   "procedural",
+   [
+    [
+     "dance-technique-coach",
+     "primary"
+    ],
+    [
+     "dance-kinesiologist",
+     "checker"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ],
+    [
+     "dance-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-technique-correction",
+   "dance-technique",
+   "Technique Correction",
+   "Identifies alignment and execution faults in a described movement and pairs each with a correction cue.",
+   "semantic",
+   [
+    [
+     "dance-technique-coach",
+     "primary"
+    ],
+    [
+     "dance-kinesiologist",
+     "checker"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ],
+    [
+     "dance-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-phrase-build",
+   "dance-choreography",
+   "Phrase Construction",
+   "Builds a movement phrase from a motif with stated counts and checks it against the intended dynamics and spatial pattern.",
+   "procedural",
+   [
+    [
+     "dance-choreographer",
+     "primary"
+    ],
+    [
+     "dance-notator",
+     "checker"
+    ],
+    [
+     "dance-technique-coach",
+     "support"
+    ],
+    [
+     "dance-critic",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-dance-structure",
+   "dance-choreography",
+   "Dance Structure Design",
+   "Designs the structure of a piece in sections and checks transitions, contrast and timing against the music.",
+   "procedural",
+   [
+    [
+     "dance-choreographer",
+     "primary"
+    ],
+    [
+     "dance-critic",
+     "checker"
+    ],
+    [
+     "dance-producer",
+     "support"
+    ],
+    [
+     "dance-technique-coach",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-history-survey",
+   "dance-history",
+   "Historical Survey",
+   "Summarises a period of dance history and checks dates, works and choreographers against reference sources.",
+   "semantic",
+   [
+    [
+     "dance-historian",
+     "primary"
+    ],
+    [
+     "dance-critic",
+     "checker"
+    ],
+    [
+     "dance-ethnographer",
+     "support"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-work-analysis",
+   "dance-history",
+   "Repertory Work Analysis",
+   "Analyses a historical dance work's context and choreography and ties each claim to sources or recordings.",
+   "semantic",
+   [
+    [
+     "dance-historian",
+     "primary"
+    ],
+    [
+     "dance-critic",
+     "checker"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ],
+    [
+     "dance-notator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-score-transcription",
+   "dance-notation",
+   "Notation Transcription",
+   "Transcribes a described phrase into notation symbols and checks counts and body parts against the source.",
+   "procedural",
+   [
+    [
+     "dance-notator",
+     "primary"
+    ],
+    [
+     "dance-choreographer",
+     "checker"
+    ],
+    [
+     "dance-historian",
+     "support"
+    ],
+    [
+     "dance-technique-coach",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-effort-analysis",
+   "dance-notation",
+   "Effort and Shape Analysis",
+   "Describes movement in effort and shape terms and checks the coding against a recording.",
+   "semantic",
+   [
+    [
+     "dance-notator",
+     "primary"
+    ],
+    [
+     "dance-technique-coach",
+     "checker"
+    ],
+    [
+     "dance-critic",
+     "support"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-conditioning-plan",
+   "dance-kinesiology",
+   "Conditioning Plan",
+   "Designs a conditioning program for a dancer's goals and checks load and rest against injury prevention guidance.",
+   "procedural",
+   [
+    [
+     "dance-kinesiologist",
+     "primary"
+    ],
+    [
+     "dance-technique-coach",
+     "checker"
+    ],
+    [
+     "dance-producer",
+     "support"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-injury-review",
+   "dance-kinesiology",
+   "Injury Risk Review",
+   "Reviews a movement or schedule for injury risk factors and cites the evidence behind each flag.",
+   "semantic",
+   [
+    [
+     "dance-kinesiologist",
+     "primary"
+    ],
+    [
+     "dance-technique-coach",
+     "checker"
+    ],
+    [
+     "dance-historian",
+     "support"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-performance-review",
+   "dance-culture-performance",
+   "Performance Criticism",
+   "Writes a review of a performance describing choreography, performers and production with specific moments.",
+   "semantic",
+   [
+    [
+     "dance-critic",
+     "primary"
+    ],
+    [
+     "dance-historian",
+     "checker"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ],
+    [
+     "dance-producer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-ethnographic-study",
+   "dance-culture-performance",
+   "Dance Ethnography",
+   "Plans an ethnographic study of a dance community with consent and documentation methods.",
+   "procedural",
+   [
+    [
+     "dance-ethnographer",
+     "primary"
+    ],
+    [
+     "dance-historian",
+     "checker"
+    ],
+    [
+     "dance-critic",
+     "support"
+    ],
+    [
+     "dance-choreographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "dance-production-plan",
+   "dance-culture-performance",
+   "Production Plan",
+   "Plans lighting, costume and stage cues for a piece and checks cue timing against the score.",
+   "procedural",
+   [
+    [
+     "dance-producer",
+     "primary"
+    ],
+    [
+     "dance-choreographer",
+     "checker"
+    ],
+    [
+     "dance-critic",
+     "support"
+    ],
+    [
+     "dance-technique-coach",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "dance-choreographer": "Choreographer Agent",
+  "dance-technique-coach": "Technique Coach Agent",
+  "dance-historian": "Dance Historian Agent",
+  "dance-notator": "Dance Notation Agent",
+  "dance-kinesiologist": "Dance Kinesiology Agent",
+  "dance-critic": "Dance Critic Agent",
+  "dance-ethnographer": "Dance Ethnographer Agent",
+  "dance-producer": "Production and Lighting Agent"
+ },
+ "mcp": [],
+ "lexicon": {
+  "dance-technique": "technique ballet modern jazz alignment turnout vocabulary class",
+  "dance-choreo": "choreography composition motif phrase structure space dynamics improvisation",
+  "dance-history": "history court romantic dance contemporary repertory choreographer era",
+  "dance-notation": "notation labanotation laban effort shape score movement analysis reconstruction",
+  "dance-science": "kinesiology anatomy biomechanics conditioning injury prevention flexibility strength",
+  "dance-culture": "culture ritual social criticism performance production lighting costume"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "generated"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

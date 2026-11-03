@@ -1,0 +1,584 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "bioengineering",
+ "topic": {
+  "id": "bioengineering",
+  "label": "Bioengineering",
+  "desc": "Bioengineering: applying engineering design and quantitative analysis to living systems, from molecules to tissues and devices."
+ },
+ "concepts": [
+  [
+   "bioe-synthetic-biology",
+   "Synthetic Biology",
+   "bioengineering",
+   "Design and construction of genetic circuits, pathways and organisms with standardized biological parts.",
+   [
+    "synthetic",
+    "genetic circuit",
+    "plasmid",
+    "promoter",
+    "pathway",
+    "crispr",
+    "gene",
+    "part"
+   ]
+  ],
+  [
+   "bioe-biomolecular-engineering",
+   "Biomolecular Engineering",
+   "bioengineering",
+   "Protein design, directed evolution and molecular binding for therapeutics and tools.",
+   [
+    "protein",
+    "enzyme",
+    "binding",
+    "structure",
+    "directed evolution",
+    "antibody",
+    "affinity",
+    "folding"
+   ]
+  ],
+  [
+   "bioe-tissue-engineering",
+   "Tissue Engineering and Biomaterials",
+   "bioengineering",
+   "Scaffolds, cells and biomaterials engineered to repair or replace tissue.",
+   [
+    "tissue",
+    "scaffold",
+    "biomaterial",
+    "stem cell",
+    "hydrogel",
+    "biocompatibility",
+    "regeneration",
+    "degradation"
+   ]
+  ],
+  [
+   "bioe-systems-biology",
+   "Systems and Computational Biology",
+   "bioengineering",
+   "Quantitative models of gene networks, signaling and metabolism.",
+   [
+    "systems",
+    "network",
+    "kinetics",
+    "ode",
+    "signaling",
+    "metabolism",
+    "simulation",
+    "flux"
+   ]
+  ],
+  [
+   "bioe-biomedical-devices",
+   "Biomedical Devices and Instrumentation",
+   "bioengineering",
+   "Sensors, diagnostics and implantable devices that measure or act on the body.",
+   [
+    "device",
+    "sensor",
+    "diagnostic",
+    "implant",
+    "biosensor",
+    "signal",
+    "instrument",
+    "microfluidic"
+   ]
+  ],
+  [
+   "bioe-bioimaging",
+   "Bioimaging and Measurement",
+   "bioengineering",
+   "Microscopy and medical imaging methods and the quantitative analysis of images.",
+   [
+    "imaging",
+    "microscopy",
+    "fluorescence",
+    "segmentation",
+    "resolution",
+    "contrast",
+    "image analysis",
+    "quantification"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "bioe-circuit-design",
+   "bioe-synthetic-biology",
+   "Genetic Circuit Designer",
+   "Designs genetic circuits from promoters and regulators, checked by simulated expression and logic truth tables.",
+   "procedural",
+   [
+    [
+     "bioe-synbio",
+     "primary"
+    ],
+    [
+     "bioe-systems",
+     "checker"
+    ],
+    [
+     "bioe-molecular",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-crispr-guide",
+   "bioe-synthetic-biology",
+   "CRISPR Guide Planner",
+   "Plans CRISPR guide sequences for a target gene, checked for on-target score and off-target matches.",
+   "procedural",
+   [
+    [
+     "bioe-synbio",
+     "primary"
+    ],
+    [
+     "bioe-lit",
+     "checker"
+    ],
+    [
+     "bioe-molecular",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-pathway-engineering",
+   "bioe-synthetic-biology",
+   "Metabolic Pathway Engineering",
+   "Proposes pathway edits to raise product titer, checked by flux balance analysis.",
+   "semantic",
+   [
+    [
+     "bioe-synbio",
+     "primary"
+    ],
+    [
+     "bioe-systems",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-structure-prediction",
+   "bioe-biomolecular-engineering",
+   "Protein Structure Prediction",
+   "Predicts protein and complex structures, checked by confidence scores and known homolog comparison.",
+   "procedural",
+   [
+    [
+     "bioe-molecular",
+     "primary"
+    ],
+    [
+     "bioe-lit",
+     "checker"
+    ],
+    [
+     "bioe-systems",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-binding-affinity",
+   "bioe-biomolecular-engineering",
+   "Binding Affinity Analysis",
+   "Fits binding curves to estimate dissociation constants, checked by fit residuals and replicate agreement.",
+   "procedural",
+   [
+    [
+     "bioe-molecular",
+     "primary"
+    ],
+    [
+     "bioe-systems",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-evolution-campaign",
+   "bioe-biomolecular-engineering",
+   "Directed Evolution Campaign Planner",
+   "Plans library design and screening rounds for enzyme improvement, checked against throughput limits.",
+   "semantic",
+   [
+    [
+     "bioe-molecular",
+     "primary"
+    ],
+    [
+     "bioe-synbio",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-scaffold-design",
+   "bioe-tissue-engineering",
+   "Scaffold Design",
+   "Specifies scaffold porosity, stiffness and degradation for a target tissue, checked against literature property ranges.",
+   "semantic",
+   [
+    [
+     "bioe-tissue",
+     "primary"
+    ],
+    [
+     "bioe-lit",
+     "checker"
+    ],
+    [
+     "bioe-device",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-biocompatibility",
+   "bioe-tissue-engineering",
+   "Biocompatibility Assessment",
+   "Plans biocompatibility testing for a biomaterial, checked against ISO 10993 test categories.",
+   "procedural",
+   [
+    [
+     "bioe-regulatory",
+     "primary"
+    ],
+    [
+     "bioe-tissue",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-hydrogel-kinetics",
+   "bioe-tissue-engineering",
+   "Hydrogel Degradation Modeling",
+   "Models hydrogel swelling and degradation over time, checked by mass balance and fitted data.",
+   "procedural",
+   [
+    [
+     "bioe-tissue",
+     "primary"
+    ],
+    [
+     "bioe-systems",
+     "checker"
+    ],
+    [
+     "bioe-molecular",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-ode-network",
+   "bioe-systems-biology",
+   "Gene Network ODE Model",
+   "Builds and solves ODE models of gene regulatory networks, checked by steady-state and parameter sensitivity analysis.",
+   "procedural",
+   [
+    [
+     "bioe-systems",
+     "primary"
+    ],
+    [
+     "bioe-molecular",
+     "checker"
+    ],
+    [
+     "bioe-synbio",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-flux-balance",
+   "bioe-systems-biology",
+   "Flux Balance Analysis",
+   "Computes optimal metabolic flux distributions, checked by stoichiometric mass balance.",
+   "procedural",
+   [
+    [
+     "bioe-systems",
+     "primary"
+    ],
+    [
+     "bioe-synbio",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-signaling-review",
+   "bioe-systems-biology",
+   "Signaling Pathway Review",
+   "Summarizes a signaling pathway and its quantitative parameters, checked against cited studies.",
+   "semantic",
+   [
+    [
+     "bioe-systems",
+     "primary"
+    ],
+    [
+     "bioe-lit",
+     "checker"
+    ],
+    [
+     "bioe-molecular",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-biosensor-design",
+   "bioe-biomedical-devices",
+   "Biosensor Design",
+   "Designs a biosensor with sensitivity and detection limit targets, checked by calibration curve analysis.",
+   "procedural",
+   [
+    [
+     "bioe-device",
+     "primary"
+    ],
+    [
+     "bioe-imaging",
+     "checker"
+    ],
+    [
+     "bioe-molecular",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-microfluidic-chip",
+   "bioe-biomedical-devices",
+   "Microfluidic Chip Designer",
+   "Designs microfluidic channels for flow and mixing, checked by Reynolds number and pressure drop calculation.",
+   "procedural",
+   [
+    [
+     "bioe-device",
+     "primary"
+    ],
+    [
+     "bioe-systems",
+     "checker"
+    ],
+    [
+     "bioe-tissue",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-device-pathway",
+   "bioe-biomedical-devices",
+   "Device Regulatory Pathway",
+   "Identifies FDA device class and submission pathway, checked against predicate and classification rules.",
+   "semantic",
+   [
+    [
+     "bioe-regulatory",
+     "primary"
+    ],
+    [
+     "bioe-device",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-cell-segmentation",
+   "bioe-bioimaging",
+   "Cell Image Segmentation",
+   "Segments cells in microscopy images and counts them, checked against manually annotated ground truth.",
+   "procedural",
+   [
+    [
+     "bioe-imaging",
+     "primary"
+    ],
+    [
+     "bioe-systems",
+     "checker"
+    ],
+    [
+     "bioe-tissue",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-fluorescence-quant",
+   "bioe-bioimaging",
+   "Fluorescence Quantification",
+   "Quantifies fluorescence intensity with background correction, checked by control normalization.",
+   "procedural",
+   [
+    [
+     "bioe-imaging",
+     "primary"
+    ],
+    [
+     "bioe-molecular",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "bioe-modality-selection",
+   "bioe-bioimaging",
+   "Imaging Modality Selection",
+   "Selects an imaging modality for a biological question, checked against resolution and depth requirements.",
+   "semantic",
+   [
+    [
+     "bioe-imaging",
+     "primary"
+    ],
+    [
+     "bioe-device",
+     "checker"
+    ],
+    [
+     "bioe-lit",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "bioe-synbio": "Synthetic Biology Designer",
+  "bioe-molecular": "Molecular Engineer",
+  "bioe-tissue": "Tissue Engineer",
+  "bioe-device": "Medical Device Engineer",
+  "bioe-systems": "Systems Biology Modeler",
+  "bioe-imaging": "Bioimaging Analyst",
+  "bioe-regulatory": "Biosafety and Regulatory Reviewer",
+  "bioe-lit": "Literature Evidence Checker"
+ },
+ "mcp": [
+  [
+   "PubMed",
+   "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "Search biomedical literature from PubMed",
+   [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "bioRxiv",
+   "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "Access bioRxiv and medRxiv preprint data",
+   [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ],
+  [
+   "Boltz API",
+   "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "Predict molecular structures and binding interactions, screen libraries, and design binders with the Boltz API.",
+   [
+    "boltz_estimate_protein_screen",
+    "boltz_estimate_small_molecule_screen",
+    "boltz_estimate_structure_and_binding",
+    "boltz_get_guidance",
+    "boltz_get_job_status",
+    "boltz_get_screen_results",
+    "boltz_get_structure_and_binding_prediction",
+    "boltz_start_protein_screen"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ]
+ ],
+ "lexicon": {
+  "bioe-synthetic": "synthetic genetic circuit plasmid promoter pathway crispr gene part",
+  "bioe-biomolecular": "protein enzyme binding structure directed evolution antibody affinity folding",
+  "bioe-tissue": "tissue scaffold biomaterial stem cell hydrogel biocompatibility regeneration degradation",
+  "bioe-systems": "systems network kinetics ode signaling metabolism simulation flux",
+  "bioe-biomedical": "device sensor diagnostic implant biosensor signal instrument microfluidic",
+  "bioe-bioimaging": "imaging microscopy fluorescence segmentation resolution contrast image analysis quantification"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {},
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}

@@ -1,0 +1,686 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "disciplines",
+ "topic": {
+  "id": "history",
+  "label": "History",
+  "desc": "History: the study of the human past through sources, chronology, historiography and comparative analysis across regions and periods."
+ },
+ "concepts": [
+  {
+   "id": "hist-ancient-medieval",
+   "label": "Ancient and Medieval History",
+   "desc": "Societies from the earliest states through the medieval world, studied through texts, inscriptions, coins and archaeology.",
+   "keywords": [
+    "ancient",
+    "medieval",
+    "antiquity",
+    "empire",
+    "inscription",
+    "manuscript",
+    "feudal",
+    "archaeology"
+   ],
+   "topic": "history",
+   "source": "history",
+   "related": []
+  },
+  {
+   "id": "hist-chronology-periodization",
+   "label": "Chronology and Periodization",
+   "desc": "Ordering events in time, reconciling calendars and dating systems, and justifying the boundaries of historical periods.",
+   "keywords": [
+    "chronology",
+    "timeline",
+    "calendar",
+    "dating",
+    "periodization",
+    "era",
+    "causation",
+    "continuity"
+   ],
+   "topic": "history",
+   "source": "history",
+   "related": []
+  },
+  {
+   "id": "hist-global-social-economic",
+   "label": "Global, Social and Economic History",
+   "desc": "History across regions and from below: trade, migration, labour, gender, class and everyday life, studied comparatively.",
+   "keywords": [
+    "global",
+    "comparative",
+    "social",
+    "economic",
+    "trade",
+    "migration",
+    "labor",
+    "gender",
+    "class"
+   ],
+   "topic": "history",
+   "source": "history",
+   "related": []
+  },
+  {
+   "id": "hist-historical-method",
+   "label": "Historical Method and Sources",
+   "desc": "How historians locate, date, authenticate and interpret primary and secondary sources, and weigh their reliability and bias.",
+   "keywords": [
+    "primary source",
+    "secondary source",
+    "archive",
+    "provenance",
+    "authentication",
+    "bias",
+    "corroboration",
+    "citation"
+   ],
+   "topic": "history",
+   "source": "history",
+   "related": []
+  },
+  {
+   "id": "hist-historiography",
+   "label": "Historiography",
+   "desc": "The history of historical writing: schools of interpretation, debates and how accounts of the same past change over time.",
+   "keywords": [
+    "historiography",
+    "interpretation",
+    "debate",
+    "annales",
+    "marxist",
+    "revisionism",
+    "narrative",
+    "historian"
+   ],
+   "topic": "history",
+   "source": "history",
+   "related": []
+  },
+  {
+   "id": "hist-modern-contemporary",
+   "label": "Modern and Contemporary History",
+   "desc": "From the early modern era through revolutions, industrialisation, world wars, decolonisation and the recent past.",
+   "keywords": [
+    "modern",
+    "revolution",
+    "industrialization",
+    "nationalism",
+    "war",
+    "decolonization",
+    "cold war",
+    "contemporary"
+   ],
+   "topic": "history",
+   "source": "history",
+   "related": [
+    "chin-modern-history",
+    "euro-modern-history"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "hist-empire-comparison",
+   "concept": "hist-ancient-medieval",
+   "label": "Ancient Empire Comparison",
+   "desc": "Compares administration, economy and decline across ancient empires, checked by sourcing each comparative claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1339",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1340",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1341",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-feudal-structure",
+   "concept": "hist-ancient-medieval",
+   "label": "Feudal Structure Analyst",
+   "desc": "Explains landholding, lordship and obligation in medieval societies, checked by distinguishing regional variants with sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1339",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1342",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1341",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-manuscript-reading",
+   "concept": "hist-ancient-medieval",
+   "label": "Manuscript and Inscription Reader",
+   "desc": "Interprets the content and context of ancient inscriptions and medieval manuscripts, checked against published editions and translations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1339",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1343",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1344",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-calendar-converter",
+   "concept": "hist-chronology-periodization",
+   "label": "Calendar Converter",
+   "desc": "Converts dates between Julian, Gregorian, regnal and other calendars, checked by recomputing each conversion with a second method.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1344",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1339",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-causation-analysis",
+   "concept": "hist-chronology-periodization",
+   "label": "Causation and Continuity Analysis",
+   "desc": "Distinguishes long-term causes, triggers and continuities behind an event, checked by tying each causal claim to dated evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1340",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1344",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1341",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1346",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-timeline-builder",
+   "concept": "hist-chronology-periodization",
+   "label": "Timeline Builder",
+   "desc": "Builds a dated sequence of events with sources for each date, checked for internal consistency and calendar conversion errors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1344",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1343",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-comparative-history",
+   "concept": "hist-global-social-economic",
+   "label": "Comparative History Framework",
+   "desc": "Compares a phenomenon across two or more societies with explicit criteria, checked by applying each criterion to every case.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1340",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1342",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1346",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-social-history-data",
+   "concept": "hist-global-social-economic",
+   "label": "Social History Data Analysis",
+   "desc": "Analyses census, parish and tax records to describe class, labor and household patterns, checked by recomputing totals from the records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1341",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1343",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-trade-network",
+   "concept": "hist-global-social-economic",
+   "label": "Trade Network Reconstruction",
+   "desc": "Reconstructs historical trade routes and exchanges of goods and people, checked by sourcing each route and commodity.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1340",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1341",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-archive-search",
+   "concept": "hist-historical-method",
+   "label": "Archive Search Planner",
+   "desc": "Plans where and how to find primary sources in archives and catalogs, checked by confirming every listed collection and finding aid exists.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1343",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1344",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-citation-builder",
+   "concept": "hist-historical-method",
+   "label": "Historical Citation Builder",
+   "desc": "Formats footnotes and bibliographies for archival and published sources, checked against the citation style's rules for each source type.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1345",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1343",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1342",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-source-criticism",
+   "concept": "hist-historical-method",
+   "label": "Source Criticism",
+   "desc": "Assesses a document's authorship, date, purpose and bias, and is checked by corroborating each claim against at least one independent source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1343",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1342",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-debate-summary",
+   "concept": "hist-historiography",
+   "label": "Historiographical Debate Summary",
+   "desc": "Summarises a scholarly debate with each position, its evidence and its main proponents, checked by confirming every attributed claim in the cited work.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1342",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1343",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1346",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-revision-tracker",
+   "concept": "hist-historiography",
+   "label": "Revisionism Tracker",
+   "desc": "Traces how the interpretation of an event changed across generations of historians, checked by dating each interpretation to its publication.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1342",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1344",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1340",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-school-mapper",
+   "concept": "hist-historiography",
+   "label": "Interpretive School Mapper",
+   "desc": "Places a historical work within schools such as Annales, Marxist or cultural history, checked by citing the passages that show the method.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1342",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1341",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-oral-history",
+   "concept": "hist-modern-contemporary",
+   "label": "Oral History Protocol",
+   "desc": "Designs and documents oral history interviews with consent and transcription standards, checked against oral history ethics guidelines.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1346",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1341",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-revolution-analysis",
+   "concept": "hist-modern-contemporary",
+   "label": "Revolution Analysis",
+   "desc": "Analyses the causes, phases and outcomes of political revolutions, checked by dating each phase and citing sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1346",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1344",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1342",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  },
+  {
+   "id": "hist-war-history",
+   "concept": "hist-modern-contemporary",
+   "label": "War and Conflict History",
+   "desc": "Reconstructs the origins, conduct and consequences of wars, checked against documented casualties, treaties and dates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1346",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1345",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1340",
+     "role": "support"
+    }
+   ],
+   "source": "history"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1339",
+   "name": "Ancient and Medieval Historian",
+   "legacy_key": "hist-ancient",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1340",
+   "name": "Global and Comparative Historian",
+   "legacy_key": "hist-global",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1341",
+   "name": "Social and Economic Historian",
+   "legacy_key": "hist-social",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1342",
+   "name": "Historiography Agent",
+   "legacy_key": "hist-historiographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1343",
+   "name": "Archival Source Agent",
+   "legacy_key": "hist-archivist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1344",
+   "name": "Chronology Agent",
+   "legacy_key": "hist-chronologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1345",
+   "name": "Historical Methods Checker",
+   "legacy_key": "hist-method",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1346",
+   "name": "Modern and Contemporary Historian",
+   "legacy_key": "hist-modernist",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "hist-sources": "archive archival provenance authentication corroboration citation manuscript inscription",
+  "hist-interpretation": "historiography interpretation debate annales marxist revisionism narrative",
+  "hist-time": "chronology timeline calendar dating periodization era causation continuity",
+  "hist-periods": "ancient medieval antiquity empire feudal modern revolution industrialization decolonization contemporary",
+  "hist-society": "global comparative social economic trade migration labor gender class"
+ },
+ "sources": [
+  "history"
+ ]
+}

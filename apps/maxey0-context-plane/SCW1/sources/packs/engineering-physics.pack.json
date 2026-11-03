@@ -1,0 +1,544 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "engineering-physics",
+ "topic": {
+  "id": "engineering-physics",
+  "label": "Engineering Physics",
+  "desc": "Engineering Physics: applying fundamental physics and advanced mathematics to design devices, instruments and technologies."
+ },
+ "concepts": [
+  [
+   "engp-mathematical-methods",
+   "Mathematical Methods for Engineering Physics",
+   "engineering-physics",
+   "Differential equations, linear algebra, vector calculus and transform methods used to model physical systems.",
+   [
+    "differential equation",
+    "linear algebra",
+    "vector calculus",
+    "fourier",
+    "eigenvalue",
+    "boundary value",
+    "tensor"
+   ]
+  ],
+  [
+   "engp-quantum-engineering",
+   "Quantum Mechanics and Quantum Engineering",
+   "engineering-physics",
+   "Quantum theory applied to devices: tunneling, quantized states, qubits and quantum sensing.",
+   [
+    "quantum",
+    "wavefunction",
+    "tunneling",
+    "qubit",
+    "band structure",
+    "schrodinger",
+    "coherence"
+   ]
+  ],
+  [
+   "engp-photonics-optics",
+   "Photonics and Optics",
+   "engineering-physics",
+   "Light generation, guiding, modulation and detection, including lasers, waveguides and optical systems.",
+   [
+    "photonics",
+    "optics",
+    "laser",
+    "waveguide",
+    "fiber",
+    "interference",
+    "diffraction",
+    "detector"
+   ]
+  ],
+  [
+   "engp-condensed-matter-materials",
+   "Condensed Matter and Materials Physics",
+   "engineering-physics",
+   "Electronic, thermal and mechanical properties of solids, semiconductors and nanostructures.",
+   [
+    "solid state",
+    "crystal",
+    "semiconductor",
+    "nanostructure",
+    "phonon",
+    "superconductivity",
+    "thin film"
+   ]
+  ],
+  [
+   "engp-instrumentation-measurement",
+   "Instrumentation and Measurement",
+   "engineering-physics",
+   "Sensors, signal conditioning, data acquisition and uncertainty analysis for physical experiments.",
+   [
+    "instrumentation",
+    "sensor",
+    "measurement",
+    "uncertainty",
+    "calibration",
+    "data acquisition",
+    "noise"
+   ]
+  ],
+  [
+   "engp-nuclear-plasma-computation",
+   "Nuclear, Plasma and Computational Physics",
+   "engineering-physics",
+   "Radiation, nuclear reactions and plasmas, and the numerical simulation methods used to model them.",
+   [
+    "nuclear",
+    "radiation",
+    "plasma",
+    "fusion",
+    "simulation",
+    "finite element",
+    "monte carlo",
+    "numerical"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "engp-ode-pde-solver",
+   "engp-mathematical-methods",
+   "ODE and PDE Solver",
+   "Solves ordinary and partial differential equations analytically or symbolically and checks solutions by substitution.",
+   "procedural",
+   [
+    [
+     "engp-math",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-sim",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-eigen-analyzer",
+   "engp-mathematical-methods",
+   "Eigenvalue Analyzer",
+   "Computes eigenvalues and modes of physical operators and checks orthogonality and limiting cases.",
+   "procedural",
+   [
+    [
+     "engp-math",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-quantum",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-dimensional-checker",
+   "engp-mathematical-methods",
+   "Dimensional Analysis Checker",
+   "Checks equations for dimensional consistency and derives scaling laws with dimensionless groups.",
+   "procedural",
+   [
+    [
+     "engp-reviewer",
+     "primary"
+    ],
+    [
+     "engp-math",
+     "checker"
+    ],
+    [
+     "engp-instrument",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-tunneling-calculator",
+   "engp-quantum-engineering",
+   "Tunneling Calculator",
+   "Computes transmission through potential barriers and checks results against WKB approximations.",
+   "procedural",
+   [
+    [
+     "engp-quantum",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-math",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-qubit-designer",
+   "engp-quantum-engineering",
+   "Qubit Device Designer",
+   "Models qubit energy levels and coherence for a device design and checks parameters against simulation.",
+   "semantic",
+   [
+    [
+     "engp-quantum",
+     "primary"
+    ],
+    [
+     "engp-sim",
+     "checker"
+    ],
+    [
+     "engp-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-optical-system-designer",
+   "engp-photonics-optics",
+   "Optical System Designer",
+   "Traces rays and designs lens systems and checks aberrations and resolution against specifications.",
+   "procedural",
+   [
+    [
+     "engp-photonics",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-instrument",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-waveguide-modeler",
+   "engp-photonics-optics",
+   "Waveguide Mode Modeler",
+   "Computes guided modes of fibers and waveguides and checks cutoff conditions and dispersion.",
+   "procedural",
+   [
+    [
+     "engp-photonics",
+     "primary"
+    ],
+    [
+     "engp-sim",
+     "checker"
+    ],
+    [
+     "engp-math",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-laser-analyzer",
+   "engp-photonics-optics",
+   "Laser Cavity Analyzer",
+   "Analyses laser gain, cavity modes and stability and checks threshold and beam parameters.",
+   "semantic",
+   [
+    [
+     "engp-photonics",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-quantum",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-band-gap-estimator",
+   "engp-condensed-matter-materials",
+   "Band Gap Estimator",
+   "Estimates electronic band structure and band gaps of materials and checks against measured values.",
+   "semantic",
+   [
+    [
+     "engp-materials",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-quantum",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-thin-film-analyzer",
+   "engp-condensed-matter-materials",
+   "Thin Film Analyzer",
+   "Interprets thin film characterization data and checks thickness and composition across methods.",
+   "procedural",
+   [
+    [
+     "engp-materials",
+     "primary"
+    ],
+    [
+     "engp-instrument",
+     "checker"
+    ],
+    [
+     "engp-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-uncertainty-propagator",
+   "engp-instrumentation-measurement",
+   "Measurement Uncertainty Propagator",
+   "Propagates measurement uncertainties through derived quantities and checks results with Monte Carlo sampling.",
+   "procedural",
+   [
+    [
+     "engp-instrument",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-sim",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-sensor-designer",
+   "engp-instrumentation-measurement",
+   "Sensor System Designer",
+   "Selects sensors and conditioning circuits for a measurement and checks resolution, bandwidth and noise floor.",
+   "procedural",
+   [
+    [
+     "engp-instrument",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-photonics",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-calibration-planner",
+   "engp-instrumentation-measurement",
+   "Calibration Planner",
+   "Plans calibration against reference standards and checks traceability and drift.",
+   "procedural",
+   [
+    [
+     "engp-instrument",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-materials",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-radiation-shield-designer",
+   "engp-nuclear-plasma-computation",
+   "Radiation Shielding Designer",
+   "Computes attenuation and dose through shielding and checks against regulatory limits.",
+   "procedural",
+   [
+    [
+     "engp-nuclear",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-sim",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-plasma-parameter-calculator",
+   "engp-nuclear-plasma-computation",
+   "Plasma Parameter Calculator",
+   "Computes Debye length, plasma frequency and confinement figures and checks regime assumptions.",
+   "procedural",
+   [
+    [
+     "engp-nuclear",
+     "primary"
+    ],
+    [
+     "engp-math",
+     "checker"
+    ],
+    [
+     "engp-reviewer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "engp-fem-simulator",
+   "engp-nuclear-plasma-computation",
+   "Finite Element Simulator",
+   "Builds finite element and Monte Carlo simulations of physical fields and checks mesh convergence.",
+   "procedural",
+   [
+    [
+     "engp-sim",
+     "primary"
+    ],
+    [
+     "engp-reviewer",
+     "checker"
+    ],
+    [
+     "engp-math",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "engp-math": "Applied Mathematics Analyst",
+  "engp-quantum": "Quantum Device Engineer",
+  "engp-photonics": "Photonics Engineer",
+  "engp-materials": "Condensed Matter Materials Engineer",
+  "engp-instrument": "Instrumentation Engineer",
+  "engp-nuclear": "Nuclear and Plasma Engineer",
+  "engp-sim": "Computational Physics Modeler",
+  "engp-reviewer": "Physics Verification Reviewer"
+ },
+ "mcp": [
+  [
+   "Wolfram",
+   "de1d1dc7-ec10-459d-b511-797982834b43",
+   "Inject precise, real-time computation and knowledge",
+   [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)"
+  ],
+  [
+   "sympy-mcp",
+   null,
+   "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "web-listed",
+   "https://github.com/sdiehl/sympy-mcp"
+  ],
+  [
+   "quantum-simulator-mcp",
+   null,
+   "A Docker image providing a quantum circuit simulator that implements the Model Context Protocol",
+   [
+    "run_circuit",
+    "list_noise_models",
+    "list_result_types",
+    "get_circuit_stats",
+    "create_test_histogram"
+   ],
+   "web-listed",
+   "https://github.com/YuChenSSR/quantum-simulator-mcp"
+  ],
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)"
+  ]
+ ],
+ "lexicon": {
+  "engp-math": "differential linear vector fourier eigenvalue tensor dimensional",
+  "engp-qm": "quantum wavefunction tunneling qubit schrodinger coherence",
+  "engp-opt": "photonics optics laser waveguide fiber interference diffraction",
+  "engp-mat": "solid crystal semiconductor nanostructure phonon superconductivity film",
+  "engp-meas": "instrumentation sensor measurement uncertainty calibration acquisition",
+  "engp-nuc": "nuclear radiation plasma fusion simulation finite"
+ },
+ "provenance": {
+  "generated_by": "Claude in the Human0 session of 2026-10-25; user supplied the topic name only",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-10-22 (rows reused from earlier verified Human0 packs; not re-checked in this session)",
+  "mcp_notes": {
+   "all": "rows reused verbatim from the verified Human0 MCP menu; working order not re-checked in this session"
+  },
+  "limitations": [
+   "Generated levels are hypotheses for routing, not curated syllabi."
+  ]
+ }
+}
