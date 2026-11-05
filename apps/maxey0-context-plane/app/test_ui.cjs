@@ -47,6 +47,20 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
   ok(/Maxey0 Context Plane Graph/.test(r.title) && /MAXEY0 CONTEXT PLANE GRAPH/.test(r.header), "names");
   ok(r.digest === graph.snapshot_digest, "graph digest");
 
+  // 1b. label buttons: every kind turns off on a second click, and None/All reset that
+  {
+    const lb = await p.evaluate(() => { const out = {}; const c = id => document.getElementById(id).click();
+      c('lOff');
+      for (const [id, k] of [['lT','topic'],['lC','concept'],['lS','skill'],['lA','agent'],['lM','mcp']]) {
+        c(id); const a = window.__cpv.labels(); c(id); const b = window.__cpv.labels();
+        out[k] = a.on[k] && !a.off[k] && !b.on[k] && b.off[k] && document.getElementById(id).className === '';
+      }
+      c('lAll'); const x = window.__cpv.labels(); out.all = Object.values(x.on).every(Boolean) && !Object.values(x.off).some(Boolean);
+      c('lOff'); const y = window.__cpv.labels(); out.none = !Object.values(y.on).some(Boolean) && !Object.values(y.off).some(Boolean) && y.strict;
+      return out });
+    ok(Object.values(lb).every(Boolean), "label toggles T C S A M, None, All: " + JSON.stringify(lb));
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

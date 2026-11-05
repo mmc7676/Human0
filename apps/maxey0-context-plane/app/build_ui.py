@@ -169,7 +169,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
@@ -506,6 +506,12 @@ def main():
     h = once(h, " else m.append(hh('div','tmL','No concept or skill shares enough words with this task. Rephrase it with the field\\'s own words, or add a topic pack that covers it.'));\n",
              " else{m.append(hh('div','tmL','No concept or skill shares enough words with this task. Rephrase it with the field\\'s own words, or generate a topic that covers it.'));"
              "const gb=hh('button','','Generate a topic for this task',{type:'button',id:'cpGenFromTask'});gb.onclick=()=>cpGenerateFor(t.text);m.append(gb)}\n", "no match: generate")
+    # labels: a kind switched off stays off, even on the selected path (T/C/A/M kept showing path labels)
+    h = once(h, "lbl={topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,", "lbl={topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,lblX={},", "label opt-out state")
+    h = once(h, "const show=!dim&&(lbl[n.kind]||(!strict&&(", "const show=!dim&&(lbl[n.kind]||(!strict&&!lblX[n.kind]&&(", "label opt-out in draw")
+    h = once(h, "lbl[k]=!lbl[k];if(lbl[k])strict=false;", "lbl[k]=!lbl[k];lblX[k]=!lbl[k];if(lbl[k])strict=false;", "label toggle opt-out")
+    h = once(h, "$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>lbl[k]=false);", "$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=false;lblX[k]=false});", "None resets opt-out")
+    h = once(h, "$('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>lbl[k]=true);", "$('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=true;lblX[k]=false});", "All resets opt-out")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):

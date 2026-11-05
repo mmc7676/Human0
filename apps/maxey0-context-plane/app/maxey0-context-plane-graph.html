@@ -299,7 +299,7 @@ GP=pca();mIds.forEach((m,i)=>{N[m].x=GP[i][0]*RAD.mcp;N[m].y=GP[i][1]*RAD.mcp});
 buildModel();
 (()=>{for(const id of['k','t']){const el=document.getElementById(id);const r=el&&el.closest('.row');if(r){r.hidden=true;r.style.display='none'}}const t=document.getElementById('t');const row=t&&t.closest('.row');if(row){const n=document.createElement('div');n.className='cpnote';n.textContent='Gates come from the Maxey0 Context Plane server: derived (TF-IDF cosine >= 0.10), inherited (a checker holds its primary\'s servers) or declared. Manual gate toggles still apply on top.';row.after(n)}})();
 // ---- state
-let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=null,scwOn=false,scwOpt={agents:'sel'},lbl={topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,bubbles=[],GC={},sel=null,hov=null,showAg=true,showGt=true,iso=false,spin=false,spinT=null,tab='a',q='',rot=-.35,tilt=1.0,zoom=.6,drag=null,pts=[];
+let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=null,scwOn=false,scwOpt={agents:'sel'},lbl={topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,lblX={},bubbles=[],GC={},sel=null,hov=null,showAg=true,showGt=true,iso=false,spin=false,spinT=null,tab='a',q='',rot=-.35,tilt=1.0,zoom=.6,drag=null,pts=[];
 const vis={topic:true,concept:true,skill:true,agent:true,mcp:true};
 let G=[];
 function autoSet(a){return new Set((__CP.gates[a]||[]).filter(m=>N[m]))}
@@ -350,7 +350,7 @@ const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1
   if(n.kind==='mcp'){cx.rect(o.sx-rad,o.sy-rad,rad*2,rad*2)}else cx.arc(o.sx,o.sy,rad,0,6.2832);cx.fillStyle=(rel&&rel.has(n.id)&&str[n.id]!==undefined)?lerpHex(BG,nodeCol(n),.4+.6*str[n.id]):nodeCol(n);cx.fill();cx.strokeStyle=sel===n.id?'#fff':(n.kind==='mcp'&&n.state!=='registry'?'#fff8':'#071321');cx.lineWidth=sel===n.id?2:(n.kind==='mcp'&&n.state!=='registry'?1.5:1);cx.stroke();
   if(!dim&&v03IsUp(n)){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.5,0,6.2832);cx.strokeStyle=nodeCol(n);cx.lineWidth=1.2;cx.stroke()}
   if(!dim&&(msel.has(n.id)||taskSet.has(n.id))){cx.beginPath();cx.arc(o.sx,o.sy,rad+(msel.has(n.id)?6:4.5),0,6.2832);cx.strokeStyle=msel.has(n.id)?'#ffffff':'#ffffffaa';cx.setLineDash(msel.has(n.id)?[3,2]:[]);cx.lineWidth=1.4;cx.stroke();cx.setLineDash([])}
-  if(n.kind==='agent'&&!dim&&(GC[n.id]||0)>=2){cx.beginPath();cx.arc(o.sx,o.sy,rad+3,0,6.2832);cx.strokeStyle=COL.mcp;cx.lineWidth=1.2;cx.stroke()}const show=!dim&&(lbl[n.kind]||(!strict&&(sel===n.id||hov===n.id||(rel&&rel.has(n.id)&&(msel.size<2||n.kind!=='skill'||msel.has(n.id)||taskSet.has(n.id))))));if(show){cx.font=(n.kind==='topic'?'bold 12px':'11px')+' system-ui';cx.fillStyle='#e6f0fb';cx.textAlign='start';if(cpFanPos[n.id]&&n.kind!=='topic'){cx.save();cx.translate(o.sx,o.sy);cx.rotate(.62);cx.fillText(nodeLabel(n).slice(0,36),rad+3,4);cx.restore()}else cx.fillText(nodeLabel(n).slice(0,36),o.sx+rad+3,o.sy+4)}}
+  if(n.kind==='agent'&&!dim&&(GC[n.id]||0)>=2){cx.beginPath();cx.arc(o.sx,o.sy,rad+3,0,6.2832);cx.strokeStyle=COL.mcp;cx.lineWidth=1.2;cx.stroke()}const show=!dim&&(lbl[n.kind]||(!strict&&!lblX[n.kind]&&(sel===n.id||hov===n.id||(rel&&rel.has(n.id)&&(msel.size<2||n.kind!=='skill'||msel.has(n.id)||taskSet.has(n.id))))));if(show){cx.font=(n.kind==='topic'?'bold 12px':'11px')+' system-ui';cx.fillStyle='#e6f0fb';cx.textAlign='start';if(cpFanPos[n.id]&&n.kind!=='topic'){cx.save();cx.translate(o.sx,o.sy);cx.rotate(.62);cx.fillText(nodeLabel(n).slice(0,36),rad+3,4);cx.restore()}else cx.fillText(nodeLabel(n).slice(0,36),o.sx+rad+3,o.sy+4)}}
  cx.globalAlpha=1}
 function pick(x,y){let b=null,dd=14;for(const o of pts){if(!match(o.n))continue;const d=Math.hypot(o.sx-x,o.sy-y);if(d<dd){dd=d;b=o.n}}return b}
 cv.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect(),n=cpDrag?pick(e.clientX-r.left,e.clientY-r.top):null;drag={x:e.clientX,y:e.clientY,m:false,node:(n&&e.button===0&&!e.altKey)?n.id:null,pan:e.button===2||e.button===1||e.altKey};cv.setPointerCapture(e.pointerId)});
@@ -448,9 +448,9 @@ function detailSCW(b){const L=buildSCWs(),s=L.find(x=>x.id===selSCW);if(!s){b.in
 function exportObj(){const o=exportBase();o.params.agent_gate_counts=ovrK;o.params.gates_cleared=gatesOff;o.multi_mcp_agents=aIds.filter(a=>(GC[a]||0)>=2).map(a=>N[a].key);o.ontology={app:'Human0',top_level_environment:'SCW0',orchestrator:'Maxey0',note:'MaxeyN and SCWn are index labels, not names; an SCW exists only where context meets execution (agent + MCP gates), grouped for multi-agent/loop, all inside SCW0'};o.ids={agent_index:Object.fromEntries(aIds.map(a=>[N[a].key,idx[a]])),scw_registry:{...scwReg}};o.palette={...COL,scw:SC.agent,scw_guard:guardInfo};o.scw0_knowledge=jevKnowledge();o.topic_packs=Object.entries(packs).map(([id,r])=>({id,topic:r.pack.topic.label,added:r.added,levels:r.pack.provenance.levels,digest:'fnv1a32:'+fnv(JSON.stringify(r.pack))}));if(scwOn)o.scws=buildSCWs().map(scwManifest);return o}
 $('isoScw').onclick=e=>{scwOn=!scwOn;e.target.className='scwb'+(scwOn?' on':'');$('scwOpts').style.display=scwOn?'flex':'none';if(!scwOn)selSCW=null;detail();draw()};
 $('oA').onchange=e=>{scwOpt.agents=e.target.value;draw()};
-[['lT','topic'],['lC','concept'],['lS','skill'],['lA','agent'],['lM','mcp']].forEach(([i,k])=>$(i).onclick=e=>{lbl[k]=!lbl[k];if(lbl[k])strict=false;e.target.className=lbl[k]?'on':'';draw()});
-$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>lbl[k]=false);strict=true;['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='');draw()};
-$('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>lbl[k]=true);strict=false;['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='on');draw()};
+[['lT','topic'],['lC','concept'],['lS','skill'],['lA','agent'],['lM','mcp']].forEach(([i,k])=>$(i).onclick=e=>{lbl[k]=!lbl[k];lblX[k]=!lbl[k];if(lbl[k])strict=false;e.target.className=lbl[k]?'on':'';draw()});
+$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=false;lblX[k]=false});strict=true;['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='');draw()};
+$('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=true;lblX[k]=false});strict=false;['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='on');draw()};
 $('clrSel').onclick=()=>{sel=null;hov=null;selSCW=null;$('detail').innerHTML='<strong>Details</strong><p>Selection cleared.</p>';renderList();draw()};
 $('clrSearch').onclick=()=>{q='';$('search').value='';renderList();draw()};
 $('clrGates').onclick=()=>{gatesOff=true;recompute();renderList();detail();draw()};
@@ -1094,7 +1094,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
