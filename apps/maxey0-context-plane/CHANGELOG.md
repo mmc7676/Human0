@@ -1,5 +1,9 @@
 # Changelog
 
+## Server 5.1.2
+
+- `get_harness` description states what it returns, without directing the model to other tools.
+
 ## Server 5.1.1
 
 - Every tool declares `annotations.title` for directory listings.

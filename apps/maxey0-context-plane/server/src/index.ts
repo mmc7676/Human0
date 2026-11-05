@@ -15,7 +15,7 @@ import { Graph, GraphData, ToolError, scopeTo } from "./graph";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "5.1.1" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "5.1.2" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -70,7 +70,7 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ query: STR, domain: DOM }), run: (g, a) => g.list_topics(a as never) },
   { name: "get_topic", title: "Get topic", description: "One topic: domain, priority, concepts (with skill counts) and MCP servers the topic lists. 'related' links a concept to similar concepts in OTHER topics (cosine >= 0.40); concepts within one topic are not cross-linked, so an empty list is normal.",
     inputSchema: obj({ topic_id: STR }, ["topic_id"]), run: (g, a) => g.get_topic(a as never) },
-  { name: "get_harness", title: "Get full topic harness", description: "The complete SCW1 topic harness (human0.topic-harness/2). Large; prefer the narrower tools.",
+  { name: "get_harness", title: "Get full topic harness", description: "One topic in full (SCW1 topic harness, maxey0.topic-harness/3): every concept, skill, agent and MCP server in the topic, about 49 KB.",
     inputSchema: obj({ topic_id: STR }, ["topic_id"]), run: (g, a) => g.get_harness(a as never) },
   { name: "get_concept", title: "Get concept", description: "One concept with its path (domain/topic), related concepts, and its skills with agents and their MCP servers.",
     inputSchema: obj({ concept_id: STR }, ["concept_id"]), run: (g, a) => g.get_concept(a as never) },
