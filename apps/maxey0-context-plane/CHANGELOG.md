@@ -1,5 +1,10 @@
 # Changelog
 
+## Server 5.1.1
+
+- Every tool declares `annotations.title` for directory listings.
+- App: the task panel shows the route only (agent, server and model choice happen in the Maxey0 orchestrator); legend explains rotate, roll, pan and node drag.
+
 ## Server 5.1.0 · App 1.0 · Plugin 0.3.1
 
 - **MCP App.** `open_context_plane_graph` shows the graph inside the conversation in hosts that support MCP Apps; the app takes the task Claude passes in, can go full screen, and sends topic-generation requests to the conversation.

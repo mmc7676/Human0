@@ -15,7 +15,7 @@ import { Graph, GraphData, ToolError, scopeTo } from "./graph";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "5.1.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "5.1.1" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -158,7 +158,7 @@ function dispatch(scope: string, method: string, p: Json, modern: boolean, legac
       if (modern) throw new RpcError(-32601, "ping was removed in 2026-07-28");
       return {};
     case "tools/list":
-      return { tools: TOOLS.map(({ name, title, description, inputSchema, _meta }) => ({ name, title, description, inputSchema, annotations: RO, ...(_meta ? { _meta } : {}) })), ...cache };
+      return { tools: TOOLS.map(({ name, title, description, inputSchema, _meta }) => ({ name, title, description, inputSchema, annotations: { ...RO, title }, ...(_meta ? { _meta } : {}) })), ...cache };
     case "tools/call": {
       const name = p.name;
       const t = typeof name === "string" ? TOOL_BY_NAME.get(name) : undefined;

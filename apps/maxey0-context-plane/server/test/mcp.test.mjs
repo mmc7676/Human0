@@ -325,3 +325,8 @@ test("MCP App: tool carries ui.resourceUri; ui:// resource is the app HTML with 
   const html = await page.text(); assert.ok(html.includes("https://cp.example") && /Maxey0 Context Plane Graph/.test(html));
   assert.match(page.headers.get("content-security-policy"), /connect-src 'self'/);
 });
+
+test("every tool carries annotations.title for the directory listing", async () => {
+  const tools = (await modern("tools/list")).body.result.tools;
+  for (const t of tools) { assert.equal(t.annotations.title, t.title, t.name); assert.equal(t.annotations.readOnlyHint, true, t.name) }
+});

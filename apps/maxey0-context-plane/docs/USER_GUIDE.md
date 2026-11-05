@@ -137,7 +137,7 @@ Everything below sits in the **Workspace** panel. Its first line, **App state & 
 | **Metrics** | Live counts: topics, concepts, skills, agents, MCP servers, gate links, agents with two or more servers |
 | **Graph** | The 3D graph, its toolbar and legend |
 | **Details** | Everything about the selected node |
-| **Task execution** | The decision steps for the last task, opened from **Show execution path ↓** |
+| **Task route** | The last task's top three routes, opened from **Show execution path ↓** |
 | **Topics → Concepts → Skills → Agents → MCP** | Generate and manage new topics (Part 7) |
 
 ### Graph toolbar

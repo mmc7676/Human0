@@ -484,6 +484,11 @@ def main():
              "<span>Drag space: rotate any way · Shift+drag: roll · Right-drag: pan · Drag a node: move it on its level · Scroll: zoom · Click: select</span>", "legend: how to move")
     h = once(h, '<option value="all">all 67 agents</option>', '<option value="all">all agents</option>', "SCW option label")
     h = once(h, "d.append(mk('summary','','Topics → Concepts → Skills → Agents → MCP (v6)'));", "d.append(mk('summary','','Topics → Concepts → Skills → Agents → MCP'));", "topics panel title")
+    # published build: the execution panel shows the route only; agent / MCP / model decision nodes and the
+    # System One (Jev) calls belong to the Maxey0 orchestrator, and the app may only reach its own server
+    h = once(h, "<summary>Task execution (decision nodes, F1–F3)</summary>", "<summary>Task route</summary>", "execution panel title")
+    h = once(h, "rt.append(c)});b.append(rt);",
+             "rt.append(c)});b.append(rt);b.append(el('p','','Choosing and running the agent, its MCP servers and its model happens in the Maxey0 orchestrator, not in this app.'));return;", "route-only execution panel")
     h = once(h, "zoom=Math.max(.25,Math.min(3,zoom*(e.deltaY<0?1.1:.91)));", "zoom=Math.max(.08,Math.min(8,zoom*(e.deltaY<0?1.1:.91)));", "wider zoom")
     h = once(h, "return{sx:w/2+x*p*zoom*1.15,sy:h/2+yy*p*zoom*1.15+10,p,zz}}", "return{sx:w/2+x*p*zoom*1.15+cpPanX,sy:h/2+yy*p*zoom*1.15+10+cpPanY,p,zz}}", "pan in projection")
     h = once(h, "drag={x:e.clientX,y:e.clientY,m:false,node:n?n.id:null};",

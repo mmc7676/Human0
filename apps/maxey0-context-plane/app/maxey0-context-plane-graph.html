@@ -94,7 +94,7 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 <details class="cs" id="cs_detail" open><summary>Details</summary><div class="cs-b">
 <div class="detail" id="detail"><strong>Details</strong><p>Select an agent to see its candidate MCP gates and move it by toggling them.</p></div>
 </div></details>
-<details class="cs" id="cs_exec" open hidden><summary>Task execution (decision nodes, F1–F3)</summary><div class="cs-b">
+<details class="cs" id="cs_exec" open hidden><summary>Task route</summary><div class="cs-b">
 <div class="detail" id="exec" style="display:none;max-height:none"></div>
 </div></details>
 <details class="cs" id="cs_export" hidden><summary>Export</summary><div class="cs-b">
@@ -564,7 +564,7 @@ function renderExec(){const b=$('exec');b.innerHTML='';if(!task){b.style.display
  const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e};
  b.append(el('strong','',task.id+' · Execution path'));b.append(el('p','',task.text));
  if(!task.matched){b.append(el('p','bad','ROUTING FAILURE: the task did not match any skill in the OKF (best cosine '+(task.skills[0]?task.skills[0][1]:0).toFixed(2)+'). This is where a new agent/loop would be spawned (harness recursion) — not implemented in this page.'));return}
- const rt=el('p','','Route (DERIVED, graph + cosine): ');task.skills.slice(0,3).forEach(([id,s])=>{const c=chip(N[id]);c.textContent=N[cTopic[N[id].concept]].label+' → '+N['c:'+N[id].concept].label+' → '+N[id].label+' · '+s.toFixed(2);rt.append(c)});b.append(rt);
+ const rt=el('p','','Route (DERIVED, graph + cosine): ');task.skills.slice(0,3).forEach(([id,s])=>{const c=chip(N[id]);c.textContent=N[cTopic[N[id].concept]].label+' → '+N['c:'+N[id].concept].label+' → '+N[id].label+' · '+s.toFixed(2);rt.append(c)});b.append(rt);b.append(el('p','','Choosing and running the agent, its MCP servers and its model happens in the Maxey0 orchestrator, not in this app.'));return;
  const g=el('div','row');const cb=document.createElement('input');cb.type='checkbox';cb.id='s1On';cb.style.width='auto';cb.checked=s1On;cb.onchange=()=>{s1On=cb.checked;renderExec()};const lb=el('label','','Use System One (Jev) decision nodes');lb.style.minWidth='0';lb.prepend(cb);
  const key=document.createElement('input');key.type='password';key.id='apiKey';key.placeholder='TypeSafe API key (memory only)';key.autocomplete='off';key.style.width='220px';key.value=apiKey;key.oninput=()=>{apiKey=key.value.trim()};
  const ep=document.createElement('input');ep.id='endpoint';ep.value=endpoint;ep.style.width='270px';ep.onchange=()=>{endpoint=ep.value.trim()};g.append(lb,key,ep);b.append(g);transportRow(b,el);
