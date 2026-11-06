@@ -103,12 +103,13 @@ The [user guide](docs/USER_GUIDE.md) walks through every control.
 
 ## The MCP server
 
-Fourteen read-only tools, one prompt, nine resources and one resource template, over the MCP 2026-07-28 stateless protocol (and the earlier `initialize` handshake for older clients).
+Fifteen read-only tools, one prompt, nine resources and one resource template, over the MCP 2026-07-28 stateless protocol (and the earlier `initialize` handshake for older clients).
 
 | Tool | Answers |
 |---|---|
 | `route_task` | Which topic, concept, skill, agents and servers fit this task? |
 | `search` | Which nodes match these words? |
+| `nearest` | Which nodes, at any level, lie nearest this node or text in the shared embedding field? |
 | `list_domains` · `list_topics` · `children` · `trace` | Browse the map and walk any node's parents |
 | `get_topic` · `get_concept` · `get_skill` · `get_agent` · `get_mcp_server` | One node in detail |
 | `get_harness` | One topic in full: every concept, skill, agent and server |
@@ -128,6 +129,8 @@ One method scores everything: search, routing, agent-to-server links and related
 | A task matches a skill | cosine ≥ 0.08 |
 | An agent holds an MCP server | cosine ≥ 0.10, top 2 agents per server |
 | Two concepts in different topics are related | cosine ≥ 0.40 |
+
+**One embedding field for all six levels.** Every node (domain, topic, concept, skill, agent, MCP server) has a vector in the same TF-IDF space: domains and topics from their own text and their concepts, agents from the skills they serve, servers from their description and tools. A truncated SVD of all of them gives every node a location in one shared field, at one scale. In the graph, **Embedding field** places each node at that location on its level, so nodes that mean the same thing line up across levels; `nearest` answers the same question over MCP.
 
 A **checker** agent holds every server its primary holds for the same skill, so it can verify by re-running the work, not just by reading it. More in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 

@@ -6,7 +6,7 @@ Connects Claude to the **Maxey0 Context Plane**: a map of 121 topics in five dom
 
 | | |
 |---|---|
-| **Connector** | The remote MCP server `https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp`: 14 read-only tools, the `topic-graph-generator` prompt, and the graph as an MCP App |
+| **Connector** | The remote MCP server `https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp`: 15 read-only tools, the `topic-graph-generator` prompt, and the graph as an MCP App |
 | **Skill: maxey0-context-plane** | Tells Claude which tool to use for routing, browsing and showing the graph, and how to read the results |
 | **Skill: topic-graph-generator** | When a task has no route, Claude writes a new topic pack (real MCP servers only), validates it with the server, and returns it for the graph app |
 

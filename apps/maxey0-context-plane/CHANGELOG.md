@@ -1,5 +1,11 @@
 # Changelog
 
+## Server 5.2.0 · App 1.1
+
+- **Shared embedding field.** Every node on all six levels (domain, topic, concept, skill, agent, MCP server) now has a vector in one TF-IDF space and a location in one 2-D field (truncated SVD, same scale for every level). `graph.json` carries the locations; `?index=1` carries all vectors.
+- New tool `nearest`: the nearest nodes of any level to a node or a piece of text in that field.
+- App: **Embedding field** places every node at its field location on its level.
+
 ## Server 5.1.2
 
 - `get_harness` description states what it returns, without directing the model to other tools.

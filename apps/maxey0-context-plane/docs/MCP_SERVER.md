@@ -13,7 +13,7 @@ https://maxey0-context-plane-mcp.maxey0.workers.dev
 | `/mcp` | POST | MCP, every domain |
 | `/mcp/maxey0-system` · `/mcp/foundations` · `/mcp/work` · `/mcp/finance` · `/mcp/disciplines` | POST | MCP, one domain each: the same tools over a smaller map |
 | `/app` | GET | The Maxey0 Context Plane Graph web app |
-| `/graph.json` | GET | The whole map as JSON for browser apps (any origin may read it); `?index=1` adds the TF-IDF index |
+| `/graph.json` | GET | The whole map as JSON for browser apps (any origin may read it), with every node's field location; `?index=1` adds the TF-IDF index (a vector for every node on all six levels) |
 | `/` | GET | Server info, endpoints, counts and the map's digest |
 
 A domain endpoint answers only for its own domain: looking up a node from another domain returns a tool error.
@@ -40,6 +40,7 @@ All tools are read-only (`readOnlyHint: true`, `destructiveHint: false`, `idempo
 | `get_agent` | `agent_key` | One MaxeyN agent: the skills it serves in each role and the servers it holds |
 | `get_mcp_server` | `mcp_id` | One server: description, source, the topics that list it and the agents that hold it |
 | `search` | `query`, `limit?`, `domain?`, `use_priority?` | Matching nodes with their paths and scores |
+| `nearest` | `node_id` or `text`, `level?`, `limit?` | Nearest nodes in the shared six-level embedding field, with scores and field locations |
 | `route_task` | `task`, `limit?`, `domain?`, `use_priority?` | `matched`, and candidate paths domain → topic → concept → skill → agents → servers |
 | `children` | `level`, `parent_id?` | The children of a node at the next level |
 | `trace` | `node_id` | The chain from the domain down to that node |

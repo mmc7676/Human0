@@ -52,8 +52,9 @@ def cut_json(h, marker, replacement, what):
 
 
 CP_VIEW_JS = r"""// ---------- Maxey0 Context Plane Graph v1.0: readable paths, node drag, generated topics
-let cpFan=true,cpDrag=true,cpOnlyNew=false,cpOff={},cpFanPos={},cpNewCache=null,cpNewKey='';
-function cpPos(n){const f=cpFanPos[n.id],b=f||n,o=cpOff[n.id];if(!o)return{x:b.x,y:b.y};let x=b.x+o.x,y=b.y+o.y;
+let cpField=false,cpFan=true,cpDrag=true,cpOnlyNew=false,cpOff={},cpFanPos={},cpNewCache=null,cpNewKey='';
+function cpFieldXY(n){const q=cpField&&__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
+function cpPos(n){const f=cpFanPos[n.id],b=f||cpFieldXY(n)||n,o=cpOff[n.id];if(!o)return{x:b.x,y:b.y};let x=b.x+o.x,y=b.y+o.y;if(cpField&&!f)return{x,y};
  const r=Math.hypot(x,y),lo=cpIn(),hi=cpOut();if(r>hi){x*=hi/r;y*=hi/r}else if(r<lo&&r>1e-9){x*=lo/r;y*=lo/r}return{x,y}}  // a dragged node stays inside its level's donut
 // screen-horizontal direction in the level plane (inverse of project's rotation)
 // ---- all-axis orientation: one 3x3 rotation matrix cpM maps world (x, y, z) to view (X right, Y down, D depth).
@@ -106,9 +107,9 @@ function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewK
  Object.values(packs).forEach(r=>{const A=r.added,pid=r.pack.topic.id;s.add('t:'+pid);A.concepts.forEach(c=>s.add('c:'+c));A.skills.forEach(k=>{s.add('s:'+k);
   E.forEach(e=>{if(e.kind==='agent'&&e.a==='s:'+k){s.add(e.b);G.forEach(g=>{if(g.a===e.b)s.add(g.b)})}})})});
  cpNewCache=s;cpNewKey=ids;return s}
-function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
+function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
 function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cpSetBtns();draw()}};
- on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
+ on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
  on('cpAllBtn',()=>{cpOnlyNew=false});on('cpNewBtn',()=>{cpOnlyNew=true;cpNewCache=null;if(!Object.keys(packs).length){tpSt.msg='No generated topics yet: build a request below, generate the pack in Claude, paste it and Add to graph.';tpSt.cls='';const tb=$('topicsBox');if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}});
  cpSetBtns();
  // layout and view are part of the app state
@@ -169,7 +170,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
@@ -304,7 +305,14 @@ window.__cpLoad = async function () {
       const sid = kind === 'c' ? firstSkill[id] : id; if (!sid || seen.has(sid)) continue;
       seen.add(sid); out.push(['s:' + sid, s]); if (out.length >= limit) break }
     return out };
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route };
+  // the shared embedding field: one location per node, the same space and scale on every level
+  const field = {};
+  for (const [k, xy] of Object.entries((g.field && g.field.xy) || {})) {
+    const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1);
+    const app = lv === 'm' ? midx[id] : (lv === 'd' ? null : lv + ':' + id);
+    if (app) field[app] = xy;
+  }
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field };
 };
 </script>
 """.replace("__DEFAULT_API__", DEFAULT_API)
@@ -494,7 +502,7 @@ def main():
     h = once(h, "drag={x:e.clientX,y:e.clientY,m:false,node:n?n.id:null};",
              "drag={x:e.clientX,y:e.clientY,m:false,node:(n&&e.button===0&&!e.altKey)?n.id:null,pan:e.button===2||e.button===1||e.altKey};", "pan with right/middle button or Alt")
     h = once(h, "<div class=\"graphbox\"><canvas id=\"g\"",
-             "<div class=\"cpview row\" id=\"cpView\"><button type=\"button\" id=\"cpFanBtn\" class=\"on\" title=\"When a path is isolated, spread each level's nodes side by side under their parents so every node and label is readable\">Spread path</button>"
+             "<div class=\"cpview row\" id=\"cpView\"><button type=\"button\" id=\"cpFieldBtn\" title=\"Place every node by its location in the shared embedding field: one space and one scale on all six levels, so nodes that mean the same thing line up across levels\">Embedding field</button><button type=\"button\" id=\"cpFanBtn\" class=\"on\" title=\"When a path is isolated, spread each level's nodes side by side under their parents so every node and label is readable\">Spread path</button>"
              "<button type=\"button\" id=\"cpDragBtn\" class=\"on\" title=\"Drag a node to move it sideways within its own level; drag empty space to rotate\">Drag nodes</button>"
              "<button type=\"button\" id=\"cpResetBtn\" title=\"Put dragged nodes back\">Reset layout</button>"
              "<button type=\"button\" id=\"cp720Btn\" title=\"Tumble the graph through two full turns about a tilted axis and land back where it started\">720°</button>"

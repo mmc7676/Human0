@@ -15,7 +15,7 @@ import { Graph, GraphData, ToolError, scopeTo } from "./graph";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "5.1.2" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "5.2.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -86,6 +86,8 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ task: STR, limit: INT, domain: DOM, use_priority: PRIO }, ["task"]), run: (g, a) => g.route_task(a as never) },
   { name: "children", title: "Children", description: "Children one level down: domain (no parent), topic (parent=domain), concept (parent=topic), skill (parent=concept), agent (parent=skill), mcp (parent=agent).",
     inputSchema: obj({ level: { type: "string", enum: ["domain", "topic", "concept", "skill", "agent", "mcp"] }, parent_id: STR }, ["level"]), run: (g, a) => g.children(a as never) },
+  { name: "nearest", title: "Nearest in the field", description: "Nearest nodes to any node, or to a piece of text, in the shared embedding field that all six levels (domain, topic, concept, skill, agent, MCP server) live in, optionally limited to one level. Returns scores and each node's field location.",
+    inputSchema: obj({ node_id: STR, text: STR, level: { type: "string", enum: ["domain", "topic", "concept", "skill", "agent", "mcp"] }, limit: { type: "integer", minimum: 1, maximum: 50 } }, []), run: (g, a) => g.nearest(a as never) },
   { name: "trace", title: "Trace", description: "Full parent chain and links for any domain, topic, concept, skill, agent or MCP id.",
     inputSchema: obj({ node_id: STR }, ["node_id"]), run: (g, a) => g.trace(a as never) },
 ];

@@ -18,7 +18,9 @@ export interface GraphData {
   domains: Domain[]; topics: Topic[]; concepts: Concept[]; skills: Skill[]; agents: Agent[]; mcp: Mcp[];
   agent_mcp: AgentMcp[]; topic_mcp: Record<string, string[]>; related: Related[]; lexicon: Record<string, Record<string, string>>; similarity: Similarity;
   topic_priority: { source: string; use: string; default: number };
+  field: Field;
 }
+export interface Field { method: string; dims: number; levels: string[]; xy: Record<string, [number, number]> }
 
 /** The graph restricted to one domain: topics, concepts and skills of that domain, the
  *  agents serving those skills, their MCP links, the MCP servers those topics list, and
@@ -33,12 +35,15 @@ export function scopeTo(g: GraphData, domain: string): GraphData {
   const agent_mcp = g.agent_mcp.filter((l) => A.has(l.agent) && (l.topic === null || T.has(l.topic)));
   const topic_mcp = Object.fromEntries(Object.entries(g.topic_mcp).filter(([t]) => T.has(t)));
   const M = new Set([...agent_mcp.map((l) => l.mcp), ...Object.values(topic_mcp).flat()]);
-  const keep = new Set([...[...C].map((c) => "c:" + c), ...skills.map((s) => "s:" + s.id)]);
+  const MS = new Set([...M]);
+  const keep = new Set(["d:" + domain, ...topics.map((t) => "t:" + t.id), ...[...C].map((c) => "c:" + c), ...skills.map((s) => "s:" + s.id),
+    ...[...A].map((a) => "a:" + a), ...[...MS].map((m) => "m:" + m)]);
   return { ...g, domains: g.domains.filter((d) => d.id === domain), topics, concepts, skills,
     agents: g.agents.filter((a) => A.has(a.key)), mcp: g.mcp.filter((m) => M.has(m.id)), agent_mcp, topic_mcp,
     related: g.related.filter((r) => C.has(r.a) && C.has(r.b)),
     lexicon: Object.fromEntries(Object.entries(g.lexicon).filter(([t]) => T.has(t))),
-    similarity: { ...g.similarity, vectors: Object.fromEntries(Object.entries(g.similarity.vectors).filter(([k]) => keep.has(k))) } };
+    similarity: { ...g.similarity, vectors: Object.fromEntries(Object.entries(g.similarity.vectors).filter(([k]) => keep.has(k))) },
+    field: { ...g.field, xy: Object.fromEntries(Object.entries(g.field.xy).filter(([k]) => keep.has(k))) } };
 }
 
 import { cos, vec, Vec } from "./sim";
@@ -240,6 +245,43 @@ export class Graph {
     if (this.agent.has(id)) { const g = this.get_agent({ agent_key: id }); return { kind: "agent", id, name: g.name, topics: g.topics, skills: g.skills, mcp: g.mcp }; }
     if (this.mcp.has(id)) return { kind: "mcp", ...this.get_mcp_server({ mcp_id: id }) };
     throw new ToolError(`unknown node '${id}' (not a domain, topic, concept, skill, agent or MCP id).`);
+  }
+
+  /** The shared embedding field: every level (domain, topic, concept, skill, agent, MCP server) has a vector in
+   *  the same TF-IDF space and a location in the same 2-D field. Nearest neighbours of any node, at any level. */
+  fieldKey(id: string): string {
+    if (this.domain.has(id)) return "d:" + id; if (this.topic.has(id)) return "t:" + id; if (this.concept.has(id)) return "c:" + id;
+    if (this.skill.has(id)) return "s:" + id; if (this.agent.has(id)) return "a:" + id; if (this.mcp.has(id)) return "m:" + id;
+    throw new ToolError(`unknown node '${id}' (not a domain, topic, concept, skill, agent or MCP id).`);
+  }
+  nearest(a: { node_id?: string; text?: string; level?: string; limit?: number }) {
+    const LV: Record<string, string> = { domain: "d", topic: "t", concept: "c", skill: "s", agent: "a", mcp: "m" };
+    const NAME: Record<string, string> = { d: "domain", t: "topic", c: "concept", s: "skill", a: "agent", m: "mcp" };
+    if (a.level !== undefined && !(a.level in LV)) throw new ToolError(`level must be one of ${Object.keys(LV).join(", ")}.`);
+    if (!a.node_id === !a.text) throw new ToolError("give exactly one of node_id or text.");
+    const V = this.g.similarity.vectors, XY = this.g.field.xy;
+    const src = a.node_id ? this.fieldKey(a.node_id) : null;
+    const q = src ? V[src] : vec(String(a.text), this.g.similarity.idf, false);
+    if (!q || !Object.keys(q).length) return { from: src ?? a.text, results: [], note: "no words of the query are in the index" };
+    const want = a.level ? LV[a.level] : null, lim = Math.max(1, Math.min(50, a.limit ?? 10));
+    const out: { level: string; id: string; label: string; score: number; xy: [number, number] }[] = [];
+    for (const k in V) {
+      if (k === src || (want && !k.startsWith(want + ":"))) continue;
+      const sc = cos(q, V[k]); if (sc <= 0) continue;
+      const p = k.indexOf(":"), lv = k.slice(0, p), id = k.slice(p + 1);
+      out.push({ level: NAME[lv], id, label: this.labelOf(lv, id), score: Math.round(sc * 1e4) / 1e4, xy: XY[k] });
+    }
+    out.sort((x, y) => y.score - x.score || (x.id < y.id ? -1 : 1));
+    return { from: src ? { level: NAME[src.slice(0, 1)], id: a.node_id, xy: XY[src] } : { text: a.text }, level: a.level ?? "all",
+      method: "TF-IDF cosine in the shared six-level field (coverage rule applies)", field: this.g.field.method, results: out.slice(0, lim) };
+  }
+  labelOf(lv: string, id: string): string {
+    switch (lv) {
+      case "d": return this.g.domains.find((d) => d.id === id)?.label ?? id;
+      case "t": return this.topic.get(id)?.label ?? id; case "c": return this.concept.get(id)?.label ?? id;
+      case "s": return this.skill.get(id)?.label ?? id; case "a": return this.agent.get(id)?.name ?? id;
+      default: return this.mcp.get(id)?.name ?? id;
+    }
   }
 
   snapshot() {

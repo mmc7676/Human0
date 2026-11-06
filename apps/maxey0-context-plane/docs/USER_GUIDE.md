@@ -150,6 +150,7 @@ Everything below sits in the **Workspace** panel. Its first line, **App state & 
 | **720°** | Tumble the graph through two full turns and land where it started |
 | **Full screen** | Inside Claude only: ask Claude to show the app full screen |
 | **Fit view** | Reset rotation, zoom and pan so the whole graph fits |
+| **Embedding field** | Place every node at its location in the shared embedding field. All six levels use one space and one scale, so nodes that mean the same thing sit above each other. Off: the ring layout |
 | **Show: Full graph / New topics only** | Show everything, or only topics you added (Part 7) |
 
 ### Reading the graph

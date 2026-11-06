@@ -72,6 +72,37 @@ class Sim:
 
 
 
+def build_field(vectors, idf, cfg):
+    """One coordinate system for all six levels: truncated SVD (deterministic, ARPACK) of the
+    TF-IDF matrix of every node, rows normalised, then the two leading principal axes of that
+    space scaled so the farthest node sits at radius 1. Same space, same scale, every level:
+    a node's location on its level plane is its meaning, and nodes that mean the same thing
+    line up across levels."""
+    import numpy as np
+    from scipy.sparse import csr_matrix
+    from scipy.sparse.linalg import svds
+    k = int(cfg.get("dims", 24))
+    keys = sorted(vectors); col = {w: i for i, w in enumerate(sorted(idf))}
+    rows, cols, vals = [], [], []
+    for r, key in enumerate(keys):
+        for w, x in vectors[key].items():
+            rows.append(r); cols.append(col[w]); vals.append(x)
+    X = csr_matrix((vals, (rows, cols)), shape=(len(keys), len(col)))
+    U, S, _ = svds(X, k=k, solver="arpack", random_state=0, v0=np.full(min(X.shape), 1.0 / math.sqrt(min(X.shape))))
+    o = np.argsort(-S); Z = U[:, o] * S[o]
+    Z /= np.maximum(np.linalg.norm(Z, axis=1, keepdims=True), 1e-12)
+    Zc = Z - Z.mean(axis=0)
+    _, _, Vt = np.linalg.svd(Zc, full_matrices=False)
+    P = Zc @ Vt[:2].T
+    for j in range(2):  # fix the sign so the layout is stable across builds
+        if P[np.argmax(np.abs(P[:, j])), j] < 0: P[:, j] *= -1
+    P /= np.max(np.linalg.norm(P, axis=1)) or 1.0
+    expl = float((np.var(P, axis=0)).sum())
+    return {"method": f"tfidf -> truncated SVD ({k} dims, ARPACK) -> row-normalised -> 2 principal axes; radius 1 = farthest node",
+            "dims": k, "levels": ["d", "t", "c", "s", "a", "m"],
+            "xy": {key: [round(float(P[i, 0]), 4), round(float(P[i, 1]), 4)] for i, key in enumerate(keys)}}
+
+
 def fail(msg):
     sys.exit("FAIL: " + msg)
 
@@ -507,6 +538,25 @@ def cmd_build(a):
 
     # --- outputs --------------------------------------------------------
     order = sorted(topics, key=lambda t: ([d["id"] for d in spec["domains"]].index(topics[t]["domain"]), t))
+    # ---- the shared embedding field: every level in one TF-IDF space, then one set of coordinates ----
+    def top(v, n=48):  # long aggregate texts keep their 48 strongest terms, re-normalised
+        if len(v) <= n: return v
+        kept = dict(sorted(v.items(), key=lambda kv: -kv[1])[:n]); nr = math.sqrt(sum(x * x for x in kept.values())) or 1.0
+        return {w: round(x / nr, 6) for w, x in sorted(kept.items())}
+    skills_of_agent = collections.defaultdict(list)
+    for s in skills.values():
+        for a_ in s["agents"]: skills_of_agent[a_["key"]].append(stext(s))
+    topic_text = {t: " ".join([topics[t]["label"], topics[t]["desc"]] + [ctext(c) for c in concepts.values() if c["topic"] == t]) for t in order}
+    dom_of = {t: topics[t]["domain"] for t in order}
+    field_vectors = {}
+    for d in spec["domains"]:
+        field_vectors["d:" + d["id"]] = top(sim.vec(" ".join([d["label"], d["desc"]] + [topic_text[t] for t in order if dom_of[t] == d["id"]])))
+    for t in order: field_vectors["t:" + t] = top(sim.vec(topic_text[t]))
+    for k, v in sorted(cvec.items()): field_vectors["c:" + k] = v
+    for k, v in sorted(svec.items()): field_vectors["s:" + k] = v
+    for k in sorted(agents): field_vectors["a:" + k] = top(sim.vec(" ".join([agents[k]] + skills_of_agent[k])))
+    for u in sorted(mcp): field_vectors["m:" + u] = top(sim.vec(mtext(mcp[u])))
+    field = build_field(field_vectors, sim.idf, spec.get("field", {}))
     graph = {
         "schema": GRAPH_SCHEMA, "scw": "SCW1",
         "domains": spec["domains"],
@@ -519,8 +569,8 @@ def cmd_build(a):
                    for k in sorted(agents, key=lambda k: int(k[5:]) if mx.fullmatch(k) else 10**9)],
         "mcp": [mcp[u] for u in sorted(mcp, key=lambda u: (mcp[u]["name"].lower(), u))],
         "agent_mcp": links, "topic_mcp": {t: topic_mcp[t] for t in order if topic_mcp[t]}, "related": related, "lexicon": {t: lexicon[t] for t in order},
-        "similarity": {"method": spec["similarity"]["method"], "thresholds": TH, "idf": sim.idf,
-                       "vectors": {**{"c:" + k: v for k, v in sorted(cvec.items())}, **{"s:" + k: v for k, v in sorted(svec.items())}}},
+        "similarity": {"method": spec["similarity"]["method"], "thresholds": TH, "idf": sim.idf, "vectors": field_vectors},
+        "field": field,
     }
     graph["snapshot_digest"] = digest({k: v for k, v in graph.items() if k != "snapshot_digest"})
     totals = {"domains": len(spec["domains"]), "topics": len(topics), "concepts": len(concepts), "skills": len(skills),

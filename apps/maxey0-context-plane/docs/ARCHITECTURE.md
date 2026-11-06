@@ -56,6 +56,20 @@ Search, routing, agent→server links and related concepts all use TF-IDF cosine
 
 The server's `sim.ts` mirrors the builder's tokenizer and vectoriser exactly; a test checks it reproduces every stored vector.
 
+### One embedding field
+
+Every node on all six levels has a vector in the same TF-IDF space (same tokenizer, same idf):
+
+| Level | Text it is built from |
+|---|---|
+| Domain | label, description, and the text of its topics |
+| Topic | label, description, and its concepts |
+| Concept · Skill | their own text (as used for routing) |
+| Agent | its name and every skill it serves |
+| MCP server | name, description, tool names |
+
+Aggregate vectors keep their 48 strongest terms. The builder stacks all vectors into one matrix, takes a deterministic truncated SVD (24 dimensions, ARPACK), normalizes each row, and projects onto the two leading principal axes; the farthest node sits at radius 1. Every level uses the same projection and scale, so a node's location is comparable across levels. `graph.json` carries the locations (`field.xy`); `?index=1` carries the vectors; the `nearest` tool ranks nodes of any level by cosine in that space. The server test checks that topic–concept pairs sit at under half the random-pair distance and that agent–server gates sit closer than random.
+
 ## The server
 
 `server/src/` — TypeScript on Cloudflare Workers, no runtime dependencies.

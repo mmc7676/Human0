@@ -61,6 +61,18 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(Object.values(lb).every(Boolean), "label toggles T C S A M, None, All: " + JSON.stringify(lb));
   }
 
+  // 1c. shared embedding field: every app node has a location; the toggle places nodes there on every level
+  {
+    const f = await p.evaluate(() => { const v = window.__cpv, c = id => document.getElementById(id).click();
+      const n = v.field().n; c('cpFieldBtn'); const on = v.field().on;
+      const ids = ['s:dv-option-pricer', 'a:Maxey0', 't:quantum-physics'];
+      const pos = ids.map(id => v.field().pos(id)); c('cpFieldBtn'); return { n, on, pos, off: !v.field().on } });
+    const nApp = graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length;
+    const fine = f.n === nApp && f.on && f.off && f.pos.every(q => q && isFinite(q.x) && isFinite(q.y));
+    const want = graph.field.xy['s:dv-option-pricer'], got = f.pos[0], sc = Math.hypot(got.x, got.y) / Math.hypot(want[0], want[1]);
+    ok(fine && sc > 0 && Math.abs(Math.atan2(got.y, got.x) - Math.atan2(want[1], want[0])) < 1e-6, "embedding field: " + f.n + " located nodes, placement follows field coordinates");
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

@@ -50,9 +50,9 @@ test("server/discover advertises versions, capabilities, serverInfo, cache field
   assert.equal(typeof r.ttlMs, "number"); assert.equal(r.cacheScope, "public");
 });
 
-test("tools/list: 14 read-only tools, deterministic order, cacheable", async () => {
+test("tools/list: 15 read-only tools, deterministic order, cacheable", async () => {
   const a = (await modern("tools/list")).body.result, b = (await modern("tools/list")).body.result;
-  assert.equal(a.tools.length, 14);
+  assert.equal(a.tools.length, 15);
   assert.deepEqual(a.tools.map((t) => t.name), b.tools.map((t) => t.name));
   assert.ok(a.tools.every((t) => t.annotations.readOnlyHint === true && t.inputSchema.type === "object"));
   assert.equal(a.resultType, "complete"); assert.ok(a.ttlMs > 0);
@@ -169,7 +169,10 @@ test("GET /graph.json: whole graph for browser UIs, CORS open, no search index",
   assert.equal(g.topics.length, manifest.entries.length);
   assert.equal(g.similarity.vectors, undefined); assert.equal(g.similarity.idf, undefined);
   const gi = await (await worker.fetch(new Request("https://x/graph.json?index=1"), env)).json();
-  assert.ok(gi.similarity.idf && Object.keys(gi.similarity.vectors).length === gi.concepts.length + gi.skills.length);
+  const nNodes = gi.domains.length + gi.topics.length + gi.concepts.length + gi.skills.length + gi.agents.length + gi.mcp.length;
+  assert.ok(gi.similarity.idf && Object.keys(gi.similarity.vectors).length === nNodes, "every node of all six levels has a vector");
+  assert.equal(Object.keys(g.field.xy).length, nNodes, "every node has a field location (graph.json, no index needed)");
+  assert.ok(Object.values(g.field.xy).every(([x, y]) => Math.hypot(x, y) <= 1.0001));
   assert.equal((await worker.fetch(new Request("https://x/graph.json", { method: "OPTIONS" }), env)).status, 204);
   assert.equal((await worker.fetch(new Request("https://x/graph.json", { method: "POST", body: "{}" }), env)).status, 405);
 });
@@ -238,7 +241,7 @@ test("legacy: initialize negotiates, no session id minted, tools work", async ()
   const u = await legacy("initialize", { protocolVersion: "2099-01-01" }, null);
   assert.equal(u.body.result.protocolVersion, "2025-11-25");
   const l = await legacy("tools/list");
-  assert.equal(l.body.result.tools.length, 14); assert.equal(l.body.result.resultType, undefined);
+  assert.equal(l.body.result.tools.length, 15); assert.equal(l.body.result.resultType, undefined);
   const c = await legacy("tools/call", { name: "route_task", arguments: { task: "dna transcription" } });
   assert.ok(c.body.result.structuredContent.paths.length > 0);
   assert.equal((await legacy("ping")).body.result && true, true);
@@ -329,4 +332,21 @@ test("MCP App: tool carries ui.resourceUri; ui:// resource is the app HTML with 
 test("every tool carries annotations.title for the directory listing", async () => {
   const tools = (await modern("tools/list")).body.result.tools;
   for (const t of tools) { assert.equal(t.annotations.title, t.title, t.name); assert.equal(t.annotations.readOnlyHint, true, t.name) }
+});
+
+test("shared embedding field: nearest across levels, by node or text; linked nodes sit closer than random", async () => {
+  const q = (await call("nearest", { text: "price an option with black scholes", level: "skill", limit: 3 })).structuredContent;
+  assert.equal(q.results[0].id, "dv-option-pricer");
+  const t = (await call("nearest", { node_id: "quantum-physics", level: "agent", limit: 5 })).structuredContent;
+  assert.equal(t.from.level, "topic"); assert.equal(t.results.length, 5); assert.ok(t.results.every((r) => r.level === "agent" && r.xy.length === 2));
+  const m = (await call("nearest", { node_id: "Maxey0", level: "mcp", limit: 3 })).structuredContent;
+  assert.ok(m.results.every((r) => r.level === "mcp"));
+  const bad = await call("nearest", { node_id: "x", text: "y" }); assert.equal(bad.isError, true);
+  const g = await (await worker.fetch(new Request("https://x/graph.json"), env)).json(), xy = g.field.xy, d = (a, b) => Math.hypot(xy[a][0] - xy[b][0], xy[a][1] - xy[b][1]);
+  const mean = (ps) => ps.reduce((s, [a, b]) => s + d(a, b), 0) / ps.length;
+  const keys = Object.keys(xy); let r = 7; const rnd = () => (r = (r * 1103515245 + 12345) % 2147483648) / 2147483648;
+  const random = Array.from({ length: 4000 }, () => [keys[Math.floor(rnd() * keys.length)], keys[Math.floor(rnd() * keys.length)]]);
+  const tc = g.concepts.map((c) => ["t:" + c.topic, "c:" + c.id]), gate = g.agent_mcp.map((l) => ["a:" + l.agent, "m:" + l.mcp]);
+  assert.ok(mean(tc) < 0.5 * mean(random), "topic-concept closer than random");
+  assert.ok(mean(gate) < mean(random), "agent-server gates closer than random");
 });
