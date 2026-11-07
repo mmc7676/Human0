@@ -1,0 +1,546 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "math-physical-sciences",
+ "topic": {
+  "id": "linear-algebra-and-geometry",
+  "label": "Linear Algebra and Geometry",
+  "desc": "Linear Algebra and Geometry: Linear Algebra, Linear Algebra and Matrix Methods and Geometry and Topology."
+ },
+ "concepts": [
+  {
+   "id": "ma-geometry",
+   "label": "Geometry and Topology",
+   "desc": "Shapes, transformations, coordinates, curves and surfaces, and properties that survive stretching.",
+   "keywords": [
+    "geometry",
+    "topology",
+    "curve",
+    "surface",
+    "transformation"
+   ],
+   "topic": "linear-algebra-and-geometry",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "ma-linear",
+   "label": "Linear Algebra",
+   "desc": "Vectors, matrices, linear systems, eigenvalues, decompositions and vector spaces.",
+   "keywords": [
+    "matrix",
+    "vector",
+    "eigenvalue",
+    "decomposition",
+    "linear",
+    "determinant",
+    "inverse",
+    "transpose"
+   ],
+   "topic": "linear-algebra-and-geometry",
+   "source": "math",
+   "source_topic": "math",
+   "related": [
+    "engp-mathematical-methods"
+   ]
+  },
+  {
+   "id": "mcs-linear-algebra",
+   "label": "Linear Algebra and Matrix Methods",
+   "desc": "Vector spaces, matrices, eigenvalues and decompositions that underpin data analysis and computation.",
+   "keywords": [
+    "linear algebra",
+    "matrix",
+    "vector",
+    "eigenvalue",
+    "decomposition",
+    "svd",
+    "least squares",
+    "rank"
+   ],
+   "topic": "linear-algebra-and-geometry",
+   "source": "mathematical-and-computational-science",
+   "source_topic": "mathematical-and-computational-science",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ma-coordinate-transformer",
+   "concept": "ma-geometry",
+   "label": "Coordinate and Transformation Helper",
+   "desc": "Converts between coordinate systems and applies rotations, scalings and translations with matrices.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1446",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1447",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-curve-surface-analyst",
+   "concept": "ma-geometry",
+   "label": "Curve and Surface Analyst",
+   "desc": "Computes length, area, curvature and tangents of curves and surfaces from a parametrisation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1446",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1443",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-topology-explainer",
+   "concept": "ma-geometry",
+   "label": "Topology Explainer",
+   "desc": "Explains open sets, continuity, connectedness and homeomorphism with simple spaces and checks which properties are preserved.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1446",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1441",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-eigen-analyst",
+   "concept": "ma-linear",
+   "label": "Eigenvalue and Decomposition Analyst",
+   "desc": "Computes eigenvalues, eigenvectors and decompositions such as SVD and explains what they say about the matrix.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1447",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1444",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-linear-system-solver",
+   "concept": "ma-linear",
+   "label": "Linear System Solver",
+   "desc": "Solves linear systems by elimination, reports whether the solution is unique, absent or free, and checks the residual.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1447",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1444",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-vector-space-explainer",
+   "concept": "ma-linear",
+   "label": "Vector Space Explainer",
+   "desc": "Explains basis, span, rank and projection with small examples in two and three dimensions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1447",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1446",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "mcs-dimension-reducer",
+   "concept": "mcs-linear-algebra",
+   "label": "PCA Dimension Reducer",
+   "desc": "Projects data onto principal components and checks explained variance and reconstruction quality.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1614",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1613",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1451",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-least-squares-fitter",
+   "concept": "mcs-linear-algebra",
+   "label": "Least Squares Fitter",
+   "desc": "Solves overdetermined systems by least squares and checks residuals and conditioning.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1614",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1451",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1612",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-matrix-decomposer",
+   "concept": "mcs-linear-algebra",
+   "label": "Matrix Decomposer",
+   "desc": "Computes LU, QR, eigen and SVD decompositions and checks reconstruction error and orthogonality.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1614",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1612",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1441",
+   "name": "Proof and Foundations Agent",
+   "legacy_key": "ma-proof-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1442",
+   "name": "Mathematical Result Checker Agent",
+   "legacy_key": "ma-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1443",
+   "name": "Calculus Agent",
+   "legacy_key": "ma-calculus-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1444",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "ma-numerical-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1446",
+   "name": "Geometry and Topology Agent",
+   "legacy_key": "ma-geometry-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1447",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "ma-linear-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1450",
+   "name": "Scientific Programmer Agent",
+   "legacy_key": "mcs-programmer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1451",
+   "name": "Statistician Agent",
+   "legacy_key": "mcs-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1612",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "mcs-numerics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1613",
+   "name": "Machine Learning Agent",
+   "legacy_key": "mcs-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1614",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "mcs-linalg",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "name": "Coteach",
+   "desc": "Create classroom-ready K-12 math diagrams in Claude",
+   "tools": [
+    "CreateDiagrams"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "origins": [
+    "education",
+    "math"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "8f5a51c6-5664-40c8-8043-f0441252c878",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "local:mcp-server-motherduck"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "maalg": "equation inequality polynomial factor substitution group ring axiom algebra function",
+  "macalc": "derivative integral limit convergence ode pde differentiate differentiation integrate antiderivative gradient slope calculus differential",
+  "malinear": "matrix eigenvalue eigenvector svd rank basis determinant inverse transpose linear solver",
+  "mastat": "deviation median mean pvalue anova nonparametric goodness estimation candidate generalised",
+  "madiscrete": "combinatorics permutation combination modular prime congruence colouring arrange arrangement ways factorial counting recurrence discrete mathematics",
+  "maproof": "conjecture theorem lemma prove irrational rational corollary square sqrt construction justified unjustified",
+  "manum": "bisection quadrature rounding optimisation numerical iteration methods",
+  "mageom": "rotation tangent homeomorphism parametrisation geometry curve",
+  "mcs-analysis": "calculus analysis limit derivative integral series convergence differential",
+  "mcs-matrix": "linear algebra matrix vector eigenvalue decomposition svd rank pca orthogonality",
+  "mcs-inference": "probability statistic distribution estimation hypothesis bayesian regression confidence posterior mcmc",
+  "mcs-numerics": "numerical approximation root quadrature stability floating finite error discretise",
+  "mcs-algorithmic": "algorithm complexity graph optimization gradient dynamic combinatorial runtime kkt",
+  "mcs-learning": "machine learning data science classification validation overfitting feature sql"
+ },
+ "sources": [
+  "math",
+  "mathematical-and-computational-science"
+ ]
+}

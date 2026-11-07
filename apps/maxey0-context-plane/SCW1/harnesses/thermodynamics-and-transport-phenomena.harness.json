@@ -1,0 +1,1235 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "engineering",
+ "topic": {
+  "id": "thermodynamics-and-transport-phenomena",
+  "label": "Thermodynamics and Transport Phenomena",
+  "desc": "Thermodynamics and Transport Phenomena: Thermodynamics and Fluid Mechanics, Thermodynamics and Statistical Mechanics, Transport Phenomena, Heat Transfer, Thermodynamics and Energy Conversion and Fluid Mechanics."
+ },
+ "concepts": [
+  {
+   "id": "cheme-transport-phenomena",
+   "label": "Transport Phenomena",
+   "desc": "Momentum, heat and mass transfer in process equipment.",
+   "keywords": [
+    "transport",
+    "heat transfer",
+    "mass transfer",
+    "fluid",
+    "diffusion",
+    "heat exchanger",
+    "viscosity",
+    "momentum"
+   ],
+   "topic": "thermodynamics-and-transport-phenomena",
+   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
+   "related": []
+  },
+  {
+   "id": "cl-fluids",
+   "label": "Fluid Mechanics",
+   "desc": "Fluid statics and flow: pressure, viscosity, turbulence and scaling.",
+   "keywords": [
+    "fluid",
+    "pressure",
+    "viscosity",
+    "turbulence",
+    "reynolds"
+   ],
+   "topic": "thermodynamics-and-transport-phenomena",
+   "source": "classical-physics",
+   "source_topic": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "cl-thermo",
+   "label": "Thermodynamics and Statistical Mechanics",
+   "desc": "Heat, entropy, thermodynamic cycles and the kinetic theory of gases.",
+   "keywords": [
+    "heat",
+    "entropy",
+    "cycle",
+    "carnot",
+    "kinetic",
+    "temperature",
+    "thermodynamics",
+    "ensemble",
+    "partition",
+    "phase transition",
+    "diffusion"
+   ],
+   "topic": "thermodynamics-and-transport-phenomena",
+   "source": "classical-physics",
+   "source_topic": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "ese-thermodynamics-conversion",
+   "label": "Thermodynamics and Energy Conversion",
+   "desc": "Laws of thermodynamics applied to power cycles, heat engines, heat pumps and efficiency limits.",
+   "keywords": [
+    "thermodynamics",
+    "efficiency",
+    "cycle",
+    "rankine",
+    "heat engine",
+    "heat pump",
+    "exergy",
+    "turbine"
+   ],
+   "topic": "thermodynamics-and-transport-phenomena",
+   "source": "energy-science-and-engineering",
+   "source_topic": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "me-heat-transfer",
+   "label": "Heat Transfer",
+   "desc": "Conduction, convection and radiation and the design of heat exchangers and thermal management.",
+   "keywords": [
+    "heat transfer",
+    "conduction",
+    "convection",
+    "radiation",
+    "heat exchanger",
+    "fin",
+    "thermal resistance",
+    "temperature"
+   ],
+   "topic": "thermodynamics-and-transport-phenomena",
+   "source": "mechanical-engineering",
+   "source_topic": "mechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "me-thermodynamics-fluids",
+   "label": "Thermodynamics and Fluid Mechanics",
+   "desc": "Energy conversion, power and refrigeration cycles, fluid statics and internal and external flows.",
+   "keywords": [
+    "thermodynamics",
+    "cycle",
+    "efficiency",
+    "fluid",
+    "pressure",
+    "flow",
+    "pipe",
+    "turbine"
+   ],
+   "topic": "thermodynamics-and-transport-phenomena",
+   "source": "mechanical-engineering",
+   "source_topic": "mechanical-engineering",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cheme-exchanger-design",
+   "concept": "cheme-transport-phenomena",
+   "label": "Heat Exchanger Design",
+   "desc": "Sizes heat exchangers by LMTD or effectiveness methods, checked by energy balance closure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1106",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-mass-transfer",
+   "concept": "cheme-transport-phenomena",
+   "label": "Mass Transfer Coefficient Estimator",
+   "desc": "Estimates mass transfer coefficients from correlations, checked by dimensionless validity ranges.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1106",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1109",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1107",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-pipe-flow",
+   "concept": "cheme-transport-phenomena",
+   "label": "Pipe Flow and Pressure Drop",
+   "desc": "Computes pressure drop and pump power in piping, checked by Reynolds regime and friction factor.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1106",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cl-dimensional-analysis-scaler",
+   "concept": "cl-fluids",
+   "label": "Dimensional Analysis and Scaling",
+   "desc": "Builds dimensionless numbers such as the Reynolds number and uses them to scale models to full size.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1493",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1494",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-fluid-flow-solver",
+   "concept": "cl-fluids",
+   "label": "Fluid Flow Solver",
+   "desc": "Solves pressure, Bernoulli and pipe-flow problems and identifies laminar or turbulent regimes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1493",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-heat-transfer-solver",
+   "concept": "cl-thermo",
+   "label": "Heat Transfer Solver",
+   "desc": "Solves conduction, convection and radiation problems with boundary conditions and reports the dominant mode.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1494",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1493",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-kinetic-theory-statistics",
+   "concept": "cl-thermo",
+   "label": "Kinetic Theory and Statistics",
+   "desc": "Derives gas properties from molecular statistics and connects entropy to counting of states.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1494",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1485",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-thermodynamic-cycle-analyzer",
+   "concept": "cl-thermo",
+   "label": "Thermodynamic Cycle Analyzer",
+   "desc": "Analyzes engines and refrigerators on pressure-volume diagrams and computes efficiency against the Carnot limit.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1494",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1486",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "heat-engine-cycle-analyzer",
+   "concept": "cl-thermo",
+   "label": "Heat Engine Cycle Analyzer",
+   "desc": "Analyses Carnot and Otto cycles for work, heat flow, entropy production and efficiency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1484",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "statistical-ensemble-calculator",
+   "concept": "cl-thermo",
+   "label": "Statistical Ensemble Calculator",
+   "desc": "Computes partition functions and Boltzmann distributions and detects phase transitions in model systems.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1480",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1484",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "thermal-transport-simulator",
+   "concept": "cl-thermo",
+   "label": "Thermal Transport Simulator",
+   "desc": "Simulates heat conduction and diffusion on a mesh with boundary conditions and reports temperature fields.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1484",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "ese-cycle-analyzer",
+   "concept": "ese-thermodynamics-conversion",
+   "label": "Power Cycle Analyzer",
+   "desc": "Computes efficiency and work of Rankine, Brayton and combined cycles and checks energy balance closure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1259",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1258",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-exergy-auditor",
+   "concept": "ese-thermodynamics-conversion",
+   "label": "Exergy Auditor",
+   "desc": "Locates exergy destruction in a process and checks totals against first and second law balances.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1259",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-heat-pump-sizer",
+   "concept": "ese-thermodynamics-conversion",
+   "label": "Heat Pump Sizer",
+   "desc": "Sizes heat pumps from load and climate data and checks coefficient of performance across temperatures.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1259",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "me-electronics-cooling-designer",
+   "concept": "me-heat-transfer",
+   "label": "Electronics Cooling Designer",
+   "desc": "Designs fins and airflow to keep component temperatures within limits and checks results with a transient thermal model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1459",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1454",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-heat-exchanger-sizer",
+   "concept": "me-heat-transfer",
+   "label": "Heat Exchanger Sizer",
+   "desc": "Sizes exchangers by LMTD and effectiveness-NTU methods and checks both methods agree.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1459",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1460",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-thermal-resistance-network",
+   "concept": "me-heat-transfer",
+   "label": "Thermal Resistance Network Solver",
+   "desc": "Models conduction and convection paths as resistance networks and checks the heat balance at each node.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1459",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1460",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-cfd-flow-checker",
+   "concept": "me-thermodynamics-fluids",
+   "label": "CFD Flow Checker",
+   "desc": "Sets up computational flow simulations and checks mesh independence and conservation of mass and momentum.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1460",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1459",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-cycle-efficiency-calculator",
+   "concept": "me-thermodynamics-fluids",
+   "label": "Cycle Efficiency Calculator",
+   "desc": "Analyses Rankine, Brayton and refrigeration cycles with property tables and checks first and second law balances.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1460",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1459",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-pipe-flow-sizer",
+   "concept": "me-thermodynamics-fluids",
+   "label": "Pipe Flow Sizer",
+   "desc": "Sizes pipes and pumps with Darcy friction and minor losses and checks Reynolds regime and head balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1460",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1104",
+   "name": "Process Design Engineer",
+   "legacy_key": "cheme-design",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1105",
+   "name": "Mass and Energy Balance Checker",
+   "legacy_key": "cheme-balance",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1106",
+   "name": "Transport Phenomena Engineer",
+   "legacy_key": "cheme-transport",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1107",
+   "name": "Chemical Thermodynamics Analyst",
+   "legacy_key": "cheme-thermo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1109",
+   "name": "Separations Process Engineer",
+   "legacy_key": "cheme-separations",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1255",
+   "name": "Energy Data Reviewer",
+   "legacy_key": "ese-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1257",
+   "name": "Energy Systems Analyst",
+   "legacy_key": "ese-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1258",
+   "name": "Fuels and Combustion Engineer",
+   "legacy_key": "ese-fuels",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1259",
+   "name": "Thermal Energy Engineer",
+   "legacy_key": "ese-thermo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1454",
+   "name": "Controls and Mechatronics Agent",
+   "legacy_key": "me-controls",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1456",
+   "name": "Units and Standards Checker",
+   "legacy_key": "me-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1457",
+   "name": "Machine Design Agent",
+   "legacy_key": "me-designer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1458",
+   "name": "Finite Element Analyst",
+   "legacy_key": "me-fea",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1459",
+   "name": "Heat Transfer Agent",
+   "legacy_key": "me-heat",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1460",
+   "name": "Thermofluids Agent",
+   "legacy_key": "me-thermofluids",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1480",
+   "name": "Theorist Agent",
+   "legacy_key": "phys-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1481",
+   "name": "Units Checker Agent",
+   "legacy_key": "phys-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1482",
+   "name": "Observer Agent",
+   "legacy_key": "phys-observer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1483",
+   "name": "Simulation Agent",
+   "legacy_key": "phys-simulation",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1484",
+   "name": "Thermal Systems Agent",
+   "legacy_key": "phys-thermal",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1485",
+   "name": "Mechanics Agent",
+   "legacy_key": "cl-mechanician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1486",
+   "name": "Conservation Law Checker Agent",
+   "legacy_key": "cl-conservation-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1487",
+   "name": "Numerical Integration Agent",
+   "legacy_key": "cl-numerical-integrator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1488",
+   "name": "Units and Dimensions Checker Agent",
+   "legacy_key": "cl-units-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1489",
+   "name": "Engineer Agent",
+   "legacy_key": "phys-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1490",
+   "name": "Experimentalist Agent",
+   "legacy_key": "phys-experimentalist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1493",
+   "name": "Fluid Dynamics Agent",
+   "legacy_key": "cl-fluid-dynamicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1494",
+   "name": "Thermodynamics Agent",
+   "legacy_key": "cl-thermodynamicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1617",
+   "name": "Data Analyst Agent",
+   "legacy_key": "phys-data-analyst",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "astro_mcp",
+   "desc": "mcp server for desi and other surveys (astronomical object search, astroquery, spectra, FITS conversion)",
+   "tools": [
+    "search_objects",
+    "astroquery_query",
+    "get_spectrum_by_id",
+    "list_astroquery_services",
+    "preview_data",
+    "convert_to_fits"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/SandyYuan/astro_mcp",
+   "id": "local:astro-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "chuk-mcp-physics",
+   "desc": "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   "tools": [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/IBM/chuk-mcp-physics",
+   "id": "local:chuk-mcp-physics",
+   "origins": [
+    "mechanical-engineering",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ParticlePhysics-MCP-Server",
+   "desc": "Fast particle data lookup from natural language.",
+   "tools": [
+    "search_particle",
+    "list_decays"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/uzerone/ParticlePhysics-MCP-Server",
+   "id": "local:particlephysics-mcp-server",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Psi-MCP",
+   "desc": "An Advanced Quantum Physics MCP server",
+   "tools": [
+    "create_quantum_circuit",
+    "simulate_quantum_circuit",
+    "solve_master_equation",
+    "vqe_optimization",
+    "dmrg_simulation",
+    "quantum_neural_network"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/manasp21/Psi-MCP",
+   "id": "local:psi-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "quantum-simulator-mcp",
+   "desc": "A Docker image providing a quantum circuit simulator that implements the Model Context Protocol",
+   "tools": [
+    "run_circuit",
+    "list_noise_models",
+    "list_result_types",
+    "get_circuit_stats",
+    "create_test_histogram"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/YuChenSSR/quantum-simulator-mcp",
+   "id": "local:quantum-simulator-mcp",
+   "origins": [
+    "engineering-physics",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ros-mcp-server",
+   "desc": "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/robotmcp/ros-mcp-server",
+   "id": "local:ros-mcp-server",
+   "origins": [
+    "mechanical-engineering",
+    "robotics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "local:particlephysics-mcp-server",
+  "local:chuk-mcp-physics",
+  "local:quantum-simulator-mcp",
+  "local:astro-mcp",
+  "local:psi-mcp",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "local:sympy-mcp",
+  "local:ros-mcp-server"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "cheme-thermodynamics": "thermodynamics equilibrium phase fugacity equation state activity enthalpy gibbs",
+  "cheme-reaction": "reactor kinetics rate law conversion cstr plug flow catalyst selectivity",
+  "cheme-transport": "transport heat transfer mass fluid diffusion exchanger viscosity momentum",
+  "cheme-separations": "separation distillation absorption extraction membrane column stage purity",
+  "cheme-process": "control dynamics feedback pid function stability tuning setpoint",
+  "cheme-processdesig": "process design flowsheet economics cost hazard hazop safety sustainability",
+  "newtonian": "newton torque friction kepler constraint inertia force acceleration orbit kinematics newtonian mechanics moon lunar mars planetary gravity weight surface",
+  "conservation": "energy dissipated impulse elastic inelastic momentum collision conservation",
+  "wavemotion": "oscillator damping resonance standing dispersion grating wave interference fourier oscillations",
+  "thermoclass": "entropy carnot efficiency conduction convection radiation heat cycle kinetic temperature thermodynamics statistical",
+  "fieldtheory": "gauss maxwell induction capacitor inductor potential electric magnetic circuit field capacitance electromagnetism",
+  "raytrace": "ray mirror aberration diffraction polarization refraction optics",
+  "flowmech": "bernoulli laminar turbulent reynolds pipe viscosity fluid pressure turbulence",
+  "relativistic": "lorentz dilation contraction geodesic curvature relativity spacetime special general",
+  "ese-thermo": "thermodynamics cycle rankine brayton heat turbine exergy",
+  "ese-renew": "renewable solar photovoltaic wind hydro geothermal irradiance",
+  "ese-store": "storage battery lithium electrochemistry hydrogen degradation",
+  "ese-grid": "grid transmission dispatch reliability frequency microgrid curtailment",
+  "ese-fuel": "fuel combustion emissions biofuel nuclear reactor fission",
+  "ese-sys": "lcoe life decarbonization carbon policy pathway economics",
+  "me-solid": "statics equilibrium free stress strain beam deflection torsion shear",
+  "me-motion": "dynamics kinematics mechanism vibration frequency damping resonance linkage modal transmissibility",
+  "me-energy": "thermodynamic cycle efficiency fluid pressure flow pipe turbine rankine pump",
+  "me-thermal": "heat conduction convection radiation exchanger fin resistance temperature cooling",
+  "me-design": "machine gear bearing fastener tolerance safety manufacturing cad machining",
+  "me-control": "control feedback pid transfer sensor actuator robot stability"
+ },
+ "sources": [
+  "chemical-engineering",
+  "classical-physics",
+  "energy-science-and-engineering",
+  "mechanical-engineering"
+ ]
+}

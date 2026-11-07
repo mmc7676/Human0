@@ -1,0 +1,399 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "business-finance",
+ "topic": {
+  "id": "hedge-funds-and-private-funds",
+  "label": "Hedge Funds and Private Funds",
+  "desc": "Hedge Funds and Private Funds: Private Equity and Venture Capital, Hedge Fund Strategies, Fund Structures: Onshore and Offshore, Prime Brokerage and Fund Operations, Funds and ETFs and Subscribing, Reporting and Tracking."
+ },
+ "concepts": [
+  {
+   "id": "hf-operations",
+   "label": "Prime Brokerage and Fund Operations",
+   "desc": "Prime brokers, fund administrators, NAV calculation, custody, margin and securities lending.",
+   "keywords": [
+    "prime",
+    "brokerage",
+    "administrator",
+    "nav",
+    "custody",
+    "margin",
+    "securities",
+    "lending",
+    "operations"
+   ],
+   "topic": "hedge-funds-and-private-funds",
+   "source": "hedge-funds",
+   "source_topic": "hedge-funds",
+   "related": []
+  },
+  {
+   "id": "hf-private-markets",
+   "label": "Private Equity and Venture Capital",
+   "desc": "Buyouts, growth and venture funds, capital calls, J-curve, carried interest and exits.",
+   "keywords": [
+    "private",
+    "equity",
+    "venture",
+    "capital",
+    "buyout",
+    "fund",
+    "capital",
+    "call",
+    "carried",
+    "interest",
+    "exit"
+   ],
+   "topic": "hedge-funds-and-private-funds",
+   "source": "hedge-funds",
+   "source_topic": "hedge-funds",
+   "related": []
+  },
+  {
+   "id": "hf-strategies",
+   "label": "Hedge Fund Strategies",
+   "desc": "Long/short equity, global macro, event driven, relative value, credit and quant strategies.",
+   "keywords": [
+    "hedge",
+    "fund",
+    "strategy",
+    "long",
+    "short",
+    "macro",
+    "event",
+    "driven",
+    "arbitrage",
+    "relative",
+    "value"
+   ],
+   "topic": "hedge-funds-and-private-funds",
+   "source": "hedge-funds",
+   "source_topic": "hedge-funds",
+   "related": []
+  },
+  {
+   "id": "hf-structures",
+   "label": "Fund Structures: Onshore and Offshore",
+   "desc": "Delaware LPs, Cayman funds, master-feeder structures, side pockets and why each is used.",
+   "keywords": [
+    "onshore",
+    "offshore",
+    "cayman",
+    "delaware",
+    "master",
+    "feeder",
+    "limited",
+    "partnership",
+    "side",
+    "pocket",
+    "structure"
+   ],
+   "topic": "hedge-funds-and-private-funds",
+   "source": "hedge-funds",
+   "source_topic": "hedge-funds",
+   "related": []
+  },
+  {
+   "id": "hf-subscriptions",
+   "label": "Subscribing, Reporting and Tracking",
+   "desc": "How investors subscribe and redeem: eligibility, subscription documents, lockups, gates, and investor reporting.",
+   "keywords": [
+    "subscription",
+    "redemption",
+    "lockup",
+    "gate",
+    "investor",
+    "reporting",
+    "eligibility",
+    "qualified",
+    "purchaser"
+   ],
+   "topic": "hedge-funds-and-private-funds",
+   "source": "hedge-funds",
+   "source_topic": "hedge-funds",
+   "related": []
+  },
+  {
+   "id": "inv-funds",
+   "label": "Funds and ETFs",
+   "desc": "Mutual funds, ETFs, index funds, expense ratios, tracking error and fund structures.",
+   "keywords": [
+    "fund",
+    "etf",
+    "mutual",
+    "index",
+    "expense",
+    "ratio",
+    "tracking",
+    "error",
+    "holdings",
+    "nav"
+   ],
+   "topic": "hedge-funds-and-private-funds",
+   "source": "investing",
+   "source_topic": "investing",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "hf-fund-ops-map",
+   "concept": "hf-operations",
+   "label": "Fund Ops Map",
+   "desc": "Maps a fund's service providers (prime broker, administrator, auditor, custodian) and what each does.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1741",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1742",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1743",
+     "role": "support"
+    }
+   ],
+   "source": "hedge-funds"
+  },
+  {
+   "id": "hf-pe-fund-terms-explainer",
+   "concept": "hf-private-markets",
+   "label": "PE Fund Terms Explainer",
+   "desc": "Explains fund terms: management fee, carry, hurdle, waterfall and capital calls.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1744",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1742",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1741",
+     "role": "support"
+    }
+   ],
+   "source": "hedge-funds"
+  },
+  {
+   "id": "hf-strategy-explainer",
+   "concept": "hf-strategies",
+   "label": "Strategy Explainer",
+   "desc": "Explains a hedge fund strategy's return sources, risks and typical leverage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1745",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1742",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1746",
+     "role": "support"
+    }
+   ],
+   "source": "hedge-funds"
+  },
+  {
+   "id": "hf-fund-structure-selector",
+   "concept": "hf-structures",
+   "label": "Fund Structure Selector",
+   "desc": "Compares onshore, offshore and parallel fund structures for an investor base.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1746",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1742",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1744",
+     "role": "support"
+    }
+   ],
+   "source": "hedge-funds"
+  },
+  {
+   "id": "hf-master-feeder-explainer",
+   "concept": "hf-structures",
+   "label": "Master-Feeder Explainer",
+   "desc": "Explains a master-feeder structure, which investors use which feeder and why.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1746",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1742",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1744",
+     "role": "support"
+    }
+   ],
+   "source": "hedge-funds"
+  },
+  {
+   "id": "hf-subscription-guide",
+   "concept": "hf-subscriptions",
+   "label": "Subscription Guide",
+   "desc": "Explains how an investor subscribes to a fund: eligibility, documents, KYC, lockups and redemptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1743",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1742",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1745",
+     "role": "support"
+    }
+   ],
+   "source": "hedge-funds"
+  },
+  {
+   "id": "inv-fund-comparator",
+   "concept": "inv-funds",
+   "label": "Fund Comparator",
+   "desc": "Compares funds by holdings, fees, tracking error and structure.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1749",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1748",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1750",
+     "role": "support"
+    }
+   ],
+   "source": "investing"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1741",
+   "name": "Fund Operations Agent",
+   "legacy_key": "hf-ops",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1742",
+   "name": "Alternatives Checker Agent",
+   "legacy_key": "hf-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1743",
+   "name": "Investor Relations Agent",
+   "legacy_key": "hf-investor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1744",
+   "name": "Private Equity Agent",
+   "legacy_key": "hf-pe",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1745",
+   "name": "Hedge Fund Strategy Agent",
+   "legacy_key": "hf-strategy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1746",
+   "name": "Fund Structuring Agent",
+   "legacy_key": "hf-structure",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1748",
+   "name": "Investment Checker Agent",
+   "legacy_key": "inv-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1749",
+   "name": "Fund Analyst Agent",
+   "legacy_key": "inv-funds",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1750",
+   "name": "Portfolio Risk Agent",
+   "legacy_key": "inv-risk",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "QuantConnect MCP",
+   "desc": "QuantConnect MCP server: algorithmic trading research, backtests, projects and quantitative strategy code on the LEAN engine.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/QuantConnect/mcp-server",
+   "id": "local:quantconnect-mcp",
+   "origins": [
+    "investing"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Yahoo Finance MCP",
+   "desc": "Yahoo Finance MCP server: stock prices, historical quotes, company financial statements, holders, options chains and news.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/Alex2Yang97/yahoo-finance-mcp",
+   "id": "local:yahoo-finance-mcp",
+   "origins": [
+    "equities",
+    "investing"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:quantconnect-mcp",
+  "local:yahoo-finance-mcp"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "hfstrategies": "hedge fund strategy long short macro event driven arbitrage relative value",
+  "hfstructures": "onshore offshore cayman delaware master feeder limited partnership side pocket structure",
+  "hfprivatemarkets": "private equity venture capital buyout fund capital call carried interest exit",
+  "hfoperations": "prime brokerage administrator nav custody margin securities lending operations",
+  "hfsubscriptions": "subscription redemption lockup gate investor reporting eligibility qualified purchaser",
+  "invallocation": "asset allocation portfolio diversification rebalance risk tolerance horizon goal",
+  "invfunds": "fund etf mutual index expense ratio tracking error holdings nav",
+  "invrisk": "risk return volatility drawdown correlation beta sharpe var factor",
+  "invtracking": "performance tracking return benchmark attribution holding position watchlist",
+  "invquant": "quantitative strategy backtest factor model systematic algorithm overfitting signal"
+ },
+ "sources": [
+  "hedge-funds",
+  "investing"
+ ]
+}

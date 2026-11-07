@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "work",
+ "domain": "business-finance",
  "topic": {
   "id": "marketing",
   "label": "Marketing",
-  "desc": "Marketing: strategy and positioning, content and social, search, email and lifecycle, paid media, and measurement."
+  "desc": "Marketing: Paid Media, Email and Lifecycle, Positioning and Strategy, Measurement and Attribution, Content and Social and Search and SEO."
  },
  "concepts": [
   {
@@ -25,6 +25,7 @@
    ],
    "topic": "marketing",
    "source": "marketing",
+   "source_topic": "marketing",
    "related": []
   },
   {
@@ -43,6 +44,7 @@
    ],
    "topic": "marketing",
    "source": "marketing",
+   "source_topic": "marketing",
    "related": []
   },
   {
@@ -61,6 +63,7 @@
    ],
    "topic": "marketing",
    "source": "marketing",
+   "source_topic": "marketing",
    "related": []
   },
   {
@@ -80,6 +83,7 @@
    ],
    "topic": "marketing",
    "source": "marketing",
+   "source_topic": "marketing",
    "related": []
   },
   {
@@ -98,6 +102,7 @@
    ],
    "topic": "marketing",
    "source": "marketing",
+   "source_topic": "marketing",
    "related": []
   },
   {
@@ -115,6 +120,7 @@
    ],
    "topic": "marketing",
    "source": "marketing",
+   "source_topic": "marketing",
    "related": []
   }
  ],
@@ -842,7 +848,8 @@
    "via": {
     "primary": "Maxey889",
     "skill": "mk-content-calendar-planner"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey887",
@@ -853,7 +860,8 @@
    "via": {
     "primary": "Maxey889",
     "skill": "mk-content-calendar-planner"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey888",
@@ -864,7 +872,8 @@
    "via": {
     "primary": "Maxey890",
     "skill": "mk-audience-segmenter"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey888",
@@ -875,7 +884,8 @@
    "via": {
     "primary": "Maxey896",
     "skill": "mk-backlink-gap-analyst"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey888",
@@ -886,14 +896,16 @@
    "via": {
     "primary": "Maxey890",
     "skill": "mk-audience-segmenter"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey888",
    "mcp": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
    "topic": "marketing",
    "score": 0.2221,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey888",
@@ -904,7 +916,8 @@
    "via": {
     "primary": "Maxey890",
     "skill": "mk-audience-segmenter"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey888",
@@ -915,56 +928,64 @@
    "via": {
     "primary": "Maxey890",
     "skill": "mk-audience-segmenter"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey889",
    "mcp": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
    "topic": "marketing",
    "score": 0.2603,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey889",
    "mcp": "b1a89151-dc5f-4d75-baa7-9da291b81a0c",
    "topic": "marketing",
    "score": 0.2341,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey890",
    "mcp": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
    "topic": "marketing",
    "score": 0.2735,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey890",
    "mcp": "875dee50-9b3f-452b-af8c-fbc839966273",
    "topic": "marketing",
    "score": 0.2253,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey890",
    "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
    "topic": "marketing",
    "score": 0.132,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey890",
    "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
    "topic": "marketing",
    "score": 0.3898,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey891",
    "mcp": "70ba6d62-7e98-4ef4-9073-d161d900a95f",
    "topic": "marketing",
    "score": 0.3256,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey892",
@@ -975,7 +996,8 @@
    "via": {
     "primary": "Maxey893",
     "skill": "mk-lifecycle-journey-designer"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey892",
@@ -986,7 +1008,8 @@
    "via": {
     "primary": "Maxey896",
     "skill": "mk-keyword-researcher"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey892",
@@ -997,35 +1020,40 @@
    "via": {
     "primary": "Maxey893",
     "skill": "mk-lifecycle-journey-designer"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey892",
    "mcp": "cc599e7b-8c59-4e89-9bf0-36d47bb9ec80",
    "topic": "marketing",
    "score": 0.1348,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey892",
    "mcp": "cd33c38a-66e7-41a4-8777-bec24d4bba3a",
    "topic": "marketing",
    "score": 0.382,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey893",
    "mcp": "3a7fa2ac-d655-4479-bce3-8e10fcc26f96",
    "topic": "marketing",
    "score": 0.3033,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey893",
    "mcp": "875dee50-9b3f-452b-af8c-fbc839966273",
    "topic": "marketing",
    "score": 0.2003,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey894",
@@ -1036,7 +1064,8 @@
    "via": {
     "primary": "Maxey892",
     "skill": "mk-attribution-analyst"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey894",
@@ -1047,7 +1076,8 @@
    "via": {
     "primary": "Maxey892",
     "skill": "mk-attribution-analyst"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey895",
@@ -1058,7 +1088,8 @@
    "via": {
     "primary": "Maxey892",
     "skill": "mk-budget-pacing-monitor"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey895",
@@ -1069,21 +1100,24 @@
    "via": {
     "primary": "Maxey892",
     "skill": "mk-budget-pacing-monitor"
-   }
+   },
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey896",
    "mcp": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
    "topic": "marketing",
    "score": 0.3249,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   },
   {
    "agent": "Maxey897",
    "mcp": "8194f7ea-e733-4e80-bd77-e504fd4ed5e5",
    "topic": "marketing",
    "score": 0.3716,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "marketing"
   }
  ],
  "lexicon": {

@@ -1,0 +1,314 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "agentic-systems",
+ "topic": {
+  "id": "systems-engineering-and-reliability",
+  "label": "Systems Engineering and Reliability",
+  "desc": "Systems Engineering and Reliability: Systems Modeling and Architecture, Systems Thinking and Feedback, Boundaries and Interfaces and Reliability and Failure Modes."
+ },
+ "concepts": [
+  {
+   "id": "sys-architecture",
+   "label": "Systems Modeling and Architecture",
+   "desc": "Modeling a system's structure and behavior: components, data flow, decomposition and architecture views.",
+   "keywords": [
+    "architecture",
+    "model",
+    "component",
+    "decomposition",
+    "diagram",
+    "data",
+    "flow",
+    "subsystem",
+    "modular"
+   ],
+   "topic": "systems-engineering-and-reliability",
+   "source": "systems",
+   "source_topic": "systems",
+   "related": []
+  },
+  {
+   "id": "sys-feedback",
+   "label": "Systems Thinking and Feedback",
+   "desc": "Stocks and flows, feedback loops, delays, leverage points and emergent behavior of systems.",
+   "keywords": [
+    "system",
+    "thinking",
+    "feedback",
+    "loop",
+    "stock",
+    "flow",
+    "delay",
+    "leverage",
+    "emergence",
+    "dynamics"
+   ],
+   "topic": "systems-engineering-and-reliability",
+   "source": "systems",
+   "source_topic": "systems",
+   "related": []
+  },
+  {
+   "id": "sys-interfaces",
+   "label": "Boundaries and Interfaces",
+   "desc": "Where a system ends, what crosses its boundary, and the interfaces and contracts between components.",
+   "keywords": [
+    "boundary",
+    "interface",
+    "contract",
+    "component",
+    "input",
+    "output",
+    "dependency",
+    "coupling"
+   ],
+   "topic": "systems-engineering-and-reliability",
+   "source": "systems",
+   "source_topic": "systems",
+   "related": []
+  },
+  {
+   "id": "sys-reliability",
+   "label": "Reliability and Failure Modes",
+   "desc": "How systems fail: failure modes, redundancy, single points of failure, cascading failure and resilience.",
+   "keywords": [
+    "reliability",
+    "failure",
+    "mode",
+    "redundancy",
+    "resilience",
+    "cascade",
+    "fault",
+    "tolerance",
+    "availability"
+   ],
+   "topic": "systems-engineering-and-reliability",
+   "source": "systems",
+   "source_topic": "systems",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "sys-architecture-view-builder",
+   "concept": "sys-architecture",
+   "label": "Architecture View Builder",
+   "desc": "Builds architecture views of a system (context, containers, components) from a description.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1640",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1642",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-system-decomposer",
+   "concept": "sys-architecture",
+   "label": "System Decomposer",
+   "desc": "Decomposes a system into subsystems and components with their responsibilities and data flow.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1640",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1642",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-feedback-loop-mapper",
+   "concept": "sys-feedback",
+   "label": "Feedback Loop Mapper",
+   "desc": "Maps the feedback loops in a system and labels each reinforcing or balancing, with its delays.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1643",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1644",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-leverage-point-finder",
+   "concept": "sys-feedback",
+   "label": "Leverage Point Finder",
+   "desc": "Names where a small change to a system would have large effect, with reasoning.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1643",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1644",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-boundary-definer",
+   "concept": "sys-interfaces",
+   "label": "Boundary Definer",
+   "desc": "Defines what is inside and outside a system and what crosses the boundary.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1644",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1640",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-interface-contract-writer",
+   "concept": "sys-interfaces",
+   "label": "Interface Contract Writer",
+   "desc": "Writes the contract for an interface between components: inputs, outputs, errors and guarantees.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1644",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1640",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-failure-mode-analyzer",
+   "concept": "sys-reliability",
+   "label": "Failure Mode Analyzer",
+   "desc": "Lists a system's failure modes, their effects and detection, ranked by severity.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1642",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1643",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  },
+  {
+   "id": "sys-single-point-of-failure-finder",
+   "concept": "sys-reliability",
+   "label": "Single Point of Failure Finder",
+   "desc": "Finds single points of failure in a system design and suggests redundancy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1642",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1641",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1643",
+     "role": "support"
+    }
+   ],
+   "source": "systems"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1640",
+   "name": "Systems Architect Agent",
+   "legacy_key": "sys-architect",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1641",
+   "name": "Systems Checker Agent",
+   "legacy_key": "sys-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1642",
+   "name": "Reliability Agent",
+   "legacy_key": "sys-reliability",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1643",
+   "name": "Systems Thinking Agent",
+   "legacy_key": "sys-thinker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1644",
+   "name": "Interface Agent",
+   "legacy_key": "sys-interface",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "sysfeedback": "system thinking feedback loop stock flow delay leverage emergence dynamics",
+  "sysinterfaces": "boundary interface contract component input output dependency coupling",
+  "sysarchitecture": "architecture model component decomposition diagram data flow subsystem modular",
+  "sysreliability": "reliability failure mode redundancy resilience cascade fault tolerance availability"
+ },
+ "sources": [
+  "systems"
+ ]
+}

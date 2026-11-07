@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "life-health-mind",
  "topic": {
   "id": "biomedical-computation",
   "label": "Biomedical Computation",
-  "desc": "Biomedical Computation: computational methods for genomics, molecules, imaging, clinical data and physiology."
+  "desc": "Biomedical Computation: Biomedical Machine Learning, Clinical Informatics, Physiological Modeling, Genomics and Bioinformatics and Medical Image Computing."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "biomedical-computation",
    "source": "biomedical-computation",
+   "source_topic": "biomedical-computation",
    "related": [
     "mcs-machine-learning-data"
    ]
@@ -44,6 +45,7 @@
    ],
    "topic": "biomedical-computation",
    "source": "biomedical-computation",
+   "source_topic": "biomedical-computation",
    "related": []
   },
   {
@@ -62,6 +64,7 @@
    ],
    "topic": "biomedical-computation",
    "source": "biomedical-computation",
+   "source_topic": "biomedical-computation",
    "related": []
   },
   {
@@ -80,28 +83,9 @@
    ],
    "topic": "biomedical-computation",
    "source": "biomedical-computation",
+   "source_topic": "biomedical-computation",
    "related": [
     "bioe-bioimaging"
-   ]
-  },
-  {
-   "id": "bmc-molecular-modeling",
-   "label": "Molecular Modeling and Drug Discovery",
-   "desc": "Structure prediction, docking and molecular dynamics for understanding and designing drugs.",
-   "keywords": [
-    "molecular",
-    "docking",
-    "structure",
-    "dynamics",
-    "ligand",
-    "drug",
-    "protein",
-    "binding"
-   ],
-   "topic": "biomedical-computation",
-   "source": "biomedical-computation",
-   "related": [
-    "bi-structural"
    ]
   },
   {
@@ -120,6 +104,7 @@
    ],
    "topic": "biomedical-computation",
    "source": "biomedical-computation",
+   "source_topic": "biomedical-computation",
    "related": []
   }
  ],
@@ -389,72 +374,6 @@
    "source": "biomedical-computation"
   },
   {
-   "id": "bmc-ligand-docking",
-   "concept": "bmc-molecular-modeling",
-   "label": "Ligand Docking Screen",
-   "desc": "Docks ligand libraries to a target and ranks poses, checked by redocking a known ligand.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1101",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1097",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1095",
-     "role": "support"
-    }
-   ],
-   "source": "biomedical-computation"
-  },
-  {
-   "id": "bmc-md-simulation",
-   "concept": "bmc-molecular-modeling",
-   "label": "Molecular Dynamics Analysis",
-   "desc": "Runs and analyses molecular dynamics trajectories, checked by energy and RMSD stability.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1101",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1100",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1597",
-     "role": "support"
-    }
-   ],
-   "source": "biomedical-computation"
-  },
-  {
-   "id": "bmc-structure-prediction",
-   "concept": "bmc-molecular-modeling",
-   "label": "Structure Prediction",
-   "desc": "Predicts protein and complex structures, checked by confidence metrics and experimental structure comparison.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1101",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1597",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1095",
-     "role": "support"
-    }
-   ],
-   "source": "biomedical-computation"
-  },
-  {
    "id": "bmc-cardiac-sim",
    "concept": "bmc-physiological-modeling",
    "label": "Cardiac Electrophysiology Simulation",
@@ -561,14 +480,6 @@
    "key": "Maxey1100",
    "name": "Physiology Simulation Modeler",
    "legacy_key": "bmc-physio",
-   "mcp": [
-    "8c1da671-b40e-465b-9bc4-bff40398221f"
-   ]
-  },
-  {
-   "key": "Maxey1101",
-   "name": "Structural Bioinformatician",
-   "legacy_key": "bmc-structural",
    "mcp": [
     "8c1da671-b40e-465b-9bc4-bff40398221f"
    ]
@@ -722,7 +633,8 @@
    "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
    "topic": "biomedical-computation",
    "score": 0.4436,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "biomedical-computation"
   },
   {
    "agent": "Maxey1097",
@@ -733,7 +645,8 @@
    "via": {
     "primary": "Maxey1101",
     "skill": "bmc-ligand-docking"
-   }
+   },
+   "source_topic": "biomedical-computation"
   },
   {
    "agent": "Maxey1097",
@@ -744,7 +657,8 @@
    "via": {
     "primary": "Maxey1096",
     "skill": "bmc-cohort-definition"
-   }
+   },
+   "source_topic": "biomedical-computation"
   },
   {
    "agent": "Maxey1100",
@@ -755,28 +669,24 @@
    "via": {
     "primary": "Maxey1101",
     "skill": "bmc-md-simulation"
-   }
-  },
-  {
-   "agent": "Maxey1101",
-   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
-   "topic": "biomedical-computation",
-   "score": 0.2398,
-   "basis": "derived:tfidf-cosine"
+   },
+   "source_topic": "biomedical-computation"
   },
   {
    "agent": "Maxey1597",
    "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
    "topic": "biomedical-computation",
    "score": 0.2349,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "biomedical-computation"
   },
   {
    "agent": "Maxey1597",
    "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
    "topic": "biomedical-computation",
    "score": 0.4505,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "biomedical-computation"
   }
  ],
  "lexicon": {

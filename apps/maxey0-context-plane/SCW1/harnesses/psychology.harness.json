@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "life-health-mind",
  "topic": {
   "id": "psychology",
   "label": "Psychology",
-  "desc": "Psychology: the scientific study of mind, brain and behaviour across development, society and mental health."
+  "desc": "Psychology: Research Methods and Statistics, Social and Personality Psychology, Clinical and Health Psychology, Developmental Psychology and Biological Psychology and Neuroscience."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "psychology",
    "source": "psychology",
+   "source_topic": "psychology",
    "related": [
     "bi-neuro"
    ]
@@ -44,25 +45,7 @@
    ],
    "topic": "psychology",
    "source": "psychology",
-   "related": []
-  },
-  {
-   "id": "psych-cognitive-psychology",
-   "label": "Cognitive Psychology",
-   "desc": "Perception, attention, memory, language, reasoning and decision making studied experimentally.",
-   "keywords": [
-    "cognition",
-    "perception",
-    "attention",
-    "memory",
-    "reasoning",
-    "decision making",
-    "reaction time",
-    "experiment",
-    "decision"
-   ],
-   "topic": "psychology",
-   "source": "psychology",
+   "source_topic": "psychology",
    "related": []
   },
   {
@@ -81,6 +64,7 @@
    ],
    "topic": "psychology",
    "source": "psychology",
+   "source_topic": "psychology",
    "related": []
   },
   {
@@ -99,6 +83,7 @@
    ],
    "topic": "psychology",
    "source": "psychology",
+   "source_topic": "psychology",
    "related": []
   },
   {
@@ -117,6 +102,7 @@
    ],
    "topic": "psychology",
    "source": "psychology",
+   "source_topic": "psychology",
    "related": []
   }
  ],
@@ -230,138 +216,6 @@
     }
    ],
    "source": "psychology"
-  },
-  {
-   "id": "psych-cognitive-task-designer",
-   "concept": "psych-cognitive-psychology",
-   "label": "Cognitive Task Designer",
-   "desc": "Designs attention or memory tasks with counterbalanced trials and checks timing and trial balance.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1521",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1522",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1517",
-     "role": "support"
-    }
-   ],
-   "source": "psychology"
-  },
-  {
-   "id": "psych-memory-model-fitter",
-   "concept": "psych-cognitive-psychology",
-   "label": "Memory Model Fitter",
-   "desc": "Fits signal detection and forgetting models to recall data and checks parameter recovery.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1521",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1517",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1516",
-     "role": "support"
-    }
-   ],
-   "source": "psychology"
-  },
-  {
-   "id": "psych-reaction-time-analyzer",
-   "concept": "psych-cognitive-psychology",
-   "label": "Reaction Time Analyzer",
-   "desc": "Cleans and models reaction time data with mixed models and checks outlier rules and model fit.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1517",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1521",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1522",
-     "role": "support"
-    }
-   ],
-   "source": "psychology"
-  },
-  {
-   "id": "symsys-bias-review",
-   "concept": "psych-cognitive-psychology",
-   "label": "Reasoning Bias Reviewer",
-   "desc": "Explains a reasoning or decision bias and the evidence for it, checked against replication results.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1521",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1616",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1474",
-     "role": "support"
-    }
-   ],
-   "source": "symbolic-systems"
-  },
-  {
-   "id": "symsys-data-analysis",
-   "concept": "psych-cognitive-psychology",
-   "label": "Behavioral Data Analyzer",
-   "desc": "Analyzes behavioral data with mixed-effects models, checked by rerunning the analysis.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1521",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1181",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1186",
-     "role": "support"
-    }
-   ],
-   "source": "symbolic-systems"
-  },
-  {
-   "id": "symsys-experiment-design",
-   "concept": "psych-cognitive-psychology",
-   "label": "Cognitive Experiment Designer",
-   "desc": "Designs a reaction-time or memory experiment with conditions and power analysis, checked by an independent power computation.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1521",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1186",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1181",
-     "role": "support"
-    }
-   ],
-   "source": "symbolic-systems"
   },
   {
    "id": "psych-attachment-coder",
@@ -564,24 +418,6 @@
  ],
  "agents": [
   {
-   "key": "Maxey1181",
-   "name": "Machine Learning Agent",
-   "legacy_key": "cs-ml-engineer",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1186",
-   "name": "Cognitive Science Agent",
-   "legacy_key": "symsys-cog",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1474",
-   "name": "Philosophy of Mind Agent",
-   "legacy_key": "phil-mind",
-   "mcp": []
-  },
-  {
    "key": "Maxey1516",
    "name": "Behavioral Neuroscience Agent",
    "legacy_key": "psych-neuro",
@@ -653,12 +489,6 @@
     "43edc307-1d33-44f5-94a2-6e9c3e64a538",
     "7f750eb6-c3cb-47d7-9269-d35c43fe9925"
    ]
-  },
-  {
-   "key": "Maxey1616",
-   "name": "Research Literature Agent",
-   "legacy_key": "symsys-lit",
-   "mcp": []
   }
  ],
  "mcp": [
@@ -924,28 +754,32 @@
    "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
    "topic": "psychology",
    "score": 0.1759,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1518",
    "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
    "topic": "psychology",
    "score": 0.1009,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1518",
    "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
    "topic": "psychology",
    "score": 0.2528,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1519",
    "mcp": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
    "topic": "psychology",
    "score": 0.283,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1520",
@@ -956,21 +790,24 @@
    "via": {
     "primary": "Maxey1519",
     "skill": "psych-diagnostic-criteria-mapper"
-   }
+   },
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1522",
    "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
    "topic": "psychology",
    "score": 0.1062,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1522",
    "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
    "topic": "psychology",
    "score": 0.1941,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1522",
@@ -981,7 +818,8 @@
    "via": {
     "primary": "Maxey1518",
     "skill": "psych-psych-literature-search"
-   }
+   },
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1522",
@@ -992,7 +830,8 @@
    "via": {
     "primary": "Maxey1518",
     "skill": "psych-psych-literature-search"
-   }
+   },
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1523",
@@ -1003,7 +842,8 @@
    "via": {
     "primary": "Maxey1522",
     "skill": "psych-longitudinal-design-planner"
-   }
+   },
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1523",
@@ -1014,7 +854,8 @@
    "via": {
     "primary": "Maxey1522",
     "skill": "psych-longitudinal-design-planner"
-   }
+   },
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1524",
@@ -1025,7 +866,8 @@
    "via": {
     "primary": "Maxey1522",
     "skill": "psych-replication-assessor"
-   }
+   },
+   "source_topic": "psychology"
   },
   {
    "agent": "Maxey1524",
@@ -1036,7 +878,8 @@
    "via": {
     "primary": "Maxey1522",
     "skill": "psych-replication-assessor"
-   }
+   },
+   "source_topic": "psychology"
   }
  ],
  "lexicon": {

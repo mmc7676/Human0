@@ -1,0 +1,848 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "earth-environment-place",
+ "topic": {
+  "id": "mapping-and-gis",
+  "label": "Mapping and GIS",
+  "desc": "Mapping and GIS: Map Types, Dimensions, Survey and Capture Methods, Web Mapping and Geocoding, Spatial Data and GIS, SLAM - Simultaneous Localization and Mapping and Coordinate Systems and Projections."
+ },
+ "concepts": [
+  {
+   "id": "mp-coords",
+   "label": "Coordinate Systems and Projections",
+   "desc": "Datums, coordinate reference systems and map projections.",
+   "keywords": [
+    "datum",
+    "projection",
+    "crs",
+    "epsg",
+    "transform",
+    "wgs84"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "location",
+   "related": []
+  },
+  {
+   "id": "mp-dimensions",
+   "label": "Dimensions",
+   "desc": "Mapping in two, two-and-a-half, three and four dimensions.",
+   "keywords": [
+    "2d",
+    "3d",
+    "elevation",
+    "point-cloud",
+    "mesh",
+    "temporal"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "mapping",
+   "related": []
+  },
+  {
+   "id": "mp-gis",
+   "label": "Spatial Data and GIS",
+   "desc": "Spatial file formats, queries and cartographic design.",
+   "keywords": [
+    "gis",
+    "geojson",
+    "shapefile",
+    "geotiff",
+    "geopackage",
+    "layer"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "mapping",
+   "related": []
+  },
+  {
+   "id": "mp-slam",
+   "label": "SLAM - Simultaneous Localization and Mapping",
+   "desc": "Building a map of an unknown place while estimating the sensor's own position in it, with visual and LiDAR methods.",
+   "keywords": [
+    "slam",
+    "localization",
+    "loop-closure",
+    "pose-graph",
+    "odometry",
+    "keyframe"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "mapping",
+   "related": []
+  },
+  {
+   "id": "mp-survey",
+   "label": "Survey and Capture Methods",
+   "desc": "How spatial data is captured: GNSS and RTK, photogrammetry, LiDAR scanning and remote sensing.",
+   "keywords": [
+    "gnss",
+    "rtk",
+    "photogrammetry",
+    "lidar",
+    "remote-sensing",
+    "satellite"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "mapping",
+   "related": []
+  },
+  {
+   "id": "mp-types",
+   "label": "Map Types",
+   "desc": "Kinds of map: topographic, thematic, road network, indoor and occupancy maps.",
+   "keywords": [
+    "topographic",
+    "thematic",
+    "road",
+    "indoor",
+    "occupancy",
+    "floor-plan"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "mapping",
+   "related": []
+  },
+  {
+   "id": "mp-web",
+   "label": "Web Mapping and Geocoding",
+   "desc": "Geocoding, map tiles and routing services for web and mobile maps.",
+   "keywords": [
+    "geocode",
+    "tiles",
+    "routing",
+    "webmap",
+    "basemap"
+   ],
+   "topic": "mapping-and-gis",
+   "source": "mapping",
+   "source_topic": "location",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "mp-crs-transformer",
+   "concept": "mp-coords",
+   "label": "Coordinate Reference System Transformer",
+   "desc": "Transforms coordinates between datums and projections and reports the expected error of each transformation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey878",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey880",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-projection-selector",
+   "concept": "mp-coords",
+   "label": "Projection Selector",
+   "desc": "Selects a projection for a region and purpose by which distortion matters, such as area, distance or shape.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey878",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey881",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey879",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-point-cloud-mesh-processor",
+   "concept": "mp-dimensions",
+   "label": "Point Cloud and Mesh Processor",
+   "desc": "Filters, registers and meshes three-dimensional point clouds and reports density and noise.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey882",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey883",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-surface-model-builder",
+   "concept": "mp-dimensions",
+   "label": "Elevation Surface Model Builder",
+   "desc": "Builds elevation and surface models from points or imagery and separates ground from objects.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey882",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey878",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-temporal-change-detector",
+   "concept": "mp-dimensions",
+   "label": "Temporal Change Detector",
+   "desc": "Compares maps or scans from different dates to find real change and separates it from registration error.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey880",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey882",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-cartographic-designer",
+   "concept": "mp-gis",
+   "label": "Cartographic Designer",
+   "desc": "Designs a legible map layout with labels, color and legend for a stated audience.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey881",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey880",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-spatial-format-converter",
+   "concept": "mp-gis",
+   "label": "Spatial Format Converter",
+   "desc": "Converts between GeoJSON, shapefile, GeoTIFF and GeoPackage and reports attributes or precision lost in conversion.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey880",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey884",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-spatial-query-analyst",
+   "concept": "mp-gis",
+   "label": "Spatial Query Analyst",
+   "desc": "Runs overlay, buffer, join and proximity analysis on layers and explains the result with its caveats.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey880",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey878",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-lidar-slam",
+   "concept": "mp-slam",
+   "label": "LiDAR SLAM",
+   "desc": "Registers successive LiDAR scans into a map and a trajectory with scan matching and optional inertial data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey883",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey885",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey886",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-loop-closure-pose-graph",
+   "concept": "mp-slam",
+   "label": "Loop Closure and Pose Graph Optimization",
+   "desc": "Detects revisited places and optimizes the pose graph to remove accumulated drift, rejecting false loop closures.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey883",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey885",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey878",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-slam-evaluator",
+   "concept": "mp-slam",
+   "label": "SLAM Evaluation",
+   "desc": "Evaluates a SLAM run against ground truth with absolute and relative trajectory error and map accuracy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey885",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey883",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-visual-slam",
+   "concept": "mp-slam",
+   "label": "Visual SLAM",
+   "desc": "Estimates camera motion and builds a sparse or dense map from monocular, stereo or depth images using features and keyframes, and states the scale ambiguity of a single camera.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey883",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey885",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey882",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-gnss-rtk-surveyor",
+   "concept": "mp-survey",
+   "label": "GNSS and RTK Surveyor",
+   "desc": "Plans GNSS and RTK surveys with base station setup, occupation time and ground control points and reports accuracy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey886",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey878",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-lidar-scan-planner",
+   "concept": "mp-survey",
+   "label": "LiDAR Scan Planner",
+   "desc": "Plans terrestrial, mobile or airborne LiDAR scans for point density and coverage and notes occlusions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey886",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey882",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-photogrammetry-planner",
+   "concept": "mp-survey",
+   "label": "Photogrammetry Planner",
+   "desc": "Plans image capture and processing for a three-dimensional model with overlap, camera calibration and check points.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey882",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey886",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-remote-sensing-analyst",
+   "concept": "mp-survey",
+   "label": "Remote Sensing Analyst",
+   "desc": "Works with satellite and aerial imagery for land cover, change and indices and states resolution limits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey880",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey878",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-indoor-occupancy-mapper",
+   "concept": "mp-types",
+   "label": "Indoor and Occupancy Mapper",
+   "desc": "Builds indoor floor plans and occupancy grids from scans or sensor data and marks unknown space explicitly.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey883",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey886",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-road-network-builder",
+   "concept": "mp-types",
+   "label": "Road Network Builder",
+   "desc": "Builds a routable road network graph with turn restrictions and speed attributes and checks connectivity.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey880",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey884",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-topographic-thematic-mapper",
+   "concept": "mp-types",
+   "label": "Topographic and Thematic Mapper",
+   "desc": "Chooses map type, scale and symbology for a purpose and builds thematic maps from attribute data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey881",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey880",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-geocoder",
+   "concept": "mp-web",
+   "label": "Geocoder",
+   "desc": "Converts addresses to coordinates and back and returns the match quality of each result.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey884",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey880",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-routing-integrator",
+   "concept": "mp-web",
+   "label": "Routing Service Integrator",
+   "desc": "Integrates a routing service for directions and travel times and tests edge cases such as closures and one-way streets.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey884",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey880",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  },
+  {
+   "id": "mp-tile-publisher",
+   "concept": "mp-web",
+   "label": "Map Tile Publisher",
+   "desc": "Prepares vector or raster tiles and a basemap style for web display and sets zoom levels and caching.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey884",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey879",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey881",
+     "role": "support"
+    }
+   ],
+   "source": "mapping"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey878",
+   "name": "Geodesy Agent",
+   "legacy_key": "mp-geodesist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey879",
+   "name": "Map Quality Checker Agent",
+   "legacy_key": "mp-map-quality-checker",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey880",
+   "name": "GIS Analyst Agent",
+   "legacy_key": "mp-gis-analyst",
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
+  },
+  {
+   "key": "Maxey881",
+   "name": "Cartographer Agent",
+   "legacy_key": "mp-cartographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey882",
+   "name": "Photogrammetry Agent",
+   "legacy_key": "mp-photogrammetrist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey883",
+   "name": "SLAM Engineer Agent",
+   "legacy_key": "mp-slam-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey884",
+   "name": "Web Map Developer Agent",
+   "legacy_key": "mp-web-map-developer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey885",
+   "name": "Localization Evaluation Agent",
+   "legacy_key": "mp-localization-evaluator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey886",
+   "name": "Survey Agent",
+   "legacy_key": "mp-surveyor",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "name": "TomTom Maps",
+   "desc": "TomTom maps, routing, geocoding & traffic data",
+   "tools": [
+    "tomtom-geocode",
+    "tomtom-reverse-geocode",
+    "tomtom-fuzzy-search",
+    "tomtom-poi-search",
+    "tomtom-nearby",
+    "tomtom-poi-categories",
+    "tomtom-area-search",
+    "tomtom-ev-search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "origins": [
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Google Maps MCP",
+   "desc": "Google Maps Platform MCP server: geocoding and reverse geocoding of addresses and coordinates, place search and place details, distance matrix, elevation and directions.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/google-maps",
+   "id": "local:google-maps-mcp",
+   "origins": [
+    "location",
+    "travel-outdoors"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Mapbox MCP Server",
+   "desc": "Mapbox location MCP server: forward and reverse geocoding, points of interest search, directions and travel-time isochrones, static map images.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/mapbox/mcp-server",
+   "id": "local:mapbox-mcp-server",
+   "origins": [
+    "location"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "OpenStreetMap MCP",
+   "desc": "OpenStreetMap MCP server: geocode addresses and place names to coordinates, find nearby places, route between locations, explore neighborhoods from open map data.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/jagan-shanmugam/open-streetmap-mcp",
+   "id": "local:openstreetmap-mcp",
+   "origins": [
+    "location",
+    "travel-outdoors"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:google-maps-mcp",
+  "local:mapbox-mcp-server",
+  "local:openstreetmap-mcp",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "5775e1f2-124a-4f56-be6c-105a5cb33acc"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey879",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "mapping-and-gis",
+   "score": 0.1508,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "mapping"
+  },
+  {
+   "agent": "Maxey879",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "mapping-and-gis",
+   "score": 0.1426,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "mapping"
+  },
+  {
+   "agent": "Maxey880",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "mapping-and-gis",
+   "score": 0.1836,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "mapping"
+  }
+ ],
+ "lexicon": {
+  "locplaces": "place name gazetteer city town landmark mountain park river toponym",
+  "locdistance": "distance route routing navigation bearing travel time directions walking driving",
+  "locregions": "region country state county jurisdiction boundary border administrative zone",
+  "locplanetary": "planetary celestial coordinate frame moon mars orbit selenographic location",
+  "maptypes": "topographic thematic symbology occupancy floor basemap road indoor network",
+  "surfaces": "elevation surface cloud mesh registration temporal",
+  "crs": "datum projection epsg wgs84 transformation distortion transform coordinate",
+  "capture": "gnss rtk photogrammetry calibration occlusion satellite sensing capture",
+  "slam": "slam odometry keyframe closure drift scan matching localization pose simultaneous mapping absolute",
+  "spatialdata": "geojson shapefile geotiff geopackage overlay buffer layer spatial cartographic legible",
+  "webmap": "geocoder tiles routing zoom directions geocode webmap geocoding"
+ },
+ "sources": [
+  "location",
+  "mapping"
+ ]
+}

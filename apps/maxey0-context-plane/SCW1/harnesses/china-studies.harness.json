@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "area-identity-studies",
  "topic": {
   "id": "china-studies",
   "label": "China Studies",
-  "desc": "China Studies: the history, language, politics, economy, society and culture of China."
+  "desc": "China Studies: Politics and International Relations, Imperial and Premodern History, Modern and Contemporary China, Philosophy, Literature and Culture, Chinese Language and Linguistics and Economy and Society."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "china-studies",
    "source": "china-studies",
+   "source_topic": "china-studies",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "china-studies",
    "source": "china-studies",
+   "source_topic": "china-studies",
    "related": []
   },
   {
@@ -60,6 +62,7 @@
    ],
    "topic": "china-studies",
    "source": "china-studies",
+   "source_topic": "china-studies",
    "related": []
   },
   {
@@ -78,6 +81,7 @@
    ],
    "topic": "china-studies",
    "source": "china-studies",
+   "source_topic": "china-studies",
    "related": [
     "hist-modern-contemporary"
    ]
@@ -98,6 +102,7 @@
    ],
    "topic": "china-studies",
    "source": "china-studies",
+   "source_topic": "china-studies",
    "related": []
   },
   {
@@ -116,6 +121,7 @@
    ],
    "topic": "china-studies",
    "source": "china-studies",
+   "source_topic": "china-studies",
    "related": []
   }
  ],
@@ -729,14 +735,16 @@
    "via": {
     "primary": "Maxey1125",
     "skill": "chin-mao-era"
-   }
+   },
+   "source_topic": "china-studies"
   },
   {
    "agent": "Maxey1125",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "china-studies",
    "score": 0.1088,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "china-studies"
   },
   {
    "agent": "Maxey1126",
@@ -747,21 +755,24 @@
    "via": {
     "primary": "Maxey1127",
     "skill": "chin-classical-reading"
-   }
+   },
+   "source_topic": "china-studies"
   },
   {
    "agent": "Maxey1127",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "china-studies",
    "score": 0.1988,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "china-studies"
   },
   {
    "agent": "Maxey1602",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "china-studies",
    "score": 0.1876,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "china-studies"
   },
   {
    "agent": "Maxey1602",
@@ -772,7 +783,8 @@
    "via": {
     "primary": "Maxey1125",
     "skill": "chin-dynasty-timeline"
-   }
+   },
+   "source_topic": "china-studies"
   }
  ],
  "lexicon": {

@@ -47,6 +47,7 @@ export function scopeTo(g: GraphData, domain: string): GraphData {
 }
 
 import { cos, vec, Vec } from "./sim";
+import { lensRoute, LAMBDA } from "./lens";
 
 export class ToolError extends Error {}
 export const LEVELS = ["domain", "topic", "concept", "skill", "agent", "mcp"] as const;
@@ -198,7 +199,9 @@ export class Graph {
       results: ord.slice(0, lim).map(([sc, r]) => ({ ...r, score: Math.round(sc * 1e4) / 1e4 })) };
   }
 
-  route_task(a: { task: string; limit?: number; domain?: string; use_priority?: boolean }) {
+  route_task(a: { task: string; limit?: number; domain?: string; domains?: string[]; mode?: string; use_priority?: boolean }) {
+    if (a.mode !== undefined && a.mode !== "flat" && a.mode !== "lens") throw new ToolError("mode must be 'flat' or 'lens'.");
+    if (a.mode === "lens") return this.route_lens(a);
     const limit = Math.max(1, Math.min(Math.trunc(Number(a.limit ?? 5)) || 5, 20));
     const r = this.search({ query: a.task, limit: Math.min(limit * 3, 50), domain: a.domain, use_priority: a.use_priority });
     const out: Record<string, unknown>[] = [];
@@ -211,6 +214,23 @@ export class Graph {
       if (out.length >= limit) break;
     }
     return { task: a.task, note: "candidate paths ranked by TF-IDF cosine; not an authorization", matched: out.length > 0, paths: out };
+  }
+
+  /** Observer-lens routing (see lens.ts): topic -> concept -> skill read from where the observer stands. */
+  route_lens(a: { task: string; domain?: string; domains?: string[] }) {
+    const doms = [...(a.domains ?? []), ...(a.domain ? [a.domain] : [])];
+    for (const d of doms) this.need(this.domain, d, "domain", "Call list_domains.");
+    const sim = this.g.similarity;
+    const r = lensRoute(String(a.task ?? ""), sim.idf, sim.vectors, [
+      { level: "topic", prefix: "t", ids: this.g.topics.map((t) => t.id) },
+      { level: "concept", prefix: "c", ids: this.g.concepts.map((c) => c.id) },
+      { level: "skill", prefix: "s", ids: this.g.skills.map((s) => s.id) }],
+      doms.length ? (id) => doms.includes(this.topic.get(id)!.domain) : undefined);
+    const paths = r.skills.map((id) => { const sk = this.skill.get(id)!;
+      return { ...this.path(sk.concept), skill: sk.id, label: sk.label, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) }; });
+    return { task: a.task, mode: "lens", observer_start: doms.length ? { domains: doms } : "above the topic plane", lambda: LAMBDA,
+      note: "observer-lens routing: each level is valued from the nodes selected above it (signed support, ranked by psi, selected only when psi > 0); candidates, not an authorization",
+      matched: paths.length > 0, paths, lens: r.chain, remaining_task: r.remaining_task };
   }
 
   children(a: { level: string; parent_id?: string }) {

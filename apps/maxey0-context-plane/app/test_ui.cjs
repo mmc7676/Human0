@@ -73,6 +73,20 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(fine && sc > 0 && Math.abs(Math.atan2(got.y, got.x) - Math.atan2(want[1], want[0])) < 1e-6, "embedding field: " + f.n + " located nodes, placement follows field coordinates");
   }
 
+  // 1d. domains: the Domain filter lists every domain and narrows topics and concepts to it
+  {
+    const r = await p.evaluate(() => { const bd = document.getElementById('bfDomain'), bt = document.getElementById('bfTopic');
+      const doms = [...bd.options].map(o => o.value).filter(Boolean);
+      bd.value = 'business-finance'; bd.dispatchEvent(new Event('change'));
+      const tops = [...bt.options].map(o => o.value).filter(Boolean);
+      const out = { doms: doms.length, tops: tops.length };
+      bd.value = ''; bd.dispatchEvent(new Event('change')); out.all = [...bt.options].filter(o => o.value).length; return { ...out, tops };
+    });
+    const want = graph.topics.filter(t => t.domain === 'business-finance').map(t => t.id).sort();
+    ok(r.doms === graph.domains.length && JSON.stringify(r.tops.slice().sort()) === JSON.stringify(want) && r.all === graph.topics.length,
+      "domain filter: " + r.doms + " domains, " + r.tops.length + " finance topics, " + r.all + " topics when cleared");
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

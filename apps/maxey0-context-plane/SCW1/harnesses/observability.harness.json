@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "work",
+ "domain": "agentic-systems",
  "topic": {
   "id": "observability",
   "label": "Observability",
-  "desc": "Observability of software and agent systems: metrics, logs and traces, instrumentation, dashboards, alerts and SLOs, agent and LLM tracing, root-cause debugging, drift and regression monitoring, incidents and capacity. Extends the base Observability topic, which held Observability and Evaluation."
+  "desc": "Observability: Debugging and Root Cause Analysis, Metrics, Logs and Traces, Dashboards and Visualisation, Incident Response and Capacity, Agent and LLM Observability, Instrumentation and Collection, Drift, Quality and Regression Monitoring and Alerting and SLOs."
  },
  "concepts": [
   {
@@ -22,6 +22,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -40,6 +41,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -55,6 +57,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -71,6 +74,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -86,6 +90,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -103,6 +108,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -118,6 +124,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   },
   {
@@ -133,6 +140,7 @@
    ],
    "topic": "observability",
    "source": "observability",
+   "source_topic": "observability",
    "related": []
   }
  ],
@@ -1108,14 +1116,16 @@
    "via": {
     "primary": "Maxey903",
     "skill": "ob-alert-noise-reducer"
-   }
+   },
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey901",
    "mcp": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
    "topic": "observability",
    "score": 0.2166,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey901",
@@ -1126,14 +1136,16 @@
    "via": {
     "primary": "Maxey905",
     "skill": "ob-signal-chooser"
-   }
+   },
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey901",
    "mcp": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
    "topic": "observability",
    "score": 0.2313,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey902",
@@ -1144,42 +1156,48 @@
    "via": {
     "primary": "Maxey905",
     "skill": "ob-retention-sampler"
-   }
+   },
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey903",
    "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
    "topic": "observability",
    "score": 0.2415,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey904",
    "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
    "topic": "observability",
    "score": 0.1389,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey904",
    "mcp": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
    "topic": "observability",
    "score": 0.1859,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey904",
    "mcp": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
    "topic": "observability",
    "score": 0.1923,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey905",
    "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
    "topic": "observability",
    "score": 0.1686,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey911",
@@ -1190,14 +1208,16 @@
    "via": {
     "primary": "Maxey905",
     "skill": "ob-metric-namer"
-   }
+   },
+   "source_topic": "observability"
   },
   {
    "agent": "Maxey912",
    "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
    "topic": "observability",
    "score": 0.1544,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
   }
  ],
  "lexicon": {

@@ -70,6 +70,35 @@ Every node on all six levels has a vector in the same TF-IDF space (same tokeniz
 
 Aggregate vectors keep their 48 strongest terms. The builder stacks all vectors into one matrix, takes a deterministic truncated SVD (24 dimensions, ARPACK), normalizes each row, and projects onto the two leading principal axes; the farthest node sits at radius 1. Every level uses the same projection and scale, so a node's location is comparable across levels. `graph.json` carries the locations (`field.xy`); `?index=1` carries the vectors; the `nearest` tool ranks nodes of any level by cosine in that space. The server test checks that topic–concept pairs sit at under half the random-pair distance and that agent–server gates sit closer than random.
 
+### Domains and topics, from the concepts up
+
+The domain and topic levels were rebuilt bottom-up (spec `regroup`). Each concept was described by its own text, its skills, the agents that serve them and the servers those agents hold; concepts were grouped on that description into 128 topics of 3–8 concepts, and topics into 11 domains, with placements the data got wrong corrected by hand and marked as such. Concepts, skills, agents, servers and links did not change. Each concept keeps `source_topic`, the pack topic it came from; agent-name uniqueness and checker inheritance are checked against that source topic. A topic pack added later keeps its own topic in the domain named for it in `regroup.pack_domains`.
+
+### Observer-lens routing
+
+`route_task` with `mode: "lens"` routes the way an agent inside the graph observes it. The observer starts above the topic plane (or at chosen domains, superposed when more than one), selects up to three topics, and reads the next plane from the selected nodes:
+
+| Quantity | Meaning |
+|---|---|
+| a = cos(x, p) | how much of candidate x the observer's position p already explains |
+| s = cos(x − a·p, q_p) | what x adds beyond p, against what is left of the task; can be negative |
+| φ_p = λ·a + (1 − λ)·s | the value of x seen from p |
+| ψ(x) = Σ w_p·φ_p, Σ w_p² = 1 | the superposed observer; ranked by ψ, selected only when ψ > 0 |
+
+After each level the task loses the part the selected nodes explain. Each selection records every branch's contribution, and the strongest task matches the lens suppressed are listed with the branches that opposed them. Agents and servers are not chosen by the lens: roles, gates and checker inheritance come from the ontology.
+
+λ was set by calibrating on 400 skill labels with known paths, then testing on 24 tasks not used for calibration:
+
+| Router | Skill@1 (labels) | Skill in top 5 | Topic@1 |
+|---|---|---|---|
+| flat | 0.925 | 0.998 | 0.950 |
+| lens, λ = 0.5 / 0.3 (chosen) | 0.912 | 0.970 | 0.940 |
+| lens, λ = 0.65 / 0.45 | 0.907 | 0.970 | 0.935 |
+| lens, λ = 0.8 / 0.6 | 0.902 | 0.968 | 0.930 |
+| lens, task-driven λ | 0.910 | 0.968 | 0.940 |
+
+Labels share the map's own words, so flat ranking is expected to win there; the lens returns at most three skills, which caps top-5. On the 24 held-out tasks the chosen lens matched flat on 21, was better on 2 (a French translation task reached French text translation; a data-pipeline task reached the pipeline builder) and different but not worse on 1. Task-driven λ was worse on 3. Two known flat failures (server logs routed to drone flight logs; the Krebs cycle to the cell cycle) were not fixed by the lens: the wrong topic wins at entry, which is a vocabulary limit, not an observation one. Signed opposition rarely appears among top candidates with word-count vectors, because they carry no negation. Flat stays the default.
+
 ## The server
 
 `server/src/` — TypeScript on Cloudflare Workers, no runtime dependencies.

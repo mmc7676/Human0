@@ -1,0 +1,545 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "agentic-systems",
+ "topic": {
+  "id": "code-generation-review-and-testing",
+  "label": "Code Generation, Review and Testing",
+  "desc": "Code Generation, Review and Testing: Code Review and Security, Code Generation and Editing, Testing and Verification, Repository Understanding and Vulnerability Scanning."
+ },
+ "concepts": [
+  {
+   "id": "ca-codegen",
+   "label": "Code Generation and Editing",
+   "desc": "Turning a specification into code and making small, verifiable edits to existing code.",
+   "keywords": [
+    "generate",
+    "edit",
+    "patch",
+    "diff",
+    "refactor",
+    "specification"
+   ],
+   "topic": "code-generation-review-and-testing",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-repo",
+   "label": "Repository Understanding",
+   "desc": "Mapping a codebase: structure, entry points, dependencies and search.",
+   "keywords": [
+    "repository",
+    "index",
+    "dependency",
+    "search",
+    "entry-point"
+   ],
+   "topic": "code-generation-review-and-testing",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-review",
+   "label": "Code Review and Security",
+   "desc": "Reviewing changes for correctness and security and auditing dependencies.",
+   "keywords": [
+    "review",
+    "pull-request",
+    "vulnerability",
+    "dependency",
+    "audit"
+   ],
+   "topic": "code-generation-review-and-testing",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-verify",
+   "label": "Testing and Verification",
+   "desc": "Running tests, reproducing failures and checking a change against its specification.",
+   "keywords": [
+    "test",
+    "failure",
+    "reproduce",
+    "root-cause",
+    "regression"
+   ],
+   "topic": "code-generation-review-and-testing",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "sec-vulns",
+   "label": "Vulnerability Scanning",
+   "desc": "Finding vulnerabilities in code, dependencies and configuration with static analysis and scanners.",
+   "keywords": [
+    "vulnerability",
+    "scan",
+    "static",
+    "analysis",
+    "dependency",
+    "cve",
+    "injection",
+    "insecure",
+    "code"
+   ],
+   "topic": "code-generation-review-and-testing",
+   "source": "security-identity",
+   "source_topic": "security-identity",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ca-minimal-diff-editor",
+   "concept": "ca-codegen",
+   "label": "Minimal Diff Editor",
+   "desc": "Makes the smallest edit that satisfies a request, applies it and re-runs the affected checks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey802",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey804",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-refactor-planner",
+   "concept": "ca-codegen",
+   "label": "Refactor Planner",
+   "desc": "Plans a refactor as small, individually testable steps and states what behaviour must not change.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey802",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey805",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-spec-to-code-generator",
+   "concept": "ca-codegen",
+   "label": "Spec to Code Generator",
+   "desc": "Turns a written specification into code and tests together and lists what the specification left undefined.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey802",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey806",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-code-search",
+   "concept": "ca-repo",
+   "label": "Code Search",
+   "desc": "Finds definitions, call sites and similar code by name and by meaning and returns each with its file and line.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey805",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey806",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-repo-indexer",
+   "concept": "ca-repo",
+   "label": "Repository Indexer",
+   "desc": "Maps a codebase's modules, entry points and dependency graph and reports which parts it could not parse.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey805",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey806",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-dependency-auditor",
+   "concept": "ca-review",
+   "label": "Dependency Auditor",
+   "desc": "Lists dependencies, versions and known advisories and recommends upgrades with the risk of each.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey810",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-pull-request-reviewer",
+   "concept": "ca-review",
+   "label": "Pull Request Reviewer",
+   "desc": "Reviews a change for correctness, missing tests and unintended behaviour changes and ranks findings by severity.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey804",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-vulnerability-scanner",
+   "concept": "ca-review",
+   "label": "Vulnerability Scanner",
+   "desc": "Flags injection, unsafe deserialization and secret exposure in code and reports the evidence for each finding.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey810",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-failure-triager",
+   "concept": "ca-verify",
+   "label": "Failure Triager",
+   "desc": "Reproduces a failing test or bug report, narrows the cause and proposes a fix with a regression test.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey804",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey805",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-test-runner",
+   "concept": "ca-verify",
+   "label": "Test Runner",
+   "desc": "Runs the relevant tests, parses the output and reports failures with the command that reproduces them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey804",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "sec-code-vulnerability-reviewer",
+   "concept": "sec-vulns",
+   "label": "Code Vulnerability Reviewer",
+   "desc": "Reviews code for injection, insecure deserialization, auth bypass and other common vulnerabilities.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1658",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1656",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1659",
+     "role": "support"
+    }
+   ],
+   "source": "security-identity"
+  },
+  {
+   "id": "sec-dependency-risk-checker",
+   "concept": "sec-vulns",
+   "label": "Dependency Risk Checker",
+   "desc": "Checks dependencies for known vulnerabilities and outdated versions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1658",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1656",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1659",
+     "role": "support"
+    }
+   ],
+   "source": "security-identity"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1656",
+   "name": "Security Checker Agent",
+   "legacy_key": "sec-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1658",
+   "name": "Vulnerability Scanner Agent",
+   "legacy_key": "sec-scanner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1659",
+   "name": "Threat Modeling Agent",
+   "legacy_key": "sec-threat",
+   "mcp": []
+  },
+  {
+   "key": "Maxey802",
+   "name": "Coding Engineer Agent",
+   "legacy_key": "ca-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey803",
+   "name": "Code Review Agent",
+   "legacy_key": "ca-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey804",
+   "name": "Test and Debug Agent",
+   "legacy_key": "ca-tester",
+   "mcp": []
+  },
+  {
+   "key": "Maxey805",
+   "name": "Repository Analyst Agent",
+   "legacy_key": "ca-repo-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey806",
+   "name": "Technical Writer Agent",
+   "legacy_key": "ca-technical-writer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey807",
+   "name": "Agent Evaluator Agent",
+   "legacy_key": "ca-evaluator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey810",
+   "name": "Security Review Agent",
+   "legacy_key": "ca-security-reviewer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "name": "CircleCI",
+   "desc": "Manage CI/CD pipelines, debug failed builds, and optimize test suites directly from Claude - no terminal required.",
+   "tools": [
+    "cancel_workflow",
+    "download_usage_data",
+    "get_deploy_component",
+    "get_deploy_environment",
+    "get_job",
+    "get_job_logs",
+    "get_job_resource_usage",
+    "get_me"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "origins": [
+    "coding-agents"
+   ]
+  },
+  {
+   "uuid": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "name": "Sentry",
+   "desc": "Search, query, and debug errors intelligently",
+   "tools": [
+    "whoami",
+    "find_organizations",
+    "find_teams",
+    "find_projects",
+    "find_issues",
+    "find_releases",
+    "find_tags",
+    "get_issue_details"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "origins": [
+    "coding-agents"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Auth0 MCP Server",
+   "desc": "Auth0 MCP server: manage Auth0 identity tenants, applications, authentication and authorization configuration.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/auth0/auth0-mcp-server",
+   "id": "local:auth0-mcp-server",
+   "origins": [
+    "security-identity"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "GitHub",
+   "desc": "GitHub's official MCP Server",
+   "tools": [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/github/github-mcp-server",
+   "id": "local:github",
+   "origins": [
+    "biomedical-computation",
+    "coding-agents",
+    "computer-science",
+    "electrical-engineering"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Semgrep MCP",
+   "desc": "Semgrep MCP server: static analysis security scanning of source code for vulnerabilities and insecure patterns.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/semgrep/mcp",
+   "id": "local:semgrep-mcp",
+   "origins": [
+    "security-identity"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:github",
+  "46d6322a-5f75-4822-b739-f49261805e9c",
+  "09103c21-59c7-480e-8fb4-69914bfa311e",
+  "local:semgrep-mcp",
+  "local:auth0-mcp-server"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "agentloop": "harness stop compaction retry transcript coding loop context",
+  "codeedit": "patch diff refactor specification regression minimal generate edit generation editing spec testable",
+  "repomap": "repository entry point call site dependency graph understanding",
+  "verifyloop": "reproduce failing command failure root cause testing verification",
+  "secreview": "injection deserialization severity vulnerability pull request security",
+  "sandboxing": "sandbox allowlist isolation credential token permission secret sandboxing container",
+  "subagents": "worktree decomposer handoff conflict merge subtask decompose branch parallel multi orchestration",
+  "agenteval": "benchmark variance trajectory looping suite pass rate evaluation",
+  "secauthn": "authentication authorization oauth login sso role permission session token identity",
+  "secsecrets": "secret key password certificate encryption rotation vault leak credential",
+  "secvulns": "vulnerability scan static analysis dependency cve injection insecure code",
+  "secthreats": "threat model attacker attack surface risk mitigation stride abuse"
+ },
+ "sources": [
+  "coding-agents",
+  "security-identity"
+ ]
+}

@@ -1,6 +1,6 @@
 # maxey0-context-plane-graph
 
-Connects Claude to the **Maxey0 Context Plane**: a map of 121 topics in five domains that routes any task to the topic, concept and skill it belongs to, the specialised MaxeyN agents who should handle it, and the MCP servers those agents would use. Ask for the graph and Claude opens the **Maxey0 Context Plane Graph**, an interactive 3D view of the map, inside the conversation.
+Connects Claude to the **Maxey0 Context Plane**: a map of 128 topics in 11 domains that routes any task to the topic, concept and skill it belongs to, the specialised MaxeyN agents who should handle it, and the MCP servers those agents would use. Ask for the graph and Claude opens the **Maxey0 Context Plane Graph**, an interactive 3D view of the map, inside the conversation.
 
 ## What it adds
 

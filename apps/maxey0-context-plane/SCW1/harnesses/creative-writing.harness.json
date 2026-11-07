@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "languages-communication",
  "topic": {
   "id": "creative-writing",
   "label": "Creative Writing",
-  "desc": "Creative Writing: the craft of fiction, poetry, creative nonfiction and dramatic writing, developed through drafting, workshop and revision."
+  "desc": "Creative Writing: Fiction, Creative Nonfiction, Literary Publishing, Craft, Workshop and Revision and Dramatic Writing."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "creative-writing",
    "source": "creative-writing",
+   "source_topic": "creative-writing",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "creative-writing",
    "source": "creative-writing",
+   "source_topic": "creative-writing",
    "related": []
   },
   {
@@ -60,6 +62,7 @@
    ],
    "topic": "creative-writing",
    "source": "creative-writing",
+   "source_topic": "creative-writing",
    "related": []
   },
   {
@@ -78,27 +81,8 @@
    ],
    "topic": "creative-writing",
    "source": "creative-writing",
+   "source_topic": "creative-writing",
    "related": []
-  },
-  {
-   "id": "cw-poetry",
-   "label": "Poetry",
-   "desc": "Verse built from image, line, sound, form and meter.",
-   "keywords": [
-    "poetry",
-    "poem",
-    "image",
-    "line break",
-    "meter",
-    "form",
-    "sonnet",
-    "free verse"
-   ],
-   "topic": "creative-writing",
-   "source": "creative-writing",
-   "related": [
-    "engl-poetry-poetics"
-   ]
   },
   {
    "id": "cw-publishing",
@@ -116,6 +100,7 @@
    ],
    "topic": "creative-writing",
    "source": "creative-writing",
+   "source_topic": "creative-writing",
    "related": []
   }
  ],
@@ -349,58 +334,6 @@
     },
     {
      "key": "Maxey1193",
-     "role": "support"
-    }
-   ],
-   "source": "creative-writing"
-  },
-  {
-   "id": "cw-poem-draft",
-   "concept": "cw-poetry",
-   "label": "Poem Drafting",
-   "desc": "Drafts a poem in a requested form and checks the line, rhyme and meter rules of that form.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1194",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1190",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1191",
-     "role": "support"
-    },
-    {
-     "key": "Maxey1192",
-     "role": "support"
-    }
-   ],
-   "source": "creative-writing"
-  },
-  {
-   "id": "cw-scansion-check",
-   "concept": "cw-poetry",
-   "label": "Meter and Sound Check",
-   "desc": "Scans a poem for meter and sound patterns and flags lines that break the intended pattern.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1190",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1191",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1194",
-     "role": "support"
-    },
-    {
-     "key": "Maxey1192",
      "role": "support"
     }
    ],

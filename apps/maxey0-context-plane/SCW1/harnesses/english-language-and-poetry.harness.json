@@ -1,0 +1,678 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "english-language-and-poetry",
+  "label": "English Language and Poetry",
+  "desc": "English Language and Poetry: Poetry and Poetics, English Language and Linguistics, Literary Analysis and Close Reading, Rhetoric, Composition and Creative Writing and Poetry."
+ },
+ "concepts": [
+  {
+   "id": "cw-poetry",
+   "label": "Poetry",
+   "desc": "Verse built from image, line, sound, form and meter.",
+   "keywords": [
+    "poetry",
+    "poem",
+    "image",
+    "line break",
+    "meter",
+    "form",
+    "sonnet",
+    "free verse"
+   ],
+   "topic": "english-language-and-poetry",
+   "source": "creative-writing",
+   "source_topic": "creative-writing",
+   "related": []
+  },
+  {
+   "id": "engl-english-language",
+   "label": "English Language and Linguistics",
+   "desc": "Grammar, usage, phonology, semantics and the history and varieties of the English language.",
+   "keywords": [
+    "grammar",
+    "syntax",
+    "usage",
+    "phonology",
+    "etymology",
+    "dialect",
+    "semantics",
+    "history of english"
+   ],
+   "topic": "english-language-and-poetry",
+   "source": "english",
+   "source_topic": "english",
+   "related": [
+    "germ-translation"
+   ]
+  },
+  {
+   "id": "engl-literary-analysis",
+   "label": "Literary Analysis and Close Reading",
+   "desc": "Interpreting texts through attention to diction, imagery, form, narrative and figurative language.",
+   "keywords": [
+    "close reading",
+    "interpretation",
+    "imagery",
+    "symbolism",
+    "narrative",
+    "diction",
+    "theme",
+    "figurative"
+   ],
+   "topic": "english-language-and-poetry",
+   "source": "english",
+   "source_topic": "english",
+   "related": []
+  },
+  {
+   "id": "engl-poetry-poetics",
+   "label": "Poetry and Poetics",
+   "desc": "Meter, rhyme, sound and form in poetry and the vocabulary for describing them.",
+   "keywords": [
+    "poetry",
+    "meter",
+    "scansion",
+    "rhyme",
+    "sonnet",
+    "stanza",
+    "prosody",
+    "verse"
+   ],
+   "topic": "english-language-and-poetry",
+   "source": "english",
+   "source_topic": "english",
+   "related": []
+  },
+  {
+   "id": "engl-rhetoric-writing",
+   "label": "Rhetoric, Composition and Creative Writing",
+   "desc": "Argument, persuasion, academic and creative writing, revision and editing.",
+   "keywords": [
+    "rhetoric",
+    "argument",
+    "thesis",
+    "composition",
+    "essay",
+    "revision",
+    "creative writing",
+    "editing"
+   ],
+   "topic": "english-language-and-poetry",
+   "source": "english",
+   "source_topic": "english",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cw-poem-draft",
+   "concept": "cw-poetry",
+   "label": "Poem Drafting",
+   "desc": "Drafts a poem in a requested form and checks the line, rhyme and meter rules of that form.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1194",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1190",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "cw-scansion-check",
+   "concept": "cw-poetry",
+   "label": "Meter and Sound Check",
+   "desc": "Scans a poem for meter and sound patterns and flags lines that break the intended pattern.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1190",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1191",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1194",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1192",
+     "role": "support"
+    }
+   ],
+   "source": "creative-writing"
+  },
+  {
+   "id": "engl-dialect-describer",
+   "concept": "engl-english-language",
+   "label": "Dialect Describer",
+   "desc": "Describes features of English varieties and checks examples against linguistic documentation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1268",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1266",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-etymology-tracer",
+   "concept": "engl-english-language",
+   "label": "Etymology Tracer",
+   "desc": "Traces word origins and semantic change and checks each step against dictionary evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1268",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1267",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-grammar-analyzer",
+   "concept": "engl-english-language",
+   "label": "Grammar Analyzer",
+   "desc": "Parses sentence structure and identifies grammatical functions and checks analysis against a reference grammar.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1268",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1269",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1270",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-close-reader",
+   "concept": "engl-literary-analysis",
+   "label": "Close Reader",
+   "desc": "Produces line-level interpretations of a passage and checks every claim against quoted textual evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1266",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1264",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-narrative-analyzer",
+   "concept": "engl-literary-analysis",
+   "label": "Narrative Structure Analyzer",
+   "desc": "Analyses point of view, plot and character in fiction and checks the account against the text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1266",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1271",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-theme-tracer",
+   "concept": "engl-literary-analysis",
+   "label": "Theme Tracer",
+   "desc": "Traces a theme or motif across a work and checks each instance with cited passages.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1266",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1267",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-form-identifier",
+   "concept": "engl-poetry-poetics",
+   "label": "Poetic Form Identifier",
+   "desc": "Identifies fixed forms and rhyme schemes and checks them against the formal definition.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1266",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1267",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-scansion-marker",
+   "concept": "engl-poetry-poetics",
+   "label": "Scansion Marker",
+   "desc": "Scans lines of verse for meter and stress and checks foot counts and variations line by line.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1266",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1268",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-creative-workshop",
+   "concept": "engl-rhetoric-writing",
+   "label": "Creative Writing Workshop",
+   "desc": "Gives craft feedback on fiction and poetry drafts and checks suggestions against the writer's stated goals.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1271",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1269",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1266",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-essay-editor",
+   "concept": "engl-rhetoric-writing",
+   "label": "Essay Editor",
+   "desc": "Edits drafts for clarity, structure, grammar and citation style and checks against the assignment rubric.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1269",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1270",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1268",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-thesis-builder",
+   "concept": "engl-rhetoric-writing",
+   "label": "Thesis and Argument Builder",
+   "desc": "Develops a thesis and argument outline and checks claims, evidence and counterargument for coherence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1270",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1266",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1190",
+   "name": "Line Editor Agent",
+   "legacy_key": "cw-line-editor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1191",
+   "name": "Close Reader Agent",
+   "legacy_key": "cw-reader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1192",
+   "name": "Workshop Editor Agent",
+   "legacy_key": "cw-workshop-editor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1194",
+   "name": "Poet Agent",
+   "legacy_key": "cw-poet",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1264",
+   "name": "Literary Theory Analyst",
+   "legacy_key": "engl-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1265",
+   "name": "Textual Evidence Reviewer",
+   "legacy_key": "engl-reviewer",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1266",
+   "name": "Close Reading Critic",
+   "legacy_key": "engl-reader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1267",
+   "name": "Literary Historian",
+   "legacy_key": "engl-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1268",
+   "name": "English Language Linguist",
+   "legacy_key": "engl-linguist",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1269",
+   "name": "Manuscript Editor",
+   "legacy_key": "engl-editor",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1270",
+   "name": "Rhetoric and Composition Instructor",
+   "legacy_key": "engl-rhetor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1271",
+   "name": "Creative Writing Mentor",
+   "legacy_key": "engl-creative",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1265",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "english-language-and-poetry",
+   "score": 0.1108,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1268",
+    "skill": "engl-dialect-describer"
+   },
+   "source_topic": "english"
+  },
+  {
+   "agent": "Maxey1268",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "english-language-and-poetry",
+   "score": 0.1108,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "english"
+  },
+  {
+   "agent": "Maxey1269",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "english-language-and-poetry",
+   "score": 0.1108,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1268",
+    "skill": "engl-grammar-analyzer"
+   },
+   "source_topic": "english"
+  }
+ ],
+ "lexicon": {
+  "cw-fiction": "fiction character plot point of view scene setting short story novel",
+  "cw-poetry": "poetry poem image line break meter form sonnet free verse",
+  "cw-nonfiction": "nonfiction memoir essay literary journalism truth research voice reflection",
+  "cw-drama": "drama play screenplay dialogue act stage format action",
+  "cw-craft": "revision workshop critique feedback draft edit structure prose",
+  "cw-publish": "publishing submission query letter agent magazine press manuscript market",
+  "engl-read": "interpretation imagery symbolism narrative diction theme figurative",
+  "engl-hist": "medieval renaissance romanticism victorian modernism postcolonial canon",
+  "engl-poet": "poetry meter scansion rhyme sonnet stanza verse",
+  "engl-crit": "theory formalism structuralism feminist marxist psychoanalytic ideology",
+  "engl-lang": "grammar syntax usage phonology etymology dialect semantics",
+  "engl-write": "rhetoric argument thesis composition essay revision editing"
+ },
+ "sources": [
+  "creative-writing",
+  "english"
+ ]
+}

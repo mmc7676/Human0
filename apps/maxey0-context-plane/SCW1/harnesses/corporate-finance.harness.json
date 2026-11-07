@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "finance",
+ "domain": "business-finance",
  "topic": {
   "id": "corporate-finance",
   "label": "Corporate Finance",
-  "desc": "Building and financing a corporation: entity formation and governance, capital structure, valuation, mergers and acquisitions, and treasury."
+  "desc": "Corporate Finance: Capital Structure and Financing, Treasury and Working Capital, Valuation, Entity Formation and Governance and Mergers and Acquisitions."
  },
  "concepts": [
   {
@@ -25,6 +25,7 @@
    ],
    "topic": "corporate-finance",
    "source": "corporate-finance",
+   "source_topic": "corporate-finance",
    "related": []
   },
   {
@@ -46,6 +47,7 @@
    ],
    "topic": "corporate-finance",
    "source": "corporate-finance",
+   "source_topic": "corporate-finance",
    "related": []
   },
   {
@@ -66,6 +68,7 @@
    ],
    "topic": "corporate-finance",
    "source": "corporate-finance",
+   "source_topic": "corporate-finance",
    "related": []
   },
   {
@@ -84,6 +87,7 @@
    ],
    "topic": "corporate-finance",
    "source": "corporate-finance",
+   "source_topic": "corporate-finance",
    "related": []
   },
   {
@@ -105,6 +109,7 @@
    ],
    "topic": "corporate-finance",
    "source": "corporate-finance",
+   "source_topic": "corporate-finance",
    "related": []
   }
  ],
@@ -395,7 +400,8 @@
    "mcp": "local:financial-datasets-mcp",
    "topic": "corporate-finance",
    "score": 0.1041,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "corporate-finance"
   },
   {
    "agent": "Maxey1693",
@@ -406,28 +412,32 @@
    "via": {
     "primary": "Maxey1696",
     "skill": "cf-accretion-dilution-analyzer"
-   }
+   },
+   "source_topic": "corporate-finance"
   },
   {
    "agent": "Maxey1694",
    "mcp": "local:sec-edgar-mcp",
    "topic": "corporate-finance",
    "score": 0.1171,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "corporate-finance"
   },
   {
    "agent": "Maxey1696",
    "mcp": "local:financial-datasets-mcp",
    "topic": "corporate-finance",
    "score": 0.1205,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "corporate-finance"
   },
   {
    "agent": "Maxey1696",
    "mcp": "local:sec-edgar-mcp",
    "topic": "corporate-finance",
    "score": 0.1297,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "corporate-finance"
   }
  ],
  "lexicon": {

@@ -60,12 +60,12 @@ test("tools/list: 15 read-only tools, deterministic order, cacheable", async () 
 
 test("domains and every topic served with manifest counts; removed/merged topics absent", async () => {
   const d = (await call("list_domains", {})).structuredContent.domains;
-  assert.deepEqual(d.map((x) => x.id), ["maxey0-system", "foundations", "work", "finance", "disciplines"]);
+  assert.deepEqual(d.map((x) => x.id), ["agentic-systems", "data-science", "math-physical-sciences", "engineering", "life-health-mind", "earth-environment-place", "business-finance", "society-governance", "languages-communication", "area-identity-studies", "humanities-arts"]);
   const r = (await call("list_topics", {})).structuredContent;
   assert.equal(r.count, manifest.entries.length);
   const byId = Object.fromEntries(r.topics.map((t) => [t.id, t]));
   for (const e of manifest.entries) { assert.equal(byId[e.id].domain, e.domain); assert.equal(byId[e.id].concepts, e.counts.concepts, e.id); }
-  for (const gone of ["digestion", "nutrition", "medical-conditions", "physics"]) assert.ok(!byId[gone], gone);
+  for (const gone of ["digestion", "nutrition", "medical-conditions", "physics", "maxey0", "location", "infrastructure"]) assert.ok(!byId[gone], gone);
   assert.equal(d.reduce((n, x) => n + x.topics, 0), r.count);
 });
 
@@ -79,13 +79,13 @@ test("get_harness equals SCW1/harnesses/<id>.harness.json for every topic", asyn
 });
 
 test("walk domain -> topic -> concept -> skill -> agent -> mcp with children and trace", async () => {
-  const t = (await call("children", { level: "topic", parent_id: "maxey0-system" })).structuredContent.children;
-  assert.deepEqual(t.map((x) => x.id), ["maxey0"]);
-  const c = (await call("children", { level: "concept", parent_id: "maxey0" })).structuredContent.children;
-  assert.equal(c.length, 8); assert.ok(c.some((x) => x.id === "mx-memory"));
+  const t = (await call("children", { level: "topic", parent_id: "agentic-systems" })).structuredContent.children;
+  assert.ok(t.some((x) => x.id === "maxey0-context-architecture"));
+  const c = (await call("children", { level: "concept", parent_id: "maxey0-context-architecture" })).structuredContent.children;
+  assert.equal(c.length, 6); assert.ok(c.some((x) => x.id === "mx-memory"));
   const s = (await call("children", { level: "skill", parent_id: "mx-memory" })).structuredContent.children;
   const sk = (await call("get_skill", { skill_id: s[0].id })).structuredContent;
-  assert.deepEqual([sk.domain, sk.topic, sk.concept], ["maxey0-system", "maxey0", "mx-memory"]);
+  assert.deepEqual([sk.domain, sk.topic, sk.concept], ["agentic-systems", "maxey0-context-architecture", "mx-memory"]);
   const tr = (await call("trace", { node_id: s[0].id })).structuredContent;
   assert.deepEqual(tr.chain.map((x) => x.level), ["domain", "topic", "concept", "skill"]);
   const g = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "scw1.graph.json"), "utf8"));
@@ -98,11 +98,11 @@ test("walk domain -> topic -> concept -> skill -> agent -> mcp with children and
   assert.ok(m.agents.some((x) => x.key === multi));
 });
 
-test("physics: three normal-size topics with declared priority; overview concepts merged away", async () => {
-  const want = { "classical-physics": "Newtonian Mechanics", "quantum-physics": "Quantum Foundations", "physics-foundations": "Astrophysics and Cosmology" };
+test("physics: normal-size topics carry the declared priority of the topics they came from; overview concepts merged away", async () => {
+  const want = { "classical-physics": "Newtonian Mechanics", "quantum-physics": "Quantum Foundations", "thermodynamics-and-transport-phenomena": "Transport Phenomena", "optics-photonics-and-plasma": "Optics and Photonics" };
   for (const [id, label] of Object.entries(want)) {
     const t = (await call("get_topic", { topic_id: id })).structuredContent;
-    assert.equal(t.domain, "disciplines"); assert.equal(t.priority, 1);
+    assert.equal(t.domain, id.startsWith("thermo") ? "engineering" : "math-physical-sciences"); assert.equal(t.priority, 1);
     assert.ok(t.concepts.length >= 3 && t.concepts.length <= 8, id);
     assert.ok(t.concepts.some((c) => c.label === label), label);
     for (const l of ["Quantum Physics", "Classical Physics", "Relativity"]) assert.ok(!t.concepts.some((c) => c.label === l), l);
@@ -129,7 +129,7 @@ async function at(path, method, params = {}) {
 test("one endpoint per domain plus /mcp: /mcp serves all; /mcp/<domain> serves only that domain", async () => {
   const all = (await at("/mcp", "tools/call", { name: "list_topics", arguments: {} })).body.result.structuredContent;
   let sum = 0;
-  for (const d of ["maxey0-system", "foundations", "work", "finance", "disciplines"]) {
+  for (const d of ["agentic-systems", "data-science", "math-physical-sciences", "engineering", "life-health-mind", "earth-environment-place", "business-finance", "society-governance", "languages-communication", "area-identity-studies", "humanities-arts"]) {
     const r = (await at("/mcp/" + d, "tools/call", { name: "list_topics", arguments: {} })).body.result.structuredContent;
     assert.ok(r.count > 0 && r.topics.every((t) => t.domain === d), d); sum += r.count;
     const dom = (await at("/mcp/" + d, "tools/call", { name: "list_domains", arguments: {} })).body.result.structuredContent.domains;
@@ -138,11 +138,11 @@ test("one endpoint per domain plus /mcp: /mcp serves all; /mcp/<domain> serves o
     assert.match(disc.instructions, new RegExp("only the '" + d + "' domain"));
   }
   assert.equal(sum, all.count);
-  const cross = (await at("/mcp/work", "tools/call", { name: "get_topic", arguments: { topic_id: "classical-physics" } })).body.result;
+  const cross = (await at("/mcp/business-finance", "tools/call", { name: "get_topic", arguments: { topic_id: "classical-physics" } })).body.result;
   assert.equal(cross.isError, true);
-  const route = (await at("/mcp/maxey0-system", "tools/call", { name: "route_task", arguments: { task: "quantum entanglement of two qubits" } })).body.result.structuredContent;
-  assert.ok(route.paths.every((p) => p.domain === "maxey0-system"));
-  const h = (await at("/mcp/disciplines", "tools/call", { name: "get_harness", arguments: { topic_id: "quantum-physics" } })).body.result.structuredContent;
+  const route = (await at("/mcp/agentic-systems", "tools/call", { name: "route_task", arguments: { task: "quantum entanglement of two qubits" } })).body.result.structuredContent;
+  assert.ok(route.paths.every((p) => p.domain === "agentic-systems"));
+  const h = (await at("/mcp/math-physical-sciences", "tools/call", { name: "get_harness", arguments: { topic_id: "quantum-physics" } })).body.result.structuredContent;
   const f = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "harnesses", "quantum-physics.harness.json"), "utf8"));
   assert.equal(JSON.stringify(h.skills), JSON.stringify(f.skills));
   assert.equal((await at("/mcp/nope", "tools/list")).status, 404);
@@ -181,8 +181,8 @@ test("route_task returns full vertical paths; domain filter works", async () => 
   const r = (await call("route_task", { task: "orbital mechanics trajectory", limit: 2 })).structuredContent;
   assert.ok(r.paths.length > 0);
   for (const p of r.paths) assert.ok(p.domain && p.topic && p.concept && p.skill && p.agents.length);
-  const w = (await call("route_task", { task: "tiered memory promotion", domain: "maxey0-system" })).structuredContent;
-  assert.ok(w.paths.length && w.paths.every((p) => p.domain === "maxey0-system"));
+  const w = (await call("route_task", { task: "tiered memory promotion", domain: "agentic-systems" })).structuredContent;
+  assert.ok(w.paths.length && w.paths.every((p) => p.domain === "agentic-systems"));
 });
 
 test("tool errors are isError results, not protocol errors", async () => {
@@ -201,8 +201,8 @@ test("resources: list, ontology, snapshot, topic template, not-found = -32602", 
   assert.equal(o.spec, "maxey0.scw1-ontology/3");
   const s = JSON.parse((await modern("resources/read", { uri: "ctxplane://snapshot" })).body.result.contents[0].text);
   assert.equal(s.snapshot_digest, manifest.snapshot_digest);
-  const t = JSON.parse((await modern("resources/read", { uri: "ctxplane://topic/math" })).body.result.contents[0].text);
-  assert.equal(t.topic.id, "math");
+  const t = JSON.parse((await modern("resources/read", { uri: "ctxplane://topic/linear-algebra-and-geometry" })).body.result.contents[0].text);
+  assert.equal(t.topic.id, "linear-algebra-and-geometry");
   assert.equal((await modern("resources/read", { uri: "ctxplane://topic/zzz" })).body.error.code, -32602);
 });
 
@@ -260,16 +260,16 @@ test("transport: notification 202, GET/DELETE 405, bad Origin 403, bad JSON 400"
 });
 
 
-test("v4: Foundations and Finance domains; Human0's test tasks route to the new topics", async () => {
+test("Human0's test tasks route to the topics that now hold their concepts", async () => {
   const d = (await call("list_domains", {})).structuredContent.domains;
   const n = Object.fromEntries(d.map((x) => [x.id, x.topics ?? x.topic_count ?? x.count]));
   console.log("domains", JSON.stringify(n));
   const want = {
-    "get geographic coordinates": "location", "hike in California": "travel-outdoors", "build a website": "ui-frontend",
-    "search local real estate": "real-estate", "drone simulator": "simulation", "use claude to do my taxes": "taxes",
-    "read a 10-K filing": "equities", "take a company public with an IPO": "offerings", "offshore hedge fund master feeder structure": "hedge-funds",
-    "AML red flags in wire transfers": "financial-regulation", "bitcoin wallet custody": "crypto", "price a call option": "derivatives",
-    "convert time zones for a meeting": "time", "kubernetes cluster deployment": "infrastructure",
+    "get geographic coordinates": "places-routing-and-travel", "hike in California": "places-routing-and-travel", "build a website": "front-end-and-ui-engineering",
+    "search local real estate": "real-estate", "drone simulator": "simulation-and-digital-twins", "use claude to do my taxes": "taxes-and-personal-finance",
+    "read a 10-K filing": "equities", "take a company public with an IPO": "securities-offerings", "offshore hedge fund master feeder structure": "hedge-funds-and-private-funds",
+    "AML red flags in wire transfers": "financial-regulation-and-aml", "bitcoin wallet custody": "crypto-and-digital-assets", "price a call option": "derivatives",
+    "convert time zones for a meeting": "time-and-scheduling", "kubernetes cluster deployment": "cloud-infrastructure-and-devops",
   };
   const got = {};
   for (const [task, topic] of Object.entries(want)) {
@@ -349,4 +349,22 @@ test("shared embedding field: nearest across levels, by node or text; linked nod
   const tc = g.concepts.map((c) => ["t:" + c.topic, "c:" + c.id]), gate = g.agent_mcp.map((l) => ["a:" + l.agent, "m:" + l.mcp]);
   assert.ok(mean(tc) < 0.5 * mean(random), "topic-concept closer than random");
   assert.ok(mean(gate) < mean(random), "agent-server gates closer than random");
+});
+
+const f0 = (fx) => fx[3].task;
+test("observer-lens routing: same chain as the reference implementation; superposed branches, signed contributions", async () => {
+  const fx = JSON.parse(readFileSync(join(here, "lens.fixture.json"), "utf8"));
+  for (const f of fx) {
+    const r = (await call("route_task", { task: f.task, mode: "lens" })).structuredContent;
+    assert.equal(r.mode, "lens");
+    assert.deepEqual(r.lens.map((l) => l.selected.map((s) => s.id)), f.levels, f.task);
+    assert.deepEqual(r.paths.map((p) => p.skill), f.skills, f.task);
+    for (const l of r.lens) { assert.ok(Math.abs(l.selected.reduce((s, x) => s + x.weight * x.weight, 0) - 1) < 2e-3, "weights " + JSON.stringify(l.selected)); assert.ok(l.selected.every((x) => x.psi > 0), "psi"); }
+  }
+  const sup = (await call("route_task", { task: f0(fx), mode: "lens" })).structuredContent.lens;
+  for (const l of sup.slice(1)) { assert.ok(Array.isArray(l.suppressed)); for (const s of l.selected) assert.ok(Object.keys(s.contributions).length >= 1); }
+  const d = (await call("route_task", { task: "price a call option", mode: "lens", domains: ["business-finance"] })).structuredContent;
+  const topicsOf = Object.fromEntries((await call("list_topics", {})).structuredContent.topics.map((t) => [t.id, t.domain]));
+  assert.ok(d.lens[0].selected.every((s) => topicsOf[s.id] === "business-finance"), "observer starts in the chosen domain");
+  assert.equal((await call("route_task", { task: "x y", mode: "nope" })).isError, true);
 });

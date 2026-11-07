@@ -502,6 +502,52 @@ def cmd_build(a):
             if sc >= TH["related"]:
                 related.append({"a": x["id"], "b": y["id"], "score": sc, "basis": "derived:tfidf-cosine"})
 
+    # --- regroup: domains and topics rebuilt bottom-up from the concepts (spec["regroup"]) ---
+    rg = spec.get("regroup")
+    if rg:
+        new_of = {}
+        for t in rg["topics"]:
+            for c in t["concepts"]:
+                if c not in concepts: fail(f"regroup: unknown concept {c}")
+                if c in new_of: fail(f"regroup: concept {c} in two topics")
+                new_of[c] = t["id"]
+        # a topic pack added after the regroup keeps its own topic, in the domain declared for it in regroup.pack_domains
+        kept = {}
+        for c in concepts:
+            if c in new_of: continue
+            o = concepts[c]["topic"]; d = rg.get("pack_domains", {}).get(o)
+            if not d: fail(f"regroup: concept {c} of topic '{o}' is not placed; add '{o}' to regroup.pack_domains (or place its concepts in regroup.topics)")
+            new_of[c] = o; kept[o] = d
+        rg = {**rg, "topics": rg["topics"] + [{"id": o, "label": topics[o]["label"], "domain": d, "concepts": [c for c in concepts if new_of[c] == o]} for o, d in sorted(kept.items())]}
+        old_of = {c: concepts[c]["topic"] for c in concepts}
+        old_topics, old_pri = topics, dict(spec["topic_priority"]["topics"])
+        via = collections.defaultdict(collections.Counter)          # old topic -> new topics (by concepts)
+        for c, o in old_of.items(): via[o][new_of[c]] += 1
+        topics = {}
+        for t in rg["topics"]:
+            src = sorted({old_of[c] for c in t["concepts"]})
+            labels = [concepts[c]["label"] for c in t["concepts"]]
+            topics[t["id"]] = {"id": t["id"], "label": t["label"], "domain": t["domain"], "sources": src,
+                               "desc": t["label"] + ": " + ", ".join(labels[:-1]) + (" and " if len(labels) > 1 else "") + labels[-1] + "."}
+            pr = [old_pri[o] for o in src if o in old_pri]
+            if pr: spec["topic_priority"]["topics"][t["id"]] = min(pr)
+        spec["topic_priority"]["topics"] = {k: v for k, v in spec["topic_priority"]["topics"].items() if k in topics}
+        for c in concepts: concepts[c]["source_topic"] = old_of[c]; concepts[c]["topic"] = new_of[c]
+        lex2, tm2 = collections.defaultdict(dict), collections.defaultdict(list)
+        for t in topics.values():
+            for o in t["sources"]:
+                for dom_, words in lexicon.get(o, {}).items():
+                    cur = lex2[t["id"]].get(dom_)
+                    lex2[t["id"]][dom_] = words if not cur else " ".join(dict.fromkeys((cur + " " + words).split()))
+                for u in topic_mcp.get(o, []):
+                    if u not in tm2[t["id"]]: tm2[t["id"]].append(u)
+        lexicon, topic_mcp = lex2, tm2
+        for l in links:
+            if l.get("topic") in via: l["source_topic"] = l["topic"]; l["topic"] = via[l["topic"]].most_common(1)[0][0]
+        related = [r for r in related if concepts[r["a"]]["topic"] != concepts[r["b"]]["topic"]]
+        spec["domains"] = rg["domains"]
+        log["regroup"] = {"domains": len(rg["domains"]), "topics": len(topics), "from_topics": len(old_topics)}
+
     # --- invariants (fail hard) ------------------------------------------
     problems = []
     dom_ids = {d["id"] for d in spec["domains"]}

@@ -1,0 +1,682 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "data-science",
+ "topic": {
+  "id": "machine-learning-and-sql",
+  "label": "Machine Learning and SQL",
+  "desc": "Machine Learning and SQL: Data Engineering and Wrangling, Machine Learning and Data Science, Machine Learning and SQL."
+ },
+ "concepts": [
+  {
+   "id": "ds-data-engineering",
+   "label": "Data Engineering and Wrangling",
+   "desc": "Acquiring, cleaning, joining and storing data so it is consistent, documented and queryable at scale.",
+   "keywords": [
+    "pipeline",
+    "cleaning",
+    "etl",
+    "warehouse",
+    "sql",
+    "schema",
+    "missing data",
+    "join"
+   ],
+   "topic": "machine-learning-and-sql",
+   "source": "data-science",
+   "source_topic": "data-science",
+   "related": []
+  },
+  {
+   "id": "ds-machine-learning",
+   "label": "Machine Learning",
+   "desc": "Building predictive models that learn patterns from data, from supervised classification and regression to unsupervised clustering and deep learning.",
+   "keywords": [
+    "supervised",
+    "unsupervised",
+    "classification",
+    "clustering",
+    "neural network",
+    "feature",
+    "training",
+    "hyperparameter"
+   ],
+   "topic": "machine-learning-and-sql",
+   "source": "data-science",
+   "source_topic": "data-science",
+   "related": []
+  },
+  {
+   "id": "mcs-machine-learning-data",
+   "label": "Machine Learning and Data Science",
+   "desc": "Statistical learning, model validation and reproducible data pipelines for prediction and discovery.",
+   "keywords": [
+    "machine learning",
+    "data science",
+    "classification",
+    "cross validation",
+    "overfitting",
+    "feature",
+    "model",
+    "sql"
+   ],
+   "topic": "machine-learning-and-sql",
+   "source": "mathematical-and-computational-science",
+   "source_topic": "mathematical-and-computational-science",
+   "related": [
+    "bmc-biomedical-ml"
+   ]
+  },
+  {
+   "id": "pl-sql",
+   "label": "SQL",
+   "desc": "SQL queries, schema design, indexes, migrations and query plans.",
+   "keywords": [
+    "sql",
+    "query",
+    "schema",
+    "index",
+    "migration",
+    "join"
+   ],
+   "topic": "machine-learning-and-sql",
+   "source": "programming-languages",
+   "source_topic": "programming-languages",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ds-data-cleaner",
+   "concept": "ds-data-engineering",
+   "label": "Data Cleaner",
+   "desc": "Detects and repairs missing values, duplicates, outliers and type errors and checks row counts and null rates before and after.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1206",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1208",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-pipeline-builder",
+   "concept": "ds-data-engineering",
+   "label": "ETL Pipeline Builder",
+   "desc": "Designs extract-transform-load pipelines with schema contracts and checks each run with data quality assertions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1206",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1208",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1209",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-sql-query-writer",
+   "concept": "ds-data-engineering",
+   "label": "SQL Query Writer",
+   "desc": "Writes analytical SQL against warehouse tables and checks results against independent aggregate counts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1208",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1206",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1210",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-classifier-trainer",
+   "concept": "ds-machine-learning",
+   "label": "Classifier Trainer",
+   "desc": "Trains and tunes classification models with cross-validation and checks held-out accuracy, calibration and class balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1209",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1206",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-clustering-explorer",
+   "concept": "ds-machine-learning",
+   "label": "Clustering Explorer",
+   "desc": "Groups unlabeled records with clustering algorithms and checks cluster stability and silhouette scores across seeds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1209",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1210",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1213",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-feature-engineer",
+   "concept": "ds-machine-learning",
+   "label": "Feature Engineer",
+   "desc": "Derives, encodes and selects predictive features and checks for target leakage and train-test drift.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1209",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1206",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1208",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "mcs-classifier-builder",
+   "concept": "mcs-machine-learning-data",
+   "label": "Classifier Builder",
+   "desc": "Builds and tunes classification models and checks calibration and confusion matrices on held-out data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1613",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1451",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1614",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-data-query-pipeline",
+   "concept": "mcs-machine-learning-data",
+   "label": "Data Query Pipeline",
+   "desc": "Writes SQL and dataframe pipelines over analytic databases and checks row counts and aggregates against source tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1450",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1451",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1613",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-model-validator",
+   "concept": "mcs-machine-learning-data",
+   "label": "Cross Validation Runner",
+   "desc": "Trains models with k-fold cross validation and checks for leakage and overfitting.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1613",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1451",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "pl-sql-query-optimizer",
+   "concept": "pl-sql",
+   "label": "SQL Query Writer and Optimizer",
+   "desc": "Writes joins and aggregates, reads query plans and proposes indexes, showing the plan before and after.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey923",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey915",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey916",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  },
+  {
+   "id": "pl-sql-schema-migrations",
+   "concept": "pl-sql",
+   "label": "SQL Schema and Migrations",
+   "desc": "Designs normalized tables and constraints and writes reversible migrations with a plan for existing data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey923",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey914",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey917",
+     "role": "support"
+    }
+   ],
+   "source": "programming-languages"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1206",
+   "name": "Data Wrangling Specialist",
+   "legacy_key": "ds-wrangler",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1207",
+   "name": "Model Validation Auditor",
+   "legacy_key": "ds-validator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1208",
+   "name": "SQL and Warehouse Analyst",
+   "legacy_key": "ds-sql",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1209",
+   "name": "Machine Learning Engineer",
+   "legacy_key": "ds-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1210",
+   "name": "Statistical Inference Analyst",
+   "legacy_key": "ds-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1213",
+   "name": "Visualization Designer",
+   "legacy_key": "ds-viz",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1450",
+   "name": "Scientific Programmer Agent",
+   "legacy_key": "mcs-programmer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1451",
+   "name": "Statistician Agent",
+   "legacy_key": "mcs-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1613",
+   "name": "Machine Learning Agent",
+   "legacy_key": "mcs-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1614",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "mcs-linalg",
+   "mcp": []
+  },
+  {
+   "key": "Maxey914",
+   "name": "Code Reviewer Agent",
+   "legacy_key": "pl-code-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey915",
+   "name": "Performance Analyst Agent",
+   "legacy_key": "pl-performance-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey916",
+   "name": "Test Engineer Agent",
+   "legacy_key": "pl-test-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey917",
+   "name": "Build and Packaging Agent",
+   "legacy_key": "pl-build-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey923",
+   "name": "SQL Engineer Agent",
+   "legacy_key": "pl-sql-engineer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "name": "Microsoft Learn",
+   "desc": "Search trusted Microsoft docs to power your development",
+   "tools": [
+    "microsoft_docs_search",
+    "microsoft_docs_fetch",
+    "microsoft_code_sample_search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
+   "origins": [
+    "computer-science",
+    "programming-languages"
+   ]
+  },
+  {
+   "uuid": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "name": "Omni Analytics",
+   "desc": "Query your data using natural language through Omni's semantic model",
+   "tools": [
+    "pickModel",
+    "pickTopic",
+    "getData"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "name": "Snowflake",
+   "desc": "Retrieve both structured and unstructured data",
+   "tools": [
+    "Cortex Agents",
+    "Cortex Search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+  "local:mcp-server-motherduck",
+  "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "ds-stats": "statistical inference estimation hypothesis bayesian bootstrap regression posterior",
+  "ds-ml": "machine learning supervised unsupervised classification clustering neural feature training hyperparameter",
+  "ds-eng": "pipeline cleaning etl warehouse sql schema join wrangling",
+  "ds-viz": "visualization chart dashboard storytelling encoding exploratory",
+  "ds-causal": "experiment causal randomization power treatment confounding counterfactual",
+  "ds-gov": "ethics privacy fairness bias governance reproducibility consent",
+  "mcs-analysis": "calculus analysis limit derivative integral series convergence differential",
+  "mcs-matrix": "linear algebra matrix vector eigenvalue decomposition svd rank pca orthogonality",
+  "mcs-inference": "probability statistic distribution estimation hypothesis bayesian regression confidence posterior mcmc",
+  "mcs-numerics": "numerical approximation root quadrature stability floating finite error discretise",
+  "mcs-algorithmic": "algorithm complexity graph optimization gradient dynamic combinatorial runtime kkt",
+  "mcs-learning": "machine learning data science classification validation overfitting feature sql",
+  "pylang": "python pip venv pytest asyncio pipeline lock typing",
+  "tslang": "typescript tsconfig npm bundler generics discriminated node",
+  "golang": "goroutine race table driven leak golang module",
+  "rustlang": "rust ownership borrow lifetime cargo clippy crate unsafe",
+  "clang": "cmake sanitizer pointer abi header smart",
+  "jvmlang": "java kotlin gradle maven coroutine executor",
+  "sqlquery": "sql join index query migration normalized schema",
+  "shellscript": "shell quoting linter cron strict bash script scripting"
+ },
+ "sources": [
+  "data-science",
+  "mathematical-and-computational-science",
+  "programming-languages"
+ ]
+}

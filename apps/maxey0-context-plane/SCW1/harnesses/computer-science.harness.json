@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "agentic-systems",
  "topic": {
   "id": "computer-science",
   "label": "Computer Science",
-  "desc": "Computer Science: the theory of computation and the design of algorithms, software, systems and intelligent machines."
+  "desc": "Computer Science: Theory of Computation, Algorithms and Data Structures, Software Engineering, Artificial Intelligence and Machine Learning, Computer Systems and Networks, Computer Security, Formal Logic and Computability and Algorithms and Optimization."
  },
  "concepts": [
   {
@@ -29,6 +29,7 @@
    ],
    "topic": "computer-science",
    "source": "computer-science",
+   "source_topic": "computer-science",
    "related": []
   },
   {
@@ -47,9 +48,8 @@
    ],
    "topic": "computer-science",
    "source": "computer-science",
-   "related": [
-    "mcs-algorithms-optimization"
-   ]
+   "source_topic": "computer-science",
+   "related": []
   },
   {
    "id": "cs-security",
@@ -67,6 +67,7 @@
    ],
    "topic": "computer-science",
    "source": "computer-science",
+   "source_topic": "computer-science",
    "related": []
   },
   {
@@ -85,6 +86,7 @@
    ],
    "topic": "computer-science",
    "source": "computer-science",
+   "source_topic": "computer-science",
    "related": []
   },
   {
@@ -103,6 +105,7 @@
    ],
    "topic": "computer-science",
    "source": "computer-science",
+   "source_topic": "computer-science",
    "related": []
   },
   {
@@ -121,9 +124,45 @@
    ],
    "topic": "computer-science",
    "source": "computer-science",
-   "related": [
-    "symsys-formal-logic"
-   ]
+   "source_topic": "computer-science",
+   "related": []
+  },
+  {
+   "id": "mcs-algorithms-optimization",
+   "label": "Algorithms and Optimization",
+   "desc": "Design and analysis of algorithms, complexity, graphs and continuous and discrete optimization.",
+   "keywords": [
+    "algorithm",
+    "complexity",
+    "graph",
+    "optimization",
+    "gradient descent",
+    "dynamic programming",
+    "combinatorial",
+    "runtime"
+   ],
+   "topic": "computer-science",
+   "source": "mathematical-and-computational-science",
+   "source_topic": "mathematical-and-computational-science",
+   "related": []
+  },
+  {
+   "id": "symsys-formal-logic",
+   "label": "Formal Logic and Computability",
+   "desc": "Propositional and first-order logic, proofs, automata, computability and complexity.",
+   "keywords": [
+    "logic",
+    "proof",
+    "first-order",
+    "automata",
+    "computability",
+    "complexity",
+    "turing"
+   ],
+   "topic": "computer-science",
+   "source": "symbolic-systems",
+   "source_topic": "symbolic-systems",
+   "related": []
   }
  ],
  "skills": [
@@ -556,6 +595,138 @@
     }
    ],
    "source": "computer-science"
+  },
+  {
+   "id": "mcs-complexity-analyzer",
+   "concept": "mcs-algorithms-optimization",
+   "label": "Algorithm Complexity Analyzer",
+   "desc": "Derives time and space complexity of algorithms and checks bounds with empirical runtime scaling.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1611",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1449",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-convex-optimizer",
+   "concept": "mcs-algorithms-optimization",
+   "label": "Convex Optimizer",
+   "desc": "Solves convex problems with gradient and interior-point methods and checks KKT conditions at the solution.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1612",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1611",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1613",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-graph-algorithm-runner",
+   "concept": "mcs-algorithms-optimization",
+   "label": "Graph Algorithm Runner",
+   "desc": "Runs shortest path, flow and matching algorithms and checks optimality certificates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1611",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1614",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "symsys-automata-builder",
+   "concept": "symsys-formal-logic",
+   "label": "Automaton Constructor",
+   "desc": "Constructs a finite automaton or Turing machine for a language and tests it on accepted and rejected strings.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1606",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-complexity-classify",
+   "concept": "symsys-formal-logic",
+   "label": "Complexity Classifier",
+   "desc": "Classifies a decision problem by complexity class with a reduction, checked by reviewing the reduction steps.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-proof-checker",
+   "concept": "symsys-formal-logic",
+   "label": "Natural Deduction Proof Checker",
+   "desc": "Builds or checks a natural deduction proof in propositional or first-order logic, verified rule by rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey941",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1187",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
   }
  ],
  "agents": [
@@ -626,6 +797,24 @@
    "mcp": []
   },
   {
+   "key": "Maxey1449",
+   "name": "Proof Checker Agent",
+   "legacy_key": "mcs-prover",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1450",
+   "name": "Scientific Programmer Agent",
+   "legacy_key": "mcs-programmer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1474",
+   "name": "Philosophy of Mind Agent",
+   "legacy_key": "phil-mind",
+   "mcp": []
+  },
+  {
    "key": "Maxey1603",
    "name": "Code Review Agent",
    "legacy_key": "cs-code-reviewer",
@@ -637,6 +826,30 @@
    "key": "Maxey1606",
    "name": "Computational Linguistics Agent",
    "legacy_key": "symsys-ling",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1611",
+   "name": "Algorithms Agent",
+   "legacy_key": "mcs-algorithms",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1612",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "mcs-numerics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1613",
+   "name": "Machine Learning Agent",
+   "legacy_key": "mcs-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1614",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "mcs-linalg",
    "mcp": []
   },
   {
@@ -682,6 +895,37 @@
     "science-technology-and-society",
     "sociology",
     "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
    ]
   },
   {
@@ -804,6 +1048,61 @@
     "computer-science",
     "electrical-engineering"
    ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
   }
  ],
  "topic_mcp": [
@@ -811,7 +1110,10 @@
   "89a7ddf5-2a6b-410c-be11-aa0e1a1b35a6",
   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
   "de1d1dc7-ec10-459d-b511-797982834b43",
-  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "local:sympy-mcp",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "local:mcp-server-motherduck"
  ],
  "agent_mcp": [
   {
@@ -823,14 +1125,16 @@
    "via": {
     "primary": "Maxey1182",
     "skill": "cs-paper-review"
-   }
+   },
+   "source_topic": "computer-science"
   },
   {
    "agent": "Maxey1182",
    "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
    "topic": "computer-science",
    "score": 0.2793,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "computer-science"
   },
   {
    "agent": "Maxey1183",
@@ -841,14 +1145,16 @@
    "via": {
     "primary": "Maxey1603",
     "skill": "cs-code-review"
-   }
+   },
+   "source_topic": "computer-science"
   },
   {
    "agent": "Maxey1184",
    "mcp": "de1d1dc7-ec10-459d-b511-797982834b43",
    "topic": "computer-science",
    "score": 0.1175,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "computer-science"
   },
   {
    "agent": "Maxey1185",
@@ -859,21 +1165,24 @@
    "via": {
     "primary": "Maxey1184",
     "skill": "cs-automaton-construction"
-   }
+   },
+   "source_topic": "computer-science"
   },
   {
    "agent": "Maxey1188",
    "mcp": "local:github",
    "topic": "computer-science",
    "score": 0.1058,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "computer-science"
   },
   {
    "agent": "Maxey1603",
    "mcp": "local:github",
    "topic": "computer-science",
    "score": 0.151,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "computer-science"
   }
  ],
  "lexicon": {
@@ -882,9 +1191,23 @@
   "cs-systems": "operating system architecture distributed network concurrency memory protocol cloud",
   "cs-software": "software testing design pattern version control requirements refactoring code review continuous integration",
   "cs-ml": "learning neural training model evaluation search reasoning dataset",
-  "cs-security": "security cryptography vulnerability threat authentication encryption exploit privacy"
+  "cs-security": "security cryptography vulnerability threat authentication encryption exploit privacy",
+  "mcs-analysis": "calculus analysis limit derivative integral series convergence differential",
+  "mcs-matrix": "linear algebra matrix vector eigenvalue decomposition svd rank pca orthogonality",
+  "mcs-inference": "probability statistic distribution estimation hypothesis bayesian regression confidence posterior mcmc",
+  "mcs-numerics": "numerical approximation root quadrature stability floating finite error discretise",
+  "mcs-algorithmic": "algorithm complexity graph optimization gradient dynamic combinatorial runtime kkt",
+  "mcs-learning": "machine learning data science classification validation overfitting feature sql",
+  "symsys-logic": "logic proof deduction automaton turing complexity",
+  "symsys-psychology": "psychology memory attention reasoning experiment behavioral",
+  "symsys-language": "syntax semantics pragmatics parse lambda treebank",
+  "symsys-ai": "bayesian network classifier search accuracy learning",
+  "symsys-mind": "mind consciousness functionalism computationalism intentionality reference",
+  "symsys-modeling": "connectionist simulation fit baseline cognition"
  },
  "sources": [
-  "computer-science"
+  "computer-science",
+  "mathematical-and-computational-science",
+  "symbolic-systems"
  ]
 }

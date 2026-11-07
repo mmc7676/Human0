@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "area-identity-studies",
  "topic": {
   "id": "american-studies",
   "label": "American Studies",
-  "desc": "American Studies: interdisciplinary study of the culture, history, politics and identities of the United States and its place in the world."
+  "desc": "American Studies: American Literature and Texts, American Cultural History, Gender, Sexuality and Class, Place, Region and Empire, Race, Ethnicity and Immigration and Popular Culture and Media."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "american-studies",
    "source": "american-studies",
+   "source_topic": "american-studies",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "american-studies",
    "source": "american-studies",
+   "source_topic": "american-studies",
    "related": []
   },
   {
@@ -60,6 +62,7 @@
    ],
    "topic": "american-studies",
    "source": "american-studies",
+   "source_topic": "american-studies",
    "related": []
   },
   {
@@ -78,6 +81,7 @@
    ],
    "topic": "american-studies",
    "source": "american-studies",
+   "source_topic": "american-studies",
    "related": []
   },
   {
@@ -96,6 +100,7 @@
    ],
    "topic": "american-studies",
    "source": "american-studies",
+   "source_topic": "american-studies",
    "related": []
   },
   {
@@ -114,6 +119,7 @@
    ],
    "topic": "american-studies",
    "source": "american-studies",
+   "source_topic": "american-studies",
    "related": []
   }
  ],
@@ -672,7 +678,8 @@
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "american-studies",
    "score": 0.107,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "american-studies"
   }
  ],
  "lexicon": {

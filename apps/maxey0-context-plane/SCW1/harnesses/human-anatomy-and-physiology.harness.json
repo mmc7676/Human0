@@ -1,0 +1,464 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "life-health-mind",
+ "topic": {
+  "id": "human-anatomy-and-physiology",
+  "label": "Human Anatomy and Physiology",
+  "desc": "Human Anatomy and Physiology: Human Anatomy, Human Physiology and Human Development and Aging."
+ },
+ "concepts": [
+  {
+   "id": "hbio-anatomy",
+   "label": "Human Anatomy",
+   "desc": "The gross and microscopic structure of the human body: organs, tissues and organ systems and their spatial relationships.",
+   "keywords": [
+    "anatomy",
+    "organ",
+    "tissue",
+    "skeleton",
+    "muscle",
+    "histology",
+    "organ system",
+    "landmark"
+   ],
+   "topic": "human-anatomy-and-physiology",
+   "source": "human-biology",
+   "source_topic": "human-biology",
+   "related": []
+  },
+  {
+   "id": "hbio-development-aging",
+   "label": "Human Development and Aging",
+   "desc": "Growth from fertilisation through embryonic development, childhood, puberty and aging across the life course.",
+   "keywords": [
+    "development",
+    "embryo",
+    "fertilization",
+    "growth",
+    "puberty",
+    "aging",
+    "life course",
+    "differentiation"
+   ],
+   "topic": "human-anatomy-and-physiology",
+   "source": "human-biology",
+   "source_topic": "human-biology",
+   "related": []
+  },
+  {
+   "id": "hbio-physiology",
+   "label": "Human Physiology",
+   "desc": "How organ systems work and are regulated: cardiovascular, respiratory, renal, endocrine and nervous function and homeostasis.",
+   "keywords": [
+    "physiology",
+    "homeostasis",
+    "cardiovascular",
+    "respiratory",
+    "renal",
+    "endocrine",
+    "nervous",
+    "feedback"
+   ],
+   "topic": "human-anatomy-and-physiology",
+   "source": "human-biology",
+   "source_topic": "human-biology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "hbio-anatomical-terms",
+   "concept": "hbio-anatomy",
+   "label": "Anatomical Terminology",
+   "desc": "Translates descriptions into correct anatomical planes, directions and landmark terms, checked against the standard terminology.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1347",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-histology-identify",
+   "concept": "hbio-anatomy",
+   "label": "Histology Identifier",
+   "desc": "Identifies tissue types from described microscopic features, checked by listing the diagnostic features for each tissue.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1347",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1349",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-organ-system-map",
+   "concept": "hbio-anatomy",
+   "label": "Organ System Mapper",
+   "desc": "Maps an organ to its system, location, blood supply and innervation, checked against standard anatomical references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1347",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1350",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-aging-biology",
+   "concept": "hbio-development-aging",
+   "label": "Biology of Aging Review",
+   "desc": "Summarises cellular and systemic mechanisms of aging, checked by citing a primary study for each mechanism.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1351",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1349",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-embryo-timeline",
+   "concept": "hbio-development-aging",
+   "label": "Embryonic Development Timeline",
+   "desc": "Lays out embryonic stages and when organ systems form, checked against standard embryology staging.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1351",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1347",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-growth-assessment",
+   "concept": "hbio-development-aging",
+   "label": "Growth Curve Assessment",
+   "desc": "Places a measurement on a growth reference and reports the percentile, checked by recomputing the percentile.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1351",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1350",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-homeostasis-loop",
+   "concept": "hbio-physiology",
+   "label": "Homeostasis Loop Analyst",
+   "desc": "Describes the sensor, control centre and effector of a feedback loop, checked by tracing the response to a perturbation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1350",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1347",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-hormone-pathway",
+   "concept": "hbio-physiology",
+   "label": "Endocrine Pathway Tracer",
+   "desc": "Traces a hormone from secretion to target and feedback, checked against the literature for each step.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1350",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1349",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-physiology-calc",
+   "concept": "hbio-physiology",
+   "label": "Physiological Calculator",
+   "desc": "Computes quantities such as cardiac output, clearance and ventilation from inputs, checked by units and plausible reference ranges.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1350",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1347",
+   "name": "Human Anatomy Agent",
+   "legacy_key": "hbio-anatomist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1348",
+   "name": "Evidence and Accuracy Checker",
+   "legacy_key": "hbio-checker",
+   "mcp": [
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "81cc5080-a204-4aa1-a694-fa868a3c8721",
+    "cc609c18-f6f5-44a0-ac77-6150b9d7b439"
+   ]
+  },
+  {
+   "key": "Maxey1349",
+   "name": "Cell and Molecular Biology Agent",
+   "legacy_key": "hbio-cell",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1350",
+   "name": "Physiology Agent",
+   "legacy_key": "hbio-physiologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1351",
+   "name": "Developmental Biology Agent",
+   "legacy_key": "hbio-development",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1608",
+   "name": "Biomedical Literature Agent",
+   "legacy_key": "hbio-literature",
+   "mcp": [
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "81cc5080-a204-4aa1-a694-fa868a3c8721",
+    "cc609c18-f6f5-44a0-ac77-6150b9d7b439"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "name": "bioRxiv",
+   "desc": "Access bioRxiv and medRxiv preprint data",
+   "tools": [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "origins": [
+    "bioengineering",
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology",
+    "research"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "name": "Helix GenoSphere",
+   "desc": "Query human genomics & longitudinal clinical data",
+   "tools": [
+    "get_variant_frequency",
+    "check_gene_availability",
+    "get_dataset_overview",
+    "search_concepts",
+    "get_patient_count"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "origins": [
+    "biology",
+    "human-biology"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+  "cc609c18-f6f5-44a0-ac77-6150b9d7b439"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1348",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "human-anatomy-and-physiology",
+   "score": 0.2802,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "human-biology"
+  },
+  {
+   "agent": "Maxey1348",
+   "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "topic": "human-anatomy-and-physiology",
+   "score": 0.3082,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "human-biology"
+  },
+  {
+   "agent": "Maxey1348",
+   "mcp": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "topic": "human-anatomy-and-physiology",
+   "score": 0.3749,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1352",
+    "skill": "hbio-hardy-weinberg"
+   },
+   "source_topic": "human-biology"
+  },
+  {
+   "agent": "Maxey1608",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "human-anatomy-and-physiology",
+   "score": 0.2718,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1353",
+    "skill": "hbio-adaptation-case"
+   },
+   "source_topic": "human-biology"
+  },
+  {
+   "agent": "Maxey1608",
+   "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "topic": "human-anatomy-and-physiology",
+   "score": 0.3499,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "human-biology"
+  },
+  {
+   "agent": "Maxey1608",
+   "mcp": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "topic": "human-anatomy-and-physiology",
+   "score": 0.3378,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "human-biology"
+  }
+ ],
+ "lexicon": {
+  "hbio-structure": "anatomy organ tissue skeleton muscle histology landmark",
+  "hbio-function": "physiology homeostasis cardiovascular respiratory renal endocrine nervous feedback",
+  "hbio-cellular": "cell membrane organelle metabolism signaling protein transcription",
+  "hbio-heredity": "genetics genome variant inheritance allele mendelian genomics",
+  "hbio-lifespan": "development embryo fertilization growth puberty aging differentiation",
+  "hbio-origins": "evolution hominin adaptation fossil selection diversity ancestry"
+ },
+ "sources": [
+  "human-biology"
+ ]
+}

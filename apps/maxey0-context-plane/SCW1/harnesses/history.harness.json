@@ -1,13 +1,32 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "humanities-arts",
  "topic": {
   "id": "history",
   "label": "History",
-  "desc": "History: the study of the human past through sources, chronology, historiography and comparative analysis across regions and periods."
+  "desc": "History: Modern and Contemporary History, Historiography, Historical Method and Sources, Chronology and Periodization, Global, Social and Economic History, Modern European History and Ancient and Medieval History."
  },
  "concepts": [
+  {
+   "id": "euro-modern-history",
+   "label": "Modern European History",
+   "desc": "Europe from the Enlightenment and revolutions through industrialisation, the world wars, the Cold War and 1989.",
+   "keywords": [
+    "enlightenment",
+    "revolution",
+    "nationalism",
+    "empire",
+    "world war",
+    "cold war",
+    "industrialization",
+    "archive"
+   ],
+   "topic": "history",
+   "source": "european-studies",
+   "source_topic": "european-studies",
+   "related": []
+  },
   {
    "id": "hist-ancient-medieval",
    "label": "Ancient and Medieval History",
@@ -24,6 +43,7 @@
    ],
    "topic": "history",
    "source": "history",
+   "source_topic": "history",
    "related": []
   },
   {
@@ -42,6 +62,7 @@
    ],
    "topic": "history",
    "source": "history",
+   "source_topic": "history",
    "related": []
   },
   {
@@ -61,6 +82,7 @@
    ],
    "topic": "history",
    "source": "history",
+   "source_topic": "history",
    "related": []
   },
   {
@@ -79,6 +101,7 @@
    ],
    "topic": "history",
    "source": "history",
+   "source_topic": "history",
    "related": []
   },
   {
@@ -97,6 +120,7 @@
    ],
    "topic": "history",
    "source": "history",
+   "source_topic": "history",
    "related": []
   },
   {
@@ -115,13 +139,79 @@
    ],
    "topic": "history",
    "source": "history",
+   "source_topic": "history",
    "related": [
-    "chin-modern-history",
-    "euro-modern-history"
+    "chin-modern-history"
    ]
   }
  ],
  "skills": [
+  {
+   "id": "euro-chronology-building",
+   "concept": "euro-modern-history",
+   "label": "Historical Chronology Building",
+   "desc": "Builds a dated sequence of events for a period or country and checks each date against at least two reference sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1294",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1288",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-historiography-review",
+   "concept": "euro-modern-history",
+   "label": "Historiographical Debate Review",
+   "desc": "Summarises competing interpretations of an event such as the origins of the First World War and checks each position against its key authors.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1294",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1293",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
+  {
+   "id": "euro-source-criticism",
+   "concept": "euro-modern-history",
+   "label": "Primary Source Criticism",
+   "desc": "Evaluates a historical document for authorship, date, audience and bias and checks its claims against corroborating sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1294",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1289",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1295",
+     "role": "support"
+    }
+   ],
+   "source": "european-studies"
+  },
   {
    "id": "hist-empire-comparison",
    "concept": "hist-ancient-medieval",
@@ -525,6 +615,36 @@
  ],
  "agents": [
   {
+   "key": "Maxey1288",
+   "name": "Comparative Politics Analyst",
+   "legacy_key": "euro-political",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1289",
+   "name": "Source and Citation Reviewer",
+   "legacy_key": "euro-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1293",
+   "name": "European Culture Scholar",
+   "legacy_key": "euro-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1294",
+   "name": "European Historian",
+   "legacy_key": "euro-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1295",
+   "name": "European Language Translator",
+   "legacy_key": "euro-language",
+   "mcp": []
+  },
+  {
    "key": "Maxey1339",
    "name": "Ancient and Medieval Historian",
    "legacy_key": "hist-ancient",
@@ -612,6 +732,47 @@
    ]
   },
   {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
    "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "name": "Wiley Scholar Gateway",
    "desc": "Enhance responses with scholarly research and citations",
@@ -670,10 +831,17 @@
  ],
  "topic_mcp": [
   "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
   "43edc307-1d33-44f5-94a2-6e9c3e64a538"
  ],
  "agent_mcp": [],
  "lexicon": {
+  "euro-history": "enlightenment revolution nationalism empire industrialization archive",
+  "euro-union": "treaty commission parliament council integration enlargement sovereignty",
+  "euro-politics": "party election democracy populism coalition federalism",
+  "euro-economy": "market monetary trade cohesion eurozone fiscal",
+  "euro-identity": "memory migration religion literature citizenship minority",
+  "euro-lang": "translation multilingual terminology glossary bibliography",
   "hist-sources": "archive archival provenance authentication corroboration citation manuscript inscription",
   "hist-interpretation": "historiography interpretation debate annales marxist revisionism narrative",
   "hist-time": "chronology timeline calendar dating periodization era causation continuity",
@@ -681,6 +849,7 @@
   "hist-society": "global comparative social economic trade migration labor gender class"
  },
  "sources": [
+  "european-studies",
   "history"
  ]
 }

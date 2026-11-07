@@ -1,33 +1,31 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "engineering",
  "topic": {
   "id": "chemical-engineering",
   "label": "Chemical Engineering",
-  "desc": "Chemical Engineering: design and operation of processes that transform materials and energy at scale."
+  "desc": "Chemical Engineering: Chemical Thermodynamics, Chemical Reaction Engineering, Separation Processes, Process Design, Economics and Safety and Physical Chemistry."
  },
  "concepts": [
   {
-   "id": "cheme-process-control",
-   "label": "Process Dynamics and Control",
-   "desc": "Dynamic models, feedback control and tuning for stable plant operation.",
+   "id": "chem-physical-chemistry",
+   "label": "Physical Chemistry",
+   "desc": "Thermodynamics, kinetics and quantum mechanics applied to chemical systems.",
    "keywords": [
-    "control",
-    "dynamics",
-    "feedback",
-    "pid",
-    "transfer function",
-    "stability",
-    "tuning",
-    "setpoint"
+    "physical",
+    "thermodynamics",
+    "kinetics",
+    "quantum",
+    "spectroscopy",
+    "rate constant",
+    "entropy",
+    "equilibrium"
    ],
    "topic": "chemical-engineering",
-   "source": "chemical-engineering",
-   "related": [
-    "me-controls-mechatronics",
-    "rb-control"
-   ]
+   "source": "chemistry",
+   "source_topic": "chemistry",
+   "related": []
   },
   {
    "id": "cheme-process-design-safety",
@@ -45,6 +43,7 @@
    ],
    "topic": "chemical-engineering",
    "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
    "related": []
   },
   {
@@ -63,6 +62,7 @@
    ],
    "topic": "chemical-engineering",
    "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
    "related": []
   },
   {
@@ -81,6 +81,7 @@
    ],
    "topic": "chemical-engineering",
    "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
    "related": []
   },
   {
@@ -99,93 +100,76 @@
    ],
    "topic": "chemical-engineering",
    "source": "chemical-engineering",
-   "related": []
-  },
-  {
-   "id": "cheme-transport-phenomena",
-   "label": "Transport Phenomena",
-   "desc": "Momentum, heat and mass transfer in process equipment.",
-   "keywords": [
-    "transport",
-    "heat transfer",
-    "mass transfer",
-    "fluid",
-    "diffusion",
-    "heat exchanger",
-    "viscosity",
-    "momentum"
-   ],
-   "topic": "chemical-engineering",
-   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
    "related": []
   }
  ],
  "skills": [
   {
-   "id": "cheme-control-strategy",
-   "concept": "cheme-process-control",
-   "label": "Control Strategy Design",
-   "desc": "Proposes cascade and feedforward schemes for a unit, checked against disturbance analysis.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1102",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1103",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1104",
-     "role": "support"
-    }
-   ],
-   "source": "chemical-engineering"
-  },
-  {
-   "id": "cheme-pid-tuning",
-   "concept": "cheme-process-control",
-   "label": "PID Controller Tuning",
-   "desc": "Tunes PID controllers by model-based rules, checked by simulated step response.",
+   "id": "chem-quantum-levels",
+   "concept": "chem-physical-chemistry",
+   "label": "Quantum Energy Level Calculator",
+   "desc": "Computes energy levels for model systems, checked against spectroscopic transitions.",
    "type": "procedural",
    "agents": [
     {
-     "key": "Maxey1102",
+     "key": "Maxey1112",
      "role": "primary"
     },
     {
-     "key": "Maxey1105",
+     "key": "Maxey1116",
      "role": "checker"
     },
     {
-     "key": "Maxey1104",
+     "key": "Maxey1111",
      "role": "support"
     }
    ],
-   "source": "chemical-engineering"
+   "source": "chemistry"
   },
   {
-   "id": "cheme-stability-check",
-   "concept": "cheme-process-control",
-   "label": "Closed-Loop Stability Analysis",
-   "desc": "Assesses stability margins of control loops, checked by Bode and root locus criteria.",
+   "id": "chem-rate-law",
+   "concept": "chem-physical-chemistry",
+   "label": "Rate Law Determination",
+   "desc": "Determines reaction order and rate constants from kinetic data, checked by linearized fits.",
    "type": "procedural",
    "agents": [
     {
-     "key": "Maxey1102",
+     "key": "Maxey1112",
      "role": "primary"
     },
     {
-     "key": "Maxey1104",
+     "key": "Maxey1111",
      "role": "checker"
     },
     {
-     "key": "Maxey1106",
+     "key": "Maxey1110",
      "role": "support"
     }
    ],
-   "source": "chemical-engineering"
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-thermo-calc",
+   "concept": "chem-physical-chemistry",
+   "label": "Thermochemistry Calculator",
+   "desc": "Computes enthalpy, entropy and Gibbs energy changes, checked by Hess law consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1117",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
   },
   {
    "id": "cheme-cost-estimate",
@@ -450,72 +434,6 @@
     }
    ],
    "source": "chemical-engineering"
-  },
-  {
-   "id": "cheme-exchanger-design",
-   "concept": "cheme-transport-phenomena",
-   "label": "Heat Exchanger Design",
-   "desc": "Sizes heat exchangers by LMTD or effectiveness methods, checked by energy balance closure.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1106",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1105",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1104",
-     "role": "support"
-    }
-   ],
-   "source": "chemical-engineering"
-  },
-  {
-   "id": "cheme-mass-transfer",
-   "concept": "cheme-transport-phenomena",
-   "label": "Mass Transfer Coefficient Estimator",
-   "desc": "Estimates mass transfer coefficients from correlations, checked by dimensionless validity ranges.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1106",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1109",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1107",
-     "role": "support"
-    }
-   ],
-   "source": "chemical-engineering"
-  },
-  {
-   "id": "cheme-pipe-flow",
-   "concept": "cheme-transport-phenomena",
-   "label": "Pipe Flow and Pressure Drop",
-   "desc": "Computes pressure drop and pump power in piping, checked by Reynolds regime and friction factor.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1106",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1105",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1104",
-     "role": "support"
-    }
-   ],
-   "source": "chemical-engineering"
   }
  ],
  "agents": [
@@ -566,9 +484,62 @@
    "name": "Separations Process Engineer",
    "legacy_key": "cheme-separations",
    "mcp": []
+  },
+  {
+   "key": "Maxey1110",
+   "name": "Analytical Chemist",
+   "legacy_key": "chem-analytical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1111",
+   "name": "Stoichiometry and Units Checker",
+   "legacy_key": "chem-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1112",
+   "name": "Physical Chemist",
+   "legacy_key": "chem-physical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1116",
+   "name": "Computational Chemist",
+   "legacy_key": "chem-computational",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1117",
+   "name": "Inorganic Chemist",
+   "legacy_key": "chem-inorganic",
+   "mcp": []
   }
  ],
  "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
   {
    "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
    "name": "SciSpace",
@@ -607,6 +578,34 @@
    ]
   },
   {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
    "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
    "name": "Wolfram",
    "desc": "Inject precise, real-time computation and knowledge",
@@ -642,6 +641,45 @@
     "mechanical-engineering",
     "physics",
     "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
     "symbolic-systems"
    ]
   },
@@ -705,7 +743,10 @@
  "topic_mcp": [
   "de1d1dc7-ec10-459d-b511-797982834b43",
   "ff091334-0f12-4d0e-a973-c00467dd3818",
-  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
  ],
  "agent_mcp": [],
  "lexicon": {
@@ -714,9 +755,16 @@
   "cheme-transport": "transport heat transfer mass fluid diffusion exchanger viscosity momentum",
   "cheme-separations": "separation distillation absorption extraction membrane column stage purity",
   "cheme-process": "control dynamics feedback pid function stability tuning setpoint",
-  "cheme-processdesig": "process design flowsheet economics cost hazard hazop safety sustainability"
+  "cheme-processdesig": "process design flowsheet economics cost hazard hazop safety sustainability",
+  "chem-organic": "organic functional group mechanism synthesis stereochemistry nucleophile carbonyl retrosynthesis",
+  "chem-inorganic": "inorganic coordination ligand transition metal crystal field oxidation state solid periodic",
+  "chem-physical": "physical thermodynamics kinetics quantum spectroscopy rate constant entropy equilibrium",
+  "chem-analytical": "analytical chromatography mass spectrometry nmr calibration titration detection limit spectrum",
+  "chem-computational": "computational dft molecular dynamics cheminformatics basis set conformer simulation property",
+  "chem-biochemistry": "biochemistry enzyme protein metabolism nucleic acid michaelis buffer lipid"
  },
  "sources": [
-  "chemical-engineering"
+  "chemical-engineering",
+  "chemistry"
  ]
 }

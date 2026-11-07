@@ -1,13 +1,32 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "math-physical-sciences",
  "topic": {
   "id": "classical-physics",
   "label": "Classical Physics",
-  "desc": "Classical physics: Newtonian mechanics, conservation laws, oscillations and waves, thermodynamics, electromagnetism, optics, fluids and relativity."
+  "desc": "Classical Physics: Newtonian Mechanics, Electromagnetism, Special and General Relativity, Quantum Field Theory and Particles, Astrophysics and Cosmology, Physics Literature and Methods, Energy, Momentum and Conservation and Oscillations and Waves."
  },
  "concepts": [
+  {
+   "id": "astrophysics-cosmology",
+   "label": "Astrophysics and Cosmology",
+   "desc": "Stars, galaxies, spectra, redshift and the expansion of the universe.",
+   "keywords": [
+    "astrophysics",
+    "cosmology",
+    "spectrum",
+    "redshift",
+    "survey",
+    "galaxy",
+    "star",
+    "astronomy"
+   ],
+   "topic": "classical-physics",
+   "source": "physics",
+   "source_topic": "physics-foundations",
+   "related": []
+  },
   {
    "id": "cl-conservation",
    "label": "Energy, Momentum and Conservation",
@@ -22,6 +41,7 @@
    ],
    "topic": "classical-physics",
    "source": "classical-physics",
+   "source_topic": "classical-physics",
    "related": []
   },
   {
@@ -42,25 +62,9 @@
    ],
    "topic": "classical-physics",
    "source": "classical-physics",
+   "source_topic": "classical-physics",
    "related": [
     "ee-electromagnetics"
-   ]
-  },
-  {
-   "id": "cl-fluids",
-   "label": "Fluid Mechanics",
-   "desc": "Fluid statics and flow: pressure, viscosity, turbulence and scaling.",
-   "keywords": [
-    "fluid",
-    "pressure",
-    "viscosity",
-    "turbulence",
-    "reynolds"
-   ],
-   "topic": "classical-physics",
-   "source": "classical-physics",
-   "related": [
-    "me-thermodynamics-fluids"
    ]
   },
   {
@@ -83,42 +87,25 @@
    ],
    "topic": "classical-physics",
    "source": "classical-physics",
+   "source_topic": "classical-physics",
    "related": []
   },
   {
-   "id": "cl-optics",
-   "label": "Optics",
-   "desc": "Geometric and wave optics: lenses, mirrors, diffraction and polarization.",
+   "id": "cl-relativity",
+   "label": "Special and General Relativity",
+   "desc": "Spacetime, time dilation and gravity as curvature, treated as classical field theory.",
    "keywords": [
-    "lens",
-    "mirror",
-    "diffraction",
-    "polarization",
-    "refraction"
+    "relativity",
+    "spacetime",
+    "lorentz",
+    "curvature",
+    "geodesic",
+    "four-momentum",
+    "time dilation"
    ],
    "topic": "classical-physics",
    "source": "classical-physics",
-   "related": []
-  },
-  {
-   "id": "cl-thermo",
-   "label": "Thermodynamics and Statistical Mechanics",
-   "desc": "Heat, entropy, thermodynamic cycles and the kinetic theory of gases.",
-   "keywords": [
-    "heat",
-    "entropy",
-    "cycle",
-    "carnot",
-    "kinetic",
-    "temperature",
-    "thermodynamics",
-    "ensemble",
-    "partition",
-    "phase transition",
-    "diffusion"
-   ],
-   "topic": "classical-physics",
-   "source": "classical-physics",
+   "source_topic": "physics-foundations",
    "related": []
   },
   {
@@ -135,10 +122,130 @@
    ],
    "topic": "classical-physics",
    "source": "classical-physics",
+   "source_topic": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "physics-literature-methods",
+   "label": "Physics Literature and Methods",
+   "desc": "Finding preprints, symbolic derivation and unit checking across all physics.",
+   "keywords": [
+    "arxiv",
+    "preprint",
+    "literature",
+    "symbolic",
+    "derivation",
+    "units",
+    "dimensional analysis"
+   ],
+   "topic": "classical-physics",
+   "source": "physics",
+   "source_topic": "physics-foundations",
+   "related": []
+  },
+  {
+   "id": "qm-qft",
+   "label": "Quantum Field Theory and Particles",
+   "desc": "Fields, Feynman diagrams and the Standard Model.",
+   "keywords": [
+    "feynman",
+    "field",
+    "standard-model",
+    "renormalization",
+    "boson",
+    "particle",
+    "lepton",
+    "quark",
+    "accelerator",
+    "decay",
+    "detector",
+    "beam"
+   ],
+   "topic": "classical-physics",
+   "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   }
  ],
  "skills": [
+  {
+   "id": "cosmology-distance-calculator",
+   "concept": "astrophysics-cosmology",
+   "label": "Cosmology Distance Calculator",
+   "desc": "Converts redshift to luminosity and comoving distance under a Hubble expansion model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1479",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "sky-survey-spectrum-query",
+   "concept": "astrophysics-cosmology",
+   "label": "Sky Survey Spectrum Query",
+   "desc": "Queries astronomical survey catalogs for objects, retrieves spectra and converts data to FITS.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1479",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1618",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "stellar-structure-modeler",
+   "concept": "astrophysics-cosmology",
+   "label": "Stellar Structure Modeler",
+   "desc": "Models stellar interior structure, luminosity and evolution from mass and composition.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1479",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1484",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
   {
    "id": "cl-collision-momentum-solver",
    "concept": "cl-conservation",
@@ -328,50 +435,6 @@
    "source": "physics"
   },
   {
-   "id": "cl-dimensional-analysis-scaler",
-   "concept": "cl-fluids",
-   "label": "Dimensional Analysis and Scaling",
-   "desc": "Builds dimensionless numbers such as the Reynolds number and uses them to scale models to full size.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1493",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1488",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1494",
-     "role": "support"
-    }
-   ],
-   "source": "classical-physics"
-  },
-  {
-   "id": "cl-fluid-flow-solver",
-   "concept": "cl-fluids",
-   "label": "Fluid Flow Solver",
-   "desc": "Solves pressure, Bernoulli and pipe-flow problems and identifies laminar or turbulent regimes.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1493",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1488",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1487",
-     "role": "support"
-    }
-   ],
-   "source": "classical-physics"
-  },
-  {
    "id": "cl-kinematics-dynamics-solver",
    "concept": "cl-mechanics",
    "label": "Kinematics and Dynamics Solver",
@@ -516,80 +579,14 @@
    "source": "physics"
   },
   {
-   "id": "cl-geometric-optics-designer",
-   "concept": "cl-optics",
-   "label": "Geometric Optics Designer",
-   "desc": "Traces rays through lenses and mirrors and designs simple optical systems with aberration estimates.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1495",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1488",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1487",
-     "role": "support"
-    }
-   ],
-   "source": "classical-physics"
-  },
-  {
-   "id": "cl-wave-optics-analyzer",
-   "concept": "cl-optics",
-   "label": "Wave Optics Analyzer",
-   "desc": "Analyzes diffraction, interference and polarization patterns from slits, gratings and thin films.",
+   "id": "cl-gravitation-curvature-explainer",
+   "concept": "cl-relativity",
+   "label": "Gravitation and Curvature Explainer",
+   "desc": "Explains gravity as spacetime curvature, geodesics and gravitational time dilation and separates the weak-field limit from the full theory Compares weight and surface gravity on the Moon, Mars and Earth.",
    "type": "semantic",
    "agents": [
     {
-     "key": "Maxey1495",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1488",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1492",
-     "role": "support"
-    }
-   ],
-   "source": "classical-physics"
-  },
-  {
-   "id": "cl-heat-transfer-solver",
-   "concept": "cl-thermo",
-   "label": "Heat Transfer Solver",
-   "desc": "Solves conduction, convection and radiation problems with boundary conditions and reports the dominant mode.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1494",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1488",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1493",
-     "role": "support"
-    }
-   ],
-   "source": "classical-physics"
-  },
-  {
-   "id": "cl-kinetic-theory-statistics",
-   "concept": "cl-thermo",
-   "label": "Kinetic Theory and Statistics",
-   "desc": "Derives gas properties from molecular statistics and connects entropy to counting of states.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1494",
+     "key": "Maxey1496",
      "role": "primary"
     },
     {
@@ -604,58 +601,32 @@
    "source": "classical-physics"
   },
   {
-   "id": "cl-thermodynamic-cycle-analyzer",
-   "concept": "cl-thermo",
-   "label": "Thermodynamic Cycle Analyzer",
-   "desc": "Analyzes engines and refrigerators on pressure-volume diagrams and computes efficiency against the Carnot limit.",
+   "id": "cl-special-relativity-calculator",
+   "concept": "cl-relativity",
+   "label": "Special Relativity Calculator",
+   "desc": "Computes time dilation, length contraction and relativistic energy and momentum with Lorentz transformations.",
    "type": "procedural",
    "agents": [
     {
-     "key": "Maxey1494",
+     "key": "Maxey1496",
      "role": "primary"
     },
     {
-     "key": "Maxey1486",
+     "key": "Maxey1488",
      "role": "checker"
     },
     {
-     "key": "Maxey1488",
+     "key": "Maxey1486",
      "role": "support"
     }
    ],
    "source": "classical-physics"
   },
   {
-   "id": "heat-engine-cycle-analyzer",
-   "concept": "cl-thermo",
-   "label": "Heat Engine Cycle Analyzer",
-   "desc": "Analyses Carnot and Otto cycles for work, heat flow, entropy production and efficiency.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1484",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1489",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1481",
-     "role": "support"
-    },
-    {
-     "key": "Maxey1482",
-     "role": "support"
-    }
-   ],
-   "source": "physics"
-  },
-  {
-   "id": "statistical-ensemble-calculator",
-   "concept": "cl-thermo",
-   "label": "Statistical Ensemble Calculator",
-   "desc": "Computes partition functions and Boltzmann distributions and detects phase transitions in model systems.",
+   "id": "lorentz-transformation-calculator",
+   "concept": "cl-relativity",
+   "label": "Lorentz Transformation Calculator",
+   "desc": "Applies Lorentz transformations for time dilation, length contraction and relativistic velocity addition.",
    "type": "semantic",
    "agents": [
     {
@@ -663,29 +634,55 @@
      "role": "primary"
     },
     {
-     "key": "Maxey1484",
+     "key": "Maxey1481",
      "role": "checker"
     },
     {
-     "key": "Maxey1483",
+     "key": "Maxey1482",
      "role": "support"
     },
     {
-     "key": "Maxey1617",
+     "key": "Maxey1497",
      "role": "support"
     }
    ],
    "source": "physics"
   },
   {
-   "id": "thermal-transport-simulator",
-   "concept": "cl-thermo",
-   "label": "Thermal Transport Simulator",
-   "desc": "Simulates heat conduction and diffusion on a mesh with boundary conditions and reports temperature fields.",
+   "id": "relativistic-collision-kinematics",
+   "concept": "cl-relativity",
+   "label": "Relativistic Collision Kinematics",
+   "desc": "Computes four-momentum, invariant mass and energy thresholds for relativistic particle collisions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1497",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "spacetime-geodesic-tracer",
+   "concept": "cl-relativity",
+   "label": "Spacetime Geodesic Tracer",
+   "desc": "Traces geodesics of massive and light-like bodies in a Schwarzschild spacetime and reports proper time.",
    "type": "procedural",
    "agents": [
     {
-     "key": "Maxey1484",
+     "key": "Maxey1480",
      "role": "primary"
     },
     {
@@ -693,11 +690,11 @@
      "role": "checker"
     },
     {
-     "key": "Maxey1489",
+     "key": "Maxey1479",
      "role": "support"
     },
     {
-     "key": "Maxey1490",
+     "key": "Maxey1617",
      "role": "support"
     }
    ],
@@ -746,6 +743,228 @@
     }
    ],
    "source": "classical-physics"
+  },
+  {
+   "id": "preprint-literature-reviewer",
+   "concept": "physics-literature-methods",
+   "label": "Preprint Literature Reviewer",
+   "desc": "Searches arXiv preprints, reads full text and summarises what is known about a physics question with citations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1618",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "symbolic-derivation-assistant",
+   "concept": "physics-literature-methods",
+   "label": "Symbolic Derivation Assistant",
+   "desc": "Derives and checks equations symbolically and numerically with a computational knowledge engine.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1480",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1481",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1618",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "unit-consistency-checker",
+   "concept": "physics-literature-methods",
+   "label": "Unit Consistency Checker",
+   "desc": "Checks dimensional analysis and unit conversions across a derivation or simulation input.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1481",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1489",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "decay-chain-analyzer",
+   "concept": "qm-qft",
+   "label": "Decay Chain Analyzer",
+   "desc": "Lists decay channels and branching ratios of leptons, quarks and hadrons and follows a decay chain to stable products.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1497",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1490",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1480",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "particle-acceleration-simulator",
+   "concept": "qm-qft",
+   "label": "Particle Acceleration Simulator",
+   "desc": "Simulates charged particle tracks in electric and magnetic fields of a linear accelerator or synchrotron and reports beam energy and orbit radius.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1489",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1497",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1483",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "particle-data-lookup",
+   "concept": "qm-qft",
+   "label": "Particle Data Lookup",
+   "desc": "Looks up particle mass, charge, spin, lifetime and decay modes from particle data tables using natural language.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1497",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1618",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1617",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1482",
+     "role": "support"
+    }
+   ],
+   "source": "physics"
+  },
+  {
+   "id": "qm-feynman-diagram-calculator",
+   "concept": "qm-qft",
+   "label": "Feynman Diagram Calculator",
+   "desc": "Draws diagrams and writes amplitudes for simple scattering processes at lowest order.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1506",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1499",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-renormalization-analyst",
+   "concept": "qm-qft",
+   "label": "Renormalization Analyst",
+   "desc": "Explains renormalization and running couplings and when a cutoff matters.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1506",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1505",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
+  },
+  {
+   "id": "qm-standard-model-explainer",
+   "concept": "qm-qft",
+   "label": "Standard Model Explainer",
+   "desc": "Explains the particles and forces of the Standard Model and which questions it leaves open.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1506",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1500",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1501",
+     "role": "support"
+    }
+   ],
+   "source": "quantum-physics"
   }
  ],
  "agents": [
@@ -753,31 +972,46 @@
    "key": "Maxey1479",
    "name": "Astronomer Agent",
    "legacy_key": "phys-astronomer",
-   "mcp": []
+   "mcp": [
+    "local:astro-mcp"
+   ]
   },
   {
    "key": "Maxey1480",
    "name": "Theorist Agent",
    "legacy_key": "phys-theorist",
-   "mcp": []
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "local:astro-mcp"
+   ]
   },
   {
    "key": "Maxey1481",
    "name": "Units Checker Agent",
    "legacy_key": "phys-units",
-   "mcp": []
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "local:chuk-mcp-physics"
+   ]
   },
   {
    "key": "Maxey1482",
    "name": "Observer Agent",
    "legacy_key": "phys-observer",
-   "mcp": []
+   "mcp": [
+    "local:chuk-mcp-physics",
+    "local:particlephysics-mcp-server"
+   ]
   },
   {
    "key": "Maxey1483",
    "name": "Simulation Agent",
    "legacy_key": "phys-simulation",
-   "mcp": []
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "local:astro-mcp",
+    "local:chuk-mcp-physics"
+   ]
   },
   {
    "key": "Maxey1484",
@@ -813,7 +1047,9 @@
    "key": "Maxey1489",
    "name": "Engineer Agent",
    "legacy_key": "phys-engineer",
-   "mcp": []
+   "mcp": [
+    "local:quantum-simulator-mcp"
+   ]
   },
   {
    "key": "Maxey1490",
@@ -834,28 +1070,70 @@
    "mcp": []
   },
   {
-   "key": "Maxey1493",
-   "name": "Fluid Dynamics Agent",
-   "legacy_key": "cl-fluid-dynamicist",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1494",
-   "name": "Thermodynamics Agent",
-   "legacy_key": "cl-thermodynamicist",
-   "mcp": []
-  },
-  {
    "key": "Maxey1495",
    "name": "Optics Agent",
    "legacy_key": "cl-optician",
    "mcp": []
   },
   {
+   "key": "Maxey1496",
+   "name": "Relativity Agent",
+   "legacy_key": "cl-relativist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1497",
+   "name": "Lepton Agent",
+   "legacy_key": "phys-lepton",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1499",
+   "name": "Quantum Theorist Agent",
+   "legacy_key": "qm-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1500",
+   "name": "Quantum Consistency Checker Agent",
+   "legacy_key": "qm-consistency-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1501",
+   "name": "Quantum Experiment Agent",
+   "legacy_key": "qm-experimentalist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1505",
+   "name": "Many-Body Physics Agent",
+   "legacy_key": "qm-many-body-physicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1506",
+   "name": "Field Theory Agent",
+   "legacy_key": "qm-field-theorist",
+   "mcp": []
+  },
+  {
    "key": "Maxey1617",
    "name": "Data Analyst Agent",
    "legacy_key": "phys-data-analyst",
-   "mcp": []
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "local:astro-mcp",
+    "local:particlephysics-mcp-server"
+   ]
+  },
+  {
+   "key": "Maxey1618",
+   "name": "Literature Review Agent",
+   "legacy_key": "phys-literature",
+   "mcp": [
+    "local:particlephysics-mcp-server"
+   ]
   }
  ],
  "mcp": [
@@ -1104,7 +1382,152 @@
   "local:astro-mcp",
   "local:psi-mcp"
  ],
- "agent_mcp": [],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1479",
+   "mcp": "local:astro-mcp",
+   "topic": "classical-physics",
+   "score": 0.4535,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1480",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "classical-physics",
+   "score": 0.1862,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1480",
+   "mcp": "local:astro-mcp",
+   "topic": "classical-physics",
+   "score": 0.4535,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1479",
+    "skill": "cosmology-distance-calculator"
+   },
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1481",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "classical-physics",
+   "score": 0.1862,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1480",
+    "skill": "lorentz-transformation-calculator"
+   },
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1481",
+   "mcp": "local:chuk-mcp-physics",
+   "topic": "classical-physics",
+   "score": 0.3835,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1482",
+   "mcp": "local:chuk-mcp-physics",
+   "topic": "classical-physics",
+   "score": 0.3835,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1481",
+    "skill": "unit-consistency-checker"
+   },
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1482",
+   "mcp": "local:particlephysics-mcp-server",
+   "topic": "classical-physics",
+   "score": 0.5245,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1618",
+    "skill": "preprint-literature-reviewer"
+   },
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1483",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "classical-physics",
+   "score": 0.1862,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1480",
+    "skill": "spacetime-geodesic-tracer"
+   },
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1483",
+   "mcp": "local:astro-mcp",
+   "topic": "classical-physics",
+   "score": 0.4535,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1479",
+    "skill": "stellar-structure-modeler"
+   },
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1483",
+   "mcp": "local:chuk-mcp-physics",
+   "topic": "classical-physics",
+   "score": 0.4136,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1489",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "classical-physics",
+   "score": 0.5842,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1617",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "classical-physics",
+   "score": 0.1906,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1617",
+   "mcp": "local:astro-mcp",
+   "topic": "classical-physics",
+   "score": 0.4435,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1617",
+   "mcp": "local:particlephysics-mcp-server",
+   "topic": "classical-physics",
+   "score": 0.5299,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  },
+  {
+   "agent": "Maxey1618",
+   "mcp": "local:particlephysics-mcp-server",
+   "topic": "classical-physics",
+   "score": 0.5245,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "physics-foundations"
+  }
+ ],
  "lexicon": {
   "newtonian": "newton torque friction kepler constraint inertia force acceleration orbit kinematics newtonian mechanics moon lunar mars planetary gravity weight surface",
   "conservation": "energy dissipated impulse elastic inelastic momentum collision conservation",
@@ -1113,9 +1536,28 @@
   "fieldtheory": "gauss maxwell induction capacitor inductor potential electric magnetic circuit field capacitance electromagnetism",
   "raytrace": "ray mirror aberration diffraction polarization refraction optics",
   "flowmech": "bernoulli laminar turbulent reynolds pipe viscosity fluid pressure turbulence",
-  "relativistic": "lorentz dilation contraction geodesic curvature relativity spacetime special general"
+  "relativistic": "lorentz dilation contraction geodesic curvature relativity spacetime special general",
+  "physics": "physics physical science scientific simulation simulator simulate quantitative experiment experimental observer theory theoretical",
+  "quantum": "quantum qubit circuit wavefunction schrodinger entanglement decoherence hamiltonian vqe noise histogram superposition fidelity master equation dmrg",
+  "particle": "particle lepton quark hadron decay accelerator acceleration synchrotron beam detector collider boson fermion branching mass spin",
+  "mechanics": "mechanics classical projectile trajectory momentum collision rigid body torque force orbit orbital kinematic dynamic velocity friction pendulum fluid joint",
+  "thermal": "thermodynamics thermal heat entropy carnot otto engine ensemble partition boltzmann diffusion conduction temperature",
+  "em-optics": "electromagnetic maxwell optics interference diffraction lens ray electrostatic magnetostatic wave relativity lorentz spacetime geodesic",
+  "astro": "astrophysics astronomy astronomical cosmology redshift spectrum survey galaxy stellar star hubble luminosity desi fits catalog astroquery",
+  "symbolic": "symbolic derivation algebra calculus computation computational wolfram unit dimensional conversion numerical derive",
+  "literature": "literature preprint review citation xiv pre print",
+  "foundations": "postulate born commutator observable wavefunction measurement quantum foundations",
+  "wavemech": "schrodinger barrier tunneling cross section variational levels perturbation scattering",
+  "spinphys": "pauli bloch precession clebsch gordan ladder fine structure spin angular hydrogen",
+  "qinfo": "qubit syndrome histogram resource speedup gate algorithm error correction entanglement information computing",
+  "manybody": "tight binding dmrg fermion boson lattice band tensor second quantization body condensed matter",
+  "qfield": "feynman amplitude lowest order renormalization coupling cutoff standard theory particles",
+  "opensys": "lindblad dephasing purity partial trace relaxation density decoherence master",
+  "qoptics": "squeezed photon number interferometer clock correlation atom"
  },
  "sources": [
-  "classical-physics"
+  "classical-physics",
+  "physics-foundations",
+  "quantum-physics"
  ]
 }

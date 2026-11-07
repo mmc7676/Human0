@@ -1,0 +1,837 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "grammar-of-modern-languages",
+  "label": "Grammar of Modern Languages",
+  "desc": "Grammar of Modern Languages: Italian Grammar and Syntax, Japanese Grammar, Korean Grammar, French Grammar and Usage, German Grammar and Usage and Spanish Language Acquisition."
+ },
+ "concepts": [
+  {
+   "id": "fren-grammar-language",
+   "label": "French Grammar and Usage",
+   "desc": "Morphology and syntax of French: verb conjugation, tense and mood, agreement, pronouns and register.",
+   "keywords": [
+    "grammar",
+    "conjugation",
+    "subjunctive",
+    "agreement",
+    "pronoun",
+    "tense",
+    "syntax",
+    "register"
+   ],
+   "topic": "grammar-of-modern-languages",
+   "source": "french",
+   "source_topic": "french",
+   "related": []
+  },
+  {
+   "id": "germ-grammar-language",
+   "label": "German Grammar and Usage",
+   "desc": "German morphology and syntax: cases, declension, verb position, separable verbs, modal verbs and the subjunctive.",
+   "keywords": [
+    "grammar",
+    "case",
+    "declension",
+    "word order",
+    "separable verb",
+    "konjunktiv",
+    "gender",
+    "syntax"
+   ],
+   "topic": "grammar-of-modern-languages",
+   "source": "german-studies",
+   "source_topic": "german-studies",
+   "related": []
+  },
+  {
+   "id": "ital-grammar",
+   "label": "Italian Grammar and Syntax",
+   "desc": "Morphology and syntax of standard Italian: articles, agreement, verb conjugation, moods, tenses, clitic pronouns and word order.",
+   "keywords": [
+    "grammar",
+    "conjugation",
+    "subjunctive",
+    "congiuntivo",
+    "agreement",
+    "clitic",
+    "article",
+    "tense"
+   ],
+   "topic": "grammar-of-modern-languages",
+   "source": "italian",
+   "source_topic": "italian",
+   "related": []
+  },
+  {
+   "id": "jpn-grammar",
+   "label": "Japanese Grammar",
+   "desc": "Particles, verb and adjective conjugation, sentence-final forms, clause linking and word order.",
+   "keywords": [
+    "grammar",
+    "particle",
+    "conjugation",
+    "verb",
+    "adjective",
+    "te-form",
+    "clause",
+    "sentence"
+   ],
+   "topic": "grammar-of-modern-languages",
+   "source": "japanese",
+   "source_topic": "japanese",
+   "related": []
+  },
+  {
+   "id": "kor-grammar",
+   "label": "Korean Grammar",
+   "desc": "Particles, verb endings, conjugation, connective endings and sentence structure in Korean.",
+   "keywords": [
+    "grammar",
+    "particle",
+    "ending",
+    "conjugation",
+    "connective",
+    "verb",
+    "tense",
+    "sentence"
+   ],
+   "topic": "grammar-of-modern-languages",
+   "source": "korean",
+   "source_topic": "korean",
+   "related": []
+  },
+  {
+   "id": "span-language-acquisition",
+   "label": "Spanish Language Acquisition",
+   "desc": "Building Spanish proficiency in speaking, listening, reading and writing, from basic grammar to advanced composition.",
+   "keywords": [
+    "spanish",
+    "proficiency",
+    "grammar",
+    "conjugation",
+    "subjunctive",
+    "composition",
+    "vocabulary"
+   ],
+   "topic": "grammar-of-modern-languages",
+   "source": "spanish",
+   "source_topic": "spanish",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "fren-conjugation-drill",
+   "concept": "fren-grammar-language",
+   "label": "Conjugation Drill",
+   "desc": "Generates conjugations across tenses and moods for regular and irregular verbs and checks every form against a reference conjugation table.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1311",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1312",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-error-correction",
+   "concept": "fren-grammar-language",
+   "label": "Written Error Correction",
+   "desc": "Corrects agreement, tense and pronoun errors in a learner text and checks each correction with an explained grammar rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1311",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1313",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-register-adjustment",
+   "concept": "fren-grammar-language",
+   "label": "Register Adjustment",
+   "desc": "Rewrites a text between familiar, standard and formal French and checks vocabulary and tu or vous usage match the target register.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1311",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1307",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "germ-declension-drill",
+   "concept": "germ-grammar-language",
+   "label": "Case and Declension Drill",
+   "desc": "Generates article and adjective endings across nominative, accusative, dative and genitive and checks each against declension tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1326",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1330",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-konjunktiv-usage",
+   "concept": "germ-grammar-language",
+   "label": "Subjunctive Usage Practice",
+   "desc": "Builds Konjunktiv I and II sentences for reported speech and hypotheticals and checks forms against conjugation tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1326",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1330",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "germ-word-order-correction",
+   "concept": "germ-grammar-language",
+   "label": "Word Order Correction",
+   "desc": "Corrects verb-second, verb-final and separable verb placement in learner sentences and checks each fix with the rule.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1326",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1324",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1327",
+     "role": "support"
+    }
+   ],
+   "source": "german-studies"
+  },
+  {
+   "id": "ital-conjugator",
+   "concept": "ital-grammar",
+   "label": "Verb Conjugator",
+   "desc": "Conjugates Italian verbs in every mood and tense including irregular forms, checked against standard conjugation tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1388",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1386",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-grammar-correction",
+   "concept": "ital-grammar",
+   "label": "Grammar Correction",
+   "desc": "Corrects errors in Italian text and explains each rule, checked by citing the rule for every change.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1388",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1389",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-subjunctive-trainer",
+   "concept": "ital-grammar",
+   "label": "Subjunctive Trainer",
+   "desc": "Generates exercises on when the congiuntivo is required, checked by an answer key with the trigger for each item.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1386",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1388",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "jpn-conjugator",
+   "concept": "jpn-grammar",
+   "label": "Verb and Adjective Conjugator",
+   "desc": "Conjugates Japanese verbs and adjectives into each form, checked against conjugation class rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1390",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1392",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-grammar-correction",
+   "concept": "jpn-grammar",
+   "label": "Grammar Correction",
+   "desc": "Corrects errors in Japanese sentences and explains each fix, checked by citing the rule used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1390",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1393",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-particle-explainer",
+   "concept": "jpn-grammar",
+   "label": "Particle Explainer",
+   "desc": "Explains particle choice such as wa versus ga in a sentence, checked by giving contrasting example sentences.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1390",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1394",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "kor-conjugator",
+   "concept": "kor-grammar",
+   "label": "Verb Conjugator",
+   "desc": "Conjugates Korean verbs and adjectives with endings and irregular stems, checked against conjugation rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1406",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1408",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-grammar-correction",
+   "concept": "kor-grammar",
+   "label": "Grammar Correction",
+   "desc": "Corrects errors in Korean sentences and explains each fix, checked by citing the rule used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1406",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1409",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-particle-explainer",
+   "concept": "kor-grammar",
+   "label": "Particle Explainer",
+   "desc": "Explains particle choice such as eun versus i in context, checked with contrasting example sentences.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1406",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1410",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "span-composition-feedback",
+   "concept": "span-language-acquisition",
+   "label": "Composition Feedback Reviewer",
+   "desc": "Reviews a Spanish composition for grammar, vocabulary and coherence by proficiency level, checked by a second grammar pass.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1373",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1568",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-conjugation-drill",
+   "concept": "span-language-acquisition",
+   "label": "Conjugation Drill Generator",
+   "desc": "Generates verb conjugation exercises across tenses and moods with answer keys checked against standard conjugation tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1373",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1568",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1567",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-subjunctive-coach",
+   "concept": "span-language-acquisition",
+   "label": "Subjunctive Usage Coach",
+   "desc": "Explains when the subjunctive is required and corrects learner sentences, checked against grammar references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1568",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1567",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1307",
+   "name": "French Culture and History Analyst",
+   "legacy_key": "fren-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1308",
+   "name": "French Language Reviewer",
+   "legacy_key": "fren-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1311",
+   "name": "French Grammar Tutor",
+   "legacy_key": "fren-grammar",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1312",
+   "name": "French Linguist",
+   "legacy_key": "fren-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1313",
+   "name": "French Translator",
+   "legacy_key": "fren-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1324",
+   "name": "German Language Reviewer",
+   "legacy_key": "germ-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1326",
+   "name": "German Grammar Tutor",
+   "legacy_key": "germ-grammar",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1327",
+   "name": "German Translator",
+   "legacy_key": "germ-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1330",
+   "name": "German Linguist",
+   "legacy_key": "germ-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1373",
+   "name": "Spanish Language Agent",
+   "legacy_key": "span-lang",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1383",
+   "name": "Italian Accuracy Checker",
+   "legacy_key": "ital-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1386",
+   "name": "Italian Language Tutor",
+   "legacy_key": "ital-tutor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1388",
+   "name": "Italian Grammar Agent",
+   "legacy_key": "ital-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1389",
+   "name": "Italian Translation Agent",
+   "legacy_key": "ital-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1390",
+   "name": "Japanese Grammar Agent",
+   "legacy_key": "jpn-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1391",
+   "name": "Japanese Accuracy Checker",
+   "legacy_key": "jpn-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1392",
+   "name": "Kanji and Writing System Agent",
+   "legacy_key": "jpn-script",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1393",
+   "name": "Japanese Translation Agent",
+   "legacy_key": "jpn-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1394",
+   "name": "Honorifics and Pragmatics Agent",
+   "legacy_key": "jpn-keigo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1406",
+   "name": "Korean Grammar Agent",
+   "legacy_key": "kor-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1407",
+   "name": "Korean Accuracy Checker",
+   "legacy_key": "kor-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1408",
+   "name": "Hangul and Writing Agent",
+   "legacy_key": "kor-hangul",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1409",
+   "name": "Korean Translation Agent",
+   "legacy_key": "kor-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1410",
+   "name": "Speech Levels and Honorifics Agent",
+   "legacy_key": "kor-honorifics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1567",
+   "name": "Hispanic Linguistics Agent",
+   "legacy_key": "span-ling",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1568",
+   "name": "Spanish Grammar Agent",
+   "legacy_key": "span-gram",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1610",
+   "name": "Literary Criticism Agent",
+   "legacy_key": "span-critic",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "fren-grammar": "conjugation subjunctive agreement pronoun tense syntax",
+  "fren-sound": "phonetics pronunciation nasal liaison intonation ipa",
+  "fren-trans": "translation idiom stylistics glossary friend",
+  "fren-lit": "novel poetry theatre romanticism realism explication",
+  "fren-franco": "francophone colonial postcolonial quebec maghreb caribbean creole",
+  "fren-civ": "republic laicite revolution institution cinema society",
+  "germ-grammar": "case declension order separable konjunktiv syntax",
+  "germ-ling": "translation compound dialect phonology pronunciation idiom",
+  "germ-lit": "romanticism classicism novella poetry drama modernism",
+  "germ-thought": "philosophy idealism kant hegel marx nietzsche",
+  "germ-history": "empire unification weimar holocaust reunification",
+  "germ-culture": "film media society austria switzerland politics",
+  "ital-morphology": "grammar conjugation subjunctive congiuntivo agreement clitic tense",
+  "ital-sound": "pronunciation phonetics geminate stress vowel intonation ipa",
+  "ital-varieties": "latin dialect tuscan neapolitan sicilian etymology",
+  "ital-letters": "dante petrarch boccaccio renaissance poetry sonnet hendecasyllable",
+  "ital-usage": "translation register idiom vocabulary glossary",
+  "ital-culture": "cinema neorealism opera society food",
+  "jpn-script": "hiragana katakana kanji radical furigana romanization",
+  "jpn-grammar": "grammar particle conjugation verb adjective clause",
+  "jpn-politeness": "keigo honorific humble polite register pragmatics business",
+  "jpn-sound": "pronunciation mora pitch geminate dialect intonation",
+  "jpn-letters": "literature genji haiku waka classical poetry",
+  "jpn-culture": "translation history society anime edo meiji localization",
+  "kor-script": "hangul jamo hanja romanization sejong orthography",
+  "kor-grammar": "grammar particle ending conjugation connective verb",
+  "kor-politeness": "honorific polite formal banmal jondaetmal hierarchy",
+  "kor-sound": "pronunciation phonology nasalization liaison dialect ipa",
+  "kor-letters": "literature sijo classical poetry pansori fiction",
+  "kor-culture": "translation history joseon division media hallyu",
+  "span-language": "conjugation subjunctive proficiency composition vocabulary",
+  "span-linguistics": "linguistics phonetic dialect syntax ipa bilingualism",
+  "span-peninsular": "peninsular golden cervantes quijote lorca medieval",
+  "span-latam": "boom neruda borges colonial modernismo chronicle",
+  "span-translation": "translation terminology localization interpreting legal medical",
+  "span-culture": "film identity latino memory dictatorship transatlantic"
+ },
+ "sources": [
+  "french",
+  "german-studies",
+  "italian",
+  "japanese",
+  "korean",
+  "spanish"
+ ]
+}

@@ -11,7 +11,7 @@ https://maxey0-context-plane-mcp.maxey0.workers.dev
 | Path | Method | Serves |
 |---|---|---|
 | `/mcp` | POST | MCP, every domain |
-| `/mcp/maxey0-system` · `/mcp/foundations` · `/mcp/work` · `/mcp/finance` · `/mcp/disciplines` | POST | MCP, one domain each: the same tools over a smaller map |
+| `/mcp/<domain id>` (11, e.g. `/mcp/agentic-systems`, `/mcp/business-finance`) | POST | MCP, one domain each: the same tools over a smaller map |
 | `/app` | GET | The Maxey0 Context Plane Graph web app |
 | `/graph.json` | GET | The whole map as JSON for browser apps (any origin may read it), with every node's field location; `?index=1` adds the TF-IDF index (a vector for every node on all six levels) |
 | `/` | GET | Server info, endpoints, counts and the map's digest |
@@ -41,13 +41,17 @@ All tools are read-only (`readOnlyHint: true`, `destructiveHint: false`, `idempo
 | `get_mcp_server` | `mcp_id` | One server: description, source, the topics that list it and the agents that hold it |
 | `search` | `query`, `limit?`, `domain?`, `use_priority?` | Matching nodes with their paths and scores |
 | `nearest` | `node_id` or `text`, `level?`, `limit?` | Nearest nodes in the shared six-level embedding field, with scores and field locations |
-| `route_task` | `task`, `limit?`, `domain?`, `use_priority?` | `matched`, and candidate paths domain → topic → concept → skill → agents → servers |
+| `route_task` | `task`, `limit?`, `domain?`, `use_priority?`, `mode?` (`flat` · `lens`), `domains?` | `matched`, and candidate paths domain → topic → concept → skill → agents → servers. With `mode: "lens"`: the observer chain `lens` (per level: selected nodes, weights, each branch's signed contribution, suppressed candidates) and `remaining_task` |
 | `children` | `level`, `parent_id?` | The children of a node at the next level |
 | `trace` | `node_id` | The chain from the domain down to that node |
 | `open_context_plane_graph` | `task?`, `topic_id?` | Opens the graph app (MCP App). Also returns `app_url`, and the best route when a task is given |
 | `validate_topic_pack` | `pack` | `ok`, `problems`, `warnings`, counts and the nearest existing topics for a generated topic pack. Writes nothing. |
 
-`domain` is one of `maxey0-system`, `foundations`, `work`, `finance`, `disciplines`. `limit` is 1–50.
+`domain` is one of the 11 domain ids: `agentic-systems`, `data-science`, `math-physical-sciences`, `engineering`, `life-health-mind`, `earth-environment-place`, `business-finance`, `society-governance`, `languages-communication`, `area-identity-studies`, `humanities-arts`. `limit` is 1–50.
+
+### Observer-lens routing (`mode: "lens"`)
+
+The observer starts above the topic plane, or at the domains given in `domains` (superposed when more than one). It selects up to three topics, then reads the concept plane from those topics and the skill plane from the chosen concepts. A candidate x seen from a selected node p scores φ = λ·a + (1−λ)·s, where a = cos(x, p) and s is the cosine between what x adds beyond p and what is left of the task (it can be negative). Several selected nodes add their weighted φ (ψ = Σ wᵢφᵢ, Σ wᵢ² = 1); candidates are ranked by ψ and selected only when ψ > 0. λ is 0 at the topic level, 0.5 for concepts and 0.3 for skills. Agents and servers come from the ontology (roles, gates, checker inheritance), not from the lens.
 
 ### Reading results
 

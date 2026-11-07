@@ -1,5 +1,12 @@
 # Changelog
 
+## Server 6.0.0 · App 1.2 · Plugin 0.4.0
+
+- **Domains and topics rebuilt from the concepts up.** 11 new domains replace the 5 old ones; 128 topics were formed from what their concepts, skills, agents and MCP servers have in common (all 711 concepts, 1,998 skills, 1,021 agents and 117 servers unchanged). Domain endpoints are now `/mcp/<domain id>` for the 11 domains. Each concept records the topic it came from (`source_topic`).
+- **Observer-lens routing.** `route_task` takes `mode: "lens"`: topics are chosen first, then concepts and skills are valued from the chosen nodes with signed support (several chosen nodes add as one superposed observer), and the answer carries the full observer chain. `domains` starts the observer at one or more domains. Flat ranking stays the default.
+- App: a **Domain** filter in Browse & select.
+- New topic packs get their domain from `regroup.pack_domains` in the spec.
+
 ## Server 5.2.0 · App 1.1
 
 - **Shared embedding field.** Every node on all six levels (domain, topic, concept, skill, agent, MCP server) now has a vector in one TF-IDF space and a location in one 2-D field (truncated SVD, same scale for every level). `graph.json` carries the locations; `?index=1` carries all vectors.

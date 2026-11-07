@@ -15,7 +15,7 @@ import { Graph, GraphData, ToolError, scopeTo } from "./graph";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "5.2.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.0.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -23,7 +23,7 @@ const LIST_TTL_MS = 3_600_000;
 
 const FULL = bundleJson as unknown as GraphData;
 // one Worker, six endpoints: /mcp serves every domain; /mcp/<domain> serves one domain
-const SCOPES = ["maxey0-system", "foundations", "work", "finance", "disciplines"] as const;
+const SCOPES = FULL.domains.map((d) => d.id);
 const GRAPHS: Record<string, Graph> = { all: new Graph(FULL) };
 for (const d of SCOPES) GRAPHS[d] = new Graph(scopeTo(FULL, d));
 // the graph minus the search index (the index is only needed server-side for search/route_task)
@@ -50,7 +50,7 @@ const RO = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, o
 
 interface ToolDef { name: string; title: string; description: string; inputSchema: Json; run: (g: Graph, a: Json) => unknown; _meta?: Json }
 let REQ_ORIGIN = "https://maxey0-context-plane-mcp.maxey0.workers.dev";   // origin of the request being served (set per request)
-const DOM = { type: "string", description: "optional domain filter: maxey0-system | foundations | work | finance | disciplines" };
+const DOM = { type: "string", description: "optional domain filter, one of: " + SCOPES.join(" | ") };
 const PRIO = { type: "boolean", description: "break exact score ties by the declared topic priority (default true)" };
 const TOOLS: ToolDef[] = [
   { name: "open_context_plane_graph", title: "Open the Maxey0 Context Plane Graph",
@@ -64,7 +64,7 @@ const TOOLS: ToolDef[] = [
     } },
   { name: "validate_topic_pack", title: "Validate a topic pack", description: "Check a generated human0.topic-pack/1 (from the topic-graph-generator prompt) against the schema and the live graph: unique ids, 3-8 concepts, one primary and one checker per skill, MCP rows with a verification source. Also lists the nearest existing topics. Validation only; nothing is written.",
     inputSchema: obj({ pack: { type: "object", description: "the pack JSON object" } }, ["pack"]), run: (g, a) => validatePack(g, a.pack) },
-  { name: "list_domains", title: "List domains", description: "The root domains (Maxey0 System, Foundations, Work Domains, Finance, Academic Disciplines) with topic counts.",
+  { name: "list_domains", title: "List domains", description: "The 11 root domains with their topic counts.",
     inputSchema: obj({}), run: (g) => g.list_domains() },
   { name: "list_topics", title: "List topics", description: "Topic ids, labels and domain. Optional 'query' filters by id/label, 'domain' by domain.",
     inputSchema: obj({ query: STR, domain: DOM }), run: (g, a) => g.list_topics(a as never) },
@@ -82,8 +82,10 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ mcp_id: STR }, ["mcp_id"]), run: (g, a) => g.get_mcp_server(a as never) },
   { name: "search", title: "Search", description: "Keyword search over concepts and skills; each hit carries its domain/topic/concept path. Optional domain filter.",
     inputSchema: obj({ query: STR, limit: INT, domain: DOM, use_priority: PRIO }, ["query"]), run: (g, a) => g.search(a as never) },
-  { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP. Candidates, not an authorization.",
-    inputSchema: obj({ task: STR, limit: INT, domain: DOM, use_priority: PRIO }, ["task"]), run: (g, a) => g.route_task(a as never) },
+  { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP, by flat ranking (default) or by observer lens (mode: lens). Candidates, not an authorization.",
+    inputSchema: obj({ task: STR, limit: INT, domain: DOM, use_priority: PRIO,
+      mode: { type: "string", enum: ["flat", "lens"], description: "flat (default): rank every skill against the task. lens: choose topics, then read concepts and skills from the chosen nodes, with signed support and the full observer chain" },
+      domains: { type: "array", items: { type: "string" }, description: "lens mode: start the observer at these domains (superposed when more than one)" } }, ["task"]), run: (g, a) => g.route_task(a as never) },
   { name: "children", title: "Children", description: "Children one level down: domain (no parent), topic (parent=domain), concept (parent=topic), skill (parent=concept), agent (parent=skill), mcp (parent=agent).",
     inputSchema: obj({ level: { type: "string", enum: ["domain", "topic", "concept", "skill", "agent", "mcp"] }, parent_id: STR }, ["level"]), run: (g, a) => g.children(a as never) },
   { name: "nearest", title: "Nearest in the field", description: "Nearest nodes to any node, or to a piece of text, in the shared embedding field that all six levels (domain, topic, concept, skill, agent, MCP server) live in, optionally limited to one level. Returns scores and each node's field location.",

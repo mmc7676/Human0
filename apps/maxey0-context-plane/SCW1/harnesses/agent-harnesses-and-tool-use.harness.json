@@ -1,0 +1,1577 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "agentic-systems",
+ "topic": {
+  "id": "agent-harnesses-and-tool-use",
+  "label": "Agent Harnesses and Tool Use",
+  "desc": "Agent Harnesses and Tool Use: Agent-to-Agent Protocols, Evaluation of Coding Agents, Multi-Agent Coding Orchestration, Agent Harness and Tool Use, I/O, A2A and MCP Contracts, Sandboxing and Permissions and Runtime Infrastructure."
+ },
+ "concepts": [
+  {
+   "id": "ca-eval",
+   "label": "Evaluation of Coding Agents",
+   "desc": "Measuring a coding agent on benchmark tasks and reading its trajectories.",
+   "keywords": [
+    "benchmark",
+    "trajectory",
+    "pass-rate",
+    "evaluation",
+    "harness"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-harness",
+   "label": "Agent Harness and Tool Use",
+   "desc": "The loop that lets a model call tools, with stop conditions, tool definitions and a context budget.",
+   "keywords": [
+    "harness",
+    "loop",
+    "tool",
+    "schema",
+    "context",
+    "compaction"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-orchestration",
+   "label": "Multi-Agent Coding Orchestration",
+   "desc": "Splitting a task across agents and branches and handing results back.",
+   "keywords": [
+    "decompose",
+    "worktree",
+    "branch",
+    "handoff",
+    "parallel"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "ca-sandbox",
+   "label": "Sandboxing and Permissions",
+   "desc": "Limiting what an agent can read, run and send, and keeping secrets out of its reach.",
+   "keywords": [
+    "sandbox",
+    "permission",
+    "secret",
+    "allowlist",
+    "isolation"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "coding-agents",
+   "source_topic": "coding-agents",
+   "related": []
+  },
+  {
+   "id": "mx-infrastructure",
+   "label": "Runtime Infrastructure",
+   "desc": "Runtime execution, containerization, sandboxing, and resource enforcement for ag",
+   "keywords": [
+    "infrastructure",
+    "runtime",
+    "sandbox",
+    "container",
+    "execution",
+    "isolation"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "maxey0_base",
+   "source_topic": "maxey0",
+   "related": []
+  },
+  {
+   "id": "mx-io-contract",
+   "label": "I/O, A2A and MCP Contracts",
+   "desc": "Typed input/output contracts on every agent and tool boundary.",
+   "keywords": [
+    "io",
+    "contract",
+    "schema",
+    "endpoint",
+    "negotiation",
+    "api",
+    "protocol",
+    "a2a",
+    "mcp",
+    "handoff",
+    "envelope"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "maxey0_base",
+   "source_topic": "maxey0",
+   "related": []
+  },
+  {
+   "id": "pr-a2a",
+   "label": "Agent-to-Agent Protocols",
+   "desc": "How agents find and call each other: agent cards, task lifecycles, messages, artifacts and handoff between agents.",
+   "keywords": [
+    "a2a",
+    "agentcard",
+    "task",
+    "handoff",
+    "artifact"
+   ],
+   "topic": "agent-harnesses-and-tool-use",
+   "source": "protocol",
+   "source_topic": "protocol",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ca-benchmark-runner",
+   "concept": "ca-eval",
+   "label": "Benchmark Runner",
+   "desc": "Runs a coding agent on a fixed task suite in clean environments and reports pass rate with its variance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey807",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey808",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-trajectory-analyst",
+   "concept": "ca-eval",
+   "label": "Trajectory Analyst",
+   "desc": "Reads an agent's step-by-step transcript to find where it went wrong, such as looping, ignoring errors or editing the wrong file.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey807",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-agent-loop-designer",
+   "concept": "ca-harness",
+   "label": "Agent Loop Designer",
+   "desc": "Designs the tool-calling loop with stop conditions, retry limits and a budget for steps and tokens.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey809",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey808",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-context-assembler",
+   "concept": "ca-harness",
+   "label": "Context Assembler",
+   "desc": "Chooses which files, results and messages enter the model's context and compacts the rest without losing decisions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey809",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey805",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-tool-schema-designer",
+   "concept": "ca-harness",
+   "label": "Tool Schema Designer",
+   "desc": "Defines tool names, input schemas and error messages so a model can call each tool correctly and recover from failure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey809",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-handoff-reporter",
+   "concept": "ca-orchestration",
+   "label": "Handoff Reporter",
+   "desc": "Writes a short report of what changed, what was verified and what remains, for the next agent or the human.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey806",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey808",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-task-decomposer",
+   "concept": "ca-orchestration",
+   "label": "Task Decomposer",
+   "desc": "Splits a large coding task into independent subtasks with clear inputs and outputs and an order of dependence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey808",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey807",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-worktree-coordinator",
+   "concept": "ca-orchestration",
+   "label": "Worktree Coordinator",
+   "desc": "Assigns subtasks to separate branches or worktrees, detects conflicts and merges results in a safe order.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey808",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey803",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey802",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-permission-policy-writer",
+   "concept": "ca-sandbox",
+   "label": "Permission Policy Writer",
+   "desc": "Writes allow and deny rules for commands and paths and the approval prompts for actions that change things outside the sandbox.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey811",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-sandbox-designer",
+   "concept": "ca-sandbox",
+   "label": "Sandbox Designer",
+   "desc": "Designs the container or process boundary an agent runs in, including file, network and process limits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey811",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey810",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey809",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "ca-secrets-guard",
+   "concept": "ca-sandbox",
+   "label": "Secrets Guard",
+   "desc": "Keeps credentials out of prompts, logs and commits by scanning for them and routing access through scoped tokens.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey810",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey811",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey803",
+     "role": "support"
+    }
+   ],
+   "source": "coding-agents"
+  },
+  {
+   "id": "agent-infrastructure-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Agent Infrastructure Engineering",
+   "desc": "Designs and provisions the infrastructure layer for agent deployments: compute, networking, secret management, and health monitoring.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey70",
+     "role": "support"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-platform-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Agent Platform Engineering",
+   "desc": "Builds the platform abstractions agents run on: scheduling, load balancing, autoscaling, and the observability integrations the platform provides.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    },
+    {
+     "key": "Maxey80",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-runtime-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Agent Runtime Engineering",
+   "desc": "Executes agent code inside enforced resource and isolation contracts, priced by risk budget, with purge-on-completion state discipline.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey35",
+     "role": "support"
+    },
+    {
+     "key": "Maxey55",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "distributed-agent-runtime-engineering",
+   "concept": "mx-infrastructure",
+   "label": "Distributed Agent Runtime Engineering",
+   "desc": "Operates agent runtimes across distributed compute: work distribution, fault tolerance, state coherence, and split-brain prevention.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey55",
+     "role": "support"
+    },
+    {
+     "key": "Maxey80",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "multi-tenant-agent-infrastructure",
+   "concept": "mx-infrastructure",
+   "label": "Multi-Tenant Agent Infrastructure",
+   "desc": "Provisions and isolates agent infrastructure across tenants: resource quotas, network separation, and tenant-scoped secret stores.",
+   "type": "working",
+   "agents": [
+    {
+     "key": "Maxey797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey85",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey187",
+     "role": "support"
+    },
+    {
+     "key": "Maxey54",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "agent-to-agent-protocol-engineering",
+   "concept": "mx-io-contract",
+   "label": "Agent-to-Agent Protocol Engineering",
+   "desc": "Defines, validates, versions, and adapts schema-checked A2A envelopes so any conformant agent can exchange work with the network.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey0",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey193",
+     "role": "support"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "ai-platform-engineering",
+   "concept": "mx-io-contract",
+   "label": "AI Platform Engineering",
+   "desc": "Engineers the end-to-end AI platform: model serving, tool integration, agent orchestration endpoints, and platform-level observability.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey187",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "context-infrastructure-engineering",
+   "concept": "mx-io-contract",
+   "label": "Context Infrastructure Engineering",
+   "desc": "Engineers the infrastructure that serves context to agents: retrieval endpoints, caching layers, and contract-validated context APIs.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey10",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "inference-pipeline-engineering",
+   "concept": "mx-io-contract",
+   "label": "Inference Pipeline Engineering",
+   "desc": "Engineers the pipeline from request to model inference: batching, routing, caching, and contract-validated responses.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey30",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey66",
+     "role": "support"
+    },
+    {
+     "key": "Maxey187",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "model-context-protocol-engineering",
+   "concept": "mx-io-contract",
+   "label": "Model Context Protocol Engineering",
+   "desc": "Builds and operates MCP servers: tool registration, capability advertisement, auth, and the lazy-load manifest pattern.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "multi-mcp-federation",
+   "concept": "mx-io-contract",
+   "label": "Multi-MCP Federation",
+   "desc": "Federates multiple MCP servers behind a unified discovery surface; routes tool calls to the right server without exposing federation internals to call",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey32",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey0",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    },
+    {
+     "key": "Maxey14",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "protocol-translation",
+   "concept": "mx-io-contract",
+   "label": "Protocol Translation",
+   "desc": "Translates between A2A, MCP, and foreign agent frameworks' message shapes without loss of contract fields.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey193",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey32",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    },
+    {
+     "key": "Maxey30",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "tool-capability-discovery",
+   "concept": "mx-io-contract",
+   "label": "Tool Capability Discovery",
+   "desc": "Discovers what tools and capabilities are available in the current environment: MCP servers, APIs, and local capabilities.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey30",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey32",
+     "role": "support"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "tool-schema-negotiation",
+   "concept": "mx-io-contract",
+   "label": "Tool Schema Negotiation",
+   "desc": "Publishes owned, versioned service contracts; discovers and negotiates capabilities before first call; tests contracts in both directions.",
+   "type": "episodic",
+   "agents": [
+    {
+     "key": "Maxey30",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey71",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey31",
+     "role": "support"
+    },
+    {
+     "key": "Maxey32",
+     "role": "support"
+    }
+   ],
+   "source": "maxey0_base"
+  },
+  {
+   "id": "pr-agent-card-writer",
+   "concept": "pr-a2a",
+   "label": "Agent Card Writer",
+   "desc": "Writes an agent card that states skills, endpoint, input and output types and authentication so other agents can find and call it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey925",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey926",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey927",
+     "role": "support"
+    }
+   ],
+   "source": "protocol"
+  },
+  {
+   "id": "pr-handoff-contract-writer",
+   "concept": "pr-a2a",
+   "label": "Handoff Contract Writer",
+   "desc": "Specifies what context, files and authority pass from one agent to another and what stays behind.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey925",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey927",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey926",
+     "role": "support"
+    }
+   ],
+   "source": "protocol"
+  },
+  {
+   "id": "pr-task-lifecycle-designer",
+   "concept": "pr-a2a",
+   "label": "Task Lifecycle Designer",
+   "desc": "Defines task states, updates and cancellation between agents and what each side must do on failure or timeout.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey925",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey928",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey929",
+     "role": "support"
+    }
+   ],
+   "source": "protocol"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey0",
+   "name": "SuperAgent Orchestrator",
+   "mcp": [
+    "session:Maxey0"
+   ]
+  },
+  {
+   "key": "Maxey10",
+   "name": "Context Window Architect",
+   "mcp": [
+    "d0585e82-4190-4588-ab31-b1afd254cf0f"
+   ]
+  },
+  {
+   "key": "Maxey14",
+   "name": "Retrieval Orchestrator",
+   "mcp": [
+    "254e954c-da06-44e1-8f83-e0c599a1a495"
+   ]
+  },
+  {
+   "key": "Maxey187",
+   "name": "Code Interpreter Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey193",
+   "name": "LangChain Adapter Agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey30",
+   "name": "Memory API Keeper",
+   "mcp": [
+    "b9049585-f39b-45e8-8626-6ca78d9d7d22"
+   ]
+  },
+  {
+   "key": "Maxey31",
+   "name": "Runner API Keeper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey32",
+   "name": "MCP Bridge",
+   "mcp": []
+  },
+  {
+   "key": "Maxey35",
+   "name": "Sandbox Runner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey54",
+   "name": "Security Sentinel",
+   "mcp": [
+    "c703ddc2-743d-4677-b37e-4f58476c6a60"
+   ]
+  },
+  {
+   "key": "Maxey55",
+   "name": "Backup & Restore",
+   "mcp": []
+  },
+  {
+   "key": "Maxey66",
+   "name": "API Gateway Agent",
+   "mcp": [
+    "2d60210c-dd92-4be0-b09c-3662f10445c9"
+   ]
+  },
+  {
+   "key": "Maxey70",
+   "name": "Integration Engineer",
+   "mcp": [
+    "9ed5afff-a8dc-4f68-b97b-61dae12de3a5"
+   ]
+  },
+  {
+   "key": "Maxey71",
+   "name": "QA Agent",
+   "mcp": [
+    "3119bc71-0dfd-48f8-a764-c2fca895325c",
+    "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+    "d0585e82-4190-4588-ab31-b1afd254cf0f"
+   ]
+  },
+  {
+   "key": "Maxey797",
+   "name": "Context Boundary Warden",
+   "mcp": []
+  },
+  {
+   "key": "Maxey80",
+   "name": "Incident Commander",
+   "mcp": []
+  },
+  {
+   "key": "Maxey802",
+   "name": "Coding Engineer Agent",
+   "legacy_key": "ca-engineer",
+   "mcp": [
+    "46d6322a-5f75-4822-b739-f49261805e9c"
+   ]
+  },
+  {
+   "key": "Maxey803",
+   "name": "Code Review Agent",
+   "legacy_key": "ca-reviewer",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e",
+    "46d6322a-5f75-4822-b739-f49261805e9c",
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey804",
+   "name": "Test and Debug Agent",
+   "legacy_key": "ca-tester",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e",
+    "46d6322a-5f75-4822-b739-f49261805e9c"
+   ]
+  },
+  {
+   "key": "Maxey805",
+   "name": "Repository Analyst Agent",
+   "legacy_key": "ca-repo-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey806",
+   "name": "Technical Writer Agent",
+   "legacy_key": "ca-technical-writer",
+   "mcp": [
+    "46d6322a-5f75-4822-b739-f49261805e9c",
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey807",
+   "name": "Agent Evaluator Agent",
+   "legacy_key": "ca-evaluator",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e",
+    "46d6322a-5f75-4822-b739-f49261805e9c",
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey808",
+   "name": "Coding Orchestrator Agent",
+   "legacy_key": "ca-orchestrator",
+   "mcp": [
+    "09103c21-59c7-480e-8fb4-69914bfa311e"
+   ]
+  },
+  {
+   "key": "Maxey809",
+   "name": "Agent Architect Agent",
+   "legacy_key": "ca-architect",
+   "mcp": []
+  },
+  {
+   "key": "Maxey810",
+   "name": "Security Review Agent",
+   "legacy_key": "ca-security-reviewer",
+   "mcp": [
+    "local:github"
+   ]
+  },
+  {
+   "key": "Maxey811",
+   "name": "Sandbox Engineer Agent",
+   "legacy_key": "ca-sandbox-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey85",
+   "name": "Security Scanner",
+   "mcp": [
+    "2d60210c-dd92-4be0-b09c-3662f10445c9",
+    "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+    "c703ddc2-743d-4677-b37e-4f58476c6a60"
+   ]
+  },
+  {
+   "key": "Maxey925",
+   "name": "Agent-to-Agent Protocol Agent",
+   "legacy_key": "pr-a2a-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey926",
+   "name": "Schema and Contract Agent",
+   "legacy_key": "pr-schema-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey927",
+   "name": "Protocol Security Agent",
+   "legacy_key": "pr-security-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey928",
+   "name": "Protocol Skeptic Agent",
+   "legacy_key": "pr-skeptic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey929",
+   "name": "Transport Engineer Agent",
+   "legacy_key": "pr-transport-engineer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "name": "CircleCI",
+   "desc": "Manage CI/CD pipelines, debug failed builds, and optimize test suites directly from Claude - no terminal required.",
+   "tools": [
+    "cancel_workflow",
+    "download_usage_data",
+    "get_deploy_component",
+    "get_deploy_environment",
+    "get_job",
+    "get_job_logs",
+    "get_job_resource_usage",
+    "get_me"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "origins": [
+    "coding-agents"
+   ]
+  },
+  {
+   "uuid": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "name": "Control Plane",
+   "desc": "Deploy, scale, and debug cloud apps from one platform",
+   "tools": [
+    "add_database",
+    "build_image",
+    "convert_to_terraform",
+    "allow_workload_access"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "name": "Cloudflare Developer Platform",
+   "desc": "Build applications with compute, storage, and AI",
+   "tools": [
+    "workers_list",
+    "kv_namespaces_list",
+    "r2_buckets_list",
+    "d1_databases_list"
+   ],
+   "state": "connected",
+   "source": "Maxey0 base graph MCP table",
+   "id": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "name": "Mem0",
+   "desc": "Persistent memory for AI agents & assistants",
+   "tools": [
+    "add_memory",
+    "search_memories",
+    "get_memories",
+    "update_memory",
+    "delete_memory",
+    "list_entities"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
+   "name": "Alpic",
+   "desc": "Manage your MCP Servers and MCP Apps hosted on Alpic",
+   "tools": [
+    "deployment-logs",
+    "get-analytics",
+    "list-projects",
+    "list-teams",
+    "show-analytics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
+   "origins": [
+    "protocol"
+   ]
+  },
+  {
+   "uuid": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "name": "Sentry",
+   "desc": "Search, query, and debug errors intelligently",
+   "tools": [
+    "whoami",
+    "find_organizations",
+    "find_teams",
+    "find_projects",
+    "find_issues",
+    "find_releases",
+    "find_tags",
+    "get_issue_details"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "origins": [
+    "coding-agents"
+   ]
+  },
+  {
+   "uuid": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
+   "name": "Manufact",
+   "desc": "Deploy and monitor MCP servers",
+   "tools": [
+    "cancel_org_invitation",
+    "deploy",
+    "get_deployment",
+    "get_deployment_build_logs",
+    "get_deployment_runtime_logs",
+    "get_observability_overview",
+    "get_organization_stats",
+    "get_server"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
+   "origins": [
+    "protocol"
+   ]
+  },
+  {
+   "uuid": "653a5f84-8819-4215-9ba7-9b384eb2ddc2",
+   "name": "Swagger",
+   "desc": "Build, govern, and document APIs",
+   "tools": [
+    "list_portals",
+    "get_portal",
+    "create_portal",
+    "update_portal",
+    "list_portal_products",
+    "get_portal_product",
+    "create_portal_product",
+    "update_portal_product"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "653a5f84-8819-4215-9ba7-9b384eb2ddc2",
+   "origins": [
+    "protocol"
+   ]
+  },
+  {
+   "uuid": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "name": "Railway",
+   "desc": "Deploy, manage, and debug your apps and infrastructure on Railway",
+   "tools": [
+    "create-deployment",
+    "deploy-artifact",
+    "get-logs",
+    "get-status"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "a133f422-ff03-478f-a208-ddc460db8826",
+   "name": "Jentic",
+   "desc": "Search 10,000+ APIs and get the one you need",
+   "tools": [
+    "search_apis",
+    "load_execution_info",
+    "execute"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "a133f422-ff03-478f-a208-ddc460db8826",
+   "origins": [
+    "protocol"
+   ]
+  },
+  {
+   "uuid": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "name": "Postman",
+   "desc": "Give API context to your coding agents",
+   "tools": [
+    "createCollection",
+    "getCollection",
+    "getAllCollections",
+    "createFolder"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "name": "Pi Security",
+   "desc": "Agentic product security platform",
+   "tools": [
+    "pi_design_review_get",
+    "pi_finding_get",
+    "pi_findings_list",
+    "pi_gatekeeper_issues_list"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "name": "LlamaParse",
+   "desc": "Turn your documents into agent-ready context for Claude",
+   "tools": [
+    "createIndex",
+    "extractFile",
+    "findFilesInIndex",
+    "classifyFile"
+   ],
+   "state": "registry",
+   "source": "Maxey0 base graph MCP table",
+   "id": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "origins": [
+    "maxey0_base"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "GitHub",
+   "desc": "GitHub's official MCP Server",
+   "tools": [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/github/github-mcp-server",
+   "id": "local:github",
+   "origins": [
+    "biomedical-computation",
+    "coding-agents",
+    "computer-science",
+    "electrical-engineering"
+   ]
+  },
+  {
+   "uuid": "session:Maxey0",
+   "name": "Maxey0 (artifact + SCW store)",
+   "desc": "Maxey0 manages Structured Context Worlds (SCWs) and stored artifacts: SCW create, files, artifact upsert, plans, runs",
+   "tools": [
+    "scw_create",
+    "scw_add_file",
+    "scw_read_file",
+    "artifact_upsert",
+    "maxey0_open_app",
+    "maxey0_record_run"
+   ],
+   "state": "session",
+   "source": "Maxey0 base graph MCP table",
+   "id": "session:Maxey0",
+   "origins": [
+    "maxey0_base"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:github",
+  "46d6322a-5f75-4822-b739-f49261805e9c",
+  "09103c21-59c7-480e-8fb4-69914bfa311e",
+  "653a5f84-8819-4215-9ba7-9b384eb2ddc2",
+  "a133f422-ff03-478f-a208-ddc460db8826",
+  "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
+  "5f441d92-3d5d-42e9-8387-cd20bb3218e6"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey0",
+   "mcp": "session:Maxey0",
+   "topic": null,
+   "score": null,
+   "basis": "declared:spec"
+  },
+  {
+   "agent": "Maxey10",
+   "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "topic": null,
+   "score": 0.1046,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey14",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": null,
+   "score": 0.1526,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey30",
+   "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "topic": null,
+   "score": 0.1894,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey54",
+   "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "topic": null,
+   "score": 0.1672,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey66",
+   "mcp": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "topic": null,
+   "score": 0.1323,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey70",
+   "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "topic": null,
+   "score": 0.1529,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "topic": null,
+   "score": 0.3032,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
+   "topic": null,
+   "score": 0.1885,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
+   "topic": null,
+   "score": 0.1249,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey802",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1173,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey803",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.172,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey804",
+    "skill": "ca-failure-triager"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey803",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1173,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey802",
+    "skill": "ca-minimal-diff-editor"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey803",
+   "mcp": "local:github",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1746,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey804",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.172,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey804",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1173,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey802",
+    "skill": "ca-spec-to-code-generator"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey806",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1183,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey806",
+   "mcp": "local:github",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1208,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey807",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1014,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey808",
+    "skill": "ca-task-decomposer"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey807",
+   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1183,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey806",
+    "skill": "ca-handoff-reporter"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey807",
+   "mcp": "local:github",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1208,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey806",
+    "skill": "ca-handoff-reporter"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey808",
+   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1014,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey810",
+   "mcp": "local:github",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1746,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey803",
+    "skill": "ca-pull-request-reviewer"
+   },
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey85",
+   "mcp": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "topic": null,
+   "score": 0.1332,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey85",
+   "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
+   "topic": null,
+   "score": 0.1526,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey85",
+   "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
+   "topic": null,
+   "score": 0.2082,
+   "basis": "derived:tfidf-cosine"
+  }
+ ],
+ "lexicon": {
+  "agentloop": "harness stop compaction retry transcript coding loop context",
+  "codeedit": "patch diff refactor specification regression minimal generate edit generation editing spec testable",
+  "repomap": "repository entry point call site dependency graph understanding",
+  "verifyloop": "reproduce failing command failure root cause testing verification",
+  "secreview": "injection deserialization severity vulnerability pull request security",
+  "sandboxing": "sandbox allowlist isolation credential token permission secret sandboxing container",
+  "subagents": "worktree decomposer handoff conflict merge subtask decompose branch parallel multi orchestration",
+  "agenteval": "benchmark variance trajectory looping suite pass rate evaluation",
+  "memory": "memory memories remember context session episodic handoff persistent working semantic tier consolidation",
+  "graph": "graph knowledge ontology node edge relationship neighborhood topology",
+  "vector": "vector embedding similarity retrieval retrieve search index semantic latent anchor subspace",
+  "observability": "observability trace tracing telemetry metric log monitor monitoring otel grafana drift alert dashboard debug slo span",
+  "security": "security compliance audit policy governance secret sentinel scanner risk trust constitution constraint enforcement isolation provenance",
+  "data": "database sql postgres storage store backup restore query warehouse dataset table schema cluster",
+  "runtime": "deploy deployment runtime sandbox execution container infrastructure platform cloud incident scaling worker hosting interpreter",
+  "orchestration": "orchestrate orchestration orchestrator router routing delegate delegation workflow coordinator swarm agent pipeline",
+  "protocol": "protocol mcp a2a api gateway integration adapter bridge contract langchain negotiation tool capability",
+  "docs": "document file page parse extract conversation import ingest artifact doc library",
+  "messaging": "message chat slack notification email channel",
+  "research": "research paper arxiv analysis interpretability reasoning frame world",
+  "prmcp": "skeleton server client hints agentcard jsonschema type oauth authentication authorization flows description cancellation another behind json invalid validator return minimizer requested handling environment",
+  "prapi": "openapi endpoint verb pagination idempotency",
+  "prtransport": "stdio sse websocket streaming backpressure timeout backoff transport",
+  "prversion": "breaking sunset changelog removed narrowed compatibility advisor interface replacement guide",
+  "prconform": "conformance fuzz interoperability contracttest implementation"
+ },
+ "sources": [
+  "coding-agents",
+  "maxey0",
+  "protocol"
+ ]
+}

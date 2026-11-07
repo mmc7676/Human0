@@ -1,0 +1,1144 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "society-governance",
+ "topic": {
+  "id": "global-and-international-development",
+  "label": "Global and International Development",
+  "desc": "Global and International Development: International Development, Global Political Economy, African Economies and Development, International Political Economy, Globalisation Theory, Global Environment and Security and International and Development Economics."
+ },
+ "concepts": [
+  {
+   "id": "afst-development-economics",
+   "label": "African Economies and Development",
+   "desc": "Growth, poverty, agriculture, resources, trade and aid in African economies.",
+   "keywords": [
+    "economy",
+    "development",
+    "poverty",
+    "agriculture",
+    "resources",
+    "aid",
+    "growth",
+    "indicators"
+   ],
+   "topic": "global-and-international-development",
+   "source": "african-studies",
+   "source_topic": "african-studies",
+   "related": []
+  },
+  {
+   "id": "econ-international-economics",
+   "label": "International and Development Economics",
+   "desc": "Trade, exchange rates, capital flows, and the causes of growth and poverty across countries.",
+   "keywords": [
+    "trade",
+    "tariff",
+    "exchange rate",
+    "comparative advantage",
+    "development",
+    "poverty",
+    "balance of payments"
+   ],
+   "topic": "global-and-international-development",
+   "source": "economics",
+   "source_topic": "economics",
+   "related": []
+  },
+  {
+   "id": "glob-development",
+   "label": "International Development",
+   "desc": "Poverty, health, education and growth in the Global South and the policies and aid that target them.",
+   "keywords": [
+    "development",
+    "poverty",
+    "aid",
+    "global south",
+    "sustainable development goals",
+    "health",
+    "education",
+    "growth"
+   ],
+   "topic": "global-and-international-development",
+   "source": "global-studies",
+   "source_topic": "global-studies",
+   "related": []
+  },
+  {
+   "id": "glob-global-economy",
+   "label": "Global Political Economy",
+   "desc": "Trade, finance, supply chains and multinational corporations, and their distributional effects across countries.",
+   "keywords": [
+    "trade",
+    "finance",
+    "supply chain",
+    "multinational",
+    "investment",
+    "inequality",
+    "tariff",
+    "commodity"
+   ],
+   "topic": "global-and-international-development",
+   "source": "global-studies",
+   "source_topic": "global-studies",
+   "related": []
+  },
+  {
+   "id": "glob-global-environment-security",
+   "label": "Global Environment and Security",
+   "desc": "Climate change, resource conflict, pandemics and other transnational risks, and their spatial distribution.",
+   "keywords": [
+    "climate",
+    "environment",
+    "conflict",
+    "pandemic",
+    "resource",
+    "risk",
+    "map",
+    "security"
+   ],
+   "topic": "global-and-international-development",
+   "source": "global-studies",
+   "source_topic": "global-studies",
+   "related": []
+  },
+  {
+   "id": "glob-globalization-theory",
+   "label": "Globalisation Theory",
+   "desc": "Competing accounts of globalisation: world-systems, modernisation, cultural globalisation and critiques of global capitalism.",
+   "keywords": [
+    "globalization",
+    "world-systems",
+    "modernization",
+    "core",
+    "periphery",
+    "hegemony",
+    "transnational",
+    "theory"
+   ],
+   "topic": "global-and-international-development",
+   "source": "global-studies",
+   "source_topic": "global-studies",
+   "related": []
+  },
+  {
+   "id": "ir-international-political-economy",
+   "label": "International Political Economy",
+   "desc": "Trade, finance, development and the politics of globalization and economic interdependence.",
+   "keywords": [
+    "trade",
+    "finance",
+    "globalization",
+    "development",
+    "interdependence",
+    "tariff",
+    "currency",
+    "aid"
+   ],
+   "topic": "global-and-international-development",
+   "source": "international-relations",
+   "source_topic": "international-relations",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "afst-agriculture-study",
+   "concept": "afst-development-economics",
+   "label": "Agricultural Livelihood Study",
+   "desc": "Analyses smallholder agriculture and land use and checks conclusions against survey evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1005",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1002",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1000",
+     "role": "support"
+    }
+   ],
+   "source": "african-studies"
+  },
+  {
+   "id": "afst-aid-evaluation",
+   "concept": "afst-development-economics",
+   "label": "Aid Program Evaluation",
+   "desc": "Evaluates an aid or development program's impact and checks the causal claim for design and selection problems.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1005",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey999",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1003",
+     "role": "support"
+    }
+   ],
+   "source": "african-studies"
+  },
+  {
+   "id": "afst-indicator-analysis",
+   "concept": "afst-development-economics",
+   "label": "Development Indicator Analysis",
+   "desc": "Computes trends in growth, poverty and health indicators and checks the data source and definitions for consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1005",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1004",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1000",
+     "role": "support"
+    }
+   ],
+   "source": "african-studies"
+  },
+  {
+   "id": "econ-development-evaluator",
+   "concept": "econ-international-economics",
+   "label": "Development Program Evaluator",
+   "desc": "Assesses development interventions using trial and survey evidence and checks external validity.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1237",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1231",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1234",
+     "role": "support"
+    }
+   ],
+   "source": "economics"
+  },
+  {
+   "id": "econ-exchange-rate-analyst",
+   "concept": "econ-international-economics",
+   "label": "Exchange Rate Analyst",
+   "desc": "Explains exchange rate movements with parity conditions and checks against balance of payments data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1237",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1236",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1235",
+     "role": "support"
+    }
+   ],
+   "source": "economics"
+  },
+  {
+   "id": "econ-trade-flow-analyst",
+   "concept": "econ-international-economics",
+   "label": "Trade Flow Analyst",
+   "desc": "Analyses bilateral trade data with gravity models and checks tariff effects against observed flows.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1237",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1233",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1231",
+     "role": "support"
+    }
+   ],
+   "source": "economics"
+  },
+  {
+   "id": "glob-aid-evaluation-review",
+   "concept": "glob-development",
+   "label": "Aid Program Evaluation Review",
+   "desc": "Summarises evaluations of a development intervention and checks that the design supports causal claims.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1331",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1333",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-indicator-profile",
+   "concept": "glob-development",
+   "label": "Development Indicator Profile",
+   "desc": "Compiles poverty, health and education indicators for a country and checks each against the cited dataset and year.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1331",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1334",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-sdg-progress",
+   "concept": "glob-development",
+   "label": "SDG Progress Tracking",
+   "desc": "Tracks progress on Sustainable Development Goal targets and checks values against official reporting.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1331",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1334",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-inequality-measurement",
+   "concept": "glob-global-economy",
+   "label": "Global Inequality Measurement",
+   "desc": "Compares within- and between-country inequality with Gini and income shares and checks the calculations and sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1333",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1331",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-supply-chain-mapping",
+   "concept": "glob-global-economy",
+   "label": "Supply Chain Mapping",
+   "desc": "Maps the stages and locations of a global supply chain and checks each node against company or trade data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1333",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1334",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-trade-flow-analysis",
+   "concept": "glob-global-economy",
+   "label": "Trade Flow Analysis",
+   "desc": "Analyses bilateral trade and value-added flows for a product or country and checks figures against the cited statistical source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1333",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1334",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-climate-negotiation-brief",
+   "concept": "glob-global-environment-security",
+   "label": "Climate Negotiation Brief",
+   "desc": "Summarises positions of country blocs in climate negotiations and checks each position against official submissions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1335",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1336",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-conflict-analysis",
+   "concept": "glob-global-environment-security",
+   "label": "Conflict Driver Analysis",
+   "desc": "Analyses drivers of a regional conflict across resources, governance and identity and checks claims against cited sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1335",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1336",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-risk-mapping",
+   "concept": "glob-global-environment-security",
+   "label": "Global Risk Mapping",
+   "desc": "Maps a transnational risk such as conflict or climate exposure in Felt Maps and checks data sources and projection.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1334",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1335",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-concept-explication",
+   "concept": "glob-globalization-theory",
+   "label": "Global Concept Explication",
+   "desc": "Explains concepts such as glocalisation or the Global South with origins and debates and checks against primary sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1338",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1331",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-scholarship-search",
+   "concept": "glob-globalization-theory",
+   "label": "Global Studies Scholarship Search",
+   "desc": "Searches peer-reviewed global studies scholarship through Wiley Scholar Gateway and checks each citation resolves to the stated work.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1332",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1338",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1336",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-theory-comparison",
+   "concept": "glob-globalization-theory",
+   "label": "Globalisation Theory Comparison",
+   "desc": "Compares how world-systems, modernisation and cultural theories explain a global trend and checks each account against its key texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1338",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1333",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "ir-development-strategy",
+   "concept": "ir-international-political-economy",
+   "label": "Development Strategy Comparison",
+   "desc": "Compares development strategies across countries, checked by sourcing each indicator.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1377",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1376",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-interdependence-risk",
+   "concept": "ir-international-political-economy",
+   "label": "Interdependence Risk Mapping",
+   "desc": "Maps economic dependencies that create leverage between states, checked against trade and investment figures.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1377",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1378",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  },
+  {
+   "id": "ir-trade-policy",
+   "concept": "ir-international-political-economy",
+   "label": "Trade Policy Analysis",
+   "desc": "Analyses tariffs and trade agreements and who gains and loses, checked against published trade data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1377",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1375",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1381",
+     "role": "support"
+    }
+   ],
+   "source": "international-relations"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1000",
+   "name": "African Geography Mapper",
+   "legacy_key": "afst-geographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1002",
+   "name": "Ethnographic Field Analyst",
+   "legacy_key": "afst-ethnographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1003",
+   "name": "African Politics Analyst",
+   "legacy_key": "afst-political",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1004",
+   "name": "Area Studies Methods Checker",
+   "legacy_key": "afst-methods",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1005",
+   "name": "Development Economist",
+   "legacy_key": "afst-economist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1231",
+   "name": "Economic Evidence Reviewer",
+   "legacy_key": "econ-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1233",
+   "name": "Econometrics Specialist",
+   "legacy_key": "econ-econometrician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1234",
+   "name": "Public Policy Economist",
+   "legacy_key": "econ-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1235",
+   "name": "Economic Forecaster",
+   "legacy_key": "econ-forecaster",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1236",
+   "name": "Macroeconomic Analyst",
+   "legacy_key": "econ-macro",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1237",
+   "name": "International Trade Analyst",
+   "legacy_key": "econ-trade",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1331",
+   "name": "Development Analyst",
+   "legacy_key": "glob-development",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1332",
+   "name": "Global Studies Reviewer",
+   "legacy_key": "glob-reviewer",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1333",
+   "name": "Global Political Economist",
+   "legacy_key": "glob-economist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1334",
+   "name": "Global Data Mapper",
+   "legacy_key": "glob-mapper",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
+  },
+  {
+   "key": "Maxey1335",
+   "name": "Global Environment Analyst",
+   "legacy_key": "glob-environment",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1336",
+   "name": "Global Governance Analyst",
+   "legacy_key": "glob-governance",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1338",
+   "name": "Globalization Theorist",
+   "legacy_key": "glob-theorist",
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1375",
+   "name": "Evidence and Method Checker",
+   "legacy_key": "ir-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1376",
+   "name": "Area Studies Agent",
+   "legacy_key": "ir-regional",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1377",
+   "name": "International Political Economy Agent",
+   "legacy_key": "ir-economist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1378",
+   "name": "Security Studies Agent",
+   "legacy_key": "ir-security",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1381",
+   "name": "International Organizations Agent",
+   "legacy_key": "ir-institutions",
+   "mcp": []
+  },
+  {
+   "key": "Maxey999",
+   "name": "Africanist Literature Reviewer",
+   "legacy_key": "afst-literature",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "49a84267-c5d5-4c7b-8070-ab6b0875d886",
+   "name": "MoSPI",
+   "desc": "India's official statistics via natural language",
+   "tools": [
+    "step1_know_about_mospi_api",
+    "step2_get_indicators",
+    "step3_get_metadata",
+    "step4_get_data"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "49a84267-c5d5-4c7b-8070-ab6b0875d886",
+   "origins": [
+    "data",
+    "economics"
+   ]
+  },
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "name": "Mantic",
+   "desc": "Explore judgemental forecasts",
+   "tools": [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "origins": [
+    "economics",
+    "international-relations",
+    "management-science-and-engineering",
+    "political-science",
+    "public-policy",
+    "reasoning"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "ccc1bcfc-193c-44b7-b443-9511aac18403",
+  "49a84267-c5d5-4c7b-8070-ab6b0875d886"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1332",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "global-and-international-development",
+   "score": 0.2465,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1332",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "global-and-international-development",
+   "score": 0.2784,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1338",
+    "skill": "glob-concept-explication"
+   },
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1334",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "global-and-international-development",
+   "score": 0.2523,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1336",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "global-and-international-development",
+   "score": 0.2775,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1338",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "global-and-international-development",
+   "score": 0.2465,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1332",
+    "skill": "glob-scholarship-search"
+   },
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1338",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "global-and-international-development",
+   "score": 0.2784,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "global-studies"
+  }
+ ],
+ "lexicon": {
+  "afst-past": "precolonial kingdom empire oral tradition chronology",
+  "afst-colonial": "colonialism scramble nationalism independence decolonization apartheid liberation",
+  "afst-polity": "politics governance election democracy conflict union",
+  "afst-economy": "economy development poverty agriculture aid indicators growth",
+  "afst-tongue": "language bantu swahili translation orature multilingual",
+  "afst-land": "kinship religion urbanization health climate environment",
+  "econ-micro": "supply demand elasticity utility competition monopoly welfare equilibrium",
+  "econ-macro": "gdp inflation unemployment growth monetary fiscal aggregate",
+  "econ-metrics": "econometrics regression panel instrumental identification endogeneity forecast",
+  "econ-public": "tax externality regulation incidence discount",
+  "econ-intl": "trade tariff exchange comparative development poverty",
+  "econ-behav": "behavioral bias heuristic nudge prospect decision",
+  "glob-theory": "globalization modernization core periphery hegemony transnational",
+  "glob-econ": "trade finance multinational investment tariff commodity",
+  "glob-govern": "governance treaty ngo regime rights multilateral",
+  "glob-dev": "development poverty aid south goals education",
+  "glob-move": "migration refugee diaspora remittance identity border",
+  "glob-risk": "climate conflict pandemic resource map",
+  "ir-theory": "realism liberalism constructivism anarchy power norms",
+  "ir-security": "security war deterrence alliance nuclear terrorism conflict",
+  "ir-statecraft": "diplomacy negotiation sanctions statecraft summit mediation",
+  "ir-economy": "trade finance globalization interdependence tariff currency aid",
+  "ir-governance": "united nations governance council regime sovereignty",
+  "ir-foresight": "forecast probability scenario geopolitics calibration judgemental"
+ },
+ "sources": [
+  "african-studies",
+  "economics",
+  "global-studies",
+  "international-relations"
+ ]
+}

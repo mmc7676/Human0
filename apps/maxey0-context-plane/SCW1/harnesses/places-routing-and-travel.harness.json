@@ -1,0 +1,752 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "earth-environment-place",
+ "topic": {
+  "id": "places-routing-and-travel",
+  "label": "Places, Routing and Travel",
+  "desc": "Places, Routing and Travel: Place Names and Gazetteers, Distance, Routing and Navigation, Hiking, Trails and Parks, Trip and Route Planning, Weather and Conditions, Planetary and Off-Earth Location, Regions and Jurisdictions and Bookings and Permits."
+ },
+ "concepts": [
+  {
+   "id": "loc-distance",
+   "label": "Distance, Routing and Navigation",
+   "desc": "Distance between places (great-circle and travel distance), routes, bearings and travel time by mode.",
+   "keywords": [
+    "distance",
+    "route",
+    "routing",
+    "navigation",
+    "bearing",
+    "travel",
+    "time",
+    "directions",
+    "walking",
+    "driving"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "location",
+   "source_topic": "location",
+   "related": []
+  },
+  {
+   "id": "loc-places",
+   "label": "Place Names and Gazetteers",
+   "desc": "Named places on Earth (cities, mountains, parks, rivers, landmarks) and how gazetteers resolve a place name to coordinates and a unique place.",
+   "keywords": [
+    "place",
+    "name",
+    "gazetteer",
+    "city",
+    "town",
+    "landmark",
+    "mountain",
+    "park",
+    "river",
+    "toponym"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "location",
+   "source_topic": "location",
+   "related": []
+  },
+  {
+   "id": "loc-planetary",
+   "label": "Planetary and Off-Earth Location",
+   "desc": "Location beyond Earth: celestial coordinates, planetary surface coordinates and the reference frames used for the Moon, Mars and spacecraft.",
+   "keywords": [
+    "planetary",
+    "celestial",
+    "coordinate",
+    "frame",
+    "moon",
+    "mars",
+    "orbit",
+    "selenographic",
+    "location"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "location",
+   "source_topic": "location",
+   "related": []
+  },
+  {
+   "id": "loc-regions",
+   "label": "Regions and Jurisdictions",
+   "desc": "Which country, state, county, city, time zone and legal jurisdiction a location falls in, and the boundaries that decide it.",
+   "keywords": [
+    "region",
+    "country",
+    "state",
+    "county",
+    "jurisdiction",
+    "boundary",
+    "border",
+    "administrative",
+    "zone"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "location",
+   "source_topic": "location",
+   "related": []
+  },
+  {
+   "id": "trv-bookings",
+   "label": "Bookings and Permits",
+   "desc": "Reservations, campsites, park permits, passes and entry requirements.",
+   "keywords": [
+    "booking",
+    "reservation",
+    "campsite",
+    "permit",
+    "pass",
+    "entry",
+    "visa",
+    "ticket"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "travel-outdoors",
+   "source_topic": "travel-outdoors",
+   "related": []
+  },
+  {
+   "id": "trv-conditions",
+   "label": "Weather and Conditions",
+   "desc": "Weather forecasts, seasons, daylight and conditions that affect travel and outdoor plans.",
+   "keywords": [
+    "weather",
+    "forecast",
+    "condition",
+    "season",
+    "daylight",
+    "temperature",
+    "rain",
+    "snow",
+    "wind"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "travel-outdoors",
+   "source_topic": "travel-outdoors",
+   "related": []
+  },
+  {
+   "id": "trv-hiking",
+   "label": "Hiking, Trails and Parks",
+   "desc": "Hikes and trails: finding a hike, distance, elevation gain, difficulty, trailheads and parks.",
+   "keywords": [
+    "hike",
+    "hiking",
+    "trail",
+    "park",
+    "trailhead",
+    "elevation",
+    "gain",
+    "difficulty",
+    "outdoor",
+    "nature"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "travel-outdoors",
+   "source_topic": "travel-outdoors",
+   "related": []
+  },
+  {
+   "id": "trv-trips",
+   "label": "Trip and Route Planning",
+   "desc": "Planning trips: destinations, itineraries, transport and routes between places.",
+   "keywords": [
+    "trip",
+    "travel",
+    "itinerary",
+    "destination",
+    "transport",
+    "route",
+    "plan",
+    "journey"
+   ],
+   "topic": "places-routing-and-travel",
+   "source": "travel-outdoors",
+   "source_topic": "travel-outdoors",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "loc-distance-calculator",
+   "concept": "loc-distance",
+   "label": "Distance Calculator",
+   "desc": "Computes great-circle distance and bearing between two coordinates or places, and travel distance when a route is known.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1630",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1632",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-route-planner",
+   "concept": "loc-distance",
+   "label": "Route Planner",
+   "desc": "Plans a route between places for a travel mode and reports distance, time and waypoints.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1630",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1632",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-geographic-coordinate-lookup",
+   "concept": "loc-places",
+   "label": "Geographic Coordinate Lookup",
+   "desc": "Gets the geographic coordinates (latitude and longitude) of a place, address or landmark, and the place at given coordinates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1633",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1630",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-nearby-places-finder",
+   "concept": "loc-places",
+   "label": "Nearby Places Finder",
+   "desc": "Finds places near a coordinate or place name within a radius, by type, with distances.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1633",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1630",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-place-name-resolver",
+   "concept": "loc-places",
+   "label": "Place Name Resolver",
+   "desc": "Resolves a place name to one place with its coordinates, type and country, and lists the alternatives when the name is ambiguous.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1633",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1630",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-planetary-coordinate-explainer",
+   "concept": "loc-planetary",
+   "label": "Planetary Coordinate Explainer",
+   "desc": "Explains surface coordinates and reference frames for the Moon, Mars and other bodies, and how they differ from Earth latitude and longitude.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1634",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1633",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-boundary-explainer",
+   "concept": "loc-regions",
+   "label": "Boundary Explainer",
+   "desc": "Explains an administrative or legal boundary and which places fall on each side.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1632",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1634",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "loc-jurisdiction-locator",
+   "concept": "loc-regions",
+   "label": "Jurisdiction Locator",
+   "desc": "Maps a location to its country, state, county, municipality and time zone, and names the authority that governs it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1632",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1631",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1634",
+     "role": "support"
+    }
+   ],
+   "source": "location"
+  },
+  {
+   "id": "trv-permit-requirement-finder",
+   "concept": "trv-bookings",
+   "label": "Permit Requirement Finder",
+   "desc": "Finds whether a park, trail or campsite needs a permit or reservation and how to get it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1665",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1666",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1667",
+     "role": "support"
+    }
+   ],
+   "source": "travel-outdoors"
+  },
+  {
+   "id": "trv-conditions-check",
+   "concept": "trv-conditions",
+   "label": "Conditions Check",
+   "desc": "Checks forecast, daylight and seasonal conditions for a place and date.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1668",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1666",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1665",
+     "role": "support"
+    }
+   ],
+   "source": "travel-outdoors"
+  },
+  {
+   "id": "trv-hike-finder",
+   "concept": "trv-hiking",
+   "label": "Hike Finder",
+   "desc": "Finds hikes near a place by distance, elevation gain and difficulty, with trailhead coordinates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1669",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1666",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1668",
+     "role": "support"
+    }
+   ],
+   "source": "travel-outdoors"
+  },
+  {
+   "id": "trv-trail-safety-briefing",
+   "concept": "trv-hiking",
+   "label": "Trail Safety Briefing",
+   "desc": "Briefs the safety needs of a hike: water, daylight, weather, terrain and turnaround time.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1669",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1666",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1668",
+     "role": "support"
+    }
+   ],
+   "source": "travel-outdoors"
+  },
+  {
+   "id": "trv-itinerary-planner",
+   "concept": "trv-trips",
+   "label": "Itinerary Planner",
+   "desc": "Plans a day-by-day itinerary with travel times between stops.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1667",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1666",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1669",
+     "role": "support"
+    }
+   ],
+   "source": "travel-outdoors"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1630",
+   "name": "Navigation Agent",
+   "legacy_key": "loc-navigator",
+   "mcp": [
+    "local:google-maps-mcp",
+    "local:openstreetmap-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1631",
+   "name": "Location Checker Agent",
+   "legacy_key": "loc-checker",
+   "mcp": [
+    "local:google-maps-mcp",
+    "local:mapbox-mcp-server",
+    "local:openstreetmap-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1632",
+   "name": "Jurisdiction Agent",
+   "legacy_key": "loc-jurisdiction",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1633",
+   "name": "Gazetteer Agent",
+   "legacy_key": "loc-gazetteer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1634",
+   "name": "Geographer Agent",
+   "legacy_key": "loc-geographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1665",
+   "name": "Bookings and Permits Agent",
+   "legacy_key": "trv-booking",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1666",
+   "name": "Travel Checker Agent",
+   "legacy_key": "trv-checker",
+   "mcp": [
+    "local:google-maps-mcp",
+    "local:openstreetmap-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1667",
+   "name": "Trip Planning Agent",
+   "legacy_key": "trv-planner",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1668",
+   "name": "Conditions Agent",
+   "legacy_key": "trv-weather",
+   "mcp": [
+    "local:google-maps-mcp",
+    "local:openstreetmap-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1669",
+   "name": "Trail and Hiking Agent",
+   "legacy_key": "trv-trail",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "name": "TomTom Maps",
+   "desc": "TomTom maps, routing, geocoding & traffic data",
+   "tools": [
+    "tomtom-geocode",
+    "tomtom-reverse-geocode",
+    "tomtom-fuzzy-search",
+    "tomtom-poi-search",
+    "tomtom-nearby",
+    "tomtom-poi-categories",
+    "tomtom-area-search",
+    "tomtom-ev-search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "5775e1f2-124a-4f56-be6c-105a5cb33acc",
+   "origins": [
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Google Maps MCP",
+   "desc": "Google Maps Platform MCP server: geocoding and reverse geocoding of addresses and coordinates, place search and place details, distance matrix, elevation and directions.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/google-maps",
+   "id": "local:google-maps-mcp",
+   "origins": [
+    "location",
+    "travel-outdoors"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Mapbox MCP Server",
+   "desc": "Mapbox location MCP server: forward and reverse geocoding, points of interest search, directions and travel-time isochrones, static map images.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/mapbox/mcp-server",
+   "id": "local:mapbox-mcp-server",
+   "origins": [
+    "location"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "OpenStreetMap MCP",
+   "desc": "OpenStreetMap MCP server: geocode addresses and place names to coordinates, find nearby places, route between locations, explore neighborhoods from open map data.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/jagan-shanmugam/open-streetmap-mcp",
+   "id": "local:openstreetmap-mcp",
+   "origins": [
+    "location",
+    "travel-outdoors"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:google-maps-mcp",
+  "local:mapbox-mcp-server",
+  "local:openstreetmap-mcp",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "5775e1f2-124a-4f56-be6c-105a5cb33acc"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1630",
+   "mcp": "local:google-maps-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.2478,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "location"
+  },
+  {
+   "agent": "Maxey1630",
+   "mcp": "local:openstreetmap-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.3473,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "location"
+  },
+  {
+   "agent": "Maxey1631",
+   "mcp": "local:google-maps-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.2457,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "location"
+  },
+  {
+   "agent": "Maxey1631",
+   "mcp": "local:mapbox-mcp-server",
+   "topic": "places-routing-and-travel",
+   "score": 0.1421,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "location"
+  },
+  {
+   "agent": "Maxey1631",
+   "mcp": "local:openstreetmap-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.3919,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "location"
+  },
+  {
+   "agent": "Maxey1666",
+   "mcp": "local:google-maps-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.2213,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "travel-outdoors"
+  },
+  {
+   "agent": "Maxey1666",
+   "mcp": "local:openstreetmap-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.1437,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "travel-outdoors"
+  },
+  {
+   "agent": "Maxey1668",
+   "mcp": "local:google-maps-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.2272,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "travel-outdoors"
+  },
+  {
+   "agent": "Maxey1668",
+   "mcp": "local:openstreetmap-mcp",
+   "topic": "places-routing-and-travel",
+   "score": 0.1475,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "travel-outdoors"
+  }
+ ],
+ "lexicon": {
+  "locplaces": "place name gazetteer city town landmark mountain park river toponym",
+  "locdistance": "distance route routing navigation bearing travel time directions walking driving",
+  "locregions": "region country state county jurisdiction boundary border administrative zone",
+  "locplanetary": "planetary celestial coordinate frame moon mars orbit selenographic location",
+  "trvtrips": "trip travel itinerary destination transport route plan journey",
+  "trvhiking": "hike hiking trail park trailhead elevation gain difficulty outdoor nature",
+  "trvconditions": "weather forecast condition season daylight temperature rain snow wind",
+  "trvbookings": "booking reservation campsite permit pass entry visa ticket"
+ },
+ "sources": [
+  "location",
+  "travel-outdoors"
+ ]
+}

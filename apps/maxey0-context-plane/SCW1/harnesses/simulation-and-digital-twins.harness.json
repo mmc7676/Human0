@@ -1,0 +1,298 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "math-physical-sciences",
+ "topic": {
+  "id": "simulation-and-digital-twins",
+  "label": "Simulation and Digital Twins",
+  "desc": "Simulation and Digital Twins: Digital Twins, Scenario and Monte Carlo Analysis and Physics and Flight Simulation."
+ },
+ "concepts": [
+  {
+   "id": "sim-physics",
+   "label": "Physics and Flight Simulation",
+   "desc": "Simulating motion and forces: rigid body dynamics, flight simulators, drone simulators and solver step size.",
+   "keywords": [
+    "simulation",
+    "simulator",
+    "physics",
+    "flight",
+    "drone",
+    "dynamics",
+    "solver",
+    "step",
+    "model"
+   ],
+   "topic": "simulation-and-digital-twins",
+   "source": "simulation",
+   "source_topic": "simulation",
+   "related": []
+  },
+  {
+   "id": "sim-scenarios",
+   "label": "Scenario and Monte Carlo Analysis",
+   "desc": "Running many what-if scenarios with random inputs to see the spread of outcomes.",
+   "keywords": [
+    "scenario",
+    "monte",
+    "carlo",
+    "random",
+    "distribution",
+    "what",
+    "sensitivity",
+    "outcome",
+    "stress"
+   ],
+   "topic": "simulation-and-digital-twins",
+   "source": "simulation",
+   "source_topic": "simulation",
+   "related": []
+  },
+  {
+   "id": "sim-twins",
+   "label": "Digital Twins",
+   "desc": "A live model of a physical asset fed by its data, used to monitor and test changes.",
+   "keywords": [
+    "digital",
+    "twin",
+    "asset",
+    "model",
+    "sensor",
+    "live",
+    "mirror",
+    "3d",
+    "scene"
+   ],
+   "topic": "simulation-and-digital-twins",
+   "source": "simulation",
+   "source_topic": "simulation",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "sim-drone-simulator-setup",
+   "concept": "sim-physics",
+   "label": "Drone Simulator Setup",
+   "desc": "Sets up a drone or flight simulator with vehicle model, environment and autopilot in the loop.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1660",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1661",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1662",
+     "role": "support"
+    }
+   ],
+   "source": "simulation"
+  },
+  {
+   "id": "sim-solver-stability-checker",
+   "concept": "sim-physics",
+   "label": "Solver Stability Checker",
+   "desc": "Checks a simulation's step size and solver for stability and energy drift.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1660",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1661",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1662",
+     "role": "support"
+    }
+   ],
+   "source": "simulation"
+  },
+  {
+   "id": "sim-monte-carlo-runner",
+   "concept": "sim-scenarios",
+   "label": "Monte Carlo Runner",
+   "desc": "Designs a Monte Carlo analysis: inputs and distributions, runs, and how results are summarized.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1664",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1661",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1660",
+     "role": "support"
+    }
+   ],
+   "source": "simulation"
+  },
+  {
+   "id": "sim-sensitivity-analyzer",
+   "concept": "sim-scenarios",
+   "label": "Sensitivity Analyzer",
+   "desc": "Finds which inputs move an outcome most.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1664",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1661",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1660",
+     "role": "support"
+    }
+   ],
+   "source": "simulation"
+  },
+  {
+   "id": "sim-digital-twin-designer",
+   "concept": "sim-twins",
+   "label": "Digital Twin Designer",
+   "desc": "Designs a digital twin: what is modeled, which data feeds it, and how it is validated against the real asset.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1662",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1661",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1664",
+     "role": "support"
+    }
+   ],
+   "source": "simulation"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1660",
+   "name": "Physics Simulation Agent",
+   "legacy_key": "sim-physics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1661",
+   "name": "Simulation Checker Agent",
+   "legacy_key": "sim-checker",
+   "mcp": [
+    "local:blender-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1662",
+   "name": "Digital Twin Agent",
+   "legacy_key": "sim-twin",
+   "mcp": [
+    "local:blender-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1664",
+   "name": "Scenario Analysis Agent",
+   "legacy_key": "sim-scenario",
+   "mcp": [
+    "local:blender-mcp"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Blender MCP",
+   "desc": "Blender MCP: control Blender for 3D modeling, scene construction and rendering of models and digital twin scenes.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/ahujasid/blender-mcp",
+   "id": "local:blender-mcp",
+   "origins": [
+    "simulation"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "MAVLinkMCP",
+   "desc": "MCP server for LLM to drone communication via MAVLink",
+   "tools": [
+    "get_map_view",
+    "create_survey_plan",
+    "render_plan_view",
+    "validate_plan",
+    "preflight_check",
+    "upload_plan",
+    "verify_uploaded_plan",
+    "start_mission",
+    "map_transform",
+    "prefetch_map_area",
+    "revise_plan"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/ion-g-ion/MAVLinkMCP",
+   "id": "local:mavlinkmcp",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "drones",
+    "simulation"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:blender-mcp",
+  "local:mavlinkmcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1661",
+   "mcp": "local:blender-mcp",
+   "topic": "simulation-and-digital-twins",
+   "score": 0.2634,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1662",
+    "skill": "sim-digital-twin-designer"
+   },
+   "source_topic": "simulation"
+  },
+  {
+   "agent": "Maxey1662",
+   "mcp": "local:blender-mcp",
+   "topic": "simulation-and-digital-twins",
+   "score": 0.2634,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "simulation"
+  },
+  {
+   "agent": "Maxey1664",
+   "mcp": "local:blender-mcp",
+   "topic": "simulation-and-digital-twins",
+   "score": 0.2264,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "simulation"
+  }
+ ],
+ "lexicon": {
+  "simphysics": "simulation simulator physics flight drone dynamics solver step model",
+  "simtwins": "digital twin asset model sensor live mirror 3d scene",
+  "simscenarios": "scenario monte carlo random distribution what sensitivity outcome stress"
+ },
+ "sources": [
+  "simulation"
+ ]
+}

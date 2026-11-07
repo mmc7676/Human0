@@ -1,0 +1,966 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "area-identity-studies",
+ "topic": {
+  "id": "race-and-ethnicity-studies",
+  "label": "Race and Ethnicity Studies",
+  "desc": "Race and Ethnicity Studies: Research Methods in Ethnic Studies, Theories of Race and Ethnicity, Comparative Histories of Race, Law, Policy and Rights, Culture, Representation and Identity, Structural Inequality, Race, Inequality and Society and Oral History and Research Methods."
+ },
+ "concepts": [
+  {
+   "id": "aaas-race-society",
+   "label": "Race, Inequality and Society",
+   "desc": "Social science of race as a structure, covering segregation, wealth gaps, policing, health and education outcomes.",
+   "keywords": [
+    "race",
+    "inequality",
+    "racism",
+    "wealth",
+    "policing",
+    "housing",
+    "education",
+    "census"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "african-and-african-american-studies",
+   "source_topic": "african-and-african-american-studies",
+   "related": []
+  },
+  {
+   "id": "asam-oral-history-methods",
+   "label": "Oral History and Research Methods",
+   "desc": "Interviews, archives, community-based research and data disaggregation used to document Asian American lives.",
+   "keywords": [
+    "oral history",
+    "interview",
+    "archive",
+    "methods",
+    "disaggregation",
+    "survey",
+    "census",
+    "ethics"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "asian-american-studies",
+   "source_topic": "asian-american-studies",
+   "related": []
+  },
+  {
+   "id": "csre-culture",
+   "label": "Culture, Representation and Identity",
+   "desc": "Representation of race and ethnicity in media, literature and art, and how communities express identity.",
+   "keywords": [
+    "representation",
+    "culture",
+    "media",
+    "literature",
+    "art",
+    "stereotype",
+    "community",
+    "expression"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "comparative-studies-in-race-and-ethnicity",
+   "source_topic": "comparative-studies-in-race-and-ethnicity",
+   "related": [
+    "asam-literature-culture"
+   ]
+  },
+  {
+   "id": "csre-history",
+   "label": "Comparative Histories of Race",
+   "desc": "Colonialism, slavery, migration and civil rights movements compared across regions and periods.",
+   "keywords": [
+    "history",
+    "colonialism",
+    "slavery",
+    "migration",
+    "civil rights",
+    "diaspora",
+    "indigenous",
+    "segregation"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "comparative-studies-in-race-and-ethnicity",
+   "source_topic": "comparative-studies-in-race-and-ethnicity",
+   "related": []
+  },
+  {
+   "id": "csre-inequality",
+   "label": "Structural Inequality",
+   "desc": "Racial and ethnic disparities in wealth, housing, education, health and criminal justice.",
+   "keywords": [
+    "inequality",
+    "disparity",
+    "wealth",
+    "housing",
+    "education",
+    "health",
+    "criminal justice",
+    "discrimination"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "comparative-studies-in-race-and-ethnicity",
+   "source_topic": "comparative-studies-in-race-and-ethnicity",
+   "related": []
+  },
+  {
+   "id": "csre-law-policy",
+   "label": "Law, Policy and Rights",
+   "desc": "Legal and policy regimes that define, regulate or remedy racial and ethnic difference.",
+   "keywords": [
+    "law",
+    "policy",
+    "rights",
+    "citizenship",
+    "affirmative action",
+    "voting",
+    "immigration",
+    "court"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "comparative-studies-in-race-and-ethnicity",
+   "source_topic": "comparative-studies-in-race-and-ethnicity",
+   "related": []
+  },
+  {
+   "id": "csre-methods",
+   "label": "Research Methods in Ethnic Studies",
+   "desc": "Mixed methods for studying race including ethnography, oral history, survey data and demographic analysis.",
+   "keywords": [
+    "methods",
+    "ethnography",
+    "oral history",
+    "census",
+    "survey",
+    "mixed methods",
+    "classification",
+    "ethics"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "comparative-studies-in-race-and-ethnicity",
+   "source_topic": "comparative-studies-in-race-and-ethnicity",
+   "related": [
+    "soc-research-methods"
+   ]
+  },
+  {
+   "id": "csre-race-theory",
+   "label": "Theories of Race and Ethnicity",
+   "desc": "Frameworks explaining race and ethnicity as social constructions, including racial formation and critical race theory.",
+   "keywords": [
+    "race",
+    "ethnicity",
+    "racial formation",
+    "critical race theory",
+    "social construction",
+    "identity",
+    "racialization",
+    "whiteness"
+   ],
+   "topic": "race-and-ethnicity-studies",
+   "source": "comparative-studies-in-race-and-ethnicity",
+   "source_topic": "comparative-studies-in-race-and-ethnicity",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "aaas-disparity-measure",
+   "concept": "aaas-race-society",
+   "label": "Racial Disparity Measurement",
+   "desc": "Computes racial gaps in wealth, housing, health or education from census data and checks the method for confounding and sample issues.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey996",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey995",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey997",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-policing-review",
+   "concept": "aaas-race-society",
+   "label": "Policing Research Review",
+   "desc": "Synthesises research on policing and race and checks the summary for study quality and correct citation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey991",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey996",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey997",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-segregation-index",
+   "concept": "aaas-race-society",
+   "label": "Residential Segregation Index",
+   "desc": "Calculates dissimilarity and isolation indices for a metro area and checks the values against published estimates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey996",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey995",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey994",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "asam-archive-finding",
+   "concept": "asam-oral-history-methods",
+   "label": "Archive and Source Finder",
+   "desc": "Locates archival collections and scholarly literature for a research question, checked by confirming each citation resolves.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1060",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1056",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1058",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-data-disaggregation",
+   "concept": "asam-oral-history-methods",
+   "label": "Data Disaggregation Analysis",
+   "desc": "Disaggregates census data by Asian subgroup to show hidden disparities, checked by reproducing the table totals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1055",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1059",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "asam-interview-protocol",
+   "concept": "asam-oral-history-methods",
+   "label": "Oral History Interview Protocol",
+   "desc": "Designs an oral history protocol with consent and question guides, checked against oral history ethics standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1060",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1057",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1054",
+     "role": "support"
+    }
+   ],
+   "source": "asian-american-studies"
+  },
+  {
+   "id": "csre-community-ethnography",
+   "concept": "csre-culture",
+   "label": "Community Ethnography Plan",
+   "desc": "Designs an ethnographic study of a community with consent and reciprocity plans and checks it against research ethics guidance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1173",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1174",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1175",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1176",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-representation-analysis",
+   "concept": "csre-culture",
+   "label": "Representation Analysis",
+   "desc": "Analyses how a group is represented in a set of media texts and checks codes against a defined coding scheme.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1175",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1173",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1176",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-archive-analysis",
+   "concept": "csre-history",
+   "label": "Archival Source Analysis",
+   "desc": "Analyses a primary archival document for author, context and perspective and checks interpretation against other records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1178",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1173",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1175",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-historical-comparison",
+   "concept": "csre-history",
+   "label": "Historical Comparison",
+   "desc": "Compares racial systems in two societies over a period and dates each claim against historical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1178",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1176",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1174",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-disparity-measurement",
+   "concept": "csre-inequality",
+   "label": "Disparity Measurement",
+   "desc": "Computes outcome gaps between groups from census or survey data and reports uncertainty and data limitations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1179",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1174",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1180",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-mechanism-review",
+   "concept": "csre-inequality",
+   "label": "Mechanism Review",
+   "desc": "Summarises evidence for a mechanism producing a disparity and checks each finding against the cited study.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1174",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1179",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1180",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-case-analysis",
+   "concept": "csre-law-policy",
+   "label": "Legal Case Analysis",
+   "desc": "Summarises a court decision on race or ethnicity, its reasoning and effects, and checks the summary against the opinion text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1180",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1176",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1178",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-policy-impact",
+   "concept": "csre-law-policy",
+   "label": "Policy Impact Review",
+   "desc": "Assesses a policy's effects on racial and ethnic groups and separates measured effects from claimed ones.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1180",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1179",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1174",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-classification-audit",
+   "concept": "csre-methods",
+   "label": "Racial Classification Audit",
+   "desc": "Audits how a dataset classifies race and ethnicity and flags categories that change across years or sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1179",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1174",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1176",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1173",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-oral-history",
+   "concept": "csre-methods",
+   "label": "Oral History Protocol",
+   "desc": "Writes an oral history interview protocol and checks consent, question neutrality and archiving plans.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1173",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1178",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1176",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-concept-definition",
+   "concept": "csre-race-theory",
+   "label": "Concept Definition",
+   "desc": "Defines a key concept with its origin, scholarly uses and contested meanings, each tied to citations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1176",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1178",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1175",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "id": "csre-framework-comparison",
+   "concept": "csre-race-theory",
+   "label": "Framework Comparison",
+   "desc": "Compares theoretical frameworks of race on a single question and checks each attribution against primary texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1176",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1177",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1174",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1175",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-studies-in-race-and-ethnicity"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1054",
+   "name": "Community Sociologist",
+   "legacy_key": "asam-sociologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1055",
+   "name": "Census Demographer",
+   "legacy_key": "asam-demographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1056",
+   "name": "Immigration Historian",
+   "legacy_key": "asam-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1057",
+   "name": "Source Verification Checker",
+   "legacy_key": "asam-fact",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1058",
+   "name": "Literary and Cultural Critic",
+   "legacy_key": "asam-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1059",
+   "name": "Civic Policy Analyst",
+   "legacy_key": "asam-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1060",
+   "name": "Oral History Archivist",
+   "legacy_key": "asam-archivist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1173",
+   "name": "Ethnographer Agent",
+   "legacy_key": "csre-ethnographer",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1174",
+   "name": "Sociologist Agent",
+   "legacy_key": "csre-sociologist",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1175",
+   "name": "Cultural Critic Agent",
+   "legacy_key": "csre-cultural-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1176",
+   "name": "Race Theory Agent",
+   "legacy_key": "csre-race-theorist",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1177",
+   "name": "Scholarly Literature Agent",
+   "legacy_key": "csre-literature",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey1178",
+   "name": "Social Historian Agent",
+   "legacy_key": "csre-historian",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1179",
+   "name": "Demographic Data Agent",
+   "legacy_key": "csre-demographer",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+   ]
+  },
+  {
+   "key": "Maxey1180",
+   "name": "Law and Policy Analyst Agent",
+   "legacy_key": "csre-policy-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey991",
+   "name": "Scholarly Literature Reviewer",
+   "legacy_key": "aaas-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey994",
+   "name": "Diaspora Historian",
+   "legacy_key": "aaas-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey995",
+   "name": "Research Methods Checker",
+   "legacy_key": "aaas-methods",
+   "mcp": []
+  },
+  {
+   "key": "Maxey996",
+   "name": "Race and Society Analyst",
+   "legacy_key": "aaas-sociologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey997",
+   "name": "Black Political Thought Analyst",
+   "legacy_key": "aaas-political",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1173",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "race-and-ethnicity-studies",
+   "score": 0.1053,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "agent": "Maxey1174",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "race-and-ethnicity-studies",
+   "score": 0.1004,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1179",
+    "skill": "csre-classification-audit"
+   },
+   "source_topic": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "agent": "Maxey1176",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "race-and-ethnicity-studies",
+   "score": 0.1102,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "agent": "Maxey1177",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "race-and-ethnicity-studies",
+   "score": 0.1501,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "agent": "Maxey1178",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "race-and-ethnicity-studies",
+   "score": 0.1053,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1173",
+    "skill": "csre-oral-history"
+   },
+   "source_topic": "comparative-studies-in-race-and-ethnicity"
+  },
+  {
+   "agent": "Maxey1179",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "race-and-ethnicity-studies",
+   "score": 0.1004,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "comparative-studies-in-race-and-ethnicity"
+  }
+ ],
+ "lexicon": {
+  "aaas-slavery": "slavery abolition emancipation plantation trade voyage atlantic",
+  "aaas-freedom": "civil rights reconstruction segregation protest voting organizing",
+  "aaas-letters": "literature harlem renaissance poetry novel vernacular reading",
+  "aaas-society": "race inequality wealth housing policing census disparity",
+  "aaas-diaspora": "diaspora pan migration caribbean memory identity colonialism",
+  "aaas-culture": "music blues jazz hip hop church performance",
+  "asam-immigration": "immigration migration labor exclusion refugee diaspora settlement generation",
+  "asam-law": "citizenship act incarceration naturalization court civil rights redress case law",
+  "asam-community": "community identity panethnic enclave model minority multiracial ethnicity assimilation",
+  "asam-literature": "literature novel film theater representation media memoir criticism",
+  "asam-politics": "activism movement coalition electoral voting hate crime organizing advocacy",
+  "asam-oral": "oral history interview archive methods disaggregation survey census ethics",
+  "csre-theory": "race ethnicity racial formation critical theory social construction identity racialization whiteness",
+  "csre-history": "history colonialism slavery migration civil rights diaspora indigenous segregation",
+  "csre-inequality": "inequality disparity wealth housing education health criminal justice discrimination",
+  "csre-law": "law policy citizenship affirmative action voting immigration court",
+  "csre-culture": "representation culture media literature art stereotype community expression",
+  "csre-method": "methods ethnography oral census survey mixed classification ethics"
+ },
+ "sources": [
+  "african-and-african-american-studies",
+  "asian-american-studies",
+  "comparative-studies-in-race-and-ethnicity"
+ ]
+}

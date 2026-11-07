@@ -1,33 +1,13 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "society-governance",
  "topic": {
   "id": "anthropology",
   "label": "Anthropology",
-  "desc": "Anthropology: the study of human beings across time and place, spanning cultural, biological, linguistic and archaeological approaches."
+  "desc": "Anthropology: Economic and Political Anthropology, Ethnographic Methods, Medical Anthropology and Social and Cultural Theory."
  },
  "concepts": [
-  {
-   "id": "anth-biological-anthropology",
-   "label": "Biological Anthropology",
-   "desc": "Human evolution, primatology, skeletal biology and human genetic and physiological variation.",
-   "keywords": [
-    "evolution",
-    "hominin",
-    "primate",
-    "skeletal",
-    "osteology",
-    "genetic",
-    "variation",
-    "fossil"
-   ],
-   "topic": "anthropology",
-   "source": "anthropology",
-   "related": [
-    "hbio-evolution-variation"
-   ]
-  },
   {
    "id": "anth-economic-political-anthropology",
    "label": "Economic and Political Anthropology",
@@ -44,6 +24,7 @@
    ],
    "topic": "anthropology",
    "source": "anthropology",
+   "source_topic": "anthropology",
    "related": []
   },
   {
@@ -62,24 +43,7 @@
    ],
    "topic": "anthropology",
    "source": "anthropology",
-   "related": []
-  },
-  {
-   "id": "anth-linguistic-anthropology",
-   "label": "Linguistic Anthropology",
-   "desc": "Language as social practice, including language ideology, speech communities and endangered languages.",
-   "keywords": [
-    "language",
-    "speech community",
-    "discourse",
-    "ideology",
-    "endangered",
-    "sociolinguistic",
-    "transcription",
-    "indexicality"
-   ],
-   "topic": "anthropology",
-   "source": "anthropology",
+   "source_topic": "anthropology",
    "related": []
   },
   {
@@ -98,6 +62,7 @@
    ],
    "topic": "anthropology",
    "source": "anthropology",
+   "source_topic": "anthropology",
    "related": []
   },
   {
@@ -116,76 +81,11 @@
    ],
    "topic": "anthropology",
    "source": "anthropology",
+   "source_topic": "anthropology",
    "related": []
   }
  ],
  "skills": [
-  {
-   "id": "anth-genetic-variation",
-   "concept": "anth-biological-anthropology",
-   "label": "Human Genetic Variation Review",
-   "desc": "Summarises population genetic variation studies and checks interpretations for race and ancestry misuse.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1012",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1013",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1014",
-     "role": "support"
-    }
-   ],
-   "source": "anthropology"
-  },
-  {
-   "id": "anth-hominin-comparison",
-   "concept": "anth-biological-anthropology",
-   "label": "Hominin Fossil Comparison",
-   "desc": "Compares hominin fossil traits and dates and checks placements against the published phylogenetic literature.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1012",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1013",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1015",
-     "role": "support"
-    }
-   ],
-   "source": "anthropology"
-  },
-  {
-   "id": "anth-skeletal-profile",
-   "concept": "anth-biological-anthropology",
-   "label": "Skeletal Biological Profile",
-   "desc": "Estimates age, sex and stature from skeletal measurements and checks the estimates against reference standards.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1012",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1015",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1016",
-     "role": "support"
-    }
-   ],
-   "source": "anthropology"
-  },
   {
    "id": "anth-livelihood-survey",
    "concept": "anth-economic-political-anthropology",
@@ -313,72 +213,6 @@
     },
     {
      "key": "Maxey1013",
-     "role": "support"
-    }
-   ],
-   "source": "anthropology"
-  },
-  {
-   "id": "anth-discourse-transcription",
-   "concept": "anth-linguistic-anthropology",
-   "label": "Discourse Transcription and Analysis",
-   "desc": "Transcribes and analyses a speech event and checks transcription accuracy and interpretation with a second listener pass.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1019",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1015",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1017",
-     "role": "support"
-    }
-   ],
-   "source": "anthropology"
-  },
-  {
-   "id": "anth-language-ideology",
-   "concept": "anth-linguistic-anthropology",
-   "label": "Language Ideology Analysis",
-   "desc": "Identifies language ideologies in talk or policy and checks the analysis against sociolinguistic scholarship.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1019",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1013",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1018",
-     "role": "support"
-    }
-   ],
-   "source": "anthropology"
-  },
-  {
-   "id": "anth-revitalization-plan",
-   "concept": "anth-linguistic-anthropology",
-   "label": "Endangered Language Documentation",
-   "desc": "Plans documentation of an endangered language with translation support and checks the plan against community ethics guidance.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1019",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1017",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1015",
      "role": "support"
     }
    ],
@@ -519,12 +353,6 @@
  ],
  "agents": [
   {
-   "key": "Maxey1012",
-   "name": "Biological Anthropologist",
-   "legacy_key": "anth-bioanth",
-   "mcp": []
-  },
-  {
    "key": "Maxey1013",
    "name": "Anthropological Literature Reviewer",
    "legacy_key": "anth-literature",
@@ -567,12 +395,6 @@
    "mcp": [
     "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
    ]
-  },
-  {
-   "key": "Maxey1019",
-   "name": "Linguistic Anthropologist",
-   "legacy_key": "anth-linguist",
-   "mcp": []
   }
  ],
  "mcp": [
@@ -740,21 +562,24 @@
    "mcp": "81cc5080-a204-4aa1-a694-fa868a3c8721",
    "topic": "anthropology",
    "score": 0.1018,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "anthropology"
   },
   {
    "agent": "Maxey1015",
    "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
    "topic": "anthropology",
    "score": 0.1564,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "anthropology"
   },
   {
    "agent": "Maxey1017",
    "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
    "topic": "anthropology",
    "score": 0.1739,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "anthropology"
   },
   {
    "agent": "Maxey1018",
@@ -765,7 +590,8 @@
    "via": {
     "primary": "Maxey1017",
     "skill": "anth-thick-description"
-   }
+   },
+   "source_topic": "anthropology"
   }
  ],
  "lexicon": {

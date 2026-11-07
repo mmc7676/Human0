@@ -1,0 +1,411 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "business-finance",
+ "topic": {
+  "id": "capital-markets-and-trading",
+  "label": "Capital Markets and Trading",
+  "desc": "Capital Markets and Trading: Trading Platforms and Market Data, Market Structure and Orders, Exchanges and Trading Venues, Clearing, Settlement and Custody and Indices and Benchmarks."
+ },
+ "concepts": [
+  {
+   "id": "cm-clearing",
+   "label": "Clearing, Settlement and Custody",
+   "desc": "What happens after a trade: clearing houses, settlement cycles, custody and prime brokerage.",
+   "keywords": [
+    "clearing",
+    "settlement",
+    "custody",
+    "prime",
+    "broker",
+    "dtcc",
+    "t+1",
+    "counterparty",
+    "margin"
+   ],
+   "topic": "capital-markets-and-trading",
+   "source": "capital-markets",
+   "source_topic": "capital-markets",
+   "related": []
+  },
+  {
+   "id": "cm-exchanges",
+   "label": "Exchanges and Trading Venues",
+   "desc": "Stock, futures and options exchanges, alternative trading systems, dark pools and their listing rules and hours.",
+   "keywords": [
+    "exchange",
+    "nyse",
+    "nasdaq",
+    "cme",
+    "venue",
+    "ats",
+    "dark",
+    "pool",
+    "listing",
+    "trading",
+    "hours"
+   ],
+   "topic": "capital-markets-and-trading",
+   "source": "capital-markets",
+   "source_topic": "capital-markets",
+   "related": []
+  },
+  {
+   "id": "cm-indices",
+   "label": "Indices and Benchmarks",
+   "desc": "Market indices such as the S&P 500, how they are built, weighted and rebalanced, and index funds that track them.",
+   "keywords": [
+    "index",
+    "indices",
+    "benchmark",
+    "s&p",
+    "dow",
+    "weighting",
+    "rebalance",
+    "constituent",
+    "etf"
+   ],
+   "topic": "capital-markets-and-trading",
+   "source": "capital-markets",
+   "source_topic": "capital-markets",
+   "related": []
+  },
+  {
+   "id": "cm-platforms",
+   "label": "Trading Platforms and Market Data",
+   "desc": "Brokerages, trading platforms, terminals and market data feeds, and what each provides.",
+   "keywords": [
+    "platform",
+    "brokerage",
+    "broker",
+    "terminal",
+    "market",
+    "data",
+    "feed",
+    "quote",
+    "api"
+   ],
+   "topic": "capital-markets-and-trading",
+   "source": "capital-markets",
+   "source_topic": "capital-markets",
+   "related": []
+  },
+  {
+   "id": "cm-structure",
+   "label": "Market Structure and Orders",
+   "desc": "Order types, order books, bid-ask spread, market makers, liquidity and best execution.",
+   "keywords": [
+    "order",
+    "type",
+    "limit",
+    "market",
+    "stop",
+    "book",
+    "bid",
+    "ask",
+    "spread",
+    "market",
+    "maker",
+    "liquidity",
+    "execution"
+   ],
+   "topic": "capital-markets-and-trading",
+   "source": "capital-markets",
+   "source_topic": "capital-markets",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cm-trade-lifecycle-tracer",
+   "concept": "cm-clearing",
+   "label": "Trade Lifecycle Tracer",
+   "desc": "Traces a trade from order to settlement, naming each party and step.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1682",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1684",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  },
+  {
+   "id": "cm-venue-explainer",
+   "concept": "cm-exchanges",
+   "label": "Venue Explainer",
+   "desc": "Explains a trading venue's role, listing rules, hours and which instruments trade there.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1685",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1686",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  },
+  {
+   "id": "cm-index-methodology-explainer",
+   "concept": "cm-indices",
+   "label": "Index Methodology Explainer",
+   "desc": "Explains how an index is constructed, weighted and rebalanced.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1684",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1687",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  },
+  {
+   "id": "cm-market-data-explainer",
+   "concept": "cm-platforms",
+   "label": "Market Data Explainer",
+   "desc": "Explains market data types (quotes, trades, bars, depth) and their sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1687",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1685",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  },
+  {
+   "id": "cm-platform-comparator",
+   "concept": "cm-platforms",
+   "label": "Platform Comparator",
+   "desc": "Compares brokerages and trading platforms by instruments, fees, data and API access.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1687",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1685",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  },
+  {
+   "id": "cm-liquidity-assessor",
+   "concept": "cm-structure",
+   "label": "Liquidity Assessor",
+   "desc": "Assesses an instrument's liquidity from spread, depth and volume.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1686",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1682",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  },
+  {
+   "id": "cm-order-type-explainer",
+   "concept": "cm-structure",
+   "label": "Order Type Explainer",
+   "desc": "Explains order types and which to use for a goal, with risks.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1686",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1683",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1682",
+     "role": "support"
+    }
+   ],
+   "source": "capital-markets"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1682",
+   "name": "Clearing and Settlement Agent",
+   "legacy_key": "cm-clearing",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1683",
+   "name": "Markets Checker Agent",
+   "legacy_key": "cm-checker",
+   "mcp": [
+    "local:alpaca-mcp",
+    "local:polygon-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1684",
+   "name": "Index Agent",
+   "legacy_key": "cm-index",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1685",
+   "name": "Exchange Agent",
+   "legacy_key": "cm-exchange",
+   "mcp": [
+    "local:polygon-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1686",
+   "name": "Market Structure Agent",
+   "legacy_key": "cm-structure",
+   "mcp": [
+    "local:alpaca-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1687",
+   "name": "Trading Platform Agent",
+   "legacy_key": "cm-platform",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Alpaca MCP",
+   "desc": "Alpaca MCP server: stock, options and crypto market data, account positions and order placement through a brokerage API.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/alpacahq/alpaca-mcp-server",
+   "id": "local:alpaca-mcp",
+   "origins": [
+    "capital-markets"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Polygon MCP",
+   "desc": "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/polygon-io/mcp_polygon",
+   "id": "local:polygon-mcp",
+   "origins": [
+    "capital-markets",
+    "currencies",
+    "derivatives",
+    "financial-data"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Twelve Data MCP",
+   "desc": "Twelve Data MCP server: real time and historical prices for stocks, forex, crypto, ETFs and indices, technical indicators.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/twelvedata/mcp",
+   "id": "local:twelve-data-mcp",
+   "origins": [
+    "capital-markets",
+    "commodities",
+    "currencies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:polygon-mcp",
+  "local:twelve-data-mcp",
+  "local:alpaca-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1683",
+   "mcp": "local:alpaca-mcp",
+   "topic": "capital-markets-and-trading",
+   "score": 0.1988,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "capital-markets"
+  },
+  {
+   "agent": "Maxey1683",
+   "mcp": "local:polygon-mcp",
+   "topic": "capital-markets-and-trading",
+   "score": 0.2473,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "capital-markets"
+  },
+  {
+   "agent": "Maxey1685",
+   "mcp": "local:polygon-mcp",
+   "topic": "capital-markets-and-trading",
+   "score": 0.2348,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "capital-markets"
+  },
+  {
+   "agent": "Maxey1686",
+   "mcp": "local:alpaca-mcp",
+   "topic": "capital-markets-and-trading",
+   "score": 0.1614,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "capital-markets"
+  }
+ ],
+ "lexicon": {
+  "cmexchanges": "exchange nyse nasdaq cme venue ats dark pool listing trading hours",
+  "cmstructure": "order type limit market stop book bid ask spread market maker liquidity execution",
+  "cmclearing": "clearing settlement custody prime broker dtcc t+1 counterparty margin",
+  "cmindices": "index indices benchmark s&p dow weighting rebalance constituent etf",
+  "cmplatforms": "platform brokerage broker terminal market data feed quote api"
+ },
+ "sources": [
+  "capital-markets"
+ ]
+}

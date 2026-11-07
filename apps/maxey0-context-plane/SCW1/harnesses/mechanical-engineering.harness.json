@@ -1,34 +1,13 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "engineering",
  "topic": {
   "id": "mechanical-engineering",
   "label": "Mechanical Engineering",
-  "desc": "Mechanical Engineering: analysis and design of machines, structures, thermal-fluid systems and controls."
+  "desc": "Mechanical Engineering: Statics and Solid Mechanics, Machine Design and Manufacturing and Dynamics and Vibrations."
  },
  "concepts": [
-  {
-   "id": "me-controls-mechatronics",
-   "label": "Controls and Mechatronics",
-   "desc": "Modelling and feedback control of dynamic systems with sensors, actuators and embedded code.",
-   "keywords": [
-    "control",
-    "feedback",
-    "pid",
-    "transfer function",
-    "sensor",
-    "actuator",
-    "robot",
-    "stability"
-   ],
-   "topic": "mechanical-engineering",
-   "source": "mechanical-engineering",
-   "related": [
-    "cheme-process-control",
-    "rb-control"
-   ]
-  },
   {
    "id": "me-dynamics-vibration",
    "label": "Dynamics and Vibrations",
@@ -45,24 +24,7 @@
    ],
    "topic": "mechanical-engineering",
    "source": "mechanical-engineering",
-   "related": []
-  },
-  {
-   "id": "me-heat-transfer",
-   "label": "Heat Transfer",
-   "desc": "Conduction, convection and radiation and the design of heat exchangers and thermal management.",
-   "keywords": [
-    "heat transfer",
-    "conduction",
-    "convection",
-    "radiation",
-    "heat exchanger",
-    "fin",
-    "thermal resistance",
-    "temperature"
-   ],
-   "topic": "mechanical-engineering",
-   "source": "mechanical-engineering",
+   "source_topic": "mechanical-engineering",
    "related": []
   },
   {
@@ -81,6 +43,7 @@
    ],
    "topic": "mechanical-engineering",
    "source": "mechanical-engineering",
+   "source_topic": "mechanical-engineering",
    "related": []
   },
   {
@@ -99,97 +62,11 @@
    ],
    "topic": "mechanical-engineering",
    "source": "mechanical-engineering",
+   "source_topic": "mechanical-engineering",
    "related": []
-  },
-  {
-   "id": "me-thermodynamics-fluids",
-   "label": "Thermodynamics and Fluid Mechanics",
-   "desc": "Energy conversion, power and refrigeration cycles, fluid statics and internal and external flows.",
-   "keywords": [
-    "thermodynamics",
-    "cycle",
-    "efficiency",
-    "fluid",
-    "pressure",
-    "flow",
-    "pipe",
-    "turbine"
-   ],
-   "topic": "mechanical-engineering",
-   "source": "mechanical-engineering",
-   "related": [
-    "cl-fluids",
-    "ese-thermodynamics-conversion"
-   ]
   }
  ],
  "skills": [
-  {
-   "id": "me-pid-tuner",
-   "concept": "me-controls-mechatronics",
-   "label": "PID Controller Tuner",
-   "desc": "Tunes PID gains for a plant model and checks step response, overshoot and stability margins.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1454",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1455",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1456",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-robot-motion-planner",
-   "concept": "me-controls-mechatronics",
-   "label": "Robot Motion Planner",
-   "desc": "Plans robot arm or mobile robot trajectories over ROS and checks joint limits and collision clearance.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1454",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1457",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1455",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-state-space-modeler",
-   "concept": "me-controls-mechatronics",
-   "label": "State Space Modeler",
-   "desc": "Builds state space models from equations of motion and checks controllability and observability.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1454",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1455",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1458",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
   {
    "id": "me-mechanism-kinematics-solver",
    "concept": "me-dynamics-vibration",
@@ -251,72 +128,6 @@
     },
     {
      "key": "Maxey1454",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-electronics-cooling-designer",
-   "concept": "me-heat-transfer",
-   "label": "Electronics Cooling Designer",
-   "desc": "Designs fins and airflow to keep component temperatures within limits and checks results with a transient thermal model.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1459",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1458",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1454",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-heat-exchanger-sizer",
-   "concept": "me-heat-transfer",
-   "label": "Heat Exchanger Sizer",
-   "desc": "Sizes exchangers by LMTD and effectiveness-NTU methods and checks both methods agree.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1459",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1460",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1457",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-thermal-resistance-network",
-   "concept": "me-heat-transfer",
-   "label": "Thermal Resistance Network Solver",
-   "desc": "Models conduction and convection paths as resistance networks and checks the heat balance at each node.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1459",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1456",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1460",
      "role": "support"
     }
    ],
@@ -453,72 +264,6 @@
     }
    ],
    "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-cfd-flow-checker",
-   "concept": "me-thermodynamics-fluids",
-   "label": "CFD Flow Checker",
-   "desc": "Sets up computational flow simulations and checks mesh independence and conservation of mass and momentum.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1460",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1458",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1459",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-cycle-efficiency-calculator",
-   "concept": "me-thermodynamics-fluids",
-   "label": "Cycle Efficiency Calculator",
-   "desc": "Analyses Rankine, Brayton and refrigeration cycles with property tables and checks first and second law balances.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1460",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1456",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1459",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
-  },
-  {
-   "id": "me-pipe-flow-sizer",
-   "concept": "me-thermodynamics-fluids",
-   "label": "Pipe Flow Sizer",
-   "desc": "Sizes pipes and pumps with Darcy friction and minor losses and checks Reynolds regime and head balance.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1460",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1456",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1457",
-     "role": "support"
-    }
-   ],
-   "source": "mechanical-engineering"
   }
  ],
  "agents": [
@@ -559,20 +304,6 @@
    "mcp": [
     "local:chuk-mcp-physics",
     "local:ros-mcp-server"
-   ]
-  },
-  {
-   "key": "Maxey1459",
-   "name": "Heat Transfer Agent",
-   "legacy_key": "me-heat",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1460",
-   "name": "Thermofluids Agent",
-   "legacy_key": "me-thermofluids",
-   "mcp": [
-    "local:chuk-mcp-physics"
    ]
   },
   {
@@ -713,21 +444,24 @@
    "mcp": "local:ros-mcp-server",
    "topic": "mechanical-engineering",
    "score": 0.2808,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "mechanical-engineering"
   },
   {
    "agent": "Maxey1456",
    "mcp": "local:chuk-mcp-physics",
    "topic": "mechanical-engineering",
    "score": 0.1537,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "mechanical-engineering"
   },
   {
    "agent": "Maxey1457",
    "mcp": "local:ros-mcp-server",
    "topic": "mechanical-engineering",
    "score": 0.2876,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "mechanical-engineering"
   },
   {
    "agent": "Maxey1458",
@@ -738,7 +472,8 @@
    "via": {
     "primary": "Maxey1460",
     "skill": "me-cfd-flow-checker"
-   }
+   },
+   "source_topic": "mechanical-engineering"
   },
   {
    "agent": "Maxey1458",
@@ -749,14 +484,8 @@
    "via": {
     "primary": "Maxey1455",
     "skill": "me-modal-analyzer"
-   }
-  },
-  {
-   "agent": "Maxey1460",
-   "mcp": "local:chuk-mcp-physics",
-   "topic": "mechanical-engineering",
-   "score": 0.1452,
-   "basis": "derived:tfidf-cosine"
+   },
+   "source_topic": "mechanical-engineering"
   },
   {
    "agent": "Maxey1461",
@@ -767,7 +496,8 @@
    "via": {
     "primary": "Maxey1457",
     "skill": "me-gear-bearing-selector"
-   }
+   },
+   "source_topic": "mechanical-engineering"
   }
  ],
  "lexicon": {

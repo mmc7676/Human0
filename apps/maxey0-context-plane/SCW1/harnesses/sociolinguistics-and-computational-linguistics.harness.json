@@ -1,0 +1,852 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "sociolinguistics-and-computational-linguistics",
+  "label": "Sociolinguistics and Computational Linguistics",
+  "desc": "Sociolinguistics and Computational Linguistics: Language Variation and Learning, Computational Linguistics, Linguistic Anthropology, Historical and Sociolinguistics and Psycholinguistics and Acquisition."
+ },
+ "concepts": [
+  {
+   "id": "anth-linguistic-anthropology",
+   "label": "Linguistic Anthropology",
+   "desc": "Language as social practice, including language ideology, speech communities and endangered languages.",
+   "keywords": [
+    "language",
+    "speech community",
+    "discourse",
+    "ideology",
+    "endangered",
+    "sociolinguistic",
+    "transcription",
+    "indexicality"
+   ],
+   "topic": "sociolinguistics-and-computational-linguistics",
+   "source": "anthropology",
+   "source_topic": "anthropology",
+   "related": []
+  },
+  {
+   "id": "hl-computational",
+   "label": "Computational Linguistics",
+   "desc": "Language processing: tokenisation, tagging, parsing, language identification, corpora and evaluation of language models.",
+   "keywords": [
+    "tokenisation",
+    "parsing",
+    "corpus",
+    "tagging",
+    "language"
+   ],
+   "topic": "sociolinguistics-and-computational-linguistics",
+   "source": "human-language",
+   "source_topic": "human-language",
+   "related": []
+  },
+  {
+   "id": "hl-variation",
+   "label": "Language Variation and Learning",
+   "desc": "Dialects, registers and change over time, how people learn second languages and how endangered languages are documented.",
+   "keywords": [
+    "dialect",
+    "register",
+    "acquisition",
+    "endangered",
+    "sociolinguistics"
+   ],
+   "topic": "sociolinguistics-and-computational-linguistics",
+   "source": "human-language",
+   "source_topic": "human-language",
+   "related": []
+  },
+  {
+   "id": "ling-historical-sociolinguistics",
+   "label": "Historical and Sociolinguistics",
+   "desc": "How languages change over time and vary across speakers, regions and social groups, including reconstruction and language contact.",
+   "keywords": [
+    "historical",
+    "comparative",
+    "reconstruction",
+    "sound change",
+    "variation",
+    "dialect",
+    "contact",
+    "sociolinguistics"
+   ],
+   "topic": "sociolinguistics-and-computational-linguistics",
+   "source": "linguistics",
+   "source_topic": "linguistics",
+   "related": []
+  },
+  {
+   "id": "ling-psycholinguistics-acquisition",
+   "label": "Psycholinguistics and Acquisition",
+   "desc": "How people learn, process and produce language, studied through experiments, child acquisition data and second language learning.",
+   "keywords": [
+    "psycholinguistics",
+    "acquisition",
+    "processing",
+    "experiment",
+    "child",
+    "second language",
+    "reaction time",
+    "bilingual"
+   ],
+   "topic": "sociolinguistics-and-computational-linguistics",
+   "source": "linguistics",
+   "source_topic": "linguistics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "anth-discourse-transcription",
+   "concept": "anth-linguistic-anthropology",
+   "label": "Discourse Transcription and Analysis",
+   "desc": "Transcribes and analyses a speech event and checks transcription accuracy and interpretation with a second listener pass.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1019",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-language-ideology",
+   "concept": "anth-linguistic-anthropology",
+   "label": "Language Ideology Analysis",
+   "desc": "Identifies language ideologies in talk or policy and checks the analysis against sociolinguistic scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1019",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1018",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-revitalization-plan",
+   "concept": "anth-linguistic-anthropology",
+   "label": "Endangered Language Documentation",
+   "desc": "Plans documentation of an endangered language with translation support and checks the plan against community ethics guidance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1019",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1017",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "hl-corpus-evaluator",
+   "concept": "hl-computational",
+   "label": "Corpus and Evaluation Designer",
+   "desc": "Builds a labelled test set for a language task, picks metrics and reports where scores hide weak languages or dialects.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey845",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey846",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey847",
+     "role": "support"
+    }
+   ],
+   "source": "human-language"
+  },
+  {
+   "id": "hl-language-identifier",
+   "concept": "hl-computational",
+   "label": "Language Identifier",
+   "desc": "Identifies the language of a text, reports confidence and warns on short or mixed-language input.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey845",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey846",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey848",
+     "role": "support"
+    }
+   ],
+   "source": "human-language"
+  },
+  {
+   "id": "hl-tokenizer-designer",
+   "concept": "hl-computational",
+   "label": "Tokenisation Designer",
+   "desc": "Chooses word, subword or character tokenisation for a language and shows how it splits sample text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey845",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey846",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey848",
+     "role": "support"
+    }
+   ],
+   "source": "human-language"
+  },
+  {
+   "id": "hl-dialect-profiler",
+   "concept": "hl-variation",
+   "label": "Dialect and Variety Profiler",
+   "desc": "Describes the features that mark a dialect or variety and cautions against stereotyping speakers from a few features.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey847",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey846",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey853",
+     "role": "support"
+    }
+   ],
+   "source": "human-language"
+  },
+  {
+   "id": "hl-language-documenter",
+   "concept": "hl-variation",
+   "label": "Language Documentation Planner",
+   "desc": "Plans recordings, transcription and glossing for an under-documented language with consent and community ownership recorded.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey847",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey846",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey853",
+     "role": "support"
+    }
+   ],
+   "source": "human-language"
+  },
+  {
+   "id": "hl-learning-planner",
+   "concept": "hl-variation",
+   "label": "Language Learning Planner",
+   "desc": "Plans study for a learner by level and goal, ordering vocabulary, grammar and listening practice with checkpoints.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey854",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey846",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey855",
+     "role": "support"
+    }
+   ],
+   "source": "human-language"
+  },
+  {
+   "id": "ling-comparative-reconstructor",
+   "concept": "ling-historical-sociolinguistics",
+   "label": "Comparative Method Reconstructor",
+   "desc": "Aligns cognates, proposes regular sound correspondences and reconstructs proto-forms checked for exceptionless correspondence sets.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1414",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1415",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1416",
+     "role": "support"
+    }
+   ],
+   "source": "linguistics"
+  },
+  {
+   "id": "ling-dialect-variation-mapper",
+   "concept": "ling-historical-sociolinguistics",
+   "label": "Dialect Variation Mapper",
+   "desc": "Maps variable features across speakers or regions and checks distributions with a statistical test of social or regional effect.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1417",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1416",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1414",
+     "role": "support"
+    }
+   ],
+   "source": "linguistics"
+  },
+  {
+   "id": "ling-loanword-detector",
+   "concept": "ling-historical-sociolinguistics",
+   "label": "Loanword and Contact Detector",
+   "desc": "Flags borrowed vocabulary and contact-induced structure and verifies source language etymology in reference dictionaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1414",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1418",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1417",
+     "role": "support"
+    }
+   ],
+   "source": "linguistics"
+  },
+  {
+   "id": "ling-acquisition-milestone-tracker",
+   "concept": "ling-psycholinguistics-acquisition",
+   "label": "Acquisition Milestone Tracker",
+   "desc": "Scores child speech samples for MLU and grammatical milestones and checks scores against published norms.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1421",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1419",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1417",
+     "role": "support"
+    }
+   ],
+   "source": "linguistics"
+  },
+  {
+   "id": "ling-multilingual-translation-checker",
+   "concept": "ling-psycholinguistics-acquisition",
+   "label": "Multilingual Translation Checker",
+   "desc": "Translates stimuli and example sentences across languages and back-translates to verify meaning and register are preserved.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1418",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1420",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1422",
+     "role": "support"
+    }
+   ],
+   "source": "linguistics"
+  },
+  {
+   "id": "ling-psycholing-experiment-designer",
+   "concept": "ling-psycholinguistics-acquisition",
+   "label": "Psycholinguistic Experiment Designer",
+   "desc": "Designs reading time or priming experiments with counterbalanced items and checks the item lists for confounds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1421",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1416",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1420",
+     "role": "support"
+    }
+   ],
+   "source": "linguistics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1013",
+   "name": "Anthropological Literature Reviewer",
+   "legacy_key": "anth-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1015",
+   "name": "Fieldwork Methods Checker",
+   "legacy_key": "anth-methods",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1017",
+   "name": "Ethnographer",
+   "legacy_key": "anth-ethnographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1018",
+   "name": "Social Theory Analyst",
+   "legacy_key": "anth-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1019",
+   "name": "Linguistic Anthropologist",
+   "legacy_key": "anth-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1414",
+   "name": "Historical Comparative Agent",
+   "legacy_key": "ling-historical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1415",
+   "name": "Phonetics and Phonology Analyst",
+   "legacy_key": "ling-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1416",
+   "name": "Corpus Linguistics Agent",
+   "legacy_key": "ling-corpus",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1417",
+   "name": "Field Linguist Agent",
+   "legacy_key": "ling-fieldworker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1418",
+   "name": "Translation Checker Agent",
+   "legacy_key": "ling-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1419",
+   "name": "Morphosyntax Analyst",
+   "legacy_key": "ling-morphosyntax",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1420",
+   "name": "Formal Semantics Agent",
+   "legacy_key": "ling-semanticist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1421",
+   "name": "Psycholinguistics Agent",
+   "legacy_key": "ling-psycholing",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1422",
+   "name": "Pragmatics and Discourse Agent",
+   "legacy_key": "ling-pragmatics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey845",
+   "name": "Computational Linguistics Agent",
+   "legacy_key": "hl-computational-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey846",
+   "name": "Language Quality Checker Agent",
+   "legacy_key": "hl-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey847",
+   "name": "Sociolinguistics Agent",
+   "legacy_key": "hl-sociolinguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey848",
+   "name": "Writing Systems and Encoding Agent",
+   "legacy_key": "hl-text-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey853",
+   "name": "Phonetics and Phonology Agent",
+   "legacy_key": "hl-phonologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey854",
+   "name": "Language Learning Agent",
+   "legacy_key": "hl-learning-coach",
+   "mcp": []
+  },
+  {
+   "key": "Maxey855",
+   "name": "Grammar Agent",
+   "legacy_key": "hl-grammarian",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "493d699b-dd21-43ae-afec-c47c914bae9c",
+   "name": "Smartling",
+   "desc": "Translate content and manage Smartling projects, jobs, and quality issues directly from your AI assistant.",
+   "tools": [
+    "smartling_add_issue_comment",
+    "smartling_add_strings_to_job",
+    "smartling_add_tags_to_strings",
+    "smartling_authorize_job",
+    "smartling_count_account_issues",
+    "smartling_count_project_issues",
+    "smartling_create_issue",
+    "smartling_create_job"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "493d699b-dd21-43ae-afec-c47c914bae9c",
+   "origins": [
+    "human-language"
+   ]
+  },
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "493d699b-dd21-43ae-afec-c47c914bae9c",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "anth-field": "ethnography fieldwork participant observation interview notes coding",
+  "anth-theory": "kinship ritual exchange structuralism symbolic gift",
+  "anth-bio": "evolution hominin primate skeletal fossil genetic",
+  "anth-speech": "language discourse ideology endangered transcription sociolinguistic",
+  "anth-health": "illness healing biomedicine epidemic narrative",
+  "anth-economy": "market globalization livelihood migration development",
+  "hlsound": "phoneme phonetic stress tone assimilation harmony pronunciation phonology",
+  "hlgrammar": "morphology inflection syntax agreement phrase word sentence tree noun grammar",
+  "hlmeaning": "ambiguity implicature pragmatic politeness irony reading formality",
+  "hllexicon": "etymology sense collocation dictionary terminology lexicon vocabulary lexicography",
+  "hltranslate": "translator locale omission mistranslation translate translated translating localize localise i18n l10n japanese german french spanish chinese language interpretation",
+  "hlscript": "unicode encoding normalisation bidirectional text ordering",
+  "hlcomput": "tokenisation corpus identification parser tagging parsing computational linguistics",
+  "hlvariety": "dialect variety acquisition learner endangered sociolinguistics variation learning",
+  "ling-sound": "phonetics phonology phoneme allophone ipa syllable stress tone acoustic formant pitch vowel",
+  "ling-structure": "morphology syntax morpheme affix constituent tree agreement case treebank dependency typology",
+  "ling-meaning": "semantics truth lexical quantifier entailment lambda scope synonymy polysemy negation",
+  "ling-use": "pragmatics discourse implicature presupposition politeness conversation register turn repair",
+  "ling-change": "historical comparative reconstruction cognate dialect variation contact loanword etymology",
+  "ling-mind": "psycholinguistic acquisition processing experiment child bilingual priming translate translation"
+ },
+ "sources": [
+  "anthropology",
+  "human-language",
+  "linguistics"
+ ]
+}

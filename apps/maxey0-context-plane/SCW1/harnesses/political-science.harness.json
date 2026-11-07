@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "society-governance",
  "topic": {
   "id": "political-science",
   "label": "Political Science",
-  "desc": "Political Science: the study of power, institutions, behaviour, conflict and policy within and between states."
+  "desc": "Political Science: Comparative Politics, International Politics, Political Theory and Elections, Institutions and Behavior."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "political-science",
    "source": "political-science",
+   "source_topic": "political-science",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "political-science",
    "source": "political-science",
+   "source_topic": "political-science",
    "related": []
   },
   {
@@ -60,24 +62,7 @@
    ],
    "topic": "political-science",
    "source": "political-science",
-   "related": []
-  },
-  {
-   "id": "polisci-political-methodology",
-   "label": "Political Methodology",
-   "desc": "Research design, causal inference, surveys, text-as-data and statistics for political questions.",
-   "keywords": [
-    "methodology",
-    "causal inference",
-    "regression",
-    "survey",
-    "experiment",
-    "text as data",
-    "dataset",
-    "statistics"
-   ],
-   "topic": "political-science",
-   "source": "political-science",
+   "source_topic": "political-science",
    "related": []
   },
   {
@@ -96,24 +81,7 @@
    ],
    "topic": "political-science",
    "source": "political-science",
-   "related": []
-  },
-  {
-   "id": "polisci-public-policy",
-   "label": "Public Policy and Administration",
-   "desc": "How policy is made, implemented and evaluated by governments and bureaucracies.",
-   "keywords": [
-    "policy",
-    "public administration",
-    "bureaucracy",
-    "implementation",
-    "evaluation",
-    "agenda",
-    "regulation",
-    "budget"
-   ],
-   "topic": "political-science",
-   "source": "political-science",
+   "source_topic": "political-science",
    "related": []
   }
  ],
@@ -317,72 +285,6 @@
    "source": "political-science"
   },
   {
-   "id": "polisci-causal-design-reviewer",
-   "concept": "polisci-political-methodology",
-   "label": "Causal Design Reviewer",
-   "desc": "Assesses identification strategies such as difference-in-differences and regression discontinuity and checks assumptions with placebo tests.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1508",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1515",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1513",
-     "role": "support"
-    }
-   ],
-   "source": "political-science"
-  },
-  {
-   "id": "polisci-political-dataset-query",
-   "concept": "polisci-political-methodology",
-   "label": "Political Dataset Query",
-   "desc": "Queries election and country-year datasets with SQL and checks merges and counts against codebooks.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1508",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1507",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1512",
-     "role": "support"
-    }
-   ],
-   "source": "political-science"
-  },
-  {
-   "id": "polisci-survey-experiment-builder",
-   "concept": "polisci-political-methodology",
-   "label": "Survey Experiment Builder",
-   "desc": "Designs survey experiments with randomised treatments and checks balance and power.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1508",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1513",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1515",
-     "role": "support"
-    }
-   ],
-   "source": "political-science"
-  },
-  {
    "id": "polisci-democracy-concept-coder",
    "concept": "polisci-political-theory",
    "label": "Democracy Concept Coder",
@@ -421,50 +323,6 @@
     },
     {
      "key": "Maxey1510",
-     "role": "support"
-    }
-   ],
-   "source": "political-science"
-  },
-  {
-   "id": "polisci-policy-evaluation-planner",
-   "concept": "polisci-public-policy",
-   "label": "Policy Evaluation Planner",
-   "desc": "Plans impact evaluations of programmes and checks outcome measures and comparison groups.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1515",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1508",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1514",
-     "role": "support"
-    }
-   ],
-   "source": "political-science"
-  },
-  {
-   "id": "polisci-policy-process-tracer",
-   "concept": "polisci-public-policy",
-   "label": "Policy Process Tracer",
-   "desc": "Traces agenda setting and implementation for a policy and checks each step against documents.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1515",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1513",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1507",
      "role": "support"
     }
    ],
@@ -677,7 +535,8 @@
    "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
    "topic": "political-science",
    "score": 0.1953,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "political-science"
   },
   {
    "agent": "Maxey1508",
@@ -688,14 +547,16 @@
    "via": {
     "primary": "Maxey1507",
     "skill": "polisci-case-comparison-designer"
-   }
+   },
+   "source_topic": "political-science"
   },
   {
    "agent": "Maxey1512",
    "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
    "topic": "political-science",
    "score": 0.1987,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "political-science"
   },
   {
    "agent": "Maxey1513",
@@ -706,7 +567,8 @@
    "via": {
     "primary": "Maxey1512",
     "skill": "polisci-district-map-analyzer"
-   }
+   },
+   "source_topic": "political-science"
   }
  ],
  "lexicon": {

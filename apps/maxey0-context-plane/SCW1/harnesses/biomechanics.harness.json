@@ -1,0 +1,699 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "life-health-mind",
+ "topic": {
+  "id": "biomechanics",
+  "label": "Biomechanics",
+  "desc": "Biomechanics: Musculoskeletal Modeling, Tissue Mechanics, Human Movement and Gait, Finite Element Analysis, Prosthetics, Orthotics and Injury and Biofluid Mechanics."
+ },
+ "concepts": [
+  {
+   "id": "biom-assistive-devices",
+   "label": "Prosthetics, Orthotics and Injury",
+   "desc": "Design of prostheses, orthoses and protective equipment, and the mechanics of injury.",
+   "keywords": [
+    "prosthesis",
+    "orthosis",
+    "injury",
+    "impact",
+    "protective",
+    "design",
+    "exoskeleton",
+    "rehabilitation"
+   ],
+   "topic": "biomechanics",
+   "source": "biomechanical-engineering",
+   "source_topic": "biomechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "biom-biofluid-mechanics",
+   "label": "Biofluid Mechanics",
+   "desc": "Blood flow, airflow and fluid transport in the body.",
+   "keywords": [
+    "blood flow",
+    "hemodynamics",
+    "shear",
+    "pressure",
+    "vessel",
+    "airflow",
+    "reynolds",
+    "pulsatile"
+   ],
+   "topic": "biomechanics",
+   "source": "biomechanical-engineering",
+   "source_topic": "biomechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "biom-finite-element",
+   "label": "Finite Element Analysis",
+   "desc": "Numerical stress analysis of anatomy and implants with finite element meshes.",
+   "keywords": [
+    "finite element",
+    "mesh",
+    "boundary condition",
+    "implant",
+    "convergence",
+    "von mises",
+    "load",
+    "geometry"
+   ],
+   "topic": "biomechanics",
+   "source": "biomechanical-engineering",
+   "source_topic": "biomechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "biom-human-movement",
+   "label": "Human Movement and Gait",
+   "desc": "Kinematics and kinetics of human motion from motion capture, force plates and electromyography.",
+   "keywords": [
+    "gait",
+    "kinematics",
+    "kinetics",
+    "motion capture",
+    "force plate",
+    "joint",
+    "emg",
+    "movement"
+   ],
+   "topic": "biomechanics",
+   "source": "biomechanical-engineering",
+   "source_topic": "biomechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "biom-musculoskeletal-modeling",
+   "label": "Musculoskeletal Modeling",
+   "desc": "Rigid-body and muscle models that estimate internal forces during motion.",
+   "keywords": [
+    "musculoskeletal",
+    "muscle",
+    "rigid body",
+    "model",
+    "optimization",
+    "tendon force",
+    "simulation",
+    "moment arm"
+   ],
+   "topic": "biomechanics",
+   "source": "biomechanical-engineering",
+   "source_topic": "biomechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "biom-tissue-mechanics",
+   "label": "Tissue Mechanics",
+   "desc": "Mechanical behavior of bone, cartilage, tendon and soft tissue, including viscoelasticity and failure.",
+   "keywords": [
+    "tissue",
+    "bone",
+    "cartilage",
+    "tendon",
+    "viscoelastic",
+    "stress",
+    "strain",
+    "stiffness"
+   ],
+   "topic": "biomechanics",
+   "source": "biomechanical-engineering",
+   "source_topic": "biomechanical-engineering",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "biom-exoskeleton-assist",
+   "concept": "biom-assistive-devices",
+   "label": "Exoskeleton Assistance Planner",
+   "desc": "Plans assistive torque profiles for an exoskeleton, checked by joint power and metabolic estimates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1088",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1089",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-impact-injury",
+   "concept": "biom-assistive-devices",
+   "label": "Impact Injury Analysis",
+   "desc": "Estimates injury risk from impact accelerations, checked against head injury criterion thresholds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1091",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-prosthesis-design",
+   "concept": "biom-assistive-devices",
+   "label": "Prosthesis Design Specification",
+   "desc": "Specifies prosthesis alignment, stiffness and mass targets, checked against user gait requirements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1088",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1089",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-hemodynamics-review",
+   "concept": "biom-biofluid-mechanics",
+   "label": "Hemodynamics and Disease Review",
+   "desc": "Relates wall shear stress to atherosclerosis and aneurysm, checked against cited studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1094",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1596",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-pulsatile-flow",
+   "concept": "biom-biofluid-mechanics",
+   "label": "Pulsatile Flow Modeling",
+   "desc": "Models pulsatile blood flow with Womersley solutions, checked by mass conservation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1094",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-vessel-flow",
+   "concept": "biom-biofluid-mechanics",
+   "label": "Vessel Flow Calculator",
+   "desc": "Computes flow, shear stress and Reynolds number in vessels, checked by Poiseuille limit comparison.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1094",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-boundary-setup",
+   "concept": "biom-finite-element",
+   "label": "Boundary Condition Setup",
+   "desc": "Specifies physiological loads and constraints for a model, checked against cited loading data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1093",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1596",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-implant-fea",
+   "concept": "biom-finite-element",
+   "label": "Implant Stress Analysis",
+   "desc": "Runs finite element stress analysis of an implant under load, checked by mesh convergence study.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1093",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1088",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-mesh-convergence",
+   "concept": "biom-finite-element",
+   "label": "Mesh Convergence Study",
+   "desc": "Refines meshes until peak stress converges, checked by percent change below a tolerance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1093",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1091",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-emg-processing",
+   "concept": "biom-human-movement",
+   "label": "EMG Signal Processing",
+   "desc": "Filters and normalizes electromyography to estimate muscle activation, checked against maximal contraction reference.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1089",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1596",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-gait-analysis",
+   "concept": "biom-human-movement",
+   "label": "Gait Analysis",
+   "desc": "Computes joint angles and gait parameters from motion capture data, checked against normative ranges.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1089",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-inverse-dynamics",
+   "concept": "biom-human-movement",
+   "label": "Inverse Dynamics Solver",
+   "desc": "Computes joint moments from kinematics and force plate data, checked by equilibrium residuals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1089",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-model-scaling",
+   "concept": "biom-musculoskeletal-modeling",
+   "label": "Model Scaling and Calibration",
+   "desc": "Scales a generic musculoskeletal model to a subject, checked by marker error thresholds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1089",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-muscle-force",
+   "concept": "biom-musculoskeletal-modeling",
+   "label": "Muscle Force Estimation",
+   "desc": "Estimates muscle forces by static optimization, checked against EMG timing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1089",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1091",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-simulation-validation",
+   "concept": "biom-musculoskeletal-modeling",
+   "label": "Simulation Validation Review",
+   "desc": "Reviews a musculoskeletal simulation against validation best practice, checked by a published checklist.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1596",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1089",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-bone-remodeling",
+   "concept": "biom-tissue-mechanics",
+   "label": "Bone Remodeling Review",
+   "desc": "Explains bone adaptation to load under Wolff law, checked against cited experimental studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1091",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1596",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1090",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-stress-strain",
+   "concept": "biom-tissue-mechanics",
+   "label": "Stress-Strain Characterization",
+   "desc": "Fits stress-strain data to elastic and hyperelastic models, checked by fit residuals and physical parameter ranges.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1091",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1596",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  },
+  {
+   "id": "biom-viscoelastic-model",
+   "concept": "biom-tissue-mechanics",
+   "label": "Viscoelastic Model Fitting",
+   "desc": "Fits creep and relaxation data to viscoelastic models, checked by cross-validation on held-out curves.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1091",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1093",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1092",
+     "role": "support"
+    }
+   ],
+   "source": "biomechanical-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1088",
+   "name": "Prosthetics and Orthotics Designer",
+   "legacy_key": "biom-prosthetic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1089",
+   "name": "Motion Capture Analyst",
+   "legacy_key": "biom-motion",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1090",
+   "name": "Clinical Biomechanics Reviewer",
+   "legacy_key": "biom-clinical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1091",
+   "name": "Tissue Mechanics Analyst",
+   "legacy_key": "biom-solid",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1092",
+   "name": "Mechanics Units Checker",
+   "legacy_key": "biom-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1093",
+   "name": "Finite Element Modeler",
+   "legacy_key": "biom-fea",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1094",
+   "name": "Biofluid Dynamics Engineer",
+   "legacy_key": "biom-fluid",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1596",
+   "name": "Literature Evidence Checker",
+   "legacy_key": "biom-lit",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "biom-tissue": "tissue bone cartilage tendon viscoelastic stress strain stiffness",
+  "biom-human": "gait kinematics kinetics motion capture force plate joint emg movement",
+  "biom-musculoskeletal": "musculoskeletal muscle rigid body model optimization simulation moment arm",
+  "biom-finite": "finite element mesh boundary condition implant convergence von mises load geometry",
+  "biom-biofluid": "blood flow hemodynamics shear pressure vessel airflow reynolds pulsatile",
+  "biom-assistive": "prosthesis orthosis injury impact protective design exoskeleton rehabilitation"
+ },
+ "sources": [
+  "biomechanical-engineering"
+ ]
+}

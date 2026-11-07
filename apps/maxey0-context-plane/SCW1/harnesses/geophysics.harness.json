@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "earth-environment-place",
  "topic": {
   "id": "geophysics",
   "label": "Geophysics",
-  "desc": "Geophysics: the physics of the solid Earth, measured through seismic, gravity, magnetic, electrical and geodetic methods."
+  "desc": "Geophysics: Exploration Geophysics, Geophysical Inversion and Data, Electrical and Electromagnetic Methods, Seismology, Geodesy and Geodynamics and Gravity and Magnetics."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "geophysics",
    "source": "geophysics",
+   "source_topic": "geophysics",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "geophysics",
    "source": "geophysics",
+   "source_topic": "geophysics",
    "related": []
   },
   {
@@ -60,6 +62,7 @@
    ],
    "topic": "geophysics",
    "source": "geophysics",
+   "source_topic": "geophysics",
    "related": []
   },
   {
@@ -78,6 +81,7 @@
    ],
    "topic": "geophysics",
    "source": "geophysics",
+   "source_topic": "geophysics",
    "related": []
   },
   {
@@ -96,6 +100,7 @@
    ],
    "topic": "geophysics",
    "source": "geophysics",
+   "source_topic": "geophysics",
    "related": []
   },
   {
@@ -114,6 +119,7 @@
    ],
    "topic": "geophysics",
    "source": "geophysics",
+   "source_topic": "geophysics",
    "related": []
   }
  ],
@@ -696,21 +702,24 @@
    "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
    "topic": "geophysics",
    "score": 0.1628,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "geophysics"
   },
   {
    "agent": "Maxey1316",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "geophysics",
    "score": 0.1611,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "geophysics"
   },
   {
    "agent": "Maxey1317",
    "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
    "topic": "geophysics",
    "score": 0.1691,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "geophysics"
   },
   {
    "agent": "Maxey1318",
@@ -721,7 +730,8 @@
    "via": {
     "primary": "Maxey1316",
     "skill": "geop-literature-search"
-   }
+   },
+   "source_topic": "geophysics"
   },
   {
    "agent": "Maxey1318",
@@ -732,14 +742,16 @@
    "via": {
     "primary": "Maxey1316",
     "skill": "geop-literature-search"
-   }
+   },
+   "source_topic": "geophysics"
   },
   {
    "agent": "Maxey1319",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "geophysics",
    "score": 0.1827,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "geophysics"
   },
   {
    "agent": "Maxey1321",
@@ -750,7 +762,8 @@
    "via": {
     "primary": "Maxey1319",
     "skill": "geop-focal-mechanism"
-   }
+   },
+   "source_topic": "geophysics"
   }
  ],
  "lexicon": {

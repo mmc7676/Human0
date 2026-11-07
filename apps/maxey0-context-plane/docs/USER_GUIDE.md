@@ -52,15 +52,23 @@ Everything in the map sits on one of six levels, and every thread runs through a
 
 Topics, concepts and skills each have exactly one parent. Agents and MCP servers are shared: one agent can serve skills in several concepts, and one server can be held by several agents.
 
-### The five domains
+### The eleven domains
 
-| Domain | Holds |
-|---|---|
-| **Maxey0 System** | One topic, **Maxey0**: how the Maxey0 multi-agent system itself runs (orchestration, runtime, contracts, Structured Context Windows, memory, latent space, gates, reasoning) |
-| **Foundations** | The dimensions every task has: Location and Place, Environments and Deployment, Time, State, Systems, Infrastructure |
-| **Work Domains** | Applied work: UI and front-end, security, data, coding agents, robotics, drones, mapping, real estate, travel and more |
-| **Finance** | Accounting, corporate finance, securities offerings, capital markets, equities, fixed income, derivatives, commodities, currencies, crypto, investing, hedge funds, regulation and AML, financial data, financial services, taxes |
-| **Academic Disciplines** | One topic per field of study, from Aeronautics to Urban Studies |
+Domains were written from the concepts up: topics were formed from what their concepts, skills, agents and servers have in common, and domains from what their topics have in common.
+
+| Domain | Topics | Holds |
+|---|---|---|
+| **Agentic Systems and Software Engineering** | 17 | Maxey0, agent harnesses, MCP and protocols, governance, observability, state, time, reasoning, knowledge graphs, code and infrastructure |
+| **Data Science and Quantitative Methods** | 7 | statistics and causal inference, machine learning, data engineering, visualization, optimization, decision and risk analysis, research methods |
+| **Mathematical and Physical Sciences** | 9 | algebra, calculus, linear algebra, classical and quantum physics, optics, condensed matter, materials, chemistry and simulation |
+| **Engineering** | 10 | electrical, chemical, mechanical, civil, aerospace and energy engineering, control, robotics and drones |
+| **Life, Health and Mind Sciences** | 9 | cell and molecular biology, genetics, anatomy, bioengineering, biomedical computation, biomechanics, public health, psychology and cognitive science |
+| **Earth, Environment and Place** | 8 | climate, atmosphere, water, geophysics, environmental engineering, energy and emissions policy, maps, GIS, cities, places and travel |
+| **Business, Finance and Economics** | 21 | accounting, corporate finance, banking, markets and trading, funds, regulation, taxes, crypto, real estate, economics, startups, marketing and careers |
+| **Society, Governance and Ethics** | 11 | politics, international relations, public policy, human rights, development, sociology, anthropology, education and the ethics of technology and data |
+| **Languages, Literatures and Communication** | 11 | language structure, grammar, pronunciation, translation, linguistics, writing, poetry, rhetoric and literature |
+| **Area and Identity Studies** | 13 | European, Slavic, Chinese, African, American, Latin American and Jewish studies, and the study of race, ethnicity, gender and sexuality |
+| **Humanities and Arts** | 12 | philosophy, history, classics, religion, archaeology, art history, studio art, design, music, dance, theater, film and media |
 
 ### Agents: primary, checker, support
 
@@ -286,7 +294,7 @@ Each saved state records which version of the map it was made with. A state from
 1. **Customize → Connectors → Add custom connector**
 2. URL `https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp`, no authentication.
 
-No account is needed. To use one domain only, use `/mcp/finance`, `/mcp/foundations`, `/mcp/work`, `/mcp/disciplines` or `/mcp/maxey0-system` instead.
+No account is needed. To use one domain only, use `/mcp/<domain id>` instead, for example `/mcp/business-finance` or `/mcp/agentic-systems`.
 
 ### Open the graph in a conversation
 

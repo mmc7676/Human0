@@ -16,7 +16,7 @@ Treat agents as **context records** (who should handle a skill, with which tools
 
 Fetch only what the question needs; the full graph is never needed.
 
-1. **Unknown task -> `route_task`** with the user's task text (optionally `domain`: `maxey0-system`, `foundations`, `work`, `finance` or `disciplines`). It returns candidate paths domain -> topic -> concept -> skill -> agents -> MCP servers, ranked by TF-IDF cosine.
+1. **Unknown task -> `route_task`** with the user's task text (optionally `domain`, one of the ids `list_domains` returns). It returns candidate paths domain -> topic -> concept -> skill -> agents -> MCP servers, ranked by TF-IDF cosine. For a task with several parts, add `mode: "lens"`: topics are chosen first and each lower level is read from the chosen nodes; the result carries the observer chain (selected nodes, weights, each branch's signed contribution, and suppressed candidates).
 2. **Detail on one result -> `get_skill`** (agents and their servers) or **`get_concept`** (all skills of a concept). Prefer these over `get_harness`, which returns a whole topic (about 49 KB).
 3. **Browsing -> `list_domains`, `list_topics`, `get_topic`, `children`.** Use `trace` for the full parent chain of any id, `get_agent` for everything one MaxeyN agent serves, `get_mcp_server` for which agents hold a server.
 4. **Keyword lookups -> `search`**, which returns ids with their path; fetch details afterwards.

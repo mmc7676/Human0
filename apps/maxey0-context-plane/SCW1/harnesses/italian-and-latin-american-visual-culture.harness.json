@@ -1,0 +1,568 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "area-identity-studies",
+ "topic": {
+  "id": "italian-and-latin-american-visual-culture",
+  "label": "Italian and Latin American Visual Culture",
+  "desc": "Italian and Latin American Visual Culture: Italian Culture, Cinema and Society, Film, Visual Culture and Society, Indigenous and Afro-Latin Cultures and History of the Language and Dialects."
+ },
+ "concepts": [
+  {
+   "id": "ilac-film-visual-society",
+   "label": "Film, Visual Culture and Society",
+   "desc": "Cinema, art, music and popular culture, and contemporary politics, migration and society in the Iberian and Latin American world.",
+   "keywords": [
+    "cinema",
+    "film",
+    "art",
+    "music",
+    "popular culture",
+    "migration",
+    "politics",
+    "society"
+   ],
+   "topic": "italian-and-latin-american-visual-culture",
+   "source": "iberian-and-latin-american-cultures",
+   "source_topic": "iberian-and-latin-american-cultures",
+   "related": [
+    "germ-culture-media"
+   ]
+  },
+  {
+   "id": "ilac-indigenous-afro",
+   "label": "Indigenous and Afro-Latin Cultures",
+   "desc": "Indigenous peoples and languages, the African diaspora, mestizaje and identity in Latin America and Iberia.",
+   "keywords": [
+    "indigenous",
+    "quechua",
+    "nahuatl",
+    "afro-latin",
+    "diaspora",
+    "mestizaje",
+    "identity",
+    "race"
+   ],
+   "topic": "italian-and-latin-american-visual-culture",
+   "source": "iberian-and-latin-american-cultures",
+   "source_topic": "iberian-and-latin-american-cultures",
+   "related": []
+  },
+  {
+   "id": "ital-culture-cinema",
+   "label": "Italian Culture, Cinema and Society",
+   "desc": "Italian cinema, art, music, regional culture and contemporary society and politics.",
+   "keywords": [
+    "cinema",
+    "neorealism",
+    "art",
+    "opera",
+    "culture",
+    "society",
+    "politics",
+    "food"
+   ],
+   "topic": "italian-and-latin-american-visual-culture",
+   "source": "italian",
+   "source_topic": "italian",
+   "related": []
+  },
+  {
+   "id": "ital-dialects-history",
+   "label": "History of the Language and Dialects",
+   "desc": "From Latin to the questione della lingua and Tuscan standard, and the regional dialects and languages of Italy.",
+   "keywords": [
+    "latin",
+    "dialect",
+    "tuscan",
+    "questione della lingua",
+    "neapolitan",
+    "sicilian",
+    "regional",
+    "evolution"
+   ],
+   "topic": "italian-and-latin-american-visual-culture",
+   "source": "italian",
+   "source_topic": "italian",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ilac-art-movement",
+   "concept": "ilac-film-visual-society",
+   "label": "Visual Art Movement Profile",
+   "desc": "Explains movements such as muralism with artists and works, checked against museum and catalog records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1366",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1362",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-film-analysis",
+   "concept": "ilac-film-visual-society",
+   "label": "Film Analysis",
+   "desc": "Analyses shots, sound and narrative in a film from the region, checked by timestamping each cited scene.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1366",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-society-briefing",
+   "concept": "ilac-film-visual-society",
+   "label": "Contemporary Society Briefing",
+   "desc": "Summarises current politics, migration or social movements in a country, checked by dating and sourcing each fact.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1365",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1609",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-diaspora-mapping",
+   "concept": "ilac-indigenous-afro",
+   "label": "African Diaspora Cultural Mapping",
+   "desc": "Traces African-derived music, religion and cultural forms in a region, checked by sourcing each tradition.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1364",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1366",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-identity-analysis",
+   "concept": "ilac-indigenous-afro",
+   "label": "Identity Discourse Analysis",
+   "desc": "Analyses how mestizaje, race and indigeneity are represented in a text or policy, checked by citing passages and scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1364",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-language-revitalization",
+   "concept": "ilac-indigenous-afro",
+   "label": "Indigenous Language Profile",
+   "desc": "Profiles an indigenous language's speakers, status and revitalisation efforts, checked against census and survey sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1364",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1368",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ital-culture-briefing",
+   "concept": "ital-culture-cinema",
+   "label": "Culture Briefing",
+   "desc": "Explains a cultural practice, region or tradition, checked by sourcing each claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1382",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1384",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-film-analysis",
+   "concept": "ital-culture-cinema",
+   "label": "Italian Film Analysis",
+   "desc": "Analyses films such as neorealist works for style and context, checked by timestamping each cited scene.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1382",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1385",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-lesson-planner",
+   "concept": "ital-culture-cinema",
+   "label": "Italian Lesson Planner",
+   "desc": "Plans a language lesson combining grammar and culture for a proficiency level, checked against CEFR descriptors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1386",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1382",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-dialect-identify",
+   "concept": "ital-dialects-history",
+   "label": "Dialect Identifier",
+   "desc": "Identifies which regional dialect a passage comes from by its features, checked by listing the diagnostic features.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1384",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1387",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-etymology",
+   "concept": "ital-dialects-history",
+   "label": "Etymology Tracer",
+   "desc": "Traces an Italian word from Latin or other sources, checked against etymological dictionaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1384",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1385",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-language-question",
+   "concept": "ital-dialects-history",
+   "label": "Questione della Lingua Explainer",
+   "desc": "Explains the debate over a national standard from Bembo to Manzoni, checked by citing primary texts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1384",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1385",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1362",
+   "name": "Colonial Studies Agent",
+   "legacy_key": "ilac-colonial",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1363",
+   "name": "Cultural Accuracy Checker",
+   "legacy_key": "ilac-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1364",
+   "name": "Indigenous and Afro-Latin Cultures Agent",
+   "legacy_key": "ilac-indigenous",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1365",
+   "name": "Latin American Society Agent",
+   "legacy_key": "ilac-society",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1366",
+   "name": "Film and Visual Culture Agent",
+   "legacy_key": "ilac-film",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1368",
+   "name": "Spanish and Portuguese Language Agent",
+   "legacy_key": "ilac-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1382",
+   "name": "Italian Culture and Cinema Agent",
+   "legacy_key": "ital-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1383",
+   "name": "Italian Accuracy Checker",
+   "legacy_key": "ital-checker",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1384",
+   "name": "Italian Dialect Agent",
+   "legacy_key": "ital-dialectologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1385",
+   "name": "Italian Literature Agent",
+   "legacy_key": "ital-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1386",
+   "name": "Italian Language Tutor",
+   "legacy_key": "ital-tutor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1387",
+   "name": "Italian Pronunciation Agent",
+   "legacy_key": "ital-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1609",
+   "name": "Translation Agent",
+   "legacy_key": "ilac-translator",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1383",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "italian-and-latin-american-visual-culture",
+   "score": 0.2058,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "italian"
+  }
+ ],
+ "lexicon": {
+  "ilac-language": "spanish portuguese grammar dialect sociolinguistics bilingualism catalan",
+  "ilac-letters": "literature cervantes poetry novel theater verse modernismo testimonio",
+  "ilac-empire": "conquest colonial independence postcolonial viceroyalty missions",
+  "ilac-peoples": "indigenous quechua nahuatl diaspora mestizaje identity race",
+  "ilac-screen": "cinema film art music migration politics",
+  "ital-morphology": "grammar conjugation subjunctive congiuntivo agreement clitic tense",
+  "ital-sound": "pronunciation phonetics geminate stress vowel intonation ipa",
+  "ital-varieties": "latin dialect tuscan neapolitan sicilian etymology",
+  "ital-letters": "dante petrarch boccaccio renaissance poetry sonnet hendecasyllable",
+  "ital-usage": "translation register idiom vocabulary glossary",
+  "ital-culture": "cinema neorealism opera society food"
+ },
+ "sources": [
+  "iberian-and-latin-american-cultures",
+  "italian"
+ ]
+}

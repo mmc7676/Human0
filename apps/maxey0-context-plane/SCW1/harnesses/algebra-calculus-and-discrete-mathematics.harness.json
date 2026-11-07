@@ -1,0 +1,974 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "math-physical-sciences",
+ "topic": {
+  "id": "algebra-calculus-and-discrete-mathematics",
+  "label": "Algebra, Calculus and Discrete Mathematics",
+  "desc": "Algebra, Calculus and Discrete Mathematics: Calculus and Differential Equations, Calculus and Real Analysis, Numerical Methods and Scientific Computing, Numerical Methods and Optimisation, Algebra, Proof and Foundations and Discrete Mathematics and Combinatorics."
+ },
+ "concepts": [
+  {
+   "id": "ma-algebra",
+   "label": "Algebra",
+   "desc": "Solving and simplifying equations and inequalities, polynomials, functions, exponentials and logarithms, and abstract structures such as groups and rings.",
+   "keywords": [
+    "algebra",
+    "equation",
+    "polynomial",
+    "function",
+    "group"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "ma-calculus",
+   "label": "Calculus and Differential Equations",
+   "desc": "Limits, derivatives, integrals, series and ordinary and partial differential equations, with their physical meaning.",
+   "keywords": [
+    "calculus",
+    "derivative",
+    "integral",
+    "series",
+    "differential",
+    "differentiate",
+    "differentiation",
+    "integrate",
+    "integration",
+    "antiderivative",
+    "gradient",
+    "slope"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "ma-discrete",
+   "label": "Discrete Mathematics and Combinatorics",
+   "desc": "Counting, graphs, number theory, recurrences and algorithms on finite structures.",
+   "keywords": [
+    "combinatorics",
+    "graph",
+    "counting",
+    "recurrence",
+    "number",
+    "arrange",
+    "arrangement",
+    "ways",
+    "factorial"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "ma-numerical",
+   "label": "Numerical Methods and Optimisation",
+   "desc": "Computing answers approximately and checking the error: root finding, integration, linear solvers, floating point and optimisation.",
+   "keywords": [
+    "numerical",
+    "optimisation",
+    "error",
+    "iteration",
+    "convergence"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "ma-proof",
+   "label": "Proof and Foundations",
+   "desc": "Logic, sets, proof techniques such as induction and contradiction, and how to read and write a rigorous argument.",
+   "keywords": [
+    "proof",
+    "induction",
+    "set",
+    "logic",
+    "theorem",
+    "prove",
+    "irrational",
+    "rational",
+    "corollary",
+    "square",
+    "sqrt",
+    "axiom",
+    "lemma",
+    "conjecture"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "mcs-numerical-methods",
+   "label": "Numerical Methods and Scientific Computing",
+   "desc": "Algorithms for approximating solutions to continuous problems with controlled error and stability.",
+   "keywords": [
+    "numerical",
+    "approximation",
+    "root finding",
+    "quadrature",
+    "stability",
+    "floating point",
+    "finite difference",
+    "error"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "mathematical-and-computational-science",
+   "source_topic": "mathematical-and-computational-science",
+   "related": []
+  },
+  {
+   "id": "mcs-real-analysis-calculus",
+   "label": "Calculus and Real Analysis",
+   "desc": "Limits, derivatives, integrals, series and the rigorous foundations of continuous mathematics.",
+   "keywords": [
+    "calculus",
+    "analysis",
+    "limit",
+    "derivative",
+    "integral",
+    "series",
+    "convergence",
+    "proof"
+   ],
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "source": "mathematical-and-computational-science",
+   "source_topic": "mathematical-and-computational-science",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ma-abstract-structure-explainer",
+   "concept": "ma-algebra",
+   "label": "Abstract Algebra Explainer",
+   "desc": "Explains groups, rings and fields with small worked examples and checks that a given set meets the axioms.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1440",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1441",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-equation-solver",
+   "concept": "ma-algebra",
+   "label": "Equation and Inequality Solver",
+   "desc": "Solves equations and inequalities step by step, checks each solution by substitution and lists any that were introduced by the method.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1440",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1441",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-polynomial-analyzer",
+   "concept": "ma-algebra",
+   "label": "Polynomial and Function Analyzer",
+   "desc": "Factors polynomials, finds roots, asymptotes and symmetries and sketches the function from them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1440",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1443",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-differentiator-integrator",
+   "concept": "ma-calculus",
+   "label": "Differentiation and Integration Assistant",
+   "desc": "Differentiates and integrates a function by named rules, shows each step and verifies the result by differentiating back.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1443",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1444",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-ode-solver",
+   "concept": "ma-calculus",
+   "label": "Differential Equation Solver",
+   "desc": "Solves ordinary and simple partial differential equations analytically or numerically and states the initial and boundary conditions used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1443",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1444",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-series-limit-analyst",
+   "concept": "ma-calculus",
+   "label": "Limits and Series Analyst",
+   "desc": "Evaluates limits and decides whether a series converges, naming the test used and why it applies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1443",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1441",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-counting-solver",
+   "concept": "ma-discrete",
+   "label": "Counting and Combinatorics Solver",
+   "desc": "Counts arrangements and selections with permutations, combinations and inclusion and exclusion and checks small cases by listing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1445",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1441",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-graph-algorithm-analyst",
+   "concept": "ma-discrete",
+   "label": "Graph Theory Analyst",
+   "desc": "Analyses paths, connectivity, colouring and flows on a graph and states the algorithm and its running time.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1445",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1444",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-number-theory-helper",
+   "concept": "ma-discrete",
+   "label": "Number Theory Helper",
+   "desc": "Works with primes, divisibility, modular arithmetic and congruences, with a worked check for each result.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1445",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1440",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-floating-point-auditor",
+   "concept": "ma-numerical",
+   "label": "Floating Point Auditor",
+   "desc": "Finds rounding, cancellation and overflow problems in a computation and proposes a stabler form.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1444",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1447",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-optimization-planner",
+   "concept": "ma-numerical",
+   "label": "Optimization Planner",
+   "desc": "Sets up an optimisation problem with objective, variables and constraints, picks a method and checks the result is a true optimum.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1444",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1443",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-root-integration-solver",
+   "concept": "ma-numerical",
+   "label": "Root Finding and Numerical Integration",
+   "desc": "Applies bisection, Newton or quadrature rules and reports the error estimate and the iteration count.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1444",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1443",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-counterexample-finder",
+   "concept": "ma-proof",
+   "label": "Counterexample Finder",
+   "desc": "Searches for small cases that break a conjecture or lemma and reports what the failure says about the claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1441",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1445",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-proof-checker",
+   "concept": "ma-proof",
+   "label": "Proof Checker",
+   "desc": "Reads a proof line by line, marks gaps and unjustified steps and says whether the argument proves the stated claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1441",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1445",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-proof-writer",
+   "concept": "ma-proof",
+   "label": "Proof Writer",
+   "desc": "Writes a proof by induction, contradiction or construction, with every step justified and the claim restated at the end.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1441",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1440",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "mcs-error-propagation-auditor",
+   "concept": "mcs-numerical-methods",
+   "label": "Floating Point Error Auditor",
+   "desc": "Analyses rounding and truncation error in a computation and checks results with higher-precision reruns.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1612",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1449",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-pde-discretizer",
+   "concept": "mcs-numerical-methods",
+   "label": "PDE Discretizer",
+   "desc": "Discretises partial differential equations with finite differences and checks stability conditions and grid convergence.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1612",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1452",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-root-finder",
+   "concept": "mcs-numerical-methods",
+   "label": "Root Finder",
+   "desc": "Finds roots with bisection, Newton and secant methods and checks residuals and convergence order.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1612",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1452",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-convergence-prover",
+   "concept": "mcs-real-analysis-calculus",
+   "label": "Convergence Proof Builder",
+   "desc": "Writes epsilon-delta and series convergence proofs and has every step checked for valid inference.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1452",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1449",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1453",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-ode-solver",
+   "concept": "mcs-real-analysis-calculus",
+   "label": "Differential Equation Solver",
+   "desc": "Solves ordinary differential equations analytically and checks solutions by substitution and numeric integration.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1452",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1612",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-symbolic-calculus-solver",
+   "concept": "mcs-real-analysis-calculus",
+   "label": "Symbolic Calculus Solver",
+   "desc": "Computes derivatives, integrals and series expansions symbolically and checks them by differentiation or numeric evaluation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1452",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1612",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1440",
+   "name": "Algebra Agent",
+   "legacy_key": "ma-algebra-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1441",
+   "name": "Proof and Foundations Agent",
+   "legacy_key": "ma-proof-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1442",
+   "name": "Mathematical Result Checker Agent",
+   "legacy_key": "ma-checker",
+   "mcp": [
+    "local:sympy-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1443",
+   "name": "Calculus Agent",
+   "legacy_key": "ma-calculus-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1444",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "ma-numerical-agent",
+   "mcp": [
+    "local:sympy-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1445",
+   "name": "Discrete Mathematics Agent",
+   "legacy_key": "ma-discrete-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1447",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "ma-linear-agent",
+   "mcp": [
+    "local:sympy-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1449",
+   "name": "Proof Checker Agent",
+   "legacy_key": "mcs-prover",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1450",
+   "name": "Scientific Programmer Agent",
+   "legacy_key": "mcs-programmer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1452",
+   "name": "Mathematical Analysis Agent",
+   "legacy_key": "mcs-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1453",
+   "name": "Probability Agent",
+   "legacy_key": "mcs-probabilist",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+    "local:mcp-server-motherduck"
+   ]
+  },
+  {
+   "key": "Maxey1612",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "mcs-numerics",
+   "mcp": [
+    "local:sympy-mcp"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "name": "Coteach",
+   "desc": "Create classroom-ready K-12 math diagrams in Claude",
+   "tools": [
+    "CreateDiagrams"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "origins": [
+    "education",
+    "math"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "8f5a51c6-5664-40c8-8043-f0441252c878",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "local:mcp-server-motherduck"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1442",
+   "mcp": "local:sympy-mcp",
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "score": 0.1734,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1444",
+    "skill": "ma-floating-point-auditor"
+   },
+   "source_topic": "math"
+  },
+  {
+   "agent": "Maxey1444",
+   "mcp": "local:sympy-mcp",
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "score": 0.1734,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "math"
+  },
+  {
+   "agent": "Maxey1447",
+   "mcp": "local:sympy-mcp",
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "score": 0.2364,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "math"
+  },
+  {
+   "agent": "Maxey1453",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "score": 0.1439,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1451",
+    "skill": "mcs-hypothesis-tester"
+   },
+   "source_topic": "mathematical-and-computational-science"
+  },
+  {
+   "agent": "Maxey1453",
+   "mcp": "local:mcp-server-motherduck",
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "score": 0.198,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1451",
+    "skill": "mcs-hypothesis-tester"
+   },
+   "source_topic": "mathematical-and-computational-science"
+  },
+  {
+   "agent": "Maxey1612",
+   "mcp": "local:sympy-mcp",
+   "topic": "algebra-calculus-and-discrete-mathematics",
+   "score": 0.1594,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1614",
+    "skill": "mcs-matrix-decomposer"
+   },
+   "source_topic": "mathematical-and-computational-science"
+  }
+ ],
+ "lexicon": {
+  "maalg": "equation inequality polynomial factor substitution group ring axiom algebra function",
+  "macalc": "derivative integral limit convergence ode pde differentiate differentiation integrate antiderivative gradient slope calculus differential",
+  "malinear": "matrix eigenvalue eigenvector svd rank basis determinant inverse transpose linear solver",
+  "mastat": "deviation median mean pvalue anova nonparametric goodness estimation candidate generalised",
+  "madiscrete": "combinatorics permutation combination modular prime congruence colouring arrange arrangement ways factorial counting recurrence discrete mathematics",
+  "maproof": "conjecture theorem lemma prove irrational rational corollary square sqrt construction justified unjustified",
+  "manum": "bisection quadrature rounding optimisation numerical iteration methods",
+  "mageom": "rotation tangent homeomorphism parametrisation geometry curve",
+  "mcs-analysis": "calculus analysis limit derivative integral series convergence differential",
+  "mcs-matrix": "linear algebra matrix vector eigenvalue decomposition svd rank pca orthogonality",
+  "mcs-inference": "probability statistic distribution estimation hypothesis bayesian regression confidence posterior mcmc",
+  "mcs-numerics": "numerical approximation root quadrature stability floating finite error discretise",
+  "mcs-algorithmic": "algorithm complexity graph optimization gradient dynamic combinatorial runtime kkt",
+  "mcs-learning": "machine learning data science classification validation overfitting feature sql"
+ },
+ "sources": [
+  "math",
+  "mathematical-and-computational-science"
+ ]
+}

@@ -1,0 +1,849 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "literary-theory-and-comparative-literature",
+  "label": "Literary Theory and Comparative Literature",
+  "desc": "Literary Theory and Comparative Literature: Literary Theory, Literary History and Periods, Literary Periods and Movements, Comparative Method, Critical Theory, World Literature, Literature and Other Media and Scripture and Textual Interpretation."
+ },
+ "concepts": [
+  {
+   "id": "clit-comparative-method",
+   "label": "Comparative Method",
+   "desc": "Principles for comparing texts across languages and cultures, including influence, parallel and reception study.",
+   "keywords": [
+    "comparative",
+    "comparison",
+    "influence",
+    "parallel",
+    "reception",
+    "intertextuality",
+    "method",
+    "cross-cultural"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "comparative-literature",
+   "source_topic": "comparative-literature",
+   "related": []
+  },
+  {
+   "id": "clit-intermediality",
+   "label": "Literature and Other Media",
+   "desc": "Relations between literature and film, visual art, music and digital media, including adaptation.",
+   "keywords": [
+    "adaptation",
+    "film",
+    "visual art",
+    "music",
+    "intermedial",
+    "ekphrasis",
+    "digital",
+    "media"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "comparative-literature",
+   "source_topic": "comparative-literature",
+   "related": []
+  },
+  {
+   "id": "clit-literary-theory",
+   "label": "Literary Theory",
+   "desc": "Critical frameworks including formalism, structuralism, psychoanalysis, Marxism, feminism and postcolonial theory.",
+   "keywords": [
+    "theory",
+    "formalism",
+    "structuralism",
+    "psychoanalysis",
+    "marxism",
+    "feminism",
+    "postcolonial",
+    "deconstruction"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "comparative-literature",
+   "source_topic": "comparative-literature",
+   "related": []
+  },
+  {
+   "id": "clit-periods-movements",
+   "label": "Literary Periods and Movements",
+   "desc": "Romanticism, realism, modernism and other movements compared across national traditions.",
+   "keywords": [
+    "period",
+    "movement",
+    "romanticism",
+    "realism",
+    "modernism",
+    "avant-garde",
+    "history",
+    "tradition"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "comparative-literature",
+   "source_topic": "comparative-literature",
+   "related": []
+  },
+  {
+   "id": "clit-world-literature",
+   "label": "World Literature",
+   "desc": "Circulation of literature beyond its origin through markets, canons, prizes and translation.",
+   "keywords": [
+    "world literature",
+    "canon",
+    "circulation",
+    "global",
+    "prize",
+    "market",
+    "periphery",
+    "anthology"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "comparative-literature",
+   "source_topic": "comparative-literature",
+   "related": []
+  },
+  {
+   "id": "engl-critical-theory",
+   "label": "Critical Theory",
+   "desc": "Frameworks such as formalism, structuralism, feminism, Marxism, psychoanalysis and postcolonial theory used to read texts.",
+   "keywords": [
+    "theory",
+    "formalism",
+    "structuralism",
+    "feminist",
+    "marxist",
+    "psychoanalytic",
+    "deconstruction",
+    "ideology"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "english",
+   "source_topic": "english",
+   "related": []
+  },
+  {
+   "id": "engl-literary-history",
+   "label": "Literary History and Periods",
+   "desc": "English-language literature from Old English through contemporary global Anglophone writing, in historical context.",
+   "keywords": [
+    "literary history",
+    "medieval",
+    "renaissance",
+    "romanticism",
+    "victorian",
+    "modernism",
+    "postcolonial",
+    "canon"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "english",
+   "source_topic": "english",
+   "related": []
+  },
+  {
+   "id": "rel-scripture-texts",
+   "label": "Scripture and Textual Interpretation",
+   "desc": "Critical study of sacred texts: canon formation, manuscripts, translation and historical-critical and literary interpretation.",
+   "keywords": [
+    "scripture",
+    "canon",
+    "manuscript",
+    "exegesis",
+    "hermeneutics",
+    "translation",
+    "commentary"
+   ],
+   "topic": "literary-theory-and-comparative-literature",
+   "source": "religious-studies",
+   "source_topic": "religious-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "clit-influence-tracing",
+   "concept": "clit-comparative-method",
+   "label": "Influence Tracing",
+   "desc": "Traces documented influence between authors and checks each link against letters, translations or citations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1165",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1167",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-parallel-reading",
+   "concept": "clit-comparative-method",
+   "label": "Parallel Text Comparison",
+   "desc": "Compares two texts from different literatures on a shared theme and ties every point of comparison to quoted passages.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1166",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1165",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-adaptation-analysis",
+   "concept": "clit-intermediality",
+   "label": "Adaptation Analysis",
+   "desc": "Compares a literary work with its film or stage adaptation and lists changes with scene and page references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1170",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1171",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-ekphrasis-reading",
+   "concept": "clit-intermediality",
+   "label": "Ekphrasis Reading",
+   "desc": "Analyses a text's description of a work of visual art and checks details against the artwork.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1170",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1171",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-theory-application",
+   "concept": "clit-literary-theory",
+   "label": "Theoretical Reading",
+   "desc": "Applies a named critical framework to a text and checks that each claim uses the framework's own concepts correctly.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1171",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1167",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-theory-survey",
+   "concept": "clit-literary-theory",
+   "label": "Theory Survey",
+   "desc": "Summarises a critical school's key thinkers and concepts and checks each attribution against primary works.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1171",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1167",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-movement-comparison",
+   "concept": "clit-periods-movements",
+   "label": "Movement Comparison",
+   "desc": "Compares how a literary movement developed in two traditions and dates each claim against literary history.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1165",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-period-context",
+   "concept": "clit-periods-movements",
+   "label": "Historical Contextualization",
+   "desc": "Places a text in its historical and literary context and checks dates and events against reference sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1165",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1171",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-canon-analysis",
+   "concept": "clit-world-literature",
+   "label": "Canon Analysis",
+   "desc": "Analyses which works enter a canon or anthology and checks claims against publication and translation records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1167",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1165",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-circulation-mapping",
+   "concept": "clit-world-literature",
+   "label": "Circulation Mapping",
+   "desc": "Maps the translations and editions of a work across languages and dates and flags gaps in the records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1167",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1172",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1165",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "engl-lens-applier",
+   "concept": "engl-critical-theory",
+   "label": "Critical Lens Applier",
+   "desc": "Reads a text through a chosen theoretical framework and checks that the framework is represented accurately.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1264",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1266",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-theory-comparer",
+   "concept": "engl-critical-theory",
+   "label": "Theory Comparer",
+   "desc": "Compares how different critical frameworks interpret the same text and checks each reading against its sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1264",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1267",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-influence-mapper",
+   "concept": "engl-literary-history",
+   "label": "Literary Influence Mapper",
+   "desc": "Maps influence and allusion between authors and checks each link against documented evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1267",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1264",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "engl-period-contextualizer",
+   "concept": "engl-literary-history",
+   "label": "Period Contextualizer",
+   "desc": "Situates a text within its literary period and historical context and checks dates and attributions against sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1267",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1265",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1266",
+     "role": "support"
+    }
+   ],
+   "source": "english"
+  },
+  {
+   "id": "rel-canon-history",
+   "concept": "rel-scripture-texts",
+   "label": "Canon Formation Tracer",
+   "desc": "Traces when and how a text entered a canon, checked against dated manuscript and council evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1540",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1538",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1536",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-passage-exegesis",
+   "concept": "rel-scripture-texts",
+   "label": "Passage Exegesis Builder",
+   "desc": "Produces a historical-critical reading of a passage with context, genre and variants, checked against scholarly commentary.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1538",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1541",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1540",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  },
+  {
+   "id": "rel-translation-compare",
+   "concept": "rel-scripture-texts",
+   "label": "Scripture Translation Comparator",
+   "desc": "Aligns several translations of a passage with the source language and flags divergent renderings, checked by a sacred languages review.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1541",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1538",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1537",
+     "role": "support"
+    }
+   ],
+   "source": "religious-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1165",
+   "name": "Literary History Agent",
+   "legacy_key": "clit-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1166",
+   "name": "Comparatist Agent",
+   "legacy_key": "clit-comparatist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1167",
+   "name": "World Literature Agent",
+   "legacy_key": "clit-world-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1168",
+   "name": "Literary Bibliographer Agent",
+   "legacy_key": "clit-bibliographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1169",
+   "name": "Close Reading Agent",
+   "legacy_key": "clit-close-reader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1170",
+   "name": "Intermedial Studies Agent",
+   "legacy_key": "clit-intermedial",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1171",
+   "name": "Literary Theory Agent",
+   "legacy_key": "clit-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1172",
+   "name": "Translation Studies Agent",
+   "legacy_key": "clit-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1264",
+   "name": "Literary Theory Analyst",
+   "legacy_key": "engl-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1265",
+   "name": "Textual Evidence Reviewer",
+   "legacy_key": "engl-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1266",
+   "name": "Close Reading Critic",
+   "legacy_key": "engl-reader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1267",
+   "name": "Literary Historian",
+   "legacy_key": "engl-historian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1536",
+   "name": "Religion Literature Agent",
+   "legacy_key": "rel-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1537",
+   "name": "Comparative Religion Agent",
+   "legacy_key": "rel-comp",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1538",
+   "name": "Scripture and Text Agent",
+   "legacy_key": "rel-text",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1540",
+   "name": "Religious History Agent",
+   "legacy_key": "rel-hist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1541",
+   "name": "Sacred Languages Agent",
+   "legacy_key": "rel-lang",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "clit-compare": "comparative comparison influence parallel reception intertextuality method",
+  "clit-translation": "translation translator equivalence foreignization domestication source text target retranslation",
+  "clit-theory": "theory formalism structuralism psychoanalysis marxism feminism postcolonial deconstruction",
+  "clit-world": "world literature canon circulation global prize market periphery anthology",
+  "clit-period": "period movement romanticism realism modernism history tradition",
+  "clit-media": "adaptation film visual art music intermedial ekphrasis digital media",
+  "engl-read": "interpretation imagery symbolism narrative diction theme figurative",
+  "engl-hist": "medieval renaissance romanticism victorian modernism postcolonial canon",
+  "engl-poet": "poetry meter scansion rhyme sonnet stanza verse",
+  "engl-crit": "theory formalism structuralism feminist marxist psychoanalytic ideology",
+  "engl-lang": "grammar syntax usage phonology etymology dialect semantics",
+  "engl-write": "rhetoric argument thesis composition essay revision editing",
+  "rel-theory": "theory method definition phenomenology secularization functional",
+  "rel-text": "scripture passage exegesis canon manuscript translation commentary",
+  "rel-tradition": "tradition judaism christianity islam hinduism buddhism comparative",
+  "rel-practice": "ritual pilgrimage sacred ethnography fieldwork site",
+  "rel-society": "law pluralism movement politics secularism gender"
+ },
+ "sources": [
+  "comparative-literature",
+  "english",
+  "religious-studies"
+ ]
+}

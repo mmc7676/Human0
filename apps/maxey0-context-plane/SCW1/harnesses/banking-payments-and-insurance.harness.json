@@ -1,0 +1,424 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "business-finance",
+ "topic": {
+  "id": "banking-payments-and-insurance",
+  "label": "Banking, Payments and Insurance",
+  "desc": "Banking, Payments and Insurance: Payments, Banking and Lending, Wealth Management and Brokerage, Investment Banks and Their Divisions, Insurance and Cross-Border Payments."
+ },
+ "concepts": [
+  {
+   "id": "fs-banking",
+   "label": "Banking and Lending",
+   "desc": "Deposits, loans, credit cards, underwriting, interest and bank capital.",
+   "keywords": [
+    "bank",
+    "deposit",
+    "loan",
+    "lending",
+    "credit",
+    "card",
+    "underwriting",
+    "interest",
+    "capital"
+   ],
+   "topic": "banking-payments-and-insurance",
+   "source": "financial-services",
+   "source_topic": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-ib",
+   "label": "Investment Banks and Their Divisions",
+   "desc": "How investment banks are organized: banking, sales and trading, research, prime services and asset management.",
+   "keywords": [
+    "investment",
+    "bank",
+    "division",
+    "sales",
+    "trading",
+    "research",
+    "prime",
+    "services",
+    "asset",
+    "management",
+    "front",
+    "office"
+   ],
+   "topic": "banking-payments-and-insurance",
+   "source": "financial-services",
+   "source_topic": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-insurance",
+   "label": "Insurance",
+   "desc": "Life, property, casualty and health insurance, premiums, underwriting and claims.",
+   "keywords": [
+    "insurance",
+    "life",
+    "property",
+    "casualty",
+    "premium",
+    "underwriting",
+    "claim",
+    "policy",
+    "coverage"
+   ],
+   "topic": "banking-payments-and-insurance",
+   "source": "financial-services",
+   "source_topic": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-payments",
+   "label": "Payments",
+   "desc": "Card networks, ACH, wires, real-time payments, processors and fees.",
+   "keywords": [
+    "payment",
+    "card",
+    "ach",
+    "wire",
+    "real",
+    "time",
+    "processor",
+    "merchant",
+    "fee",
+    "transfer"
+   ],
+   "topic": "banking-payments-and-insurance",
+   "source": "financial-services",
+   "source_topic": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fs-wealth",
+   "label": "Wealth Management and Brokerage",
+   "desc": "Advisors, brokerage accounts, fiduciary duty, account types and fees.",
+   "keywords": [
+    "wealth",
+    "advisor",
+    "brokerage",
+    "account",
+    "fiduciary",
+    "ira",
+    "401k",
+    "fee"
+   ],
+   "topic": "banking-payments-and-insurance",
+   "source": "financial-services",
+   "source_topic": "financial-services",
+   "related": []
+  },
+  {
+   "id": "fx-payments",
+   "label": "Cross-Border Payments",
+   "desc": "Sending money across borders: SWIFT, correspondent banking, remittances, fees and timing.",
+   "keywords": [
+    "cross",
+    "border",
+    "payment",
+    "swift",
+    "correspondent",
+    "remittance",
+    "wire",
+    "transfer",
+    "fee"
+   ],
+   "topic": "banking-payments-and-insurance",
+   "source": "currencies",
+   "source_topic": "currencies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "fs-loan-comparator",
+   "concept": "fs-banking",
+   "label": "Loan Comparator",
+   "desc": "Compares loans by APR, fees and terms, and computes total cost.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1730",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1732",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-investment-bank-map",
+   "concept": "fs-ib",
+   "label": "Investment Bank Map",
+   "desc": "Maps an investment bank's divisions, what each does and how they interact on a deal.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1733",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1730",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-coverage-reviewer",
+   "concept": "fs-insurance",
+   "label": "Coverage Reviewer",
+   "desc": "Reviews an insurance policy's coverage, exclusions and deductibles.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1734",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1735",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-payment-flow-explainer",
+   "concept": "fs-payments",
+   "label": "Payment Flow Explainer",
+   "desc": "Explains how a payment moves between payer, processor, network and payee, with fees and timing.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1732",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1734",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fs-account-type-guide",
+   "concept": "fs-wealth",
+   "label": "Account Type Guide",
+   "desc": "Explains brokerage and retirement account types and their tax treatment.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1735",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1731",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1733",
+     "role": "support"
+    }
+   ],
+   "source": "financial-services"
+  },
+  {
+   "id": "fx-cross-border-payment-planner",
+   "concept": "fx-payments",
+   "label": "Cross-Border Payment Planner",
+   "desc": "Plans a cross-border payment route with fees, timing and compliance checks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1706",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1705",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1707",
+     "role": "support"
+    }
+   ],
+   "source": "currencies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1705",
+   "name": "FX Checker Agent",
+   "legacy_key": "fx-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1706",
+   "name": "Cross-Border Payments Agent",
+   "legacy_key": "fx-payments",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1707",
+   "name": "FX Markets Agent",
+   "legacy_key": "fx-trader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1730",
+   "name": "Banking Agent",
+   "legacy_key": "fs-bank",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1731",
+   "name": "Financial Services Checker Agent",
+   "legacy_key": "fs-checker",
+   "mcp": [
+    "local:stripe-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1732",
+   "name": "Payments Agent",
+   "legacy_key": "fs-payments",
+   "mcp": [
+    "local:stripe-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1733",
+   "name": "Investment Banking Agent",
+   "legacy_key": "fs-ib",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1734",
+   "name": "Insurance Agent",
+   "legacy_key": "fs-insurance",
+   "mcp": [
+    "local:stripe-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1735",
+   "name": "Wealth Management Agent",
+   "legacy_key": "fs-wealth",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Polygon MCP",
+   "desc": "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/polygon-io/mcp_polygon",
+   "id": "local:polygon-mcp",
+   "origins": [
+    "capital-markets",
+    "currencies",
+    "derivatives",
+    "financial-data"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Stripe MCP",
+   "desc": "Stripe agent toolkit and MCP server: payments, customers, invoices, subscriptions, refunds and payment links.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/stripe/agent-toolkit",
+   "id": "local:stripe-mcp",
+   "origins": [
+    "financial-services"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Twelve Data MCP",
+   "desc": "Twelve Data MCP server: real time and historical prices for stocks, forex, crypto, ETFs and indices, technical indicators.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/twelvedata/mcp",
+   "id": "local:twelve-data-mcp",
+   "origins": [
+    "capital-markets",
+    "commodities",
+    "currencies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:polygon-mcp",
+  "local:twelve-data-mcp",
+  "local:stripe-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1731",
+   "mcp": "local:stripe-mcp",
+   "topic": "banking-payments-and-insurance",
+   "score": 0.2055,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1734",
+    "skill": "fs-coverage-reviewer"
+   },
+   "source_topic": "financial-services"
+  },
+  {
+   "agent": "Maxey1732",
+   "mcp": "local:stripe-mcp",
+   "topic": "banking-payments-and-insurance",
+   "score": 0.2472,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "financial-services"
+  },
+  {
+   "agent": "Maxey1734",
+   "mcp": "local:stripe-mcp",
+   "topic": "banking-payments-and-insurance",
+   "score": 0.2055,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "financial-services"
+  }
+ ],
+ "lexicon": {
+  "fxpairs": "currency pair forex fx spot quote pip exchange rate dollar euro yen",
+  "fxdrivers": "central bank interest rate inflation policy intervention fed ecb differential",
+  "fxpayments": "cross border payment swift correspondent remittance wire transfer fee",
+  "fxfxhedging": "currency risk hedge forward exposure translation transaction",
+  "fsbanking": "bank deposit loan lending credit card underwriting interest capital",
+  "fspayments": "payment card ach wire real time processor merchant fee transfer",
+  "fsinsurance": "insurance life property casualty premium underwriting claim policy coverage",
+  "fswealth": "wealth advisor brokerage account fiduciary ira 401k fee",
+  "fsib": "investment bank division sales trading research prime services asset management front office"
+ },
+ "sources": [
+  "currencies",
+  "financial-services"
+ ]
+}

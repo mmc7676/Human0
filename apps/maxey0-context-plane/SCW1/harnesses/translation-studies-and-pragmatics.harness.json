@@ -1,0 +1,1016 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "translation-studies-and-pragmatics",
+  "label": "Translation Studies and Pragmatics",
+  "desc": "Translation Studies and Pragmatics: Translation and Usage, Slavic Translation Studies, Japanese Translation, History and Culture, Korean Translation, History and Culture, Speech Levels and Honorifics, Translation and Stylistics, Honorifics and Pragmatics and Translation Studies."
+ },
+ "concepts": [
+  {
+   "id": "clit-translation-studies",
+   "label": "Translation Studies",
+   "desc": "Theory and practice of literary translation and how translations shape the circulation of texts.",
+   "keywords": [
+    "translation",
+    "translator",
+    "equivalence",
+    "foreignization",
+    "domestication",
+    "source text",
+    "target text",
+    "retranslation"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "comparative-literature",
+   "source_topic": "comparative-literature",
+   "related": []
+  },
+  {
+   "id": "fren-translation",
+   "label": "Translation and Stylistics",
+   "desc": "Translating between French and English with attention to idiom, style and cultural reference.",
+   "keywords": [
+    "translation",
+    "idiom",
+    "stylistics",
+    "equivalence",
+    "false friend",
+    "glossary",
+    "localization",
+    "version"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "french",
+   "source_topic": "french",
+   "related": []
+  },
+  {
+   "id": "ital-translation",
+   "label": "Translation and Usage",
+   "desc": "Translation between Italian and other languages, register, idiom and specialised vocabulary.",
+   "keywords": [
+    "translation",
+    "register",
+    "idiom",
+    "vocabulary",
+    "formal",
+    "false friend",
+    "glossary",
+    "style"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "italian",
+   "source_topic": "italian",
+   "related": []
+  },
+  {
+   "id": "jpn-honorifics-pragmatics",
+   "label": "Honorifics and Pragmatics",
+   "desc": "Keigo, politeness levels, in-group and out-group speech and register in social context.",
+   "keywords": [
+    "keigo",
+    "honorific",
+    "humble",
+    "polite",
+    "register",
+    "politeness",
+    "pragmatics",
+    "business"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "japanese",
+   "source_topic": "japanese",
+   "related": []
+  },
+  {
+   "id": "jpn-translation-culture",
+   "label": "Japanese Translation, History and Culture",
+   "desc": "Translation between Japanese and other languages, and Japanese history, society and popular culture.",
+   "keywords": [
+    "translation",
+    "history",
+    "culture",
+    "society",
+    "anime",
+    "edo",
+    "meiji",
+    "localization"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "japanese",
+   "source_topic": "japanese",
+   "related": []
+  },
+  {
+   "id": "kor-speech-levels",
+   "label": "Speech Levels and Honorifics",
+   "desc": "Korean speech levels, honorific verbs and nouns, and register in social relationships.",
+   "keywords": [
+    "speech level",
+    "honorific",
+    "polite",
+    "formal",
+    "banmal",
+    "jondaetmal",
+    "register",
+    "hierarchy"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "korean",
+   "source_topic": "korean",
+   "related": []
+  },
+  {
+   "id": "kor-translation-culture",
+   "label": "Korean Translation, History and Culture",
+   "desc": "Translation between Korean and other languages, Korean history, and contemporary culture and media.",
+   "keywords": [
+    "translation",
+    "history",
+    "culture",
+    "joseon",
+    "division",
+    "media",
+    "hallyu",
+    "society"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "korean",
+   "source_topic": "korean",
+   "related": []
+  },
+  {
+   "id": "slav-translation-studies",
+   "label": "Slavic Translation Studies",
+   "desc": "Translating Slavic literary and non-literary texts into English and analyzing translation choices.",
+   "keywords": [
+    "translation",
+    "equivalence",
+    "style",
+    "register",
+    "rendering",
+    "glossary"
+   ],
+   "topic": "translation-studies-and-pragmatics",
+   "source": "slavic-languages-and-literatures",
+   "source_topic": "slavic-languages-and-literatures",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "clit-draft-translation",
+   "concept": "clit-translation-studies",
+   "label": "Literary Translation Draft",
+   "desc": "Produces a draft translation of a literary passage and annotates choices where meaning, sound or register could not all be kept.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1172",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "clit-translation-comparison",
+   "concept": "clit-translation-studies",
+   "label": "Translation Comparison",
+   "desc": "Compares several translations of one passage against the source and describes each translator's strategy with examples.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1172",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1169",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1166",
+     "role": "support"
+    },
+    {
+     "key": "Maxey1168",
+     "role": "support"
+    }
+   ],
+   "source": "comparative-literature"
+  },
+  {
+   "id": "fren-comparative-stylistics",
+   "concept": "fren-translation",
+   "label": "Comparative Stylistics",
+   "desc": "Applies translation procedures such as transposition and modulation to a passage and checks each choice is justified.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1313",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1310",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-glossary-building",
+   "concept": "fren-translation",
+   "label": "Bilingual Glossary Building",
+   "desc": "Builds a French-English glossary for a domain and checks each pair against usage in authoritative sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1313",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1312",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "fren-text-translation",
+   "concept": "fren-translation",
+   "label": "Text Translation",
+   "desc": "Translates passages between French and English with DeepL and checks the output for meaning, idiom and false friends.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1313",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1308",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1311",
+     "role": "support"
+    }
+   ],
+   "source": "french"
+  },
+  {
+   "id": "ital-false-friends",
+   "concept": "ital-translation",
+   "label": "False Friend Detector",
+   "desc": "Flags false friends and calques in a translation, checked by giving the correct equivalent with dictionary support.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1389",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1386",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-glossary-builder",
+   "concept": "ital-translation",
+   "label": "Glossary Builder",
+   "desc": "Builds a bilingual glossary for a domain, checked for consistency across the source text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1389",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1382",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-translate",
+   "concept": "ital-translation",
+   "label": "Italian Translation",
+   "desc": "Translates text to or from Italian in a chosen register, checked by back-translation of key sentences.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1389",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1388",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "jpn-business-email",
+   "concept": "jpn-honorifics-pragmatics",
+   "label": "Business Japanese Writing",
+   "desc": "Drafts business emails with correct greetings and keigo, checked against standard business correspondence conventions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1393",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-keigo-converter",
+   "concept": "jpn-honorifics-pragmatics",
+   "label": "Keigo Converter",
+   "desc": "Rewrites a sentence in plain, polite, honorific and humble registers, checked by naming the form used for each verb.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1390",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-register-check",
+   "concept": "jpn-honorifics-pragmatics",
+   "label": "Register Appropriateness Check",
+   "desc": "Assesses whether speech fits the social relationship described, checked by explaining the in-group and out-group reasoning.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1394",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1395",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-history-briefing",
+   "concept": "jpn-translation-culture",
+   "label": "Japanese History Briefing",
+   "desc": "Summarises a period such as Edo or Meiji with key events and dates, checked against historical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1395",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1396",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-localization",
+   "concept": "jpn-translation-culture",
+   "label": "Localization Review",
+   "desc": "Reviews localized text for cultural fit and consistent terminology, checked against a glossary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1393",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1395",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-translate",
+   "concept": "jpn-translation-culture",
+   "label": "Japanese Translation",
+   "desc": "Translates text to or from Japanese preserving register and nuance, checked by back-translation of key sentences.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1393",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1394",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "kor-formal-writing",
+   "concept": "kor-speech-levels",
+   "label": "Formal Korean Writing",
+   "desc": "Drafts formal emails and documents in correct register, checked against business correspondence conventions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1410",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1409",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-honorific-check",
+   "concept": "kor-speech-levels",
+   "label": "Honorific Appropriateness Check",
+   "desc": "Assesses whether honorifics fit the relationship and hierarchy described, checked by explaining each choice.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1410",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-level-converter",
+   "concept": "kor-speech-levels",
+   "label": "Speech Level Converter",
+   "desc": "Rewrites a sentence across formal, polite and plain speech levels, checked by naming the ending used.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1410",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1406",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-history-briefing",
+   "concept": "kor-translation-culture",
+   "label": "Korean History Briefing",
+   "desc": "Summarises a period such as Joseon or the division with key events, checked against historical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1413",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1412",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-subtitle-review",
+   "concept": "kor-translation-culture",
+   "label": "Subtitle Review",
+   "desc": "Reviews subtitles for media for accuracy, timing and cultural notes, checked against the source dialogue.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1409",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-translate",
+   "concept": "kor-translation-culture",
+   "label": "Korean Translation",
+   "desc": "Translates text to or from Korean preserving speech level and nuance, checked by back-translation of key sentences.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1409",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1410",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "slav-glossary-builder",
+   "concept": "slav-translation-studies",
+   "label": "Translation Glossary Builder",
+   "desc": "Builds a terminology glossary for a Slavic text with consistent renderings, checked for consistency across the text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1555",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1556",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-literary-translation",
+   "concept": "slav-translation-studies",
+   "label": "Literary Translation Drafter",
+   "desc": "Translates a Slavic literary passage into English preserving style and register, checked by back-translation against the source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1555",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1553",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1370",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  },
+  {
+   "id": "slav-translation-critique",
+   "concept": "slav-translation-studies",
+   "label": "Translation Comparison Critic",
+   "desc": "Compares published English translations of a passage and evaluates choices, checked against the source text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1370",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1555",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1557",
+     "role": "support"
+    }
+   ],
+   "source": "slavic-languages-and-literatures"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1166",
+   "name": "Comparatist Agent",
+   "legacy_key": "clit-comparatist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1168",
+   "name": "Literary Bibliographer Agent",
+   "legacy_key": "clit-bibliographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1169",
+   "name": "Close Reading Agent",
+   "legacy_key": "clit-close-reader",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1172",
+   "name": "Translation Studies Agent",
+   "legacy_key": "clit-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1308",
+   "name": "French Language Reviewer",
+   "legacy_key": "fren-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1310",
+   "name": "French Literature Scholar",
+   "legacy_key": "fren-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1311",
+   "name": "French Grammar Tutor",
+   "legacy_key": "fren-grammar",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1312",
+   "name": "French Linguist",
+   "legacy_key": "fren-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1313",
+   "name": "French Translator",
+   "legacy_key": "fren-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1370",
+   "name": "Literary Criticism Agent",
+   "legacy_key": "slav-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1382",
+   "name": "Italian Culture and Cinema Agent",
+   "legacy_key": "ital-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1383",
+   "name": "Italian Accuracy Checker",
+   "legacy_key": "ital-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1386",
+   "name": "Italian Language Tutor",
+   "legacy_key": "ital-tutor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1388",
+   "name": "Italian Grammar Agent",
+   "legacy_key": "ital-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1389",
+   "name": "Italian Translation Agent",
+   "legacy_key": "ital-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1390",
+   "name": "Japanese Grammar Agent",
+   "legacy_key": "jpn-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1391",
+   "name": "Japanese Accuracy Checker",
+   "legacy_key": "jpn-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1393",
+   "name": "Japanese Translation Agent",
+   "legacy_key": "jpn-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1394",
+   "name": "Honorifics and Pragmatics Agent",
+   "legacy_key": "jpn-keigo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1395",
+   "name": "Japanese Culture and History Agent",
+   "legacy_key": "jpn-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1396",
+   "name": "Japanese Literature Agent",
+   "legacy_key": "jpn-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1406",
+   "name": "Korean Grammar Agent",
+   "legacy_key": "kor-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1407",
+   "name": "Korean Accuracy Checker",
+   "legacy_key": "kor-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1409",
+   "name": "Korean Translation Agent",
+   "legacy_key": "kor-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1410",
+   "name": "Speech Levels and Honorifics Agent",
+   "legacy_key": "kor-honorifics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1412",
+   "name": "Korean Literature Agent",
+   "legacy_key": "kor-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1413",
+   "name": "Korean Culture and History Agent",
+   "legacy_key": "kor-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1553",
+   "name": "Russian Language Agent",
+   "legacy_key": "slav-lang",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1555",
+   "name": "Literary Translation Agent",
+   "legacy_key": "slav-trans",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1556",
+   "name": "Slavic Grammar Agent",
+   "legacy_key": "slav-gram",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1557",
+   "name": "Slavic Linguistics Agent",
+   "legacy_key": "slav-ling",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "clit-compare": "comparative comparison influence parallel reception intertextuality method",
+  "clit-translation": "translation translator equivalence foreignization domestication source text target retranslation",
+  "clit-theory": "theory formalism structuralism psychoanalysis marxism feminism postcolonial deconstruction",
+  "clit-world": "world literature canon circulation global prize market periphery anthology",
+  "clit-period": "period movement romanticism realism modernism history tradition",
+  "clit-media": "adaptation film visual art music intermedial ekphrasis digital media",
+  "fren-grammar": "conjugation subjunctive agreement pronoun tense syntax",
+  "fren-sound": "phonetics pronunciation nasal liaison intonation ipa",
+  "fren-trans": "translation idiom stylistics glossary friend",
+  "fren-lit": "novel poetry theatre romanticism realism explication",
+  "fren-franco": "francophone colonial postcolonial quebec maghreb caribbean creole",
+  "fren-civ": "republic laicite revolution institution cinema society",
+  "ital-morphology": "grammar conjugation subjunctive congiuntivo agreement clitic tense",
+  "ital-sound": "pronunciation phonetics geminate stress vowel intonation ipa",
+  "ital-varieties": "latin dialect tuscan neapolitan sicilian etymology",
+  "ital-letters": "dante petrarch boccaccio renaissance poetry sonnet hendecasyllable",
+  "ital-usage": "translation register idiom vocabulary glossary",
+  "ital-culture": "cinema neorealism opera society food",
+  "jpn-script": "hiragana katakana kanji radical furigana romanization",
+  "jpn-grammar": "grammar particle conjugation verb adjective clause",
+  "jpn-politeness": "keigo honorific humble polite register pragmatics business",
+  "jpn-sound": "pronunciation mora pitch geminate dialect intonation",
+  "jpn-letters": "literature genji haiku waka classical poetry",
+  "jpn-culture": "translation history society anime edo meiji localization",
+  "kor-script": "hangul jamo hanja romanization sejong orthography",
+  "kor-grammar": "grammar particle ending conjugation connective verb",
+  "kor-politeness": "honorific polite formal banmal jondaetmal hierarchy",
+  "kor-sound": "pronunciation phonology nasalization liaison dialect ipa",
+  "kor-letters": "literature sijo classical poetry pansori fiction",
+  "kor-culture": "translation history joseon division media hallyu",
+  "slav-language": "russian cyrillic case aspect declension proficiency vocabulary",
+  "slav-linguistics": "linguistics phonology morphology dialect etymological reconstruction",
+  "slav-literature": "literature novel poetry poem pushkin tolstoy dostoevsky",
+  "slav-translation": "translation glossary register rendering style",
+  "slav-culture": "film avant garde soviet media orthodoxy",
+  "slav-regional": "polish czech ukrainian serbian croatian bulgarian"
+ },
+ "sources": [
+  "comparative-literature",
+  "french",
+  "italian",
+  "japanese",
+  "korean",
+  "slavic-languages-and-literatures"
+ ]
+}

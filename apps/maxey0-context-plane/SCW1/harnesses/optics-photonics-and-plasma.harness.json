@@ -1,0 +1,1045 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "math-physical-sciences",
+ "topic": {
+  "id": "optics-photonics-and-plasma",
+  "label": "Optics, Photonics and Plasma",
+  "desc": "Optics, Photonics and Plasma: Photonics and Optics, Computational and Mathematical Physics, Optics and Photonics, Mathematical Methods for Engineering Physics, Nuclear, Plasma and Computational Physics, Fluids, Acoustics and Plasmas and Optics."
+ },
+ "concepts": [
+  {
+   "id": "apph-computational-physics",
+   "label": "Computational and Mathematical Physics",
+   "desc": "Numerical and symbolic methods for solving the differential equations of applied physics.",
+   "keywords": [
+    "numerical",
+    "differential equation",
+    "finite element",
+    "symbolic",
+    "monte carlo",
+    "solver",
+    "model",
+    "eigenvalue"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "applied-physics",
+   "source_topic": "applied-physics",
+   "related": []
+  },
+  {
+   "id": "apph-fluids-plasmas",
+   "label": "Fluids, Acoustics and Plasmas",
+   "desc": "Continuum flow, sound and ionised gases in engineered devices and processes.",
+   "keywords": [
+    "fluid",
+    "navier-stokes",
+    "turbulence",
+    "acoustics",
+    "plasma",
+    "heat transfer",
+    "viscosity",
+    "wave"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "applied-physics",
+   "source_topic": "applied-physics",
+   "related": []
+  },
+  {
+   "id": "apph-optics-photonics",
+   "label": "Optics and Photonics",
+   "desc": "Lasers, waveguides, fibre optics and optical systems for communication, sensing and imaging.",
+   "keywords": [
+    "laser",
+    "photonics",
+    "waveguide",
+    "fiber",
+    "optical",
+    "interferometer",
+    "imaging",
+    "spectroscopy"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "applied-physics",
+   "source_topic": "applied-physics",
+   "related": []
+  },
+  {
+   "id": "cl-optics",
+   "label": "Optics",
+   "desc": "Geometric and wave optics: lenses, mirrors, diffraction and polarization.",
+   "keywords": [
+    "lens",
+    "mirror",
+    "diffraction",
+    "polarization",
+    "refraction"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "classical-physics",
+   "source_topic": "classical-physics",
+   "related": []
+  },
+  {
+   "id": "engp-mathematical-methods",
+   "label": "Mathematical Methods for Engineering Physics",
+   "desc": "Differential equations, linear algebra, vector calculus and transform methods used to model physical systems.",
+   "keywords": [
+    "differential equation",
+    "linear algebra",
+    "vector calculus",
+    "fourier",
+    "eigenvalue",
+    "boundary value",
+    "tensor"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "engineering-physics",
+   "source_topic": "engineering-physics",
+   "related": [
+    "ma-linear"
+   ]
+  },
+  {
+   "id": "engp-nuclear-plasma-computation",
+   "label": "Nuclear, Plasma and Computational Physics",
+   "desc": "Radiation, nuclear reactions and plasmas, and the numerical simulation methods used to model them.",
+   "keywords": [
+    "nuclear",
+    "radiation",
+    "plasma",
+    "fusion",
+    "simulation",
+    "finite element",
+    "monte carlo",
+    "numerical"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "engineering-physics",
+   "source_topic": "engineering-physics",
+   "related": []
+  },
+  {
+   "id": "engp-photonics-optics",
+   "label": "Photonics and Optics",
+   "desc": "Light generation, guiding, modulation and detection, including lasers, waveguides and optical systems.",
+   "keywords": [
+    "photonics",
+    "optics",
+    "laser",
+    "waveguide",
+    "fiber",
+    "interference",
+    "diffraction",
+    "detector"
+   ],
+   "topic": "optics-photonics-and-plasma",
+   "source": "engineering-physics",
+   "source_topic": "engineering-physics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "apph-fem-model",
+   "concept": "apph-computational-physics",
+   "label": "Finite Element Modeling",
+   "desc": "Sets up a finite element model of a field problem and checks convergence under mesh refinement.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1020",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1021",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1022",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-monte-carlo",
+   "concept": "apph-computational-physics",
+   "label": "Monte Carlo Simulation",
+   "desc": "Runs Monte Carlo simulation of a physical process and checks statistical convergence and known limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1020",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1023",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1024",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-ode-pde-solve",
+   "concept": "apph-computational-physics",
+   "label": "Differential Equation Solving",
+   "desc": "Solves ordinary and partial differential equations symbolically or numerically and checks solutions by substitution.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1020",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1023",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1025",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-acoustic-design",
+   "concept": "apph-fluids-plasmas",
+   "label": "Acoustic Wave Analysis",
+   "desc": "Computes acoustic wave propagation and resonances in a device and checks them against analytic modes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1025",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1021",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-flow-analysis",
+   "concept": "apph-fluids-plasmas",
+   "label": "Flow and Heat Transfer Analysis",
+   "desc": "Estimates flow regimes and heat transfer using dimensionless numbers and checks them against correlations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1025",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1023",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-plasma-params",
+   "concept": "apph-fluids-plasmas",
+   "label": "Plasma Parameter Calculation",
+   "desc": "Computes Debye length, plasma frequency and collision rates and checks regime assumptions for consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1025",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1023",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1024",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-gaussian-beam",
+   "concept": "apph-optics-photonics",
+   "label": "Laser Beam Propagation",
+   "desc": "Propagates Gaussian laser beams through optical systems and checks waist and divergence with ABCD matrices.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1026",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1023",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-spectroscopy-design",
+   "concept": "apph-optics-photonics",
+   "label": "Optical Spectroscopy Design",
+   "desc": "Designs a spectroscopy or interferometer setup and checks resolution and throughput against requirements and literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1026",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1021",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1024",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "apph-waveguide-modes",
+   "concept": "apph-optics-photonics",
+   "label": "Waveguide Mode Solver",
+   "desc": "Finds guided modes of a slab or fiber waveguide and checks the cutoff conditions analytically.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1026",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1022",
+     "role": "support"
+    }
+   ],
+   "source": "applied-physics"
+  },
+  {
+   "id": "cl-geometric-optics-designer",
+   "concept": "cl-optics",
+   "label": "Geometric Optics Designer",
+   "desc": "Traces rays through lenses and mirrors and designs simple optical systems with aberration estimates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1495",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1487",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "cl-wave-optics-analyzer",
+   "concept": "cl-optics",
+   "label": "Wave Optics Analyzer",
+   "desc": "Analyzes diffraction, interference and polarization patterns from slits, gratings and thin films.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1495",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1488",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1492",
+     "role": "support"
+    }
+   ],
+   "source": "classical-physics"
+  },
+  {
+   "id": "engp-dimensional-checker",
+   "concept": "engp-mathematical-methods",
+   "label": "Dimensional Analysis Checker",
+   "desc": "Checks equations for dimensional consistency and derives scaling laws with dimensionless groups.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1028",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1262",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1021",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-eigen-analyzer",
+   "concept": "engp-mathematical-methods",
+   "label": "Eigenvalue Analyzer",
+   "desc": "Computes eigenvalues and modes of physical operators and checks orthogonality and limiting cases.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1262",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1261",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-ode-pde-solver",
+   "concept": "engp-mathematical-methods",
+   "label": "ODE and PDE Solver",
+   "desc": "Solves ordinary and partial differential equations analytically or symbolically and checks solutions by substitution.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1262",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-fem-simulator",
+   "concept": "engp-nuclear-plasma-computation",
+   "label": "Finite Element Simulator",
+   "desc": "Builds finite element and Monte Carlo simulations of physical fields and checks mesh convergence.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1020",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1262",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-plasma-parameter-calculator",
+   "concept": "engp-nuclear-plasma-computation",
+   "label": "Plasma Parameter Calculator",
+   "desc": "Computes Debye length, plasma frequency and confinement figures and checks regime assumptions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1263",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1262",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-radiation-shield-designer",
+   "concept": "engp-nuclear-plasma-computation",
+   "label": "Radiation Shielding Designer",
+   "desc": "Computes attenuation and dose through shielding and checks against regulatory limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1263",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-laser-analyzer",
+   "concept": "engp-photonics-optics",
+   "label": "Laser Cavity Analyzer",
+   "desc": "Analyses laser gain, cavity modes and stability and checks threshold and beam parameters.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1026",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1261",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-optical-system-designer",
+   "concept": "engp-photonics-optics",
+   "label": "Optical System Designer",
+   "desc": "Traces rays and designs lens systems and checks aberrations and resolution against specifications.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1026",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1021",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-waveguide-modeler",
+   "concept": "engp-photonics-optics",
+   "label": "Waveguide Mode Modeler",
+   "desc": "Computes guided modes of fibers and waveguides and checks cutoff conditions and dispersion.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1026",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1262",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1020",
+   "name": "Computational Physics Modeler",
+   "legacy_key": "apph-modeler",
+   "mcp": [
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1021",
+   "name": "Instrumentation Engineer",
+   "legacy_key": "apph-instrumentation",
+   "mcp": [
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1022",
+   "name": "Materials Physicist",
+   "legacy_key": "apph-materials",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1023",
+   "name": "Units and Error Checker",
+   "legacy_key": "apph-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1024",
+   "name": "Applied Physics Literature Reviewer",
+   "legacy_key": "apph-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1025",
+   "name": "Fluid and Plasma Physicist",
+   "legacy_key": "apph-fluids",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1026",
+   "name": "Photonics Engineer",
+   "legacy_key": "apph-photonics",
+   "mcp": [
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1028",
+   "name": "Physics Verification Reviewer",
+   "legacy_key": "engp-reviewer",
+   "mcp": [
+    "local:quantum-simulator-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1261",
+   "name": "Quantum Device Engineer",
+   "legacy_key": "engp-quantum",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1262",
+   "name": "Applied Mathematics Analyst",
+   "legacy_key": "engp-math",
+   "mcp": [
+    "local:sympy-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1263",
+   "name": "Nuclear and Plasma Engineer",
+   "legacy_key": "engp-nuclear",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1487",
+   "name": "Numerical Integration Agent",
+   "legacy_key": "cl-numerical-integrator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1488",
+   "name": "Units and Dimensions Checker Agent",
+   "legacy_key": "cl-units-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1492",
+   "name": "Waves and Oscillations Agent",
+   "legacy_key": "cl-wave-physicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1495",
+   "name": "Optics Agent",
+   "legacy_key": "cl-optician",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "astro_mcp",
+   "desc": "mcp server for desi and other surveys (astronomical object search, astroquery, spectra, FITS conversion)",
+   "tools": [
+    "search_objects",
+    "astroquery_query",
+    "get_spectrum_by_id",
+    "list_astroquery_services",
+    "preview_data",
+    "convert_to_fits"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/SandyYuan/astro_mcp",
+   "id": "local:astro-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "chuk-mcp-physics",
+   "desc": "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   "tools": [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/IBM/chuk-mcp-physics",
+   "id": "local:chuk-mcp-physics",
+   "origins": [
+    "mechanical-engineering",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ParticlePhysics-MCP-Server",
+   "desc": "Fast particle data lookup from natural language.",
+   "tools": [
+    "search_particle",
+    "list_decays"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/uzerone/ParticlePhysics-MCP-Server",
+   "id": "local:particlephysics-mcp-server",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Psi-MCP",
+   "desc": "An Advanced Quantum Physics MCP server",
+   "tools": [
+    "create_quantum_circuit",
+    "simulate_quantum_circuit",
+    "solve_master_equation",
+    "vqe_optimization",
+    "dmrg_simulation",
+    "quantum_neural_network"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/manasp21/Psi-MCP",
+   "id": "local:psi-mcp",
+   "origins": [
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "quantum-simulator-mcp",
+   "desc": "A Docker image providing a quantum circuit simulator that implements the Model Context Protocol",
+   "tools": [
+    "run_circuit",
+    "list_noise_models",
+    "list_result_types",
+    "get_circuit_stats",
+    "create_test_histogram"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/YuChenSSR/quantum-simulator-mcp",
+   "id": "local:quantum-simulator-mcp",
+   "origins": [
+    "engineering-physics",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "local:quantum-simulator-mcp",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "local:particlephysics-mcp-server",
+  "local:chuk-mcp-physics",
+  "local:astro-mcp",
+  "local:psi-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1020",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "optics-photonics-and-plasma",
+   "score": 0.1455,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1026",
+    "skill": "engp-waveguide-modeler"
+   },
+   "source_topic": "engineering-physics"
+  },
+  {
+   "agent": "Maxey1021",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "optics-photonics-and-plasma",
+   "score": 0.147,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "engineering-physics"
+  },
+  {
+   "agent": "Maxey1026",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "optics-photonics-and-plasma",
+   "score": 0.1455,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "engineering-physics"
+  },
+  {
+   "agent": "Maxey1028",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "optics-photonics-and-plasma",
+   "score": 0.1455,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1026",
+    "skill": "engp-laser-analyzer"
+   },
+   "source_topic": "engineering-physics"
+  },
+  {
+   "agent": "Maxey1262",
+   "mcp": "local:sympy-mcp",
+   "topic": "optics-photonics-and-plasma",
+   "score": 0.175,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "engineering-physics"
+  }
+ ],
+ "lexicon": {
+  "apph-device": "semiconductor carrier junction transistor doping solar",
+  "apph-light": "laser photonics waveguide fiber optical interferometer spectroscopy",
+  "apph-matter": "crystal lattice film magnetic superconductor diffraction",
+  "apph-measure": "sensor measurement noise calibration uncertainty detector",
+  "apph-compute": "numerical differential symbolic monte carlo solver",
+  "apph-flow": "fluid turbulence acoustics plasma viscosity",
+  "newtonian": "newton torque friction kepler constraint inertia force acceleration orbit kinematics newtonian mechanics moon lunar mars planetary gravity weight surface",
+  "conservation": "energy dissipated impulse elastic inelastic momentum collision conservation",
+  "wavemotion": "oscillator damping resonance standing dispersion grating wave interference fourier oscillations",
+  "thermoclass": "entropy carnot efficiency conduction convection radiation heat cycle kinetic temperature thermodynamics statistical",
+  "fieldtheory": "gauss maxwell induction capacitor inductor potential electric magnetic circuit field capacitance electromagnetism",
+  "raytrace": "ray mirror aberration diffraction polarization refraction optics",
+  "flowmech": "bernoulli laminar turbulent reynolds pipe viscosity fluid pressure turbulence",
+  "relativistic": "lorentz dilation contraction geodesic curvature relativity spacetime special general",
+  "engp-math": "differential linear vector fourier eigenvalue tensor dimensional",
+  "engp-qm": "quantum wavefunction tunneling qubit schrodinger coherence",
+  "engp-opt": "photonics optics laser waveguide fiber interference diffraction",
+  "engp-mat": "solid crystal semiconductor nanostructure phonon superconductivity film",
+  "engp-meas": "instrumentation sensor measurement uncertainty calibration acquisition",
+  "engp-nuc": "nuclear radiation plasma fusion simulation finite"
+ },
+ "sources": [
+  "applied-physics",
+  "classical-physics",
+  "engineering-physics"
+ ]
+}

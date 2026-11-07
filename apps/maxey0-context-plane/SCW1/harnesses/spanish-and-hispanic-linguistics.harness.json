@@ -1,0 +1,551 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "spanish-and-hispanic-linguistics",
+  "label": "Spanish and Hispanic Linguistics",
+  "desc": "Spanish and Hispanic Linguistics: Hispanic Linguistics, Spanish Translation and Interpreting, Spanish and Portuguese Languages and Hispanic Cultural Studies."
+ },
+ "concepts": [
+  {
+   "id": "ilac-languages",
+   "label": "Spanish and Portuguese Languages",
+   "desc": "Grammar, dialects and sociolinguistics of Spanish and Portuguese across Iberia and the Americas, including bilingualism.",
+   "keywords": [
+    "spanish",
+    "portuguese",
+    "grammar",
+    "dialect",
+    "sociolinguistics",
+    "bilingualism",
+    "catalan",
+    "variation"
+   ],
+   "topic": "spanish-and-hispanic-linguistics",
+   "source": "iberian-and-latin-american-cultures",
+   "source_topic": "iberian-and-latin-american-cultures",
+   "related": []
+  },
+  {
+   "id": "span-hispanic-cultures",
+   "label": "Hispanic Cultural Studies",
+   "desc": "Film, art, politics and identity in the Hispanic world, including US Latino cultures and transatlantic exchange.",
+   "keywords": [
+    "culture",
+    "film",
+    "identity",
+    "latino",
+    "transatlantic",
+    "dictatorship",
+    "memory"
+   ],
+   "topic": "spanish-and-hispanic-linguistics",
+   "source": "spanish",
+   "source_topic": "spanish",
+   "related": []
+  },
+  {
+   "id": "span-hispanic-linguistics",
+   "label": "Hispanic Linguistics",
+   "desc": "Phonetics, morphology, syntax, dialect variation, the history of Spanish and bilingualism.",
+   "keywords": [
+    "linguistics",
+    "phonetics",
+    "syntax",
+    "dialect",
+    "variation",
+    "bilingualism",
+    "history of spanish"
+   ],
+   "topic": "spanish-and-hispanic-linguistics",
+   "source": "spanish",
+   "source_topic": "spanish",
+   "related": []
+  },
+  {
+   "id": "span-translation-interpreting",
+   "label": "Spanish Translation and Interpreting",
+   "desc": "Translating between Spanish and English across literary, legal and medical registers, with terminology control.",
+   "keywords": [
+    "translation",
+    "interpreting",
+    "register",
+    "terminology",
+    "localization",
+    "equivalence"
+   ],
+   "topic": "spanish-and-hispanic-linguistics",
+   "source": "spanish",
+   "source_topic": "spanish",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ilac-dialect-features",
+   "concept": "ilac-languages",
+   "label": "Dialect Feature Analysis",
+   "desc": "Identifies regional features such as voseo or seseo in a text, checked against dialect atlas descriptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1368",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-grammar-check",
+   "concept": "ilac-languages",
+   "label": "Spanish and Portuguese Grammar Check",
+   "desc": "Corrects and explains grammar errors in Spanish or Portuguese text, checked by citing the rule for each change.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1368",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1609",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-translation",
+   "concept": "ilac-languages",
+   "label": "Literary and Academic Translation",
+   "desc": "Translates passages between Spanish, Portuguese and English preserving register, checked by back-translation of key phrases.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1609",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1368",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1367",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "span-film-analysis",
+   "concept": "span-hispanic-cultures",
+   "label": "Hispanic Film Analyzer",
+   "desc": "Analyzes a Spanish or Latin American film's form and politics, checked against film scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1371",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1369",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-latino-identity",
+   "concept": "span-hispanic-cultures",
+   "label": "US Latino Identity Reviewer",
+   "desc": "Reviews literature and media on US Latino identity and bilingualism, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1371",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1567",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1369",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-memory-politics",
+   "concept": "span-hispanic-cultures",
+   "label": "Historical Memory Analyzer",
+   "desc": "Analyzes cultural representations of dictatorship and memory, checked against historical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1371",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1372",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1369",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-dialect-compare",
+   "concept": "span-hispanic-linguistics",
+   "label": "Spanish Dialect Comparator",
+   "desc": "Compares features such as seseo, voseo and aspiration across dialects, checked against dialectology sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1567",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1371",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-phonetic-transcription",
+   "concept": "span-hispanic-linguistics",
+   "label": "Spanish Phonetic Transcriber",
+   "desc": "Transcribes Spanish words in IPA with allophones such as spirantized stops, checked against phonetic rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1567",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1568",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-syntax-parse",
+   "concept": "span-hispanic-linguistics",
+   "label": "Spanish Syntax Analyzer",
+   "desc": "Parses Spanish sentences for clitics, word order and argument structure, checked against a syntax reference.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1568",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1567",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1569",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-legal-medical",
+   "concept": "span-translation-interpreting",
+   "label": "Specialized Terminology Translator",
+   "desc": "Translates legal or medical Spanish with a controlled terminology list, checked for term consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1569",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1568",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-literary-translation",
+   "concept": "span-translation-interpreting",
+   "label": "Spanish Literary Translator",
+   "desc": "Translates a Spanish literary passage into English preserving voice and register, checked by back-translation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1569",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-localization-review",
+   "concept": "span-translation-interpreting",
+   "label": "Regional Localization Reviewer",
+   "desc": "Adapts a text for a specific Spanish-speaking region, checked against regional usage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1569",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1567",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1371",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1363",
+   "name": "Cultural Accuracy Checker",
+   "legacy_key": "ilac-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1365",
+   "name": "Latin American Society Agent",
+   "legacy_key": "ilac-society",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1367",
+   "name": "Hispanic and Lusophone Literature Agent",
+   "legacy_key": "ilac-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1368",
+   "name": "Spanish and Portuguese Language Agent",
+   "legacy_key": "ilac-linguist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1369",
+   "name": "Latin American Literature Agent",
+   "legacy_key": "span-latam",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1371",
+   "name": "Hispanic Cultural Studies Agent",
+   "legacy_key": "span-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1372",
+   "name": "Peninsular Literature Agent",
+   "legacy_key": "span-penin",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1373",
+   "name": "Spanish Language Agent",
+   "legacy_key": "span-lang",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1567",
+   "name": "Hispanic Linguistics Agent",
+   "legacy_key": "span-ling",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1568",
+   "name": "Spanish Grammar Agent",
+   "legacy_key": "span-gram",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1569",
+   "name": "Spanish Translation Agent",
+   "legacy_key": "span-trans",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1609",
+   "name": "Translation Agent",
+   "legacy_key": "ilac-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1610",
+   "name": "Literary Criticism Agent",
+   "legacy_key": "span-critic",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "ilac-language": "spanish portuguese grammar dialect sociolinguistics bilingualism catalan",
+  "ilac-letters": "literature cervantes poetry novel theater verse modernismo testimonio",
+  "ilac-empire": "conquest colonial independence postcolonial viceroyalty missions",
+  "ilac-peoples": "indigenous quechua nahuatl diaspora mestizaje identity race",
+  "ilac-screen": "cinema film art music migration politics",
+  "span-language": "conjugation subjunctive proficiency composition vocabulary",
+  "span-linguistics": "linguistics phonetic dialect syntax ipa bilingualism",
+  "span-peninsular": "peninsular golden cervantes quijote lorca medieval",
+  "span-latam": "boom neruda borges colonial modernismo chronicle",
+  "span-translation": "translation terminology localization interpreting legal medical",
+  "span-culture": "film identity latino memory dictatorship transatlantic"
+ },
+ "sources": [
+  "iberian-and-latin-american-cultures",
+  "spanish"
+ ]
+}

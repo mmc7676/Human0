@@ -1,0 +1,916 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "math-physical-sciences",
+ "topic": {
+  "id": "materials-science",
+  "label": "Materials Science",
+  "desc": "Materials Science: Computational Materials and Characterization, Crystal Structure and Defects, Mechanical Behavior of Materials, Thermodynamics and Kinetics of Materials, Electronic, Optical and Magnetic Materials and Polymers, Ceramics and Composites."
+ },
+ "concepts": [
+  {
+   "id": "matsci-computation-characterization",
+   "label": "Computational Materials and Characterization",
+   "desc": "Simulation from DFT to molecular dynamics, plus microscopy and spectroscopy for measuring materials.",
+   "keywords": [
+    "dft",
+    "molecular dynamics",
+    "simulation",
+    "microscopy",
+    "spectroscopy",
+    "sem",
+    "tem",
+    "literature"
+   ],
+   "topic": "materials-science",
+   "source": "materials-science-and-engineering",
+   "source_topic": "materials-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "matsci-crystal-structure",
+   "label": "Crystal Structure and Defects",
+   "desc": "Atomic arrangement in crystalline and amorphous solids, lattices, symmetry and point, line and planar defects.",
+   "keywords": [
+    "crystal",
+    "lattice",
+    "unit cell",
+    "symmetry",
+    "miller index",
+    "defect",
+    "dislocation",
+    "grain boundary"
+   ],
+   "topic": "materials-science",
+   "source": "materials-science-and-engineering",
+   "source_topic": "materials-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "matsci-electronic-functional",
+   "label": "Electronic, Optical and Magnetic Materials",
+   "desc": "Band structure, semiconductors, dielectrics, magnetic and optical materials used in devices and energy systems.",
+   "keywords": [
+    "semiconductor",
+    "band gap",
+    "dopant",
+    "dielectric",
+    "magnetic",
+    "optical",
+    "conductivity",
+    "battery"
+   ],
+   "topic": "materials-science",
+   "source": "materials-science-and-engineering",
+   "source_topic": "materials-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "matsci-mechanical-behavior",
+   "label": "Mechanical Behavior of Materials",
+   "desc": "Elasticity, plasticity, fracture, fatigue and creep and their links to microstructure.",
+   "keywords": [
+    "mechanical",
+    "stress",
+    "strain",
+    "elastic",
+    "plastic",
+    "fracture",
+    "fatigue",
+    "creep",
+    "hardness"
+   ],
+   "topic": "materials-science",
+   "source": "materials-science-and-engineering",
+   "source_topic": "materials-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "matsci-polymers-ceramics-composites",
+   "label": "Polymers, Ceramics and Composites",
+   "desc": "Structure and properties of polymer, ceramic, glass and composite material classes and their design rules.",
+   "keywords": [
+    "polymer",
+    "ceramic",
+    "glass",
+    "composite",
+    "molecular weight",
+    "glass transition",
+    "fiber",
+    "viscoelastic"
+   ],
+   "topic": "materials-science",
+   "source": "materials-science-and-engineering",
+   "source_topic": "materials-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "matsci-thermodynamics-kinetics",
+   "label": "Thermodynamics and Kinetics of Materials",
+   "desc": "Phase equilibria, phase diagrams, diffusion and transformation kinetics that govern microstructure.",
+   "keywords": [
+    "thermodynamics",
+    "phase diagram",
+    "free energy",
+    "diffusion",
+    "kinetics",
+    "nucleation",
+    "equilibrium",
+    "microstructure"
+   ],
+   "topic": "materials-science",
+   "source": "materials-science-and-engineering",
+   "source_topic": "materials-science-and-engineering",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "matsci-dft-workflow-runner",
+   "concept": "matsci-computation-characterization",
+   "label": "DFT Workflow Runner",
+   "desc": "Sets up and runs DFT relaxations and energies and checks k-point and cutoff convergence.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1431",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1432",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1433",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-materials-literature-search",
+   "concept": "matsci-computation-characterization",
+   "label": "Materials Literature Search",
+   "desc": "Retrieves papers and datasets on a material system and checks each cited property against its source.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1434",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1435",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-md-simulation-runner",
+   "concept": "matsci-computation-characterization",
+   "label": "Molecular Dynamics Runner",
+   "desc": "Runs MD simulations for diffusion or mechanical response and checks energy conservation and equilibration.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1431",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1436",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1437",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-defect-density-estimator",
+   "concept": "matsci-crystal-structure",
+   "label": "Defect Density Estimator",
+   "desc": "Estimates vacancy and dislocation densities from thermodynamic and microscopy data and checks units and orders of magnitude.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1433",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1436",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1437",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-unit-cell-calculator",
+   "concept": "matsci-crystal-structure",
+   "label": "Unit Cell Calculator",
+   "desc": "Computes lattice parameters, density and packing fraction from a structure and checks them against reference values.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1433",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1435",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-xrd-pattern-indexer",
+   "concept": "matsci-crystal-structure",
+   "label": "XRD Pattern Indexer",
+   "desc": "Indexes diffraction peaks to Miller indices and phases and checks indexing with Bragg law residuals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1435",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1433",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1434",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-band-gap-estimator",
+   "concept": "matsci-electronic-functional",
+   "label": "Band Gap Estimator",
+   "desc": "Estimates band gaps from absorption spectra or calculations and checks against reported experimental values.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1432",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1435",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-battery-material-screener",
+   "concept": "matsci-electronic-functional",
+   "label": "Battery Material Screener",
+   "desc": "Screens electrode and electrolyte candidates on voltage, capacity and stability and checks against computed databases and literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1431",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1432",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1434",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-carrier-concentration-calculator",
+   "concept": "matsci-electronic-functional",
+   "label": "Carrier Concentration Calculator",
+   "desc": "Computes carrier density and conductivity for doped semiconductors and checks charge neutrality.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1432",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1436",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-fatigue-life-estimator",
+   "concept": "matsci-mechanical-behavior",
+   "label": "Fatigue Life Estimator",
+   "desc": "Estimates fatigue life from S-N and Paris law data and checks predictions against mean-stress corrections.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1437",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1438",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-fracture-toughness-checker",
+   "concept": "matsci-mechanical-behavior",
+   "label": "Fracture Toughness Checker",
+   "desc": "Computes critical crack size and stress intensity and checks test validity against standard size criteria.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1437",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1433",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-stress-strain-analyzer",
+   "concept": "matsci-mechanical-behavior",
+   "label": "Stress-Strain Curve Analyzer",
+   "desc": "Extracts modulus, yield strength, UTS and elongation from tensile data and checks values against handbook ranges.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1437",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1435",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1438",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-composite-rule-of-mixtures",
+   "concept": "matsci-polymers-ceramics-composites",
+   "label": "Composite Rule of Mixtures",
+   "desc": "Computes composite stiffness and strength bounds from fiber and matrix data and checks that measured values fall between bounds.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1437",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1439",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1438",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-material-selection-ranker",
+   "concept": "matsci-polymers-ceramics-composites",
+   "label": "Material Selection Ranker",
+   "desc": "Ranks materials with Ashby performance indices for a design requirement and checks each candidate meets every constraint.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1438",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1437",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1439",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-polymer-property-predictor",
+   "concept": "matsci-polymers-ceramics-composites",
+   "label": "Polymer Property Predictor",
+   "desc": "Estimates glass transition and molecular weight effects on properties and checks predictions against measured data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1439",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1435",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-diffusion-profile-solver",
+   "concept": "matsci-thermodynamics-kinetics",
+   "label": "Diffusion Profile Solver",
+   "desc": "Solves Fick law profiles for carburising and doping and checks results against the error-function solution.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1436",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1431",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1438",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-phase-diagram-reader",
+   "concept": "matsci-thermodynamics-kinetics",
+   "label": "Phase Diagram Reader",
+   "desc": "Reads binary phase diagrams with the lever rule to give phase fractions and compositions checked by mass balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1436",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1438",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1433",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  },
+  {
+   "id": "matsci-transformation-kinetics-fitter",
+   "concept": "matsci-thermodynamics-kinetics",
+   "label": "Transformation Kinetics Fitter",
+   "desc": "Fits Avrami and TTT kinetics to transformation data and checks fitted exponents fall in physical ranges.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1436",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1435",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1438",
+     "role": "support"
+    }
+   ],
+   "source": "materials-science-and-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1431",
+   "name": "Computational Materials Agent",
+   "legacy_key": "matsci-computational",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey1432",
+   "name": "Electronic Materials Agent",
+   "legacy_key": "matsci-electronic",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey1433",
+   "name": "Crystallography Agent",
+   "legacy_key": "matsci-crystallographer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1434",
+   "name": "Materials Literature Agent",
+   "legacy_key": "matsci-literature",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey1435",
+   "name": "Characterization Lab Agent",
+   "legacy_key": "matsci-characterization",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey1436",
+   "name": "Materials Thermodynamics Agent",
+   "legacy_key": "matsci-thermo",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey1437",
+   "name": "Mechanical Behavior Agent",
+   "legacy_key": "matsci-mechanical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1438",
+   "name": "Processing Engineer Agent",
+   "legacy_key": "matsci-processing",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1439",
+   "name": "Polymer and Soft Matter Agent",
+   "legacy_key": "matsci-polymer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1431",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "materials-science",
+   "score": 0.1701,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1431",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "materials-science",
+   "score": 0.1364,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1432",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "materials-science",
+   "score": 0.1701,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1431",
+    "skill": "matsci-battery-material-screener"
+   },
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1432",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "materials-science",
+   "score": 0.1364,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1431",
+    "skill": "matsci-battery-material-screener"
+   },
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1434",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "materials-science",
+   "score": 0.1708,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1434",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "materials-science",
+   "score": 0.1369,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1435",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "materials-science",
+   "score": 0.1708,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1434",
+    "skill": "matsci-materials-literature-search"
+   },
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1435",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "materials-science",
+   "score": 0.1369,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1434",
+    "skill": "matsci-materials-literature-search"
+   },
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1436",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "materials-science",
+   "score": 0.1701,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1431",
+    "skill": "matsci-md-simulation-runner"
+   },
+   "source_topic": "materials-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1436",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "materials-science",
+   "score": 0.1364,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1431",
+    "skill": "matsci-md-simulation-runner"
+   },
+   "source_topic": "materials-science-and-engineering"
+  }
+ ],
+ "lexicon": {
+  "matsci-structure": "crystal lattice cell symmetry miller defect dislocation grain xrd bragg",
+  "matsci-phase": "thermodynamics phase free diffusion kinetics nucleation equilibrium microstructure avrami lever",
+  "matsci-mechanics": "mechanical stress strain elastic plastic fracture fatigue creep hardness tensile toughness",
+  "matsci-functional": "semiconductor band dopant dielectric magnetic optical conductivity battery carrier electrode",
+  "matsci-classes": "polymer ceramic glass composite fiber viscoelastic matrix ashby",
+  "matsci-compute": "dft dynamics simulation microscopy spectroscopy sem tem literature convergence"
+ },
+ "sources": [
+  "materials-science-and-engineering"
+ ]
+}

@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "humanities-arts",
  "topic": {
   "id": "archaeology",
   "label": "Archaeology",
-  "desc": "Archaeology: the study of the human past through material remains, excavation, dating and spatial analysis."
+  "desc": "Archaeology: Field Survey and Remote Sensing, Material Culture and Artifact Analysis, Excavation and Stratigraphy, Archaeological Theory and Heritage, Dating and Chronology and Bioarchaeology and Environmental Archaeology."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "archaeology",
    "source": "archaeology",
+   "source_topic": "archaeology",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "archaeology",
    "source": "archaeology",
+   "source_topic": "archaeology",
    "related": []
   },
   {
@@ -60,6 +62,7 @@
    ],
    "topic": "archaeology",
    "source": "archaeology",
+   "source_topic": "archaeology",
    "related": []
   },
   {
@@ -78,6 +81,7 @@
    ],
    "topic": "archaeology",
    "source": "archaeology",
+   "source_topic": "archaeology",
    "related": [
     "earth-geospatial-observation"
    ]
@@ -98,6 +102,7 @@
    ],
    "topic": "archaeology",
    "source": "archaeology",
+   "source_topic": "archaeology",
    "related": []
   },
   {
@@ -116,6 +121,7 @@
    ],
    "topic": "archaeology",
    "source": "archaeology",
+   "source_topic": "archaeology",
    "related": []
   }
  ],
@@ -738,14 +744,16 @@
    "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
    "topic": "archaeology",
    "score": 0.1134,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "archaeology"
   },
   {
    "agent": "Maxey1036",
    "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
    "topic": "archaeology",
    "score": 0.1114,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "archaeology"
   },
   {
    "agent": "Maxey1037",
@@ -756,7 +764,8 @@
    "via": {
     "primary": "Maxey1036",
     "skill": "arch-lidar-review"
-   }
+   },
+   "source_topic": "archaeology"
   }
  ],
  "lexicon": {

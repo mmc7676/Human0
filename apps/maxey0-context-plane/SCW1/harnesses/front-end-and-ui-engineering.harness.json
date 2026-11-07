@@ -1,0 +1,435 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "agentic-systems",
+ "topic": {
+  "id": "front-end-and-ui-engineering",
+  "label": "Front-End and UI Engineering",
+  "desc": "Front-End and UI Engineering: Browser Testing, Websites and Web Apps, Accessibility, Components and Frameworks and HTML, CSS and Layout."
+ },
+ "concepts": [
+  {
+   "id": "ui-a11y",
+   "label": "Accessibility",
+   "desc": "Making interfaces usable by everyone: WCAG, keyboard access, screen readers, contrast and focus.",
+   "keywords": [
+    "accessibility",
+    "wcag",
+    "keyboard",
+    "screen",
+    "reader",
+    "contrast",
+    "focus",
+    "aria",
+    "label"
+   ],
+   "topic": "front-end-and-ui-engineering",
+   "source": "ui-frontend",
+   "source_topic": "ui-frontend",
+   "related": []
+  },
+  {
+   "id": "ui-components",
+   "label": "Components and Frameworks",
+   "desc": "UI components, state in the browser, and frameworks such as React, Vue and Svelte.",
+   "keywords": [
+    "component",
+    "react",
+    "vue",
+    "svelte",
+    "framework",
+    "javascript",
+    "typescript",
+    "props",
+    "state",
+    "render"
+   ],
+   "topic": "front-end-and-ui-engineering",
+   "source": "ui-frontend",
+   "source_topic": "ui-frontend",
+   "related": []
+  },
+  {
+   "id": "ui-layout",
+   "label": "HTML, CSS and Layout",
+   "desc": "Page structure and styling: semantic HTML, CSS, flexbox and grid layout, responsive design and theming.",
+   "keywords": [
+    "html",
+    "css",
+    "layout",
+    "flexbox",
+    "grid",
+    "responsive",
+    "theme",
+    "style",
+    "page",
+    "markup"
+   ],
+   "topic": "front-end-and-ui-engineering",
+   "source": "ui-frontend",
+   "source_topic": "ui-frontend",
+   "related": []
+  },
+  {
+   "id": "ui-testing",
+   "label": "Browser Testing",
+   "desc": "Testing web front ends in real browsers: end-to-end tests, visual checks and console errors.",
+   "keywords": [
+    "browser",
+    "test",
+    "end",
+    "playwright",
+    "visual",
+    "screenshot",
+    "console",
+    "error",
+    "automation"
+   ],
+   "topic": "front-end-and-ui-engineering",
+   "source": "ui-frontend",
+   "source_topic": "ui-frontend",
+   "related": []
+  },
+  {
+   "id": "ui-websites",
+   "label": "Websites and Web Apps",
+   "desc": "Building a website or web app end to end: pages, content, routing, build tools, performance and where it is deployed.",
+   "keywords": [
+    "website",
+    "web",
+    "app",
+    "site",
+    "page",
+    "build",
+    "bundle",
+    "performance",
+    "seo",
+    "deploy",
+    "static"
+   ],
+   "topic": "front-end-and-ui-engineering",
+   "source": "ui-frontend",
+   "source_topic": "ui-frontend",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ui-accessibility-auditor",
+   "concept": "ui-a11y",
+   "label": "Accessibility Auditor",
+   "desc": "Audits a page against WCAG 2.1 AA and lists each failure with its fix.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1670",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1672",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-component-designer",
+   "concept": "ui-components",
+   "label": "Component Designer",
+   "desc": "Designs a reusable UI component with its props, states and events.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1673",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1670",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-framework-selector",
+   "concept": "ui-components",
+   "label": "Framework Selector",
+   "desc": "Compares front-end frameworks for a project by size, ecosystem and rendering model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1673",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1670",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-css-debugger",
+   "concept": "ui-layout",
+   "label": "CSS Debugger",
+   "desc": "Finds why an element is positioned or styled wrongly and gives the minimal CSS fix.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1674",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1673",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-responsive-layout-builder",
+   "concept": "ui-layout",
+   "label": "Responsive Layout Builder",
+   "desc": "Builds a responsive page layout in HTML and CSS that works from phone to desktop width.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1674",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1673",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-console-error-triage",
+   "concept": "ui-testing",
+   "label": "Console Error Triage",
+   "desc": "Triages browser console and network errors on a page and names the cause.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1672",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1675",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-end-to-end-test-writer",
+   "concept": "ui-testing",
+   "label": "End-to-End Test Writer",
+   "desc": "Writes end-to-end browser tests for a user flow with assertions on what the user sees.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1672",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1675",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-web-performance-auditor",
+   "concept": "ui-websites",
+   "label": "Web Performance Auditor",
+   "desc": "Audits a website's load performance and lists the largest wins.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1675",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1674",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  },
+  {
+   "id": "ui-website-builder",
+   "concept": "ui-websites",
+   "label": "Website Builder",
+   "desc": "Plans and builds a website: pages, navigation, content, build tooling and deploy target.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1675",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1671",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1674",
+     "role": "support"
+    }
+   ],
+   "source": "ui-frontend"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1670",
+   "name": "Accessibility Agent",
+   "legacy_key": "ui-a11y",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1671",
+   "name": "Front-End Checker Agent",
+   "legacy_key": "ui-checker",
+   "mcp": [
+    "local:chrome-devtools-mcp",
+    "local:playwright-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1672",
+   "name": "Browser Test Agent",
+   "legacy_key": "ui-tester",
+   "mcp": [
+    "local:playwright-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1673",
+   "name": "Component Engineer Agent",
+   "legacy_key": "ui-component",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1674",
+   "name": "Layout Engineer Agent",
+   "legacy_key": "ui-layout",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1675",
+   "name": "Website Builder Agent",
+   "legacy_key": "ui-web",
+   "mcp": [
+    "local:chrome-devtools-mcp"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Chrome DevTools MCP",
+   "desc": "Chrome DevTools MCP server: inspect a live Chrome page, console, network requests, performance traces and front-end debugging.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+   "id": "local:chrome-devtools-mcp",
+   "origins": [
+    "ui-frontend"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Playwright MCP",
+   "desc": "Microsoft Playwright MCP server: drive a browser through accessibility snapshots, navigate pages, click, fill forms and test web front ends.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/microsoft/playwright-mcp",
+   "id": "local:playwright-mcp",
+   "origins": [
+    "ui-frontend"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:playwright-mcp",
+  "local:chrome-devtools-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1671",
+   "mcp": "local:chrome-devtools-mcp",
+   "topic": "front-end-and-ui-engineering",
+   "score": 0.2924,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "ui-frontend"
+  },
+  {
+   "agent": "Maxey1671",
+   "mcp": "local:playwright-mcp",
+   "topic": "front-end-and-ui-engineering",
+   "score": 0.2783,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "ui-frontend"
+  },
+  {
+   "agent": "Maxey1672",
+   "mcp": "local:playwright-mcp",
+   "topic": "front-end-and-ui-engineering",
+   "score": 0.2563,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "ui-frontend"
+  },
+  {
+   "agent": "Maxey1675",
+   "mcp": "local:chrome-devtools-mcp",
+   "topic": "front-end-and-ui-engineering",
+   "score": 0.1937,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "ui-frontend"
+  }
+ ],
+ "lexicon": {
+  "uilayout": "html css layout flexbox grid responsive theme style page markup",
+  "uicomponents": "component react vue svelte framework javascript typescript props state render",
+  "uia11y": "accessibility wcag keyboard screen reader contrast focus aria label",
+  "uitesting": "browser test end playwright visual screenshot console error automation",
+  "uiwebsites": "website web app site page build bundle performance seo deploy static"
+ },
+ "sources": [
+  "ui-frontend"
+ ]
+}

@@ -1,32 +1,13 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "work",
+ "domain": "engineering",
  "topic": {
   "id": "robotics",
   "label": "Robotics",
-  "desc": "Robotics: kinematics and dynamics, perception, motion planning and navigation, control, manipulation, robot software (ROS), simulation, and safety and human-robot interaction. Ontology: Robotics is its own topic; Drones are aerial robots, and Mapping holds SLAM, which robots use for navigation."
+  "desc": "Robotics: Robot Software and ROS, Safety and Human-Robot Interaction, Robot Simulation and Sim-to-Real, Motion Planning and Navigation, Kinematics and Dynamics, Manipulation and Grasping and Perception."
  },
  "concepts": [
-  {
-   "id": "rb-control",
-   "label": "Control",
-   "desc": "Feedback control of robot joints and vehicles: PID, state-space and model-predictive control.",
-   "keywords": [
-    "pid",
-    "lqr",
-    "mpc",
-    "controller",
-    "actuator",
-    "tuning"
-   ],
-   "topic": "robotics",
-   "source": "robotics",
-   "related": [
-    "cheme-process-control",
-    "me-controls-mechatronics"
-   ]
-  },
   {
    "id": "rb-kinematics",
    "label": "Kinematics and Dynamics",
@@ -41,6 +22,7 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   },
   {
@@ -56,6 +38,7 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   },
   {
@@ -72,6 +55,7 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   },
   {
@@ -88,6 +72,7 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   },
   {
@@ -103,6 +88,7 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   },
   {
@@ -117,6 +103,7 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   },
   {
@@ -133,76 +120,11 @@
    ],
    "topic": "robotics",
    "source": "robotics",
+   "source_topic": "robotics",
    "related": []
   }
  ],
  "skills": [
-  {
-   "id": "rb-actuator-motor-driver",
-   "concept": "rb-control",
-   "label": "Actuator and Motor Driver Selector",
-   "desc": "Selects motors, drivers and gearing for torque, speed and duty cycle and checks thermal limits.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey964",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey965",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey966",
-     "role": "support"
-    }
-   ],
-   "source": "robotics"
-  },
-  {
-   "id": "rb-pid-tuner",
-   "concept": "rb-control",
-   "label": "PID Tuner",
-   "desc": "Tunes PID gains from step responses and reports overshoot, settling time and stability margin.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey964",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey965",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey967",
-     "role": "support"
-    }
-   ],
-   "source": "robotics"
-  },
-  {
-   "id": "rb-state-space-controller",
-   "concept": "rb-control",
-   "label": "State-Space and Predictive Controller",
-   "desc": "Designs LQR or model-predictive controllers from a linear model and checks constraint handling.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey964",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey965",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey966",
-     "role": "support"
-    }
-   ],
-   "source": "robotics"
-  },
   {
    "id": "rb-dynamics-modeler",
    "concept": "rb-kinematics",
@@ -664,7 +586,8 @@
    "mcp": "local:ros-mcp-server",
    "topic": "robotics",
    "score": 0.3855,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "robotics"
   },
   {
    "agent": "Maxey968",
@@ -675,14 +598,16 @@
    "via": {
     "primary": "Maxey965",
     "skill": "rb-hri-designer"
-   }
+   },
+   "source_topic": "robotics"
   },
   {
    "agent": "Maxey972",
    "mcp": "local:ros-mcp-server",
    "topic": "robotics",
    "score": 0.3941,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "robotics"
   }
  ],
  "lexicon": {

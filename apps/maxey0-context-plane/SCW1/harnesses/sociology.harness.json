@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "society-governance",
  "topic": {
   "id": "sociology",
   "label": "Sociology",
-  "desc": "Sociology: the scientific study of social structure, groups, institutions, inequality and social change."
+  "desc": "Sociology: Social Theory, Stratification and Inequality, Culture, Deviance and Social Movements, Sociological Research Methods, Demography, Population and Family and Social Networks and Organizations."
  },
  "concepts": [
   {
@@ -23,6 +23,7 @@
    ],
    "topic": "sociology",
    "source": "sociology",
+   "source_topic": "sociology",
    "related": []
   },
   {
@@ -40,6 +41,7 @@
    ],
    "topic": "sociology",
    "source": "sociology",
+   "source_topic": "sociology",
    "related": []
   },
   {
@@ -57,6 +59,7 @@
    ],
    "topic": "sociology",
    "source": "sociology",
+   "source_topic": "sociology",
    "related": []
   },
   {
@@ -74,6 +77,7 @@
    ],
    "topic": "sociology",
    "source": "sociology",
+   "source_topic": "sociology",
    "related": [
     "csre-methods"
    ]
@@ -93,6 +97,7 @@
    ],
    "topic": "sociology",
    "source": "sociology",
+   "source_topic": "sociology",
    "related": []
   },
   {
@@ -110,6 +115,7 @@
    ],
    "topic": "sociology",
    "source": "sociology",
+   "source_topic": "sociology",
    "related": [
     "fgss-intersectionality"
    ]
@@ -720,7 +726,8 @@
    "via": {
     "primary": "Maxey1565",
     "skill": "soc-intersection-review"
-   }
+   },
+   "source_topic": "sociology"
   },
   {
    "agent": "Maxey1562",
@@ -731,21 +738,24 @@
    "via": {
     "primary": "Maxey1564",
     "skill": "soc-life-table"
-   }
+   },
+   "source_topic": "sociology"
   },
   {
    "agent": "Maxey1564",
    "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
    "topic": "sociology",
    "score": 0.1183,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "sociology"
   },
   {
    "agent": "Maxey1565",
    "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
    "topic": "sociology",
    "score": 0.1183,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "sociology"
   },
   {
    "agent": "Maxey1566",
@@ -756,7 +766,8 @@
    "via": {
     "primary": "Maxey1564",
     "skill": "soc-migration-profile"
-   }
+   },
+   "source_topic": "sociology"
   }
  ],
  "lexicon": {

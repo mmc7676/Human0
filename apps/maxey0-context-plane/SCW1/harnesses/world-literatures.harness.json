@@ -1,0 +1,934 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "languages-communication",
+ "topic": {
+  "id": "world-literatures",
+  "label": "World Literatures",
+  "desc": "World Literatures: Iberian Literature, Korean Literature, Italian Literature, Japanese Literature, Latin American Literature and Peninsular Spanish Literature."
+ },
+ "concepts": [
+  {
+   "id": "ilac-iberian-literature",
+   "label": "Iberian Literature",
+   "desc": "Literature of Spain and Portugal from the medieval period and the Golden Age to modern and contemporary writing.",
+   "keywords": [
+    "literature",
+    "golden age",
+    "cervantes",
+    "camoes",
+    "poetry",
+    "novel",
+    "theater",
+    "generation"
+   ],
+   "topic": "world-literatures",
+   "source": "iberian-and-latin-american-cultures",
+   "source_topic": "iberian-and-latin-american-cultures",
+   "related": []
+  },
+  {
+   "id": "ilac-latin-american-literature",
+   "label": "Latin American Literature",
+   "desc": "Literature of Latin America and Brazil from chronicles to modernismo, the Boom, testimonio and contemporary fiction.",
+   "keywords": [
+    "boom",
+    "modernismo",
+    "magical realism",
+    "testimonio",
+    "brazilian",
+    "chronicle",
+    "fiction",
+    "essay",
+    "latin american",
+    "colonial",
+    "borges",
+    "neruda"
+   ],
+   "topic": "world-literatures",
+   "source": "iberian-and-latin-american-cultures",
+   "source_topic": "iberian-and-latin-american-cultures",
+   "related": []
+  },
+  {
+   "id": "ital-literature",
+   "label": "Italian Literature",
+   "desc": "Italian literature from Dante, Petrarch and Boccaccio through the Renaissance, Romanticism and modern writers.",
+   "keywords": [
+    "literature",
+    "dante",
+    "petrarch",
+    "boccaccio",
+    "renaissance",
+    "poetry",
+    "novel",
+    "sonnet"
+   ],
+   "topic": "world-literatures",
+   "source": "italian",
+   "source_topic": "italian",
+   "related": []
+  },
+  {
+   "id": "jpn-literature",
+   "label": "Japanese Literature",
+   "desc": "Classical to modern literature: the Tale of Genji, haiku and waka, and modern novelists.",
+   "keywords": [
+    "literature",
+    "genji",
+    "haiku",
+    "waka",
+    "classical",
+    "novel",
+    "poetry",
+    "modern"
+   ],
+   "topic": "world-literatures",
+   "source": "japanese",
+   "source_topic": "japanese",
+   "related": []
+  },
+  {
+   "id": "kor-literature",
+   "label": "Korean Literature",
+   "desc": "Classical poetry such as sijo, premodern fiction and modern and contemporary Korean literature.",
+   "keywords": [
+    "literature",
+    "sijo",
+    "classical",
+    "poetry",
+    "novel",
+    "modern",
+    "fiction",
+    "pansori"
+   ],
+   "topic": "world-literatures",
+   "source": "korean",
+   "source_topic": "korean",
+   "related": []
+  },
+  {
+   "id": "span-peninsular-literature",
+   "label": "Peninsular Spanish Literature",
+   "desc": "Literature of Spain from the medieval cantar and Golden Age drama through Cervantes, the Generation of 98 and contemporary fiction.",
+   "keywords": [
+    "peninsular",
+    "golden age",
+    "cervantes",
+    "quijote",
+    "lorca",
+    "drama",
+    "medieval"
+   ],
+   "topic": "world-literatures",
+   "source": "spanish",
+   "source_topic": "spanish",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ilac-close-reading",
+   "concept": "ilac-iberian-literature",
+   "label": "Close Reading",
+   "desc": "Analyses form, imagery and theme in a passage, checked by quoting the lines that support each claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1367",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1368",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-period-context",
+   "concept": "ilac-iberian-literature",
+   "label": "Literary Period Contextualiser",
+   "desc": "Places a work in its movement and historical context, checked against dated literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1367",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1362",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-verse-scansion",
+   "concept": "ilac-iberian-literature",
+   "label": "Verse Scansion",
+   "desc": "Counts syllables and identifies meter and rhyme in Spanish and Portuguese verse, checked by recounting with synalepha rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1367",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1368",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-author-profile",
+   "concept": "ilac-latin-american-literature",
+   "label": "Author and Work Profile",
+   "desc": "Profiles an author with dated works and critical reception, checked against bibliographic records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1367",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1609",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-movement-analysis",
+   "concept": "ilac-latin-american-literature",
+   "label": "Literary Movement Analysis",
+   "desc": "Explains the features of a movement such as modernismo or the Boom with example works, checked by quoting each example.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1367",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-testimonio-reading",
+   "concept": "ilac-latin-american-literature",
+   "label": "Testimonio Reading",
+   "desc": "Reads a testimonio for voice, mediation and politics, checked by citing the text and its editor.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1367",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1364",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "span-boom-analysis",
+   "concept": "ilac-latin-american-literature",
+   "label": "Boom Novel Analyzer",
+   "desc": "Analyzes form and politics of a Boom novel, checked against primary text and criticism.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1369",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1371",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-colonial-chronicle",
+   "concept": "ilac-latin-american-literature",
+   "label": "Colonial Chronicle Interpreter",
+   "desc": "Interprets a colonial chronicle in its historical context, checked against historical scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1369",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1371",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1372",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-poetry-reading",
+   "concept": "ilac-latin-american-literature",
+   "label": "Latin American Poetry Reader",
+   "desc": "Produces a close reading of a poem by poets such as Neruda or Mistral, checked against the original Spanish.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1369",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "ital-author-context",
+   "concept": "ital-literature",
+   "label": "Author and Period Context",
+   "desc": "Places an author in a literary movement and historical setting, checked against dated literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1385",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1382",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-close-reading",
+   "concept": "ital-literature",
+   "label": "Close Reading",
+   "desc": "Analyses a passage of Italian literature for form, imagery and theme, checked by quoting the supporting lines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1385",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1389",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "ital-metrics",
+   "concept": "ital-literature",
+   "label": "Italian Metrics",
+   "desc": "Scans hendecasyllables and identifies rhyme schemes such as terza rima and the sonnet, checked by recounting syllables with elision rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1385",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1387",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1383",
+     "role": "support"
+    }
+   ],
+   "source": "italian"
+  },
+  {
+   "id": "jpn-author-context",
+   "concept": "jpn-literature",
+   "label": "Author and Period Context",
+   "desc": "Places a work in its literary period and movement, checked against dated literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1396",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1395",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-classical-reading",
+   "concept": "jpn-literature",
+   "label": "Classical Japanese Reader",
+   "desc": "Explains classical grammar forms in a passage, checked against classical grammar references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1396",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1390",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "jpn-haiku-analysis",
+   "concept": "jpn-literature",
+   "label": "Haiku and Waka Analysis",
+   "desc": "Analyses a poem's seasonal word, cutting word and imagery, checked by mora count and cited conventions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1396",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1391",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1397",
+     "role": "support"
+    }
+   ],
+   "source": "japanese"
+  },
+  {
+   "id": "kor-author-context",
+   "concept": "kor-literature",
+   "label": "Author and Period Context",
+   "desc": "Places a work in its period and movement, checked against dated literary histories.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1412",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1413",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-close-reading",
+   "concept": "kor-literature",
+   "label": "Close Reading",
+   "desc": "Analyses a passage of Korean fiction for form and theme, checked by quoting supporting lines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1412",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1409",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "kor-sijo-analysis",
+   "concept": "kor-literature",
+   "label": "Sijo Analysis",
+   "desc": "Analyses a sijo's structure and imagery, checked by syllable count per line and cited conventions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1412",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1407",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1411",
+     "role": "support"
+    }
+   ],
+   "source": "korean"
+  },
+  {
+   "id": "span-cervantes-analysis",
+   "concept": "span-peninsular-literature",
+   "label": "Cervantes Narrative Analyzer",
+   "desc": "Analyzes narrative structure and themes in Cervantes, checked against cited criticism.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1372",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1371",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-golden-age-reading",
+   "concept": "span-peninsular-literature",
+   "label": "Golden Age Text Reader",
+   "desc": "Produces a close reading of a Golden Age play or poem with meter and context, checked against the original text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1372",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1373",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  },
+  {
+   "id": "span-peninsular-survey",
+   "concept": "span-peninsular-literature",
+   "label": "Peninsular Period Surveyor",
+   "desc": "Surveys a period of Spanish literature with dated works and movements, checked against literary histories.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1372",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1371",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1610",
+     "role": "support"
+    }
+   ],
+   "source": "spanish"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1362",
+   "name": "Colonial Studies Agent",
+   "legacy_key": "ilac-colonial",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1363",
+   "name": "Cultural Accuracy Checker",
+   "legacy_key": "ilac-checker",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1364",
+   "name": "Indigenous and Afro-Latin Cultures Agent",
+   "legacy_key": "ilac-indigenous",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1365",
+   "name": "Latin American Society Agent",
+   "legacy_key": "ilac-society",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1367",
+   "name": "Hispanic and Lusophone Literature Agent",
+   "legacy_key": "ilac-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1368",
+   "name": "Spanish and Portuguese Language Agent",
+   "legacy_key": "ilac-linguist",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1369",
+   "name": "Latin American Literature Agent",
+   "legacy_key": "span-latam",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1371",
+   "name": "Hispanic Cultural Studies Agent",
+   "legacy_key": "span-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1372",
+   "name": "Peninsular Literature Agent",
+   "legacy_key": "span-penin",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1373",
+   "name": "Spanish Language Agent",
+   "legacy_key": "span-lang",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1382",
+   "name": "Italian Culture and Cinema Agent",
+   "legacy_key": "ital-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1383",
+   "name": "Italian Accuracy Checker",
+   "legacy_key": "ital-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1385",
+   "name": "Italian Literature Agent",
+   "legacy_key": "ital-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1387",
+   "name": "Italian Pronunciation Agent",
+   "legacy_key": "ital-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1389",
+   "name": "Italian Translation Agent",
+   "legacy_key": "ital-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1390",
+   "name": "Japanese Grammar Agent",
+   "legacy_key": "jpn-grammarian",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1391",
+   "name": "Japanese Accuracy Checker",
+   "legacy_key": "jpn-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1395",
+   "name": "Japanese Culture and History Agent",
+   "legacy_key": "jpn-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1396",
+   "name": "Japanese Literature Agent",
+   "legacy_key": "jpn-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1397",
+   "name": "Japanese Pronunciation Agent",
+   "legacy_key": "jpn-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1407",
+   "name": "Korean Accuracy Checker",
+   "legacy_key": "kor-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1409",
+   "name": "Korean Translation Agent",
+   "legacy_key": "kor-translator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1411",
+   "name": "Korean Pronunciation Agent",
+   "legacy_key": "kor-phonetician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1412",
+   "name": "Korean Literature Agent",
+   "legacy_key": "kor-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1413",
+   "name": "Korean Culture and History Agent",
+   "legacy_key": "kor-culture",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1609",
+   "name": "Translation Agent",
+   "legacy_key": "ilac-translator",
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
+  },
+  {
+   "key": "Maxey1610",
+   "name": "Literary Criticism Agent",
+   "legacy_key": "span-critic",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1363",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "world-literatures",
+   "score": 0.1185,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "iberian-and-latin-american-cultures"
+  },
+  {
+   "agent": "Maxey1368",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "world-literatures",
+   "score": 0.1308,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "iberian-and-latin-american-cultures"
+  },
+  {
+   "agent": "Maxey1609",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "world-literatures",
+   "score": 0.1308,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1368",
+    "skill": "ilac-grammar-check"
+   },
+   "source_topic": "iberian-and-latin-american-cultures"
+  }
+ ],
+ "lexicon": {
+  "ilac-language": "spanish portuguese grammar dialect sociolinguistics bilingualism catalan",
+  "ilac-letters": "literature cervantes poetry novel theater verse modernismo testimonio",
+  "ilac-empire": "conquest colonial independence postcolonial viceroyalty missions",
+  "ilac-peoples": "indigenous quechua nahuatl diaspora mestizaje identity race",
+  "ilac-screen": "cinema film art music migration politics",
+  "ital-morphology": "grammar conjugation subjunctive congiuntivo agreement clitic tense",
+  "ital-sound": "pronunciation phonetics geminate stress vowel intonation ipa",
+  "ital-varieties": "latin dialect tuscan neapolitan sicilian etymology",
+  "ital-letters": "dante petrarch boccaccio renaissance poetry sonnet hendecasyllable",
+  "ital-usage": "translation register idiom vocabulary glossary",
+  "ital-culture": "cinema neorealism opera society food",
+  "jpn-script": "hiragana katakana kanji radical furigana romanization",
+  "jpn-grammar": "grammar particle conjugation verb adjective clause",
+  "jpn-politeness": "keigo honorific humble polite register pragmatics business",
+  "jpn-sound": "pronunciation mora pitch geminate dialect intonation",
+  "jpn-letters": "literature genji haiku waka classical poetry",
+  "jpn-culture": "translation history society anime edo meiji localization",
+  "kor-script": "hangul jamo hanja romanization sejong orthography",
+  "kor-grammar": "grammar particle ending conjugation connective verb",
+  "kor-politeness": "honorific polite formal banmal jondaetmal hierarchy",
+  "kor-sound": "pronunciation phonology nasalization liaison dialect ipa",
+  "kor-letters": "literature sijo classical poetry pansori fiction",
+  "kor-culture": "translation history joseon division media hallyu",
+  "span-language": "conjugation subjunctive proficiency composition vocabulary",
+  "span-linguistics": "linguistics phonetic dialect syntax ipa bilingualism",
+  "span-peninsular": "peninsular golden cervantes quijote lorca medieval",
+  "span-latam": "boom neruda borges colonial modernismo chronicle",
+  "span-translation": "translation terminology localization interpreting legal medical",
+  "span-culture": "film identity latino memory dictatorship transatlantic"
+ },
+ "sources": [
+  "iberian-and-latin-american-cultures",
+  "italian",
+  "japanese",
+  "korean",
+  "spanish"
+ ]
+}

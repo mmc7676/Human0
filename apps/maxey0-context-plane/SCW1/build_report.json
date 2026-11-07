@@ -7,14 +7,14 @@
   "mcp_rows": 363
  },
  "after": {
-  "domains": 5,
-  "topics": 121,
+  "domains": 11,
+  "topics": 128,
   "concepts": 711,
   "skills": 1998,
   "agents": 1021,
   "mcp_servers": 117,
   "agent_mcp_links": 556,
-  "related_links": 57,
+  "related_links": 13,
   "mcp_without_agent": 21
  },
  "removed_topics": {
@@ -620,5 +620,10 @@
    "id": "session:claude-code-remote",
    "name": "Claude Code Remote"
   }
- ]
+ ],
+ "regroup": {
+  "domains": 11,
+  "topics": 128,
+  "from_topics": 121
+ }
 }

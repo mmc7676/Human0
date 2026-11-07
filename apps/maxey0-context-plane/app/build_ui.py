@@ -520,6 +520,16 @@ def main():
     h = once(h, "lbl[k]=!lbl[k];if(lbl[k])strict=false;", "lbl[k]=!lbl[k];lblX[k]=!lbl[k];if(lbl[k])strict=false;", "label toggle opt-out")
     h = once(h, "$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>lbl[k]=false);", "$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=false;lblX[k]=false});", "None resets opt-out")
     h = once(h, "$('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>lbl[k]=true);", "$('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=true;lblX[k]=false});", "All resets opt-out")
+    # domains: a Domain filter above Topic in Browse & select (domains are the top level of the map)
+    h = once(h, '<div class="row"><label>Topic</label><select id="bfTopic"', '<div class="row"><label>Domain</label><select id="bfDomain" aria-label="Filter by domain"></select></div><div class="row"><label>Topic</label><select id="bfTopic"', "domain filter control")
+    h = once(h, "bf:{topic:'',concept:''}", "bf:{domain:'',topic:'',concept:''}", "domain filter state")
+    h = once(h, "function v03Filter(items){const T=V3.bf.topic,C=V3.bf.concept;if(!T&&!C)return items;\n const cOk=cid=>(!C||cid===C)&&(!T||D.concepts.some(c=>c[0]===cid&&c[2]===T));\n return items.filter(n=>{\n  if(n.kind==='topic')return !T||n.id==='t:'+T;",
+      "function v03Filter(items){const T=V3.bf.topic,C=V3.bf.concept,DM=V3.bf.domain;if(!T&&!C&&!DM)return items;\n const tOk=t=>!DM||(TOPIC_META[t]&&TOPIC_META[t].domain===DM);\n const cOk=cid=>(!C||cid===C)&&D.concepts.some(c=>c[0]===cid&&(!T||c[2]===T)&&tOk(c[2]));\n return items.filter(n=>{\n  if(n.kind==='topic')return (!T||n.id==='t:'+T)&&tOk(n.id.slice(2));", "domain filter")
+    h = once(h, "function v03BrowseOptions(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||!bc)return;const tps=[...new Set(D.concepts.map(c=>c[2]))];",
+      "function v03BrowseOptions(){const bt=$('bfTopic'),bc=$('bfConcept'),bd=$('bfDomain');if(!bt||!bc)return;\n if(bd){const ds=(__CP.graph.domains||[]);bd.innerHTML='';const d0=hh('option','','All domains');d0.value='';bd.append(d0);ds.forEach(d=>{const o=hh('option','',d.label+' ('+Object.values(TOPIC_META).filter(m=>m.domain===d.id).length+')');o.value=d.id;o.title=d.desc||'';bd.append(o)});bd.value=V3.bf.domain||''}\n const tps=[...new Set(D.concepts.map(c=>c[2]))].filter(t=>!V3.bf.domain||(TOPIC_META[t]&&TOPIC_META[t].domain===V3.bf.domain));", "domain options")
+    h = once(h, " const cs=D.concepts.filter(c=>!V3.bf.topic||c[2]===V3.bf.topic);", " const cs=D.concepts.filter(c=>(!V3.bf.topic||c[2]===V3.bf.topic)&&tps.includes(c[2]));", "concepts follow domain")
+    h = once(h, "function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.dataset.w)return;bt.dataset.w='1';",
+      "function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.dataset.w)return;bt.dataset.w='1';\n if($('bfDomain'))$('bfDomain').onchange=()=>{V3.bf.domain=$('bfDomain').value;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)};", "domain wire")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):

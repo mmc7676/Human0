@@ -1,13 +1,31 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "math-physical-sciences",
  "topic": {
   "id": "quantum-physics",
   "label": "Quantum Physics",
-  "desc": "Quantum physics: foundations and measurement, wave mechanics, spin, quantum information, many-body physics, field theory, open systems and quantum optics."
+  "desc": "Quantum Physics: Quantum Foundations, Quantum Information and Computing, Wave Mechanics and Solvers, Open Systems and Decoherence, Quantum Optics and Sensing, Many-Body and Condensed Matter, Angular Momentum and Spin and Quantum Mechanics and Quantum Engineering."
  },
  "concepts": [
+  {
+   "id": "engp-quantum-engineering",
+   "label": "Quantum Mechanics and Quantum Engineering",
+   "desc": "Quantum theory applied to devices: tunneling, quantized states, qubits and quantum sensing.",
+   "keywords": [
+    "quantum",
+    "wavefunction",
+    "tunneling",
+    "qubit",
+    "band structure",
+    "schrodinger",
+    "coherence"
+   ],
+   "topic": "quantum-physics",
+   "source": "engineering-physics",
+   "source_topic": "engineering-physics",
+   "related": []
+  },
   {
    "id": "qm-foundations",
    "label": "Quantum Foundations",
@@ -27,6 +45,7 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   },
   {
@@ -43,6 +62,7 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   },
   {
@@ -59,6 +79,7 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   },
   {
@@ -74,6 +95,7 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   },
   {
@@ -89,28 +111,7 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
-   "related": []
-  },
-  {
-   "id": "qm-qft",
-   "label": "Quantum Field Theory and Particles",
-   "desc": "Fields, Feynman diagrams and the Standard Model.",
-   "keywords": [
-    "feynman",
-    "field",
-    "standard-model",
-    "renormalization",
-    "boson",
-    "particle",
-    "lepton",
-    "quark",
-    "accelerator",
-    "decay",
-    "detector",
-    "beam"
-   ],
-   "topic": "quantum-physics",
-   "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   },
   {
@@ -126,6 +127,7 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   },
   {
@@ -141,10 +143,55 @@
    ],
    "topic": "quantum-physics",
    "source": "quantum-physics",
+   "source_topic": "quantum-physics",
    "related": []
   }
  ],
  "skills": [
+  {
+   "id": "engp-qubit-designer",
+   "concept": "engp-quantum-engineering",
+   "label": "Qubit Device Designer",
+   "desc": "Models qubit energy levels and coherence for a device design and checks parameters against simulation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1261",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1020",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
+  {
+   "id": "engp-tunneling-calculator",
+   "concept": "engp-quantum-engineering",
+   "label": "Tunneling Calculator",
+   "desc": "Computes transmission through potential barriers and checks results against WKB approximations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1261",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1028",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1262",
+     "role": "support"
+    }
+   ],
+   "source": "engineering-physics"
+  },
   {
    "id": "entanglement-entropy-analyzer",
    "concept": "qm-foundations",
@@ -532,150 +579,6 @@
    "source": "quantum-physics"
   },
   {
-   "id": "decay-chain-analyzer",
-   "concept": "qm-qft",
-   "label": "Decay Chain Analyzer",
-   "desc": "Lists decay channels and branching ratios of leptons, quarks and hadrons and follows a decay chain to stable products.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1497",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1490",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1617",
-     "role": "support"
-    },
-    {
-     "key": "Maxey1480",
-     "role": "support"
-    }
-   ],
-   "source": "physics"
-  },
-  {
-   "id": "particle-acceleration-simulator",
-   "concept": "qm-qft",
-   "label": "Particle Acceleration Simulator",
-   "desc": "Simulates charged particle tracks in electric and magnetic fields of a linear accelerator or synchrotron and reports beam energy and orbit radius.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1489",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1497",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1483",
-     "role": "support"
-    },
-    {
-     "key": "Maxey1482",
-     "role": "support"
-    }
-   ],
-   "source": "physics"
-  },
-  {
-   "id": "particle-data-lookup",
-   "concept": "qm-qft",
-   "label": "Particle Data Lookup",
-   "desc": "Looks up particle mass, charge, spin, lifetime and decay modes from particle data tables using natural language.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1497",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1618",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1617",
-     "role": "support"
-    },
-    {
-     "key": "Maxey1482",
-     "role": "support"
-    }
-   ],
-   "source": "physics"
-  },
-  {
-   "id": "qm-feynman-diagram-calculator",
-   "concept": "qm-qft",
-   "label": "Feynman Diagram Calculator",
-   "desc": "Draws diagrams and writes amplitudes for simple scattering processes at lowest order.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1506",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1500",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1499",
-     "role": "support"
-    }
-   ],
-   "source": "quantum-physics"
-  },
-  {
-   "id": "qm-renormalization-analyst",
-   "concept": "qm-qft",
-   "label": "Renormalization Analyst",
-   "desc": "Explains renormalization and running couplings and when a cutoff matters.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1506",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1500",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1505",
-     "role": "support"
-    }
-   ],
-   "source": "quantum-physics"
-  },
-  {
-   "id": "qm-standard-model-explainer",
-   "concept": "qm-qft",
-   "label": "Standard Model Explainer",
-   "desc": "Explains the particles and forces of the Standard Model and which questions it leaves open.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1506",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1500",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1501",
-     "role": "support"
-    }
-   ],
-   "source": "quantum-physics"
-  },
-  {
    "id": "qm-perturbation-variational",
    "concept": "qm-solvers",
    "label": "Perturbation and Variational Methods",
@@ -810,6 +713,30 @@
  ],
  "agents": [
   {
+   "key": "Maxey1020",
+   "name": "Computational Physics Modeler",
+   "legacy_key": "apph-modeler",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1028",
+   "name": "Physics Verification Reviewer",
+   "legacy_key": "engp-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1261",
+   "name": "Quantum Device Engineer",
+   "legacy_key": "engp-quantum",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1262",
+   "name": "Applied Mathematics Analyst",
+   "legacy_key": "engp-math",
+   "mcp": []
+  },
+  {
    "key": "Maxey1480",
    "name": "Theorist Agent",
    "legacy_key": "phys-theorist",
@@ -840,18 +767,6 @@
    "key": "Maxey1489",
    "name": "Engineer Agent",
    "legacy_key": "phys-engineer",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1490",
-   "name": "Experimentalist Agent",
-   "legacy_key": "phys-experimentalist",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1497",
-   "name": "Lepton Agent",
-   "legacy_key": "phys-lepton",
    "mcp": []
   },
   {
@@ -911,24 +826,6 @@
    "key": "Maxey1505",
    "name": "Many-Body Physics Agent",
    "legacy_key": "qm-many-body-physicist",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1506",
-   "name": "Field Theory Agent",
-   "legacy_key": "qm-field-theorist",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1617",
-   "name": "Data Analyst Agent",
-   "legacy_key": "phys-data-analyst",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1618",
-   "name": "Literature Review Agent",
-   "legacy_key": "phys-literature",
    "mcp": []
   }
  ],
@@ -1165,16 +1062,51 @@
     "engineering-physics",
     "physics"
    ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
   }
  ],
  "topic_mcp": [
-  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
   "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "local:quantum-simulator-mcp",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
   "171e28f5-9105-4a1b-8474-73a40df68cb6",
   "43edc307-1d33-44f5-94a2-6e9c3e64a538",
   "local:particlephysics-mcp-server",
   "local:chuk-mcp-physics",
-  "local:quantum-simulator-mcp",
   "local:astro-mcp",
   "local:psi-mcp"
  ],
@@ -1188,7 +1120,8 @@
    "via": {
     "primary": "Maxey1498",
     "skill": "quantum-circuit-simulator"
-   }
+   },
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1482",
@@ -1199,28 +1132,32 @@
    "via": {
     "primary": "Maxey1498",
     "skill": "quantum-circuit-simulator"
-   }
+   },
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1498",
    "mcp": "local:psi-mcp",
    "topic": "quantum-physics",
    "score": 0.3932,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1498",
    "mcp": "local:quantum-simulator-mcp",
    "topic": "quantum-physics",
    "score": 0.6298,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1499",
    "mcp": "local:psi-mcp",
    "topic": "quantum-physics",
    "score": 0.3636,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1500",
@@ -1231,7 +1168,8 @@
    "via": {
     "primary": "Maxey1498",
     "skill": "entanglement-entropy-analyzer"
-   }
+   },
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1500",
@@ -1242,7 +1180,8 @@
    "via": {
     "primary": "Maxey1498",
     "skill": "entanglement-entropy-analyzer"
-   }
+   },
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1503",
@@ -1253,7 +1192,8 @@
    "via": {
     "primary": "Maxey1498",
     "skill": "qm-circuit-designer"
-   }
+   },
+   "source_topic": "quantum-physics"
   },
   {
    "agent": "Maxey1503",
@@ -1264,10 +1204,17 @@
    "via": {
     "primary": "Maxey1498",
     "skill": "qm-circuit-designer"
-   }
+   },
+   "source_topic": "quantum-physics"
   }
  ],
  "lexicon": {
+  "engp-math": "differential linear vector fourier eigenvalue tensor dimensional",
+  "engp-qm": "quantum wavefunction tunneling qubit schrodinger coherence",
+  "engp-opt": "photonics optics laser waveguide fiber interference diffraction",
+  "engp-mat": "solid crystal semiconductor nanostructure phonon superconductivity film",
+  "engp-meas": "instrumentation sensor measurement uncertainty calibration acquisition",
+  "engp-nuc": "nuclear radiation plasma fusion simulation finite",
   "foundations": "postulate born commutator observable wavefunction measurement quantum foundations",
   "wavemech": "schrodinger barrier tunneling cross section variational levels perturbation scattering",
   "spinphys": "pauli bloch precession clebsch gordan ladder fine structure spin angular hydrogen",
@@ -1278,6 +1225,7 @@
   "qoptics": "squeezed photon number interferometer clock correlation atom"
  },
  "sources": [
+  "engineering-physics",
   "quantum-physics"
  ]
 }

@@ -1,0 +1,764 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "engineering",
+ "topic": {
+  "id": "aerospace-engineering",
+  "label": "Aerospace Engineering",
+  "desc": "Aerospace Engineering: Spacecraft Systems Engineering, Aerodynamics, Astrodynamics, Flight Dynamics and Control, Propulsion and Aerospace Structures and Materials."
+ },
+ "concepts": [
+  {
+   "id": "aero-aerodynamics",
+   "label": "Aerodynamics",
+   "desc": "Flow of air over wings, bodies and inlets, covering lift, drag, boundary layers and compressible shock behaviour at subsonic to hypersonic speeds.",
+   "keywords": [
+    "aerodynamics",
+    "lift",
+    "drag",
+    "airfoil",
+    "boundary layer",
+    "compressible",
+    "shock",
+    "mach"
+   ],
+   "topic": "aerospace-engineering",
+   "source": "aeronautics-and-astronautics",
+   "source_topic": "aeronautics-and-astronautics",
+   "related": []
+  },
+  {
+   "id": "aero-aerospace-structures",
+   "label": "Aerospace Structures and Materials",
+   "desc": "Lightweight airframe and spacecraft structures, their loads, stresses, buckling, fatigue and composite materials.",
+   "keywords": [
+    "structures",
+    "stress",
+    "buckling",
+    "fatigue",
+    "composite",
+    "airframe",
+    "finite element",
+    "loads"
+   ],
+   "topic": "aerospace-engineering",
+   "source": "aeronautics-and-astronautics",
+   "source_topic": "aeronautics-and-astronautics",
+   "related": []
+  },
+  {
+   "id": "aero-astrodynamics",
+   "label": "Astrodynamics",
+   "desc": "Motion of spacecraft under gravity, including Keplerian orbits, transfers, perturbations and rendezvous.",
+   "keywords": [
+    "orbit",
+    "kepler",
+    "transfer",
+    "delta-v",
+    "trajectory",
+    "perturbation",
+    "rendezvous",
+    "launch"
+   ],
+   "topic": "aerospace-engineering",
+   "source": "aeronautics-and-astronautics",
+   "source_topic": "aeronautics-and-astronautics",
+   "related": []
+  },
+  {
+   "id": "aero-flight-dynamics-control",
+   "label": "Flight Dynamics and Control",
+   "desc": "Aircraft equations of motion, stability derivatives and feedback control laws that keep vehicles stable and on path.",
+   "keywords": [
+    "stability",
+    "control",
+    "autopilot",
+    "feedback",
+    "trim",
+    "handling",
+    "equations of motion",
+    "drone"
+   ],
+   "topic": "aerospace-engineering",
+   "source": "aeronautics-and-astronautics",
+   "source_topic": "aeronautics-and-astronautics",
+   "related": []
+  },
+  {
+   "id": "aero-propulsion",
+   "label": "Propulsion",
+   "desc": "Generation of thrust by air-breathing engines and rockets, analysed through thermodynamic cycles, nozzle flow and specific impulse.",
+   "keywords": [
+    "propulsion",
+    "thrust",
+    "turbofan",
+    "rocket",
+    "nozzle",
+    "combustion",
+    "specific impulse",
+    "cycle"
+   ],
+   "topic": "aerospace-engineering",
+   "source": "aeronautics-and-astronautics",
+   "source_topic": "aeronautics-and-astronautics",
+   "related": []
+  },
+  {
+   "id": "aero-spacecraft-systems",
+   "label": "Spacecraft Systems Engineering",
+   "desc": "Design of spacecraft subsystems such as power, thermal, attitude and communications, integrated against mission requirements.",
+   "keywords": [
+    "spacecraft",
+    "subsystem",
+    "attitude",
+    "thermal",
+    "power",
+    "mission",
+    "requirements",
+    "budget"
+   ],
+   "topic": "aerospace-engineering",
+   "source": "aeronautics-and-astronautics",
+   "source_topic": "aeronautics-and-astronautics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "aero-airfoil-polar",
+   "concept": "aero-aerodynamics",
+   "label": "Airfoil Polar Analysis",
+   "desc": "Computes lift and drag coefficients across angle of attack for an airfoil and checks them against thin-airfoil theory and published wind tunnel polars.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey982",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey983",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey984",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-compressible-flow",
+   "concept": "aero-aerodynamics",
+   "label": "Compressible Flow Calculator",
+   "desc": "Solves isentropic, normal shock and oblique shock relations for a given Mach number and checks results for conservation of mass, momentum and energy.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey982",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey985",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey986",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-wing-design",
+   "concept": "aero-aerodynamics",
+   "label": "Wing Planform Sizing",
+   "desc": "Sizes wing area, aspect ratio and sweep for a cruise condition and checks induced drag and stall margin against the requirements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey982",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey987",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey988",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-beam-stress",
+   "concept": "aero-aerospace-structures",
+   "label": "Wing Box Stress Analysis",
+   "desc": "Calculates bending and shear stresses in a wing box under flight loads and checks margins of safety against material allowables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey987",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey982",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey988",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-buckling-check",
+   "concept": "aero-aerospace-structures",
+   "label": "Panel Buckling Check",
+   "desc": "Estimates critical buckling loads for stiffened panels and checks them against finite element results or handbook curves.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey987",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey983",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey984",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-composite-layup",
+   "concept": "aero-aerospace-structures",
+   "label": "Composite Layup Selection",
+   "desc": "Recommends a composite ply layup for a part and checks stiffness and failure indices with laminate theory.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey987",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey988",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey984",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-hohmann-transfer",
+   "concept": "aero-astrodynamics",
+   "label": "Orbit Transfer Design",
+   "desc": "Computes Hohmann and bi-elliptic transfer delta-v between orbits and checks the totals by energy and vis-viva equations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey986",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey989",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey985",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-launch-window",
+   "concept": "aero-astrodynamics",
+   "label": "Launch Window Analysis",
+   "desc": "Identifies launch windows and rendezvous opportunities for a target orbit and checks the timing against published mission data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey986",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey984",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey988",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-orbit-propagation",
+   "concept": "aero-astrodynamics",
+   "label": "Orbit Propagation",
+   "desc": "Propagates a spacecraft trajectory with J2 and drag perturbations and checks the drift against analytic secular rates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey986",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey988",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey989",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-autopilot-design",
+   "concept": "aero-flight-dynamics-control",
+   "label": "Autopilot Loop Design",
+   "desc": "Designs a feedback controller for pitch or heading hold and checks gain and phase margins in a simulated step response.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey989",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey982",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey983",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-drone-mission",
+   "concept": "aero-flight-dynamics-control",
+   "label": "Drone Mission Planning",
+   "desc": "Plans and validates a drone survey mission through the MAVLink interface, with preflight checks reviewed before upload.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey983",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey989",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey988",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-stability-derivatives",
+   "concept": "aero-flight-dynamics-control",
+   "label": "Stability Derivative Analysis",
+   "desc": "Derives longitudinal and lateral modes from stability derivatives and checks damping and frequency against handling qualities criteria.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey989",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey983",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey982",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-combustor-review",
+   "concept": "aero-propulsion",
+   "label": "Combustion Stability Review",
+   "desc": "Reviews a combustor or injector design for instability risks and checks the findings against documented test literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey985",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey983",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey984",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-engine-cycle",
+   "concept": "aero-propulsion",
+   "label": "Gas Turbine Cycle Analysis",
+   "desc": "Runs an ideal and real Brayton cycle for a turbojet or turbofan and reports thrust and fuel consumption, checked by an energy balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey985",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey982",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey988",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-rocket-performance",
+   "concept": "aero-propulsion",
+   "label": "Rocket Performance Estimator",
+   "desc": "Computes specific impulse, nozzle expansion and delta-v from propellant data and checks the result with the rocket equation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey985",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey986",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey988",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-mission-review",
+   "concept": "aero-spacecraft-systems",
+   "label": "Mission Requirements Review",
+   "desc": "Traces mission requirements to subsystem design choices and checks each trace against prior missions and literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey988",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey984",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey989",
+     "role": "support"
+    },
+    {
+     "key": "Maxey986",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-power-budget",
+   "concept": "aero-spacecraft-systems",
+   "label": "Power and Mass Budget",
+   "desc": "Builds power and mass budgets for spacecraft subsystems and checks the totals for margin against mission requirements.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey988",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey987",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey985",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  },
+  {
+   "id": "aero-thermal-balance",
+   "concept": "aero-spacecraft-systems",
+   "label": "Thermal Balance Analysis",
+   "desc": "Computes equilibrium temperatures from solar, albedo and internal heat loads and checks them against component limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey988",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey987",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey986",
+     "role": "support"
+    }
+   ],
+   "source": "aeronautics-and-astronautics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey982",
+   "name": "Aerodynamics Analyst",
+   "legacy_key": "aero-aerodynamicist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey983",
+   "name": "Flight Test Engineer",
+   "legacy_key": "aero-flight-test",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey984",
+   "name": "Aerospace Literature Reviewer",
+   "legacy_key": "aero-literature",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey985",
+   "name": "Propulsion Engineer",
+   "legacy_key": "aero-propulsion",
+   "mcp": []
+  },
+  {
+   "key": "Maxey986",
+   "name": "Orbital Dynamics Analyst",
+   "legacy_key": "aero-orbital",
+   "mcp": []
+  },
+  {
+   "key": "Maxey987",
+   "name": "Aerospace Structures Analyst",
+   "legacy_key": "aero-structures",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey988",
+   "name": "Spacecraft Systems Engineer",
+   "legacy_key": "aero-systems",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  },
+  {
+   "key": "Maxey989",
+   "name": "Guidance and Control Engineer",
+   "legacy_key": "aero-guidance",
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "MAVLinkMCP",
+   "desc": "MCP server for LLM to drone communication via MAVLink",
+   "tools": [
+    "get_map_view",
+    "create_survey_plan",
+    "render_plan_view",
+    "validate_plan",
+    "preflight_check",
+    "upload_plan",
+    "verify_uploaded_plan",
+    "start_mission",
+    "map_transform",
+    "prefetch_map_area",
+    "revise_plan"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/ion-g-ion/MAVLinkMCP",
+   "id": "local:mavlinkmcp",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "drones",
+    "simulation"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "local:mavlinkmcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey983",
+   "mcp": "local:mavlinkmcp",
+   "topic": "aerospace-engineering",
+   "score": 0.4333,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "aeronautics-and-astronautics"
+  },
+  {
+   "agent": "Maxey984",
+   "mcp": "local:mavlinkmcp",
+   "topic": "aerospace-engineering",
+   "score": 0.43,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey988",
+    "skill": "aero-mission-review"
+   },
+   "source_topic": "aeronautics-and-astronautics"
+  },
+  {
+   "agent": "Maxey987",
+   "mcp": "local:mavlinkmcp",
+   "topic": "aerospace-engineering",
+   "score": 0.43,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey988",
+    "skill": "aero-power-budget"
+   },
+   "source_topic": "aeronautics-and-astronautics"
+  },
+  {
+   "agent": "Maxey988",
+   "mcp": "local:mavlinkmcp",
+   "topic": "aerospace-engineering",
+   "score": 0.43,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "aeronautics-and-astronautics"
+  },
+  {
+   "agent": "Maxey989",
+   "mcp": "local:mavlinkmcp",
+   "topic": "aerospace-engineering",
+   "score": 0.4333,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey983",
+    "skill": "aero-drone-mission"
+   },
+   "source_topic": "aeronautics-and-astronautics"
+  }
+ ],
+ "lexicon": {
+  "aero-flow": "aerodynamics airfoil lift drag compressible shock mach boundary",
+  "aero-engine": "propulsion thrust turbofan rocket nozzle combustion impulse cycle",
+  "aero-airframe": "structures stress buckling fatigue composite panel layup",
+  "aero-flight": "stability autopilot feedback drone handling damping gain",
+  "aero-orbit": "orbit transfer trajectory perturbation rendezvous launch hohmann",
+  "aero-mission": "spacecraft subsystem attitude thermal power requirements budget"
+ },
+ "sources": [
+  "aeronautics-and-astronautics"
+ ]
+}

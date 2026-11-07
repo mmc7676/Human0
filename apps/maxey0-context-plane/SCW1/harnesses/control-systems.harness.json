@@ -1,0 +1,593 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "engineering",
+ "topic": {
+  "id": "control-systems",
+  "label": "Control Systems",
+  "desc": "Control Systems: Control, Controls and Mechatronics and Process Dynamics and Control."
+ },
+ "concepts": [
+  {
+   "id": "cheme-process-control",
+   "label": "Process Dynamics and Control",
+   "desc": "Dynamic models, feedback control and tuning for stable plant operation.",
+   "keywords": [
+    "control",
+    "dynamics",
+    "feedback",
+    "pid",
+    "transfer function",
+    "stability",
+    "tuning",
+    "setpoint"
+   ],
+   "topic": "control-systems",
+   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
+   "related": []
+  },
+  {
+   "id": "me-controls-mechatronics",
+   "label": "Controls and Mechatronics",
+   "desc": "Modelling and feedback control of dynamic systems with sensors, actuators and embedded code.",
+   "keywords": [
+    "control",
+    "feedback",
+    "pid",
+    "transfer function",
+    "sensor",
+    "actuator",
+    "robot",
+    "stability"
+   ],
+   "topic": "control-systems",
+   "source": "mechanical-engineering",
+   "source_topic": "mechanical-engineering",
+   "related": []
+  },
+  {
+   "id": "rb-control",
+   "label": "Control",
+   "desc": "Feedback control of robot joints and vehicles: PID, state-space and model-predictive control.",
+   "keywords": [
+    "pid",
+    "lqr",
+    "mpc",
+    "controller",
+    "actuator",
+    "tuning"
+   ],
+   "topic": "control-systems",
+   "source": "robotics",
+   "source_topic": "robotics",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cheme-control-strategy",
+   "concept": "cheme-process-control",
+   "label": "Control Strategy Design",
+   "desc": "Proposes cascade and feedforward schemes for a unit, checked against disturbance analysis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1102",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1103",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-pid-tuning",
+   "concept": "cheme-process-control",
+   "label": "PID Controller Tuning",
+   "desc": "Tunes PID controllers by model-based rules, checked by simulated step response.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1102",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-stability-check",
+   "concept": "cheme-process-control",
+   "label": "Closed-Loop Stability Analysis",
+   "desc": "Assesses stability margins of control loops, checked by Bode and root locus criteria.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1102",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1106",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "me-pid-tuner",
+   "concept": "me-controls-mechatronics",
+   "label": "PID Controller Tuner",
+   "desc": "Tunes PID gains for a plant model and checks step response, overshoot and stability margins.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1454",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1455",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1456",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-robot-motion-planner",
+   "concept": "me-controls-mechatronics",
+   "label": "Robot Motion Planner",
+   "desc": "Plans robot arm or mobile robot trajectories over ROS and checks joint limits and collision clearance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1454",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1457",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1455",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "me-state-space-modeler",
+   "concept": "me-controls-mechatronics",
+   "label": "State Space Modeler",
+   "desc": "Builds state space models from equations of motion and checks controllability and observability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1454",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1455",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1458",
+     "role": "support"
+    }
+   ],
+   "source": "mechanical-engineering"
+  },
+  {
+   "id": "rb-actuator-motor-driver",
+   "concept": "rb-control",
+   "label": "Actuator and Motor Driver Selector",
+   "desc": "Selects motors, drivers and gearing for torque, speed and duty cycle and checks thermal limits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey964",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey966",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-pid-tuner",
+   "concept": "rb-control",
+   "label": "PID Tuner",
+   "desc": "Tunes PID gains from step responses and reports overshoot, settling time and stability margin.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey964",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey967",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  },
+  {
+   "id": "rb-state-space-controller",
+   "concept": "rb-control",
+   "label": "State-Space and Predictive Controller",
+   "desc": "Designs LQR or model-predictive controllers from a linear model and checks constraint handling.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey964",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey965",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey966",
+     "role": "support"
+    }
+   ],
+   "source": "robotics"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1102",
+   "name": "Process Control Engineer",
+   "legacy_key": "cheme-control",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1103",
+   "name": "Process Safety Reviewer",
+   "legacy_key": "cheme-safety",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1104",
+   "name": "Process Design Engineer",
+   "legacy_key": "cheme-design",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1105",
+   "name": "Mass and Energy Balance Checker",
+   "legacy_key": "cheme-balance",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1106",
+   "name": "Transport Phenomena Engineer",
+   "legacy_key": "cheme-transport",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1454",
+   "name": "Controls and Mechatronics Agent",
+   "legacy_key": "me-controls",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1455",
+   "name": "Dynamics and Vibration Agent",
+   "legacy_key": "me-dynamics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1456",
+   "name": "Units and Standards Checker",
+   "legacy_key": "me-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1457",
+   "name": "Machine Design Agent",
+   "legacy_key": "me-designer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1458",
+   "name": "Finite Element Analyst",
+   "legacy_key": "me-fea",
+   "mcp": []
+  },
+  {
+   "key": "Maxey964",
+   "name": "Robot Controls Agent",
+   "legacy_key": "rb-controls-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey965",
+   "name": "Robot Safety Agent",
+   "legacy_key": "rb-safety-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey966",
+   "name": "Kinematics and Dynamics Agent",
+   "legacy_key": "rb-kinematics-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey967",
+   "name": "Robot Simulation Agent",
+   "legacy_key": "rb-simulation-engineer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "chuk-mcp-physics",
+   "desc": "A Model Context Protocol server that gives LLMs physics simulation and calculation tools (projectile motion, collisions, rigid body simulation, fluid dynamics, orbits, conservation laws, unit conversion).",
+   "tools": [
+    "calculate_projectile_motion",
+    "calculate_elastic_collision",
+    "create_simulation",
+    "add_rigid_body",
+    "step_simulation",
+    "calculate_orbital_period",
+    "calculate_escape_velocity",
+    "check_energy_conservation",
+    "convert_unit"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/IBM/chuk-mcp-physics",
+   "id": "local:chuk-mcp-physics",
+   "origins": [
+    "mechanical-engineering",
+    "physics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "ros-mcp-server",
+   "desc": "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/robotmcp/ros-mcp-server",
+   "id": "local:ros-mcp-server",
+   "origins": [
+    "mechanical-engineering",
+    "robotics"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "local:sympy-mcp",
+  "local:ros-mcp-server",
+  "local:chuk-mcp-physics"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "cheme-thermodynamics": "thermodynamics equilibrium phase fugacity equation state activity enthalpy gibbs",
+  "cheme-reaction": "reactor kinetics rate law conversion cstr plug flow catalyst selectivity",
+  "cheme-transport": "transport heat transfer mass fluid diffusion exchanger viscosity momentum",
+  "cheme-separations": "separation distillation absorption extraction membrane column stage purity",
+  "cheme-process": "control dynamics feedback pid function stability tuning setpoint",
+  "cheme-processdesig": "process design flowsheet economics cost hazard hazop safety sustainability",
+  "me-solid": "statics equilibrium free stress strain beam deflection torsion shear",
+  "me-motion": "dynamics kinematics mechanism vibration frequency damping resonance linkage modal transmissibility",
+  "me-energy": "thermodynamic cycle efficiency fluid pressure flow pipe turbine rankine pump",
+  "me-thermal": "heat conduction convection radiation exchanger fin resistance temperature cooling",
+  "me-design": "machine gear bearing fastener tolerance safety manufacturing cad machining",
+  "me-control": "control feedback pid transfer sensor actuator robot stability",
+  "robotkin": "jacobian lagrange euler frame joint robot robotic arm manipulator dynamics",
+  "robotsense": "imu kalman six degree stereo time fusion detection depth perception",
+  "robotplan": "rrt costmap sampling based recovery navigation obstacle motion smooth",
+  "robotctl": "pid lqr overshoot settling gearing duty controller actuator",
+  "grasping": "gripper grasp reachability effector pick place manipulation grasping",
+  "rosware": "ros rosbridge topic launch service software",
+  "robotsim": "simulator digital twin scenario sim real physics engine simulation",
+  "robotsafe": "hazard separation intent collaborative safety zone human interaction"
+ },
+ "sources": [
+  "chemical-engineering",
+  "mechanical-engineering",
+  "robotics"
+ ]
+}

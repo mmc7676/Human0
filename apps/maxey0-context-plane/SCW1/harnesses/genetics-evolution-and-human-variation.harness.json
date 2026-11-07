@@ -1,0 +1,800 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "life-health-mind",
+ "topic": {
+  "id": "genetics-evolution-and-human-variation",
+  "label": "Genetics, Evolution and Human Variation",
+  "desc": "Genetics, Evolution and Human Variation: Human Genetics and Genomics, Genetics and Genomics, Human Evolution and Variation, Biological Anthropology and Evolution and Ecology."
+ },
+ "concepts": [
+  {
+   "id": "anth-biological-anthropology",
+   "label": "Biological Anthropology",
+   "desc": "Human evolution, primatology, skeletal biology and human genetic and physiological variation.",
+   "keywords": [
+    "evolution",
+    "hominin",
+    "primate",
+    "skeletal",
+    "osteology",
+    "genetic",
+    "variation",
+    "fossil"
+   ],
+   "topic": "genetics-evolution-and-human-variation",
+   "source": "anthropology",
+   "source_topic": "anthropology",
+   "related": []
+  },
+  {
+   "id": "bi-evolution",
+   "label": "Evolution and Ecology",
+   "desc": "Phylogenetics, population dynamics and ecosystems.",
+   "keywords": [
+    "phylogeny",
+    "selection",
+    "ecosystem",
+    "biodiversity",
+    "population"
+   ],
+   "topic": "genetics-evolution-and-human-variation",
+   "source": "biology",
+   "source_topic": "biology",
+   "related": []
+  },
+  {
+   "id": "bi-genomics",
+   "label": "Genetics and Genomics",
+   "desc": "Inheritance, genomes, variants and population genetics.",
+   "keywords": [
+    "gene",
+    "genome",
+    "variant",
+    "allele",
+    "inheritance",
+    "population"
+   ],
+   "topic": "genetics-evolution-and-human-variation",
+   "source": "biology",
+   "source_topic": "biology",
+   "related": []
+  },
+  {
+   "id": "hbio-evolution-variation",
+   "label": "Human Evolution and Variation",
+   "desc": "Hominin evolution, adaptation and the biological diversity of living human populations.",
+   "keywords": [
+    "evolution",
+    "hominin",
+    "adaptation",
+    "fossil",
+    "selection",
+    "diversity",
+    "ancestry",
+    "preprint"
+   ],
+   "topic": "genetics-evolution-and-human-variation",
+   "source": "human-biology",
+   "source_topic": "human-biology",
+   "related": []
+  },
+  {
+   "id": "hbio-human-genetics",
+   "label": "Human Genetics and Genomics",
+   "desc": "Inheritance, variation and the human genome: Mendelian and complex traits, variants and population genetics.",
+   "keywords": [
+    "genetics",
+    "genome",
+    "variant",
+    "inheritance",
+    "allele",
+    "mendelian",
+    "population",
+    "genomics"
+   ],
+   "topic": "genetics-evolution-and-human-variation",
+   "source": "human-biology",
+   "source_topic": "human-biology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "anth-genetic-variation",
+   "concept": "anth-biological-anthropology",
+   "label": "Human Genetic Variation Review",
+   "desc": "Summarises population genetic variation studies and checks interpretations for race and ancestry misuse.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1012",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1014",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-hominin-comparison",
+   "concept": "anth-biological-anthropology",
+   "label": "Hominin Fossil Comparison",
+   "desc": "Compares hominin fossil traits and dates and checks placements against the published phylogenetic literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1012",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1013",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "anth-skeletal-profile",
+   "concept": "anth-biological-anthropology",
+   "label": "Skeletal Biological Profile",
+   "desc": "Estimates age, sex and stature from skeletal measurements and checks the estimates against reference standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1012",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1015",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1016",
+     "role": "support"
+    }
+   ],
+   "source": "anthropology"
+  },
+  {
+   "id": "bi-ecosystem-biodiversity-analyst",
+   "concept": "bi-evolution",
+   "label": "Ecosystem and Biodiversity Analyst",
+   "desc": "Computes diversity indices and species distributions and states the sampling limits of the data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1083",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-phylogenetics-builder",
+   "concept": "bi-evolution",
+   "label": "Phylogenetics Builder",
+   "desc": "Builds phylogenetic trees from sequences with alignment, model choice and support values.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1083",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-population-dynamics-modeler",
+   "concept": "bi-evolution",
+   "label": "Population Dynamics Modeler",
+   "desc": "Models growth, competition and predator-prey dynamics and tests them against field data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1083",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1085",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-genome-assembly-annotation",
+   "concept": "bi-genomics",
+   "label": "Genome Assembly and Annotation",
+   "desc": "Plans assembly and gene annotation pipelines and reports assembly quality statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1084",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1085",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-population-genetics",
+   "concept": "bi-genomics",
+   "label": "Population Genetics Analyst",
+   "desc": "Computes allele frequencies, Hardy-Weinberg tests and measures of population structure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1085",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1083",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-variant-interpretation",
+   "concept": "bi-genomics",
+   "label": "Variant Interpretation Assistant",
+   "desc": "Summarizes what the literature and databases say about a genetic variant for research use and does not give clinical diagnosis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1085",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "hbio-adaptation-case",
+   "concept": "hbio-evolution-variation",
+   "label": "Adaptation Case Study",
+   "desc": "Explains a human adaptation with its selection pressure and genetic basis, checked against published studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1353",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1352",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-hominin-timeline",
+   "concept": "hbio-evolution-variation",
+   "label": "Hominin Timeline",
+   "desc": "Orders hominin species by date and key traits, checked against dated fossil evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1353",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-literature-search",
+   "concept": "hbio-evolution-variation",
+   "label": "Biomedical Literature Search",
+   "desc": "Finds peer-reviewed articles and preprints on a human biology question, checked by verifying identifiers and publication status.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1608",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1353",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-hardy-weinberg",
+   "concept": "hbio-human-genetics",
+   "label": "Hardy-Weinberg Tester",
+   "desc": "Tests genotype counts against Hardy-Weinberg equilibrium for a population, checked by recomputing the chi-square statistic.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1352",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1353",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-pedigree-analysis",
+   "concept": "hbio-human-genetics",
+   "label": "Pedigree Analysis",
+   "desc": "Infers inheritance mode and genotype probabilities from a pedigree, checked by recomputing each probability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1352",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1351",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  },
+  {
+   "id": "hbio-variant-frequency",
+   "concept": "hbio-human-genetics",
+   "label": "Variant Frequency Lookup",
+   "desc": "Looks up variant and allele frequency in genomics datasets, checked by reporting dataset, cohort size and query.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1352",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1348",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1608",
+     "role": "support"
+    }
+   ],
+   "source": "human-biology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1012",
+   "name": "Biological Anthropologist",
+   "legacy_key": "anth-bioanth",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1013",
+   "name": "Anthropological Literature Reviewer",
+   "legacy_key": "anth-literature",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1014",
+   "name": "Medical Anthropologist",
+   "legacy_key": "anth-medical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1015",
+   "name": "Fieldwork Methods Checker",
+   "legacy_key": "anth-methods",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1016",
+   "name": "Field Site Mapper",
+   "legacy_key": "anth-mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1079",
+   "name": "Literature Claim Checker Agent",
+   "legacy_key": "bi-literature-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1083",
+   "name": "Evolution and Ecology Agent",
+   "legacy_key": "bi-evolutionary-biologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1084",
+   "name": "Bioinformatics Agent",
+   "legacy_key": "bi-bioinformatician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1085",
+   "name": "Genetics Agent",
+   "legacy_key": "bi-geneticist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1348",
+   "name": "Evidence and Accuracy Checker",
+   "legacy_key": "hbio-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1351",
+   "name": "Developmental Biology Agent",
+   "legacy_key": "hbio-development",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1352",
+   "name": "Human Genetics Agent",
+   "legacy_key": "hbio-geneticist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1353",
+   "name": "Human Evolution Agent",
+   "legacy_key": "hbio-evolution",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1608",
+   "name": "Biomedical Literature Agent",
+   "legacy_key": "hbio-literature",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "name": "bioRxiv",
+   "desc": "Access bioRxiv and medRxiv preprint data",
+   "tools": [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "origins": [
+    "bioengineering",
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology",
+    "research"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "name": "Boltz API",
+   "desc": "Predict molecular structures and binding interactions, screen libraries, and design binders with the Boltz API.",
+   "tools": [
+    "boltz_estimate_protein_screen",
+    "boltz_estimate_small_molecule_screen",
+    "boltz_estimate_structure_and_binding",
+    "boltz_get_guidance",
+    "boltz_get_job_status",
+    "boltz_get_screen_results",
+    "boltz_get_structure_and_binding_prediction",
+    "boltz_start_protein_screen"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "origins": [
+    "bioengineering",
+    "biology",
+    "biomedical-computation"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "name": "Owkin",
+   "desc": "Interact with AI agents built for biology",
+   "tools": [
+    "list_cell_types",
+    "list_cohorts",
+    "features_description",
+    "filter_slides",
+    "get_histomics",
+    "display_slide_thumbnail",
+    "survival_analysis",
+    "histoplus_help"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "origins": [
+    "biology"
+   ]
+  },
+  {
+   "uuid": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "name": "Helix GenoSphere",
+   "desc": "Query human genomics & longitudinal clinical data",
+   "tools": [
+    "get_variant_frequency",
+    "check_gene_availability",
+    "get_dataset_overview",
+    "search_concepts",
+    "get_patient_count"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "origins": [
+    "biology",
+    "human-biology"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "8c1da671-b40e-465b-9bc4-bff40398221f",
+  "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+  "bd022b03-2829-47df-b07f-b50c3541c932",
+  "7f750eb6-c3cb-47d7-9269-d35c43fe9925"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "anth-field": "ethnography fieldwork participant observation interview notes coding",
+  "anth-theory": "kinship ritual exchange structuralism symbolic gift",
+  "anth-bio": "evolution hominin primate skeletal fossil genetic",
+  "anth-speech": "language discourse ideology endangered transcription sociolinguistic",
+  "anth-health": "illness healing biomedicine epidemic narrative",
+  "anth-economy": "market globalization livelihood migration development",
+  "molecular": "dna rna transcription translation pcr cloning promoter protein molecular biology",
+  "cellbio": "organelle checkpoint trafficking membrane culture contamination cell signalling mitosis",
+  "genomics": "allele variant genome assembly annotation hardy weinberg gene inheritance population genetics genomics",
+  "neuroscience": "neuron hodgkin huxley eeg fmri synaptic synapse plasticity neuroscience neural connectivity",
+  "structbio": "enzyme michaelis menten docking inhibition binder folding ligand biochemistry structural",
+  "evolution": "phylogenetic alignment predator prey diversity phylogeny selection biodiversity evolution ecology",
+  "physiology": "homeostasis immune cytokine adaptive innate organ antibody physiology immunology",
+  "biosafety": "biosafety hazardous qualified diagnosis",
+  "hbio-structure": "anatomy organ tissue skeleton muscle histology landmark",
+  "hbio-function": "physiology homeostasis cardiovascular respiratory renal endocrine nervous feedback",
+  "hbio-cellular": "cell membrane organelle metabolism signaling protein transcription",
+  "hbio-heredity": "genetics genome variant inheritance allele mendelian genomics",
+  "hbio-lifespan": "development embryo fertilization growth puberty aging differentiation",
+  "hbio-origins": "evolution hominin adaptation fossil selection diversity ancestry"
+ },
+ "sources": [
+  "anthropology",
+  "biology",
+  "human-biology"
+ ]
+}

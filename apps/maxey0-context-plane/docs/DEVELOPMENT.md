@@ -49,7 +49,7 @@ The Worker bundles the map and the app page at deploy time; rebuild both first w
 ## Add or change a topic
 
 1. Add or edit a pack in `SCW1/sources/packs/` (format: `human0.topic-pack/1`; the `topic-graph-generator` prompt describes it, and `validate_topic_pack` checks it).
-2. If the topic belongs to a domain other than Academic Disciplines, list it in `domain_topics` or `work_topics` in `SCW1/ontology.spec.json`.
+2. Give the new topic a domain: add `"<topic id>": "<domain id>"` to `regroup.pack_domains` in `SCW1/ontology.spec.json`, or place its concepts in existing topics under `regroup.topics`. The build fails for any concept with no place.
 3. Build, run the tests, deploy.
 
 MCP server rows must be real projects whose existence you have checked; record where in the pack's `provenance.mcp_notes`.

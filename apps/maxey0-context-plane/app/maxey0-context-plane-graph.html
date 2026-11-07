@@ -68,7 +68,7 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 </div></details>
 <details class="cs" id="cs_browse" open><summary>Browse &amp; select</summary><div class="cs-b">
 <div class="row"><input id="search" placeholder="Search agent, server, skill…"></div>
-<div class="row"><label>Topic</label><select id="bfTopic" aria-label="Filter by topic"></select></div><div class="row"><label>Concept</label><select id="bfConcept" aria-label="Filter by concept"></select></div><div class="row"><button id="tabT">Topics</button><button id="tabC">Concepts</button><button id="tabA" class="on">Agents</button><button id="tabM">MCP servers</button><button id="tabS">Skills</button></div>
+<div class="row"><label>Domain</label><select id="bfDomain" aria-label="Filter by domain"></select></div><div class="row"><label>Topic</label><select id="bfTopic" aria-label="Filter by topic"></select></div><div class="row"><label>Concept</label><select id="bfConcept" aria-label="Filter by concept"></select></div><div class="row"><button id="tabT">Topics</button><button id="tabC">Concepts</button><button id="tabA" class="on">Agents</button><button id="tabM">MCP servers</button><button id="tabS">Skills</button></div>
 <div class="list" id="list"></div>
 <div class="row"><button id="msTog">Multi-select</button><button id="msAll">Select all listed</button></div>
 <div class="detail" id="msPanel" style="display:none;min-height:0"></div>
@@ -1123,7 +1123,7 @@ window.__v02={version:'0.2',builtin:BUILTIN_PACKS.map(p=>p.id),added:()=>[...v01
 // (1) Browse & select by Topic / Concept  (2) collapsed explanations  (3) upload Skill / Agent -> mapped, orange / fire-engine red
 // (4) separate state controls: per artifact app (teal bar inside each app) and for the whole Human0 app (gold bar at the top)
 // (5) full screen for every artifact app, and for the graph / control board of App 1
-const V3={ver:'0.3',up:[],staged:[],bf:{topic:'',concept:''},xpOpen:{},msg:{},fs:null,seq:0};
+const V3={ver:'0.3',up:[],staged:[],bf:{domain:'',topic:'',concept:''},xpOpen:{},msg:{},fs:null,seq:0};
 const UPC={skill:'#ff8c00',agent:'#ce2029'};           // orange = uploaded skill, fire-engine red = uploaded agent
 const V3KEY='human0.v03.state.';
 const hh=(t,c,x,a)=>{const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;if(a)for(const k in a)e.setAttribute(k,a[k]);return e};
@@ -1133,26 +1133,30 @@ function v03EdgeTint(e,dim){if(dim)return;const a=N[e.a],b=N[e.b];if(!a||!b)retu
  cx.strokeStyle=((ua&&a.kind==='agent')||(ub&&b.kind==='agent'))?UPC.agent+'cc':UPC.skill+'cc';cx.lineWidth=Math.max(cx.lineWidth,1.5)}
 
 // ---------- (1) Browse & select by Topic and Concept
-function v03Filter(items){const T=V3.bf.topic,C=V3.bf.concept;if(!T&&!C)return items;
- const cOk=cid=>(!C||cid===C)&&(!T||D.concepts.some(c=>c[0]===cid&&c[2]===T));
+function v03Filter(items){const T=V3.bf.topic,C=V3.bf.concept,DM=V3.bf.domain;if(!T&&!C&&!DM)return items;
+ const tOk=t=>!DM||(TOPIC_META[t]&&TOPIC_META[t].domain===DM);
+ const cOk=cid=>(!C||cid===C)&&D.concepts.some(c=>c[0]===cid&&(!T||c[2]===T)&&tOk(c[2]));
  return items.filter(n=>{
-  if(n.kind==='topic')return !T||n.id==='t:'+T;
+  if(n.kind==='topic')return (!T||n.id==='t:'+T)&&tOk(n.id.slice(2));
   if(n.kind==='concept')return cOk(n.raw);
   if(n.kind==='skill')return cOk(n.concept);
   if(n.kind==='agent')return (agentSkills[n.id]||[]).some(o=>cOk(o.s[1]));
   if(n.kind==='mcp')return G.some(g=>g.b===n.id&&(agentSkills[g.a]||[]).some(o=>cOk(o.s[1])));
   return true})}
-function v03BrowseOptions(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||!bc)return;const tps=[...new Set(D.concepts.map(c=>c[2]))];
+function v03BrowseOptions(){const bt=$('bfTopic'),bc=$('bfConcept'),bd=$('bfDomain');if(!bt||!bc)return;
+ if(bd){const ds=(__CP.graph.domains||[]);bd.innerHTML='';const d0=hh('option','','All domains');d0.value='';bd.append(d0);ds.forEach(d=>{const o=hh('option','',d.label+' ('+Object.values(TOPIC_META).filter(m=>m.domain===d.id).length+')');o.value=d.id;o.title=d.desc||'';bd.append(o)});bd.value=V3.bf.domain||''}
+ const tps=[...new Set(D.concepts.map(c=>c[2]))].filter(t=>!V3.bf.domain||(TOPIC_META[t]&&TOPIC_META[t].domain===V3.bf.domain));
  if(V3.bf.topic&&!tps.includes(V3.bf.topic))V3.bf.topic='';
  bt.innerHTML='';const o0=hh('option','','All topics');o0.value='';bt.append(o0);
  tps.forEach(t=>{const o=hh('option','',((TOPIC_META[t]&&TOPIC_META[t].label)||cap(t))+' ('+D.concepts.filter(c=>c[2]===t).length+')');o.value=t;bt.append(o)});bt.value=V3.bf.topic;
- const cs=D.concepts.filter(c=>!V3.bf.topic||c[2]===V3.bf.topic);if(V3.bf.concept&&!cs.some(c=>c[0]===V3.bf.concept))V3.bf.concept='';
+ const cs=D.concepts.filter(c=>(!V3.bf.topic||c[2]===V3.bf.topic)&&tps.includes(c[2]));if(V3.bf.concept&&!cs.some(c=>c[0]===V3.bf.concept))V3.bf.concept='';
  bc.innerHTML='';const p0=hh('option','',V3.bf.topic?'All concepts in this topic':'All concepts');p0.value='';bc.append(p0);
  cs.slice().sort((x,y)=>x[1].localeCompare(y[1])).forEach(c=>{const o=hh('option','',c[1]+(V3.bf.topic?'':' · '+((TOPIC_META[c[2]]&&TOPIC_META[c[2]].label)||cap(c[2]))));o.value=c[0];bc.append(o)});bc.value=V3.bf.concept}
 function v03BrowseApply(selectNode){v03BrowseOptions();
  if(selectNode){const T=V3.bf.topic,C=V3.bf.concept;if(C&&N['c:'+C])select('c:'+C);else if(T&&N['t:'+T])select('t:'+T);else{sel=null;msel.clear();renderMs();renderList();detail();draw();return}}
  renderList();draw()}
 function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.dataset.w)return;bt.dataset.w='1';
+ if($('bfDomain'))$('bfDomain').onchange=()=>{V3.bf.domain=$('bfDomain').value;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)};
  bt.onchange=()=>{V3.bf.topic=bt.value;V3.bf.concept='';v03BrowseApply(true)};
  bc.onchange=()=>{V3.bf.concept=bc.value;v03BrowseApply(true)};
  $('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC'].forEach(x=>$(x).className=x==='tabT'?'on':'');renderList()};

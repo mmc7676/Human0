@@ -1,0 +1,509 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "data-science",
+ "topic": {
+  "id": "data-visualization-and-ml-datasets",
+  "label": "Data Visualization and ML Datasets",
+  "desc": "Data Visualization and ML Datasets: Exploration and Visualisation, Data Visualization and Communication and Datasets for Machine Learning."
+ },
+ "concepts": [
+  {
+   "id": "da-exploration",
+   "label": "Exploration and Visualisation",
+   "desc": "Looking at data to learn from it: profiling, summaries, charts that tell the truth and sharing findings.",
+   "keywords": [
+    "exploration",
+    "profiling",
+    "visualization",
+    "chart",
+    "summary"
+   ],
+   "topic": "data-visualization-and-ml-datasets",
+   "source": "data",
+   "source_topic": "data",
+   "related": []
+  },
+  {
+   "id": "da-ml-datasets",
+   "label": "Datasets for Machine Learning",
+   "desc": "Preparing data for models: labelling, splits, leakage, class balance, versioning and dataset documentation.",
+   "keywords": [
+    "dataset",
+    "labelling",
+    "split",
+    "leakage",
+    "balance"
+   ],
+   "topic": "data-visualization-and-ml-datasets",
+   "source": "data",
+   "source_topic": "data",
+   "related": []
+  },
+  {
+   "id": "ds-visualization-communication",
+   "label": "Data Visualization and Communication",
+   "desc": "Turning analyses into honest charts, dashboards and narratives that decision makers can read correctly.",
+   "keywords": [
+    "visualization",
+    "chart",
+    "dashboard",
+    "storytelling",
+    "encoding",
+    "exploratory",
+    "report"
+   ],
+   "topic": "data-visualization-and-ml-datasets",
+   "source": "data-science",
+   "source_topic": "data-science",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "da-chart-designer",
+   "concept": "da-exploration",
+   "label": "Honest Chart Designer",
+   "desc": "Chooses a chart for the question, sets axes and scales that do not mislead and writes the title as the finding.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey817",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey813",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey815",
+     "role": "support"
+    }
+   ],
+   "source": "data"
+  },
+  {
+   "id": "da-data-profiler",
+   "concept": "da-exploration",
+   "label": "Data Profiler",
+   "desc": "Profiles columns for types, ranges, missing values and outliers and lists the first questions the profile raises.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey817",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey818",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey813",
+     "role": "support"
+    }
+   ],
+   "source": "data"
+  },
+  {
+   "id": "da-insight-reporter",
+   "concept": "da-exploration",
+   "label": "Insight Reporter",
+   "desc": "Writes up a finding with the number, the comparison, the caveats and what decision it should or should not drive.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey817",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey813",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey818",
+     "role": "support"
+    }
+   ],
+   "source": "data"
+  },
+  {
+   "id": "da-dataset-card-writer",
+   "concept": "da-ml-datasets",
+   "label": "Dataset Card Writer",
+   "desc": "Documents a dataset's source, collection method, labelling process, licence, balance and known gaps in one page.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey819",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey812",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey813",
+     "role": "support"
+    }
+   ],
+   "source": "data"
+  },
+  {
+   "id": "da-label-schema-designer",
+   "concept": "da-ml-datasets",
+   "label": "Labeling Guide Designer",
+   "desc": "Writes labelling instructions with examples and edge cases and measures how often two labellers agree.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey819",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey813",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey818",
+     "role": "support"
+    }
+   ],
+   "source": "data"
+  },
+  {
+   "id": "da-split-leakage-checker",
+   "concept": "da-ml-datasets",
+   "label": "Split and Leakage Checker",
+   "desc": "Builds train, validation and test splits by the right unit and checks for duplicates and future information crossing them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey819",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey813",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey817",
+     "role": "support"
+    }
+   ],
+   "source": "data"
+  },
+  {
+   "id": "ds-chart-designer",
+   "concept": "ds-visualization-communication",
+   "label": "Chart Designer",
+   "desc": "Chooses chart forms and visual encodings for a dataset and checks that axes, scales and colors do not distort the data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1213",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1210",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1211",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-dashboard-builder",
+   "concept": "ds-visualization-communication",
+   "label": "Dashboard Builder",
+   "desc": "Assembles metric dashboards from warehouse queries and checks every tile against its source query.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1213",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1208",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1212",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-eda-explorer",
+   "concept": "ds-visualization-communication",
+   "label": "Exploratory Data Analyst",
+   "desc": "Profiles distributions, correlations and anomalies in a new dataset and checks findings against summary statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1213",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1210",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1206",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1206",
+   "name": "Data Wrangling Specialist",
+   "legacy_key": "ds-wrangler",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1208",
+   "name": "SQL and Warehouse Analyst",
+   "legacy_key": "ds-sql",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1210",
+   "name": "Statistical Inference Analyst",
+   "legacy_key": "ds-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1211",
+   "name": "Data Ethics Reviewer",
+   "legacy_key": "ds-ethics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1212",
+   "name": "Experimentation Analyst",
+   "legacy_key": "ds-experiment",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1213",
+   "name": "Visualization Designer",
+   "legacy_key": "ds-viz",
+   "mcp": []
+  },
+  {
+   "key": "Maxey812",
+   "name": "Data Catalog and Lineage Agent",
+   "legacy_key": "da-catalog-steward",
+   "mcp": []
+  },
+  {
+   "key": "Maxey813",
+   "name": "Data Skeptic Agent",
+   "legacy_key": "da-skeptic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey815",
+   "name": "Analytics Engineering Agent",
+   "legacy_key": "da-analytics-engineer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey817",
+   "name": "Data Analyst Agent",
+   "legacy_key": "da-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey818",
+   "name": "Data Quality Agent",
+   "legacy_key": "da-quality-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey819",
+   "name": "ML Dataset Agent",
+   "legacy_key": "da-ml-data-engineer",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "49a84267-c5d5-4c7b-8070-ab6b0875d886",
+   "name": "MoSPI",
+   "desc": "India's official statistics via natural language",
+   "tools": [
+    "step1_know_about_mospi_api",
+    "step2_get_indicators",
+    "step3_get_metadata",
+    "step4_get_data"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "49a84267-c5d5-4c7b-8070-ab6b0875d886",
+   "origins": [
+    "data",
+    "economics"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "name": "Omni Analytics",
+   "desc": "Query your data using natural language through Omni's semantic model",
+   "tools": [
+    "pickModel",
+    "pickTopic",
+    "getData"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "name": "Snowflake",
+   "desc": "Retrieve both structured and unstructured data",
+   "tools": [
+    "Cortex Agents",
+    "Cortex Search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+  "49a84267-c5d5-4c7b-8070-ab6b0875d886",
+  "local:mcp-server-motherduck",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "daschema": "normalization dimensional grain fact dimension keys star sales modeling",
+  "dapipe": "etl backfill idempotent scheduling retries ingestion historical",
+  "dawh": "partition clustering incremental dbt analytics engineering definition formula",
+  "daqual": "expectation volume reconciliation null uniqueness checksum mismatch mismatched check checks",
+  "dacat": "sensitivity catalog downstream outage affected",
+  "daviz": "profiling outlier insight summary exploration visualization honest",
+  "dastream": "watermark late deduplicate kafka stream flink ordered",
+  "dalabel": "labelling leakage split card machine labeling",
+  "ds-stats": "statistical inference estimation hypothesis bayesian bootstrap regression posterior",
+  "ds-ml": "machine learning supervised unsupervised classification clustering neural feature training hyperparameter",
+  "ds-eng": "pipeline cleaning etl warehouse sql schema join wrangling",
+  "ds-viz": "visualization chart dashboard storytelling encoding exploratory",
+  "ds-causal": "experiment causal randomization power treatment confounding counterfactual",
+  "ds-gov": "ethics privacy fairness bias governance reproducibility consent"
+ },
+ "sources": [
+  "data",
+  "data-science"
+ ]
+}

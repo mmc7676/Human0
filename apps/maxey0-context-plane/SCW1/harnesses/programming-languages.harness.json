@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "work",
+ "domain": "agentic-systems",
  "topic": {
   "id": "programming-languages",
   "label": "Programming Languages",
-  "desc": "Programming languages as working skills: Python, TypeScript, Go, Rust, C and C++, Java and Kotlin, SQL and shell, with the tooling around each."
+  "desc": "Programming Languages: Python, C and C++, Java and Kotlin, Shell Scripting, TypeScript, Rust and Go."
  },
  "concepts": [
   {
@@ -21,6 +21,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   },
   {
@@ -36,6 +37,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   },
   {
@@ -51,6 +53,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   },
   {
@@ -67,6 +70,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   },
   {
@@ -83,6 +87,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   },
   {
@@ -99,22 +104,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
-   "related": []
-  },
-  {
-   "id": "pl-sql",
-   "label": "SQL",
-   "desc": "SQL queries, schema design, indexes, migrations and query plans.",
-   "keywords": [
-    "sql",
-    "query",
-    "schema",
-    "index",
-    "migration",
-    "join"
-   ],
-   "topic": "programming-languages",
-   "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   },
   {
@@ -131,6 +121,7 @@
    ],
    "topic": "programming-languages",
    "source": "programming-languages",
+   "source_topic": "programming-languages",
    "related": []
   }
  ],
@@ -444,50 +435,6 @@
    "source": "programming-languages"
   },
   {
-   "id": "pl-sql-query-optimizer",
-   "concept": "pl-sql",
-   "label": "SQL Query Writer and Optimizer",
-   "desc": "Writes joins and aggregates, reads query plans and proposes indexes, showing the plan before and after.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey923",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey915",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey916",
-     "role": "support"
-    }
-   ],
-   "source": "programming-languages"
-  },
-  {
-   "id": "pl-sql-schema-migrations",
-   "concept": "pl-sql",
-   "label": "SQL Schema and Migrations",
-   "desc": "Designs normalized tables and constraints and writes reversible migrations with a plan for existing data.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey923",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey914",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey917",
-     "role": "support"
-    }
-   ],
-   "source": "programming-languages"
-  },
-  {
    "id": "pl-typescript-node-web-build",
    "concept": "pl-typescript",
    "label": "TypeScript Node and Web Build",
@@ -591,12 +538,6 @@
    "key": "Maxey922",
    "name": "Shell Engineer Agent",
    "legacy_key": "pl-shell-engineer",
-   "mcp": []
-  },
-  {
-   "key": "Maxey923",
-   "name": "SQL Engineer Agent",
-   "legacy_key": "pl-sql-engineer",
    "mcp": []
   },
   {

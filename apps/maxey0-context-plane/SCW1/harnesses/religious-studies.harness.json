@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "humanities-arts",
  "topic": {
   "id": "religious-studies",
   "label": "Religious Studies",
-  "desc": "Religious Studies: the academic, non-confessional study of religious traditions, texts, practices and theories of religion."
+  "desc": "Religious Studies: Philosophy of Religion and Religious Ethics, Religion, Politics and Society, World Religious Traditions, Ritual, Practice and Material Religion and Theory and Method in the Study of Religion."
  },
  "concepts": [
   {
@@ -23,6 +23,7 @@
    ],
    "topic": "religious-studies",
    "source": "religious-studies",
+   "source_topic": "religious-studies",
    "related": []
   },
   {
@@ -40,6 +41,7 @@
    ],
    "topic": "religious-studies",
    "source": "religious-studies",
+   "source_topic": "religious-studies",
    "related": []
   },
   {
@@ -57,23 +59,7 @@
    ],
    "topic": "religious-studies",
    "source": "religious-studies",
-   "related": []
-  },
-  {
-   "id": "rel-scripture-texts",
-   "label": "Scripture and Textual Interpretation",
-   "desc": "Critical study of sacred texts: canon formation, manuscripts, translation and historical-critical and literary interpretation.",
-   "keywords": [
-    "scripture",
-    "canon",
-    "manuscript",
-    "exegesis",
-    "hermeneutics",
-    "translation",
-    "commentary"
-   ],
-   "topic": "religious-studies",
-   "source": "religious-studies",
+   "source_topic": "religious-studies",
    "related": []
   },
   {
@@ -91,6 +77,7 @@
    ],
    "topic": "religious-studies",
    "source": "religious-studies",
+   "source_topic": "religious-studies",
    "related": []
   },
   {
@@ -109,6 +96,7 @@
    ],
    "topic": "religious-studies",
    "source": "religious-studies",
+   "source_topic": "religious-studies",
    "related": []
   }
  ],
@@ -312,72 +300,6 @@
    "source": "religious-studies"
   },
   {
-   "id": "rel-canon-history",
-   "concept": "rel-scripture-texts",
-   "label": "Canon Formation Tracer",
-   "desc": "Traces when and how a text entered a canon, checked against dated manuscript and council evidence.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1540",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1538",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1536",
-     "role": "support"
-    }
-   ],
-   "source": "religious-studies"
-  },
-  {
-   "id": "rel-passage-exegesis",
-   "concept": "rel-scripture-texts",
-   "label": "Passage Exegesis Builder",
-   "desc": "Produces a historical-critical reading of a passage with context, genre and variants, checked against scholarly commentary.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1538",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1541",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1540",
-     "role": "support"
-    }
-   ],
-   "source": "religious-studies"
-  },
-  {
-   "id": "rel-translation-compare",
-   "concept": "rel-scripture-texts",
-   "label": "Scripture Translation Comparator",
-   "desc": "Aligns several translations of a passage with the source language and flags divergent renderings, checked by a sacred languages review.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1541",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1538",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1537",
-     "role": "support"
-    }
-   ],
-   "source": "religious-studies"
-  },
-  {
    "id": "rel-definition-compare",
    "concept": "rel-theory-method",
    "label": "Definition of Religion Comparator",
@@ -551,12 +473,6 @@
    "key": "Maxey1540",
    "name": "Religious History Agent",
    "legacy_key": "rel-hist",
-   "mcp": []
-  },
-  {
-   "key": "Maxey1541",
-   "name": "Sacred Languages Agent",
-   "legacy_key": "rel-lang",
    "mcp": []
   }
  ],

@@ -1,0 +1,1353 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "data-science",
+ "topic": {
+  "id": "research-methods-and-evidence",
+  "label": "Research Methods and Evidence",
+  "desc": "Research Methods and Evidence: Source Appraisal and Evidence Quality, Literature Search and Review, Scholarly Writing and Citation, Research Questions and Scoping, Study and Experiment Design, Research Integrity and Ethics, Synthesis and Evidence Mapping and Analysis and Replication."
+ },
+ "concepts": [
+  {
+   "id": "rs-analysis",
+   "label": "Analysis and Replication",
+   "desc": "Analysing results and checking whether they hold: statistics, robustness checks, reproducible pipelines and replication attempts.",
+   "keywords": [
+    "analysis",
+    "replication",
+    "reproducibility",
+    "robustness",
+    "statistics",
+    "replicable",
+    "replicate",
+    "replicated"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-appraisal",
+   "label": "Source Appraisal and Evidence Quality",
+   "desc": "Judging how far a source can be trusted: study design, bias, peer review versus preprint, conflicts of interest and retraction status.",
+   "keywords": [
+    "appraisal",
+    "bias",
+    "credibility",
+    "preprint",
+    "retraction"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-design",
+   "label": "Study and Experiment Design",
+   "desc": "Designing studies and experiments: controls, sampling, sample size, preregistration and what would count as a negative result.",
+   "keywords": [
+    "experiment",
+    "control",
+    "sampling",
+    "preregistration",
+    "power"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-integrity",
+   "label": "Research Integrity and Ethics",
+   "desc": "Keeping research honest and lawful: provenance, data licences, consent, authorship, disclosure of tool and AI use, and conflicts of interest.",
+   "keywords": [
+    "integrity",
+    "ethics",
+    "consent",
+    "licence",
+    "authorship"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-literature",
+   "label": "Literature Search and Review",
+   "desc": "Searching, screening and tracking papers: search strings, citation chasing, screening rules and annotated bibliographies.",
+   "keywords": [
+    "literature",
+    "search",
+    "screening",
+    "bibliography",
+    "snowballing"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-question",
+   "label": "Research Questions and Scoping",
+   "desc": "Turning a topic into answerable questions, hypotheses, scope limits and success criteria before any searching starts.",
+   "keywords": [
+    "question",
+    "hypothesis",
+    "scope",
+    "criteria"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-synthesis",
+   "label": "Synthesis and Evidence Mapping",
+   "desc": "Combining many sources into one picture: evidence tables, agreement and conflict between studies, stated confidence and open gaps.",
+   "keywords": [
+    "synthesis",
+    "evidence",
+    "confidence",
+    "gap",
+    "meta"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  },
+  {
+   "id": "rs-writing",
+   "label": "Scholarly Writing and Citation",
+   "desc": "Writing papers and reports: structure, claims tied to evidence, related work, abstracts, figures and correct citation.",
+   "keywords": [
+    "manuscript",
+    "citation",
+    "abstract",
+    "related",
+    "figure"
+   ],
+   "topic": "research-methods-and-evidence",
+   "source": "research",
+   "source_topic": "research",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "rs-replication-planner",
+   "concept": "rs-analysis",
+   "label": "Replication Planner",
+   "desc": "Plans a direct or conceptual replication of a published result and says what outcome would count as failing to replicate.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey949",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    },
+    {
+     "key": "Maxey952",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-reproducible-pipeline",
+   "concept": "rs-analysis",
+   "label": "Reproducible Pipeline Builder",
+   "desc": "Packages data, code, versions and random seeds so another person can regenerate every table and figure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey949",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey953",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey954",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-robustness-checker",
+   "concept": "rs-analysis",
+   "label": "Robustness Checker",
+   "desc": "Re-runs an analysis with other reasonable choices of data cleaning, model and threshold and reports whether the finding survives.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey953",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey949",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey950",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-statistical-analyst",
+   "concept": "rs-analysis",
+   "label": "Statistical Analysis Runner",
+   "desc": "Runs the planned tests, reports effect sizes with intervals rather than only p-values, and lists every test that was tried.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey953",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    },
+    {
+     "key": "Maxey949",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-bias-finder",
+   "concept": "rs-appraisal",
+   "label": "Bias and Confounder Finder",
+   "desc": "Looks for selection bias, confounding, p-hacking and selective reporting and states how each would change the result.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey952",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey953",
+     "role": "support"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-funding-conflict-scanner",
+   "concept": "rs-appraisal",
+   "label": "Funding and Conflict Scanner",
+   "desc": "Reads funding statements and author disclosures and says which findings could be shaped by who paid for the work.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey952",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey955",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey956",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-preprint-status-checker",
+   "concept": "rs-appraisal",
+   "label": "Preprint and Retraction Checker",
+   "desc": "Checks whether a paper is peer reviewed, revised, corrected or retracted and reports the date and source of that status.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey956",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey952",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey957",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-study-design-appraiser",
+   "concept": "rs-appraisal",
+   "label": "Study Design Appraiser",
+   "desc": "Classifies a study as trial, cohort, case study, simulation or opinion and says what that design can and cannot show.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey952",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-data-collection-protocol",
+   "concept": "rs-design",
+   "label": "Data Collection Protocol Writer",
+   "desc": "Writes the step-by-step protocol, form fields and quality checks for gathering data so different collectors get comparable results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey958",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey951",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey950",
+     "role": "support"
+    },
+    {
+     "key": "Maxey955",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-experiment-planner",
+   "concept": "rs-design",
+   "label": "Experiment Planner",
+   "desc": "Writes a plan with variables, controls, procedure and the measurements that will be taken, before any data exists.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey951",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey953",
+     "role": "support"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-preregistration-writer",
+   "concept": "rs-design",
+   "label": "Preregistration Writer",
+   "desc": "Drafts a timestamped plan of hypotheses and analyses so later choices cannot quietly change the question.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey951",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey954",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    },
+    {
+     "key": "Maxey950",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-sample-power-calculator",
+   "concept": "rs-design",
+   "label": "Sample Size and Power Calculator",
+   "desc": "Estimates the sample needed to detect an effect of a stated size and shows the assumptions behind the number.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey951",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey953",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey950",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-ai-use-disclosure",
+   "concept": "rs-integrity",
+   "label": "Tool and AI Use Disclosure Writer",
+   "desc": "Writes a plain statement of which tools and AI systems helped with which step and what a person checked afterwards.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey954",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey960",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-conflict-consent-checker",
+   "concept": "rs-integrity",
+   "label": "Consent and Conflict Checker",
+   "desc": "Checks that consent, ethics review, data licences and conflicts of interest are documented before data is used or published.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey954",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    },
+    {
+     "key": "Maxey960",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-data-management-plan",
+   "concept": "rs-integrity",
+   "label": "Data Management Plan Writer",
+   "desc": "Writes where research data will be stored, who may access it, how long it is kept and how sensitive records are protected.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey958",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey955",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey954",
+     "role": "support"
+    },
+    {
+     "key": "Maxey949",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-provenance-recorder",
+   "concept": "rs-integrity",
+   "label": "Provenance Recorder",
+   "desc": "Records where every dataset, figure and quotation came from, under what licence and on what date it was retrieved.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey954",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey956",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey949",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-annotated-bibliography",
+   "concept": "rs-literature",
+   "label": "Annotated Bibliography Maker",
+   "desc": "Summarises each source in a few lines with its method, finding and limit, kept in one shareable list.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey957",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey956",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey960",
+     "role": "support"
+    },
+    {
+     "key": "Maxey952",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-citation-chaser",
+   "concept": "rs-literature",
+   "label": "Citation Chaser",
+   "desc": "Follows references forwards and backwards from key papers to find work the keyword search missed, and lists what each hop added.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey957",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey956",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey961",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-paper-screener",
+   "concept": "rs-literature",
+   "label": "Paper Screener",
+   "desc": "Screens titles and abstracts against the written criteria and logs every inclusion and exclusion with its reason.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey957",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey952",
+     "role": "support"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-search-strategy",
+   "concept": "rs-literature",
+   "label": "Search Strategy Builder",
+   "desc": "Builds search strings with synonyms and filters for several databases and records exactly what was run and when.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey957",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey956",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-feasibility-assessor",
+   "concept": "rs-question",
+   "label": "Feasibility Assessor",
+   "desc": "Estimates the time, data access, skills and cost a question needs and says whether to narrow it before work starts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey951",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey958",
+     "role": "support"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-prior-knowledge-map",
+   "concept": "rs-question",
+   "label": "Prior Knowledge Mapper",
+   "desc": "Lists what is already known, what is assumed and what is disputed on a topic so new work does not repeat settled ground.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey957",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    },
+    {
+     "key": "Maxey961",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-question-framer",
+   "concept": "rs-question",
+   "label": "Research Question Framer",
+   "desc": "Turns a vague topic into a few answerable questions with a hypothesis for each and a statement of what would change the conclusion.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey959",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-scope-boundary",
+   "concept": "rs-question",
+   "label": "Scope and Criteria Writer",
+   "desc": "Writes inclusion and exclusion criteria, time window and success measures so the work can be judged finished.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey959",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey957",
+     "role": "support"
+    },
+    {
+     "key": "Maxey951",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-confidence-grader",
+   "concept": "rs-synthesis",
+   "label": "Confidence Grader",
+   "desc": "Rates how strongly the evidence supports each claim and writes the reason for the grade next to it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey961",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey952",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-evidence-table-builder",
+   "concept": "rs-synthesis",
+   "label": "Evidence Table Builder",
+   "desc": "Builds a table of studies by population, method, measure and result so agreement and conflict are visible side by side.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey961",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey952",
+     "role": "support"
+    },
+    {
+     "key": "Maxey957",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-gap-finder",
+   "concept": "rs-synthesis",
+   "label": "Research Gap Finder",
+   "desc": "Lists questions the literature leaves open or answers only weakly, ranked by how much an answer would change decisions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey961",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey959",
+     "role": "support"
+    },
+    {
+     "key": "Maxey957",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-meta-analysis-planner",
+   "concept": "rs-synthesis",
+   "label": "Meta-Analysis Planner",
+   "desc": "Plans the pooling of comparable studies: effect measure, heterogeneity checks, fixed versus random effects and sensitivity analyses.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey962",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey953",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey950",
+     "role": "support"
+    },
+    {
+     "key": "Maxey961",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-citation-formatter",
+   "concept": "rs-writing",
+   "label": "Citation Formatter",
+   "desc": "Formats references in a named style, checks each against its source record and flags entries that cannot be found.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey956",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey960",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey957",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-paper-outliner",
+   "concept": "rs-writing",
+   "label": "Paper Outliner",
+   "desc": "Lays out a paper with one claim per section and the evidence each section must cite.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey960",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey961",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-peer-review-responder",
+   "concept": "rs-writing",
+   "label": "Peer Review Response Writer",
+   "desc": "Answers each reviewer comment point by point, says what changed in the manuscript and politely explains what did not.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey963",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey950",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey960",
+     "role": "support"
+    },
+    {
+     "key": "Maxey956",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  },
+  {
+   "id": "rs-related-work-writer",
+   "concept": "rs-writing",
+   "label": "Related Work Writer",
+   "desc": "Writes a related-work section that groups sources by idea, states how this work differs and cites each source correctly.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey960",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey956",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey961",
+     "role": "support"
+    },
+    {
+     "key": "Maxey957",
+     "role": "support"
+    }
+   ],
+   "source": "research"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey949",
+   "name": "Replication Agent",
+   "legacy_key": "rs-replicator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey950",
+   "name": "Research Skeptic Agent",
+   "legacy_key": "rs-skeptic",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey951",
+   "name": "Study Design Agent",
+   "legacy_key": "rs-methodologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey952",
+   "name": "Evidence Appraiser Agent",
+   "legacy_key": "rs-appraiser",
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey953",
+   "name": "Research Analyst Agent",
+   "legacy_key": "rs-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey954",
+   "name": "Research Integrity Officer Agent",
+   "legacy_key": "rs-integrity-officer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey955",
+   "name": "Research Ethics Reviewer Agent",
+   "legacy_key": "rs-ethics-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey956",
+   "name": "Citation Verifier Agent",
+   "legacy_key": "rs-citation-verifier",
+   "mcp": [
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey957",
+   "name": "Literature Search Agent",
+   "legacy_key": "rs-librarian",
+   "mcp": [
+    "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+   ]
+  },
+  {
+   "key": "Maxey958",
+   "name": "Research Data Curator Agent",
+   "legacy_key": "rs-data-curator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey959",
+   "name": "Research Question Agent",
+   "legacy_key": "rs-question-agent",
+   "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+   ]
+  },
+  {
+   "key": "Maxey960",
+   "name": "Scholarly Writer Agent",
+   "legacy_key": "rs-writer",
+   "mcp": [
+    "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey961",
+   "name": "Evidence Synthesizer Agent",
+   "legacy_key": "rs-synthesizer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey962",
+   "name": "Meta-Analysis Agent",
+   "legacy_key": "rs-meta-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey963",
+   "name": "Scholarly Editor Agent",
+   "legacy_key": "rs-editor",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "name": "bioRxiv",
+   "desc": "Access bioRxiv and medRxiv preprint data",
+   "tools": [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "origins": [
+    "bioengineering",
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology",
+    "research"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "7f750eb6-c3cb-47d7-9269-d35c43fe9925"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey950",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "research-methods-and-evidence",
+   "score": 0.2398,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey950",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1524,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey957",
+    "skill": "rs-paper-screener"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey950",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1358,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey957",
+    "skill": "rs-paper-screener"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey950",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1152,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey960",
+    "skill": "rs-paper-outliner"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey952",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1089,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey956",
+    "skill": "rs-preprint-status-checker"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey952",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1081,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey956",
+    "skill": "rs-preprint-status-checker"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey956",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1524,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey957",
+    "skill": "rs-annotated-bibliography"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey956",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1089,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey956",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1081,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey957",
+   "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1524,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey957",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1358,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey959",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1596,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey960",
+   "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1089,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey956",
+    "skill": "rs-citation-formatter"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey960",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "research-methods-and-evidence",
+   "score": 0.1152,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  }
+ ],
+ "lexicon": {
+  "rsquestion": "hypothesis criteria prior assumed disputed question scoping feasibility",
+  "rssearch": "screening snowballing bibliography annotated chaser string exclusion literature",
+  "rsappraise": "bias confounder retraction preprint credibility selective trial appraisal source evidence quality",
+  "rsdesign": "preregistration control sample power variable study data",
+  "rsanalysis": "replication reproducible robustness seed interval effect replicable replicate replicated reproducibility statistics reasonable",
+  "rssynth": "synthesis grade confidence gap meta",
+  "rswrite": "manuscript citation related abstract figure scholarly writing",
+  "rsethics": "integrity disclosure consent licence authorship ethics"
+ },
+ "sources": [
+  "research"
+ ]
+}

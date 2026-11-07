@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "area-identity-studies",
  "topic": {
   "id": "african-studies",
   "label": "African Studies",
-  "desc": "African Studies: interdisciplinary study of the African continent's histories, societies, languages, politics, economies and environments."
+  "desc": "African Studies: Colonialism and Independence, Precolonial African History, African Languages and Literatures, African Politics and Governance, Society, Health and Environment and Colonial and Postcolonial History."
  },
  "concepts": [
   {
@@ -24,6 +24,7 @@
    ],
    "topic": "african-studies",
    "source": "african-studies",
+   "source_topic": "african-studies",
    "related": []
   },
   {
@@ -42,6 +43,7 @@
    ],
    "topic": "african-studies",
    "source": "african-studies",
+   "source_topic": "african-studies",
    "related": []
   },
   {
@@ -60,27 +62,8 @@
    ],
    "topic": "african-studies",
    "source": "african-studies",
+   "source_topic": "african-studies",
    "related": []
-  },
-  {
-   "id": "afst-development-economics",
-   "label": "African Economies and Development",
-   "desc": "Growth, poverty, agriculture, resources, trade and aid in African economies.",
-   "keywords": [
-    "economy",
-    "development",
-    "poverty",
-    "agriculture",
-    "resources",
-    "aid",
-    "growth",
-    "indicators"
-   ],
-   "topic": "african-studies",
-   "source": "african-studies",
-   "related": [
-    "glob-development"
-   ]
   },
   {
    "id": "afst-precolonial-history",
@@ -98,6 +81,7 @@
    ],
    "topic": "african-studies",
    "source": "african-studies",
+   "source_topic": "african-studies",
    "related": []
   },
   {
@@ -116,6 +100,26 @@
    ],
    "topic": "african-studies",
    "source": "african-studies",
+   "source_topic": "african-studies",
+   "related": []
+  },
+  {
+   "id": "ilac-colonial-history",
+   "label": "Colonial and Postcolonial History",
+   "desc": "Conquest, empire, independence movements and the postcolonial nation-state across the Iberian world.",
+   "keywords": [
+    "conquest",
+    "colonial",
+    "empire",
+    "independence",
+    "postcolonial",
+    "nation",
+    "missions",
+    "viceroyalty"
+   ],
+   "topic": "african-studies",
+   "source": "iberian-and-latin-american-cultures",
+   "source_topic": "iberian-and-latin-american-cultures",
    "related": []
   }
  ],
@@ -319,72 +323,6 @@
    "source": "african-studies"
   },
   {
-   "id": "afst-agriculture-study",
-   "concept": "afst-development-economics",
-   "label": "Agricultural Livelihood Study",
-   "desc": "Analyses smallholder agriculture and land use and checks conclusions against survey evidence.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1005",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1002",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1000",
-     "role": "support"
-    }
-   ],
-   "source": "african-studies"
-  },
-  {
-   "id": "afst-aid-evaluation",
-   "concept": "afst-development-economics",
-   "label": "Aid Program Evaluation",
-   "desc": "Evaluates an aid or development program's impact and checks the causal claim for design and selection problems.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1005",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey999",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1003",
-     "role": "support"
-    }
-   ],
-   "source": "african-studies"
-  },
-  {
-   "id": "afst-indicator-analysis",
-   "concept": "afst-development-economics",
-   "label": "Development Indicator Analysis",
-   "desc": "Computes trends in growth, poverty and health indicators and checks the data source and definitions for consistency.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1005",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1004",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1000",
-     "role": "support"
-    }
-   ],
-   "source": "african-studies"
-  },
-  {
    "id": "afst-oral-tradition",
    "concept": "afst-precolonial-history",
    "label": "Oral Tradition Analysis",
@@ -515,6 +453,72 @@
     }
    ],
    "source": "african-studies"
+  },
+  {
+   "id": "ilac-colonial-source",
+   "concept": "ilac-colonial-history",
+   "label": "Colonial Source Analysis",
+   "desc": "Interprets chronicles and colonial documents for perspective and bias, checked against independent sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1362",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1364",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-empire-comparison",
+   "concept": "ilac-colonial-history",
+   "label": "Spanish and Portuguese Empire Comparison",
+   "desc": "Compares colonial administration in the Spanish and Portuguese empires, checked by sourcing each claim.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1362",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
+  },
+  {
+   "id": "ilac-independence-timeline",
+   "concept": "ilac-colonial-history",
+   "label": "Independence Timeline",
+   "desc": "Dates independence movements and key events by country, checked against historical records.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1362",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1363",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1365",
+     "role": "support"
+    }
+   ],
+   "source": "iberian-and-latin-american-cultures"
   }
  ],
  "agents": [
@@ -565,6 +569,30 @@
    "mcp": [
     "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
    ]
+  },
+  {
+   "key": "Maxey1362",
+   "name": "Colonial Studies Agent",
+   "legacy_key": "ilac-colonial",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1363",
+   "name": "Cultural Accuracy Checker",
+   "legacy_key": "ilac-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1364",
+   "name": "Indigenous and Afro-Latin Cultures Agent",
+   "legacy_key": "ilac-indigenous",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1365",
+   "name": "Latin American Society Agent",
+   "legacy_key": "ilac-society",
+   "mcp": []
   },
   {
    "key": "Maxey998",
@@ -762,7 +790,8 @@
    "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
    "topic": "african-studies",
    "score": 0.2472,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey1001",
@@ -773,14 +802,16 @@
    "via": {
     "primary": "Maxey1000",
     "skill": "afst-trade-networks"
-   }
+   },
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey1002",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "african-studies",
    "score": 0.1135,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey1002",
@@ -791,7 +822,8 @@
    "via": {
     "primary": "Maxey1005",
     "skill": "afst-agriculture-study"
-   }
+   },
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey1004",
@@ -802,7 +834,8 @@
    "via": {
     "primary": "Maxey1002",
     "skill": "afst-kinship-religion"
-   }
+   },
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey1004",
@@ -813,21 +846,24 @@
    "via": {
     "primary": "Maxey1005",
     "skill": "afst-indicator-analysis"
-   }
+   },
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey1005",
    "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
    "topic": "african-studies",
    "score": 0.2569,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey998",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "african-studies",
    "score": 0.1349,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey999",
@@ -838,7 +874,8 @@
    "via": {
     "primary": "Maxey998",
     "skill": "afst-language-classification"
-   }
+   },
+   "source_topic": "african-studies"
   },
   {
    "agent": "Maxey999",
@@ -849,7 +886,8 @@
    "via": {
     "primary": "Maxey1005",
     "skill": "afst-aid-evaluation"
-   }
+   },
+   "source_topic": "african-studies"
   }
  ],
  "lexicon": {
@@ -858,9 +896,15 @@
   "afst-polity": "politics governance election democracy conflict union",
   "afst-economy": "economy development poverty agriculture aid indicators growth",
   "afst-tongue": "language bantu swahili translation orature multilingual",
-  "afst-land": "kinship religion urbanization health climate environment"
+  "afst-land": "kinship religion urbanization health climate environment",
+  "ilac-language": "spanish portuguese grammar dialect sociolinguistics bilingualism catalan",
+  "ilac-letters": "literature cervantes poetry novel theater verse modernismo testimonio",
+  "ilac-empire": "conquest colonial independence postcolonial viceroyalty missions",
+  "ilac-peoples": "indigenous quechua nahuatl diaspora mestizaje identity race",
+  "ilac-screen": "cinema film art music migration politics"
  },
  "sources": [
-  "african-studies"
+  "african-studies",
+  "iberian-and-latin-american-cultures"
  ]
 }

@@ -40,8 +40,8 @@ The project has three parts that share one data set:
 
 | | |
 |---|---|
-| **5 domains** | Maxey0 System · Foundations · Work Domains · Finance · Academic Disciplines |
-| **121 topics** | from Location, Time and Infrastructure to Capital Markets, Crypto, Quantum Physics and Linguistics |
+| **11 domains** | Agentic Systems and Software Engineering · Data Science and Quantitative Methods · Mathematical and Physical Sciences · Engineering · Life, Health and Mind Sciences · Earth, Environment and Place · Business, Finance and Economics · Society, Governance and Ethics · Languages, Literatures and Communication · Area and Identity Studies · Humanities and Arts |
+| **128 topics** | formed from the concepts up, from Agent Harnesses and MCP Contracts to Derivatives, Quantum Physics and Translation Studies |
 | **711 concepts · 1,998 skills** | 3–8 concepts per topic, 1–17 skills per concept |
 | **1,021 agents** | every one a permanent **MaxeyN** key (Maxey0 is the orchestrator); each skill has a primary, a checker and support agents |
 | **117 MCP servers · 556 links** | real, existence-checked servers, linked to the agents whose skills they fit |
@@ -107,7 +107,7 @@ Fifteen read-only tools, one prompt, nine resources and one resource template, o
 
 | Tool | Answers |
 |---|---|
-| `route_task` | Which topic, concept, skill, agents and servers fit this task? |
+| `route_task` | Which topic, concept, skill, agents and servers fit this task? Flat ranking, or `mode: "lens"` to read each level from the nodes chosen above it |
 | `search` | Which nodes match these words? |
 | `nearest` | Which nodes, at any level, lie nearest this node or text in the shared embedding field? |
 | `list_domains` · `list_topics` · `children` · `trace` | Browse the map and walk any node's parents |
@@ -116,7 +116,7 @@ Fifteen read-only tools, one prompt, nine resources and one resource template, o
 | `open_context_plane_graph` | Show the graph (MCP App), optionally routed to a task or opened on a topic |
 | `validate_topic_pack` | Check a generated topic against the schema and the live map |
 
-Prompt: `topic-graph-generator`. Endpoints: `/mcp` serves every domain; `/mcp/maxey0-system`, `/mcp/foundations`, `/mcp/work`, `/mcp/finance` and `/mcp/disciplines` serve one domain each. Full reference: [docs/MCP_SERVER.md](docs/MCP_SERVER.md).
+Prompt: `topic-graph-generator`. Endpoints: `/mcp` serves every domain; `/mcp/<domain id>` serves one domain. Full reference: [docs/MCP_SERVER.md](docs/MCP_SERVER.md).
 
 Only what a call asks for is returned: about 7 KB of tool definitions up front, 3–10 KB per lookup, and one topic in full is about 49 KB. The full map stays on the server.
 

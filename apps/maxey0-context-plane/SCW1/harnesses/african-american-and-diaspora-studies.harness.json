@@ -1,0 +1,796 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "area-identity-studies",
+ "topic": {
+  "id": "african-american-and-diaspora-studies",
+  "label": "African American and Diaspora Studies",
+  "desc": "African American and Diaspora Studies: African Diaspora Studies, African American Literature, Black Expressive Culture, Slavery and Emancipation, Civil Rights and Black Freedom Movements and Migration, Diaspora and Global Culture."
+ },
+ "concepts": [
+  {
+   "id": "aaas-african-american-literature",
+   "label": "African American Literature",
+   "desc": "Black writing in the United States from slave narratives and the Harlem Renaissance to contemporary fiction, poetry and criticism.",
+   "keywords": [
+    "literature",
+    "harlem renaissance",
+    "poetry",
+    "novel",
+    "criticism",
+    "vernacular",
+    "authorship",
+    "text"
+   ],
+   "topic": "african-american-and-diaspora-studies",
+   "source": "african-and-african-american-studies",
+   "source_topic": "african-and-african-american-studies",
+   "related": []
+  },
+  {
+   "id": "aaas-black-expressive-culture",
+   "label": "Black Expressive Culture",
+   "desc": "Music, art, religion and performance traditions such as spirituals, blues, jazz, hip hop and the Black church.",
+   "keywords": [
+    "music",
+    "blues",
+    "jazz",
+    "hip hop",
+    "religion",
+    "church",
+    "performance",
+    "visual art"
+   ],
+   "topic": "african-american-and-diaspora-studies",
+   "source": "african-and-african-american-studies",
+   "source_topic": "african-and-african-american-studies",
+   "related": []
+  },
+  {
+   "id": "aaas-civil-rights-movements",
+   "label": "Civil Rights and Black Freedom Movements",
+   "desc": "Organised Black struggles for citizenship and equality, from Reconstruction through the civil rights and Black Power eras.",
+   "keywords": [
+    "civil rights",
+    "reconstruction",
+    "segregation",
+    "protest",
+    "black power",
+    "voting",
+    "movement",
+    "organizing"
+   ],
+   "topic": "african-american-and-diaspora-studies",
+   "source": "african-and-african-american-studies",
+   "source_topic": "african-and-african-american-studies",
+   "related": []
+  },
+  {
+   "id": "aaas-diaspora-studies",
+   "label": "African Diaspora Studies",
+   "desc": "Connections among African, Caribbean, Latin American and European Black communities through migration, culture and Pan-African politics.",
+   "keywords": [
+    "diaspora",
+    "pan-african",
+    "migration",
+    "caribbean",
+    "transnational",
+    "identity",
+    "memory",
+    "colonialism"
+   ],
+   "topic": "african-american-and-diaspora-studies",
+   "source": "african-and-african-american-studies",
+   "source_topic": "african-and-african-american-studies",
+   "related": []
+  },
+  {
+   "id": "aaas-slavery-emancipation",
+   "label": "Slavery and Emancipation",
+   "desc": "The Atlantic slave trade, slavery in the Americas and the struggles for abolition and emancipation, studied through primary sources.",
+   "keywords": [
+    "slavery",
+    "slave trade",
+    "abolition",
+    "emancipation",
+    "plantation",
+    "narrative",
+    "atlantic",
+    "resistance"
+   ],
+   "topic": "african-american-and-diaspora-studies",
+   "source": "african-and-african-american-studies",
+   "source_topic": "african-and-african-american-studies",
+   "related": []
+  },
+  {
+   "id": "glob-migration-culture",
+   "label": "Migration, Diaspora and Global Culture",
+   "desc": "Transnational migration, refugees, diasporas and the global circulation of media, religion and culture.",
+   "keywords": [
+    "migration",
+    "refugee",
+    "diaspora",
+    "remittance",
+    "culture",
+    "media",
+    "identity",
+    "border"
+   ],
+   "topic": "african-american-and-diaspora-studies",
+   "source": "global-studies",
+   "source_topic": "global-studies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "aaas-close-reading",
+   "concept": "aaas-african-american-literature",
+   "label": "Close Reading of Black Texts",
+   "desc": "Produces a close reading of a poem or novel passage and checks each claim against textual evidence and critical literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey990",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey991",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey992",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-renaissance-context",
+   "concept": "aaas-african-american-literature",
+   "label": "Harlem Renaissance Contextualization",
+   "desc": "Places a Harlem Renaissance work within its publishing and social context and checks the facts against archival records.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey990",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey993",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey994",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-vernacular-analysis",
+   "concept": "aaas-african-american-literature",
+   "label": "Vernacular Language Analysis",
+   "desc": "Identifies African American vernacular features in a text and checks the identifications against linguistic scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey990",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey995",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey992",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-art-reading",
+   "concept": "aaas-black-expressive-culture",
+   "label": "Visual Art Interpretation",
+   "desc": "Interprets works of Black visual art and performance in context and checks claims against exhibition and critical sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey992",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey993",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey990",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-church-study",
+   "concept": "aaas-black-expressive-culture",
+   "label": "Black Church Study",
+   "desc": "Analyses the social and political role of the Black church and checks the analysis against historical and sociological research.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey996",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey994",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey992",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-music-lineage",
+   "concept": "aaas-black-expressive-culture",
+   "label": "Musical Lineage Tracing",
+   "desc": "Traces stylistic lineages from spirituals and blues to jazz and hip hop and checks the links against musicological sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey992",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey991",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey994",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-movement-timeline",
+   "concept": "aaas-civil-rights-movements",
+   "label": "Movement Timeline Builder",
+   "desc": "Builds a dated timeline of civil rights campaigns and organizations and checks each event against primary and secondary sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey994",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey993",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey997",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-strategy-analysis",
+   "concept": "aaas-civil-rights-movements",
+   "label": "Protest Strategy Analysis",
+   "desc": "Compares nonviolent and Black Power organizing strategies and checks the interpretation against movement scholarship.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey997",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey991",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey996",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-voting-rights",
+   "concept": "aaas-civil-rights-movements",
+   "label": "Voting Rights Case Study",
+   "desc": "Analyses voting rights legislation and litigation and checks outcomes against registration and turnout data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey997",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey995",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey996",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-memory-study",
+   "concept": "aaas-diaspora-studies",
+   "label": "Diaspora Memory and Identity Study",
+   "desc": "Analyses how diaspora communities commemorate slavery and colonialism and checks the account against ethnographic literature.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey992",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey995",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey991",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-migration-mapping",
+   "concept": "aaas-diaspora-studies",
+   "label": "Diaspora Migration Mapping",
+   "desc": "Traces migration flows of African-descended people across regions and checks the routes and figures against historical sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey994",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey993",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey996",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-panafrican-thought",
+   "concept": "aaas-diaspora-studies",
+   "label": "Pan-African Thought Analysis",
+   "desc": "Compares Pan-African thinkers and congresses and checks attributions and dates against the scholarly record.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey997",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey991",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey994",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-abolition-argument",
+   "concept": "aaas-slavery-emancipation",
+   "label": "Abolitionist Argument Mapping",
+   "desc": "Maps the arguments of abolitionist texts and speeches and checks each attribution against the original text.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey997",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey994",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey990",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-source-criticism",
+   "concept": "aaas-slavery-emancipation",
+   "label": "Slave Narrative Source Criticism",
+   "desc": "Analyses a slave narrative or plantation record for authorship, audience and bias, and checks claims against corroborating archival sources.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey994",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey993",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey991",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "aaas-trade-data",
+   "concept": "aaas-slavery-emancipation",
+   "label": "Slave Trade Data Analysis",
+   "desc": "Summarises voyage and population records to quantify the slave trade, checked against published voyage database totals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey993",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey995",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey994",
+     "role": "support"
+    }
+   ],
+   "source": "african-and-african-american-studies"
+  },
+  {
+   "id": "glob-cultural-flow-analysis",
+   "concept": "glob-migration-culture",
+   "label": "Global Cultural Flow Analysis",
+   "desc": "Analyses how a cultural product circulates and is localised across countries and checks claims against evidence.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1338",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1337",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-diaspora-study",
+   "concept": "glob-migration-culture",
+   "label": "Diaspora Community Study",
+   "desc": "Analyses a diaspora's ties, remittances and identity and checks claims against cited studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1337",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1338",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-migration-flow-analysis",
+   "concept": "glob-migration-culture",
+   "label": "Migration Flow Analysis",
+   "desc": "Describes migrant and refugee flows between regions and checks numbers against official statistics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1337",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1334",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1332",
+   "name": "Global Studies Reviewer",
+   "legacy_key": "glob-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1334",
+   "name": "Global Data Mapper",
+   "legacy_key": "glob-mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1337",
+   "name": "Transnational Migration Analyst",
+   "legacy_key": "glob-migration",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1338",
+   "name": "Globalization Theorist",
+   "legacy_key": "glob-theorist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey990",
+   "name": "Black Literary Critic",
+   "legacy_key": "aaas-literary",
+   "mcp": []
+  },
+  {
+   "key": "Maxey991",
+   "name": "Scholarly Literature Reviewer",
+   "legacy_key": "aaas-literature",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey992",
+   "name": "Expressive Culture Analyst",
+   "legacy_key": "aaas-cultural",
+   "mcp": []
+  },
+  {
+   "key": "Maxey993",
+   "name": "Archival Research Agent",
+   "legacy_key": "aaas-archivist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey994",
+   "name": "Diaspora Historian",
+   "legacy_key": "aaas-historian",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey995",
+   "name": "Research Methods Checker",
+   "legacy_key": "aaas-methods",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey996",
+   "name": "Race and Society Analyst",
+   "legacy_key": "aaas-sociologist",
+   "mcp": [
+    "ff091334-0f12-4d0e-a973-c00467dd3818"
+   ]
+  },
+  {
+   "key": "Maxey997",
+   "name": "Black Political Thought Analyst",
+   "legacy_key": "aaas-political",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey991",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "african-american-and-diaspora-studies",
+   "score": 0.1809,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "african-and-african-american-studies"
+  },
+  {
+   "agent": "Maxey994",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "african-american-and-diaspora-studies",
+   "score": 0.1168,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey996",
+    "skill": "aaas-church-study"
+   },
+   "source_topic": "african-and-african-american-studies"
+  },
+  {
+   "agent": "Maxey995",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "african-american-and-diaspora-studies",
+   "score": 0.1168,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey996",
+    "skill": "aaas-disparity-measure"
+   },
+   "source_topic": "african-and-african-american-studies"
+  },
+  {
+   "agent": "Maxey996",
+   "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "topic": "african-american-and-diaspora-studies",
+   "score": 0.1168,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "african-and-african-american-studies"
+  }
+ ],
+ "lexicon": {
+  "aaas-slavery": "slavery abolition emancipation plantation trade voyage atlantic",
+  "aaas-freedom": "civil rights reconstruction segregation protest voting organizing",
+  "aaas-letters": "literature harlem renaissance poetry novel vernacular reading",
+  "aaas-society": "race inequality wealth housing policing census disparity",
+  "aaas-diaspora": "diaspora pan migration caribbean memory identity colonialism",
+  "aaas-culture": "music blues jazz hip hop church performance",
+  "glob-theory": "globalization modernization core periphery hegemony transnational",
+  "glob-econ": "trade finance multinational investment tariff commodity",
+  "glob-govern": "governance treaty ngo regime rights multilateral",
+  "glob-dev": "development poverty aid south goals education",
+  "glob-move": "migration refugee diaspora remittance identity border",
+  "glob-risk": "climate conflict pandemic resource map"
+ },
+ "sources": [
+  "african-and-african-american-studies",
+  "global-studies"
+ ]
+}

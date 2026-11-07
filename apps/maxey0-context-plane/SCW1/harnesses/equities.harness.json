@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "finance",
+ "domain": "business-finance",
  "topic": {
   "id": "equities",
-  "label": "Stocks and Equities",
-  "desc": "Shares in companies: common and preferred stock, fundamental and technical analysis, corporate actions, and reading company filings."
+  "label": "Equities",
+  "desc": "Equities: Stocks and Share Classes, Reading Company Filings, Fundamental Analysis, Corporate Actions and Technical Analysis."
  },
  "concepts": [
   {
@@ -26,6 +26,7 @@
    ],
    "topic": "equities",
    "source": "equities",
+   "source_topic": "equities",
    "related": []
   },
   {
@@ -47,6 +48,7 @@
    ],
    "topic": "equities",
    "source": "equities",
+   "source_topic": "equities",
    "related": []
   },
   {
@@ -66,6 +68,7 @@
    ],
    "topic": "equities",
    "source": "equities",
+   "source_topic": "equities",
    "related": []
   },
   {
@@ -85,6 +88,7 @@
    ],
    "topic": "equities",
    "source": "equities",
+   "source_topic": "equities",
    "related": []
   },
   {
@@ -105,6 +109,7 @@
    ],
    "topic": "equities",
    "source": "equities",
+   "source_topic": "equities",
    "related": []
   }
  ],
@@ -361,21 +366,24 @@
    "via": {
     "primary": "Maxey1715",
     "skill": "eq-10-k-reader"
-   }
+   },
+   "source_topic": "equities"
   },
   {
    "agent": "Maxey1715",
    "mcp": "local:sec-edgar-mcp",
    "topic": "equities",
    "score": 0.252,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "equities"
   },
   {
    "agent": "Maxey1716",
    "mcp": "local:sec-edgar-mcp",
    "topic": "equities",
    "score": 0.1934,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "equities"
   }
  ],
  "lexicon": {

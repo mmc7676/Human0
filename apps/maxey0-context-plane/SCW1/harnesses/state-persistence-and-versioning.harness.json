@@ -1,0 +1,376 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "agentic-systems",
+ "topic": {
+  "id": "state-persistence-and-versioning",
+  "label": "State, Persistence and Versioning",
+  "desc": "State, Persistence and Versioning: State Models and State Machines, Persistence and Storage, Synchronization and Consistency and Snapshots, Versioning and Provenance."
+ },
+ "concepts": [
+  {
+   "id": "sta-consistency",
+   "label": "Synchronization and Consistency",
+   "desc": "Keeping copies of state consistent: replication, conflicts, eventual and strong consistency, locks and merges.",
+   "keywords": [
+    "synchronization",
+    "consistency",
+    "replication",
+    "conflict",
+    "merge",
+    "lock",
+    "eventual",
+    "strong",
+    "concurrent"
+   ],
+   "topic": "state-persistence-and-versioning",
+   "source": "state",
+   "source_topic": "state",
+   "related": []
+  },
+  {
+   "id": "sta-machines",
+   "label": "State Models and State Machines",
+   "desc": "Representing state explicitly: finite state machines, statecharts, transitions, guards and invalid states.",
+   "keywords": [
+    "state",
+    "machine",
+    "transition",
+    "statechart",
+    "guard",
+    "status",
+    "lifecycle",
+    "model"
+   ],
+   "topic": "state-persistence-and-versioning",
+   "source": "state",
+   "source_topic": "state",
+   "related": []
+  },
+  {
+   "id": "sta-persistence",
+   "label": "Persistence and Storage",
+   "desc": "Where state is kept: memory, files, databases, key value stores, caches, and durability.",
+   "keywords": [
+    "persistence",
+    "storage",
+    "database",
+    "key",
+    "value",
+    "cache",
+    "durable",
+    "file",
+    "save",
+    "restore"
+   ],
+   "topic": "state-persistence-and-versioning",
+   "source": "state",
+   "source_topic": "state",
+   "related": []
+  },
+  {
+   "id": "sta-versions",
+   "label": "Snapshots, Versioning and Provenance",
+   "desc": "Snapshots, versions, digests, history and provenance: knowing which state a result came from.",
+   "keywords": [
+    "snapshot",
+    "version",
+    "digest",
+    "history",
+    "provenance",
+    "hash",
+    "diff",
+    "commit",
+    "audit"
+   ],
+   "topic": "state-persistence-and-versioning",
+   "source": "state",
+   "source_topic": "state",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "sta-conflict-resolver",
+   "concept": "sta-consistency",
+   "label": "Conflict Resolver",
+   "desc": "Explains conflicting copies of state and proposes a merge with the rule used.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1635",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1637",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-consistency-model-explainer",
+   "concept": "sta-consistency",
+   "label": "Consistency Model Explainer",
+   "desc": "Explains the consistency guarantee a system gives and what a reader may observe.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1635",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1637",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-lifecycle-explainer",
+   "concept": "sta-machines",
+   "label": "Lifecycle Explainer",
+   "desc": "Explains the lifecycle states of an object or process and what moves it between them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1637",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1638",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-state-machine-designer",
+   "concept": "sta-machines",
+   "label": "State Machine Designer",
+   "desc": "Designs a state machine for a workflow, listing states, transitions, guards and unreachable or dead-end states.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1637",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1638",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-save-and-restore-planner",
+   "concept": "sta-persistence",
+   "label": "Save and Restore Planner",
+   "desc": "Plans how application state is saved, exported, imported and restored safely.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1638",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1639",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-storage-selector",
+   "concept": "sta-persistence",
+   "label": "Storage Selector",
+   "desc": "Chooses a store for a kind of state by durability, latency, size and sharing needs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1638",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1639",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-provenance-recorder",
+   "concept": "sta-versions",
+   "label": "Provenance Recorder",
+   "desc": "Records which inputs and version a result came from, with digests, so it can be reproduced.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1639",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1635",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  },
+  {
+   "id": "sta-snapshot-differ",
+   "concept": "sta-versions",
+   "label": "Snapshot Differ",
+   "desc": "Compares two snapshots or versions of state and lists what changed.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1639",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1636",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1635",
+     "role": "support"
+    }
+   ],
+   "source": "state"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1635",
+   "name": "Synchronization Agent",
+   "legacy_key": "sta-sync",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1636",
+   "name": "State Checker Agent",
+   "legacy_key": "sta-checker",
+   "mcp": [
+    "local:redis-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1637",
+   "name": "State Modeling Agent",
+   "legacy_key": "sta-modeler",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1638",
+   "name": "Persistence Agent",
+   "legacy_key": "sta-store",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1639",
+   "name": "Versioning Agent",
+   "legacy_key": "sta-version",
+   "mcp": [
+    "local:redis-mcp"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Git MCP",
+   "desc": "Git reference MCP server: read, search and manipulate git repositories, commits, diffs, branches and version history.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+   "id": "local:git-mcp",
+   "origins": [
+    "state"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Memory MCP",
+   "desc": "Memory reference MCP server: persistent knowledge graph memory of entities, relations and observations stored across sessions.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+   "id": "local:memory-mcp",
+   "origins": [
+    "state"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Redis MCP",
+   "desc": "Redis official MCP server: store, read and search data in Redis, key value state, streams, hashes and vectors.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/redis/mcp-redis",
+   "id": "local:redis-mcp",
+   "origins": [
+    "state"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:memory-mcp",
+  "local:git-mcp",
+  "local:redis-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1636",
+   "mcp": "local:redis-mcp",
+   "topic": "state-persistence-and-versioning",
+   "score": 0.1247,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "state"
+  },
+  {
+   "agent": "Maxey1639",
+   "mcp": "local:redis-mcp",
+   "topic": "state-persistence-and-versioning",
+   "score": 0.105,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "state"
+  }
+ ],
+ "lexicon": {
+  "stamachines": "state machine transition statechart guard status lifecycle model",
+  "stapersistence": "persistence storage database key value cache durable file save restore",
+  "staversions": "snapshot version digest history provenance hash diff commit audit",
+  "staconsistency": "synchronization consistency replication conflict merge lock eventual strong concurrent"
+ },
+ "sources": [
+  "state"
+ ]
+}

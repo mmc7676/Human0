@@ -1,0 +1,1096 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "life-health-mind",
+ "topic": {
+  "id": "bioengineering-and-synthetic-biology",
+  "label": "Bioengineering and Synthetic Biology",
+  "desc": "Bioengineering and Synthetic Biology: Biomolecular Engineering, Synthetic Biology, Systems and Computational Biology, Biomedical Devices and Instrumentation, Biochemistry and Structural Biology, Tissue Engineering and Biomaterials, Bioimaging and Measurement and Molecular Modeling and Drug Discovery."
+ },
+ "concepts": [
+  {
+   "id": "bi-structural",
+   "label": "Biochemistry and Structural Biology",
+   "desc": "Proteins, enzymes and molecular structure and binding.",
+   "keywords": [
+    "enzyme",
+    "kinetics",
+    "structure",
+    "folding",
+    "docking",
+    "ligand"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "biology",
+   "source_topic": "biology",
+   "related": []
+  },
+  {
+   "id": "bioe-bioimaging",
+   "label": "Bioimaging and Measurement",
+   "desc": "Microscopy and medical imaging methods and the quantitative analysis of images.",
+   "keywords": [
+    "imaging",
+    "microscopy",
+    "fluorescence",
+    "segmentation",
+    "resolution",
+    "contrast",
+    "image analysis",
+    "quantification"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "bioengineering",
+   "source_topic": "bioengineering",
+   "related": [
+    "bmc-medical-imaging"
+   ]
+  },
+  {
+   "id": "bioe-biomedical-devices",
+   "label": "Biomedical Devices and Instrumentation",
+   "desc": "Sensors, diagnostics and implantable devices that measure or act on the body.",
+   "keywords": [
+    "device",
+    "sensor",
+    "diagnostic",
+    "implant",
+    "biosensor",
+    "signal",
+    "instrument",
+    "microfluidic"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "bioengineering",
+   "source_topic": "bioengineering",
+   "related": []
+  },
+  {
+   "id": "bioe-biomolecular-engineering",
+   "label": "Biomolecular Engineering",
+   "desc": "Protein design, directed evolution and molecular binding for therapeutics and tools.",
+   "keywords": [
+    "protein",
+    "enzyme",
+    "binding",
+    "structure",
+    "directed evolution",
+    "antibody",
+    "affinity",
+    "folding"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "bioengineering",
+   "source_topic": "bioengineering",
+   "related": []
+  },
+  {
+   "id": "bioe-synthetic-biology",
+   "label": "Synthetic Biology",
+   "desc": "Design and construction of genetic circuits, pathways and organisms with standardized biological parts.",
+   "keywords": [
+    "synthetic",
+    "genetic circuit",
+    "plasmid",
+    "promoter",
+    "pathway",
+    "crispr",
+    "gene",
+    "part"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "bioengineering",
+   "source_topic": "bioengineering",
+   "related": []
+  },
+  {
+   "id": "bioe-systems-biology",
+   "label": "Systems and Computational Biology",
+   "desc": "Quantitative models of gene networks, signaling and metabolism.",
+   "keywords": [
+    "systems",
+    "network",
+    "kinetics",
+    "ode",
+    "signaling",
+    "metabolism",
+    "simulation",
+    "flux"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "bioengineering",
+   "source_topic": "bioengineering",
+   "related": []
+  },
+  {
+   "id": "bioe-tissue-engineering",
+   "label": "Tissue Engineering and Biomaterials",
+   "desc": "Scaffolds, cells and biomaterials engineered to repair or replace tissue.",
+   "keywords": [
+    "tissue",
+    "scaffold",
+    "biomaterial",
+    "stem cell",
+    "hydrogel",
+    "biocompatibility",
+    "regeneration",
+    "degradation"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "bioengineering",
+   "source_topic": "bioengineering",
+   "related": []
+  },
+  {
+   "id": "bmc-molecular-modeling",
+   "label": "Molecular Modeling and Drug Discovery",
+   "desc": "Structure prediction, docking and molecular dynamics for understanding and designing drugs.",
+   "keywords": [
+    "molecular",
+    "docking",
+    "structure",
+    "dynamics",
+    "ligand",
+    "drug",
+    "protein",
+    "binding"
+   ],
+   "topic": "bioengineering-and-synthetic-biology",
+   "source": "biomedical-computation",
+   "source_topic": "biomedical-computation",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "bi-docking-planner",
+   "concept": "bi-structural",
+   "label": "Molecular Docking Planner",
+   "desc": "Plans docking and binding studies with preparation, scoring caveats and validation against known binders.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1082",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1081",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-enzyme-kinetics-fitter",
+   "concept": "bi-structural",
+   "label": "Enzyme Kinetics Fitter",
+   "desc": "Fits Michaelis-Menten and inhibition models to rate data and reports parameter uncertainty.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1082",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1080",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bi-protein-structure-analyst",
+   "concept": "bi-structural",
+   "label": "Protein Structure Analyst",
+   "desc": "Reads protein structures and predictions for domains, active sites and confidence, and separates predicted from measured structure.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1082",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1079",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1084",
+     "role": "support"
+    }
+   ],
+   "source": "biology"
+  },
+  {
+   "id": "bioe-cell-segmentation",
+   "concept": "bioe-bioimaging",
+   "label": "Cell Image Segmentation",
+   "desc": "Segments cells in microscopy images and counts them, checked against manually annotated ground truth.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1070",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1072",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-fluorescence-quant",
+   "concept": "bioe-bioimaging",
+   "label": "Fluorescence Quantification",
+   "desc": "Quantifies fluorescence intensity with background correction, checked by control normalization.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1070",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-modality-selection",
+   "concept": "bioe-bioimaging",
+   "label": "Imaging Modality Selection",
+   "desc": "Selects an imaging modality for a biological question, checked against resolution and depth requirements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1070",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1075",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-biosensor-design",
+   "concept": "bioe-biomedical-devices",
+   "label": "Biosensor Design",
+   "desc": "Designs a biosensor with sensitivity and detection limit targets, checked by calibration curve analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1075",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1070",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-device-pathway",
+   "concept": "bioe-biomedical-devices",
+   "label": "Device Regulatory Pathway",
+   "desc": "Identifies FDA device class and submission pathway, checked against predicate and classification rules.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1076",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1075",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-microfluidic-chip",
+   "concept": "bioe-biomedical-devices",
+   "label": "Microfluidic Chip Designer",
+   "desc": "Designs microfluidic channels for flow and mixing, checked by Reynolds number and pressure drop calculation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1075",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1072",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-binding-affinity",
+   "concept": "bioe-biomolecular-engineering",
+   "label": "Binding Affinity Analysis",
+   "desc": "Fits binding curves to estimate dissociation constants, checked by fit residuals and replicate agreement.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1073",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-evolution-campaign",
+   "concept": "bioe-biomolecular-engineering",
+   "label": "Directed Evolution Campaign Planner",
+   "desc": "Plans library design and screening rounds for enzyme improvement, checked against throughput limits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1073",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1077",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-structure-prediction",
+   "concept": "bioe-biomolecular-engineering",
+   "label": "Protein Structure Prediction",
+   "desc": "Predicts protein and complex structures, checked by confidence scores and known homolog comparison.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1073",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-circuit-design",
+   "concept": "bioe-synthetic-biology",
+   "label": "Genetic Circuit Designer",
+   "desc": "Designs genetic circuits from promoters and regulators, checked by simulated expression and logic truth tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1077",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-crispr-guide",
+   "concept": "bioe-synthetic-biology",
+   "label": "CRISPR Guide Planner",
+   "desc": "Plans CRISPR guide sequences for a target gene, checked for on-target score and off-target matches.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1077",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-pathway-engineering",
+   "concept": "bioe-synthetic-biology",
+   "label": "Metabolic Pathway Engineering",
+   "desc": "Proposes pathway edits to raise product titer, checked by flux balance analysis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1077",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-flux-balance",
+   "concept": "bioe-systems-biology",
+   "label": "Flux Balance Analysis",
+   "desc": "Computes optimal metabolic flux distributions, checked by stoichiometric mass balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1071",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1077",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-ode-network",
+   "concept": "bioe-systems-biology",
+   "label": "Gene Network ODE Model",
+   "desc": "Builds and solves ODE models of gene regulatory networks, checked by steady-state and parameter sensitivity analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1071",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1077",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-signaling-review",
+   "concept": "bioe-systems-biology",
+   "label": "Signaling Pathway Review",
+   "desc": "Summarizes a signaling pathway and its quantitative parameters, checked against cited studies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1071",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-biocompatibility",
+   "concept": "bioe-tissue-engineering",
+   "label": "Biocompatibility Assessment",
+   "desc": "Plans biocompatibility testing for a biomaterial, checked against ISO 10993 test categories.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1076",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1072",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-hydrogel-kinetics",
+   "concept": "bioe-tissue-engineering",
+   "label": "Hydrogel Degradation Modeling",
+   "desc": "Models hydrogel swelling and degradation over time, checked by mass balance and fitted data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1072",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1071",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1073",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bioe-scaffold-design",
+   "concept": "bioe-tissue-engineering",
+   "label": "Scaffold Design",
+   "desc": "Specifies scaffold porosity, stiffness and degradation for a target tissue, checked against literature property ranges.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1072",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1074",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1075",
+     "role": "support"
+    }
+   ],
+   "source": "bioengineering"
+  },
+  {
+   "id": "bmc-ligand-docking",
+   "concept": "bmc-molecular-modeling",
+   "label": "Ligand Docking Screen",
+   "desc": "Docks ligand libraries to a target and ranks poses, checked by redocking a known ligand.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1101",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1097",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1095",
+     "role": "support"
+    }
+   ],
+   "source": "biomedical-computation"
+  },
+  {
+   "id": "bmc-md-simulation",
+   "concept": "bmc-molecular-modeling",
+   "label": "Molecular Dynamics Analysis",
+   "desc": "Runs and analyses molecular dynamics trajectories, checked by energy and RMSD stability.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1101",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1100",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1597",
+     "role": "support"
+    }
+   ],
+   "source": "biomedical-computation"
+  },
+  {
+   "id": "bmc-structure-prediction",
+   "concept": "bmc-molecular-modeling",
+   "label": "Structure Prediction",
+   "desc": "Predicts protein and complex structures, checked by confidence metrics and experimental structure comparison.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1101",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1597",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1095",
+     "role": "support"
+    }
+   ],
+   "source": "biomedical-computation"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1070",
+   "name": "Bioimaging Analyst",
+   "legacy_key": "bioe-imaging",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1071",
+   "name": "Systems Biology Modeler",
+   "legacy_key": "bioe-systems",
+   "mcp": [
+    "8c1da671-b40e-465b-9bc4-bff40398221f"
+   ]
+  },
+  {
+   "key": "Maxey1072",
+   "name": "Tissue Engineer",
+   "legacy_key": "bioe-tissue",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1073",
+   "name": "Molecular Engineer",
+   "legacy_key": "bioe-molecular",
+   "mcp": [
+    "8c1da671-b40e-465b-9bc4-bff40398221f"
+   ]
+  },
+  {
+   "key": "Maxey1074",
+   "name": "Literature Evidence Checker",
+   "legacy_key": "bioe-lit",
+   "mcp": [
+    "8c1da671-b40e-465b-9bc4-bff40398221f"
+   ]
+  },
+  {
+   "key": "Maxey1075",
+   "name": "Medical Device Engineer",
+   "legacy_key": "bioe-device",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1076",
+   "name": "Biosafety and Regulatory Reviewer",
+   "legacy_key": "bioe-regulatory",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1077",
+   "name": "Synthetic Biology Designer",
+   "legacy_key": "bioe-synbio",
+   "mcp": [
+    "8c1da671-b40e-465b-9bc4-bff40398221f"
+   ]
+  },
+  {
+   "key": "Maxey1079",
+   "name": "Literature Claim Checker Agent",
+   "legacy_key": "bi-literature-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1080",
+   "name": "Molecular Biology Agent",
+   "legacy_key": "bi-molecular-biologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1081",
+   "name": "Biosafety Checker Agent",
+   "legacy_key": "bi-biosafety-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1082",
+   "name": "Structural Biology Agent",
+   "legacy_key": "bi-structural-biologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1084",
+   "name": "Bioinformatics Agent",
+   "legacy_key": "bi-bioinformatician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1095",
+   "name": "Biomedical Machine Learning Engineer",
+   "legacy_key": "bmc-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1097",
+   "name": "Biostatistics Checker",
+   "legacy_key": "bmc-stats",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1100",
+   "name": "Physiology Simulation Modeler",
+   "legacy_key": "bmc-physio",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1101",
+   "name": "Structural Bioinformatician",
+   "legacy_key": "bmc-structural",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1597",
+   "name": "Literature Evidence Checker",
+   "legacy_key": "bmc-lit",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "name": "bioRxiv",
+   "desc": "Access bioRxiv and medRxiv preprint data",
+   "tools": [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "origins": [
+    "bioengineering",
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology",
+    "research"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "name": "Boltz API",
+   "desc": "Predict molecular structures and binding interactions, screen libraries, and design binders with the Boltz API.",
+   "tools": [
+    "boltz_estimate_protein_screen",
+    "boltz_estimate_small_molecule_screen",
+    "boltz_estimate_structure_and_binding",
+    "boltz_get_guidance",
+    "boltz_get_job_status",
+    "boltz_get_screen_results",
+    "boltz_get_structure_and_binding_prediction",
+    "boltz_start_protein_screen"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "origins": [
+    "bioengineering",
+    "biology",
+    "biomedical-computation"
+   ]
+  },
+  {
+   "uuid": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "name": "Owkin",
+   "desc": "Interact with AI agents built for biology",
+   "tools": [
+    "list_cell_types",
+    "list_cohorts",
+    "features_description",
+    "filter_slides",
+    "get_histomics",
+    "display_slide_thumbnail",
+    "survival_analysis",
+    "histoplus_help"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "bd022b03-2829-47df-b07f-b50c3541c932",
+   "origins": [
+    "biology"
+   ]
+  },
+  {
+   "uuid": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "name": "Clinical Trials",
+   "desc": "Access ClinicalTrials.gov data",
+   "tools": [
+    "get_trial_details",
+    "search_by_eligibility",
+    "analyze_endpoints",
+    "search_investigators",
+    "search_trials",
+    "search_by_sponsor"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-24)",
+   "id": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "origins": [
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "name": "Helix GenoSphere",
+   "desc": "Query human genomics & longitudinal clinical data",
+   "tools": [
+    "get_variant_frequency",
+    "check_gene_availability",
+    "get_dataset_overview",
+    "search_concepts",
+    "get_patient_count"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+   "origins": [
+    "biology",
+    "human-biology"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "GitHub",
+   "desc": "GitHub's official MCP Server",
+   "tools": [
+    "actions_get",
+    "actions_list",
+    "actions_run_trigger",
+    "get_job_logs",
+    "get_code_quality_finding",
+    "get_code_scanning_alert",
+    "list_code_scanning_alerts",
+    "get_me",
+    "get_team_members",
+    "get_teams"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/github/github-mcp-server",
+   "id": "local:github",
+   "origins": [
+    "biomedical-computation",
+    "coding-agents",
+    "computer-science",
+    "electrical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+  "8c1da671-b40e-465b-9bc4-bff40398221f",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "cc609c18-f6f5-44a0-ac77-6150b9d7b439",
+  "bd022b03-2829-47df-b07f-b50c3541c932",
+  "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+  "local:github"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1071",
+   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "topic": "bioengineering-and-synthetic-biology",
+   "score": 0.2705,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1073",
+    "skill": "bioe-binding-affinity"
+   },
+   "source_topic": "bioengineering"
+  },
+  {
+   "agent": "Maxey1073",
+   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "topic": "bioengineering-and-synthetic-biology",
+   "score": 0.2705,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "bioengineering"
+  },
+  {
+   "agent": "Maxey1074",
+   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "topic": "bioengineering-and-synthetic-biology",
+   "score": 0.2396,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "bioengineering"
+  },
+  {
+   "agent": "Maxey1077",
+   "mcp": "8c1da671-b40e-465b-9bc4-bff40398221f",
+   "topic": "bioengineering-and-synthetic-biology",
+   "score": 0.2705,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1073",
+    "skill": "bioe-evolution-campaign"
+   },
+   "source_topic": "bioengineering"
+  }
+ ],
+ "lexicon": {
+  "bioe-synthetic": "synthetic genetic circuit plasmid promoter pathway crispr gene part",
+  "bioe-biomolecular": "protein enzyme binding structure directed evolution antibody affinity folding",
+  "bioe-tissue": "tissue scaffold biomaterial stem cell hydrogel biocompatibility regeneration degradation",
+  "bioe-systems": "systems network kinetics ode signaling metabolism simulation flux",
+  "bioe-biomedical": "device sensor diagnostic implant biosensor signal instrument microfluidic",
+  "bioe-bioimaging": "imaging microscopy fluorescence segmentation resolution contrast image analysis quantification",
+  "molecular": "dna rna transcription translation pcr cloning promoter protein molecular biology",
+  "cellbio": "organelle checkpoint trafficking membrane culture contamination cell signalling mitosis",
+  "genomics": "allele variant genome assembly annotation hardy weinberg gene inheritance population genetics genomics",
+  "neuroscience": "neuron hodgkin huxley eeg fmri synaptic synapse plasticity neuroscience neural connectivity",
+  "structbio": "enzyme michaelis menten docking inhibition binder folding ligand biochemistry structural",
+  "evolution": "phylogenetic alignment predator prey diversity phylogeny selection biodiversity evolution ecology",
+  "physiology": "homeostasis immune cytokine adaptive innate organ antibody physiology immunology",
+  "biosafety": "biosafety hazardous qualified diagnosis",
+  "bmc-genomics": "genomics sequencing alignment variant expression rna seq genome pipeline",
+  "bmc-molecular": "molecular docking structure dynamics ligand drug protein binding",
+  "bmc-biomedical": "machine learning classifier validation bias interpretability feature deep prediction",
+  "bmc-clinical": "clinical ehr phenotype terminology trial cohort outcome interoperability",
+  "bmc-medical": "imaging segmentation registration mri radiomics image annotation",
+  "bmc-physiological": "physiology pharmacokinetics compartment simulation cardiac multiscale dose differential equation"
+ },
+ "sources": [
+  "bioengineering",
+  "biology",
+  "biomedical-computation"
+ ]
+}

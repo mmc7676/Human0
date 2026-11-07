@@ -244,5 +244,1677 @@
   "location-resolution": "Is an MCP server a location? Hypothesis: an MCP server is an address (endpoint); a location is host + region + environment. Placeholder concept env-human0-dev; no rule reads it.",
   "dev-server-name": "The Human0 development server needs a new name (owner)."
  },
- "maxey0_topic_rule": "Maxey0 is one topic (owner decision 2026-10-31). Its 15 base concepts are merged to 8: orchestration+agentic loops+superposition; I/O contract+A2A/MCP message contracts; tiered memory+OKF knowledge graph; policy gates+run tracing+run evaluation; structured reasoning+claim verification; runtime infrastructure, Structured Context Windows and latent space stay. Former topic ids maxey0-runtime, maxey0-memory-context, maxey0-assurance no longer exist."
+ "maxey0_topic_rule": "Maxey0 is one topic (owner decision 2026-10-31). Its 15 base concepts are merged to 8: orchestration+agentic loops+superposition; I/O contract+A2A/MCP message contracts; tiered memory+OKF knowledge graph; policy gates+run tracing+run evaluation; structured reasoning+claim verification; runtime infrastructure, Structured Context Windows and latent space stay. Former topic ids maxey0-runtime, maxey0-memory-context, maxey0-assurance no longer exist.",
+ "regroup": {
+  "rule": "Applied after every other step. Domains were written from scratch and topics re-formed bottom-up from each concept's own text, skills, agents and MCP servers (Human0 approved, 2026-11-07). Each concept is placed in exactly one topic; a topic's description lists its concepts. Old topic ids, lexicons and listed servers carry over through the concepts they contained.",
+  "source": "maxey0_context_plane_refactored_v2.csv",
+  "domains": [
+   {
+    "id": "agentic-systems",
+    "label": "Agentic Systems and Software Engineering",
+    "desc": "Building and running agent systems and the software under them: Maxey0, agent harnesses, MCP and protocols, governance, observability, state, time, reasoning, knowledge graphs, code and infrastructure."
+   },
+   {
+    "id": "data-science",
+    "label": "Data Science and Quantitative Methods",
+    "desc": "Working with data and numbers to decide: statistics and causal inference, machine learning, data engineering, visualization, optimization, decision and risk analysis, research methods."
+   },
+   {
+    "id": "math-physical-sciences",
+    "label": "Mathematical and Physical Sciences",
+    "desc": "Mathematics and the physical sciences: algebra, calculus, linear algebra, classical and quantum physics, optics, condensed matter, materials, chemistry and simulation."
+   },
+   {
+    "id": "engineering",
+    "label": "Engineering",
+    "desc": "Designing and building physical systems: electrical, chemical, mechanical, civil, aerospace and energy engineering, control, robotics and drones."
+   },
+   {
+    "id": "life-health-mind",
+    "label": "Life, Health and Mind Sciences",
+    "desc": "Living systems, health and the mind: cell and molecular biology, genetics, anatomy, bioengineering, biomedical computation, biomechanics, public health, psychology and cognitive science."
+   },
+   {
+    "id": "earth-environment-place",
+    "label": "Earth, Environment and Place",
+    "desc": "The planet and where things are: climate, atmosphere, water, geophysics, environmental engineering, energy and emissions policy, maps, GIS, cities, places and travel."
+   },
+   {
+    "id": "business-finance",
+    "label": "Business, Finance and Economics",
+    "desc": "Money, markets and work: accounting, corporate finance, banking, markets and trading, funds, regulation, taxes, crypto, real estate, economics, startups, marketing and careers."
+   },
+   {
+    "id": "society-governance",
+    "label": "Society, Governance and Ethics",
+    "desc": "How societies organize and govern themselves: politics, international relations, public policy, human rights, development, sociology, anthropology, education and the ethics of technology and data."
+   },
+   {
+    "id": "languages-communication",
+    "label": "Languages, Literatures and Communication",
+    "desc": "Language and communication, including any text a model can read as instructions: language structure, grammar, pronunciation, translation, linguistics, writing, poetry, rhetoric and literature."
+   },
+   {
+    "id": "area-identity-studies",
+    "label": "Area and Identity Studies",
+    "desc": "Regions, cultures and identities: European, Slavic, Chinese, African, American, Latin American and Jewish studies, and the study of race, ethnicity, gender and sexuality."
+   },
+   {
+    "id": "humanities-arts",
+    "label": "Humanities and Arts",
+    "desc": "Humanities and the arts: philosophy, history, classics, religion, archaeology, art history, studio art, design, music, dance, theater, film and media."
+   }
+  ],
+  "topics": [
+   {
+    "id": "apis-protocols-and-mcp-contracts",
+    "label": "APIs, Protocols and MCP Contracts",
+    "domain": "agentic-systems",
+    "concepts": [
+     "pr-conformance",
+     "pr-mcp",
+     "pr-schema",
+     "pr-api",
+     "pr-transport",
+     "pr-versioning"
+    ]
+   },
+   {
+    "id": "agent-governance-and-control",
+    "label": "Agent Governance and Control",
+    "domain": "agentic-systems",
+    "concepts": [
+     "gv-access",
+     "gv-compliance",
+     "gv-accountability",
+     "gv-risk",
+     "gv-audit",
+     "gv-policy",
+     "gv-privacy",
+     "gv-safety"
+    ]
+   },
+   {
+    "id": "agent-harnesses-and-tool-use",
+    "label": "Agent Harnesses and Tool Use",
+    "domain": "agentic-systems",
+    "concepts": [
+     "pr-a2a",
+     "ca-eval",
+     "ca-orchestration",
+     "ca-harness",
+     "mx-io-contract",
+     "ca-sandbox",
+     "mx-infrastructure"
+    ]
+   },
+   {
+    "id": "cloud-infrastructure-and-devops",
+    "label": "Cloud Infrastructure and DevOps",
+    "domain": "agentic-systems",
+    "concepts": [
+     "inf-containers",
+     "inf-compute",
+     "inf-iac",
+     "inf-cicd",
+     "inf-networking"
+    ]
+   },
+   {
+    "id": "code-generation-review-and-testing",
+    "label": "Code Generation, Review and Testing",
+    "domain": "agentic-systems",
+    "concepts": [
+     "ca-review",
+     "ca-codegen",
+     "ca-verify",
+     "ca-repo",
+     "sec-vulns"
+    ]
+   },
+   {
+    "id": "computer-science",
+    "label": "Computer Science",
+    "domain": "agentic-systems",
+    "concepts": [
+     "cs-theory",
+     "cs-algorithms",
+     "cs-software-engineering",
+     "cs-ai-ml",
+     "cs-systems",
+     "cs-security",
+     "symsys-formal-logic",
+     "mcs-algorithms-optimization"
+    ]
+   },
+   {
+    "id": "deployment-environments",
+    "label": "Deployment Environments",
+    "domain": "agentic-systems",
+    "concepts": [
+     "env-human0-dev",
+     "env-endpoints",
+     "env-promotion",
+     "env-targets"
+    ]
+   },
+   {
+    "id": "front-end-and-ui-engineering",
+    "label": "Front-End and UI Engineering",
+    "domain": "agentic-systems",
+    "concepts": [
+     "ui-testing",
+     "ui-websites",
+     "ui-a11y",
+     "ui-components",
+     "ui-layout"
+    ]
+   },
+   {
+    "id": "identity-secrets-and-threat-modeling",
+    "label": "Identity, Secrets and Threat Modeling",
+    "domain": "agentic-systems",
+    "concepts": [
+     "sec-authn",
+     "sec-secrets",
+     "pr-auth",
+     "sec-threats"
+    ]
+   },
+   {
+    "id": "knowledge-graphs-and-ontology",
+    "label": "Knowledge Graphs and Ontology",
+    "domain": "agentic-systems",
+    "concepts": [
+     "kn-ontology",
+     "kn-query",
+     "kn-curation",
+     "kn-sharing",
+     "kn-metadata",
+     "kn-extraction",
+     "kn-retrieval",
+     "kn-resolution"
+    ]
+   },
+   {
+    "id": "maxey0-context-architecture",
+    "label": "Maxey0 Context Architecture",
+    "domain": "agentic-systems",
+    "concepts": [
+     "mx-context-management",
+     "mx-governance",
+     "mx-orchestration",
+     "mx-memory",
+     "mx-reasoning",
+     "mx-latent"
+    ]
+   },
+   {
+    "id": "observability",
+    "label": "Observability",
+    "domain": "agentic-systems",
+    "concepts": [
+     "ob-debugging",
+     "ob-signals",
+     "ob-dashboards",
+     "ob-incident",
+     "ob-agent-tracing",
+     "ob-instrumentation",
+     "ob-drift",
+     "ob-alerting"
+    ]
+   },
+   {
+    "id": "programming-languages",
+    "label": "Programming Languages",
+    "domain": "agentic-systems",
+    "concepts": [
+     "pl-python",
+     "pl-c-cpp",
+     "pl-jvm",
+     "pl-shell",
+     "pl-typescript",
+     "pl-rust",
+     "pl-go"
+    ]
+   },
+   {
+    "id": "reasoning-and-argument",
+    "label": "Reasoning and Argument",
+    "domain": "agentic-systems",
+    "concepts": [
+     "rn-calibration",
+     "rn-probabilistic",
+     "rn-causal",
+     "rn-abduction",
+     "rn-argument",
+     "rn-planning"
+    ]
+   },
+   {
+    "id": "state-persistence-and-versioning",
+    "label": "State, Persistence and Versioning",
+    "domain": "agentic-systems",
+    "concepts": [
+     "sta-machines",
+     "sta-persistence",
+     "sta-consistency",
+     "sta-versions"
+    ]
+   },
+   {
+    "id": "systems-engineering-and-reliability",
+    "label": "Systems Engineering and Reliability",
+    "domain": "agentic-systems",
+    "concepts": [
+     "sys-architecture",
+     "sys-feedback",
+     "sys-interfaces",
+     "sys-reliability"
+    ]
+   },
+   {
+    "id": "time-and-scheduling",
+    "label": "Time and Scheduling",
+    "domain": "agentic-systems",
+    "concepts": [
+     "tim-clocks",
+     "tim-calendars",
+     "tim-durations",
+     "tim-ordering"
+    ]
+   },
+   {
+    "id": "data-engineering-and-pipelines",
+    "label": "Data Engineering and Pipelines",
+    "domain": "data-science",
+    "concepts": [
+     "da-warehouse",
+     "da-modeling",
+     "da-catalog",
+     "da-quality",
+     "da-pipelines",
+     "da-streaming"
+    ]
+   },
+   {
+    "id": "data-visualization-and-ml-datasets",
+    "label": "Data Visualization and ML Datasets",
+    "domain": "data-science",
+    "concepts": [
+     "da-exploration",
+     "ds-visualization-communication",
+     "da-ml-datasets"
+    ]
+   },
+   {
+    "id": "decision-analysis-under-uncertainty",
+    "label": "Decision Analysis under Uncertainty",
+    "domain": "data-science",
+    "concepts": [
+     "mse-decision-analysis",
+     "rn-decision",
+     "mse-organizations-strategy"
+    ]
+   },
+   {
+    "id": "machine-learning-and-sql",
+    "label": "Machine Learning and SQL",
+    "domain": "data-science",
+    "concepts": [
+     "ds-data-engineering",
+     "mcs-machine-learning-data",
+     "ds-machine-learning",
+     "pl-sql"
+    ]
+   },
+   {
+    "id": "operations-research-and-optimization",
+    "label": "Operations Research and Optimization",
+    "domain": "data-science",
+    "concepts": [
+     "mse-operations-supply-chain",
+     "mse-stochastic-modeling",
+     "mse-optimization",
+     "mse-financial-engineering"
+    ]
+   },
+   {
+    "id": "research-methods-and-evidence",
+    "label": "Research Methods and Evidence",
+    "domain": "data-science",
+    "concepts": [
+     "rs-appraisal",
+     "rs-literature",
+     "rs-writing",
+     "rs-question",
+     "rs-design",
+     "rs-integrity",
+     "rs-synthesis",
+     "rs-analysis"
+    ]
+   },
+   {
+    "id": "statistics-and-causal-inference",
+    "label": "Statistics and Causal Inference",
+    "domain": "data-science",
+    "concepts": [
+     "ds-statistical-inference",
+     "mcs-probability-statistics",
+     "ds-experimentation-causal",
+     "ma-probstat",
+     "polisci-political-methodology",
+     "pubpol-program-evaluation"
+    ]
+   },
+   {
+    "id": "algebra-calculus-and-discrete-mathematics",
+    "label": "Algebra, Calculus and Discrete Mathematics",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "ma-calculus",
+     "mcs-real-analysis-calculus",
+     "mcs-numerical-methods",
+     "ma-numerical",
+     "ma-algebra",
+     "ma-proof",
+     "ma-discrete"
+    ]
+   },
+   {
+    "id": "chemistry",
+    "label": "Chemistry",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "chem-organic-chemistry",
+     "chem-computational-chemistry",
+     "chem-analytical-chemistry",
+     "chem-inorganic-chemistry",
+     "chem-biochemistry"
+    ]
+   },
+   {
+    "id": "classical-physics",
+    "label": "Classical Physics",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "cl-mechanics",
+     "cl-em",
+     "cl-relativity",
+     "qm-qft",
+     "astrophysics-cosmology",
+     "physics-literature-methods",
+     "cl-conservation",
+     "cl-waves"
+    ]
+   },
+   {
+    "id": "instrumentation-and-condensed-matter",
+    "label": "Instrumentation and Condensed Matter",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "engp-condensed-matter-materials",
+     "apph-materials-physics",
+     "apph-solid-state-devices",
+     "apph-instrumentation-measurement"
+    ]
+   },
+   {
+    "id": "linear-algebra-and-geometry",
+    "label": "Linear Algebra and Geometry",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "ma-linear",
+     "mcs-linear-algebra",
+     "ma-geometry"
+    ]
+   },
+   {
+    "id": "materials-science",
+    "label": "Materials Science",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "matsci-computation-characterization",
+     "matsci-crystal-structure",
+     "matsci-mechanical-behavior",
+     "matsci-thermodynamics-kinetics",
+     "matsci-electronic-functional",
+     "matsci-polymers-ceramics-composites"
+    ]
+   },
+   {
+    "id": "optics-photonics-and-plasma",
+    "label": "Optics, Photonics and Plasma",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "engp-photonics-optics",
+     "apph-computational-physics",
+     "apph-optics-photonics",
+     "engp-mathematical-methods",
+     "engp-nuclear-plasma-computation",
+     "apph-fluids-plasmas",
+     "cl-optics"
+    ]
+   },
+   {
+    "id": "quantum-physics",
+    "label": "Quantum Physics",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "qm-foundations",
+     "qm-info",
+     "qm-solvers",
+     "qm-open",
+     "qm-optics",
+     "qm-manybody",
+     "qm-spin",
+     "engp-quantum-engineering"
+    ]
+   },
+   {
+    "id": "simulation-and-digital-twins",
+    "label": "Simulation and Digital Twins",
+    "domain": "math-physical-sciences",
+    "concepts": [
+     "sim-twins",
+     "sim-scenarios",
+     "sim-physics"
+    ]
+   },
+   {
+    "id": "aerospace-engineering",
+    "label": "Aerospace Engineering",
+    "domain": "engineering",
+    "concepts": [
+     "aero-spacecraft-systems",
+     "aero-aerodynamics",
+     "aero-astrodynamics",
+     "aero-flight-dynamics-control",
+     "aero-propulsion",
+     "aero-aerospace-structures"
+    ]
+   },
+   {
+    "id": "chemical-engineering",
+    "label": "Chemical Engineering",
+    "domain": "engineering",
+    "concepts": [
+     "cheme-thermodynamics",
+     "cheme-reaction-engineering",
+     "cheme-separations",
+     "cheme-process-design-safety",
+     "chem-physical-chemistry"
+    ]
+   },
+   {
+    "id": "civil-and-structural-engineering",
+    "label": "Civil and Structural Engineering",
+    "domain": "engineering",
+    "concepts": [
+     "civil-structural",
+     "civil-geotechnical",
+     "civil-materials",
+     "civil-construction",
+     "civil-transportation"
+    ]
+   },
+   {
+    "id": "control-systems",
+    "label": "Control Systems",
+    "domain": "engineering",
+    "concepts": [
+     "rb-control",
+     "me-controls-mechatronics",
+     "cheme-process-control"
+    ]
+   },
+   {
+    "id": "drones-and-uav-operations",
+    "label": "Drones and UAV Operations",
+    "domain": "engineering",
+    "concepts": [
+     "dr-flight",
+     "dr-applications",
+     "dr-mission",
+     "dr-platforms",
+     "dr-regulation",
+     "dr-payload",
+     "dr-types",
+     "dr-planetary"
+    ]
+   },
+   {
+    "id": "electrical-engineering",
+    "label": "Electrical Engineering",
+    "domain": "engineering",
+    "concepts": [
+     "ee-circuit-analysis",
+     "ee-electronics",
+     "ee-signals-systems",
+     "ee-power-control",
+     "ee-digital-systems",
+     "ee-electromagnetics"
+    ]
+   },
+   {
+    "id": "energy-systems-and-power-grids",
+    "label": "Energy Systems and Power Grids",
+    "domain": "engineering",
+    "concepts": [
+     "atmo-energy-systems",
+     "ese-power-grids",
+     "ese-renewable-energy",
+     "ese-energy-storage"
+    ]
+   },
+   {
+    "id": "mechanical-engineering",
+    "label": "Mechanical Engineering",
+    "domain": "engineering",
+    "concepts": [
+     "me-solid-mechanics",
+     "me-machine-design",
+     "me-dynamics-vibration"
+    ]
+   },
+   {
+    "id": "robotics",
+    "label": "Robotics",
+    "domain": "engineering",
+    "concepts": [
+     "rb-software",
+     "rb-safety",
+     "rb-simulation",
+     "rb-planning",
+     "rb-kinematics",
+     "rb-manipulation",
+     "rb-perception"
+    ]
+   },
+   {
+    "id": "thermodynamics-and-transport-phenomena",
+    "label": "Thermodynamics and Transport Phenomena",
+    "domain": "engineering",
+    "concepts": [
+     "me-thermodynamics-fluids",
+     "cl-thermo",
+     "cheme-transport-phenomena",
+     "me-heat-transfer",
+     "ese-thermodynamics-conversion",
+     "cl-fluids"
+    ]
+   },
+   {
+    "id": "bioengineering-and-synthetic-biology",
+    "label": "Bioengineering and Synthetic Biology",
+    "domain": "life-health-mind",
+    "concepts": [
+     "bioe-biomolecular-engineering",
+     "bioe-synthetic-biology",
+     "bioe-systems-biology",
+     "bioe-biomedical-devices",
+     "bi-structural",
+     "bioe-tissue-engineering",
+     "bioe-bioimaging",
+     "bmc-molecular-modeling"
+    ]
+   },
+   {
+    "id": "biomechanics",
+    "label": "Biomechanics",
+    "domain": "life-health-mind",
+    "concepts": [
+     "biom-musculoskeletal-modeling",
+     "biom-tissue-mechanics",
+     "biom-human-movement",
+     "biom-finite-element",
+     "biom-assistive-devices",
+     "biom-biofluid-mechanics"
+    ]
+   },
+   {
+    "id": "biomedical-computation",
+    "label": "Biomedical Computation",
+    "domain": "life-health-mind",
+    "concepts": [
+     "bmc-biomedical-ml",
+     "bmc-clinical-informatics",
+     "bmc-physiological-modeling",
+     "bmc-genomics-bioinformatics",
+     "bmc-medical-imaging"
+    ]
+   },
+   {
+    "id": "cell-molecular-and-organismal-biology",
+    "label": "Cell, Molecular and Organismal Biology",
+    "domain": "life-health-mind",
+    "concepts": [
+     "bi-cell",
+     "hbio-cell-molecular",
+     "bi-molecular",
+     "bi-neuro",
+     "bi-physiology"
+    ]
+   },
+   {
+    "id": "cognitive-science-and-computational-models-of-mind",
+    "label": "Cognitive Science and Computational Models of Mind",
+    "domain": "life-health-mind",
+    "concepts": [
+     "symsys-computational-cognition",
+     "psych-cognitive-psychology",
+     "symsys-natural-language"
+    ]
+   },
+   {
+    "id": "genetics-evolution-and-human-variation",
+    "label": "Genetics, Evolution and Human Variation",
+    "domain": "life-health-mind",
+    "concepts": [
+     "hbio-human-genetics",
+     "bi-genomics",
+     "hbio-evolution-variation",
+     "anth-biological-anthropology",
+     "bi-evolution"
+    ]
+   },
+   {
+    "id": "human-anatomy-and-physiology",
+    "label": "Human Anatomy and Physiology",
+    "domain": "life-health-mind",
+    "concepts": [
+     "hbio-anatomy",
+     "hbio-physiology",
+     "hbio-development-aging"
+    ]
+   },
+   {
+    "id": "psychology",
+    "label": "Psychology",
+    "domain": "life-health-mind",
+    "concepts": [
+     "psych-research-methods",
+     "psych-social-personality",
+     "psych-clinical-psychology",
+     "psych-developmental-psychology",
+     "psych-biological-psychology"
+    ]
+   },
+   {
+    "id": "public-health-and-prevention-research",
+    "label": "Public Health and Prevention Research",
+    "domain": "life-health-mind",
+    "concepts": [
+     "chpr-prevention-science",
+     "chpr-intervention",
+     "chpr-evaluation-policy",
+     "chpr-community-engagement",
+     "chpr-epidemiology",
+     "chpr-behavior-change"
+    ]
+   },
+   {
+    "id": "climate-atmosphere-and-earth-systems",
+    "label": "Climate, Atmosphere and Earth Systems",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "earth-climate-atmosphere",
+     "earth-biogeochemistry",
+     "atmo-climate-science",
+     "atmo-radiation-energy-balance",
+     "earth-geospatial-observation",
+     "earth-oceanography",
+     "earth-solid-earth",
+     "atmo-atmospheric-dynamics"
+    ]
+   },
+   {
+    "id": "energy-emissions-and-air-quality-policy",
+    "label": "Energy, Emissions and Air Quality Policy",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "atmo-air-quality-policy",
+     "ese-energy-systems-policy",
+     "envs-sustainability-lca",
+     "envs-air-quality",
+     "ese-fuels-combustion"
+    ]
+   },
+   {
+    "id": "geophysics",
+    "label": "Geophysics",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "geop-exploration-seismic",
+     "geop-inversion-data",
+     "geop-electrical-em",
+     "geop-seismology",
+     "geop-geodesy-geodynamics",
+     "geop-potential-fields"
+    ]
+   },
+   {
+    "id": "hydrology-and-water-resources",
+    "label": "Hydrology and Water Resources",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "envs-water-resources",
+     "earth-hydrology-cryosphere",
+     "civil-water-resources"
+    ]
+   },
+   {
+    "id": "mapping-and-gis",
+    "label": "Mapping and GIS",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "mp-types",
+     "mp-dimensions",
+     "mp-survey",
+     "mp-web",
+     "mp-gis",
+     "mp-slam",
+     "mp-coords"
+    ]
+   },
+   {
+    "id": "places-routing-and-travel",
+    "label": "Places, Routing and Travel",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "loc-places",
+     "loc-distance",
+     "trv-hiking",
+     "trv-trips",
+     "trv-conditions",
+     "loc-planetary",
+     "loc-regions",
+     "trv-bookings"
+    ]
+   },
+   {
+    "id": "urban-studies",
+    "label": "Urban Studies",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "urban-spatial-analysis-environment",
+     "urban-urban-planning",
+     "urban-urban-economics",
+     "urban-housing-community",
+     "urban-urban-society-history",
+     "urban-transportation-mobility"
+    ]
+   },
+   {
+    "id": "waste-and-water-treatment",
+    "label": "Waste and Water Treatment",
+    "domain": "earth-environment-place",
+    "concepts": [
+     "envs-water-quality",
+     "envs-env-risk-policy",
+     "envs-solid-waste"
+    ]
+   },
+   {
+    "id": "accounting-and-audit",
+    "label": "Accounting and Audit",
+    "domain": "business-finance",
+    "concepts": [
+     "acc-audit",
+     "acc-management",
+     "acc-ledger",
+     "acc-standards"
+    ]
+   },
+   {
+    "id": "banking-payments-and-insurance",
+    "label": "Banking, Payments and Insurance",
+    "domain": "business-finance",
+    "concepts": [
+     "fs-payments",
+     "fs-banking",
+     "fs-wealth",
+     "fs-ib",
+     "fs-insurance",
+     "fx-payments"
+    ]
+   },
+   {
+    "id": "capital-markets-and-trading",
+    "label": "Capital Markets and Trading",
+    "domain": "business-finance",
+    "concepts": [
+     "cm-platforms",
+     "cm-structure",
+     "cm-exchanges",
+     "cm-clearing",
+     "cm-indices"
+    ]
+   },
+   {
+    "id": "commodities",
+    "label": "Commodities",
+    "domain": "business-finance",
+    "concepts": [
+     "cmd-drivers",
+     "cmd-metals",
+     "cmd-ags",
+     "cmd-energy"
+    ]
+   },
+   {
+    "id": "corporate-finance",
+    "label": "Corporate Finance",
+    "domain": "business-finance",
+    "concepts": [
+     "cf-capital",
+     "cf-treasury",
+     "cf-valuation",
+     "cf-formation",
+     "cf-mna"
+    ]
+   },
+   {
+    "id": "crypto-and-digital-assets",
+    "label": "Crypto and Digital Assets",
+    "domain": "business-finance",
+    "concepts": [
+     "cry-chains",
+     "cry-defi",
+     "cry-regulation",
+     "cry-digital-currencies",
+     "cry-tokens",
+     "cry-custody"
+    ]
+   },
+   {
+    "id": "currencies-and-fx",
+    "label": "Currencies and FX",
+    "domain": "business-finance",
+    "concepts": [
+     "fx-pairs",
+     "fx-fx-hedging",
+     "fx-drivers"
+    ]
+   },
+   {
+    "id": "derivatives",
+    "label": "Derivatives",
+    "domain": "business-finance",
+    "concepts": [
+     "dv-options",
+     "dv-pricing",
+     "dv-hedging",
+     "dv-futures",
+     "dv-swaps"
+    ]
+   },
+   {
+    "id": "economics",
+    "label": "Economics",
+    "domain": "business-finance",
+    "concepts": [
+     "econ-public-economics",
+     "pubpol-public-economics",
+     "econ-microeconomics",
+     "econ-econometrics",
+     "econ-behavioral-economics",
+     "econ-macroeconomics",
+     "pubpol-public-finance-budgeting"
+    ]
+   },
+   {
+    "id": "equities",
+    "label": "Equities",
+    "domain": "business-finance",
+    "concepts": [
+     "eq-stocks",
+     "eq-filings",
+     "eq-fundamental",
+     "eq-actions",
+     "eq-technical"
+    ]
+   },
+   {
+    "id": "financial-regulation-and-aml",
+    "label": "Financial Regulation and AML",
+    "domain": "business-finance",
+    "concepts": [
+     "frg-aml",
+     "frg-program",
+     "frg-sanctions",
+     "frg-securities",
+     "frg-kyc"
+    ]
+   },
+   {
+    "id": "financial-and-economic-data",
+    "label": "Financial and Economic Data",
+    "domain": "business-finance",
+    "concepts": [
+     "fd-models",
+     "fd-fundamentals",
+     "fd-quality",
+     "fd-economic",
+     "acc-statements",
+     "fd-market-data"
+    ]
+   },
+   {
+    "id": "fixed-income",
+    "label": "Fixed Income",
+    "domain": "business-finance",
+    "concepts": [
+     "fi-math",
+     "fi-govt",
+     "fi-muni",
+     "fi-credit",
+     "fi-securitized"
+    ]
+   },
+   {
+    "id": "hedge-funds-and-private-funds",
+    "label": "Hedge Funds and Private Funds",
+    "domain": "business-finance",
+    "concepts": [
+     "hf-private-markets",
+     "hf-strategies",
+     "hf-structures",
+     "hf-operations",
+     "inv-funds",
+     "hf-subscriptions"
+    ]
+   },
+   {
+    "id": "investing-and-portfolio-management",
+    "label": "Investing and Portfolio Management",
+    "domain": "business-finance",
+    "concepts": [
+     "inv-tracking",
+     "inv-quant",
+     "inv-risk",
+     "inv-allocation"
+    ]
+   },
+   {
+    "id": "job-search-and-careers",
+    "label": "Job Search and Careers",
+    "domain": "business-finance",
+    "concepts": [
+     "js-targeting",
+     "js-search",
+     "js-resume",
+     "js-application",
+     "js-offer",
+     "js-interview"
+    ]
+   },
+   {
+    "id": "marketing",
+    "label": "Marketing",
+    "domain": "business-finance",
+    "concepts": [
+     "mk-paid",
+     "mk-email",
+     "mk-strategy",
+     "mk-measure",
+     "mk-content",
+     "mk-seo"
+    ]
+   },
+   {
+    "id": "real-estate",
+    "label": "Real Estate",
+    "domain": "business-finance",
+    "concepts": [
+     "re-valuation",
+     "re-search",
+     "re-transactions",
+     "re-zoning"
+    ]
+   },
+   {
+    "id": "securities-offerings",
+    "label": "Securities Offerings",
+    "domain": "business-finance",
+    "concepts": [
+     "ofr-followon",
+     "ofr-ipo",
+     "ofr-bookbuilding",
+     "ofr-debt",
+     "ofr-alt-listings",
+     "ofr-exempt"
+    ]
+   },
+   {
+    "id": "startups",
+    "label": "Startups",
+    "domain": "business-finance",
+    "concepts": [
+     "su-company",
+     "su-finance",
+     "su-fundraising",
+     "su-product",
+     "su-validation",
+     "su-growth"
+    ]
+   },
+   {
+    "id": "taxes-and-personal-finance",
+    "label": "Taxes and Personal Finance",
+    "domain": "business-finance",
+    "concepts": [
+     "tax-filing",
+     "tax-retirement",
+     "tax-deductions",
+     "tax-investment-tax",
+     "tax-budgeting"
+    ]
+   },
+   {
+    "id": "anthropology",
+    "label": "Anthropology",
+    "domain": "society-governance",
+    "concepts": [
+     "anth-economic-political-anthropology",
+     "anth-ethnography",
+     "anth-medical-anthropology",
+     "anth-social-cultural-theory"
+    ]
+   },
+   {
+    "id": "data-and-ai-ethics",
+    "label": "Data and AI Ethics",
+    "domain": "society-governance",
+    "concepts": [
+     "etht-privacy-data",
+     "etht-ai-ethics",
+     "ds-data-ethics-governance"
+    ]
+   },
+   {
+    "id": "education",
+    "label": "Education",
+    "domain": "society-governance",
+    "concepts": [
+     "edu-learning-sciences",
+     "edu-inclusive-education",
+     "edu-curriculum-design",
+     "edu-pedagogy",
+     "edu-education-policy",
+     "edu-assessment"
+    ]
+   },
+   {
+    "id": "ethics-of-technology",
+    "label": "Ethics of Technology",
+    "domain": "society-governance",
+    "concepts": [
+     "etht-moral-theory",
+     "etht-design-bioethics",
+     "etht-sts-society",
+     "etht-tech-governance",
+     "sts-ethics-technology",
+     "phil-ethics-value"
+    ]
+   },
+   {
+    "id": "global-and-international-development",
+    "label": "Global and International Development",
+    "domain": "society-governance",
+    "concepts": [
+     "glob-development",
+     "glob-global-economy",
+     "afst-development-economics",
+     "ir-international-political-economy",
+     "glob-globalization-theory",
+     "glob-global-environment-security",
+     "econ-international-economics"
+    ]
+   },
+   {
+    "id": "human-rights",
+    "label": "Human Rights",
+    "domain": "society-governance",
+    "concepts": [
+     "hr-institutions-mechanisms",
+     "hr-international-law",
+     "hr-specific-rights",
+     "hr-theory-foundations",
+     "hr-transitional-justice",
+     "hr-monitoring-documentation"
+    ]
+   },
+   {
+    "id": "international-relations",
+    "label": "International Relations",
+    "domain": "society-governance",
+    "concepts": [
+     "ir-international-organizations",
+     "ir-security-studies",
+     "ir-ir-theory",
+     "ir-area-forecasting",
+     "ir-diplomacy-foreign-policy",
+     "glob-global-governance"
+    ]
+   },
+   {
+    "id": "political-science",
+    "label": "Political Science",
+    "domain": "society-governance",
+    "concepts": [
+     "polisci-comparative-politics",
+     "polisci-international-relations",
+     "polisci-political-theory",
+     "polisci-elections-behavior"
+    ]
+   },
+   {
+    "id": "public-policy-and-government",
+    "label": "Public Policy and Government",
+    "domain": "society-governance",
+    "concepts": [
+     "pubpol-institutions-process",
+     "pubpol-policy-analysis",
+     "pubpol-regulation-ethics",
+     "polisci-public-policy"
+    ]
+   },
+   {
+    "id": "science-and-technology-studies",
+    "label": "Science and Technology Studies",
+    "domain": "society-governance",
+    "concepts": [
+     "sts-risk-controversy",
+     "sts-social-construction",
+     "sts-governance-policy",
+     "sts-history-technology",
+     "sts-actor-network"
+    ]
+   },
+   {
+    "id": "sociology",
+    "label": "Sociology",
+    "domain": "society-governance",
+    "concepts": [
+     "soc-social-theory",
+     "soc-stratification-inequality",
+     "soc-culture-movements",
+     "soc-research-methods",
+     "soc-demography-family",
+     "soc-networks-organizations"
+    ]
+   },
+   {
+    "id": "communication-studies-and-rhetoric",
+    "label": "Communication Studies and Rhetoric",
+    "domain": "languages-communication",
+    "concepts": [
+     "comm-strategic",
+     "comm-theory",
+     "comm-research-methods",
+     "comm-rhetoric",
+     "comm-media",
+     "comm-interpersonal"
+    ]
+   },
+   {
+    "id": "creative-writing",
+    "label": "Creative Writing",
+    "domain": "languages-communication",
+    "concepts": [
+     "cw-fiction",
+     "cw-nonfiction",
+     "cw-publishing",
+     "cw-craft-revision",
+     "cw-drama"
+    ]
+   },
+   {
+    "id": "english-language-and-poetry",
+    "label": "English Language and Poetry",
+    "domain": "languages-communication",
+    "concepts": [
+     "engl-poetry-poetics",
+     "engl-english-language",
+     "engl-literary-analysis",
+     "engl-rhetoric-writing",
+     "cw-poetry"
+    ]
+   },
+   {
+    "id": "grammar-of-modern-languages",
+    "label": "Grammar of Modern Languages",
+    "domain": "languages-communication",
+    "concepts": [
+     "ital-grammar",
+     "jpn-grammar",
+     "kor-grammar",
+     "fren-grammar-language",
+     "germ-grammar-language",
+     "span-language-acquisition"
+    ]
+   },
+   {
+    "id": "language-structure-lexicon-and-translation",
+    "label": "Language Structure, Lexicon and Translation",
+    "domain": "languages-communication",
+    "concepts": [
+     "ling-semantics",
+     "ling-morphology-syntax",
+     "hl-lexicon",
+     "hl-translation",
+     "hl-writing",
+     "ling-pragmatics-discourse"
+    ]
+   },
+   {
+    "id": "literary-theory-and-comparative-literature",
+    "label": "Literary Theory and Comparative Literature",
+    "domain": "languages-communication",
+    "concepts": [
+     "clit-literary-theory",
+     "engl-literary-history",
+     "clit-periods-movements",
+     "clit-comparative-method",
+     "engl-critical-theory",
+     "clit-world-literature",
+     "clit-intermediality",
+     "rel-scripture-texts"
+    ]
+   },
+   {
+    "id": "phonetics-pronunciation-and-writing-systems",
+    "label": "Phonetics, Pronunciation and Writing Systems",
+    "domain": "languages-communication",
+    "concepts": [
+     "kor-phonology",
+     "ital-phonology",
+     "jpn-phonology",
+     "ling-phonetics-phonology",
+     "fren-phonetics-oral",
+     "jpn-writing-system",
+     "kor-hangul-writing"
+    ]
+   },
+   {
+    "id": "sociolinguistics-and-computational-linguistics",
+    "label": "Sociolinguistics and Computational Linguistics",
+    "domain": "languages-communication",
+    "concepts": [
+     "hl-variation",
+     "hl-computational",
+     "anth-linguistic-anthropology",
+     "ling-historical-sociolinguistics",
+     "ling-psycholinguistics-acquisition"
+    ]
+   },
+   {
+    "id": "spanish-and-hispanic-linguistics",
+    "label": "Spanish and Hispanic Linguistics",
+    "domain": "languages-communication",
+    "concepts": [
+     "span-hispanic-linguistics",
+     "span-translation-interpreting",
+     "ilac-languages",
+     "span-hispanic-cultures"
+    ]
+   },
+   {
+    "id": "translation-studies-and-pragmatics",
+    "label": "Translation Studies and Pragmatics",
+    "domain": "languages-communication",
+    "concepts": [
+     "ital-translation",
+     "slav-translation-studies",
+     "jpn-translation-culture",
+     "kor-translation-culture",
+     "kor-speech-levels",
+     "fren-translation",
+     "jpn-honorifics-pragmatics",
+     "clit-translation-studies"
+    ]
+   },
+   {
+    "id": "world-literatures",
+    "label": "World Literatures",
+    "domain": "languages-communication",
+    "concepts": [
+     "ilac-iberian-literature",
+     "kor-literature",
+     "ital-literature",
+     "jpn-literature",
+     "ilac-latin-american-literature",
+     "span-peninsular-literature"
+    ]
+   },
+   {
+    "id": "african-american-and-diaspora-studies",
+    "label": "African American and Diaspora Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "aaas-diaspora-studies",
+     "aaas-african-american-literature",
+     "aaas-black-expressive-culture",
+     "aaas-slavery-emancipation",
+     "aaas-civil-rights-movements",
+     "glob-migration-culture"
+    ]
+   },
+   {
+    "id": "african-studies",
+    "label": "African Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "afst-colonialism-independence",
+     "afst-precolonial-history",
+     "afst-african-languages",
+     "afst-african-politics",
+     "afst-society-environment",
+     "ilac-colonial-history"
+    ]
+   },
+   {
+    "id": "american-studies",
+    "label": "American Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "amst-literature-texts",
+     "amst-american-cultural-history",
+     "amst-gender-class",
+     "amst-place-empire",
+     "amst-race-ethnicity-immigration",
+     "amst-popular-culture-media"
+    ]
+   },
+   {
+    "id": "asian-american-studies",
+    "label": "Asian American Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "asam-politics-activism",
+     "asam-immigration-history",
+     "asam-literature-culture",
+     "asam-community-identity",
+     "asam-law-citizenship"
+    ]
+   },
+   {
+    "id": "chicana-o-and-latina-o-studies",
+    "label": "Chicana/o and Latina/o Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "chla-chicano-movement",
+     "chla-borderlands-history",
+     "chla-immigration-labor",
+     "chla-gender-identity",
+     "chla-language-community",
+     "chla-literature-arts"
+    ]
+   },
+   {
+    "id": "china-studies",
+    "label": "China Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "chin-politics-international",
+     "chin-imperial-history",
+     "chin-modern-history",
+     "chin-thought-culture",
+     "chin-language-linguistics",
+     "chin-economy-society"
+    ]
+   },
+   {
+    "id": "european-studies",
+    "label": "European Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "euro-culture-identity",
+     "euro-languages-sources",
+     "euro-eu-integration",
+     "euro-comparative-politics",
+     "euro-european-economy"
+    ]
+   },
+   {
+    "id": "french-and-german-studies",
+    "label": "French and German Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "germ-german-literature",
+     "germ-german-history",
+     "germ-culture-media",
+     "fren-french-literature",
+     "fren-culture-society",
+     "germ-german-thought",
+     "germ-translation",
+     "fren-francophone"
+    ]
+   },
+   {
+    "id": "gender-and-sexuality-studies",
+    "label": "Gender and Sexuality Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "fgss-gender-history",
+     "fgss-intersectionality",
+     "fgss-gender-society",
+     "fgss-feminist-theory",
+     "fgss-body-health-media",
+     "fgss-sexuality-queer"
+    ]
+   },
+   {
+    "id": "italian-and-latin-american-visual-culture",
+    "label": "Italian and Latin American Visual Culture",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "ital-culture-cinema",
+     "ilac-film-visual-society",
+     "ilac-indigenous-afro",
+     "ital-dialects-history"
+    ]
+   },
+   {
+    "id": "jewish-studies",
+    "label": "Jewish Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "jwst-culture-holocaust",
+     "jwst-jewish-history",
+     "jwst-hebrew-bible",
+     "jwst-languages",
+     "jwst-jewish-thought",
+     "jwst-rabbinic-literature"
+    ]
+   },
+   {
+    "id": "race-and-ethnicity-studies",
+    "label": "Race and Ethnicity Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "csre-methods",
+     "csre-race-theory",
+     "csre-history",
+     "csre-law-policy",
+     "csre-culture",
+     "csre-inequality",
+     "aaas-race-society",
+     "asam-oral-history-methods"
+    ]
+   },
+   {
+    "id": "slavic-studies",
+    "label": "Slavic Studies",
+    "domain": "area-identity-studies",
+    "concepts": [
+     "slav-russian-literature",
+     "slav-other-slavic",
+     "slav-culture-history",
+     "slav-slavic-linguistics",
+     "slav-russian-language"
+    ]
+   },
+   {
+    "id": "archaeology",
+    "label": "Archaeology",
+    "domain": "humanities-arts",
+    "concepts": [
+     "arch-field-survey",
+     "arch-material-culture",
+     "arch-excavation-stratigraphy",
+     "arch-heritage-theory",
+     "arch-dating-chronology",
+     "arch-bioarchaeology"
+    ]
+   },
+   {
+    "id": "art-history",
+    "label": "Art History",
+    "domain": "humanities-arts",
+    "concepts": [
+     "arth-periods-styles",
+     "arth-global-art",
+     "arth-formal-analysis",
+     "arth-iconography-meaning",
+     "arth-architecture-history",
+     "arth-museums-provenance-theory"
+    ]
+   },
+   {
+    "id": "classics",
+    "label": "Classics",
+    "domain": "humanities-arts",
+    "concepts": [
+     "clas-greek-language",
+     "clas-latin-language",
+     "clas-epigraphy",
+     "clas-literature",
+     "clas-ancient-history",
+     "clas-ancient-philosophy",
+     "clas-archaeology"
+    ]
+   },
+   {
+    "id": "dance",
+    "label": "Dance",
+    "domain": "humanities-arts",
+    "concepts": [
+     "dance-culture-performance",
+     "dance-choreography",
+     "dance-history",
+     "dance-technique",
+     "dance-notation",
+     "dance-kinesiology"
+    ]
+   },
+   {
+    "id": "design-and-user-experience",
+    "label": "Design and User Experience",
+    "domain": "humanities-arts",
+    "concepts": [
+     "dsgn-design-theory-critique",
+     "dsgn-interaction-design",
+     "dsgn-visual-communication",
+     "dsgn-design-research",
+     "dsgn-typography",
+     "dsgn-product-design"
+    ]
+   },
+   {
+    "id": "film-and-media",
+    "label": "Film and Media",
+    "domain": "humanities-arts",
+    "concepts": [
+     "film-film-form",
+     "film-media-theory",
+     "film-industries-production",
+     "film-film-history",
+     "film-television-streaming",
+     "comm-digital"
+    ]
+   },
+   {
+    "id": "history",
+    "label": "History",
+    "domain": "humanities-arts",
+    "concepts": [
+     "hist-modern-contemporary",
+     "hist-historiography",
+     "hist-historical-method",
+     "hist-chronology-periodization",
+     "hist-global-social-economic",
+     "euro-modern-history",
+     "hist-ancient-medieval"
+    ]
+   },
+   {
+    "id": "music",
+    "label": "Music",
+    "domain": "humanities-arts",
+    "concepts": [
+     "music-ethnomusicology",
+     "music-composition-arranging",
+     "music-music-history",
+     "music-performance-practice",
+     "music-music-theory",
+     "music-music-technology-cognition"
+    ]
+   },
+   {
+    "id": "philosophy-and-logic",
+    "label": "Philosophy and Logic",
+    "domain": "humanities-arts",
+    "concepts": [
+     "phil-logic",
+     "phil-epistemology",
+     "phil-philosophy-of-mind",
+     "phil-metaphysics",
+     "phil-history-political",
+     "rn-logic"
+    ]
+   },
+   {
+    "id": "religious-studies",
+    "label": "Religious Studies",
+    "domain": "humanities-arts",
+    "concepts": [
+     "rel-philosophy-ethics",
+     "rel-religion-society",
+     "rel-world-traditions",
+     "rel-ritual-practice",
+     "rel-theory-method"
+    ]
+   },
+   {
+    "id": "studio-art-practice",
+    "label": "Studio Art Practice",
+    "domain": "humanities-arts",
+    "concepts": [
+     "artp-photography-lens",
+     "artp-sculpture-installation",
+     "artp-new-media-performance",
+     "artp-critique-professional",
+     "artp-painting",
+     "artp-drawing"
+    ]
+   },
+   {
+    "id": "theater-and-performance",
+    "label": "Theater and Performance",
+    "domain": "humanities-arts",
+    "concepts": [
+     "taps-dramatic-literature",
+     "taps-acting-directing",
+     "taps-playwriting-devising",
+     "taps-design-technical",
+     "taps-theater-history",
+     "taps-performance-theory"
+    ]
+   }
+  ],
+  "pack_domains": {},
+  "pack_domains_rule": "A topic pack added after the regroup keeps its own topic; list it here as topic_id -> domain_id. The build fails for any unplaced topic."
+ }
 }

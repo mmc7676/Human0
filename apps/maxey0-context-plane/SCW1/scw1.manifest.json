@@ -4,214 +4,154 @@
  "schema": "maxey0.topic-harness/3",
  "graph_schema": "maxey0.scw1-graph/3",
  "spec": "ontology.spec.json",
- "snapshot_digest": "sha256:307435d5d57bf8baa7892a0c2642679d7c11091e1295959e17c5379bddbcdd60",
+ "snapshot_digest": "sha256:563798525a2b0c491dcb6266f8a8bf3cfde395c46ad57da12ebcef8cf19d0611",
  "totals": {
-  "domains": 5,
-  "topics": 121,
+  "domains": 11,
+  "topics": 128,
   "concepts": 711,
   "skills": 1998,
   "agents": 1021,
   "mcp_servers": 117,
   "agent_mcp_links": 556,
-  "related_links": 57,
+  "related_links": 13,
   "mcp_without_agent": 21
  },
  "entries": [
   {
-   "id": "maxey0",
-   "domain": "maxey0-system",
-   "label": "Maxey0",
-   "counts": {
-    "concepts": 8,
-    "skills": 81,
-    "agents": 67,
-    "mcp": 16
-   },
-   "digest": "sha256:344f96405a9f9b099260e15ab6d26d1b44c4640a36cb6fbb7be07b52ec079305"
-  },
-  {
-   "id": "environments",
-   "domain": "foundations",
-   "label": "Environments and Deployment",
-   "counts": {
-    "concepts": 4,
-    "skills": 8,
-    "agents": 5,
-    "mcp": 3
-   },
-   "digest": "sha256:f1dc9072885401520f43143fa6ba8c13a70b2ff7d9e93f11be00d298eba5bb63"
-  },
-  {
-   "id": "infrastructure",
-   "domain": "foundations",
-   "label": "Infrastructure",
-   "counts": {
-    "concepts": 5,
-    "skills": 10,
-    "agents": 6,
-    "mcp": 4
-   },
-   "digest": "sha256:efafc953d63f4690134b9bb2f3d9025b02f51901336388a112bff3b8d793d379"
-  },
-  {
-   "id": "location",
-   "domain": "foundations",
-   "label": "Location and Place",
-   "counts": {
-    "concepts": 6,
-    "skills": 13,
-    "agents": 10,
-    "mcp": 6
-   },
-   "digest": "sha256:118a1957136010a0a0d1ffe9e942a2a02b6ce38de1365c2ca3ba80ceb8cb21d6"
-  },
-  {
-   "id": "state",
-   "domain": "foundations",
-   "label": "State",
-   "counts": {
-    "concepts": 4,
-    "skills": 8,
-    "agents": 5,
-    "mcp": 3
-   },
-   "digest": "sha256:58816a61c03b4ee0ec7ca6520e038294aa2807aa8df4523b48921fbb643406b2"
-  },
-  {
-   "id": "systems",
-   "domain": "foundations",
-   "label": "Systems",
-   "counts": {
-    "concepts": 4,
-    "skills": 8,
-    "agents": 5,
-    "mcp": 0
-   },
-   "digest": "sha256:a88c79b99558e2dd1850c24bd2476defcba7496dc79b289224c68e32259db258"
-  },
-  {
-   "id": "time",
-   "domain": "foundations",
-   "label": "Time",
-   "counts": {
-    "concepts": 4,
-    "skills": 8,
-    "agents": 5,
-    "mcp": 1
-   },
-   "digest": "sha256:c3695c2162072e82034ad5ce266779b37e986f576d07b2f1697e0183891993b8"
-  },
-  {
-   "id": "coding-agents",
-   "domain": "work",
-   "label": "Coding Agents",
-   "counts": {
-    "concepts": 8,
-    "skills": 21,
-    "agents": 10,
-    "mcp": 3
-   },
-   "digest": "sha256:d3250c3ff408524aa8ea8cf75d9dab33d59a0569522c5dc5204717830dc60e1e"
-  },
-  {
-   "id": "data",
-   "domain": "work",
-   "label": "Data",
-   "counts": {
-    "concepts": 8,
-    "skills": 24,
-    "agents": 9,
-    "mcp": 5
-   },
-   "digest": "sha256:b34b199c38a34b478dd1263aa1d4fc785bbba8af13171ffbb452ad1f29598e22"
-  },
-  {
-   "id": "drones",
-   "domain": "work",
-   "label": "Drones",
-   "counts": {
-    "concepts": 8,
-    "skills": 21,
-    "agents": 9,
-    "mcp": 1
-   },
-   "digest": "sha256:a6b6988e11494bdffc00e06bd5804944976ed7cf4712ee17179fe07b673c7cc8"
-  },
-  {
-   "id": "governance",
-   "domain": "work",
-   "label": "Governance",
+   "id": "agent-governance-and-control",
+   "domain": "agentic-systems",
+   "label": "Agent Governance and Control",
    "counts": {
     "concepts": 8,
     "skills": 32,
     "agents": 15,
     "mcp": 6
    },
-   "digest": "sha256:e0629d299523207d1ed8253e0c93ff51c51935120586cb0d823afe2a43b856ff"
+   "digest": "sha256:bad4cab35b195e5d7de61e5a70c37149695fd3baadbe67aad477f057fd820f50"
   },
   {
-   "id": "human-language",
-   "domain": "work",
-   "label": "Human Language",
+   "id": "agent-harnesses-and-tool-use",
+   "domain": "agentic-systems",
+   "label": "Agent Harnesses and Tool Use",
    "counts": {
-    "concepts": 5,
-    "skills": 15,
-    "agents": 11,
-    "mcp": 2
+    "concepts": 7,
+    "skills": 28,
+    "agents": 32,
+    "mcp": 15
    },
-   "digest": "sha256:d4427fd31972a68f5f321cfbec1f4a6ea33d0dadb9b28da76d602a3401c063df"
+   "digest": "sha256:1d41b00de74b25c25138b1158fec5d298e3a686fb02255ba1d6f35c9ed0ec8fd"
   },
   {
-   "id": "jobseeker",
-   "domain": "work",
-   "label": "JobSeeker",
+   "id": "apis-protocols-and-mcp-contracts",
+   "domain": "agentic-systems",
+   "label": "APIs, Protocols and MCP Contracts",
    "counts": {
     "concepts": 6,
     "skills": 18,
-    "agents": 13,
-    "mcp": 5
+    "agents": 8,
+    "mcp": 4
    },
-   "digest": "sha256:a5b4732e3e729f8d80ed273c371418372665f51f03ef1097928a4fe47f706ec2"
+   "digest": "sha256:5b2f659eb67ed9124d0714bcbaa122ba40483f20122c191514d1ed138571328e"
   },
   {
-   "id": "knowledge",
-   "domain": "work",
-   "label": "Knowledge",
+   "id": "cloud-infrastructure-and-devops",
+   "domain": "agentic-systems",
+   "label": "Cloud Infrastructure and DevOps",
+   "counts": {
+    "concepts": 5,
+    "skills": 10,
+    "agents": 6,
+    "mcp": 4
+   },
+   "digest": "sha256:49b05da5496a9a5a9fdfe3b5aacdc4c9adbcd5422d6679d321b33ad7be6e80b5"
+  },
+  {
+   "id": "code-generation-review-and-testing",
+   "domain": "agentic-systems",
+   "label": "Code Generation, Review and Testing",
+   "counts": {
+    "concepts": 5,
+    "skills": 12,
+    "agents": 10,
+    "mcp": 5
+   },
+   "digest": "sha256:1b5d51ae1063a05302639db117eda85da2117a9f3add632739590d4985b8f10c"
+  },
+  {
+   "id": "computer-science",
+   "domain": "agentic-systems",
+   "label": "Computer Science",
+   "counts": {
+    "concepts": 8,
+    "skills": 23,
+    "agents": 19,
+    "mcp": 8
+   },
+   "digest": "sha256:efa5427a92887c19642499065d7d59dd3ae4e37ad14d65512876be5747cd7310"
+  },
+  {
+   "id": "deployment-environments",
+   "domain": "agentic-systems",
+   "label": "Deployment Environments",
+   "counts": {
+    "concepts": 4,
+    "skills": 8,
+    "agents": 5,
+    "mcp": 3
+   },
+   "digest": "sha256:ef1d68f584b8e2863fa3636c3a8387fc0603a49781b2d128ea3cd814ce2ca048"
+  },
+  {
+   "id": "front-end-and-ui-engineering",
+   "domain": "agentic-systems",
+   "label": "Front-End and UI Engineering",
+   "counts": {
+    "concepts": 5,
+    "skills": 9,
+    "agents": 6,
+    "mcp": 2
+   },
+   "digest": "sha256:1104fc532d53e25d455da54b45c3c4d274109e67e3e8240c83376992cffb2a51"
+  },
+  {
+   "id": "identity-secrets-and-threat-modeling",
+   "domain": "agentic-systems",
+   "label": "Identity, Secrets and Threat Modeling",
+   "counts": {
+    "concepts": 4,
+    "skills": 8,
+    "agents": 10,
+    "mcp": 6
+   },
+   "digest": "sha256:4be649b11d5aa3b02637dbd04b34cdec4fa913f7193b86b54c7596df2093d375"
+  },
+  {
+   "id": "knowledge-graphs-and-ontology",
+   "domain": "agentic-systems",
+   "label": "Knowledge Graphs and Ontology",
    "counts": {
     "concepts": 8,
     "skills": 24,
     "agents": 9,
     "mcp": 3
    },
-   "digest": "sha256:6a6f18a33b495482f52b81170c5e30bc6e3f94a949eb18ae2ba3a09608ea7d3d"
+   "digest": "sha256:b545b66f02aafd68d6c22b3deab9a6b748c78948df93eb5e3f92e2f651d00f95"
   },
   {
-   "id": "mapping",
-   "domain": "work",
-   "label": "Mapping",
-   "counts": {
-    "concepts": 5,
-    "skills": 17,
-    "agents": 9,
-    "mcp": 3
-   },
-   "digest": "sha256:4ed17d48c2baf6de31bb0e9207da8b0a572b73045a41d039e601c102c0cc672f"
-  },
-  {
-   "id": "marketing",
-   "domain": "work",
-   "label": "Marketing",
+   "id": "maxey0-context-architecture",
+   "domain": "agentic-systems",
+   "label": "Maxey0 Context Architecture",
    "counts": {
     "concepts": 6,
-    "skills": 18,
-    "agents": 11,
-    "mcp": 7
+    "skills": 67,
+    "agents": 60,
+    "mcp": 14
    },
-   "digest": "sha256:cbc25106770ff2b042e0fc1840940a67bb815a3469f2e194d44c9f545b7f5c9f"
+   "digest": "sha256:86053f71b0bd643396ba9eea932470acd1af035a67d458b3d81d0b6d22f7505a"
   },
   {
    "id": "observability",
-   "domain": "work",
+   "domain": "agentic-systems",
    "label": "Observability",
    "counts": {
     "concepts": 8,
@@ -219,95 +159,251 @@
     "agents": 15,
     "mcp": 5
    },
-   "digest": "sha256:fa3bef5ad1d9d2d79d77b7bd0db489dbfea3a2aad9261ae7ea25ad2ab8ca43bd"
+   "digest": "sha256:fa3d1b2130bf23a0b4d65a984b0439745aa83d34eed16ef40b066180ce928b9c"
   },
   {
    "id": "programming-languages",
-   "domain": "work",
+   "domain": "agentic-systems",
    "label": "Programming Languages",
    "counts": {
-    "concepts": 8,
-    "skills": 18,
-    "agents": 12,
+    "concepts": 7,
+    "skills": 16,
+    "agents": 11,
     "mcp": 1
    },
-   "digest": "sha256:ee0aa45e0a89b416b5db7276a337de3e2f530df019550888174d29caaad98308"
+   "digest": "sha256:aec2cc02fd8ab6e8ae44b59da661e94cd911cfb797ebd46a16143b9941fe709b"
   },
   {
-   "id": "protocol",
-   "domain": "work",
-   "label": "Protocol",
+   "id": "reasoning-and-argument",
+   "domain": "agentic-systems",
+   "label": "Reasoning and Argument",
    "counts": {
-    "concepts": 8,
+    "concepts": 6,
     "skills": 24,
-    "agents": 9,
-    "mcp": 4
+    "agents": 13,
+    "mcp": 3
    },
-   "digest": "sha256:e84a4cce136f0b275b188f3a3103226e2f49d92a79974948a2481a7e8a69b7b8"
+   "digest": "sha256:2e7e50e179a1355d6219b060ef3d7d8eb573e4b43e92a62237b481d16f4c6d7f"
   },
   {
-   "id": "real-estate",
-   "domain": "work",
-   "label": "Real Estate and Property",
+   "id": "state-persistence-and-versioning",
+   "domain": "agentic-systems",
+   "label": "State, Persistence and Versioning",
    "counts": {
     "concepts": 4,
-    "skills": 7,
+    "skills": 8,
+    "agents": 5,
+    "mcp": 3
+   },
+   "digest": "sha256:5242f2faa30ac41c79caf7fb7c364c003e88bdcbe62570daef4930c473595100"
+  },
+  {
+   "id": "systems-engineering-and-reliability",
+   "domain": "agentic-systems",
+   "label": "Systems Engineering and Reliability",
+   "counts": {
+    "concepts": 4,
+    "skills": 8,
     "agents": 5,
     "mcp": 0
    },
-   "digest": "sha256:4195267a8b713428c93d89038c48c66f2289658bb2adb544cd7dbb087d704842"
+   "digest": "sha256:2fc5ff958479ce601d1e963cb27658171a8a869aa53d50095d8799a0a649d41e"
   },
   {
-   "id": "reasoning",
-   "domain": "work",
-   "label": "Reasoning",
+   "id": "time-and-scheduling",
+   "domain": "agentic-systems",
+   "label": "Time and Scheduling",
    "counts": {
-    "concepts": 8,
-    "skills": 32,
-    "agents": 15,
-    "mcp": 3
+    "concepts": 4,
+    "skills": 8,
+    "agents": 5,
+    "mcp": 1
    },
-   "digest": "sha256:2b99c710c06e22806a0f926236106bd113cd6b37b9145a2481efc312bddd8b4e"
+   "digest": "sha256:52a6ba8a597e33e10a0c8baa9f79deda500126474196df4ec167f8721ef5bd22"
   },
   {
-   "id": "research",
-   "domain": "work",
-   "label": "Research",
+   "id": "data-engineering-and-pipelines",
+   "domain": "data-science",
+   "label": "Data Engineering and Pipelines",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 7,
+    "mcp": 5
+   },
+   "digest": "sha256:86fb570aef14d160869fe50425a3b722f106cfc79e1edf28ec29c49ddd6f269b"
+  },
+  {
+   "id": "data-visualization-and-ml-datasets",
+   "domain": "data-science",
+   "label": "Data Visualization and ML Datasets",
+   "counts": {
+    "concepts": 3,
+    "skills": 9,
+    "agents": 12,
+    "mcp": 6
+   },
+   "digest": "sha256:5f0b3ebd1ef4122bad2e7c3ad06801428579568108c268618bbc13a91e6cf49d"
+  },
+  {
+   "id": "decision-analysis-under-uncertainty",
+   "domain": "data-science",
+   "label": "Decision Analysis under Uncertainty",
+   "counts": {
+    "concepts": 3,
+    "skills": 10,
+    "agents": 13,
+    "mcp": 5
+   },
+   "digest": "sha256:c312121fd68a6f3cc203b5cc5826ec5cfc7bd3cccf6888b4d79db182db24a158"
+  },
+  {
+   "id": "machine-learning-and-sql",
+   "domain": "data-science",
+   "label": "Machine Learning and SQL",
+   "counts": {
+    "concepts": 4,
+    "skills": 11,
+    "agents": 15,
+    "mcp": 8
+   },
+   "digest": "sha256:f57b983868f0977f1770a304a987a29229f7eba3ea2ee1ee9bbb34481d95633f"
+  },
+  {
+   "id": "operations-research-and-optimization",
+   "domain": "data-science",
+   "label": "Operations Research and Optimization",
+   "counts": {
+    "concepts": 4,
+    "skills": 12,
+    "agents": 7,
+    "mcp": 4
+   },
+   "digest": "sha256:b95d081f31365ee1da4a15746d6cdaa65986505b96821c09e48d9a1bffa904fb"
+  },
+  {
+   "id": "research-methods-and-evidence",
+   "domain": "data-science",
+   "label": "Research Methods and Evidence",
    "counts": {
     "concepts": 8,
     "skills": 32,
     "agents": 15,
     "mcp": 4
    },
-   "digest": "sha256:9b522208d1b79661960d2964bf08c8acf6204b4dd6ed10daae5ef345b3d9080f"
+   "digest": "sha256:88a02941dbdba8071d997560caa8572fbecece9864af6d7089c4619571fab655"
   },
   {
-   "id": "robotics",
-   "domain": "work",
-   "label": "Robotics",
+   "id": "statistics-and-causal-inference",
+   "domain": "data-science",
+   "label": "Statistics and Causal Inference",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 25,
+    "mcp": 12
+   },
+   "digest": "sha256:bd0b73218293ae521fc08e1e5e56af9e541b12ac0027c010fe4f90e53d99d495"
+  },
+  {
+   "id": "algebra-calculus-and-discrete-mathematics",
+   "domain": "math-physical-sciences",
+   "label": "Algebra, Calculus and Discrete Mathematics",
+   "counts": {
+    "concepts": 7,
+    "skills": 21,
+    "agents": 12,
+    "mcp": 6
+   },
+   "digest": "sha256:aa1e63bbcb37610325a09b80d0bd5cf7da951c64428f4c42f5d69a2ae76efd0f"
+  },
+  {
+   "id": "chemistry",
+   "domain": "math-physical-sciences",
+   "label": "Chemistry",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 8,
+    "mcp": 4
+   },
+   "digest": "sha256:a1bc26763d2acb7edf70e5931d44f30f18937a15778295afdf8dc8888229cf4f"
+  },
+  {
+   "id": "classical-physics",
+   "domain": "math-physical-sciences",
+   "label": "Classical Physics",
    "counts": {
     "concepts": 8,
-    "skills": 20,
-    "agents": 9,
-    "mcp": 1
+    "skills": 33,
+    "agents": 24,
+    "mcp": 9
    },
-   "digest": "sha256:e6744eaddc9b03177c8b7120509e2e3a51be902d87f2741d526ed7a84435f3e2"
+   "digest": "sha256:6fedf2da21db0cc599bfb8f9c34d9712021ddbc5e9966eb56a2dfb34766910b6"
   },
   {
-   "id": "security-identity",
-   "domain": "work",
-   "label": "Security and Identity",
+   "id": "instrumentation-and-condensed-matter",
+   "domain": "math-physical-sciences",
+   "label": "Instrumentation and Condensed Matter",
    "counts": {
     "concepts": 4,
-    "skills": 7,
-    "agents": 5,
-    "mcp": 2
+    "skills": 14,
+    "agents": 10,
+    "mcp": 4
    },
-   "digest": "sha256:803d2fe66072c848d3a066395cc1afb2a08c5ccbe641f85105b05ce6370568ec"
+   "digest": "sha256:ea008726bdb5f9544e5d6e9110d761ea33a94d186ffad7b087d0876b010c6bf2"
   },
   {
-   "id": "simulation",
-   "domain": "work",
+   "id": "linear-algebra-and-geometry",
+   "domain": "math-physical-sciences",
+   "label": "Linear Algebra and Geometry",
+   "counts": {
+    "concepts": 3,
+    "skills": 9,
+    "agents": 11,
+    "mcp": 6
+   },
+   "digest": "sha256:5c64738056650562559642c1df2c4e8b62b192a0c95b95c16d56ee2fb765a5c6"
+  },
+  {
+   "id": "materials-science",
+   "domain": "math-physical-sciences",
+   "label": "Materials Science",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 9,
+    "mcp": 5
+   },
+   "digest": "sha256:a4f64049ae14a1228c6873e1d3eb266795c7024793de9f714904119a7de03f9a"
+  },
+  {
+   "id": "optics-photonics-and-plasma",
+   "domain": "math-physical-sciences",
+   "label": "Optics, Photonics and Plasma",
+   "counts": {
+    "concepts": 7,
+    "skills": 20,
+    "agents": 15,
+    "mcp": 10
+   },
+   "digest": "sha256:59fadecbba376bbdbfdf80d88200bfbfe8acfd6e760b53bc8e25ef80ffd65a42"
+  },
+  {
+   "id": "quantum-physics",
+   "domain": "math-physical-sciences",
+   "label": "Quantum Physics",
+   "counts": {
+    "concepts": 8,
+    "skills": 25,
+    "agents": 17,
+    "mcp": 10
+   },
+   "digest": "sha256:95796b1a5b6acbe3d5398ad3bd9d76adaa9bdd0c408133a6925c3b21f88f543f"
+  },
+  {
+   "id": "simulation-and-digital-twins",
+   "domain": "math-physical-sciences",
    "label": "Simulation and Digital Twins",
    "counts": {
     "concepts": 3,
@@ -315,647 +411,71 @@
     "agents": 4,
     "mcp": 2
    },
-   "digest": "sha256:c06f24d345d0e11840915364744dc6a3d7afe3c7b95708e5ddfdd80a67a35b85"
+   "digest": "sha256:5c9892d20ad945a08398dc3f42f0ee9ae5934398e4ab0984096b46f3c44f75f2"
   },
   {
-   "id": "startups",
-   "domain": "work",
-   "label": "Startups",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 10,
-    "mcp": 6
-   },
-   "digest": "sha256:e89991693ad5c83904fac82de0a029f581f1c99d9bc067e6ff82fd2e9e93b2fe"
-  },
-  {
-   "id": "travel-outdoors",
-   "domain": "work",
-   "label": "Travel and Outdoors",
-   "counts": {
-    "concepts": 4,
-    "skills": 5,
-    "agents": 5,
-    "mcp": 2
-   },
-   "digest": "sha256:008d2d5063255be044d22e244ee9fc0fe81434aa2d9d9f117cbcc46b56122100"
-  },
-  {
-   "id": "ui-frontend",
-   "domain": "work",
-   "label": "UI and Front-End Development",
-   "counts": {
-    "concepts": 5,
-    "skills": 9,
-    "agents": 6,
-    "mcp": 2
-   },
-   "digest": "sha256:5a4b70f9d254465666e5562a50c1683312f66348050491a1915b36e5b85e73d4"
-  },
-  {
-   "id": "accounting",
-   "domain": "finance",
-   "label": "Accounting",
-   "counts": {
-    "concepts": 5,
-    "skills": 9,
-    "agents": 6,
-    "mcp": 1
-   },
-   "digest": "sha256:75c7462e2f8982f78559c3af7ffc01bc2ba197aba83d1a70a111c4f36323ac65"
-  },
-  {
-   "id": "capital-markets",
-   "domain": "finance",
-   "label": "Capital Markets and Exchanges",
-   "counts": {
-    "concepts": 5,
-    "skills": 7,
-    "agents": 6,
-    "mcp": 3
-   },
-   "digest": "sha256:4f1afebb58f121a7b1326dfc36ad3ff7aa7239b1477f59efb3a84b29219263e0"
-  },
-  {
-   "id": "commodities",
-   "domain": "finance",
-   "label": "Commodities",
-   "counts": {
-    "concepts": 4,
-    "skills": 4,
-    "agents": 4,
-    "mcp": 1
-   },
-   "digest": "sha256:7da7a2e028c41e4989cb9a5ae630ce00936e62b779864745750a507ae200d6a7"
-  },
-  {
-   "id": "corporate-finance",
-   "domain": "finance",
-   "label": "Corporate Finance",
-   "counts": {
-    "concepts": 5,
-    "skills": 9,
-    "agents": 6,
-    "mcp": 2
-   },
-   "digest": "sha256:fe2a8343b23fbb1d9823af0366ab5c1aff6f4d2e72583206846ff830953afec6"
-  },
-  {
-   "id": "crypto",
-   "domain": "finance",
-   "label": "Cryptocurrencies and Digital Assets",
-   "counts": {
-    "concepts": 6,
-    "skills": 6,
-    "agents": 6,
-    "mcp": 2
-   },
-   "digest": "sha256:c7067a3a8f34e4b4f03391492b77bfd7367dada3593548ae8259856076a5270e"
-  },
-  {
-   "id": "currencies",
-   "domain": "finance",
-   "label": "Currencies and Foreign Exchange",
-   "counts": {
-    "concepts": 4,
-    "skills": 5,
-    "agents": 4,
-    "mcp": 2
-   },
-   "digest": "sha256:f84b1cf1d0b39a769a5f97ff7b955f04338f7b9fda61df1aaef2984539f7f68b"
-  },
-  {
-   "id": "derivatives",
-   "domain": "finance",
-   "label": "Derivatives and Options",
-   "counts": {
-    "concepts": 5,
-    "skills": 6,
-    "agents": 5,
-    "mcp": 1
-   },
-   "digest": "sha256:9c61fde1105764d8cb3cea489a3b7691620d5a24f76ead58142cb1b060a8a4bb"
-  },
-  {
-   "id": "equities",
-   "domain": "finance",
-   "label": "Stocks and Equities",
-   "counts": {
-    "concepts": 5,
-    "skills": 7,
-    "agents": 5,
-    "mcp": 3
-   },
-   "digest": "sha256:15cf5df47eb028a1f3daeb765498005c2a93e5c5556bab3a0650582185a210d9"
-  },
-  {
-   "id": "financial-data",
-   "domain": "finance",
-   "label": "Financial Data and Models",
-   "counts": {
-    "concepts": 5,
-    "skills": 7,
-    "agents": 6,
-    "mcp": 4
-   },
-   "digest": "sha256:d5c869a9126d8cdf2acbfd58404f7dfd4974b2fa90e6e380fb0369174fa853dd"
-  },
-  {
-   "id": "financial-regulation",
-   "domain": "finance",
-   "label": "Financial Regulation, AML and Compliance",
-   "counts": {
-    "concepts": 5,
-    "skills": 6,
-    "agents": 6,
-    "mcp": 0
-   },
-   "digest": "sha256:bb3cc3b1d7051826f8817e84a397830af77ed857acfc0b5610371dec80bdd5ab"
-  },
-  {
-   "id": "financial-services",
-   "domain": "finance",
-   "label": "Financial Services and Banking",
-   "counts": {
-    "concepts": 5,
-    "skills": 5,
-    "agents": 6,
-    "mcp": 1
-   },
-   "digest": "sha256:c8eb222cd8b2b7db10ff45722aa465024c96518ab7b3e09f20183cb67f5510f5"
-  },
-  {
-   "id": "fixed-income",
-   "domain": "finance",
-   "label": "Bonds and Fixed Income",
-   "counts": {
-    "concepts": 5,
-    "skills": 6,
-    "agents": 5,
-    "mcp": 1
-   },
-   "digest": "sha256:f144b1cec3136bf6b7056f801a1b4bf40f5bb1a2cfd3daf49a6aaf0e09644c9c"
-  },
-  {
-   "id": "hedge-funds",
-   "domain": "finance",
-   "label": "Hedge Funds and Alternative Investments",
-   "counts": {
-    "concepts": 5,
-    "skills": 6,
-    "agents": 6,
-    "mcp": 0
-   },
-   "digest": "sha256:45b666b2c579690fdbdb01c43e7fea8700e7dde5b1794ca39ddd12b1ddd09de8"
-  },
-  {
-   "id": "investing",
-   "domain": "finance",
-   "label": "Investing and Portfolio Management",
-   "counts": {
-    "concepts": 5,
-    "skills": 7,
-    "agents": 6,
-    "mcp": 2
-   },
-   "digest": "sha256:25da1bf3c5d533ed559c7f23e89b0451f274a39c9458dbbc851c93943a0c0cf0"
-  },
-  {
-   "id": "offerings",
-   "domain": "finance",
-   "label": "Securities Offerings and Going Public",
-   "counts": {
-    "concepts": 6,
-    "skills": 8,
-    "agents": 6,
-    "mcp": 1
-   },
-   "digest": "sha256:87edaec3919b917deef51250d12e3c2959c3bb529d033a4b908ce6dd97f9eef7"
-  },
-  {
-   "id": "taxes",
-   "domain": "finance",
-   "label": "Taxes and Personal Finance",
-   "counts": {
-    "concepts": 5,
-    "skills": 6,
-    "agents": 5,
-    "mcp": 1
-   },
-   "digest": "sha256:711ec6ea7aaebe7cf97c0389cc0bed97b0085ce4baaaaed0bfab5c56ced70dfb"
-  },
-  {
-   "id": "aeronautics-and-astronautics",
-   "domain": "disciplines",
-   "label": "Aeronautics and Astronautics",
+   "id": "aerospace-engineering",
+   "domain": "engineering",
+   "label": "Aerospace Engineering",
    "counts": {
     "concepts": 6,
     "skills": 18,
     "agents": 8,
     "mcp": 3
    },
-   "digest": "sha256:c3bb647717832d01fe01b3647608b2f72eefe4f7922a5f6b116499433abbebcd"
-  },
-  {
-   "id": "african-and-african-american-studies",
-   "domain": "disciplines",
-   "label": "African and African American Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:daf8aeaa607af5b18e26636c9c4a523696a1a27ddf142a7f2c5ac552ad3bfcf8"
-  },
-  {
-   "id": "african-studies",
-   "domain": "disciplines",
-   "label": "African Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:83aa016ba4b8587410a614084313471edb309fdcae639fedc4cb88447dfb1e04"
-  },
-  {
-   "id": "american-studies",
-   "domain": "disciplines",
-   "label": "American Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:64484844c8bfc4f2ba61d16587be41256a98aa43e628e6a38dc2628775862d4d"
-  },
-  {
-   "id": "anthropology",
-   "domain": "disciplines",
-   "label": "Anthropology",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:ecc30725aca96de3e9c481b1540296e75371aa2c6906d6f0448f3300d4a4e2e1"
-  },
-  {
-   "id": "applied-physics",
-   "domain": "disciplines",
-   "label": "Applied Physics",
-   "counts": {
-    "concepts": 6,
-    "skills": 21,
-    "agents": 10,
-    "mcp": 4
-   },
-   "digest": "sha256:a086cdffe1caecc76afe519a27895ab342920fed8465dd20fc313c6305a5d2c1"
-  },
-  {
-   "id": "archaeology",
-   "domain": "disciplines",
-   "label": "Archaeology",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:ec4b663d6fd6b0169ee19085814ee7269405653af8350063e6fe1f30f5d90273"
-  },
-  {
-   "id": "art-history",
-   "domain": "disciplines",
-   "label": "Art History",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:1409055af66962efd864af0276706a9dc23a7528ed8e8c11643e612d81b78cae"
-  },
-  {
-   "id": "art-practice",
-   "domain": "disciplines",
-   "label": "Art Practice",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 0
-   },
-   "digest": "sha256:f3b298af75a0fcff129d80a710b3b175da18d8e16b4178766737c44d45af43fb"
-  },
-  {
-   "id": "asian-american-studies",
-   "domain": "disciplines",
-   "label": "Asian American Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:53e7c9831eee7f7a5bfd83c6f28d007ee8a6d60e6c051b9a8eb6d70c661b8a63"
-  },
-  {
-   "id": "atmosphere-energy",
-   "domain": "disciplines",
-   "label": "Atmosphere/Energy",
-   "counts": {
-    "concepts": 5,
-    "skills": 15,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:bce918779b909d5bbca8612ef802159fcd2c4c789768d2d95f16c874426eb377"
-  },
-  {
-   "id": "bioengineering",
-   "domain": "disciplines",
-   "label": "Bioengineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:e7c84db01826f3233dd98a441fceb58dcbe6dcb99f3c8f4f95cc8ce364ad880e"
-  },
-  {
-   "id": "biology",
-   "domain": "disciplines",
-   "label": "Biology",
-   "counts": {
-    "concepts": 7,
-    "skills": 21,
-    "agents": 10,
-    "mcp": 4
-   },
-   "digest": "sha256:9ae1c9281b581bed1a04c1e8d4d0bdf2f1c6dec5381c3e1285b10fc551046edc"
-  },
-  {
-   "id": "biomechanical-engineering",
-   "domain": "disciplines",
-   "label": "Biomechanical Engineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:e647463c899500d1022912e7bf822a2249074e39596d515299c470c756d404f8"
-  },
-  {
-   "id": "biomedical-computation",
-   "domain": "disciplines",
-   "label": "Biomedical Computation",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 5
-   },
-   "digest": "sha256:f3920188da111390312ff8127d082e477065e0e47cac88b6d3969524d40812cd"
+   "digest": "sha256:ba4d8d6ee16949a03cb47be8bed652a72c300aa8e0ac6187ae74acbb6bb19ada"
   },
   {
    "id": "chemical-engineering",
-   "domain": "disciplines",
+   "domain": "engineering",
    "label": "Chemical Engineering",
    "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:a754b90c03e9ef0162f43fb04f4ee17f82eb39f366af3e73166b5b7e6d748cc4"
-  },
-  {
-   "id": "chemistry",
-   "domain": "disciplines",
-   "label": "Chemistry",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:1a3db1b4927bd5c13495d3ffe3114ece04d65edff097791439e858fc7330525f"
-  },
-  {
-   "id": "chicana-o-latina-o-studies",
-   "domain": "disciplines",
-   "label": "Chicana/o - Latina/o Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:9f99545ff6f060227175b62aff9c852d969f9fcd592e720e7ff65cc00f1be74c"
-  },
-  {
-   "id": "china-studies",
-   "domain": "disciplines",
-   "label": "China Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:e0cdceb8edc9d9b06d01b90786256592254759807b14a4e2f34d9c7c721eb7cd"
-  },
-  {
-   "id": "civil-engineering",
-   "domain": "disciplines",
-   "label": "Civil Engineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 17,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:340aadf3a48a868794c72991945e92ff7b9091e20f6f03e1ef7e440ba2857410"
-  },
-  {
-   "id": "classical-physics",
-   "domain": "disciplines",
-   "label": "Classical Physics",
-   "counts": {
-    "concepts": 7,
-    "skills": 26,
-    "agents": 18,
-    "mcp": 9
-   },
-   "digest": "sha256:6cddb06747c0b31c22e8e277ad7412dd42f18d6a74d826216aaa8a58bbfb20c5"
-  },
-  {
-   "id": "classics",
-   "domain": "disciplines",
-   "label": "Classics",
-   "counts": {
-    "concepts": 7,
+    "concepts": 5,
     "skills": 15,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:bfc67ba9e50b17b3d581adeb5cdd38b123917e51c115498cfe203854d3148d1c"
-  },
-  {
-   "id": "communication",
-   "domain": "disciplines",
-   "label": "Communication",
-   "counts": {
-    "concepts": 7,
-    "skills": 17,
     "agents": 13,
-    "mcp": 2
+    "mcp": 6
    },
-   "digest": "sha256:e9d1d59d1307bd2b038168db924dd1961f4afac8e83090945e69f23c633f2e17"
+   "digest": "sha256:700a7bd4f475831d2cd55628e0abb9f989b89851235df0a237e5f9f59f322528"
   },
   {
-   "id": "community-health-and-prevention-research",
-   "domain": "disciplines",
-   "label": "Community Health and Prevention Research",
+   "id": "civil-and-structural-engineering",
+   "domain": "engineering",
+   "label": "Civil and Structural Engineering",
    "counts": {
-    "concepts": 6,
+    "concepts": 5,
     "skills": 14,
-    "agents": 8,
+    "agents": 7,
     "mcp": 3
    },
-   "digest": "sha256:8987fe8284956c3dfb3713f561755653b7a1c13920e706cc1b23640c89136204"
+   "digest": "sha256:2c63220bd7bc4c960cafb46d75cc7c8382aaea71e9920174b2fc43384f56099c"
   },
   {
-   "id": "comparative-literature",
-   "domain": "disciplines",
-   "label": "Comparative Literature",
+   "id": "control-systems",
+   "domain": "engineering",
+   "label": "Control Systems",
    "counts": {
-    "concepts": 6,
-    "skills": 12,
-    "agents": 8,
-    "mcp": 2
+    "concepts": 3,
+    "skills": 9,
+    "agents": 14,
+    "mcp": 6
    },
-   "digest": "sha256:6bfd9c19ce7ba5d739d4282e2591e13c90325984a1702a36ea808598869b9009"
+   "digest": "sha256:9a1277ece44d00c755d6c5b4f5474f238fd663f3f0f492a46988d259312bf2f5"
   },
   {
-   "id": "comparative-studies-in-race-and-ethnicity",
-   "domain": "disciplines",
-   "label": "Comparative Studies in Race and Ethnicity",
+   "id": "drones-and-uav-operations",
+   "domain": "engineering",
+   "label": "Drones and UAV Operations",
    "counts": {
-    "concepts": 6,
-    "skills": 12,
-    "agents": 8,
-    "mcp": 3
+    "concepts": 8,
+    "skills": 21,
+    "agents": 9,
+    "mcp": 1
    },
-   "digest": "sha256:eb14c296c9e8278f5b1ae87d6c2dbdd7046318157534500beb00940738619e9d"
-  },
-  {
-   "id": "computer-science",
-   "domain": "disciplines",
-   "label": "Computer Science",
-   "counts": {
-    "concepts": 6,
-    "skills": 17,
-    "agents": 12,
-    "mcp": 5
-   },
-   "digest": "sha256:6b1b738b23aa31d381b7748a8bde67416ca563b3905d8bf387731c13ae112ae1"
-  },
-  {
-   "id": "creative-writing",
-   "domain": "disciplines",
-   "label": "Creative Writing",
-   "counts": {
-    "concepts": 6,
-    "skills": 13,
-    "agents": 8,
-    "mcp": 0
-   },
-   "digest": "sha256:27a5a94bd322a07dd80fbace58dd82e50d9cbd8801a5e869b4da4de9662ba00a"
-  },
-  {
-   "id": "dance",
-   "domain": "disciplines",
-   "label": "Dance",
-   "counts": {
-    "concepts": 6,
-    "skills": 13,
-    "agents": 8,
-    "mcp": 0
-   },
-   "digest": "sha256:8bac529ef3d33d4c33c374ebeff35e340a83d73c86100f9269030b444a862d1d"
-  },
-  {
-   "id": "data-science",
-   "domain": "disciplines",
-   "label": "Data Science",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 5
-   },
-   "digest": "sha256:574edf96ce17f3aa8f60f95d8427497e8de5ca9377700870a633dd3edfabe1b9"
-  },
-  {
-   "id": "design",
-   "domain": "disciplines",
-   "label": "Design",
-   "counts": {
-    "concepts": 6,
-    "skills": 17,
-    "agents": 8,
-    "mcp": 0
-   },
-   "digest": "sha256:8c31f3bdb9eb7c175b261b5664a04762767929e48ec0759180f29dde308c2dae"
-  },
-  {
-   "id": "earth-systems",
-   "domain": "disciplines",
-   "label": "Earth Systems",
-   "counts": {
-    "concepts": 6,
-    "skills": 16,
-    "agents": 8,
-    "mcp": 5
-   },
-   "digest": "sha256:e3ee08faf9d93efd564339dc9904f3e6cea70c1622ce6b8d684920390036e28f"
-  },
-  {
-   "id": "economics",
-   "domain": "disciplines",
-   "label": "Economics",
-   "counts": {
-    "concepts": 6,
-    "skills": 16,
-    "agents": 8,
-    "mcp": 5
-   },
-   "digest": "sha256:b41d801a851aed60fe98e59a8bded67d1b6eb784d870d0154380473779987078"
-  },
-  {
-   "id": "education",
-   "domain": "disciplines",
-   "label": "Education",
-   "counts": {
-    "concepts": 6,
-    "skills": 15,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:6d9fe5655e383d6beeeb913ed3917badb30d4d831799d4996e9608c7b3cd0a65"
+   "digest": "sha256:24c49ce02990f76fc21737dfa37099a03e7fc13a157bf11834ce227547c2644c"
   },
   {
    "id": "electrical-engineering",
-   "domain": "disciplines",
+   "domain": "engineering",
    "label": "Electrical Engineering",
    "counts": {
     "concepts": 6,
@@ -963,119 +483,191 @@
     "agents": 8,
     "mcp": 4
    },
-   "digest": "sha256:f713ca8b10eb630db58f0fb56c6b0f14cfda849fa0eac72e6c2d9ce8f7aca36d"
+   "digest": "sha256:bddec1e309f81dde41a695ef47dd3ae20934253f9afbf52ea8b411f98026fdd7"
   },
   {
-   "id": "energy-science-and-engineering",
-   "domain": "disciplines",
-   "label": "Energy Science and Engineering",
+   "id": "energy-systems-and-power-grids",
+   "domain": "engineering",
+   "label": "Energy Systems and Power Grids",
    "counts": {
-    "concepts": 6,
-    "skills": 19,
+    "concepts": 4,
+    "skills": 14,
     "agents": 12,
     "mcp": 5
    },
-   "digest": "sha256:5e79ad93ab96be70f973ba4aa1e1065af6efbcace67bdf502b6cd3674539ce46"
+   "digest": "sha256:c8ab80f895419b22661fa3cce7575584eb25c0abf8bc3cf1e64e6aa794fbaf8c"
   },
   {
-   "id": "engineering-physics",
-   "domain": "disciplines",
-   "label": "Engineering Physics",
+   "id": "mechanical-engineering",
+   "domain": "engineering",
+   "label": "Mechanical Engineering",
    "counts": {
-    "concepts": 5,
-    "skills": 13,
-    "agents": 8,
+    "concepts": 3,
+    "skills": 9,
+    "agents": 7,
     "mcp": 4
    },
-   "digest": "sha256:c662a58787924287bf8285cf021218a5a9825437e0a874f042d1fd8318b699bb"
+   "digest": "sha256:d103d48a896da190fbefb586aecd7f5ebae7a4c8c22dc0d679c38cd087b9dc3b"
   },
   {
-   "id": "english",
-   "domain": "disciplines",
-   "label": "English",
+   "id": "robotics",
+   "domain": "engineering",
+   "label": "Robotics",
    "counts": {
-    "concepts": 6,
-    "skills": 15,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:209b03b88c69231f0fcf301a9bc0b93d1addddb80ca2dc0f70b3f9edf271461c"
-  },
-  {
-   "id": "environmental-systems-engineering",
-   "domain": "disciplines",
-   "label": "Environmental Systems Engineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:d10675f08c3e421043e2eacddedf5b7b480d23b863c671d29a481e02065e6cda"
-  },
-  {
-   "id": "ethics-and-technology",
-   "domain": "disciplines",
-   "label": "Ethics and Technology",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:bf51f264ce3f12c951dd1879ac1ddc0453ddfe0a6597b5c90f0a4823447df5d1"
-  },
-  {
-   "id": "european-studies",
-   "domain": "disciplines",
-   "label": "European Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:ed9afe0c7c41188a024170f818af2f10809a73c8c070a239926ad526c6c95e36"
-  },
-  {
-   "id": "feminist-gender-and-sexuality-studies",
-   "domain": "disciplines",
-   "label": "Feminist, Gender, and Sexuality Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
+    "concepts": 7,
+    "skills": 17,
+    "agents": 9,
     "mcp": 1
    },
-   "digest": "sha256:2695cd9df1c684f97dd0b1d01cd205359f74ff52eae458e44a3180f1f8399262"
+   "digest": "sha256:e1674567b430a7cb7b554e8d9939ff22241e17d5da755ed3f476e011bb547f37"
   },
   {
-   "id": "film-and-media-studies",
-   "domain": "disciplines",
-   "label": "Film and Media Studies",
+   "id": "thermodynamics-and-transport-phenomena",
+   "domain": "engineering",
+   "label": "Thermodynamics and Transport Phenomena",
+   "counts": {
+    "concepts": 6,
+    "skills": 20,
+    "agents": 29,
+    "mcp": 15
+   },
+   "digest": "sha256:d168458168363919e9946d8cc6891d57c1579de09da4b1b097ef412192b4e1cd"
+  },
+  {
+   "id": "bioengineering-and-synthetic-biology",
+   "domain": "life-health-mind",
+   "label": "Bioengineering and Synthetic Biology",
+   "counts": {
+    "concepts": 8,
+    "skills": 24,
+    "agents": 18,
+    "mcp": 8
+   },
+   "digest": "sha256:6baeaf2242aa031c6130a21e07c400e10ed1b6a2176ec5d11c92aecb64e9d299"
+  },
+  {
+   "id": "biomechanics",
+   "domain": "life-health-mind",
+   "label": "Biomechanics",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 3
+   },
+   "digest": "sha256:3c74a6417531ac138ef1db3151e55125c3c7df8076e5f4cb198adb4eae67b8fb"
+  },
+  {
+   "id": "biomedical-computation",
+   "domain": "life-health-mind",
+   "label": "Biomedical Computation",
    "counts": {
     "concepts": 5,
     "skills": 15,
-    "agents": 8,
-    "mcp": 1
+    "agents": 7,
+    "mcp": 5
    },
-   "digest": "sha256:03a9f3172ccb8392c887f9874e40105c04decee8832fe3ea5105da546f42630d"
+   "digest": "sha256:d910df7f36ae679a0523de6e11f9437d8d6e14fc49036610a8e5ffd078c4f03b"
   },
   {
-   "id": "french",
-   "domain": "disciplines",
-   "label": "French",
+   "id": "cell-molecular-and-organismal-biology",
+   "domain": "life-health-mind",
+   "label": "Cell, Molecular and Organismal Biology",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 14,
+    "mcp": 5
+   },
+   "digest": "sha256:5fa631da8552854d6e2177800cfe0b508da8ba2e1274409e41fc1ac65dd39aed"
+  },
+  {
+   "id": "cognitive-science-and-computational-models-of-mind",
+   "domain": "life-health-mind",
+   "label": "Cognitive Science and Computational Models of Mind",
+   "counts": {
+    "concepts": 3,
+    "skills": 12,
+    "agents": 10,
+    "mcp": 7
+   },
+   "digest": "sha256:0b65714757960c13e46e05fa14435271bd063bf032f849fd3ac22064b09407b4"
+  },
+  {
+   "id": "genetics-evolution-and-human-variation",
+   "domain": "life-health-mind",
+   "label": "Genetics, Evolution and Human Variation",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 14,
+    "mcp": 8
+   },
+   "digest": "sha256:2f7f4f464af488f9e1f3f40636f423dc5f5ab54ec7a9cbe2348d54dd574ff651"
+  },
+  {
+   "id": "human-anatomy-and-physiology",
+   "domain": "life-health-mind",
+   "label": "Human Anatomy and Physiology",
+   "counts": {
+    "concepts": 3,
+    "skills": 9,
+    "agents": 6,
+    "mcp": 3
+   },
+   "digest": "sha256:a8b2e87714084efdef83ac576179de5ee75a5d64be2808c39bc6cf5779b2c368"
+  },
+  {
+   "id": "psychology",
+   "domain": "life-health-mind",
+   "label": "Psychology",
+   "counts": {
+    "concepts": 5,
+    "skills": 14,
+    "agents": 9,
+    "mcp": 7
+   },
+   "digest": "sha256:4ee67bfd6228f518c1474df4fc2b67529fdbb994c7b9d32e79cdde500773cf41"
+  },
+  {
+   "id": "public-health-and-prevention-research",
+   "domain": "life-health-mind",
+   "label": "Public Health and Prevention Research",
    "counts": {
     "concepts": 6,
-    "skills": 18,
+    "skills": 14,
     "agents": 8,
-    "mcp": 2
+    "mcp": 3
    },
-   "digest": "sha256:1a0f700a7f624ce3d609077a5d35bdc291e3075dd2deda3b2be0cd05652bff6e"
+   "digest": "sha256:109ed13b94120a2ef92f9bd8beff000ddcc53c8ce4d05a3392281c2b0ff358f4"
+  },
+  {
+   "id": "climate-atmosphere-and-earth-systems",
+   "domain": "earth-environment-place",
+   "label": "Climate, Atmosphere and Earth Systems",
+   "counts": {
+    "concepts": 8,
+    "skills": 22,
+    "agents": 14,
+    "mcp": 5
+   },
+   "digest": "sha256:679d036449c44e25949681da87026f25f70cbf6f828fa36a9d3e66403f4fe1b5"
+  },
+  {
+   "id": "energy-emissions-and-air-quality-policy",
+   "domain": "earth-environment-place",
+   "label": "Energy, Emissions and Air Quality Policy",
+   "counts": {
+    "concepts": 5,
+    "skills": 14,
+    "agents": 17,
+    "mcp": 6
+   },
+   "digest": "sha256:17e8ea54ba550b61a245481638d6c73a85191c0456ca66d23cdc23239a88358f"
   },
   {
    "id": "geophysics",
-   "domain": "disciplines",
+   "domain": "earth-environment-place",
    "label": "Geophysics",
    "counts": {
     "concepts": 6,
@@ -1083,383 +675,47 @@
     "agents": 8,
     "mcp": 3
    },
-   "digest": "sha256:0d00796d88aa780dbbb9c5908f10298c8423db539424d251d7f703822268d3e1"
+   "digest": "sha256:e1fadfd738ae1e33c56e33529e89c41a8517abae75c392ff51a0a0a223eb2dc6"
   },
   {
-   "id": "german-studies",
-   "domain": "disciplines",
-   "label": "German Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:78abf3423bee98de4189fd75d8a14940e098c57891913f5c8936b110cc381604"
-  },
-  {
-   "id": "global-studies",
-   "domain": "disciplines",
-   "label": "Global Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:78d6f69ecd690d9315e6f92e83cb016d7633f222fba9b842a317f80f8dba1024"
-  },
-  {
-   "id": "history",
-   "domain": "disciplines",
-   "label": "History",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:b20a8fef50be2415f17eb70e46f15012b7fee45091f1beffbb862973e5e4b6e1"
-  },
-  {
-   "id": "human-biology",
-   "domain": "disciplines",
-   "label": "Human Biology",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:5841c51f9de39839f223608b9c6c943d9b9ae3011da219b5f7d3cea5ec10a5bb"
-  },
-  {
-   "id": "human-rights",
-   "domain": "disciplines",
-   "label": "Human Rights",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 1
-   },
-   "digest": "sha256:89941c9350cd405fe0e541c9ad2a147660f38b1758c6645df67c5ee9e0fc3704"
-  },
-  {
-   "id": "iberian-and-latin-american-cultures",
-   "domain": "disciplines",
-   "label": "Iberian and Latin American Cultures",
-   "counts": {
-    "concepts": 6,
-    "skills": 21,
-    "agents": 13,
-    "mcp": 2
-   },
-   "digest": "sha256:16d63f0f3f65c9933f7d2d4f459541c0ea41d57a9b275255743d3dfc2a19d8f8"
-  },
-  {
-   "id": "international-relations",
-   "domain": "disciplines",
-   "label": "International Relations",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:18702bb426972157c993b6225d7fc2683169e2002baefe97b70396575d9fb60d"
-  },
-  {
-   "id": "italian",
-   "domain": "disciplines",
-   "label": "Italian",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 1
-   },
-   "digest": "sha256:e60200607d2ed10842d8b0d7ac890b0fe4cc5d06bb2e147a7fedbe3b355963ac"
-  },
-  {
-   "id": "japanese",
-   "domain": "disciplines",
-   "label": "Japanese",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 1
-   },
-   "digest": "sha256:8a3081ea3ed05d042f9b8a4a99b2739438c6aee35000a17137304b19b864d265"
-  },
-  {
-   "id": "jewish-studies",
-   "domain": "disciplines",
-   "label": "Jewish Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:5baadd2850d697f5da62c0c77ea34146ef5ed73e9118a434d8213ea5f2a19a1f"
-  },
-  {
-   "id": "korean",
-   "domain": "disciplines",
-   "label": "Korean",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 1
-   },
-   "digest": "sha256:95cbfe7723ed5b95c167164e66ecf49e6324c266a07799d91080f17a64eaf693"
-  },
-  {
-   "id": "linguistics",
-   "domain": "disciplines",
-   "label": "Linguistics",
-   "counts": {
-    "concepts": 6,
-    "skills": 27,
-    "agents": 18,
-    "mcp": 4
-   },
-   "digest": "sha256:1ef50e7fba6312f1b47b2a33ef06961399ffbcc9748e14f14fbd09607eb74f0a"
-  },
-  {
-   "id": "management-science-and-engineering",
-   "domain": "disciplines",
-   "label": "Management Science and Engineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 4
-   },
-   "digest": "sha256:1b7474d03c704c45590a197e2b60588c520dc5a0f969c2105a3ffff599fce59c"
-  },
-  {
-   "id": "materials-science-and-engineering",
-   "domain": "disciplines",
-   "label": "Materials Science and Engineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 9,
-    "mcp": 5
-   },
-   "digest": "sha256:f4a751e43e75f2523cc89f519e3e745bc1282bc47a9a43d117c2e7e02f1f47cc"
-  },
-  {
-   "id": "math",
-   "domain": "disciplines",
-   "label": "Math",
-   "counts": {
-    "concepts": 8,
-    "skills": 24,
-    "agents": 9,
-    "mcp": 3
-   },
-   "digest": "sha256:6d175fb89b3a908eb1bd4948a1de39ce9b1546bdd7a98a3f9be9d0208d14848a"
-  },
-  {
-   "id": "mathematical-and-computational-science",
-   "domain": "disciplines",
-   "label": "Mathematical and Computational Science",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 9,
-    "mcp": 5
-   },
-   "digest": "sha256:aaa6932cbb4fd596f65c456963cbe3ad93d22b9254224ef5374d368c43e3e9d2"
-  },
-  {
-   "id": "mechanical-engineering",
-   "domain": "disciplines",
-   "label": "Mechanical Engineering",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 9,
-    "mcp": 4
-   },
-   "digest": "sha256:0e2a33dc455f84efa8a6ef4066b99b3eb864fe709c05b47b83eafa38a5534dc6"
-  },
-  {
-   "id": "music",
-   "domain": "disciplines",
-   "label": "Music",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:6915db067ed24d35e06f92972e88152d4b8b442b085e70bd578b1bd245139876"
-  },
-  {
-   "id": "philosophy",
-   "domain": "disciplines",
-   "label": "Philosophy",
-   "counts": {
-    "concepts": 6,
-    "skills": 21,
-    "agents": 12,
-    "mcp": 5
-   },
-   "digest": "sha256:8694d6d329d100a7ffb2337729d6f9978991c2bca5497ef88b915024777eab12"
-  },
-  {
-   "id": "physics-foundations",
-   "domain": "disciplines",
-   "label": "Physics Foundations",
-   "counts": {
-    "concepts": 3,
-    "skills": 11,
-    "agents": 15,
-    "mcp": 9
-   },
-   "digest": "sha256:a381a0ffe981aa1cefe994a96b866a9a25e5cab5b5606052467eb4fdd87c9b34"
-  },
-  {
-   "id": "political-science",
-   "domain": "disciplines",
-   "label": "Political Science",
-   "counts": {
-    "concepts": 6,
-    "skills": 16,
-    "agents": 9,
-    "mcp": 4
-   },
-   "digest": "sha256:58311b9774bc2249cbf8b554b17d7d313f247b2cd48fc6ddfa6757273c5436cd"
-  },
-  {
-   "id": "psychology",
-   "domain": "disciplines",
-   "label": "Psychology",
-   "counts": {
-    "concepts": 6,
-    "skills": 20,
-    "agents": 13,
-    "mcp": 7
-   },
-   "digest": "sha256:ad4d633faa10a1e451f66906f24614a30713e383e77986e4312d2cd11af4231e"
-  },
-  {
-   "id": "public-policy",
-   "domain": "disciplines",
-   "label": "Public Policy",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 9,
-    "mcp": 3
-   },
-   "digest": "sha256:743e95e734fd6273ce7865d8f4ba11a770f4dfc81b5af556193fcadd9f2d3141"
-  },
-  {
-   "id": "quantum-physics",
-   "domain": "disciplines",
-   "label": "Quantum Physics",
-   "counts": {
-    "concepts": 8,
-    "skills": 29,
-    "agents": 18,
-    "mcp": 9
-   },
-   "digest": "sha256:723627b515578a746c8cd2513fabbaa2450454987ed3db7ebf0471cec5ac4764"
-  },
-  {
-   "id": "religious-studies",
-   "domain": "disciplines",
-   "label": "Religious Studies",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 1
-   },
-   "digest": "sha256:b91e066a45b7f9bf8c46659b66963127d072bc26f24fa4cf77b9f7220fb495fe"
-  },
-  {
-   "id": "science-technology-and-society",
-   "domain": "disciplines",
-   "label": "Science, Technology, and Society",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 8,
-    "mcp": 3
-   },
-   "digest": "sha256:f7b4fcfef1e624e121407171d9770cf59120a35beceb548b9db2c52919a48b11"
-  },
-  {
-   "id": "slavic-languages-and-literatures",
-   "domain": "disciplines",
-   "label": "Slavic Languages and Literatures",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 9,
-    "mcp": 2
-   },
-   "digest": "sha256:91225490aced8e85556eb86d84e93294c89faba4f22d593789ef6d3655411133"
-  },
-  {
-   "id": "sociology",
-   "domain": "disciplines",
-   "label": "Sociology",
-   "counts": {
-    "concepts": 6,
-    "skills": 18,
-    "agents": 9,
-    "mcp": 3
-   },
-   "digest": "sha256:ffebe74015f027d745d0be476edfdf91b450d0443542673126160a08c01234f7"
-  },
-  {
-   "id": "spanish",
-   "domain": "disciplines",
-   "label": "Spanish",
-   "counts": {
-    "concepts": 5,
-    "skills": 15,
-    "agents": 8,
-    "mcp": 2
-   },
-   "digest": "sha256:8f591b0aed0d4a6adb89a782c658cc33ae6c87f0dba79fca12e331568d952833"
-  },
-  {
-   "id": "symbolic-systems",
-   "domain": "disciplines",
-   "label": "Symbolic Systems",
+   "id": "hydrology-and-water-resources",
+   "domain": "earth-environment-place",
+   "label": "Hydrology and Water Resources",
    "counts": {
     "concepts": 3,
     "skills": 9,
-    "agents": 8,
-    "mcp": 3
+    "agents": 16,
+    "mcp": 6
    },
-   "digest": "sha256:0fd368df658c855e6c52087d6d50e4d6114ea82ff2bddce5b76bf2000301f1cc"
+   "digest": "sha256:a6d5eaf3b7efe6f9c4ae8ed889d22dcec6456bf5cb9601b5d449492fb93e885a"
   },
   {
-   "id": "theater-and-performance-studies",
-   "domain": "disciplines",
-   "label": "Theater and Performance Studies",
+   "id": "mapping-and-gis",
+   "domain": "earth-environment-place",
+   "label": "Mapping and GIS",
    "counts": {
-    "concepts": 6,
-    "skills": 18,
+    "concepts": 7,
+    "skills": 22,
     "agents": 9,
-    "mcp": 1
+    "mcp": 6
    },
-   "digest": "sha256:b6a828520c352c3922d6363fe4cf6fb2afa856f54e1487de123f6532e74e4cc8"
+   "digest": "sha256:b433736fd519973888bb4c9bdb92fd403264487f757e7ef712c4cfb62ee9552b"
+  },
+  {
+   "id": "places-routing-and-travel",
+   "domain": "earth-environment-place",
+   "label": "Places, Routing and Travel",
+   "counts": {
+    "concepts": 8,
+    "skills": 13,
+    "agents": 10,
+    "mcp": 6
+   },
+   "digest": "sha256:04497c33863b444713a34d3587fdd56509e4c7c6a73e38c1f76ff75b241c4788"
   },
   {
    "id": "urban-studies",
-   "domain": "disciplines",
+   "domain": "earth-environment-place",
    "label": "Urban Studies",
    "counts": {
     "concepts": 6,
@@ -1467,7 +723,835 @@
     "agents": 9,
     "mcp": 4
    },
-   "digest": "sha256:77bbf62629556367e5997b16f3bf2f079e24d1060653a59e68f8f4824c95f805"
+   "digest": "sha256:ed433dc5fabd69e6fb1751a1848f191cfbbde5197ab91b2aa2a8fb0bac62776a"
+  },
+  {
+   "id": "waste-and-water-treatment",
+   "domain": "earth-environment-place",
+   "label": "Waste and Water Treatment",
+   "counts": {
+    "concepts": 3,
+    "skills": 9,
+    "agents": 7,
+    "mcp": 3
+   },
+   "digest": "sha256:0a4a5bf632df9fe765589226afb932c4dd9304b4f3a1f7a4979aefb00b777188"
+  },
+  {
+   "id": "accounting-and-audit",
+   "domain": "business-finance",
+   "label": "Accounting and Audit",
+   "counts": {
+    "concepts": 4,
+    "skills": 7,
+    "agents": 6,
+    "mcp": 1
+   },
+   "digest": "sha256:860be1c3a8181028cfe83674b7c41e5b826313619d5031240365fe7f249ae960"
+  },
+  {
+   "id": "banking-payments-and-insurance",
+   "domain": "business-finance",
+   "label": "Banking, Payments and Insurance",
+   "counts": {
+    "concepts": 6,
+    "skills": 6,
+    "agents": 9,
+    "mcp": 3
+   },
+   "digest": "sha256:700292192af03a347bbf9edcaeaed7943cc26a8061c65e7d00b27486038e3b4c"
+  },
+  {
+   "id": "capital-markets-and-trading",
+   "domain": "business-finance",
+   "label": "Capital Markets and Trading",
+   "counts": {
+    "concepts": 5,
+    "skills": 7,
+    "agents": 6,
+    "mcp": 3
+   },
+   "digest": "sha256:d9d5bb39060bf36431f691fc334ef36cf5955510cc39f1f2500e192ae6a9864a"
+  },
+  {
+   "id": "commodities",
+   "domain": "business-finance",
+   "label": "Commodities",
+   "counts": {
+    "concepts": 4,
+    "skills": 4,
+    "agents": 4,
+    "mcp": 1
+   },
+   "digest": "sha256:679879d55c765f1ce1627a68b50797b4bb6cbfe271b086645a8cf7505a337013"
+  },
+  {
+   "id": "corporate-finance",
+   "domain": "business-finance",
+   "label": "Corporate Finance",
+   "counts": {
+    "concepts": 5,
+    "skills": 9,
+    "agents": 6,
+    "mcp": 2
+   },
+   "digest": "sha256:faf91d1b113c3eaba9640cc96c47c3923b4eb97e7c5466ee45a30f37ef7701d9"
+  },
+  {
+   "id": "crypto-and-digital-assets",
+   "domain": "business-finance",
+   "label": "Crypto and Digital Assets",
+   "counts": {
+    "concepts": 6,
+    "skills": 6,
+    "agents": 6,
+    "mcp": 2
+   },
+   "digest": "sha256:aed9ce8e2c19e2e20ab55d3905de87dd2bef2a82f2e7f2cc1eae38e95d7fc11d"
+  },
+  {
+   "id": "currencies-and-fx",
+   "domain": "business-finance",
+   "label": "Currencies and FX",
+   "counts": {
+    "concepts": 3,
+    "skills": 4,
+    "agents": 4,
+    "mcp": 2
+   },
+   "digest": "sha256:964db28a3d985260ee8492233ec0f7744fce128ae6e8f77258e01ad449c60779"
+  },
+  {
+   "id": "derivatives",
+   "domain": "business-finance",
+   "label": "Derivatives",
+   "counts": {
+    "concepts": 5,
+    "skills": 6,
+    "agents": 5,
+    "mcp": 1
+   },
+   "digest": "sha256:70c09b82276797404649f4c6a6b5137bd14cfe273745dbbbd8303730acc71e63"
+  },
+  {
+   "id": "economics",
+   "domain": "business-finance",
+   "label": "Economics",
+   "counts": {
+    "concepts": 7,
+    "skills": 19,
+    "agents": 13,
+    "mcp": 5
+   },
+   "digest": "sha256:9d4c5bbe2bbf549d258653c78ebd8ab4bf00a7b765ee7bc0e1bb9337493842c1"
+  },
+  {
+   "id": "equities",
+   "domain": "business-finance",
+   "label": "Equities",
+   "counts": {
+    "concepts": 5,
+    "skills": 7,
+    "agents": 5,
+    "mcp": 3
+   },
+   "digest": "sha256:e7165c8f43a608937bd77ab7377589421f370e0c864093ba2e6023bdd7667684"
+  },
+  {
+   "id": "financial-and-economic-data",
+   "domain": "business-finance",
+   "label": "Financial and Economic Data",
+   "counts": {
+    "concepts": 6,
+    "skills": 9,
+    "agents": 9,
+    "mcp": 5
+   },
+   "digest": "sha256:2675d28f8c737046b4de3f0ca0b648042a0bd4ebc3bc2c2ec0c81f3b8128519a"
+  },
+  {
+   "id": "financial-regulation-and-aml",
+   "domain": "business-finance",
+   "label": "Financial Regulation and AML",
+   "counts": {
+    "concepts": 5,
+    "skills": 6,
+    "agents": 6,
+    "mcp": 0
+   },
+   "digest": "sha256:80d017e13809ff2f5e86eff8bd81b2b42ff19c5668bdea70cfa9fc36a2e4497e"
+  },
+  {
+   "id": "fixed-income",
+   "domain": "business-finance",
+   "label": "Fixed Income",
+   "counts": {
+    "concepts": 5,
+    "skills": 6,
+    "agents": 5,
+    "mcp": 1
+   },
+   "digest": "sha256:f8b168a3b4abac837a5067347eb8d20676d155a3e323e02f6427746308af29ad"
+  },
+  {
+   "id": "hedge-funds-and-private-funds",
+   "domain": "business-finance",
+   "label": "Hedge Funds and Private Funds",
+   "counts": {
+    "concepts": 6,
+    "skills": 7,
+    "agents": 9,
+    "mcp": 2
+   },
+   "digest": "sha256:be40f0b7dbdd91d280fe80a9346f6fe45444b92cbe96212e2f66048e7d5ce4cd"
+  },
+  {
+   "id": "investing-and-portfolio-management",
+   "domain": "business-finance",
+   "label": "Investing and Portfolio Management",
+   "counts": {
+    "concepts": 4,
+    "skills": 6,
+    "agents": 6,
+    "mcp": 2
+   },
+   "digest": "sha256:e64031c6fb083ffee4c822df08a8bd9b7bf8d18136659d57e616ccc8f5bc3f7a"
+  },
+  {
+   "id": "job-search-and-careers",
+   "domain": "business-finance",
+   "label": "Job Search and Careers",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 13,
+    "mcp": 5
+   },
+   "digest": "sha256:75cf21ab275eec4075af5a9aad3ca5e5cd5b4499f0d35a637080cc263dc59f56"
+  },
+  {
+   "id": "marketing",
+   "domain": "business-finance",
+   "label": "Marketing",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 11,
+    "mcp": 7
+   },
+   "digest": "sha256:26773562ef2cbaa929e87b2694c0804a4edc0d29023d84fdad196fa73a863a0a"
+  },
+  {
+   "id": "real-estate",
+   "domain": "business-finance",
+   "label": "Real Estate",
+   "counts": {
+    "concepts": 4,
+    "skills": 7,
+    "agents": 5,
+    "mcp": 0
+   },
+   "digest": "sha256:1a1f2d646808b4219084e5fdf0d83bc9e60181b831fc5cd0559b3f740ededc2c"
+  },
+  {
+   "id": "securities-offerings",
+   "domain": "business-finance",
+   "label": "Securities Offerings",
+   "counts": {
+    "concepts": 6,
+    "skills": 8,
+    "agents": 6,
+    "mcp": 1
+   },
+   "digest": "sha256:a7c6f2542773cef953ba73d08e094abcf02b3986abddefdc71de68dfa23bace5"
+  },
+  {
+   "id": "startups",
+   "domain": "business-finance",
+   "label": "Startups",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 10,
+    "mcp": 6
+   },
+   "digest": "sha256:f0ebd539155a41ca8513f896a1c08014ee25942c9405774441dcc17d37771b10"
+  },
+  {
+   "id": "taxes-and-personal-finance",
+   "domain": "business-finance",
+   "label": "Taxes and Personal Finance",
+   "counts": {
+    "concepts": 5,
+    "skills": 6,
+    "agents": 5,
+    "mcp": 1
+   },
+   "digest": "sha256:634f6645dbc4867f99a3d2c87e4fe1772a05e1cd5fa3d3181d128435933a4020"
+  },
+  {
+   "id": "anthropology",
+   "domain": "society-governance",
+   "label": "Anthropology",
+   "counts": {
+    "concepts": 4,
+    "skills": 12,
+    "agents": 6,
+    "mcp": 4
+   },
+   "digest": "sha256:ad3bc978748fddaa3c0bf8a0f157a4a381ef27e8ba7f369714f320fa0f4f2b7d"
+  },
+  {
+   "id": "data-and-ai-ethics",
+   "domain": "society-governance",
+   "label": "Data and AI Ethics",
+   "counts": {
+    "concepts": 3,
+    "skills": 9,
+    "agents": 11,
+    "mcp": 6
+   },
+   "digest": "sha256:9dd61249d93adf20df35f590488a34f967d0b4c8220c05b5e75ba468784f1685"
+  },
+  {
+   "id": "education",
+   "domain": "society-governance",
+   "label": "Education",
+   "counts": {
+    "concepts": 6,
+    "skills": 15,
+    "agents": 8,
+    "mcp": 3
+   },
+   "digest": "sha256:1691333bd4c984a54f8880145bbb6f62ebc90458e538771df1ffea8e12b3c581"
+  },
+  {
+   "id": "ethics-of-technology",
+   "domain": "society-governance",
+   "label": "Ethics of Technology",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 18,
+    "mcp": 5
+   },
+   "digest": "sha256:0ab7533c0df8e02f2df3a7fa757c166c64f42a442c3f0605f11c25635b5de46f"
+  },
+  {
+   "id": "global-and-international-development",
+   "domain": "society-governance",
+   "label": "Global and International Development",
+   "counts": {
+    "concepts": 7,
+    "skills": 21,
+    "agents": 24,
+    "mcp": 8
+   },
+   "digest": "sha256:d93a4313a1bd39b1e6384a53b122b6d7bea163fcb8abfccfde5055b7eee6a2ad"
+  },
+  {
+   "id": "human-rights",
+   "domain": "society-governance",
+   "label": "Human Rights",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 1
+   },
+   "digest": "sha256:55ca7238f1ea337e418b0896af193ea2049fc4a23fa0308961b2b1bde500442c"
+  },
+  {
+   "id": "international-relations",
+   "domain": "society-governance",
+   "label": "International Relations",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 13,
+    "mcp": 3
+   },
+   "digest": "sha256:2d4a66b9299e2fd5dcdfeeb74267306b3f4d7cbd3c9e7986082630397b1b49bf"
+  },
+  {
+   "id": "political-science",
+   "domain": "society-governance",
+   "label": "Political Science",
+   "counts": {
+    "concepts": 4,
+    "skills": 11,
+    "agents": 9,
+    "mcp": 4
+   },
+   "digest": "sha256:d28198ba341058d42f35b96bc4d155c8e6ffc539696c532fdd06378578b7fbd2"
+  },
+  {
+   "id": "public-policy-and-government",
+   "domain": "society-governance",
+   "label": "Public Policy and Government",
+   "counts": {
+    "concepts": 4,
+    "skills": 11,
+    "agents": 14,
+    "mcp": 5
+   },
+   "digest": "sha256:49e93be3024d54c19aa5f2fe2921eb6712cb4db705180a2e45923a42da8d3ef9"
+  },
+  {
+   "id": "science-and-technology-studies",
+   "domain": "society-governance",
+   "label": "Science and Technology Studies",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 8,
+    "mcp": 3
+   },
+   "digest": "sha256:cdb70f2715fb21b1dc8d93b8b7bb69f2cfa59a4370554d91e4a36ca18ea2199b"
+  },
+  {
+   "id": "sociology",
+   "domain": "society-governance",
+   "label": "Sociology",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 9,
+    "mcp": 3
+   },
+   "digest": "sha256:83c810550a5205f5c2adc6db8c7ec2bcd08ac917da627c635dfc9d324c6537cf"
+  },
+  {
+   "id": "communication-studies-and-rhetoric",
+   "domain": "languages-communication",
+   "label": "Communication Studies and Rhetoric",
+   "counts": {
+    "concepts": 6,
+    "skills": 12,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:39312c8dde3a7b58d59421b98699707150970392727c6b351dc3b464fa1a836c"
+  },
+  {
+   "id": "creative-writing",
+   "domain": "languages-communication",
+   "label": "Creative Writing",
+   "counts": {
+    "concepts": 5,
+    "skills": 11,
+    "agents": 8,
+    "mcp": 0
+   },
+   "digest": "sha256:9c71e7adbe473a622603e579986b3965e24980b5c741570ca0d04d4c623b49e3"
+  },
+  {
+   "id": "english-language-and-poetry",
+   "domain": "languages-communication",
+   "label": "English Language and Poetry",
+   "counts": {
+    "concepts": 5,
+    "skills": 13,
+    "agents": 12,
+    "mcp": 3
+   },
+   "digest": "sha256:1a28da9f4a76fe3caf3e0a4d9667c89b9fa1fbeda83498e8248b117bfb0c6abd"
+  },
+  {
+   "id": "grammar-of-modern-languages",
+   "domain": "languages-communication",
+   "label": "Grammar of Modern Languages",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 27,
+    "mcp": 2
+   },
+   "digest": "sha256:529487d374c1a1b4788924a27d77b2ed2b2f9faf6e02adc1d64559f13d0583e9"
+  },
+  {
+   "id": "language-structure-lexicon-and-translation",
+   "domain": "languages-communication",
+   "label": "Language Structure, Lexicon and Translation",
+   "counts": {
+    "concepts": 6,
+    "skills": 24,
+    "agents": 18,
+    "mcp": 4
+   },
+   "digest": "sha256:1f68565bbb1b15d50e6ade13dde07f9e5456add471c512105f1ed7e554d00b5f"
+  },
+  {
+   "id": "literary-theory-and-comparative-literature",
+   "domain": "languages-communication",
+   "label": "Literary Theory and Comparative Literature",
+   "counts": {
+    "concepts": 8,
+    "skills": 17,
+    "agents": 17,
+    "mcp": 3
+   },
+   "digest": "sha256:43ef8bf37988f091697da2093239163be5d62852fd304980ed2227a82bb6081e"
+  },
+  {
+   "id": "phonetics-pronunciation-and-writing-systems",
+   "domain": "languages-communication",
+   "label": "Phonetics, Pronunciation and Writing Systems",
+   "counts": {
+    "concepts": 7,
+    "skills": 24,
+    "agents": 30,
+    "mcp": 5
+   },
+   "digest": "sha256:db496be392d3ed54e5b38e658885144d49e1aec55a7f25692d5151286cf62524"
+  },
+  {
+   "id": "sociolinguistics-and-computational-linguistics",
+   "domain": "languages-communication",
+   "label": "Sociolinguistics and Computational Linguistics",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 21,
+    "mcp": 7
+   },
+   "digest": "sha256:776f0783a12e440eb0fd5fa1510581785b397144e3d50595f4aa8082a2f5160e"
+  },
+  {
+   "id": "spanish-and-hispanic-linguistics",
+   "domain": "languages-communication",
+   "label": "Spanish and Hispanic Linguistics",
+   "counts": {
+    "concepts": 4,
+    "skills": 12,
+    "agents": 13,
+    "mcp": 2
+   },
+   "digest": "sha256:0760168ba57b65d88b089e8a78fc13298b675ff7ddff996f46b5b70128db9715"
+  },
+  {
+   "id": "translation-studies-and-pragmatics",
+   "domain": "languages-communication",
+   "label": "Translation Studies and Pragmatics",
+   "counts": {
+    "concepts": 8,
+    "skills": 23,
+    "agents": 31,
+    "mcp": 2
+   },
+   "digest": "sha256:2be74703fd478348a1b88f6a2d4d067c62fad53bd63bee34b38dd03296600aaa"
+  },
+  {
+   "id": "world-literatures",
+   "domain": "languages-communication",
+   "label": "World Literatures",
+   "counts": {
+    "concepts": 6,
+    "skills": 21,
+    "agents": 27,
+    "mcp": 2
+   },
+   "digest": "sha256:774f306838176a7c5f1b4551b62da2bf9e37109d3bb49c807a34535f24d0ea2f"
+  },
+  {
+   "id": "african-american-and-diaspora-studies",
+   "domain": "area-identity-studies",
+   "label": "African American and Diaspora Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 12,
+    "mcp": 3
+   },
+   "digest": "sha256:62faec686c81b964bdeccbd2b5c8d2e95afff98b340192d71c4650f5de6a000d"
+  },
+  {
+   "id": "african-studies",
+   "domain": "area-identity-studies",
+   "label": "African Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 12,
+    "mcp": 4
+   },
+   "digest": "sha256:95d356fbb16d5f2707f0c22ff00b1356d26d98b71acd0abf798f1cdaf2189e6d"
+  },
+  {
+   "id": "american-studies",
+   "domain": "area-identity-studies",
+   "label": "American Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:057bccc527bd9e4a53d88ced3b5f12f233b610b16cf061b2b6c676a4968748e3"
+  },
+  {
+   "id": "asian-american-studies",
+   "domain": "area-identity-studies",
+   "label": "Asian American Studies",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:05f419220f401d0157f05ff5390c6490766fcaee84d3c67ee5f61101a5074716"
+  },
+  {
+   "id": "chicana-o-and-latina-o-studies",
+   "domain": "area-identity-studies",
+   "label": "Chicana/o and Latina/o Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 3
+   },
+   "digest": "sha256:ed3e1a35f9a43b460f1665d627fe1f92357adfe62d95106e0ceda5922c83348c"
+  },
+  {
+   "id": "china-studies",
+   "domain": "area-identity-studies",
+   "label": "China Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 3
+   },
+   "digest": "sha256:37b0b407c419d60aa4dc26543e16b8ed9297fbcf9b606f70be0ad832a6ebb0db"
+  },
+  {
+   "id": "european-studies",
+   "domain": "area-identity-studies",
+   "label": "European Studies",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:8e8a37dfb48d788b99670e432b28c1ebd377bdf74c8f95652b251fcdbc1b2156"
+  },
+  {
+   "id": "french-and-german-studies",
+   "domain": "area-identity-studies",
+   "label": "French and German Studies",
+   "counts": {
+    "concepts": 8,
+    "skills": 24,
+    "agents": 14,
+    "mcp": 2
+   },
+   "digest": "sha256:97cc620ef81c722084645df97743d4b3a95b6dc7ff537fa16bdd0d5fa03d40b8"
+  },
+  {
+   "id": "gender-and-sexuality-studies",
+   "domain": "area-identity-studies",
+   "label": "Gender and Sexuality Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 1
+   },
+   "digest": "sha256:e36c5b3fe472c3086ea5ad4d06690750e82e4b53cc6d871a237a6c5435f4466c"
+  },
+  {
+   "id": "italian-and-latin-american-visual-culture",
+   "domain": "area-identity-studies",
+   "label": "Italian and Latin American Visual Culture",
+   "counts": {
+    "concepts": 4,
+    "skills": 12,
+    "agents": 13,
+    "mcp": 2
+   },
+   "digest": "sha256:1043a52181917c51ad52997bfeeb29280ba4e643689860cb5f52431e8990c9ae"
+  },
+  {
+   "id": "jewish-studies",
+   "domain": "area-identity-studies",
+   "label": "Jewish Studies",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:8241c907d352707647b5efc655558b3cb5c762de3e53c3457f3038df30bd5c52"
+  },
+  {
+   "id": "race-and-ethnicity-studies",
+   "domain": "area-identity-studies",
+   "label": "Race and Ethnicity Studies",
+   "counts": {
+    "concepts": 8,
+    "skills": 18,
+    "agents": 20,
+    "mcp": 3
+   },
+   "digest": "sha256:d8567860ea294db3935810bb808230231fddd63c463f81ff8b6d7c981cb4b474"
+  },
+  {
+   "id": "slavic-studies",
+   "domain": "area-identity-studies",
+   "label": "Slavic Studies",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 9,
+    "mcp": 2
+   },
+   "digest": "sha256:6c7f5bd3ab75144bb2afbbe8d7df0b3792289758e28b63f9428cfc3ae1c956a7"
+  },
+  {
+   "id": "archaeology",
+   "domain": "humanities-arts",
+   "label": "Archaeology",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 4
+   },
+   "digest": "sha256:819b06904ed4eb4698d97e55841170ea8b8369f10f89c88c315998361ce96c36"
+  },
+  {
+   "id": "art-history",
+   "domain": "humanities-arts",
+   "label": "Art History",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:47947593094c95c67f5c85157768263e951d1d9abe0ba70d1f6fcd553b78b777"
+  },
+  {
+   "id": "classics",
+   "domain": "humanities-arts",
+   "label": "Classics",
+   "counts": {
+    "concepts": 7,
+    "skills": 15,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:7299b6e31edc44de2180a6089b950a16e6b7dedbf5b41faee3882ec00a82d383"
+  },
+  {
+   "id": "dance",
+   "domain": "humanities-arts",
+   "label": "Dance",
+   "counts": {
+    "concepts": 6,
+    "skills": 13,
+    "agents": 8,
+    "mcp": 0
+   },
+   "digest": "sha256:972260853774eb4290185f5bd11a3fa8b0f6c4ffff4102b9084d6208ed96cd83"
+  },
+  {
+   "id": "design-and-user-experience",
+   "domain": "humanities-arts",
+   "label": "Design and User Experience",
+   "counts": {
+    "concepts": 6,
+    "skills": 17,
+    "agents": 8,
+    "mcp": 0
+   },
+   "digest": "sha256:68971539b4b7125f6da5c3ff5baeb4b56cbd21245168db17794c4cbd13939e1e"
+  },
+  {
+   "id": "film-and-media",
+   "domain": "humanities-arts",
+   "label": "Film and Media",
+   "counts": {
+    "concepts": 6,
+    "skills": 20,
+    "agents": 13,
+    "mcp": 2
+   },
+   "digest": "sha256:81df75fcd6870ece66fbb305122bcd3546eac34d1bdcdbb12f1002afaa6ffa54"
+  },
+  {
+   "id": "history",
+   "domain": "humanities-arts",
+   "label": "History",
+   "counts": {
+    "concepts": 7,
+    "skills": 21,
+    "agents": 13,
+    "mcp": 3
+   },
+   "digest": "sha256:31898c6c85181cb98d8468f73a52617b4583b5eda8c1127b50fb1729dbc28331"
+  },
+  {
+   "id": "music",
+   "domain": "humanities-arts",
+   "label": "Music",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 2
+   },
+   "digest": "sha256:ef1a944cccc91d1ca5661a4f5cf2aa47305391310be006b8a5f41f521799db68"
+  },
+  {
+   "id": "philosophy-and-logic",
+   "domain": "humanities-arts",
+   "label": "Philosophy and Logic",
+   "counts": {
+    "concepts": 6,
+    "skills": 22,
+    "agents": 18,
+    "mcp": 7
+   },
+   "digest": "sha256:b6265026fe41c5d41a51f8bf1bdc3c23c5a84c9af982b82e00128119aaa290d1"
+  },
+  {
+   "id": "religious-studies",
+   "domain": "humanities-arts",
+   "label": "Religious Studies",
+   "counts": {
+    "concepts": 5,
+    "skills": 15,
+    "agents": 7,
+    "mcp": 1
+   },
+   "digest": "sha256:0bad05223d8ec45eba612f82534986ba485dd0054769e9025b7129ee473f455c"
+  },
+  {
+   "id": "studio-art-practice",
+   "domain": "humanities-arts",
+   "label": "Studio Art Practice",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 8,
+    "mcp": 0
+   },
+   "digest": "sha256:fa13fd37a360146390744c5d801411f43b5d9e79cf569ff381c6731133ee3d11"
+  },
+  {
+   "id": "theater-and-performance",
+   "domain": "humanities-arts",
+   "label": "Theater and Performance",
+   "counts": {
+    "concepts": 6,
+    "skills": 18,
+    "agents": 9,
+    "mcp": 1
+   },
+   "digest": "sha256:27ccf0725c2a34a71039ce54a98b38b88d43428beb1ebe7ce87543042ff28616"
   }
  ]
 }

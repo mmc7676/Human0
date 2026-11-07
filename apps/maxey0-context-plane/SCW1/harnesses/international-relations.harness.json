@@ -1,13 +1,32 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "society-governance",
  "topic": {
   "id": "international-relations",
   "label": "International Relations",
-  "desc": "International Relations: how states and other actors interact through power, institutions, conflict, cooperation and the global economy."
+  "desc": "International Relations: International Organizations and Law, Security Studies, International Relations Theory, Regional Studies and Forecasting, Diplomacy and Foreign Policy and Global Governance and Institutions."
  },
  "concepts": [
+  {
+   "id": "glob-global-governance",
+   "label": "Global Governance and Institutions",
+   "desc": "International organisations, treaties, NGOs and regimes that govern trade, security, health and human rights.",
+   "keywords": [
+    "governance",
+    "united nations",
+    "treaty",
+    "ngo",
+    "regime",
+    "human rights",
+    "security",
+    "multilateral"
+   ],
+   "topic": "international-relations",
+   "source": "global-studies",
+   "source_topic": "global-studies",
+   "related": []
+  },
   {
    "id": "ir-area-forecasting",
    "label": "Regional Studies and Forecasting",
@@ -24,6 +43,7 @@
    ],
    "topic": "international-relations",
    "source": "international-relations",
+   "source_topic": "international-relations",
    "related": []
   },
   {
@@ -42,6 +62,7 @@
    ],
    "topic": "international-relations",
    "source": "international-relations",
+   "source_topic": "international-relations",
    "related": []
   },
   {
@@ -60,26 +81,7 @@
    ],
    "topic": "international-relations",
    "source": "international-relations",
-   "related": [
-    "glob-global-governance"
-   ]
-  },
-  {
-   "id": "ir-international-political-economy",
-   "label": "International Political Economy",
-   "desc": "Trade, finance, development and the politics of globalization and economic interdependence.",
-   "keywords": [
-    "trade",
-    "finance",
-    "globalization",
-    "development",
-    "interdependence",
-    "tariff",
-    "currency",
-    "aid"
-   ],
-   "topic": "international-relations",
-   "source": "international-relations",
+   "source_topic": "international-relations",
    "related": []
   },
   {
@@ -98,6 +100,7 @@
    ],
    "topic": "international-relations",
    "source": "international-relations",
+   "source_topic": "international-relations",
    "related": []
   },
   {
@@ -116,10 +119,77 @@
    ],
    "topic": "international-relations",
    "source": "international-relations",
+   "source_topic": "international-relations",
    "related": []
   }
  ],
  "skills": [
+  {
+   "id": "glob-human-rights-review",
+   "concept": "glob-global-governance",
+   "label": "Human Rights Instrument Review",
+   "desc": "Summarises a human rights treaty's provisions and monitoring and checks articles against the treaty text.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1336",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1337",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-institution-profile",
+   "concept": "glob-global-governance",
+   "label": "International Institution Profile",
+   "desc": "Profiles an organisation's mandate, membership, decision rules and funding and checks each fact against its founding documents.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1336",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1338",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
+  {
+   "id": "glob-regime-effectiveness",
+   "concept": "glob-global-governance",
+   "label": "Regime Effectiveness Assessment",
+   "desc": "Assesses whether an international regime changed state behaviour using compliance evidence and checks the evidence base.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1336",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1332",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1335",
+     "role": "support"
+    }
+   ],
+   "source": "global-studies"
+  },
   {
    "id": "ir-geopolitical-forecast",
    "concept": "ir-area-forecasting",
@@ -319,72 +389,6 @@
    "source": "international-relations"
   },
   {
-   "id": "ir-development-strategy",
-   "concept": "ir-international-political-economy",
-   "label": "Development Strategy Comparison",
-   "desc": "Compares development strategies across countries, checked by sourcing each indicator.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1377",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1375",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1376",
-     "role": "support"
-    }
-   ],
-   "source": "international-relations"
-  },
-  {
-   "id": "ir-interdependence-risk",
-   "concept": "ir-international-political-economy",
-   "label": "Interdependence Risk Mapping",
-   "desc": "Maps economic dependencies that create leverage between states, checked against trade and investment figures.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1377",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1378",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1375",
-     "role": "support"
-    }
-   ],
-   "source": "international-relations"
-  },
-  {
-   "id": "ir-trade-policy",
-   "concept": "ir-international-political-economy",
-   "label": "Trade Policy Analysis",
-   "desc": "Analyses tariffs and trade agreements and who gains and loses, checked against published trade data.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1377",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1375",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1381",
-     "role": "support"
-    }
-   ],
-   "source": "international-relations"
-  },
-  {
    "id": "ir-hypothesis-design",
    "concept": "ir-ir-theory",
    "label": "IR Hypothesis Design",
@@ -519,6 +523,36 @@
  ],
  "agents": [
   {
+   "key": "Maxey1332",
+   "name": "Global Studies Reviewer",
+   "legacy_key": "glob-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1335",
+   "name": "Global Environment Analyst",
+   "legacy_key": "glob-environment",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1336",
+   "name": "Global Governance Analyst",
+   "legacy_key": "glob-governance",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1337",
+   "name": "Transnational Migration Analyst",
+   "legacy_key": "glob-migration",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1338",
+   "name": "Globalization Theorist",
+   "legacy_key": "glob-theorist",
+   "mcp": []
+  },
+  {
    "key": "Maxey1374",
    "name": "Geopolitical Forecasting Agent",
    "legacy_key": "ir-forecaster",
@@ -572,6 +606,36 @@
   }
  ],
  "mcp": [
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
   {
    "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
    "name": "Mantic",
@@ -656,8 +720,9 @@
   }
  ],
  "topic_mcp": [
-  "ccc1bcfc-193c-44b7-b443-9511aac18403",
-  "ff091334-0f12-4d0e-a973-c00467dd3818"
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "ccc1bcfc-193c-44b7-b443-9511aac18403"
  ],
  "agent_mcp": [
   {
@@ -665,17 +730,25 @@
    "mcp": "ccc1bcfc-193c-44b7-b443-9511aac18403",
    "topic": "international-relations",
    "score": 0.3372,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "international-relations"
   },
   {
    "agent": "Maxey1376",
    "mcp": "ccc1bcfc-193c-44b7-b443-9511aac18403",
    "topic": "international-relations",
    "score": 0.333,
-   "basis": "derived:tfidf-cosine"
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "international-relations"
   }
  ],
  "lexicon": {
+  "glob-theory": "globalization modernization core periphery hegemony transnational",
+  "glob-econ": "trade finance multinational investment tariff commodity",
+  "glob-govern": "governance treaty ngo regime rights multilateral",
+  "glob-dev": "development poverty aid south goals education",
+  "glob-move": "migration refugee diaspora remittance identity border",
+  "glob-risk": "climate conflict pandemic resource map",
   "ir-theory": "realism liberalism constructivism anarchy power norms",
   "ir-security": "security war deterrence alliance nuclear terrorism conflict",
   "ir-statecraft": "diplomacy negotiation sanctions statecraft summit mediation",
@@ -684,6 +757,7 @@
   "ir-foresight": "forecast probability scenario geopolitics calibration judgemental"
  },
  "sources": [
+  "global-studies",
   "international-relations"
  ]
 }

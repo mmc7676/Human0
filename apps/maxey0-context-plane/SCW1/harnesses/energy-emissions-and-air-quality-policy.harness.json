@@ -1,0 +1,761 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "earth-environment-place",
+ "topic": {
+  "id": "energy-emissions-and-air-quality-policy",
+  "label": "Energy, Emissions and Air Quality Policy",
+  "desc": "Energy, Emissions and Air Quality Policy: Air Quality and Energy Policy, Energy Systems Analysis, Economics and Policy, Sustainability and Life Cycle Assessment, Air Quality and Atmospheric Emissions and Fuels, Combustion and Nuclear Energy."
+ },
+ "concepts": [
+  {
+   "id": "atmo-air-quality-policy",
+   "label": "Air Quality and Energy Policy",
+   "desc": "Pollutant emissions, air quality, carbon pricing and policy for energy transitions.",
+   "keywords": [
+    "air quality",
+    "emissions",
+    "pollutant",
+    "carbon",
+    "policy",
+    "ozone",
+    "particulate",
+    "transition"
+   ],
+   "topic": "energy-emissions-and-air-quality-policy",
+   "source": "atmosphere-energy",
+   "source_topic": "atmosphere-energy",
+   "related": []
+  },
+  {
+   "id": "envs-air-quality",
+   "label": "Air Quality and Atmospheric Emissions",
+   "desc": "Characterising emission sources, atmospheric dispersion and control technologies for particulates and gaseous pollutants.",
+   "keywords": [
+    "air",
+    "emission",
+    "dispersion",
+    "plume",
+    "particulate",
+    "pollutant",
+    "stack",
+    "scrubber"
+   ],
+   "topic": "energy-emissions-and-air-quality-policy",
+   "source": "environmental-systems-engineering",
+   "source_topic": "environmental-systems-engineering",
+   "related": []
+  },
+  {
+   "id": "envs-sustainability-lca",
+   "label": "Sustainability and Life Cycle Assessment",
+   "desc": "Evaluating the cradle-to-grave resource use and environmental impact of products and infrastructure to compare design alternatives.",
+   "keywords": [
+    "sustainability",
+    "life cycle",
+    "inventory",
+    "impact",
+    "carbon",
+    "footprint",
+    "energy",
+    "alternative"
+   ],
+   "topic": "energy-emissions-and-air-quality-policy",
+   "source": "environmental-systems-engineering",
+   "source_topic": "environmental-systems-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-energy-systems-policy",
+   "label": "Energy Systems Analysis, Economics and Policy",
+   "desc": "Life cycle assessment, levelized cost, decarbonization pathways and the policy that shapes energy transitions.",
+   "keywords": [
+    "lcoe",
+    "life cycle",
+    "decarbonization",
+    "carbon",
+    "policy",
+    "pathway",
+    "economics",
+    "efficiency standard"
+   ],
+   "topic": "energy-emissions-and-air-quality-policy",
+   "source": "energy-science-and-engineering",
+   "source_topic": "energy-science-and-engineering",
+   "related": []
+  },
+  {
+   "id": "ese-fuels-combustion",
+   "label": "Fuels, Combustion and Nuclear Energy",
+   "desc": "Fossil, bio and nuclear fuels, combustion chemistry, emissions and reactor fundamentals.",
+   "keywords": [
+    "fuel",
+    "combustion",
+    "emissions",
+    "biofuel",
+    "nuclear",
+    "reactor",
+    "fission",
+    "natural gas"
+   ],
+   "topic": "energy-emissions-and-air-quality-policy",
+   "source": "energy-science-and-engineering",
+   "source_topic": "energy-science-and-engineering",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "atmo-carbon-pricing",
+   "concept": "atmo-air-quality-policy",
+   "label": "Carbon Pricing Analysis",
+   "desc": "Analyses carbon tax and cap-and-trade effects on generation mix, checked against stated model assumptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1062",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1063",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1064",
+     "role": "support"
+    }
+   ],
+   "source": "atmosphere-energy"
+  },
+  {
+   "id": "atmo-emissions-inventory",
+   "concept": "atmo-air-quality-policy",
+   "label": "Emissions Inventory Builder",
+   "desc": "Builds a pollutant and carbon emissions inventory from activity data and factors, checked by totals reconciliation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1062",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1065",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1063",
+     "role": "support"
+    }
+   ],
+   "source": "atmosphere-energy"
+  },
+  {
+   "id": "atmo-ozone-particulate",
+   "concept": "atmo-air-quality-policy",
+   "label": "Ozone and Particulate Analysis",
+   "desc": "Analyses ozone and particulate concentrations against air quality standards, checked against monitoring data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1066",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1067",
+     "role": "support"
+    }
+   ],
+   "source": "atmosphere-energy"
+  },
+  {
+   "id": "envs-control-device-selection",
+   "concept": "envs-air-quality",
+   "label": "Control Device Selection",
+   "desc": "Matches cyclones, baghouses, electrostatic precipitators or scrubbers to a gas stream and checks the required removal efficiency is met.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1272",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1274",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-emission-inventory",
+   "concept": "envs-air-quality",
+   "label": "Emission Inventory Building",
+   "desc": "Compiles source emission rates from activity data and emission factors and checks totals by reconciling against reported facility data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1272",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1276",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-gaussian-plume",
+   "concept": "envs-air-quality",
+   "label": "Gaussian Plume Dispersion",
+   "desc": "Estimates ground-level pollutant concentrations downwind of a stack using stability-class dispersion coefficients and checks maxima against ambient standards.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1272",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1277",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-alternative-comparison",
+   "concept": "envs-sustainability-lca",
+   "label": "Design Alternative Comparison",
+   "desc": "Ranks engineering alternatives on cost, energy and impact criteria with weighted scoring and checks that the ranking holds under sensitivity analysis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-carbon-footprint",
+   "concept": "envs-sustainability-lca",
+   "label": "Carbon Footprint Calculation",
+   "desc": "Converts inventory flows to carbon dioxide equivalents with stated characterisation factors and checks the arithmetic by recomputing per stage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1275",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1272",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "envs-lca-inventory",
+   "concept": "envs-sustainability-lca",
+   "label": "Life Cycle Inventory Compilation",
+   "desc": "Assembles material and energy flows per functional unit for each life cycle stage and checks completeness against the declared system boundary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1276",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1273",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1274",
+     "role": "support"
+    }
+   ],
+   "source": "environmental-systems-engineering"
+  },
+  {
+   "id": "ese-lca-assessor",
+   "concept": "ese-energy-systems-policy",
+   "label": "Life Cycle Assessor",
+   "desc": "Performs life cycle carbon accounting for an energy technology and checks system boundaries and inventory data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1257",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1258",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-lcoe-calculator",
+   "concept": "ese-energy-systems-policy",
+   "label": "LCOE Calculator",
+   "desc": "Computes levelized cost of energy with discounting and checks sensitivity to capital cost and capacity factor.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1257",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-pathway-evaluator",
+   "concept": "ese-energy-systems-policy",
+   "label": "Decarbonization Pathway Evaluator",
+   "desc": "Evaluates energy transition scenarios against emissions targets and checks assumptions with cited data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1062",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1257",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1256",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-combustion-calculator",
+   "concept": "ese-fuels-combustion",
+   "label": "Combustion Calculator",
+   "desc": "Computes stoichiometry, adiabatic flame temperature and emissions and checks mass balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1258",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1259",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  },
+  {
+   "id": "ese-reactor-explainer",
+   "concept": "ese-fuels-combustion",
+   "label": "Nuclear Reactor Explainer",
+   "desc": "Explains reactor physics, fuel cycles and safety systems and checks claims against technical references.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1258",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1255",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1062",
+     "role": "support"
+    }
+   ],
+   "source": "energy-science-and-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1062",
+   "name": "Energy Policy Analyst",
+   "legacy_key": "atmo-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1063",
+   "name": "Energy Systems Engineer",
+   "legacy_key": "atmo-energy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1064",
+   "name": "Climate Modeler",
+   "legacy_key": "atmo-climate",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1065",
+   "name": "Units and Balance Checker",
+   "legacy_key": "atmo-units",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1066",
+   "name": "Climate Data Analyst",
+   "legacy_key": "atmo-data",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1067",
+   "name": "Atmospheric Dynamics Analyst",
+   "legacy_key": "atmo-meteorologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1255",
+   "name": "Energy Data Reviewer",
+   "legacy_key": "ese-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1256",
+   "name": "Grid Integration Engineer",
+   "legacy_key": "ese-grid",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1257",
+   "name": "Energy Systems Analyst",
+   "legacy_key": "ese-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1258",
+   "name": "Fuels and Combustion Engineer",
+   "legacy_key": "ese-fuels",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1259",
+   "name": "Thermal Energy Engineer",
+   "legacy_key": "ese-thermo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1272",
+   "name": "Air Quality Analyst",
+   "legacy_key": "envs-air",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1273",
+   "name": "Environmental Compliance Reviewer",
+   "legacy_key": "envs-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1274",
+   "name": "Waste and Resource Engineer",
+   "legacy_key": "envs-waste",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1275",
+   "name": "Environmental Risk Assessor",
+   "legacy_key": "envs-risk",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1276",
+   "name": "Life Cycle Assessment Analyst",
+   "legacy_key": "envs-lca",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1277",
+   "name": "Spatial Environmental Analyst",
+   "legacy_key": "envs-gis",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "name": "GIS Cloud",
+   "desc": "Run your entire GIS workflow in plain language: maps, data, analysis, field apps, and reports",
+   "tools": [
+    "add_table_columns",
+    "bind_form_to_layer",
+    "bulk_update_features",
+    "create_bookmark",
+    "create_feature",
+    "create_form",
+    "create_layer",
+    "create_map"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "origins": [
+    "archaeology",
+    "civil-engineering",
+    "earth-systems",
+    "energy-science-and-engineering",
+    "environmental-systems-engineering",
+    "geophysics",
+    "mapping",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "atmo-atmospheric": "atmosphere circulation geostrophic pressure wind convection storm jet stream",
+  "atmo-radiation": "radiation solar infrared greenhouse forcing albedo energy budget aerosol",
+  "atmo-climate": "climate model projection scenario feedback sensitivity warming attribution",
+  "atmo-energy": "grid efficiency storage generation thermodynamic power plant electricity",
+  "atmo-renewable": "renewable photovoltaic turbine hydro geothermal capacity factor resource variability",
+  "atmo-air": "air quality emissions pollutant carbon policy ozone particulate transition",
+  "ese-thermo": "thermodynamics cycle rankine brayton heat turbine exergy",
+  "ese-renew": "renewable solar photovoltaic wind hydro geothermal irradiance",
+  "ese-store": "storage battery lithium electrochemistry hydrogen degradation",
+  "ese-grid": "grid transmission dispatch reliability frequency microgrid curtailment",
+  "ese-fuel": "fuel combustion emissions biofuel nuclear reactor fission",
+  "ese-sys": "lcoe life decarbonization carbon policy pathway economics",
+  "envs-water": "hydrology watershed runoff groundwater reservoir flood rainfall catchment",
+  "envs-treat": "treatment wastewater coagulation filtration disinfection sludge effluent oxygen",
+  "envs-atmos": "air emission dispersion plume particulate pollutant stack scrubber",
+  "envs-waste": "landfill recycling compost leachate hazardous collection circular",
+  "envs-lca": "sustainability inventory footprint carbon impact energy",
+  "envs-risk": "exposure toxicity regulation permit compliance spatial"
+ },
+ "sources": [
+  "atmosphere-energy",
+  "energy-science-and-engineering",
+  "environmental-systems-engineering"
+ ]
+}

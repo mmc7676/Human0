@@ -1,0 +1,262 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "business-finance",
+ "topic": {
+  "id": "currencies-and-fx",
+  "label": "Currencies and FX",
+  "desc": "Currencies and FX: Currency Pairs and FX Markets, Currency Risk Hedging and Exchange Rate Drivers and Central Banks."
+ },
+ "concepts": [
+  {
+   "id": "fx-drivers",
+   "label": "Exchange Rate Drivers and Central Banks",
+   "desc": "Interest rate differentials, inflation, trade balances, central bank policy and intervention.",
+   "keywords": [
+    "central",
+    "bank",
+    "interest",
+    "rate",
+    "inflation",
+    "policy",
+    "intervention",
+    "fed",
+    "ecb",
+    "differential"
+   ],
+   "topic": "currencies-and-fx",
+   "source": "currencies",
+   "source_topic": "currencies",
+   "related": []
+  },
+  {
+   "id": "fx-fx-hedging",
+   "label": "Currency Risk Hedging",
+   "desc": "Hedging FX exposure with forwards, options and natural hedges.",
+   "keywords": [
+    "currency",
+    "risk",
+    "hedge",
+    "forward",
+    "exposure",
+    "translation",
+    "transaction"
+   ],
+   "topic": "currencies-and-fx",
+   "source": "currencies",
+   "source_topic": "currencies",
+   "related": [
+    "dv-hedging"
+   ]
+  },
+  {
+   "id": "fx-pairs",
+   "label": "Currency Pairs and FX Markets",
+   "desc": "Spot FX, currency pairs, quotes, pips and the over-the-counter FX market.",
+   "keywords": [
+    "currency",
+    "pair",
+    "forex",
+    "fx",
+    "spot",
+    "quote",
+    "pip",
+    "exchange",
+    "rate",
+    "dollar",
+    "euro",
+    "yen"
+   ],
+   "topic": "currencies-and-fx",
+   "source": "currencies",
+   "source_topic": "currencies",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "fx-rate-differential-analyzer",
+   "concept": "fx-drivers",
+   "label": "Rate Differential Analyzer",
+   "desc": "Explains a currency move by rate differentials and central bank policy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1704",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1705",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1706",
+     "role": "support"
+    }
+   ],
+   "source": "currencies"
+  },
+  {
+   "id": "fx-fx-exposure-hedger",
+   "concept": "fx-fx-hedging",
+   "label": "FX Exposure Hedger",
+   "desc": "Measures a company's currency exposure and proposes a hedge.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1707",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1705",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1704",
+     "role": "support"
+    }
+   ],
+   "source": "currencies"
+  },
+  {
+   "id": "fx-currency-converter",
+   "concept": "fx-pairs",
+   "label": "Currency Converter",
+   "desc": "Converts amounts between currencies at a stated rate and source.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1707",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1705",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1704",
+     "role": "support"
+    }
+   ],
+   "source": "currencies"
+  },
+  {
+   "id": "fx-fx-quote-explainer",
+   "concept": "fx-pairs",
+   "label": "FX Quote Explainer",
+   "desc": "Explains a currency quote, base and quote currency, pips and cross rates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1707",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1705",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1704",
+     "role": "support"
+    }
+   ],
+   "source": "currencies"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1704",
+   "name": "Central Bank Agent",
+   "legacy_key": "fx-macro",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1705",
+   "name": "FX Checker Agent",
+   "legacy_key": "fx-checker",
+   "mcp": [
+    "local:polygon-mcp"
+   ]
+  },
+  {
+   "key": "Maxey1706",
+   "name": "Cross-Border Payments Agent",
+   "legacy_key": "fx-payments",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1707",
+   "name": "FX Markets Agent",
+   "legacy_key": "fx-trader",
+   "mcp": [
+    "local:polygon-mcp"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Polygon MCP",
+   "desc": "Polygon.io MCP server: market data for stocks, options, indices, forex and crypto, aggregates, trades, quotes, reference data and financials.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/polygon-io/mcp_polygon",
+   "id": "local:polygon-mcp",
+   "origins": [
+    "capital-markets",
+    "currencies",
+    "derivatives",
+    "financial-data"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "Twelve Data MCP",
+   "desc": "Twelve Data MCP server: real time and historical prices for stocks, forex, crypto, ETFs and indices, technical indicators.",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://github.com/twelvedata/mcp",
+   "id": "local:twelve-data-mcp",
+   "origins": [
+    "capital-markets",
+    "commodities",
+    "currencies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:polygon-mcp",
+  "local:twelve-data-mcp"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1705",
+   "mcp": "local:polygon-mcp",
+   "topic": "currencies-and-fx",
+   "score": 0.1941,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1707",
+    "skill": "fx-currency-converter"
+   },
+   "source_topic": "currencies"
+  },
+  {
+   "agent": "Maxey1707",
+   "mcp": "local:polygon-mcp",
+   "topic": "currencies-and-fx",
+   "score": 0.1941,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "currencies"
+  }
+ ],
+ "lexicon": {
+  "fxpairs": "currency pair forex fx spot quote pip exchange rate dollar euro yen",
+  "fxdrivers": "central bank interest rate inflation policy intervention fed ecb differential",
+  "fxpayments": "cross border payment swift correspondent remittance wire transfer fee",
+  "fxfxhedging": "currency risk hedge forward exposure translation transaction"
+ },
+ "sources": [
+  "currencies"
+ ]
+}

@@ -1,0 +1,546 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "society-governance",
+ "topic": {
+  "id": "data-and-ai-ethics",
+  "label": "Data and AI Ethics",
+  "desc": "Data and AI Ethics: Privacy, Surveillance and Data Ethics, AI and Algorithmic Ethics and Data Ethics and Governance."
+ },
+ "concepts": [
+  {
+   "id": "ds-data-ethics-governance",
+   "label": "Data Ethics and Governance",
+   "desc": "Privacy, fairness, consent and reproducibility obligations that govern how data is collected, modeled and shared.",
+   "keywords": [
+    "ethics",
+    "privacy",
+    "fairness",
+    "bias",
+    "governance",
+    "reproducibility",
+    "consent",
+    "audit"
+   ],
+   "topic": "data-and-ai-ethics",
+   "source": "data-science",
+   "source_topic": "data-science",
+   "related": []
+  },
+  {
+   "id": "etht-ai-ethics",
+   "label": "AI and Algorithmic Ethics",
+   "desc": "Fairness, accountability, transparency and safety in machine learning and automated decision systems.",
+   "keywords": [
+    "algorithm",
+    "fairness",
+    "bias",
+    "accountability",
+    "transparency",
+    "explainability",
+    "automation",
+    "alignment"
+   ],
+   "topic": "data-and-ai-ethics",
+   "source": "ethics-and-technology",
+   "source_topic": "ethics-and-technology",
+   "related": []
+  },
+  {
+   "id": "etht-privacy-data",
+   "label": "Privacy, Surveillance and Data Ethics",
+   "desc": "The ethics of collecting, aggregating and inferring from personal data, including consent, surveillance and data ownership.",
+   "keywords": [
+    "privacy",
+    "surveillance",
+    "consent",
+    "personal data",
+    "anonymization",
+    "tracking",
+    "ownership",
+    "inference"
+   ],
+   "topic": "data-and-ai-ethics",
+   "source": "ethics-and-technology",
+   "source_topic": "ethics-and-technology",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ds-fairness-auditor",
+   "concept": "ds-data-ethics-governance",
+   "label": "Model Fairness Auditor",
+   "desc": "Measures disparate performance of a model across groups and checks results against stated fairness criteria.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1211",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1209",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-privacy-reviewer",
+   "concept": "ds-data-ethics-governance",
+   "label": "Privacy Risk Reviewer",
+   "desc": "Identifies personal data and re-identification risk in a dataset and checks proposed anonymization against it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1211",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1206",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1208",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-reproducibility-checker",
+   "concept": "ds-data-ethics-governance",
+   "label": "Reproducibility Checker",
+   "desc": "Reruns an analysis from versioned code and data and checks that reported numbers are reproduced exactly.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1207",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1211",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1206",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "etht-ai-research-review",
+   "concept": "etht-ai-ethics",
+   "label": "AI Ethics Literature Review",
+   "desc": "Retrieves preprints on alignment, bias and explainability through alphaXiv and checks each summarised finding against the source paper.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1280",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1282",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-fairness-audit",
+   "concept": "etht-ai-ethics",
+   "label": "Algorithmic Fairness Audit",
+   "desc": "Computes group fairness metrics such as demographic parity and equalized odds on model outputs and checks which fairness definitions conflict for the data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1280",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1283",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-model-documentation",
+   "concept": "etht-ai-ethics",
+   "label": "Model Card and Impact Documentation",
+   "desc": "Drafts a model card covering intended use, limitations and evaluation and checks every claim against reported test results.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1280",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1285",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-consent-design-review",
+   "concept": "etht-privacy-data",
+   "label": "Consent Design Review",
+   "desc": "Reviews a consent flow for informed, specific and revocable agreement and checks it for dark patterns.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1285",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1283",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-privacy-impact-assessment",
+   "concept": "etht-privacy-data",
+   "label": "Privacy Impact Assessment",
+   "desc": "Maps personal data flows in a system, rates risks to data subjects and checks mitigations against data protection principles.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1283",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1284",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1285",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  },
+  {
+   "id": "etht-reidentification-risk",
+   "concept": "etht-privacy-data",
+   "label": "Re-identification Risk Check",
+   "desc": "Evaluates anonymization of a dataset with k-anonymity style reasoning and checks whether quasi-identifiers allow linkage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1283",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1280",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1281",
+     "role": "support"
+    }
+   ],
+   "source": "ethics-and-technology"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1206",
+   "name": "Data Wrangling Specialist",
+   "legacy_key": "ds-wrangler",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1207",
+   "name": "Model Validation Auditor",
+   "legacy_key": "ds-validator",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1208",
+   "name": "SQL and Warehouse Analyst",
+   "legacy_key": "ds-sql",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1209",
+   "name": "Machine Learning Engineer",
+   "legacy_key": "ds-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1211",
+   "name": "Data Ethics Reviewer",
+   "legacy_key": "ds-ethics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1280",
+   "name": "AI Ethics Auditor",
+   "legacy_key": "etht-ai",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1281",
+   "name": "Ethics Argument Reviewer",
+   "legacy_key": "etht-critic",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1282",
+   "name": "Science and Technology Studies Scholar",
+   "legacy_key": "etht-sts",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1283",
+   "name": "Privacy and Data Ethics Analyst",
+   "legacy_key": "etht-privacy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1284",
+   "name": "Technology Policy Analyst",
+   "legacy_key": "etht-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1285",
+   "name": "Value Sensitive Design Practitioner",
+   "legacy_key": "etht-design",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "name": "Omni Analytics",
+   "desc": "Query your data using natural language through Omni's semantic model",
+   "tools": [
+    "pickModel",
+    "pickTopic",
+    "getData"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "name": "Snowflake",
+   "desc": "Retrieve both structured and unstructured data",
+   "tools": [
+    "Cortex Agents",
+    "Cortex Search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+  "local:mcp-server-motherduck",
+  "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "ds-stats": "statistical inference estimation hypothesis bayesian bootstrap regression posterior",
+  "ds-ml": "machine learning supervised unsupervised classification clustering neural feature training hyperparameter",
+  "ds-eng": "pipeline cleaning etl warehouse sql schema join wrangling",
+  "ds-viz": "visualization chart dashboard storytelling encoding exploratory",
+  "ds-causal": "experiment causal randomization power treatment confounding counterfactual",
+  "ds-gov": "ethics privacy fairness bias governance reproducibility consent",
+  "etht-theory": "consequentialism deontology virtue care duty normative dilemma moral",
+  "etht-ai": "algorithm fairness bias accountability transparency explainability alignment",
+  "etht-data": "privacy surveillance consent anonymization tracking identifier",
+  "etht-govern": "policy governance regulation standard liability law oversight",
+  "etht-society": "society history labor inequality sociotechnical culture innovation",
+  "etht-design": "responsible biotechnology robotics neurotechnology anticipatory precaution"
+ },
+ "sources": [
+  "data-science",
+  "ethics-and-technology"
+ ]
+}

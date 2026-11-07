@@ -1,0 +1,1169 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "data-science",
+ "topic": {
+  "id": "statistics-and-causal-inference",
+  "label": "Statistics and Causal Inference",
+  "desc": "Statistics and Causal Inference: Statistical Inference, Probability and Statistical Inference, Experimentation and Causal Inference, Probability and Statistics, Political Methodology and Program Evaluation and Causal Inference."
+ },
+ "concepts": [
+  {
+   "id": "ds-experimentation-causal",
+   "label": "Experimentation and Causal Inference",
+   "desc": "Designing controlled experiments and using observational methods to estimate causal effects rather than mere correlation.",
+   "keywords": [
+    "experiment",
+    "a/b test",
+    "causal",
+    "randomization",
+    "power",
+    "treatment",
+    "confounding",
+    "counterfactual"
+   ],
+   "topic": "statistics-and-causal-inference",
+   "source": "data-science",
+   "source_topic": "data-science",
+   "related": []
+  },
+  {
+   "id": "ds-statistical-inference",
+   "label": "Statistical Inference",
+   "desc": "Estimating population quantities and testing hypotheses from samples, with explicit uncertainty through confidence intervals, p-values and posterior distributions.",
+   "keywords": [
+    "inference",
+    "estimation",
+    "hypothesis",
+    "confidence interval",
+    "p-value",
+    "bayesian",
+    "bootstrap",
+    "regression"
+   ],
+   "topic": "statistics-and-causal-inference",
+   "source": "data-science",
+   "source_topic": "data-science",
+   "related": []
+  },
+  {
+   "id": "ma-probstat",
+   "label": "Probability and Statistics",
+   "desc": "Random variables, distributions, estimation, hypothesis tests, regression and the limits of what a sample shows.",
+   "keywords": [
+    "probability",
+    "distribution",
+    "estimation",
+    "regression",
+    "hypothesis",
+    "variance",
+    "deviation",
+    "median",
+    "mean",
+    "pvalue",
+    "anova",
+    "nonparametric",
+    "goodness"
+   ],
+   "topic": "statistics-and-causal-inference",
+   "source": "math",
+   "source_topic": "math",
+   "related": []
+  },
+  {
+   "id": "mcs-probability-statistics",
+   "label": "Probability and Statistical Inference",
+   "desc": "Random variables, distributions, estimation, hypothesis testing and Bayesian inference for data.",
+   "keywords": [
+    "probability",
+    "statistics",
+    "distribution",
+    "estimation",
+    "hypothesis test",
+    "bayesian",
+    "regression",
+    "confidence interval"
+   ],
+   "topic": "statistics-and-causal-inference",
+   "source": "mathematical-and-computational-science",
+   "source_topic": "mathematical-and-computational-science",
+   "related": []
+  },
+  {
+   "id": "polisci-political-methodology",
+   "label": "Political Methodology",
+   "desc": "Research design, causal inference, surveys, text-as-data and statistics for political questions.",
+   "keywords": [
+    "methodology",
+    "causal inference",
+    "regression",
+    "survey",
+    "experiment",
+    "text as data",
+    "dataset",
+    "statistics"
+   ],
+   "topic": "statistics-and-causal-inference",
+   "source": "political-science",
+   "source_topic": "political-science",
+   "related": []
+  },
+  {
+   "id": "pubpol-program-evaluation",
+   "label": "Program Evaluation and Causal Inference",
+   "desc": "Estimating the causal effect of programs with randomized trials and quasi-experimental designs such as difference-in-differences and regression discontinuity.",
+   "keywords": [
+    "evaluation",
+    "causal",
+    "randomized",
+    "difference-in-differences",
+    "regression discontinuity",
+    "counterfactual",
+    "impact"
+   ],
+   "topic": "statistics-and-causal-inference",
+   "source": "public-policy",
+   "source_topic": "public-policy",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ds-ab-test-designer",
+   "concept": "ds-experimentation-causal",
+   "label": "A/B Test Designer",
+   "desc": "Plans randomized experiments with power calculations and guardrail metrics and checks sample ratio and pre-period balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1212",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1210",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1208",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-causal-estimator",
+   "concept": "ds-experimentation-causal",
+   "label": "Causal Effect Estimator",
+   "desc": "Estimates treatment effects with matching, difference-in-differences or instrumental variables and checks robustness to confounding.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1212",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1210",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1209",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-forecast-modeler",
+   "concept": "ds-experimentation-causal",
+   "label": "Time Series Forecaster",
+   "desc": "Builds seasonal time series forecasts and checks backtest error against naive baselines.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1210",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1212",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-bayesian-estimator",
+   "concept": "ds-statistical-inference",
+   "label": "Bayesian Estimator",
+   "desc": "Specifies priors and likelihoods, samples posterior distributions and checks convergence diagnostics and posterior predictive fit.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1210",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1209",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-hypothesis-tester",
+   "concept": "ds-statistical-inference",
+   "label": "Hypothesis Test Runner",
+   "desc": "Selects and runs the appropriate significance test for a stated question and checks its assumptions and effect size before reporting.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1210",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1212",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ds-regression-modeler",
+   "concept": "ds-statistical-inference",
+   "label": "Regression Modeler",
+   "desc": "Fits linear and generalized linear regression models and checks residual diagnostics, multicollinearity and coefficient intervals.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1210",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1207",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1209",
+     "role": "support"
+    }
+   ],
+   "source": "data-science"
+  },
+  {
+   "id": "ma-distribution-fitter",
+   "concept": "ma-probstat",
+   "label": "Distribution Fitter",
+   "desc": "Fits candidate distributions to data, compares them with goodness of fit and states which assumptions each requires.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1448",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1444",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-hypothesis-test-selector",
+   "concept": "ma-probstat",
+   "label": "Hypothesis Test Selector",
+   "desc": "Chooses a test such as ANOVA, a chi-square test or a nonparametric test from the data type and design, runs it, and reports effect size and interval along with the p-value.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1448",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1441",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "ma-regression-analyst",
+   "concept": "ma-probstat",
+   "label": "Regression Analyst",
+   "desc": "Fits linear and generalised regression models, checks residuals and warns when the fit is driven by a few points.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1448",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1442",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1447",
+     "role": "support"
+    }
+   ],
+   "source": "math"
+  },
+  {
+   "id": "mcs-bayesian-inferencer",
+   "concept": "mcs-probability-statistics",
+   "label": "Bayesian Inferencer",
+   "desc": "Specifies priors and likelihoods, samples posteriors and checks MCMC convergence diagnostics.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1453",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1451",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1612",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-hypothesis-tester",
+   "concept": "mcs-probability-statistics",
+   "label": "Hypothesis Tester",
+   "desc": "Selects and runs the appropriate statistical test and checks its assumptions and effect size.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1451",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1453",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1450",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "mcs-regression-modeler",
+   "concept": "mcs-probability-statistics",
+   "label": "Regression Modeler",
+   "desc": "Fits linear and generalised linear models and checks residual diagnostics and out-of-sample error.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1451",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1613",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1614",
+     "role": "support"
+    }
+   ],
+   "source": "mathematical-and-computational-science"
+  },
+  {
+   "id": "polisci-causal-design-reviewer",
+   "concept": "polisci-political-methodology",
+   "label": "Causal Design Reviewer",
+   "desc": "Assesses identification strategies such as difference-in-differences and regression discontinuity and checks assumptions with placebo tests.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1508",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1515",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1513",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-political-dataset-query",
+   "concept": "polisci-political-methodology",
+   "label": "Political Dataset Query",
+   "desc": "Queries election and country-year datasets with SQL and checks merges and counts against codebooks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1508",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1507",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1512",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "polisci-survey-experiment-builder",
+   "concept": "polisci-political-methodology",
+   "label": "Survey Experiment Builder",
+   "desc": "Designs survey experiments with randomised treatments and checks balance and power.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1508",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1513",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1515",
+     "role": "support"
+    }
+   ],
+   "source": "political-science"
+  },
+  {
+   "id": "pubpol-did-estimator",
+   "concept": "pubpol-program-evaluation",
+   "label": "Difference-in-Differences Estimator",
+   "desc": "Runs a difference-in-differences regression and reports the effect with a parallel-trends check.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1526",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1532",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-evidence-synthesis",
+   "concept": "pubpol-program-evaluation",
+   "label": "Evaluation Evidence Synthesizer",
+   "desc": "Collects published impact evaluations of a program type and summarizes effect sizes, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1532",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-rct-design",
+   "concept": "pubpol-program-evaluation",
+   "label": "Randomized Trial Designer",
+   "desc": "Designs a randomized evaluation with sample size and power calculation, checked by an independent power computation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1533",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1531",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1207",
+   "name": "Model Validation Auditor",
+   "legacy_key": "ds-validator",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+    "local:mcp-server-motherduck"
+   ]
+  },
+  {
+   "key": "Maxey1208",
+   "name": "SQL and Warehouse Analyst",
+   "legacy_key": "ds-sql",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+    "local:mcp-server-motherduck"
+   ]
+  },
+  {
+   "key": "Maxey1209",
+   "name": "Machine Learning Engineer",
+   "legacy_key": "ds-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1210",
+   "name": "Statistical Inference Analyst",
+   "legacy_key": "ds-statistician",
+   "mcp": [
+    "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+    "local:mcp-server-motherduck"
+   ]
+  },
+  {
+   "key": "Maxey1212",
+   "name": "Experimentation Analyst",
+   "legacy_key": "ds-experiment",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1441",
+   "name": "Proof and Foundations Agent",
+   "legacy_key": "ma-proof-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1442",
+   "name": "Mathematical Result Checker Agent",
+   "legacy_key": "ma-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1444",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "ma-numerical-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1447",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "ma-linear-agent",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1448",
+   "name": "Statistics Agent",
+   "legacy_key": "ma-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1450",
+   "name": "Scientific Programmer Agent",
+   "legacy_key": "mcs-programmer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1451",
+   "name": "Statistician Agent",
+   "legacy_key": "mcs-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1453",
+   "name": "Probability Agent",
+   "legacy_key": "mcs-probabilist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1507",
+   "name": "Comparative Politics Agent",
+   "legacy_key": "polisci-comparativist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1508",
+   "name": "Political Methodology Agent",
+   "legacy_key": "polisci-methodologist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1512",
+   "name": "Electoral Geography Agent",
+   "legacy_key": "polisci-mapper",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1513",
+   "name": "Elections and Institutions Agent",
+   "legacy_key": "polisci-americanist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1515",
+   "name": "Public Policy Analyst",
+   "legacy_key": "polisci-policy",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1526",
+   "name": "Program Evaluation Agent",
+   "legacy_key": "pubpol-eval",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1531",
+   "name": "Policy Ethics Agent",
+   "legacy_key": "pubpol-ethics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1532",
+   "name": "Policy Literature Agent",
+   "legacy_key": "pubpol-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1533",
+   "name": "Quantitative Methods Agent",
+   "legacy_key": "pubpol-stat",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1612",
+   "name": "Numerical Methods Agent",
+   "legacy_key": "mcs-numerics",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1613",
+   "name": "Machine Learning Agent",
+   "legacy_key": "mcs-ml",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1614",
+   "name": "Linear Algebra Agent",
+   "legacy_key": "mcs-linalg",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "name": "DeepL",
+   "desc": "Translate text and documents across 100+ languages, with your preferred styles applied",
+   "tools": [
+    "correct-text",
+    "download-document",
+    "get-custom-instruction",
+    "get-document-status",
+    "get-glossary-dictionary-entries",
+    "get-glossary-info",
+    "get-source-languages",
+    "get-style-rule"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "origins": [
+    "african-studies",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "comparative-literature",
+    "english",
+    "european-studies",
+    "french",
+    "german-studies",
+    "human-language",
+    "iberian-and-latin-american-cultures",
+    "italian",
+    "japanese",
+    "jewish-studies",
+    "korean",
+    "linguistics",
+    "music",
+    "philosophy",
+    "political-science",
+    "slavic-languages-and-literatures",
+    "spanish"
+   ]
+  },
+  {
+   "uuid": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "name": "Google Cloud BigQuery",
+   "desc": "BigQuery: Advanced analytical insights for agents",
+   "tools": [
+    "list_dataset_ids",
+    "get_dataset_info",
+    "list_table_ids",
+    "get_table_info",
+    "execute_sql"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "origins": [
+    "atmosphere-energy",
+    "comparative-studies-in-race-and-ethnicity",
+    "data",
+    "data-science",
+    "earth-systems",
+    "economics",
+    "energy-science-and-engineering",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "political-science",
+    "public-policy",
+    "sociology",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "name": "Omni Analytics",
+   "desc": "Query your data using natural language through Omni's semantic model",
+   "tools": [
+    "pickModel",
+    "pickTopic",
+    "getData"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "name": "Coteach",
+   "desc": "Create classroom-ready K-12 math diagrams in Claude",
+   "tools": [
+    "CreateDiagrams"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "8f5a51c6-5664-40c8-8043-f0441252c878",
+   "origins": [
+    "education",
+    "math"
+   ]
+  },
+  {
+   "uuid": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "name": "Felt Maps",
+   "desc": "Map and analyze your geospatial data",
+   "tools": [
+    "who_am_i",
+    "create_map",
+    "get_map",
+    "update_map",
+    "delete_map",
+    "list_maps",
+    "share_map",
+    "get_map_layers"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "origins": [
+    "african-studies",
+    "anthropology",
+    "archaeology",
+    "atmosphere-energy",
+    "civil-engineering",
+    "earth-systems",
+    "global-studies",
+    "mapping",
+    "political-science",
+    "urban-studies"
+   ]
+  },
+  {
+   "uuid": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "name": "Mantic",
+   "desc": "Explore judgemental forecasts",
+   "tools": [
+    "get_forecast",
+    "get_forecast_cdf",
+    "get_question_forecasts",
+    "list_dashboards",
+    "list_forecasts",
+    "search_dashboard_questions",
+    "search_questions",
+    "view_question"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ccc1bcfc-193c-44b7-b443-9511aac18403",
+   "origins": [
+    "economics",
+    "international-relations",
+    "management-science-and-engineering",
+    "political-science",
+    "public-policy",
+    "reasoning"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "name": "Snowflake",
+   "desc": "Retrieve both structured and unstructured data",
+   "tools": [
+    "Cortex Agents",
+    "Cortex Search"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+   "origins": [
+    "data",
+    "data-science"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "mcp-server-motherduck",
+   "desc": "Local MCP server for DuckDB and MotherDuck: run SQL, browse catalogs and connect to local DuckDB files, in-memory databases, S3-hosted databases and MotherDuck",
+   "tools": [
+    "execute_query",
+    "list_databases",
+    "list_tables",
+    "list_columns",
+    "switch_database_connection"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "id": "local:mcp-server-motherduck",
+   "origins": [
+    "data",
+    "data-science",
+    "management-science-and-engineering",
+    "mathematical-and-computational-science"
+   ]
+  },
+  {
+   "uuid": null,
+   "name": "sympy-mcp",
+   "desc": "Model Context Protocol server for symbolic mathematics and computer algebra built on SymPy",
+   "tools": [
+    "solve_algebraically",
+    "solve_linear_system",
+    "solve_nonlinear_system",
+    "dsolve_ode",
+    "pdsolve_pde",
+    "simplify_expression",
+    "integrate_expression",
+    "differentiate_expression",
+    "calculate_curl",
+    "calculate_divergence",
+    "calculate_gradient",
+    "matrix_determinant",
+    "matrix_inverse",
+    "matrix_eigenvalues",
+    "matrix_eigenvectors",
+    "convert_to_units"
+   ],
+   "state": "web-listed",
+   "source": "https://github.com/sdiehl/sympy-mcp",
+   "id": "local:sympy-mcp",
+   "origins": [
+    "applied-physics",
+    "electrical-engineering",
+    "engineering-physics",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+  "ee49809c-50e1-4b24-bc17-17ce8887bfdf",
+  "local:mcp-server-motherduck",
+  "8e7324aa-2671-46bf-9447-5bba8ccf8c2f",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "local:sympy-mcp",
+  "8f5a51c6-5664-40c8-8043-f0441252c878",
+  "ccc1bcfc-193c-44b7-b443-9511aac18403",
+  "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+  "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+  "ff091334-0f12-4d0e-a973-c00467dd3818"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1207",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "statistics-and-causal-inference",
+   "score": 0.1992,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1210",
+    "skill": "ds-bayesian-estimator"
+   },
+   "source_topic": "data-science"
+  },
+  {
+   "agent": "Maxey1207",
+   "mcp": "local:mcp-server-motherduck",
+   "topic": "statistics-and-causal-inference",
+   "score": 0.1203,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1210",
+    "skill": "ds-bayesian-estimator"
+   },
+   "source_topic": "data-science"
+  },
+  {
+   "agent": "Maxey1208",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "statistics-and-causal-inference",
+   "score": 0.2067,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "data-science"
+  },
+  {
+   "agent": "Maxey1208",
+   "mcp": "local:mcp-server-motherduck",
+   "topic": "statistics-and-causal-inference",
+   "score": 0.1276,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "data-science"
+  },
+  {
+   "agent": "Maxey1210",
+   "mcp": "7c316b77-98a0-4dbb-8b54-a96ae26a884f",
+   "topic": "statistics-and-causal-inference",
+   "score": 0.1992,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "data-science"
+  },
+  {
+   "agent": "Maxey1210",
+   "mcp": "local:mcp-server-motherduck",
+   "topic": "statistics-and-causal-inference",
+   "score": 0.1203,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "data-science"
+  }
+ ],
+ "lexicon": {
+  "ds-stats": "statistical inference estimation hypothesis bayesian bootstrap regression posterior",
+  "ds-ml": "machine learning supervised unsupervised classification clustering neural feature training hyperparameter",
+  "ds-eng": "pipeline cleaning etl warehouse sql schema join wrangling",
+  "ds-viz": "visualization chart dashboard storytelling encoding exploratory",
+  "ds-causal": "experiment causal randomization power treatment confounding counterfactual",
+  "ds-gov": "ethics privacy fairness bias governance reproducibility consent",
+  "maalg": "equation inequality polynomial factor substitution group ring axiom algebra function",
+  "macalc": "derivative integral limit convergence ode pde differentiate differentiation integrate antiderivative gradient slope calculus differential",
+  "malinear": "matrix eigenvalue eigenvector svd rank basis determinant inverse transpose linear solver",
+  "mastat": "deviation median mean pvalue anova nonparametric goodness estimation candidate generalised",
+  "madiscrete": "combinatorics permutation combination modular prime congruence colouring arrange arrangement ways factorial counting recurrence discrete mathematics",
+  "maproof": "conjecture theorem lemma prove irrational rational corollary square sqrt construction justified unjustified",
+  "manum": "bisection quadrature rounding optimisation numerical iteration methods",
+  "mageom": "rotation tangent homeomorphism parametrisation geometry curve",
+  "mcs-analysis": "calculus analysis limit derivative integral series convergence differential",
+  "mcs-matrix": "linear algebra matrix vector eigenvalue decomposition svd rank pca orthogonality",
+  "mcs-inference": "probability statistic distribution estimation hypothesis bayesian regression confidence posterior mcmc",
+  "mcs-numerics": "numerical approximation root quadrature stability floating finite error discretise",
+  "mcs-algorithmic": "algorithm complexity graph optimization gradient dynamic combinatorial runtime kkt",
+  "mcs-learning": "machine learning data science classification validation overfitting feature sql",
+  "polisci-normative": "theory democracy legitimacy justice rights authority liberalism sovereignty",
+  "polisci-regimes": "comparative regime authoritarian party capacity democratization federalism",
+  "polisci-voters": "election voting opinion legislature electoral turnout polarization district poll",
+  "polisci-world": "international conflict war alliance trade realism security geopolitical",
+  "polisci-methods": "methodology causal regression survey experiment dataset statistic sql",
+  "polisci-govern": "policy administration bureaucracy implementation evaluation agenda regulation budget",
+  "pubpol-analysis": "policy analysis alternatives criteria memo recommendation tradeoff",
+  "pubpol-economics": "economist externality tax incidence welfare surplus deadweight subsidy",
+  "pubpol-evaluation": "evaluation randomized causal regression trial impact counterfactual",
+  "pubpol-process": "legislature agency interest coalition veto rulemaking statute implementation",
+  "pubpol-finance": "budget revenue debt deficit fiscal forecast expenditure",
+  "pubpol-normative": "ethics equity justice rights distributional"
+ },
+ "sources": [
+  "data-science",
+  "math",
+  "mathematical-and-computational-science",
+  "political-science",
+  "public-policy"
+ ]
+}

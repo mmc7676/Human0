@@ -1,0 +1,683 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "life-health-mind",
+ "topic": {
+  "id": "cognitive-science-and-computational-models-of-mind",
+  "label": "Cognitive Science and Computational Models of Mind",
+  "desc": "Cognitive Science and Computational Models of Mind: Computational Models of Cognition, Cognitive Psychology and Natural Language and Computational Linguistics."
+ },
+ "concepts": [
+  {
+   "id": "psych-cognitive-psychology",
+   "label": "Cognitive Psychology",
+   "desc": "Perception, attention, memory, language, reasoning and decision making studied experimentally.",
+   "keywords": [
+    "cognition",
+    "perception",
+    "attention",
+    "memory",
+    "reasoning",
+    "decision making",
+    "reaction time",
+    "experiment",
+    "decision"
+   ],
+   "topic": "cognitive-science-and-computational-models-of-mind",
+   "source": "psychology",
+   "source_topic": "psychology",
+   "related": []
+  },
+  {
+   "id": "symsys-computational-cognition",
+   "label": "Computational Models of Cognition",
+   "desc": "Bayesian, connectionist and symbolic models that explain human learning and inference.",
+   "keywords": [
+    "model",
+    "bayesian cognition",
+    "connectionist",
+    "symbolic",
+    "inference",
+    "simulation",
+    "fit"
+   ],
+   "topic": "cognitive-science-and-computational-models-of-mind",
+   "source": "symbolic-systems",
+   "source_topic": "symbolic-systems",
+   "related": []
+  },
+  {
+   "id": "symsys-natural-language",
+   "label": "Natural Language and Computational Linguistics",
+   "desc": "Syntax, semantics and pragmatics of natural language and their computational models.",
+   "keywords": [
+    "syntax",
+    "semantics",
+    "pragmatics",
+    "parsing",
+    "language model",
+    "grammar",
+    "meaning"
+   ],
+   "topic": "cognitive-science-and-computational-models-of-mind",
+   "source": "symbolic-systems",
+   "source_topic": "symbolic-systems",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "psych-cognitive-task-designer",
+   "concept": "psych-cognitive-psychology",
+   "label": "Cognitive Task Designer",
+   "desc": "Designs attention or memory tasks with counterbalanced trials and checks timing and trial balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-memory-model-fitter",
+   "concept": "psych-cognitive-psychology",
+   "label": "Memory Model Fitter",
+   "desc": "Fits signal detection and forgetting models to recall data and checks parameter recovery.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1517",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1516",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "psych-reaction-time-analyzer",
+   "concept": "psych-cognitive-psychology",
+   "label": "Reaction Time Analyzer",
+   "desc": "Cleans and models reaction time data with mixed models and checks outlier rules and model fit.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1517",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1522",
+     "role": "support"
+    }
+   ],
+   "source": "psychology"
+  },
+  {
+   "id": "symsys-bias-review",
+   "concept": "psych-cognitive-psychology",
+   "label": "Reasoning Bias Reviewer",
+   "desc": "Explains a reasoning or decision bias and the evidence for it, checked against replication results.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1616",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-data-analysis",
+   "concept": "psych-cognitive-psychology",
+   "label": "Behavioral Data Analyzer",
+   "desc": "Analyzes behavioral data with mixed-effects models, checked by rerunning the analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-experiment-design",
+   "concept": "psych-cognitive-psychology",
+   "label": "Cognitive Experiment Designer",
+   "desc": "Designs a reaction-time or memory experiment with conditions and power analysis, checked by an independent power computation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1521",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-bayesian-model",
+   "concept": "symsys-computational-cognition",
+   "label": "Bayesian Cognitive Modeler",
+   "desc": "Builds a Bayesian model of a cognitive task and fits it to data, checked by comparing fit against a baseline.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1186",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-connectionist-model",
+   "concept": "symsys-computational-cognition",
+   "label": "Connectionist Model Simulator",
+   "desc": "Simulates a connectionist model of learning and compares its error pattern to human data.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1186",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1181",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-model-review",
+   "concept": "symsys-computational-cognition",
+   "label": "Cognitive Model Literature Reviewer",
+   "desc": "Summarizes competing computational models of a phenomenon, checked for citation accuracy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1616",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-pragmatics-analysis",
+   "concept": "symsys-natural-language",
+   "label": "Pragmatic Inference Analyzer",
+   "desc": "Explains implicatures and presuppositions of an utterance, checked against Gricean and formal accounts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1606",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1521",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-semantic-composer",
+   "concept": "symsys-natural-language",
+   "label": "Compositional Semantics Builder",
+   "desc": "Derives a logical form for a sentence with lambda calculus, checked by evaluating it in a model.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1606",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1474",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  },
+  {
+   "id": "symsys-syntax-parser",
+   "concept": "symsys-natural-language",
+   "label": "Syntactic Parse Builder",
+   "desc": "Produces a constituency or dependency parse of a sentence, checked against a treebank convention.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1606",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey941",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1186",
+     "role": "support"
+    }
+   ],
+   "source": "symbolic-systems"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1181",
+   "name": "Machine Learning Agent",
+   "legacy_key": "cs-ml-engineer",
+   "mcp": [
+    "de1d1dc7-ec10-459d-b511-797982834b43"
+   ]
+  },
+  {
+   "key": "Maxey1186",
+   "name": "Cognitive Science Agent",
+   "legacy_key": "symsys-cog",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1474",
+   "name": "Philosophy of Mind Agent",
+   "legacy_key": "phil-mind",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1516",
+   "name": "Behavioral Neuroscience Agent",
+   "legacy_key": "psych-neuro",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1517",
+   "name": "Psychological Statistics Agent",
+   "legacy_key": "psych-statistician",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1521",
+   "name": "Cognitive Psychology Agent",
+   "legacy_key": "psych-cognitive",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1522",
+   "name": "Research Methods Agent",
+   "legacy_key": "psych-methods",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1606",
+   "name": "Computational Linguistics Agent",
+   "legacy_key": "symsys-ling",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1616",
+   "name": "Research Literature Agent",
+   "legacy_key": "symsys-lit",
+   "mcp": []
+  },
+  {
+   "key": "Maxey941",
+   "name": "Logic Agent",
+   "legacy_key": "phil-logician",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "name": "bioRxiv",
+   "desc": "Access bioRxiv and medRxiv preprint data",
+   "tools": [
+    "search_biorxiv_publications",
+    "search_by_funder",
+    "get_categories",
+    "get_preprint",
+    "search_published_articles",
+    "search_publisher_articles",
+    "search_preprints",
+    "get_content_statistics"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+   "origins": [
+    "bioengineering",
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology",
+    "research"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "name": "Clinical Trials",
+   "desc": "Access ClinicalTrials.gov data",
+   "tools": [
+    "get_trial_details",
+    "search_by_eligibility",
+    "analyze_endpoints",
+    "search_investigators",
+    "search_trials",
+    "search_by_sponsor"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-24)",
+   "id": "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+   "origins": [
+    "biomedical-computation",
+    "community-health-and-prevention-research",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "c1754944-3ad1-49ab-bec5-9aeae3a6a9a3",
+  "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1181",
+   "mcp": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "topic": "cognitive-science-and-computational-models-of-mind",
+   "score": 0.1171,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "symbolic-systems"
+  }
+ ],
+ "lexicon": {
+  "psych-cognition": "cognition perception attention memory reasoning decision reaction experiment",
+  "psych-brain": "neuroscience brain neuron neurotransmitter fmri eeg hormone genetic",
+  "psych-growth": "development lifespan infant child adolescent attachment aging milestone longitudinal",
+  "psych-people": "social attitude persuasion group stereotype personality trait big five",
+  "psych-care": "clinical disorder diagnosis dsm therapy cbt assessment wellbeing",
+  "psych-evidence": "method statistic power meta preregistration effect literature trial",
+  "symsys-logic": "logic proof deduction automaton turing complexity",
+  "symsys-psychology": "psychology memory attention reasoning experiment behavioral",
+  "symsys-language": "syntax semantics pragmatics parse lambda treebank",
+  "symsys-ai": "bayesian network classifier search accuracy learning",
+  "symsys-mind": "mind consciousness functionalism computationalism intentionality reference",
+  "symsys-modeling": "connectionist simulation fit baseline cognition"
+ },
+ "sources": [
+  "psychology",
+  "symbolic-systems"
+ ]
+}

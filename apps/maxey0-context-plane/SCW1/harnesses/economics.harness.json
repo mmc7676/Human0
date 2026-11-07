@@ -1,11 +1,11 @@
 {
  "schema": "maxey0.topic-harness/3",
  "scw": "SCW1",
- "domain": "disciplines",
+ "domain": "business-finance",
  "topic": {
   "id": "economics",
   "label": "Economics",
-  "desc": "Economics: how individuals, firms and governments allocate scarce resources, studied through theory, data and policy analysis."
+  "desc": "Economics: Public Economics and Policy, Public Economics, Microeconomics, Econometrics, Behavioral and Experimental Economics, Macroeconomics and Public Finance and Budgeting."
  },
  "concepts": [
   {
@@ -23,6 +23,7 @@
    ],
    "topic": "economics",
    "source": "economics",
+   "source_topic": "economics",
    "related": []
   },
   {
@@ -40,23 +41,7 @@
    ],
    "topic": "economics",
    "source": "economics",
-   "related": []
-  },
-  {
-   "id": "econ-international-economics",
-   "label": "International and Development Economics",
-   "desc": "Trade, exchange rates, capital flows, and the causes of growth and poverty across countries.",
-   "keywords": [
-    "trade",
-    "tariff",
-    "exchange rate",
-    "comparative advantage",
-    "development",
-    "poverty",
-    "balance of payments"
-   ],
-   "topic": "economics",
-   "source": "economics",
+   "source_topic": "economics",
    "related": []
   },
   {
@@ -75,6 +60,7 @@
    ],
    "topic": "economics",
    "source": "economics",
+   "source_topic": "economics",
    "related": []
   },
   {
@@ -93,6 +79,7 @@
    ],
    "topic": "economics",
    "source": "economics",
+   "source_topic": "economics",
    "related": []
   },
   {
@@ -110,9 +97,46 @@
    ],
    "topic": "economics",
    "source": "economics",
-   "related": [
-    "pubpol-public-economics"
-   ]
+   "source_topic": "economics",
+   "related": []
+  },
+  {
+   "id": "pubpol-public-economics",
+   "label": "Public Economics",
+   "desc": "Market failure, externalities, public goods, taxation and the welfare effects of government intervention.",
+   "keywords": [
+    "market failure",
+    "externality",
+    "public good",
+    "taxation",
+    "incidence",
+    "welfare",
+    "subsidy",
+    "efficiency"
+   ],
+   "topic": "economics",
+   "source": "public-policy",
+   "source_topic": "public-policy",
+   "related": []
+  },
+  {
+   "id": "pubpol-public-finance-budgeting",
+   "label": "Public Finance and Budgeting",
+   "desc": "Revenue, expenditure, budget processes, fiscal rules and the long-run sustainability of public debt.",
+   "keywords": [
+    "budget",
+    "revenue",
+    "expenditure",
+    "deficit",
+    "debt",
+    "appropriation",
+    "fiscal",
+    "forecast"
+   ],
+   "topic": "economics",
+   "source": "public-policy",
+   "source_topic": "public-policy",
+   "related": []
   }
  ],
  "skills": [
@@ -221,72 +245,6 @@
     },
     {
      "key": "Maxey1232",
-     "role": "support"
-    }
-   ],
-   "source": "economics"
-  },
-  {
-   "id": "econ-development-evaluator",
-   "concept": "econ-international-economics",
-   "label": "Development Program Evaluator",
-   "desc": "Assesses development interventions using trial and survey evidence and checks external validity.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1237",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1231",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1234",
-     "role": "support"
-    }
-   ],
-   "source": "economics"
-  },
-  {
-   "id": "econ-exchange-rate-analyst",
-   "concept": "econ-international-economics",
-   "label": "Exchange Rate Analyst",
-   "desc": "Explains exchange rate movements with parity conditions and checks against balance of payments data.",
-   "type": "semantic",
-   "agents": [
-    {
-     "key": "Maxey1237",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1236",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1235",
-     "role": "support"
-    }
-   ],
-   "source": "economics"
-  },
-  {
-   "id": "econ-trade-flow-analyst",
-   "concept": "econ-international-economics",
-   "label": "Trade Flow Analyst",
-   "desc": "Analyses bilateral trade data with gravity models and checks tariff effects against observed flows.",
-   "type": "procedural",
-   "agents": [
-    {
-     "key": "Maxey1237",
-     "role": "primary"
-    },
-    {
-     "key": "Maxey1233",
-     "role": "checker"
-    },
-    {
-     "key": "Maxey1231",
      "role": "support"
     }
    ],
@@ -467,6 +425,138 @@
     }
    ],
    "source": "economics"
+  },
+  {
+   "id": "pubpol-externality-pricing",
+   "concept": "pubpol-public-economics",
+   "label": "Externality Pricing Estimator",
+   "desc": "Estimates the marginal external cost of an activity and the corrective tax, with the calculation verified for units and sources.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1528",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-tax-incidence",
+   "concept": "pubpol-public-economics",
+   "label": "Tax Incidence Analyzer",
+   "desc": "Computes how a tax burden splits between buyers and sellers from supply and demand elasticities, checked by recomputation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1527",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-welfare-analysis",
+   "concept": "pubpol-public-economics",
+   "label": "Welfare Effect Assessor",
+   "desc": "Measures consumer surplus, producer surplus and deadweight loss of an intervention, checked against a stated market model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1530",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1526",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1529",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-budget-scoring",
+   "concept": "pubpol-public-finance-budgeting",
+   "label": "Budget Cost Scorer",
+   "desc": "Projects the multi-year cost or revenue of a proposal, with assumptions and arithmetic checked by recomputation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1527",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-debt-sustainability",
+   "concept": "pubpol-public-finance-budgeting",
+   "label": "Debt Sustainability Calculator",
+   "desc": "Projects the debt-to-GDP path under interest, growth and deficit assumptions, checked with the standard debt dynamics equation.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1527",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1533",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
+  },
+  {
+   "id": "pubpol-revenue-forecast",
+   "concept": "pubpol-public-finance-budgeting",
+   "label": "Revenue Forecast Builder",
+   "desc": "Builds a revenue forecast from economic drivers and reports error ranges, checked against historical forecast errors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1533",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1527",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1530",
+     "role": "support"
+    }
+   ],
+   "source": "public-policy"
   }
  ],
  "agents": [
@@ -513,9 +603,39 @@
    "mcp": []
   },
   {
-   "key": "Maxey1237",
-   "name": "International Trade Analyst",
-   "legacy_key": "econ-trade",
+   "key": "Maxey1526",
+   "name": "Program Evaluation Agent",
+   "legacy_key": "pubpol-eval",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1527",
+   "name": "Public Budget Agent",
+   "legacy_key": "pubpol-budget",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1528",
+   "name": "Regulatory and Legal Agent",
+   "legacy_key": "pubpol-law",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1529",
+   "name": "Policy Analysis Agent",
+   "legacy_key": "pubpol-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1530",
+   "name": "Policy Economist Agent",
+   "legacy_key": "pubpol-econ",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1533",
+   "name": "Quantitative Methods Agent",
+   "legacy_key": "pubpol-stat",
    "mcp": []
   }
  ],
@@ -705,9 +825,16 @@
   "econ-metrics": "econometrics regression panel instrumental identification endogeneity forecast",
   "econ-public": "tax externality regulation incidence discount",
   "econ-intl": "trade tariff exchange comparative development poverty",
-  "econ-behav": "behavioral bias heuristic nudge prospect decision"
+  "econ-behav": "behavioral bias heuristic nudge prospect decision",
+  "pubpol-analysis": "policy analysis alternatives criteria memo recommendation tradeoff",
+  "pubpol-economics": "economist externality tax incidence welfare surplus deadweight subsidy",
+  "pubpol-evaluation": "evaluation randomized causal regression trial impact counterfactual",
+  "pubpol-process": "legislature agency interest coalition veto rulemaking statute implementation",
+  "pubpol-finance": "budget revenue debt deficit fiscal forecast expenditure",
+  "pubpol-normative": "ethics equity justice rights distributional"
  },
  "sources": [
-  "economics"
+  "economics",
+  "public-policy"
  ]
 }

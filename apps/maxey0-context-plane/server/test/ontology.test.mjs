@@ -41,7 +41,7 @@ test("no level clashes or duplicates", () => {
   const topicsOf = new Map();
   for (const sk of g.skills) for (const a of sk.agents) {
     if (!topicsOf.has(a.key)) topicsOf.set(a.key, new Set());
-    topicsOf.get(a.key).add(C.get(sk.concept).topic);
+    topicsOf.get(a.key).add(C.get(sk.concept).source_topic ?? C.get(sk.concept).topic);
   }
   const byName = new Map();
   for (const a of g.agents) { const n = a.name.toLowerCase(); if (!byName.has(n)) byName.set(n, []); byName.get(n).push(a.key); }
@@ -77,13 +77,16 @@ test("agents and MCP: no orphans, links evidence-backed, no invented links", () 
 
 test("spec decisions are reflected", () => {
   for (const t of Object.keys(spec.removed_topics)) assert.ok(!T.has(t), t);
+  // regroup: domains written from scratch; every concept in exactly one regrouped topic of 3-8 concepts
+  assert.deepEqual(g.domains.map((d) => d.id), spec.regroup.domains.map((d) => d.id));
+  const placed = spec.regroup.topics.flatMap((t) => t.concepts);
+  assert.equal(new Set(placed).size, g.concepts.length);
+  for (const t of spec.regroup.topics) { assert.equal(T.get(t.id).domain, t.domain, t.id); for (const c of t.concepts) assert.equal(C.get(c).topic, t.id, c); }
   for (const [src, dst] of Object.entries(spec.concept_merges)) { assert.ok(!C.has(src), src); assert.ok(C.has(dst), dst); }
   for (const s of Object.keys(spec.dropped_skills)) assert.ok(!S.has(s), s);
-  for (const t of spec.work_topics) assert.equal(T.get(t).domain, "work", t);
-  for (const t of Object.keys(spec.maxey0_topics)) assert.equal(T.get(t).domain, "maxey0-system", t);
-  assert.equal(g.topics.filter((t) => t.domain === "maxey0-system").length, 1);
-  // Maxey0 is one topic with 8 concepts; every former Maxey0 skill survives the concept merges
-  assert.equal(g.concepts.filter((c) => c.topic === "maxey0").length, 8);
+  // the 8 Maxey0 concepts all sit in Agentic Systems; every former Maxey0 skill survives the concept merges
+  const mx = g.concepts.filter((c) => c.id.startsWith("mx-"));
+  assert.equal(mx.length, 8); for (const c of mx) assert.equal(T.get(c.topic).domain, "agentic-systems", c.id);
   assert.equal(g.skills.filter((s) => s.concept.startsWith("mx-")).length, 81);   // 26 + 30 + 25 before the merge
   for (const r of g.related) {
     assert.ok(C.has(r.a) && C.has(r.b)); assert.notEqual(C.get(r.a).topic, C.get(r.b).topic);
@@ -113,7 +116,7 @@ test("test-chat findings stay fixed", () => {
   const sk = g.skills.find((s) => s.label === "Entanglement Entropy Analyzer");
   assert.equal(sk.agents.find((a) => a.role === "checker").key, "Maxey1500", "override: Quantum Consistency Checker");
   const checker = "Maxey1617";
-  for (const sk2 of g.skills) if (sk2.agents.some((a) => a.key === checker)) assert.ok(["classical-physics", "quantum-physics", "physics-foundations"].includes(C.get(sk2.concept).topic));
+  for (const sk2 of g.skills) if (sk2.agents.some((a) => a.key === checker)) assert.ok(["classical-physics", "quantum-physics", "physics-foundations"].includes(C.get(sk2.concept).source_topic));
   const names = g.agent_mcp.filter((l) => l.agent === checker).map((l) => M.get(l.mcp).name);
   assert.ok(!names.includes("Snowflake"), names.join(","));
   // 1b. servers listed by a pack follow its concepts into the topics they merged into
@@ -122,8 +125,8 @@ test("test-chat findings stay fixed", () => {
   assert.ok(g.topic_mcp["quantum-physics"].includes(qs));
   // 2. the orchestrator holds its own store
   assert.ok(g.agent_mcp.some((l) => l.agent === "Maxey0" && l.mcp === "session:Maxey0"));
-  // 3. the Maxey0 System domain describes Maxey0, not Human0
-  assert.match(D.get("maxey0-system").desc, /^How Maxey0 itself runs/);
+  // 3. the agentic domain names Maxey0
+  assert.match(D.get("agentic-systems").desc, /Maxey0/);
 });
 
 test("checker rule: every checker holds its primary's servers for that skill's topic", () => {
@@ -133,7 +136,8 @@ test("checker rule: every checker holds its primary's servers for that skill's t
     const prim = sk.agents.filter((a) => a.role === "primary").map((a) => a.key);
     const chk = sk.agents.filter((a) => a.role === "checker").map((a) => a.key);
     for (const l of g.agent_mcp) {
-      if (!prim.includes(l.agent) || l.basis.startsWith("inherited") || !(l.topic === t || l.topic === null)) continue;
+      const st = C.get(sk.concept).source_topic ?? t, share = l.topic === null || (l.source_topic ?? l.topic) === st;
+      if (!prim.includes(l.agent) || l.basis.startsWith("inherited") || !share) continue;
       for (const c of chk) { assert.ok(g.agent_mcp.some((x) => x.agent === c && x.mcp === l.mcp), `${sk.id}: ${c} lacks ${l.mcp}`); checked++; }
     }
   }
