@@ -595,9 +595,14 @@ def cmd_build(a):
     topic_text = {t: " ".join([topics[t]["label"], topics[t]["desc"]] + [ctext(c) for c in concepts.values() if c["topic"] == t]) for t in order}
     dom_of = {t: topics[t]["domain"] for t in order}
     field_vectors = {}
-    for d in spec["domains"]:
-        field_vectors["d:" + d["id"]] = top(sim.vec(" ".join([d["label"], d["desc"]] + [topic_text[t] for t in order if dom_of[t] == d["id"]])))
     for t in order: field_vectors["t:" + t] = top(sim.vec(topic_text[t]))
+    # a domain is the centroid of its topics (with its own label and description), keeping its 128 strongest terms
+    for d in spec["domains"]:
+        acc = collections.Counter(sim.vec(d["label"] + " " + d["desc"]))
+        for t in order:
+            if dom_of[t] == d["id"]:
+                for w, x in field_vectors["t:" + t].items(): acc[w] += x
+        field_vectors["d:" + d["id"]] = top(dict(acc), 128)
     for k, v in sorted(cvec.items()): field_vectors["c:" + k] = v
     for k, v in sorted(svec.items()): field_vectors["s:" + k] = v
     for k in sorted(agents): field_vectors["a:" + k] = top(sim.vec(" ".join([agents[k]] + skills_of_agent[k])))

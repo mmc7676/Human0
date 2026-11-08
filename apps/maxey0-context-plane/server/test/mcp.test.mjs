@@ -368,3 +368,10 @@ test("observer-lens routing: same chain as the reference implementation; superpo
   assert.ok(d.lens[0].selected.every((s) => topicsOf[s.id] === "business-finance"), "observer starts in the chosen domain");
   assert.equal((await call("route_task", { task: "x y", mode: "nope" })).isError, true);
 });
+
+test("open_context_plane_graph passes domain, mode and field to the app; rejects unknown values", async () => {
+  const r = (await call("open_context_plane_graph", { task: "price a call option", domain: "business-finance", mode: "lens", field: true })).structuredContent;
+  assert.equal(r.domain, "business-finance"); assert.equal(r.mode, "lens"); assert.ok(r.best_route && r.best_route.domain === "business-finance");
+  assert.equal((await call("open_context_plane_graph", { domain: "nope" })).isError, true);
+  assert.equal((await call("open_context_plane_graph", { mode: "x" })).isError, true);
+});

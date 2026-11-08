@@ -68,6 +68,13 @@ function cpObserver(){if(typeof task!=='undefined'&&task&&task.lens&&task.lens.c
  return Object.keys(st).length?{st,label:lab}:null}
 function cpLensSync(){const o=cpObserver(),k=o?JSON.stringify(o.st):'';if(k===cpLensKey)return;cpLensKey=k;cpLensPos=o?__CP.lensLayout(o.st):null;cpObsLabel=o?o.label:'above the graph';
  const el=$('cpObs');if(el)el.textContent='Observer: '+cpObsLabel}
+function cpLensVal(n){if(!cpField||!cpLensPos)return null;const q=cpLensPos[n.id];if(!q)return null;const r=Math.hypot(q[0],q[1]);return Math.max(0,1-r)}
+function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('div','cpemb');box.append(hh('b','','Embedding'));
+ const lv=cpLensVal(n);box.append(hh('div','','Field location (seen from above): x '+f[0].toFixed(3)+', y '+f[1].toFixed(3)+(lv!==null?' · seen from '+cpObsLabel+': '+lv.toFixed(2)+' (1 = at the centre of the observer\'s view)':'')));
+ const nb=__CP.nearest(n.id,3),NAMES={d:'Domains',t:'Topics',c:'Concepts',s:'Skills',a:'Agents',m:'MCP servers'};
+ for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const row=hh('div','');row.append(hh('span','cpembk',NAMES[k]+': '));
+  nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
+ b.append(box)}
 function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
 // domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
 const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
@@ -139,7 +146,7 @@ function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewK
  cpNewCache=s;cpNewKey=ids;return s}
 function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDomBtn',cpDomOn);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
 function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cpSetBtns();draw()}};
- on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
+ on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn;vis.domain=cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
  on('cpAllBtn',()=>{cpOnlyNew=false});on('cpNewBtn',()=>{cpOnlyNew=true;cpNewCache=null;if(!Object.keys(packs).length){tpSt.msg='No generated topics yet: build a request below, generate the pack in Claude, paste it and Add to graph.';tpSt.cls='';const tb=$('topicsBox');if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}});
  cpSetBtns();
  // layout and view are part of the app state
@@ -158,7 +165,10 @@ function cpHostReq(method,params){return new Promise((res,rej)=>{const id='cp-'+
 function cpHostNote(method,params){window.parent.postMessage({jsonrpc:'2.0',method,params},'*')}
 function cpApplyArgs(a){if(!a||typeof a!=='object')return;
  if(typeof a.topic_id==='string'&&N['t:'+a.topic_id]){select('t:'+a.topic_id);draw()}
- if(typeof a.task==='string'&&a.task.trim()){const ti=$('taskIn'),go=$('taskGo');if(ti&&go){ti.value=a.task.slice(0,500);go.click()}}}
+ if(typeof a.domain==='string'&&__CP.domains.some(d=>d.id===a.domain)){V3.bf.domain=a.domain;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)}
+ if((a.mode==='lens'||a.mode==='flat')&&$('taskMode'))$('taskMode').value=a.mode;
+ if(typeof a.task==='string'&&a.task.trim()){const ti=$('taskIn'),go=$('taskGo');if(ti&&go){ti.value=a.task.slice(0,500);go.click()}}
+ if(a.field===true&&!cpField){cpField=true;cpSetBtns();draw()}}
 window.addEventListener('message',e=>{if(e.source!==window.parent||window.parent===window)return;const m=e.data;if(!m||m.jsonrpc!=='2.0')return;
  if(m.id!==undefined&&cpHost.wait[m.id]&&(('result' in m)||('error' in m))){const w=cpHost.wait[m.id];delete cpHost.wait[m.id];m.error?w.rej(m.error):w.res(m.result);return}
  if(m.method==='ui/notifications/tool-input')cpApplyArgs((m.params||{}).arguments);
@@ -180,7 +190,7 @@ function cpGenerateFor(task){const tb=$('topicsBox');tpSt.topic=String(task||'')
   b.onclick=()=>{const how=cpAskHost(ta.value);tpSt.msg=how==='sent'?'Sent to Claude. Paste the JSON it returns below (or it may add it for you).':how==='copied'?'Copied. Paste it into Claude (with the Maxey0 Context Plane connector or plugin), then paste the JSON it returns below.':'Select the request text and copy it into Claude.';tpSt.cls='';const m=$('tpMsg');if(m)m.textContent=tpSt.msg};ta.after(b)}
  cpNewCache=null;return r}}
 {const _rg=refreshGraph;refreshGraph=function(){cpNewCache=null;return _rg.apply(this,arguments)}}
-function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill','concept','topic'];
+function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill','concept','topic','domain'];
  const ring=(r,z)=>{const pts=[];for(let i=0;i<=S;i++){const a=i/S*2*Math.PI;pts.push(project({z},w,h,{x:Math.cos(a)*r,y:Math.sin(a)*r}))}return pts};
  const path=pts=>pts.forEach((o,i)=>i?cx.lineTo(o.sx,o.sy):cx.moveTo(o.sx,o.sy));
  // far levels first so nearer donuts paint over them
@@ -192,15 +202,15 @@ function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill
   cx.setLineDash([2,4]);cx.strokeStyle=c+'33';cx.beginPath();path(ring(cpRing(),ZP[k]));cx.stroke();cx.setLineDash([]);
   const lab=o.reduce((m,p)=>p.sx>m.sx?p:m,o[0]);cx.fillStyle=c;cx.font='10px system-ui';cx.textAlign='start';cx.fillText(k==='mcp'?'MCP SERVERS (GATES)':LBL[k].toUpperCase()+'S',lab.sx+6,lab.sy+3)}
  // the vertical axis through every level
- const top=project({z:ZP.topic+90},w,h,{x:0,y:0}),bot=project({z:ZP.mcp-90},w,h,{x:0,y:0});cx.beginPath();cx.moveTo(top.sx,top.sy);cx.lineTo(bot.sx,bot.sy);cx.strokeStyle='#ffffff22';cx.lineWidth=1;cx.stroke()}
+ const top=project({z:ZP.domain+90},w,h,{x:0,y:0}),bot=project({z:ZP.mcp-90},w,h,{x:0,y:0});cx.beginPath();cx.moveTo(top.sx,top.sy);cx.lineTo(bot.sx,bot.sy);cx.strokeStyle='#ffffff22';cx.lineWidth=1;cx.stroke()}
 function cpFit(){const r=cv.getBoundingClientRect();if(cpAnim){cancelAnimationFrame(cpAnim);cpAnim=null}cpM=cpM0();cpPanX=0;cpPanY=0;
  // zoom so the full stack (top donut to bottom donut) fits the canvas height and the donut fits its width
- const span=(ZP.topic-ZP.mcp)*Math.sin(1.0)+2*cpOut()*Math.cos(1.0)+80;zoom=Math.max(.08,Math.min(8,Math.min(r.height/(span*1.15),r.width/(2.3*cpOut()*1.15))));draw()}
+ const span=(ZP.domain-ZP.mcp)*Math.sin(1.0)+2*cpOut()*Math.cos(1.0)+80;zoom=Math.max(.08,Math.min(8,Math.min(r.height/(span*1.15),r.width/(2.3*cpOut()*1.15))));draw()}
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
@@ -227,7 +237,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-.cpview .cpsep{width:12px}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
+.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -399,7 +409,13 @@ window.__cpLoad = async function () {
         const f = field[id] || [0, 0], ang = Math.atan2(f[1] - c0[1], f[0] - c0[0]), r = 1 - Math.sqrt(a); pos[id] = [r * Math.cos(ang), r * Math.sin(ang)] } }
     return pos };
   const domains = g.domains.map(d => ({ id: d.id, label: d.label, desc: d.desc }));
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom };
+  /** nearest(appId, k): the k nearest nodes on every level to one node, by cosine in the shared space (server tool: nearest). */
+  const nearest = (id, k) => { const v = U[id]; if (!v) return {}; const out = {};
+    for (const a in U) { if (a === id) continue; const lv = a.slice(0, a.indexOf(':')); const sc = dotu(v, U[a]); if (sc <= 0) continue; (out[lv] = out[lv] || []).push([a, sc]) }
+    // a domain is as near as its nearest topic (domain vectors are broad centroids)
+    if (out.t) { const best = {}; for (const [a, sc] of out.t) { const d = tDom[a.slice(2)]; if (d && (!(d in best) || sc > best[d])) best[d] = sc } out.d = Object.entries(best).map(([d, sc]) => ['d:' + d, sc]) }
+    for (const lv in out) out[lv] = out[lv].sort((x, y) => y[1] - x[1]).slice(0, k || 3).map(([a, sc]) => [a, r4(sc)]); return out };
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest };
 };
 </script>
 """.replace("__DEFAULT_API__", DEFAULT_API)
@@ -619,7 +635,7 @@ def main():
       "function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.dataset.w)return;bt.dataset.w='1';\n if($('bfDomain'))$('bfDomain').onchange=()=>{V3.bf.domain=$('bfDomain').value;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)};", "domain wire")
     # observer lens + domains in the graph and the task panel (server parity: route_task mode "lens")
     h = once(h, " cpDrawRings(w,h);\n const rel=relNow()", " cpDrawRings(w,h);cpLensSync();\n const rel=relNow()", "lens sync before projection")
-    h = once(h, " drawSCW(P,w,h);const lines=[];", " drawSCW(P,w,h);cpDrawDomains(P);const lines=[];", "domain labels")
+    h = once(h, " drawSCW(P,w,h);const lines=[];", " drawSCW(P,w,h);const lines=[];", "domain labels")
     h = once(h, "  if(!dim&&v03IsUp(n)){cx.beginPath();", "  if(cpDomOn&&n.kind==='topic'){const d=__CP.tDom[n.id.slice(2)];if(d){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.2,0,6.2832);cx.strokeStyle=cpDomCol(d);cx.lineWidth=2;cx.stroke()}}\n  if(!dim&&v03IsUp(n)){cx.beginPath();", "domain ring on topics")
     h = once(h, '<div class="cpview row" id="cpView"><button type="button" id="cpFieldBtn"',
       '<div class="cpview row" id="cpView"><button type="button" id="cpDomBtn" class="on" aria-pressed="true" title="Show each topic\'s domain as a coloured ring and label each domain where its topics are">Domains</button><button type="button" id="cpFieldBtn"', "domains button")
@@ -633,6 +649,28 @@ def main():
       "E.filter(e=>e.kind==='agent'&&e.a===id).forEach(e=>{taskSet.add(e.b);G.filter(g=>g.a===e.b).forEach(g=>taskSet.add(g.b))});if(LR)LR.chain.forEach(l=>l.selected.forEach(x=>taskSet.add(x.app)))}\n renderExec();draw();return task}", "lens chain highlighted")
     h = once(h, "$('taskClr').onclick=()=>{task=null;", "$('taskClr').onclick=()=>{task=null;cpLensOut();", "clear lens readout")
     h = once(h, '<button type="button" id="cpFieldBtn"', '<span id="cpObs" class="cpobs">Observer: above the graph</span><button type="button" id="cpFieldBtn"', "observer readout")
+    # DOMAIN LEVEL: domains are the sixth level of the graph (server, paper and spec already have six)
+    h = once(h, "COL={topic:'#f3c969',", "COL={domain:'#f4f1ff',topic:'#f3c969',", "domain colour")
+    h = once(h, "ZP={topic:360,", "ZP={domain:540,topic:360,", "domain plane height")
+    h = once(h, "RAD={topic:85,", "RAD={domain:150,topic:85,", "domain ring radius")
+    h = once(h, "LBL={topic:'Topic',", "LBL={domain:'Domain',topic:'Topic',", "domain label")
+    h = once(h, "vis={topic:true,", "vis={domain:true,topic:true,", "domain visible")
+    h = once(h, "lbl={topic:true,", "lbl={domain:true,topic:true,", "domain labels on")
+    h = once(h, "types.forEach(t=>add('t:'+t,'topic',", "__CP.domains.forEach(d=>add('d:'+d.id,'domain',d.label,{desc:d.desc,raw:d.id}));\ntypes.forEach(t=>{const dm=__CP.tDom[t];if(dm&&N['d:'+dm])E.push({a:'d:'+dm,b:'t:'+t,kind:'tree'})});\ntypes.forEach(t=>add('t:'+t,'topic',", "domain nodes + domain->topic edges")
+    h = once(h, "a0+=span}\n const ang={};aIds.forEach(a=>{", "a0+=span}\n  __CP.domains.forEach(d=>{const ts=types.filter(t=>__CP.tDom[t]===d.id).map(t=>N['t:'+t]);if(!ts.length||!N['d:'+d.id])return;const x=ts.reduce((s,n)=>s+Math.cos(Math.atan2(n.y,n.x)),0),y=ts.reduce((s,n)=>s+Math.sin(Math.atan2(n.y,n.x)),0);pl(N['d:'+d.id],Math.atan2(y,x),RAD.domain)});\n const ang={};aIds.forEach(a=>{", "domain placed over its topics")
+    h = once(h, "rad=({topic:7,concept:6,", "rad=({domain:9,topic:7,concept:6,", "domain node size")
+    h = once(h, "function nodeCol(n){return v03IsUp(n)?UPC[n.kind]:COL[n.kind]}", "function nodeCol(n){return n.kind==='domain'?cpDomCol(n.raw):v03IsUp(n)?UPC[n.kind]:COL[n.kind]}", "domain node colour")
+    h = once(h, "\n if(n.kind==='topic'){E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);", "\n if(n.kind==='domain'){E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);E.filter(x=>x.a===e.b).forEach(x=>s.add(x.b))});return s}\n if(n.kind==='topic'){E.filter(e=>e.b===id&&e.a.startsWith('d:')).forEach(e=>s.add(e.a));E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);", "domain in related()")
+    h = once(h, '<button id="lT" class="on">T</button>', '<button id="lD" class="on" title="Domain labels">D</button><button id="lT" class="on">T</button>', "D label button")
+    h = once(h, "[['lT','topic'],['lC','concept']", "[['lD','domain'],['lT','topic'],['lC','concept']", "D label wiring")
+    h = once(h, "['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='')", "['lD','lT','lC','lS','lA','lM'].forEach(i=>$(i).className='')", "None clears D")
+    h = once(h, "$('metrics').innerHTML='';[['Topics',c('topic')],", "$('metrics').innerHTML='';[['Domains',c('domain')],['Topics',c('topic')],", "domains metric")
+    h = once(h, "  if(n.kind==='topic')return (!T||n.id==='t:'+T)&&tOk(n.id.slice(2));", "  if(n.kind==='domain')return !DM||n.id==='d:'+DM;\n  if(n.kind==='topic')return (!T||n.id==='t:'+T)&&tOk(n.id.slice(2));", "domain in browse filter")
+    # EMBEDDING VALUES in Details: field location, the observer's value for this node, nearest nodes on every level
+    h = once(h, "const d=document.createElement('p');d.textContent=n.desc||'';b.append(h,k,d);", "const d=document.createElement('p');d.textContent=n.desc||'';b.append(h,k,d);cpEmbedDetail(b,n);", "embedding block in Details")
+    # LENS HEAT: in the embedding field with an observer inside the graph, nodes the observer barely explains fade
+    h = once(h, "const m=match(n),dim=(rel&&!rel.has(n.id))||!m,", "const m=match(n),lv=cpLensVal(n),dim=(rel&&!rel.has(n.id))||!m||(lv!==null&&lv<.12&&!(rel&&rel.has(n.id))),", "lens heat")
+    h = once(h, "(rel&&rel.has(n.id)&&(msel.size<2", "(rel&&rel.has(n.id)&&!(sel&&sel.startsWith('d:')&&n.kind!=='topic'&&n.kind!=='domain')&&(msel.size<2", "a selected domain labels its topics only")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):

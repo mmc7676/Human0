@@ -40,7 +40,7 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
   ok(r.shell === 0, "one app: no Human0 shell, toolbar, other apps or whole-app state bar (" + r.shell + " left)");
   ok(r.fold && !r.fold.open && !r.fold.sticky, "app state bar folded, closed, not sticky");
   ok(!r.oldBanner && r.headerH <= 100, "no full-width banner; header stays compact (" + Math.round(r.headerH) + "px)");
-  ok(r.nodes === graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length, "node count");
+  ok(r.nodes === graph.domains.length + graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length, "node count");
   ok(r.agents === graph.agents.length && r.servers === graph.mcp.length && r.gates === graph.agent_mcp.length, "agents/servers/gates");
   ok(r.topicOpts === graph.topics.length + 1 && r.conceptOpts === graph.concepts.length + 1, "topic and concept selectors");
   ok(r.logo && r.sliders, "Human0 logo shown, retired sliders hidden");
@@ -112,6 +112,24 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
       bt.value = ''; bt.dispatchEvent(new Event('change')); document.getElementById('cpFieldBtn').click();
       return { label: o.label, own: mean(own), rest: mean(rest) } });
     ok(/Quantum/.test(t.label) && t.own < 0.8 * t.rest, "topic observer: own concepts " + t.own.toFixed(1) + " vs others " + t.rest.toFixed(1) + " from the centre");
+  }
+
+  // 1f. domains are the sixth level; embedding values are shown; host arguments carry domain, mode and field
+  {
+    const r = await p.evaluate(() => { const v = window.__cpv, g = v.graph(), $ = id => document.getElementById(id);
+      const dn = g.domains.map(d => v.node('d:' + d.id)).filter(Boolean);
+      const met = [...$('metrics').querySelectorAll('.metric')].map(m => m.textContent);
+      v.select('t:quantum-physics'); const det = $('detail').textContent;
+      v.select('d:business-finance'); const det2 = $('detail').textContent;
+      v.apply({ domain: 'business-finance', mode: 'lens', task: 'price a European call option', field: true });
+      const o = v.observer(), mode = $('taskMode').value, field = v.field().on, lo = $('lensOut').textContent;
+      $('taskClr').click(); $('taskMode').value = 'flat'; if (v.field().on) $('cpFieldBtn').click();
+      $('bfDomain').value = ''; $('bfDomain').dispatchEvent(new Event('change'));
+      return { dn: dn.length, z: dn.every(n => n.kind === 'domain' && n.z > v.node('t:quantum-physics').z), met, det, det2, o: o.label, mode, field, lo } });
+    ok(r.dn === graph.domains.length && r.z, "domain level: " + r.dn + " domain nodes above the topic plane");
+    ok(r.met.some(m => /^11\s*Domains/i.test(m.trim())), "metrics include domains: " + r.met[0]);
+    ok(/Embedding/.test(r.det) && /Field location/.test(r.det) && /Agents: /.test(r.det) && /Topics: /.test(r.det2), "embedding values in Details");
+    ok(r.mode === 'lens' && r.field && /from Business, Finance and Economics/.test(r.lo) && /routed task \(lens\)/.test(r.o), "host args: domain + lens + field: " + r.lo.slice(0, 60));
   }
 
   // 2. gates = the server's agent->MCP links, exactly

@@ -291,9 +291,16 @@ export class Graph {
       const p = k.indexOf(":"), lv = k.slice(0, p), id = k.slice(p + 1);
       out.push({ level: NAME[lv], id, label: this.labelOf(lv, id), score: Math.round(sc * 1e4) / 1e4, xy: XY[k] });
     }
+    // a domain is as near as its nearest topic (domain vectors are broad centroids of their topics)
+    if (!want || want === "d") {
+      for (let i = out.length - 1; i >= 0; i--) if (out[i].level === "domain") out.splice(i, 1);
+      const best: Record<string, number> = {};
+      for (const k in V) { if (!k.startsWith("t:") || k === src) continue; const sc = cos(q, V[k]); const d = this.topic.get(k.slice(2))?.domain; if (d && sc > 0 && sc > (best[d] ?? 0)) best[d] = sc; }
+      for (const d in best) out.push({ level: "domain", id: d, label: this.labelOf("d", d), score: Math.round(best[d] * 1e4) / 1e4, xy: XY["d:" + d] });
+    }
     out.sort((x, y) => y.score - x.score || (x.id < y.id ? -1 : 1));
     return { from: src ? { level: NAME[src.slice(0, 1)], id: a.node_id, xy: XY[src] } : { text: a.text }, level: a.level ?? "all",
-      method: "TF-IDF cosine in the shared six-level field (coverage rule applies)", field: this.g.field.method, results: out.slice(0, lim) };
+      method: "TF-IDF cosine in the shared six-level field (coverage rule applies); a domain scores as its nearest topic", field: this.g.field.method, results: out.slice(0, lim) };
   }
   labelOf(lv: string, id: string): string {
     switch (lv) {

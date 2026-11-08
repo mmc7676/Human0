@@ -59,7 +59,7 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 <div class="row opts" id="scwOpts" style="display:none"><label>Execution SCWs (agent + its MCP gates) <select id="oA"><option value="off">off</option><option value="sel" selected>selected agents</option><option value="all">all agents</option></select></label></div>
 </div></details>
 <details class="cs" id="cs_labels" open><summary>Labels &amp; numbering</summary><div class="cs-b">
-<div class="row"><label>Labels</label><button id="lT" class="on">T</button><button id="lC">C</button><button id="lS">S</button><button id="lA">A</button><button id="lM">M</button><button id="lOff">None</button><button id="lAll">All</button></div>
+<div class="row"><label>Labels</label><button id="lD" class="on" title="Domain labels">D</button><button id="lT" class="on">T</button><button id="lC">C</button><button id="lS">S</button><button id="lA">A</button><button id="lM">M</button><button id="lOff">None</button><button id="lAll">All</button></div>
 <div class="row"><label>Agent label</label><select id="agLab" style="width:auto"><option value="name">name</option><option value="index">MaxeyN index</option><option value="both">both</option></select><button id="idClr">Clear IDs</button><button id="idRst">Reset IDs</button><button id="idReg">Registry</button></div>
 <div class="row"><label>SCW labels</label><button id="scwLab" class="on">SCWn on</button><button id="scwRst">Reset numbering</button><button id="scwDel">Delete custom loops</button></div>
 </div></details>
@@ -125,7 +125,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-.cpview .cpsep{width:12px}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
+.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -297,16 +297,22 @@ window.__cpLoad = async function () {
         const f = field[id] || [0, 0], ang = Math.atan2(f[1] - c0[1], f[0] - c0[0]), r = 1 - Math.sqrt(a); pos[id] = [r * Math.cos(ang), r * Math.sin(ang)] } }
     return pos };
   const domains = g.domains.map(d => ({ id: d.id, label: d.label, desc: d.desc }));
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom };
+  /** nearest(appId, k): the k nearest nodes on every level to one node, by cosine in the shared space (server tool: nearest). */
+  const nearest = (id, k) => { const v = U[id]; if (!v) return {}; const out = {};
+    for (const a in U) { if (a === id) continue; const lv = a.slice(0, a.indexOf(':')); const sc = dotu(v, U[a]); if (sc <= 0) continue; (out[lv] = out[lv] || []).push([a, sc]) }
+    // a domain is as near as its nearest topic (domain vectors are broad centroids)
+    if (out.t) { const best = {}; for (const [a, sc] of out.t) { const d = tDom[a.slice(2)]; if (d && (!(d in best) || sc > best[d])) best[d] = sc } out.d = Object.entries(best).map(([d, sc]) => ['d:' + d, sc]) }
+    for (const lv in out) out[lv] = out[lv].sort((x, y) => y[1] - x[1]).slice(0, k || 3).map(([a, sc]) => [a, r4(sc)]); return out };
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest };
 };
 </script>
 <script>(async()=>{'use strict';
 const __CP=await window.__cpLoad();const D=__CP.D,M=__CP.M;
 const $=id=>document.getElementById(id);
-const COL={topic:'#f3c969',concept:'#66d9e8',skill:'#87d8a7',agent:'#b9a1ff',mcp:'#ff7aa8'};
-const ZP={topic:360,concept:180,skill:0,agent:-180,mcp:-360};
-const RAD={topic:85,concept:150,skill:205,agent:260,mcp:260};
-const LBL={topic:'Topic',concept:'Concept',skill:'Skill',agent:'Agent',mcp:'MCP server'};
+const COL={domain:'#f4f1ff',topic:'#f3c969',concept:'#66d9e8',skill:'#87d8a7',agent:'#b9a1ff',mcp:'#ff7aa8'};
+const ZP={domain:540,topic:360,concept:180,skill:0,agent:-180,mcp:-360};
+const RAD={domain:150,topic:85,concept:150,skill:205,agent:260,mcp:260};
+const LBL={domain:'Domain',topic:'Topic',concept:'Concept',skill:'Skill',agent:'Agent',mcp:'MCP server'};
 const RC={primary:'#ff9d5c',checker:'#5cc8ff',support:'#8a7cc8'};
 const cap=s=>s[0].toUpperCase()+s.slice(1),slug=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-');
 // ---- semantic lexicon (transparent; domain tags shared by agents and servers)
@@ -342,6 +348,8 @@ function buildModel(){
 Object.keys(N).forEach(k=>delete N[k]);E.length=0;Object.keys(cTopic).forEach(k=>delete cTopic[k]);
 regSlug={};for(const[k,n]of Object.entries(D.agents))regSlug[slug(n)]=k;
 types=[...new Set(D.concepts.map(c=>c[2]))];
+__CP.domains.forEach(d=>add('d:'+d.id,'domain',d.label,{desc:d.desc,raw:d.id}));
+types.forEach(t=>{const dm=__CP.tDom[t];if(dm&&N['d:'+dm])E.push({a:'d:'+dm,b:'t:'+t,kind:'tree'})});
 types.forEach(t=>add('t:'+t,'topic',(TOPIC_META[t]&&TOPIC_META[t].label)||cap(t),{desc:(TOPIC_META[t]&&TOPIC_META[t].desc)||'Derived from concept_type.'}));
 D.concepts.forEach(c=>{cTopic[c[0]]='t:'+c[2];add('c:'+c[0],'concept',c[1],{desc:c[3],raw:c[0]});E.push({a:'t:'+c[2],b:'c:'+c[0],kind:'tree'})});
 agentSkills={};
@@ -363,8 +371,8 @@ GP=pca();mIds.forEach((m,i)=>{N[m].x=GP[i][0]*RAD.mcp;N[m].y=GP[i][1]*RAD.mcp});
 buildModel();
 (()=>{for(const id of['k','t']){const el=document.getElementById(id);const r=el&&el.closest('.row');if(r){r.hidden=true;r.style.display='none'}}const t=document.getElementById('t');const row=t&&t.closest('.row');if(row){const n=document.createElement('div');n.className='cpnote';n.textContent='Gates come from the Maxey0 Context Plane server: derived (TF-IDF cosine >= 0.10), inherited (a checker holds its primary\'s servers) or declared. Manual gate toggles still apply on top.';row.after(n)}})();
 // ---- state
-let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=null,scwOn=false,scwOpt={agents:'sel'},lbl={topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,lblX={},bubbles=[],GC={},sel=null,hov=null,showAg=true,showGt=true,iso=false,spin=false,spinT=null,tab='a',q='',rot=-.35,tilt=1.0,zoom=.6,drag=null,pts=[];
-const vis={topic:true,concept:true,skill:true,agent:true,mcp:true};
+let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=null,scwOn=false,scwOpt={agents:'sel'},lbl={domain:true,topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,lblX={},bubbles=[],GC={},sel=null,hov=null,showAg=true,showGt=true,iso=false,spin=false,spinT=null,tab='a',q='',rot=-.35,tilt=1.0,zoom=.6,drag=null,pts=[];
+const vis={domain:true,topic:true,concept:true,skill:true,agent:true,mcp:true};
 let G=[];
 function autoSet(a){return new Set((__CP.gates[a]||[]).filter(m=>N[m]))}
 function activeFor(a){if(gatesOff)return[];const ranked=mIds.map(m=>[m,S[a][m]]).sort((x,y)=>y[1]-x[1]),auto=autoSet(a);
@@ -375,6 +383,7 @@ function layoutAgents(){
  const tot=types.reduce((s,t)=>s+w('t:'+t),0);let a0=-Math.PI/2;
  for(const t of types){const id='t:'+t,span=w(id)/tot*2*Math.PI;pl(N[id],a0+span/2,RAD.topic);let c0=a0;
   for(const c of D.concepts.filter(c=>c[2]===t)){const sk=D.skills.filter(k=>k[1]===c[0]),cw=Math.max(1,sk.length),cs=cw/w(id)*span;pl(N['c:'+c[0]],c0+cs/2,RAD.concept);sk.forEach((s,i)=>{const a=c0+cs*(i+.5)/cw;pl(N['s:'+s[0]],a,RAD.skill);sang[s[0]]=a});c0+=cs}a0+=span}
+  __CP.domains.forEach(d=>{const ts=types.filter(t=>__CP.tDom[t]===d.id).map(t=>N['t:'+t]);if(!ts.length||!N['d:'+d.id])return;const x=ts.reduce((s,n)=>s+Math.cos(Math.atan2(n.y,n.x)),0),y=ts.reduce((s,n)=>s+Math.sin(Math.atan2(n.y,n.x)),0);pl(N['d:'+d.id],Math.atan2(y,x),RAD.domain)});
  const ang={};aIds.forEach(a=>{let x=0,y=0;E.forEach(e=>{if(e.kind==='agent'&&e.b===a){const t=sang[e.a.slice(2)];x+=Math.cos(t);y+=Math.sin(t)}});ang[a]=Math.atan2(y,x)});
  const order=[...aIds].sort((p,q)=>ang[p]-ang[q]);
  order.forEach((a,i)=>{const n=N[a],t=-Math.PI/2+i*2*Math.PI/order.length;n.sx=Math.cos(t)*RAD.agent;n.sy=Math.sin(t)*RAD.agent;n.ang=t});
@@ -383,11 +392,12 @@ function layoutAgents(){
  const gm=Math.max(1e-6,...aIds.filter(a=>N[a].gated).map(a=>Math.hypot(N[a].x,N[a].y)));aIds.forEach(a=>{const n=N[a];if(n.gated){n.x*=RAD.agent*.95/gm;n.y*=RAD.agent*.95/gm}})}
 function pl(n,a,r){n.x=Math.cos(a)*r;n.y=Math.sin(a)*r}
 function updateMetrics(){const c=k=>Object.values(N).filter(n=>n.kind===k).length,ng=aIds.filter(a=>N[a].gated).length;
- $('metrics').innerHTML='';[['Topics',c('topic')],['Concepts',c('concept')],['Skills',c('skill')],['Agents',c('agent')],['MCP servers',c('mcp')],[gatesOff?'Gate links (CLEARED)':'Gate links',G.length],['Multi-MCP agents',aIds.filter(a=>(GC[a]||0)>=2).length]].forEach(([l,v])=>{const d=document.createElement('div');d.className='metric';const b=document.createElement('b');b.textContent=v;const s=document.createElement('span');s.textContent=l;d.append(b,s);$('metrics').append(d)});
+ $('metrics').innerHTML='';[['Domains',c('domain')],['Topics',c('topic')],['Concepts',c('concept')],['Skills',c('skill')],['Agents',c('agent')],['MCP servers',c('mcp')],[gatesOff?'Gate links (CLEARED)':'Gate links',G.length],['Multi-MCP agents',aIds.filter(a=>(GC[a]||0)>=2).length]].forEach(([l,v])=>{const d=document.createElement('div');d.className='metric';const b=document.createElement('b');b.textContent=v;const s=document.createElement('span');s.textContent=l;d.append(b,s);$('metrics').append(d)});
  const nm=Object.keys(ovr).length+Object.keys(ovrK).length+(gatesOff?1:0);$('notes').textContent=(gatesOff?'ALL GATES ARE CLEARED — press Restore gate defaults. ':'')+'Agent→MCP links are DERIVED candidates: cosine between each agent (name + skills it serves) and each server (name + registry description + tool names) in a local lexical+domain space, not pretrained embeddings. '+ng+' of '+aIds.length+' agents sit at a gate-field location; others stay at their skill-angle slot. Overrides: '+nm+'. MCP directory: '+M.filter(m=>m[4]==='registry').length+' registry results (IDs verified via connector search), '+M.filter(m=>m[4]==='connected').length+' connected, '+M.filter(m=>m[4]==='session').length+' session servers'+(M.filter(m=>m[4]==='web-listed').length?', '+M.filter(m=>m[4]==='web-listed').length+' web-listed (existence checked on GitHub, never connected)':'')+'.'}
 function related(id){const s=new Set([id]),n=N[id];if(!n)return s;
  const up=sid=>{const c=N[sid].concept;s.add(sid);s.add('c:'+c);s.add(cTopic[c])},sk=a=>E.filter(e=>e.kind==='agent'&&e.b===a).map(e=>e.a),ags=sid=>E.filter(e=>e.kind==='agent'&&e.a===sid).map(e=>e.b),gm=a=>G.filter(g=>g.a===a).map(g=>g.b),ga=m=>G.filter(g=>g.b===m).map(g=>g.a);
- if(n.kind==='topic'){E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);E.filter(f=>f.kind==='tree'&&f.a===e.b).forEach(f=>{s.add(f.b);ags(f.b).forEach(a=>{s.add(a);gm(a).forEach(m=>s.add(m))})})})}
+ if(n.kind==='domain'){E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);E.filter(x=>x.a===e.b).forEach(x=>s.add(x.b))});return s}
+ if(n.kind==='topic'){E.filter(e=>e.b===id&&e.a.startsWith('d:')).forEach(e=>s.add(e.a));E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);E.filter(f=>f.kind==='tree'&&f.a===e.b).forEach(f=>{s.add(f.b);ags(f.b).forEach(a=>{s.add(a);gm(a).forEach(m=>s.add(m))})})})}
  else if(n.kind==='concept'){s.add(cTopic[n.raw]);E.filter(e=>e.kind==='tree'&&e.a===id).forEach(e=>{s.add(e.b);ags(e.b).forEach(a=>{s.add(a);gm(a).forEach(m=>s.add(m))})})}
  else if(n.kind==='skill'){up(id);ags(id).forEach(a=>{s.add(a);gm(a).forEach(m=>s.add(m))})}
  else if(n.kind==='agent'){sk(id).forEach(up);gm(id).forEach(m=>s.add(m))}
@@ -401,7 +411,7 @@ function draw(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;
  cpDrawRings(w,h);cpLensSync();
  const rel=relNow(),P={};pts=[];cpFanCompute(rel);
  for(const id in N){const n=N[id];if(!vis[n.kind])continue;const o=project(n,w,h);P[id]=o;pts.push({n,...o})}
- drawSCW(P,w,h);cpDrawDomains(P);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;lines.push(e)});if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
+ drawSCW(P,w,h);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;lines.push(e)});if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
 const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1,checker:.6,support:.4};
  const ew=e=>e.kind==='gate'?Math.min(1,e.w*e.w/wmax):e.kind==='agent'?(RW[e.role]||.4):.5;
  for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;if(cpOnlyNew&&!(cpNewSet().has(e.a)&&cpNewSet().has(e.b)))continue;const on=rel&&rel.has(e.a)&&rel.has(e.b);if(iso&&rel&&!on)continue;const t=ew(e);
@@ -410,12 +420,12 @@ const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1
   else{const base=e.kind==='gate'?COL.mcp:COL.agent;cx.strokeStyle=lerpHex(BG,base,on?.35+.65*t:.25+.35*t)+(on?'ee':(rel?'28':'88'));cx.lineWidth=on?.8+2.4*t:.5+.7*t;cx.setLineDash(e.src==='manual'?[4,3]:[])}
   v03EdgeTint(e,rel&&!on);cx.stroke();cx.setLineDash([]);if(on){str[e.a]=Math.max(str[e.a]||0,t);str[e.b]=Math.max(str[e.b]||0,t)}}
  pts.sort((a,b)=>b.zz-a.zz);
- for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;if(cpOnlyNew&&!cpNewSet().has(n.id))continue;const m=match(n),dim=(rel&&!rel.has(n.id))||!m,rad=({topic:7,concept:6,skill:3.6,agent:5,mcp:6.5})[n.kind]*o.p+1+(v03IsUp(n)?1.8:0);cx.globalAlpha=dim?.2:1;cx.beginPath();
+ for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;if(cpOnlyNew&&!cpNewSet().has(n.id))continue;const m=match(n),lv=cpLensVal(n),dim=(rel&&!rel.has(n.id))||!m||(lv!==null&&lv<.12&&!(rel&&rel.has(n.id))),rad=({domain:9,topic:7,concept:6,skill:3.6,agent:5,mcp:6.5})[n.kind]*o.p+1+(v03IsUp(n)?1.8:0);cx.globalAlpha=dim?.2:1;cx.beginPath();
   if(n.kind==='mcp'){cx.rect(o.sx-rad,o.sy-rad,rad*2,rad*2)}else cx.arc(o.sx,o.sy,rad,0,6.2832);cx.fillStyle=(rel&&rel.has(n.id)&&str[n.id]!==undefined)?lerpHex(BG,nodeCol(n),.4+.6*str[n.id]):nodeCol(n);cx.fill();cx.strokeStyle=sel===n.id?'#fff':(n.kind==='mcp'&&n.state!=='registry'?'#fff8':'#071321');cx.lineWidth=sel===n.id?2:(n.kind==='mcp'&&n.state!=='registry'?1.5:1);cx.stroke();
   if(cpDomOn&&n.kind==='topic'){const d=__CP.tDom[n.id.slice(2)];if(d){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.2,0,6.2832);cx.strokeStyle=cpDomCol(d);cx.lineWidth=2;cx.stroke()}}
   if(!dim&&v03IsUp(n)){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.5,0,6.2832);cx.strokeStyle=nodeCol(n);cx.lineWidth=1.2;cx.stroke()}
   if(!dim&&(msel.has(n.id)||taskSet.has(n.id))){cx.beginPath();cx.arc(o.sx,o.sy,rad+(msel.has(n.id)?6:4.5),0,6.2832);cx.strokeStyle=msel.has(n.id)?'#ffffff':'#ffffffaa';cx.setLineDash(msel.has(n.id)?[3,2]:[]);cx.lineWidth=1.4;cx.stroke();cx.setLineDash([])}
-  if(n.kind==='agent'&&!dim&&(GC[n.id]||0)>=2){cx.beginPath();cx.arc(o.sx,o.sy,rad+3,0,6.2832);cx.strokeStyle=COL.mcp;cx.lineWidth=1.2;cx.stroke()}const show=!dim&&(lbl[n.kind]||(!strict&&!lblX[n.kind]&&(sel===n.id||hov===n.id||(rel&&rel.has(n.id)&&(msel.size<2||n.kind!=='skill'||msel.has(n.id)||taskSet.has(n.id))))));if(show){cx.font=(n.kind==='topic'?'bold 12px':'11px')+' system-ui';cx.fillStyle='#e6f0fb';cx.textAlign='start';if(cpFanPos[n.id]&&n.kind!=='topic'){cx.save();cx.translate(o.sx,o.sy);cx.rotate(.62);cx.fillText(nodeLabel(n).slice(0,36),rad+3,4);cx.restore()}else cx.fillText(nodeLabel(n).slice(0,36),o.sx+rad+3,o.sy+4)}}
+  if(n.kind==='agent'&&!dim&&(GC[n.id]||0)>=2){cx.beginPath();cx.arc(o.sx,o.sy,rad+3,0,6.2832);cx.strokeStyle=COL.mcp;cx.lineWidth=1.2;cx.stroke()}const show=!dim&&(lbl[n.kind]||(!strict&&!lblX[n.kind]&&(sel===n.id||hov===n.id||(rel&&rel.has(n.id)&&!(sel&&sel.startsWith('d:')&&n.kind!=='topic'&&n.kind!=='domain')&&(msel.size<2||n.kind!=='skill'||msel.has(n.id)||taskSet.has(n.id))))));if(show){cx.font=(n.kind==='topic'?'bold 12px':'11px')+' system-ui';cx.fillStyle='#e6f0fb';cx.textAlign='start';if(cpFanPos[n.id]&&n.kind!=='topic'){cx.save();cx.translate(o.sx,o.sy);cx.rotate(.62);cx.fillText(nodeLabel(n).slice(0,36),rad+3,4);cx.restore()}else cx.fillText(nodeLabel(n).slice(0,36),o.sx+rad+3,o.sy+4)}}
  cx.globalAlpha=1}
 function pick(x,y){let b=null,dd=14;for(const o of pts){if(!match(o.n))continue;const d=Math.hypot(o.sx-x,o.sy-y);if(d<dd){dd=d;b=o.n}}return b}
 cv.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect(),n=cpDrag?pick(e.clientX-r.left,e.clientY-r.top):null;drag={x:e.clientX,y:e.clientY,m:false,node:(n&&e.button===0&&!e.altKey)?n.id:null,pan:e.button===2||e.button===1||e.altKey};cv.setPointerCapture(e.pointerId)});
@@ -432,7 +442,7 @@ function renderList(){const L=$('list');L.innerHTML='';
   b.textContent=n.kind==='agent'?(GC[n.id]||0)+' gates':n.kind==='mcp'?G.filter(g=>g.b===n.id).length+' agents':n.kind==='topic'?D.concepts.filter(c=>c[2]===n.id.slice(2)).length+' concepts':n.kind==='concept'?D.skills.filter(s=>s[1]===n.raw).length+' skills':v03IsUp(n)?'uploaded':'';if(v03IsUp(n)){d.style.borderLeft='4px solid '+nodeCol(n)}d.append(a,b);if(msel.has(n.id))d.className+=' ms';d.onclick=ev=>{(multiMode||ev.shiftKey||ev.ctrlKey||ev.metaKey)?addSel(n.id):select(n.id)};L.append(d)})}
 function chip(n){const c=document.createElement('span');c.className='ch';c.textContent=n.label.slice(0,36);c.style.borderColor=nodeCol(n);c.onclick=()=>select(n.id);return c}
 function shared(a,m){const out=[];N[a].dv.forEach((x,i)=>{if(x>0&&N[m].dv[i]>0)out.push(DOMS[i])});return out.join(', ')||'lexical overlap only'}
-function detail(){const b=$('detail');b.innerHTML='';if(selSCW){detailSCW(b);return}const n=N[sel];if(!n)return;const h=document.createElement('strong');h.textContent=n.label;const k=document.createElement('p');k.textContent=LBL[n.kind]+(n.state?' · '+n.state:'')+(n.uuid?' · '+n.uuid:'');k.style.color=nodeCol(n);const d=document.createElement('p');d.textContent=n.desc||'';b.append(h,k,d);
+function detail(){const b=$('detail');b.innerHTML='';if(selSCW){detailSCW(b);return}const n=N[sel];if(!n)return;const h=document.createElement('strong');h.textContent=n.label;const k=document.createElement('p');k.textContent=LBL[n.kind]+(n.state?' · '+n.state:'')+(n.uuid?' · '+n.uuid:'');k.style.color=nodeCol(n);const d=document.createElement('p');d.textContent=n.desc||'';b.append(h,k,d);cpEmbedDetail(b,n);
  if(n.kind==='agent'){const p=document.createElement('p');p.textContent='Candidate MCP gates — tick to set which gates place this agent'+(n.gated?' (field location is the weighted centroid of ticked gates)':' (no active gate: agent stays at its skill-angle slot)');b.append(p);
   const cr=document.createElement('div');cr.className='row';const ks=document.createElement('select');ks.style.width='auto';for(let i=0;i<=8;i++){const o=document.createElement('option');o.value=i;o.textContent=(i===0?'0 (cleared)':i)+' gates';ks.append(o)}ks.value=ovrK[n.id]!==undefined?ovrK[n.id]:K;
   ks.onchange=()=>{ovrK[n.id]=+ks.value;recompute();renderList();detail();draw()};
@@ -513,8 +523,8 @@ function detailSCW(b){const L=buildSCWs(),s=L.find(x=>x.id===selSCW);if(!s){b.in
 function exportObj(){const o=exportBase();o.params.agent_gate_counts=ovrK;o.params.gates_cleared=gatesOff;o.multi_mcp_agents=aIds.filter(a=>(GC[a]||0)>=2).map(a=>N[a].key);o.ontology={app:'Human0',top_level_environment:'SCW0',orchestrator:'Maxey0',note:'MaxeyN and SCWn are index labels, not names; an SCW exists only where context meets execution (agent + MCP gates), grouped for multi-agent/loop, all inside SCW0'};o.ids={agent_index:Object.fromEntries(aIds.map(a=>[N[a].key,idx[a]])),scw_registry:{...scwReg}};o.palette={...COL,scw:SC.agent,scw_guard:guardInfo};o.scw0_knowledge=jevKnowledge();o.topic_packs=Object.entries(packs).map(([id,r])=>({id,topic:r.pack.topic.label,added:r.added,levels:r.pack.provenance.levels,digest:'fnv1a32:'+fnv(JSON.stringify(r.pack))}));if(scwOn)o.scws=buildSCWs().map(scwManifest);return o}
 $('isoScw').onclick=e=>{scwOn=!scwOn;e.target.className='scwb'+(scwOn?' on':'');$('scwOpts').style.display=scwOn?'flex':'none';if(!scwOn)selSCW=null;detail();draw()};
 $('oA').onchange=e=>{scwOpt.agents=e.target.value;draw()};
-[['lT','topic'],['lC','concept'],['lS','skill'],['lA','agent'],['lM','mcp']].forEach(([i,k])=>$(i).onclick=e=>{lbl[k]=!lbl[k];lblX[k]=!lbl[k];if(lbl[k])strict=false;e.target.className=lbl[k]?'on':'';draw()});
-$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=false;lblX[k]=false});strict=true;['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='');draw()};
+[['lD','domain'],['lT','topic'],['lC','concept'],['lS','skill'],['lA','agent'],['lM','mcp']].forEach(([i,k])=>$(i).onclick=e=>{lbl[k]=!lbl[k];lblX[k]=!lbl[k];if(lbl[k])strict=false;e.target.className=lbl[k]?'on':'';draw()});
+$('lOff').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=false;lblX[k]=false});strict=true;['lD','lT','lC','lS','lA','lM'].forEach(i=>$(i).className='');draw()};
 $('lAll').onclick=()=>{Object.keys(lbl).forEach(k=>{lbl[k]=true;lblX[k]=false});strict=false;['lT','lC','lS','lA','lM'].forEach(i=>$(i).className='on');draw()};
 $('clrSel').onclick=()=>{sel=null;hov=null;selSCW=null;$('detail').innerHTML='<strong>Details</strong><p>Selection cleared.</p>';renderList();draw()};
 $('clrSearch').onclick=()=>{q='';$('search').value='';renderList();draw()};
@@ -1059,6 +1069,13 @@ function cpObserver(){if(typeof task!=='undefined'&&task&&task.lens&&task.lens.c
  return Object.keys(st).length?{st,label:lab}:null}
 function cpLensSync(){const o=cpObserver(),k=o?JSON.stringify(o.st):'';if(k===cpLensKey)return;cpLensKey=k;cpLensPos=o?__CP.lensLayout(o.st):null;cpObsLabel=o?o.label:'above the graph';
  const el=$('cpObs');if(el)el.textContent='Observer: '+cpObsLabel}
+function cpLensVal(n){if(!cpField||!cpLensPos)return null;const q=cpLensPos[n.id];if(!q)return null;const r=Math.hypot(q[0],q[1]);return Math.max(0,1-r)}
+function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('div','cpemb');box.append(hh('b','','Embedding'));
+ const lv=cpLensVal(n);box.append(hh('div','','Field location (seen from above): x '+f[0].toFixed(3)+', y '+f[1].toFixed(3)+(lv!==null?' · seen from '+cpObsLabel+': '+lv.toFixed(2)+' (1 = at the centre of the observer\'s view)':'')));
+ const nb=__CP.nearest(n.id,3),NAMES={d:'Domains',t:'Topics',c:'Concepts',s:'Skills',a:'Agents',m:'MCP servers'};
+ for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const row=hh('div','');row.append(hh('span','cpembk',NAMES[k]+': '));
+  nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
+ b.append(box)}
 function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
 // domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
 const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
@@ -1130,7 +1147,7 @@ function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewK
  cpNewCache=s;cpNewKey=ids;return s}
 function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDomBtn',cpDomOn);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
 function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cpSetBtns();draw()}};
- on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
+ on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn;vis.domain=cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
  on('cpAllBtn',()=>{cpOnlyNew=false});on('cpNewBtn',()=>{cpOnlyNew=true;cpNewCache=null;if(!Object.keys(packs).length){tpSt.msg='No generated topics yet: build a request below, generate the pack in Claude, paste it and Add to graph.';tpSt.cls='';const tb=$('topicsBox');if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}});
  cpSetBtns();
  // layout and view are part of the app state
@@ -1149,7 +1166,10 @@ function cpHostReq(method,params){return new Promise((res,rej)=>{const id='cp-'+
 function cpHostNote(method,params){window.parent.postMessage({jsonrpc:'2.0',method,params},'*')}
 function cpApplyArgs(a){if(!a||typeof a!=='object')return;
  if(typeof a.topic_id==='string'&&N['t:'+a.topic_id]){select('t:'+a.topic_id);draw()}
- if(typeof a.task==='string'&&a.task.trim()){const ti=$('taskIn'),go=$('taskGo');if(ti&&go){ti.value=a.task.slice(0,500);go.click()}}}
+ if(typeof a.domain==='string'&&__CP.domains.some(d=>d.id===a.domain)){V3.bf.domain=a.domain;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)}
+ if((a.mode==='lens'||a.mode==='flat')&&$('taskMode'))$('taskMode').value=a.mode;
+ if(typeof a.task==='string'&&a.task.trim()){const ti=$('taskIn'),go=$('taskGo');if(ti&&go){ti.value=a.task.slice(0,500);go.click()}}
+ if(a.field===true&&!cpField){cpField=true;cpSetBtns();draw()}}
 window.addEventListener('message',e=>{if(e.source!==window.parent||window.parent===window)return;const m=e.data;if(!m||m.jsonrpc!=='2.0')return;
  if(m.id!==undefined&&cpHost.wait[m.id]&&(('result' in m)||('error' in m))){const w=cpHost.wait[m.id];delete cpHost.wait[m.id];m.error?w.rej(m.error):w.res(m.result);return}
  if(m.method==='ui/notifications/tool-input')cpApplyArgs((m.params||{}).arguments);
@@ -1171,7 +1191,7 @@ function cpGenerateFor(task){const tb=$('topicsBox');tpSt.topic=String(task||'')
   b.onclick=()=>{const how=cpAskHost(ta.value);tpSt.msg=how==='sent'?'Sent to Claude. Paste the JSON it returns below (or it may add it for you).':how==='copied'?'Copied. Paste it into Claude (with the Maxey0 Context Plane connector or plugin), then paste the JSON it returns below.':'Select the request text and copy it into Claude.';tpSt.cls='';const m=$('tpMsg');if(m)m.textContent=tpSt.msg};ta.after(b)}
  cpNewCache=null;return r}}
 {const _rg=refreshGraph;refreshGraph=function(){cpNewCache=null;return _rg.apply(this,arguments)}}
-function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill','concept','topic'];
+function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill','concept','topic','domain'];
  const ring=(r,z)=>{const pts=[];for(let i=0;i<=S;i++){const a=i/S*2*Math.PI;pts.push(project({z},w,h,{x:Math.cos(a)*r,y:Math.sin(a)*r}))}return pts};
  const path=pts=>pts.forEach((o,i)=>i?cx.lineTo(o.sx,o.sy):cx.moveTo(o.sx,o.sy));
  // far levels first so nearer donuts paint over them
@@ -1183,15 +1203,15 @@ function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill
   cx.setLineDash([2,4]);cx.strokeStyle=c+'33';cx.beginPath();path(ring(cpRing(),ZP[k]));cx.stroke();cx.setLineDash([]);
   const lab=o.reduce((m,p)=>p.sx>m.sx?p:m,o[0]);cx.fillStyle=c;cx.font='10px system-ui';cx.textAlign='start';cx.fillText(k==='mcp'?'MCP SERVERS (GATES)':LBL[k].toUpperCase()+'S',lab.sx+6,lab.sy+3)}
  // the vertical axis through every level
- const top=project({z:ZP.topic+90},w,h,{x:0,y:0}),bot=project({z:ZP.mcp-90},w,h,{x:0,y:0});cx.beginPath();cx.moveTo(top.sx,top.sy);cx.lineTo(bot.sx,bot.sy);cx.strokeStyle='#ffffff22';cx.lineWidth=1;cx.stroke()}
+ const top=project({z:ZP.domain+90},w,h,{x:0,y:0}),bot=project({z:ZP.mcp-90},w,h,{x:0,y:0});cx.beginPath();cx.moveTo(top.sx,top.sy);cx.lineTo(bot.sx,bot.sy);cx.strokeStyle='#ffffff22';cx.lineWidth=1;cx.stroke()}
 function cpFit(){const r=cv.getBoundingClientRect();if(cpAnim){cancelAnimationFrame(cpAnim);cpAnim=null}cpM=cpM0();cpPanX=0;cpPanY=0;
  // zoom so the full stack (top donut to bottom donut) fits the canvas height and the donut fits its width
- const span=(ZP.topic-ZP.mcp)*Math.sin(1.0)+2*cpOut()*Math.cos(1.0)+80;zoom=Math.max(.08,Math.min(8,Math.min(r.height/(span*1.15),r.width/(2.3*cpOut()*1.15))));draw()}
+ const span=(ZP.domain-ZP.mcp)*Math.sin(1.0)+2*cpOut()*Math.cos(1.0)+80;zoom=Math.max(.08,Math.min(8,Math.min(r.height/(span*1.15),r.width/(2.3*cpOut()*1.15))));draw()}
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
@@ -1217,7 +1237,7 @@ const UPC={skill:'#ff8c00',agent:'#ce2029'};           // orange = uploaded skil
 const V3KEY='human0.v03.state.';
 const hh=(t,c,x,a)=>{const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;if(a)for(const k in a)e.setAttribute(k,a[k]);return e};
 function v03IsUp(n){return !!n&&((n.kind==='skill'&&V3.up.some(u=>u.kind==='skill'&&u.status==='mapped'&&u.id===n.raw))||(n.kind==='agent'&&V3.up.some(u=>u.kind==='agent'&&u.status==='mapped'&&u.id===n.key)))}
-function nodeCol(n){return v03IsUp(n)?UPC[n.kind]:COL[n.kind]}
+function nodeCol(n){return n.kind==='domain'?cpDomCol(n.raw):v03IsUp(n)?UPC[n.kind]:COL[n.kind]}
 function v03EdgeTint(e,dim){if(dim)return;const a=N[e.a],b=N[e.b];if(!a||!b)return;const ua=v03IsUp(a),ub=v03IsUp(b);if(!ua&&!ub)return;
  cx.strokeStyle=((ua&&a.kind==='agent')||(ub&&b.kind==='agent'))?UPC.agent+'cc':UPC.skill+'cc';cx.lineWidth=Math.max(cx.lineWidth,1.5)}
 
@@ -1226,6 +1246,7 @@ function v03Filter(items){const T=V3.bf.topic,C=V3.bf.concept,DM=V3.bf.domain;if
  const tOk=t=>!DM||(TOPIC_META[t]&&TOPIC_META[t].domain===DM);
  const cOk=cid=>(!C||cid===C)&&D.concepts.some(c=>c[0]===cid&&(!T||c[2]===T)&&tOk(c[2]));
  return items.filter(n=>{
+  if(n.kind==='domain')return !DM||n.id==='d:'+DM;
   if(n.kind==='topic')return (!T||n.id==='t:'+T)&&tOk(n.id.slice(2));
   if(n.kind==='concept')return cOk(n.raw);
   if(n.kind==='skill')return cOk(n.concept);

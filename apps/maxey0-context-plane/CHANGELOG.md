@@ -1,5 +1,12 @@
 # Changelog
 
+## Server 6.1.0 · App 1.4
+
+- **Domains are the sixth level of the graph:** one node per domain on a plane above the topics, linked to its topics, with a Domains count in Metrics and a **D** label button. The floating domain captions are gone.
+- **Embedding values are visible:** Details shows each node's field location, its value from the current observer, and its nearest nodes on every level; nodes the observer barely explains fade in the embedding field.
+- **Domain vectors** are now the centroid of their topics; a domain ranks in `nearest` as its nearest topic.
+- `open_context_plane_graph` takes `domain`, `mode` and `field`, and the app applies them.
+
 ## App 1.3
 
 - **Domains in the graph:** each topic carries its domain's colour, domains are labelled where their topics are, and a Domains toggle.

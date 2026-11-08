@@ -15,7 +15,7 @@ import { Graph, GraphData, ToolError, scopeTo } from "./graph";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "6.0.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.1.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -54,12 +54,14 @@ const DOM = { type: "string", description: "optional domain filter, one of: " + 
 const PRIO = { type: "boolean", description: "break exact score ties by the declared topic priority (default true)" };
 const TOOLS: ToolDef[] = [
   { name: "open_context_plane_graph", title: "Open the Maxey0 Context Plane Graph",
-    description: "Show the interactive 3D Maxey0 Context Plane Graph (domains -> topics -> concepts -> skills -> MaxeyN agents -> MCP servers). Optional 'task' routes a task and highlights its best path; optional 'topic_id' opens on one topic. Hosts without MCP Apps get a link to the same app.",
-    inputSchema: obj({ task: STR, topic_id: STR }), _meta: { ui: { resourceUri: APP_URI } },
+    description: "Show the interactive 3D Maxey0 Context Plane Graph (domains -> topics -> concepts -> skills -> MaxeyN agents -> MCP servers). Optional 'task' routes a task and highlights its best path; optional 'topic_id' opens on one topic; 'domain' starts the observer at a domain; 'mode' picks the router (flat or lens); 'field' opens the embedding-field view. Hosts without MCP Apps get a link to the same app.",
+    inputSchema: obj({ task: STR, topic_id: STR, domain: DOM, mode: { type: "string", enum: ["flat", "lens"] }, field: { type: "boolean" } }), _meta: { ui: { resourceUri: APP_URI } },
     run: (g, a) => {
       if (a.topic_id !== undefined && !g.g.topics.some((t) => t.id === a.topic_id)) throw new ToolError(`unknown topic_id '${String(a.topic_id)}'`);
-      const route = typeof a.task === "string" && a.task ? g.route_task({ task: a.task, limit: 1 }) as Json : null;
-      return { app_url: REQ_ORIGIN + "/app", task: a.task ?? null, topic_id: a.topic_id ?? null, best_route: route ? ((route.paths as Json[])[0] ?? null) : null,
+      if (a.domain !== undefined && !g.g.domains.some((d) => d.id === a.domain)) throw new ToolError(`unknown domain '${String(a.domain)}'`);
+      if (a.mode !== undefined && a.mode !== "flat" && a.mode !== "lens") throw new ToolError("mode must be 'flat' or 'lens'.");
+      const route = typeof a.task === "string" && a.task ? g.route_task({ task: a.task, limit: 1, mode: a.mode as string | undefined, domain: a.domain as string | undefined }) as Json : null;
+      return { app_url: REQ_ORIGIN + "/app", task: a.task ?? null, topic_id: a.topic_id ?? null, domain: a.domain ?? null, mode: a.mode ?? "flat", best_route: route ? ((route.paths as Json[])[0] ?? null) : null,
         note: "The graph opens in the conversation where the host supports MCP Apps; otherwise open app_url in a browser." };
     } },
   { name: "validate_topic_pack", title: "Validate a topic pack", description: "Check a generated human0.topic-pack/1 (from the topic-graph-generator prompt) against the schema and the live graph: unique ids, 3-8 concepts, one primary and one checker per skill, MCP rows with a verification source. Also lists the nearest existing topics. Validation only; nothing is written.",

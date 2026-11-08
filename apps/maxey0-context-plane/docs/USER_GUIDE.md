@@ -158,8 +158,9 @@ Everything below sits in the **Workspace** panel. Its first line, **App state & 
 | **720°** | Tumble the graph through two full turns and land where it started |
 | **Full screen** | Inside Claude only: ask Claude to show the app full screen |
 | **Fit view** | Reset rotation, zoom and pan so the whole graph fits |
-| **Domains** | Ring every topic in its domain's colour; label each domain where its topics are (in the embedding field, or the domain chosen in Browse & select) |
+| **Domains** | Show the domain level: the top plane of the graph, one node per domain in its own colour, linked to its topics; every topic also carries its domain's colour as a ring. **D** in Labels names them; selecting a domain lights up its topics |
 | **Observer** | Where the field is read from: *above the graph*, a chosen domain, topic or concept, or the routed task's lens chain |
+| **Embedding values** | Select any node: Details shows its field location, its value as seen from the current observer, and its three nearest nodes on every level (the same ranking as the server's `nearest` tool; a domain counts as near as its nearest topic). Click a neighbour to jump to it. In the embedding field with an observer inside the graph, nodes the observer barely explains fade |
 | **Embedding field** | Place nodes by the field. Seen from above the graph, every node sits at its location in the shared space, so nodes that mean the same thing line up across levels. Once the observer is inside the graph (a lens route, or a domain, topic or concept chosen), every plane below it is laid out from there: the chosen nodes at the centre, each other node as far out as the observer leaves it unexplained, in its field direction. Off: the ring layout |
 | **Show: Full graph / New topics only** | Show everything, or only topics you added (Part 7) |
 
