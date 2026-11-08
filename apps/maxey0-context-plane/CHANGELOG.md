@@ -1,5 +1,11 @@
 # Changelog
 
+## App 1.3
+
+- **Domains in the graph:** each topic carries its domain's colour, domains are labelled where their topics are, and a Domains toggle.
+- **Observer lens in the app:** a Flat / Observer lens router in Task, computing the same chain as the server's `route_task` mode `lens` (shared test fixture), with a readout of weights, signed support and ruled-out candidates.
+- **Embedding field follows the observer:** above the graph it shows the shared field; after a lens route, or a domain, topic or concept choice, each plane below the observer is laid out from where it stands. The current observer is shown beside the toolbar.
+
 ## Server 6.0.0 · App 1.2 · Plugin 0.4.0
 
 - **Domains and topics rebuilt from the concepts up.** 11 new domains replace the 5 old ones; 128 topics were formed from what their concepts, skills, agents and MCP servers have in common (all 711 concepts, 1,998 skills, 1,021 agents and 117 servers unchanged). Domain endpoints are now `/mcp/<domain id>` for the 11 domains. Each concept records the topic it came from (`source_topic`).

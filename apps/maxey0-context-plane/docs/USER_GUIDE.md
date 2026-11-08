@@ -141,7 +141,7 @@ Everything below sits in the **Workspace** panel. Its first line, **App state & 
 
 | Section | What it does |
 |---|---|
-| **Task** | Type a task, **Submit task**, **Clear task**; the result panel appears below |
+| **Task** | Choose the router (**Flat** or **Observer lens**), type a task, **Submit task**, **Clear task**; the result panel appears below. With **Observer lens**, a readout lists for each level the nodes chosen, their weight w, their signed support ψ and each branch's contribution, plus any candidates ruled out. A domain chosen in Browse & select becomes the lens's starting point |
 | **Metrics** | Live counts: topics, concepts, skills, agents, MCP servers, gate links, agents with two or more servers |
 | **Graph** | The 3D graph, its toolbar and legend |
 | **Details** | Everything about the selected node |
@@ -158,7 +158,9 @@ Everything below sits in the **Workspace** panel. Its first line, **App state & 
 | **720°** | Tumble the graph through two full turns and land where it started |
 | **Full screen** | Inside Claude only: ask Claude to show the app full screen |
 | **Fit view** | Reset rotation, zoom and pan so the whole graph fits |
-| **Embedding field** | Place every node at its location in the shared embedding field. All six levels use one space and one scale, so nodes that mean the same thing sit above each other. Off: the ring layout |
+| **Domains** | Ring every topic in its domain's colour; label each domain where its topics are (in the embedding field, or the domain chosen in Browse & select) |
+| **Observer** | Where the field is read from: *above the graph*, a chosen domain, topic or concept, or the routed task's lens chain |
+| **Embedding field** | Place nodes by the field. Seen from above the graph, every node sits at its location in the shared space, so nodes that mean the same thing line up across levels. Once the observer is inside the graph (a lens route, or a domain, topic or concept chosen), every plane below it is laid out from there: the chosen nodes at the centre, each other node as far out as the observer leaves it unexplained, in its field direction. Off: the ring layout |
 | **Show: Full graph / New topics only** | Show everything, or only topics you added (Part 7) |
 
 ### Reading the graph

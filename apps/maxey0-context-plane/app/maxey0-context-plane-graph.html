@@ -80,14 +80,14 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 </aside>
 <main class="panel">
 <details class="cs" id="cs_task" open><summary>Task</summary><div class="cs-b">
-<div class="taskbar"><input id="taskIn" placeholder="Describe a task for Human0 — it finds the matching path(s). Enter or Submit task." autocomplete="off"><button id="taskGo" class="scwb">Submit task</button><button id="taskClr">Clear task</button></div>
-<div id="taskMsg" role="status" aria-live="polite" hidden></div>
+<div class="taskbar"><select id="taskMode" aria-label="Router" title="Flat: rank every skill against the task. Observer lens: choose topics, then read concepts and skills from the chosen nodes (same as the server's route_task mode lens)"><option value="flat">Flat</option><option value="lens">Observer lens</option></select><input id="taskIn" placeholder="Describe a task for Human0 — it finds the matching path(s). Enter or Submit task." autocomplete="off"><button id="taskGo" class="scwb">Submit task</button><button id="taskClr">Clear task</button></div>
+<div id="taskMsg" role="status" aria-live="polite" hidden></div><div id="lensOut" class="cpnote" hidden></div>
 </div></details>
 <details class="cs" id="cs_metrics" open><summary>Metrics</summary><div class="cs-b">
 <div class="metrics" id="metrics"></div>
 </div></details>
 <details class="cs" id="cs_graph" open><summary>Graph</summary><div class="cs-b">
-<div class="cpview row" id="cpView"><button type="button" id="cpFieldBtn" title="Place every node by its location in the shared embedding field: one space and one scale on all six levels, so nodes that mean the same thing line up across levels">Embedding field</button><button type="button" id="cpFanBtn" class="on" title="When a path is isolated, spread each level's nodes side by side under their parents so every node and label is readable">Spread path</button><button type="button" id="cpDragBtn" class="on" title="Drag a node to move it sideways within its own level; drag empty space to rotate">Drag nodes</button><button type="button" id="cpResetBtn" title="Put dragged nodes back">Reset layout</button><button type="button" id="cp720Btn" title="Tumble the graph through two full turns about a tilted axis and land back where it started">720°</button><button type="button" id="cpHostFs" hidden title="Ask Claude to show the graph full screen">Full screen</button><button type="button" id="cpFitBtn" title="Reset rotation, tilt, zoom and pan so the whole graph is in view">Fit view</button><span class="cpsep"></span><span class="cplbl">Show</span><button type="button" id="cpAllBtn" class="on">Full graph</button><button type="button" id="cpNewBtn" title="Only the topics you generated and added in this app">New topics only</button></div>
+<div class="cpview row" id="cpView"><button type="button" id="cpDomBtn" class="on" aria-pressed="true" title="Show each topic's domain as a coloured ring and label each domain where its topics are">Domains</button><span id="cpObs" class="cpobs">Observer: above the graph</span><button type="button" id="cpFieldBtn" title="Place every node by its location in the shared embedding field: one space and one scale on all six levels, so nodes that mean the same thing line up across levels">Embedding field</button><button type="button" id="cpFanBtn" class="on" title="When a path is isolated, spread each level's nodes side by side under their parents so every node and label is readable">Spread path</button><button type="button" id="cpDragBtn" class="on" title="Drag a node to move it sideways within its own level; drag empty space to rotate">Drag nodes</button><button type="button" id="cpResetBtn" title="Put dragged nodes back">Reset layout</button><button type="button" id="cp720Btn" title="Tumble the graph through two full turns about a tilted axis and land back where it started">720°</button><button type="button" id="cpHostFs" hidden title="Ask Claude to show the graph full screen">Full screen</button><button type="button" id="cpFitBtn" title="Reset rotation, tilt, zoom and pan so the whole graph is in view">Fit view</button><span class="cpsep"></span><span class="cplbl">Show</span><button type="button" id="cpAllBtn" class="on">Full graph</button><button type="button" id="cpNewBtn" title="Only the topics you generated and added in this app">New topics only</button></div>
 <div class="graphbox"><canvas id="g" aria-label="five-plane hierarchy with MCP gates"></canvas></div>
 <div class="legend"><span><i class="dot" style="background:var(--t)"></i>Topic</span><span><i class="dot" style="background:var(--c)"></i>Concept</span><span><i class="dot" style="background:var(--s)"></i>Skill</span><span><i class="dot" style="background:var(--a)"></i>Agent</span><span><i class="dot" style="background:var(--m)"></i>MCP gate</span><span><i class="dot" style="background:var(--w)"></i>SCW (execution boundary)</span><span>shade = relationship strength <i class="grad"></i> gate links: cos² · skill→agent: role weight</span><span>Drag space: rotate any way · Shift+drag: roll · Right-drag: pan · Drag a node: move it on its level · Scroll: zoom · Click: select</span></div>
 </div></details>
@@ -125,7 +125,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-.cpview .cpsep{width:12px}.cpview .cplbl{font-size:11px;opacity:.7}
+.cpview .cpsep{width:12px}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -237,10 +237,67 @@ window.__cpLoad = async function () {
   const field = {};
   for (const [k, xy] of Object.entries((g.field && g.field.xy) || {})) {
     const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1);
-    const app = lv === 'm' ? midx[id] : (lv === 'd' ? null : lv + ':' + id);
+    const app = lv === 'm' ? midx[id] : lv + ':' + id;
     if (app) field[app] = xy;
   }
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field };
+  // ---- the observer lens: a mirror of the server's lens.ts (same equations, same lambda, same order) ----
+  const appKey = k => { const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1); return lv === 'm' ? midx[id] : lv + ':' + id };
+  const U = {};
+  for (const k in V) { const a = appKey(k); if (!a) continue; let n = 0; for (const w in V[k]) n += V[k][w] * V[k][w]; n = Math.sqrt(n) || 1;
+    const u = {}; for (const w in V[k]) u[w] = V[k][w] / n; U[a] = u }
+  const dotu = (a, b) => { const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b]; let s = 0;
+    for (const w in x) { const v = y[w]; if (v !== undefined) s += x[w] * v } return s };
+  const nrm = a => Math.sqrt(dotu(a, a));
+  const unitv = a => { const n = nrm(a); if (!n) return a; const o = {}; for (const w in a) o[w] = a[w] / n; return o };
+  const minus = (a, b, k) => { const o = { ...a }; for (const w in b) o[w] = (o[w] ?? 0) - k * b[w]; return o };
+  const LAMBDA = { topic: 0, concept: 0.5, skill: 0.3 }, BEAM = 3, KEEP = 0.6, DAMP = 0.1, r4 = x => Math.round(x * 1e4) / 1e4;
+  const LEVELS = [['topic', 't', g.topics.map(t => t.id)], ['concept', 'c', g.concepts.map(c => c.id)], ['skill', 's', g.skills.map(s => s.id)]];
+  const tDom = Object.fromEntries(g.topics.map(t => [t.id, t.domain]));
+  /** lens(text, domains) -> {chain, skills, remaining_task}, the same chain the server's route_task returns with mode "lens". */
+  const lens = (text, domains) => {
+    const doms = domains || [], q0 = unitv(vec(text)), chain = [];
+    if (!Object.keys(q0).length) return { chain, skills: [], remaining_task: 0 };
+    let q = q0, state = null;
+    for (const [level, pre, ids] of LEVELS) {
+      const lam = state && state.length > 1 ? LAMBDA[level] * (1 - DAMP * (state.length - 1)) : LAMBDA[level];
+      const rows = [];
+      for (const id of ids) {
+        if (!state && doms.length && !doms.includes(tDom[id])) continue;
+        const v = U[pre + ':' + id] || {}, flat = dotu(v, q0);
+        if (!state) { rows.push({ id, psi: dotu(v, q), flat, parts: {} }); continue }
+        let psi = 0; const parts = {};
+        for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = nrm(p.q);
+          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * dotu(p.v, p.q)) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi }
+        rows.push({ id, psi, flat, parts }) }
+      rows.sort((x, y) => y.psi - x.psi || (x.id < y.id ? -1 : 1));
+      if (!rows.length || rows[0].psi <= 0) break;
+      const best = rows[0].psi, sel = rows.slice(0, BEAM).filter(r => r.psi > 0 && r.psi >= KEEP * best);
+      const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0));
+      const next = sel.map(r => { const v = U[pre + ':' + r.id]; return { id: r.id, w: r.psi / n, v, q: minus(q, v, dotu(q, v)) } });
+      for (const p of next) q = minus(q, p.v, p.w * p.w * dotu(q, p.v));
+      const suppressed = state ? [...rows].sort((x, y) => y.flat - x.flat).slice(0, 15).filter(r => r.psi <= 0.5 * best && Object.values(r.parts).some(x => x < 0)).slice(0, 3)
+        .map(r => ({ id: r.id, task_match: r4(r.flat), psi: r4(r.psi), opposed_by: Object.keys(r.parts).filter(k => r.parts[k] < 0) })) : [];
+      chain.push({ level, lambda: r4(lam), selected: sel.map((r, i) => ({ id: r.id, app: pre + ':' + r.id, weight: r4(next[i].w), psi: r4(r.psi),
+        contributions: Object.fromEntries(Object.entries(r.parts).map(([k, x]) => [k, r4(x)])) })), suppressed });
+      state = next }
+    return { chain, skills: chain.length === LEVELS.length ? chain[chain.length - 1].selected.map(s => s.id) : [], remaining_task: r4(nrm(q)) } };
+  /** lensLayout(state) -> {appId: [x, y]} for every level below the observer. The observer's selected nodes sit at the
+   *  centre of the next plane; a node's distance from the centre is how little of it the observer explains (1 - sqrt(a)),
+   *  its direction is its direction in the field as seen from the observer. state: {domain|topic|concept|skill: [[appId, weight]]}. */
+  const KINDS = [['topic', g.topics.map(t => 't:' + t.id)], ['concept', g.concepts.map(c => 'c:' + c.id)], ['skill', g.skills.map(s => 's:' + s.id)],
+    ['agent', g.agents.map(a => 'a:' + a.key)], ['mcp', g.mcp.map(m => midx[m.id])]];
+  const ORDER = ['domain', 'topic', 'concept', 'skill', 'agent', 'mcp'];
+  const lensLayout = state => {
+    const pos = {}; let obs = null;
+    for (const [kind, ids] of KINDS) {
+      const prev = state[ORDER[ORDER.indexOf(kind) - 1]]; if (prev && prev.length) obs = prev;
+      if (!obs) continue;
+      const lead = obs.reduce((a, b) => b[1] > a[1] ? b : a)[0], c0 = field[lead] || [0, 0], sw = obs.reduce((s, x) => s + x[1], 0) || 1;
+      for (const id of ids) { let a = 0; for (const [p, w] of obs) a += w * dotu(U[id] || {}, U[p] || {}); a = Math.max(0, Math.min(1, a / sw));
+        const f = field[id] || [0, 0], ang = Math.atan2(f[1] - c0[1], f[0] - c0[0]), r = 1 - Math.sqrt(a); pos[id] = [r * Math.cos(ang), r * Math.sin(ang)] } }
+    return pos };
+  const domains = g.domains.map(d => ({ id: d.id, label: d.label, desc: d.desc }));
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom };
 };
 </script>
 <script>(async()=>{'use strict';
@@ -341,10 +398,10 @@ function match(n){return vis[n.kind]&&(!multiOnly||n.kind!=='agent'||(GC[n.id]||
 const cv=$('g'),cx=cv.getContext('2d');
 function project(n,w,h,o){const q=o||cpPos(n),px=q.x,py=q.y,pz=n.z,x=cpM[0]*px+cpM[1]*py+cpM[2]*pz,yy=cpM[3]*px+cpM[4]*py+cpM[5]*pz,zz=cpM[6]*px+cpM[7]*py+cpM[8]*pz,p=800/Math.max(120,800+zz);return{sx:w/2+x*p*zoom*1.15+cpPanX,sy:h/2+yy*p*zoom*1.15+10+cpPanY,p,zz}}
 function draw(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=Math.max(1,r.width*d);cv.height=Math.max(1,r.height*d);cx.setTransform(d,0,0,d,0,0);const w=r.width,h=r.height;cx.clearRect(0,0,w,h);
- cpDrawRings(w,h);
+ cpDrawRings(w,h);cpLensSync();
  const rel=relNow(),P={};pts=[];cpFanCompute(rel);
  for(const id in N){const n=N[id];if(!vis[n.kind])continue;const o=project(n,w,h);P[id]=o;pts.push({n,...o})}
- drawSCW(P,w,h);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;lines.push(e)});if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
+ drawSCW(P,w,h);cpDrawDomains(P);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;lines.push(e)});if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
 const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1,checker:.6,support:.4};
  const ew=e=>e.kind==='gate'?Math.min(1,e.w*e.w/wmax):e.kind==='agent'?(RW[e.role]||.4):.5;
  for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;if(cpOnlyNew&&!(cpNewSet().has(e.a)&&cpNewSet().has(e.b)))continue;const on=rel&&rel.has(e.a)&&rel.has(e.b);if(iso&&rel&&!on)continue;const t=ew(e);
@@ -355,6 +412,7 @@ const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1
  pts.sort((a,b)=>b.zz-a.zz);
  for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;if(cpOnlyNew&&!cpNewSet().has(n.id))continue;const m=match(n),dim=(rel&&!rel.has(n.id))||!m,rad=({topic:7,concept:6,skill:3.6,agent:5,mcp:6.5})[n.kind]*o.p+1+(v03IsUp(n)?1.8:0);cx.globalAlpha=dim?.2:1;cx.beginPath();
   if(n.kind==='mcp'){cx.rect(o.sx-rad,o.sy-rad,rad*2,rad*2)}else cx.arc(o.sx,o.sy,rad,0,6.2832);cx.fillStyle=(rel&&rel.has(n.id)&&str[n.id]!==undefined)?lerpHex(BG,nodeCol(n),.4+.6*str[n.id]):nodeCol(n);cx.fill();cx.strokeStyle=sel===n.id?'#fff':(n.kind==='mcp'&&n.state!=='registry'?'#fff8':'#071321');cx.lineWidth=sel===n.id?2:(n.kind==='mcp'&&n.state!=='registry'?1.5:1);cx.stroke();
+  if(cpDomOn&&n.kind==='topic'){const d=__CP.tDom[n.id.slice(2)];if(d){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.2,0,6.2832);cx.strokeStyle=cpDomCol(d);cx.lineWidth=2;cx.stroke()}}
   if(!dim&&v03IsUp(n)){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.5,0,6.2832);cx.strokeStyle=nodeCol(n);cx.lineWidth=1.2;cx.stroke()}
   if(!dim&&(msel.has(n.id)||taskSet.has(n.id))){cx.beginPath();cx.arc(o.sx,o.sy,rad+(msel.has(n.id)?6:4.5),0,6.2832);cx.strokeStyle=msel.has(n.id)?'#ffffff':'#ffffffaa';cx.setLineDash(msel.has(n.id)?[3,2]:[]);cx.lineWidth=1.4;cx.stroke();cx.setLineDash([])}
   if(n.kind==='agent'&&!dim&&(GC[n.id]||0)>=2){cx.beginPath();cx.arc(o.sx,o.sy,rad+3,0,6.2832);cx.strokeStyle=COL.mcp;cx.lineWidth=1.2;cx.stroke()}const show=!dim&&(lbl[n.kind]||(!strict&&!lblX[n.kind]&&(sel===n.id||hov===n.id||(rel&&rel.has(n.id)&&(msel.size<2||n.kind!=='skill'||msel.has(n.id)||taskSet.has(n.id))))));if(show){cx.font=(n.kind==='topic'?'bold 12px':'11px')+' system-ui';cx.fillStyle='#e6f0fb';cx.textAlign='start';if(cpFanPos[n.id]&&n.kind!=='topic'){cx.save();cx.translate(o.sx,o.sy);cx.rotate(.62);cx.fillText(nodeLabel(n).slice(0,36),rad+3,4);cx.restore()}else cx.fillText(nodeLabel(n).slice(0,36),o.sx+rad+3,o.sy+4)}}
@@ -516,11 +574,12 @@ const HARNESSES=['Claude Agent SDK','OpenAI Agents SDK','LangChain / LangGraph',
 let llmCands=[['claude-opus-5-5','Claude Opus 5.5',''],['claude-sonnet-5-5','Claude Sonnet 5.5','Smart, efficient model for everyday use'],['claude-haiku-5-5','Claude Haiku 5.5',''],['claude-fable-5-1','Claude Fable 5.1','']];
 const fnv=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16).padStart(8,'0')};
 function submitTask(text){text=(text||$('taskIn').value).trim();if(!text)return null;const tv=embed(text).v;
- const sk=__CP.route(text,5);
+ const lensMode=$('taskMode')&&$('taskMode').value==='lens',doms=V3.bf.domain?[V3.bf.domain]:[],LR=lensMode?__CP.lens(text,doms):null;
+ const sk=lensMode?LR.chain.length===3?LR.chain[2].selected.map(x=>[x.app,x.psi]):[]:__CP.route(text,5);
  const sc={};sk.forEach(([sid,s])=>E.filter(e=>e.kind==='agent'&&e.a===sid).forEach(e=>{sc[e.b]=(sc[e.b]||0)+s*({primary:1,checker:.6,support:.4}[e.role]||.4)}));
  const ags=Object.entries(sc).sort((a,b)=>b[1]-a[1]).slice(0,5);dec={};resetJev();
- const ok=!!sk.length&&sk[0][1]>=__CP.graph.similarity.thresholds.search_min;task={id:'run-'+(++runSeq),text,ts:new Date().toISOString(),tv,skills:sk,agents:ags,matched:ok};
- cpMsgHidden=false;taskSet=new Set();if(ok){const id=sk[0][0];taskSet.add(id);taskSet.add('c:'+N[id].concept);taskSet.add(cTopic[N[id].concept]);E.filter(e=>e.kind==='agent'&&e.a===id).forEach(e=>{taskSet.add(e.b);G.filter(g=>g.a===e.b).forEach(g=>taskSet.add(g.b))})}
+ const ok=lensMode?!!sk.length:!!sk.length&&sk[0][1]>=__CP.graph.similarity.thresholds.search_min;task={id:'run-'+(++runSeq),text,ts:new Date().toISOString(),tv,skills:sk,agents:ags,matched:ok,lens:LR,doms:lensMode?doms:[]};cpLensOut();
+ cpMsgHidden=false;taskSet=new Set();if(ok){const id=sk[0][0];taskSet.add(id);taskSet.add('c:'+N[id].concept);taskSet.add(cTopic[N[id].concept]);E.filter(e=>e.kind==='agent'&&e.a===id).forEach(e=>{taskSet.add(e.b);G.filter(g=>g.a===e.b).forEach(g=>taskSet.add(g.b))});if(LR)LR.chain.forEach(l=>l.selected.forEach(x=>taskSet.add(x.app)))}
  renderExec();draw();return task}
 function chosenAgent(){if(!task||!task.matched)return null;const d=dec.agent;return d&&d.status==='ok'?d.selected:task.agents[0][0]}
 function cands(node){if(!task||!task.matched)return[];
@@ -587,7 +646,7 @@ function renderExec(){const b=$('exec');b.innerHTML='';if(!task){b.style.display
  const ad=el('div','node');ad.append(el('strong','','Admission (virtual SCW) — a decision is not authorization'));admissionRows().forEach(r=>{const p=el('p','',r.node+': '+r.state+' — '+r.reason);p.className=r.state==='ALLOW'?'good':r.state==='DENY'||r.state==='STALE'?'bad':r.state==='REVIEW'||r.state==='CONFIRM'?'warn':'';ad.append(p)});b.append(ad);
  const ex=el('div','row'),eb=el('button','','Export task envelope (JSON)');eb.id='envBtn';eb.onclick=()=>{$('expBox').style.display='block';$('expTa').value=JSON.stringify(envelope(),null,2)};ex.append(eb,el('small','','Execution: NOT performed here — hand the envelope to the selected harness.'));b.append(ex)}
 $('taskGo').onclick=()=>submitTask();$('taskIn').onkeydown=e=>{if(e.key==='Enter')submitTask()};
-$('taskClr').onclick=()=>{task=null;dec={};resetJev();taskSet=new Set();$('taskIn').value='';renderExec();draw()};
+$('taskClr').onclick=()=>{task=null;cpLensOut();dec={};resetJev();taskSet=new Set();$('taskIn').value='';renderExec();draw()};
 window.__v3={taskSet:()=>[...taskSet],reg:()=>({scw:{...scwReg},idx:{...idx},custom:customGroups.length}),addSel,msel:()=>[...msel],submit:submitTask,decide,dec:()=>dec,cands,envelope,setKey:k=>{apiKey=k},setS1:v=>{s1On=v;renderExec()},setDecider:(n,v)=>{dNode[n]=v},admission:admissionRows,hc:harnessComponents,pts:()=>pts.map(o=>({id:o.n.id,x:o.sx,y:o.sy})),scwList:()=>buildSCWs().map(s=>({id:s.id,kind:s.kind,label:scwLabel(s),members:s.members,children:s.children})),geom:()=>bubbles.map(b=>({id:b.s.id,kind:b.s.kind,mx:b.mx,my:b.my,a:b.a,b:b.b,th:b.th})),colors:()=>({COL:{...COL},SC:{...SC},guard:guardInfo}),shade:t=>lerpHex(BG,COL.mcp,.25+.35*t),buildReq,exportAll:()=>exportObj()};
 // ================= v5: bridge-safe Jev transport, local contract check, three Jev gate functions =================
 // FACT (docs.typesafe.ai, read this session, see the SCW0 knowledge panel): POST /v1/systemone, Bearer key, questions of type noul|choice|score.
@@ -985,7 +1044,37 @@ function syncHidden(det,target){let was=null;const f=()=>{const h=target.style.d
 
 // ---------- Maxey0 Context Plane Graph v1.0: readable paths, node drag, generated topics
 let cpField=false,cpFan=true,cpDrag=true,cpOnlyNew=false,cpOff={},cpFanPos={},cpNewCache=null,cpNewKey='';
-function cpFieldXY(n){const q=cpField&&__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
+// The observer: where the field is read from. Above the graph (no selection) every node sits at its field location;
+// a routed task (lens), a chosen domain, topic or concept moves the observer into the graph, and every plane below it is
+// laid out from there (lensLayout). Same state on the server: route_task mode "lens".
+let cpDomOn=true,cpLensKey='',cpLensPos=null,cpObsLabel='above the graph';
+function cpObserver(){if(typeof task!=='undefined'&&task&&task.lens&&task.lens.chain.length){const st={};
+  if(task.doms&&task.doms.length)st.domain=task.doms.map(d=>['d:'+d,1/Math.sqrt(task.doms.length)]);
+  for(const l of task.lens.chain)st[l.level]=l.selected.map(x=>[x.app,x.weight]);
+  return{st,label:'routed task (lens): '+task.lens.chain.map(l=>l.selected.map(x=>N[x.app]?N[x.app].label:x.id)[0]).join(' › ')}}
+ const bf=(typeof V3!=='undefined'&&V3.bf)||{},st={};let lab='';
+ if(bf.domain){st.domain=[['d:'+bf.domain,1]];lab=(__CP.domains.find(d=>d.id===bf.domain)||{}).label||bf.domain}
+ if(bf.topic){st.topic=[['t:'+bf.topic,1]];lab=(N['t:'+bf.topic]||{}).label||bf.topic}
+ if(bf.concept){st.concept=[['c:'+bf.concept,1]];lab=(N['c:'+bf.concept]||{}).label||bf.concept}
+ return Object.keys(st).length?{st,label:lab}:null}
+function cpLensSync(){const o=cpObserver(),k=o?JSON.stringify(o.st):'';if(k===cpLensKey)return;cpLensKey=k;cpLensPos=o?__CP.lensLayout(o.st):null;cpObsLabel=o?o.label:'above the graph';
+ const el=$('cpObs');if(el)el.textContent='Observer: '+cpObsLabel}
+function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
+// domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
+const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
+function cpDomCol(d){const i=__CP.domains.findIndex(x=>x.id===d);return DOMCOL[(i<0?0:i)%DOMCOL.length]}
+function cpDrawDomains(P){if(!cpDomOn)return;const acc={},sel=(typeof V3!=='undefined'&&V3.bf&&V3.bf.domain)||'';
+ for(const id in P){const n=N[id];if(!n||n.kind!=='topic')continue;const d=__CP.tDom[id.slice(2)];if(!d)continue;(acc[d]=acc[d]||[]).push(P[id])}
+ cx.save();cx.textAlign='center';for(const d in acc){if(!cpField&&d!==sel)continue;const ps=acc[d],x=ps.reduce((s,p)=>s+p.sx,0)/ps.length,y=Math.min(...ps.map(p=>p.sy))-16;
+  cx.font=(d===sel?'bold 12px':'600 10px')+' system-ui';cx.fillStyle=cpDomCol(d)+(sel&&d!==sel?'66':'ee');cx.fillText(((__CP.domains.find(x=>x.id===d)||{}).label||d).toUpperCase(),x,y)}cx.restore()}
+// the task panel's readout of a lens route: per level, what was chosen, with what weight and signed support, and what was ruled out
+function cpLensOut(){const el=$('lensOut');if(!el)return;const L=typeof task!=='undefined'&&task&&task.lens;if(!L){el.hidden=true;el.textContent='';return}
+ el.hidden=false;el.textContent='';const nm=a=>N[a]?N[a].label:a;
+ if(!L.chain.length){el.append(hh('div','','Observer lens: no topic shares words with this task.'));return}
+ el.append(hh('div','','Observer lens'+(task.doms&&task.doms.length?' from '+task.doms.map(d=>(__CP.domains.find(x=>x.id===d)||{}).label||d).join(' + '):' from above the graph')+' · remaining task '+L.remaining_task));
+ for(const l of L.chain){const row=hh('div','');row.append(hh('b','',l.level[0].toUpperCase()+l.level.slice(1)+'s (λ '+l.lambda+'): '));
+  row.append(document.createTextNode(l.selected.map(x=>nm(x.app)+' w '+x.weight+' ψ '+x.psi+(Object.keys(x.contributions).length>1?' ['+Object.entries(x.contributions).map(([k,v])=>(v>=0?'+':'')+v).join(' ')+']':'')).join(' · ')));
+  if(l.suppressed.length)row.append(document.createTextNode(' — ruled out: '+l.suppressed.map(x=>x.id+' (opposed by '+x.opposed_by.join(', ')+')').join('; ')));el.append(row)}}
 function cpPos(n){const f=cpFanPos[n.id],b=f||cpFieldXY(n)||n,o=cpOff[n.id];if(!o)return{x:b.x,y:b.y};let x=b.x+o.x,y=b.y+o.y;if(cpField&&!f)return{x,y};
  const r=Math.hypot(x,y),lo=cpIn(),hi=cpOut();if(r>hi){x*=hi/r;y*=hi/r}else if(r<lo&&r>1e-9){x*=lo/r;y*=lo/r}return{x,y}}  // a dragged node stays inside its level's donut
 // screen-horizontal direction in the level plane (inverse of project's rotation)
@@ -1039,9 +1128,9 @@ function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewK
  Object.values(packs).forEach(r=>{const A=r.added,pid=r.pack.topic.id;s.add('t:'+pid);A.concepts.forEach(c=>s.add('c:'+c));A.skills.forEach(k=>{s.add('s:'+k);
   E.forEach(e=>{if(e.kind==='agent'&&e.a==='s:'+k){s.add(e.b);G.forEach(g=>{if(g.a===e.b)s.add(g.b)})}})})});
  cpNewCache=s;cpNewKey=ids;return s}
-function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
+function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDomBtn',cpDomOn);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
 function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cpSetBtns();draw()}};
- on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
+ on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
  on('cpAllBtn',()=>{cpOnlyNew=false});on('cpNewBtn',()=>{cpOnlyNew=true;cpNewCache=null;if(!Object.keys(packs).length){tpSt.msg='No generated topics yet: build a request below, generate the pack in Claude, paste it and Add to graph.';tpSt.cls='';const tb=$('topicsBox');if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}});
  cpSetBtns();
  // layout and view are part of the app state
@@ -1102,7 +1191,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 

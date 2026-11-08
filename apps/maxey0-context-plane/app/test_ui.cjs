@@ -67,7 +67,7 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
       const n = v.field().n; c('cpFieldBtn'); const on = v.field().on;
       const ids = ['s:dv-option-pricer', 'a:Maxey0', 't:quantum-physics'];
       const pos = ids.map(id => v.field().pos(id)); c('cpFieldBtn'); return { n, on, pos, off: !v.field().on } });
-    const nApp = graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length;
+    const nApp = graph.domains.length + graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length;
     const fine = f.n === nApp && f.on && f.off && f.pos.every(q => q && isFinite(q.x) && isFinite(q.y));
     const want = graph.field.xy['s:dv-option-pricer'], got = f.pos[0], sc = Math.hypot(got.x, got.y) / Math.hypot(want[0], want[1]);
     ok(fine && sc > 0 && Math.abs(Math.atan2(got.y, got.x) - Math.atan2(want[1], want[0])) < 1e-6, "embedding field: " + f.n + " located nodes, placement follows field coordinates");
@@ -85,6 +85,33 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     const want = graph.topics.filter(t => t.domain === 'business-finance').map(t => t.id).sort();
     ok(r.doms === graph.domains.length && JSON.stringify(r.tops.slice().sort()) === JSON.stringify(want) && r.all === graph.topics.length,
       "domain filter: " + r.doms + " domains, " + r.tops.length + " finance topics, " + r.all + " topics when cleared");
+  }
+
+  // 1e. observer lens in the app: the same chain as the server's route_task mode "lens" (shared fixture)
+  {
+    const fx = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../server/test/lens.fixture.json'), 'utf8'));
+    const got = await p.evaluate((fx) => fx.map(f => { const r = window.__cpv.lens(f.task); return { levels: r.chain.map(l => l.selected.map(s => s.id)), skills: r.skills } }), fx);
+    const same = fx.every((f, i) => JSON.stringify(f.levels) === JSON.stringify(got[i].levels) && JSON.stringify(f.skills) === JSON.stringify(got[i].skills));
+    ok(same, "app lens = server lens on " + fx.length + " tasks");
+    // a lens route from the task panel: chain highlighted, readout shown, observer moves into the graph
+    const r = await p.evaluate(() => { const c = id => document.getElementById(id);
+      c('taskMode').value = 'lens'; c('taskIn').value = 'translate a paragraph into French'; c('taskGo').click();
+      if (!window.__cpv.field().on) c('cpFieldBtn').click();
+      const o = window.__cpv.observer(), txt = c('lensOut').textContent, ts = window.__v3.taskSet();
+      c('taskClr').click(); c('taskMode').value = 'flat'; const o2 = window.__cpv.observer(); c('cpFieldBtn').click();
+      return { o, txt, ts: ts.length, hidden: c('lensOut').hidden, o2 } });
+    ok(/routed task \(lens\)/.test(r.o.label) && r.o.n > 3000 && /Topics \(λ 0\)/.test(r.txt) && /Skills \(λ /.test(r.txt) && r.ts >= 9 && r.hidden && r.o2.label === 'above the graph',
+      "lens route in the app: " + JSON.stringify({ label: r.o.label.slice(0, 40), n: r.o.n, ts: r.ts }));
+    // choosing a topic moves the observer into the topic plane: its own concepts sit nearest the centre of the concept plane
+    const t = await p.evaluate(() => { const bt = document.getElementById('bfTopic'); const tid = 'quantum-physics';
+      bt.value = tid; bt.dispatchEvent(new Event('change')); if (!window.__cpv.field().on) document.getElementById('cpFieldBtn').click();
+      window.__cpv.select && 0; const o = window.__cpv.observer(); const P = id => window.__cpv.field().pos(id);
+      const own = window.__cpv.graph().concepts.filter(c => c.topic === tid).map(c => Math.hypot(P('c:' + c.id).x, P('c:' + c.id).y));
+      const rest = window.__cpv.graph().concepts.filter(c => c.topic !== tid).map(c => Math.hypot(P('c:' + c.id).x, P('c:' + c.id).y));
+      const mean = a => a.reduce((s, x) => s + x, 0) / a.length;
+      bt.value = ''; bt.dispatchEvent(new Event('change')); document.getElementById('cpFieldBtn').click();
+      return { label: o.label, own: mean(own), rest: mean(rest) } });
+    ok(/Quantum/.test(t.label) && t.own < 0.8 * t.rest, "topic observer: own concepts " + t.own.toFixed(1) + " vs others " + t.rest.toFixed(1) + " from the centre");
   }
 
   // 2. gates = the server's agent->MCP links, exactly

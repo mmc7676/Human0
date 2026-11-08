@@ -53,7 +53,37 @@ def cut_json(h, marker, replacement, what):
 
 CP_VIEW_JS = r"""// ---------- Maxey0 Context Plane Graph v1.0: readable paths, node drag, generated topics
 let cpField=false,cpFan=true,cpDrag=true,cpOnlyNew=false,cpOff={},cpFanPos={},cpNewCache=null,cpNewKey='';
-function cpFieldXY(n){const q=cpField&&__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
+// The observer: where the field is read from. Above the graph (no selection) every node sits at its field location;
+// a routed task (lens), a chosen domain, topic or concept moves the observer into the graph, and every plane below it is
+// laid out from there (lensLayout). Same state on the server: route_task mode "lens".
+let cpDomOn=true,cpLensKey='',cpLensPos=null,cpObsLabel='above the graph';
+function cpObserver(){if(typeof task!=='undefined'&&task&&task.lens&&task.lens.chain.length){const st={};
+  if(task.doms&&task.doms.length)st.domain=task.doms.map(d=>['d:'+d,1/Math.sqrt(task.doms.length)]);
+  for(const l of task.lens.chain)st[l.level]=l.selected.map(x=>[x.app,x.weight]);
+  return{st,label:'routed task (lens): '+task.lens.chain.map(l=>l.selected.map(x=>N[x.app]?N[x.app].label:x.id)[0]).join(' › ')}}
+ const bf=(typeof V3!=='undefined'&&V3.bf)||{},st={};let lab='';
+ if(bf.domain){st.domain=[['d:'+bf.domain,1]];lab=(__CP.domains.find(d=>d.id===bf.domain)||{}).label||bf.domain}
+ if(bf.topic){st.topic=[['t:'+bf.topic,1]];lab=(N['t:'+bf.topic]||{}).label||bf.topic}
+ if(bf.concept){st.concept=[['c:'+bf.concept,1]];lab=(N['c:'+bf.concept]||{}).label||bf.concept}
+ return Object.keys(st).length?{st,label:lab}:null}
+function cpLensSync(){const o=cpObserver(),k=o?JSON.stringify(o.st):'';if(k===cpLensKey)return;cpLensKey=k;cpLensPos=o?__CP.lensLayout(o.st):null;cpObsLabel=o?o.label:'above the graph';
+ const el=$('cpObs');if(el)el.textContent='Observer: '+cpObsLabel}
+function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
+// domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
+const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
+function cpDomCol(d){const i=__CP.domains.findIndex(x=>x.id===d);return DOMCOL[(i<0?0:i)%DOMCOL.length]}
+function cpDrawDomains(P){if(!cpDomOn)return;const acc={},sel=(typeof V3!=='undefined'&&V3.bf&&V3.bf.domain)||'';
+ for(const id in P){const n=N[id];if(!n||n.kind!=='topic')continue;const d=__CP.tDom[id.slice(2)];if(!d)continue;(acc[d]=acc[d]||[]).push(P[id])}
+ cx.save();cx.textAlign='center';for(const d in acc){if(!cpField&&d!==sel)continue;const ps=acc[d],x=ps.reduce((s,p)=>s+p.sx,0)/ps.length,y=Math.min(...ps.map(p=>p.sy))-16;
+  cx.font=(d===sel?'bold 12px':'600 10px')+' system-ui';cx.fillStyle=cpDomCol(d)+(sel&&d!==sel?'66':'ee');cx.fillText(((__CP.domains.find(x=>x.id===d)||{}).label||d).toUpperCase(),x,y)}cx.restore()}
+// the task panel's readout of a lens route: per level, what was chosen, with what weight and signed support, and what was ruled out
+function cpLensOut(){const el=$('lensOut');if(!el)return;const L=typeof task!=='undefined'&&task&&task.lens;if(!L){el.hidden=true;el.textContent='';return}
+ el.hidden=false;el.textContent='';const nm=a=>N[a]?N[a].label:a;
+ if(!L.chain.length){el.append(hh('div','','Observer lens: no topic shares words with this task.'));return}
+ el.append(hh('div','','Observer lens'+(task.doms&&task.doms.length?' from '+task.doms.map(d=>(__CP.domains.find(x=>x.id===d)||{}).label||d).join(' + '):' from above the graph')+' · remaining task '+L.remaining_task));
+ for(const l of L.chain){const row=hh('div','');row.append(hh('b','',l.level[0].toUpperCase()+l.level.slice(1)+'s (λ '+l.lambda+'): '));
+  row.append(document.createTextNode(l.selected.map(x=>nm(x.app)+' w '+x.weight+' ψ '+x.psi+(Object.keys(x.contributions).length>1?' ['+Object.entries(x.contributions).map(([k,v])=>(v>=0?'+':'')+v).join(' ')+']':'')).join(' · ')));
+  if(l.suppressed.length)row.append(document.createTextNode(' — ruled out: '+l.suppressed.map(x=>x.id+' (opposed by '+x.opposed_by.join(', ')+')').join('; ')));el.append(row)}}
 function cpPos(n){const f=cpFanPos[n.id],b=f||cpFieldXY(n)||n,o=cpOff[n.id];if(!o)return{x:b.x,y:b.y};let x=b.x+o.x,y=b.y+o.y;if(cpField&&!f)return{x,y};
  const r=Math.hypot(x,y),lo=cpIn(),hi=cpOut();if(r>hi){x*=hi/r;y*=hi/r}else if(r<lo&&r>1e-9){x*=lo/r;y*=lo/r}return{x,y}}  // a dragged node stays inside its level's donut
 // screen-horizontal direction in the level plane (inverse of project's rotation)
@@ -107,9 +137,9 @@ function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewK
  Object.values(packs).forEach(r=>{const A=r.added,pid=r.pack.topic.id;s.add('t:'+pid);A.concepts.forEach(c=>s.add('c:'+c));A.skills.forEach(k=>{s.add('s:'+k);
   E.forEach(e=>{if(e.kind==='agent'&&e.a==='s:'+k){s.add(e.b);G.forEach(g=>{if(g.a===e.b)s.add(g.b)})}})})});
  cpNewCache=s;cpNewKey=ids;return s}
-function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
+function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDomBtn',cpDomOn);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
 function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cpSetBtns();draw()}};
- on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
+ on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
  on('cpAllBtn',()=>{cpOnlyNew=false});on('cpNewBtn',()=>{cpOnlyNew=true;cpNewCache=null;if(!Object.keys(packs).length){tpSt.msg='No generated topics yet: build a request below, generate the pack in Claude, paste it and Add to graph.';tpSt.cls='';const tb=$('topicsBox');if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}});
  cpSetBtns();
  // layout and view are part of the app state
@@ -170,7 +200,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
@@ -197,7 +227,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-.cpview .cpsep{width:12px}.cpview .cplbl{font-size:11px;opacity:.7}
+.cpview .cpsep{width:12px}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -309,10 +339,67 @@ window.__cpLoad = async function () {
   const field = {};
   for (const [k, xy] of Object.entries((g.field && g.field.xy) || {})) {
     const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1);
-    const app = lv === 'm' ? midx[id] : (lv === 'd' ? null : lv + ':' + id);
+    const app = lv === 'm' ? midx[id] : lv + ':' + id;
     if (app) field[app] = xy;
   }
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field };
+  // ---- the observer lens: a mirror of the server's lens.ts (same equations, same lambda, same order) ----
+  const appKey = k => { const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1); return lv === 'm' ? midx[id] : lv + ':' + id };
+  const U = {};
+  for (const k in V) { const a = appKey(k); if (!a) continue; let n = 0; for (const w in V[k]) n += V[k][w] * V[k][w]; n = Math.sqrt(n) || 1;
+    const u = {}; for (const w in V[k]) u[w] = V[k][w] / n; U[a] = u }
+  const dotu = (a, b) => { const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b]; let s = 0;
+    for (const w in x) { const v = y[w]; if (v !== undefined) s += x[w] * v } return s };
+  const nrm = a => Math.sqrt(dotu(a, a));
+  const unitv = a => { const n = nrm(a); if (!n) return a; const o = {}; for (const w in a) o[w] = a[w] / n; return o };
+  const minus = (a, b, k) => { const o = { ...a }; for (const w in b) o[w] = (o[w] ?? 0) - k * b[w]; return o };
+  const LAMBDA = { topic: 0, concept: 0.5, skill: 0.3 }, BEAM = 3, KEEP = 0.6, DAMP = 0.1, r4 = x => Math.round(x * 1e4) / 1e4;
+  const LEVELS = [['topic', 't', g.topics.map(t => t.id)], ['concept', 'c', g.concepts.map(c => c.id)], ['skill', 's', g.skills.map(s => s.id)]];
+  const tDom = Object.fromEntries(g.topics.map(t => [t.id, t.domain]));
+  /** lens(text, domains) -> {chain, skills, remaining_task}, the same chain the server's route_task returns with mode "lens". */
+  const lens = (text, domains) => {
+    const doms = domains || [], q0 = unitv(vec(text)), chain = [];
+    if (!Object.keys(q0).length) return { chain, skills: [], remaining_task: 0 };
+    let q = q0, state = null;
+    for (const [level, pre, ids] of LEVELS) {
+      const lam = state && state.length > 1 ? LAMBDA[level] * (1 - DAMP * (state.length - 1)) : LAMBDA[level];
+      const rows = [];
+      for (const id of ids) {
+        if (!state && doms.length && !doms.includes(tDom[id])) continue;
+        const v = U[pre + ':' + id] || {}, flat = dotu(v, q0);
+        if (!state) { rows.push({ id, psi: dotu(v, q), flat, parts: {} }); continue }
+        let psi = 0; const parts = {};
+        for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = nrm(p.q);
+          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * dotu(p.v, p.q)) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi }
+        rows.push({ id, psi, flat, parts }) }
+      rows.sort((x, y) => y.psi - x.psi || (x.id < y.id ? -1 : 1));
+      if (!rows.length || rows[0].psi <= 0) break;
+      const best = rows[0].psi, sel = rows.slice(0, BEAM).filter(r => r.psi > 0 && r.psi >= KEEP * best);
+      const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0));
+      const next = sel.map(r => { const v = U[pre + ':' + r.id]; return { id: r.id, w: r.psi / n, v, q: minus(q, v, dotu(q, v)) } });
+      for (const p of next) q = minus(q, p.v, p.w * p.w * dotu(q, p.v));
+      const suppressed = state ? [...rows].sort((x, y) => y.flat - x.flat).slice(0, 15).filter(r => r.psi <= 0.5 * best && Object.values(r.parts).some(x => x < 0)).slice(0, 3)
+        .map(r => ({ id: r.id, task_match: r4(r.flat), psi: r4(r.psi), opposed_by: Object.keys(r.parts).filter(k => r.parts[k] < 0) })) : [];
+      chain.push({ level, lambda: r4(lam), selected: sel.map((r, i) => ({ id: r.id, app: pre + ':' + r.id, weight: r4(next[i].w), psi: r4(r.psi),
+        contributions: Object.fromEntries(Object.entries(r.parts).map(([k, x]) => [k, r4(x)])) })), suppressed });
+      state = next }
+    return { chain, skills: chain.length === LEVELS.length ? chain[chain.length - 1].selected.map(s => s.id) : [], remaining_task: r4(nrm(q)) } };
+  /** lensLayout(state) -> {appId: [x, y]} for every level below the observer. The observer's selected nodes sit at the
+   *  centre of the next plane; a node's distance from the centre is how little of it the observer explains (1 - sqrt(a)),
+   *  its direction is its direction in the field as seen from the observer. state: {domain|topic|concept|skill: [[appId, weight]]}. */
+  const KINDS = [['topic', g.topics.map(t => 't:' + t.id)], ['concept', g.concepts.map(c => 'c:' + c.id)], ['skill', g.skills.map(s => 's:' + s.id)],
+    ['agent', g.agents.map(a => 'a:' + a.key)], ['mcp', g.mcp.map(m => midx[m.id])]];
+  const ORDER = ['domain', 'topic', 'concept', 'skill', 'agent', 'mcp'];
+  const lensLayout = state => {
+    const pos = {}; let obs = null;
+    for (const [kind, ids] of KINDS) {
+      const prev = state[ORDER[ORDER.indexOf(kind) - 1]]; if (prev && prev.length) obs = prev;
+      if (!obs) continue;
+      const lead = obs.reduce((a, b) => b[1] > a[1] ? b : a)[0], c0 = field[lead] || [0, 0], sw = obs.reduce((s, x) => s + x[1], 0) || 1;
+      for (const id of ids) { let a = 0; for (const [p, w] of obs) a += w * dotu(U[id] || {}, U[p] || {}); a = Math.max(0, Math.min(1, a / sw));
+        const f = field[id] || [0, 0], ang = Math.atan2(f[1] - c0[1], f[0] - c0[0]), r = 1 - Math.sqrt(a); pos[id] = [r * Math.cos(ang), r * Math.sin(ang)] } }
+    return pos };
+  const domains = g.domains.map(d => ({ id: d.id, label: d.label, desc: d.desc }));
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom };
 };
 </script>
 """.replace("__DEFAULT_API__", DEFAULT_API)
@@ -530,6 +617,22 @@ def main():
     h = once(h, " const cs=D.concepts.filter(c=>!V3.bf.topic||c[2]===V3.bf.topic);", " const cs=D.concepts.filter(c=>(!V3.bf.topic||c[2]===V3.bf.topic)&&tps.includes(c[2]));", "concepts follow domain")
     h = once(h, "function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.dataset.w)return;bt.dataset.w='1';",
       "function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.dataset.w)return;bt.dataset.w='1';\n if($('bfDomain'))$('bfDomain').onchange=()=>{V3.bf.domain=$('bfDomain').value;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)};", "domain wire")
+    # observer lens + domains in the graph and the task panel (server parity: route_task mode "lens")
+    h = once(h, " cpDrawRings(w,h);\n const rel=relNow()", " cpDrawRings(w,h);cpLensSync();\n const rel=relNow()", "lens sync before projection")
+    h = once(h, " drawSCW(P,w,h);const lines=[];", " drawSCW(P,w,h);cpDrawDomains(P);const lines=[];", "domain labels")
+    h = once(h, "  if(!dim&&v03IsUp(n)){cx.beginPath();", "  if(cpDomOn&&n.kind==='topic'){const d=__CP.tDom[n.id.slice(2)];if(d){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.2,0,6.2832);cx.strokeStyle=cpDomCol(d);cx.lineWidth=2;cx.stroke()}}\n  if(!dim&&v03IsUp(n)){cx.beginPath();", "domain ring on topics")
+    h = once(h, '<div class="cpview row" id="cpView"><button type="button" id="cpFieldBtn"',
+      '<div class="cpview row" id="cpView"><button type="button" id="cpDomBtn" class="on" aria-pressed="true" title="Show each topic\'s domain as a coloured ring and label each domain where its topics are">Domains</button><button type="button" id="cpFieldBtn"', "domains button")
+    h = once(h, '<div class="taskbar"><input id="taskIn"', '<div class="taskbar"><select id="taskMode" aria-label="Router" title="Flat: rank every skill against the task. Observer lens: choose topics, then read concepts and skills from the chosen nodes (same as the server\'s route_task mode lens)"><option value="flat">Flat</option><option value="lens">Observer lens</option></select><input id="taskIn"', "router select")
+    h = once(h, '<div id="taskMsg" role="status" aria-live="polite" hidden></div>', '<div id="taskMsg" role="status" aria-live="polite" hidden></div><div id="lensOut" class="cpnote" hidden></div>', "lens readout")
+    h = once(h, "function submitTask(text){text=(text||$('taskIn').value).trim();if(!text)return null;const tv=embed(text).v;\n const sk=__CP.route(text,5);",
+      "function submitTask(text){text=(text||$('taskIn').value).trim();if(!text)return null;const tv=embed(text).v;\n const lensMode=$('taskMode')&&$('taskMode').value==='lens',doms=V3.bf.domain?[V3.bf.domain]:[],LR=lensMode?__CP.lens(text,doms):null;\n const sk=lensMode?LR.chain.length===3?LR.chain[2].selected.map(x=>[x.app,x.psi]):[]:__CP.route(text,5);", "lens router")
+    h = once(h, " const ok=!!sk.length&&sk[0][1]>=__CP.graph.similarity.thresholds.search_min;task={id:'run-'+(++runSeq),text,ts:new Date().toISOString(),tv,skills:sk,agents:ags,matched:ok};",
+      " const ok=lensMode?!!sk.length:!!sk.length&&sk[0][1]>=__CP.graph.similarity.thresholds.search_min;task={id:'run-'+(++runSeq),text,ts:new Date().toISOString(),tv,skills:sk,agents:ags,matched:ok,lens:LR,doms:lensMode?doms:[]};cpLensOut();", "task carries the lens chain")
+    h = once(h, "E.filter(e=>e.kind==='agent'&&e.a===id).forEach(e=>{taskSet.add(e.b);G.filter(g=>g.a===e.b).forEach(g=>taskSet.add(g.b))})}\n renderExec();draw();return task}",
+      "E.filter(e=>e.kind==='agent'&&e.a===id).forEach(e=>{taskSet.add(e.b);G.filter(g=>g.a===e.b).forEach(g=>taskSet.add(g.b))});if(LR)LR.chain.forEach(l=>l.selected.forEach(x=>taskSet.add(x.app)))}\n renderExec();draw();return task}", "lens chain highlighted")
+    h = once(h, "$('taskClr').onclick=()=>{task=null;", "$('taskClr').onclick=()=>{task=null;cpLensOut();", "clear lens readout")
+    h = once(h, '<button type="button" id="cpFieldBtn"', '<span id="cpObs" class="cpobs">Observer: above the graph</span><button type="button" id="cpFieldBtn"', "observer readout")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):
