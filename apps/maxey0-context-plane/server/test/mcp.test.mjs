@@ -427,3 +427,11 @@ test("dense signal end to end through the Worker: /dense warms in steps, then ro
   const bad = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "x", dense_weight: 2 }) });
   assert.equal(bad.status, 400);
 });
+
+test("performance budget (server CPU per route, in-process): flat under 15 ms, lens under 60 ms (median of 5)", async () => {
+  const med = async (args) => { const t = []; for (let i = 0; i < 6; i++) { const a = performance.now(); await call("route_task", args); t.push(performance.now() - a) } t.shift(); t.sort((x, y) => x - y); return t[2] };
+  const T = "Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard";
+  const flat = await med({ task: T }), lens = await med({ task: T, mode: "lens" });
+  console.log("# perf server", JSON.stringify({ flat_ms: +flat.toFixed(1), lens_ms: +lens.toFixed(1) }));
+  assert.ok(flat < 15, "flat " + flat.toFixed(1) + " ms"); assert.ok(lens < 60, "lens " + lens.toFixed(1) + " ms");
+});

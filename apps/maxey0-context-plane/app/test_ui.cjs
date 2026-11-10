@@ -318,6 +318,25 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(r3.sig === 'Signal: TF-IDF (dense off)' && r3.saved === false, "dense toggle off: TF-IDF only, saved in state");
   }
 
+  // 1p. performance budget (11): page weight, time to a usable graph, frame time, routing time in the page.
+  //     Limits are for this headless, software-rendered test browser; docs/PERFORMANCE.md has the budget and live numbers.
+  {
+    const html = require('fs').statSync(require('path').join(__dirname, 'maxey0-context-plane-graph.html')).size;
+    const p2 = await ctx.newPage(); await p2.route(/^https?:/, r => r.request().url().startsWith(API + "/") ? r.continue() : r.abort());
+    const t0 = Date.now(); await p2.goto(PAGE, { waitUntil: "commit" }); await p2.waitForFunction(() => window.__l5 && window.__l5.nodes() > 0, null, { timeout: 60000 }); const ready = Date.now() - t0;
+    const m = await p2.evaluate(() => { const v = window.__cpv, med = f => { const t = []; for (let i = 0; i < 15; i++) { const a = performance.now(); f(); t.push(performance.now() - a) } t.sort((x, y) => x - y); return t[7] };
+      const frame = med(() => v.rotate(0.01)); document.getElementById('cpFieldBtn').click(); const frameField = med(() => v.rotate(0.01));
+      const T = 'Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard'; v.lens(T);
+      return { frame, frameField, lens: med(() => v.lens(T)), heap: performance.memory ? performance.memory.usedJSHeapSize / 1048576 : 0 } });
+    await p2.close();
+    console.log("# perf", JSON.stringify({ html_kb: Math.round(html / 1024), ready_ms: ready, frame_ms: +m.frame.toFixed(1), frame_field_ms: +m.frameField.toFixed(1), lens_ms: +m.lens.toFixed(1), heap_mb: Math.round(m.heap) }));
+    ok(html < 300 * 1024, "budget: page under 300 KB (" + Math.round(html / 1024) + " KB)");
+    ok(ready < 3000, "budget: graph usable within 3 s of navigation, local server (" + ready + " ms)");
+    ok(m.frame < 40 && m.frameField < 40, "budget: median frame under 40 ms in the test browser (" + m.frame.toFixed(1) + " / " + m.frameField.toFixed(1) + " ms)");
+    ok(m.lens < 40, "budget: lens route in the page under 40 ms (" + m.lens.toFixed(1) + " ms)");
+    ok(!m.heap || m.heap < 150, "budget: JS heap under 150 MB (" + Math.round(m.heap) + " MB)");
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

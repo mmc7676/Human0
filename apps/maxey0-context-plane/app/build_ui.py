@@ -495,7 +495,8 @@ window.__cpLoad = async function () {
   const U = {};
   for (const k in V) { const a = appKey(k); if (!a) continue; let n = 0; for (const w in V[k]) n += V[k][w] * V[k][w]; n = Math.sqrt(n) || 1;
     const u = {}; for (const w in V[k]) u[w] = V[k][w] / n; U[a] = u }
-  const dotu = (a, b) => { const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b]; let s = 0;
+  const SZ = new WeakMap(), sz = a => { let n = SZ.get(a); if (n === undefined) { n = Object.keys(a).length; SZ.set(a, n) } return n };   // key counts cached (no key array per dot)
+  const dotu = (a, b) => { const [x, y] = sz(a) > sz(b) ? [b, a] : [a, b]; let s = 0;
     for (const w in x) if (Object.hasOwn(y, w)) s += x[w] * y[w]; return s };   // own keys only ('constructor' is a word in the map)
   const nrm = a => Math.sqrt(dotu(a, a));
   const unitv = a => { const n = nrm(a); if (!n) return a; const o = {}; for (const w in a) o[w] = a[w] / n; return o };
@@ -524,15 +525,15 @@ window.__cpLoad = async function () {
         const v = U[key(id)] || {}, flat = dotu(v, q0);
         if (!state) { rows.push({ id, psi: dotu(v, q), flat, aobs: 0, parts: {} }); continue }
         let psi = 0, aobs = 0; const parts = {};
-        for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = nrm(p.q);
-          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * dotu(p.v, p.q)) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi; aobs += p.w * a }
+        for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = p.qn;
+          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * p.vq) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi; aobs += p.w * a }
         rows.push({ id, psi, flat, aobs, parts }) }
       rows.sort((x, y) => y.psi - x.psi || (x.id < y.id ? -1 : 1));
       if (!rows.length || rows[0].psi <= 0) break;
       const flatOrder = [...rows].sort((x, y) => y.flat - x.flat || (x.id < y.id ? -1 : 1)), flatRank = new Map(flatOrder.map((r, i) => [r.id, i + 1]));
       const best = rows[0].psi, sel = rows.slice(0, BEAM).filter(r => r.psi > 0 && r.psi >= KEEP * best);
       const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0)), taskIn = nrm(q);
-      const next = sel.map(r => { const v = U[key(r.id)]; return { id: r.id, w: r.psi / n, v, q: minus(q, v, dotu(q, v)) } });
+      const next = sel.map(r => { const v = U[key(r.id)], pq = minus(q, v, dotu(q, v)); return { id: r.id, w: r.psi / n, v, q: pq, qn: nrm(pq), vq: dotu(v, pq) } });
       for (const p of next) q = minus(q, p.v, p.w * p.w * dotu(q, p.v));
       const taskOut = nrm(q);
       const suppressed = state ? flatOrder.slice(0, 15).filter(r => r.psi <= 0.5 * best && Object.values(r.parts).some(x => x < 0)).slice(0, 3)
@@ -846,6 +847,20 @@ def main():
     # GENERATED TOPICS get a domain: the domain of the nearest existing topic, marked as suggested
     h = once(h, "if(plan.topicIsNew)TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||''};", "if(plan.topicIsNew){const sd=__CP.suggestDomain([pm.topic.label,pm.topic.desc||''].concat((pm.concepts||[]).map(c=>c[1]+' '+(c[3]||''))).join(' '));TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||'',domain:sd&&sd.domain,domainSuggested:true};if(sd)__CP.tDom[pm.topic.id]=sd.domain}", "generated topic domain")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
+    # 11. PERFORMANCE: same results, less work (each replacement is order-preserving; the tests compare layouts and routes)
+    # layoutAgents: the topic weight w(t) re-filtered every concept and skill on every call (it is called inside the concept
+    # loop); skills per concept and the weight per topic are now counted once per layout
+    h = once(h, " const sang={};const w=t=>Math.max(1,D.concepts.filter(c=>cTopic[c[0]]===t).reduce((s,c)=>s+Math.max(1,D.skills.filter(k=>k[1]===c[0]).length),0));",
+             " const sang={},skBy={},wT={};for(const k of D.skills)(skBy[k[1]]=skBy[k[1]]||[]).push(k);for(const c of D.concepts){const t=cTopic[c[0]];wT[t]=(wT[t]||0)+Math.max(1,(skBy[c[0]]||[]).length)}\n const w=t=>Math.max(1,wT[t]||0);", "layout: topic weights counted once")
+    h = once(h, "for(const c of D.concepts.filter(c=>c[2]===t)){const sk=D.skills.filter(k=>k[1]===c[0]),",
+             "for(const c of D.concepts.filter(c=>c[2]===t)){const sk=skBy[c[0]]||[],", "layout: skills per concept from the index")
+    # agent angle: one pass over the edges instead of one pass per agent (edge order kept, so the sums are identical)
+    h = once(h, " const ang={};aIds.forEach(a=>{let x=0,y=0;E.forEach(e=>{if(e.kind==='agent'&&e.b===a){const t=sang[e.a.slice(2)];x+=Math.cos(t);y+=Math.sin(t)}});ang[a]=Math.atan2(y,x)});",
+             " const ang={},ax={},ay={};for(const e of E)if(e.kind==='agent'){const t=sang[e.a.slice(2)];ax[e.b]=(ax[e.b]||0)+Math.cos(t);ay[e.b]=(ay[e.b]||0)+Math.sin(t)}aIds.forEach(a=>{ang[a]=Math.atan2(ay[a]||0,ax[a]||0)});", "layout: agent angles in one pass")
+    # active gates: sort only the servers that can be active (auto or switched on), not all 117 for every agent; a stable
+    # sort of the filtered list gives the same order as filtering the sorted list
+    h = once(h, "function activeFor(a){if(gatesOff)return[];const ranked=mIds.map(m=>[m,S[a][m]]).sort((x,y)=>y[1]-x[1]),auto=autoSet(a);",
+             "function activeFor(a){if(gatesOff)return[];const auto=autoSet(a),ranked=mIds.filter(m=>auto.has(m)||ovr[a+'|'+m]===1).map(m=>[m,S[a][m]]).sort((x,y)=>y[1]-x[1]);", "gates: sort only candidates")
     # drift arrows and domain labels paint over the nodes, at the end of each frame
     h = once(h, "\n cx.globalAlpha=1}\nfunction pick(x,y)", "\n cx.globalAlpha=1;cpDrawDrift(w,h);cpDrawDomains(P);cpDrawLegend(w,h)}\nfunction pick(x,y)", "drift + domain labels + legend over nodes")
     h = once(h, '<span id="cpObs" class="cpobs">', '<div id="cpLive" class="cpsr" role="status" aria-live="polite"></div><span id="cpObs" class="cpobs">', "keyboard live region")

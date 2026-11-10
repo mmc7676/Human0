@@ -246,7 +246,8 @@ window.__cpLoad = async function () {
   const U = {};
   for (const k in V) { const a = appKey(k); if (!a) continue; let n = 0; for (const w in V[k]) n += V[k][w] * V[k][w]; n = Math.sqrt(n) || 1;
     const u = {}; for (const w in V[k]) u[w] = V[k][w] / n; U[a] = u }
-  const dotu = (a, b) => { const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b]; let s = 0;
+  const SZ = new WeakMap(), sz = a => { let n = SZ.get(a); if (n === undefined) { n = Object.keys(a).length; SZ.set(a, n) } return n };   // key counts cached (no key array per dot)
+  const dotu = (a, b) => { const [x, y] = sz(a) > sz(b) ? [b, a] : [a, b]; let s = 0;
     for (const w in x) if (Object.hasOwn(y, w)) s += x[w] * y[w]; return s };   // own keys only ('constructor' is a word in the map)
   const nrm = a => Math.sqrt(dotu(a, a));
   const unitv = a => { const n = nrm(a); if (!n) return a; const o = {}; for (const w in a) o[w] = a[w] / n; return o };
@@ -275,15 +276,15 @@ window.__cpLoad = async function () {
         const v = U[key(id)] || {}, flat = dotu(v, q0);
         if (!state) { rows.push({ id, psi: dotu(v, q), flat, aobs: 0, parts: {} }); continue }
         let psi = 0, aobs = 0; const parts = {};
-        for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = nrm(p.q);
-          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * dotu(p.v, p.q)) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi; aobs += p.w * a }
+        for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = p.qn;
+          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * p.vq) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi; aobs += p.w * a }
         rows.push({ id, psi, flat, aobs, parts }) }
       rows.sort((x, y) => y.psi - x.psi || (x.id < y.id ? -1 : 1));
       if (!rows.length || rows[0].psi <= 0) break;
       const flatOrder = [...rows].sort((x, y) => y.flat - x.flat || (x.id < y.id ? -1 : 1)), flatRank = new Map(flatOrder.map((r, i) => [r.id, i + 1]));
       const best = rows[0].psi, sel = rows.slice(0, BEAM).filter(r => r.psi > 0 && r.psi >= KEEP * best);
       const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0)), taskIn = nrm(q);
-      const next = sel.map(r => { const v = U[key(r.id)]; return { id: r.id, w: r.psi / n, v, q: minus(q, v, dotu(q, v)) } });
+      const next = sel.map(r => { const v = U[key(r.id)], pq = minus(q, v, dotu(q, v)); return { id: r.id, w: r.psi / n, v, q: pq, qn: nrm(pq), vq: dotu(v, pq) } });
       for (const p of next) q = minus(q, p.v, p.w * p.w * dotu(q, p.v));
       const taskOut = nrm(q);
       const suppressed = state ? flatOrder.slice(0, 15).filter(r => r.psi <= 0.5 * best && Object.values(r.parts).some(x => x < 0)).slice(0, 3)
@@ -398,16 +399,17 @@ let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=
 const vis={domain:true,topic:true,concept:true,skill:true,agent:true,mcp:true};
 let G=[];
 function autoSet(a){return new Set((__CP.gates[a]||[]).filter(m=>N[m]))}
-function activeFor(a){if(gatesOff)return[];const ranked=mIds.map(m=>[m,S[a][m]]).sort((x,y)=>y[1]-x[1]),auto=autoSet(a);
+function activeFor(a){if(gatesOff)return[];const auto=autoSet(a),ranked=mIds.filter(m=>auto.has(m)||ovr[a+'|'+m]===1).map(m=>[m,S[a][m]]).sort((x,y)=>y[1]-x[1]);
  const out=[];for(const[m,s]of ranked){const k=a+'|'+m,o=ovr[k];if(o===-1)continue;if(auto.has(m)||o===1)out.push({m,s,src:o===1&&!auto.has(m)?'manual':'auto'})}return out}
 function recompute(){G=[];GC={};aIds.forEach(a=>activeFor(a).forEach(g=>{G.push({a,b:g.m,w:effW(a,g.m,g.s),cos:g.s,src:g.src});GC[a]=(GC[a]||0)+1}));layoutAgents();updateMetrics()}
 function layoutAgents(){
- const sang={};const w=t=>Math.max(1,D.concepts.filter(c=>cTopic[c[0]]===t).reduce((s,c)=>s+Math.max(1,D.skills.filter(k=>k[1]===c[0]).length),0));
+ const sang={},skBy={},wT={};for(const k of D.skills)(skBy[k[1]]=skBy[k[1]]||[]).push(k);for(const c of D.concepts){const t=cTopic[c[0]];wT[t]=(wT[t]||0)+Math.max(1,(skBy[c[0]]||[]).length)}
+ const w=t=>Math.max(1,wT[t]||0);
  const tot=types.reduce((s,t)=>s+w('t:'+t),0);let a0=-Math.PI/2;
  for(const t of types){const id='t:'+t,span=w(id)/tot*2*Math.PI;pl(N[id],a0+span/2,RAD.topic);let c0=a0;
-  for(const c of D.concepts.filter(c=>c[2]===t)){const sk=D.skills.filter(k=>k[1]===c[0]),cw=Math.max(1,sk.length),cs=cw/w(id)*span;pl(N['c:'+c[0]],c0+cs/2,RAD.concept);sk.forEach((s,i)=>{const a=c0+cs*(i+.5)/cw;pl(N['s:'+s[0]],a,RAD.skill);sang[s[0]]=a});c0+=cs}a0+=span}
+  for(const c of D.concepts.filter(c=>c[2]===t)){const sk=skBy[c[0]]||[],cw=Math.max(1,sk.length),cs=cw/w(id)*span;pl(N['c:'+c[0]],c0+cs/2,RAD.concept);sk.forEach((s,i)=>{const a=c0+cs*(i+.5)/cw;pl(N['s:'+s[0]],a,RAD.skill);sang[s[0]]=a});c0+=cs}a0+=span}
   __CP.domains.forEach(d=>{const ts=types.filter(t=>__CP.tDom[t]===d.id).map(t=>N['t:'+t]);if(!ts.length||!N['d:'+d.id])return;const x=ts.reduce((s,n)=>s+Math.cos(Math.atan2(n.y,n.x)),0),y=ts.reduce((s,n)=>s+Math.sin(Math.atan2(n.y,n.x)),0);pl(N['d:'+d.id],Math.atan2(y,x),RAD.domain)});
- const ang={};aIds.forEach(a=>{let x=0,y=0;E.forEach(e=>{if(e.kind==='agent'&&e.b===a){const t=sang[e.a.slice(2)];x+=Math.cos(t);y+=Math.sin(t)}});ang[a]=Math.atan2(y,x)});
+ const ang={},ax={},ay={};for(const e of E)if(e.kind==='agent'){const t=sang[e.a.slice(2)];ax[e.b]=(ax[e.b]||0)+Math.cos(t);ay[e.b]=(ay[e.b]||0)+Math.sin(t)}aIds.forEach(a=>{ang[a]=Math.atan2(ay[a]||0,ax[a]||0)});
  const order=[...aIds].sort((p,q)=>ang[p]-ang[q]);
  order.forEach((a,i)=>{const n=N[a],t=-Math.PI/2+i*2*Math.PI/order.length;n.sx=Math.cos(t)*RAD.agent;n.sy=Math.sin(t)*RAD.agent;n.ang=t});
  aIds.forEach(a=>{const n=N[a],g=G.filter(x=>x.a===a);n.gated=false;
