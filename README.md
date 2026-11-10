@@ -12,7 +12,7 @@
 
 | App | |
 |---|---|
-| **[Maxey0 Context Plane](apps/maxey0-context-plane)** | A live map of where any task belongs and who should handle it: an MCP server for Claude and an interactive 3D graph. [Open the graph](https://maxey0-context-plane-mcp.maxey0.workers.dev/app) |
+| **[Maxey0 Context Plane](apps/maxey0-context-plane)** | A live map of where any task belongs and who should handle it: an MCP server for Claude and an interactive 3D graph. [Open the app](https://app.maxey0.com/app) · [Docs](https://app.maxey0.com/docs/) · [Research](https://app.maxey0.com/research/) |
 
 ## Install the plugin in Claude
 

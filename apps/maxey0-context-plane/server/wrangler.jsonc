@@ -3,6 +3,8 @@
   "name": "maxey0-context-plane-mcp",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
+  // /docs and /research are static files (built by tools/site/build_site.py); the Worker runs first for every other path.
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
   "vars": {
     // Origins allowed when a request carries an Origin header (DNS-rebinding guard).
     // Requests without Origin (server-to-server MCP clients) are accepted.
@@ -14,7 +16,11 @@
   "kv_namespaces": [{ "binding": "DENSE", "id": "edaf26bace7f4a56b7eb466da83a9a21" }],
   // Served on Human0's own domain as well as workers.dev (the connector, plugin and paper keep using workers.dev).
   // On deploy Cloudflare creates the DNS record and certificate for app.maxey0.com (zone maxey0.com in this account).
-  "routes": [{ "pattern": "app.maxey0.com", "custom_domain": true }],
+  "routes": [{ "pattern": "app.maxey0.com", "custom_domain": true },
+    // Docs and research on the main domain too. These only take effect if maxey0.com has a proxied (orange-cloud) DNS
+    // record; email (MX) is not affected by Worker routes.
+    { "pattern": "maxey0.com/docs*", "zone_name": "maxey0.com" }, { "pattern": "maxey0.com/research*", "zone_name": "maxey0.com" },
+    { "pattern": "maxey0.com/logo.png", "zone_name": "maxey0.com" }],
   "workers_dev": true,
   "observability": { "enabled": true }
   // Local tests without Cloudflare credentials use wrangler.local.jsonc (no AI / KV binding: TF-IDF only):

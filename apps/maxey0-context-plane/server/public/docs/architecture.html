@@ -1,0 +1,401 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Architecture · Maxey0 by Human0</title><meta name="description" content="How the plane is built, served and drawn."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/architecture.pdf" download>Download PDF</a><a class="alt" href="/docs/architecture.md" download>Download .md</a></div><h1 id="architecture">Architecture</h1>
+<p>One data set, built once, served three ways.</p>
+<pre><code> SCW1/sources/packs/*.pack.json ─┐
+ SCW1/sources/maxey0_base.json ──┤
+ SCW1/ontology.spec.json ────────┤   tools/build_scw1.py
+                                 ▼
+          SCW1/scw1.graph.json · SCW1/harnesses/*.harness.json · SCW1/maxey_registry.json
+                                 │
+                                 ▼   server/src/scw1.bundle.json (graph + TF-IDF index)
+ ┌───────────────────── Cloudflare Worker (server/) ──────────────────────┐
+ │  /mcp, /mcp/&lt;domain&gt;   MCP tools · prompt · resources · ui:// app       │
+ │  /graph.json           the map for browser apps                          │
+ │  /app                  the graph app (app/maxey0-context-plane-graph.html)│
+ └──────────────────────────────────────────────────────────────────────────┘
+          ▲                         ▲                          ▲
+     Claude / MCP clients     Claude MCP Apps host          browsers
+     (connector, plugin)      (app in the conversation)    (app on the web)
+</code></pre>
+<h2 id="the-map">The map</h2>
+<h3 id="sources">Sources</h3>
+<p>Each topic starts as a <strong>topic pack</strong> (<code>human0.topic-pack/1</code>): a topic, its concepts, skills with their agents and roles, agent names, MCP server rows, a lexicon and provenance. The Maxey0 base graph adds the Maxey0 system's own concepts and agents. Sources are inputs and are never edited by the build.</p>
+<h3 id="the-ontology-spec">The ontology spec</h3>
+<p><code>SCW1/ontology.spec.json</code> holds every structural decision: which domain each topic belongs to, topics and concepts that are merged, moved, renamed or dropped, id rules, the similarity method and its thresholds, declared links, topic priority, role overrides, and open questions. Changing the map means changing the spec or a pack and rebuilding.</p>
+<h3 id="the-builder">The builder</h3>
+<p><code>tools/build_scw1.py build</code> applies the spec to the sources and refuses to write anything if a rule breaks. It checks, among others:</p>
+<ul>
+<li>every node has exactly one parent, and every thread reaches the skill level;</li>
+<li>each topic has 3–8 concepts and no concept is named like a topic;</li>
+<li>labels and ids are unique;</li>
+<li>every skill has a primary agent;</li>
+<li>every agent key is a MaxeyN key from <code>SCW1/maxey_registry.json</code>, which keeps keys permanent across builds (new agents get the next free number);</li>
+<li>every link meets its threshold.</li>
+</ul>
+<p>It writes the graph, one harness per topic, a manifest and build report, and the server bundle. The graph carries a SHA-256 digest; the app records it in saved state.</p>
+<h3 id="one-similarity-method">One similarity method</h3>
+<p>Search, routing, agent→server links and related concepts all use TF-IDF cosine over one tokenizer (lower case, <code>[a-z0-9]+</code> words, stop words and words of two letters or fewer removed, trailing plural <em>s</em> folded). Weight = (1 + ln tf) · idf, idf = ln((N + 1)/(df + 1)) + 1, vectors L2-normalised. A pair counts only when it shares at least min(2, terms in the shorter side) words.</p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search and routing</td>
+<td>cosine ≥ 0.08</td>
+</tr>
+<tr>
+<td>Agent → MCP server</td>
+<td>each agent scored by its single best skill; cosine ≥ 0.10; top 2 agents per server</td>
+</tr>
+<tr>
+<td>Related concepts</td>
+<td>different topics, cosine ≥ 0.40</td>
+</tr>
+<tr>
+<td>Checker inheritance</td>
+<td>a checker holds every server its primary holds on the same skill (<code>via</code> records the source)</td>
+</tr>
+</tbody>
+</table>
+<p>The server's <code>sim.ts</code> mirrors the builder's tokenizer and vectoriser exactly; a test checks it reproduces every stored vector.</p>
+<h3 id="one-embedding-field">One embedding field</h3>
+<p>Every node on all six levels has a vector in the same TF-IDF space (same tokenizer, same idf):</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Text it is built from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain</td>
+<td>label, description, and the text of its topics</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>label, description, and its concepts</td>
+</tr>
+<tr>
+<td>Concept · Skill</td>
+<td>their own text (as used for routing)</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>its name and every skill it serves</td>
+</tr>
+<tr>
+<td>MCP server</td>
+<td>name, description, tool names</td>
+</tr>
+</tbody>
+</table>
+<p>Aggregate vectors keep their 48 strongest terms. The builder stacks all vectors into one matrix, takes a deterministic truncated SVD (24 dimensions, ARPACK), normalizes each row, and projects onto the two leading principal axes; the farthest node sits at radius 1. Every level uses the same projection and scale, so a node's location is comparable across levels. <code>graph.json</code> carries the locations (<code>field.xy</code>); <code>?index=1</code> carries the vectors; the <code>nearest</code> tool ranks nodes of any level by cosine in that space. The server test checks that topic–concept pairs sit at under half the random-pair distance and that agent–server gates sit closer than random.</p>
+<h3 id="domains-and-topics-from-the-concepts-up">Domains and topics, from the concepts up</h3>
+<p>The domain and topic levels were rebuilt bottom-up (spec <code>regroup</code>). Each concept was described by its own text, its skills, the agents that serve them and the servers those agents hold; concepts were grouped on that description into 128 topics of 3–8 concepts, and topics into 11 domains, with placements the data got wrong corrected by hand and marked as such. Concepts, skills, agents, servers and links did not change. Each concept keeps <code>source_topic</code>, the pack topic it came from; agent-name uniqueness and checker inheritance are checked against that source topic. A topic pack added later keeps its own topic in the domain named for it in <code>regroup.pack_domains</code>.</p>
+<h3 id="observer-lens-routing">Observer-lens routing</h3>
+<p><code>route_task</code> with <code>mode: "lens"</code> routes the way an agent inside the graph observes it. The observer starts above the topic plane (or at chosen domains, superposed when more than one), selects up to three topics, and reads the next plane from the selected nodes:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a = cos(x, p)</td>
+<td>how much of candidate x the observer's position p already explains</td>
+</tr>
+<tr>
+<td>s = cos(x − a·p, q_p)</td>
+<td>what x adds beyond p, against what is left of the task; can be negative</td>
+</tr>
+<tr>
+<td>φ_p = λ·a + (1 − λ)·s</td>
+<td>the value of x seen from p</td>
+</tr>
+<tr>
+<td>ψ(x) = Σ w_p·φ_p, Σ w_p² = 1</td>
+<td>the superposed observer; ranked by ψ, selected only when ψ &gt; 0</td>
+</tr>
+</tbody>
+</table>
+<p>After each level the task loses the part the selected nodes explain. Each selection records every branch's contribution, and the strongest task matches the lens suppressed are listed with the branches that opposed them. Agents and servers are not chosen by the lens: roles, gates and checker inheritance come from the ontology.</p>
+<p>λ was set by calibrating on 400 skill labels with known paths, then testing on 24 tasks not used for calibration:</p>
+<table>
+<thead>
+<tr>
+<th>Router</th>
+<th>Skill@1 (labels)</th>
+<th>Skill in top 5</th>
+<th>Topic@1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flat</td>
+<td>0.925</td>
+<td>0.998</td>
+<td>0.950</td>
+</tr>
+<tr>
+<td>lens, λ = 0.5 / 0.3 (chosen)</td>
+<td>0.912</td>
+<td>0.970</td>
+<td>0.940</td>
+</tr>
+<tr>
+<td>lens, λ = 0.65 / 0.45</td>
+<td>0.907</td>
+<td>0.970</td>
+<td>0.935</td>
+</tr>
+<tr>
+<td>lens, λ = 0.8 / 0.6</td>
+<td>0.902</td>
+<td>0.968</td>
+<td>0.930</td>
+</tr>
+<tr>
+<td>lens, task-driven λ</td>
+<td>0.910</td>
+<td>0.968</td>
+<td>0.940</td>
+</tr>
+</tbody>
+</table>
+<p>Labels share the map's own words, so flat ranking is expected to win there; the lens returns at most three skills, which caps top-5. On the 24 held-out tasks the chosen lens matched flat on 21, was better on 2 (a French translation task reached French text translation; a data-pipeline task reached the pipeline builder) and different but not worse on 1. Task-driven λ was worse on 3. Two known flat failures (server logs routed to drone flight logs; the Krebs cycle to the cell cycle) were not fixed by the lens: the wrong topic wins at entry, which is a vocabulary limit, not an observation one. Signed opposition rarely appears among top candidates with word-count vectors, because they carry no negation. Flat stays the default.</p>
+<h3 id="lens-through-agents-and-mcp-servers-and-drift">Lens through agents and MCP servers, and drift</h3>
+<p>Below the skill level the lens is structural: agent candidates are only the agents of the chosen skills, and MCP candidates are only the servers gated to the chosen agents. The same ψ chooses among them. λ for agents was calibrated the same way as the upper levels (task = a skill's description; hit = the routed skill's primary agent chosen first; 300 calibration skills, 300 held-out skills):</p>
+<table>
+<thead>
+<tr>
+<th>λ (agent)</th>
+<th>calibration</th>
+<th>held-out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0</td>
+<td>0.107</td>
+<td>—</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>0.453</td>
+<td>0.403</td>
+</tr>
+<tr>
+<td>0.9 (chosen)</td>
+<td>0.570</td>
+<td>0.463</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>0.580</td>
+<td>0.493</td>
+</tr>
+</tbody>
+</table>
+<p>λ = 1.0 scores slightly higher but ignores the task residual entirely; 0.9 keeps it. The MCP level has no ground truth and uses the agent value.</p>
+<p>Every chosen node records its <strong>drift</strong>: <code>flat</code> (cosine with the original task, no observer), <code>flat_rank</code> and <code>lens_rank</code> among the level's candidates, <code>drift = ψ − flat</code> (how much the path above raised or lowered its fit) and <code>a_obs</code> (its alignment with the observer). Every level records <code>task_in</code>, <code>task_out</code> and the share it <code>explained</code>. route_task (mode "lens") returns these as SCWs: <code>SCW-drift:&lt;node&gt;</code> per chosen node, <code>SCW-level:&lt;level&gt;</code> per level, and <code>SCW-path</code> around all levels. The values are exact in the TF-IDF space. The app adds where each node sits on its 3D donut seen from above (home) and from the observer (observed), the displacement between them and its length relative to the donut radius. That 3D part is a projection.</p>
+<h3 id="dense-second-signal-bge-m3">Dense second signal (bge-m3)</h3>
+<p>Every node also has a bge-m3 embedding (Workers AI), centred on the mean node embedding and normalised; the task is embedded per route. Scores live in one inner-product space, <x, y> = (1 − β)·TF-IDF cosine + β·dense cosine, so flat ranking and the observer lens (a, s, residuals) use both signals with no other change. With β = 0 the space is exactly the TF-IDF space. Calibration on the live server (November 2026):</p>
+<table>
+<thead>
+<tr>
+<th>Flat routing</th>
+<th>Skill@1 (300 labels)</th>
+<th>Topic@1</th>
+<th>Tasks: top skill correct</th>
+<th>Tasks: in top 3</th>
+<th>Off-map max score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TF-IDF only</td>
+<td>0.933</td>
+<td>0.950</td>
+<td>13/19</td>
+<td>14/19</td>
+<td>—</td>
+</tr>
+<tr>
+<td>β 0.3</td>
+<td>0.960</td>
+<td>0.970</td>
+<td>14/19</td>
+<td>16/19</td>
+<td>0.412</td>
+</tr>
+<tr>
+<td>β 0.5</td>
+<td>0.970</td>
+<td>0.977</td>
+<td>14/19</td>
+<td>17/19</td>
+<td>0.317</td>
+</tr>
+<tr>
+<td><strong>β 0.7 (chosen)</strong></td>
+<td><strong>0.987</strong></td>
+<td><strong>0.993</strong></td>
+<td><strong>15/19</strong></td>
+<td><strong>17/19</strong></td>
+<td><strong>0.239</strong></td>
+</tr>
+<tr>
+<td>β 0.9</td>
+<td>0.980</td>
+<td>0.990</td>
+<td>13/19</td>
+<td>16/19</td>
+<td>0.262</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Observer lens</th>
+<th>Skill@1 (300 labels)</th>
+<th>Topic@1</th>
+<th>Tasks: top skill correct</th>
+<th>Tasks: in top 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TF-IDF only</td>
+<td>0.923</td>
+<td>0.943</td>
+<td>16/19</td>
+<td>16/19</td>
+</tr>
+<tr>
+<td>β 0.3</td>
+<td>0.960</td>
+<td>0.970</td>
+<td>16/19</td>
+<td>17/19</td>
+</tr>
+<tr>
+<td>β 0.5</td>
+<td>0.973</td>
+<td>0.980</td>
+<td>16/19</td>
+<td>17/19</td>
+</tr>
+<tr>
+<td><strong>β 0.7 (chosen)</strong></td>
+<td><strong>0.983</strong></td>
+<td><strong>0.990</strong></td>
+<td><strong>16/19</strong></td>
+<td><strong>17/19</strong></td>
+</tr>
+<tr>
+<td>β 0.9</td>
+<td>0.980</td>
+<td>0.987</td>
+<td>14/19</td>
+<td>17/19</td>
+</tr>
+</tbody>
+</table>
+<p>The lens with dense puts the server-log anomaly spotter first (flat does not), but takes the hike finder over the itinerary planner for "plan a three day hike with campsites", which the fixed judgement counts as wrong. The lens has no match threshold: it selects whenever ψ &gt; 0, so an off-map request still gets a route (highest first-level ψ on the 10 off-map requests: 0.184 at β 0.7).</p>
+<p>Tasks are the 20 author-written tasks of the paper's Section 9.2 with the correct skills fixed before any dense run (19 have a correct skill; for "value a startup for a seed round" the map has none). Off-map: 10 author-written requests nothing in the map does ("tell me a joke about penguins"). The threshold 0.25 sits between the off-map maximum (0.239) and the lowest correct top score (0.300) at β 0.7; it was chosen on these same 30 requests, so it is fitted, not tested. What dense fixed: the French translation and hallucination-tracing tasks now reach their skills, and DNS/CDN and server-log anomalies have the right skill second. What it did not fix: the Krebs cycle still reaches the cell cycle, and server logs still put drone flight logs first.</p>
+<h2 id="the-server">The server</h2>
+<p><code>server/src/</code> — TypeScript on Cloudflare Workers, no runtime dependencies.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.ts</code></td>
+<td>HTTP routing, MCP JSON-RPC (2026-07-28 stateless and the earlier <code>initialize</code>), header validation, tools, resources, prompt, <code>/graph.json</code>, <code>/app</code></td>
+</tr>
+<tr>
+<td><code>graph.ts</code></td>
+<td>The map in memory, scoped per domain endpoint; every tool's logic</td>
+</tr>
+<tr>
+<td><code>sim.ts</code></td>
+<td>Tokenizer, vectors, cosine with the coverage rule</td>
+</tr>
+<tr>
+<td><code>generator.ts</code></td>
+<td>The <code>topic-graph-generator</code> prompt and <code>validate_topic_pack</code></td>
+</tr>
+<tr>
+<td><code>app.ts</code></td>
+<td>The graph app as an MCP App resource and as the <code>/app</code> page</td>
+</tr>
+</tbody>
+</table>
+<p>The bundle is imported at build time, so the server has no storage and no network calls. A domain endpoint serves a copy of the map trimmed to that domain.</p>
+<h2 id="the-app">The app</h2>
+<p><code>app/maxey0-context-plane-graph.html</code> is one self-contained page (HTML, CSS, JavaScript; no libraries, no external requests other than the map).</p>
+<p>It is produced by <code>app/build_ui.py</code> from a fixed source page (<code>app/source/</code>). Each change is a named replacement at an anchor that must occur exactly once, so the build either applies every change or stops. On load the page fetches <code>/graph.json?index=1</code> from the server it came from, converts it to its internal shapes, and uses the server's gates and TF-IDF index, so the page and <code>route_task</code> give the same answers.</p>
+<p>Rendering is a 2D canvas with its own 3D projection: one 3×3 orientation matrix maps world coordinates to the view, so rotation has no limits. Levels are rings on one vertical axis; a spread path is laid out in world coordinates on each ring; a dragged node's offset is solved in its level's plane and applied to everything downstream of it on the path.</p>
+<p>Inside an MCP Apps host the page talks to the host over <code>postMessage</code> (Part <em>The MCP App</em> in <a href="MCP_SERVER.md">MCP_SERVER.md</a>); in a browser that code stays idle.</p>
+<h2 id="the-plugin">The plugin</h2>
+<p><code>plugin/maxey0-context-plane-graph/</code> contains <code>.claude-plugin/plugin.json</code>, <code>.mcp.json</code> (the remote server, <code>type: http</code>) and two skills in Markdown. It runs no code locally.</p>
+<h2 id="tests">Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Suite</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>server/test/mcp.test.mjs</code></td>
+<td>Protocol (both eras), every tool, domain endpoints, resources, prompt, validator, MCP App resource, <code>/app</code></td>
+</tr>
+<tr>
+<td><code>server/test/ontology.test.mjs</code></td>
+<td>The built map against the spec: structure, keys, thresholds, checker rule, decisions</td>
+</tr>
+<tr>
+<td><code>server/test/sim.test.mjs</code></td>
+<td><code>sim.ts</code> reproduces every stored vector</td>
+</tr>
+<tr>
+<td><code>app/test_ui.cjs</code></td>
+<td>The page in Chromium against a local server: load, counts, gates equal the server's, routing equals <code>route_task</code>, isolation, spread, drag, rotation, topics, state</td>
+</tr>
+<tr>
+<td><code>app/test_host.cjs</code></td>
+<td>The page inside a simulated MCP Apps host: handshake, sizing, tool input, full screen, messages</td>
+</tr>
+</tbody>
+</table></main></body></html>

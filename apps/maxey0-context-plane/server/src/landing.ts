@@ -17,7 +17,7 @@ h1{font-size:40px;line-height:1.1;margin:0}h1 small{display:block;font-size:17px
 h2{font-size:20px;margin:0 0 8px}p{margin:0 0 12px;color:var(--dim)}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
 a.btn{display:inline-block;padding:12px 18px;border-radius:8px;background:var(--btn);color:#fff;text-decoration:none;font-weight:600}
-a.btn.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+a.btn.claude{background:#c2410c;color:#fff;border-radius:999px}a.btn.claude:hover{background:#9a3412}a.btn.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
 a{color:var(--acc)}a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:8px 0 32px}
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}.stat b{display:block;font-size:24px}.stat span{color:var(--dim);font-size:13px}
@@ -28,7 +28,7 @@ ol{margin:0;padding-left:20px;color:var(--dim)}footer{margin-top:40px;color:var(
 </style></head><body><main>
 <header><img src="/logo.png" alt="Human0 logo" width="96" height="96">
 <h1>Maxey0<small>The Context Plane: where any task belongs, and who should handle it.</small></h1></header>
-<div class="cta"><a class="btn" href="/app">Open Maxey0</a><a class="btn alt" href="#claude">Use Maxey0 inside Claude</a><a class="btn alt" href="${repo}">Docs and source</a></div>
+<div class="cta"><a class="btn" href="/app">Open Maxey0</a><a class="btn claude" href="/app#connect">Use Maxey0 inside Claude</a><a class="btn alt" href="/docs">Docs</a><a class="btn alt" href="/research">Research</a><a class="btn alt" href="${repo}">Source</a></div>
 <p>Type a task. Maxey0 places it on one path through six levels — domain, topic, concept, skill, the agents in their roles (primary, checker, support), and the MCP servers they hold — and shows that path in a live 3D map. An observer lens reads each level from the one above it and records how far every chosen node drifted to fit the task.</p>
 <div class="stats" aria-label="What the plane holds">
 <div class="stat"><b>${n(s.domains)}</b><span>domains</span></div><div class="stat"><b>${n(s.topics)}</b><span>topics</span></div>
@@ -40,6 +40,6 @@ ol{margin:0;padding-left:20px;color:var(--dim)}footer{margin-top:40px;color:var(
 <ol><li>In Claude: <b>Customize → Connectors → + Add → Add custom connector</b></li><li>Name: <code>Maxey0 Context Plane</code></li><li>URL: <code>${origin}/mcp</code></li><li>Sign-in: none — the server is read-only</li></ol></section>
 <section class="card"><h2>Build it with Claude Code</h2><p>Route a task in the app, then <b>Send to Claude Code</b>: you get a project folder with the route, one subagent per chosen agent and the build instructions. Run <code>claude</code> in it.</p></section>
 </div>
-<footer>Maxey0 Context Plane ${version} · read-only · routes are candidates, not authorizations · concepts, skills and agents are generated and structurally checked, MCP servers are real · <a href="${repo}">Apache-2.0</a> · <a href="/graph.json">graph.json</a> · <a href="/?format=json">server info</a></footer>
+<footer>Maxey0 Context Plane ${version} · read-only · routes are candidates, not authorizations · concepts, skills and agents are generated and structurally checked, MCP servers are real · <a href="${repo}">Apache-2.0</a> · <a href="/docs">docs</a> · <a href="/research">research</a> · <a href="/graph.json">graph.json</a> · <a href="/?format=json">server info</a></footer>
 </main></body></html>`;
 }

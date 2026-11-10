@@ -1,0 +1,213 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Performance budget · Maxey0 by Human0</title><meta name="description" content="The limits the tests enforce."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/performance.pdf" download>Download PDF</a><a class="alt" href="/docs/performance.md" download>Download .md</a></div><h1 id="performance-budget-item-11">Performance budget (item 11)</h1>
+<p>What is measured, the limit, and where it is checked. Browser numbers come from headless Chromium with software
+rendering, which is slower than a desktop browser with a GPU; the limits are set for that browser.</p>
+<h2 id="budget">Budget</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Limit</th>
+<th>Checked by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App page (HTML, one file)</td>
+<td>&lt; 300 KB</td>
+<td><code>app/test_ui.cjs</code> 1p</td>
+</tr>
+<tr>
+<td>Graph usable after navigation (local server)</td>
+<td>&lt; 3 s</td>
+<td><code>app/test_ui.cjs</code> 1p</td>
+</tr>
+<tr>
+<td>Frame (rotate one step), full graph, with and without the field view</td>
+<td>median &lt; 40 ms</td>
+<td><code>app/test_ui.cjs</code> 1p</td>
+</tr>
+<tr>
+<td>Observer-lens route computed in the page</td>
+<td>median &lt; 40 ms</td>
+<td><code>app/test_ui.cjs</code> 1p</td>
+</tr>
+<tr>
+<td>JS heap after load</td>
+<td>&lt; 150 MB</td>
+<td><code>app/test_ui.cjs</code> 1p</td>
+</tr>
+<tr>
+<td>Server CPU per flat route (in-process)</td>
+<td>median &lt; 15 ms</td>
+<td><code>server/test/mcp.test.mjs</code></td>
+</tr>
+<tr>
+<td>Server CPU per lens route (in-process)</td>
+<td>median &lt; 60 ms</td>
+<td><code>server/test/mcp.test.mjs</code></td>
+</tr>
+<tr>
+<td>Live lens route with dense</td>
+<td>no error 1102 (Cloudflare resource limit)</td>
+<td>live check after each deploy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="measurements">Measurements</h2>
+<h3 id="before-server-651-app-110-live-measured-from-claudes-cloud-workspace">Before (server 6.5.1 / app 1.10, live, measured from Claude's cloud workspace)</h3>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App HTML</td>
+<td>93 KB over the wire (gzip), 247 KB raw</td>
+</tr>
+<tr>
+<td>graph.json</td>
+<td>946 KB over the wire, 3.5 MB raw; 156–228 ms to fetch</td>
+</tr>
+<tr>
+<td>DOMContentLoaded</td>
+<td>263 ms first load, 47 ms cached</td>
+</tr>
+<tr>
+<td>Graph usable</td>
+<td>1,287 ms first load, 1,159 ms cached</td>
+</tr>
+<tr>
+<td>Frame, full graph</td>
+<td>median 13.1–16.5 ms, p90 20.5–28.4 ms</td>
+</tr>
+<tr>
+<td>Frame, field view</td>
+<td>median 15.2–15.4 ms, p90 17.1–19.1 ms</td>
+</tr>
+<tr>
+<td>Lens route in the page</td>
+<td>56–62 ms</td>
+</tr>
+<tr>
+<td>JS heap</td>
+<td>54–61 MB</td>
+</tr>
+<tr>
+<td>/route end to end (includes the workspace's proxy)</td>
+<td>flat 0.12–0.88 s, lens 0.20–1.10 s</td>
+</tr>
+</tbody>
+</table>
+<p>The profile of a page load showed three avoidable costs: the agent ring layout re-counted every concept's skills for
+every concept (about 1.5 M filter steps per call, ~160 ms), each agent's angle scanned all edges (~55 ms), and the gate
+list sorted all 117 servers for every agent (~45 ms).</p>
+<h3 id="after-app-111-local-measurements-same-results-checked-node-by-node">After (app 1.11, local measurements; same results checked node by node)</h3>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Graph usable (local server)</td>
+<td>991–1,027 ms</td>
+<td>737–776 ms</td>
+</tr>
+<tr>
+<td>Lens route in the page</td>
+<td>67–71 ms</td>
+<td>15–17 ms (10.9 ms in the test run)</td>
+</tr>
+<tr>
+<td>Frame, full graph / field view</td>
+<td>—</td>
+<td>15.1 / 15.7 ms</td>
+</tr>
+<tr>
+<td>Server CPU per route (in-process)</td>
+<td>lens ~80 ms before 6.5.1</td>
+<td>flat 2.7 ms, lens 16 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Every node's place, the lens chain on the reference task, the number of gates and each agent's gate count were compared
+between the old and new page: identical.</p>
+<h3 id="after-live-server-652-app-111-same-workspace-same-script-appperf_livecjs">After, live (server 6.5.2 / app 1.11, same workspace, same script <code>app/perf_live.cjs</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Before (6.5.1)</th>
+<th>After (6.5.2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Graph usable, cached load</td>
+<td>1,159 ms</td>
+<td>888 ms</td>
+</tr>
+<tr>
+<td>Graph usable, first load</td>
+<td>1,287 ms</td>
+<td>1,522 ms (the HTML took 524 ms on the first request after the deploy, against 141 ms before: a cold edge cache, not page work)</td>
+</tr>
+<tr>
+<td>Lens route in the page</td>
+<td>56–62 ms</td>
+<td>10.7–11.3 ms</td>
+</tr>
+<tr>
+<td>Frame, full graph</td>
+<td>median 13.1–16.5 ms</td>
+<td>median 18.5–21.0 ms</td>
+</tr>
+<tr>
+<td>Frame, field view</td>
+<td>median 15.2–15.4 ms</td>
+<td>median 18.8–22.1 ms</td>
+</tr>
+<tr>
+<td>JS heap</td>
+<td>54–61 MB</td>
+<td>40–54 MB</td>
+</tr>
+<tr>
+<td>Live lens routes with dense</td>
+<td>—</td>
+<td>10 of 10 returned 200 (no error 1102)</td>
+</tr>
+</tbody>
+</table>
+<p>Frame times rose in this run although no drawing code changed in 6.5.2; the workspace's shared CPU varies between runs, so
+single runs of a few milliseconds are noise here. All values are inside the budget.</p>
+<h2 id="not-yet-done">Not yet done</h2>
+<ul>
+<li>graph.json (3.5 MB raw) is the largest cost of a first load; a slimmer browser payload (field places and vectors only
+  where the page needs them) would cut it.</li>
+<li>The page still computes its own legacy 48-dimension hash embedding at load (~80 ms); it only feeds the gate re-rank.</li>
+</ul></main></body></html>

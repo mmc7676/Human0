@@ -1,0 +1,701 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>User guide · Maxey0 by Human0</title><meta name="description" content="Every feature of the app, step by step."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/user-guide.pdf" download>Download PDF</a><a class="alt" href="/docs/user-guide.md" download>Download .md</a></div><h1 id="maxey0-context-plane-user-guide">Maxey0 Context Plane — User Guide</h1>
+<p>This guide covers the three ways to use the Maxey0 Context Plane: the <strong>graph app</strong> in a browser, the <strong>graph inside Claude</strong>, and the <strong>MCP server</strong> behind both. It starts with the ideas you need, then walks through every part of the app, then covers Claude, the plugin and topic generation.</p>
+<h2 id="how-this-guide-is-organized">How this guide is organized</h2>
+<p>The product is one map shown three ways. The guide follows that shape.</p>
+<pre><code>The map (shared by everything)
+│
+├── Part 1  Ideas ............. what domains, topics, concepts, skills, agents and MCP servers are
+│
+├── The graph app (browser and Claude)
+│   ├── Part 2  First run ...... open it, route a task, read the result
+│   ├── Part 3  The screen ..... every panel, top to bottom
+│   ├── Part 4  Moving the view  rotate, roll, pan, zoom, spin, 720°, fit
+│   ├── Part 5  Paths .......... select, isolate, spread, drag
+│   ├── Part 6  Agents &amp; gates . how agents sit, gate toggles, SCWs
+│   ├── Part 7  New topics ..... generate, validate, add, keep or remove
+│   ├── Part 8  Your own skills  uploading skills and agents
+│   └── Part 9  Saving ......... state, files, full screen
+│
+├── Claude
+│   ├── Part 10 Connector &amp; MCP App   the graph and tools inside a conversation
+│   └── Part 11 Plugin &amp; skills       routing skill, topic-graph-generator
+│
+└── Reference
+    ├── Part 12 Troubleshooting
+    ├── Part 13 Controls at a glance
+    └── Part 14 Glossary
+</code></pre>
+<p>Server internals and the full tool reference are in <a href="MCP_SERVER.md">MCP_SERVER.md</a>; how the map is built is in <a href="ARCHITECTURE.md">ARCHITECTURE.md</a>.</p>
+<hr />
+<h2 id="part-1-ideas">Part 1 · Ideas</h2>
+<h3 id="the-six-levels">The six levels</h3>
+<p>Everything in the map sits on one of six levels, and every thread runs through all of them in order:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What it is</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domain</strong></td>
+<td>The broadest grouping</td>
+<td>Finance</td>
+</tr>
+<tr>
+<td><strong>Topic</strong></td>
+<td>A field of work or study</td>
+<td>Derivatives and Options</td>
+</tr>
+<tr>
+<td><strong>Concept</strong></td>
+<td>A distinct idea within the topic</td>
+<td>Pricing and Greeks</td>
+</tr>
+<tr>
+<td><strong>Skill</strong></td>
+<td>A piece of work you can ask for</td>
+<td>Option Pricer</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>Who should do that work</td>
+<td>Derivatives Pricing Agent (a MaxeyN key)</td>
+</tr>
+<tr>
+<td><strong>MCP server</strong></td>
+<td>A tool that agent would use</td>
+<td>Polygon MCP</td>
+</tr>
+</tbody>
+</table>
+<p>Topics, concepts and skills each have exactly one parent. Agents and MCP servers are shared: one agent can serve skills in several concepts, and one server can be held by several agents.</p>
+<h3 id="the-eleven-domains">The eleven domains</h3>
+<p>Domains were written from the concepts up: topics were formed from what their concepts, skills, agents and servers have in common, and domains from what their topics have in common.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Topics</th>
+<th>Holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agentic Systems and Software Engineering</strong></td>
+<td>17</td>
+<td>Maxey0, agent harnesses, MCP and protocols, governance, observability, state, time, reasoning, knowledge graphs, code and infrastructure</td>
+</tr>
+<tr>
+<td><strong>Data Science and Quantitative Methods</strong></td>
+<td>7</td>
+<td>statistics and causal inference, machine learning, data engineering, visualization, optimization, decision and risk analysis, research methods</td>
+</tr>
+<tr>
+<td><strong>Mathematical and Physical Sciences</strong></td>
+<td>9</td>
+<td>algebra, calculus, linear algebra, classical and quantum physics, optics, condensed matter, materials, chemistry and simulation</td>
+</tr>
+<tr>
+<td><strong>Engineering</strong></td>
+<td>10</td>
+<td>electrical, chemical, mechanical, civil, aerospace and energy engineering, control, robotics and drones</td>
+</tr>
+<tr>
+<td><strong>Life, Health and Mind Sciences</strong></td>
+<td>9</td>
+<td>cell and molecular biology, genetics, anatomy, bioengineering, biomedical computation, biomechanics, public health, psychology and cognitive science</td>
+</tr>
+<tr>
+<td><strong>Earth, Environment and Place</strong></td>
+<td>8</td>
+<td>climate, atmosphere, water, geophysics, environmental engineering, energy and emissions policy, maps, GIS, cities, places and travel</td>
+</tr>
+<tr>
+<td><strong>Business, Finance and Economics</strong></td>
+<td>21</td>
+<td>accounting, corporate finance, banking, markets and trading, funds, regulation, taxes, crypto, real estate, economics, startups, marketing and careers</td>
+</tr>
+<tr>
+<td><strong>Society, Governance and Ethics</strong></td>
+<td>11</td>
+<td>politics, international relations, public policy, human rights, development, sociology, anthropology, education and the ethics of technology and data</td>
+</tr>
+<tr>
+<td><strong>Languages, Literatures and Communication</strong></td>
+<td>11</td>
+<td>language structure, grammar, pronunciation, translation, linguistics, writing, poetry, rhetoric and literature</td>
+</tr>
+<tr>
+<td><strong>Area and Identity Studies</strong></td>
+<td>13</td>
+<td>European, Slavic, Chinese, African, American, Latin American and Jewish studies, and the study of race, ethnicity, gender and sexuality</td>
+</tr>
+<tr>
+<td><strong>Humanities and Arts</strong></td>
+<td>12</td>
+<td>philosophy, history, classics, religion, archaeology, art history, studio art, design, music, dance, theater, film and media</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agents-primary-checker-support">Agents: primary, checker, support</h3>
+<p>Each skill names three or four agents:</p>
+<ul>
+<li><strong>Primary</strong> does the work.</li>
+<li><strong>Checker</strong> verifies it. A checker holds every MCP server its primary holds on that skill, so it can re-run the work rather than only read it.</li>
+<li><strong>Support</strong> helps with part of the work.</li>
+</ul>
+<p>Every agent has a permanent key: <strong>Maxey</strong> followed by a number. <strong>Maxey0</strong> is the orchestrator that hands work to the others; for example, <strong>Maxey1498</strong> is the Quantum Circuit Agent. Keys never change between versions of the map.</p>
+<p>Agents here are <strong>context records</strong>: a role, the skills it serves and the tools it would hold. Nothing in this product runs an agent or calls an MCP server. The map tells an orchestrator, or you, who should do a piece of work and with what.</p>
+<h3 id="mcp-servers-and-gates">MCP servers and gates</h3>
+<p>An MCP server is a tool server an agent can use. In the graph, the line from an agent to a server is a <strong>gate</strong>. A gate exists for one of three reasons:</p>
+<ul>
+<li><strong>Derived:</strong> the server's description is similar to one of the agent's skills (cosine ≥ 0.10).</li>
+<li><strong>Inherited:</strong> the agent is the checker on a skill whose primary holds the server.</li>
+<li><strong>Declared:</strong> set by hand in the map's rules (one case: Maxey0 → its own session store).</li>
+</ul>
+<p>Every server in the map is a real project whose existence was checked. Some can place orders, move money or change accounts; the map lists them as context only.</p>
+<h3 id="routing">Routing</h3>
+<p>Routing turns a task into a path. The task's words are compared with every skill and concept using one method, TF-IDF cosine similarity: words are lower-cased, common words dropped, plurals folded, and rare words weigh more than common ones. A match needs a score of at least <strong>0.08</strong> and at least two shared words, so a single rare word is never enough. The best match becomes the route; the next few are listed as candidates.</p>
+<p>Routing matches words, not meaning. If a task uses words the map doesn't, it returns no route instead of a wrong one. Rephrase with the field's own words, or generate the missing topic (Part 7).</p>
+<hr />
+<h2 id="part-2-first-run">Part 2 · First run</h2>
+<ol>
+<li>Open <strong><a href="https://maxey0-context-plane-mcp.maxey0.workers.dev/app">maxey0-context-plane-mcp.maxey0.workers.dev/app</a></strong>. The graph loads from the server in a few seconds; a notice beside the title shows progress.</li>
+<li>In <strong>Task</strong>, type <code>quantum entanglement of two qubits</code> and press <strong>Enter</strong> or <strong>Submit task</strong>.</li>
+<li>Read the green panel:</li>
+<li><strong>Matched … best skill</strong> names the skill and its score.</li>
+<li><strong>Best route</strong> reads <em>topic → concept → skill</em>: here Quantum Physics → Quantum Foundations → Entanglement Entropy Analyzer.</li>
+<li><strong>Other candidates</strong> are the next-best skills; click one to jump to it.</li>
+<li>Look at the graph. The route is highlighted: the topic, concept and skill, the skill's agents, and those agents' MCP servers.</li>
+<li>Click <strong>Hide</strong> on the panel to shrink it to one line. The highlight stays. Click <strong>Show result</strong> to bring it back.</li>
+<li>Try <code>hello there friend</code>. The panel turns amber: no skill shares enough words. It offers <strong>Generate a topic for this task</strong> (Part 7).</li>
+</ol>
+<hr />
+<h2 id="part-3-the-screen">Part 3 · The screen</h2>
+<p>The app is one page, top to bottom:</p>
+<h3 id="header">Header</h3>
+<p>The Human0 logo, the app name and version. <strong>What is this graph?</strong> opens a short explanation.</p>
+<h3 id="workspace">Workspace</h3>
+<p>Everything below sits in the <strong>Workspace</strong> panel. Its first line, <strong>App state &amp; full screen</strong>, is folded by default; open it for Save, Restore, Export file, Import file, Remove state, and the browser full-screen buttons (Part 9).</p>
+<h3 id="left-column-agent-field-control">Left column: Agent field control</h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Layout &amp; gates</strong></td>
+<td>Agent layout (<strong>Skill-angle</strong> or <strong>Gate-field</strong>), show or hide <strong>skill→agent</strong> lines and <strong>agent→MCP gates</strong>, <strong>Multi-MCP only</strong>, <strong>Spin</strong>, <strong>Isolate path</strong>, <strong>⬡ ISOLATE</strong> (SCW view) and which agents get an SCW</td>
+</tr>
+<tr>
+<td><strong>Labels &amp; numbering</strong></td>
+<td>Which levels show labels (<strong>T</strong> topics, <strong>C</strong> concepts, <strong>S</strong> skills, <strong>A</strong> agents, <strong>M</strong> MCP servers, <strong>None</strong>, <strong>All</strong>); agent labels as name, MaxeyN index or both; ID tools; SCW labels</td>
+</tr>
+<tr>
+<td><strong>Clear</strong></td>
+<td>Clear the <strong>Selection</strong> or <strong>Search</strong>; <strong>Clear ALL gates</strong> or <strong>Restore gate defaults</strong></td>
+</tr>
+<tr>
+<td><strong>Browse &amp; select</strong></td>
+<td>Search box, <strong>Topic</strong> and <strong>Concept</strong> selectors, lists of topics, concepts, agents, MCP servers or skills; <strong>Multi-select</strong> and <strong>Select all listed</strong></td>
+</tr>
+<tr>
+<td><strong>Overrides &amp; export</strong></td>
+<td><strong>Reset overrides</strong> (manual gate changes) and <strong>Export locations (JSON)</strong></td>
+</tr>
+<tr>
+<td><strong>Upload Skill or Agent</strong></td>
+<td>Add your own skill or agent to the graph (Part 8)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="right-column">Right column</h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Task</strong></td>
+<td>Choose the router (<strong>Flat</strong> or <strong>Observer lens</strong>), type a task, <strong>Submit task</strong>, <strong>Clear task</strong>; the result panel appears below. With <strong>Observer lens</strong>, a readout lists for each level the nodes chosen, their weight w, their signed support ψ and each branch's contribution, plus any candidates ruled out. A domain chosen in Browse &amp; select becomes the lens's starting point</td>
+</tr>
+<tr>
+<td><strong>Metrics</strong></td>
+<td>Live counts: topics, concepts, skills, agents, MCP servers, gate links, agents with two or more servers</td>
+</tr>
+<tr>
+<td><strong>Graph</strong></td>
+<td>The 3D graph, its toolbar and legend</td>
+</tr>
+<tr>
+<td><strong>Details</strong></td>
+<td>Everything about the selected node</td>
+</tr>
+<tr>
+<td><strong>Task route</strong></td>
+<td>The last task's top three routes, opened from <strong>Show execution path ↓</strong></td>
+</tr>
+<tr>
+<td><strong>Topics → Concepts → Skills → Agents → MCP</strong></td>
+<td>Generate and manage new topics (Part 7)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="graph-toolbar">Graph toolbar</h3>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spread path</strong></td>
+<td>When a path is isolated, lay each level's nodes around its ring so every label is readable (on by default)</td>
+</tr>
+<tr>
+<td><strong>Drag nodes</strong></td>
+<td>Let a drag on a node move it (on by default)</td>
+</tr>
+<tr>
+<td><strong>Reset layout</strong></td>
+<td>Put dragged nodes back</td>
+</tr>
+<tr>
+<td><strong>720°</strong></td>
+<td>Tumble the graph through two full turns and land where it started</td>
+</tr>
+<tr>
+<td><strong>Full screen</strong></td>
+<td>Inside Claude only: ask Claude to show the app full screen</td>
+</tr>
+<tr>
+<td><strong>Fit view</strong></td>
+<td>Reset rotation, zoom and pan so the whole graph fits</td>
+</tr>
+<tr>
+<td><strong>Domains</strong></td>
+<td>Show the domain level: the top plane of the graph, one node per domain in its own colour, linked to its topics; every topic also carries its domain's colour as a ring. <strong>D</strong> in Labels names them; selecting a domain lights up its topics</td>
+</tr>
+<tr>
+<td><strong>Observer</strong></td>
+<td>Where the field is read from: <em>above the graph</em>, a chosen domain, topic or concept, or the routed task's lens chain</td>
+</tr>
+<tr>
+<td><strong>Embedding values</strong></td>
+<td>Select any node: Details shows its field location, its value as seen from the current observer, and its three nearest nodes on every level (the same ranking as the server's <code>nearest</code> tool; a domain counts as near as its nearest topic). Click a neighbour to jump to it. In the embedding field with an observer inside the graph, nodes the observer barely explains fade</td>
+</tr>
+<tr>
+<td><strong>Embedding field</strong></td>
+<td>Place nodes by the field. Seen from above the graph, every node sits at its location in the shared space, so nodes that mean the same thing line up across levels. Once the observer is inside the graph (a lens route, or a domain, topic or concept chosen), every plane below it is laid out from there: the chosen nodes at the centre, each other node as far out as the observer leaves it unexplained, in its field direction. Off: the ring layout</td>
+</tr>
+<tr>
+<td><strong>Show: Full graph / New topics only</strong></td>
+<td>Show everything, or only topics you added (Part 7)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reading-the-graph">Reading the graph</h3>
+<p>The five levels are stacked rings on one vertical axis, from the top: <strong>Topics</strong> (gold), <strong>Concepts</strong> (cyan), <strong>Skills</strong> (green), <strong>Agents</strong> (violet), <strong>MCP servers</strong> (pink squares). Lines run between levels: tree lines (topic → concept → skill), skill→agent lines weighted by role (primary heaviest), and gates (agent → server) shaded by strength. A ring around an agent means it holds two or more servers. Orange skills and red agents are ones you uploaded.</p>
+<hr />
+<h2 id="part-4-moving-the-view">Part 4 · Moving the view</h2>
+<table>
+<thead>
+<tr>
+<th>To</th>
+<th>Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotate in any direction</td>
+<td>Drag empty space. The graph turns about the axis at right angles to your drag, with no limit.</td>
+</tr>
+<tr>
+<td>Roll (tilt sideways)</td>
+<td><strong>Shift</strong> + drag</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td>Right-drag, middle-drag or <strong>Alt</strong> + drag</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Scroll (0.08× to 8×)</td>
+</tr>
+<tr>
+<td>Spin about the graph's own axis</td>
+<td><strong>Spin</strong> (Layout &amp; gates); click again to stop</td>
+</tr>
+<tr>
+<td>Tumble two full turns</td>
+<td><strong>720°</strong></td>
+</tr>
+<tr>
+<td>Start over</td>
+<td><strong>Fit view</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A click on a node selects it; a click on empty space clears the selection. Hovering a node highlights its path while the pointer is on it.</p>
+<hr />
+<h2 id="part-5-paths">Part 5 · Paths</h2>
+<h3 id="selecting">Selecting</h3>
+<p>Click any node, pick it from <strong>Browse &amp; select</strong>, or choose a <strong>Topic</strong> and <strong>Concept</strong> in the selectors. The selected node's whole path lights up: for a topic, all its concepts, skills, agents and servers; for an agent, the skills it serves and the servers it holds; for a server, the agents holding it and their skills. <strong>Details</strong> shows the node's description and its links.</p>
+<p>To select several nodes, turn on <strong>Multi-select</strong> (or hold <strong>Shift</strong>/<strong>Ctrl</strong> and click). <strong>Select all listed</strong> selects everything in the current list.</p>
+<h3 id="isolating">Isolating</h3>
+<p><strong>Isolate path</strong> hides everything that isn't on the selected path, so you see one thread on its own. Click it again to bring the rest back.</p>
+<h3 id="spreading">Spreading</h3>
+<p>With a path isolated and <strong>Spread path</strong> on, each level's nodes on the path are placed around that level's ring, centred under their parents, so nodes and labels no longer stack on top of each other. The spread starts on the side facing you and then turns with the graph like everything else.</p>
+<h3 id="dragging">Dragging</h3>
+<p>With <strong>Drag nodes</strong> on, drag any node to move it. A node always stays on its own level and inside that level's ring, and everything below it on the path moves with it: drag a concept and its skills, their agents and those agents' servers follow on their own rings. This works at any rotation, including upside-down. <strong>Reset layout</strong> puts every node back. Dragged positions are saved with the app state.</p>
+<hr />
+<h2 id="part-6-agents-and-gates">Part 6 · Agents and gates</h2>
+<h3 id="agent-layout">Agent layout</h3>
+<ul>
+<li><strong>Gate-field</strong> (default): each agent sits at the weighted centre of the servers it holds, so agents with similar tools cluster together. Agents with no servers stay at their skill-angle position.</li>
+<li><strong>Skill-angle:</strong> agents are spread evenly around their ring, ordered by the skills they serve.</li>
+</ul>
+<h3 id="gate-toggles">Gate toggles</h3>
+<p>Select an agent: <strong>Details</strong> lists its candidate MCP gates with their scores and the reason for each (derived, inherited with the skill it came from, or declared). Tick or untick a gate to change which servers place the agent; the agent moves to its new position. <strong>Reset overrides</strong> undoes your changes, <strong>Clear ALL gates</strong> removes every gate (to see agents by skill alone) and <strong>Restore gate defaults</strong> brings back the map's gates. <strong>Export locations (JSON)</strong> saves every agent's position and gates.</p>
+<p><strong>Multi-MCP only</strong> dims every agent that holds fewer than two servers.</p>
+<h3 id="scws-execution-boundaries">SCWs (execution boundaries)</h3>
+<p>A Structured Context Window (SCW) is the boundary where context meets execution: one agent and the servers it would use. Turn on <strong>⬡ ISOLATE</strong> and select an agent to draw its SCW; Shift-click two or more agents for a multi-agent or loop SCW. <strong>Execution SCWs</strong> chooses whether SCWs are drawn for the selected agents, all agents, or none. <strong>SCWn on</strong> labels them; <strong>Reset numbering</strong> renumbers them and <strong>Delete custom loops</strong> removes the multi-agent ones you made.</p>
+<hr />
+<h2 id="part-7-new-topics">Part 7 · New topics</h2>
+<p>When a task has no route, the missing piece is usually a whole topic. You can generate one with Claude, check it, add it to your graph, and keep or remove it later.</p>
+<h3 id="1-build-the-request">1. Build the request</h3>
+<p>Either click <strong>Generate a topic for this task</strong> on an amber result, or open <strong>Topics → Concepts → Skills → Agents → MCP</strong>, type a topic (and optionally a concept), and click <strong>Build generation request</strong>. The request lists the existing topics and the rules a topic must follow.</p>
+<h3 id="2-generate-it">2. Generate it</h3>
+<p>Click <strong>Ask Claude to generate it</strong>.</p>
+<ul>
+<li><strong>Inside Claude</strong>, the request goes straight into the conversation.</li>
+<li><strong>In a browser</strong>, it is copied; paste it into Claude. Claude works best with the Maxey0 Context Plane connector or plugin installed, because it can then check its work with <code>validate_topic_pack</code>.</li>
+</ul>
+<p>Claude returns one JSON object: a <strong>topic pack</strong> with 3–8 concepts, their skills, the agents for each skill, and only real MCP servers it could verify.</p>
+<h3 id="3-validate-and-add">3. Validate and add</h3>
+<p>Paste the JSON into the box under the request (or import a <code>.json</code> file), click <strong>Validate</strong> to see problems or counts, then <strong>Add to graph</strong>. The new topic appears in the graph, the selectors, search and <strong>Details</strong>, and works with isolation, spreading, dragging and SCWs like any other topic.</p>
+<h3 id="4-keep-remove-view">4. Keep, remove, view</h3>
+<p>Each added topic is listed under <strong>Added to this graph</strong> with <strong>Show</strong>, <strong>Remove</strong> and <strong>Export</strong>. Topics are independent: add three, remove the second, and the first and third stay. <strong>Show: New topics only</strong> displays just the topics you added; <strong>Full graph</strong> brings back everything.</p>
+<p>Added topics live in your app state (Part 9). They are not sent to the server. To propose one for the public map, export it and open an issue or pull request.</p>
+<hr />
+<h2 id="part-8-your-own-skills-and-agents">Part 8 · Your own skills and agents</h2>
+<p><strong>Upload Skill or Agent</strong> maps your own skill or agent onto the graph:</p>
+<ol>
+<li>Choose a type, or leave <strong>Auto-detect</strong>.</li>
+<li>Choose files or paste a <code>SKILL.md</code>, an agent <code>.md</code>, or JSON with at least a name and a description.</li>
+<li>Files you choose are staged as they load; for pasted text click <strong>Stage pasted text</strong>. Then click <strong>Submit to graph for mapping</strong> (<strong>Clear staged</strong> empties the list).</li>
+</ol>
+<p>The app places each upload under the concept its text is most similar to. Uploaded skills are <strong>orange</strong>, uploaded agents <strong>red</strong>. Uploads are saved in your app state and can be remapped or removed from the list under the panel.</p>
+<hr />
+<h2 id="part-9-saving">Part 9 · Saving</h2>
+<h3 id="app-state">App state</h3>
+<p>Open <strong>App state &amp; full screen</strong> (folded under Workspace):</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Save</strong></td>
+<td>Saves to this browser: added topics, uploads, gate overrides, labels, filters, dragged layout, rotation, zoom and pan</td>
+</tr>
+<tr>
+<td><strong>Restore</strong></td>
+<td>Loads the saved state</td>
+</tr>
+<tr>
+<td><strong>Export file</strong> / <strong>Import file</strong></td>
+<td>The same, as a <code>.json</code> file you can keep or share</td>
+</tr>
+<tr>
+<td><strong>Remove state</strong></td>
+<td>Deletes the saved state from this browser</td>
+</tr>
+</tbody>
+</table>
+<p>Each saved state records which version of the map it was made with. A state from a different version is refused with a message rather than loaded wrong.</p>
+<h3 id="full-screen">Full screen</h3>
+<ul>
+<li><strong>In a browser:</strong> <strong>Graph full screen</strong>, <strong>Control board full screen</strong> or <strong>App full screen</strong> in the App state line.</li>
+<li><strong>Inside Claude:</strong> <strong>Full screen</strong> in the Graph toolbar asks Claude to show the app full screen; click again to return.</li>
+</ul>
+<hr />
+<h2 id="part-10-in-claude-connector-and-mcp-app">Part 10 · In Claude: connector and MCP App</h2>
+<h3 id="connect">Connect</h3>
+<ol>
+<li><strong>Customize → Connectors → Add custom connector</strong></li>
+<li>URL <code>https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp</code>, no authentication.</li>
+</ol>
+<p>No account is needed. To use one domain only, use <code>/mcp/&lt;domain id&gt;</code> instead, for example <code>/mcp/business-finance</code> or <code>/mcp/agentic-systems</code>.</p>
+<h3 id="open-the-graph-in-a-conversation">Open the graph in a conversation</h3>
+<p>Ask for it:</p>
+<ul>
+<li><em>"Open the Maxey0 Context Plane graph."</em></li>
+<li><em>"Open the Maxey0 Context Plane graph for the task: hedge a currency exposure."</em></li>
+<li><em>"Show the Maxey0 Context Plane graph on the Real Estate topic."</em></li>
+</ul>
+<p>Claude calls <code>open_context_plane_graph</code>. In hosts that support MCP Apps, such as Claude Desktop, the graph renders in the conversation with the task already routed. Elsewhere Claude gives you a link to the web app.</p>
+<h3 id="ask-questions-without-the-graph">Ask questions without the graph</h3>
+<ul>
+<li><em>"Use Maxey0 Context Plane to route: reconcile a bank statement."</em></li>
+<li><em>"Which agents check skills in Quantum Physics, and which servers do they hold?"</em></li>
+<li><em>"Trace Maxey1498 back to its domain."</em></li>
+<li><em>"List the topics in the Foundations domain."</em></li>
+</ul>
+<p>Claude answers from the tools, fetching only what it needs. The full list of tools is in <a href="MCP_SERVER.md">MCP_SERVER.md</a>.</p>
+<h3 id="permissions">Permissions</h3>
+<p>Every tool is read-only. Whether Claude asks before each call, or before showing the app, depends on your connector permission settings in Claude.</p>
+<hr />
+<h2 id="part-11-plugin-and-skills">Part 11 · Plugin and skills</h2>
+<p>The plugin <strong>maxey0-context-plane-graph</strong> packages the connector with two skills:</p>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Claude uses it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>maxey0-context-plane</strong></td>
+<td>You ask to route a task, find who handles a skill, which MCP server fits, or to open the graph. It tells Claude which tool to call first, how to read the results (gate reasons, no-match answers) and how to report them.</td>
+</tr>
+<tr>
+<td><strong>topic-graph-generator</strong></td>
+<td>A task has no route, or you ask Claude to add or generate a topic. Claude gets the generation request, checks for overlap with existing topics, writes the pack, verifies each MCP server exists, validates the pack with <code>validate_topic_pack</code>, and returns the JSON for the app.</td>
+</tr>
+</tbody>
+</table>
+<p>Install it from the plugin directory when listed, or from this repository (see the <a href="../README.md#in-claude-as-a-plugin">README</a>). If you already added the connector by hand, keep one of the two so the tools don't appear twice.</p>
+<hr />
+<h2 id="part-12-troubleshooting">Part 12 · Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>You see</th>
+<th>Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The graph doesn't load; a red notice names the server</td>
+<td>Check your connection and reload. The page needs to reach the server for <code>/graph.json</code>.</td>
+</tr>
+<tr>
+<td><strong>No match</strong> for a task you expect to route</td>
+<td>Rephrase with the field's own words; or generate the missing topic (Part 7).</td>
+</tr>
+<tr>
+<td>Nodes and labels pile up</td>
+<td>Isolate the path and turn on <strong>Spread path</strong>, or drag nodes apart.</td>
+</tr>
+<tr>
+<td>The graph is lost off screen</td>
+<td><strong>Fit view</strong>.</td>
+</tr>
+<tr>
+<td>A saved state won't load</td>
+<td>It was saved against another version of the map. Its added topics are still in the exported file: re-add them from the Topics panel.</td>
+</tr>
+<tr>
+<td>In Claude, the graph shows as a link, not the app</td>
+<td>That client doesn't support MCP Apps; open the link, or use Claude Desktop.</td>
+</tr>
+<tr>
+<td>In Claude, the tools appear twice</td>
+<td>The connector was added by hand and by the plugin. Turn one off.</td>
+</tr>
+<tr>
+<td><strong>Full screen</strong> missing in the toolbar</td>
+<td>It appears only inside an MCP Apps host such as Claude; in a browser use the App state line.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-13-controls-at-a-glance">Part 13 · Controls at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Route a task</td>
+<td>Type in Task, <strong>Enter</strong></td>
+</tr>
+<tr>
+<td>Select a node</td>
+<td>Click it, or pick it in Browse &amp; select</td>
+</tr>
+<tr>
+<td>Add to selection</td>
+<td><strong>Shift</strong>/<strong>Ctrl</strong> + click, or <strong>Multi-select</strong></td>
+</tr>
+<tr>
+<td>Isolate the selected path</td>
+<td><strong>Isolate path</strong></td>
+</tr>
+<tr>
+<td>Rotate any way</td>
+<td>Drag empty space</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td><strong>Shift</strong> + drag</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td>Right-drag, middle-drag, or <strong>Alt</strong> + drag</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Scroll</td>
+</tr>
+<tr>
+<td>Move a node on its level</td>
+<td>Drag the node</td>
+</tr>
+<tr>
+<td>Reset nodes / view</td>
+<td><strong>Reset layout</strong> / <strong>Fit view</strong></td>
+</tr>
+<tr>
+<td>Draw an agent's SCW</td>
+<td><strong>⬡ ISOLATE</strong>, then click the agent</td>
+</tr>
+<tr>
+<td>Generate a topic</td>
+<td><strong>Generate a topic for this task</strong>, or the Topics panel</td>
+</tr>
+<tr>
+<td>Save everything</td>
+<td>App state → <strong>Save</strong> or <strong>Export file</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-14-glossary">Part 14 · Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maxey0</strong></td>
+<td>The orchestrator of a multi-agent system; also the one topic in the Maxey0 System domain</td>
+</tr>
+<tr>
+<td><strong>MaxeyN</strong></td>
+<td>A specialised agent's permanent key, such as Maxey1498</td>
+</tr>
+<tr>
+<td><strong>Context plane</strong></td>
+<td>The map an orchestrator reads before acting: what kinds of work exist and who handles each</td>
+</tr>
+<tr>
+<td><strong>SCW</strong></td>
+<td>Structured Context Window: a bounded workspace for one piece of work; in the graph, the boundary around an agent and its servers</td>
+</tr>
+<tr>
+<td><strong>SCW1</strong></td>
+<td>The SCW that holds this map</td>
+</tr>
+<tr>
+<td><strong>Topic harness</strong></td>
+<td>Everything about one topic in one document: its concepts, skills, agents and servers</td>
+</tr>
+<tr>
+<td><strong>Topic pack</strong></td>
+<td>The JSON format for a topic, used to build the map and to add generated topics</td>
+</tr>
+<tr>
+<td><strong>Gate</strong></td>
+<td>A link from an agent to an MCP server</td>
+</tr>
+<tr>
+<td><strong>Route</strong></td>
+<td>The best path for a task: topic → concept → skill → agents → servers</td>
+</tr>
+<tr>
+<td><strong>Human0</strong></td>
+<td>The app platform this graph belongs to</td>
+</tr>
+</tbody>
+</table>
+<h2 id="part-15-app-15-additions">Part 15 — App 1.5 additions</h2>
+<ul>
+<li><strong>Edge toggles.</strong> The toolbar has one button per link level: Domain→Topic, Topic→Concept, Concept→Skill, Skill→Agent, Agent→MCP, plus Related (dashed lines between related concepts, off by default). A path that stops at skills means the Skill→Agent or Agent→MCP toggle is off.</li>
+<li><strong>Selecting a domain</strong> shows its topics and their concepts. Skills, agents and servers appear when you select a concept or skill, or route a task.</li>
+<li><strong>Domains tab</strong> lists all 11 domains; click one to select it.</li>
+<li><strong>Generated topics</strong> get a suggested domain from the nearest existing topic. When you publish a pack, set <code>pack_domains</code> so the server files it under that domain.</li>
+<li><strong>Saved state</strong> now includes router mode (flat/lens), the field view, the domain filter, every edge toggle and the browse filters.</li>
+</ul>
+<h2 id="part-16-app-16-3d-donut-levels">Part 16 — App 1.6: 3D donut levels</h2>
+<ul>
+<li>Each level is a donut with thickness. With <strong>Embedding field</strong> on, a node's place around and across the ring comes from field axes 1–2 and its height inside the donut from axis 3.</li>
+<li><strong>Drag nodes</strong>: grab a node and move it; it follows the pointer from any viewing angle and moves in 3D within its donut. Release to place it; it stays there. <strong>Reset layout</strong> puts every node back.</li>
+</ul>
+<h2 id="part-17-app-17-node-size-and-per-level-framing">Part 17 — App 1.7: node size and per-level framing</h2>
+<ul>
+<li>Node size depends on how many nodes a level shows: a crowded level draws small nodes and a sparse one draws large nodes, so the gaps between nodes stay visible.</li>
+<li>With <strong>Embedding field</strong> on, each level fills its own donut: a node's place has no meaning by itself; what matters is its direction and distance to the other nodes on the same level.</li>
+</ul>
+<h2 id="part-18-app-18-the-lens-down-to-mcp-servers-and-drift">Part 18 — App 1.8: the lens down to MCP servers, and drift</h2>
+<ol>
+<li>Set the router to <strong>Observer lens</strong>, type a task, press Route.</li>
+<li>The readout lists five levels: Topics, Concepts, Skills, Agents, MCP servers. For each chosen node: weight w, score ψ, <strong>drift</strong> (ψ minus its score seen from above: how much the path above moved it) and its rank seen from above → its rank through the lens. Each level ends with the task it received and passed on and the share it explained.</li>
+<li>Turn on <strong>Embedding field</strong>. With <strong>Drift arrows: on</strong>, each chosen node has a dashed ghost where it sits seen from above and an arrow to where the observer placed it. Spin and tilt the graph; the arrows turn with it.</li>
+<li><strong>Export drift SCW</strong> downloads <code>run-N-drift-scw.json</code>: one SCW per chosen node, one per level, one around the whole path, with exact embedding values and the 3D home/observed places.</li>
+</ol>
+<h2 id="part-19-app-19-color-scale-keyboard-drift-in-one-frame">Part 19 — App 1.9: color scale, keyboard, drift in one frame</h2>
+<ul>
+<li><strong>Observer color</strong> (graph toolbar): with an observer in the graph (a lens route, or a chosen domain, topic or concept) and <strong>Embedding field</strong> on, nodes are colored from dark blue (the observer explains nothing of the node) to yellow (it explains the node fully). The legend in the lower-left corner shows the scale and the drift arrow colors: green = the path raised the node's fit, red = lowered it.</li>
+<li><strong>Drift arrows</strong> now show each node's own movement: home and observed places are in one frame, and a node moves along the line between the observer and its home place, in all three axes.</li>
+<li><strong>Keyboard</strong>: press Tab until the graph is focused (cyan outline). Right/Left = next/previous node on the level; Down = first node below; Up = first node above; Page Up/Page Down = the level above/below; Home/End = first/last on the level; Escape = clear. Each move selects the node, and a screen reader hears its level, name, position and how many nodes are below and above.</li>
+</ul>
+<h2 id="part-20-app-112-embedding-values-in-details">Part 20 — App 1.12: embedding values in Details</h2>
+<p>Select any node. The <strong>Embedding values</strong> block lists:
+- <strong>TF-IDF vector (routing, exact)</strong>: how many of the vocabulary's terms the node uses and the largest weights (the vector has length 1).
+- <strong>bge-m3 vector (routing, exact)</strong>: the first 8 of its 1024 values (centred, length 1), <strong>Copy all</strong> for the whole vector, and <strong>Nearest by bge-m3 cosine</strong> per level. Shown when the server's dense index is available.
+- <strong>Field place, 3D</strong>: x, y, z in the shared field (SVD axes 1–3).
+- <strong>Seen from above (no observer)</strong>: where the node is drawn on its level donut, x, y, z.
+- <strong>Seen from <observer></strong> (a lens route, or a chosen domain, topic or concept): a (how much of the node the observer explains) and √a, the observed field place and drawn place, and the <strong>Displacement</strong> between home and observed, x, y, z and its length relative to the donut radius.
+- <strong>In this lens route</strong>: when the route chose the node, its flat score and rank seen from above, ψ and rank through the lens, drift and weight.
+- <strong>Nearest by TF-IDF cosine</strong> per level.</p></main></body></html>

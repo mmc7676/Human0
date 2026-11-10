@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Development · Maxey0 by Human0</title><meta name="description" content="Build, test and deploy it yourself."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/development.pdf" download>Download PDF</a><a class="alt" href="/docs/development.md" download>Download .md</a></div><h1 id="development">Development</h1>
+<p>Requirements: Node.js 20+, Python 3.10+, and for the browser tests Playwright with Chromium.</p>
+<h2 id="layout">Layout</h2>
+<pre><code>SCW1/      the map: sources/, ontology.spec.json, maxey_registry.json, built graph and harnesses
+tools/     build_scw1.py (the map builder), new_packs_v4.py (generates the v4 topic packs)
+server/    the MCP server (Cloudflare Worker) and its tests
+app/       build_ui.py, source/ (fixed input page), the built app, browser tests, screenshots.cjs
+plugin/    the Claude plugin
+docs/      documentation and images
+</code></pre>
+<h2 id="build">Build</h2>
+<pre><code class="language-bash">python tools/build_scw1.py build      # the map → SCW1/ and server/src/scw1.bundle.json
+python app/build_ui.py                # the app → app/maxey0-context-plane-graph.html
+</code></pre>
+<p>Both are deterministic: the same inputs give byte-identical outputs.</p>
+<h2 id="test">Test</h2>
+<pre><code class="language-bash">cd server
+npm install
+npm test                               # server and map tests
+
+npx wrangler dev --port 8794           # in a second terminal: the server locally
+cd ../app
+node test_ui.cjs                       # the app in Chromium
+node test_host.cjs                     # the app inside a simulated MCP Apps host
+node screenshots.cjs                   # refresh docs/images
+</code></pre>
+<h2 id="deploy">Deploy</h2>
+<pre><code class="language-bash">cd server
+npx wrangler login                     # once
+npx wrangler deploy
+</code></pre>
+<p>The Worker bundles the map and the app page at deploy time; rebuild both first when either changed. Check with <code>GET /</code> (version and digest) and <code>GET /app</code>.</p>
+<h2 id="add-or-change-a-topic">Add or change a topic</h2>
+<ol>
+<li>Add or edit a pack in <code>SCW1/sources/packs/</code> (format: <code>human0.topic-pack/1</code>; the <code>topic-graph-generator</code> prompt describes it, and <code>validate_topic_pack</code> checks it).</li>
+<li>Give the new topic a domain: add <code>"&lt;topic id&gt;": "&lt;domain id&gt;"</code> to <code>regroup.pack_domains</code> in <code>SCW1/ontology.spec.json</code>, or place its concepts in existing topics under <code>regroup.topics</code>. The build fails for any concept with no place.</li>
+<li>Build, run the tests, deploy.</li>
+</ol>
+<p>MCP server rows must be real projects whose existence you have checked; record where in the pack's <code>provenance.mcp_notes</code>.</p>
+<h2 id="release">Release</h2>
+<p>Raise the server version in <code>server/src/index.ts</code>, the plugin version in <code>plugin/maxey0-context-plane-graph/.claude-plugin/plugin.json</code>, and add an entry to <code>CHANGELOG.md</code>.</p></main></body></html>

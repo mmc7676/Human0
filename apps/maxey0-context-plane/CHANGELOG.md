@@ -1,5 +1,12 @@
 # Changelog
 
+## 6.7.1 — 2026-11-10
+- `/docs`: every doc (overview, user guide, MCP server and API reference, architecture, performance, development, changelog, privacy) as a web page, a PDF and a Markdown download. Built by `tools/site/build_site.py`, served as Workers static assets (no storage charge).
+- `/research`: research library with a summary and a question-and-answer frame per paper, the PDF embedded in the page and downloadable. Starts with the Context Plane paper and the four Maxey0 papers (SCW, System One, Logical SCWs, execution-space control). The Context Plane PDF stays out of git and is copied in locally before deploy.
+- Routes `maxey0.com/docs*`, `maxey0.com/research*` (take effect only if maxey0.com has a proxied DNS record).
+- Home page: orange "Use Maxey0 inside Claude" button opens the app's Connect dialog (`/app#connect`); Docs and Research buttons.
+- README redesigned.
+
 ## 6.7.0 (app 1.13, plugin 0.5.0) — 2026-11-10
 - Landing page at `/` for browsers (unaltered Human0 logo at `/logo.png`); JSON server info via `?format=json` or non-HTML Accept.
 - Custom domain `app.maxey0.com` (wrangler route; Cloudflare creates the DNS record and certificate on deploy).

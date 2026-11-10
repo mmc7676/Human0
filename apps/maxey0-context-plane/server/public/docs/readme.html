@@ -1,0 +1,265 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview · Maxey0 by Human0</title><meta name="description" content="What Maxey0 is, what it holds, and how to use it."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/readme.pdf" download>Download PDF</a><a class="alt" href="/docs/readme.md" download>Download .md</a></div><div align="center">
+
+<img src="docs/images/human0-logo.png" width="120" alt="Human0">
+
+# Maxey0
+
+### The Context Plane: where any task belongs, and who should handle it
+
+Give Maxey0 a task. It places it on one path (domain → topic → concept → skill → agents → MCP servers) and shows that path in a live 3D map, in your browser or inside Claude.
+
+[![release](https://img.shields.io/badge/release-6.7.1-c2410c)](CHANGELOG.md)
+[![MCP](https://img.shields.io/badge/MCP-read--only%20server-0e7490)](docs/MCP_SERVER.md)
+[![license](https://img.shields.io/badge/license-Apache--2.0-eab308)](LICENSE)
+[![by](https://img.shields.io/badge/by-Human0-334155)](https://app.maxey0.com/)
+
+**[Open the app](https://app.maxey0.com/app)** · [Documentation](https://app.maxey0.com/docs/) · [Research](https://app.maxey0.com/research/) · [Getting started](#getting-started) · [Use it inside Claude](#use-it-inside-claude)
+
+</div>
+
+<hr />
+<p><strong>Maxey0</strong> is a context plane for agent systems. Before an agent acts on a task it has to answer <em>what kind of work is this?</em> and <em>who, with which tools, should do it?</em> Maxey0 answers both from one structured, versioned map of <strong>11 domains, 128 topics, 711 concepts, 1,998 skills, 1,021 agents and 117 real MCP servers</strong>, every node embedded in one shared space. It returns a candidate path, never an authorization: nothing runs until your orchestrator decides.</p>
+<h2 id="why-maxey0">Why Maxey0?</h2>
+<ul>
+<li><strong>One path per task:</strong> the topic, concept and skill a task falls under, plus the agents who should do it, check it and support it</li>
+<li><strong>Real tools:</strong> the MCP servers agents hold are real, published servers; concepts, skills and agents are generated and structurally checked</li>
+<li><strong>Two signals:</strong> TF-IDF plus dense bge-m3 embeddings in one inner-product space (exact-skill recovery 93.3% → 98.7% on the live server)</li>
+<li><strong>An observer lens with drift:</strong> each level is read from the nodes chosen above it, and every route records how far each node moved to fit the task</li>
+<li><strong>Inside Claude:</strong> a public MCP server and an MCP App that draws the graph in your conversation</li>
+<li><strong>Hand-off to Claude Code:</strong> export a route as a project with one subagent per chosen agent</li>
+</ul>
+<h2 id="how-it-works">How it works</h2>
+<p align="center"><img src="docs/images/how-it-works.svg" width="900" alt="How it works: 1 your task, 2 domain and topic, 3 concept and skill, 4 agents (primary, checker, support), 5 the MCP servers they hold, 6 the route with drift and a harness"></p>
+
+<p align="center"><img src="docs/images/02-isolated-path.png" width="820" alt="An isolated path in the Maxey0 Context Plane Graph: one concept, its skills, the agents that handle them and the MCP servers those agents use, each on its own level ring"></p>
+
+<h2 id="getting-started">Getting started</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>How</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use it here</strong></td>
+<td>Open the app, type a task, press Submit task</td>
+<td><a href="https://app.maxey0.com/app">app.maxey0.com/app</a></td>
+</tr>
+<tr>
+<td><strong>Use it inside Claude</strong></td>
+<td>Add a custom connector (below)</td>
+<td><code>https://app.maxey0.com/mcp</code></td>
+</tr>
+<tr>
+<td><strong>Install the plugin</strong></td>
+<td><code>/plugin marketplace add mmc7676/Human0</code> then <code>/plugin install maxey0-context-plane-graph@human0</code></td>
+<td><a href="plugin/maxey0-context-plane-graph"><code>plugin/</code></a></td>
+</tr>
+<tr>
+<td><strong>Build with Claude Code</strong></td>
+<td>Route a task in the app, then <strong>Send to Claude Code</strong></td>
+<td>the downloaded project folder</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-it-inside-claude">Use it inside Claude</h3>
+<ol>
+<li>In Claude: <strong>Customize → Connectors → + Add → Add custom connector</strong></li>
+<li>Name: <code>Maxey0 Context Plane</code></li>
+<li>URL: <code>https://app.maxey0.com/mcp</code></li>
+<li>Sign-in: none (the server is read-only)</li>
+</ol>
+<p>Then ask Claude: <em>"Route this task with Maxey0: …"</em> or <em>"Open the Maxey0 graph."</em></p>
+<h2 id="research">Research</h2>
+<p>The papers behind Maxey0 (the Context Plane, Structured Context Worlds, System One and more) are at <strong><a href="https://app.maxey0.com/research/">app.maxey0.com/research</a></strong>, each with a summary, a question-and-answer frame and a PDF.</p>
+<h2 id="whats-in-the-map">What's in the map</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>11 domains</strong></td>
+<td>Agentic Systems and Software Engineering · Data Science and Quantitative Methods · Mathematical and Physical Sciences · Engineering · Life, Health and Mind Sciences · Earth, Environment and Place · Business, Finance and Economics · Society, Governance and Ethics · Languages, Literatures and Communication · Area and Identity Studies · Humanities and Arts</td>
+</tr>
+<tr>
+<td><strong>128 topics</strong></td>
+<td>formed from the concepts up, from Agent Harnesses and MCP Contracts to Derivatives, Quantum Physics and Translation Studies</td>
+</tr>
+<tr>
+<td><strong>711 concepts · 1,998 skills</strong></td>
+<td>3–8 concepts per topic, 1–17 skills per concept</td>
+</tr>
+<tr>
+<td><strong>1,021 agents</strong></td>
+<td>every one a permanent <strong>MaxeyN</strong> key (Maxey0 is the orchestrator); each skill has a primary, a checker and support agents</td>
+</tr>
+<tr>
+<td><strong>117 MCP servers · 556 links</strong></td>
+<td>real, existence-checked servers, linked to the agents whose skills they fit</td>
+</tr>
+</tbody>
+</table>
+<p>Agents in the map are <strong>context records</strong>: a role, the skills it serves and the tools it would hold. They are not running agents.</p>
+<h2 id="use-it">Use it</h2>
+<h3 id="in-your-browser">In your browser</h3>
+<p>Open <strong><a href="https://maxey0-context-plane-mcp.maxey0.workers.dev/app">maxey0-context-plane-mcp.maxey0.workers.dev/app</a></strong>. No sign-in, nothing to install. Type a task, press <strong>Submit task</strong>, and the graph lights up the route.</p>
+<h3 id="in-claude-as-a-connector">In Claude, as a connector</h3>
+<ol>
+<li><strong>Customize → Connectors → Add custom connector</strong></li>
+<li>URL: <code>https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp</code> · Authentication: none</li>
+<li>Ask:</li>
+<li><em>"Open the Maxey0 Context Plane graph for the task: price a call option."</em></li>
+<li><em>"Use Maxey0 Context Plane to route: build a website for a real estate office."</em></li>
+<li><em>"Which MaxeyN agent checks entanglement entropy results, and with which tools?"</em></li>
+</ol>
+<p>Where the host supports MCP Apps (Claude Desktop, for example), the graph opens inside the conversation.</p>
+<h3 id="in-claude-as-a-plugin">In Claude, as a plugin</h3>
+<p>Install <a href="plugin/maxey0-context-plane-graph"><code>plugin/maxey0-context-plane-graph</code></a>. It adds the same connector plus two skills: one that teaches Claude to route with the map, and <code>topic-graph-generator</code>, which writes and validates a new topic when a task has no route.</p>
+<h3 id="from-any-mcp-client">From any MCP client</h3>
+<pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;maxey0-context-plane&quot;: { &quot;type&quot;: &quot;http&quot;, &quot;url&quot;: &quot;https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp&quot; }
+  }
+}
+</code></pre>
+<h2 id="the-graph-app">The graph app</h2>
+<table>
+<tr>
+<td width="50%"><img src="docs/images/01-route-a-task.png" alt="Routing a task"><br><b>Route a task.</b> The best path is highlighted; the panel names it, the method, and the next candidates.</td>
+<td width="50%"><img src="docs/images/03-rotate-any-angle.png" alt="Rotating the graph"><br><b>Turn it any way.</b> Drag to rotate in any direction, Shift-drag to roll, 720° to tumble, Fit view to reset.</td>
+</tr>
+<tr>
+<td><img src="docs/images/02-isolated-path.png" alt="Isolated path"><br><b>Isolate a path.</b> Each level is a ring; the path spreads around it and stays readable as the graph turns.</td>
+<td><img src="docs/images/04-full-map.png" alt="Full map"><br><b>See the whole map.</b> 4,000 nodes on five stacked levels, with agent-to-server gates.</td>
+</tr>
+</table>
+
+<ul>
+<li><strong>Route</strong> any task with the same method the server uses; a task with no route offers to generate the missing topic.</li>
+<li><strong>Isolate</strong> a topic, concept, skill, agent or server and its full path; <strong>spread</strong> it on the level rings; <strong>drag</strong> a node and everything below it follows on its own level.</li>
+<li><strong>Browse</strong> by topic and concept, search any node, read its details, and tick which MCP gates place an agent.</li>
+<li><strong>Generate topics</strong> with Claude, validate them, add them to the graph, keep or remove each one, and view new topics alone or with the full map.</li>
+<li><strong>Save state</strong> (topics, layout, view) to the browser or a file; a state saved against another version of the map is refused rather than loaded wrong.</li>
+<li><strong>Inside Claude</strong>, the app takes the task Claude passes in, can go full screen, and sends generation requests straight to the conversation.</li>
+</ul>
+<p>The <a href="docs/USER_GUIDE.md">user guide</a> walks through every control.</p>
+<h2 id="the-mcp-server">The MCP server</h2>
+<p>Fifteen read-only tools, one prompt, nine resources and one resource template, over the MCP 2026-07-28 stateless protocol (and the earlier <code>initialize</code> handshake for older clients).</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>route_task</code></td>
+<td>Which topic, concept, skill, agents and servers fit this task? Flat ranking, or <code>mode: "lens"</code> to read each level from the nodes chosen above it</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>Which nodes match these words?</td>
+</tr>
+<tr>
+<td><code>nearest</code></td>
+<td>Which nodes, at any level, lie nearest this node or text in the shared embedding field?</td>
+</tr>
+<tr>
+<td><code>list_domains</code> · <code>list_topics</code> · <code>children</code> · <code>trace</code></td>
+<td>Browse the map and walk any node's parents</td>
+</tr>
+<tr>
+<td><code>get_topic</code> · <code>get_concept</code> · <code>get_skill</code> · <code>get_agent</code> · <code>get_mcp_server</code></td>
+<td>One node in detail</td>
+</tr>
+<tr>
+<td><code>get_harness</code></td>
+<td>One topic in full: every concept, skill, agent and server</td>
+</tr>
+<tr>
+<td><code>open_context_plane_graph</code></td>
+<td>Show the graph (MCP App), optionally routed to a task or opened on a topic</td>
+</tr>
+<tr>
+<td><code>validate_topic_pack</code></td>
+<td>Check a generated topic against the schema and the live map</td>
+</tr>
+</tbody>
+</table>
+<p>Prompt: <code>topic-graph-generator</code>. Endpoints: <code>/mcp</code> serves every domain; <code>/mcp/&lt;domain id&gt;</code> serves one domain. Full reference: <a href="docs/MCP_SERVER.md">docs/MCP_SERVER.md</a>.</p>
+<p>Only what a call asks for is returned: about 7 KB of tool definitions up front, 3–10 KB per lookup, and one topic in full is about 49 KB. The full map stays on the server.</p>
+<h2 id="how-routing-works">How routing works</h2>
+<p>One method scores everything: search, routing, agent-to-server links and related concepts. Text is reduced to words (lower case, stop words removed, plurals folded), weighted by TF-IDF, and compared by cosine similarity. A match must share at least two words, so a single rare word is never enough.</p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A task matches a skill</td>
+<td>cosine ≥ 0.08</td>
+</tr>
+<tr>
+<td>An agent holds an MCP server</td>
+<td>cosine ≥ 0.10, top 2 agents per server</td>
+</tr>
+<tr>
+<td>Two concepts in different topics are related</td>
+<td>cosine ≥ 0.40</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One embedding field for all six levels.</strong> Every node (domain, topic, concept, skill, agent, MCP server) has a vector in the same TF-IDF space: domains and topics from their own text and their concepts, agents from the skills they serve, servers from their description and tools. A truncated SVD of all of them gives every node a location in one shared field, at one scale. In the graph, <strong>Embedding field</strong> places each node at that location on its level, so nodes that mean the same thing line up across levels; <code>nearest</code> answers the same question over MCP.</p>
+<p>A <strong>checker</strong> agent holds every server its primary holds for the same skill, so it can verify by re-running the work, not just by reading it. More in <a href="docs/ARCHITECTURE.md">docs/ARCHITECTURE.md</a>.</p>
+<h2 id="limits">Limits</h2>
+<ul>
+<li><strong>Generated content.</strong> Concepts, skills and agents are generated and structurally checked, not expert-reviewed. MCP servers are real projects whose existence was checked; whether a server suits your use is yours to judge.</li>
+<li><strong>Lexical, not semantic.</strong> Routing matches words. A task phrased in words the map doesn't use returns no route rather than a wrong one; rephrasing, or generating the missing topic, fixes it.</li>
+<li><strong>Context, not execution.</strong> A route is a candidate, never an authorization. Some listed servers can place orders or move money; this project never calls them.</li>
+</ul>
+<h2 id="privacy">Privacy</h2>
+<p>The server is read-only and has no accounts. It stores nothing you send it, and the app keeps its saved state in your own browser. See <a href="PRIVACY.md">PRIVACY.md</a>.</p>
+<h2 id="repository">Repository</h2>
+<pre><code>server/   MCP server (TypeScript, Cloudflare Workers) and its tests
+app/      the graph app: build script, built page, browser tests
+SCW1/     the map: source topic packs, the ontology spec, the built graph and one harness per topic
+tools/    the map builder and topic-pack generator (Python)
+plugin/   the Claude plugin
+docs/     user guide, server reference, architecture, development
+</code></pre>
+<p>Build, test and deploy: <a href="docs/DEVELOPMENT.md">docs/DEVELOPMENT.md</a>. Changes: <a href="CHANGELOG.md">CHANGELOG.md</a>.</p>
+<h2 id="support">Support</h2>
+<p>Questions and bug reports: <a href="https://github.com/mmc7676/Human0/issues">GitHub Issues</a>.</p>
+<h2 id="license-and-credit">License and credit</h2>
+<p><a href="LICENSE">Apache License 2.0</a>. Redistributions keep the <a href="NOTICE">NOTICE</a> file.</p>
+<p>Structured Context Windows (SCW), Maxey0 and Human0 were created by <strong>Human0 (Mike Cohan)</strong>; SCWs were <a href="https://claude.ai/share/551bdb74-8a71-4b95-a8a7-260241fd760b">first published on 27 September 2025</a>. To cite this project, use <strong>Cite this repository</strong> on the <a href="https://github.com/mmc7676/Human0">Human0 repository page</a>.</p>
+<p><sub>Built with Claude.</sub></p></main></body></html>

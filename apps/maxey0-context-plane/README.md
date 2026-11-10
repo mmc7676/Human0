@@ -1,40 +1,62 @@
 <div align="center">
 
-<img src="docs/images/human0-logo.png" width="96" alt="Human0">
+<img src="docs/images/human0-logo.png" width="120" alt="Human0">
 
-# Maxey0 Context Plane
+# Maxey0
 
-**A live map of where any task belongs, and who should handle it.**
+### The Context Plane: where any task belongs, and who should handle it
 
-Domain → Topic → Concept → Skill → Agent → MCP server, served to Claude as an MCP server and drawn as an interactive 3D graph.
+Give Maxey0 a task. It places it on one path (domain → topic → concept → skill → agents → MCP servers) and shows that path in a live 3D map, in your browser or inside Claude.
 
-[Open the graph](https://maxey0-context-plane-mcp.maxey0.workers.dev/app) · [User guide](docs/USER_GUIDE.md) · [MCP server reference](docs/MCP_SERVER.md) · [Architecture](docs/ARCHITECTURE.md)
+[![release](https://img.shields.io/badge/release-6.7.1-c2410c)](CHANGELOG.md)
+[![MCP](https://img.shields.io/badge/MCP-read--only%20server-0e7490)](docs/MCP_SERVER.md)
+[![license](https://img.shields.io/badge/license-Apache--2.0-eab308)](LICENSE)
+[![by](https://img.shields.io/badge/by-Human0-334155)](https://app.maxey0.com/)
+
+**[Open the app](https://app.maxey0.com/app)** · [Documentation](https://app.maxey0.com/docs/) · [Research](https://app.maxey0.com/research/) · [Getting started](#getting-started) · [Use it inside Claude](#use-it-inside-claude)
 
 </div>
 
-<p align="center"><img src="docs/images/02-isolated-path.png" width="820" alt="An isolated path in the Maxey0 Context Plane Graph: one concept, its skills, the agents that handle them and the MCP servers those agents use, each on its own level ring"></p>
-
 ---
 
-## What it is
+**Maxey0** is a context plane for agent systems. Before an agent acts on a task it has to answer *what kind of work is this?* and *who, with which tools, should do it?* Maxey0 answers both from one structured, versioned map of **11 domains, 128 topics, 711 concepts, 1,998 skills, 1,021 agents and 117 real MCP servers**, every node embedded in one shared space. It returns a candidate path, never an authorization: nothing runs until your orchestrator decides.
 
-Before an agent system can act on a task, it has to answer two questions: *what kind of work is this?* and *who, with which tools, should do it?* The Maxey0 Context Plane answers both from one structured map.
+## Why Maxey0?
 
-Every thread in the map has the same depth:
+- **One path per task:** the topic, concept and skill a task falls under, plus the agents who should do it, check it and support it
+- **Real tools:** the MCP servers agents hold are real, published servers; concepts, skills and agents are generated and structurally checked
+- **Two signals:** TF-IDF plus dense bge-m3 embeddings in one inner-product space (exact-skill recovery 93.3% → 98.7% on the live server)
+- **An observer lens with drift:** each level is read from the nodes chosen above it, and every route records how far each node moved to fit the task
+- **Inside Claude:** a public MCP server and an MCP App that draws the graph in your conversation
+- **Hand-off to Claude Code:** export a route as a project with one subagent per chosen agent
 
-```
-Domain ─► Topic ─► Concept ─► Skill ─► Agents (primary · checker · support) ─► MCP servers
-```
+## How it works
 
-Give it a task in plain words and it returns the best path through that map: the topic and concept the task falls under, the skill that fits it, the agents who should handle that skill, and the MCP servers those agents would use. Nothing runs. The map is context: it tells an orchestrator, or a person, where to look and whom to call.
+<p align="center"><img src="docs/images/how-it-works.svg" width="900" alt="How it works: 1 your task, 2 domain and topic, 3 concept and skill, 4 agents (primary, checker, support), 5 the MCP servers they hold, 6 the route with drift and a harness"></p>
 
-The project has three parts that share one data set:
+<p align="center"><img src="docs/images/02-isolated-path.png" width="820" alt="An isolated path in the Maxey0 Context Plane Graph: one concept, its skills, the agents that handle them and the MCP servers those agents use, each on its own level ring"></p>
 
-| | What it is | Where |
+## Getting started
+
+| | How | Where |
 |---|---|---|
-| **Maxey0 Context Plane** | A read-only, public MCP server on Cloudflare Workers | `https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp` |
-| **Maxey0 Context Plane Graph** | The interactive 3D app: on the web, and inside Claude as an MCP App | [`/app`](https://maxey0-context-plane-mcp.maxey0.workers.dev/app) |
-| **Plugin** `maxey0-context-plane-graph` | The connector plus two skills for Claude: routing, and generating missing topics | [`plugin/`](plugin/maxey0-context-plane-graph) |
+| **Use it here** | Open the app, type a task, press Submit task | [app.maxey0.com/app](https://app.maxey0.com/app) |
+| **Use it inside Claude** | Add a custom connector (below) | `https://app.maxey0.com/mcp` |
+| **Install the plugin** | `/plugin marketplace add mmc7676/Human0` then `/plugin install maxey0-context-plane-graph@human0` | [`plugin/`](plugin/maxey0-context-plane-graph) |
+| **Build with Claude Code** | Route a task in the app, then **Send to Claude Code** | the downloaded project folder |
+
+### Use it inside Claude
+
+1. In Claude: **Customize → Connectors → + Add → Add custom connector**
+2. Name: `Maxey0 Context Plane`
+3. URL: `https://app.maxey0.com/mcp`
+4. Sign-in: none (the server is read-only)
+
+Then ask Claude: *"Route this task with Maxey0: …"* or *"Open the Maxey0 graph."*
+
+## Research
+
+The papers behind Maxey0 (the Context Plane, Structured Context Worlds, System One and more) are at **[app.maxey0.com/research](https://app.maxey0.com/research/)**, each with a summary, a question-and-answer frame and a PDF.
 
 ## What's in the map
 

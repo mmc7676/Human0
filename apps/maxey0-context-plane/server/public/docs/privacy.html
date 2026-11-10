@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy · Maxey0 by Human0</title><meta name="description" content="What the server and app keep (nothing about you)."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/privacy.pdf" download>Download PDF</a><a class="alt" href="/docs/privacy.md" download>Download .md</a></div><h1 id="privacy-policy">Privacy Policy</h1>
+<p><strong>Maxey0 Context Plane</strong> (the MCP server), <strong>Maxey0 Context Plane Graph</strong> (the app) and the <strong>maxey0-context-plane-graph</strong> plugin.
+Effective 2 November 2026.</p>
+<h2 id="summary">Summary</h2>
+<p>The service is a read-only map. It has no accounts, asks for no personal information, and stores nothing you send it.</p>
+<h2 id="what-is-collected">What is collected</h2>
+<p><strong>Requests to the server.</strong> When Claude, another MCP client or your browser calls the server, the request contains what the call needs: for example a task you asked to route, a search term, a node id, or a topic pack to validate. The server uses it to compute the answer and keeps nothing after the response is sent. It writes no request content to logs or storage.</p>
+<p><strong>Hosting logs.</strong> The server runs on Cloudflare Workers. Cloudflare records standard request metadata for operating the service, such as time, path, response status, and network information like IP address and approximate location. These logs are kept for a limited period under Cloudflare's own retention and are used only to keep the service running and fix faults. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</p>
+<p><strong>The app.</strong> The graph app runs in your browser. Anything you save in it (added topics, uploaded skills and agents, layout and view) is stored in your browser's local storage or in files you export, on your own device. It is never sent to the server. The app's only network request is for the map itself (<code>/graph.json</code>) from the same server.</p>
+<p><strong>Inside Claude.</strong> When the app runs inside Claude, a generation request you send with <strong>Ask Claude to generate it</strong> goes into your conversation, which is governed by Anthropic's privacy policy, not this one.</p>
+<h2 id="use-and-sharing">Use and sharing</h2>
+<p>Data is used only to answer the request it came with. It is not sold, shared, used for advertising, or used to train models. No third party receives it apart from Cloudflare as the host.</p>
+<h2 id="plugin">Plugin</h2>
+<p>The plugin contains instructions for Claude and the address of this server. It runs no code on your computer, reads no local files, and sends data only to this server, as part of the tool calls described above.</p>
+<h2 id="children">Children</h2>
+<p>The service is not directed at children under 13 and collects no information about anyone.</p>
+<h2 id="changes">Changes</h2>
+<p>Changes to this policy are published in this file with a new effective date.</p>
+<h2 id="contact">Contact</h2>
+<p>Open an issue at https://github.com/mmc7676/Human0/issues.</p></main></body></html>

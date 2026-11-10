@@ -56,7 +56,7 @@ async function cpGenerateApi(text){const m=$('tpMsg');tpSt.msg='Generating with 
   tpSt.txt=out.slice(a,b+1);tpSt.msg='Generated with '+cpClaude.model+'. Press Validate, then Add to graph.';tpSt.cls=''}
  catch(e){tpSt.msg='Generation failed: '+e.message;tpSt.cls='bad'}renderTopics()}
 setTimeout(()=>{if(window.parent!==window)return;const seen=cpLS('mx0.connect');if(seen==='connector')cpClaude.mode='connector';cpClaudeBtn();
- if(new URLSearchParams(location.search).get('connect')==='0')return;if(!seen)cpClaudeOpen('ask')},400);
+ if(location.hash==='#connect'){cpClaudeOpen('how');return}if(new URLSearchParams(location.search).get('connect')==='0')return;if(!seen)cpClaudeOpen('ask')},400);
 // ======================================================================================================================
 // Send to Claude Code: the current route as a ready-to-run project folder (zip): CLAUDE.md (task, route, agents and
 // roles, servers, acceptance criteria), one subagent per chosen agent (.claude/agents), .mcp.json (the Maxey0 Context

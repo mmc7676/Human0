@@ -19,7 +19,7 @@ import type { DenseSignal } from "./lens";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "6.7.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.7.1" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -228,7 +228,7 @@ const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =
 const rpcErr = (id: Id, e: RpcError) =>
   json({ jsonrpc: "2.0", id, error: { code: e.code, message: e.message, ...(e.data !== undefined ? { data: e.data } : {}) } }, e.http);
 
-interface Env extends DenseEnv { ALLOWED_ORIGINS?: string }
+interface Env extends DenseEnv { ALLOWED_ORIGINS?: string; ASSETS?: { fetch(req: Request): Promise<Response> } }
 
 /** Prepare the dense signal for a route_task / search call: the index (built per graph digest, kept in KV) and the task's
  *  embedding. When the index is not built yet, one warm step runs in the background and the call is answered with TF-IDF. */
@@ -378,6 +378,8 @@ export default {
         endpoints: { "/mcp": "all domains", ...Object.fromEntries(SCOPES.map((d) => ["/mcp/" + d, d + " only"])) },
         ...GRAPHS.all.snapshot() });
     }
+    // /docs and /research: static pages and files built by tools/site/build_site.py (server/public, Workers static assets)
+    if (env.ASSETS && /^\/(docs|research)(\/|$)/.test(url.pathname) && (req.method === "GET" || req.method === "HEAD")) return env.ASSETS.fetch(req);
     return new Response("not found", { status: 404 });
   },
 };

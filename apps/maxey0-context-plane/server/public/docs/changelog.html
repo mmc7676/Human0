@@ -1,0 +1,158 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Changelog · Maxey0 by Human0</title><meta name="description" content="Every release."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/changelog.pdf" download>Download PDF</a><a class="alt" href="/docs/changelog.md" download>Download .md</a></div><h1 id="changelog">Changelog</h1>
+<h2 id="671-2026-11-10">6.7.1 — 2026-11-10</h2>
+<ul>
+<li><code>/docs</code>: every doc (overview, user guide, MCP server and API reference, architecture, performance, development, changelog, privacy) as a web page, a PDF and a Markdown download. Built by <code>tools/site/build_site.py</code>, served as Workers static assets (no storage charge).</li>
+<li><code>/research</code>: research library with a summary and a question-and-answer frame per paper, the PDF embedded in the page and downloadable. Starts with the Context Plane paper and the four Maxey0 papers (SCW, System One, Logical SCWs, execution-space control). The Context Plane PDF stays out of git and is copied in locally before deploy.</li>
+<li>Routes <code>maxey0.com/docs*</code>, <code>maxey0.com/research*</code> (take effect only if maxey0.com has a proxied DNS record).</li>
+<li>Home page: orange "Use Maxey0 inside Claude" button opens the app's Connect dialog (<code>/app#connect</code>); Docs and Research buttons.</li>
+<li>README redesigned.</li>
+</ul>
+<h2 id="670-app-113-plugin-050-2026-11-10">6.7.0 (app 1.13, plugin 0.5.0) — 2026-11-10</h2>
+<ul>
+<li>Landing page at <code>/</code> for browsers (unaltered Human0 logo at <code>/logo.png</code>); JSON server info via <code>?format=json</code> or non-HTML Accept.</li>
+<li>Custom domain <code>app.maxey0.com</code> (wrangler route; Cloudflare creates the DNS record and certificate on deploy).</li>
+<li>App: Maxey0 · by Human0 branding; "Connect to Claude" dialog (default: Maxey0 inside your Claude as a custom connector; or your own API key held in page memory only, never stored or sent to our server, with a model picker); Send to Claude Code (zip harness: CLAUDE.md, .mcp.json, .claude/agents, route.json).</li>
+<li>/app CSP allows connect-src https://api.anthropic.com only for BYOK calls.</li>
+</ul>
+<h2 id="server-660-app-112">Server 6.6.0 · App 1.12</h2>
+<ul>
+<li>Embedding values of a selected node in Details, each labelled with what it is: the TF-IDF vector routing uses (non-zero terms and weights, length 1); the bge-m3 vector routing uses (1024 values, centred, unit; first 8 shown, Copy all) with its nearest nodes per level by dense cosine; the 3D field place (SVD axes 1–3: x, y, z); the 3D drawn place on its level donut seen from above; with an observer, the observer's value for the node (a and √a), its observed 3D field place, observed drawn place and the 3D displacement; with a lens route that chose it, flat score and rank → ψ and rank, drift, weight. Previously only x, y of the field and √a were shown, labelled "seen from above" in both views.</li>
+<li>Server: <code>GET /embedding?key=&lt;node&gt;</code> returns a node's bge-m3 vector and its dense nearest nodes per level (CORS, cached an hour).</li>
+</ul>
+<h2 id="server-652-app-111">Server 6.5.2 · App 1.11</h2>
+<ul>
+<li>Performance (11): budget and checks in docs/PERFORMANCE.md. Page load ~25% faster (agent ring layout counts skills once per layout instead of once per concept; agent angles in one pass over the edges; gate lists sort only candidate servers) and the page's lens 4× faster (cached key counts, per-node constants computed once), with identical layouts, gates and routes. Budget tests in app (page size, load, frame, lens, heap) and server (CPU per route).</li>
+</ul>
+<h2 id="server-651">Server 6.5.1</h2>
+<ul>
+<li>Dense defaults calibrated on the live server (bge-m3 index built): β = 0.7, match threshold 0.25. 300 skill labels: skill@1 0.933 (TF-IDF) → 0.987, topic@1 0.950 → 0.993. 20 realistic tasks: correct top skill 13/19 → 15/19, correct within top 3 14/19 → 17/19; 10 off-map requests all below the threshold (max 0.239). Observer lens with dense, same β (live, after the CPU fix): skill@1 0.923 → 0.983, topic@1 0.943 → 0.990, tasks top 3 16/19 → 17/19; it also puts the server-log anomaly spotter first. Details in docs/ARCHITECTURE.md.</li>
+<li>Lens speed: per-candidate constants computed once per selected node, node vectors normalised once per isolate, key counts cached. TF-IDF lens ~80 ms → ~17 ms CPU (node timing); results unchanged (fixture). The dense lens hit Cloudflare's resource limit (error 1102) on 6.5.0; now ~22 ms.</li>
+<li>Index warming keeps a progress bitmap, so a step never re-embeds chunks a lagging KV list does not show yet.</li>
+<li>Local test config moved to <code>wrangler.local.jsonc</code>; <code>npx wrangler deploy</code> no longer warns about multiple environments.</li>
+</ul>
+<h2 id="server-650-app-110">Server 6.5.0 · App 1.10</h2>
+<ul>
+<li>Dense second signal (15): BAAI bge-m3 embeddings from Cloudflare Workers AI (binding <code>AI</code>), next to TF-IDF in one inner-product space: <x, y> = (1 − β)·TF-IDF cosine + β·dense cosine. Node embeddings (all 3,986 nodes) are built once per graph digest in steps of 8 chunks of 50 and kept in KV (binding <code>DENSE</code>); embeddings are centred on the mean node embedding and normalised. The task is embedded per route. With no binding, or before the index exists, routing is TF-IDF only and the response says why.</li>
+<li>route_task and search take <code>dense</code> (default true), <code>dense_weight</code> (β, default 0.5 until calibrated) and <code>min_score</code>; responses carry <code>signal</code> (weights, model) and <code>dense_status</code>. Flat paths now include their <code>score</code>.</li>
+<li>The lens runs in the hybrid space; with dense, ψ is evaluated for the 300 best candidates of a level by flat hybrid score (all children of structural levels). Without dense the lens is bit-for-bit the TF-IDF lens (fixture test).</li>
+<li>New endpoints: <code>GET /dense</code> (status), <code>POST /dense</code> (one warm step, idempotent), <code>POST /route</code> (read-only routing for the app, CORS).</li>
+<li>App: routes in the page at once (TF-IDF), then asks the server; a route with the dense signal replaces the local one. <strong>Dense signal</strong> checkbox and a readout of which signal produced the route; saved with the state.</li>
+<li>Local tests run without Cloudflare credentials: <code>npx wrangler dev -c wrangler.local.jsonc --port 8794</code>.</li>
+</ul>
+<h2 id="server-640-app-19">Server 6.4.0 · App 1.9</h2>
+<ul>
+<li>Fix (server + app): a word that is also an Object.prototype key ('constructor' is in the map's vocabulary) turned similarity scores into NaN for any task or node containing it (skill <code>symsys-automata-builder</code>). Vectors are now read by own keys only (<code>Object.hasOwn</code>). Test added on both sides.</li>
+<li>Drift in one shared 3D frame: the observer's view is now in the same field coordinates as the view from above. Each node keeps its 3D direction from the observer and its distance becomes (1 − √a) × the level's farthest distance, so displacement = observed − home is the node's own drift, in all three axes. Depth is framed per level (deepest node reaches the donut's top or bottom) instead of saturating at the rim.</li>
+<li>Color scale (10): with an observer and Embedding field on, nodes are colored by observer value √a on a perceptually even scale, with a legend in the graph's corner; drift arrows are green for + drift and red for − drift. <strong>Observer color</strong> toggles it; saved with the state.</li>
+<li>Accessibility (12): the graph takes keyboard focus. Left/Right move along a level, Down/Up to the node below/above, Page Up/Down change level, Home/End, Escape clears; a live region reads each node out. Active buttons darkened to meet WCAG AA text contrast (4.18 → ≥ 4.5); a contrast check over every visible text element is part of the tests.</li>
+<li>OWL 2 + SHACL rebuilt for 6.x (13): <code>ontology/</code> (11 domains, 128 topics, 3D field places on every node, drift vocabulary with SHACL rules) built by <code>tools/owl/build_owl.py</code>; parity, SHACL, negative controls and OWL 2 RL reasoning pass. See ontology/README.md.</li>
+</ul>
+<h2 id="server-630-app-18">Server 6.3.0 · App 1.8</h2>
+<ul>
+<li>Observer lens continues below the skill: agents (children of the chosen skills) and MCP servers (gated to the chosen agents), chosen by the same ψ. λ agent = 0.9 (calibrated, held-out 0.463 primary-agent@1 vs 0.403 at 0.5); λ MCP = 0.9 (no ground truth).</li>
+<li>Drift: every chosen node records flat score, flat rank, lens rank, drift = ψ − flat and alignment with the observer; every level records task in/out and the share explained. route_task (lens) returns <code>agents</code>, <code>mcp_servers</code> and <code>drift</code>: SCW-drift per node, SCW-level per level, SCW-path around all levels.</li>
+<li>App: the lens readout shows drift and explained task per level; <strong>Drift arrows</strong> (field view) draw a ghost where each chosen node sits seen from above and an arrow to where the observer moved it, turning with the graph; <strong>Export drift SCW</strong> downloads the path record with home/observed 3D places and displacements.</li>
+<li>App = server checked value for value (ids, weights, ψ, drift, ranks, task norms) on 15 tasks through all five levels.</li>
+<li>Domain labels are now drawn (cpDrawDomains existed but was never called).</li>
+</ul>
+<h2 id="app-17">App 1.7</h2>
+<ul>
+<li>Node size follows density: each level's node radius is 0.3 x the mean spacing on its donut (donut area / visible node count, times zoom), between 1.4 and 13 px. Fewer visible nodes (an isolated path, a filter) give bigger nodes.</li>
+<li>Embedding field: each level is framed on its own. Field coordinates have no meaning by themselves, so a level is centred on its own centroid and scaled by one factor (x, y and depth together) until its farthest node reaches the outer rim. Directions between a level's nodes and the order of their distances are kept; the hole adds a radial stretch near the centre.</li>
+</ul>
+<h2 id="server-620-app-16">Server 6.2.0 · App 1.6</h2>
+<ul>
+<li>Embedding field is now 3D: the builder keeps the third principal axis (<code>field.z</code>, with <code>field.variance_share</code>). Axes 1–3 carry 8.1%, 7.3% and 6.2% of the variance of the 24-dim SVD space, so 3D shows 21.5% against 15.4% for 2D. <code>nearest</code> returns <code>z</code> with <code>xy</code>.</li>
+<li>Every level is a 3D donut: inner hole at 30% of the radius and a thickness of ±45. Axes 1–2 place a node around and across the ring, axis 3 places it in the thickness. Every node, dragged or not, is kept inside its donut.</li>
+<li>Drag moves a node in 3D parallel to the screen, so it follows the pointer from any angle (it used to stop or jump when a level was seen edge-on) and stays exactly where it is dropped. Saved layouts keep the depth.</li>
+</ul>
+<h2 id="app-15">App 1.5</h2>
+<ul>
+<li>Level-edge toggles: Domain→Topic, Topic→Concept, Concept→Skill, and Related concepts (dashed, off by default), alongside the Skill→Agent and Agent→MCP gate toggles.</li>
+<li>Domains tab in the side list (11 domains).</li>
+<li>Topics generated in the app get a suggested domain (nearest topic by TF-IDF), shown as suggested.</li>
+<li>Saved state now keeps router mode, field, domain filter, edge toggles and browse filters.</li>
+<li>Related-concept pairs from the graph are drawn when enabled.</li>
+</ul>
+<h2 id="server-610-app-14">Server 6.1.0 · App 1.4</h2>
+<ul>
+<li><strong>Domains are the sixth level of the graph:</strong> one node per domain on a plane above the topics, linked to its topics, with a Domains count in Metrics and a <strong>D</strong> label button. The floating domain captions are gone.</li>
+<li><strong>Embedding values are visible:</strong> Details shows each node's field location, its value from the current observer, and its nearest nodes on every level; nodes the observer barely explains fade in the embedding field.</li>
+<li><strong>Domain vectors</strong> are now the centroid of their topics; a domain ranks in <code>nearest</code> as its nearest topic.</li>
+<li><code>open_context_plane_graph</code> takes <code>domain</code>, <code>mode</code> and <code>field</code>, and the app applies them.</li>
+</ul>
+<h2 id="app-13">App 1.3</h2>
+<ul>
+<li><strong>Domains in the graph:</strong> each topic carries its domain's colour, domains are labelled where their topics are, and a Domains toggle.</li>
+<li><strong>Observer lens in the app:</strong> a Flat / Observer lens router in Task, computing the same chain as the server's <code>route_task</code> mode <code>lens</code> (shared test fixture), with a readout of weights, signed support and ruled-out candidates.</li>
+<li><strong>Embedding field follows the observer:</strong> above the graph it shows the shared field; after a lens route, or a domain, topic or concept choice, each plane below the observer is laid out from where it stands. The current observer is shown beside the toolbar.</li>
+</ul>
+<h2 id="server-600-app-12-plugin-040">Server 6.0.0 · App 1.2 · Plugin 0.4.0</h2>
+<ul>
+<li><strong>Domains and topics rebuilt from the concepts up.</strong> 11 new domains replace the 5 old ones; 128 topics were formed from what their concepts, skills, agents and MCP servers have in common (all 711 concepts, 1,998 skills, 1,021 agents and 117 servers unchanged). Domain endpoints are now <code>/mcp/&lt;domain id&gt;</code> for the 11 domains. Each concept records the topic it came from (<code>source_topic</code>).</li>
+<li><strong>Observer-lens routing.</strong> <code>route_task</code> takes <code>mode: "lens"</code>: topics are chosen first, then concepts and skills are valued from the chosen nodes with signed support (several chosen nodes add as one superposed observer), and the answer carries the full observer chain. <code>domains</code> starts the observer at one or more domains. Flat ranking stays the default.</li>
+<li>App: a <strong>Domain</strong> filter in Browse &amp; select.</li>
+<li>New topic packs get their domain from <code>regroup.pack_domains</code> in the spec.</li>
+</ul>
+<h2 id="server-520-app-11">Server 5.2.0 · App 1.1</h2>
+<ul>
+<li><strong>Shared embedding field.</strong> Every node on all six levels (domain, topic, concept, skill, agent, MCP server) now has a vector in one TF-IDF space and a location in one 2-D field (truncated SVD, same scale for every level). <code>graph.json</code> carries the locations; <code>?index=1</code> carries all vectors.</li>
+<li>New tool <code>nearest</code>: the nearest nodes of any level to a node or a piece of text in that field.</li>
+<li>App: <strong>Embedding field</strong> places every node at its field location on its level.</li>
+</ul>
+<h2 id="server-512">Server 5.1.2</h2>
+<ul>
+<li><code>get_harness</code> description states what it returns, without directing the model to other tools.</li>
+</ul>
+<h2 id="server-511">Server 5.1.1</h2>
+<ul>
+<li>Every tool declares <code>annotations.title</code> for directory listings.</li>
+<li>App: the task panel shows the route only (agent, server and model choice happen in the Maxey0 orchestrator); legend explains rotate, roll, pan and node drag.</li>
+</ul>
+<h2 id="server-510-app-10-plugin-031">Server 5.1.0 · App 1.0 · Plugin 0.3.1</h2>
+<ul>
+<li><strong>MCP App.</strong> <code>open_context_plane_graph</code> shows the graph inside the conversation in hosts that support MCP Apps; the app takes the task Claude passes in, can go full screen, and sends topic-generation requests to the conversation.</li>
+<li><strong>Web app</strong> served by the server at <code>/app</code>.</li>
+<li><strong>Plugin</strong> renamed <code>maxey0-context-plane-graph</code>.</li>
+</ul>
+<h2 id="server-500">Server 5.0.0</h2>
+<ul>
+<li><strong>Maxey0 is one topic</strong> with eight concepts (was three topics). Former topic ids <code>maxey0-runtime</code>, <code>maxey0-memory-context</code> and <code>maxey0-assurance</code> are replaced by <code>maxey0</code>.</li>
+</ul>
+<h2 id="server-400">Server 4.0.0</h2>
+<ul>
+<li><strong>Two new domains:</strong> Foundations (Location and Place, Environments and Deployment, Time, State, Systems, Infrastructure) and Finance (16 topics, from Accounting to Crypto).</li>
+<li><strong>Five new work topics:</strong> UI and Front-End Development, Security and Identity, Real Estate and Property, Simulation and Digital Twins, Travel and Outdoors.</li>
+<li><strong>30 new MCP servers.</strong></li>
+<li><strong>Topic generation:</strong> the <code>topic-graph-generator</code> prompt and the <code>validate_topic_pack</code> tool.</li>
+</ul>
+<h2 id="app-10">App 1.0</h2>
+<ul>
+<li>One app: task routing with the server's method, best route highlighted, result panel that hides to one line.</li>
+<li>Level rings, spread paths, node dragging that carries the path below it.</li>
+<li>Rotation in any direction, roll, pan, 720° tumble, Fit view.</li>
+<li>Generated topics: add, validate, keep or remove each, view new topics alone.</li>
+<li>State records the map version and the view.</li>
+</ul>
+<h2 id="server-3x">Server 3.x</h2>
+<ul>
+<li>One endpoint per domain plus one for all; <code>/graph.json</code> for browser apps; checker agents inherit their primary's servers; permanent MaxeyN keys.</li>
+</ul></main></body></html>

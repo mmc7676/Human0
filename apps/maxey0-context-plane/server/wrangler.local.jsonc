@@ -5,5 +5,7 @@
   "name": "maxey0-context-plane-mcp-local",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
+  // /docs and /research are static files (built by tools/site/build_site.py); the Worker runs first for every other path.
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
   "vars": { "ALLOWED_ORIGINS": "https://claude.ai,https://claude.com" }
 }

@@ -1,0 +1,275 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCP server and API reference · Maxey0 by Human0</title><meta name="description" content="Endpoints, the 15 MCP tools, inputs and outputs."><link rel="icon" href="/logo.png">
+<style>:root{--bg:#071321;--panel:#0c1d30;--ink:#e8f1fb;--dim:#c7d6e0;--acc:#7ee7ff;--line:#ffffff1f;--or:#c2410c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}a{color:var(--acc)}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px}
+nav img{width:44px;height:44px;border-radius:8px}nav b{font-size:20px;margin-right:auto}nav a{text-decoration:none}
+h1{font-size:32px;line-height:1.2;margin:8px 0}h2{margin-top:32px}p,li{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin:12px 0}
+.card h3{margin:0 0 6px}.meta{font-size:13px;color:var(--dim)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.dl a{padding:8px 16px;border-radius:999px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.dl a.alt{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+pre{background:#0006;padding:12px;border-radius:8px;overflow:auto}code{background:#0004;padding:1px 5px;border-radius:4px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--line);padding:6px 10px}
+iframe{width:100%;height:85vh;border:1px solid var(--line);border-radius:8px;background:#fff}
+dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim)}
+@media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
+<a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
+<div class="dl"><a href="/docs/mcp-server.pdf" download>Download PDF</a><a class="alt" href="/docs/mcp-server.md" download>Download .md</a></div><h1 id="maxey0-context-plane-mcp-server-reference">Maxey0 Context Plane — MCP server reference</h1>
+<p>A remote, read-only, unauthenticated MCP server on Cloudflare Workers.</p>
+<pre><code>https://maxey0-context-plane-mcp.maxey0.workers.dev
+</code></pre>
+<h2 id="endpoints">Endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Method</th>
+<th>Serves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mcp</code></td>
+<td>POST</td>
+<td>MCP, every domain</td>
+</tr>
+<tr>
+<td><code>/mcp/&lt;domain id&gt;</code> (11, e.g. <code>/mcp/agentic-systems</code>, <code>/mcp/business-finance</code>)</td>
+<td>POST</td>
+<td>MCP, one domain each: the same tools over a smaller map</td>
+</tr>
+<tr>
+<td><code>/app</code></td>
+<td>GET</td>
+<td>The Maxey0 Context Plane Graph web app</td>
+</tr>
+<tr>
+<td><code>/graph.json</code></td>
+<td>GET</td>
+<td>The whole map as JSON for browser apps (any origin may read it), with every node's field location; <code>?index=1</code> adds the TF-IDF index (a vector for every node on all six levels)</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>GET</td>
+<td>Server info, endpoints, counts and the map's digest</td>
+</tr>
+</tbody>
+</table>
+<p>A domain endpoint answers only for its own domain: looking up a node from another domain returns a tool error.</p>
+<h2 id="protocol">Protocol</h2>
+<ul>
+<li><strong>MCP 2026-07-28</strong>, stateless: requests carry <code>_meta["io.modelcontextprotocol/protocolVersion"]</code> and the <code>MCP-Protocol-Version</code>, <code>Mcp-Method</code> and <code>Mcp-Name</code> headers; <code>server/discover</code> describes the server. List results are cacheable (<code>ttlMs</code> one hour, <code>cacheScope: "public"</code>).</li>
+<li><strong>Earlier clients</strong> (2025-11-25, 2025-06-18, 2025-03-26) use the <code>initialize</code> handshake and work the same way.</li>
+<li><strong>MCP Apps</strong> (extension <code>io.modelcontextprotocol/ui</code>, spec 2026-01-26): <code>open_context_plane_graph</code> declares the app resource <code>ui://maxey0-context-plane/graph.html</code>.</li>
+<li>Requests that carry an <code>Origin</code> header must come from an allowed origin (<code>https://claude.ai</code>, <code>https://claude.com</code>); server-to-server clients send none.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<p>All tools are read-only (<code>readOnlyHint: true</code>, <code>destructiveHint: false</code>, <code>idempotentHint: true</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Arguments</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list_domains</code></td>
+<td>—</td>
+<td>The five domains with topic counts</td>
+</tr>
+<tr>
+<td><code>list_topics</code></td>
+<td><code>query?</code>, <code>domain?</code></td>
+<td>Topic ids, labels and domains, optionally filtered</td>
+</tr>
+<tr>
+<td><code>get_topic</code></td>
+<td><code>topic_id</code></td>
+<td>Domain, priority, concepts with skill counts, related concepts in other topics, listed MCP servers</td>
+</tr>
+<tr>
+<td><code>get_harness</code></td>
+<td><code>topic_id</code></td>
+<td>The complete topic: every concept, skill, agent, server and link (about 49 KB)</td>
+</tr>
+<tr>
+<td><code>get_concept</code></td>
+<td><code>concept_id</code></td>
+<td>The concept and all its skills with their agents</td>
+</tr>
+<tr>
+<td><code>get_skill</code></td>
+<td><code>skill_id</code></td>
+<td>The skill, its path, its agents by role and each agent's servers with score, basis and source</td>
+</tr>
+<tr>
+<td><code>get_agent</code></td>
+<td><code>agent_key</code></td>
+<td>One MaxeyN agent: the skills it serves in each role and the servers it holds</td>
+</tr>
+<tr>
+<td><code>get_mcp_server</code></td>
+<td><code>mcp_id</code></td>
+<td>One server: description, source, the topics that list it and the agents that hold it</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>query</code>, <code>limit?</code>, <code>domain?</code>, <code>use_priority?</code></td>
+<td>Matching nodes with their paths and scores</td>
+</tr>
+<tr>
+<td><code>nearest</code></td>
+<td><code>node_id</code> or <code>text</code>, <code>level?</code>, <code>limit?</code></td>
+<td>Nearest nodes in the shared six-level embedding field, with scores and field locations</td>
+</tr>
+<tr>
+<td><code>route_task</code></td>
+<td><code>task</code>, <code>limit?</code>, <code>domain?</code>, <code>use_priority?</code>, <code>mode?</code> (<code>flat</code> · <code>lens</code>), <code>domains?</code></td>
+<td><code>matched</code>, and candidate paths domain → topic → concept → skill → agents → servers. With <code>mode: "lens"</code>: the observer chain <code>lens</code> (per level: selected nodes, weights, each branch's signed contribution, suppressed candidates) and <code>remaining_task</code></td>
+</tr>
+<tr>
+<td><code>children</code></td>
+<td><code>level</code>, <code>parent_id?</code></td>
+<td>The children of a node at the next level</td>
+</tr>
+<tr>
+<td><code>trace</code></td>
+<td><code>node_id</code></td>
+<td>The chain from the domain down to that node</td>
+</tr>
+<tr>
+<td><code>open_context_plane_graph</code></td>
+<td><code>task?</code>, <code>topic_id?</code></td>
+<td>Opens the graph app (MCP App). Also returns <code>app_url</code>, and the best route when a task is given</td>
+</tr>
+<tr>
+<td><code>validate_topic_pack</code></td>
+<td><code>pack</code></td>
+<td><code>ok</code>, <code>problems</code>, <code>warnings</code>, counts and the nearest existing topics for a generated topic pack. Writes nothing.</td>
+</tr>
+</tbody>
+</table>
+<p><code>domain</code> is one of the 11 domain ids: <code>agentic-systems</code>, <code>data-science</code>, <code>math-physical-sciences</code>, <code>engineering</code>, <code>life-health-mind</code>, <code>earth-environment-place</code>, <code>business-finance</code>, <code>society-governance</code>, <code>languages-communication</code>, <code>area-identity-studies</code>, <code>humanities-arts</code>. <code>limit</code> is 1–50.</p>
+<h3 id="observer-lens-routing-mode-lens">Observer-lens routing (<code>mode: "lens"</code>)</h3>
+<p>The observer starts above the topic plane, or at the domains given in <code>domains</code> (superposed when more than one). It selects up to three topics, then reads the concept plane from those topics and the skill plane from the chosen concepts. A candidate x seen from a selected node p scores φ = λ·a + (1−λ)·s, where a = cos(x, p) and s is the cosine between what x adds beyond p and what is left of the task (it can be negative). Several selected nodes add their weighted φ (ψ = Σ wᵢφᵢ, Σ wᵢ² = 1); candidates are ranked by ψ and selected only when ψ &gt; 0. λ is 0 at the topic level, 0.5 for concepts and 0.3 for skills. Agents and servers come from the ontology (roles, gates, checker inheritance), not from the lens.</p>
+<h3 id="reading-results">Reading results</h3>
+<ul>
+<li><strong><code>matched: false</code></strong> from <code>route_task</code> means no skill shares enough words with the task. It is an answer, not an error.</li>
+<li><strong>Server links</strong> carry a <code>basis</code>: <code>derived:tfidf-cosine</code> (with its score), <code>inherited:checker-of-primary</code> (with <code>via</code>: the skill and the primary it came from), or <code>declared</code>.</li>
+<li><strong><code>use_priority</code></strong> (default <code>true</code>) breaks exact score ties by a topic's declared priority. It never changes a score.</li>
+<li>Unknown ids and out-of-domain lookups return <code>isError: true</code> with a message.</li>
+</ul>
+<h2 id="prompt">Prompt</h2>
+<p><strong><code>topic-graph-generator</code></strong> — arguments <code>topic</code> (required), <code>concept</code>, <code>task</code>. Returns the request for generating one topic pack: the format, the rules, the existing topics, and the instruction to validate with <code>validate_topic_pack</code>.</p>
+<h2 id="resources">Resources</h2>
+<table>
+<thead>
+<tr>
+<th>URI</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ctxplane://snapshot</code></td>
+<td>Counts, digest and topic ids</td>
+</tr>
+<tr>
+<td><code>ctxplane://ontology</code></td>
+<td>The rules the map is built from</td>
+</tr>
+<tr>
+<td><code>ctxplane://level/{domain\|topic\|concept\|skill\|agent\|mcp}</code></td>
+<td>Every node on one level (ids and labels)</td>
+</tr>
+<tr>
+<td><code>ctxplane://topic/{topic_id}</code> (template)</td>
+<td>One topic harness</td>
+</tr>
+<tr>
+<td><code>ui://maxey0-context-plane/graph.html</code></td>
+<td>The graph app, <code>text/html;profile=mcp-app</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-mcp-app">The MCP App</h2>
+<p><code>open_context_plane_graph</code> carries <code>_meta.ui.resourceUri = "ui://maxey0-context-plane/graph.html"</code>. Reading that resource returns the app's HTML with <code>_meta.ui.csp.connectDomains</code> set to the server it came from, because the app loads the map from that server's <code>/graph.json</code>. It loads nothing else.</p>
+<p>Inside the host, the app:</p>
+<ol>
+<li>sends <code>ui/initialize</code> (<code>appInfo</code>, <code>appCapabilities.availableDisplayModes: ["inline", "fullscreen"]</code>, <code>protocolVersion: "2026-01-26"</code>), then <code>ui/notifications/initialized</code>;</li>
+<li>asks for a height of 900 px with <code>ui/notifications/size-changed</code>;</li>
+<li>applies <code>ui/notifications/tool-input</code>: a <code>task</code> is routed and highlighted, a <code>topic_id</code> is selected;</li>
+<li>sends <code>ui/request-display-mode</code> from its <strong>Full screen</strong> button, and <code>ui/message</code> from <strong>Ask Claude to generate it</strong>.</li>
+</ol>
+<p>In a host without MCP Apps, the tool's text result gives <code>app_url</code>, the same app on the web.</p>
+<h2 id="size-of-what-is-returned">Size of what is returned</h2>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>About</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool definitions and instructions</td>
+<td>7 KB</td>
+</tr>
+<tr>
+<td><code>get_topic</code></td>
+<td>3 KB</td>
+</tr>
+<tr>
+<td><code>get_skill</code></td>
+<td>5 KB</td>
+</tr>
+<tr>
+<td><code>route_task</code> (3 paths)</td>
+<td>10 KB</td>
+</tr>
+<tr>
+<td><code>get_harness</code></td>
+<td>49 KB</td>
+</tr>
+</tbody>
+</table>
+<p>The full map (about 1.9 MB) is held by the server and never sent through MCP.</p>
+<h2 id="errors">Errors</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unknown tool, bad arguments</td>
+<td>JSON-RPC <code>-32602</code></td>
+</tr>
+<tr>
+<td>Unknown method</td>
+<td><code>-32601</code> (HTTP 404 on 2026-07-28)</td>
+</tr>
+<tr>
+<td>Missing or mismatched MCP headers</td>
+<td><code>-32020</code> / <code>-32022</code></td>
+</tr>
+<tr>
+<td>Unknown id, wrong domain, invalid topic</td>
+<td>Tool result with <code>isError: true</code></td>
+</tr>
+<tr>
+<td>Resource not found</td>
+<td><code>-32602</code> (2026-07-28) / <code>-32002</code> (earlier)</td>
+</tr>
+<tr>
+<td>Disallowed <code>Origin</code></td>
+<td>HTTP 403</td>
+</tr>
+</tbody>
+</table></main></body></html>
