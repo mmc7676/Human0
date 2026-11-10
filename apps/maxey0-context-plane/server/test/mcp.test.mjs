@@ -402,3 +402,28 @@ test("a word that is also an Object.prototype key ('constructor') never turns sc
   for (const lv of l.lens) for (const x of lv.selected) assert.ok(Number.isFinite(x.psi) && Number.isFinite(x.drift.drift), JSON.stringify(x));
   assert.ok(Number.isFinite(l.remaining_task));
 });
+
+test("dense signal end to end through the Worker: /dense warms in steps, then route_task and /route use TF-IDF + bge-m3", async () => {
+  const fake = (t) => { const v = new Array(1024).fill(0); for (const w of t.toLowerCase().match(/[a-z]{3,}/g) || []) { let h = 2166136261; for (const c of w) h = Math.imul(h ^ c.charCodeAt(0), 16777619); v[(h >>> 0) % 1024] += 1 } v[1] += 2; return v };
+  const kv = new Map(); let calls = 0; const waits = [];
+  const denv = { ...env, AI: { run: async (m, { text }) => { calls++; return { data: text.map(fake) } } },
+    DENSE: { get: async (k) => kv.get(k) ?? null, put: async (k, v) => { kv.set(k, v) }, list: async ({ prefix }) => ({ keys: [...kv.keys()].filter((k) => k.startsWith(prefix)).map((name) => ({ name })) }) } };
+  const ctx = { waitUntil: (p) => waits.push(p) };
+  const get = async (path, init) => { const r = await worker.fetch(new Request("https://x" + path, init), denv, ctx); return { status: r.status, body: await r.json() } };
+  assert.equal((await get("/dense")).body.ready, false);
+  // before the index exists: TF-IDF only, the reason is stated, and one warm step is started in the background
+  const before = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "price a call option" }) });
+  assert.equal(before.status, 200); assert.equal(before.body.signal.tfidf, 1); assert.match(before.body.dense_status.reason, /being built/);
+  await Promise.all(waits);
+  let st; do { st = (await get("/dense", { method: "POST" })).body } while (!st.ready);
+  assert.ok(st.total > 0 && (await get("/dense")).body.ready);
+  const r = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "Design a marketing email campaign, segment the customer list and measure attribution", mode: "lens" }) });
+  assert.equal(r.body.signal.dense, 0.5); assert.equal(r.body.signal.model, "@cf/baai/bge-m3"); assert.equal(r.body.lens.length, 5);
+  const viaMcp = await (async () => { const body = { jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "route_task", arguments: { task: "price a call option", dense_weight: 0.3 } } };
+    const res = await worker.fetch(new Request("https://x/mcp", { method: "POST", headers: { "content-type": "application/json", "mcp-protocol-version": "2025-11-25" }, body: JSON.stringify(body) }), denv, ctx); return (await res.json()).result.structuredContent })();
+  assert.equal(viaMcp.signal.dense, 0.3); assert.ok(viaMcp.matched && typeof viaMcp.paths[0].score === "number");
+  const off = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "price a call option", dense: false }) });
+  assert.equal(off.body.signal.tfidf, 1);
+  const bad = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "x", dense_weight: 2 }) });
+  assert.equal(bad.status, 400);
+});

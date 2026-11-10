@@ -82,7 +82,7 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 <main class="panel">
 <details class="cs" id="cs_task" open><summary>Task</summary><div class="cs-b">
 <div class="taskbar"><select id="taskMode" aria-label="Router" title="Flat: rank every skill against the task. Observer lens: choose topics, then read concepts and skills from the chosen nodes (same as the server's route_task mode lens)"><option value="flat">Flat</option><option value="lens">Observer lens</option></select><input id="taskIn" placeholder="Describe a task for Human0 — it finds the matching path(s). Enter or Submit task." autocomplete="off"><button id="taskGo" class="scwb">Submit task</button><button id="taskClr">Clear task</button></div>
-<div id="taskMsg" role="status" aria-live="polite" hidden></div><div id="lensOut" class="cpnote" hidden></div>
+<div id="taskMsg" role="status" aria-live="polite" hidden></div><div class="cpsig"><label title="Route on the server with TF-IDF + bge-m3 embeddings when its dense index is ready; off = TF-IDF only, in the page"><input type="checkbox" id="cpDenseChk" checked> Dense signal</label> <span id="cpSignal">Signal: TF-IDF</span></div><div id="lensOut" class="cpnote" hidden></div>
 </div></details>
 <details class="cs" id="cs_metrics" open><summary>Metrics</summary><div class="cs-b">
 <div class="metrics" id="metrics"></div>
@@ -126,7 +126,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-button.on{background:#05697a}#g:focus-visible{outline:2px solid #7ee7ff;outline-offset:2px}.cpsr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
+button.on{background:#05697a}.cpsig{font-size:12px;margin-top:6px;color:#c7d6e0}.cpsig input{vertical-align:-2px}#g:focus-visible{outline:2px solid #7ee7ff;outline-offset:2px}.cpsr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -1207,6 +1207,31 @@ function cpKey(e){const k=e.key;if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDo
 setTimeout(()=>{cv.tabIndex=0;cv.setAttribute('role','application');cv.setAttribute('aria-roledescription','graph');
  cv.setAttribute('aria-label','Maxey0 Context Plane graph: domains, topics, concepts, skills, agents and MCP servers. Arrow keys: left and right move along a level, down and up move to the node below or above; Page Up and Page Down change level; Escape clears.');
  cv.addEventListener('keydown',cpKey)},0);
+// ---- dense second signal (15): the page routes with TF-IDF at once (same index as the server); when the server has its
+// bge-m3 index, the same task is routed there with TF-IDF + dense and the result replaces the local one. Off, or when the
+// server is unreachable or not ready, the local TF-IDF route stays. The readout says which signal produced the route.
+let cpDenseOn=true,cpSignal=null;
+const CP_PRE={topic:'t:',concept:'c:',skill:'s:',agent:'a:'};
+function cpAppKey(level,id){if(level==='mcp'){const i=__CP.graph.mcp.findIndex(m=>m.id===id);return i<0?null:'m:'+i}return CP_PRE[level]+id}
+function cpApplyRoute(t,LR,sk){const sc={};sk.forEach(([sid,s])=>E.filter(e=>e.kind==='agent'&&e.a===sid).forEach(e=>{sc[e.b]=(sc[e.b]||0)+s*({primary:1,checker:.6,support:.4}[e.role]||.4)}));
+ t.skills=sk;t.agents=Object.entries(sc).sort((a,b)=>b[1]-a[1]).slice(0,5);t.lens=LR;t.matched=!!sk.length;
+ taskSet=new Set();if(t.matched){const id=sk[0][0];taskSet.add(id);taskSet.add('c:'+N[id].concept);taskSet.add(cTopic[N[id].concept]);E.filter(e=>e.kind==='agent'&&e.a===id).forEach(e=>{taskSet.add(e.b);G.filter(g=>g.a===e.b).forEach(g=>taskSet.add(g.b))});if(LR)LR.chain.forEach(l=>l.selected.forEach(x=>taskSet.add(x.app)))}
+ cpLensKey='';cpLensOut();renderExec();draw()}
+function cpSignalOut(){const el=$('cpSignal');if(!el)return;const s=cpSignal;
+ el.textContent=!cpDenseOn?'Signal: TF-IDF (dense off)':!s?'Signal: TF-IDF':s.dense>0?'Signal: TF-IDF + '+(s.model||'').replace('@cf/baai/','')+' (β '+s.dense+')':'Signal: TF-IDF'+(s.reason?' — '+s.reason:'')}
+async function cpDenseRoute(t){if(!cpDenseOn||!t)return;const lens=$('taskMode')&&$('taskMode').value==='lens';
+ const args={task:t.text,mode:lens?'lens':'flat',limit:5};if(lens&&t.doms&&t.doms.length)args.domains=t.doms;
+ let sc;try{const r=await fetch(__CP.api+'/route',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(args)});
+  sc=await r.json();if(!r.ok)throw new Error(sc.error)}catch(e){cpSignal={dense:0,reason:'server not reachable'};cpSignalOut();return}
+ if(!sc||task!==t)return;cpSignal={...(sc.signal||{}),reason:sc.dense_status&&sc.dense_status.reason};cpSignalOut();
+ if(!(sc.signal&&sc.signal.dense>0))return;
+ let LR=null,sk;
+ if(lens){const chain=(sc.lens||[]).map(l=>({...l,selected:l.selected.map(x=>({...x,app:cpAppKey(l.level,x.id)})).filter(x=>x.app&&N[x.app])}));
+  LR={chain,skills:sc.paths.map(p=>p.skill),agents:sc.agents||[],mcp:sc.mcp_servers||[],remaining_task:sc.remaining_task,signal:sc.signal};const LS=chain.find(l=>l.level==='skill');sk=LS?LS.selected.map(x=>[x.app,x.psi]):[]}
+ else sk=(sc.paths||[]).filter(p=>N['s:'+p.skill]).map(p=>['s:'+p.skill,p.score]);
+ cpApplyRoute(t,LR,sk)}
+setTimeout(()=>{const c=$('cpDenseChk');if(c)c.onchange=()=>{cpDenseOn=c.checked;cpSignalOut()}},0);
+{const _st=submitTask;submitTask=function(){const t=_st.apply(this,arguments);cpSignal=null;cpSignalOut();if(t)cpDenseRoute(t);return t}}
 // drift arrows on the graph: a ghost ring where each chosen node sits seen from above, an arrow to where the observer put it
 function cpDrawDrift(w,h){const L=typeof task!=='undefined'&&task&&task.lens;if(!cpDriftOn||!cpField||!L||!cpLensPos)return;cx.save();
  for(const l of L.chain)for(const x of l.selected){const n=N[x.app];if(!n||!vis[n.kind])continue;const a=project(n,w,h,cpHomeXY(n)),b=project(n,w,h),c=x.drift&&x.drift.drift<0?CP_DNEG:CP_DPOS;
@@ -1280,8 +1305,8 @@ function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cp
  cpSetBtns();
  // layout and view are part of the app state
  const g0=APPS.app1.get,s0=APPS.app1.set;
- APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};r.observer={mode:$('taskMode')?$('taskMode').value:'flat',field:cpField,colorObs:cpColorObs,drift:cpDriftOn,domains:cpDomOn,edges:{showDT,showTC,showCS,showRel,showAg,showGt},browse:{...V3.bf}};return r};
- APPS.app1.set=function(st){const r=s0.apply(this,arguments);const ob=st&&st.observer;if(ob&&typeof ob==='object'){if($('taskMode')&&(ob.mode==='lens'||ob.mode==='flat'))$('taskMode').value=ob.mode;cpField=!!ob.field;cpColorObs=ob.colorObs!==false;cpDriftOn=ob.drift!==false;cpDomOn=ob.domains!==false;vis.domain=cpDomOn;
+ APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};r.observer={mode:$('taskMode')?$('taskMode').value:'flat',field:cpField,colorObs:cpColorObs,drift:cpDriftOn,dense:cpDenseOn,domains:cpDomOn,edges:{showDT,showTC,showCS,showRel,showAg,showGt},browse:{...V3.bf}};return r};
+ APPS.app1.set=function(st){const r=s0.apply(this,arguments);const ob=st&&st.observer;if(ob&&typeof ob==='object'){if($('taskMode')&&(ob.mode==='lens'||ob.mode==='flat'))$('taskMode').value=ob.mode;cpField=!!ob.field;cpColorObs=ob.colorObs!==false;cpDriftOn=ob.drift!==false;cpDenseOn=ob.dense!==false;if($('cpDenseChk'))$('cpDenseChk').checked=cpDenseOn;cpSignalOut();cpDomOn=ob.domains!==false;vis.domain=cpDomOn;
    const ed=ob.edges||{};if('showDT'in ed)showDT=!!ed.showDT;if('showTC'in ed)showTC=!!ed.showTC;if('showCS'in ed)showCS=!!ed.showCS;if('showRel'in ed)showRel=!!ed.showRel;if('showAg'in ed)showAg=!!ed.showAg;if('showGt'in ed)showGt=!!ed.showGt;
    [['bDT',showDT],['bTC',showTC],['bCS',showCS],['bRel',showRel],['bAg',showAg],['bGt',showGt]].forEach(([i,v])=>{if($(i))$(i).className=v?'on':''});
    const b=ob.browse||{};if(b.domain===''||__CP.domains.some(d=>d.id===b.domain)){V3.bf.domain=b.domain||'';V3.bf.topic=N['t:'+b.topic]?b.topic:'';V3.bf.concept=N['c:'+b.concept]?b.concept:'';v03BrowseApply(false)}cpSetBtns()}
@@ -1349,7 +1374,7 @@ setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
 window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},key:k=>cpKey({key:k,preventDefault(){}}),live:()=>($('cpLive')||{}).textContent||'',sel:()=>sel,lensPos:id=>{cpLensSync();return cpLensPos&&cpLensPos[id]?cpLensPos[id].slice():null},fieldRaw:id=>__CP.field[id]?__CP.field[id].slice():null,drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},signal:()=>cpSignal,denseOn:v=>{if(v!==undefined){cpDenseOn=!!v;cpSignalOut()}return cpDenseOn},key:k=>cpKey({key:k,preventDefault(){}}),live:()=>($('cpLive')||{}).textContent||'',sel:()=>sel,lensPos:id=>{cpLensSync();return cpLensPos&&cpLensPos[id]?cpLensPos[id].slice():null},fieldRaw:id=>__CP.field[id]?__CP.field[id].slice():null,drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
 // ---------- init + test hooks
 function v7init(){csApply();

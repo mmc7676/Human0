@@ -11,11 +11,13 @@
 //                       in those revisions), so every request stands alone.
 import bundleJson from "./scw1.bundle.json";
 import ontology from "../../SCW1/ontology.spec.json";
-import { Graph, GraphData, ToolError, scopeTo } from "./graph";
+import { Graph, GraphData, ToolError, scopeTo, DENSE_DEFAULT } from "./graph";
+import { DENSE_MODEL, DenseEnv, embedTask, loadIndex, rowOf, warmStep } from "./dense";
+import type { DenseSignal } from "./lens";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "6.4.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.5.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -52,6 +54,10 @@ interface ToolDef { name: string; title: string; description: string; inputSchem
 let REQ_ORIGIN = "https://maxey0-context-plane-mcp.maxey0.workers.dev";   // origin of the request being served (set per request)
 const DOM = { type: "string", description: "optional domain filter, one of: " + SCOPES.join(" | ") };
 const PRIO = { type: "boolean", description: "break exact score ties by the declared topic priority (default true)" };
+const DENSE_ARGS = {
+  dense: { type: "boolean", description: "use the dense second signal (bge-m3 embeddings) next to TF-IDF when it is available (default true)" },
+  dense_weight: { type: "number", minimum: 0, maximum: 1, description: "weight of the dense signal; 0 = TF-IDF only (default " + DENSE_DEFAULT.beta + ")" },
+  min_score: { type: "number", minimum: 0, maximum: 1, description: "match threshold on the score (default 0.08)" } };
 const TOOLS: ToolDef[] = [
   { name: "open_context_plane_graph", title: "Open the Maxey0 Context Plane Graph",
     description: "Show the interactive 3D Maxey0 Context Plane Graph (domains -> topics -> concepts -> skills -> MaxeyN agents -> MCP servers). Optional 'task' routes a task and highlights its best path; optional 'topic_id' opens on one topic; 'domain' starts the observer at a domain; 'mode' picks the router (flat or lens); 'field' opens the embedding-field view. Hosts without MCP Apps get a link to the same app.",
@@ -83,11 +89,11 @@ const TOOLS: ToolDef[] = [
   { name: "get_mcp_server", title: "Get MCP server", description: "One MCP server row (directory listing, not an installed connector), the agents linked to it, and the topics that list it.",
     inputSchema: obj({ mcp_id: STR }, ["mcp_id"]), run: (g, a) => g.get_mcp_server(a as never) },
   { name: "search", title: "Search", description: "Keyword search over concepts and skills; each hit carries its domain/topic/concept path. Optional domain filter.",
-    inputSchema: obj({ query: STR, limit: INT, domain: DOM, use_priority: PRIO }, ["query"]), run: (g, a) => g.search(a as never) },
+    inputSchema: obj({ query: STR, limit: INT, domain: DOM, use_priority: PRIO, ...DENSE_ARGS }, ["query"]), run: (g, a) => g.search(a as never) },
   { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP, by flat ranking (default) or by observer lens (mode: lens: topic -> concept -> skill -> the chosen skills' agents -> their gated MCP servers, with a drift record per node, per level and around the path). Candidates, not an authorization.",
     inputSchema: obj({ task: STR, limit: INT, domain: DOM, use_priority: PRIO,
       mode: { type: "string", enum: ["flat", "lens"], description: "flat (default): rank every skill against the task. lens: choose topics, then read concepts and skills from the chosen nodes, with signed support and the full observer chain" },
-      domains: { type: "array", items: { type: "string" }, description: "lens mode: start the observer at these domains (superposed when more than one)" } }, ["task"]), run: (g, a) => g.route_task(a as never) },
+      domains: { type: "array", items: { type: "string" }, description: "lens mode: start the observer at these domains (superposed when more than one)" }, ...DENSE_ARGS }, ["task"]), run: (g, a) => g.route_task(a as never) },
   { name: "children", title: "Children", description: "Children one level down: domain (no parent), topic (parent=domain), concept (parent=topic), skill (parent=concept), agent (parent=skill), mcp (parent=agent).",
     inputSchema: obj({ level: { type: "string", enum: ["domain", "topic", "concept", "skill", "agent", "mcp"] }, parent_id: STR }, ["level"]), run: (g, a) => g.children(a as never) },
   { name: "nearest", title: "Nearest in the field", description: "Nearest nodes to any node, or to a piece of text, in the shared embedding field that all six levels (domain, topic, concept, skill, agent, MCP server) live in, optionally limited to one level. Returns scores and each node's field location.",
@@ -106,6 +112,7 @@ function validateArgs(schema: Json, args: Json): string | null {
     if (p.type === "string" && typeof v !== "string") return `'${k}' must be a string`;
     if (p.type === "integer" && !(Number.isInteger(v))) return `'${k}' must be an integer`;
     if (p.type === "boolean" && typeof v !== "boolean") return `'${k}' must be a boolean`;
+    if (p.type === "number" && (typeof v !== "number" || !isFinite(v) || (p.minimum !== undefined && v < (p.minimum as number)) || (p.maximum !== undefined && v > (p.maximum as number)))) return `'${k}' must be a number${p.minimum !== undefined ? " in [" + p.minimum + ", " + p.maximum + "]" : ""}`;
     if (p.type === "object" && (typeof v !== "object" || v === null || Array.isArray(v))) return `'${k}' must be an object`;
     if (p.enum && !(p.enum as unknown[]).includes(v)) return `'${k}' must be one of ${(p.enum as string[]).join(", ")}`;
   }
@@ -147,7 +154,7 @@ function capabilities() {
   return { tools: { listChanged: false }, resources: { listChanged: false, subscribe: false }, prompts: { listChanged: false } };
 }
 
-function dispatch(scope: string, method: string, p: Json, modern: boolean, legacyVersion: string): Json {
+function dispatch(scope: string, method: string, p: Json, modern: boolean, legacyVersion: string, extra: Json = {}): Json {
   const graph = GRAPHS[scope];
   const cache = modern ? { ttlMs: LIST_TTL_MS, cacheScope: "public" } : {};
   switch (method) {
@@ -174,7 +181,7 @@ function dispatch(scope: string, method: string, p: Json, modern: boolean, legac
       const bad = validateArgs(t.inputSchema, args);
       if (bad) return { content: [{ type: "text", text: `invalid arguments: ${bad}` }], isError: true };
       try {
-        const res = t.run(graph, args);
+        const res = t.run(graph, { ...args, ...extra });
         return { content: [{ type: "text", text: JSON.stringify(res) }], structuredContent: res, isError: false };
       } catch (e) {
         if (e instanceof ToolError) return { content: [{ type: "text", text: e.message }], isError: true };
@@ -219,9 +226,34 @@ const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =
 const rpcErr = (id: Id, e: RpcError) =>
   json({ jsonrpc: "2.0", id, error: { code: e.code, message: e.message, ...(e.data !== undefined ? { data: e.data } : {}) } }, e.http);
 
-interface Env { ALLOWED_ORIGINS?: string }
+interface Env extends DenseEnv { ALLOWED_ORIGINS?: string }
 
-async function handleMcp(req: Request, env: Env, scope: string): Promise<Response> {
+/** Prepare the dense signal for a route_task / search call: the index (built per graph digest, kept in KV) and the task's
+ *  embedding. When the index is not built yet, one warm step runs in the background and the call is answered with TF-IDF. */
+async function densePrep(env: Env, ctx: ExecutionContext | undefined, p: Json): Promise<Json> {
+  const name = p.name, args = (p.arguments ?? {}) as Json;
+  if ((name !== "route_task" && name !== "search") || typeof args !== "object" || args === null || Array.isArray(args)) return {};
+  const text = String((name === "route_task" ? args.task : args.query) ?? "");
+  if (args.dense === false || !text.trim()) return {};
+  const beta = typeof args.dense_weight === "number" && isFinite(args.dense_weight) ? Math.max(0, Math.min(1, args.dense_weight)) : DENSE_DEFAULT.beta;
+  if (beta === 0) return {};
+  if (!env.AI || !env.DENSE) return { _dense_status: { available: false, reason: "no Workers AI / KV binding on this deployment" } };
+  try {
+    const idx = await loadIndex(env, FULL);
+    if (!idx) {
+      const w = warmStep(env, FULL).catch(() => null);
+      if (ctx) ctx.waitUntil(w);
+      return { _dense_status: { available: false, reason: "dense index for this graph is being built (one step per call); TF-IDF only until it is ready", status: "/dense" } };
+    }
+    const q = await embedTask(env, idx, text);
+    const sig: DenseSignal = { beta, q, get: (k) => rowOf(idx, k), model: DENSE_MODEL };
+    return { _dense: sig as unknown as Json, _dense_status: { available: true, model: DENSE_MODEL, beta } };
+  } catch (e) {
+    return { _dense_status: { available: false, reason: "dense signal failed: " + String((e as Error).message ?? e).slice(0, 160) } };
+  }
+}
+
+async function handleMcp(req: Request, env: Env, scope: string, ctx?: ExecutionContext): Promise<Response> {
   REQ_ORIGIN = new URL(req.url).origin;
   // DNS-rebinding guard: an Origin header, when present, must be allow-listed.
   const origin = req.headers.get("origin");
@@ -271,7 +303,8 @@ async function handleMcp(req: Request, env: Env, scope: string): Promise<Respons
     } else if (hdrVersion !== null && !LEGACY.includes(hdrVersion) && method !== "initialize") {
       throw new RpcError(-32022, "Unsupported protocol version", 400, { supported: SUPPORTED, requested: hdrVersion });
     }
-    const result = dispatch(scope, method, params, modern, hdrVersion ?? LEGACY[LEGACY.length - 1]);
+    const extra = method === "tools/call" ? await densePrep(env, ctx, params) : {};
+    const result = dispatch(scope, method, params, modern, hdrVersion ?? LEGACY[LEGACY.length - 1], extra);
     if (modern) {
       result.resultType = "complete";
       result._meta = { ...((result._meta as Json) ?? {}), [META("serverInfo")]: SERVER_INFO };
@@ -284,11 +317,28 @@ async function handleMcp(req: Request, env: Env, scope: string): Promise<Respons
 }
 
 export default {
-  async fetch(req: Request, env: Env): Promise<Response> {
+  async fetch(req: Request, env: Env, ctx?: ExecutionContext): Promise<Response> {
     const url = new URL(req.url);
-    if (url.pathname === "/mcp") return handleMcp(req, env, "all");
+    if (url.pathname === "/mcp") return handleMcp(req, env, "all", ctx);
+    // read-only routing for browser UIs (the graph app): POST {task, mode, domains, dense, dense_weight} -> route_task result
+    if (url.pathname === "/route") {
+      const cors = { "access-control-allow-origin": "*", "access-control-allow-methods": "POST, OPTIONS", "access-control-allow-headers": "content-type" };
+      if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
+      if (req.method !== "POST") return new Response(null, { status: 405, headers: { allow: "POST, OPTIONS", ...cors } });
+      let args: Json; try { args = (await req.json()) as Json; } catch { return json({ error: "body must be JSON" }, 400, cors); }
+      const res = dispatch("all", "tools/call", { name: "route_task", arguments: args }, false, LEGACY[LEGACY.length - 1], await densePrep(env, ctx, { name: "route_task", arguments: args }));
+      return json(res.isError ? { error: (res.content as { text: string }[])[0].text } : res.structuredContent, res.isError ? 400 : 200, cors);
+    }
+    // dense index status; POST /dense runs one warm step (idempotent: embeds only chunks that are missing)
+    if (url.pathname === "/dense") {
+      const cors = { "access-control-allow-origin": "*" };
+      if (!env.AI || !env.DENSE) return json({ model: DENSE_MODEL, available: false, reason: "no Workers AI / KV binding" }, 200, cors);
+      if (req.method === "POST") return json({ model: DENSE_MODEL, digest: FULL.snapshot_digest, ...(await warmStep(env, FULL)) }, 200, cors);
+      const ready = !!(await loadIndex(env, FULL));
+      return json({ model: DENSE_MODEL, digest: FULL.snapshot_digest, ready, default_weight: DENSE_DEFAULT.beta, warm: "POST /dense runs one step" }, 200, cors);
+    }
     const m = /^\/mcp\/([a-z0-9-]+)$/.exec(url.pathname);
-    if (m) return GRAPHS[m[1]] && m[1] !== "all" ? handleMcp(req, env, m[1]) : new Response("unknown MCP endpoint; use /mcp or /mcp/<domain>", { status: 404 });
+    if (m) return GRAPHS[m[1]] && m[1] !== "all" ? handleMcp(req, env, m[1], ctx) : new Response("unknown MCP endpoint; use /mcp or /mcp/<domain>", { status: 404 });
     // read-only graph for browser UIs (the Human0 app): no MCP headers, any origin may read
     if (url.pathname === "/graph.json") {
       const cors = { "access-control-allow-origin": "*", "access-control-allow-methods": "GET, OPTIONS" };

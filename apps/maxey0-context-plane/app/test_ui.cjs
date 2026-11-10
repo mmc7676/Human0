@@ -295,6 +295,29 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(cr.n > 500 && cr.bad.length === 0, "text contrast meets WCAG AA on " + cr.n + " visible text elements" + (cr.bad.length ? ": " + cr.bad.slice(0, 5).join(", ") : ""));
   }
 
+  // 1o. dense signal: the page asks the server; with no dense index (local server) the TF-IDF route stays and the readout says why;
+  //     when the server answers with the dense signal, its route replaces the local one
+  {
+    const TASK = 'Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard';
+    await p.evaluate(t => { const $ = id => document.getElementById(id); $('taskMode').value = 'lens'; $('taskIn').value = t; $('taskGo').click() }, TASK);
+    await p.waitForFunction(() => window.__cpv.signal() !== null, null, { timeout: 10000 });
+    const r1 = await p.evaluate(() => ({ sig: document.getElementById('cpSignal').textContent, sk: window.__v3.taskSet().filter(x => x.startsWith('s:')).length }));
+    ok(/^Signal: TF-IDF — no Workers AI/.test(r1.sig), "no dense on this server: TF-IDF route kept, readout says why: " + r1.sig);
+    // a server that has the dense signal: answer with its lens route (here: the local route with the skill level's choice changed)
+    await p.route(API + "/route", async route => { const args = JSON.parse(route.request().postData()); const resp = await route.fetch(); const sc = await resp.json(); const j = sc; sc.signal = { tfidf: 0.5, dense: 0.5, model: "@cf/baai/bge-m3", shortlist: 300 };
+      if (args.mode === 'lens') { const L = sc.lens.find(l => l.level === 'skill'); L.selected = [{ ...L.selected[0], id: 'mk-audience-segmenter' }] }
+      await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(j) }) });
+    await p.evaluate(t => { const $ = id => document.getElementById(id); $('taskIn').value = t; $('taskGo').click() }, TASK);
+    await p.waitForFunction(() => /bge-m3/.test(document.getElementById('cpSignal').textContent), null, { timeout: 10000 });
+    const r2 = await p.evaluate(() => ({ sig: document.getElementById('cpSignal').textContent, lens: document.getElementById('lensOut').textContent, sel: window.__cpv.drift() && window.__cpv.drift().chain.find(l => l.level === 'skill').nodes.map(n => n.node) }));
+    ok(/TF-IDF \+ bge-m3 \(β 0.5\)/.test(r2.sig) && JSON.stringify(r2.sel) === '["s:mk-audience-segmenter"]', "dense route from the server replaces the local route: " + JSON.stringify(r2));
+    await p.unroute(API + "/route");
+    await p.evaluate(() => { const $ = id => document.getElementById(id); $('cpDenseChk').click(); $('taskIn').value = 'price a call option'; $('taskGo').click() });
+    const r3 = await p.evaluate(() => ({ sig: document.getElementById('cpSignal').textContent, saved: window.__cpv.getState().observer.dense }));
+    await p.evaluate(() => { const $ = id => document.getElementById(id); $('cpDenseChk').click(); $('taskClr').click(); $('taskMode').value = 'flat' });
+    ok(r3.sig === 'Signal: TF-IDF (dense off)' && r3.saved === false, "dense toggle off: TF-IDF only, saved in state");
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

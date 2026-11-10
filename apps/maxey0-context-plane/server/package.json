@@ -6,7 +6,7 @@
   "scripts": {
     "build:data": "python3 ../tools/build_scw1.py build",
     "typecheck": "tsc --noEmit",
-    "test": "node --test test/mcp.test.mjs test/ontology.test.mjs test/sim.test.mjs",
+    "test": "node --test test/mcp.test.mjs test/ontology.test.mjs test/sim.test.mjs test/dense.test.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },

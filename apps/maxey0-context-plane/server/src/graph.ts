@@ -47,7 +47,10 @@ export function scopeTo(g: GraphData, domain: string): GraphData {
 }
 
 import { cos, vec, Vec } from "./sim";
-import { lensRoute, LAMBDA, LensLevel } from "./lens";
+import { lensRoute, LAMBDA, LensLevel, DenseSignal } from "./lens";
+import { ddot } from "./dense";
+/** Default weight of the dense signal and the hybrid match threshold (see docs/ARCHITECTURE.md, dense calibration). */
+export const DENSE_DEFAULT = { beta: 0.5, min: 0.08 };
 
 export class ToolError extends Error {}
 export const LEVELS = ["domain", "topic", "concept", "skill", "agent", "mcp"] as const;
@@ -169,23 +172,26 @@ export class Graph {
   }
 
   /** Cosine between the query and every concept / skill vector (one method, see sim.ts). */
-  search(a: { query: string; limit?: number; domain?: string; use_priority?: boolean }) {
+  search(a: { query: string; limit?: number; domain?: string; use_priority?: boolean; min_score?: number; _dense?: DenseSignal }) {
     if (a.domain !== undefined) this.need(this.domain, a.domain, "domain", "Call list_domains.");
     const sim = this.g.similarity;
     const q = vec(String(a.query ?? ""), sim.idf, false);
-    if (!Object.keys(q).length) throw new ToolError("query has no indexed words (all stop-words, too short, or unknown)");
-    const min = sim.thresholds.search_min;
+    const D = a._dense;
+    if (!Object.keys(q).length && !D) throw new ToolError("query has no indexed words (all stop-words, too short, or unknown)");
+    const min = typeof a.min_score === "number" && isFinite(a.min_score) ? a.min_score : D ? DENSE_DEFAULT.min : sim.thresholds.search_min;
+    // with the dense signal: score = (1 - beta) * TF-IDF cosine + beta * dense cosine (centred bge-m3 embeddings)
+    const score = (key: string) => { const t = cos(q, sim.vectors[key]); if (!D) return t; const r = D.get(key); return (1 - D.beta) * t + (r ? D.beta * ddot(r, D.q) : 0); };
     const hits: [number, Record<string, unknown>][] = [];
     for (const c of this.g.concepts) {
       const p = this.path(c.id);
       if (a.domain && p.domain !== a.domain) continue;
-      const sc = cos(q, sim.vectors["c:" + c.id]);
+      const sc = score("c:" + c.id);
       if (sc >= min) hits.push([sc, { kind: "concept", id: c.id, label: c.label, ...p }]);
     }
     for (const sk of this.g.skills) {
       const p = this.path(sk.concept);
       if (a.domain && p.domain !== a.domain) continue;
-      const sc = cos(q, sim.vectors["s:" + sk.id]);
+      const sc = score("s:" + sk.id);
       if (sc >= min) hits.push([sc, { kind: "skill", id: sk.id, label: sk.label, ...p }]);
     }
     // declared topic priority only breaks exact (4-decimal) score ties, and only when use_priority
@@ -195,29 +201,30 @@ export class Graph {
     const ord = hits.map((h, i) => [h, i] as const)
       .sort((x, y) => r4(y[0][0]) - r4(x[0][0]) || prio(y[0][1]) - prio(x[0][1]) || x[1] - y[1]).map((x) => x[0]);
     const lim = Math.max(1, Math.min(Math.trunc(Number(a.limit ?? 10)) || 1, 50));
-    return { query: a.query, method: sim.method, min_score: min, priority_tiebreak: usePrio, total: ord.length,
+    return { query: a.query, method: D ? sim.method + " + dense " + D.model + " (beta " + D.beta + ")" : sim.method, min_score: min, priority_tiebreak: usePrio, total: ord.length,
       results: ord.slice(0, lim).map(([sc, r]) => ({ ...r, score: Math.round(sc * 1e4) / 1e4 })) };
   }
 
-  route_task(a: { task: string; limit?: number; domain?: string; domains?: string[]; mode?: string; use_priority?: boolean }) {
+  route_task(a: { task: string; limit?: number; domain?: string; domains?: string[]; mode?: string; use_priority?: boolean; min_score?: number; _dense?: DenseSignal; _dense_status?: unknown }) {
     if (a.mode !== undefined && a.mode !== "flat" && a.mode !== "lens") throw new ToolError("mode must be 'flat' or 'lens'.");
     if (a.mode === "lens") return this.route_lens(a);
     const limit = Math.max(1, Math.min(Math.trunc(Number(a.limit ?? 5)) || 5, 20));
-    const r = this.search({ query: a.task, limit: Math.min(limit * 3, 50), domain: a.domain, use_priority: a.use_priority });
+    const r = this.search({ query: a.task, limit: Math.min(limit * 3, 50), domain: a.domain, use_priority: a.use_priority, min_score: a.min_score, _dense: a._dense });
     const out: Record<string, unknown>[] = [];
     const seen = new Set<string>();
-    for (const h of r.results as unknown as { kind: string; id: string }[]) {
+    for (const h of r.results as unknown as { kind: string; id: string; score: number }[]) {
       const sk = h.kind === "concept" ? (this.skillsByConcept.get(h.id) ?? [])[0] : this.skill.get(h.id)!;
       if (!sk || seen.has(sk.id)) continue;
       seen.add(sk.id);
-      out.push({ ...this.path(sk.concept), skill: sk.id, label: sk.label, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) });
+      out.push({ ...this.path(sk.concept), skill: sk.id, label: sk.label, score: h.score, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) });
       if (out.length >= limit) break;
     }
-    return { task: a.task, note: "candidate paths ranked by TF-IDF cosine; not an authorization", matched: out.length > 0, paths: out };
+    return { task: a.task, note: a._dense ? "candidate paths ranked by TF-IDF cosine + dense " + a._dense.model + " (beta " + a._dense.beta + "); not an authorization" : "candidate paths ranked by TF-IDF cosine; not an authorization",
+      signal: a._dense ? { tfidf: 1 - a._dense.beta, dense: a._dense.beta, model: a._dense.model } : { tfidf: 1 }, ...(a._dense_status ? { dense_status: a._dense_status } : {}), matched: out.length > 0, paths: out };
   }
 
   /** Observer-lens routing (see lens.ts): topic -> concept -> skill read from where the observer stands. */
-  route_lens(a: { task: string; domain?: string; domains?: string[] }) {
+  route_lens(a: { task: string; domain?: string; domains?: string[]; _dense?: DenseSignal; _dense_status?: unknown }) {
     const doms = [...(a.domains ?? []), ...(a.domain ? [a.domain] : [])];
     for (const d of doms) this.need(this.domain, d, "domain", "Call list_domains.");
     const sim = this.g.similarity;
@@ -227,11 +234,12 @@ export class Graph {
       { level: "skill", prefix: "s", ids: this.g.skills.map((s) => s.id) },
       { level: "agent", prefix: "a", ids: [], children: (sid) => (this.skill.get(sid)?.agents ?? []).map((x) => x.key) },
       { level: "mcp", prefix: "m", ids: [], children: (ak) => this.gatesOf(ak) }],
-      doms.length ? (id) => doms.includes(this.topic.get(id)!.domain) : undefined);
+      doms.length ? (id) => doms.includes(this.topic.get(id)!.domain) : undefined, {}, a._dense);
     const paths = r.skills.map((id) => { const sk = this.skill.get(id)!;
       return { ...this.path(sk.concept), skill: sk.id, label: sk.label, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) }; });
     return { task: a.task, mode: "lens", observer_start: doms.length ? { domains: doms } : "above the topic plane", lambda: LAMBDA,
       note: "observer-lens routing: each level is valued from the nodes selected above it (signed support, ranked by psi, selected only when psi > 0); candidates, not an authorization",
+      signal: a._dense ? { tfidf: 1 - a._dense.beta, dense: a._dense.beta, model: a._dense.model, shortlist: r.dense!.shortlist } : { tfidf: 1 }, ...(a._dense_status ? { dense_status: a._dense_status } : {}),
       matched: paths.length > 0, paths, lens: r.chain, agents: r.agents, mcp_servers: r.mcp, remaining_task: r.remaining_task,
       drift: this.driftScw(String(a.task ?? ""), r.chain, r.remaining_task) };
   }
