@@ -48,6 +48,21 @@ list sorted all 117 servers for every agent (~45 ms).
 Every node's place, the lens chain on the reference task, the number of gates and each agent's gate count were compared
 between the old and new page: identical.
 
+### After, live (server 6.5.2 / app 1.11, same workspace, same script `app/perf_live.cjs`)
+
+| What | Before (6.5.1) | After (6.5.2) |
+|---|---|---|
+| Graph usable, cached load | 1,159 ms | 888 ms |
+| Graph usable, first load | 1,287 ms | 1,522 ms (the HTML took 524 ms on the first request after the deploy, against 141 ms before: a cold edge cache, not page work) |
+| Lens route in the page | 56–62 ms | 10.7–11.3 ms |
+| Frame, full graph | median 13.1–16.5 ms | median 18.5–21.0 ms |
+| Frame, field view | median 15.2–15.4 ms | median 18.8–22.1 ms |
+| JS heap | 54–61 MB | 40–54 MB |
+| Live lens routes with dense | — | 10 of 10 returned 200 (no error 1102) |
+
+Frame times rose in this run although no drawing code changed in 6.5.2; the workspace's shared CPU varies between runs, so
+single runs of a few milliseconds are noise here. All values are inside the budget.
+
 ## Not yet done
 - graph.json (3.5 MB raw) is the largest cost of a first load; a slimmer browser payload (field places and vectors only
   where the page needs them) would cut it.
