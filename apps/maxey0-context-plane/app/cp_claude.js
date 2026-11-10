@@ -13,9 +13,17 @@ async function cpAnthropic(path,body,key){const r=await fetch('https://api.anthr
   headers:{'x-api-key':key||cpClaude.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true',...(body?{'content-type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});
  let j={};try{j=await r.json()}catch(e){}if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));return j}
 function cpClaudeLabel(){return cpClaude.mode==='api'&&cpClaude.key?'Claude: API · '+cpClaude.model:cpClaude.mode==='connector'?'Claude: in your Claude':'Connect to Claude'}
-function cpClaudeBtn(){let b=$('cpClaudeBtn');if(cpHost.on){if(b)b.remove();return}
- if(!b){b=hh('button','',cpClaudeLabel(),{type:'button',id:'cpClaudeBtn',title:'Connect Maxey0 to Claude: use it inside your Claude, or with your own API key'});b.onclick=()=>cpClaudeOpen('how');document.body.append(b)}
+// The Connect button sits in a dock: top right on wide screens, bottom right on phones, where it can also be hidden to a
+// small tab on the right edge and brought back (the choice is kept for this browser only).
+function cpClaudeBtn(){let b=$('cpClaudeBtn'),k=$('cpClaudeDock');if(cpHost.on){if(k)k.remove();return}
+ if(!b){k=hh('div','',null,{id:'cpClaudeDock'});
+  b=hh('button','',cpClaudeLabel(),{type:'button',id:'cpClaudeBtn',title:'Connect Maxey0 to Claude: use it inside your Claude, or with your own API key'});b.onclick=()=>cpClaudeOpen('how');
+  const x=hh('button','','\u00d7',{type:'button',id:'cpClaudeHide',title:'Hide the Claude button','aria-label':'Hide the Claude button'});x.onclick=()=>cpClaudeDock(true);
+  const t=hh('button','','Claude',{type:'button',id:'cpClaudeTab',title:'Show the Claude button','aria-label':'Show the Claude button'});t.onclick=()=>cpClaudeDock(false);
+  k.append(b,x,t);document.body.append(k);cpClaudeDock(cpLS('mx0.claudeHidden')==='1',true)}
  b.textContent=cpClaudeLabel()}
+function cpClaudeDock(hide,init){const k=$('cpClaudeDock');if(!k)return;k.classList.toggle('cphid',!!hide);if(!init)cpLS('mx0.claudeHidden',hide?'1':'0');
+ const f=$(hide?'cpClaudeTab':'cpClaudeBtn');if(f&&!init)f.focus()}
 function cpClaudeClose(){const d=$('cpClaude');if(d)d.remove();cpClaudeBtn();const b=$('cpClaudeBtn');if(b)b.focus()}
 function cpClaudeOpen(step){let d=$('cpClaude');if(d)d.remove();
  d=hh('div','');d.id='cpClaude';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-labelledby','cpClaudeT');
