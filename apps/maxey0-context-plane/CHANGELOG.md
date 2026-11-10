@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.7.0 (app 1.13, plugin 0.5.0) — 2026-11-10
+- Landing page at `/` for browsers (unaltered Human0 logo at `/logo.png`); JSON server info via `?format=json` or non-HTML Accept.
+- Custom domain `app.maxey0.com` (wrangler route; Cloudflare creates the DNS record and certificate on deploy).
+- App: Maxey0 · by Human0 branding; "Connect to Claude" dialog (default: Maxey0 inside your Claude as a custom connector; or your own API key held in page memory only, never stored or sent to our server, with a model picker); Send to Claude Code (zip harness: CLAUDE.md, .mcp.json, .claude/agents, route.json).
+- /app CSP allows connect-src https://api.anthropic.com only for BYOK calls.
+
 ## Server 6.6.0 · App 1.12
 - Embedding values of a selected node in Details, each labelled with what it is: the TF-IDF vector routing uses (non-zero terms and weights, length 1); the bge-m3 vector routing uses (1024 values, centred, unit; first 8 shown, Copy all) with its nearest nodes per level by dense cosine; the 3D field place (SVD axes 1–3: x, y, z); the 3D drawn place on its level donut seen from above; with an observer, the observer's value for the node (a and √a), its observed 3D field place, observed drawn place and the 3D displacement; with a lens route that chose it, flat score and rank → ψ and rank, drift, weight. Previously only x, y of the field and √a were shown, labelled "seen from above" in both views.
 - Server: `GET /embedding?key=<node>` returns a node's bge-m3 vector and its dense nearest nodes per level (CORS, cached an hour).
