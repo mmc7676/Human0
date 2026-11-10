@@ -414,7 +414,7 @@ const cv=$('g'),cx=cv.getContext('2d');
 function project(n,w,h,o){const q=o||cpPos(n),px=q.x,py=q.y,pz=n.z+(q.z||0),x=cpM[0]*px+cpM[1]*py+cpM[2]*pz,yy=cpM[3]*px+cpM[4]*py+cpM[5]*pz,zz=cpM[6]*px+cpM[7]*py+cpM[8]*pz,p=800/Math.max(120,800+zz);return{sx:w/2+x*p*zoom*1.15+cpPanX,sy:h/2+yy*p*zoom*1.15+10+cpPanY,p,zz}}
 function draw(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=Math.max(1,r.width*d);cv.height=Math.max(1,r.height*d);cx.setTransform(d,0,0,d,0,0);const w=r.width,h=r.height;cx.clearRect(0,0,w,h);
  cpDrawRings(w,h);cpLensSync();
- const rel=relNow(),P={};pts=[];cpFanCompute(rel);
+ const rel=relNow(),P={};pts=[];cpFanCompute(rel);cpCnt={};for(const n of Object.values(N)){if(!vis[n.kind]||(iso&&rel&&!rel.has(n.id))||(cpOnlyNew&&!cpNewSet().has(n.id)))continue;cpCnt[n.kind]=(cpCnt[n.kind]||0)+1}
  for(const id in N){const n=N[id];if(!vis[n.kind])continue;const o=project(n,w,h);P[id]=o;pts.push({n,...o})}
  drawSCW(P,w,h);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;if(e.kind==='tree'){const pa=e.a[0];if(pa==='d'&&!showDT||pa==='t'&&!showTC||pa==='c'&&!showCS)return}lines.push(e)});if(showRel)__CP.related.forEach(([a,b,w])=>lines.push({a,b,kind:'related',w}));if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
 const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1,checker:.6,support:.4};
@@ -425,7 +425,7 @@ const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1
   else{const base=e.kind==='gate'?COL.mcp:COL.agent;cx.strokeStyle=lerpHex(BG,base,on?.35+.65*t:.25+.35*t)+(on?'ee':(rel?'28':'88'));cx.lineWidth=on?.8+2.4*t:.5+.7*t;cx.setLineDash(e.src==='manual'?[4,3]:[])}
   v03EdgeTint(e,rel&&!on);cx.stroke();cx.setLineDash([]);if(on){str[e.a]=Math.max(str[e.a]||0,t);str[e.b]=Math.max(str[e.b]||0,t)}}
  pts.sort((a,b)=>b.zz-a.zz);
- for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;if(cpOnlyNew&&!cpNewSet().has(n.id))continue;const m=match(n),lv=cpLensVal(n),dim=(rel&&!rel.has(n.id))||!m||(lv!==null&&lv<.12&&!(rel&&rel.has(n.id))),rad=({domain:9,topic:7,concept:6,skill:3.6,agent:5,mcp:6.5})[n.kind]*o.p+1+(v03IsUp(n)?1.8:0);cx.globalAlpha=dim?.2:1;cx.beginPath();
+ for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;if(cpOnlyNew&&!cpNewSet().has(n.id))continue;const m=match(n),lv=cpLensVal(n),dim=(rel&&!rel.has(n.id))||!m||(lv!==null&&lv<.12&&!(rel&&rel.has(n.id))),rad=cpNodeR(n.kind,o.p)+(v03IsUp(n)?1.8:0);cx.globalAlpha=dim?.2:1;cx.beginPath();
   if(n.kind==='mcp'){cx.rect(o.sx-rad,o.sy-rad,rad*2,rad*2)}else cx.arc(o.sx,o.sy,rad,0,6.2832);cx.fillStyle=(rel&&rel.has(n.id)&&str[n.id]!==undefined)?lerpHex(BG,nodeCol(n),.4+.6*str[n.id]):nodeCol(n);cx.fill();cx.strokeStyle=sel===n.id?'#fff':(n.kind==='mcp'&&n.state!=='registry'?'#fff8':'#071321');cx.lineWidth=sel===n.id?2:(n.kind==='mcp'&&n.state!=='registry'?1.5:1);cx.stroke();
   if(cpDomOn&&n.kind==='topic'){const d=__CP.tDom[n.id.slice(2)];if(d){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.2,0,6.2832);cx.strokeStyle=cpDomCol(d);cx.lineWidth=2;cx.stroke()}}
   if(!dim&&v03IsUp(n)){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.5,0,6.2832);cx.strokeStyle=nodeCol(n);cx.lineWidth=1.2;cx.stroke()}
@@ -1081,9 +1081,27 @@ function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('
  for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const row=hh('div','');row.append(hh('span','cpembk',NAMES[k]+': '));
   nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
  b.append(box)}
-function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id],f=__CP.field[n.id];if(!q)return null;
- const r=Math.min(1,Math.hypot(q[0],q[1])),a=Math.atan2(q[1],q[0]),R=cpIn()+r*(cpOut()-cpIn())*.97,dz=f?Math.max(-1,Math.min(1,(f[2]||0)/cpZMAX))*cpT()*.9:0;
- return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:dz}}
+// A node's field coordinates carry no meaning on their own; only the distances and directions between nodes do.
+// So each level is framed on its own: centred on that level's centroid and scaled by one factor (x, y and depth alike)
+// so its farthest node reaches the donut's outer rim. A shift plus one uniform scale keeps every distance ratio and
+// every direction between the level's nodes, and lets each level use its whole donut instead of one crowded side.
+let cpLv=null;
+function cpLvStats(){if(cpLv)return cpLv;cpLv={};const acc={};
+ for(const id in __CP.field){const n=N[id];if(!n)continue;(acc[n.kind]=acc[n.kind]||[]).push(__CP.field[id])}
+ for(const k in acc){const P=acc[k],m=[0,1,2].map(j=>P.reduce((s,p)=>s+(p[j]||0),0)/P.length);
+  let R=0;for(const p of P)R=Math.max(R,Math.hypot(p[0]-m[0],p[1]-m[1]));
+  cpLv[k]={m,R:R||1}}return cpLv}
+function cpFieldXY(n){if(!cpField)return null;const L=cpLensPos&&cpLensPos[n.id],f=__CP.field[n.id];if(!L&&!f)return null;let u,v,w=0;
+ const st=f&&cpLvStats()[n.kind];
+ if(L){u=L[0];v=L[1];w=st?((f[2]||0)-st.m[2])/st.R:0}   // the observer's view: already centred on the observer
+ else{u=(f[0]-st.m[0])/st.R;v=(f[1]-st.m[1])/st.R;w=((f[2]||0)-st.m[2])/st.R}
+ const r=Math.min(1,Math.hypot(u,v)),a=Math.atan2(v,u),R=cpIn()+r*(cpOut()-cpIn())*.97,span=cpOut()-cpIn();
+ return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:Math.max(-1,Math.min(1,w*span/cpT()))*cpT()*.9}}
+// Node size from density: the more nodes a level shows, the smaller each one, so a node takes a fixed share of the
+// spacing between neighbours on its donut (area / count) and the distances between nodes stay readable.
+let cpCnt={};
+function cpNodeR(kind,p){const A=Math.PI*(cpOut()**2-cpIn()**2),c=Math.max(1,cpCnt[kind]||1),gap=Math.sqrt(A/c)*zoom*1.15;
+ const f={domain:1.3,topic:1.15,concept:1,skill:1,agent:1,mcp:1.05}[kind]||1;return Math.max(1.4,Math.min(13,.3*gap*f))*p}
 // domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
 const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
 function cpDomCol(d){const i=__CP.domains.findIndex(x=>x.id===d);return DOMCOL[(i<0?0:i)%DOMCOL.length]}
@@ -1125,7 +1143,6 @@ let cpFanKey='',cpFanAxis=null,cpPanX=0,cpPanY=0;
 // Level donuts: every level is a 3D donut (an annulus with thickness) of the same size, stacked on one vertical axis.
 // Field axes 1-2 place a node around and across the ring, field axis 3 places it in the donut's thickness (cpT = half-thickness).
 const cpOut=()=>RAD.mcp*1.15,cpIn=()=>cpOut()*.3,cpRing=()=>(cpIn()+cpOut())/2,cpT=()=>45;
-const cpZMAX=.9;
 function cpFanCompute(rel){if(!cpFan||!iso||!rel||rel.size>600){cpFanPos={};cpFanKey='';return}
  const key=[...rel].sort().join('|');if(key===cpFanKey)return;cpFanKey=key;cpFanPos={};
  // start the fan on the arc facing the viewer; afterwards it lives in world coordinates and turns with the graph
@@ -1235,7 +1252,7 @@ setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
 window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
 // ---------- init + test hooks
 function v7init(){csApply();

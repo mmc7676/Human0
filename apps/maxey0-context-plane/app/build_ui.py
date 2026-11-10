@@ -75,9 +75,27 @@ function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('
  for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const row=hh('div','');row.append(hh('span','cpembk',NAMES[k]+': '));
   nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
  b.append(box)}
-function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id],f=__CP.field[n.id];if(!q)return null;
- const r=Math.min(1,Math.hypot(q[0],q[1])),a=Math.atan2(q[1],q[0]),R=cpIn()+r*(cpOut()-cpIn())*.97,dz=f?Math.max(-1,Math.min(1,(f[2]||0)/cpZMAX))*cpT()*.9:0;
- return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:dz}}
+// A node's field coordinates carry no meaning on their own; only the distances and directions between nodes do.
+// So each level is framed on its own: centred on that level's centroid and scaled by one factor (x, y and depth alike)
+// so its farthest node reaches the donut's outer rim. A shift plus one uniform scale keeps every distance ratio and
+// every direction between the level's nodes, and lets each level use its whole donut instead of one crowded side.
+let cpLv=null;
+function cpLvStats(){if(cpLv)return cpLv;cpLv={};const acc={};
+ for(const id in __CP.field){const n=N[id];if(!n)continue;(acc[n.kind]=acc[n.kind]||[]).push(__CP.field[id])}
+ for(const k in acc){const P=acc[k],m=[0,1,2].map(j=>P.reduce((s,p)=>s+(p[j]||0),0)/P.length);
+  let R=0;for(const p of P)R=Math.max(R,Math.hypot(p[0]-m[0],p[1]-m[1]));
+  cpLv[k]={m,R:R||1}}return cpLv}
+function cpFieldXY(n){if(!cpField)return null;const L=cpLensPos&&cpLensPos[n.id],f=__CP.field[n.id];if(!L&&!f)return null;let u,v,w=0;
+ const st=f&&cpLvStats()[n.kind];
+ if(L){u=L[0];v=L[1];w=st?((f[2]||0)-st.m[2])/st.R:0}   // the observer's view: already centred on the observer
+ else{u=(f[0]-st.m[0])/st.R;v=(f[1]-st.m[1])/st.R;w=((f[2]||0)-st.m[2])/st.R}
+ const r=Math.min(1,Math.hypot(u,v)),a=Math.atan2(v,u),R=cpIn()+r*(cpOut()-cpIn())*.97,span=cpOut()-cpIn();
+ return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:Math.max(-1,Math.min(1,w*span/cpT()))*cpT()*.9}}
+// Node size from density: the more nodes a level shows, the smaller each one, so a node takes a fixed share of the
+// spacing between neighbours on its donut (area / count) and the distances between nodes stay readable.
+let cpCnt={};
+function cpNodeR(kind,p){const A=Math.PI*(cpOut()**2-cpIn()**2),c=Math.max(1,cpCnt[kind]||1),gap=Math.sqrt(A/c)*zoom*1.15;
+ const f={domain:1.3,topic:1.15,concept:1,skill:1,agent:1,mcp:1.05}[kind]||1;return Math.max(1.4,Math.min(13,.3*gap*f))*p}
 // domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
 const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
 function cpDomCol(d){const i=__CP.domains.findIndex(x=>x.id===d);return DOMCOL[(i<0?0:i)%DOMCOL.length]}
@@ -119,7 +137,6 @@ let cpFanKey='',cpFanAxis=null,cpPanX=0,cpPanY=0;
 // Level donuts: every level is a 3D donut (an annulus with thickness) of the same size, stacked on one vertical axis.
 // Field axes 1-2 place a node around and across the ring, field axis 3 places it in the donut's thickness (cpT = half-thickness).
 const cpOut=()=>RAD.mcp*1.15,cpIn=()=>cpOut()*.3,cpRing=()=>(cpIn()+cpOut())/2,cpT=()=>45;
-const cpZMAX=.9;
 function cpFanCompute(rel){if(!cpFan||!iso||!rel||rel.size>600){cpFanPos={};cpFanKey='';return}
  const key=[...rel].sort().join('|');if(key===cpFanKey)return;cpFanKey=key;cpFanPos={};
  // start the fan on the arc facing the viewer; afterwards it lives in world coordinates and turns with the graph
@@ -229,7 +246,7 @@ setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
 window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
 
 LOADER = r"""<style>
@@ -592,7 +609,7 @@ def main():
     # 8. readable paths: spread an isolated path on its levels; drag nodes within their level --------
     h = once(h, "function project(n,w,h,o){const px=o?o.x:n.x,py=o?o.y:n.y,",
              "function project(n,w,h,o){const q=o||cpPos(n),px=q.x,py=q.y,", "project: layout overrides")
-    h = once(h, "const rel=relNow(),P={};pts=[];", "const rel=relNow(),P={};pts=[];cpFanCompute(rel);", "draw: fan layout")
+    h = once(h, "const rel=relNow(),P={};pts=[];", "const rel=relNow(),P={};pts=[];cpFanCompute(rel);cpCnt={};for(const n of Object.values(N)){if(!vis[n.kind]||(iso&&rel&&!rel.has(n.id))||(cpOnlyNew&&!cpNewSet().has(n.id)))continue;cpCnt[n.kind]=(cpCnt[n.kind]||0)+1}", "draw: fan layout")
     h = once(h, "for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;",
              "for(const o of pts){const n=o.n;if(iso&&rel&&!rel.has(n.id))continue;if(cpOnlyNew&&!cpNewSet().has(n.id))continue;", "draw: new-topics-only nodes")
     h = once(h, "for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;",
@@ -679,7 +696,7 @@ def main():
     h = once(h, "lbl={topic:true,", "lbl={domain:true,topic:true,", "domain labels on")
     h = once(h, "types.forEach(t=>add('t:'+t,'topic',", "__CP.domains.forEach(d=>add('d:'+d.id,'domain',d.label,{desc:d.desc,raw:d.id}));\ntypes.forEach(t=>{const dm=__CP.tDom[t];if(dm&&N['d:'+dm])E.push({a:'d:'+dm,b:'t:'+t,kind:'tree'})});\ntypes.forEach(t=>add('t:'+t,'topic',", "domain nodes + domain->topic edges")
     h = once(h, "a0+=span}\n const ang={};aIds.forEach(a=>{", "a0+=span}\n  __CP.domains.forEach(d=>{const ts=types.filter(t=>__CP.tDom[t]===d.id).map(t=>N['t:'+t]);if(!ts.length||!N['d:'+d.id])return;const x=ts.reduce((s,n)=>s+Math.cos(Math.atan2(n.y,n.x)),0),y=ts.reduce((s,n)=>s+Math.sin(Math.atan2(n.y,n.x)),0);pl(N['d:'+d.id],Math.atan2(y,x),RAD.domain)});\n const ang={};aIds.forEach(a=>{", "domain placed over its topics")
-    h = once(h, "rad=({topic:7,concept:6,", "rad=({domain:9,topic:7,concept:6,", "domain node size")
+    h = once(h, "rad=({topic:7,concept:6,skill:3.6,agent:5,mcp:6.5})[n.kind]*o.p+1", "rad=cpNodeR(n.kind,o.p)", "node size from density")
     h = once(h, "function nodeCol(n){return v03IsUp(n)?UPC[n.kind]:COL[n.kind]}", "function nodeCol(n){return n.kind==='domain'?cpDomCol(n.raw):v03IsUp(n)?UPC[n.kind]:COL[n.kind]}", "domain node colour")
     h = once(h, "\n if(n.kind==='topic'){E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);", "\n if(n.kind==='domain'){E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);E.filter(x=>x.a===e.b).forEach(x=>s.add(x.b))});return s}\n if(n.kind==='topic'){E.filter(e=>e.b===id&&e.a.startsWith('d:')).forEach(e=>s.add(e.a));E.filter(e=>e.a===id).forEach(e=>{s.add(e.b);", "domain in related()")
     h = once(h, '<button id="lT" class="on">T</button>', '<button id="lD" class="on" title="Domain labels">D</button><button id="lT" class="on">T</button>', "D label button")

@@ -398,3 +398,7 @@ Install it from the plugin directory when listed, or from this repository (see t
 ## Part 16 — App 1.6: 3D donut levels
 - Each level is a donut with thickness. With **Embedding field** on, a node's place around and across the ring comes from field axes 1–2 and its height inside the donut from axis 3.
 - **Drag nodes**: grab a node and move it; it follows the pointer from any viewing angle and moves in 3D within its donut. Release to place it; it stays there. **Reset layout** puts every node back.
+
+## Part 17 — App 1.7: node size and per-level framing
+- Node size depends on how many nodes a level shows: a crowded level draws small nodes and a sparse one draws large nodes, so the gaps between nodes stay visible.
+- With **Embedding field** on, each level fills its own donut: a node's place has no meaning by itself; what matters is its direction and distance to the other nodes on the same level.

@@ -69,7 +69,9 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
       const pos = ids.map(id => v.field().pos(id)); c('cpFieldBtn'); return { n, on, pos, off: !v.field().on } });
     const nApp = graph.domains.length + graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length;
     const fine = f.n === nApp && f.on && f.off && f.pos.every(q => q && isFinite(q.x) && isFinite(q.y));
-    const want = graph.field.xy['s:dv-option-pricer'], got = f.pos[0], sc = Math.hypot(got.x, got.y) / Math.hypot(want[0], want[1]);
+    // each level is framed on its own centroid: the direction from the skill level's centroid is kept exactly
+    const sk = graph.skills.map(s => graph.field.xy['s:' + s.id]), mx = sk.reduce((t, q) => t + q[0], 0) / sk.length, my = sk.reduce((t, q) => t + q[1], 0) / sk.length;
+    const w0 = graph.field.xy['s:dv-option-pricer'], want = [w0[0] - mx, w0[1] - my], got = f.pos[0], sc = Math.hypot(got.x, got.y) / Math.hypot(want[0], want[1]);
     ok(fine && sc > 0 && Math.abs(Math.atan2(got.y, got.x) - Math.atan2(want[1], want[0])) < 1e-6, "embedding field: " + f.n + " located nodes, placement follows field coordinates");
   }
 
@@ -180,6 +182,20 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     }
     await p.evaluate(() => { document.getElementById('cpResetBtn').click(); window.__cpv.fit && 0; if (window.__cpv.field().on) document.getElementById('cpFieldBtn').click() });
     await p.evaluate(() => document.getElementById('cpFitBtn').click());
+  }
+
+  // 1i. node size from density; each level framed on its own centroid and filling its donut
+  {
+    const r = await p.evaluate(() => { const v = window.__cpv, g = v.graph(), [I, , O] = v.ringR();
+      if (!v.field().on) document.getElementById('cpFieldBtn').click();
+      const c = v.cnt(), sk = v.nodeR('skill'), tp = v.nodeR('topic');
+      let maxR = 0, sx = 0, sy = 0; for (const s of g.skills) { const q = v.field().pos('s:' + s.id); maxR = Math.max(maxR, Math.hypot(q.x, q.y)); sx += q.x; sy += q.y }
+      const ang = Math.atan2(sy, sx), spread = Math.hypot(sx, sy) / g.skills.length;
+      document.getElementById('cpFieldBtn').click(); return { c, sk, tp, maxR, O, I, spread } });
+    ok(r.c.skill === 1998 && r.c.topic === 128, "visible counts per level: " + JSON.stringify(r.c));
+    ok(r.sk < r.tp, "denser level draws smaller nodes: skill " + r.sk.toFixed(2) + " < topic " + r.tp.toFixed(2));
+    ok(r.maxR > 0.95 * r.O, "skill level framed to reach its donut's outer rim: " + r.maxR.toFixed(1) + " of " + r.O.toFixed(1));
+    ok(r.spread < 0.5 * r.I, "skill level centred on its own centroid (mean offset " + r.spread.toFixed(1) + ")");
   }
 
   // 2. gates = the server's agent->MCP links, exactly
