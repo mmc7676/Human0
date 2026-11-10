@@ -12,7 +12,7 @@ function cpLS(k,v){try{if(v===undefined)return localStorage.getItem(k);if(v===nu
 async function cpAnthropic(path,body,key){const r=await fetch('https://api.anthropic.com'+path,{method:body?'POST':'GET',
   headers:{'x-api-key':key||cpClaude.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true',...(body?{'content-type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});
  let j={};try{j=await r.json()}catch(e){}if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));return j}
-function cpClaudeLabel(){return cpClaude.mode==='api'&&cpClaude.key?'Claude: API · '+cpClaude.model:cpClaude.mode==='connector'?'Claude: in your Claude':'Connect to Claude'}
+function cpClaudeLabel(){return cpClaude.mode==='api'&&cpClaude.key?'Claude: API · '+cpClaude.model:'Connect to Claude'}
 // The Connect button sits in a dock: top right on wide screens, bottom right on phones, where it can also be hidden to a
 // small tab on the right edge and brought back (the choice is kept for this browser only).
 function cpClaudeBtn(){let b=$('cpClaudeBtn'),k=$('cpClaudeDock');if(cpHost.on){if(k)k.remove();return}
@@ -20,9 +20,26 @@ function cpClaudeBtn(){let b=$('cpClaudeBtn'),k=$('cpClaudeDock');if(cpHost.on){
   b=hh('button','',cpClaudeLabel(),{type:'button',id:'cpClaudeBtn',title:'Connect Maxey0 to Claude: use it inside your Claude, or with your own API key'});b.onclick=()=>cpClaudeOpen('how');
   const x=hh('button','','\u00d7',{type:'button',id:'cpClaudeHide',title:'Hide the Claude button','aria-label':'Hide the Claude button'});x.onclick=()=>cpClaudeDock(true);
   const t=hh('button','','Claude',{type:'button',id:'cpClaudeTab',title:'Show the Claude button','aria-label':'Show the Claude button'});t.onclick=()=>cpClaudeDock(false);
-  k.append(b,x,t);document.body.append(k);cpClaudeDock(cpLS('mx0.claudeHidden')==='1',true)}
+  k.append(b,x,t);document.body.append(k);cpClaudeDock(cpLS('mx0.claudeHidden')==='1',true);cpClaudeDrag(k)}
  b.textContent=cpClaudeLabel()}
-function cpClaudeDock(hide,init){const k=$('cpClaudeDock');if(!k)return;k.classList.toggle('cphid',!!hide);if(!init)cpLS('mx0.claudeHidden',hide?'1':'0');
+// Phones: drag the button anywhere; on release it snaps to the nearer side edge, and its place is kept for this browser.
+// A press that moves less than 8 px is a tap (opens the dialog); a drag never opens it.
+const cpNarrow=()=>matchMedia('(max-width:700px)').matches;
+function cpClaudePlace(k,p){k._pos=p;if(!p||!cpNarrow()){k.style.left=k.style.right=k.style.top=k.style.bottom='';return}
+ const h=k.offsetHeight||48,y=Math.max(8,Math.min(innerHeight-h-8,p.y*innerHeight));k.style.top=y+'px';k.style.bottom='auto';
+ const e=k.classList.contains('cphid')?0:null;k.classList.toggle('cpleft',p.side==='left');
+ if(p.side==='left'){k.style.left=(e??8)+'px';k.style.right='auto'}else{k.style.right=(e??12)+'px';k.style.left='auto'}}
+function cpClaudeDrag(k){let pos=null;try{pos=JSON.parse(cpLS('mx0.claudePos')||'null')}catch(e){}cpClaudePlace(k,pos);
+ addEventListener('resize',()=>cpClaudePlace(k,pos));let st=null,moved=false;
+ k.addEventListener('pointerdown',e=>{if(!cpNarrow()||e.target.id==='cpClaudeHide')return;const r=k.getBoundingClientRect();st={x:e.clientX,y:e.clientY,l:r.left,t:r.top};moved=false});
+ addEventListener('pointermove',e=>{if(!st)return;const dx=e.clientX-st.x,dy=e.clientY-st.y;if(!moved&&Math.hypot(dx,dy)<8)return;
+  moved=true;e.preventDefault();
+  k.style.left=Math.max(0,Math.min(innerWidth-k.offsetWidth,st.l+dx))+'px';k.style.right='auto';k.style.top=Math.max(0,Math.min(innerHeight-k.offsetHeight,st.t+dy))+'px';k.style.bottom='auto'});
+ const end=()=>{if(!st)return;st=null;if(!moved)return;const r=k.getBoundingClientRect();pos={y:r.top/innerHeight,side:r.left+r.width/2<innerWidth/2?'left':'right'};
+  cpLS('mx0.claudePos',JSON.stringify(pos));cpClaudePlace(k,pos)};
+ addEventListener('pointerup',end);addEventListener('pointercancel',end);
+ k.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true)}
+function cpClaudeDock(hide,init){const k=$('cpClaudeDock');if(!k)return;k.classList.toggle('cphid',!!hide);if(!init)cpClaudePlace(k,k._pos);if(!init)cpLS('mx0.claudeHidden',hide?'1':'0');
  const f=$(hide?'cpClaudeTab':'cpClaudeBtn');if(f&&!init)f.focus()}
 function cpClaudeClose(){const d=$('cpClaude');if(d)d.remove();cpClaudeBtn();const b=$('cpClaudeBtn');if(b)b.focus()}
 function cpClaudeOpen(step){let d=$('cpClaude');if(d)d.remove();

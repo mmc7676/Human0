@@ -3,7 +3,7 @@
 ## v1.0.0 - Prefederation — 2026-11-10 (first public release)
 - One version for everything: the Maxey0 Context Plane server, the Maxey0 Context Plane Graph (the MCP App), the plugin and the paper are all v1.0.0 - Prefederation. Earlier entries keep their internal build numbers (server 6.x, app 1.x, plugin 0.x); v1.0.0 is internal build 6.7.1 / app 1.13 / plugin 0.5.0 plus the Context Plane paper in the research library.
 - "Prefederation": no sign-in. Next release adds identity federation and a small hosted allowance for people without a Claude account.
-- Phones: the Connect to Claude button moves to the bottom-right corner with a × to hide it to a small "Claude" tab on the right edge; tapping the tab brings it back (remembered in this browser).
+- Phones: the Connect to Claude button moves to the bottom-right corner with a × to hide it to a small "Claude" tab on the right edge; tapping the tab brings it back (remembered in this browser). The button can be dragged anywhere on a phone screen; it snaps to the nearer side edge and keeps its place. The button always reads "Connect to Claude" (it shows the model only while your own API key is in use).
 - The Context Plane paper is now in the repository (`research/papers/`) and served at `/research/context-plane`.
 
 ## 6.7.1 — 2026-11-10
