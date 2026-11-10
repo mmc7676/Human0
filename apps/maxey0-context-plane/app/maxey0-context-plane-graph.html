@@ -54,6 +54,7 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 <div class="row"><label>Agent layout</label><button id="mSkill">Skill-angle</button><button id="mGate" class="on">Gate-field</button></div>
 <div class="row"><label>Gates per agent <b id="kv">3</b></label><input id="k" type="range" min="1" max="8" value="3"></div>
 <div class="row"><label>Min similarity <b id="tv">0.12</b></label><input id="t" type="range" min="0" max="60" value="12"></div>
+<div class="row"><button id="bDT" class="on">domain→topic</button><button id="bTC" class="on">topic→concept</button><button id="bCS" class="on">concept→skill</button><button id="bRel" title="Concepts in different topics whose text is close (cosine ≥ 0.40), dashed">related concepts</button></div>
 <div class="row"><button id="bAg" class="on">skill→agent</button><button id="bGt" class="on">agent→MCP gates</button><button id="multi">Multi-MCP only</button></div>
 <div class="row"><button id="spin">Spin</button><button id="iso">Isolate path</button><button id="isoScw" class="scwb">⬡ ISOLATE</button></div>
 <div class="row opts" id="scwOpts" style="display:none"><label>Execution SCWs (agent + its MCP gates) <select id="oA"><option value="off">off</option><option value="sel" selected>selected agents</option><option value="all">all agents</option></select></label></div>
@@ -68,7 +69,7 @@ details.cs>.cs-b{padding:0 10px 10px}details.cs.app,details.cs.frame{background:
 </div></details>
 <details class="cs" id="cs_browse" open><summary>Browse &amp; select</summary><div class="cs-b">
 <div class="row"><input id="search" placeholder="Search agent, server, skill…"></div>
-<div class="row"><label>Domain</label><select id="bfDomain" aria-label="Filter by domain"></select></div><div class="row"><label>Topic</label><select id="bfTopic" aria-label="Filter by topic"></select></div><div class="row"><label>Concept</label><select id="bfConcept" aria-label="Filter by concept"></select></div><div class="row"><button id="tabT">Topics</button><button id="tabC">Concepts</button><button id="tabA" class="on">Agents</button><button id="tabM">MCP servers</button><button id="tabS">Skills</button></div>
+<div class="row"><label>Domain</label><select id="bfDomain" aria-label="Filter by domain"></select></div><div class="row"><label>Topic</label><select id="bfTopic" aria-label="Filter by topic"></select></div><div class="row"><label>Concept</label><select id="bfConcept" aria-label="Filter by concept"></select></div><div class="row"><button id="tabT">Topics</button><button id="tabC">Concepts</button><button id="tabD">Domains</button><button id="tabA" class="on">Agents</button><button id="tabM">MCP servers</button><button id="tabS">Skills</button></div>
 <div class="list" id="list"></div>
 <div class="row"><button id="msTog">Multi-select</button><button id="msAll">Select all listed</button></div>
 <div class="detail" id="msPanel" style="display:none;min-height:0"></div>
@@ -303,7 +304,11 @@ window.__cpLoad = async function () {
     // a domain is as near as its nearest topic (domain vectors are broad centroids)
     if (out.t) { const best = {}; for (const [a, sc] of out.t) { const d = tDom[a.slice(2)]; if (d && (!(d in best) || sc > best[d])) best[d] = sc } out.d = Object.entries(best).map(([d, sc]) => ['d:' + d, sc]) }
     for (const lv in out) out[lv] = out[lv].sort((x, y) => y[1] - x[1]).slice(0, k || 3).map(([a, sc]) => [a, r4(sc)]); return out };
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest };
+  /** suggestDomain(text): the domain of the topic nearest to this text (used for topics generated in the app). */
+  const suggestDomain = text => { const q = unitv(vec(text)); let best = null, sc = 0;
+    for (const t of g.topics) { const x = dotu(q, U['t:' + t.id] || {}); if (x > sc) { sc = x; best = t.domain } } return best ? { domain: best, score: r4(sc) } : null };
+  const related = (g.related || []).map(r => ['c:' + r.a, 'c:' + r.b, r.score]);
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest, suggestDomain, related };
 };
 </script>
 <script>(async()=>{'use strict';
@@ -371,7 +376,7 @@ GP=pca();mIds.forEach((m,i)=>{N[m].x=GP[i][0]*RAD.mcp;N[m].y=GP[i][1]*RAD.mcp});
 buildModel();
 (()=>{for(const id of['k','t']){const el=document.getElementById(id);const r=el&&el.closest('.row');if(r){r.hidden=true;r.style.display='none'}}const t=document.getElementById('t');const row=t&&t.closest('.row');if(row){const n=document.createElement('div');n.className='cpnote';n.textContent='Gates come from the Maxey0 Context Plane server: derived (TF-IDF cosine >= 0.10), inherited (a checker holds its primary\'s servers) or declared. Manual gate toggles still apply on top.';row.after(n)}})();
 // ---- state
-let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=null,scwOn=false,scwOpt={agents:'sel'},lbl={domain:true,topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,lblX={},bubbles=[],GC={},sel=null,hov=null,showAg=true,showGt=true,iso=false,spin=false,spinT=null,tab='a',q='',rot=-.35,tilt=1.0,zoom=.6,drag=null,pts=[];
+let K=3,TH=.12,mode='gate',ovr={},ovrK={},gatesOff=false,multiOnly=false,selSCW=null,scwOn=false,scwOpt={agents:'sel'},lbl={domain:true,topic:true,concept:false,skill:false,agent:false,mcp:false},strict=false,lblX={},bubbles=[],GC={},sel=null,hov=null,showAg=true,showGt=true,showDT=true,showTC=true,showCS=true,showRel=false,iso=false,spin=false,spinT=null,tab='a',q='',rot=-.35,tilt=1.0,zoom=.6,drag=null,pts=[];
 const vis={domain:true,topic:true,concept:true,skill:true,agent:true,mcp:true};
 let G=[];
 function autoSet(a){return new Set((__CP.gates[a]||[]).filter(m=>N[m]))}
@@ -411,10 +416,10 @@ function draw(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;
  cpDrawRings(w,h);cpLensSync();
  const rel=relNow(),P={};pts=[];cpFanCompute(rel);
  for(const id in N){const n=N[id];if(!vis[n.kind])continue;const o=project(n,w,h);P[id]=o;pts.push({n,...o})}
- drawSCW(P,w,h);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;lines.push(e)});if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
+ drawSCW(P,w,h);const lines=[];E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;if(e.kind==='tree'){const pa=e.a[0];if(pa==='d'&&!showDT||pa==='t'&&!showTC||pa==='c'&&!showCS)return}lines.push(e)});if(showRel)__CP.related.forEach(([a,b,w])=>lines.push({a,b,kind:'related',w}));if(showGt)G.forEach(g=>lines.push({a:g.a,b:g.b,kind:'gate',w:g.w,src:g.src}));
 const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1,checker:.6,support:.4};
  const ew=e=>e.kind==='gate'?Math.min(1,e.w*e.w/wmax):e.kind==='agent'?(RW[e.role]||.4):.5;
- for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;if(cpOnlyNew&&!(cpNewSet().has(e.a)&&cpNewSet().has(e.b)))continue;const on=rel&&rel.has(e.a)&&rel.has(e.b);if(iso&&rel&&!on)continue;const t=ew(e);
+ for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;if(e.kind==='related'){cx.save();cx.setLineDash([4,4]);cx.strokeStyle='rgba(126,231,255,.75)';cx.lineWidth=1.2;cx.beginPath();cx.moveTo(a.sx,a.sy);cx.lineTo(b.sx,b.sy);cx.stroke();cx.restore();continue}if(cpOnlyNew&&!(cpNewSet().has(e.a)&&cpNewSet().has(e.b)))continue;const on=rel&&rel.has(e.a)&&rel.has(e.b);if(iso&&rel&&!on)continue;const t=ew(e);
   cx.beginPath();cx.moveTo(a.sx,a.sy);cx.lineTo(b.sx,b.sy);
   if(e.kind==='tree'){cx.strokeStyle=on?COL.concept+'dd':'#4f6f90'+(rel?'22':'55');cx.lineWidth=on?1.4:.7;cx.setLineDash([])}
   else{const base=e.kind==='gate'?COL.mcp:COL.agent;cx.strokeStyle=lerpHex(BG,base,on?.35+.65*t:.25+.35*t)+(on?'ee':(rel?'28':'88'));cx.lineWidth=on?.8+2.4*t:.5+.7*t;cx.setLineDash(e.src==='manual'?[4,3]:[])}
@@ -437,7 +442,7 @@ cv.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.08,Math.min(8,
 // ---- panels
 function select(id){sel=id;selSCW=null;if(msel.size){msel.clear();renderMs()}renderList();detail();draw()}
 function renderList(){const L=$('list');L.innerHTML='';
- const items=v03Filter(tab==='a'?aIds.map(a=>N[a]):tab==='m'?mIds.map(m=>N[m]):tab==='t'?Object.values(N).filter(n=>n.kind==='topic'):tab==='c'?Object.values(N).filter(n=>n.kind==='concept'):Object.values(N).filter(n=>n.kind==='skill'));
+ const items=v03Filter(tab==='d'?Object.values(N).filter(n=>n.kind==='domain'):tab==='a'?aIds.map(a=>N[a]):tab==='m'?mIds.map(m=>N[m]):tab==='t'?Object.values(N).filter(n=>n.kind==='topic'):tab==='c'?Object.values(N).filter(n=>n.kind==='concept'):Object.values(N).filter(n=>n.kind==='skill'));
  listed=items.filter(n=>!q||match({...n,kind:'agent'})||(n.label+n.id).toLowerCase().includes(q)).sort((x,y)=>x.label.localeCompare(y.label));listed.forEach(n=>{const d=document.createElement('div');if(sel===n.id)d.className='sel';const a=document.createElement('span');a.textContent=n.label.slice(0,38);const b=document.createElement('small');
   b.textContent=n.kind==='agent'?(GC[n.id]||0)+' gates':n.kind==='mcp'?G.filter(g=>g.b===n.id).length+' agents':n.kind==='topic'?D.concepts.filter(c=>c[2]===n.id.slice(2)).length+' concepts':n.kind==='concept'?D.skills.filter(s=>s[1]===n.raw).length+' skills':v03IsUp(n)?'uploaded':'';if(v03IsUp(n)){d.style.borderLeft='4px solid '+nodeCol(n)}d.append(a,b);if(msel.has(n.id))d.className+=' ms';d.onclick=ev=>{(multiMode||ev.shiftKey||ev.ctrlKey||ev.metaKey)?addSel(n.id):select(n.id)};L.append(d)})}
 function chip(n){const c=document.createElement('span');c.className='ch';c.textContent=n.label.slice(0,36);c.style.borderColor=nodeCol(n);c.onclick=()=>select(n.id);return c}
@@ -466,7 +471,7 @@ $('k').oninput=e=>{K=+e.target.value;$('kv').textContent=K;recompute();renderLis
 $('t').oninput=e=>{TH=e.target.value/100;$('tv').textContent=TH.toFixed(2);recompute();renderList();detail();draw()};
 $('mSkill').onclick=()=>{mode='skill';$('mSkill').className='on';$('mGate').className='';recompute();draw()};
 $('mGate').onclick=()=>{mode='gate';$('mGate').className='on';$('mSkill').className='';recompute();draw()};
-$('bAg').onclick=e=>{showAg=!showAg;e.target.className=showAg?'on':'';draw()};
+$('bAg').onclick=e=>{showAg=!showAg;e.target.className=showAg?'on':'';draw()};[['bDT','showDT'],['bTC','showTC'],['bCS','showCS'],['bRel','showRel']].forEach(([id,v])=>{$(id).onclick=e=>{const nv=!({showDT,showTC,showCS,showRel})[v];if(v==='showDT')showDT=nv;if(v==='showTC')showTC=nv;if(v==='showCS')showCS=nv;if(v==='showRel')showRel=nv;e.target.className=nv?'on':'';draw()}});
 $('bGt').onclick=e=>{showGt=!showGt;e.target.className=showGt?'on':'';draw()};
 $('iso').onclick=e=>{iso=!iso;e.target.className=iso?'on':'';draw()};
 $('spin').onclick=e=>{spin=!spin;e.target.className=spin?'on':'';clearInterval(spinT);if(spin)spinT=setInterval(()=>{if(!drag&&!cpAnim){cpWorldZ(.006);draw()}},33)};
@@ -959,7 +964,7 @@ function addPack(p){const plan=packPlan(p);if(!plan.ok)return plan;
  pm.skills.forEach(s=>{D.skills.push(s);added.skills.push(s[0])});
  Object.entries(pm.agents).forEach(([k,n])=>{D.agents[k]=n;added.agents.push(k)});
  pm.mcp.forEach(m=>{if(plan.mcpNew.includes(m[0])){M.push(m);added.mcp.push(m[0])}});
- if(plan.topicIsNew)TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||''};
+ if(plan.topicIsNew){const sd=__CP.suggestDomain([pm.topic.label,pm.topic.desc||''].concat((pm.concepts||[]).map(c=>c[1]+' '+(c[3]||''))).join(' '));TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||'',domain:sd&&sd.domain,domainSuggested:true};if(sd)__CP.tDom[pm.topic.id]=sd.domain}
  packs[pm.id]={pack:pm,added,newTopic:plan.topicIsNew};refreshGraph();return Object.assign({},plan,{added})}
 function removePack(id){const r=packs[id];if(!r)return{ok:false,problems:['pack is not added: '+id]};
  const A=r.added,cs=new Set(A.concepts),ss=new Set(A.skills),ms=new Set(A.mcp);
@@ -1152,8 +1157,12 @@ function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cp
  cpSetBtns();
  // layout and view are part of the app state
  const g0=APPS.app1.get,s0=APPS.app1.set;
- APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};return r};
- APPS.app1.set=function(st){const r=s0.apply(this,arguments);const v=st&&st.view;if(v&&typeof v==='object'){cpOff={};
+ APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};r.observer={mode:$('taskMode')?$('taskMode').value:'flat',field:cpField,domains:cpDomOn,edges:{showDT,showTC,showCS,showRel,showAg,showGt},browse:{...V3.bf}};return r};
+ APPS.app1.set=function(st){const r=s0.apply(this,arguments);const ob=st&&st.observer;if(ob&&typeof ob==='object'){if($('taskMode')&&(ob.mode==='lens'||ob.mode==='flat'))$('taskMode').value=ob.mode;cpField=!!ob.field;cpDomOn=ob.domains!==false;vis.domain=cpDomOn;
+   const ed=ob.edges||{};if('showDT'in ed)showDT=!!ed.showDT;if('showTC'in ed)showTC=!!ed.showTC;if('showCS'in ed)showCS=!!ed.showCS;if('showRel'in ed)showRel=!!ed.showRel;if('showAg'in ed)showAg=!!ed.showAg;if('showGt'in ed)showGt=!!ed.showGt;
+   [['bDT',showDT],['bTC',showTC],['bCS',showCS],['bRel',showRel],['bAg',showAg],['bGt',showGt]].forEach(([i,v])=>{if($(i))$(i).className=v?'on':''});
+   const b=ob.browse||{};if(b.domain===''||__CP.domains.some(d=>d.id===b.domain)){V3.bf.domain=b.domain||'';V3.bf.topic=N['t:'+b.topic]?b.topic:'';V3.bf.concept=N['c:'+b.concept]?b.concept:'';v03BrowseApply(false)}cpSetBtns()}
+  const v=st&&st.view;if(v&&typeof v==='object'){cpOff={};
   if(v.off&&typeof v.off==='object')for(const[k,o]of Object.entries(v.off))if(N[k]&&o&&isFinite(o.x)&&isFinite(o.y))cpOff[k]={x:+o.x,y:+o.y};
   if(Array.isArray(v.orient)&&v.orient.length===9&&v.orient.every(isFinite))cpM=cpOrtho(v.orient.map(Number));if(isFinite(v.zoom))zoom=Math.max(.08,Math.min(8,+v.zoom));if(Array.isArray(v.pan)&&v.pan.every(isFinite)){cpPanX=+v.pan[0];cpPanY=+v.pan[1]}
   cpFan=v.fan!==false;cpDrag=v.drag!==false;cpOnlyNew=!!v.onlyNew;cpSetBtns();draw()}return r}}
@@ -1211,7 +1220,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
@@ -1269,8 +1278,10 @@ function v03BrowseWire(){const bt=$('bfTopic'),bc=$('bfConcept');if(!bt||bt.data
  if($('bfDomain'))$('bfDomain').onchange=()=>{V3.bf.domain=$('bfDomain').value;V3.bf.topic='';V3.bf.concept='';v03BrowseApply(false)};
  bt.onchange=()=>{V3.bf.topic=bt.value;V3.bf.concept='';v03BrowseApply(true)};
  bc.onchange=()=>{V3.bf.concept=bc.value;v03BrowseApply(true)};
- $('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC'].forEach(x=>$(x).className=x==='tabT'?'on':'');renderList()};
- $('tabC').onclick=()=>{tab='c';['tabA','tabM','tabS','tabT','tabC'].forEach(x=>$(x).className=x==='tabC'?'on':'');renderList()};
+ $('tabD').onclick=()=>{tab='d';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(x=>$(x).className=x==='tabD'?'on':'');renderList()};
+ ['tabA','tabM','tabS'].forEach(x=>{const o=$(x).onclick;$(x).onclick=(...a)=>{$('tabD').className='';return o&&o(...a)}});
+ $('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(x=>$(x).className=x==='tabT'?'on':'');renderList()};
+ $('tabC').onclick=()=>{tab='c';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(x=>$(x).className=x==='tabC'?'on':'');renderList()};
  const bx=hh('button','','Clear topic/concept');bx.id='bfClear';bx.onclick=()=>{V3.bf.topic='';V3.bf.concept='';v03BrowseApply(true)};$('bfConcept').parentElement.append(bx)}
 
 // ---------- (2) explanations: collapsed by default, one toggle each

@@ -132,6 +132,25 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(r.mode === 'lens' && r.field && /from Business, Finance and Economics/.test(r.lo) && /routed task \(lens\)/.test(r.o), "host args: domain + lens + field: " + r.lo.slice(0, 60));
   }
 
+  // 1g. level edges, domains tab, saved observer state, domains for generated topics, related concepts
+  {
+    const r = await p.evaluate(() => { const v = window.__cpv, $ = id => document.getElementById(id);
+      const btn = ['bDT', 'bTC', 'bCS', 'bRel'].every(id => $(id));
+      $('tabD').click(); const dl = document.querySelectorAll('#list > div').length; $('tabA').click();
+      $('bCS').click(); $('bRel').click(); $('taskMode').value = 'lens';
+      const saved = v.getState(); const ob = saved.observer;
+      $('bCS').click(); $('bRel').click(); $('taskMode').value = 'flat';
+      v.setState(saved); const back = { cs: $('bCS').className, rel: $('bRel').className, mode: $('taskMode').value };
+      $('bCS').click(); $('bRel').click(); $('taskMode').value = 'flat';
+      const sd = v.suggestDomain('price swaptions and calibrate a volatility surface for interest rate derivatives');
+      return { btn, dl, ob, back, sd, rel: v.related() } });
+    ok(r.btn, "level edge toggles: domain→topic, topic→concept, concept→skill, related concepts");
+    ok(r.dl === graph.domains.length, "domains tab lists " + r.dl + " domains");
+    ok(r.ob && r.ob.mode === 'lens' && r.ob.edges.showCS === false && r.ob.edges.showRel === true && r.back.cs === '' && r.back.rel === 'on' && r.back.mode === 'lens', "observer, router and edges saved and restored");
+    ok(r.sd && r.sd.domain === 'business-finance', "generated topic gets a suggested domain: " + JSON.stringify(r.sd));
+    ok(r.rel === (graph.related || []).length && r.rel > 0, "related concept pairs available: " + r.rel);
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

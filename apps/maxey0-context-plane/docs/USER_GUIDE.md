@@ -386,3 +386,11 @@ Install it from the plugin directory when listed, or from this repository (see t
 | **Gate** | A link from an agent to an MCP server |
 | **Route** | The best path for a task: topic → concept → skill → agents → servers |
 | **Human0** | The app platform this graph belongs to |
+
+
+## Part 15 — App 1.5 additions
+- **Edge toggles.** The toolbar has one button per link level: Domain→Topic, Topic→Concept, Concept→Skill, Skill→Agent, Agent→MCP, plus Related (dashed lines between related concepts, off by default). A path that stops at skills means the Skill→Agent or Agent→MCP toggle is off.
+- **Selecting a domain** shows its topics and their concepts. Skills, agents and servers appear when you select a concept or skill, or route a task.
+- **Domains tab** lists all 11 domains; click one to select it.
+- **Generated topics** get a suggested domain from the nearest existing topic. When you publish a pack, set `pack_domains` so the server files it under that domain.
+- **Saved state** now includes router mode (flat/lens), the field view, the domain filter, every edge toggle and the browse filters.

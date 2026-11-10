@@ -1,5 +1,12 @@
 # Changelog
 
+## App 1.5
+- Level-edge toggles: Domain→Topic, Topic→Concept, Concept→Skill, and Related concepts (dashed, off by default), alongside the Skill→Agent and Agent→MCP gate toggles.
+- Domains tab in the side list (11 domains).
+- Topics generated in the app get a suggested domain (nearest topic by TF-IDF), shown as suggested.
+- Saved state now keeps router mode, field, domain filter, edge toggles and browse filters.
+- Related-concept pairs from the graph are drawn when enabled.
+
 ## Server 6.1.0 · App 1.4
 
 - **Domains are the sixth level of the graph:** one node per domain on a plane above the topics, linked to its topics, with a Domains count in Metrics and a **D** label button. The floating domain captions are gone.

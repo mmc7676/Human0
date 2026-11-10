@@ -151,8 +151,12 @@ function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cp
  cpSetBtns();
  // layout and view are part of the app state
  const g0=APPS.app1.get,s0=APPS.app1.set;
- APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};return r};
- APPS.app1.set=function(st){const r=s0.apply(this,arguments);const v=st&&st.view;if(v&&typeof v==='object'){cpOff={};
+ APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};r.observer={mode:$('taskMode')?$('taskMode').value:'flat',field:cpField,domains:cpDomOn,edges:{showDT,showTC,showCS,showRel,showAg,showGt},browse:{...V3.bf}};return r};
+ APPS.app1.set=function(st){const r=s0.apply(this,arguments);const ob=st&&st.observer;if(ob&&typeof ob==='object'){if($('taskMode')&&(ob.mode==='lens'||ob.mode==='flat'))$('taskMode').value=ob.mode;cpField=!!ob.field;cpDomOn=ob.domains!==false;vis.domain=cpDomOn;
+   const ed=ob.edges||{};if('showDT'in ed)showDT=!!ed.showDT;if('showTC'in ed)showTC=!!ed.showTC;if('showCS'in ed)showCS=!!ed.showCS;if('showRel'in ed)showRel=!!ed.showRel;if('showAg'in ed)showAg=!!ed.showAg;if('showGt'in ed)showGt=!!ed.showGt;
+   [['bDT',showDT],['bTC',showTC],['bCS',showCS],['bRel',showRel],['bAg',showAg],['bGt',showGt]].forEach(([i,v])=>{if($(i))$(i).className=v?'on':''});
+   const b=ob.browse||{};if(b.domain===''||__CP.domains.some(d=>d.id===b.domain)){V3.bf.domain=b.domain||'';V3.bf.topic=N['t:'+b.topic]?b.topic:'';V3.bf.concept=N['c:'+b.concept]?b.concept:'';v03BrowseApply(false)}cpSetBtns()}
+  const v=st&&st.view;if(v&&typeof v==='object'){cpOff={};
   if(v.off&&typeof v.off==='object')for(const[k,o]of Object.entries(v.off))if(N[k]&&o&&isFinite(o.x)&&isFinite(o.y))cpOff[k]={x:+o.x,y:+o.y};
   if(Array.isArray(v.orient)&&v.orient.length===9&&v.orient.every(isFinite))cpM=cpOrtho(v.orient.map(Number));if(isFinite(v.zoom))zoom=Math.max(.08,Math.min(8,+v.zoom));if(Array.isArray(v.pan)&&v.pan.every(isFinite)){cpPanX=+v.pan[0];cpPanY=+v.pan[1]}
   cpFan=v.fan!==false;cpDrag=v.drag!==false;cpOnlyNew=!!v.onlyNew;cpSetBtns();draw()}return r}}
@@ -210,7 +214,7 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
  select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
@@ -415,7 +419,11 @@ window.__cpLoad = async function () {
     // a domain is as near as its nearest topic (domain vectors are broad centroids)
     if (out.t) { const best = {}; for (const [a, sc] of out.t) { const d = tDom[a.slice(2)]; if (d && (!(d in best) || sc > best[d])) best[d] = sc } out.d = Object.entries(best).map(([d, sc]) => ['d:' + d, sc]) }
     for (const lv in out) out[lv] = out[lv].sort((x, y) => y[1] - x[1]).slice(0, k || 3).map(([a, sc]) => [a, r4(sc)]); return out };
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest };
+  /** suggestDomain(text): the domain of the topic nearest to this text (used for topics generated in the app). */
+  const suggestDomain = text => { const q = unitv(vec(text)); let best = null, sc = 0;
+    for (const t of g.topics) { const x = dotu(q, U['t:' + t.id] || {}); if (x > sc) { sc = x; best = t.domain } } return best ? { domain: best, score: r4(sc) } : null };
+  const related = (g.related || []).map(r => ['c:' + r.a, 'c:' + r.b, r.score]);
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest, suggestDomain, related };
 };
 </script>
 """.replace("__DEFAULT_API__", DEFAULT_API)
@@ -671,6 +679,20 @@ def main():
     # LENS HEAT: in the embedding field with an observer inside the graph, nodes the observer barely explains fade
     h = once(h, "const m=match(n),dim=(rel&&!rel.has(n.id))||!m,", "const m=match(n),lv=cpLensVal(n),dim=(rel&&!rel.has(n.id))||!m||(lv!==null&&lv<.12&&!(rel&&rel.has(n.id))),", "lens heat")
     h = once(h, "(rel&&rel.has(n.id)&&(msel.size<2", "(rel&&rel.has(n.id)&&!(sel&&sel.startsWith('d:')&&n.kind!=='topic'&&n.kind!=='domain')&&(msel.size<2", "a selected domain labels its topics only")
+    # LEVEL EDGES: every level-to-level link can be shown or hidden, like skill->agent and agent->MCP gates
+    h = once(h, '<div class="row"><button id="bAg" class="on">skill→agent</button>', '<div class="row"><button id="bDT" class="on">domain→topic</button><button id="bTC" class="on">topic→concept</button><button id="bCS" class="on">concept→skill</button><button id="bRel" title="Concepts in different topics whose text is close (cosine ≥ 0.40), dashed">related concepts</button></div>\n<div class="row"><button id="bAg" class="on">skill→agent</button>', "level edge toggles")
+    h = once(h, "showAg=true,showGt=true,", "showAg=true,showGt=true,showDT=true,showTC=true,showCS=true,showRel=false,", "level edge state")
+    h = once(h, "E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;lines.push(e)});", "E.forEach(e=>{if(e.kind==='agent'&&!showAg)return;if(e.kind==='tree'){const pa=e.a[0];if(pa==='d'&&!showDT||pa==='t'&&!showTC||pa==='c'&&!showCS)return}lines.push(e)});if(showRel)__CP.related.forEach(([a,b,w])=>lines.push({a,b,kind:'related',w}));", "level edges filtered")
+    h = once(h, "for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;", "for(const e of lines){const a=P[e.a],b=P[e.b];if(!a||!b)continue;if(e.kind==='related'){cx.save();cx.setLineDash([4,4]);cx.strokeStyle='rgba(126,231,255,.75)';cx.lineWidth=1.2;cx.beginPath();cx.moveTo(a.sx,a.sy);cx.lineTo(b.sx,b.sy);cx.stroke();cx.restore();continue}", "related edges dashed")
+    h = once(h, "$('bAg').onclick=e=>{showAg=!showAg;e.target.className=showAg?'on':'';draw()};", "$('bAg').onclick=e=>{showAg=!showAg;e.target.className=showAg?'on':'';draw()};[['bDT','showDT'],['bTC','showTC'],['bCS','showCS'],['bRel','showRel']].forEach(([id,v])=>{$(id).onclick=e=>{const nv=!({showDT,showTC,showCS,showRel})[v];if(v==='showDT')showDT=nv;if(v==='showTC')showTC=nv;if(v==='showCS')showCS=nv;if(v==='showRel')showRel=nv;e.target.className=nv?'on':'';draw()}});", "level edge wiring")
+    # DOMAINS TAB in Browse & select
+    h = once(h, '<button id="tabA" class="on">Agents</button>', '<button id="tabD">Domains</button><button id="tabA" class="on">Agents</button>', "domains tab")
+    h = once(h, "const items=v03Filter(tab==='a'?", "const items=v03Filter(tab==='d'?Object.values(N).filter(n=>n.kind==='domain'):tab==='a'?", "domains tab list")
+    h = once(h, "\n $('tabT').onclick=()=>{tab='t';", "\n $('tabD').onclick=()=>{tab='d';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(x=>$(x).className=x==='tabD'?'on':'');renderList()};\n ['tabA','tabM','tabS'].forEach(x=>{const o=$(x).onclick;$(x).onclick=(...a)=>{$('tabD').className='';return o&&o(...a)}});\n $('tabT').onclick=()=>{tab='t';", "domains tab wiring")
+    h = once(h, "$('tabC').onclick=()=>{tab='c';['tabA','tabM','tabS','tabT','tabC'].forEach(x=>$(x).className=x==='tabC'?'on':'');renderList()};", "$('tabC').onclick=()=>{tab='c';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(x=>$(x).className=x==='tabC'?'on':'');renderList()};", "tabC clears D")
+    h = once(h, "$('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC'].forEach(", "$('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(", "tabT clears D")
+    # GENERATED TOPICS get a domain: the domain of the nearest existing topic, marked as suggested
+    h = once(h, "if(plan.topicIsNew)TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||''};", "if(plan.topicIsNew){const sd=__CP.suggestDomain([pm.topic.label,pm.topic.desc||''].concat((pm.concepts||[]).map(c=>c[1]+' '+(c[3]||''))).join(' '));TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||'',domain:sd&&sd.domain,domainSuggested:true};if(sd)__CP.tDom[pm.topic.id]=sd.domain}", "generated topic domain")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):
