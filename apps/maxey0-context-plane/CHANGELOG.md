@@ -1,7 +1,7 @@
 # Changelog
 
 ## Server 6.5.1
-- Dense defaults calibrated on the live server (bge-m3 index built): β = 0.7, match threshold 0.25. 300 skill labels: skill@1 0.933 (TF-IDF) → 0.987, topic@1 0.950 → 0.993. 20 realistic tasks: correct top skill 13/19 → 15/19, correct within top 3 14/19 → 17/19; 10 off-map requests all below the threshold (max 0.239). Details in docs/ARCHITECTURE.md.
+- Dense defaults calibrated on the live server (bge-m3 index built): β = 0.7, match threshold 0.25. 300 skill labels: skill@1 0.933 (TF-IDF) → 0.987, topic@1 0.950 → 0.993. 20 realistic tasks: correct top skill 13/19 → 15/19, correct within top 3 14/19 → 17/19; 10 off-map requests all below the threshold (max 0.239). Observer lens with dense, same β (live, after the CPU fix): skill@1 0.923 → 0.983, topic@1 0.943 → 0.990, tasks top 3 16/19 → 17/19; it also puts the server-log anomaly spotter first. Details in docs/ARCHITECTURE.md.
 - Lens speed: per-candidate constants computed once per selected node, node vectors normalised once per isolate, key counts cached. TF-IDF lens ~80 ms → ~17 ms CPU (node timing); results unchanged (fixture). The dense lens hit Cloudflare's resource limit (error 1102) on 6.5.0; now ~22 ms.
 - Index warming keeps a progress bitmap, so a step never re-embeds chunks a lagging KV list does not show yet.
 - Local test config moved to `wrangler.local.jsonc`; `npx wrangler deploy` no longer warns about multiple environments.

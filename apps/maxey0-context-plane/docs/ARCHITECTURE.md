@@ -126,6 +126,16 @@ Every node also has a bge-m3 embedding (Workers AI), centred on the mean node em
 | **β 0.7 (chosen)** | **0.987** | **0.993** | **15/19** | **17/19** | **0.239** |
 | β 0.9 | 0.980 | 0.990 | 13/19 | 16/19 | 0.262 |
 
+| Observer lens | Skill@1 (300 labels) | Topic@1 | Tasks: top skill correct | Tasks: in top 3 |
+|---|---|---|---|---|
+| TF-IDF only | 0.923 | 0.943 | 16/19 | 16/19 |
+| β 0.3 | 0.960 | 0.970 | 16/19 | 17/19 |
+| β 0.5 | 0.973 | 0.980 | 16/19 | 17/19 |
+| **β 0.7 (chosen)** | **0.983** | **0.990** | **16/19** | **17/19** |
+| β 0.9 | 0.980 | 0.987 | 14/19 | 17/19 |
+
+The lens with dense puts the server-log anomaly spotter first (flat does not), but takes the hike finder over the itinerary planner for "plan a three day hike with campsites", which the fixed judgement counts as wrong. The lens has no match threshold: it selects whenever ψ > 0, so an off-map request still gets a route (highest first-level ψ on the 10 off-map requests: 0.184 at β 0.7).
+
 Tasks are the 20 author-written tasks of the paper's Section 9.2 with the correct skills fixed before any dense run (19 have a correct skill; for "value a startup for a seed round" the map has none). Off-map: 10 author-written requests nothing in the map does ("tell me a joke about penguins"). The threshold 0.25 sits between the off-map maximum (0.239) and the lowest correct top score (0.300) at β 0.7; it was chosen on these same 30 requests, so it is fitted, not tested. What dense fixed: the French translation and hallucination-tracing tasks now reach their skills, and DNS/CDN and server-log anomalies have the right skill second. What it did not fix: the Krebs cycle still reaches the cell cycle, and server logs still put drone flight logs first.
 
 ## The server
