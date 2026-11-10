@@ -107,13 +107,13 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     // choosing a topic moves the observer into the topic plane: its own concepts sit nearest the centre of the concept plane
     const t = await p.evaluate(() => { const bt = document.getElementById('bfTopic'); const tid = 'quantum-physics';
       bt.value = tid; bt.dispatchEvent(new Event('change')); if (!window.__cpv.field().on) document.getElementById('cpFieldBtn').click();
-      window.__cpv.select && 0; const o = window.__cpv.observer(); const P = id => window.__cpv.field().pos(id);
-      const own = window.__cpv.graph().concepts.filter(c => c.topic === tid).map(c => Math.hypot(P('c:' + c.id).x, P('c:' + c.id).y));
-      const rest = window.__cpv.graph().concepts.filter(c => c.topic !== tid).map(c => Math.hypot(P('c:' + c.id).x, P('c:' + c.id).y));
+      const v = window.__cpv, o = v.observer(), c0 = v.fieldRaw('t:' + tid), D = id => { const q = v.lensPos(id); return Math.hypot(q[0] - c0[0], q[1] - c0[1], q[2] - c0[2]) };
+      const own = v.graph().concepts.filter(c => c.topic === tid).map(c => D('c:' + c.id));
+      const rest = v.graph().concepts.filter(c => c.topic !== tid).map(c => D('c:' + c.id));
       const mean = a => a.reduce((s, x) => s + x, 0) / a.length;
       bt.value = ''; bt.dispatchEvent(new Event('change')); document.getElementById('cpFieldBtn').click();
       return { label: o.label, own: mean(own), rest: mean(rest) } });
-    ok(/Quantum/.test(t.label) && t.own < 0.8 * t.rest, "topic observer: own concepts " + t.own.toFixed(1) + " vs others " + t.rest.toFixed(1) + " from the centre");
+    ok(/Quantum/.test(t.label) && t.own < 0.8 * t.rest, "topic observer: own concepts " + t.own.toFixed(3) + " vs others " + t.rest.toFixed(3) + " from the observer (field units)");
   }
 
   // 1f. domains are the sixth level; embedding values are shown; host arguments carry domain, mode and field
@@ -222,6 +222,77 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(r.scw === "SCW-path" && r.levels.join() === "topic,concept,skill,agent,mcp", "drift SCW around all five levels: " + JSON.stringify(r.nodes));
     ok(r.moved > 0 && r.consistent, "observed - home = displacement for every node; " + r.moved + " nodes moved by the observer");
     ok(r.txt && r.btns, "lens readout shows drift per node, explained task per level, drift arrows and export");
+  }
+
+  // 1k. drift in one shared 3D frame: depth spread through the thickness, depth can drift, displacement = drift only
+  {
+    const r = await p.evaluate(() => { const $ = id => document.getElementById(id), v = window.__cpv, g = v.graph(), T = v.ringR()[3];
+      if (!v.field().on) $('cpFieldBtn').click();
+      const zs = g.skills.map(s => v.field().pos('s:' + s.id).z), sat = zs.filter(z => Math.abs(z) > 0.89 * T).length / zs.length;
+      const spread = Math.max(...zs) - Math.min(...zs);
+      $('taskMode').value = 'lens'; $('taskIn').value = 'Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard'; $('taskGo').click();
+      const D = v.drift(), nodes = D.chain.slice(1).flatMap(l => l.nodes), zMoved = nodes.filter(n => Math.abs(n.displacement[2]) > 0.5).length;
+      // shared frame: a node's observed place lies on the line from the observer through its home place (raw field), never off it
+      const lead = D.chain[0].nodes[0].node, c0 = v.fieldRaw(lead);
+      let maxOff = 0; for (const n of D.chain[1].nodes) { const f = v.fieldRaw(n.node), q = v.lensPos(n.node), d = f.map((x, i) => x - c0[i]), e = q.map((x, i) => i < 3 ? x - c0[i] : 0).slice(0, 3);
+        const nd = Math.hypot(...d), ne = Math.hypot(...e); if (nd > 1e-9 && ne > 1e-9) maxOff = Math.max(maxOff, 1 - (d[0] * e[0] + d[1] * e[1] + d[2] * e[2]) / (nd * ne)) }
+      $('taskClr').click(); $('taskMode').value = 'flat'; $('cpFieldBtn').click();
+      return { sat, spread, T, zMoved, n: nodes.length, maxOff } });
+    ok(r.sat < 0.05 && r.spread > 1.5 * r.T, "depth spread through the donut's thickness: " + (r.sat * 100).toFixed(1) + "% at the rim, spread " + r.spread.toFixed(1) + " of " + (2 * r.T));
+    ok(r.zMoved > 0, "depth drifts too: " + r.zMoved + " of " + r.n + " chosen nodes moved in depth");
+    ok(r.maxOff < 1e-6, "observed place lies on the observer's ray through the home place (shared frame)");
+  }
+
+  // 1l. color scale for observer value, with a legend; drift arrows colored by sign; saved with the state
+  {
+    const r = await p.evaluate(() => { const $ = id => document.getElementById(id), v = window.__cpv;
+      if (!v.field().on) $('cpFieldBtn').click();
+      $('taskMode').value = 'lens'; $('taskIn').value = 'Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard'; $('taskGo').click();
+      const st = v.getState().observer, btn = $('cpColorBtn'), on = btn && btn.getAttribute('aria-pressed') === 'true';
+      const cv = document.querySelector('canvas'), c = cv.getContext('2d'), h = cv.height, px = c.getImageData(20 * devicePixelRatio, h - 60 * devicePixelRatio, 160 * devicePixelRatio, 4).data;
+      let colors = new Set(); for (let i = 0; i < px.length; i += 4 * 8) colors.add(px[i] + ',' + px[i + 1] + ',' + px[i + 2]);
+      btn.click(); const off = btn.getAttribute('aria-pressed') === 'false' && v.getState().observer.colorObs === false; btn.click();
+      $('taskClr').click(); $('taskMode').value = 'flat'; $('cpFieldBtn').click();
+      return { on, off, saved: st.colorObs === true && st.drift === true, legendColors: colors.size } });
+    ok(r.on && r.off && r.saved, "observer color toggle (aria-pressed) and saved in state");
+    ok(r.legendColors > 10, "legend gradient drawn in the graph corner (" + r.legendColors + " distinct colors sampled)");
+  }
+
+  // 1m. 'constructor' (a word in the map and an Object.prototype key) never yields NaN in the app
+  {
+    const r = await p.evaluate(() => { const v = window.__cpv, L = v.lens('build a finite automaton constructor that accepts a test string'); const $ = id => document.getElementById(id);
+      if (!v.field().on) $('cpFieldBtn').click(); $('taskMode').value = 'lens'; $('taskIn').value = 'Design a marketing email campaign'; $('taskGo').click();
+      const bad = v.graph().skills.filter(s => { const q = v.lensPos('s:' + s.id); return q && !q.every(Number.isFinite) }).length;
+      $('taskClr').click(); $('taskMode').value = 'flat'; $('cpFieldBtn').click();
+      return { fin: L.chain.every(l => l.selected.every(x => Number.isFinite(x.psi))), n: L.chain.length, bad } });
+    ok(r.fin && r.n >= 3 && r.bad === 0, "no NaN from prototype-named words: lens " + r.n + " levels, " + r.bad + " bad layout places");
+  }
+
+  // 1n. accessibility: keyboard access to nodes with a live region; text contrast (WCAG AA) on the page
+  {
+    await p.evaluate(() => { const v = window.__cpv; v.key('Escape') });
+    await p.focus('#g'); await p.keyboard.press('ArrowRight');
+    const k1 = await p.evaluate(() => ({ sel: window.__cpv.sel(), live: window.__cpv.live(), role: document.getElementById('g').getAttribute('role'), tab: document.getElementById('g').tabIndex }));
+    await p.keyboard.press('ArrowRight'); const k2 = await p.evaluate(() => window.__cpv.sel());
+    await p.keyboard.press('ArrowDown'); const k3 = await p.evaluate(() => ({ sel: window.__cpv.sel(), live: window.__cpv.live() }));
+    await p.keyboard.press('ArrowDown'); await p.keyboard.press('ArrowDown'); const k4 = await p.evaluate(() => ({ sel: window.__cpv.sel(), live: window.__cpv.live() }));
+    await p.keyboard.press('ArrowUp'); const k5 = await p.evaluate(() => window.__cpv.sel());
+    await p.keyboard.press('PageDown'); const k6 = await p.evaluate(() => window.__cpv.sel());
+    await p.keyboard.press('Escape'); const k7 = await p.evaluate(() => ({ sel: window.__cpv.sel(), live: window.__cpv.live() }));
+    ok(k1.role === 'application' && k1.tab === 0 && /^t:/.test(k1.sel) && /^Topic: .+, 1 of \d+\./.test(k1.live), "keyboard: focus the graph, Right selects the first topic and announces it: " + k1.live);
+    ok(/^t:/.test(k2) && k2 !== k1.sel && /^c:/.test(k3.sel) && /^Concept: /.test(k3.live), "keyboard: Right moves along the level, Down moves to a concept");
+    ok(/^a:/.test(k4.sel) && /^Agent: /.test(k4.live) && /^s:/.test(k5) && /^a:/.test(k6), "keyboard: Down twice reaches an agent, Up returns to a skill, Page Down changes level");
+    ok(k7.sel === null && /cleared/.test(k7.live), "keyboard: Escape clears the selection");
+    const cr = await p.evaluate(() => { const P = c => c.match(/[\d.]+/g).map(Number), lum = ([r, g, b]) => { const f = x => { x /= 255; return x <= .03928 ? x / 12.92 : Math.pow((x + .055) / 1.055, 2.4) }; return .2126 * f(r) + .7152 * f(g) + .0722 * f(b) };
+      const bg = el => { const cols = []; for (let e = el; e; e = e.parentElement) { const c = P(getComputedStyle(e).backgroundColor); if (c.length === 4 && c[3] === 0) continue; cols.push(c); if (c.length === 3 || c[3] >= .99) break }
+        let o = [7, 19, 33]; for (const c of cols.reverse()) { const a = c.length === 4 ? c[3] : 1; o = o.map((x, i) => x * (1 - a) + c[i] * a) } return o };
+      const bad = []; let n = 0;
+      for (const el of document.querySelectorAll('body *')) { if (![...el.childNodes].some(t => t.nodeType === 3 && t.textContent.trim())) continue; const cs = getComputedStyle(el);
+        if (cs.visibility === 'hidden' || cs.display === 'none' || (!el.offsetParent && cs.position !== 'fixed') || el.classList.contains('cpsr')) continue;
+        let fg = P(cs.color), a = fg.length === 4 ? fg[3] : 1; for (let e = el; e; e = e.parentElement) a *= parseFloat(getComputedStyle(e).opacity); const B = bg(el); fg = fg.slice(0, 3).map((x, i) => x * a + B[i] * (1 - a));
+        const L1 = lum(fg), L2 = lum(B), r = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05), size = parseFloat(cs.fontSize), need = (size >= 24 || (size >= 18.66 && parseInt(cs.fontWeight) >= 700)) ? 3 : 4.5; n++;
+        if (r < need) bad.push((el.id || el.tagName) + ' ' + r.toFixed(2)) } return { n, bad } });
+    ok(cr.n > 500 && cr.bad.length === 0, "text contrast meets WCAG AA on " + cr.n + " visible text elements" + (cr.bad.length ? ": " + cr.bad.slice(0, 5).join(", ") : ""));
   }
 
   // 2. gates = the server's agent->MCP links, exactly

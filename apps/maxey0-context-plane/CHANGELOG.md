@@ -1,5 +1,12 @@
 # Changelog
 
+## Server 6.4.0 · App 1.9
+- Fix (server + app): a word that is also an Object.prototype key ('constructor' is in the map's vocabulary) turned similarity scores into NaN for any task or node containing it (skill `symsys-automata-builder`). Vectors are now read by own keys only (`Object.hasOwn`). Test added on both sides.
+- Drift in one shared 3D frame: the observer's view is now in the same field coordinates as the view from above. Each node keeps its 3D direction from the observer and its distance becomes (1 − √a) × the level's farthest distance, so displacement = observed − home is the node's own drift, in all three axes. Depth is framed per level (deepest node reaches the donut's top or bottom) instead of saturating at the rim.
+- Color scale (10): with an observer and Embedding field on, nodes are colored by observer value √a on a perceptually even scale, with a legend in the graph's corner; drift arrows are green for + drift and red for − drift. **Observer color** toggles it; saved with the state.
+- Accessibility (12): the graph takes keyboard focus. Left/Right move along a level, Down/Up to the node below/above, Page Up/Down change level, Home/End, Escape clears; a live region reads each node out. Active buttons darkened to meet WCAG AA text contrast (4.18 → ≥ 4.5); a contrast check over every visible text element is part of the tests.
+- OWL 2 + SHACL rebuilt for 6.x (13): `ontology/` (11 domains, 128 topics, 3D field places on every node, drift vocabulary with SHACL rules) built by `tools/owl/build_owl.py`; parity, SHACL, negative controls and OWL 2 RL reasoning pass. See ontology/README.md.
+
 ## Server 6.3.0 · App 1.8
 - Observer lens continues below the skill: agents (children of the chosen skills) and MCP servers (gated to the chosen agents), chosen by the same ψ. λ agent = 0.9 (calibrated, held-out 0.463 primary-agent@1 vs 0.403 at 0.5); λ MCP = 0.9 (no ground truth).
 - Drift: every chosen node records flat score, flat rank, lens rank, drift = ψ − flat and alignment with the observer; every level records task in/out and the share explained. route_task (lens) returns `agents`, `mcp_servers` and `drift`: SCW-drift per node, SCW-level per level, SCW-path around all levels.

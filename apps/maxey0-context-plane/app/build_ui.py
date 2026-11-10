@@ -68,7 +68,7 @@ function cpObserver(){if(typeof task!=='undefined'&&task&&task.lens&&task.lens.c
  return Object.keys(st).length?{st,label:lab}:null}
 function cpLensSync(){const o=cpObserver(),k=o?JSON.stringify(o.st):'';if(k===cpLensKey)return;cpLensKey=k;cpLensPos=o?__CP.lensLayout(o.st):null;cpObsLabel=o?o.label:'above the graph';
  const el=$('cpObs');if(el)el.textContent='Observer: '+cpObsLabel}
-function cpLensVal(n){if(!cpField||!cpLensPos)return null;const q=cpLensPos[n.id];if(!q)return null;const r=Math.hypot(q[0],q[1]);return Math.max(0,1-r)}
+function cpLensVal(n){if(!cpField||!cpLensPos)return null;const q=cpLensPos[n.id];return q?q[3]:null}   // sqrt(a): 1 = the observer explains the node fully
 function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('div','cpemb');box.append(hh('b','','Embedding'));
  const lv=cpLensVal(n);box.append(hh('div','','Field location (seen from above): x '+f[0].toFixed(3)+', y '+f[1].toFixed(3)+(lv!==null?' · seen from '+cpObsLabel+': '+lv.toFixed(2)+' (1 = at the centre of the observer\'s view)':'')));
  const nb=__CP.nearest(n.id,3),NAMES={d:'Domains',t:'Topics',c:'Concepts',s:'Skills',a:'Agents',m:'MCP servers'};
@@ -76,22 +76,22 @@ function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('
   nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
  b.append(box)}
 // A node's field coordinates carry no meaning on their own; only the distances and directions between nodes do.
-// So each level is framed on its own: centred on that level's centroid and scaled by one factor (x, y and depth alike)
-// so its farthest node reaches the donut's outer rim. A shift plus one uniform scale keeps every distance ratio and
-// every direction between the level's nodes, and lets each level use its whole donut instead of one crowded side.
+// So each level is framed on its own: centred on that level's centroid; axes 1-2 scaled by one factor so the farthest node
+// reaches the donut's outer rim (a shift plus one uniform scale keeps every direction and distance ratio in the plane), and
+// axis 3 scaled on its own so the level's deepest node reaches the donut's top or bottom (the thickness is far smaller
+// than the radius, so depth is compressed, never clipped). The observer's view (lensLayout) is in the same field
+// coordinates and goes through the same framing, so home and observed places share one frame.
 let cpLv=null;
 function cpLvStats(){if(cpLv)return cpLv;cpLv={};const acc={};
  for(const id in __CP.field){const n=N[id];if(!n)continue;(acc[n.kind]=acc[n.kind]||[]).push(__CP.field[id])}
  for(const k in acc){const P=acc[k],m=[0,1,2].map(j=>P.reduce((s,p)=>s+(p[j]||0),0)/P.length);
-  let R=0;for(const p of P)R=Math.max(R,Math.hypot(p[0]-m[0],p[1]-m[1]));
-  cpLv[k]={m,R:R||1}}return cpLv}
+  let R=0,Z=0;for(const p of P){R=Math.max(R,Math.hypot(p[0]-m[0],p[1]-m[1]));Z=Math.max(Z,Math.abs((p[2]||0)-m[2]))}
+  cpLv[k]={m,R:R||1,Z:Z||1}}return cpLv}
 function cpHomeXY(n){const f=__CP.field[n.id];if(!f)return{x:n.x,y:n.y,z:0};const was=cpLensPos;cpLensPos=null;const on=cpField;cpField=true;const q=cpFieldXY(n);cpField=on;cpLensPos=was;return q}
-function cpFieldXY(n){if(!cpField)return null;const L=cpLensPos&&cpLensPos[n.id],f=__CP.field[n.id];if(!L&&!f)return null;let u,v,w=0;
- const st=f&&cpLvStats()[n.kind];
- if(L){u=L[0];v=L[1];w=st?((f[2]||0)-st.m[2])/st.R:0}   // the observer's view: already centred on the observer
- else{u=(f[0]-st.m[0])/st.R;v=(f[1]-st.m[1])/st.R;w=((f[2]||0)-st.m[2])/st.R}
- const r=Math.min(1,Math.hypot(u,v)),a=Math.atan2(v,u),R=cpIn()+r*(cpOut()-cpIn())*.97,span=cpOut()-cpIn();
- return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:Math.max(-1,Math.min(1,w*span/cpT()))*cpT()*.9}}
+function cpFieldXY(n){if(!cpField)return null;const f=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id],st=cpLvStats()[n.kind];if(!f||!st)return null;
+ const u=(f[0]-st.m[0])/st.R,v=(f[1]-st.m[1])/st.R,w=((f[2]||0)-st.m[2])/st.Z;
+ const r=Math.min(1,Math.hypot(u,v)),a=Math.atan2(v,u),R=cpIn()+r*(cpOut()-cpIn())*.97;
+ return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:Math.max(-1,Math.min(1,w))*cpT()*.9}}
 // Node size from density: the more nodes a level shows, the smaller each one, so a node takes a fixed share of the
 // spacing between neighbours on its donut (area / count) and the distances between nodes stay readable.
 let cpCnt={};
@@ -138,9 +138,54 @@ function cpDriftScw(){const L=typeof task!=='undefined'&&task&&task.lens;if(!L)r
   units:{embedding:'cosine in the TF-IDF space (exact)',home_observed:'world units on each level donut, 3D field projection; distance = |displacement| / outer radius'},
   levels:levels.length,remaining_task:L.remaining_task,total_drift:r4(levels.reduce((t,l)=>t+l.nodes.reduce((u,n)=>u+Math.abs(n.drift||0),0),0)),
   total_distance:r4(levels.reduce((t,l)=>t+l.nodes.reduce((u,n)=>u+(n.distance||0),0),0)),chain:levels}}
+// ---- color scale for the observer value (10): with an observer in the graph and the field view on, nodes are colored by
+// sqrt(a), how much of the node the observer explains, on a perceptually even scale that stays readable on the dark
+// background (dark blue = unexplained -> yellow = explained). A legend is drawn in the graph's corner.
+let cpColorObs=true;
+const CP_SCALE=['#3b2f8a','#3a5fb0','#2a8fb5','#26b39a','#6fcf5a','#d7e24a','#fde74c'];
+function cpScale(v){v=Math.max(0,Math.min(1,v))*(CP_SCALE.length-1);const i=Math.min(CP_SCALE.length-2,Math.floor(v));return lerpHex(CP_SCALE[i],CP_SCALE[i+1],v-i)}
+const CP_DPOS='#5ad1a6',CP_DNEG='#ff7a6b';
+{const _nc=nodeCol;nodeCol=function(n){if(cpColorObs&&cpField&&cpLensPos){const v=cpLensVal(n);if(v!==null)return cpScale(v)}return _nc(n)}}
+function cpDrawLegend(w,h){const lens=cpField&&cpLensPos,drift=lens&&cpDriftOn&&typeof task!=='undefined'&&task&&task.lens;if(!lens)return;
+ cx.save();const x=14,W=170;let y=h-(drift?78:50);cx.fillStyle='rgba(7,19,33,.82)';cx.strokeStyle='#ffffff22';cx.lineWidth=1;cx.beginPath();cx.rect(x-8,y-16,W+16,drift?86:58);cx.fill();cx.stroke();
+ cx.font='10px system-ui';cx.textAlign='start';cx.fillStyle='#e6fbff';
+ if(cpColorObs){cx.fillText('Observer value √a',x,y);y+=6;const G=cx.createLinearGradient(x,0,x+W,0);CP_SCALE.forEach((c,i)=>G.addColorStop(i/(CP_SCALE.length-1),c));cx.fillStyle=G;cx.fillRect(x,y,W,9);
+  y+=20;cx.fillStyle='#c7d6e0';cx.fillText('0 unexplained',x,y);cx.textAlign='end';cx.fillText('1 explained',x+W,y);cx.textAlign='start'}
+ else{cx.fillText('Color: by level (observer value off)',x,y);y+=26}
+ if(drift){y+=16;cx.lineWidth=2;cx.setLineDash([3,3]);cx.strokeStyle='#ffffffcc';cx.beginPath();cx.arc(x+5,y-3,5,0,6.2832);cx.stroke();cx.setLineDash([]);
+  cx.strokeStyle=CP_DPOS;cx.beginPath();cx.moveTo(x+12,y-3);cx.lineTo(x+44,y-3);cx.stroke();cx.fillStyle='#e6fbff';cx.fillText('+ drift',x+48,y);
+  cx.strokeStyle=CP_DNEG;cx.beginPath();cx.moveTo(x+92,y-3);cx.lineTo(x+124,y-3);cx.stroke();cx.fillText('− drift',x+128,y)}
+ cx.restore()}
+// ---- keyboard access (12): the graph canvas takes focus (Tab). Left/Right = previous/next node on the same level,
+// Down = first node below (child, agent or gated server), Up = first node above, Home/End = first/last on the level,
+// PageUp/PageDown = the level above/below, Escape = clear the selection. Moving selects the node (details panel follows)
+// and a polite live region reads it out: level, name, position on the level, how many nodes are below and above.
+const CP_LV=['domain','topic','concept','skill','agent','mcp'];
+function cpKbdList(kind){const rel=relNow();return Object.values(N).filter(n=>n.kind===kind&&vis[kind]&&match(n)&&!(iso&&rel&&!rel.has(n.id))&&!(cpOnlyNew&&!cpNewSet().has(n.id))).sort((a,b)=>a.label.localeCompare(b.label)||(a.id<b.id?-1:1))}
+function cpKids(id){const o=new Set();for(const e of E)if(e.a===id&&(e.kind==='tree'||e.kind==='agent')&&N[e.b])o.add(e.b);if(N[id]&&N[id].kind==='agent')for(const g of G)if(g.a===id&&N[g.b])o.add(g.b);return[...o].sort((a,b)=>N[a].label.localeCompare(N[b].label))}
+function cpParents(id){const o=new Set();for(const e of E)if(e.b===id&&(e.kind==='tree'||e.kind==='agent')&&N[e.a])o.add(e.a);for(const g of G)if(g.b===id&&N[g.a])o.add(g.a);return[...o].sort((a,b)=>N[a].label.localeCompare(N[b].label))}
+const CP_LVNAME={domain:'Domain',topic:'Topic',concept:'Concept',skill:'Skill',agent:'Agent',mcp:'MCP server'};
+function cpAnnounce(id){const n=N[id],el=$('cpLive');if(!el||!n)return;const L=cpKbdList(n.kind),i=L.findIndex(x=>x.id===id);
+ el.textContent=CP_LVNAME[n.kind]+': '+n.label+', '+(i+1)+' of '+L.length+'. '+cpKids(id).length+' below, '+cpParents(id).length+' above.'}
+function cpKbdGo(id){if(!id||!N[id])return false;select(id);draw();cpAnnounce(id);return true}
+function cpKey(e){const k=e.key;if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','PageUp','PageDown','Escape','Enter',' '].includes(k))return;
+ e.preventDefault();const cur=sel&&N[sel]?N[sel]:null;
+ if(k==='Escape'){sel=null;selSCW=null;renderList();draw();const el=$('cpLive');if(el)el.textContent='Selection cleared.';return}
+ if(!cur){const t=cpKbdList('topic');cpKbdGo((t[0]||cpKbdList('domain')[0]||{}).id);return}
+ const L=cpKbdList(cur.kind),i=Math.max(0,L.findIndex(x=>x.id===cur.id));
+ if(k==='ArrowRight')return cpKbdGo(L.length?L[(i+1)%L.length].id:null);
+ if(k==='ArrowLeft')return cpKbdGo(L.length?L[(i-1+L.length)%L.length].id:null);
+ if(k==='Home')return cpKbdGo((L[0]||{}).id);if(k==='End')return cpKbdGo((L[L.length-1]||{}).id);
+ if(k==='ArrowDown'){const c=cpKids(cur.id).filter(x=>vis[N[x].kind]);if(c.length)return cpKbdGo(c[0]);const el=$('cpLive');if(el)el.textContent='Nothing below '+cur.label+'.';return}
+ if(k==='ArrowUp'){const c=cpParents(cur.id).filter(x=>vis[N[x].kind]);if(c.length)return cpKbdGo(c[0]);const el=$('cpLive');if(el)el.textContent='Nothing above '+cur.label+'.';return}
+ if(k==='PageUp'||k==='PageDown'){let j=CP_LV.indexOf(cur.kind);do{j+=k==='PageUp'?-1:1}while(j>=0&&j<CP_LV.length&&!cpKbdList(CP_LV[j]).length);if(j>=0&&j<CP_LV.length)cpKbdGo(cpKbdList(CP_LV[j])[0].id);return}
+ if(k==='Enter'||k===' ')cpAnnounce(cur.id)}
+setTimeout(()=>{cv.tabIndex=0;cv.setAttribute('role','application');cv.setAttribute('aria-roledescription','graph');
+ cv.setAttribute('aria-label','Maxey0 Context Plane graph: domains, topics, concepts, skills, agents and MCP servers. Arrow keys: left and right move along a level, down and up move to the node below or above; Page Up and Page Down change level; Escape clears.');
+ cv.addEventListener('keydown',cpKey)},0);
 // drift arrows on the graph: a ghost ring where each chosen node sits seen from above, an arrow to where the observer put it
 function cpDrawDrift(w,h){const L=typeof task!=='undefined'&&task&&task.lens;if(!cpDriftOn||!cpField||!L||!cpLensPos)return;cx.save();
- for(const l of L.chain)for(const x of l.selected){const n=N[x.app];if(!n||!vis[n.kind])continue;const a=project(n,w,h,cpHomeXY(n)),b=project(n,w,h),c=COL[n.kind]||'#fff';
+ for(const l of L.chain)for(const x of l.selected){const n=N[x.app];if(!n||!vis[n.kind])continue;const a=project(n,w,h,cpHomeXY(n)),b=project(n,w,h),c=x.drift&&x.drift.drift<0?CP_DNEG:CP_DPOS;
   cx.setLineDash([3,3]);cx.strokeStyle='#ffffffcc';cx.lineWidth=1.6;cx.beginPath();cx.arc(a.sx,a.sy,6,0,6.2832);cx.stroke();cx.setLineDash([]);cx.strokeStyle=c;cx.lineWidth=2.2;cx.shadowColor=c;cx.shadowBlur=6;
   const dx=b.sx-a.sx,dy=b.sy-a.sy,d=Math.hypot(dx,dy);if(d<3)continue;cx.beginPath();cx.moveTo(a.sx,a.sy);cx.lineTo(b.sx,b.sy);cx.stroke();
   const ux=dx/d,uy=dy/d;cx.beginPath();cx.moveTo(b.sx,b.sy);cx.lineTo(b.sx-9*ux+4*uy,b.sy-9*uy-4*ux);cx.lineTo(b.sx-9*ux-4*uy,b.sy-9*uy+4*ux);cx.closePath();cx.fillStyle=c;cx.fill()}
@@ -204,15 +249,15 @@ function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewK
  Object.values(packs).forEach(r=>{const A=r.added,pid=r.pack.topic.id;s.add('t:'+pid);A.concepts.forEach(c=>s.add('c:'+c));A.skills.forEach(k=>{s.add('s:'+k);
   E.forEach(e=>{if(e.kind==='agent'&&e.a==='s:'+k){s.add(e.b);G.forEach(g=>{if(g.a===e.b)s.add(g.b)})}})})});
  cpNewCache=s;cpNewKey=ids;return s}
-function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDomBtn',cpDomOn);t('cpDragBtn',cpDrag);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
+function cpSetBtns(){const t=(id,on)=>{const b=$(id);if(b){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}};t('cpFanBtn',cpFan);t('cpFieldBtn',cpField);t('cpDomBtn',cpDomOn);t('cpDragBtn',cpDrag);t('cpColorBtn',cpColorObs);t('cpAllBtn',!cpOnlyNew);t('cpNewBtn',cpOnlyNew)}
 function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cpSetBtns();draw()}};
- on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn;vis.domain=cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpResetBtn',()=>{cpOff={}});
+ on('cpFanBtn',()=>{cpFan=!cpFan;cpFanKey=''});on('cpFieldBtn',()=>{cpField=!cpField;cpFanKey=''});on('cpDomBtn',()=>{cpDomOn=!cpDomOn;vis.domain=cpDomOn});on('cpDragBtn',()=>{cpDrag=!cpDrag});on('cpColorBtn',()=>{cpColorObs=!cpColorObs});on('cpResetBtn',()=>{cpOff={}});
  on('cpAllBtn',()=>{cpOnlyNew=false});on('cpNewBtn',()=>{cpOnlyNew=true;cpNewCache=null;if(!Object.keys(packs).length){tpSt.msg='No generated topics yet: build a request below, generate the pack in Claude, paste it and Add to graph.';tpSt.cls='';const tb=$('topicsBox');if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}});
  cpSetBtns();
  // layout and view are part of the app state
  const g0=APPS.app1.get,s0=APPS.app1.set;
- APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};r.observer={mode:$('taskMode')?$('taskMode').value:'flat',field:cpField,domains:cpDomOn,edges:{showDT,showTC,showCS,showRel,showAg,showGt},browse:{...V3.bf}};return r};
- APPS.app1.set=function(st){const r=s0.apply(this,arguments);const ob=st&&st.observer;if(ob&&typeof ob==='object'){if($('taskMode')&&(ob.mode==='lens'||ob.mode==='flat'))$('taskMode').value=ob.mode;cpField=!!ob.field;cpDomOn=ob.domains!==false;vis.domain=cpDomOn;
+ APPS.app1.get=function(){const r=g0.apply(this,arguments);r.view={off:cpOff,fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew,orient:cpM.slice(),zoom,pan:[cpPanX,cpPanY]};r.observer={mode:$('taskMode')?$('taskMode').value:'flat',field:cpField,colorObs:cpColorObs,drift:cpDriftOn,domains:cpDomOn,edges:{showDT,showTC,showCS,showRel,showAg,showGt},browse:{...V3.bf}};return r};
+ APPS.app1.set=function(st){const r=s0.apply(this,arguments);const ob=st&&st.observer;if(ob&&typeof ob==='object'){if($('taskMode')&&(ob.mode==='lens'||ob.mode==='flat'))$('taskMode').value=ob.mode;cpField=!!ob.field;cpColorObs=ob.colorObs!==false;cpDriftOn=ob.drift!==false;cpDomOn=ob.domains!==false;vis.domain=cpDomOn;
    const ed=ob.edges||{};if('showDT'in ed)showDT=!!ed.showDT;if('showTC'in ed)showTC=!!ed.showTC;if('showCS'in ed)showCS=!!ed.showCS;if('showRel'in ed)showRel=!!ed.showRel;if('showAg'in ed)showAg=!!ed.showAg;if('showGt'in ed)showGt=!!ed.showGt;
    [['bDT',showDT],['bTC',showTC],['bCS',showCS],['bRel',showRel],['bAg',showAg],['bGt',showGt]].forEach(([i,v])=>{if($(i))$(i).className=v?'on':''});
    const b=ob.browse||{};if(b.domain===''||__CP.domains.some(d=>d.id===b.domain)){V3.bf.domain=b.domain||'';V3.bf.topic=N['t:'+b.topic]?b.topic:'';V3.bf.concept=N['c:'+b.concept]?b.concept:'';v03BrowseApply(false)}cpSetBtns()}
@@ -280,7 +325,7 @@ setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
 window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},key:k=>cpKey({key:k,preventDefault(){}}),live:()=>($('cpLive')||{}).textContent||'',sel:()=>sel,lensPos:id=>{cpLensSync();return cpLensPos&&cpLensPos[id]?cpLensPos[id].slice():null},fieldRaw:id=>__CP.field[id]?__CP.field[id].slice():null,drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
 
 LOADER = r"""<style>
@@ -305,7 +350,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
+button.on{background:#05697a}#g:focus-visible{outline:2px solid #7ee7ff;outline-offset:2px}.cpsr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -392,11 +437,11 @@ window.__cpLoad = async function () {
   const tokens = s => { const out = []; for (const w of String(s).replace(/_/g, ' ').toLowerCase().match(/[a-z0-9]+/g) || []) {
     if (STOP.has(w) || w.length <= 2) continue; out.push(w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w) } return out };
   const idf = g.similarity.idf, V = g.similarity.vectors, TH = g.similarity.thresholds;
-  const vec = text => { const tf = new Map(); for (const w of tokens(text)) if (w in idf) tf.set(w, (tf.get(w) || 0) + 1);
+  const vec = text => { const tf = new Map(); for (const w of tokens(text)) if (Object.hasOwn(idf, w)) tf.set(w, (tf.get(w) || 0) + 1);
     const v = {}; let n = 0; for (const [w, c] of tf) { const x = (1 + Math.log(c)) * idf[w]; v[w] = x; n += x * x }
     n = Math.sqrt(n) || 1; for (const w in v) v[w] /= n; return v };
   const cos = (a, b) => { const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b];
-    let s = 0, k = 0; for (const w in x) if (w in y) { s += x[w] * y[w]; k++ } return k < Math.min(2, Object.keys(x).length) ? 0 : s };
+    let s = 0, k = 0; for (const w in x) if (Object.hasOwn(y, w)) { s += x[w] * y[w]; k++ } return k < Math.min(2, Object.keys(x).length) ? 0 : s };
   const prio = Object.fromEntries(g.topics.map(t => [t.id, t.priority || 0]));
   const cTop = Object.fromEntries(g.concepts.map(c => [c.id, c.topic]));
   const firstSkill = {}; for (const s of g.skills) if (!(s.concept in firstSkill)) firstSkill[s.concept] = s.id;
@@ -426,10 +471,10 @@ window.__cpLoad = async function () {
   for (const k in V) { const a = appKey(k); if (!a) continue; let n = 0; for (const w in V[k]) n += V[k][w] * V[k][w]; n = Math.sqrt(n) || 1;
     const u = {}; for (const w in V[k]) u[w] = V[k][w] / n; U[a] = u }
   const dotu = (a, b) => { const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b]; let s = 0;
-    for (const w in x) { const v = y[w]; if (v !== undefined) s += x[w] * v } return s };
+    for (const w in x) if (Object.hasOwn(y, w)) s += x[w] * y[w]; return s };   // own keys only ('constructor' is a word in the map)
   const nrm = a => Math.sqrt(dotu(a, a));
   const unitv = a => { const n = nrm(a); if (!n) return a; const o = {}; for (const w in a) o[w] = a[w] / n; return o };
-  const minus = (a, b, k) => { const o = { ...a }; for (const w in b) o[w] = (o[w] ?? 0) - k * b[w]; return o };
+  const minus = (a, b, k) => { const o = { ...a }; for (const w in b) o[w] = (Object.hasOwn(o, w) ? o[w] : 0) - k * b[w]; return o };
   const LAMBDA = { topic: 0, concept: 0.5, skill: 0.3, agent: 0.9, mcp: 0.9 }, BEAM = 3, KEEP = 0.6, DAMP = 0.1, r4 = x => Math.round(x * 1e4) / 1e4;
   const skAg = Object.fromEntries(g.skills.map(s => [s.id, s.agents.map(a => a.key)])), agM = {};
   for (const l of g.agent_mcp) (agM[l.agent] = agM[l.agent] || new Set()).add(l.mcp);
@@ -473,9 +518,12 @@ window.__cpLoad = async function () {
           drift: { flat: r4(r.flat), flat_rank: flatRank.get(r.id), lens_rank: i + 1, drift: r4(r.psi - r.flat), a_obs: r4(r.aobs) } })), suppressed });
       state = next }
     return done() };
-  /** lensLayout(state) -> {appId: [x, y]} for every level below the observer. The observer's selected nodes sit at the
-   *  centre of the next plane; a node's distance from the centre is how little of it the observer explains (1 - sqrt(a)),
-   *  its direction is its direction in the field as seen from the observer. state: {domain|topic|concept|skill: [[appId, weight]]}. */
+  /** lensLayout(state) -> {appId: [x, y, z, v]} for every level below the observer, in the SAME 3D field coordinates as the
+   *  view from above (one shared frame). The observer stands at its lead node's field place c0. Each node keeps its 3D
+   *  direction from c0; its distance from c0 becomes (1 - sqrt(a)) x Dmax, where a is how much of it the observer explains
+   *  and Dmax is the farthest any node of that level lies from c0. So a node the observer explains fully moves onto the
+   *  observer and one it does not explain moves to the edge; displacement = observed - home is the node's own drift, in
+   *  all three axes, and v = sqrt(a) is the observer value. state: {domain|topic|concept|skill|agent: [[appId, weight]]}. */
   const KINDS = [['topic', g.topics.map(t => 't:' + t.id)], ['concept', g.concepts.map(c => 'c:' + c.id)], ['skill', g.skills.map(s => 's:' + s.id)],
     ['agent', g.agents.map(a => 'a:' + a.key)], ['mcp', g.mcp.map(m => midx[m.id])]];
   const ORDER = ['domain', 'topic', 'concept', 'skill', 'agent', 'mcp'];
@@ -484,9 +532,12 @@ window.__cpLoad = async function () {
     for (const [kind, ids] of KINDS) {
       const prev = state[ORDER[ORDER.indexOf(kind) - 1]]; if (prev && prev.length) obs = prev;
       if (!obs) continue;
-      const lead = obs.reduce((a, b) => b[1] > a[1] ? b : a)[0], c0 = field[lead] || [0, 0], sw = obs.reduce((s, x) => s + x[1], 0) || 1;
-      for (const id of ids) { let a = 0; for (const [p, w] of obs) a += w * dotu(U[id] || {}, U[p] || {}); a = Math.max(0, Math.min(1, a / sw));
-        const f = field[id] || [0, 0], ang = Math.atan2(f[1] - c0[1], f[0] - c0[0]), r = 1 - Math.sqrt(a); pos[id] = [r * Math.cos(ang), r * Math.sin(ang)] } }
+      const lead = obs.reduce((a, b) => b[1] > a[1] ? b : a)[0], c0 = field[lead] || [0, 0, 0], sw = obs.reduce((s, x) => s + x[1], 0) || 1;
+      const d3 = f => [(f[0] || 0) - c0[0], (f[1] || 0) - c0[1], (f[2] || 0) - (c0[2] || 0)];
+      let Dmax = 0; for (const id of ids) { const f = field[id]; if (f) Dmax = Math.max(Dmax, Math.hypot(...d3(f))) }
+      for (const id of ids) { const f = field[id]; if (!f) continue; let a = 0; for (const [p, w] of obs) a += w * dotu(U[id] || {}, U[p] || {}); a = Math.max(0, Math.min(1, a / sw));
+        const d = d3(f), dist = Math.hypot(...d), v = Math.sqrt(a), k = dist > 1e-9 ? (1 - v) * Dmax / dist : 0;
+        pos[id] = [c0[0] + k * d[0], c0[1] + k * d[1], (c0[2] || 0) + k * d[2], v] } }
     return pos };
   const domains = g.domains.map(d => ({ id: d.id, label: d.label, desc: d.desc }));
   /** nearest(appId, k): the k nearest nodes on every level to one node, by cosine in the shared space (server tool: nearest). */
@@ -771,7 +822,9 @@ def main():
     h = once(h, "if(plan.topicIsNew)TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||''};", "if(plan.topicIsNew){const sd=__CP.suggestDomain([pm.topic.label,pm.topic.desc||''].concat((pm.concepts||[]).map(c=>c[1]+' '+(c[3]||''))).join(' '));TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||'',domain:sd&&sd.domain,domainSuggested:true};if(sd)__CP.tDom[pm.topic.id]=sd.domain}", "generated topic domain")
     h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
     # drift arrows and domain labels paint over the nodes, at the end of each frame
-    h = once(h, "\n cx.globalAlpha=1}\nfunction pick(x,y)", "\n cx.globalAlpha=1;cpDrawDrift(w,h);cpDrawDomains(P)}\nfunction pick(x,y)", "drift + domain labels over nodes")
+    h = once(h, "\n cx.globalAlpha=1}\nfunction pick(x,y)", "\n cx.globalAlpha=1;cpDrawDrift(w,h);cpDrawDomains(P);cpDrawLegend(w,h)}\nfunction pick(x,y)", "drift + domain labels + legend over nodes")
+    h = once(h, '<span id="cpObs" class="cpobs">', '<div id="cpLive" class="cpsr" role="status" aria-live="polite"></div><span id="cpObs" class="cpobs">', "keyboard live region")
+    h = once(h, '<button type="button" id="cpDragBtn"', '<button type="button" id="cpColorBtn" class="on" aria-pressed="true" title="With an observer in the graph and Embedding field on: color nodes by observer value (how much of each node the observer explains). Off: color by level">Observer color</button><button type="button" id="cpDragBtn"', "observer color button")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):
         if gone in h:

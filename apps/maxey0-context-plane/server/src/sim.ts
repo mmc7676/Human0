@@ -21,7 +21,7 @@ const round6 = (x: number) => Math.round(x * 1e6) / 1e6;
 
 export function vec(text: string, idf: Record<string, number>, round = true): Vec {
   const tf = new Map<string, number>();
-  for (const w of tokens(text)) if (w in idf) tf.set(w, (tf.get(w) ?? 0) + 1);
+  for (const w of tokens(text)) if (Object.hasOwn(idf, w)) tf.set(w, (tf.get(w) ?? 0) + 1);
   const v: Vec = {};
   let n = 0;
   for (const [w, c] of tf) { const x = (1 + Math.log(c)) * idf[w]; v[w] = x; n += x * x; }
@@ -34,6 +34,6 @@ export function vec(text: string, idf: Record<string, number>, round = true): Ve
 export function cos(a: Vec, b: Vec): number {
   const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b];
   let s = 0, shared = 0;
-  for (const w in x) if (w in y) { s += x[w] * y[w]; shared++; }
+  for (const w in x) if (Object.hasOwn(y, w)) { s += x[w] * y[w]; shared++; }   // own keys only: a word like 'constructor' must not hit Object.prototype
   return shared < Math.min(2, Object.keys(x).length) ? 0 : s;
 }

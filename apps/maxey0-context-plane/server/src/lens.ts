@@ -33,10 +33,10 @@ export type LensLevelName = keyof typeof LAMBDA;
 const BEAM = 3, KEEP = 0.6, BRANCH_DAMP = 0.1;
 
 const dot = (a: Vec, b: Vec) => { let s = 0; const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b];
-  for (const w in x) { const v = y[w]; if (v !== undefined) s += x[w] * v; } return s; };
+  for (const w in x) if (Object.hasOwn(y, w)) s += x[w] * y[w]; return s; };   // own keys only ('constructor' is a word here)
 const norm = (a: Vec) => Math.sqrt(dot(a, a));
 const unit = (a: Vec): Vec => { const n = norm(a); if (!n) return a; const o: Vec = {}; for (const w in a) o[w] = a[w] / n; return o; };
-const minus = (a: Vec, b: Vec, k: number): Vec => { const o: Vec = { ...a }; for (const w in b) o[w] = (o[w] ?? 0) - k * b[w]; return o; };
+const minus = (a: Vec, b: Vec, k: number): Vec => { const o: Vec = { ...a }; for (const w in b) o[w] = (Object.hasOwn(o, w) ? o[w] : 0) - k * b[w]; return o; };
 const r4 = (x: number) => Math.round(x * 1e4) / 1e4;
 
 export interface LensDrift { flat: number; flat_rank: number; lens_rank: number; drift: number; a_obs: number }

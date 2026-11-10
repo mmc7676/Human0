@@ -394,3 +394,11 @@ test("open_context_plane_graph passes domain, mode and field to the app; rejects
   assert.equal((await call("open_context_plane_graph", { domain: "nope" })).isError, true);
   assert.equal((await call("open_context_plane_graph", { mode: "x" })).isError, true);
 });
+
+test("a word that is also an Object.prototype key ('constructor') never turns scores into NaN", async () => {
+  const f = (await call("route_task", { task: "build a finite automaton constructor that accepts a test string" })).structuredContent;
+  assert.ok(f.matched && f.paths.length > 0, "flat route matches");
+  const l = (await call("route_task", { task: "build a finite automaton constructor that accepts a test string", mode: "lens" })).structuredContent;
+  for (const lv of l.lens) for (const x of lv.selected) assert.ok(Number.isFinite(x.psi) && Number.isFinite(x.drift.drift), JSON.stringify(x));
+  assert.ok(Number.isFinite(l.remaining_task));
+});

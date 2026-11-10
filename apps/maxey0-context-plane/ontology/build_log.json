@@ -1,0 +1,183 @@
+[
+ {
+  "scw": "SCW90",
+  "check": "inventory",
+  "result": {
+   "domains": 11,
+   "topics": 128,
+   "concepts": 711,
+   "skills": 1998,
+   "agents": 1021,
+   "mcp": 117,
+   "agent_mcp": 556,
+   "related": 13,
+   "skill_agent_edges": 6314
+  }
+ },
+ {
+  "scw": "SCW90",
+  "check": "local digest == live digest",
+  "result": true
+ },
+ {
+  "scw": "SCW90",
+  "check": "live/local count parity",
+  "result": {
+   "domains": true,
+   "topics": true,
+   "concepts": true,
+   "skills": true,
+   "agents": true,
+   "mcp": true,
+   "agent_mcp": true,
+   "related": true
+  }
+ },
+ {
+  "scw": "SCW90",
+  "check": "live/local content parity per section",
+  "result": {
+   "domains": true,
+   "topics": true,
+   "concepts": true,
+   "skills": true,
+   "agents": true,
+   "mcp": true,
+   "agent_mcp": true,
+   "related": true
+  }
+ },
+ {
+  "scw": "SCW90",
+  "check": "dangling references",
+  "result": {
+   "topic->domain": 0,
+   "concept->topic": 0,
+   "skill->concept": 0,
+   "skill->agent": 0,
+   "gate->agent": 0,
+   "gate->mcp": 0,
+   "related->concept": 0
+  }
+ },
+ {
+  "scw": "SCW92",
+  "check": "triples",
+  "result": 46704
+ },
+ {
+  "scw": "SCW92",
+  "check": "OWL vs JSON count parity",
+  "result": {
+   "domains": [
+    11,
+    11,
+    true
+   ],
+   "topics": [
+    128,
+    128,
+    true
+   ],
+   "concepts": [
+    711,
+    711,
+    true
+   ],
+   "skills": [
+    1998,
+    1998,
+    true
+   ],
+   "agents": [
+    1021,
+    1021,
+    true
+   ],
+   "mcp": [
+    117,
+    117,
+    true
+   ],
+   "agent_mcp": [
+    556,
+    556,
+    true
+   ],
+   "related": [
+    13,
+    13,
+    true
+   ],
+   "skill_agent_edges": [
+    6314,
+    6314,
+    true
+   ]
+  }
+ },
+ {
+  "scw": "SCW92",
+  "check": "3D field places round-trip (nodes)",
+  "result": [
+   3986,
+   3986,
+   true
+  ]
+ },
+ {
+  "scw": "SCW92",
+  "check": "skill->agent role edges round-trip exactly",
+  "result": [
+   true,
+   6314,
+   6314
+  ]
+ },
+ {
+  "scw": "SCW92",
+  "check": "checker-inheritance rule violations",
+  "result": 0
+ },
+ {
+  "scw": "SCW92",
+  "check": "SHACL conforms",
+  "result": [
+   true,
+   "0.8s",
+   0
+  ]
+ },
+ {
+  "scw": "SCW92",
+  "check": "SHACL negative control (2 primaries) rejected",
+  "result": true
+ },
+ {
+  "scw": "SCW92",
+  "check": "OWL 2 RL closure",
+  "result": {
+   "triples_after": 119115,
+   "secs": 31.6,
+   "owl:Nothing members": 0
+  }
+ },
+ {
+  "scw": "SCW92",
+  "check": "inferred skill partOf domain (transitive) for all skills",
+  "result": true
+ },
+ {
+  "scw": "DRIFT",
+  "check": "run-1: drift record conforms (177 triples)",
+  "result": [
+   true,
+   0
+  ]
+ },
+ {
+  "scw": "DRIFT",
+  "check": "run-1: tampered drift rejected",
+  "result": true
+ }
+]

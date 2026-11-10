@@ -1,0 +1,198 @@
+@prefix mx: <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1> a mx:PathSCW ;
+    mx:digest "sha256:e195205d526479231fbd64dbe47689b6d576edf924705c5541d099868b6f7aca" ;
+    mx:hasLevel <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/agent>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/topic> ;
+    mx:remainingTask 0.8472 ;
+    mx:task "Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard" ;
+    mx:totalDrift 0.8838 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/agent> a mx:LevelSCW ;
+    mx:candidates 8 ;
+    mx:explained 0.0126 ;
+    mx:hasDriftNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/agent/Maxey888>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/agent/Maxey893> ;
+    mx:lambda 0.72 ;
+    mx:level "agent" ;
+    mx:taskIn 0.8666 ;
+    mx:taskOut 0.8557 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/agent/Maxey888> a mx:DriftSCW ;
+    mx:aObs 0.5741 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/agent/Maxey888> ;
+    mx:distance 0.0531 ;
+    mx:drift 0.1247 ;
+    mx:flat 0.3268 ;
+    mx:flatRank 2 ;
+    mx:lensRank 2 ;
+    mx:psi 0.4515 ;
+    mx:weight 0.5909 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/agent/Maxey893> a mx:DriftSCW ;
+    mx:aObs 0.7286 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/agent/Maxey893> ;
+    mx:distance 0.1356 ;
+    mx:drift 0.2314 ;
+    mx:flat 0.385 ;
+    mx:flatRank 1 ;
+    mx:lensRank 1 ;
+    mx:psi 0.6164 ;
+    mx:weight 0.8067 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept> a mx:LevelSCW ;
+    mx:candidates 711 ;
+    mx:explained 0.0309 ;
+    mx:hasDriftNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept/mk-email>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept/mk-measure>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept/mk-strategy> ;
+    mx:lambda 0.5 ;
+    mx:level "concept" ;
+    mx:taskIn 0.9496 ;
+    mx:taskOut 0.9202 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept/mk-email> a mx:DriftSCW ;
+    mx:aObs 0.4137 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/concept/mk-email> ;
+    mx:distance 1.0367 ;
+    mx:drift 0.0261 ;
+    mx:flat 0.2506 ;
+    mx:flatRank 2 ;
+    mx:lensRank 2 ;
+    mx:psi 0.2768 ;
+    mx:weight 0.5795 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept/mk-measure> a mx:DriftSCW ;
+    mx:aObs 0.314 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/concept/mk-measure> ;
+    mx:distance 0.4941 ;
+    mx:drift -0.0608 ;
+    mx:flat 0.3664 ;
+    mx:flatRank 1 ;
+    mx:lensRank 1 ;
+    mx:psi 0.3056 ;
+    mx:weight 0.6398 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/concept/mk-strategy> a mx:DriftSCW ;
+    mx:aObs 0.4681 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/concept/mk-strategy> ;
+    mx:distance 0.0942 ;
+    mx:drift 0.0825 ;
+    mx:flat 0.1586 ;
+    mx:flatRank 3 ;
+    mx:lensRank 3 ;
+    mx:psi 0.2411 ;
+    mx:weight 0.5048 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp> a mx:LevelSCW ;
+    mx:candidates 6 ;
+    mx:explained 0.01 ;
+    mx:hasDriftNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp/0>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp/47>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp/49> ;
+    mx:lambda 0.81 ;
+    mx:level "mcp" ;
+    mx:taskIn 0.8557 ;
+    mx:taskOut 0.8472 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp/0> a mx:DriftSCW ;
+    mx:aObs 0.2617 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/mcp/cd33c38a-66e7-41a4-8777-bec24d4bba3a> ;
+    mx:distance 0.4011 ;
+    mx:drift 0.0553 ;
+    mx:flat 0.1692 ;
+    mx:flatRank 3 ;
+    mx:lensRank 2 ;
+    mx:psi 0.2245 ;
+    mx:weight 0.5575 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp/47> a mx:DriftSCW ;
+    mx:aObs 0.2105 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/mcp/875dee50-9b3f-452b-af8c-fbc839966273> ;
+    mx:distance 0.5986 ;
+    mx:drift -0.022 ;
+    mx:flat 0.2211 ;
+    mx:flatRank 2 ;
+    mx:lensRank 3 ;
+    mx:psi 0.1992 ;
+    mx:weight 0.4947 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/mcp/49> a mx:DriftSCW ;
+    mx:aObs 0.2819 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/mcp/3a7fa2ac-d655-4479-bce3-8e10fcc26f96> ;
+    mx:distance 0.2823 ;
+    mx:drift 0.0055 ;
+    mx:flat 0.2629 ;
+    mx:flatRank 1 ;
+    mx:lensRank 1 ;
+    mx:psi 0.2685 ;
+    mx:weight 0.6667 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill> a mx:LevelSCW ;
+    mx:candidates 1998 ;
+    mx:explained 0.0582 ;
+    mx:hasDriftNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill/mk-audience-segmenter>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill/mk-email-campaign-builder>,
+        <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill/mk-email-performance-analyst> ;
+    mx:lambda 0.24 ;
+    mx:level "skill" ;
+    mx:taskIn 0.9202 ;
+    mx:taskOut 0.8666 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill/mk-audience-segmenter> a mx:DriftSCW ;
+    mx:aObs 0.1922 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/skill/mk-audience-segmenter> ;
+    mx:distance 1.1344 ;
+    mx:drift 0.0765 ;
+    mx:flat 0.2501 ;
+    mx:flatRank 3 ;
+    mx:lensRank 2 ;
+    mx:psi 0.3267 ;
+    mx:weight 0.4815 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill/mk-email-campaign-builder> a mx:DriftSCW ;
+    mx:aObs 0.2675 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/skill/mk-email-campaign-builder> ;
+    mx:distance 1.0929 ;
+    mx:drift 0.1213 ;
+    mx:flat 0.3776 ;
+    mx:flatRank 1 ;
+    mx:lensRank 1 ;
+    mx:psi 0.4989 ;
+    mx:weight 0.7354 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/skill/mk-email-performance-analyst> a mx:DriftSCW ;
+    mx:aObs 0.2976 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/skill/mk-email-performance-analyst> ;
+    mx:distance 0.1244 ;
+    mx:drift 0.0777 ;
+    mx:flat 0.2458 ;
+    mx:flatRank 4 ;
+    mx:lensRank 3 ;
+    mx:psi 0.3235 ;
+    mx:weight 0.4769 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/topic> a mx:LevelSCW ;
+    mx:candidates 128 ;
+    mx:explained 0.0504 ;
+    mx:hasDriftNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/topic/marketing> ;
+    mx:lambda 0.0 ;
+    mx:level "topic" ;
+    mx:taskIn 1.0 ;
+    mx:taskOut 0.9496 .
+
+<https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/drift/run-1/topic/marketing> a mx:DriftSCW ;
+    mx:aObs 0.0 ;
+    mx:aboutNode <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl/id/topic/marketing> ;
+    mx:distance 0.0 ;
+    mx:drift 0.0 ;
+    mx:flat 0.3136 ;
+    mx:flatRank 1 ;
+    mx:lensRank 1 ;
+    mx:psi 0.3136 ;
+    mx:weight 1.0 .
+

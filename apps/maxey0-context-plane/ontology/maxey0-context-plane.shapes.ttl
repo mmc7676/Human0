@@ -1,0 +1,21 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> . @prefix mx: <https://maxey0-context-plane-mcp.maxey0.workers.dev/owl#> . @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+mx: sh:declare [ sh:prefix "mx" ; sh:namespace "https://maxey0-context-plane-mcp.maxey0.workers.dev/owl#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] , [ sh:prefix "rdfs" ; sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^<http://www.w3.org/2001/XMLSchema#anyURI> ] .
+mx:TopicShape a sh:NodeShape ; sh:targetClass mx:Topic ; sh:property [ sh:path mx:inDomain ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:Domain ] , [ sh:path rdfs:label ; sh:minCount 1 ] .
+mx:ConceptShape a sh:NodeShape ; sh:targetClass mx:Concept ; sh:property [ sh:path mx:inTopic ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:Topic ] .
+mx:SkillShape a sh:NodeShape ; sh:targetClass mx:Skill ; sh:property [ sh:path mx:inConcept ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:Concept ] ,
+  [ sh:path mx:hasPrimaryAgent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:Agent ] , [ sh:path mx:hasCheckerAgent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:Agent ] .
+mx:GateShape a sh:NodeShape ; sh:targetClass mx:Gate ; sh:property [ sh:path mx:gateAgent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:Agent ] , [ sh:path mx:gateServer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mx:MCPServer ] ,
+  [ sh:path mx:basis ; sh:minCount 1 ; sh:pattern "^(derived|inherited|declared):" ] .
+mx:RelShape a sh:NodeShape ; sh:targetClass mx:ConceptRelation ; sh:property [ sh:path mx:score ; sh:minCount 1 ; sh:minInclusive 0.4 ] .
+mx:FieldShape a sh:NodeShape ; sh:targetClass mx:Domain, mx:Topic, mx:Concept, mx:Skill, mx:Agent, mx:MCPServer ;
+  sh:property [ sh:path mx:fieldX ; sh:minCount 1 ; sh:maxCount 1 ] , [ sh:path mx:fieldY ; sh:minCount 1 ; sh:maxCount 1 ] , [ sh:path mx:fieldZ ; sh:minCount 1 ; sh:maxCount 1 ] .
+mx:PathShape a sh:NodeShape ; sh:targetClass mx:PathSCW ; sh:property [ sh:path mx:task ; sh:minCount 1 ] , [ sh:path mx:hasLevel ; sh:minCount 1 ; sh:class mx:LevelSCW ] .
+mx:LevelShape a sh:NodeShape ; sh:targetClass mx:LevelSCW ;
+  sh:property [ sh:path mx:level ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "topic" "concept" "skill" "agent" "mcp" ) ] , [ sh:path mx:hasDriftNode ; sh:minCount 1 ; sh:class mx:DriftSCW ] ,
+    [ sh:path mx:explained ; sh:minCount 1 ; sh:minInclusive 0 ; sh:maxInclusive 1 ] ;
+  sh:sparql [ sh:prefixes mx: ; sh:message "a level cannot pass on more task than it received" ; sh:select '''SELECT $this WHERE { $this mx:taskIn ?i ; mx:taskOut ?o . FILTER(?o > ?i + 0.0001) }''' ] .
+mx:DriftShape a sh:NodeShape ; sh:targetClass mx:DriftSCW ;
+  sh:property [ sh:path mx:aboutNode ; sh:minCount 1 ; sh:maxCount 1 ] , [ sh:path mx:flat ; sh:minCount 1 ] , [ sh:path mx:psi ; sh:minCount 1 ; sh:minExclusive 0 ] ,
+    [ sh:path mx:flatRank ; sh:minCount 1 ; sh:minInclusive 1 ] , [ sh:path mx:lensRank ; sh:minCount 1 ; sh:minInclusive 1 ] ;
+  sh:sparql [ sh:prefixes mx: ; sh:message "drift must equal psi - flat" ; sh:select '''SELECT $this WHERE { $this mx:psi ?p ; mx:flat ?f ; mx:drift ?d . FILTER(ABS(?d - (?p - ?f)) > 0.0002) }''' ] ,
+    [ sh:prefixes mx: ; sh:message "the node a drift SCW is about must exist in the plane" ; sh:select '''SELECT $this WHERE { $this mx:aboutNode ?n . FILTER NOT EXISTS { ?n rdfs:label ?l } }''' ] .

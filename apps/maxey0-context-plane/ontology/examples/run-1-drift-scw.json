@@ -1,0 +1,477 @@
+{
+ "scw": "SCW-path",
+ "run": "run-1",
+ "task": "Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard",
+ "observer_start": "above the topic plane",
+ "digest": "sha256:e195205d526479231fbd64dbe47689b6d576edf924705c5541d099868b6f7aca",
+ "units": {
+  "embedding": "cosine in the TF-IDF space (exact)",
+  "home_observed": "world units on each level donut, 3D field projection; distance = |displacement| / outer radius"
+ },
+ "levels": 5,
+ "remaining_task": 0.8472,
+ "total_drift": 0.8838,
+ "total_distance": 5.4474,
+ "chain": [
+  {
+   "scw": "SCW-level:topic",
+   "level": "topic",
+   "lambda": 0,
+   "candidates": 128,
+   "task_in": 1,
+   "task_out": 0.9496,
+   "explained": 0.0504,
+   "mean_drift": 0,
+   "mean_distance": 0,
+   "nodes": [
+    {
+     "scw": "SCW-drift:t:marketing",
+     "node": "t:marketing",
+     "label": "Marketing",
+     "level": "topic",
+     "weight": 1,
+     "psi": 0.3136,
+     "flat": 0.3136,
+     "flat_rank": 1,
+     "lens_rank": 1,
+     "drift": 0,
+     "a_obs": 0,
+     "contributions": {},
+     "home": [
+      125.9967,
+      -94.504,
+      40.5
+     ],
+     "observed": [
+      125.9967,
+      -94.504,
+      40.5
+     ],
+     "displacement": [
+      0,
+      0,
+      0
+     ],
+     "distance": 0
+    }
+   ]
+  },
+  {
+   "scw": "SCW-level:concept",
+   "level": "concept",
+   "lambda": 0.5,
+   "candidates": 711,
+   "task_in": 0.9496,
+   "task_out": 0.9202,
+   "explained": 0.0309,
+   "mean_drift": 0.0159,
+   "mean_distance": 0.5417,
+   "nodes": [
+    {
+     "scw": "SCW-drift:c:mk-measure",
+     "node": "c:mk-measure",
+     "label": "Measurement and Attribution",
+     "level": "concept",
+     "weight": 0.6398,
+     "psi": 0.3056,
+     "flat": 0.3664,
+     "flat_rank": 1,
+     "lens_rank": 1,
+     "drift": -0.0608,
+     "a_obs": 0.314,
+     "contributions": {
+      "marketing": 0.3056
+     },
+     "home": [
+      173.0819,
+      11.814,
+      40.5
+     ],
+     "observed": [
+      106.6025,
+      143.7483,
+      40.5
+     ],
+     "displacement": [
+      -66.4794,
+      131.9343,
+      0
+     ],
+     "distance": 0.4941
+    },
+    {
+     "scw": "SCW-drift:c:mk-email",
+     "node": "c:mk-email",
+     "label": "Email and Lifecycle",
+     "level": "concept",
+     "weight": 0.5795,
+     "psi": 0.2768,
+     "flat": 0.2506,
+     "flat_rank": 2,
+     "lens_rank": 2,
+     "drift": 0.0261,
+     "a_obs": 0.4137,
+     "contributions": {
+      "marketing": 0.2768
+     },
+     "home": [
+      119.8471,
+      -86.9768,
+      40.5
+     ],
+     "observed": [
+      -138.3003,
+      84.6315,
+      40.5
+     ],
+     "displacement": [
+      -258.1474,
+      171.6084,
+      0
+     ],
+     "distance": 1.0367
+    },
+    {
+     "scw": "SCW-drift:c:mk-strategy",
+     "node": "c:mk-strategy",
+     "label": "Positioning and Strategy",
+     "level": "concept",
+     "weight": 0.5048,
+     "psi": 0.2411,
+     "flat": 0.1586,
+     "flat_rank": 3,
+     "lens_rank": 3,
+     "drift": 0.0825,
+     "a_obs": 0.4681,
+     "contributions": {
+      "marketing": 0.2411
+     },
+     "home": [
+      137.8155,
+      -106.9525,
+      40.5
+     ],
+     "observed": [
+      109.6747,
+      -107.8496,
+      40.5
+     ],
+     "displacement": [
+      -28.1408,
+      -0.897,
+      0
+     ],
+     "distance": 0.0942
+    }
+   ]
+  },
+  {
+   "scw": "SCW-level:skill",
+   "level": "skill",
+   "lambda": 0.24,
+   "candidates": 1998,
+   "task_in": 0.9202,
+   "task_out": 0.8666,
+   "explained": 0.0582,
+   "mean_drift": 0.0918,
+   "mean_distance": 0.7839,
+   "nodes": [
+    {
+     "scw": "SCW-drift:s:mk-email-campaign-builder",
+     "node": "s:mk-email-campaign-builder",
+     "label": "Email Campaign Builder",
+     "level": "skill",
+     "weight": 0.7354,
+     "psi": 0.4989,
+     "flat": 0.3776,
+     "flat_rank": 1,
+     "lens_rank": 1,
+     "drift": 0.1213,
+     "a_obs": 0.2675,
+     "contributions": {
+      "mk-measure": 0.1694,
+      "mk-email": 0.1927,
+      "mk-strategy": 0.1369
+     },
+     "home": [
+      121.5248,
+      -42.9176,
+      40.5
+     ],
+     "observed": [
+      -204.9454,
+      -57.09,
+      40.5
+     ],
+     "displacement": [
+      -326.4703,
+      -14.1724,
+      0
+     ],
+     "distance": 1.0929
+    },
+    {
+     "scw": "SCW-drift:s:mk-audience-segmenter",
+     "node": "s:mk-audience-segmenter",
+     "label": "Audience Segmenter",
+     "level": "skill",
+     "weight": 0.4815,
+     "psi": 0.3267,
+     "flat": 0.2501,
+     "flat_rank": 3,
+     "lens_rank": 2,
+     "drift": 0.0765,
+     "a_obs": 0.1922,
+     "contributions": {
+      "mk-measure": 0.1048,
+      "mk-email": 0.0918,
+      "mk-strategy": 0.13
+     },
+     "home": [
+      143.7383,
+      -51.6339,
+      31.6932
+     ],
+     "observed": [
+      -187.6273,
+      -124.0486,
+      31.6932
+     ],
+     "displacement": [
+      -331.3655,
+      -72.4148,
+      0
+     ],
+     "distance": 1.1344
+    },
+    {
+     "scw": "SCW-drift:s:mk-email-performance-analyst",
+     "node": "s:mk-email-performance-analyst",
+     "label": "Email Performance Analyst",
+     "level": "skill",
+     "weight": 0.4769,
+     "psi": 0.3235,
+     "flat": 0.2458,
+     "flat_rank": 4,
+     "lens_rank": 3,
+     "drift": 0.0777,
+     "a_obs": 0.2976,
+     "contributions": {
+      "mk-measure": 0.1091,
+      "mk-email": 0.1173,
+      "mk-strategy": 0.0971
+     },
+     "home": [
+      235.6724,
+      22.2897,
+      31.7683
+     ],
+     "observed": [
+      204.1106,
+      41.9486,
+      31.7683
+     ],
+     "displacement": [
+      -31.5618,
+      19.6589,
+      0
+     ],
+     "distance": 0.1244
+    }
+   ]
+  },
+  {
+   "scw": "SCW-level:agent",
+   "level": "agent",
+   "lambda": 0.72,
+   "candidates": 8,
+   "task_in": 0.8666,
+   "task_out": 0.8557,
+   "explained": 0.0126,
+   "mean_drift": 0.178,
+   "mean_distance": 0.0944,
+   "nodes": [
+    {
+     "scw": "SCW-drift:a:Maxey893",
+     "node": "a:Maxey893",
+     "label": "Email Marketing Agent",
+     "level": "agent",
+     "weight": 0.8067,
+     "psi": 0.6164,
+     "flat": 0.385,
+     "flat_rank": 1,
+     "lens_rank": 1,
+     "drift": 0.2314,
+     "a_obs": 0.7286,
+     "contributions": {
+      "mk-email-campaign-builder": 0.3518,
+      "mk-audience-segmenter": 0.0613,
+      "mk-email-performance-analyst": 0.2034
+     },
+     "home": [
+      181.2745,
+      41.8545,
+      40.5
+     ],
+     "observed": [
+      146.6328,
+      62.9317,
+      40.5
+     ],
+     "displacement": [
+      -34.6417,
+      21.0772,
+      0
+     ],
+     "distance": 0.1356
+    },
+    {
+     "scw": "SCW-drift:a:Maxey888",
+     "node": "a:Maxey888",
+     "label": "Claims and Compliance Checker Agent",
+     "level": "agent",
+     "weight": 0.5909,
+     "psi": 0.4515,
+     "flat": 0.3268,
+     "flat_rank": 2,
+     "lens_rank": 2,
+     "drift": 0.1247,
+     "a_obs": 0.5741,
+     "contributions": {
+      "mk-email-campaign-builder": 0.2438,
+      "mk-audience-segmenter": 0.1358,
+      "mk-email-performance-analyst": 0.0719
+     },
+     "home": [
+      128.6246,
+      -96.4472,
+      40.5
+     ],
+     "observed": [
+      134.5154,
+      -111.1854,
+      40.5
+     ],
+     "displacement": [
+      5.8908,
+      -14.7381,
+      0
+     ],
+     "distance": 0.0531
+    }
+   ]
+  },
+  {
+   "scw": "SCW-level:mcp",
+   "level": "mcp",
+   "lambda": 0.81,
+   "candidates": 6,
+   "task_in": 0.8557,
+   "task_out": 0.8472,
+   "explained": 0.01,
+   "mean_drift": 0.0129,
+   "mean_distance": 0.4273,
+   "nodes": [
+    {
+     "scw": "SCW-drift:m:49",
+     "node": "m:49",
+     "label": "Intuit Mailchimp",
+     "level": "mcp",
+     "weight": 0.6667,
+     "psi": 0.2685,
+     "flat": 0.2629,
+     "flat_rank": 1,
+     "lens_rank": 1,
+     "drift": 0.0055,
+     "a_obs": 0.2819,
+     "contributions": {
+      "Maxey893": 0.1478,
+      "Maxey888": 0.1206
+     },
+     "home": [
+      -128.3868,
+      -61.0453,
+      35.1169
+     ],
+     "observed": [
+      -140.3959,
+      -144.6059,
+      35.1169
+     ],
+     "displacement": [
+      -12.0092,
+      -83.5606,
+      0
+     ],
+     "distance": 0.2823
+    },
+    {
+     "scw": "SCW-drift:m:0",
+     "node": "m:0",
+     "label": "Adspirer Ads & Performance Marketing Agent",
+     "level": "mcp",
+     "weight": 0.5575,
+     "psi": 0.2245,
+     "flat": 0.1692,
+     "flat_rank": 3,
+     "lens_rank": 2,
+     "drift": 0.0553,
+     "a_obs": 0.2617,
+     "contributions": {
+      "Maxey893": 0.1165,
+      "Maxey888": 0.1079
+     },
+     "home": [
+      126.1696,
+      -79.0521,
+      20.1642
+     ],
+     "observed": [
+      78.6463,
+      -189.1777,
+      20.1642
+     ],
+     "displacement": [
+      -47.5233,
+      -110.1256,
+      0
+     ],
+     "distance": 0.4011
+    },
+    {
+     "scw": "SCW-drift:m:47",
+     "node": "m:47",
+     "label": "HubSpot",
+     "level": "mcp",
+     "weight": 0.4947,
+     "psi": 0.1992,
+     "flat": 0.2211,
+     "flat_rank": 2,
+     "lens_rank": 3,
+     "drift": -0.022,
+     "a_obs": 0.2105,
+     "contributions": {
+      "Maxey893": 0.1119,
+      "Maxey888": 0.0873
+     },
+     "home": [
+      122.0072,
+      -34.6742,
+      40.5
+     ],
+     "observed": [
+      64.2102,
+      -204.0674,
+      40.5
+     ],
+     "displacement": [
+      -57.797,
+      -169.3932,
+      0
+     ],
+     "distance": 0.5986
+    }
+   ]
+  }
+ ]
+}
