@@ -5,7 +5,7 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 const API = process.env.API || "http://127.0.0.1:8794";
-const PAGE = "file://" + path.join(__dirname, "maxey0-context-plane-graph.html") + "?api=" + API;
+const PAGE = "file://" + path.join(__dirname, "maxey0-context-plane-graph.html") + "?api=" + API + "&connect=0";
 const TASKS = ["orbital mechanics trajectory", "translate this contract into japanese", "tiered memory promotion policy",
   "build a marketing email campaign", "quantum entanglement of two qubits", "renaissance painting techniques", "dna transcription",
   "detect drift in agent runs", "kubernetes observability traces", "hello there friend", "IBS versus Crohn disease"];
@@ -39,12 +39,12 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
   ok(!r.intro, "no intro notice after load");
   ok(r.shell === 0, "one app: no Human0 shell, toolbar, other apps or whole-app state bar (" + r.shell + " left)");
   ok(r.fold && !r.fold.open && !r.fold.sticky, "app state bar folded, closed, not sticky");
-  ok(!r.oldBanner && r.headerH <= 100, "no full-width banner; header stays compact (" + Math.round(r.headerH) + "px)");
+  ok(!r.oldBanner && r.headerH <= 115, "no full-width banner; header stays compact: logo, kicker, name, one-line subtitle (" + Math.round(r.headerH) + "px)");
   ok(r.nodes === graph.domains.length + graph.topics.length + graph.concepts.length + graph.skills.length + graph.agents.length + graph.mcp.length, "node count");
   ok(r.agents === graph.agents.length && r.servers === graph.mcp.length && r.gates === graph.agent_mcp.length, "agents/servers/gates");
   ok(r.topicOpts === graph.topics.length + 1 && r.conceptOpts === graph.concepts.length + 1, "topic and concept selectors");
   ok(r.logo && r.sliders, "Human0 logo shown, retired sliders hidden");
-  ok(/Maxey0 Context Plane Graph/.test(r.title) && /MAXEY0 CONTEXT PLANE GRAPH/.test(r.header), "names");
+  ok(/^Maxey0 · the Context Plane · by Human0$/.test(r.title) && /MAXEY0 · BY HUMAN0/.test(r.header) && !/MCP APP|LIVE/.test(r.header), "Maxey0 brand by Human0 in title and header: " + r.title);
   ok(r.digest === graph.snapshot_digest, "graph digest");
 
   // 1b. label buttons: every kind turns off on a second click, and None/All reset that
@@ -356,6 +356,74 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(/Field place, 3D \(shared field, SVD axes 1–3\): x -?\d\.\d{3}, y -?\d\.\d{3}, z -?\d\.\d{3}/.test(a) && /Seen from above \(no observer\): drawn on its skill donut at x -?\d+\.\d, y -?\d+\.\d, z -?\d+\.\d/.test(a), "3D field place and 3D drawn place (x, y, z)");
     ok(/1024 values, centred and length 1 · first 8: 0\.0000, 0\.0372/.test(b2) && /Nearest by bge-m3 cosine:Skills: Audience Segmenter 0\.81/.test(b2), "bge-m3 vector values and dense neighbours from the server");
     ok(/Seen from routed task \(lens\).*: a \d\.\d{3} .*√a \d\.\d{3} · field place x -?\d\.\d{3}, y -?\d\.\d{3}, z -?\d\.\d{3} · drawn at x/.test(c) && /Displacement \(observed − home\): x -?\d+\.\d, y -?\d+\.\d, z -?\d+\.\d/.test(c) && /In this lens route \(skill\): flat [\d.]+ \(seen from above, rank #\d+\) → ψ [\d.]+ \(through the lens, rank #1\)/.test(c), "observer view: a, √a, observed 3D place, displacement, lens values");
+  }
+
+  // 1r. Connect to Claude: first-visit dialog, connector option, own API key held in memory only (mocked Anthropic API)
+  {
+    const KEY = 'sk-ant-test-0123456789';
+    const c2 = await b.newContext({ viewport: { width: 1500, height: 950 } }), q = await c2.newPage();
+    const seenKeyAt = [];   // any request other than api.anthropic.com that carries the key = a leak
+    q.on('request', r => { const h = JSON.stringify(r.headers()) + (r.postData() || '') + r.url(); if (h.includes(KEY) && !r.url().startsWith('https://api.anthropic.com/')) seenKeyAt.push(r.url()) });
+    const anth = [];
+    await q.route(/^https?:/, r => { const u = r.request().url();
+      if (u.startsWith('https://api.anthropic.com/')) { anth.push({ u, h: r.request().headers(), body: r.request().postData() });
+        if (u.includes('/v1/models')) return r.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ data: [{ id: 'claude-test-model', display_name: 'Claude Test' }, { id: 'claude-other', display_name: 'Claude Other' }] }) });
+        const pack = { schema: 'human0.topic-pack/1', id: 'test-pack' };
+        return r.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ content: [{ type: 'text', text: 'Here it is: ' + JSON.stringify(pack) }] }) }) }
+      return u.startsWith(API + "/") ? r.continue() : r.abort() });
+    const P0 = PAGE.replace('&connect=0', '');
+    await q.goto(P0, { waitUntil: "commit" }); await q.waitForFunction(() => window.__l5 && window.__l5.nodes() > 0, null, { timeout: 60000 });
+    await q.waitForSelector('#cpClaude', { timeout: 5000 });
+    const d1 = await q.evaluate(() => ({ t: document.getElementById('cpClaudeT').textContent, modal: document.getElementById('cpClaude').getAttribute('aria-modal'), btn: !!document.getElementById('cpClaudeBtn') }));
+    await q.click('#cpClaudeNo');
+    const d2 = await q.evaluate(() => ({ open: !!document.getElementById('cpClaude'), ls: localStorage.getItem('mx0.connect'), label: document.getElementById('cpClaudeBtn').textContent }));
+    await q.reload({ waitUntil: "commit" }); await q.waitForFunction(() => window.__l5 && window.__l5.nodes() > 0, null, { timeout: 60000 }); await q.waitForTimeout(700);
+    const d3 = await q.evaluate(() => !!document.getElementById('cpClaude'));
+    ok(d1.t === 'Connect Maxey0 to Claude?' && d1.modal === 'true' && !d2.open && d2.ls === 'none' && d2.label === 'Connect to Claude' && !d3, "first visit asks once; Not now is remembered (choice only)");
+    await q.click('#cpClaudeBtn');
+    const d4 = await q.evaluate(() => document.getElementById('cpClaudeUrl').textContent);
+    ok(d4 === API + '/mcp', "connector option shows this server's MCP address: " + d4);
+    await q.fill('#cpClaudeKey', KEY); await q.click('#cpClaudeCheck');
+    await q.waitForFunction(() => /Key works: 2 models/.test(document.getElementById('cpClaudeMsg').textContent), null, { timeout: 5000 });
+    await q.selectOption('#cpClaudeModel', 'claude-other'); await q.click('#cpClaudeUse');
+    const d5 = await q.evaluate(KEY => { const v = window.__cpv; return { c: v.claude(), label: document.getElementById('cpClaudeBtn').textContent,
+      ls: JSON.stringify(Object.fromEntries(Object.keys(localStorage).map(k => [k, localStorage.getItem(k)]))), state: JSON.stringify(v.getState()), ss: JSON.stringify(sessionStorage), url: location.href,
+      inputs: [...document.querySelectorAll('input')].some(i => i.value === KEY) } }, KEY);
+    ok(d5.c.mode === 'api' && d5.c.hasKey && d5.c.model === 'claude-other' && d5.label === 'Claude: API · claude-other', "API key accepted, model chosen: " + d5.label);
+    ok(!d5.ls.includes(KEY) && !d5.state.includes(KEY) && !d5.ss.includes(KEY) && !d5.url.includes(KEY) && !d5.inputs, "the key is in no storage, no saved state, no URL and no field after use");
+    const h0 = anth[0].h;
+    ok(h0['x-api-key'] === KEY && h0['anthropic-dangerous-direct-browser-access'] === 'true' && h0['anthropic-version'] === '2023-06-01', "browser calls api.anthropic.com directly with the key");
+    // generation with the key
+    await q.evaluate(() => window.__cpv.genFor('build a coral reef monitoring dashboard'));
+    await q.click('#cpAsk');
+    await q.waitForFunction(() => /Generated with claude-other/.test(document.getElementById('tpMsg').textContent), null, { timeout: 5000 });
+    const d6 = await q.evaluate(() => document.getElementById('tpIn').value);
+    const gen = anth.find(x => x.u.endsWith('/v1/messages')), gb = JSON.parse(gen.body);
+    ok(d6 === '{"schema":"human0.topic-pack/1","id":"test-pack"}' && gb.model === 'claude-other' && /coral reef/.test(gb.messages[0].content), "topic generation runs on the chosen model; the JSON lands in the paste box");
+    ok(seenKeyAt.length === 0, "the key never went to the Maxey0 server or anywhere but api.anthropic.com" + (seenKeyAt.length ? ": " + seenKeyAt[0] : ""));
+    await q.click('#cpClaudeBtn'); await q.click('#cpClaudeForget');
+    const d7 = await q.evaluate(() => window.__cpv.claude()); await c2.close();
+    ok(!d7.hasKey && d7.mode === null, "Forget key clears it from memory");
+  }
+
+  // 1s. Send to Claude Code: the route as a Claude Code project (zip)
+  {
+    const T = 'Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard';
+    const h = await p.evaluate(T => { const $ = id => document.getElementById(id); $('taskMode').value = 'lens'; $('taskIn').value = T; $('taskGo').click(); return window.__cpv.harness() }, T);
+    const bytes = await p.evaluate(() => window.__cpv.zipBytes());
+    const fs = require('fs'), os = require('os'), zp = require('path').join(os.tmpdir(), 'mx0-harness-test.zip'); fs.writeFileSync(zp, Buffer.from(bytes));
+    let zt = ''; try { zt = require('child_process').execSync('unzip -t ' + zp).toString() } catch (e) { zt = String(e.stdout || e) }
+    const zl = require('child_process').execSync('unzip -l ' + zp).toString();
+    const [dl] = await Promise.all([p.waitForEvent('download', { timeout: 5000 }), p.click('#cpCCBtn')]);
+    const msg = await p.evaluate(() => document.getElementById('cpCCMsg').textContent);
+    await p.evaluate(() => { const $ = id => document.getElementById(id); $('taskClr').click(); $('taskMode').value = 'flat' });
+    const agents = h.files.filter(f => f.startsWith('.claude/agents/'));
+    ok(['CLAUDE.md', '.mcp.json', 'route.json', 'README.md'].every(f => h.files.includes(f)) && agents.length >= 2, "harness files: " + h.files.join(', '));
+    const C = h.text['CLAUDE.md'], R = JSON.parse(h.text['route.json']), M = JSON.parse(h.text['.mcp.json']);
+    ok(/## Route\n1\. Business, Finance and Economics → Marketing → /.test(C) && /primary/.test(C) && /checker/.test(C) && /## Acceptance criteria/.test(C) && /## MCP servers on this route/.test(C), "CLAUDE.md: route, roles, servers, acceptance");
+    ok(R.schema === 'maxey0.harness/1' && R.router === 'lens' && R.drift && R.drift.scw === 'SCW-path' && M.mcpServers['maxey0-context-plane'].url === API + '/mcp', "route.json carries route + drift; .mcp.json carries the Context Plane server");
+    ok(/^---\nname: [a-z0-9-]+\ndescription: .+\n---\n/.test(h.text[agents[0]]), "subagent files have Claude Code frontmatter");
+    ok(/No errors detected/.test(zt) && zl.includes('CLAUDE.md') && /\.zip$/.test(dl.suggestedFilename()) && /Downloaded maxey0-harness-design-a-marketing/.test(msg), "the zip is valid (unzip -t) and downloads: " + dl.suggestedFilename());
   }
 
   // 2. gates = the server's agent->MCP links, exactly

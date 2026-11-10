@@ -16,18 +16,21 @@ Treat agents as **context records** (who should handle a skill, with which tools
 
 Fetch only what the question needs; the full graph is never needed.
 
-1. **Unknown task -> `route_task`** with the user's task text (optionally `domain`, one of the ids `list_domains` returns). It returns candidate paths domain -> topic -> concept -> skill -> agents -> MCP servers, ranked by TF-IDF cosine. For a task with several parts, add `mode: "lens"`: topics are chosen first and each lower level is read from the chosen nodes; the result carries the observer chain (selected nodes, weights, each branch's signed contribution, and suppressed candidates).
+1. **Unknown task -> `route_task`** with the user's task text (optionally `domain`, one of the ids `list_domains` returns). It returns candidate paths domain -> topic -> concept -> skill -> agents -> MCP servers, ranked by a hybrid score: (1 − β)·TF-IDF cosine + β·bge-m3 cosine, β = 0.7 by default (`signal` in the result says which signals were used; `dense: false` or `dense_weight` changes it). For a task with several parts, add `mode: "lens"`: topics are chosen first and each lower level — concepts, skills, then the chosen skills' agents and the servers those agents hold — is read from the chosen nodes; the result carries the observer chain (selected nodes, weights, each branch's signed contribution, suppressed candidates) and a `drift` record: per chosen node its score seen from above (`flat`), its lens score ψ, `drift = ψ − flat` and its rank in both, per level the task received, passed on and explained, shaped as SCW-drift / SCW-level / SCW-path.
 2. **Detail on one result -> `get_skill`** (agents and their servers) or **`get_concept`** (all skills of a concept). Prefer these over `get_harness`, which returns a whole topic (about 49 KB).
 3. **Browsing -> `list_domains`, `list_topics`, `get_topic`, `children`.** Use `trace` for the full parent chain of any id, `get_agent` for everything one MaxeyN agent serves, `get_mcp_server` for which agents hold a server.
 4. **Keyword lookups -> `search`**, which returns ids with their path; fetch details afterwards.
 
 ## Reading the results correctly
 
-- **No match is a real answer.** `route_task` returns `matched: false` when nothing shares enough words with the task; say so instead of guessing a route. Routing is lexical, so rephrasing with domain vocabulary can help. If the topic is genuinely missing, offer to generate it with the `topic-graph-generator` skill (and `validate_topic_pack`).
+- **No match is a real answer.** Flat `route_task` returns `matched: false` when no candidate reaches the match threshold (0.25 with the dense signal); say so instead of guessing a route. The lens has no threshold and always returns its best path, so check `remaining_task` and the scores before relying on it. Rephrasing with domain vocabulary can help. If the topic is genuinely missing, offer to generate it with the `topic-graph-generator` skill (and `validate_topic_pack`).
 - **MCP link basis:** `derived` = text similarity (cosine >= 0.10), `inherited` = the agent is the checker on the skill named in `via` and holds that skill's primary's servers, `declared` = set by the ontology spec. Links belong to the agent, so an agent shown in one role may hold servers inherited as checker on another skill; check `via` before attributing a server to the current skill.
 - **MCP rows are directory listings**, not installed connectors. Do not claim a server is available or reachable from the map alone.
 - **Priority:** physics topics carry an owner-declared priority that only breaks exact score ties.
 - **Generated content:** concepts, skills and agents are generated hypotheses, not curated knowledge; mention this when the user relies on them for real decisions.
+
+- **Drift:** a large positive drift means the path above carried the node; a negative drift means it was chosen despite its context. Report drift as what the lens did, not as a quality score.
+- **Dense signal availability:** `dense_status` says when the dense signal was not used (index building, no binding) — the route is then TF-IDF only.
 
 ## Answer format
 

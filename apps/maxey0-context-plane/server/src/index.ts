@@ -12,12 +12,14 @@
 import bundleJson from "./scw1.bundle.json";
 import ontology from "../../SCW1/ontology.spec.json";
 import { Graph, GraphData, ToolError, scopeTo, DENSE_DEFAULT } from "./graph";
+import { landingHtml } from "./landing";
+import { LOGO_PNG_B64 } from "./logo";
 import { DENSE_MODEL, DenseEnv, ddot, embedTask, loadIndex, rowOf, warmStep } from "./dense";
 import type { DenseSignal } from "./lens";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "6.6.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.7.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -363,7 +365,13 @@ export default {
     if (url.pathname === "/app" || url.pathname === "/app/") {
       if (req.method !== "GET" && req.method !== "HEAD") return new Response(null, { status: 405, headers: { allow: "GET, HEAD" } });
       return new Response(appHtml(url.origin), { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300",
-        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors *" } });
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.anthropic.com; frame-ancestors *" } });
+    }
+    if (url.pathname === "/logo.png") return new Response(Uint8Array.from(atob(LOGO_PNG_B64), (c) => c.charCodeAt(0)), { headers: { "content-type": "image/png", "cache-control": "public, max-age=86400" } });
+    // the front page for browsers; the JSON server info for everything else (and ?format=json)
+    if (url.pathname === "/" && req.method === "GET" && url.searchParams.get("format") !== "json" && (req.headers.get("accept") ?? "").includes("text/html")) {
+      return new Response(landingHtml(url.origin, { domains: FULL.domains.length, topics: FULL.topics.length, concepts: FULL.concepts.length, skills: FULL.skills.length, agents: FULL.agents.length, mcp: FULL.mcp.length }, SERVER_INFO.version), { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; frame-ancestors 'none'" } });
     }
     if (url.pathname === "/" && req.method === "GET") {
       return json({ server: SERVER_INFO, supported_versions: SUPPORTED, graph_json: "/graph.json", app: "/app", mcp_app: APP_URI,

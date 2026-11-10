@@ -32,7 +32,7 @@ import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "source", "Human0 - Context Plane Control Graph v0.6.html")
 OUT = os.path.join(HERE, "maxey0-context-plane-graph.html")
-VERSION = "1.0"
+VERSION = "1.13"
 DEFAULT_API = "https://maxey0-context-plane-mcp.maxey0.workers.dev"
 
 
@@ -107,7 +107,7 @@ async function cpDenseFill(n,el){const key=__CP.serverKey(n.id);let d=CP_DENSE[k
  if(!el.isConnected)return;
  if(!d.dense&&!d.values){el.lastChild.textContent='not available ('+(d.reason||'no dense index')+')';return}
  el.lastChild.textContent=d.dims+' values, centred and length 1 · first 8: '+d.values.slice(0,8).map(x=>x.toFixed(4)).join(', ')+' … ';
- const c=hh('button','','Copy all '+d.dims,{type:'button',title:'Copy the full bge-m3 vector as JSON'});c.onclick=()=>{try{navigator.clipboard.writeText(JSON.stringify(d.values))}catch(e){}};el.append(c);
+ const c=hh('button','','Copy all '+d.dims,{type:'button',title:'Copy the full bge-m3 vector as JSON'});c.onclick=()=>{cpCopy(JSON.stringify(d.values))};el.append(c);
  const appKey=k=>{if(k[0]!=='m')return k;const i=__CP.graph.mcp.findIndex(m=>'m:'+m.id===k);return i<0?null:'m:'+i};
  const NAMES={d:'Domains',t:'Topics',c:'Concepts',s:'Skills',a:'Agents',m:'MCP servers'},box=el.parentNode;const hdr=hh('div','cpembk','Nearest by bge-m3 cosine:');hdr.id='cpEmbDenseNear';box.insertBefore(hdr,el.nextSibling);let after=hdr;
  for(const k of['d','t','c','s','a','m']){const L=(d.nearest||{})[k];if(!L)continue;const r=hh('div','');r.append(hh('span','cpembk',NAMES[k]+': '));
@@ -244,7 +244,7 @@ async function cpDenseRoute(t){if(!cpDenseOn||!t)return;const lens=$('taskMode')
   LR={chain,skills:sc.paths.map(p=>p.skill),agents:sc.agents||[],mcp:sc.mcp_servers||[],remaining_task:sc.remaining_task,signal:sc.signal};const LS=chain.find(l=>l.level==='skill');sk=LS?LS.selected.map(x=>[x.app,x.psi]):[]}
  else sk=(sc.paths||[]).filter(p=>N['s:'+p.skill]).map(p=>['s:'+p.skill,p.score]);
  cpApplyRoute(t,LR,sk)}
-setTimeout(()=>{const c=$('cpDenseChk');if(c)c.onchange=()=>{cpDenseOn=c.checked;cpSignalOut()}},0);
+setTimeout(()=>{const c=$('cpDenseChk');if(c)c.onchange=()=>{cpDenseOn=c.checked;cpSignalOut()};const cc=$('cpCCBtn');if(cc)cc.onclick=()=>cpSendCode()},0);
 {const _st=submitTask;submitTask=function(){const t=_st.apply(this,arguments);cpSignal=null;cpSignalOut();if(t)cpDenseRoute(t);return t}}
 // drift arrows on the graph: a ghost ring where each chosen node sits seen from above, an arrow to where the observer put it
 function cpDrawDrift(w,h){const L=typeof task!=='undefined'&&task&&task.lens;if(!cpDriftOn||!cpField||!L||!cpLensPos)return;cx.save();
@@ -353,13 +353,15 @@ async function cpHostInit(){if(window.parent===window)return;
   cpHostNote('ui/notifications/size-changed',{height:900});cpHostBtn();
   const b=$('cpHostFs');if(b)b.onclick=async()=>{try{const x=await cpHostReq('ui/request-display-mode',{mode:cpHost.mode==='fullscreen'?'inline':'fullscreen'});cpHost.mode=(x&&x.mode)||cpHost.mode;cpHostBtn()}catch(e){}}}
  catch(e){cpHost.on=false}}
-// ask the host model: inside an MCP Apps host the request goes to the conversation (ui/message); elsewhere it is copied
+// ask the host model: inside an MCP Apps host the request goes to the conversation (ui/message); on the website with an
+// API key in memory it goes to the chosen model; otherwise it is copied
 function cpAskHost(text){if(cpHost.on){cpHostReq('ui/message',{role:'user',content:[{type:'text',text}]}).catch(()=>{});return'sent'}
- try{navigator.clipboard.writeText(text);return'copied'}catch(e){return'select'}}
+ if(cpClaude.key){cpGenerateApi(text);return'api'}
+ if(navigator.clipboard){cpCopy(text);return'copied'}return'select'}
 function cpGenerateFor(task){const tb=$('topicsBox');tpSt.topic=String(task||'').slice(0,80);tpSt.concept='';tpSt.req=genRequest(tpSt.topic,'')+'\nThe pack must cover this task, which found no route: "'+String(task||'').slice(0,300)+'". Use the task’s own words in skill descriptions.';
  tpSt.msg='Request built for this task. Ask Claude to run it (button below), then paste the JSON it returns.';tpSt.cls='';if(tb){tb.open=true;renderTopics();tb.scrollIntoView({block:'nearest'})}}
 {const _rt=renderTopics;renderTopics=function(){const r=_rt.apply(this,arguments);const ta=$('tpReq');if(ta&&!$('cpAsk')){const b=hh('button','','Ask Claude to generate it',{type:'button',id:'cpAsk',title:'Inside Claude (MCP app) the request is sent to the conversation; in a browser it is copied for you to paste into Claude'});
-  b.onclick=()=>{const how=cpAskHost(ta.value);tpSt.msg=how==='sent'?'Sent to Claude. Paste the JSON it returns below (or it may add it for you).':how==='copied'?'Copied. Paste it into Claude (with the Maxey0 Context Plane connector or plugin), then paste the JSON it returns below.':'Select the request text and copy it into Claude.';tpSt.cls='';const m=$('tpMsg');if(m)m.textContent=tpSt.msg};ta.after(b)}
+  b.onclick=()=>{const how=cpAskHost(ta.value);if(how==='api')return;tpSt.msg=how==='sent'?'Sent to Claude. Paste the JSON it returns below (or it may add it for you).':how==='copied'?'Copied. Paste it into Claude (with the Maxey0 Context Plane connector or plugin), then paste the JSON it returns below.':'Select the request text and copy it into Claude.';tpSt.cls='';const m=$('tpMsg');if(m)m.textContent=tpSt.msg};ta.after(b)}
  cpNewCache=null;return r}}
 {const _rg=refreshGraph;refreshGraph=function(){cpNewCache=null;return _rg.apply(this,arguments)}}
 function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill','concept','topic','domain'];
@@ -388,7 +390,7 @@ setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
 window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},signal:()=>cpSignal,denseOn:v=>{if(v!==undefined){cpDenseOn=!!v;cpSignalOut()}return cpDenseOn},key:k=>cpKey({key:k,preventDefault(){}}),live:()=>($('cpLive')||{}).textContent||'',sel:()=>sel,lensPos:id=>{cpLensSync();return cpLensPos&&cpLensPos[id]?cpLensPos[id].slice():null},fieldRaw:id=>__CP.field[id]?__CP.field[id].slice():null,drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},genFor:t=>cpGenerateFor(t),claude:()=>({mode:cpClaude.mode,model:cpClaude.model,hasKey:!!cpClaude.key,models:cpClaude.models.length}),harness:()=>{const h=cpHarness(task);return h&&{name:h.name,files:h.files.map(f=>f[0]),text:Object.fromEntries(h.files)}},zipBytes:async()=>{const h=cpHarness(task);return h?Array.from(new Uint8Array(await cpZip(h.files).arrayBuffer())):null},signal:()=>cpSignal,denseOn:v=>{if(v!==undefined){cpDenseOn=!!v;cpSignalOut()}return cpDenseOn},key:k=>cpKey({key:k,preventDefault(){}}),live:()=>($('cpLive')||{}).textContent||'',sel:()=>sel,lensPos:id=>{cpLensSync();return cpLensPos&&cpLensPos[id]?cpLensPos[id].slice():null},fieldRaw:id=>__CP.field[id]?__CP.field[id].slice():null,drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 """
 
 LOADER = r"""<style>
@@ -413,7 +415,7 @@ details.cpfold>summary::before{content:'\25B8  '}details.cpfold[open]>summary::b
 details.cpfold>.statebar{border-bottom:0}
 .cpview{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 6px}
 .cpview button.on{outline:1px solid #22d3ee;color:#e6fbff}
-button.on{background:#05697a}.cpsig{font-size:12px;margin-top:6px;color:#c7d6e0}.cpsig input{vertical-align:-2px}#g:focus-visible{outline:2px solid #7ee7ff;outline-offset:2px}.cpsr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
+button.on{background:#05697a}.cpsub{font-size:13px;line-height:1.3;color:#c7d6e0;margin:0}#cpClaudeBtn{position:fixed;top:10px;right:12px;z-index:50;background:#05697a;color:#fff;border:0;border-radius:16px;padding:6px 12px;font-size:12px;cursor:pointer}#cpClaude{position:fixed;inset:0;background:#000a;z-index:60;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:40px 16px}.cpdlg{background:#0c1d30;color:#e8f1fb;border:1px solid #ffffff2a;border-radius:10px;max-width:640px;width:100%;padding:20px}.cpdlg h2{margin:0 0 8px;font-size:20px}.cpdlg h3{margin:0 0 6px;font-size:15px}.cpdlg p,.cpdlg li{color:#c7d6e0;font-size:13px}.cpdcard{border:1px solid #ffffff22;border-radius:8px;padding:12px;margin:10px 0}.cpdrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}.cpdlg code{background:#0006;padding:2px 6px;border-radius:4px;word-break:break-all}.cpdlg input{width:100%;margin-top:4px}.cpdmsg{font-size:12px;margin-top:6px;color:#c7d6e0}#cpCCMsg{font-size:12px}.cpsig{font-size:12px;margin-top:6px;color:#c7d6e0}.cpsig input{vertical-align:-2px;width:auto;margin:0 4px 0 0}.cpsig label{display:inline-flex;align-items:center;margin-right:10px}#g:focus-visible{outline:2px solid #7ee7ff;outline-offset:2px}.cpsr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.cpview .cpsep{width:12px}.cpemb{margin-top:8px;padding-top:6px;border-top:1px solid var(--line);font-size:12px;line-height:1.55}.cpemb a{color:#9fe7f5}.cpembk{opacity:.7}.cpview .cpobs{font-size:11px;opacity:.8;margin-right:4px}#lensOut{margin-top:6px;font-size:12px;line-height:1.5}#lensOut b{color:#e6fbff}.taskbar select{max-width:150px}.cpview .cplbl{font-size:11px;opacity:.7}
 /* task result: hide to one line */
 #taskMsg .cphide{float:right;margin:0 0 4px 8px}
 #taskMsg.slim{padding:4px 8px;display:flex;align-items:center;gap:8px;font-size:12px}
@@ -687,7 +689,7 @@ def main():
              "state guard")
 
     # 5. names
-    h = once(h, "<title>Human0 - Context Plane Control Graph v0.6</title>", "<title>Maxey0 Context Plane Graph · Human0 v" + VERSION + "</title>", "title")
+    h = once(h, "<title>Human0 - Context Plane Control Graph v0.6</title>", "<title>Maxey0 · the Context Plane · by Human0</title>", "title")
     h = once(h, "1 · Context Plane Control Graph — Maxey0 OKF (v0.6)", "1 · Maxey0 Context Plane Graph — live (v" + VERSION + ")", "app1 summary")
     h = once(h, "<button data-goto=\"cs_app1\">1 · Context Plane Control Graph</button>", "<button data-goto=\"cs_app1\">1 · Maxey0 Context Plane Graph</button>", "toolbar")
     h = once(h, "APPS.app1={name:'1 · Context Plane Control Graph'", "APPS.app1={name:'1 · Maxey0 Context Plane Graph'", "app name")
@@ -695,7 +697,7 @@ def main():
 
     h = once(h, "<div class=\"k\">HUMAN0 · CONTEXT PLANE CONTROL GRAPH · v0.6 · LEVEL 5 · MCP DIRECTORY</div><h1>Agent field locations from semantic MCP gates</h1>\n"
              "<p>Topics → Concepts → Skills → Agents → MCP servers. Agent→MCP links are computed candidates (HYPOTHESIS), not declared in the OKF repo. You set them; the agent field moves.</p>",
-             "<div class=\"k\">HUMAN0 · MCP APP · MAXEY0 CONTEXT PLANE GRAPH · v" + VERSION + " · LIVE</div><h1>Maxey0 Context Plane Graph</h1>\n"
+             "<div class=\"k\">MAXEY0 · BY HUMAN0</div><h1>Maxey0</h1><div class=\"cpsub\">The Context Plane — where any task belongs, and who should handle it.</div>\n"
              "<p>Domains → Topics → Concepts → Skills → MaxeyN agents → MCP servers, read live from the Maxey0 Context Plane. "
              "Agents are context records (who should handle a skill, with which tools), not running agents. Agent→MCP gates come from the server "
              "(derived by TF-IDF cosine, inherited by checkers, or declared); you can still toggle gates by hand, and the agent field moves.</p>", "header")
@@ -887,7 +889,7 @@ def main():
     h = once(h, "$('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC'].forEach(", "$('tabT').onclick=()=>{tab='t';['tabA','tabM','tabS','tabT','tabC','tabD'].forEach(", "tabT clears D")
     # GENERATED TOPICS get a domain: the domain of the nearest existing topic, marked as suggested
     h = once(h, "if(plan.topicIsNew)TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||''};", "if(plan.topicIsNew){const sd=__CP.suggestDomain([pm.topic.label,pm.topic.desc||''].concat((pm.concepts||[]).map(c=>c[1]+' '+(c[3]||''))).join(' '));TOPIC_META[pm.topic.id]={label:pm.topic.label,desc:pm.topic.desc||'',domain:sd&&sd.domain,domainSuggested:true};if(sd)__CP.tDom[pm.topic.id]=sd.domain}", "generated topic domain")
-    h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n// ---------- init + test hooks", "view + generation code")
+    h = once(h, "\n// ---------- init + test hooks", "\n" + CP_VIEW_JS + "\n" + open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cp_claude.js"), encoding="utf-8").read() + "\n// ---------- init + test hooks", "view + generation code + Claude connection + Send to Claude Code")
     # 11. PERFORMANCE: same results, less work (each replacement is order-preserving; the tests compare layouts and routes)
     # layoutAgents: the topic weight w(t) re-filtered every concept and skill on every call (it is called inside the concept
     # loop); skills per concept and the weight per topic are now counted once per layout
@@ -905,7 +907,7 @@ def main():
     # drift arrows and domain labels paint over the nodes, at the end of each frame
     h = once(h, "\n cx.globalAlpha=1}\nfunction pick(x,y)", "\n cx.globalAlpha=1;cpDrawDrift(w,h);cpDrawDomains(P);cpDrawLegend(w,h)}\nfunction pick(x,y)", "drift + domain labels + legend over nodes")
     h = once(h, '<span id="cpObs" class="cpobs">', '<div id="cpLive" class="cpsr" role="status" aria-live="polite"></div><span id="cpObs" class="cpobs">', "keyboard live region")
-    h = once(h, '<div id="lensOut" class="cpnote" hidden></div>', '<div class="cpsig"><label title="Route on the server with TF-IDF + bge-m3 embeddings when its dense index is ready; off = TF-IDF only, in the page"><input type="checkbox" id="cpDenseChk" checked> Dense signal</label> <span id="cpSignal">Signal: TF-IDF</span></div><div id="lensOut" class="cpnote" hidden></div>', "dense signal toggle + readout")
+    h = once(h, '<div id="lensOut" class="cpnote" hidden></div>', '<div class="cpsig"><button type="button" id="cpCCBtn" title="Download this route as a Claude Code project: CLAUDE.md, one subagent per chosen agent, .mcp.json, route.json">Send to Claude Code</button> <span id="cpCCMsg" role="status"></span><br><label title="Route on the server with TF-IDF + bge-m3 embeddings when its dense index is ready; off = TF-IDF only, in the page"><input type="checkbox" id="cpDenseChk" checked> Dense signal</label> <span id="cpSignal">Signal: TF-IDF</span></div><div id="lensOut" class="cpnote" hidden></div>', "dense signal toggle + readout")
     h = once(h, '<button type="button" id="cpDragBtn"', '<button type="button" id="cpColorBtn" class="on" aria-pressed="true" title="With an observer in the graph and Embedding field on: color nodes by observer value (how much of each node the observer explains). Off: color by level">Observer color</button><button type="button" id="cpDragBtn"', "observer color button")
 
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):

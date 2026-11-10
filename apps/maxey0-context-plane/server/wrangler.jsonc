@@ -12,6 +12,10 @@
   // node embeddings are kept in KV per graph digest (see src/dense.ts).
   "ai": { "binding": "AI" },
   "kv_namespaces": [{ "binding": "DENSE", "id": "edaf26bace7f4a56b7eb466da83a9a21" }],
+  // Served on Human0's own domain as well as workers.dev (the connector, plugin and paper keep using workers.dev).
+  // On deploy Cloudflare creates the DNS record and certificate for app.maxey0.com (zone maxey0.com in this account).
+  "routes": [{ "pattern": "app.maxey0.com", "custom_domain": true }],
+  "workers_dev": true,
   "observability": { "enabled": true }
   // Local tests without Cloudflare credentials use wrangler.local.jsonc (no AI / KV binding: TF-IDF only):
   // npx wrangler dev -c wrangler.local.jsonc --port 8794
