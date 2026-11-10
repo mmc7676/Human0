@@ -413,3 +413,13 @@ Install it from the plugin directory when listed, or from this repository (see t
 - **Observer color** (graph toolbar): with an observer in the graph (a lens route, or a chosen domain, topic or concept) and **Embedding field** on, nodes are colored from dark blue (the observer explains nothing of the node) to yellow (it explains the node fully). The legend in the lower-left corner shows the scale and the drift arrow colors: green = the path raised the node's fit, red = lowered it.
 - **Drift arrows** now show each node's own movement: home and observed places are in one frame, and a node moves along the line between the observer and its home place, in all three axes.
 - **Keyboard**: press Tab until the graph is focused (cyan outline). Right/Left = next/previous node on the level; Down = first node below; Up = first node above; Page Up/Page Down = the level above/below; Home/End = first/last on the level; Escape = clear. Each move selects the node, and a screen reader hears its level, name, position and how many nodes are below and above.
+
+## Part 20 — App 1.12: embedding values in Details
+Select any node. The **Embedding values** block lists:
+- **TF-IDF vector (routing, exact)**: how many of the vocabulary's terms the node uses and the largest weights (the vector has length 1).
+- **bge-m3 vector (routing, exact)**: the first 8 of its 1024 values (centred, length 1), **Copy all** for the whole vector, and **Nearest by bge-m3 cosine** per level. Shown when the server's dense index is available.
+- **Field place, 3D**: x, y, z in the shared field (SVD axes 1–3).
+- **Seen from above (no observer)**: where the node is drawn on its level donut, x, y, z.
+- **Seen from <observer>** (a lens route, or a chosen domain, topic or concept): a (how much of the node the observer explains) and √a, the observed field place and drawn place, and the **Displacement** between home and observed, x, y, z and its length relative to the donut radius.
+- **In this lens route**: when the route chose the node, its flat score and rank seen from above, ψ and rank through the lens, drift and weight.
+- **Nearest by TF-IDF cosine** per level.

@@ -1,5 +1,9 @@
 # Changelog
 
+## Server 6.6.0 · App 1.12
+- Embedding values of a selected node in Details, each labelled with what it is: the TF-IDF vector routing uses (non-zero terms and weights, length 1); the bge-m3 vector routing uses (1024 values, centred, unit; first 8 shown, Copy all) with its nearest nodes per level by dense cosine; the 3D field place (SVD axes 1–3: x, y, z); the 3D drawn place on its level donut seen from above; with an observer, the observer's value for the node (a and √a), its observed 3D field place, observed drawn place and the 3D displacement; with a lens route that chose it, flat score and rank → ψ and rank, drift, weight. Previously only x, y of the field and √a were shown, labelled "seen from above" in both views.
+- Server: `GET /embedding?key=<node>` returns a node's bge-m3 vector and its dense nearest nodes per level (CORS, cached an hour).
+
 ## Server 6.5.2 · App 1.11
 - Performance (11): budget and checks in docs/PERFORMANCE.md. Page load ~25% faster (agent ring layout counts skills once per layout instead of once per concept; agent angles in one pass over the edges; gate lists sort only candidate servers) and the page's lens 4× faster (cached key counts, per-node constants computed once), with identical layouts, gates and routes. Budget tests in app (page size, load, frame, lens, heap) and server (CPU per route).
 

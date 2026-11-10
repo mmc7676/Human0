@@ -327,7 +327,10 @@ window.__cpLoad = async function () {
   const suggestDomain = text => { const q = unitv(vec(text)); let best = null, sc = 0;
     for (const t of g.topics) { const x = dotu(q, U['t:' + t.id] || {}); if (x > sc) { sc = x; best = t.domain } } return best ? { domain: best, score: r4(sc) } : null };
   const related = (g.related || []).map(r => ['c:' + r.a, 'c:' + r.b, r.score]);
-  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest, suggestDomain, related };
+  // the TF-IDF embedding of a node as used in routing (unit length): its non-zero terms, largest first
+  const terms = id => { const u = U[id]; return u ? Object.entries(u).sort((a, b) => b[1] - a[1]) : [] };
+  const vocab = Object.keys(idf).length, serverKey = id => id[0] === 'm' ? 'm:' + (g.mcp[+id.slice(2)] || {}).id : id;
+  return { D, M, gates, scores, meta, graph: g, api: API, digest: g.snapshot_digest, route, field, lens, lensLayout, domains, tDom, nearest, suggestDomain, related, terms, vocab, serverKey };
 };
 </script>
 <script>(async()=>{'use strict';
@@ -1095,12 +1098,50 @@ function cpObserver(){if(typeof task!=='undefined'&&task&&task.lens&&task.lens.c
 function cpLensSync(){const o=cpObserver(),k=o?JSON.stringify(o.st):'';if(k===cpLensKey)return;cpLensKey=k;cpLensPos=o?__CP.lensLayout(o.st):null;cpObsLabel=o?o.label:'above the graph';
  const el=$('cpObs');if(el)el.textContent='Observer: '+cpObsLabel}
 function cpLensVal(n){if(!cpField||!cpLensPos)return null;const q=cpLensPos[n.id];return q?q[3]:null}   // sqrt(a): 1 = the observer explains the node fully
-function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('div','cpemb');box.append(hh('b','','Embedding'));
- const lv=cpLensVal(n);box.append(hh('div','','Field location (seen from above): x '+f[0].toFixed(3)+', y '+f[1].toFixed(3)+(lv!==null?' · seen from '+cpObsLabel+': '+lv.toFixed(2)+' (1 = at the centre of the observer\'s view)':'')));
+// ---- Embedding values of the selected node (Details). Four kinds of value, each labelled with what it is:
+//  1. TF-IDF vector: the exact sparse vector routing uses (unit length): its non-zero terms and weights.
+//  2. bge-m3 vector: the exact dense vector routing uses (1024 values, centred, unit), fetched from the server, with its
+//     nearest nodes per level by dense cosine.
+//  3. Field place: the node's place in the shared 3D field (SVD axes 1-3 of the TF-IDF space), seen from above.
+//  4. Drawn place: where that sits on the node's level donut (world units); with an observer, the observer's value for
+//     the node (a, sqrt a), its observed field place, observed drawn place and the displacement; with a lens route that
+//     chose the node, its flat score, psi, drift and ranks.
+const CP_DENSE={};
+const f3=(v,d=3)=>v.map(x=>(+x).toFixed(d)).join(', ');
+function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('div','cpemb');box.id='cpEmb';box.append(hh('b','','Embedding values'));
+ const row=(k,t)=>{const r=hh('div','');r.append(hh('span','cpembk',k+' '),document.createTextNode(t));box.append(r);return r};
+ // 1. TF-IDF
+ const T=__CP.terms(n.id);row('TF-IDF vector (routing, exact):',T.length+' non-zero of '+__CP.vocab+' terms, length 1 · '+T.slice(0,8).map(([w,x])=>w+' '+x.toFixed(3)).join(' · ')+(T.length>8?' · …':''));
+ // 2. bge-m3 (async)
+ const dr=row('bge-m3 vector (routing, exact):','loading…');dr.id='cpEmbDense';cpDenseFill(n,dr);
+ // 3. field place
+ row('Field place, 3D (shared field, SVD axes 1–3):','x '+f[0].toFixed(3)+', y '+f[1].toFixed(3)+', z '+(f[2]||0).toFixed(3));
+ // 4. drawn places + observer
+ const was=cpField;cpField=true;cpLensSync();const home=cpHomeXY(n),q=cpLensPos&&cpLensPos[n.id],obs=q?cpFieldXY(n):null;cpField=was;cpLensSync();
+ const O=cpOut();row('Seen from above (no observer):','drawn on its '+n.kind+' donut at x '+home.x.toFixed(1)+', y '+home.y.toFixed(1)+', z '+(home.z||0).toFixed(1)+' (outer radius '+O.toFixed(0)+')');
+ if(q){const v=q[3],d={x:obs.x-home.x,y:obs.y-home.y,z:(obs.z||0)-(home.z||0)};
+  row('Seen from '+cpObsLabel+':','a '+(v*v).toFixed(3)+' (how much of the node the observer explains), √a '+v.toFixed(3)+' · field place x '+q[0].toFixed(3)+', y '+q[1].toFixed(3)+', z '+q[2].toFixed(3)+' · drawn at x '+obs.x.toFixed(1)+', y '+obs.y.toFixed(1)+', z '+(obs.z||0).toFixed(1));
+  row('Displacement (observed − home):','x '+d.x.toFixed(1)+', y '+d.y.toFixed(1)+', z '+d.z.toFixed(1)+' · distance '+(Math.hypot(d.x,d.y,d.z)/O).toFixed(3)+' of the radius')}
+ else if(cpObsLabel==='above the graph')row('Observer:','none — route a task with the Observer lens, or choose a domain, topic or concept, to see this node from an observer');
+ const L=typeof task!=='undefined'&&task&&task.lens;if(L)for(const l of L.chain){const x=l.selected.find(s=>s.app===n.id);if(x&&x.drift)
+  row('In this lens route ('+l.level+'):','flat '+x.drift.flat+' (seen from above, rank #'+x.drift.flat_rank+') → ψ '+x.psi+' (through the lens, rank #'+x.drift.lens_rank+') · drift '+(x.drift.drift>=0?'+':'')+x.drift.drift+' · weight '+x.weight)}
+ // nearest by TF-IDF (in the page)
  const nb=__CP.nearest(n.id,3),NAMES={d:'Domains',t:'Topics',c:'Concepts',s:'Skills',a:'Agents',m:'MCP servers'};
- for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const row=hh('div','');row.append(hh('span','cpembk',NAMES[k]+': '));
-  nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
+ box.append(hh('div','cpembk','Nearest by TF-IDF cosine:'));
+ for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const r=hh('div','');r.append(hh('span','cpembk',NAMES[k]+': '));
+  nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)r.append(document.createTextNode(' · '));r.append(a)});box.append(r)}
  b.append(box)}
+async function cpDenseFill(n,el){const key=__CP.serverKey(n.id);let d=CP_DENSE[key];
+ if(!d){try{const r=await fetch(__CP.api+'/embedding?key='+encodeURIComponent(key));d=await r.json();if(!r.ok)throw new Error(d.error||r.status);CP_DENSE[key]=d}catch(e){el.lastChild.textContent='not available ('+(e.message||'server not reachable')+')';return}}
+ if(!el.isConnected)return;
+ if(!d.dense&&!d.values){el.lastChild.textContent='not available ('+(d.reason||'no dense index')+')';return}
+ el.lastChild.textContent=d.dims+' values, centred and length 1 · first 8: '+d.values.slice(0,8).map(x=>x.toFixed(4)).join(', ')+' … ';
+ const c=hh('button','','Copy all '+d.dims,{type:'button',title:'Copy the full bge-m3 vector as JSON'});c.onclick=()=>{try{navigator.clipboard.writeText(JSON.stringify(d.values))}catch(e){}};el.append(c);
+ const appKey=k=>{if(k[0]!=='m')return k;const i=__CP.graph.mcp.findIndex(m=>'m:'+m.id===k);return i<0?null:'m:'+i};
+ const NAMES={d:'Domains',t:'Topics',c:'Concepts',s:'Skills',a:'Agents',m:'MCP servers'},box=el.parentNode;const hdr=hh('div','cpembk','Nearest by bge-m3 cosine:');hdr.id='cpEmbDenseNear';box.insertBefore(hdr,el.nextSibling);let after=hdr;
+ for(const k of['d','t','c','s','a','m']){const L=(d.nearest||{})[k];if(!L)continue;const r=hh('div','');r.append(hh('span','cpembk',NAMES[k]+': '));
+  L.forEach(([sk,sc],i)=>{const id=appKey(sk),a=hh('a','',(id&&N[id]?N[id].label:sk)+' '+(+sc).toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(id&&N[id])select(id)};if(i)r.append(document.createTextNode(' · '));r.append(a)});
+  box.insertBefore(r,after.nextSibling);after=r}}
 // A node's field coordinates carry no meaning on their own; only the distances and directions between nodes do.
 // So each level is framed on its own: centred on that level's centroid; axes 1-2 scaled by one factor so the farthest node
 // reaches the donut's outer rim (a shift plus one uniform scale keeps every direction and distance ratio in the plane), and

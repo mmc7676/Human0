@@ -424,6 +424,12 @@ test("dense signal end to end through the Worker: /dense warms in steps, then ro
   assert.equal(viaMcp.signal.dense, 0.3); assert.ok(viaMcp.matched && typeof viaMcp.paths[0].score === "number");
   const off = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "price a call option", dense: false }) });
   assert.equal(off.body.signal.tfidf, 1);
+  const emb = (await get("/embedding?key=s:dv-option-pricer")).body;
+  assert.equal(emb.dims, 1024); assert.equal(emb.values.length, 1024);
+  assert.ok(Math.abs(emb.values.reduce((t, x) => t + x * x, 0) - 1) < 1e-3, "centred, unit vector");
+  for (const lv of ["t", "c", "s", "a", "m", "d"]) assert.ok(emb.nearest[lv] && emb.nearest[lv].length === 3 && emb.nearest[lv][0][1] >= emb.nearest[lv][2][1], lv);
+  assert.ok(!emb.nearest.s.some(([k]) => k === "s:dv-option-pricer"), "a node is not its own neighbour");
+  assert.equal((await get("/embedding?key=s:no-such-skill")).status, 404);
   const bad = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "x", dense_weight: 2 }) });
   assert.equal(bad.status, 400);
 });

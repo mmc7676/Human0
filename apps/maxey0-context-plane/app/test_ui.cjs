@@ -130,7 +130,7 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
       return { dn: dn.length, z: dn.every(n => n.kind === 'domain' && n.z > v.node('t:quantum-physics').z), met, det, det2, o: o.label, mode, field, lo } });
     ok(r.dn === graph.domains.length && r.z, "domain level: " + r.dn + " domain nodes above the topic plane");
     ok(r.met.some(m => /^11\s*Domains/i.test(m.trim())), "metrics include domains: " + r.met[0]);
-    ok(/Embedding/.test(r.det) && /Field location/.test(r.det) && /Agents: /.test(r.det) && /Topics: /.test(r.det2), "embedding values in Details");
+    ok(/Embedding values/.test(r.det) && /Field place, 3D/.test(r.det) && /Agents: /.test(r.det) && /Topics: /.test(r.det2), "embedding values in Details");
     ok(r.mode === 'lens' && r.field && /from Business, Finance and Economics/.test(r.lo) && /routed task \(lens\)/.test(r.o), "host args: domain + lens + field: " + r.lo.slice(0, 60));
   }
 
@@ -335,6 +335,27 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(m.frame < 40 && m.frameField < 40, "budget: median frame under 40 ms in the test browser (" + m.frame.toFixed(1) + " / " + m.frameField.toFixed(1) + " ms)");
     ok(m.lens < 40, "budget: lens route in the page under 40 ms (" + m.lens.toFixed(1) + " ms)");
     ok(!m.heap || m.heap < 150, "budget: JS heap under 150 MB (" + Math.round(m.heap) + " MB)");
+  }
+
+  // 1q. embedding values of a selected node: TF-IDF terms, bge-m3 vector (server), 3D field place, drawn 3D places,
+  //     and with an observer: a, sqrt a, observed 3D place, displacement, lens values
+  {
+    const k = 's:mk-email-campaign-builder';
+    // a server with the dense index: serve a 1024-value vector for this node
+    const vals = Array.from({ length: 1024 }, (_, i) => +(Math.sin(i) / 22.6).toFixed(5));
+    await p.route(API + "/embedding?*", r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ key: k, model: '@cf/baai/bge-m3', dims: 1024, centred: true, values: vals,
+      nearest: { s: [['s:mk-audience-segmenter', 0.81], ['s:mk-email-performance-analyst', 0.77], ['s:dv-option-pricer', 0.12]], m: [['m:' + graph.mcp[0].id, 0.3], ['m:' + graph.mcp[1].id, 0.2], ['m:' + graph.mcp[2].id, 0.1]] } }) }));
+    const a = await p.evaluate(k => { const v = window.__cpv; v.select(k); return document.getElementById('cpEmb').textContent }, k);
+    await p.waitForFunction(() => /first 8/.test((document.getElementById('cpEmbDense') || {}).textContent || ''), null, { timeout: 5000 });
+    const b2 = await p.evaluate(() => document.getElementById('cpEmb').textContent);
+    await p.unroute(API + "/embedding?*");
+    const T = 'Design a marketing email campaign, segment the customer list, A/B test subject lines, and measure attribution in a dashboard';
+    const c = await p.evaluate(([k, T]) => { const $ = id => document.getElementById(id), v = window.__cpv; $('taskMode').value = 'lens'; $('taskIn').value = T; $('taskGo').click(); v.select(k);
+      const t = $('cpEmb').textContent; $('taskClr').click(); $('taskMode').value = 'flat'; v.select(null); return t }, [k, T]);
+    ok(/TF-IDF vector \(routing, exact\): \d+ non-zero of \d+ terms, length 1 · email \d\.\d{3}/.test(a), "TF-IDF terms and weights of the node: " + a.slice(a.indexOf('TF-IDF'), a.indexOf('TF-IDF') + 90));
+    ok(/Field place, 3D \(shared field, SVD axes 1–3\): x -?\d\.\d{3}, y -?\d\.\d{3}, z -?\d\.\d{3}/.test(a) && /Seen from above \(no observer\): drawn on its skill donut at x -?\d+\.\d, y -?\d+\.\d, z -?\d+\.\d/.test(a), "3D field place and 3D drawn place (x, y, z)");
+    ok(/1024 values, centred and length 1 · first 8: 0\.0000, 0\.0372/.test(b2) && /Nearest by bge-m3 cosine:Skills: Audience Segmenter 0\.81/.test(b2), "bge-m3 vector values and dense neighbours from the server");
+    ok(/Seen from routed task \(lens\).*: a \d\.\d{3} .*√a \d\.\d{3} · field place x -?\d\.\d{3}, y -?\d\.\d{3}, z -?\d\.\d{3} · drawn at x/.test(c) && /Displacement \(observed − home\): x -?\d+\.\d, y -?\d+\.\d, z -?\d+\.\d/.test(c) && /In this lens route \(skill\): flat [\d.]+ \(seen from above, rank #\d+\) → ψ [\d.]+ \(through the lens, rank #1\)/.test(c), "observer view: a, √a, observed 3D place, displacement, lens values");
   }
 
   // 2. gates = the server's agent->MCP links, exactly

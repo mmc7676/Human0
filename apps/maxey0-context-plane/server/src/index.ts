@@ -12,12 +12,12 @@
 import bundleJson from "./scw1.bundle.json";
 import ontology from "../../SCW1/ontology.spec.json";
 import { Graph, GraphData, ToolError, scopeTo, DENSE_DEFAULT } from "./graph";
-import { DENSE_MODEL, DenseEnv, embedTask, loadIndex, rowOf, warmStep } from "./dense";
+import { DENSE_MODEL, DenseEnv, ddot, embedTask, loadIndex, rowOf, warmStep } from "./dense";
 import type { DenseSignal } from "./lens";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "6.5.2" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.6.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -328,6 +328,20 @@ export default {
       let args: Json; try { args = (await req.json()) as Json; } catch { return json({ error: "body must be JSON" }, 400, cors); }
       const res = dispatch("all", "tools/call", { name: "route_task", arguments: args }, false, LEGACY[LEGACY.length - 1], await densePrep(env, ctx, { name: "route_task", arguments: args }));
       return json(res.isError ? { error: (res.content as { text: string }[])[0].text } : res.structuredContent, res.isError ? 400 : 200, cors);
+    }
+    // one node's embedding values for browser UIs: GET /embedding?key=s:dv-option-pricer (keys as in graph.json vectors)
+    // -> the bge-m3 vector (1024 values, centred and normalised as used in routing) and its nearest nodes per level by
+    // dense cosine. 404 for an unknown key; dense: null when the dense index is not available.
+    if (url.pathname === "/embedding" && req.method === "GET") {
+      const cors = { "access-control-allow-origin": "*" }, key = url.searchParams.get("key") ?? "";
+      if (!FULL.similarity.vectors[key]) return json({ error: "unknown node key" }, 404, cors);
+      const idx = env.AI && env.DENSE ? await loadIndex(env, FULL).catch(() => null) : null;
+      if (!idx) return json({ key, model: DENSE_MODEL, dense: null, reason: env.DENSE ? "dense index not built yet" : "no Workers AI / KV binding" }, 200, cors);
+      const v = rowOf(idx, key); if (!v) return json({ key, model: DENSE_MODEL, dense: null, reason: "node not in the dense index" }, 200, cors);
+      const near: Record<string, [string, number][]> = {};
+      for (const k of idx.keys) { if (k === key) continue; const lv = k[0], sc = ddot(v, rowOf(idx, k)!); const L = (near[lv] ??= []);
+        if (L.length < 3 || sc > L[L.length - 1][1]) { L.push([k, Math.round(sc * 1e4) / 1e4]); L.sort((x, y) => y[1] - x[1]); if (L.length > 3) L.pop(); } }
+      return json({ key, model: DENSE_MODEL, dims: v.length, centred: true, values: Array.from(v, (x) => Math.round(x * 1e5) / 1e5), nearest: near }, 200, { ...cors, "cache-control": "public, max-age=3600" });
     }
     // dense index status; POST /dense runs one warm step (idempotent: embeds only chunks that are missing)
     if (url.pathname === "/dense") {
