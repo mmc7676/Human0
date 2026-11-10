@@ -12,13 +12,7 @@
   // node embeddings are kept in KV per graph digest (see src/dense.ts).
   "ai": { "binding": "AI" },
   "kv_namespaces": [{ "binding": "DENSE", "id": "edaf26bace7f4a56b7eb466da83a9a21" }],
-  "observability": { "enabled": true },
-  "env": {
-    // Local tests without Cloudflare credentials: no AI / KV binding, so routing is TF-IDF only.
-    // npx wrangler dev --env local --port 8794
-    "local": {
-      "name": "maxey0-context-plane-mcp-local",
-      "vars": { "ALLOWED_ORIGINS": "https://claude.ai,https://claude.com" }
-    }
-  }
+  "observability": { "enabled": true }
+  // Local tests without Cloudflare credentials use wrangler.local.jsonc (no AI / KV binding: TF-IDF only):
+  // npx wrangler dev -c wrangler.local.jsonc --port 8794
 }

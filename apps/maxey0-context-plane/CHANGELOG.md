@@ -1,12 +1,18 @@
 # Changelog
 
+## Server 6.5.1
+- Dense defaults calibrated on the live server (bge-m3 index built): β = 0.7, match threshold 0.25. 300 skill labels: skill@1 0.933 (TF-IDF) → 0.987, topic@1 0.950 → 0.993. 20 realistic tasks: correct top skill 13/19 → 15/19, correct within top 3 14/19 → 17/19; 10 off-map requests all below the threshold (max 0.239). Details in docs/ARCHITECTURE.md.
+- Lens speed: per-candidate constants computed once per selected node, node vectors normalised once per isolate, key counts cached. TF-IDF lens ~80 ms → ~17 ms CPU (node timing); results unchanged (fixture). The dense lens hit Cloudflare's resource limit (error 1102) on 6.5.0; now ~22 ms.
+- Index warming keeps a progress bitmap, so a step never re-embeds chunks a lagging KV list does not show yet.
+- Local test config moved to `wrangler.local.jsonc`; `npx wrangler deploy` no longer warns about multiple environments.
+
 ## Server 6.5.0 · App 1.10
 - Dense second signal (15): BAAI bge-m3 embeddings from Cloudflare Workers AI (binding `AI`), next to TF-IDF in one inner-product space: <x, y> = (1 − β)·TF-IDF cosine + β·dense cosine. Node embeddings (all 3,986 nodes) are built once per graph digest in steps of 8 chunks of 50 and kept in KV (binding `DENSE`); embeddings are centred on the mean node embedding and normalised. The task is embedded per route. With no binding, or before the index exists, routing is TF-IDF only and the response says why.
 - route_task and search take `dense` (default true), `dense_weight` (β, default 0.5 until calibrated) and `min_score`; responses carry `signal` (weights, model) and `dense_status`. Flat paths now include their `score`.
 - The lens runs in the hybrid space; with dense, ψ is evaluated for the 300 best candidates of a level by flat hybrid score (all children of structural levels). Without dense the lens is bit-for-bit the TF-IDF lens (fixture test).
 - New endpoints: `GET /dense` (status), `POST /dense` (one warm step, idempotent), `POST /route` (read-only routing for the app, CORS).
 - App: routes in the page at once (TF-IDF), then asks the server; a route with the dense signal replaces the local one. **Dense signal** checkbox and a readout of which signal produced the route; saved with the state.
-- Local tests run without Cloudflare credentials: `npx wrangler dev --env local --port 8794`.
+- Local tests run without Cloudflare credentials: `npx wrangler dev -c wrangler.local.jsonc --port 8794`.
 
 ## Server 6.4.0 · App 1.9
 - Fix (server + app): a word that is also an Object.prototype key ('constructor' is in the map's vocabulary) turned similarity scores into NaN for any task or node containing it (skill `symsys-automata-builder`). Vectors are now read by own keys only (`Object.hasOwn`). Test added on both sides.

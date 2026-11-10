@@ -35,10 +35,17 @@ const BEAM = 3, KEEP = 0.6, BRANCH_DAMP = 0.1;
  *  structural level's children are always kept). It bounds the work per route; ranks seen from above still cover all. */
 export const SHORTLIST = 300;
 
-const dot = (a: Vec, b: Vec) => { let s = 0; const [x, y] = Object.keys(a).length > Object.keys(b).length ? [b, a] : [a, b];
+// key counts cached per vector object: dot iterates the smaller vector (same choice as counting keys every time, without
+// allocating a key array per call)
+const SIZE = new WeakMap<Vec, number>();
+const size = (a: Vec) => { let n = SIZE.get(a); if (n === undefined) { n = Object.keys(a).length; SIZE.set(a, n); } return n; };
+const dot = (a: Vec, b: Vec) => { let s = 0; const [x, y] = size(a) > size(b) ? [b, a] : [a, b];
   for (const w in x) if (Object.hasOwn(y, w)) s += x[w] * y[w]; return s; };   // own keys only ('constructor' is a word here)
 const unitS = (a: Vec): Vec => { const n = Math.sqrt(dot(a, a)); if (!n) return a; const o: Vec = {}; for (const w in a) o[w] = a[w] / n; return o; };
+const UNIT = new WeakMap<Vec, Vec>();   // the unit form of a stored node vector, computed once per isolate
+const unitNode = (a: Vec): Vec => { let u = UNIT.get(a); if (!u) { u = unitS(a); UNIT.set(a, u); } return u; };
 const minusS = (a: Vec, b: Vec, k: number): Vec => { const o: Vec = { ...a }; for (const w in b) o[w] = (Object.hasOwn(o, w) ? o[w] : 0) - k * b[w]; return o; };
+const EMPTY: Vec = {};
 const r4 = (x: number) => Math.round(x * 1e4) / 1e4;
 
 // ---- one inner-product space for both signals. A vector is (s, d): s the sparse TF-IDF part, d the dense part (unit,
@@ -83,13 +90,16 @@ export function lensRoute(task: string, idf: Record<string, number>, vectors: Re
                           levels: LensLevelSpec[], topicAllowed?: (id: string) => boolean,
                           lambda: Partial<Record<LensLevelName, number>> = {}, dense?: DenseSignal): LensResult {
   const S = new Space(dense ? dense.beta : 0, !!dense);
-  const nodeV = (key: string): HV => dense ? S.unit({ s: unitS(vectors[key] ?? {}), d: dense.get(key) ?? null }) : { s: unitS(vectors[key] ?? {}), d: null };
+  // node vectors: both parts are unit, so the hybrid vector is unit with no copy; only a node with one part missing is rescaled
+  const nodeV = (key: string): HV => { const v = vectors[key], s = v ? unitNode(v) : EMPTY;
+    if (!dense) return { s, d: null };
+    const d = dense.get(key) ?? null; return d && v ? { s, d } : S.unit({ s, d }); };
   const qs = unitS(vec(task, idf, false));
   const chain: LensLevel[] = [];
   const empty: LensResult = { chain, skills: [], agents: [], mcp: [], remaining_task: 0 };
   if (!Object.keys(qs).length && !dense) return empty;
   const q0: HV = dense ? S.unit({ s: qs, d: dense.q }) : { s: qs, d: null };
-  let q = q0; let state: { id: string; w: number; v: HV; q: HV }[] | null = null;
+  let q = q0; let state: { id: string; w: number; v: HV; q: HV; qn: number; vq: number }[] | null = null;
   for (const L of levels) {
     const base = lambda[L.level] ?? LAMBDA[L.level];
     const lam = state && state.length > 1 ? base * (1 - BRANCH_DAMP * (state.length - 1)) : base;
@@ -107,8 +117,8 @@ export function lensRoute(task: string, idf: Record<string, number>, vectors: Re
       if (!state) { rows.push({ id, psi: S.dot(v, q), flat, aobs: 0, parts: {} }); continue; }
       let psi = 0, aobs = 0; const parts: Record<string, number> = {};
       for (const p of state) {
-        const a = S.dot(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = S.norm(p.q);
-        const s = qn > 1e-9 ? (S.dot(v, p.q) - a * S.dot(p.v, p.q)) / (rn * qn) : 0;
+        const a = S.dot(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = p.qn;
+        const s = qn > 1e-9 ? (S.dot(v, p.q) - a * p.vq) / (rn * qn) : 0;
         const phi = p.w * (lam * a + (1 - lam) * s); psi += phi; parts[p.id] = phi; aobs += p.w * a;
       }
       rows.push({ id, psi, flat, aobs, parts });
@@ -119,7 +129,8 @@ export function lensRoute(task: string, idf: Record<string, number>, vectors: Re
     const sel = rows.slice(0, BEAM).filter((r) => r.psi > 0 && r.psi >= KEEP * best);
     const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0));
     const taskIn = S.norm(q);
-    const next = sel.map((r) => { const v = nodeV(L.prefix + ":" + r.id); return { id: r.id, w: r.psi / n, v, q: S.minus(q, v, S.dot(q, v)) }; });
+    // per selected node: its residual task, and the two constants every candidate's value uses (computed once, not per candidate)
+    const next = sel.map((r) => { const v = nodeV(L.prefix + ":" + r.id), pq = S.minus(q, v, S.dot(q, v)); return { id: r.id, w: r.psi / n, v, q: pq, qn: S.norm(pq), vq: S.dot(v, pq) }; });
     for (const p of next) q = S.minus(q, p.v, p.w * p.w * S.dot(q, p.v));
     const taskOut = S.norm(q);
     const rowOf = new Map(rows.map((r) => [r.id, r]));

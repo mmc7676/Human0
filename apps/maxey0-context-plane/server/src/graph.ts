@@ -50,7 +50,7 @@ import { cos, vec, Vec } from "./sim";
 import { lensRoute, LAMBDA, LensLevel, DenseSignal } from "./lens";
 import { ddot } from "./dense";
 /** Default weight of the dense signal and the hybrid match threshold (see docs/ARCHITECTURE.md, dense calibration). */
-export const DENSE_DEFAULT = { beta: 0.5, min: 0.08 };
+export const DENSE_DEFAULT = { beta: 0.7, min: 0.25 };
 
 export class ToolError extends Error {}
 export const LEVELS = ["domain", "topic", "concept", "skill", "agent", "mcp"] as const;

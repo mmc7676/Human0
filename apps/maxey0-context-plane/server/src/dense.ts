@@ -50,8 +50,11 @@ export async function warmStep(env: DenseEnv, g: GraphData): Promise<{ ready: bo
   if (!env.AI || !env.DENSE) return { ready: false, chunks: 0, total: 0, embedded_now: 0 };
   const P = prefix(g.snapshot_digest), { keys, text } = nodeTexts(g), total = chunkCount(keys.length);
   if (await env.DENSE.get(P + "full", "arrayBuffer")) return { ready: true, chunks: total, total, embedded_now: 0 };
-  const have = new Set<string>(); let cursor: { prefix: string } = { prefix: P + "c" };
-  const lst = await env.DENSE.list(cursor); for (const k of lst.keys) have.add(k.name);
+  // which chunks exist: a progress bitmap written with each step (read-your-write in the same location), joined with a
+  // KV list (eventually consistent, so it can lag behind recent writes)
+  const have = new Set<string>();
+  const prog = await env.DENSE.get(P + "progress", "arrayBuffer"); if (prog) new Uint8Array(prog).forEach((x, i) => { if (x) have.add(P + "c" + i); });
+  const lst = await env.DENSE.list({ prefix: P + "c" }); for (const k of lst.keys) have.add(k.name);
   let now = 0;
   for (let i = 0; i < total && now < STEP; i++) {
     if (have.has(P + "c" + i)) continue;
@@ -59,6 +62,7 @@ export async function warmStep(env: DenseEnv, g: GraphData): Promise<{ ready: bo
     const buf = new Float32Array(vs.length * DIMS); vs.forEach((v, j) => buf.set(v, j * DIMS));
     await env.DENSE.put(P + "c" + i, buf.buffer); have.add(P + "c" + i); now++;
   }
+  if (now) { const bm = new Uint8Array(total); for (let i = 0; i < total; i++) bm[i] = have.has(P + "c" + i) ? 1 : 0; await env.DENSE.put(P + "progress", bm.buffer); }
   const done = [...Array(total).keys()].filter((i) => have.has(P + "c" + i)).length;
   if (done < total) return { ready: false, chunks: done, total, embedded_now: now };
   // assemble: centre on the mean node embedding, normalise each row; append the mean as the last row

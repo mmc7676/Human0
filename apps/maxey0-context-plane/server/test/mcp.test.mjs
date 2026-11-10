@@ -418,7 +418,7 @@ test("dense signal end to end through the Worker: /dense warms in steps, then ro
   let st; do { st = (await get("/dense", { method: "POST" })).body } while (!st.ready);
   assert.ok(st.total > 0 && (await get("/dense")).body.ready);
   const r = await get("/route", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ task: "Design a marketing email campaign, segment the customer list and measure attribution", mode: "lens" }) });
-  assert.equal(r.body.signal.dense, 0.5); assert.equal(r.body.signal.model, "@cf/baai/bge-m3"); assert.equal(r.body.lens.length, 5);
+  assert.equal(r.body.signal.dense, 0.7); assert.equal(r.body.signal.model, "@cf/baai/bge-m3"); assert.equal(r.body.lens.length, 5);
   const viaMcp = await (async () => { const body = { jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "route_task", arguments: { task: "price a call option", dense_weight: 0.3 } } };
     const res = await worker.fetch(new Request("https://x/mcp", { method: "POST", headers: { "content-type": "application/json", "mcp-protocol-version": "2025-11-25" }, body: JSON.stringify(body) }), denv, ctx); return (await res.json()).result.structuredContent })();
   assert.equal(viaMcp.signal.dense, 0.3); assert.ok(viaMcp.matched && typeof viaMcp.paths[0].score === "number");

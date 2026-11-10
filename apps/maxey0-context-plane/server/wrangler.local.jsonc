@@ -1,0 +1,9 @@
+{
+  // Local tests only, without Cloudflare credentials: no AI / KV binding, so routing is TF-IDF only.
+  // npx wrangler dev -c wrangler.local.jsonc --port 8794      (deploys always use wrangler.jsonc)
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maxey0-context-plane-mcp-local",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "vars": { "ALLOWED_ORIGINS": "https://claude.ai,https://claude.com" }
+}
