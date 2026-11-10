@@ -99,6 +99,21 @@ After each level the task loses the part the selected nodes explain. Each select
 
 Labels share the map's own words, so flat ranking is expected to win there; the lens returns at most three skills, which caps top-5. On the 24 held-out tasks the chosen lens matched flat on 21, was better on 2 (a French translation task reached French text translation; a data-pipeline task reached the pipeline builder) and different but not worse on 1. Task-driven λ was worse on 3. Two known flat failures (server logs routed to drone flight logs; the Krebs cycle to the cell cycle) were not fixed by the lens: the wrong topic wins at entry, which is a vocabulary limit, not an observation one. Signed opposition rarely appears among top candidates with word-count vectors, because they carry no negation. Flat stays the default.
 
+### Lens through agents and MCP servers, and drift
+
+Below the skill level the lens is structural: agent candidates are only the agents of the chosen skills, and MCP candidates are only the servers gated to the chosen agents. The same ψ chooses among them. λ for agents was calibrated the same way as the upper levels (task = a skill's description; hit = the routed skill's primary agent chosen first; 300 calibration skills, 300 held-out skills):
+
+| λ (agent) | calibration | held-out |
+|---|---|---|
+| 0.0 | 0.107 | — |
+| 0.5 | 0.453 | 0.403 |
+| 0.9 (chosen) | 0.570 | 0.463 |
+| 1.0 | 0.580 | 0.493 |
+
+λ = 1.0 scores slightly higher but ignores the task residual entirely; 0.9 keeps it. The MCP level has no ground truth and uses the agent value.
+
+Every chosen node records its **drift**: `flat` (cosine with the original task, no observer), `flat_rank` and `lens_rank` among the level's candidates, `drift = ψ − flat` (how much the path above raised or lowered its fit) and `a_obs` (its alignment with the observer). Every level records `task_in`, `task_out` and the share it `explained`. route_task (mode "lens") returns these as SCWs: `SCW-drift:<node>` per chosen node, `SCW-level:<level>` per level, and `SCW-path` around all levels. The values are exact in the TF-IDF space. The app adds where each node sits on its 3D donut seen from above (home) and from the observer (observed), the displacement between them and its length relative to the donut radius. That 3D part is a projection.
+
 ## The server
 
 `server/src/` — TypeScript on Cloudflare Workers, no runtime dependencies.

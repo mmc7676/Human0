@@ -47,7 +47,7 @@ export function scopeTo(g: GraphData, domain: string): GraphData {
 }
 
 import { cos, vec, Vec } from "./sim";
-import { lensRoute, LAMBDA } from "./lens";
+import { lensRoute, LAMBDA, LensLevel } from "./lens";
 
 export class ToolError extends Error {}
 export const LEVELS = ["domain", "topic", "concept", "skill", "agent", "mcp"] as const;
@@ -224,13 +224,39 @@ export class Graph {
     const r = lensRoute(String(a.task ?? ""), sim.idf, sim.vectors, [
       { level: "topic", prefix: "t", ids: this.g.topics.map((t) => t.id) },
       { level: "concept", prefix: "c", ids: this.g.concepts.map((c) => c.id) },
-      { level: "skill", prefix: "s", ids: this.g.skills.map((s) => s.id) }],
+      { level: "skill", prefix: "s", ids: this.g.skills.map((s) => s.id) },
+      { level: "agent", prefix: "a", ids: [], children: (sid) => (this.skill.get(sid)?.agents ?? []).map((x) => x.key) },
+      { level: "mcp", prefix: "m", ids: [], children: (ak) => this.gatesOf(ak) }],
       doms.length ? (id) => doms.includes(this.topic.get(id)!.domain) : undefined);
     const paths = r.skills.map((id) => { const sk = this.skill.get(id)!;
       return { ...this.path(sk.concept), skill: sk.id, label: sk.label, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) }; });
     return { task: a.task, mode: "lens", observer_start: doms.length ? { domains: doms } : "above the topic plane", lambda: LAMBDA,
       note: "observer-lens routing: each level is valued from the nodes selected above it (signed support, ranked by psi, selected only when psi > 0); candidates, not an authorization",
-      matched: paths.length > 0, paths, lens: r.chain, remaining_task: r.remaining_task };
+      matched: paths.length > 0, paths, lens: r.chain, agents: r.agents, mcp_servers: r.mcp, remaining_task: r.remaining_task,
+      drift: this.driftScw(String(a.task ?? ""), r.chain, r.remaining_task) };
+  }
+
+  /** MCP servers gated to an agent (agent -> MCP links), in a stable order. */
+  gatesOf(agentKey: string): string[] {
+    if (!this.gateIdx) { this.gateIdx = new Map(); for (const l of this.g.agent_mcp) { const x = this.gateIdx.get(l.agent) ?? []; x.push(l.mcp); this.gateIdx.set(l.agent, x); } }
+    return [...new Set(this.gateIdx.get(agentKey) ?? [])].sort();
+  }
+  private gateIdx?: Map<string, string[]>;
+
+  /** The drift record of a lens route as SCWs: one per selected node (its drift values), one per level (the task it
+   *  received, passed on and explained, and its nodes), and one around all levels (the whole path). Values are exact
+   *  in the TF-IDF space; field xy/z are where each node sits in the shared field seen from above. */
+  driftScw(task: string, chain: LensLevel[], remaining: number) {
+    const XY = this.g.field.xy, Z = this.g.field.z ?? {};
+    const levels = chain.map((l) => {
+      const nodes = l.selected.map((s) => { const k = l.level[0] === "m" ? "m:" + s.id : l.level[0] + ":" + s.id;
+        return { scw: "SCW-drift:" + k, node: k, label: this.labelOf(k.slice(0, 1), s.id), weight: s.weight, psi: s.psi, ...s.drift,
+          field: XY[k] ? [XY[k][0], XY[k][1], Z[k] ?? 0] : null }; });
+      return { scw: "SCW-level:" + l.level, level: l.level, lambda: l.lambda, candidates: l.candidates, task_in: l.task_in, task_out: l.task_out,
+        explained: l.explained, mean_drift: nodes.length ? Math.round(nodes.reduce((t, n) => t + n.drift, 0) / nodes.length * 1e4) / 1e4 : 0, nodes };
+    });
+    return { scw: "SCW-path", task, levels: levels.length, remaining_task: remaining,
+      total_drift: Math.round(levels.reduce((t, l) => t + l.nodes.reduce((u, n) => u + Math.abs(n.drift), 0), 0) * 1e4) / 1e4, chain: levels };
   }
 
   children(a: { level: string; parent_id?: string }) {

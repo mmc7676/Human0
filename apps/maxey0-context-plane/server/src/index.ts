@@ -15,7 +15,7 @@ import { Graph, GraphData, ToolError, scopeTo } from "./graph";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "6.2.0" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "6.3.0" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -84,7 +84,7 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ mcp_id: STR }, ["mcp_id"]), run: (g, a) => g.get_mcp_server(a as never) },
   { name: "search", title: "Search", description: "Keyword search over concepts and skills; each hit carries its domain/topic/concept path. Optional domain filter.",
     inputSchema: obj({ query: STR, limit: INT, domain: DOM, use_priority: PRIO }, ["query"]), run: (g, a) => g.search(a as never) },
-  { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP, by flat ranking (default) or by observer lens (mode: lens). Candidates, not an authorization.",
+  { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP, by flat ranking (default) or by observer lens (mode: lens: topic -> concept -> skill -> the chosen skills' agents -> their gated MCP servers, with a drift record per node, per level and around the path). Candidates, not an authorization.",
     inputSchema: obj({ task: STR, limit: INT, domain: DOM, use_priority: PRIO,
       mode: { type: "string", enum: ["flat", "lens"], description: "flat (default): rank every skill against the task. lens: choose topics, then read concepts and skills from the chosen nodes, with signed support and the full observer chain" },
       domains: { type: "array", items: { type: "string" }, description: "lens mode: start the observer at these domains (superposed when more than one)" } }, ["task"]), run: (g, a) => g.route_task(a as never) },

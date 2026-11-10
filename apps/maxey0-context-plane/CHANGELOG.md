@@ -1,5 +1,12 @@
 # Changelog
 
+## Server 6.3.0 · App 1.8
+- Observer lens continues below the skill: agents (children of the chosen skills) and MCP servers (gated to the chosen agents), chosen by the same ψ. λ agent = 0.9 (calibrated, held-out 0.463 primary-agent@1 vs 0.403 at 0.5); λ MCP = 0.9 (no ground truth).
+- Drift: every chosen node records flat score, flat rank, lens rank, drift = ψ − flat and alignment with the observer; every level records task in/out and the share explained. route_task (lens) returns `agents`, `mcp_servers` and `drift`: SCW-drift per node, SCW-level per level, SCW-path around all levels.
+- App: the lens readout shows drift and explained task per level; **Drift arrows** (field view) draw a ghost where each chosen node sits seen from above and an arrow to where the observer moved it, turning with the graph; **Export drift SCW** downloads the path record with home/observed 3D places and displacements.
+- App = server checked value for value (ids, weights, ψ, drift, ranks, task norms) on 15 tasks through all five levels.
+- Domain labels are now drawn (cpDrawDomains existed but was never called).
+
 ## App 1.7
 - Node size follows density: each level's node radius is 0.3 x the mean spacing on its donut (donut area / visible node count, times zoom), between 1.4 and 13 px. Fewer visible nodes (an isolated path, a filter) give bigger nodes.
 - Embedding field: each level is framed on its own. Field coordinates have no meaning by themselves, so a level is centred on its own centroid and scaled by one factor (x, y and depth together) until its farthest node reaches the outer rim. Directions between a level's nodes and the order of their distances are kept; the hole adds a radial stretch near the centre.

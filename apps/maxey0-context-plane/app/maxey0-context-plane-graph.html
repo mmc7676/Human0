@@ -251,37 +251,49 @@ window.__cpLoad = async function () {
   const nrm = a => Math.sqrt(dotu(a, a));
   const unitv = a => { const n = nrm(a); if (!n) return a; const o = {}; for (const w in a) o[w] = a[w] / n; return o };
   const minus = (a, b, k) => { const o = { ...a }; for (const w in b) o[w] = (o[w] ?? 0) - k * b[w]; return o };
-  const LAMBDA = { topic: 0, concept: 0.5, skill: 0.3 }, BEAM = 3, KEEP = 0.6, DAMP = 0.1, r4 = x => Math.round(x * 1e4) / 1e4;
-  const LEVELS = [['topic', 't', g.topics.map(t => t.id)], ['concept', 'c', g.concepts.map(c => c.id)], ['skill', 's', g.skills.map(s => s.id)]];
+  const LAMBDA = { topic: 0, concept: 0.5, skill: 0.3, agent: 0.9, mcp: 0.9 }, BEAM = 3, KEEP = 0.6, DAMP = 0.1, r4 = x => Math.round(x * 1e4) / 1e4;
+  const skAg = Object.fromEntries(g.skills.map(s => [s.id, s.agents.map(a => a.key)])), agM = {};
+  for (const l of g.agent_mcp) (agM[l.agent] = agM[l.agent] || new Set()).add(l.mcp);
+  // [level, server prefix, app key of an id, ids (top levels), children of a selected parent (structural levels)]
+  const LEVELS = [['topic', 't', id => 't:' + id, g.topics.map(t => t.id)], ['concept', 'c', id => 'c:' + id, g.concepts.map(c => c.id)], ['skill', 's', id => 's:' + id, g.skills.map(s => s.id)],
+    ['agent', 'a', id => 'a:' + id, null, sid => skAg[sid] || []], ['mcp', 'm', id => midx[id], null, ak => [...(agM[ak] || [])].sort()]];
   const tDom = Object.fromEntries(g.topics.map(t => [t.id, t.domain]));
   /** lens(text, domains) -> {chain, skills, remaining_task}, the same chain the server's route_task returns with mode "lens". */
   const lens = (text, domains) => {
     const doms = domains || [], q0 = unitv(vec(text)), chain = [];
-    if (!Object.keys(q0).length) return { chain, skills: [], remaining_task: 0 };
+    const done = () => { const pick = lv => { const l = chain.find(x => x.level === lv); return l ? l.selected.map(s => s.id) : [] };
+      return { chain, skills: chain.some(l => l.level === 'skill') ? pick('skill') : [], agents: pick('agent'), mcp: pick('mcp'), remaining_task: r4(nrm(q)) } };
     let q = q0, state = null;
-    for (const [level, pre, ids] of LEVELS) {
+    if (!Object.keys(q0).length) return done();
+    for (const [level, pre, key, ids0, kids] of LEVELS) {
       const lam = state && state.length > 1 ? LAMBDA[level] * (1 - DAMP * (state.length - 1)) : LAMBDA[level];
+      let ids = ids0;
+      if (state && kids) { const seen = new Set(); ids = []; for (const p of state) for (const c of kids(p.id)) if (!seen.has(c)) { seen.add(c); ids.push(c) } }
       const rows = [];
       for (const id of ids) {
         if (!state && doms.length && !doms.includes(tDom[id])) continue;
-        const v = U[pre + ':' + id] || {}, flat = dotu(v, q0);
-        if (!state) { rows.push({ id, psi: dotu(v, q), flat, parts: {} }); continue }
-        let psi = 0; const parts = {};
+        const v = U[key(id)] || {}, flat = dotu(v, q0);
+        if (!state) { rows.push({ id, psi: dotu(v, q), flat, aobs: 0, parts: {} }); continue }
+        let psi = 0, aobs = 0; const parts = {};
         for (const p of state) { const a = dotu(v, p.v), rn = Math.sqrt(Math.max(1 - a * a, 1e-12)), qn = nrm(p.q);
-          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * dotu(p.v, p.q)) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi }
-        rows.push({ id, psi, flat, parts }) }
+          const sv = qn > 1e-9 ? (dotu(v, p.q) - a * dotu(p.v, p.q)) / (rn * qn) : 0; const phi = p.w * (lam * a + (1 - lam) * sv); psi += phi; parts[p.id] = phi; aobs += p.w * a }
+        rows.push({ id, psi, flat, aobs, parts }) }
       rows.sort((x, y) => y.psi - x.psi || (x.id < y.id ? -1 : 1));
       if (!rows.length || rows[0].psi <= 0) break;
+      const flatOrder = [...rows].sort((x, y) => y.flat - x.flat || (x.id < y.id ? -1 : 1)), flatRank = new Map(flatOrder.map((r, i) => [r.id, i + 1]));
       const best = rows[0].psi, sel = rows.slice(0, BEAM).filter(r => r.psi > 0 && r.psi >= KEEP * best);
-      const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0));
-      const next = sel.map(r => { const v = U[pre + ':' + r.id]; return { id: r.id, w: r.psi / n, v, q: minus(q, v, dotu(q, v)) } });
+      const n = Math.sqrt(sel.reduce((s, r) => s + r.psi * r.psi, 0)), taskIn = nrm(q);
+      const next = sel.map(r => { const v = U[key(r.id)]; return { id: r.id, w: r.psi / n, v, q: minus(q, v, dotu(q, v)) } });
       for (const p of next) q = minus(q, p.v, p.w * p.w * dotu(q, p.v));
-      const suppressed = state ? [...rows].sort((x, y) => y.flat - x.flat).slice(0, 15).filter(r => r.psi <= 0.5 * best && Object.values(r.parts).some(x => x < 0)).slice(0, 3)
+      const taskOut = nrm(q);
+      const suppressed = state ? flatOrder.slice(0, 15).filter(r => r.psi <= 0.5 * best && Object.values(r.parts).some(x => x < 0)).slice(0, 3)
         .map(r => ({ id: r.id, task_match: r4(r.flat), psi: r4(r.psi), opposed_by: Object.keys(r.parts).filter(k => r.parts[k] < 0) })) : [];
-      chain.push({ level, lambda: r4(lam), selected: sel.map((r, i) => ({ id: r.id, app: pre + ':' + r.id, weight: r4(next[i].w), psi: r4(r.psi),
-        contributions: Object.fromEntries(Object.entries(r.parts).map(([k, x]) => [k, r4(x)])) })), suppressed });
+      chain.push({ level, lambda: r4(lam), candidates: rows.length, task_in: r4(taskIn), task_out: r4(taskOut), explained: taskIn > 1e-9 ? r4(1 - taskOut / taskIn) : 0,
+        selected: sel.map((r, i) => ({ id: r.id, app: key(r.id), weight: r4(next[i].w), psi: r4(r.psi),
+          contributions: Object.fromEntries(Object.entries(r.parts).map(([k, x]) => [k, r4(x)])),
+          drift: { flat: r4(r.flat), flat_rank: flatRank.get(r.id), lens_rank: i + 1, drift: r4(r.psi - r.flat), a_obs: r4(r.aobs) } })), suppressed });
       state = next }
-    return { chain, skills: chain.length === LEVELS.length ? chain[chain.length - 1].selected.map(s => s.id) : [], remaining_task: r4(nrm(q)) } };
+    return done() };
   /** lensLayout(state) -> {appId: [x, y]} for every level below the observer. The observer's selected nodes sit at the
    *  centre of the next plane; a node's distance from the centre is how little of it the observer explains (1 - sqrt(a)),
    *  its direction is its direction in the field as seen from the observer. state: {domain|topic|concept|skill: [[appId, weight]]}. */
@@ -431,7 +443,7 @@ const wmax=Math.max(1e-6,...G.map(g=>g.w*g.w)),BG='#0b1a2a',str={},RW={primary:1
   if(!dim&&v03IsUp(n)){cx.beginPath();cx.arc(o.sx,o.sy,rad+2.5,0,6.2832);cx.strokeStyle=nodeCol(n);cx.lineWidth=1.2;cx.stroke()}
   if(!dim&&(msel.has(n.id)||taskSet.has(n.id))){cx.beginPath();cx.arc(o.sx,o.sy,rad+(msel.has(n.id)?6:4.5),0,6.2832);cx.strokeStyle=msel.has(n.id)?'#ffffff':'#ffffffaa';cx.setLineDash(msel.has(n.id)?[3,2]:[]);cx.lineWidth=1.4;cx.stroke();cx.setLineDash([])}
   if(n.kind==='agent'&&!dim&&(GC[n.id]||0)>=2){cx.beginPath();cx.arc(o.sx,o.sy,rad+3,0,6.2832);cx.strokeStyle=COL.mcp;cx.lineWidth=1.2;cx.stroke()}const show=!dim&&(lbl[n.kind]||(!strict&&!lblX[n.kind]&&(sel===n.id||hov===n.id||(rel&&rel.has(n.id)&&!(sel&&sel.startsWith('d:')&&n.kind!=='topic'&&n.kind!=='domain')&&(msel.size<2||n.kind!=='skill'||msel.has(n.id)||taskSet.has(n.id))))));if(show){cx.font=(n.kind==='topic'?'bold 12px':'11px')+' system-ui';cx.fillStyle='#e6f0fb';cx.textAlign='start';if(cpFanPos[n.id]&&n.kind!=='topic'){cx.save();cx.translate(o.sx,o.sy);cx.rotate(.62);cx.fillText(nodeLabel(n).slice(0,36),rad+3,4);cx.restore()}else cx.fillText(nodeLabel(n).slice(0,36),o.sx+rad+3,o.sy+4)}}
- cx.globalAlpha=1}
+ cx.globalAlpha=1;cpDrawDrift(w,h);cpDrawDomains(P)}
 function pick(x,y){let b=null,dd=14;for(const o of pts){if(!match(o.n))continue;const d=Math.hypot(o.sx-x,o.sy-y);if(d<dd){dd=d;b=o.n}}return b}
 cv.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect(),n=cpDrag?pick(e.clientX-r.left,e.clientY-r.top):null;drag={x:e.clientX,y:e.clientY,m:false,node:(n&&e.button===0&&!e.altKey)?n.id:null,pan:e.button===2||e.button===1||e.altKey};cv.setPointerCapture(e.pointerId)});
 cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();if(!drag){const n=pick(e.clientX-r.left,e.clientY-r.top),id=n?n.id:null;if(id!==hov){hov=id;draw()}return}
@@ -589,8 +601,8 @@ const HARNESSES=['Claude Agent SDK','OpenAI Agents SDK','LangChain / LangGraph',
 let llmCands=[['claude-opus-5-5','Claude Opus 5.5',''],['claude-sonnet-5-5','Claude Sonnet 5.5','Smart, efficient model for everyday use'],['claude-haiku-5-5','Claude Haiku 5.5',''],['claude-fable-5-1','Claude Fable 5.1','']];
 const fnv=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16).padStart(8,'0')};
 function submitTask(text){text=(text||$('taskIn').value).trim();if(!text)return null;const tv=embed(text).v;
- const lensMode=$('taskMode')&&$('taskMode').value==='lens',doms=V3.bf.domain?[V3.bf.domain]:[],LR=lensMode?__CP.lens(text,doms):null;
- const sk=lensMode?LR.chain.length===3?LR.chain[2].selected.map(x=>[x.app,x.psi]):[]:__CP.route(text,5);
+ const lensMode=$('taskMode')&&$('taskMode').value==='lens',doms=V3.bf.domain?[V3.bf.domain]:[],LR=lensMode?__CP.lens(text,doms):null,LS=LR&&LR.chain.find(l=>l.level==='skill');
+ const sk=lensMode?LS?LS.selected.map(x=>[x.app,x.psi]):[]:__CP.route(text,5);
  const sc={};sk.forEach(([sid,s])=>E.filter(e=>e.kind==='agent'&&e.a===sid).forEach(e=>{sc[e.b]=(sc[e.b]||0)+s*({primary:1,checker:.6,support:.4}[e.role]||.4)}));
  const ags=Object.entries(sc).sort((a,b)=>b[1]-a[1]).slice(0,5);dec={};resetJev();
  const ok=lensMode?!!sk.length:!!sk.length&&sk[0][1]>=__CP.graph.similarity.thresholds.search_min;task={id:'run-'+(++runSeq),text,ts:new Date().toISOString(),tv,skills:sk,agents:ags,matched:ok,lens:LR,doms:lensMode?doms:[]};cpLensOut();
@@ -1091,6 +1103,7 @@ function cpLvStats(){if(cpLv)return cpLv;cpLv={};const acc={};
  for(const k in acc){const P=acc[k],m=[0,1,2].map(j=>P.reduce((s,p)=>s+(p[j]||0),0)/P.length);
   let R=0;for(const p of P)R=Math.max(R,Math.hypot(p[0]-m[0],p[1]-m[1]));
   cpLv[k]={m,R:R||1}}return cpLv}
+function cpHomeXY(n){const f=__CP.field[n.id];if(!f)return{x:n.x,y:n.y,z:0};const was=cpLensPos;cpLensPos=null;const on=cpField;cpField=true;const q=cpFieldXY(n);cpField=on;cpLensPos=was;return q}
 function cpFieldXY(n){if(!cpField)return null;const L=cpLensPos&&cpLensPos[n.id],f=__CP.field[n.id];if(!L&&!f)return null;let u,v,w=0;
  const st=f&&cpLvStats()[n.kind];
  if(L){u=L[0];v=L[1];w=st?((f[2]||0)-st.m[2])/st.R:0}   // the observer's view: already centred on the observer
@@ -1109,14 +1122,47 @@ function cpDrawDomains(P){if(!cpDomOn)return;const acc={},sel=(typeof V3!=='unde
  for(const id in P){const n=N[id];if(!n||n.kind!=='topic')continue;const d=__CP.tDom[id.slice(2)];if(!d)continue;(acc[d]=acc[d]||[]).push(P[id])}
  cx.save();cx.textAlign='center';for(const d in acc){if(!cpField&&d!==sel)continue;const ps=acc[d],x=ps.reduce((s,p)=>s+p.sx,0)/ps.length,y=Math.min(...ps.map(p=>p.sy))-16;
   cx.font=(d===sel?'bold 12px':'600 10px')+' system-ui';cx.fillStyle=cpDomCol(d)+(sel&&d!==sel?'66':'ee');cx.fillText(((__CP.domains.find(x=>x.id===d)||{}).label||d).toUpperCase(),x,y)}cx.restore()}
-// the task panel's readout of a lens route: per level, what was chosen, with what weight and signed support, and what was ruled out
+// the task panel's readout of a lens route: per level, what was chosen, with what weight and signed support, how far the
+// observer moved each chosen node from where it stands seen from above (drift), and what was ruled out
+const CP_LVN={topic:'Topics',concept:'Concepts',skill:'Skills',agent:'Agents',mcp:'MCP servers'};
+let cpDriftOn=true;
 function cpLensOut(){const el=$('lensOut');if(!el)return;const L=typeof task!=='undefined'&&task&&task.lens;if(!L){el.hidden=true;el.textContent='';return}
- el.hidden=false;el.textContent='';const nm=a=>N[a]?N[a].label:a;
+ el.hidden=false;el.textContent='';const nm=a=>N[a]?N[a].label:a,sg=x=>(x>=0?'+':'')+x;
  if(!L.chain.length){el.append(hh('div','','Observer lens: no topic shares words with this task.'));return}
- el.append(hh('div','','Observer lens'+(task.doms&&task.doms.length?' from '+task.doms.map(d=>(__CP.domains.find(x=>x.id===d)||{}).label||d).join(' + '):' from above the graph')+' · remaining task '+L.remaining_task));
- for(const l of L.chain){const row=hh('div','');row.append(hh('b','',l.level[0].toUpperCase()+l.level.slice(1)+'s (λ '+l.lambda+'): '));
-  row.append(document.createTextNode(l.selected.map(x=>nm(x.app)+' w '+x.weight+' ψ '+x.psi+(Object.keys(x.contributions).length>1?' ['+Object.entries(x.contributions).map(([k,v])=>(v>=0?'+':'')+v).join(' ')+']':'')).join(' · ')));
+ const head=hh('div','','Observer lens'+(task.doms&&task.doms.length?' from '+task.doms.map(d=>(__CP.domains.find(x=>x.id===d)||{}).label||d).join(' + '):' from above the graph')+' · remaining task '+L.remaining_task+' · ');
+ const db=hh('button','','Drift arrows: '+(cpDriftOn?'on':'off'),{type:'button',id:'cpDriftBtn',title:'With Embedding field on: a ghost at each chosen node\'s place seen from above and an arrow to where the observer moved it'});
+ db.onclick=()=>{cpDriftOn=!cpDriftOn;db.textContent='Drift arrows: '+(cpDriftOn?'on':'off');draw()};
+ const xb=hh('button','','Export drift SCW',{type:'button',id:'cpDriftExp',title:'Download the path drift record: one SCW per chosen node, one per level, one around the whole path'});
+ xb.onclick=()=>{const blob=new Blob([JSON.stringify(cpDriftScw(),null,1)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=task.id+'-drift-scw.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
+ head.append(db,document.createTextNode(' '),xb);el.append(head);
+ for(const l of L.chain){const row=hh('div','');row.append(hh('b','',(CP_LVN[l.level]||l.level)+' (λ '+l.lambda+'): '));
+  row.append(document.createTextNode(l.selected.map(x=>nm(x.app)+' w '+x.weight+' ψ '+x.psi+(Object.keys(x.contributions).length>1?' ['+Object.entries(x.contributions).map(([k,v])=>sg(v)).join(' ')+']':'')
+   +(x.drift?' · drift '+sg(x.drift.drift)+' (rank #'+x.drift.flat_rank+' seen from above → #'+x.drift.lens_rank+')':'')).join(' · ')));
+  row.append(document.createTextNode(' — task in '+l.task_in+' → out '+l.task_out+' ('+Math.round(l.explained*100)+'% explained, '+l.candidates+' candidates)'));
   if(l.suppressed.length)row.append(document.createTextNode(' — ruled out: '+l.suppressed.map(x=>x.id+' (opposed by '+x.opposed_by.join(', ')+')').join('; ')));el.append(row)}}
+// ---- drift SCWs: the record of how a lens route moved every chosen node, per node, per level and around all levels.
+// Embedding values (flat, psi, drift, ranks, task norms) are exact in the full TF-IDF space. home/observed/displacement are
+// the 3D places on the level's donut (world units) seen from above and from the observer: a projection of those values.
+function cpDriftScw(){const L=typeof task!=='undefined'&&task&&task.lens;if(!L)return null;const O=cpOut(),r4=x=>Math.round(x*1e4)/1e4,v3=p=>[r4(p.x),r4(p.y),r4(p.z||0)];
+ const was=cpField;cpField=true;cpLensSync();
+ const levels=L.chain.map(l=>{const nodes=l.selected.map(x=>{const n=N[x.app];const h=n?cpHomeXY(n):null,o=n?cpPos(n):null;
+   const d=h&&o?{x:o.x-h.x,y:o.y-h.y,z:(o.z||0)-(h.z||0)}:null;
+   return{scw:'SCW-drift:'+x.app,node:x.app,label:n?n.label:x.id,level:l.level,weight:x.weight,psi:x.psi,...(x.drift||{}),contributions:x.contributions,
+    home:h?v3(h):null,observed:o?v3(o):null,displacement:d?v3(d):null,distance:d?r4(Math.hypot(d.x,d.y,d.z)/O):null}});
+  return{scw:'SCW-level:'+l.level,level:l.level,lambda:l.lambda,candidates:l.candidates,task_in:l.task_in,task_out:l.task_out,explained:l.explained,
+   mean_drift:nodes.length?r4(nodes.reduce((t,n)=>t+(n.drift||0),0)/nodes.length):0,mean_distance:nodes.length?r4(nodes.reduce((t,n)=>t+(n.distance||0),0)/nodes.length):0,nodes}});
+ cpField=was;cpLensSync();
+ return{scw:'SCW-path',run:task.id,task:task.text,observer_start:task.doms&&task.doms.length?{domains:task.doms}:'above the topic plane',digest:__CP.digest,
+  units:{embedding:'cosine in the TF-IDF space (exact)',home_observed:'world units on each level donut, 3D field projection; distance = |displacement| / outer radius'},
+  levels:levels.length,remaining_task:L.remaining_task,total_drift:r4(levels.reduce((t,l)=>t+l.nodes.reduce((u,n)=>u+Math.abs(n.drift||0),0),0)),
+  total_distance:r4(levels.reduce((t,l)=>t+l.nodes.reduce((u,n)=>u+(n.distance||0),0),0)),chain:levels}}
+// drift arrows on the graph: a ghost ring where each chosen node sits seen from above, an arrow to where the observer put it
+function cpDrawDrift(w,h){const L=typeof task!=='undefined'&&task&&task.lens;if(!cpDriftOn||!cpField||!L||!cpLensPos)return;cx.save();
+ for(const l of L.chain)for(const x of l.selected){const n=N[x.app];if(!n||!vis[n.kind])continue;const a=project(n,w,h,cpHomeXY(n)),b=project(n,w,h),c=COL[n.kind]||'#fff';
+  cx.setLineDash([3,3]);cx.strokeStyle='#ffffffcc';cx.lineWidth=1.6;cx.beginPath();cx.arc(a.sx,a.sy,6,0,6.2832);cx.stroke();cx.setLineDash([]);cx.strokeStyle=c;cx.lineWidth=2.2;cx.shadowColor=c;cx.shadowBlur=6;
+  const dx=b.sx-a.sx,dy=b.sy-a.sy,d=Math.hypot(dx,dy);if(d<3)continue;cx.beginPath();cx.moveTo(a.sx,a.sy);cx.lineTo(b.sx,b.sy);cx.stroke();
+  const ux=dx/d,uy=dy/d;cx.beginPath();cx.moveTo(b.sx,b.sy);cx.lineTo(b.sx-9*ux+4*uy,b.sy-9*uy-4*ux);cx.lineTo(b.sx-9*ux-4*uy,b.sy-9*uy+4*ux);cx.closePath();cx.fillStyle=c;cx.fill()}
+ cx.restore()}
 function cpPos(n){const f=cpFanPos[n.id],b=f||cpFieldXY(n)||n,o=cpOff[n.id]||{x:0,y:0,z:0};let x=b.x+o.x,y=b.y+o.y,z=(f?0:(b===n?0:b.z||0))+(o.z||0);
  // every node, dragged or not, stays inside its level's donut: radius in [inner, outer], height within the thickness
  const r=Math.hypot(x,y),lo=cpIn(),hi=cpOut(),T=cpT();if(r>hi){x*=hi/r;y*=hi/r}else if(r<lo){if(r>1e-9){x*=lo/r;y*=lo/r}else{x=lo;y=0}}
@@ -1252,7 +1298,7 @@ setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
 window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},drift:()=>cpDriftScw(),home:id=>cpHomeXY(N[id]),nodeR:k=>cpNodeR(k,1),cnt:()=>({...cpCnt}),node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
 // ---------- init + test hooks
 function v7init(){csApply();

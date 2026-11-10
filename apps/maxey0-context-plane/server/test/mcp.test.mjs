@@ -357,7 +357,7 @@ test("observer-lens routing: same chain as the reference implementation; superpo
   for (const f of fx) {
     const r = (await call("route_task", { task: f.task, mode: "lens" })).structuredContent;
     assert.equal(r.mode, "lens");
-    assert.deepEqual(r.lens.map((l) => l.selected.map((s) => s.id)), f.levels, f.task);
+    assert.deepEqual(r.lens.slice(0, 3).map((l) => l.selected.map((s) => s.id)), f.levels, f.task);
     assert.deepEqual(r.paths.map((p) => p.skill), f.skills, f.task);
     for (const l of r.lens) { assert.ok(Math.abs(l.selected.reduce((s, x) => s + x.weight * x.weight, 0) - 1) < 2e-3, "weights " + JSON.stringify(l.selected)); assert.ok(l.selected.every((x) => x.psi > 0), "psi"); }
   }
@@ -367,6 +367,25 @@ test("observer-lens routing: same chain as the reference implementation; superpo
   const topicsOf = Object.fromEntries((await call("list_topics", {})).structuredContent.topics.map((t) => [t.id, t.domain]));
   assert.ok(d.lens[0].selected.every((s) => topicsOf[s.id] === "business-finance"), "observer starts in the chosen domain");
   assert.equal((await call("route_task", { task: "x y", mode: "nope" })).isError, true);
+});
+
+test("lens continues through agents and MCP servers; drift is recorded per node, per level and around the path", async () => {
+  const r = (await call("route_task", { task: "Work with a MCP architect to build a concept plane. then find a marketing exec to write the logic and domain expertise of our marketing bot.", mode: "lens" })).structuredContent;
+  assert.deepEqual(r.lens.map((l) => l.level), ["topic", "concept", "skill", "agent", "mcp"]);
+  const skillsSel = r.lens[2].selected.map((s) => s.id), agentSel = r.lens[3].selected.map((s) => s.id);
+  const kids = new Set(); for (const sid of skillsSel) for (const a of (await call("get_skill", { skill_id: sid })).structuredContent.skill.agents) kids.add(a.key);
+  assert.ok(agentSel.every((a) => kids.has(a)), "agents are children of the chosen skills");
+  assert.equal(r.lens[3].candidates, kids.size, "agent candidates = the chosen skills' agents");
+  const gates = new Set(); for (const a of agentSel) for (const m of (await call("get_agent", { agent_key: a })).structuredContent.mcp_links) gates.add(m.mcp);
+  assert.ok(r.lens[4].selected.every((m) => gates.has(m.id)), "MCP servers are gated to the chosen agents");
+  assert.deepEqual(r.agents, agentSel); assert.deepEqual(r.mcp_servers, r.lens[4].selected.map((s) => s.id));
+  for (const l of r.lens) {
+    assert.ok(l.task_out <= l.task_in + 1e-4 && l.explained >= 0 && l.explained <= 1, "task norms " + l.level);
+    for (const s of l.selected) { const d = s.drift; assert.ok(Math.abs(d.drift - (s.psi - d.flat)) < 2e-4 && d.lens_rank >= 1 && d.flat_rank >= 1, "drift " + JSON.stringify(d)); }
+  }
+  const D = r.drift; assert.equal(D.scw, "SCW-path"); assert.equal(D.levels, 5); assert.equal(D.chain[3].scw, "SCW-level:agent");
+  assert.ok(D.chain.every((l) => l.nodes.every((n) => n.scw.startsWith("SCW-drift:") && Array.isArray(n.field) && n.field.length === 3)), "every node has a drift SCW and a 3D field place");
+  assert.ok(Math.abs(D.total_drift - D.chain.reduce((t, l) => t + l.nodes.reduce((u, n) => u + Math.abs(n.drift), 0), 0)) < 1e-3);
 });
 
 test("open_context_plane_graph passes domain, mode and field to the app; rejects unknown values", async () => {

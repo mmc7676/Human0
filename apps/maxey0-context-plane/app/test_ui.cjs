@@ -92,7 +92,7 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
   // 1e. observer lens in the app: the same chain as the server's route_task mode "lens" (shared fixture)
   {
     const fx = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../server/test/lens.fixture.json'), 'utf8'));
-    const got = await p.evaluate((fx) => fx.map(f => { const r = window.__cpv.lens(f.task); return { levels: r.chain.map(l => l.selected.map(s => s.id)), skills: r.skills } }), fx);
+    const got = await p.evaluate((fx) => fx.map(f => { const r = window.__cpv.lens(f.task); return { levels: r.chain.slice(0, 3).map(l => l.selected.map(s => s.id)), skills: r.skills } }), fx);
     const same = fx.every((f, i) => JSON.stringify(f.levels) === JSON.stringify(got[i].levels) && JSON.stringify(f.skills) === JSON.stringify(got[i].skills));
     ok(same, "app lens = server lens on " + fx.length + " tasks");
     // a lens route from the task panel: chain highlighted, readout shown, observer moves into the graph
@@ -196,6 +196,32 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(r.sk < r.tp, "denser level draws smaller nodes: skill " + r.sk.toFixed(2) + " < topic " + r.tp.toFixed(2));
     ok(r.maxR > 0.95 * r.O, "skill level framed to reach its donut's outer rim: " + r.maxR.toFixed(1) + " of " + r.O.toFixed(1));
     ok(r.spread < 0.5 * r.I, "skill level centred on its own centroid (mean offset " + r.spread.toFixed(1) + ")");
+  }
+
+  // 1j. lens through agents and MCP servers + drift SCWs: app = live server, value for value
+  {
+    const mcp = async (name, args) => { const body = { jsonrpc: "2.0", id: 1, method: "tools/call", params: { name, arguments: args } };
+      const r = await fetch(API + "/mcp", { method: "POST", headers: { "content-type": "application/json", accept: "application/json, text/event-stream" }, body: JSON.stringify(body) });
+      const t = await r.text(), j = JSON.parse(t.startsWith("{") ? t : t.split("\n").find(l => l.startsWith("data:")).slice(5)); return j.result.structuredContent };
+    const TASK = "Work with a MCP architect to build a concept plane. then find a marketing exec to write the logic and domain expertise of our marketing bot.";
+    const fx = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../server/test/lens.fixture.json'), 'utf8'));
+    let same = 0, n = 0;
+    for (const task of [TASK, ...fx.map(f => f.task)]) { n++;
+      const sv = await mcp("route_task", { task, mode: "lens" });
+      const ap = await p.evaluate(t => window.__cpv.lens(t), task);
+      const pick = c => c.map(l => [l.level, l.candidates, l.task_in, l.task_out, l.selected.map(s => [s.id, s.weight, s.psi, s.drift.flat, s.drift.flat_rank, s.drift.lens_rank, s.drift.drift, s.drift.a_obs])]);
+      if (JSON.stringify(pick(sv.lens)) === JSON.stringify(pick(ap.chain))) same++; else console.log("lens mismatch", task.slice(0, 40)) }
+    ok(same === n, "app lens = server lens through agents and MCP servers, with drift, on " + n + " tasks");
+    const r = await p.evaluate(t => { const $ = id => document.getElementById(id), v = window.__cpv;
+      $('taskMode').value = 'lens'; $('taskIn').value = t; $('taskGo').click(); if (!v.field().on) $('cpFieldBtn').click();
+      const D = v.drift(), txt = $('lensOut').textContent, btns = !!$('cpDriftBtn') && !!$('cpDriftExp');
+      const moved = D.chain.slice(1).flatMap(l => l.nodes).filter(x => x.distance > 0.01).length;
+      const consistent = D.chain.every(l => l.nodes.every(x => { const d = x.displacement, h = x.home, o = x.observed; return Math.abs(o[0] - h[0] - d[0]) < 1e-3 && Math.abs(o[1] - h[1] - d[1]) < 1e-3 && Math.abs(o[2] - h[2] - d[2]) < 1e-3 }));
+      $('taskClr').click(); $('cpFieldBtn').click(); $('taskMode').value = 'flat';
+      return { levels: D.chain.map(l => l.level), scw: D.scw, nodes: D.chain.map(l => l.nodes.length), moved, consistent, txt: /Agents \(λ/.test(txt) && /MCP servers \(λ/.test(txt) && /drift [+-]/.test(txt) && /% explained/.test(txt), btns } }, TASK);
+    ok(r.scw === "SCW-path" && r.levels.join() === "topic,concept,skill,agent,mcp", "drift SCW around all five levels: " + JSON.stringify(r.nodes));
+    ok(r.moved > 0 && r.consistent, "observed - home = displacement for every node; " + r.moved + " nodes moved by the observer");
+    ok(r.txt && r.btns, "lens readout shows drift per node, explained task per level, drift arrows and export");
   }
 
   // 2. gates = the server's agent->MCP links, exactly

@@ -402,3 +402,9 @@ Install it from the plugin directory when listed, or from this repository (see t
 ## Part 17 — App 1.7: node size and per-level framing
 - Node size depends on how many nodes a level shows: a crowded level draws small nodes and a sparse one draws large nodes, so the gaps between nodes stay visible.
 - With **Embedding field** on, each level fills its own donut: a node's place has no meaning by itself; what matters is its direction and distance to the other nodes on the same level.
+
+## Part 18 — App 1.8: the lens down to MCP servers, and drift
+1. Set the router to **Observer lens**, type a task, press Route.
+2. The readout lists five levels: Topics, Concepts, Skills, Agents, MCP servers. For each chosen node: weight w, score ψ, **drift** (ψ minus its score seen from above: how much the path above moved it) and its rank seen from above → its rank through the lens. Each level ends with the task it received and passed on and the share it explained.
+3. Turn on **Embedding field**. With **Drift arrows: on**, each chosen node has a dashed ghost where it sits seen from above and an arrow to where the observer placed it. Spin and tilt the graph; the arrows turn with it.
+4. **Export drift SCW** downloads `run-N-drift-scw.json`: one SCW per chosen node, one per level, one around the whole path, with exact embedding values and the 3D home/observed places.
