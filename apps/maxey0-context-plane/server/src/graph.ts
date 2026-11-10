@@ -20,7 +20,7 @@ export interface GraphData {
   topic_priority: { source: string; use: string; default: number };
   field: Field;
 }
-export interface Field { method: string; dims: number; levels: string[]; xy: Record<string, [number, number]> }
+export interface Field { method: string; dims: number; levels: string[]; xy: Record<string, [number, number]>; z?: Record<string, number>; variance_share?: number[] }
 
 /** The graph restricted to one domain: topics, concepts and skills of that domain, the
  *  agents serving those skills, their MCP links, the MCP servers those topics list, and
@@ -43,7 +43,7 @@ export function scopeTo(g: GraphData, domain: string): GraphData {
     related: g.related.filter((r) => C.has(r.a) && C.has(r.b)),
     lexicon: Object.fromEntries(Object.entries(g.lexicon).filter(([t]) => T.has(t))),
     similarity: { ...g.similarity, vectors: Object.fromEntries(Object.entries(g.similarity.vectors).filter(([k]) => keep.has(k))) },
-    field: { ...g.field, xy: Object.fromEntries(Object.entries(g.field.xy).filter(([k]) => keep.has(k))) } };
+    field: { ...g.field, xy: Object.fromEntries(Object.entries(g.field.xy).filter(([k]) => keep.has(k))), z: Object.fromEntries(Object.entries(g.field.z || {}).filter(([k]) => keep.has(k))) } };
 }
 
 import { cos, vec, Vec } from "./sim";
@@ -279,27 +279,27 @@ export class Graph {
     const NAME: Record<string, string> = { d: "domain", t: "topic", c: "concept", s: "skill", a: "agent", m: "mcp" };
     if (a.level !== undefined && !(a.level in LV)) throw new ToolError(`level must be one of ${Object.keys(LV).join(", ")}.`);
     if (!a.node_id === !a.text) throw new ToolError("give exactly one of node_id or text.");
-    const V = this.g.similarity.vectors, XY = this.g.field.xy;
+    const V = this.g.similarity.vectors, XY = this.g.field.xy, ZZ = this.g.field.z ?? {};
     const src = a.node_id ? this.fieldKey(a.node_id) : null;
     const q = src ? V[src] : vec(String(a.text), this.g.similarity.idf, false);
     if (!q || !Object.keys(q).length) return { from: src ?? a.text, results: [], note: "no words of the query are in the index" };
     const want = a.level ? LV[a.level] : null, lim = Math.max(1, Math.min(50, a.limit ?? 10));
-    const out: { level: string; id: string; label: string; score: number; xy: [number, number] }[] = [];
+    const out: { level: string; id: string; label: string; score: number; xy: [number, number]; z?: number }[] = [];
     for (const k in V) {
       if (k === src || (want && !k.startsWith(want + ":"))) continue;
       const sc = cos(q, V[k]); if (sc <= 0) continue;
       const p = k.indexOf(":"), lv = k.slice(0, p), id = k.slice(p + 1);
-      out.push({ level: NAME[lv], id, label: this.labelOf(lv, id), score: Math.round(sc * 1e4) / 1e4, xy: XY[k] });
+      out.push({ level: NAME[lv], id, label: this.labelOf(lv, id), score: Math.round(sc * 1e4) / 1e4, xy: XY[k], z: ZZ[k] ?? 0 });
     }
     // a domain is as near as its nearest topic (domain vectors are broad centroids of their topics)
     if (!want || want === "d") {
       for (let i = out.length - 1; i >= 0; i--) if (out[i].level === "domain") out.splice(i, 1);
       const best: Record<string, number> = {};
       for (const k in V) { if (!k.startsWith("t:") || k === src) continue; const sc = cos(q, V[k]); const d = this.topic.get(k.slice(2))?.domain; if (d && sc > 0 && sc > (best[d] ?? 0)) best[d] = sc; }
-      for (const d in best) out.push({ level: "domain", id: d, label: this.labelOf("d", d), score: Math.round(best[d] * 1e4) / 1e4, xy: XY["d:" + d] });
+      for (const d in best) out.push({ level: "domain", id: d, label: this.labelOf("d", d), score: Math.round(best[d] * 1e4) / 1e4, xy: XY["d:" + d], z: ZZ["d:" + d] ?? 0 });
     }
     out.sort((x, y) => y.score - x.score || (x.id < y.id ? -1 : 1));
-    return { from: src ? { level: NAME[src.slice(0, 1)], id: a.node_id, xy: XY[src] } : { text: a.text }, level: a.level ?? "all",
+    return { from: src ? { level: NAME[src.slice(0, 1)], id: a.node_id, xy: XY[src], z: ZZ[src] ?? 0 } : { text: a.text }, level: a.level ?? "all",
       method: "TF-IDF cosine in the shared six-level field (coverage rule applies); a domain scores as its nearest topic", field: this.g.field.method, results: out.slice(0, lim) };
   }
   labelOf(lv: string, id: string): string {

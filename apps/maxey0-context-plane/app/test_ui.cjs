@@ -151,6 +151,37 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(r.rel === (graph.related || []).length && r.rel > 0, "related concept pairs available: " + r.rel);
   }
 
+  // 1h. 3D donut levels: every node inside its level's donut (hole + thickness), field depth used, drag follows the pointer in 3D
+  {
+    await p.evaluate(() => document.querySelector('canvas').scrollIntoView({ block: 'center' }));
+    const geo = await p.evaluate(() => { const v = window.__cpv, [I, , O, T] = v.ringR(), g = v.graph(); let bad = 0, n = 0;
+      if (!v.field().on) document.getElementById('cpFieldBtn').click();
+      const ids = [...g.skills.map(s => 's:' + s.id), ...g.concepts.map(c => 'c:' + c.id), ...g.topics.map(t => 't:' + t.id)];
+      const zs = new Set(); for (const id of ids) { const q = v.field().pos(id); n++; const r = Math.hypot(q.x, q.y);
+        if (r < I - 1e-6 || r > O + 1e-6 || Math.abs(q.z) > T + 1e-6) bad++; zs.add(Math.round(q.z)) }
+      return { I, O, T, bad, n, depthLevels: zs.size } });
+    ok(geo.I > 0.25 * geo.O && geo.T > 0, "levels are donuts with a hole and thickness: " + JSON.stringify(geo));
+    ok(geo.bad === 0, "every node inside its donut (" + geo.n + " checked)");
+    ok(geo.depthLevels > 20, "field axis 3 spreads nodes through the donut's thickness: " + geo.depthLevels + " distinct heights");
+    // drag from a side view (donut seen nearly edge-on): the node must follow the pointer and stay where it is dropped
+    for (const view of ['default', 'edge-on']) {
+      await p.evaluate(v => { const c = window.__cpv; document.getElementById('cpResetBtn').click(); c.orient(v === 'edge-on' ? [0, 1, 0, 0.08, 0, -0.9968, -0.9968, 0, -0.08] : null || c.orient()) }, view);
+      const id = await p.evaluate(() => { const g = window.__cpv.graph(), [I, , O] = window.__cpv.ringR();
+        for (const s of g.skills) { const q = window.__cpv.field().pos('s:' + s.id), r = Math.hypot(q.x, q.y); if (r > I + 60 && r < O - 60 && Math.abs(q.z) < 10) return 's:' + s.id } });
+      const a = await p.evaluate(id => window.__cpv.scr(id), id);
+      const hit = await p.evaluate(([x, y, id]) => { const el = document.elementFromPoint(x, y); return el && el.tagName === 'CANVAS' }, [a.x, a.y, id]);
+      await p.evaluate(id => { window.__cpv.select(id) }, id);
+      await p.mouse.move(a.x, a.y); await p.mouse.down(); await p.mouse.move(a.x + 12, a.y + 6, { steps: 4 }); await p.mouse.move(a.x + 24, a.y + 12, { steps: 4 }); await p.mouse.up();
+      await p.waitForTimeout(150);
+      const b2 = await p.evaluate(id => window.__cpv.scr(id), id);
+      await p.evaluate(() => window.__cpv.rotate(0)); const b3 = await p.evaluate(id => window.__cpv.scr(id), id);
+      ok(hit && Math.abs(b2.x - a.x - 24) < 3 && Math.abs(b2.y - a.y - 12) < 3, view + " view: dragged skill follows the pointer " + JSON.stringify({ a, b2 }));
+      ok(Math.abs(b3.x - b2.x) < 0.5 && Math.abs(b3.y - b2.y) < 0.5, view + " view: dropped skill stays where it was placed");
+    }
+    await p.evaluate(() => { document.getElementById('cpResetBtn').click(); window.__cpv.fit && 0; if (window.__cpv.field().on) document.getElementById('cpFieldBtn').click() });
+    await p.evaluate(() => document.getElementById('cpFitBtn').click());
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

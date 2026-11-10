@@ -74,8 +74,9 @@ class Sim:
 
 def build_field(vectors, idf, cfg):
     """One coordinate system for all six levels: truncated SVD (deterministic, ARPACK) of the
-    TF-IDF matrix of every node, rows normalised, then the two leading principal axes of that
-    space scaled so the farthest node sits at radius 1. Same space, same scale, every level:
+    TF-IDF matrix of every node, rows normalised, then the three leading principal axes of that
+    space. Axes 1-2 are scaled so the farthest node sits at radius 1 (the place on the level's donut);
+    axis 3 is scaled by the same factor and kept as depth (the height inside the donut's thickness). Same space, same scale, every level:
     a node's location on its level plane is its meaning, and nodes that mean the same thing
     line up across levels."""
     import numpy as np
@@ -93,14 +94,16 @@ def build_field(vectors, idf, cfg):
     Z /= np.maximum(np.linalg.norm(Z, axis=1, keepdims=True), 1e-12)
     Zc = Z - Z.mean(axis=0)
     _, _, Vt = np.linalg.svd(Zc, full_matrices=False)
-    P = Zc @ Vt[:2].T
-    for j in range(2):  # fix the sign so the layout is stable across builds
+    P = Zc @ Vt[:3].T
+    for j in range(3):  # fix the sign so the layout is stable across builds
         if P[np.argmax(np.abs(P[:, j])), j] < 0: P[:, j] *= -1
-    P /= np.max(np.linalg.norm(P, axis=1)) or 1.0
-    expl = float((np.var(P, axis=0)).sum())
-    return {"method": f"tfidf -> truncated SVD ({k} dims, ARPACK) -> row-normalised -> 2 principal axes; radius 1 = farthest node",
-            "dims": k, "levels": ["d", "t", "c", "s", "a", "m"],
-            "xy": {key: [round(float(P[i, 0]), 4), round(float(P[i, 1]), 4)] for i, key in enumerate(keys)}}
+    P /= np.max(np.linalg.norm(P[:, :2], axis=1)) or 1.0
+    ev = np.var(Zc, axis=0).sum() or 1.0
+    share = [round(float(np.var(Zc @ Vt[j]) / ev), 4) for j in range(3)]
+    return {"method": f"tfidf -> truncated SVD ({k} dims, ARPACK) -> row-normalised -> 3 principal axes; radius 1 = farthest node on axes 1-2, axis 3 = depth",
+            "dims": k, "levels": ["d", "t", "c", "s", "a", "m"], "variance_share": share,
+            "xy": {key: [round(float(P[i, 0]), 4), round(float(P[i, 1]), 4)] for i, key in enumerate(keys)},
+            "z": {key: round(float(P[i, 2]), 4) for i, key in enumerate(keys)}}
 
 
 def fail(msg):

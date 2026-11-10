@@ -239,7 +239,7 @@ window.__cpLoad = async function () {
   for (const [k, xy] of Object.entries((g.field && g.field.xy) || {})) {
     const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1);
     const app = lv === 'm' ? midx[id] : lv + ':' + id;
-    if (app) field[app] = xy;
+    if (app) field[app] = [xy[0], xy[1], ((g.field && g.field.z) || {})[k] || 0];
   }
   // ---- the observer lens: a mirror of the server's lens.ts (same equations, same lambda, same order) ----
   const appKey = k => { const p = k.indexOf(':'), lv = k.slice(0, p), id = k.slice(p + 1); return lv === 'm' ? midx[id] : lv + ':' + id };
@@ -411,7 +411,7 @@ function related(id){const s=new Set([id]),n=N[id];if(!n)return s;
 function match(n){return vis[n.kind]&&(!multiOnly||n.kind!=='agent'||(GC[n.id]||0)>=2)&&(!q||(n.label+' '+(n.desc||'')+' '+(n.tools||[]).join(' ')).toLowerCase().includes(q))}
 // ---- drawing
 const cv=$('g'),cx=cv.getContext('2d');
-function project(n,w,h,o){const q=o||cpPos(n),px=q.x,py=q.y,pz=n.z,x=cpM[0]*px+cpM[1]*py+cpM[2]*pz,yy=cpM[3]*px+cpM[4]*py+cpM[5]*pz,zz=cpM[6]*px+cpM[7]*py+cpM[8]*pz,p=800/Math.max(120,800+zz);return{sx:w/2+x*p*zoom*1.15+cpPanX,sy:h/2+yy*p*zoom*1.15+10+cpPanY,p,zz}}
+function project(n,w,h,o){const q=o||cpPos(n),px=q.x,py=q.y,pz=n.z+(q.z||0),x=cpM[0]*px+cpM[1]*py+cpM[2]*pz,yy=cpM[3]*px+cpM[4]*py+cpM[5]*pz,zz=cpM[6]*px+cpM[7]*py+cpM[8]*pz,p=800/Math.max(120,800+zz);return{sx:w/2+x*p*zoom*1.15+cpPanX,sy:h/2+yy*p*zoom*1.15+10+cpPanY,p,zz}}
 function draw(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=Math.max(1,r.width*d);cv.height=Math.max(1,r.height*d);cx.setTransform(d,0,0,d,0,0);const w=r.width,h=r.height;cx.clearRect(0,0,w,h);
  cpDrawRings(w,h);cpLensSync();
  const rel=relNow(),P={};pts=[];cpFanCompute(rel);
@@ -1081,7 +1081,9 @@ function cpEmbedDetail(b,n){const f=__CP.field[n.id];if(!f)return;const box=hh('
  for(const k of['d','t','c','s','a','m']){if(!nb[k])continue;const row=hh('div','');row.append(hh('span','cpembk',NAMES[k]+': '));
   nb[k].forEach(([id,sc],i)=>{const a=hh('a','',(N[id]?N[id].label:id)+' '+sc.toFixed(2));a.href='#';a.onclick=e=>{e.preventDefault();if(N[id])select(id)};if(i)row.append(document.createTextNode(' · '));row.append(a)});box.append(row)}
  b.append(box)}
-function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id];return q?{x:q[0]*cpOut()*.97,y:q[1]*cpOut()*.97}:null}
+function cpFieldXY(n){if(!cpField)return null;const q=(cpLensPos&&cpLensPos[n.id])||__CP.field[n.id],f=__CP.field[n.id];if(!q)return null;
+ const r=Math.min(1,Math.hypot(q[0],q[1])),a=Math.atan2(q[1],q[0]),R=cpIn()+r*(cpOut()-cpIn())*.97,dz=f?Math.max(-1,Math.min(1,(f[2]||0)/cpZMAX))*cpT()*.9:0;
+ return{x:Math.cos(a)*R,y:Math.sin(a)*R,z:dz}}
 // domains: one hue per domain; topics carry their domain's ring, and each domain is labelled where its topics are
 const DOMCOL=['#f2a65a','#5ec2b7','#9db4ff','#e58fb8','#a8d672','#7fc8f8','#f6d55c','#c49bff','#ff8f70','#6fe0a6','#d9b38c'];
 function cpDomCol(d){const i=__CP.domains.findIndex(x=>x.id===d);return DOMCOL[(i<0?0:i)%DOMCOL.length]}
@@ -1097,8 +1099,10 @@ function cpLensOut(){const el=$('lensOut');if(!el)return;const L=typeof task!=='
  for(const l of L.chain){const row=hh('div','');row.append(hh('b','',l.level[0].toUpperCase()+l.level.slice(1)+'s (λ '+l.lambda+'): '));
   row.append(document.createTextNode(l.selected.map(x=>nm(x.app)+' w '+x.weight+' ψ '+x.psi+(Object.keys(x.contributions).length>1?' ['+Object.entries(x.contributions).map(([k,v])=>(v>=0?'+':'')+v).join(' ')+']':'')).join(' · ')));
   if(l.suppressed.length)row.append(document.createTextNode(' — ruled out: '+l.suppressed.map(x=>x.id+' (opposed by '+x.opposed_by.join(', ')+')').join('; ')));el.append(row)}}
-function cpPos(n){const f=cpFanPos[n.id],b=f||cpFieldXY(n)||n,o=cpOff[n.id];if(!o)return{x:b.x,y:b.y};let x=b.x+o.x,y=b.y+o.y;if(cpField&&!f)return{x,y};
- const r=Math.hypot(x,y),lo=cpIn(),hi=cpOut();if(r>hi){x*=hi/r;y*=hi/r}else if(r<lo&&r>1e-9){x*=lo/r;y*=lo/r}return{x,y}}  // a dragged node stays inside its level's donut
+function cpPos(n){const f=cpFanPos[n.id],b=f||cpFieldXY(n)||n,o=cpOff[n.id]||{x:0,y:0,z:0};let x=b.x+o.x,y=b.y+o.y,z=(f?0:(b===n?0:b.z||0))+(o.z||0);
+ // every node, dragged or not, stays inside its level's donut: radius in [inner, outer], height within the thickness
+ const r=Math.hypot(x,y),lo=cpIn(),hi=cpOut(),T=cpT();if(r>hi){x*=hi/r;y*=hi/r}else if(r<lo){if(r>1e-9){x*=lo/r;y*=lo/r}else{x=lo;y=0}}
+ z=Math.max(-T,Math.min(T,z));return{x,y,z}}
 // screen-horizontal direction in the level plane (inverse of project's rotation)
 // ---- all-axis orientation: one 3x3 rotation matrix cpM maps world (x, y, z) to view (X right, Y down, D depth).
 // Every node and every donut goes through it, so the graph can face any direction; nothing is clamped.
@@ -1118,8 +1122,10 @@ function cp720(ms){if(cpAnim)return;const M0=cpM.slice(),t0=performance.now(),T=
 // The spread is laid out in WORLD coordinates on each level's plane: it is computed once per isolated path
 // (its line starts parallel to the screen) and then rotates, tilts and zooms with the 3D graph like every other node.
 let cpFanKey='',cpFanAxis=null,cpPanX=0,cpPanY=0;
-// Level rings: every level is a flat donut (annulus) of the same size, stacked on one vertical axis.
-const cpOut=()=>RAD.mcp*1.15,cpIn=()=>cpOut()*.14,cpRing=()=>cpOut()*.72;
+// Level donuts: every level is a 3D donut (an annulus with thickness) of the same size, stacked on one vertical axis.
+// Field axes 1-2 place a node around and across the ring, field axis 3 places it in the donut's thickness (cpT = half-thickness).
+const cpOut=()=>RAD.mcp*1.15,cpIn=()=>cpOut()*.3,cpRing=()=>(cpIn()+cpOut())/2,cpT=()=>45;
+const cpZMAX=.9;
 function cpFanCompute(rel){if(!cpFan||!iso||!rel||rel.size>600){cpFanPos={};cpFanKey='';return}
  const key=[...rel].sort().join('|');if(key===cpFanKey)return;cpFanKey=key;cpFanPos={};
  // start the fan on the arc facing the viewer; afterwards it lives in world coordinates and turns with the graph
@@ -1140,12 +1146,15 @@ function cpDownstream(id){const rel=relNow(),inPath=x=>!rel||rel.has(x),out=new 
  while(q.length){const x=q.shift();for(const e of E)if(e.a===x&&inPath(e.b)&&!out.has(e.b)){out.add(e.b);q.push(e.b)}
   if(N[x]&&N[x].kind==='agent')for(const g of G)if(g.a===x&&inPath(g.b)&&!out.has(g.b)){out.add(g.b);q.push(g.b)}}
  return out}
-// Drag: the screen movement is converted to a movement inside the level plane (z never changes);
-// the node and everything downstream of it move by the same amount on their own parallel planes.
-function cpMoveNode(id,dx,dy){const n=N[id];if(!n)return;const r=cv.getBoundingClientRect(),o=project(n,r.width,r.height),k=zoom*1.15*o.p,
- a=cpM[0],b=cpM[1],c=cpM[3],d=cpM[4],det=a*d-b*c;if(Math.abs(det)<.05)return;   // level seen edge-on: no sideways move is visible
- const X=dx/k,Y=dy/k,mx=(d*X-b*Y)/det,my=(-c*X+a*Y)/det;
- for(const x of cpDownstream(id)){const q=cpOff[x]||{x:0,y:0};cpOff[x]={x:q.x+mx,y:q.y+my}}}
+// Drag in 3D: the screen movement becomes the world movement parallel to the screen (rows 1-2 of the orthonormal view
+// matrix, transposed), so a node follows the pointer from any viewing angle, including a donut seen edge-on. The move is
+// stored as an offset (x, y around and across the ring, z in the thickness); cpPos keeps the node inside its donut and the
+// offset is re-based on the clamped place, so the node stays exactly where it was dropped. Everything downstream moves too.
+function cpMoveNode(id,dx,dy){const n=N[id];if(!n)return;const r=cv.getBoundingClientRect(),o=project(n,r.width,r.height),k=zoom*1.15*o.p;if(!(k>1e-9))return;
+ const X=dx/k,Y=dy/k,mx=cpM[0]*X+cpM[3]*Y,my=cpM[1]*X+cpM[4]*Y,mz=cpM[2]*X+cpM[5]*Y;
+ for(const x of cpDownstream(id)){const q=cpOff[x]||{x:0,y:0,z:0};cpOff[x]={x:q.x+mx,y:q.y+my,z:(q.z||0)+mz};
+  const nx=N[x];if(!nx)continue;const was=cpOff[x];delete cpOff[x];const base=cpPos(nx);cpOff[x]=was;const at=cpPos(nx);
+  cpOff[x]={x:at.x-base.x,y:at.y-base.y,z:at.z-base.z}}}
 function cpNewSet(){const ids=Object.keys(packs).join(',');if(cpNewCache&&cpNewKey===ids)return cpNewCache;const s=new Set();
  Object.values(packs).forEach(r=>{const A=r.added,pid=r.pack.topic.id;s.add('t:'+pid);A.concepts.forEach(c=>s.add('c:'+c));A.skills.forEach(k=>{s.add('s:'+k);
   E.forEach(e=>{if(e.kind==='agent'&&e.a==='s:'+k){s.add(e.b);G.forEach(g=>{if(g.a===e.b)s.add(g.b)})}})})});
@@ -1163,7 +1172,7 @@ function cpViewInit(){const on=(id,f)=>{const b=$(id);if(b)b.onclick=()=>{f();cp
    [['bDT',showDT],['bTC',showTC],['bCS',showCS],['bRel',showRel],['bAg',showAg],['bGt',showGt]].forEach(([i,v])=>{if($(i))$(i).className=v?'on':''});
    const b=ob.browse||{};if(b.domain===''||__CP.domains.some(d=>d.id===b.domain)){V3.bf.domain=b.domain||'';V3.bf.topic=N['t:'+b.topic]?b.topic:'';V3.bf.concept=N['c:'+b.concept]?b.concept:'';v03BrowseApply(false)}cpSetBtns()}
   const v=st&&st.view;if(v&&typeof v==='object'){cpOff={};
-  if(v.off&&typeof v.off==='object')for(const[k,o]of Object.entries(v.off))if(N[k]&&o&&isFinite(o.x)&&isFinite(o.y))cpOff[k]={x:+o.x,y:+o.y};
+  if(v.off&&typeof v.off==='object')for(const[k,o]of Object.entries(v.off))if(N[k]&&o&&isFinite(o.x)&&isFinite(o.y))cpOff[k]={x:+o.x,y:+o.y,z:isFinite(o.z)?+o.z:0};
   if(Array.isArray(v.orient)&&v.orient.length===9&&v.orient.every(isFinite))cpM=cpOrtho(v.orient.map(Number));if(isFinite(v.zoom))zoom=Math.max(.08,Math.min(8,+v.zoom));if(Array.isArray(v.pan)&&v.pan.every(isFinite)){cpPanX=+v.pan[0];cpPanY=+v.pan[1]}
   cpFan=v.fan!==false;cpDrag=v.drag!==false;cpOnlyNew=!!v.onlyNew;cpSetBtns();draw()}return r}}
 // ---- MCP Apps bridge (spec 2026-01-26): when this page runs inside a host (Claude, other MCP Apps hosts) it
@@ -1207,7 +1216,11 @@ function cpDrawRings(w,h){const O=cpOut(),I=cpIn(),S=72,lv=['mcp','agent','skill
  const order=lv.filter(k=>vis[k]).map(k=>({k,zz:project({z:ZP[k]},w,h,{x:0,y:0}).zz})).sort((a,b)=>b.zz-a.zz);
  for(const {k} of order){const o=ring(O,ZP[k]),i=ring(I,ZP[k]),c=COL[k];
   cx.beginPath();path(o);cx.closePath();path(i.slice().reverse());cx.closePath();
-  cx.fillStyle=c+'14';cx.fill('evenodd');cx.lineWidth=1.2;cx.strokeStyle=c+'88';cx.beginPath();path(o);cx.stroke();cx.strokeStyle=c+'55';cx.beginPath();path(i);cx.stroke();
+  cx.fillStyle=c+'14';cx.fill('evenodd');
+  // the donut's thickness: rims above and below the mid-plane, joined by struts
+  {const T=cpT(),oU=ring(O,ZP[k]+T),oD=ring(O,ZP[k]-T),iU=ring(I,ZP[k]+T),iD=ring(I,ZP[k]-T);cx.lineWidth=.8;cx.strokeStyle=c+'40';
+   for(const q of[oU,oD,iU,iD]){cx.beginPath();path(q);cx.stroke()}
+   cx.beginPath();for(let s=0;s<S;s+=6){cx.moveTo(oU[s].sx,oU[s].sy);cx.lineTo(oD[s].sx,oD[s].sy);cx.moveTo(iU[s].sx,iU[s].sy);cx.lineTo(iD[s].sx,iD[s].sy)}cx.stroke()}cx.lineWidth=1.2;cx.strokeStyle=c+'88';cx.beginPath();path(o);cx.stroke();cx.strokeStyle=c+'55';cx.beginPath();path(i);cx.stroke();
   // the ring's middle line, where a spread path sits
   cx.setLineDash([2,4]);cx.strokeStyle=c+'33';cx.beginPath();path(ring(cpRing(),ZP[k]));cx.stroke();cx.setLineDash([]);
   const lab=o.reduce((m,p)=>p.sx>m.sx?p:m,o[0]);cx.fillStyle=c;cx.font='10px system-ui';cx.textAlign='start';cx.fillText(k==='mcp'?'MCP SERVERS (GATES)':LBL[k].toUpperCase()+'S',lab.sx+6,lab.sy+3)}
@@ -1220,9 +1233,9 @@ cv.addEventListener('contextmenu',e=>e.preventDefault());
 setTimeout(()=>{const b=$('cpFitBtn');if(b)b.onclick=cpFit;const t=$('cp720Btn');if(t)t.onclick=()=>cp720();cpFit()},0);
 setTimeout(cpViewInit,0);
 setTimeout(cpHostInit,0);
-window.__cpv={getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
+window.__cpv={scr:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},getState:()=>APPS.app1.get(),setState:st=>APPS.app1.set(st),suggestDomain:t=>__CP.suggestDomain(t),related:()=>__CP.related.length,apply:a=>cpApplyArgs(a),graph:()=>__CP.graph,observer:()=>({label:cpObsLabel,n:cpLensPos?Object.keys(cpLensPos).length:0,dom:cpDomOn}),lens:(t,d)=>__CP.lens(t,d||[]),field:()=>({on:cpField,n:Object.keys(__CP.field).length,pos:id=>cpPos(N[id])}),labels:()=>({on:{...lbl},off:{...lblX},strict}),fanPos:()=>({...cpFanPos}),off:()=>({...cpOff}),newSet:()=>[...cpNewSet()],move:cpMoveNode,ask:cpAskHost,gen:cpGenerateFor,
  screen:id=>{const r=cv.getBoundingClientRect(),o=project(N[id],r.width,r.height);return{x:o.sx+r.left,y:o.sy+r.top}},state:()=>({fan:cpFan,drag:cpDrag,onlyNew:cpOnlyNew}),host:()=>({on:cpHost.on,mode:cpHost.mode}),
- select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
+ select:id=>{select(id);draw()},node:id=>N[id]?{kind:N[id].kind,z:N[id].z,label:N[id].label}:null,packs:()=>Object.keys(packs),app:()=>APPS.app1.get(),rotate:d=>{cpWorldZ(d);draw()},tiltBy:d=>{cpView(1,0,0,d);draw()},track:(dx,dy,roll)=>{cpTrack(dx,dy,roll);draw()},spin720:ms=>cp720(ms),orient:m=>{if(m!==undefined){if(!Array.isArray(m)||m.length!==9||!m.every(isFinite))return false;cpM=cpOrtho(m.map(Number));draw()}return cpM.slice()},view:()=>({M:cpM.slice(),zoom,panX:cpPanX,panY:cpPanY}),fit:()=>cpFit(),ringR:()=>[cpIn(),cpRing(),cpOut(),cpT()],pos:id=>cpPos(N[id]),down:id=>[...cpDownstream(id)]};
 
 // ---------- init + test hooks
 function v7init(){csApply();

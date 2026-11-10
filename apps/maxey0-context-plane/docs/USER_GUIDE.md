@@ -394,3 +394,7 @@ Install it from the plugin directory when listed, or from this repository (see t
 - **Domains tab** lists all 11 domains; click one to select it.
 - **Generated topics** get a suggested domain from the nearest existing topic. When you publish a pack, set `pack_domains` so the server files it under that domain.
 - **Saved state** now includes router mode (flat/lens), the field view, the domain filter, every edge toggle and the browse filters.
+
+## Part 16 — App 1.6: 3D donut levels
+- Each level is a donut with thickness. With **Embedding field** on, a node's place around and across the ring comes from field axes 1–2 and its height inside the donut from axis 3.
+- **Drag nodes**: grab a node and move it; it follows the pointer from any viewing angle and moves in 3D within its donut. Release to place it; it stays there. **Reset layout** puts every node back.

@@ -1,5 +1,10 @@
 # Changelog
 
+## Server 6.2.0 · App 1.6
+- Embedding field is now 3D: the builder keeps the third principal axis (`field.z`, with `field.variance_share`). Axes 1–3 carry 8.1%, 7.3% and 6.2% of the variance of the 24-dim SVD space, so 3D shows 21.5% against 15.4% for 2D. `nearest` returns `z` with `xy`.
+- Every level is a 3D donut: inner hole at 30% of the radius and a thickness of ±45. Axes 1–2 place a node around and across the ring, axis 3 places it in the thickness. Every node, dragged or not, is kept inside its donut.
+- Drag moves a node in 3D parallel to the screen, so it follows the pointer from any angle (it used to stop or jump when a level was seen edge-on) and stays exactly where it is dropped. Saved layouts keep the depth.
+
 ## App 1.5
 - Level-edge toggles: Domain→Topic, Topic→Concept, Concept→Skill, and Related concepts (dashed, off by default), alongside the Skill→Agent and Agent→MCP gate toggles.
 - Domains tab in the side list (11 domains).
