@@ -17,6 +17,12 @@ dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim
 @media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
 <a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
 <div class="dl"><a href="/docs/changelog.pdf" download>Download PDF</a><a class="alt" href="/docs/changelog.md" download>Download .md</a></div><h1 id="changelog">Changelog</h1>
+<h2 id="v100-prefederation-2026-11-10-first-public-release">v1.0.0 - Prefederation — 2026-11-10 (first public release)</h2>
+<ul>
+<li>One version for everything: the Maxey0 Context Plane server, the Maxey0 Context Plane Graph (the MCP App), the plugin and the paper are all v1.0.0 - Prefederation. Earlier entries keep their internal build numbers (server 6.x, app 1.x, plugin 0.x); v1.0.0 is internal build 6.7.1 / app 1.13 / plugin 0.5.0 plus the Context Plane paper in the research library.</li>
+<li>"Prefederation": no sign-in. Next release adds identity federation and a small hosted allowance for people without a Claude account.</li>
+<li>The Context Plane paper is now in the repository (<code>research/papers/</code>) and served at <code>/research/context-plane</code>.</li>
+</ul>
 <h2 id="671-2026-11-10">6.7.1 — 2026-11-10</h2>
 <ul>
 <li><code>/docs</code>: every doc (overview, user guide, MCP server and API reference, architecture, performance, development, changelog, privacy) as a web page, a PDF and a Markdown download. Built by <code>tools/site/build_site.py</code>, served as Workers static assets (no storage charge).</li>

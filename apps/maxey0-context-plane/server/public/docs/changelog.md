@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.0 - Prefederation — 2026-11-10 (first public release)
+- One version for everything: the Maxey0 Context Plane server, the Maxey0 Context Plane Graph (the MCP App), the plugin and the paper are all v1.0.0 - Prefederation. Earlier entries keep their internal build numbers (server 6.x, app 1.x, plugin 0.x); v1.0.0 is internal build 6.7.1 / app 1.13 / plugin 0.5.0 plus the Context Plane paper in the research library.
+- "Prefederation": no sign-in. Next release adds identity federation and a small hosted allowance for people without a Claude account.
+- The Context Plane paper is now in the repository (`research/papers/`) and served at `/research/context-plane`.
+
 ## 6.7.1 — 2026-11-10
 - `/docs`: every doc (overview, user guide, MCP server and API reference, architecture, performance, development, changelog, privacy) as a web page, a PDF and a Markdown download. Built by `tools/site/build_site.py`, served as Workers static assets (no storage charge).
 - `/research`: research library with a summary and a question-and-answer frame per paper, the PDF embedded in the page and downloadable. Starts with the Context Plane paper and the four Maxey0 papers (SCW, System One, Logical SCWs, execution-space control). The Context Plane PDF stays out of git and is copied in locally before deploy.

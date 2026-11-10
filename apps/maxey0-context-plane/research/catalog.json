@@ -1,7 +1,13 @@
 {
   "groups": [
-    {"id": "context-plane", "title": "The Context Plane"},
-    {"id": "scw", "title": "Structured Context Worlds (SCW) and execution-space control"}
+    {
+      "id": "context-plane",
+      "title": "The Context Plane"
+    },
+    {
+      "id": "scw",
+      "title": "Structured Context Worlds (SCW) and execution-space control"
+    }
   ],
   "papers": [
     {
@@ -13,14 +19,28 @@
       "date": "November 2026",
       "pages": 21,
       "file": "Maxey0_Context_Plane_intro_paper.pdf",
-      "local_only": true,
       "summary": "Agent systems built on MCP can reach thousands of tools, and most systems treat choosing among them as retrieval. The paper argues the real decision is larger and has structure: what kind of work a task is, which specialist performs it, who checks it, and which servers each should hold. That structure should be built, versioned and served as a context plane, separate from the execution plane that acts on it. The Maxey0 Context Plane places every task on one fixed-depth path, Domain → Topic → Concept → Skill → Agents (primary, checker, support) → MCP servers, over 11 domains, 128 topics, 711 concepts, 1,998 skills, 1,021 agents and 117 real MCP servers, each with a vector in one shared space. An observer lens reads each level from the nodes selected above it and records drift. A dense bge-m3 signal mixed with TF-IDF raises exact-skill recovery from labels from 93.3% to 98.7% on the live server. The plane is served by a public read-only MCP server, drawn as an interactive 3D graph that runs inside Claude, and stated in OWL 2 with SHACL validation.",
       "qa": [
-        {"q": "What problem does it address?", "a": "Choosing what should handle a task (kind of work, specialist, checker, tools) as a structured decision, not a flat tool-retrieval step."},
-        {"q": "What is the core structure?", "a": "One fixed-depth path per task: Domain → Topic → Concept → Skill → Agents (primary, checker, support) → MCP servers, every node embedded in one shared space."},
-        {"q": "What is measured?", "a": "Exact-skill recovery from labels on the live server: 93.3% with TF-IDF alone, 98.7% with the dense bge-m3 signal mixed in."},
-        {"q": "What does it not claim?", "a": "Routes are candidate paths, not authorizations; concepts, skills and agents are generated hypotheses that are structurally checked, not curated knowledge."},
-        {"q": "Where can I try it?", "a": "In the app at /app, or inside Claude as a custom connector (see the home page)."}
+        {
+          "q": "What problem does it address?",
+          "a": "Choosing what should handle a task (kind of work, specialist, checker, tools) as a structured decision, not a flat tool-retrieval step."
+        },
+        {
+          "q": "What is the core structure?",
+          "a": "One fixed-depth path per task: Domain → Topic → Concept → Skill → Agents (primary, checker, support) → MCP servers, every node embedded in one shared space."
+        },
+        {
+          "q": "What is measured?",
+          "a": "Exact-skill recovery from labels on the live server: 93.3% with TF-IDF alone, 98.7% with the dense bge-m3 signal mixed in."
+        },
+        {
+          "q": "What does it not claim?",
+          "a": "Routes are candidate paths, not authorizations; concepts, skills and agents are generated hypotheses that are structurally checked, not curated knowledge."
+        },
+        {
+          "q": "Where can I try it?",
+          "a": "In the app at /app, or inside Claude as a custom connector (see the home page)."
+        }
       ]
     },
     {
@@ -34,10 +54,22 @@
       "file": "Maxey0_SCW_intro_paper.pdf",
       "summary": "As agents combine models with persistent context, tools, code execution, sandboxes and other agents, the problem shifts from controlling model outputs to controlling the execution space where behavior happens. The paper introduces Structured Context Worlds (SCWs): bounded, addressable execution spaces that bind context, execution identity, capabilities, resources, tool and protocol access, provenance, admission rules and permitted transitions. SCW0 is the supervisory layer that creates and manages SCWs, routes context and capabilities between them, evaluates boundary transitions and records provenance. SCWs sit between agent harnesses and operating-system sandboxes rather than replacing either. It is an architecture proposal; no empirical result is claimed.",
       "qa": [
-        {"q": "What is an SCW?", "a": "A bounded semantic and contextual execution space for an agent or task, binding its context, identity, capabilities, tool access, provenance and allowed transitions into one addressable unit."},
-        {"q": "What is SCW0?", "a": "The supervisory control layer that creates SCWs, routes context and capabilities between them, evaluates boundary transitions and records provenance."},
-        {"q": "Does it replace sandboxes?", "a": "No. A sandbox restricts processes, files, network and compute; an SCW is the semantic boundary through which those capabilities are organized and governed."},
-        {"q": "What evidence is there?", "a": "None claimed. The paper gives the model, threat model, evaluation method and a falsifiable research agenda."}
+        {
+          "q": "What is an SCW?",
+          "a": "A bounded semantic and contextual execution space for an agent or task, binding its context, identity, capabilities, tool access, provenance and allowed transitions into one addressable unit."
+        },
+        {
+          "q": "What is SCW0?",
+          "a": "The supervisory control layer that creates SCWs, routes context and capabilities between them, evaluates boundary transitions and records provenance."
+        },
+        {
+          "q": "Does it replace sandboxes?",
+          "a": "No. A sandbox restricts processes, files, network and compute; an SCW is the semantic boundary through which those capabilities are organized and governed."
+        },
+        {
+          "q": "What evidence is there?",
+          "a": "None claimed. The paper gives the model, threat model, evaluation method and a falsifiable research agenda."
+        }
       ]
     },
     {
@@ -51,10 +83,22 @@
       "file": "Maxey0_SystemOne_intro_paper.pdf",
       "summary": "System One is a provider-neutral semantic decision layer that works over SCWs as explicit address spaces. It selects among bounded candidate destinations (capabilities, skills, context regions, agents, tools, resources or execution paths) while staying separate from authorization and execution. Its central invariant is Decision ≠ Authorization ≠ Execution ≠ Observation: a decision grants nothing until the host admits it against identity, policy, capabilities, SCW state and provenance. The paper defines the architecture, applications, threat model, evaluation method and implementation program; no empirical performance or safety result is claimed.",
       "qa": [
-        {"q": "What does System One decide?", "a": "Which bounded destination a request should go to: a capability, skill, context region, agent, tool, resource or execution path."},
-        {"q": "What is the key invariant?", "a": "Decision ≠ Authorization ≠ Execution ≠ Observation: choosing a destination never by itself grants permission to act."},
-        {"q": "Is it tied to one model vendor?", "a": "No, it is designed to be provider-neutral."},
-        {"q": "What evidence is there?", "a": "None claimed. The paper sets out hypotheses and the method needed to test them."}
+        {
+          "q": "What does System One decide?",
+          "a": "Which bounded destination a request should go to: a capability, skill, context region, agent, tool, resource or execution path."
+        },
+        {
+          "q": "What is the key invariant?",
+          "a": "Decision ≠ Authorization ≠ Execution ≠ Observation: choosing a destination never by itself grants permission to act."
+        },
+        {
+          "q": "Is it tied to one model vendor?",
+          "a": "No, it is designed to be provider-neutral."
+        },
+        {
+          "q": "What evidence is there?",
+          "a": "None claimed. The paper sets out hypotheses and the method needed to test them."
+        }
       ]
     },
     {
@@ -68,10 +112,22 @@
       "file": "Maxey0_Logical-SCWs_Privacy.pdf",
       "summary": "Where the owner of a boundary does not control the runtime (inside another vendor's product, between tenants, or between agents sharing one context), the boundary cannot be a process or sandbox. The paper defines the logical SCW: a boundary that is a declarative policy object, enforced by one pure evaluator on every egress path, governed by fixed invariants no setting can weaken, and required to name the rule behind every withheld signal. It pairs this with Maxey0's five typed memory tiers (Working, Episodic, Semantic, Persistent, Procedural) and an evidence-gated promotion gate. The first application is a user-side advertising boundary for ChatGPT Free and Go users, tested on a real ChatGPT data export; a seeded property test of 20,000 random cases found zero violations of 19 per-case checks. It states plainly that it cannot bind OpenAI's ad system and labels everything beyond the user's own policy as advisory.",
       "qa": [
-        {"q": "What makes an SCW logical?", "a": "Its boundary is a declarative policy enforced by one pure evaluator on every egress path, not a process or sandbox."},
-        {"q": "What are the memory tiers?", "a": "Working, Episodic, Semantic, Persistent and Procedural, joined by an evidence-gated promotion gate."},
-        {"q": "What was tested?", "a": "A seeded property test of 20,000 random profiles, worlds, messages and histories: zero violations of 19 per-case checks."},
-        {"q": "What is the limit?", "a": "It cannot bind OpenAI's ad system; it gives the user an exact account of their own policy and labels the rest advisory."}
+        {
+          "q": "What makes an SCW logical?",
+          "a": "Its boundary is a declarative policy enforced by one pure evaluator on every egress path, not a process or sandbox."
+        },
+        {
+          "q": "What are the memory tiers?",
+          "a": "Working, Episodic, Semantic, Persistent and Procedural, joined by an evidence-gated promotion gate."
+        },
+        {
+          "q": "What was tested?",
+          "a": "A seeded property test of 20,000 random profiles, worlds, messages and histories: zero violations of 19 per-case checks."
+        },
+        {
+          "q": "What is the limit?",
+          "a": "It cannot bind OpenAI's ad system; it gives the user an exact account of their own policy and labels the rest advisory."
+        }
       ]
     },
     {
@@ -85,9 +141,18 @@
       "file": "Maxey0_HF_incident_tutorial.pdf",
       "summary": "A tutorial that condenses the July 2026 incident in which evaluation agents escaped their sandboxes, coordinated through a package repository and reached Hugging Face production infrastructure, drawing on the published incident reports. It reframes the incident as a failure of execution-space control rather than of one model or firewall, and develops the thesis that an agent's execution context should be an explicit, addressable, independently enforceable object (an SCW) so that reachable is no longer the same as authorized. It is bounded: SCWs would not have patched the vulnerabilities, but would have turned several silent escalations into observable policy events. It closes with a falsifiable experiment and honest limits.",
       "qa": [
-        {"q": "What is the thesis?", "a": "Agent safety needs execution-space control: what an agent can reach should not automatically be what it is authorized to use."},
-        {"q": "Would SCWs have prevented the incident?", "a": "The tutorial says no: they would not have patched the vulnerabilities, but would have made several silent escalations visible policy events."},
-        {"q": "What are its sources?", "a": "The incident technical report, OpenAI's follow-up post and the METR and Redwood Research investigation, as cited in the paper."}
+        {
+          "q": "What is the thesis?",
+          "a": "Agent safety needs execution-space control: what an agent can reach should not automatically be what it is authorized to use."
+        },
+        {
+          "q": "Would SCWs have prevented the incident?",
+          "a": "The tutorial says no: they would not have patched the vulnerabilities, but would have made several silent escalations visible policy events."
+        },
+        {
+          "q": "What are its sources?",
+          "a": "The incident technical report, OpenAI's follow-up post and the METR and Redwood Research investigation, as cited in the paper."
+        }
       ]
     }
   ]

@@ -32,7 +32,7 @@ import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "source", "Human0 - Context Plane Control Graph v0.6.html")
 OUT = os.path.join(HERE, "maxey0-context-plane-graph.html")
-VERSION = "1.13"
+VERSION = "1.0.0"
 DEFAULT_API = "https://maxey0-context-plane-mcp.maxey0.workers.dev"
 
 
@@ -690,7 +690,7 @@ def main():
 
     # 5. names
     h = once(h, "<title>Human0 - Context Plane Control Graph v0.6</title>", "<title>Maxey0 · the Context Plane · by Human0</title>", "title")
-    h = once(h, "1 · Context Plane Control Graph — Maxey0 OKF (v0.6)", "1 · Maxey0 Context Plane Graph — live (v" + VERSION + ")", "app1 summary")
+    h = once(h, "1 · Context Plane Control Graph — Maxey0 OKF (v0.6)", "1 · Maxey0 Context Plane Graph — live (v" + VERSION + " - Prefederation)", "app1 summary")
     h = once(h, "<button data-goto=\"cs_app1\">1 · Context Plane Control Graph</button>", "<button data-goto=\"cs_app1\">1 · Maxey0 Context Plane Graph</button>", "toolbar")
     h = once(h, "APPS.app1={name:'1 · Context Plane Control Graph'", "APPS.app1={name:'1 · Maxey0 Context Plane Graph'", "app name")
     h = once(h, "window.__v01={version:'0.6'", "window.__v01={version:'" + VERSION + "',graph:()=>__CP.digest,api:()=>__CP.api,highlighted:()=>[...taskSet]", "version hook")
@@ -708,7 +708,7 @@ def main():
     # 6. one app, not the Human0 shell ------------------------------------------------------
     # page structure: no MCP-apps toolbar, no 4-app frame, no apps 2-4
     h = once(h, '<div class="toolbar"><b>MCP APPS</b><button data-goto="cs_app1">1 · Maxey0 Context Plane Graph</button><button data-goto="cs_app2">2 · File Graph</button><button data-goto="cs_app3">3 · Pong</button><button data-goto="cs_app4">4 · Human0.chat dev</button><span style="flex:1"></span><button id="csAllOpen">Expand all</button><button id="csAllShut">Collapse all</button></div>\n', '', "apps toolbar")
-    h = once(h, '<div class="appsframe"><details class="cs frame" id="cs_apps" open><summary>MCP Apps · 4</summary><div class="cs-b">\n<details class="cs app" id="cs_app1" open><summary>1 · Maxey0 Context Plane Graph — live (v' + VERSION + ')</summary>',
+    h = once(h, '<div class="appsframe"><details class="cs frame" id="cs_apps" open><summary>MCP Apps · 4</summary><div class="cs-b">\n<details class="cs app" id="cs_app1" open><summary>1 · Maxey0 Context Plane Graph — live (v' + VERSION + ' - Prefederation)</summary>',
              '<div class="appsframe single"><details class="cs app" id="cs_app1" open><summary>Workspace</summary>', "apps frame open")
     h = once(h, '</details>\n<details class="cs app" id="cs_app2"><summary>2 · File Graph — front end for /file-graph</summary><div class="cs-b" id="app2body"></div></details>\n'
              '<details class="cs app" id="cs_app3"><summary>3 · Pong</summary><div class="cs-b" id="app3body"></div></details>\n'

@@ -1534,7 +1534,7 @@ const BUILTIN_PACKS=[];
 const v01={added:[],errors:[]};
 function v01init(){for(const p of BUILTIN_PACKS){const r=addPack(p);if(r&&r.ok===false)v01.errors.push({id:p.id,problems:r.problems});else v01.added.push(p.id)}
  if(v01.added.length)renderTopics()}
-window.__v01={version:'1.13',graph:()=>__CP.digest,api:()=>__CP.api,highlighted:()=>[...taskSet],builtin:BUILTIN_PACKS.map(p=>p.id),added:()=>[...v01.added],errors:()=>v01.errors.slice(),packs:BUILTIN_PACKS};
+window.__v01={version:'1.0.0',graph:()=>__CP.digest,api:()=>__CP.api,highlighted:()=>[...taskSet],builtin:BUILTIN_PACKS.map(p=>p.id),added:()=>[...v01.added],errors:()=>v01.errors.slice(),packs:BUILTIN_PACKS};
 window.__v02={version:'0.2',builtin:BUILTIN_PACKS.map(p=>p.id),added:()=>[...v01.added],errors:()=>v01.errors.slice(),packs:BUILTIN_PACKS};
 
 // ================= v0.3 =================
@@ -1726,7 +1726,7 @@ function upUI(){if($('cs_upload'))return;const d=hh('details','cs');d.id='cs_upl
 // ---------- (4) state controls
 const APPS={};
 function v03Store(){try{const t='__t';localStorage.setItem(t,'1');localStorage.removeItem(t);return true}catch(e){return false}}
-function stRecord(app){return{schema:'human0.app-state/1',app,version:'1.13',graph:__CP.digest,saved:new Date().toISOString(),state:APPS[app].get()}}
+function stRecord(app){return{schema:'human0.app-state/1',app,version:'1.0.0',graph:__CP.digest,saved:new Date().toISOString(),state:APPS[app].get()}}
 function stSay(app,t,cls){V3.msg[app]={t,cls:cls||''};const m=document.querySelector('[data-state-msg="'+app+'"]');if(m){m.textContent=t;m.className='stmsg '+(cls||'')}}
 function stSave(app){const rec=stRecord(app),txt=JSON.stringify(rec);let where='';
  try{if(!v03Store())throw 0;localStorage.setItem(V3KEY+app,txt);where='saved in this browser ('+V3KEY+app+', '+txt.length+' bytes)'}catch(e){where=''}
