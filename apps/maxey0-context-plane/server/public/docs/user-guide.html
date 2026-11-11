@@ -728,4 +728,37 @@ dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim
 </tbody>
 </table>
 <p>Controls on the same row: <strong>Cost</strong> (show or hide the labels), the <strong>model</strong> (Sonnet 5.5, Opus 5.5, Haiku 5.5, Fable 5.1, at Anthropic's list prices checked 2026-11-10) and <strong>Loops</strong> (maker → checker rounds; each round repeats the primary's and checker's turns).</p>
-<p>These are estimates for planning, not a bill: no prompt caching is assumed (so real costs with caching are lower), the turn counts and result sizes are fixed assumptions, and the tool-call guess reads tool names only. Send to Claude Code writes every figure and assumption to <code>cost.json</code>.</p></main></body></html>
+<p>These are estimates for planning, not a bill: no prompt caching is assumed (so real costs with caching are lower), the turn counts and result sizes are fixed assumptions, and the tool-call guess reads tool names only. Send to Claude Code writes every figure and assumption to <code>cost.json</code>.</p>
+<h2 id="part-22-v120-coverage-fill-the-gap-and-copy-buttons">Part 22 — v1.2.0: Coverage, Fill the gap and copy buttons</h2>
+<p>After you route a task, the <strong>Task route</strong> panel ends with <strong>Coverage</strong>:</p>
+<ul>
+<li><strong>Covered by this route</strong>: task words the chosen path explains.</li>
+<li><strong>In the map but not on this route</strong>: words a concept in the map fits well (score shown); the route ranked something else first. Try the Observer lens or say more about that part.</li>
+<li><strong>Not covered</strong>: words nothing in the map fits; "not in the map at all" means the map has never seen the word.</li>
+<li><strong>Where it breaks</strong>: for the uncovered phrase (the word and its neighbor, e.g. "android app"), the level where the map stops fitting. If no topic scores 0.2 or more, the proposal is a <strong>new topic</strong> in the best domain; if a topic fits but no concept does, a <strong>new concept</strong> under that topic.</li>
+</ul>
+<p><strong>Fill the gap</strong> builds a generation request for only the missing levels. What happens next depends on where you are:</p>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>What Fill the gap does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inside Claude (the graph opened through the connector)</td>
+<td>Sends the request to Claude. Paste the pack it returns into the pack box, then <strong>Add pack and route again</strong>.</td>
+</tr>
+<tr>
+<td>Dashboard with your API key</td>
+<td>Generates the pack, adds it and routes the task again, in one step.</td>
+</tr>
+<tr>
+<td>Dashboard without a key</td>
+<td>Copies the request. Paste it into Claude, paste the JSON back into the pack box, then <strong>Add pack and route again</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Packs you add now take part in routing in this page (flat and observer lens), so the same task routes through the new topic. They live in this browser's graph; the public map changes only when a pack is added to the repository.</p>
+<p>Every output field has a <strong>Copy</strong> button: the route, node details, the cost line, embedding values, status messages and the text boxes.</p></main></body></html>

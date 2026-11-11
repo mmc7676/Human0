@@ -438,3 +438,25 @@ Route a task. Under the task box, **Estimated harness cost** gives the whole har
 Controls on the same row: **Cost** (show or hide the labels), the **model** (Sonnet 5.5, Opus 5.5, Haiku 5.5, Fable 5.1, at Anthropic's list prices checked 2026-11-10) and **Loops** (maker → checker rounds; each round repeats the primary's and checker's turns).
 
 These are estimates for planning, not a bill: no prompt caching is assumed (so real costs with caching are lower), the turn counts and result sizes are fixed assumptions, and the tool-call guess reads tool names only. Send to Claude Code writes every figure and assumption to `cost.json`.
+
+
+## Part 22 — v1.2.0: Coverage, Fill the gap and copy buttons
+
+After you route a task, the **Task route** panel ends with **Coverage**:
+
+- **Covered by this route**: task words the chosen path explains.
+- **In the map but not on this route**: words a concept in the map fits well (score shown); the route ranked something else first. Try the Observer lens or say more about that part.
+- **Not covered**: words nothing in the map fits; "not in the map at all" means the map has never seen the word.
+- **Where it breaks**: for the uncovered phrase (the word and its neighbor, e.g. "android app"), the level where the map stops fitting. If no topic scores 0.2 or more, the proposal is a **new topic** in the best domain; if a topic fits but no concept does, a **new concept** under that topic.
+
+**Fill the gap** builds a generation request for only the missing levels. What happens next depends on where you are:
+
+| Where | What Fill the gap does |
+|---|---|
+| Inside Claude (the graph opened through the connector) | Sends the request to Claude. Paste the pack it returns into the pack box, then **Add pack and route again**. |
+| Dashboard with your API key | Generates the pack, adds it and routes the task again, in one step. |
+| Dashboard without a key | Copies the request. Paste it into Claude, paste the JSON back into the pack box, then **Add pack and route again**. |
+
+Packs you add now take part in routing in this page (flat and observer lens), so the same task routes through the new topic. They live in this browser's graph; the public map changes only when a pack is added to the repository.
+
+Every output field has a **Copy** button: the route, node details, the cost line, embedding values, status messages and the text boxes.

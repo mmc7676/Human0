@@ -17,6 +17,15 @@ dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim
 @media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
 <a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
 <div class="dl"><a href="/docs/changelog.pdf" download>Download PDF</a><a class="alt" href="/docs/changelog.md" download>Download .md</a></div><h1 id="changelog">Changelog</h1>
+<h2 id="v120-prefederation-2026-11-11">v1.2.0 - Prefederation — 2026-11-11</h2>
+<ul>
+<li><strong>Coverage after every route.</strong> Under the route: which words of the task the chosen path covers, which the map knows but this route skipped (with the concept that fits them), and which are not covered.</li>
+<li><strong>Where the hierarchy breaks.</strong> For the uncovered part (with its neighboring word, e.g. "android app") the app walks down the levels with the observer lens: no topic fits (best TF-IDF score below 0.2) → propose a new topic in the best domain; a topic fits but no concept → propose a new concept under it. No model and no network: it runs in the dashboard for everyone.</li>
+<li><strong>Fill the gap.</strong> Builds a generation request for only the missing levels (with the task, the uncovered phrase and the target domain or topic). With your API key it generates, adds the pack and routes again in one step; inside Claude it sends the request to Claude; otherwise it copies the request. <strong>Add pack and route again</strong> adds the pasted pack and re-routes.</li>
+<li><strong>Generated packs now route.</strong> Topics, concepts and skills from packs added in the app join the in-page routing index (flat and observer lens); words the map has never seen get the largest idf. Removing a pack takes them out. The public server's map is unchanged.</li>
+<li><strong>Copy buttons</strong> on the route, details, cost line, embedding values, messages and every text field.</li>
+<li>Backup of v1.1.0: branch <code>release/v1.1.0-prefederation</code>.</li>
+</ul>
 <h2 id="v110-prefederation-2026-11-11">v1.1.0 - Prefederation — 2026-11-11</h2>
 <ul>
 <li><strong>Cost estimate before running.</strong> Every routed skill, agent and MCP server shows its estimated cost on a small orbit beside the node; the line under the task gives the whole harness (input and output tokens, dollars).</li>

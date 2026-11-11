@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.2.0 - Prefederation — 2026-11-11
+- **Coverage after every route.** Under the route: which words of the task the chosen path covers, which the map knows but this route skipped (with the concept that fits them), and which are not covered.
+- **Where the hierarchy breaks.** For the uncovered part (with its neighboring word, e.g. "android app") the app walks down the levels with the observer lens: no topic fits (best TF-IDF score below 0.2) → propose a new topic in the best domain; a topic fits but no concept → propose a new concept under it. No model and no network: it runs in the dashboard for everyone.
+- **Fill the gap.** Builds a generation request for only the missing levels (with the task, the uncovered phrase and the target domain or topic). With your API key it generates, adds the pack and routes again in one step; inside Claude it sends the request to Claude; otherwise it copies the request. **Add pack and route again** adds the pasted pack and re-routes.
+- **Generated packs now route.** Topics, concepts and skills from packs added in the app join the in-page routing index (flat and observer lens); words the map has never seen get the largest idf. Removing a pack takes them out. The public server's map is unchanged.
+- **Copy buttons** on the route, details, cost line, embedding values, messages and every text field.
+- Backup of v1.1.0: branch `release/v1.1.0-prefederation`.
+
 ## v1.1.0 - Prefederation — 2026-11-11
 - **Cost estimate before running.** Every routed skill, agent and MCP server shows its estimated cost on a small orbit beside the node; the line under the task gives the whole harness (input and output tokens, dollars).
   - Skills are fixed: the tokens of their spec in the harness. Agents depend on role and loops: primary 4 work turns, checker 1 review turn, support only on request; each turn re-sends CLAUDE.md, the agent's prompt, the skill specs and the tool definitions of the servers it holds, and history grows. MCP servers depend on the task: tool definitions (120 tokens per tool, an assumption) plus expected calls (the server's tools whose names share a word with the task, at least one) at 1,000 tokens per result.

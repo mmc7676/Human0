@@ -443,6 +443,31 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(/^Estimated harness cost \(Sonnet 5\.5, no caching\): .+ ≈ \$/.test(r.txt) && r.files.includes('cost.json') && /## Estimated cost \(before running\)/.test(r.md), "cost shown in the page and shipped in the harness: " + r.txt);
   }
 
+  // 1u. coverage + fill the gap: find the uncovered part, where the hierarchy breaks, add a pack, route again (and undo)
+  {
+    const PACK = require('fs').readFileSync(require('path').join(__dirname, 'test_android_pack.json'), 'utf8');
+    const r = await p.evaluate(P => { const $ = id => document.getElementById(id); $('taskMode').value = 'flat'; $('taskIn').value = 'Turn a MCP App into an android app'; $('taskGo').click();
+      const g1 = window.__cpv.gap(), req = window.__cpv.gapFillReq(), ui1 = ($('cpGap') || {}).innerText || '';
+      const ta = [...document.querySelectorAll('#topicsBox textarea')].pop(); ta.value = P; ta.dispatchEvent(new Event('input', { bubbles: true }));
+      const add = window.__cpv.gapAdd(), g2 = window.__cpv.gap(), route2 = ($('exec') || {}).innerText || '';
+      $('taskIn').value = 'Build a dashboard that tracks our startup cash runway'; $('taskGo').click(); const g3 = window.__cpv.gap();
+      return { g1, req, ui1, add: { ok: add.ok, topic: add.topic }, g2, route2, g3 } }, PACK);
+    ok(r.g1.gap && r.g1.gap.phrase === 'android app' && r.g1.gap.level === 'topic' && r.g1.unknown.includes('android') && r.g1.covered.includes('MCP'), "gap found: 'android app' needs a new topic; MCP is covered");
+    ok(/Not covered: android/.test(r.ui1) && /Fill the gap/.test(r.ui1) && /FILL THE GAP: the task "Turn a MCP App into an android app" has no route for "android app"/.test(r.req) && /Place the new topic in the domain/.test(r.req), "coverage panel + a request for only the missing levels");
+    ok(r.add.ok && r.g2.gap === null && /Mobile App Development → Android Apps → Android WebView Shell Builder/.test(r.route2), "after adding the pack the task routes through it and nothing is missing");
+    ok(r.g3.gap === null && r.g3.elsewhere.some(e => e.word === 'dashboard'), "a word the map knows but the route skipped is not a gap");
+    const rm = await p.evaluate(() => { const $ = id => document.getElementById(id); window.__cpv.removePack('mobile-app-development'); $('taskIn').value = 'Turn a MCP App into an android app'; $('taskGo').click(); const g = window.__cpv.gap(); $('taskClr').click(); return g });
+    ok(rm.gap && rm.unknown.includes('android'), "removing the pack takes it out of routing again");
+  }
+
+  // 1v. copy buttons on every output field
+  {
+    const r = await p.evaluate(() => new Promise(res => { const $ = id => document.getElementById(id); $('taskMode').value = 'flat'; $('taskIn').value = 'Turn a MCP App into an android app'; $('taskGo').click();
+      setTimeout(() => { const ex = $('exec'), b = ex && ex.querySelector(':scope > .cpcopy'); const fields = [...document.querySelectorAll('#topicsBox textarea')].filter(t => t.nextElementSibling && t.nextElementSibling.classList.contains('cpcopy')).length;
+        res({ n: window.__cpv.copyCount(), exec: !!b, cost: !!($('cpCost') && $('cpCost').nextElementSibling && $('cpCost').nextElementSibling.classList.contains('cpcopy')), fields }); $('taskClr').click() }, 300) }));
+    ok(r.n >= 4 && r.exec && r.cost && r.fields >= 1, "copy buttons on the route, the cost line and the text fields (" + r.n + ")");
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);

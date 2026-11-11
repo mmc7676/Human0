@@ -180,3 +180,83 @@ function cpDrawCost(w,h){cpCostOut();if(!cpCostOn)return;const c=cpCostNow();if(
 function cpCostOut(){const el=$('cpCost');if(!el)return;const c=cpCostNow();
  if(!c){el.textContent='Cost estimate: route a task to see what its harness would cost.';return}
  const p=CP_PRICES[c.model];el.textContent='Estimated harness cost ('+p.name+', no caching): '+cpFmt(c.total.in)+' input + '+cpFmt(c.total.out)+' output tokens ≈ '+cpUsd(c.total.usd)+' · '+Object.keys(c.agents).length+' agents, '+Object.keys(c.mcp).length+' MCP servers, '+Object.values(c.mcp).reduce((s,m)=>s+m.calls,0)+' expected tool calls.'}
+
+// ---- Coverage and "Fill the gap" ----------------------------------------------------------------------------------------
+// After a route: which words of the task the chosen path explains, which it does not, and for each uncovered phrase where
+// the hierarchy breaks (no fitting topic → propose a new topic under the best domain; a topic fits but no concept →
+// propose a new concept under that topic). Pure TF-IDF over the map: no model and no network.
+const CP_GAP_VERBS=new Set('turn make build create add get set run put take give help want need like into onto about from that this then than which what when where how why who our your their some more most very just also only into out off over under between through within without track tracks keep'.split(' '));
+const CP_GAP_TOPIC=0.2,CP_GAP_ELSE=0.2;
+function cpPathText(t){const ids=new Set();for(const [sid] of (t.skills||[]).slice(0,3)){const s=N[sid];if(!s)continue;ids.add(sid);const c='c:'+s.concept;ids.add(c);const tp=cTopic[s.concept];if(tp){ids.add(tp);const d=__CP.tDom[tp.slice(2)];if(d)ids.add('d:'+d)}}
+ const g=__CP.graph,txt=[];for(const id of ids){const n=N[id];if(!n)continue;txt.push(n.label);const k=id.slice(2),o=id[0]==='s'?g.skills.find(x=>x.id===k):id[0]==='c'?g.concepts.find(x=>x.id===k):id[0]==='t'?g.topics.find(x=>x.id===k):null;if(o&&o.desc)txt.push(o.desc)}
+ return txt.join(' ')}
+function cpGap(t){if(!t||!t.text)return null;const words=(t.text.match(/[A-Za-z0-9][A-Za-z0-9+#.-]*/g)||[]);
+ const pathTok=new Set(__CP.tokens(t.matched?cpPathText(t):'')),parts=[];
+ words.forEach((w,wi)=>{const tk=__CP.tokens(w)[0];if(!tk||CP_GAP_VERBS.has(tk))return;parts.push({word:w,wi,tok:tk,known:__CP.inVocab(tk),covered:pathTok.has(tk)})});
+ const best=(L,lv)=>{const l=L.chain.find(x=>x.level===lv);return l&&l.selected[0]?{id:l.selected[0].app,flat:l.selected[0].drift.flat}:null},lab=x=>x&&N[x.id]?N[x.id].label:null;
+ const covered=parts.filter(p=>p.covered),miss=parts.filter(p=>!p.covered),elsewhere=[],gapIdx=[];
+ // an uncovered word the map knows well (a concept fits it) is "in the map, not on this route"; the rest is the gap
+ for(const p of miss){if(p.known){const c=best(__CP.lens(p.word,[]),'concept');if(c&&c.flat>=CP_GAP_ELSE){elsewhere.push({word:p.word,concept:lab(c),score:+c.flat.toFixed(3)});continue}}gapIdx.push(parts.indexOf(p))}
+ const out={task:t.text,covered:covered.map(p=>p.word),uncovered:miss.map(p=>p.word),unknown:miss.filter(p=>!p.known).map(p=>p.word),elsewhere,gap:null};
+ if(!gapIdx.length)return out;
+ // the gap phrase: the gap words plus the content word right after each (or before, at the end), in task order: "android app"
+ const take=new Set(),adj=(i,j)=>j>=0&&j<parts.length&&Math.abs(parts[j].wi-parts[i].wi)===1;for(const i of gapIdx){take.add(i);if(adj(i,i+1))take.add(i+1);else if(adj(i,i-1))take.add(i-1)}
+ const phrase=[...take].sort((x,y)=>x-y).map(i=>parts[i].word).join(' '),L=__CP.lens(phrase,[]);
+ const d=best(L,'domain'),tp=best(L,'topic'),c=best(L,'concept');
+ let dom=d&&d.id;if(!dom&&tp)dom='d:'+__CP.tDom[tp.id.slice(2)];if(!dom){const sd=__CP.suggestDomain(phrase);if(sd)dom='d:'+sd.domain}
+ const level=!tp||tp.flat<CP_GAP_TOPIC?'topic':'concept';
+ out.gap={phrase,words:gapIdx.map(i=>parts[i].word),level,domain:dom?{id:dom,label:lab({id:dom})}:null,topic:tp?{id:tp.id,label:lab(tp),score:+tp.flat.toFixed(3)}:null,concept:c?{id:c.id,label:lab(c),score:+c.flat.toFixed(3)}:null};
+ return out}
+let cpGapState=null,cpGapNote='';
+function cpTitle(s){return s.replace(/\b[a-z]/g,m=>m.toUpperCase())}
+function cpGapReq(){const g=cpGapState&&cpGapState.gap;if(!g||!g.level)return null;const task=cpGapState.task;
+ const head=g.level==='topic'?genRequest(cpTitle(g.phrase),''):genRequest('',cpTitle(g.phrase));
+ const tail=g.level==='topic'
+  ?['','FILL THE GAP: the task "'+task+'" has no route for "'+g.phrase+'".'+(g.domain?' Place the new topic in the domain "'+g.domain.label+'".':''),
+    'Name the topic after the general area "'+g.phrase+'" belongs to (broader than the task words, e.g. a field or product category), change topic.id and the pack id to match, and include a concept that covers "'+g.phrase+'" and skills that would do the uncovered part of the task. Use the task’s own words in skill descriptions.']
+  :['','FILL THE GAP: the task "'+task+'" has no concept for "'+g.phrase+'". Add it under the existing topic id "'+g.topic.id.slice(2)+'" ('+g.topic.label+'): set topic.id to exactly that id and topic.label to "'+g.topic.label+'".',
+    'Include skills that would do the uncovered part of the task, in the task’s own words.'];
+ return head+'\n'+tail.join('\n')}
+async function cpGapFill(){const req=cpGapReq(),m=$('cpGapMsg');if(!req)return;tpSt.req=req;tpSt.topic=cpTitle(cpGapState.gap.phrase);tpSt.concept='';
+ const tb=$('topicsBox');if(tb){tb.open=true;renderTopics()}
+ if(cpClaude.mode==='api'&&cpClaude.key){if(m)m.textContent='Generating the missing '+cpGapState.gap.level+' with '+cpClaude.model+'…';await cpGenerateApi(req);
+  if(/^\s*\{/.test(tpSt.txt||''))return cpGapAddRoute();if(m)m.textContent=tpSt.msg;return}
+ const how=cpAskHost(req);
+ if(m)m.textContent=how==='sent'?'Sent to Claude. When it returns the pack JSON, paste it into the pack box (Topics panel) and press “Add pack and route again”.':
+  'Request copied. Paste it into Claude, paste the JSON it returns into the pack box (Topics panel), then press “Add pack and route again”. Or enter an API key under Connect to Claude to do this in one step.'}
+function cpGapAddRoute(){const m=$('cpGapMsg'),st=cpGapState;let p;try{p=JSON.parse(tpSt.txt)}catch(e){if(m)m.textContent='The pack box has no valid JSON yet: '+e.message;return{ok:false}}
+ const r=addPack(p);if(!r.ok){if(m)m.textContent=r.problems.length+' problem(s) in the pack: '+r.problems.slice(0,4).join(' | ');return r}
+ if(r.topicIsNew&&st&&st.gap&&st.gap.domain){const id=p.topic.id;__CP.tDom[id]=st.gap.domain.id.slice(2);if(typeof TOPIC_META!=='undefined'&&TOPIC_META[id])TOPIC_META[id].domain=st.gap.domain.id.slice(2);refreshGraph()}
+ tpSt.msg='ADDED · '+r.topic;tpSt.cls='good';renderTopics();
+ cpGapNote='Added “'+r.topic+'” to this graph and routed the task again.';const text=st?st.task:(typeof task!=='undefined'&&task?task.text:'');if(text){$('taskIn').value=text;submitTask(text)}
+ const g2=cpGapState,m2=$('cpGapMsg');if(m2&&!g2.gap)m2.textContent='';if(m2&&g2.gap)m2.textContent='Added “'+r.topic+'” and routed again. '+(g2&&g2.gap?'Still not covered: '+g2.gap.words.join(', ')+'.':'Nothing is missing from the map for this task now.');return r}
+function cpGapRender(){const b=$('exec');if(!b||b.style.display==='none')return;const t=typeof task!=='undefined'?task:null;if(!t)return;
+ const g=cpGapState=cpGap(t);if(!g)return;const box=hh('div','cpgap',null,{id:'cpGap'});
+ box.append(hh('strong','','Coverage'));
+ box.append(hh('p','','Covered by this route: '+(g.covered.length?g.covered.join(', '):'nothing')+'.'));
+ if(!g.gap){if(cpGapNote){box.append(hh('p','good',cpGapNote));cpGapNote=''}box.append(hh('p','good',g.uncovered.length?'Nothing is missing from the map for this task.':'Every part of the task is covered.'));if(g.elsewhere.length)box.append(hh('p','','In the map but not on this route: '+g.elsewhere.map(e=>e.word+' → '+e.concept+' ('+e.score+')').join('; ')+'.'));b.append(box);return}
+ if(g.elsewhere.length)box.append(hh('p','','In the map but not on this route: '+g.elsewhere.map(e=>e.word+' → '+e.concept+' ('+e.score+')').join('; ')+'. Try the Observer lens or say more about that part.'));
+ const gw=g.gap?g.gap.words:[];if(gw.length)box.append(hh('p','','Not covered: '+gw.join(', ')+(g.unknown.length?' (not in the map at all: '+g.unknown.join(', ')+')':'')+'.'));
+ const G=g.gap;if(G&&G.level){
+  box.append(hh('p','',G.level==='topic'
+   ?'Where it breaks: no topic fits “'+G.phrase+'”'+(G.topic?' (best: '+G.topic.label+', '+G.topic.score+')':'')+'. Proposal: a new topic'+(G.domain?' in '+G.domain.label:'')+', with its concepts, skills and agents.'
+   :'Where it breaks: the topic '+G.topic.label+' fits ('+G.topic.score+') but no concept covers “'+G.phrase+'”'+(G.concept?' (best: '+G.concept.label+', '+G.concept.score+')':'')+'. Proposal: a new concept under '+G.topic.label+', with skills and agents.'));
+  const r=hh('div','row');const f=hh('button','scwb','Fill the gap',{type:'button',id:'cpGapFill',title:'Generate only the missing levels, add them to this graph and route the task again'});f.onclick=()=>cpGapFill();
+  const a=hh('button','','Add pack and route again',{type:'button',id:'cpGapAdd',title:'Add the pack JSON from the Topics panel and route the task again'});a.onclick=()=>cpGapAddRoute();r.append(f,a);box.append(r)}
+ box.append(hh('small','',cpGapNote||null,{id:'cpGapMsg',role:'status'}));cpGapNote='';b.append(box)}
+{const _re=renderExec;renderExec=function(){const r=_re.apply(this,arguments);try{cpGapRender()}catch(e){}return r}}
+
+// ---- Copy buttons on every output field ---------------------------------------------------------------------------------
+const CP_COPY_SEL='#topicsBox textarea, #exec, #detail, #cpCost, #taskMsg, #lensOut, #tpMsg, #cpCCMsg, #cpEmb, #cpGapMsg';
+function cpCopyText(el){if(el.tagName==='TEXTAREA'||el.tagName==='INPUT')return el.value;const c=el.cloneNode(true);c.querySelectorAll('.cpcopy,button,select').forEach(x=>x.remove());return c.innerText||c.textContent||''}
+function cpCopyDecorate(){for(const el of document.querySelectorAll(CP_COPY_SEL)){if(el.hidden||el.style.display==='none')continue;
+  const isField=el.tagName==='TEXTAREA'||['tpMsg','taskMsg','cpCCMsg','cpGapMsg','cpCost'].includes(el.id),has=isField?(el.nextElementSibling&&el.nextElementSibling.classList.contains('cpcopy')):el.querySelector(':scope > .cpcopy');if(has)continue;
+  if(el.tagName!=='TEXTAREA'&&!(el.textContent||'').trim())continue;
+  const b=hh('button','cpcopy','Copy',{type:'button',title:'Copy this text','aria-label':'Copy this text'});
+  b.onclick=e=>{e.stopPropagation();cpCopy(cpCopyText(el));b.textContent='Copied';setTimeout(()=>{b.textContent='Copy'},1200)};
+  if(isField)el.after(b);else{if(getComputedStyle(el).position==='static')el.style.position='relative';el.prepend(b)}}}
+{let q=0;new MutationObserver(()=>{if(q)return;q=requestAnimationFrame(()=>{q=0;cpCopyDecorate()})}).observe(document.body,{childList:true,subtree:true,characterData:true});setTimeout(cpCopyDecorate,500)}
+// generated packs join the routing index while they are in the graph
+{const _a=addPack;addPack=function(p){const r=_a.apply(this,arguments);if(r&&r.ok&&r.added)try{__CP.indexPack(p)}catch(e){}return r}}
+{const _r=removePack;removePack=function(id){try{__CP.unindexPack(id)}catch(e){}return _r.apply(this,arguments)}}
+for(const id of Object.keys(packs))try{__CP.indexPack(packs[id].pack)}catch(e){}

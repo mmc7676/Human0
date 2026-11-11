@@ -1,0 +1,9 @@
+{"schema":"human0.topic-pack/1","id":"mobile-app-development","topic":{"id":"mobile-app-development","label":"Mobile App Development","desc":"Building, packaging and shipping apps for Android and iOS phones and tablets."},
+"concepts":[["mad-android","Android Apps","mobile-app-development","Native and web-wrapped Android apps: Kotlin, WebView, Gradle builds and Play Store release.",["android","kotlin","webview","gradle","apk","play store"]],
+["mad-webwrap","Web App Wrapping","mobile-app-development","Turning a web or HTML app into an installable mobile app with a WebView shell or a progressive web app.",["webview","pwa","capacitor","wrapper","android app"]]],
+"skills":[["mad-android-shell","mad-android","Android WebView Shell Builder","Wraps an existing web app (such as an MCP App) in an Android WebView shell and builds a signed APK.","procedural",[["MadAndroid1","primary"],["MadAndroid2","checker"],["MadAndroid3","support"]]],
+["mad-android-release","mad-android","Android Release Packager","Signs, versions and uploads an Android app bundle to the Play Store.","procedural",[["MadAndroid1","primary"],["MadAndroid2","checker"]]],
+["mad-pwa-builder","mad-webwrap","PWA Builder","Adds a manifest and service worker so a web app installs on Android as a progressive web app.","procedural",[["MadAndroid3","primary"],["MadAndroid2","checker"]]],
+["mad-capacitor","mad-webwrap","Capacitor Wrapper","Packages a web app with Capacitor into native Android and iOS projects.","procedural",[["MadAndroid1","primary"],["MadAndroid2","checker"]]]],
+"agents":{"MadAndroid1":"Android App Builder Agent","MadAndroid2":"Android Release Checker Agent","MadAndroid3":"Web App Wrapper Agent"},
+"mcp":[],"provenance":{"levels":{"topic":"user","concepts":"generated","skills":"generated","agents":"generated","mcp":"real"},"mcp_checked_at":"2026-11-11","notes":"test fixture for the Fill the gap test (test_ui.cjs 1u)"}}
