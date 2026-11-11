@@ -1,8 +1,15 @@
 # Changelog
 
+## v1.1.0 - Prefederation — 2026-11-11
+- **Cost estimate before running.** Every routed skill, agent and MCP server shows its estimated cost on a small orbit beside the node; the line under the task gives the whole harness (input and output tokens, dollars).
+  - Skills are fixed: the tokens of their spec in the harness. Agents depend on role and loops: primary 4 work turns, checker 1 review turn, support only on request; each turn re-sends CLAUDE.md, the agent's prompt, the skill specs and the tool definitions of the servers it holds, and history grows. MCP servers depend on the task: tool definitions (120 tokens per tool, an assumption) plus expected calls (the server's tools whose names share a word with the task, at least one) at 1,000 tokens per result.
+  - Model picker (Sonnet 5.5 default, Opus 5.5, Haiku 5.5, Fable 5.1) at Anthropic list prices checked 2026-11-10, no prompt caching (an upper estimate); a Loops box for maker → checker rounds; a Cost checkbox to hide the labels.
+  - Send to Claude Code adds `cost.json` (every part, with the assumptions) and an "Estimated cost" section in CLAUDE.md.
+
 ## v1.0.0 - Prefederation — 2026-11-10 (first public release)
 - One version for everything: the Maxey0 Context Plane server, the Maxey0 Context Plane Graph (the MCP App), the plugin and the paper are all v1.0.0 - Prefederation. Earlier entries keep their internal build numbers (server 6.x, app 1.x, plugin 0.x); v1.0.0 is internal build 6.7.1 / app 1.13 / plugin 0.5.0 plus the Context Plane paper in the research library.
 - "Prefederation": no sign-in. Next release adds identity federation and a small hosted allowance for people without a Claude account.
+- Phones: the Connect to Claude button moves to the bottom-right corner with a × to hide it to a small "Claude" tab on the right edge; tapping the tab brings it back (remembered in this browser). The button can be dragged anywhere on a phone screen; it snaps to the nearer side edge and keeps its place. The button always reads "Connect to Claude" (it shows the model only while your own API key is in use).
 - The Context Plane paper is now in the repository (`research/papers/`) and served at `/research/context-plane`.
 
 ## 6.7.1 — 2026-11-10

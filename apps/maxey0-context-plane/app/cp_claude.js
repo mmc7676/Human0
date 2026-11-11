@@ -119,9 +119,64 @@ function cpHarness(t){if(!t||!t.matched)return null;const g=__CP.graph,skills=t.
  const route={schema:'maxey0.harness/1',task:t.text,router:t.lens?'lens':'flat',signal,digest:__CP.digest,source:origin,route:routes,agents:Object.values(agents),servers:sv};
  if(t.lens){try{route.drift=cpDriftScw()}catch(e){}}
  const cmd='claude "Read CLAUDE.md and build the task it describes, using the subagents in .claude/agents."';
+ if(!cpHarness._inCost){cpHarness._inCost=1;try{const c=cpCost(t);if(c){files.push(['cost.json',JSON.stringify(c,null,1)+'\n']);files[0][1]+='\n## Estimated cost (before running)\nAbout '+cpFmt(c.total.in)+' input + '+cpFmt(c.total.out)+' output tokens, ≈ '+cpUsd(c.total.usd)+' on '+CP_PRICES[c.model].name+' at list prices with no caching. Per agent, skill and MCP server: cost.json. Assumptions are in cost.json → params.\n'}}finally{cpHarness._inCost=0}}
  files.push(['route.json',JSON.stringify(route,null,1)+'\n'],['README.md','# Maxey0 harness: '+t.text+'\n\n1. Unzip this folder and open a terminal in it.\n2. Run:\n\n       '+cmd+'\n\nCreated by the Maxey0 Context Plane ('+origin+'/app).\n']);
  return{name:'maxey0-harness-'+cpSlug(t.text),files,cmd}}
 function cpSendCode(){const h=cpHarness(typeof task!=='undefined'?task:null),m=$('cpCCMsg');if(!h){if(m)m.textContent='Route a task first: the harness is built from its route.';return null}
  const blob=cpZip(h.files),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=h.name+'.zip';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),3000);
  cpCopy(h.cmd)
  if(m)m.textContent='Downloaded '+h.name+'.zip ('+h.files.length+' files). Unzip it, open a terminal in the folder and run (copied): '+h.cmd;return h}
+
+// ---- Cost estimate for a route's harness (before anything runs) -------------------------------------------------------
+// What is fixed and what depends on the task:
+//  skill  — FIXED: the tokens of its spec in the harness (route line, description, acceptance line), carried in every turn.
+//  agent  — its own prompt file (fixed) + the shared CLAUDE.md + the tool definitions of the servers it holds, re-sent each
+//           turn; turns depend on role and on loops (primary: work turns × loops; checker: review turns × loops; support:
+//           only on request, 0 by default). Conversation history grows each turn (earlier outputs and tool results).
+//  MCP    — DYNAMIC by task: tool definitions (tools × tokens per tool) for every holder, plus expected calls = the server's
+//           tools whose names share a word with the task (at least 1), each returning a result of a set size.
+// Tokens are counted from the real harness text (about 4 characters per token). Prices are Anthropic's list prices
+// (platform.claude.com/docs/en/about-claude/pricing, checked 2026-11-10), with no prompt caching: an upper estimate.
+const CP_PRICES={'claude-opus-5-5':{name:'Opus 5.5',in:4,out:20},'claude-sonnet-5-5':{name:'Sonnet 5.5',in:2,out:10},'claude-haiku-5-5':{name:'Haiku 5.5',in:0.10,out:0.50,inLong:0.50,outLong:2.50},'claude-fable-5-1':{name:'Fable 5.1',in:10,out:50}};
+const cpCostP={model:'claude-sonnet-5-5',workTurns:4,reviewTurns:1,loops:1,outWork:1500,outReview:500,tokPerTool:120,callResult:1000};
+let cpCostOn=true;
+const cpTok=s=>Math.ceil((s||'').length/4);
+function cpPrice(model,inTok,outTok,perTurnIn){const p=CP_PRICES[model]||CP_PRICES['claude-sonnet-5-5'],long=p.inLong&&perTurnIn>100000;
+ return (inTok*(long?p.inLong:p.in)+outTok*(long?p.outLong:p.out))/1e6}
+function cpCost(t,P){P=Object.assign({},cpCostP,P||{});const h=cpHarness(t);if(!h)return null;const files=Object.fromEntries(h.files),C=cpTok(files['CLAUDE.md']);
+ const skills=t.skills.slice(0,3).map(x=>x[0]).filter(id=>N[id]),words=new Set((t.text||'').toLowerCase().match(/[a-z]{3,}/g)||[]);
+ const out={params:P,model:CP_PRICES[P.model]?P.model:'claude-sonnet-5-5',shared:{claude_md:C},skills:{},agents:{},mcp:{},total:{in:0,out:0,usd:0}};
+ for(const sid of skills){const s=N[sid];out.skills[sid]={label:s.label,fixed:cpTok(s.label+' '+(s.desc||''))*2+12}}
+ const ag={};for(const sid of skills)for(const e of E)if(e.kind==='agent'&&e.a===sid&&N[e.b]){const a=ag[e.b]=ag[e.b]||{roles:new Set(),servers:new Set()};a.roles.add(e.role);
+  for(const gt of G)if(gt.a===e.b&&N[gt.b])a.servers.add(gt.b)}
+ for(const mid of new Set(Object.values(ag).flatMap(a=>[...a.servers]))){const m=__CP.graph.mcp[+mid.slice(2)]||{},tools=m.tools||[];
+  const hit=tools.filter(x=>x.toLowerCase().split(/[^a-z]+/).some(w=>w.length>2&&words.has(w)));
+  out.mcp[mid]={label:m.name||N[mid].label,tools:tools.length,defs:tools.length*P.tokPerTool,calls:Math.max(1,hit.length),called:hit.slice(0,6),result:Math.max(1,hit.length)*P.callResult,holders:0}}
+ for(const [id,a] of Object.entries(ag)){const f=h.files.find(x=>x[0].startsWith('.claude/agents/')&&x[1].includes('('+id.slice(2)+')')),prompt=cpTok(f?f[1]:'');
+  const prim=a.roles.has('primary'),chk=a.roles.has('checker'),T=(prim?P.workTurns:0)+(chk?P.reviewTurns:0),loopT=T*P.loops,o=prim?P.outWork:P.outReview;
+  let defs=0,res=0;for(const mid of a.servers){const m=out.mcp[mid];defs+=m.defs;m.holders++;if(prim){res+=m.result}}
+  const skillCtx=skills.reduce((s,k)=>s+out.skills[k].fixed,0),base=C+prompt+defs+skillCtx;
+  const inTok=loopT?loopT*base+o*loopT*(loopT-1)/2+res*Math.max(1,loopT-1)/2*1:0,outTok=loopT*o;
+  const usd=cpPrice(out.model,inTok,outTok,base+o*loopT+res);
+  out.agents[id]={label:N[id].label,roles:[...a.roles],turns:loopT,prompt,base,in:Math.round(inTok),out:outTok,usd};
+  out.total.in+=Math.round(inTok);out.total.out+=outTok;out.total.usd+=usd}
+ for(const m of Object.values(out.mcp))m.usd=cpPrice(out.model,m.defs*Math.max(1,m.holders)*P.workTurns*P.loops+m.result,0,0);
+ return out}
+const cpFmt=n=>n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(n>=1e4?0:1)+'k':String(Math.round(n));
+const cpUsd=x=>x<0.01?'<$0.01':'$'+x.toFixed(x<1?2:2);
+let cpCostCache=null;
+function cpCostNow(){const t=typeof task!=='undefined'?task:null;if(!t||!t.matched)return null;const k=t.text+'|'+t.skills.slice(0,3).map(x=>x[0]).join(',')+'|'+JSON.stringify(cpCostP);
+ if(!cpCostCache||cpCostCache.k!==k)cpCostCache={k,v:cpCost(t)};return cpCostCache.v}
+// draw: a small label on an orbit just outside each routed skill, agent and MCP node
+function cpDrawCost(w,h){cpCostOut();if(!cpCostOn)return;const c=cpCostNow();if(!c)return;cx.save();cx.font='600 10px system-ui';cx.textBaseline='middle';
+ const tag=(id,txt,col,ang)=>{const n=N[id];if(!n||!vis[n.kind])return;const o=project(n,w,h),r=(typeof cpNodeR==='function'?cpNodeR(n.kind,1):6)+7,x=o.sx+Math.cos(ang)*r,y=o.sy+Math.sin(ang)*r;
+  const tw=cx.measureText(txt).width;cx.strokeStyle=col;cx.lineWidth=1;cx.setLineDash([2,2]);cx.beginPath();cx.arc(o.sx,o.sy,r-3,0,6.2832);cx.stroke();cx.setLineDash([]);
+  cx.fillStyle='rgba(7,19,33,.88)';cx.fillRect(x-2,y-7,tw+6,14);cx.fillStyle=col;cx.fillText(txt,x+1,y)};
+ let i=0;const A=()=>-0.6+(i++%5)*1.25;
+ for(const [id,s] of Object.entries(c.skills))tag(id,cpFmt(s.fixed)+' tok · fixed','#a5f3fc',A());
+ for(const [id,a] of Object.entries(c.agents))tag(id,a.turns?cpFmt(a.in+a.out)+' tok · '+cpUsd(a.usd)+(c.params.loops>1?' · '+c.params.loops+' loops':''):'on request','#fdba74',A());
+ for(const [id,m] of Object.entries(c.mcp))tag(id,(m.tools?'':'tools not listed · ')+'~'+m.calls+' call'+(m.calls>1?'s':'')+' · '+cpFmt(m.defs+m.result)+' tok','#fde68a',A());
+ cx.restore()}
+function cpCostOut(){const el=$('cpCost');if(!el)return;const c=cpCostNow();
+ if(!c){el.textContent='Cost estimate: route a task to see what its harness would cost.';return}
+ const p=CP_PRICES[c.model];el.textContent='Estimated harness cost ('+p.name+', no caching): '+cpFmt(c.total.in)+' input + '+cpFmt(c.total.out)+' output tokens ≈ '+cpUsd(c.total.usd)+' · '+Object.keys(c.agents).length+' agents, '+Object.keys(c.mcp).length+' MCP servers, '+Object.values(c.mcp).reduce((s,m)=>s+m.calls,0)+' expected tool calls.'}

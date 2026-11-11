@@ -423,3 +423,18 @@ Select any node. The **Embedding values** block lists:
 - **Seen from <observer>** (a lens route, or a chosen domain, topic or concept): a (how much of the node the observer explains) and √a, the observed field place and drawn place, and the **Displacement** between home and observed, x, y, z and its length relative to the donut radius.
 - **In this lens route**: when the route chose the node, its flat score and rank seen from above, ψ and rank through the lens, drift and weight.
 - **Nearest by TF-IDF cosine** per level.
+
+
+## Part 21 — v1.1.0: what a route will cost, before you run it
+
+Route a task. Under the task box, **Estimated harness cost** gives the whole harness in input and output tokens and dollars, and each routed node carries its own figure on a dashed orbit:
+
+| Node | Label | What it counts |
+|---|---|---|
+| Skill | `80 tok · fixed` | The tokens of the skill's spec in the harness. It does not change with the task, model or loops. |
+| Agent | `31k tok · $0.11` or `on request` | Its turns × (CLAUDE.md + its prompt + skill specs + tool definitions of the servers it holds), plus growing history, plus its output. Primary: 4 work turns; checker: 1 review turn; support: nothing unless asked. |
+| MCP server | `~2 calls · 2.2k tok` | Tool definitions (120 tokens per tool, assumed) plus the expected calls for this task (tools whose names share a word with the task, at least one) at 1,000 tokens per result. "tools not listed" means the directory gives no tool names. |
+
+Controls on the same row: **Cost** (show or hide the labels), the **model** (Sonnet 5.5, Opus 5.5, Haiku 5.5, Fable 5.1, at Anthropic's list prices checked 2026-11-10) and **Loops** (maker → checker rounds; each round repeats the primary's and checker's turns).
+
+These are estimates for planning, not a bill: no prompt caching is assumed (so real costs with caching are lower), the turn counts and result sizes are fixed assumptions, and the tool-call guess reads tool names only. Send to Claude Code writes every figure and assumption to `cost.json`.

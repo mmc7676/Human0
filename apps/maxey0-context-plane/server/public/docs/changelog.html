@@ -17,10 +17,18 @@ dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim
 @media print{body{background:#fff;color:#000}nav,.dl{display:none}p,li,dd{color:#000}a{color:#000}pre,code{background:#eee}.card{border-color:#ccc;background:#fff}}</style></head><body><main><nav><a href="https://app.maxey0.com/"><img src="/logo.png" alt="Human0 logo"></a><b>Maxey0</b>
 <a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
 <div class="dl"><a href="/docs/changelog.pdf" download>Download PDF</a><a class="alt" href="/docs/changelog.md" download>Download .md</a></div><h1 id="changelog">Changelog</h1>
+<h2 id="v110-prefederation-2026-11-11">v1.1.0 - Prefederation — 2026-11-11</h2>
+<ul>
+<li><strong>Cost estimate before running.</strong> Every routed skill, agent and MCP server shows its estimated cost on a small orbit beside the node; the line under the task gives the whole harness (input and output tokens, dollars).</li>
+<li>Skills are fixed: the tokens of their spec in the harness. Agents depend on role and loops: primary 4 work turns, checker 1 review turn, support only on request; each turn re-sends CLAUDE.md, the agent's prompt, the skill specs and the tool definitions of the servers it holds, and history grows. MCP servers depend on the task: tool definitions (120 tokens per tool, an assumption) plus expected calls (the server's tools whose names share a word with the task, at least one) at 1,000 tokens per result.</li>
+<li>Model picker (Sonnet 5.5 default, Opus 5.5, Haiku 5.5, Fable 5.1) at Anthropic list prices checked 2026-11-10, no prompt caching (an upper estimate); a Loops box for maker → checker rounds; a Cost checkbox to hide the labels.</li>
+<li>Send to Claude Code adds <code>cost.json</code> (every part, with the assumptions) and an "Estimated cost" section in CLAUDE.md.</li>
+</ul>
 <h2 id="v100-prefederation-2026-11-10-first-public-release">v1.0.0 - Prefederation — 2026-11-10 (first public release)</h2>
 <ul>
 <li>One version for everything: the Maxey0 Context Plane server, the Maxey0 Context Plane Graph (the MCP App), the plugin and the paper are all v1.0.0 - Prefederation. Earlier entries keep their internal build numbers (server 6.x, app 1.x, plugin 0.x); v1.0.0 is internal build 6.7.1 / app 1.13 / plugin 0.5.0 plus the Context Plane paper in the research library.</li>
 <li>"Prefederation": no sign-in. Next release adds identity federation and a small hosted allowance for people without a Claude account.</li>
+<li>Phones: the Connect to Claude button moves to the bottom-right corner with a × to hide it to a small "Claude" tab on the right edge; tapping the tab brings it back (remembered in this browser). The button can be dragged anywhere on a phone screen; it snaps to the nearer side edge and keeps its place. The button always reads "Connect to Claude" (it shows the model only while your own API key is in use).</li>
 <li>The Context Plane paper is now in the repository (<code>research/papers/</code>) and served at <code>/research/context-plane</code>.</li>
 </ul>
 <h2 id="671-2026-11-10">6.7.1 — 2026-11-10</h2>

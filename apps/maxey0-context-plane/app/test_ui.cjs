@@ -426,6 +426,23 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
     ok(/No errors detected/.test(zt) && zl.includes('CLAUDE.md') && /\.zip$/.test(dl.suggestedFilename()) && /Downloaded maxey0-harness-design-a-marketing/.test(msg), "the zip is valid (unzip -t) and downloads: " + dl.suggestedFilename());
   }
 
+  // 1t. cost estimate: fixed skills, per-agent turns, MCP calls by task; loops scale agents; model changes the price
+  {
+    const T = 'Build a dashboard that tracks our startup cash runway';
+    const r = await p.evaluate(T => { const $ = id => document.getElementById(id); $('taskMode').value = 'lens'; $('taskIn').value = T; $('taskGo').click();
+      const c1 = window.__cpv.cost(), c2 = window.__cpv.cost({ loops: 2 }), c3 = window.__cpv.cost({ model: 'claude-opus-5-5' }), txt = window.__cpv.costText(), h = window.__cpv.harness();
+      return { c1, c2, c3, txt, files: h.files, md: h.text['CLAUDE.md'] } }, T);
+    await p.evaluate(() => { const $ = id => document.getElementById(id); $('taskClr').click(); $('taskMode').value = 'flat' });
+    const A = Object.values(r.c1.agents), prim = A.filter(a => a.roles.includes('primary')), sup = A.filter(a => a.roles.length === 1 && a.roles[0] === 'support');
+    const sk = Object.values(r.c1.skills), sk3 = Object.values(r.c3.skills), M = Object.values(r.c1.mcp);
+    ok(sk.length >= 1 && sk.every((s, i) => s.fixed > 0 && s.fixed === sk3[i].fixed), "skills carry a fixed token size, independent of model and loops");
+    ok(prim.length >= 1 && prim.every(a => a.turns === 4 && a.in > 0 && a.out === 6000) && sup.every(a => a.turns === 0 && a.in === 0), "primary agents work 4 turns; support agents cost nothing unless asked");
+    ok(M.length >= 1 && M.every(m => m.calls >= 1 && m.result === m.calls * 1000 && m.defs === m.tools * 120), "MCP servers: tool definitions + expected calls by task");
+    ok(r.c2.total.in > r.c1.total.in * 1.5 && r.c2.total.out === r.c1.total.out * 2, "two loops double output and grow input");
+    ok(Math.abs(r.c3.total.usd / r.c1.total.usd - 2) < 0.01, "Opus 5.5 list price is twice Sonnet 5.5 for the same tokens");
+    ok(/^Estimated harness cost \(Sonnet 5\.5, no caching\): .+ ≈ \$/.test(r.txt) && r.files.includes('cost.json') && /## Estimated cost \(before running\)/.test(r.md), "cost shown in the page and shipped in the harness: " + r.txt);
+  }
+
   // 2. gates = the server's agent->MCP links, exactly
   const exp = {};
   for (const l of graph.agent_mcp) (exp[l.agent] = exp[l.agent] || new Set()).add(graph.mcp.find(m => m.id === l.mcp).name);
