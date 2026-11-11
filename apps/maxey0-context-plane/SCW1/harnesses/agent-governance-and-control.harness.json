@@ -926,7 +926,8 @@
    "legacy_key": "gv-policy-auditor",
    "mcp": [
     "42dbc617-e23b-4319-8e27-6a2c72e3c444",
-    "a847d0cb-319e-4c0a-a70d-5278ee7e5f13"
+    "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
    ]
   },
   {
@@ -941,17 +942,13 @@
    "key": "Maxey837",
    "name": "Accountability Agent",
    "legacy_key": "gv-accountability-lead",
-   "mcp": [
-    "d1e853bb-e524-4771-bb2c-21cef5c67805"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey838",
    "name": "Incident Review Agent",
    "legacy_key": "gv-incident-review-agent",
-   "mcp": [
-    "d1e853bb-e524-4771-bb2c-21cef5c67805"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey839",
@@ -971,7 +968,9 @@
    "key": "Maxey841",
    "name": "Compliance Analyst Agent",
    "legacy_key": "gv-compliance-analyst",
-   "mcp": []
+   "mcp": [
+    "d1e853bb-e524-4771-bb2c-21cef5c67805"
+   ]
   },
   {
    "key": "Maxey842",
@@ -1130,7 +1129,7 @@
    "agent": "Maxey830",
    "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
    "topic": "agent-governance-and-control",
-   "score": 0.2161,
+   "score": 0.2359,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey831",
@@ -1142,7 +1141,7 @@
    "agent": "Maxey831",
    "mcp": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
    "topic": "agent-governance-and-control",
-   "score": 0.2031,
+   "score": 0.1994,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey840",
@@ -1154,7 +1153,7 @@
    "agent": "Maxey831",
    "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
    "topic": "agent-governance-and-control",
-   "score": 0.2161,
+   "score": 0.2359,
    "basis": "derived:tfidf-cosine",
    "source_topic": "governance"
   },
@@ -1162,7 +1161,7 @@
    "agent": "Maxey833",
    "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
    "topic": "agent-governance-and-control",
-   "score": 0.2578,
+   "score": 0.2219,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey836",
@@ -1174,7 +1173,7 @@
    "agent": "Maxey833",
    "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
    "topic": "agent-governance-and-control",
-   "score": 0.2161,
+   "score": 0.2359,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey831",
@@ -1186,7 +1185,7 @@
    "agent": "Maxey835",
    "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
    "topic": "agent-governance-and-control",
-   "score": 0.2578,
+   "score": 0.2219,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey836",
@@ -1198,35 +1197,27 @@
    "agent": "Maxey835",
    "mcp": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
    "topic": "agent-governance-and-control",
-   "score": 0.203,
+   "score": 0.1991,
    "basis": "derived:tfidf-cosine",
+   "source_topic": "governance"
+  },
+  {
+   "agent": "Maxey835",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "agent-governance-and-control",
+   "score": 0.2209,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey841",
+    "skill": "gv-control-mapper"
+   },
    "source_topic": "governance"
   },
   {
    "agent": "Maxey836",
    "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
    "topic": "agent-governance-and-control",
-   "score": 0.2578,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "governance"
-  },
-  {
-   "agent": "Maxey837",
-   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
-   "topic": "agent-governance-and-control",
-   "score": 0.2016,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey838",
-    "skill": "gv-corrective-action-tracker"
-   },
-   "source_topic": "governance"
-  },
-  {
-   "agent": "Maxey838",
-   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
-   "topic": "agent-governance-and-control",
-   "score": 0.2016,
+   "score": 0.2219,
    "basis": "derived:tfidf-cosine",
    "source_topic": "governance"
   },
@@ -1234,7 +1225,15 @@
    "agent": "Maxey840",
    "mcp": "a847d0cb-319e-4c0a-a70d-5278ee7e5f13",
    "topic": "agent-governance-and-control",
-   "score": 0.2031,
+   "score": 0.1994,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "governance"
+  },
+  {
+   "agent": "Maxey841",
+   "mcp": "d1e853bb-e524-4771-bb2c-21cef5c67805",
+   "topic": "agent-governance-and-control",
+   "score": 0.2209,
    "basis": "derived:tfidf-cosine",
    "source_topic": "governance"
   },
@@ -1242,7 +1241,7 @@
    "agent": "Maxey843",
    "mcp": "42dbc617-e23b-4319-8e27-6a2c72e3c444",
    "topic": "agent-governance-and-control",
-   "score": 0.3106,
+   "score": 0.254,
    "basis": "derived:tfidf-cosine",
    "source_topic": "governance"
   }

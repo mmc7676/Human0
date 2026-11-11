@@ -1,0 +1,1131 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-api-reference",
+  "label": "Claude API Reference",
+  "desc": "Claude API Reference: API, Opentelemetry (Claude API reference), Claude code, API resources: environments, API resources: user profiles, API resources: compliance, API resources: organization, API resources: sessions, API resources: agents, API resources: vaults, API resources: dreams, API resources: memory stores, API resources: deployments, API resources: tunnels, API resources: messages, API resources: overview, API resources: skills, API resources: files, API resources: deployment runs, API resources: models and API resources: webhooks."
+ },
+ "concepts": [
+  {
+   "id": "cl-api-reference-api",
+   "label": "API",
+   "desc": "API (Claude API Reference): 11 documentation pages.",
+   "keywords": [
+    "features",
+    "overview",
+    "beta",
+    "headers",
+    "errors",
+    "actions"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-admin-compliance-api"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-agents",
+   "label": "API resources: agents",
+   "desc": "API resources: agents (Claude API Reference): 8 documentation pages.",
+   "keywords": [
+    "beta",
+    "agent",
+    "agents",
+    "list",
+    "versions",
+    "archive"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-messages-agent-skills"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-compliance",
+   "label": "API resources: compliance",
+   "desc": "API resources: compliance (Claude API Reference): 67 documentation pages.",
+   "keywords": [
+    "list",
+    "compliance",
+    "project",
+    "messages",
+    "code",
+    "delete"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-admin-compliance-api"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-deployment-runs",
+   "label": "API resources: deployment runs",
+   "desc": "API resources: deployment runs (Claude API Reference): 3 documentation pages.",
+   "keywords": [
+    "deployment",
+    "beta",
+    "runs",
+    "list"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-code-admin-deployment"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-deployments",
+   "label": "API resources: deployments",
+   "desc": "API resources: deployments (Claude API Reference): 9 documentation pages.",
+   "keywords": [
+    "beta",
+    "deployment",
+    "deployments",
+    "archive",
+    "create",
+    "list"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-code-admin-deployment"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-dreams",
+   "label": "API resources: dreams",
+   "desc": "API resources: dreams (Claude API Reference): 6 documentation pages.",
+   "keywords": [
+    "beta",
+    "dream",
+    "dreams",
+    "archive",
+    "cancel",
+    "create"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-environments",
+   "label": "API resources: environments",
+   "desc": "API resources: environments (Claude API Reference): 16 documentation pages.",
+   "keywords": [
+    "beta",
+    "work",
+    "environment",
+    "environments",
+    "item",
+    "list"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-code-config-environments",
+    "cl-managed-agents-environments-and-sandboxes"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-files",
+   "label": "API resources: files",
+   "desc": "API resources: files (Claude API Reference): 12 documentation pages.",
+   "keywords": [
+    "file",
+    "beta",
+    "files",
+    "delete",
+    "download",
+    "metadata"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-memory-stores",
+   "label": "API resources: memory stores",
+   "desc": "API resources: memory stores (Claude API Reference): 17 documentation pages.",
+   "keywords": [
+    "beta",
+    "memory",
+    "store",
+    "list",
+    "retrieve",
+    "create"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-messages",
+   "label": "API resources: messages",
+   "desc": "API resources: messages (Claude API Reference): 20 documentation pages.",
+   "keywords": [
+    "message",
+    "beta",
+    "batch",
+    "batches",
+    "create",
+    "retrieve"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-models",
+   "label": "API resources: models",
+   "desc": "API resources: models (Claude API Reference): 6 documentation pages.",
+   "keywords": [
+    "models",
+    "beta",
+    "model",
+    "list"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-organization",
+   "label": "API resources: organization",
+   "desc": "API resources: organization (Claude API Reference): 325 documentation pages.",
+   "keywords": [
+    "beta",
+    "list",
+    "workspace",
+    "service",
+    "federation",
+    "update"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-overview",
+   "label": "API resources: overview",
+   "desc": "API resources: overview (Claude API Reference): 1 documentation page.",
+   "keywords": [
+    "beta"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-admin-compliance-api",
+    "cl-messages-agent-skills"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-sessions",
+   "label": "API resources: sessions",
+   "desc": "API resources: sessions (Claude API Reference): 24 documentation pages.",
+   "keywords": [
+    "beta",
+    "session",
+    "events",
+    "list",
+    "resource",
+    "thread"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-skills",
+   "label": "API resources: skills",
+   "desc": "API resources: skills (Claude API Reference): 21 documentation pages.",
+   "keywords": [
+    "skill",
+    "beta",
+    "version",
+    "create",
+    "delete",
+    "list"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-apps-extend-skills",
+    "cl-best-practices-agent-skills",
+    "cl-messages-agent-skills"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-tunnels",
+   "label": "API resources: tunnels",
+   "desc": "API resources: tunnels (Claude API Reference): 12 documentation pages.",
+   "keywords": [
+    "beta",
+    "tunnel",
+    "certificate",
+    "archive",
+    "certificates",
+    "create"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-messages-mcp-tunnels"
+   ]
+  },
+  {
+   "id": "cl-api-reference-api-resources-user-profiles",
+   "label": "API resources: user profiles",
+   "desc": "API resources: user profiles (Claude API Reference): 17 documentation pages.",
+   "keywords": [
+    "user",
+    "beta",
+    "profile",
+    "create",
+    "action",
+    "profiles"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-vaults",
+   "label": "API resources: vaults",
+   "desc": "API resources: vaults (Claude API Reference): 15 documentation pages.",
+   "keywords": [
+    "beta",
+    "credential",
+    "vault",
+    "archive",
+    "create",
+    "credentials"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": []
+  },
+  {
+   "id": "cl-api-reference-api-resources-webhooks",
+   "label": "API resources: webhooks",
+   "desc": "API resources: webhooks (Claude API Reference): 1 documentation page.",
+   "keywords": [
+    "webhooks",
+    "beta"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-managed-agents-reference-and-other"
+   ]
+  },
+  {
+   "id": "cl-api-reference-claude-code",
+   "label": "Claude code",
+   "desc": "Claude code (Claude API Reference): 1 documentation page.",
+   "keywords": [
+    "trigger",
+    "routine"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-code-plugins-reference"
+   ]
+  },
+  {
+   "id": "cl-api-reference-opentelemetry",
+   "label": "Opentelemetry (Claude API reference)",
+   "desc": "Opentelemetry (Claude API reference) (Claude API Reference): 1 documentation page.",
+   "keywords": [
+    "spans"
+   ],
+   "topic": "claude-api-reference",
+   "source": "claude-api-reference",
+   "source_topic": "claude-api-reference",
+   "related": [
+    "cl-admin-opentelemetry"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-api-beta-headers",
+   "concept": "cl-api-reference-api",
+   "label": "Beta headers",
+   "desc": "Beta headers (API) Source: https://platform.claude.com/docs/en/api/beta-headers",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-claude-models-on-google-cloud-anthropic-mana",
+   "concept": "cl-api-reference-api",
+   "label": "Google Cloud IAM permissions",
+   "desc": "IAM permissions for Claude Models on Google Cloud (Anthropic managed) Source: https://platform.claude.com/docs/en/api/claude-models-on-google-cloud-anthropic-managed-iam-permissions",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-claude-platform-on-aws-iam-actions",
+   "concept": "cl-api-reference-api",
+   "label": "AWS IAM actions",
+   "desc": "IAM actions for Claude Platform on AWS Source: https://platform.claude.com/docs/en/api/claude-platform-on-aws-iam-actions",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-errors",
+   "concept": "cl-api-reference-api",
+   "label": "Errors",
+   "desc": "Claude API errors Source: https://platform.claude.com/docs/en/api/errors",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-ip-addresses",
+   "concept": "cl-api-reference-api",
+   "label": "IP addresses",
+   "desc": "IP addresses (API) Source: https://platform.claude.com/docs/en/api/ip-addresses",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-migration-2026-10-21",
+   "concept": "cl-api-reference-api",
+   "label": "Migrating to API version 2026-10-21",
+   "desc": "Migrating to API version 2026-10-21 (API) Source: https://platform.claude.com/docs/en/api/migration-2026-10-21",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-overview",
+   "concept": "cl-api-reference-api",
+   "label": "Features overview",
+   "desc": "API overview Source: https://platform.claude.com/docs/en/api/overview",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-rate-limits",
+   "concept": "cl-api-reference-api",
+   "label": "Rate limits",
+   "desc": "Rate limits (API) Source: https://platform.claude.com/docs/en/api/rate-limits",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-service-tiers",
+   "concept": "cl-api-reference-api",
+   "label": "Service tiers",
+   "desc": "Service tiers (API) Source: https://platform.claude.com/docs/en/api/service-tiers",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-supported-regions",
+   "concept": "cl-api-reference-api",
+   "label": "Supported regions",
+   "desc": "Supported regions (API) Source: https://platform.claude.com/docs/en/api/supported-regions",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-versioning",
+   "concept": "cl-api-reference-api",
+   "label": "Versions",
+   "desc": "Versions (API) Source: https://platform.claude.com/docs/en/api/versioning",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-agents-api",
+   "concept": "cl-api-reference-api-resources-agents",
+   "label": "Claude API: agents",
+   "desc": "Call the Claude API agents resource: Agents (Beta); Archive Agent (Beta); Create Agent (Beta); Get Agent (Beta); List Agent Versions (Beta); List Agents (Beta); Update Agent (Beta); Versions (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-compliance-api",
+   "concept": "cl-api-reference-api-resources-compliance",
+   "label": "Claude API: compliance",
+   "desc": "Call the Claude API compliance resource: Activities; Apps; Artifacts; Attachments; Chats; Code; Collaborators; Compliance API; Delete Code Artifact; Delete chat; Delete file; Delete project; Delete project document; Documents; Download Code Artifact Content; Download Code Artifact Version Content; Download a Claude-generated file; Download artifact content; Download file content; Files; Generated Files; Get Claude-generated file metadata; Get Compliance Group; Get Compliance Role; Get an organization's security posture; Get artifact metadata; Get chat messages; Get effective organization setti",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-deployment-runs-api",
+   "concept": "cl-api-reference-api-resources-deployment-runs",
+   "label": "Claude API: deployment runs",
+   "desc": "Call the Claude API deployment runs resource: Deployment Runs (Beta); Get Deployment Run (Beta); List Deployment Runs (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-deployments-api",
+   "concept": "cl-api-reference-api-resources-deployments",
+   "label": "Claude API: deployments",
+   "desc": "Call the Claude API deployments resource: Archive Deployment (Beta); Create Deployment (Beta); Deployments (Beta); Get Deployment (Beta); List Deployments (Beta); Pause Deployment (Beta); Run Deployment Now (Beta); Unpause Deployment (Beta); Update Deployment (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-dreams-api",
+   "concept": "cl-api-reference-api-resources-dreams",
+   "label": "Claude API: dreams",
+   "desc": "Call the Claude API dreams resource: Archive a Dream (Beta); Cancel a Dream (Beta); Create a Dream (Beta); Dreams (Beta); Get a Dream (Beta); List Dreams (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-environments-api",
+   "concept": "cl-api-reference-api-resources-environments",
+   "label": "Claude API: environments",
+   "desc": "Call the Claude API environments resource: Acknowledge Work (Beta); Archive Environment (Beta); Create Environment (Beta); Delete Environment (Beta); Environments (Beta); Get Environment (Beta); Get Queue Statistics (Beta); Get Work Item (Beta); List Environments (Beta); List Work Items (Beta); Poll for Work (Beta); Record Heartbeat (Beta); Stop Work (Beta); Update Environment (Beta); Update Work Item (Beta); Work (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-files-api",
+   "concept": "cl-api-reference-api-resources-files",
+   "label": "Claude API: files",
+   "desc": "Call the Claude API files resource: Delete File; Delete File (Beta); Download File; Download File (Beta); Files; Files (Beta); Get File Metadata; Get File Metadata (Beta); List Files; List Files (Beta); Upload File; Upload File (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-memory-stores-api",
+   "concept": "cl-api-reference-api-resources-memory-stores",
+   "label": "Claude API: memory stores",
+   "desc": "Call the Claude API memory stores resource: Archive a Memory Store (Beta); Create a Memory (Beta); Create a Memory Store (Beta); Delete a Memory (Beta); Delete a Memory Store (Beta); List Memories (Beta); List Memory Stores (Beta); List Memory Versions (Beta); Memories (Beta); Memory Stores (Beta); Memory Versions (Beta); Redact a Memory Version (Beta); Retrieve a Memory (Beta); Retrieve a Memory Store (Beta); Retrieve a Memory Version (Beta); Update a Memory (Beta); Update a Memory Store (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-messages-api",
+   "concept": "cl-api-reference-api-resources-messages",
+   "label": "Claude API: messages",
+   "desc": "Call the Claude API messages resource: Batches; Batches (Beta); Cancel a Message Batch; Cancel a Message Batch (Beta); Count tokens in a Message; Count tokens in a Message (Beta); Create a Message; Create a Message (Beta); Create a Message Batch; Create a Message Batch (Beta); Delete a Message Batch; Delete a Message Batch (Beta); List Message Batches; List Message Batches (Beta); Messages; Messages (Beta); Retrieve Message Batch results; Retrieve Message Batch results (Beta); Retrieve a Message Batch; Retrieve a Message Batch (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-models-api",
+   "concept": "cl-api-reference-api-resources-models",
+   "label": "Claude API: models",
+   "desc": "Call the Claude API models resource: Get a Model; Get a Model (Beta); List Models; List Models (Beta); Models; Models (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-organization-api",
+   "concept": "cl-api-reference-api-resources-organization",
+   "label": "Claude API: organization",
+   "desc": "Call the Claude API organization resource: API Keys; API Keys (Beta); Add Federation Rule Workspace; Add Federation Rule Workspace (Beta); Add RBAC Group Member; Add RBAC Group Member (Beta); Add Workspace To Service Account; Add Workspace To Service Account (Beta); Add a Telemetry Destination Workspace (Beta); Analytics; Analytics (Beta); Approve Spend Limit Increase Request; Approve Spend Limit Increase Request (Beta); Apps; Apps (Beta); Archive Federation Issuer; Archive Federation Issuer (Beta); Archive Federation Rule; Archive Federation Rule (Beta); Archive Service Account; Archive Servi",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-overview-api",
+   "concept": "cl-api-reference-api-resources-overview",
+   "label": "Claude API: overview",
+   "desc": "Call the Claude API overview resource: Beta (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-sessions-api",
+   "concept": "cl-api-reference-api-resources-sessions",
+   "label": "Claude API: sessions",
+   "desc": "Call the Claude API sessions resource: Add Session Resource (Beta); Archive Session (Beta); Archive Session Thread (Beta); Create Session (Beta); Delete Session (Beta); Delete Session Resource (Beta); Events (Beta); Get Session (Beta); Get Session Resource (Beta); Get Session Thread (Beta); List Events (Beta); List Session Resources (Beta); List Session Thread Events (Beta); List Session Threads (Beta); List Sessions (Beta); Resources (Beta); Send Events (Beta); Sessions (Beta); Stream Events (Beta); Stream Session Thread Events (Beta); Threads (Beta); Update Session (Beta); Update Session Res",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-skills-api",
+   "concept": "cl-api-reference-api-resources-skills",
+   "label": "Claude API: skills",
+   "desc": "Call the Claude API skills resource: Create Skill; Create Skill (Beta); Create Skill Version; Create Skill Version (Beta); Delete Skill; Delete Skill (Beta); Delete Skill Version; Delete Skill Version (Beta); Download Skill Version Content (Beta); Get Skill; Get Skill (Beta); Get Skill Version; Get Skill Version (Beta); List Skill Versions; List Skill Versions (Beta); List Skills; List Skills (Beta); Skills; Skills (Beta); Versions; Versions (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-tunnels-api",
+   "concept": "cl-api-reference-api-resources-tunnels",
+   "label": "Claude API: tunnels",
+   "desc": "Call the Claude API tunnels resource: Archive Tunnel (Beta); Archive Tunnel Certificate (Beta); Certificates (Beta); Create Tunnel (Beta); Create Tunnel Certificate (Beta); Get Tunnel (Beta); Get Tunnel Certificate (Beta); List Tunnel Certificates (Beta); List Tunnels (Beta); Reveal Tunnel Token (Beta); Rotate Tunnel Token (Beta); Tunnels (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-user-profiles-api",
+   "concept": "cl-api-reference-api-resources-user-profiles",
+   "label": "Claude API: user profiles",
+   "desc": "Call the Claude API user profiles resource: Action URLs; Action URLs (Beta); Create Action URL; Create Action URL (Beta); Create Enrollment URL (Beta); Create User Profile; Create User Profile (Beta); Delete User Profile; Delete User Profile (Beta); Get User Profile; Get User Profile (Beta); List User Profiles; List User Profiles (Beta); Update User Profile; Update User Profile (Beta); User Profiles; User Profiles (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-vaults-api",
+   "concept": "cl-api-reference-api-resources-vaults",
+   "label": "Claude API: vaults",
+   "desc": "Call the Claude API vaults resource: Archive a Credential (Beta); Archive a Vault (Beta); Create a Credential (Beta); Create a Vault (Beta); Credentials (Beta); Delete a Credential (Beta); Delete a Vault (Beta); List Credentials (Beta); List Vaults (Beta); Retrieve a Credential (Beta); Retrieve a Vault (Beta); Update a Credential (Beta); Update a Vault (Beta); Validate an MCP OAuth Credential (Beta); Vaults (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-webhooks-api",
+   "concept": "cl-api-reference-api-resources-webhooks",
+   "label": "Claude API: webhooks",
+   "desc": "Call the Claude API webhooks resource: Webhooks (Beta)",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-claude-code-routines-fire",
+   "concept": "cl-api-reference-claude-code",
+   "label": "Trigger a routine",
+   "desc": "Trigger a routine through the API Source: https://platform.claude.com/docs/en/api/claude-code/routines-fire",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  },
+  {
+   "id": "cl-platform-en-api-opentelemetry-spans",
+   "concept": "cl-api-reference-opentelemetry",
+   "label": "Spans",
+   "desc": "OpenTelemetry span reference Source: https://platform.claude.com/docs/en/api/opentelemetry/spans",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-reference"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1767",
+   "name": "Claude API Reference Specialist",
+   "legacy_key": "ClaudeApiReferenceSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1768",
+   "name": "Claude API Reference Reviewer",
+   "legacy_key": "ClaudeApiReferenceReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1768",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-api-reference",
+   "score": 0.2115,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-api-reference"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-api-reference"
+ ]
+}

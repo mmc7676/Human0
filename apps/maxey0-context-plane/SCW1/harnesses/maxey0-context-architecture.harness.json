@@ -1906,7 +1906,6 @@
     "1e23b148-2355-4ead-95e9-9b9b359985f7",
     "254e954c-da06-44e1-8f83-e0c599a1a495",
     "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
-    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
     "session:Maxey0"
    ]
   },
@@ -1922,6 +1921,8 @@
    "name": "Provenance Logger",
    "mcp": [
     "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "254e954c-da06-44e1-8f83-e0c599a1a495",
+    "3119bc71-0dfd-48f8-a764-c2fca895325c",
     "session:memory"
    ]
   },
@@ -1929,8 +1930,7 @@
    "key": "Maxey11",
    "name": "Memory Manager",
    "mcp": [
-    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
-    "session:memory"
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8"
    ]
   },
   {
@@ -1993,14 +1993,14 @@
   {
    "key": "Maxey14",
    "name": "Retrieval Orchestrator",
-   "mcp": [
-    "254e954c-da06-44e1-8f83-e0c599a1a495"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey145",
    "name": "OTel Collector Agent",
-   "mcp": []
+   "mcp": [
+    "session:memory"
+   ]
   },
   {
    "key": "Maxey15",
@@ -2026,7 +2026,8 @@
    "key": "Maxey17",
    "name": "Anchor Metrics",
    "mcp": [
-    "1e23b148-2355-4ead-95e9-9b9b359985f7"
+    "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "254e954c-da06-44e1-8f83-e0c599a1a495"
    ]
   },
   {
@@ -2070,17 +2071,12 @@
   {
    "key": "Maxey244",
    "name": "Conversation Importer Agent",
-   "mcp": [
-    "48ba489e-160f-4965-913b-667cce063da2",
-    "d7e0c27c-a722-420a-ae2c-e4fb16ea853e"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey245",
    "name": "Conversation Store Agent",
-   "mcp": [
-    "48ba489e-160f-4965-913b-667cce063da2"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey26",
@@ -2091,8 +2087,7 @@
    "key": "Maxey27",
    "name": "Graph GNN Router",
    "mcp": [
-    "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
-    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25"
+    "78db989f-19e7-4ff3-8b66-5b5abf5208b2"
    ]
   },
   {
@@ -2116,12 +2111,8 @@
    "key": "Maxey307",
    "name": "Promotion Policy Agent",
    "mcp": [
-    "3119bc71-0dfd-48f8-a764-c2fca895325c",
-    "48ba489e-160f-4965-913b-667cce063da2",
     "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
-    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
     "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
-    "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
     "session:memory"
    ]
   },
@@ -2148,7 +2139,6 @@
    "key": "Maxey394",
    "name": "Seed Agent Graph Agent",
    "mcp": [
-    "3119bc71-0dfd-48f8-a764-c2fca895325c",
     "78db989f-19e7-4ff3-8b66-5b5abf5208b2"
    ]
   },
@@ -2174,8 +2164,7 @@
     "254e954c-da06-44e1-8f83-e0c599a1a495",
     "a6a88aa0-b038-43ba-ac83-912f459bf576",
     "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
-    "session:Maxey0",
-    "session:memory"
+    "session:Maxey0"
    ]
   },
   {
@@ -2195,19 +2184,20 @@
    "name": "QA Agent",
    "mcp": [
     "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "254e954c-da06-44e1-8f83-e0c599a1a495",
     "3119bc71-0dfd-48f8-a764-c2fca895325c",
     "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
-    "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
     "b9049585-f39b-45e8-8626-6ca78d9d7d22",
     "d0585e82-4190-4588-ab31-b1afd254cf0f",
-    "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
-    "session:memory"
+    "d683d022-090c-4f0c-ad5e-77c5f4be5df8"
    ]
   },
   {
    "key": "Maxey74",
    "name": "Debugger Agent",
-   "mcp": []
+   "mcp": [
+    "session:memory"
+   ]
   },
   {
    "key": "Maxey79",
@@ -2253,6 +2243,8 @@
    "name": "Compliance Auditor",
    "mcp": [
     "1e23b148-2355-4ead-95e9-9b9b359985f7",
+    "254e954c-da06-44e1-8f83-e0c599a1a495",
+    "3119bc71-0dfd-48f8-a764-c2fca895325c",
     "c703ddc2-743d-4677-b37e-4f58476c6a60",
     "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
     "session:memory"
@@ -2261,7 +2253,9 @@
   {
    "key": "Maxey96",
    "name": "Artifact Store",
-   "mcp": []
+   "mcp": [
+    "d7e0c27c-a722-420a-ae2c-e4fb16ea853e"
+   ]
   },
   {
    "key": "Maxey98",
@@ -2323,23 +2317,6 @@
    ]
   },
   {
-   "uuid": "48ba489e-160f-4965-913b-667cce063da2",
-   "name": "Chatbase",
-   "desc": "Manage Chatbase agents, sources, conversations, tickets.",
-   "tools": [
-    "chatbase_chat",
-    "chatbase_create_agent",
-    "chatbase_create_source",
-    "chatbase_export_conversations"
-   ],
-   "state": "registry",
-   "source": "Maxey0 base graph MCP table",
-   "id": "48ba489e-160f-4965-913b-667cce063da2",
-   "origins": [
-    "maxey0_base"
-   ]
-  },
-  {
    "uuid": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
    "name": "DevRev",
    "desc": "Search and update your company's knowledge graph",
@@ -2353,23 +2330,6 @@
    "state": "registry",
    "source": "Maxey0 base graph MCP table",
    "id": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
-   "origins": [
-    "maxey0_base"
-   ]
-  },
-  {
-   "uuid": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
-   "name": "JupiterOne",
-   "desc": "Ask questions about your JupiterOne agentic security and it asset graph and manage alerts, rules, and dashboards",
-   "tools": [
-    "execute-j1ql-query",
-    "get-active-alerts",
-    "create-dashboard",
-    "evaluate-rule"
-   ],
-   "state": "registry",
-   "source": "Maxey0 base graph MCP table",
-   "id": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
    "origins": [
     "maxey0_base"
    ]
@@ -2531,38 +2491,21 @@
    "agent": "Maxey00",
    "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
    "topic": null,
-   "score": 0.1101,
+   "score": 0.1048,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey00",
    "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
-   "topic": "maxey0-context-architecture",
-   "score": 0.1526,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey14",
-    "skill": "agentic-deep-search"
-   },
-   "source_topic": "maxey0"
+   "topic": null,
+   "score": 0.1626,
+   "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey00",
    "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
    "topic": "maxey0-context-architecture",
-   "score": 0.1486,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey27",
-    "skill": "orbital-selection"
-   },
-   "source_topic": "maxey0"
-  },
-  {
-   "agent": "Maxey00",
-   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
-   "topic": "maxey0-context-architecture",
-   "score": 0.1021,
+   "score": 0.1618,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey27",
@@ -2586,14 +2529,14 @@
    "agent": "Maxey10",
    "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
    "topic": null,
-   "score": 0.1046,
+   "score": 0.1003,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey109",
    "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
    "topic": "maxey0-context-architecture",
-   "score": 0.1101,
+   "score": 0.1048,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey00",
@@ -2603,44 +2546,68 @@
   },
   {
    "agent": "Maxey109",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": "maxey0-context-architecture",
+   "score": 0.1626,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "retrieval-attribution-evaluation"
+   },
+   "source_topic": "maxey0"
+  },
+  {
+   "agent": "Maxey109",
+   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "topic": null,
+   "score": 0.2632,
+   "basis": "derived:tfidf-cosine"
+  },
+  {
+   "agent": "Maxey109",
    "mcp": "session:memory",
    "topic": null,
-   "score": 0.2463,
+   "score": 0.2458,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey11",
    "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
    "topic": null,
-   "score": 0.2199,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey11",
-   "mcp": "session:memory",
-   "topic": null,
-   "score": 0.2466,
+   "score": 0.2165,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey13",
    "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
    "topic": null,
-   "score": 0.185,
+   "score": 0.1593,
    "basis": "derived:tfidf-cosine"
   },
   {
-   "agent": "Maxey14",
-   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "agent": "Maxey145",
+   "mcp": "session:memory",
    "topic": null,
-   "score": 0.1526,
+   "score": 0.2417,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey17",
    "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
    "topic": "maxey0-context-architecture",
-   "score": 0.1101,
+   "score": 0.1048,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "agent-evaluation"
+   },
+   "source_topic": "maxey0"
+  },
+  {
+   "agent": "Maxey17",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": "maxey0-context-architecture",
+   "score": 0.1626,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey00",
@@ -2652,99 +2619,35 @@
    "agent": "Maxey180",
    "mcp": "a6a88aa0-b038-43ba-ac83-912f459bf576",
    "topic": null,
-   "score": 0.1065,
+   "score": 0.1102,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey180",
    "mcp": "session:Maxey0",
    "topic": null,
-   "score": 0.2654,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey244",
-   "mcp": "48ba489e-160f-4965-913b-667cce063da2",
-   "topic": null,
-   "score": 0.1129,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey244",
-   "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
-   "topic": null,
-   "score": 0.1447,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey245",
-   "mcp": "48ba489e-160f-4965-913b-667cce063da2",
-   "topic": null,
-   "score": 0.1105,
+   "score": 0.2802,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey27",
    "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
    "topic": null,
-   "score": 0.1486,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey27",
-   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
-   "topic": null,
-   "score": 0.1021,
+   "score": 0.1618,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey30",
    "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
    "topic": null,
-   "score": 0.1894,
+   "score": 0.144,
    "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey307",
-   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
-   "topic": "maxey0-context-architecture",
-   "score": 0.2873,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey394",
-    "skill": "semantic-memory-engineering"
-   },
-   "source_topic": "maxey0"
-  },
-  {
-   "agent": "Maxey307",
-   "mcp": "48ba489e-160f-4965-913b-667cce063da2",
-   "topic": "maxey0-context-architecture",
-   "score": 0.1129,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey244",
-    "skill": "episodic-memory-engineering"
-   },
-   "source_topic": "maxey0"
   },
   {
    "agent": "Maxey307",
    "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
    "topic": "maxey0-context-architecture",
-   "score": 0.1486,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey27",
-    "skill": "memory-graph-evolution"
-   },
-   "source_topic": "maxey0"
-  },
-  {
-   "agent": "Maxey307",
-   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
-   "topic": "maxey0-context-architecture",
-   "score": 0.1021,
+   "score": 0.1618,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey27",
@@ -2756,30 +2659,18 @@
    "agent": "Maxey307",
    "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
    "topic": null,
-   "score": 0.2257,
+   "score": 0.2155,
    "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey307",
-   "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
-   "topic": "maxey0-context-architecture",
-   "score": 0.1447,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey244",
-    "skill": "episodic-memory-engineering"
-   },
-   "source_topic": "maxey0"
   },
   {
    "agent": "Maxey307",
    "mcp": "session:memory",
    "topic": "maxey0-context-architecture",
-   "score": 0.2466,
+   "score": 0.2417,
    "basis": "inherited:checker-of-primary",
    "via": {
-    "primary": "Maxey11",
-    "skill": "multi-tier-memory-management"
+    "primary": "Maxey145",
+    "skill": "memory-access-telemetry"
    },
    "source_topic": "maxey0"
   },
@@ -2787,14 +2678,14 @@
    "agent": "Maxey364",
    "mcp": "a6a88aa0-b038-43ba-ac83-912f459bf576",
    "topic": null,
-   "score": 0.1098,
+   "score": 0.1137,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey364",
    "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
    "topic": "maxey0-context-architecture",
-   "score": 0.1046,
+   "score": 0.1003,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey10",
@@ -2806,35 +2697,28 @@
    "agent": "Maxey364",
    "mcp": "session:Maxey0",
    "topic": null,
-   "score": 0.2737,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey394",
-   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
-   "topic": null,
-   "score": 0.2873,
+   "score": 0.2893,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey394",
    "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
    "topic": null,
-   "score": 0.1448,
+   "score": 0.1597,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey52",
    "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
    "topic": null,
-   "score": 0.1486,
+   "score": 0.1618,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey52",
    "mcp": "a6a88aa0-b038-43ba-ac83-912f459bf576",
    "topic": "maxey0-context-architecture",
-   "score": 0.1065,
+   "score": 0.1102,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey180",
@@ -2846,7 +2730,7 @@
    "agent": "Maxey52",
    "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
    "topic": "maxey0-context-architecture",
-   "score": 0.2199,
+   "score": 0.2165,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey11",
@@ -2858,7 +2742,7 @@
    "agent": "Maxey52",
    "mcp": "session:Maxey0",
    "topic": "maxey0-context-architecture",
-   "score": 0.2654,
+   "score": 0.2802,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey180",
@@ -2867,29 +2751,29 @@
    "source_topic": "maxey0"
   },
   {
-   "agent": "Maxey52",
-   "mcp": "session:memory",
-   "topic": "maxey0-context-architecture",
-   "score": 0.2466,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey11",
-    "skill": "memory-context-compress"
-   },
-   "source_topic": "maxey0"
-  },
-  {
    "agent": "Maxey54",
    "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
    "topic": null,
-   "score": 0.1672,
+   "score": 0.1612,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
    "topic": "maxey0-context-architecture",
-   "score": 0.1101,
+   "score": 0.1048,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "same-tick-arbitration"
+   },
+   "source_topic": "maxey0"
+  },
+  {
+   "agent": "Maxey71",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": "maxey0-context-architecture",
+   "score": 0.1626,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey00",
@@ -2901,26 +2785,14 @@
    "agent": "Maxey71",
    "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
    "topic": null,
-   "score": 0.3032,
+   "score": 0.2801,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "78db989f-19e7-4ff3-8b66-5b5abf5208b2",
    "topic": "maxey0-context-architecture",
-   "score": 0.1486,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey27",
-    "skill": "graph-memory-construction"
-   },
-   "source_topic": "maxey0"
-  },
-  {
-   "agent": "Maxey71",
-   "mcp": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
-   "topic": "maxey0-context-architecture",
-   "score": 0.1021,
+   "score": 0.1618,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey27",
@@ -2932,21 +2804,21 @@
    "agent": "Maxey71",
    "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
    "topic": null,
-   "score": 0.1885,
+   "score": 0.1482,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
    "topic": null,
-   "score": 0.1249,
+   "score": 0.1134,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
    "topic": "maxey0-context-architecture",
-   "score": 0.2199,
+   "score": 0.2165,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey11",
@@ -2955,14 +2827,14 @@
    "source_topic": "maxey0"
   },
   {
-   "agent": "Maxey71",
+   "agent": "Maxey74",
    "mcp": "session:memory",
    "topic": "maxey0-context-architecture",
-   "score": 0.2466,
+   "score": 0.2417,
    "basis": "inherited:checker-of-primary",
    "via": {
-    "primary": "Maxey11",
-    "skill": "procedural-memory-engineering"
+    "primary": "Maxey145",
+    "skill": "ai-observability"
    },
    "source_topic": "maxey0"
   },
@@ -2970,7 +2842,7 @@
    "agent": "Maxey79",
    "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
    "topic": null,
-   "score": 0.1099,
+   "score": 0.1039,
    "basis": "derived:tfidf-cosine"
   },
   {
@@ -2989,7 +2861,7 @@
    "agent": "Maxey88",
    "mcp": "1e23b148-2355-4ead-95e9-9b9b359985f7",
    "topic": "maxey0-context-architecture",
-   "score": 0.1101,
+   "score": 0.1048,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey00",
@@ -2999,9 +2871,33 @@
   },
   {
    "agent": "Maxey88",
+   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
+   "topic": "maxey0-context-architecture",
+   "score": 0.1626,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey00",
+    "skill": "enterprise-constitution-evaluation"
+   },
+   "source_topic": "maxey0"
+  },
+  {
+   "agent": "Maxey88",
+   "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
+   "topic": "maxey0-context-architecture",
+   "score": 0.2632,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey109",
+    "skill": "claim-lineage-analysis"
+   },
+   "source_topic": "maxey0"
+  },
+  {
+   "agent": "Maxey88",
    "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
    "topic": "maxey0-context-architecture",
-   "score": 0.1672,
+   "score": 0.1612,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey54",
@@ -3013,7 +2909,7 @@
    "agent": "Maxey88",
    "mcp": "d683d022-090c-4f0c-ad5e-77c5f4be5df8",
    "topic": "maxey0-context-architecture",
-   "score": 0.2257,
+   "score": 0.2155,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey307",
@@ -3025,13 +2921,20 @@
    "agent": "Maxey88",
    "mcp": "session:memory",
    "topic": "maxey0-context-architecture",
-   "score": 0.2463,
+   "score": 0.2458,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey109",
     "skill": "claim-lineage-analysis"
    },
    "source_topic": "maxey0"
+  },
+  {
+   "agent": "Maxey96",
+   "mcp": "d7e0c27c-a722-420a-ae2c-e4fb16ea853e",
+   "topic": null,
+   "score": 0.1373,
+   "basis": "derived:tfidf-cosine"
   }
  ],
  "lexicon": {

@@ -1,0 +1,998 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-managed-agents",
+ "topic": {
+  "id": "claude-managed-agents",
+  "label": "Claude Managed Agents",
+  "desc": "Hosted agents on the Claude Platform: agents, sessions, environments, cloud sandboxes, memory, credential vaults, multiagent orchestration, scheduled deployments, outcomes and budgets."
+ },
+ "concepts": [
+  [
+   "cl-managed-agents-get-started",
+   "Get started",
+   "claude-managed-agents",
+   "Get started (Claude Managed Agents): 4 documentation pages.",
+   [
+    "overview",
+    "claude",
+    "managed",
+    "agents",
+    "quickstart",
+    "started"
+   ]
+  ],
+  [
+   "cl-managed-agents-tools-files-and-memory",
+   "Tools, files and memory",
+   "claude-managed-agents",
+   "Tools, files and memory (Claude Managed Agents): 8 documentation pages.",
+   [
+    "access",
+    "github",
+    "attach",
+    "download",
+    "files",
+    "authenticate"
+   ]
+  ],
+  [
+   "cl-managed-agents-environments-and-sandboxes",
+   "Environments and sandboxes",
+   "claude-managed-agents",
+   "Environments and sandboxes (Claude Managed Agents): 10 documentation pages.",
+   [
+    "environment",
+    "cloud",
+    "reference",
+    "choose",
+    "setup",
+    "sandbox"
+   ]
+  ],
+  [
+   "cl-managed-agents-agents-and-orchestration",
+   "Agents and orchestration",
+   "claude-managed-agents",
+   "Agents and orchestration (Claude Managed Agents): 5 documentation pages.",
+   [
+    "define",
+    "outcomes",
+    "agent",
+    "setup",
+    "dreams",
+    "multiagent"
+   ]
+  ],
+  [
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Sessions, events and streaming",
+   "claude-managed-agents",
+   "Sessions, events and streaming (Claude Managed Agents): 6 documentation pages.",
+   [
+    "session",
+    "event",
+    "inspect",
+    "track",
+    "usage",
+    "deltas"
+   ]
+  ],
+  [
+   "cl-managed-agents-deployment-and-security",
+   "Deployment and security",
+   "claude-managed-agents",
+   "Deployment and security (Claude Managed Agents): 5 documentation pages.",
+   [
+    "permission",
+    "policies",
+    "review",
+    "monitor",
+    "sessions",
+    "scheduled"
+   ]
+  ],
+  [
+   "cl-managed-agents-reference-and-other",
+   "Reference and other",
+   "claude-managed-agents",
+   "Reference and other (Claude Managed Agents): 3 documentation pages.",
+   [
+    "managed",
+    "agents",
+    "reference",
+    "subscribe",
+    "webhooks",
+    "workflow"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-platform-en-managed-agents-overview",
+   "cl-managed-agents-get-started",
+   "Overview: Claude Managed Agents overview",
+   "Claude Managed Agents overview Source: https://platform.claude.com/docs/en/managed-agents/overview",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-quickstart",
+   "cl-managed-agents-get-started",
+   "Quickstart: Get started with Claude Managed Agents",
+   "Get started with Claude Managed Agents Source: https://platform.claude.com/docs/en/managed-agents/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-onboarding",
+   "cl-managed-agents-get-started",
+   "Build in Console",
+   "Build in Console (Get started) Source: https://platform.claude.com/docs/en/managed-agents/onboarding",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-migration",
+   "cl-managed-agents-get-started",
+   "Migration",
+   "Migration (Get started) Source: https://platform.claude.com/docs/en/managed-agents/migration",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-github",
+   "cl-managed-agents-tools-files-and-memory",
+   "Access GitHub",
+   "Accessing GitHub Source: https://platform.claude.com/docs/en/managed-agents/github",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-files",
+   "cl-managed-agents-tools-files-and-memory",
+   "Attach and download files",
+   "Adding files Source: https://platform.claude.com/docs/en/managed-agents/files",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-vaults",
+   "cl-managed-agents-tools-files-and-memory",
+   "Authenticate with vaults",
+   "Authenticate with vaults (Tools, files and memory) Source: https://platform.claude.com/docs/en/managed-agents/vaults",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-mcp-connector",
+   "cl-managed-agents-tools-files-and-memory",
+   "MCP connector",
+   "MCP connector (Tools, files and memory) Source: https://platform.claude.com/docs/en/managed-agents/mcp-connector",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-tools-web-restrictions",
+   "cl-managed-agents-tools-files-and-memory",
+   "Web tool restrictions",
+   "Restrict web search and web fetch domains Source: https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-skills",
+   "cl-managed-agents-tools-files-and-memory",
+   "Agent Skills",
+   "Skills Source: https://platform.claude.com/docs/en/managed-agents/skills",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-tools",
+   "cl-managed-agents-tools-files-and-memory",
+   "Tools",
+   "Tools (Tools, files and memory) Source: https://platform.claude.com/docs/en/managed-agents/tools",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-memory",
+   "cl-managed-agents-tools-files-and-memory",
+   "Memory stores",
+   "Using agent memory Source: https://platform.claude.com/docs/en/managed-agents/memory",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-choosing-an-environment",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Choose an environment",
+   "Choosing an agent environment Source: https://platform.claude.com/docs/en/managed-agents/choosing-an-environment",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-environments",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Cloud environment setup",
+   "Cloud environment setup (Environments and sandboxes) Source: https://platform.claude.com/docs/en/managed-agents/environments",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-cloud-sandboxes-reference",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Cloud sandbox reference",
+   "Cloud sandbox reference (Environments and sandboxes) Source: https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference",
+   "reference",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes-custom-tool",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Custom tools and MCP servers",
+   "Custom tools in self-hosted sandboxes Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes-workers",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Deploy workers",
+   "Deploy self-hosted workers Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes-memory",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Memory stores",
+   "Memory stores in self-hosted sandboxes Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes-operations",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Monitor and troubleshoot",
+   "Monitor and troubleshoot self-hosted workers Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes-security",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Security model",
+   "Security model (Environments and sandboxes) Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Overview and quickstart",
+   "Self-hosted sandboxes Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-self-hosted-sandboxes-reference",
+   "cl-managed-agents-environments-and-sandboxes",
+   "Worker reference",
+   "Self-hosted worker reference Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference",
+   "reference",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-define-outcomes",
+   "cl-managed-agents-agents-and-orchestration",
+   "Define outcomes",
+   "Define outcomes (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-agent-setup",
+   "cl-managed-agents-agents-and-orchestration",
+   "Agent setup",
+   "Define your agent Source: https://platform.claude.com/docs/en/managed-agents/agent-setup",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-dreams",
+   "cl-managed-agents-agents-and-orchestration",
+   "Dreams",
+   "Dreams (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/dreams",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-multiagent-orchestration",
+   "cl-managed-agents-agents-and-orchestration",
+   "Multiagent orchestration",
+   "Multiagent orchestration (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-budgets",
+   "cl-managed-agents-agents-and-orchestration",
+   "Session budgets",
+   "Session budgets (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/budgets",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-session-observability",
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Inspect and track usage",
+   "Inspect sessions and track usage Source: https://platform.claude.com/docs/en/managed-agents/session-observability",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-event-deltas",
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Event deltas",
+   "Preview responses with event deltas Source: https://platform.claude.com/docs/en/managed-agents/event-deltas",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-events-and-streaming",
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Session event stream",
+   "Session event stream (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/events-and-streaming",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-session-operations",
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Session operations",
+   "Session operations (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/session-operations",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-session-threads",
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Session threads",
+   "Session threads (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/session-threads",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-sessions",
+   "cl-managed-agents-sessions-events-and-streaming",
+   "Start a session",
+   "Start a session (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/sessions",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-permission-policies",
+   "cl-managed-agents-deployment-and-security",
+   "Permission policies",
+   "Permission policies (Deployment and security) Source: https://platform.claude.com/docs/en/managed-agents/permission-policies",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-secure-deployment-monitoring",
+   "cl-managed-agents-deployment-and-security",
+   "Review and monitor sessions",
+   "Review and monitor agent sessions Source: https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-scheduled-deployments",
+   "cl-managed-agents-deployment-and-security",
+   "Scheduled deployments",
+   "Scheduled deployments (Deployment and security) Source: https://platform.claude.com/docs/en/managed-agents/scheduled-deployments",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-secure-deployment",
+   "cl-managed-agents-deployment-and-security",
+   "Secure your deployment",
+   "Secure your Managed Agents deployment Source: https://platform.claude.com/docs/en/managed-agents/secure-deployment",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-secure-deployment-risks",
+   "cl-managed-agents-deployment-and-security",
+   "Risks and boundaries",
+   "Security risks and sandbox boundaries Source: https://platform.claude.com/docs/en/managed-agents/secure-deployment-risks",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-reference",
+   "cl-managed-agents-reference-and-other",
+   "Managed Agents reference",
+   "Reference Source: https://platform.claude.com/docs/en/managed-agents/reference",
+   "reference",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-webhooks",
+   "cl-managed-agents-reference-and-other",
+   "Subscribe to webhooks",
+   "Subscribe to webhooks (Reference and other) Source: https://platform.claude.com/docs/en/managed-agents/webhooks",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-managed-agents-workflow-runs",
+   "cl-managed-agents-reference-and-other",
+   "Workflow runs",
+   "Workflow runs (Reference and other) Source: https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+   "procedural",
+   [
+    [
+     "ClaudeManagedAgentsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeManagedAgentsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeManagedAgentsSpecialist": "Claude Managed Agents Specialist",
+  "ClaudeManagedAgentsReviewer": "Claude Managed Agents Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

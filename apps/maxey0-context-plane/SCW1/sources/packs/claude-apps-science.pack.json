@@ -1,0 +1,991 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-apps-science",
+ "topic": {
+  "id": "claude-apps-science",
+  "label": "Claude Science",
+  "desc": "Claude Science, the research workbench for scientists run on a lab's own machines."
+ },
+ "concepts": [
+  [
+   "cl-apps-science-get-started-and-use",
+   "Get started and use",
+   "claude-apps-science",
+   "Get started and use (Claude Science): 10 documentation pages.",
+   [
+    "claude",
+    "science",
+    "started",
+    "window",
+    "macos",
+    "update"
+   ]
+  ],
+  [
+   "cl-apps-science-compute-data-and-connectors",
+   "Compute, data and connectors",
+   "claude-apps-science",
+   "Compute, data and connectors (Claude Science): 8 documentation pages.",
+   [
+    "remote",
+    "connectors",
+    "compute",
+    "linux",
+    "server",
+    "tools"
+   ]
+  ],
+  [
+   "cl-apps-science-example-gallery",
+   "Example gallery",
+   "claude-apps-science",
+   "Example gallery (Claude Science): 10 documentation pages.",
+   [
+    "first",
+    "curve",
+    "model",
+    "example",
+    "gallery",
+    "genetic"
+   ]
+  ],
+  [
+   "cl-apps-science-reference-and-support",
+   "Reference and support",
+   "claude-apps-science",
+   "Reference and support (Claude Science): 7 documentation pages.",
+   [
+    "claude",
+    "science",
+    "safeguards",
+    "troubleshoot",
+    "glossary",
+    "command"
+   ]
+  ],
+  [
+   "cl-apps-science-administration-and-networks",
+   "Administration and networks",
+   "claude-apps-science",
+   "Administration and networks (Claude Science): 7 documentation pages.",
+   [
+    "claude",
+    "science",
+    "network",
+    "enable",
+    "works",
+    "with"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-apps-claude-science-overview",
+   "cl-apps-science-get-started-and-use",
+   "Claude Science",
+   "Anthropic's AI workbench for rigorous science. Source: https://claude.com/docs/claude-science/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-get-started",
+   "cl-apps-science-get-started-and-use",
+   "Get started",
+   "Install Claude Science on macOS, Windows, or Linux, sign in with your Claude account, and run your first analysis. Source: https://claude.com/docs/claude-science/get-started",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-mac-app-window",
+   "cl-apps-science-get-started-and-use",
+   "Claude Science in its own window on macOS",
+   "Keep working when Claude Science switches to its own window on a Mac: open, quit, and update it, and turn macOS permissions back on. Source: https://claude.com/docs/claude-science/mac-app-window",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-update-claude-science",
+   "cl-apps-science-get-started-and-use",
+   "Update Claude Science",
+   "Install the latest version of Claude Science on Mac, Windows, or Linux, and get past an Update required message or an update that fails. Source: https://claude.com/docs/claude-science/update-claude-science",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-core-concepts",
+   "cl-apps-science-get-started-and-use",
+   "Core concepts",
+   "A project groups related sessions and the artifacts they produce. Source: https://claude.com/docs/claude-science/core-concepts",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-auto-mode",
+   "cl-apps-science-get-started-and-use",
+   "Auto mode",
+   "Auto mode lets Claude Science run code and call connectors without stopping to ask about every step. Source: https://claude.com/docs/claude-science/auto-mode",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-multiple-computers",
+   "cl-apps-science-get-started-and-use",
+   "Use Claude Science on more than one computer",
+   "What to expect when you sign in on another computer, or under another sign-in on the same computer. Source: https://claude.com/docs/claude-science/multiple-computers",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-artifacts",
+   "cl-apps-science-get-started-and-use",
+   "Artifacts in Claude Science",
+   "Artifacts in Claude Science are files Claude saves into a project, such as figures, datasets, and reports. Open, version, trace, and delete them. Source: https://claude.com/docs/claude-science/artifacts",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-comments",
+   "cl-apps-science-get-started-and-use",
+   "Comments",
+   "Comments in Claude Science pin a note to a specific part of an artifact, such as selected text or a point on a figure, and send the note to Claude. Source: https://claude.com/docs/claude-science/comments",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-the-reviewer",
+   "cl-apps-science-get-started-and-use",
+   "The reviewer",
+   "A built-in verification step that independently re-reads Claude's recent responses, the approved plan, saved artifacts, and the execution record, then checks whether its claims match what ran. Source: https://claude.com/docs/claude-science/the-reviewer",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-run-on-remote-linux-server",
+   "cl-apps-science-compute-data-and-connectors",
+   "Run on a remote Linux server",
+   "Install Claude Science on a cloud VM or lab server and use it from your own browser through an SSH tunnel. Source: https://claude.com/docs/claude-science/run-on-remote-linux-server",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-tools-and-environments",
+   "cl-apps-science-compute-data-and-connectors",
+   "Tools and environments",
+   "Claude writes and runs Python, R, and shell commands. Source: https://claude.com/docs/claude-science/tools-and-environments",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-connectors-and-skills",
+   "cl-apps-science-compute-data-and-connectors",
+   "Connectors and skills",
+   "Connectors give Claude access to external data sources during an analysis. Source: https://claude.com/docs/claude-science/connectors-and-skills",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-remote-compute-clusters",
+   "cl-apps-science-compute-data-and-connectors",
+   "Remote compute clusters",
+   "Connect a machine you can reach over SSH (a lab workstation or an HPC login node) so Claude can run jobs on it. Source: https://claude.com/docs/claude-science/remote-compute-clusters",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-compute-providers",
+   "cl-apps-science-compute-data-and-connectors",
+   "Compute providers",
+   "Claude Science can run jobs on an external cloud provider you control, and connect to model servers that serve scientific models over HTTP. Source: https://claude.com/docs/claude-science/compute-providers",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-cloud-storage",
+   "cl-apps-science-compute-data-and-connectors",
+   "Cloud storage",
+   "Connect Amazon S3, Google Cloud Storage, or Azure Blob Storage so Claude can read data and write results in place, with your permission. Source: https://claude.com/docs/claude-science/cloud-storage",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-literature-access",
+   "cl-apps-science-compute-data-and-connectors",
+   "Literature access",
+   "Claude retrieves open-access full text without credentials; add publisher keys or a library proxy to reach paywalled text you're entitled to. Source: https://claude.com/docs/claude-science/literature-access",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-custom-connectors",
+   "cl-apps-science-compute-data-and-connectors",
+   "Custom connectors",
+   "Add any Model Context Protocol (MCP) server as a Remote (HTTPS web server) or Local command (program on your computer). Source: https://claude.com/docs/claude-science/custom-connectors",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery",
+   "cl-apps-science-example-gallery",
+   "Example gallery",
+   "Browse nine example prompts from nine fields of science, each the start of a complete analysis in Claude Science. Source: https://claude.com/docs/claude-science/example-gallery",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-bio-drift",
+   "cl-apps-science-example-gallery",
+   "Genetic drift in a bottle: Buri's 107 fruit-fly populations",
+   "Simulate 107 bottles of 16 fruit flies drifting by chance alone and compare them with Peter Buri's real bottles (1956). Source: https://claude.com/docs/claude-science/example-gallery/bio-drift",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-chem-titration",
+   "cl-apps-science-example-gallery",
+   "A titration curve from the full equilibrium: which indicator finds the equivalence point?",
+   "Solve the full equilibrium for 25.0 mL of 0.100 M acetic acid as 0.100 M NaOH is added, without the usual shortcuts. Source: https://claude.com/docs/claude-science/example-gallery/chem-titration",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-clin-km",
+   "cl-apps-science-example-gallery",
+   "A first Kaplan–Meier curve: the 1963 leukemia trial of 6-MP",
+   "Compare 6-MP against placebo with Kaplan–Meier curves from 42 remission times typed into the prompt. Source: https://claude.com/docs/claude-science/example-gallery/clin-km",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-cs-pagerank-tiny",
+   "cl-apps-science-example-gallery",
+   "PageRank on a web of 11 pages: why 1 good link beats 6 weak ones",
+   "Follow a random surfer on Wikipedia's 11-page example until the numbers settle, and reproduce all 11 published values to 0.1 point. Source: https://claude.com/docs/claude-science/example-gallery/cs-pagerank-tiny",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-eng-beam",
+   "cl-apps-science-example-gallery",
+   "A first finite-element model: a clamped steel ruler bends and vibrates",
+   "Split a 300 mm steel ruler clamped at one end into 4 beam elements and check its bending under 1 N and its first 3 vibration modes against beam theory. Source: https://claude.com/docs/claude-science/example-gallery/eng-beam",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-mat-xrd",
+   "cl-apps-science-example-gallery",
+   "A first X-ray diffraction pattern: why silicon shows 6 peaks and salt 9",
+   "Simulate the X-ray powder patterns of silicon and table salt and label every peak with Bragg's law. Source: https://claude.com/docs/claude-science/example-gallery/mat-xrd",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-math-ulam",
+   "cl-apps-science-example-gallery",
+   "The Ulam spiral: are the primes' diagonal streaks real?",
+   "Compare the share of primes per diagonal on Ulam's 1963 spiral of 1 to 40,401 against as many random odd numbers. Source: https://claude.com/docs/claude-science/example-gallery/math-ulam",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-phys-doubleslit",
+   "cl-apps-science-example-gallery",
+   "The double slit, one electron at a time",
+   "Rebuild the picture of Tonomura's 1989 experiment with an ideal double slit: each electron lands as 1 random dot, yet fringes 10.7 µm apart build up. Source: https://claude.com/docs/claude-science/example-gallery/phys-doubleslit",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-example-gallery-soc-schelling-small",
+   "cl-apps-science-example-gallery",
+   "Schelling's segregation model: ask for 30% same-color neighbors, end up with 75%",
+   "Ask for 30% same-color neighbors, end up with about 75%: the textbook computer version of Thomas Schelling's 1971 idea. Source: https://claude.com/docs/claude-science/example-gallery/soc-schelling-small",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-safeguards",
+   "cl-apps-science-reference-and-support",
+   "Safeguards",
+   "What happens when a model's safeguards flag a message, how to switch models automatically, and how to choose a use case under the Life Sciences Verification Program (beta). Source: https://claude.com/docs/claude-science/safeguards",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-troubleshooting",
+   "cl-apps-science-reference-and-support",
+   "Troubleshoot Claude Science",
+   "Fix errors you see while using Claude Science: being signed out, capacity retries, Agent Failed, environment setup, connectors, dictation, and updates. Source: https://claude.com/docs/claude-science/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-glossary",
+   "cl-apps-science-reference-and-support",
+   "Glossary",
+   "One-sentence definitions for the terms you meet in Claude Science, from artifact to workspace. Source: https://claude.com/docs/claude-science/glossary",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-command-line-settings",
+   "cl-apps-science-reference-and-support",
+   "Command line settings",
+   "Reference for the claude-science command: its subcommands, the serve flags, the single-use login link, and the environment variables you can set. Source: https://claude.com/docs/claude-science/command-line-settings",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-configuration-file-reference",
+   "cl-apps-science-reference-and-support",
+   "Configuration file reference",
+   "Claude Science's config.toml file: where it lives, how it interacts with Settings, and its network, web search, and upload keys. Source: https://claude.com/docs/claude-science/configuration-file-reference",
+   "reference",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-changelog",
+   "cl-apps-science-reference-and-support",
+   "Claude Science changelog",
+   "Release notes for Claude Science, including new features, improvements, and bug fixes by version. Source: https://claude.com/docs/claude-science/changelog",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-legal-and-compliance",
+   "cl-apps-science-reference-and-support",
+   "Legal and compliance",
+   "Legal agreements, compliance certifications, and security information for Claude Science. Source: https://claude.com/docs/claude-science/legal-and-compliance",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-enable-claude-science",
+   "cl-apps-science-administration-and-networks",
+   "Enable Claude Science",
+   "Claude Science is a desktop app for scientific research. Source: https://claude.com/docs/claude-science/enable-claude-science",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-how-claude-science-works-with-your-data",
+   "cl-apps-science-administration-and-networks",
+   "How Claude Science works with your data",
+   "What Claude Science keeps on your computers, what it sends to Anthropic and how long Anthropic keeps it, who can access it, Anthropic's no-training and ownership commitments, and the controls available to your organization. Source: https://claude.com/docs/claude-science/how-claude-science-works-with-your-data",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-admin-controls",
+   "cl-apps-science-administration-and-networks",
+   "Admin controls",
+   "Organization settings for Claude Science on Team and Enterprise plans (Featured connectors and skills, custom connectors and skills, access to Claude Science work previously saved on the computer, the network allowlist, package mirror, SSH hosts, Modal, scientific model endpoints, and memory) and wh… Source: https://claude.com/docs/claude-science/admin-controls",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-manage-on-devices",
+   "cl-apps-science-administration-and-networks",
+   "Manage Claude Science on devices",
+   "Claude Science is a desktop application that stores member content locally. Source: https://claude.com/docs/claude-science/manage-on-devices",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-corporate-networks",
+   "cl-apps-science-administration-and-networks",
+   "Use Claude Science on a corporate network",
+   "How to run Claude Science behind an outbound proxy, a TLS-inspecting proxy, an internal package mirror, and an egress firewall, with the settings your network team needs for each. Source: https://claude.com/docs/claude-science/corporate-networks",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-network-requirements",
+   "cl-apps-science-administration-and-networks",
+   "Network requirements",
+   "The domains Claude Science connects to, grouped for a proxy or firewall allowlist: the app's connections to Anthropic, the analysis sandbox's package and research domains, the domains a package mirror adds and removes, and the built-in list of domains it always blocks. Source: https://claude.com/docs/claude-science/network-requirements",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-science-monitor-usage",
+   "cl-apps-science-administration-and-networks",
+   "Monitor Claude Science usage",
+   "Claude Science uses the same seat as the rest of claude.ai. Track its adoption and usage in Analytics and through the Admin API. Source: https://claude.com/docs/claude-science/monitor-usage",
+   "procedural",
+   [
+    [
+     "ClaudeAppsScienceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsScienceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeAppsScienceSpecialist": "Claude Science Specialist",
+  "ClaudeAppsScienceReviewer": "Claude Science Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

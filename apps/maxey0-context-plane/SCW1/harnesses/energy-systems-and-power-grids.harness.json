@@ -401,7 +401,9 @@
    "key": "Maxey1062",
    "name": "Energy Policy Analyst",
    "legacy_key": "atmo-policy",
-   "mcp": []
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
   },
   {
    "key": "Maxey1063",
@@ -419,7 +421,9 @@
    "key": "Maxey1066",
    "name": "Climate Data Analyst",
    "legacy_key": "atmo-data",
-   "mcp": []
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
   },
   {
    "key": "Maxey1067",
@@ -461,7 +465,9 @@
    "key": "Maxey1257",
    "name": "Energy Systems Analyst",
    "legacy_key": "ese-analyst",
-   "mcp": []
+   "mcp": [
+    "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
+   ]
   },
   {
    "key": "Maxey1260",
@@ -646,7 +652,36 @@
   "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
   "f7caef2e-05b9-45f8-b9d5-a43ccc02881e"
  ],
- "agent_mcp": [],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1062",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "energy-systems-and-power-grids",
+   "score": 0.1029,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "energy-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1066",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "energy-systems-and-power-grids",
+   "score": 0.1036,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "energy-science-and-engineering"
+  },
+  {
+   "agent": "Maxey1257",
+   "mcp": "f7caef2e-05b9-45f8-b9d5-a43ccc02881e",
+   "topic": "energy-systems-and-power-grids",
+   "score": 0.1029,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1062",
+    "skill": "ese-pathway-evaluator"
+   },
+   "source_topic": "energy-science-and-engineering"
+  }
+ ],
  "lexicon": {
   "atmo-atmospheric": "atmosphere circulation geostrophic pressure wind convection storm jet stream",
   "atmo-radiation": "radiation solar infrared greenhouse forcing albedo energy budget aerosol",

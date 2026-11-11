@@ -1,0 +1,834 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-agent-sdk",
+ "topic": {
+  "id": "claude-code-agent-sdk",
+  "label": "Claude Agent SDK",
+  "desc": "The Claude Agent SDK: building agents with the same harness as Claude Code."
+ },
+ "concepts": [
+  [
+   "cl-code-agent-sdk-agent-sdk",
+   "Agent SDK",
+   "claude-code-agent-sdk",
+   "Agent SDK (Claude Agent SDK): 4 documentation pages.",
+   [
+    "agent",
+    "overview",
+    "quickstart",
+    "migrate",
+    "claude",
+    "troubleshoot"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-build-agents",
+   "Build agents",
+   "claude-code-agent-sdk",
+   "Build agents (Claude Agent SDK): 2 documentation pages.",
+   [
+    "configure",
+    "your",
+    "agent",
+    "examples"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-core-concepts",
+   "Core concepts (Agent SDK)",
+   "claude-code-agent-sdk",
+   "Core concepts (Agent SDK) (Claude Agent SDK): 4 documentation pages.",
+   [
+    "sessions",
+    "agent",
+    "loop",
+    "works",
+    "claude",
+    "code"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-input-and-output",
+   "Input and output",
+   "claude-code-agent-sdk",
+   "Input and output (Claude Agent SDK): 4 documentation pages.",
+   [
+    "input",
+    "streaming",
+    "handle",
+    "approvals",
+    "user",
+    "stream"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-extend-with-tools",
+   "Extend with tools",
+   "claude-code-agent-sdk",
+   "Extend with tools (Claude Agent SDK): 4 documentation pages.",
+   [
+    "tools",
+    "with",
+    "give",
+    "claude",
+    "custom",
+    "connect"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-customize-behavior",
+   "Customize behavior",
+   "claude-code-agent-sdk",
+   "Customize behavior (Claude Agent SDK): 3 documentation pages.",
+   [
+    "modifying",
+    "system",
+    "prompts",
+    "extend",
+    "agents",
+    "with"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-control-and-observability",
+   "Control and observability",
+   "claude-code-agent-sdk",
+   "Control and observability (Claude Agent SDK): 6 documentation pages.",
+   [
+    "with",
+    "track",
+    "configure",
+    "permissions",
+    "intercept",
+    "control"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-deployment",
+   "Deployment (Agent SDK)",
+   "claude-code-agent-sdk",
+   "Deployment (Agent SDK) (Claude Agent SDK): 2 documentation pages.",
+   [
+    "hosting",
+    "agent",
+    "securely",
+    "deploying",
+    "agents"
+   ]
+  ],
+  [
+   "cl-code-agent-sdk-sdk-references",
+   "SDK references",
+   "claude-code-agent-sdk",
+   "SDK references (Claude Agent SDK): 3 documentation pages.",
+   [
+    "agent",
+    "reference",
+    "typescript",
+    "session",
+    "removed",
+    "python"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-code-en-agent-sdk-overview",
+   "cl-code-agent-sdk-agent-sdk",
+   "Agent SDK overview",
+   "Build production AI agents with Claude Code as a library Source: https://code.claude.com/docs/en/agent-sdk/overview",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-quickstart",
+   "cl-code-agent-sdk-agent-sdk",
+   "Quickstart",
+   "Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously Source: https://code.claude.com/docs/en/agent-sdk/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-migration-guide",
+   "cl-code-agent-sdk-agent-sdk",
+   "Migrate to Claude Agent SDK",
+   "Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK Source: https://code.claude.com/docs/en/agent-sdk/migration-guide",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-troubleshooting",
+   "cl-code-agent-sdk-agent-sdk",
+   "Troubleshoot the Agent SDK",
+   "Fix Agent SDK errors when the Claude Code CLI fails to start, the CLI process exits, or a successful result arrives without structured output. Source: https://code.claude.com/docs/en/agent-sdk/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-configuration",
+   "cl-code-agent-sdk-build-agents",
+   "Configure your agent",
+   "Configure Agent SDK sessions: compose the options object, set the model, environment, and limits, and find each feature option's page. Source: https://code.claude.com/docs/en/agent-sdk/configuration",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-examples",
+   "cl-code-agent-sdk-build-agents",
+   "Examples",
+   "Find a complete, runnable Agent SDK project or a guided recipe in the Claude Cookbook that matches what you want to build. Source: https://code.claude.com/docs/en/agent-sdk/examples",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-agent-loop",
+   "cl-code-agent-sdk-core-concepts",
+   "How the agent loop works",
+   "Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents. Source: https://code.claude.com/docs/en/agent-sdk/agent-loop",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-claude-code-features",
+   "cl-code-agent-sdk-core-concepts",
+   "Use Claude Code features in the SDK",
+   "Load project instructions, skills, hooks, and other Claude Code features into your SDK agents. Source: https://code.claude.com/docs/en/agent-sdk/claude-code-features",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-sessions",
+   "cl-code-agent-sdk-core-concepts",
+   "Work with sessions",
+   "How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run. Source: https://code.claude.com/docs/en/agent-sdk/sessions",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-session-storage",
+   "cl-code-agent-sdk-core-concepts",
+   "Persist sessions to external storage",
+   "Mirror Agent SDK session transcripts to your own object store, key-value store, or database so other hosts can resume your sessions. Source: https://code.claude.com/docs/en/agent-sdk/session-storage",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-streaming-vs-single-mode",
+   "cl-code-agent-sdk-input-and-output",
+   "Streaming Input",
+   "Understanding the two input modes for Claude Agent SDK and when to use each Source: https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-user-input",
+   "cl-code-agent-sdk-input-and-output",
+   "Handle approvals and user input",
+   "Surface Claude's approval requests and clarifying questions to users, then return their decisions to the SDK. Source: https://code.claude.com/docs/en/agent-sdk/user-input",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-streaming-output",
+   "cl-code-agent-sdk-input-and-output",
+   "Stream responses in real-time",
+   "Get real-time responses from the Agent SDK as text and tool calls stream in Source: https://code.claude.com/docs/en/agent-sdk/streaming-output",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-structured-outputs",
+   "cl-code-agent-sdk-input-and-output",
+   "Get structured output from agents",
+   "Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. Get type-safe, structured data after multi-turn tool use. Source: https://code.claude.com/docs/en/agent-sdk/structured-outputs",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-custom-tools",
+   "cl-code-agent-sdk-extend-with-tools",
+   "Give Claude custom tools",
+   "Define custom tools with the Claude Agent SDK's in-process MCP server so Claude can call your functions, hit your APIs, and perform domain-specific operations. Source: https://code.claude.com/docs/en/agent-sdk/custom-tools",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-mcp",
+   "cl-code-agent-sdk-extend-with-tools",
+   "Connect to external tools with MCP",
+   "Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error handling. Source: https://code.claude.com/docs/en/agent-sdk/mcp",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-tool-search",
+   "cl-code-agent-sdk-extend-with-tools",
+   "Scale to many tools with tool search",
+   "Scale your agent to thousands of tools by discovering and loading only what's needed, on demand. Source: https://code.claude.com/docs/en/agent-sdk/tool-search",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-subagents",
+   "cl-code-agent-sdk-extend-with-tools",
+   "Subagents in the SDK",
+   "Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications. Source: https://code.claude.com/docs/en/agent-sdk/subagents",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-modifying-system-prompts",
+   "cl-code-agent-sdk-customize-behavior",
+   "Modifying system prompts",
+   "Choose between the `claude_code` preset and a custom system prompt, and customize behavior with CLAUDE.md, output styles, append, or a fully custom prompt. Source: https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-skills",
+   "cl-code-agent-sdk-customize-behavior",
+   "Extend agents with skills",
+   "Control which skills Claude can invoke in Claude Agent SDK sessions, dispatch commands by name, and author skills your sessions discover Source: https://code.claude.com/docs/en/agent-sdk/skills",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-plugins",
+   "cl-code-agent-sdk-customize-behavior",
+   "Plugins in the SDK",
+   "Load custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers through the Agent SDK Source: https://code.claude.com/docs/en/agent-sdk/plugins",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-permissions",
+   "cl-code-agent-sdk-control-and-observability",
+   "Configure permissions",
+   "Control how your agent uses tools with permission modes, hooks, and declarative allow/deny rules. Source: https://code.claude.com/docs/en/agent-sdk/permissions",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-hooks",
+   "cl-code-agent-sdk-control-and-observability",
+   "Intercept and control agent behavior with hooks",
+   "Intercept and customize agent behavior at key execution points with hooks Source: https://code.claude.com/docs/en/agent-sdk/hooks",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-file-checkpointing",
+   "cl-code-agent-sdk-control-and-observability",
+   "Rewind file changes with checkpointing",
+   "Track file changes during agent sessions and restore files to any previous state Source: https://code.claude.com/docs/en/agent-sdk/file-checkpointing",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-cost-tracking",
+   "cl-code-agent-sdk-control-and-observability",
+   "Track cost and usage",
+   "Learn how to track token usage, estimate costs, and configure prompt caching with the Claude Agent SDK. Source: https://code.claude.com/docs/en/agent-sdk/cost-tracking",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-observability",
+   "cl-code-agent-sdk-control-and-observability",
+   "Observability with OpenTelemetry",
+   "Export traces, metrics, and events from the Agent SDK to your observability backend using OpenTelemetry. Source: https://code.claude.com/docs/en/agent-sdk/observability",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-todo-tracking",
+   "cl-code-agent-sdk-control-and-observability",
+   "Track todos",
+   "Track todos in Agent SDK sessions and render Claude's progress in your application from structured tool calls Source: https://code.claude.com/docs/en/agent-sdk/todo-tracking",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-hosting",
+   "cl-code-agent-sdk-deployment",
+   "Hosting the Agent SDK",
+   "Deploy the Agent SDK in production: subprocess architecture, session persistence, scaling, observability, and multi-tenant isolation for Docker, Kubernetes, and sandbox providers. Source: https://code.claude.com/docs/en/agent-sdk/hosting",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-secure-deployment",
+   "cl-code-agent-sdk-deployment",
+   "Securely deploying AI agents",
+   "A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls Source: https://code.claude.com/docs/en/agent-sdk/secure-deployment",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-typescript",
+   "cl-code-agent-sdk-sdk-references",
+   "Agent SDK reference - TypeScript",
+   "Complete API reference for the TypeScript Agent SDK, including all functions, types, and interfaces. Source: https://code.claude.com/docs/en/agent-sdk/typescript",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-typescript-v2-preview",
+   "cl-code-agent-sdk-sdk-references",
+   "TypeScript SDK V2 session API (removed)",
+   "Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations. Source: https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-sdk-python",
+   "cl-code-agent-sdk-sdk-references",
+   "Agent SDK reference - Python",
+   "Complete API reference for the Python Agent SDK, including all functions, types, and classes. Source: https://code.claude.com/docs/en/agent-sdk/python",
+   "procedural",
+   [
+    [
+     "ClaudeCodeAgentSdkSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeAgentSdkReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeCodeAgentSdkSpecialist": "Claude Agent SDK Specialist",
+  "ClaudeCodeAgentSdkReviewer": "Claude Agent SDK Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

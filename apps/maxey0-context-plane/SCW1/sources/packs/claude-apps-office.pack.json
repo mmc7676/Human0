@@ -1,0 +1,522 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-apps-office",
+ "topic": {
+  "id": "claude-apps-office",
+  "label": "Claude for Microsoft 365, Office Agents and Cowork",
+  "desc": "Claude in Microsoft 365 and the Office add-ins, office agents, and Cowork."
+ },
+ "concepts": [
+  [
+   "cl-apps-office-office-agents-overview",
+   "Office agents overview",
+   "claude-apps-office",
+   "Office agents overview (Claude for Microsoft 365, Office Agents and Cowork): 9 documentation pages.",
+   [
+    "overview",
+    "with",
+    "changelog",
+    "tasks",
+    "background",
+    "dispatch"
+   ]
+  ],
+  [
+   "cl-apps-office-office-apps",
+   "Office apps",
+   "claude-apps-office",
+   "Office apps (Claude for Microsoft 365, Office Agents and Cowork): 6 documentation pages.",
+   [
+    "claude",
+    "m365",
+    "excel",
+    "powerpoint",
+    "word",
+    "outlook"
+   ]
+  ],
+  [
+   "cl-apps-office-enterprise-and-operations",
+   "Enterprise and operations",
+   "claude-apps-office",
+   "Enterprise and operations (Claude for Microsoft 365, Office Agents and Cowork): 6 documentation pages.",
+   [
+    "security",
+    "admin",
+    "auditability",
+    "analytics",
+    "configure",
+    "custom"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-apps-cowork-overview",
+   "cl-apps-office-office-agents-overview",
+   "Overview",
+   "Learn about Cowork, Anthropic's agentic workspace Source: https://claude.com/docs/cowork/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-cowork-changelog",
+   "cl-apps-office-office-agents-overview",
+   "Changelog",
+   "Release notes for Claude Desktop Source: https://claude.com/docs/cowork/changelog",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-cowork-guide-dispatch",
+   "cl-apps-office-office-agents-overview",
+   "Run tasks in the background with Dispatch",
+   "Assign work to a Dispatch agent that plans, runs, and reports on tasks while you do something else, on this computer or from your phone. Source: https://claude.com/docs/cowork/guide/dispatch",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-cowork-guide-plugins",
+   "cl-apps-office-office-agents-overview",
+   "Install plugins",
+   "Add packaged skills, connectors, and agents to Cowork from the plugin marketplace or a file. Source: https://claude.com/docs/cowork/guide/plugins",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-cowork-guide-projects",
+   "cl-apps-office-office-agents-overview",
+   "Organize work with projects",
+   "Group folders, instructions, and context into a Cowork project so Claude starts each session with the right setup. Source: https://claude.com/docs/cowork/guide/projects",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-cowork-monitoring",
+   "cl-apps-office-office-agents-overview",
+   "Monitoring",
+   "Track Cowork usage and activity across your organization with OpenTelemetry Source: https://claude.com/docs/cowork/monitoring",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-cowork-hipaa-setup",
+   "cl-apps-office-office-agents-overview",
+   "Set up Cowork (local mode) for a HIPAA-ready organization",
+   "Prepare members' computers to run Cowork (local mode) under the HIPAA configuration. Covers the Claude Desktop policy, network limits, and local data. Source: https://claude.com/docs/cowork/hipaa-setup",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-overview",
+   "cl-apps-office-office-agents-overview",
+   "Claude for M365 overview",
+   "Claude for Excel, PowerPoint, Word, and Outlook. Source: https://claude.com/docs/office-agents/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-connectors-and-skills",
+   "cl-apps-office-office-agents-overview",
+   "Connectors and Skills",
+   "Extend Claude for Excel, PowerPoint, Word, and Outlook with external context and reusable task recipes. Source: https://claude.com/docs/office-agents/connectors-and-skills",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-excel",
+   "cl-apps-office-office-apps",
+   "Use Claude for Excel",
+   "An Excel add-in that integrates Claude into your spreadsheet workflow, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/excel",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-powerpoint",
+   "cl-apps-office-office-apps",
+   "Use Claude for PowerPoint",
+   "A PowerPoint add-in that integrates Claude into your presentation workflow, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/powerpoint",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-word",
+   "cl-apps-office-office-apps",
+   "Use Claude for Word",
+   "A Word add-in that integrates Claude into your document workflow, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/word",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-outlook",
+   "cl-apps-office-office-apps",
+   "Use Claude for Outlook",
+   "An Outlook add-in that integrates Claude into your inbox and calendar, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/outlook",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-work-across-apps",
+   "cl-apps-office-office-apps",
+   "Work across M365 apps",
+   "Let Claude read from one Microsoft 365 app and make changes in another in a single conversation. Source: https://claude.com/docs/office-agents/work-across-apps",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-dictation",
+   "cl-apps-office-office-apps",
+   "Use dictation in Claude for M365",
+   "Speak your prompts instead of typing them in Claude for Excel, PowerPoint, Word, and Outlook. Source: https://claude.com/docs/office-agents/dictation",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-enterprise-readiness",
+   "cl-apps-office-enterprise-and-operations",
+   "Security, admin auditability, and analytics",
+   "Security architecture diagrams, OpenTelemetry audit, usage analytics, and spend tracking for enterprise admins deploying Claude for M365. Source: https://claude.com/docs/office-agents/enterprise-readiness",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-opentelemetry",
+   "cl-apps-office-enterprise-and-operations",
+   "Configure a custom OpenTelemetry collector",
+   "Route the full Claude for M365 audit trail, including prompts, tool inputs and outputs, and document references, to an OpenTelemetry collector you operate. Source: https://claude.com/docs/office-agents/opentelemetry",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-performance",
+   "cl-apps-office-enterprise-and-operations",
+   "Performance and limits",
+   "How Claude for M365 works with a busy Office app, the size limits to know, and what to do when Office slows down or stops responding. Source: https://claude.com/docs/office-agents/performance",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-data-storage",
+   "cl-apps-office-enterprise-and-operations",
+   "Data storage and retention",
+   "Where Claude for M365 stores chat history, skills, and credentials on each user's device, why reinstalling or switching add-ins keeps that data, and how long it is kept. Source: https://claude.com/docs/office-agents/data-storage",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-third-party-platforms",
+   "cl-apps-office-enterprise-and-operations",
+   "Use Claude for M365 with third-party platforms",
+   "Deploy the Office add-ins through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, without individual Claude accounts. Source: https://claude.com/docs/office-agents/third-party-platforms",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-office-agents-fsi-plugins",
+   "cl-apps-office-enterprise-and-operations",
+   "Install financial services plugins for Cowork",
+   "Add the open-source financial services plugin set to Cowork for workflows such as financial modeling, equity research, investment banking, and private equity. Source: https://claude.com/docs/office-agents/fsi-plugins",
+   "procedural",
+   [
+    [
+     "ClaudeAppsOfficeSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsOfficeReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeAppsOfficeSpecialist": "Claude for Microsoft 365, Office Agents and Cowork Specialist",
+  "ClaudeAppsOfficeReviewer": "Claude for Microsoft 365, Office Agents and Cowork Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

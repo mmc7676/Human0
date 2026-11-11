@@ -1,0 +1,758 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-code-config",
+  "label": "Claude Code Configuration",
+  "desc": "Claude Code Configuration: Settings, Permissions and sandboxing, Environments, Self-hosted environments, Model and responses and Interface."
+ },
+ "concepts": [
+  {
+   "id": "cl-code-config-environments",
+   "label": "Environments",
+   "desc": "Environments (Claude Code Configuration): 1 documentation page.",
+   "keywords": [
+    "configure",
+    "cloud",
+    "environments"
+   ],
+   "topic": "claude-code-config",
+   "source": "claude-code-config",
+   "source_topic": "claude-code-config",
+   "related": [
+    "cl-api-reference-api-resources-environments",
+    "cl-managed-agents-environments-and-sandboxes"
+   ]
+  },
+  {
+   "id": "cl-code-config-interface",
+   "label": "Interface",
+   "desc": "Interface (Claude Code Configuration): 6 documentation pages.",
+   "keywords": [
+    "your",
+    "claude",
+    "code",
+    "customize",
+    "configure",
+    "terminal"
+   ],
+   "topic": "claude-code-config",
+   "source": "claude-code-config",
+   "source_topic": "claude-code-config",
+   "related": []
+  },
+  {
+   "id": "cl-code-config-model-and-responses",
+   "label": "Model and responses",
+   "desc": "Model and responses (Claude Code Configuration): 4 documentation pages.",
+   "keywords": [
+    "with",
+    "model",
+    "configuration",
+    "speed",
+    "responses",
+    "fast"
+   ],
+   "topic": "claude-code-config",
+   "source": "claude-code-config",
+   "source_topic": "claude-code-config",
+   "related": []
+  },
+  {
+   "id": "cl-code-config-permissions-and-sandboxing",
+   "label": "Permissions and sandboxing",
+   "desc": "Permissions and sandboxing (Claude Code Configuration): 5 documentation pages.",
+   "keywords": [
+    "configure",
+    "choose",
+    "mode",
+    "permissions",
+    "permission",
+    "auto"
+   ],
+   "topic": "claude-code-config",
+   "source": "claude-code-config",
+   "source_topic": "claude-code-config",
+   "related": []
+  },
+  {
+   "id": "cl-code-config-self-hosted-environments",
+   "label": "Self-hosted environments",
+   "desc": "Self-hosted environments (Claude Code Configuration): 7 documentation pages.",
+   "keywords": [
+    "self",
+    "hosted",
+    "environments",
+    "quickstart",
+    "deploy",
+    "production"
+   ],
+   "topic": "claude-code-config",
+   "source": "claude-code-config",
+   "source_topic": "claude-code-config",
+   "related": []
+  },
+  {
+   "id": "cl-code-config-settings",
+   "label": "Settings",
+   "desc": "Settings (Claude Code Configuration): 3 documentation pages.",
+   "keywords": [
+    "settings",
+    "files",
+    "precedence",
+    "example"
+   ],
+   "topic": "claude-code-config",
+   "source": "claude-code-config",
+   "source_topic": "claude-code-config",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-code-en-cloud-environments",
+   "concept": "cl-code-config-environments",
+   "label": "Configure cloud environments",
+   "desc": "Configure cloud environments for Claude Code cloud sessions: network access levels, environment variables, setup scripts, and environment caching. Source: https://code.claude.com/docs/en/cloud-environments",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-accessibility",
+   "concept": "cl-code-config-interface",
+   "label": "Use Claude Code with a screen reader",
+   "desc": "Set up Claude Code for screen readers such as VoiceOver and NVDA, plus settings for screen magnifiers, reduced motion, and colorblind-friendly themes. Source: https://code.claude.com/docs/en/accessibility",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-fullscreen",
+   "concept": "cl-code-config-interface",
+   "label": "Fullscreen rendering",
+   "desc": "Enable a smoother, flicker-free rendering mode with mouse support and stable memory usage in long conversations. Source: https://code.claude.com/docs/en/fullscreen",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-keybindings",
+   "concept": "cl-code-config-interface",
+   "label": "Customize keyboard shortcuts",
+   "desc": "Customize keyboard shortcuts in Claude Code with a keybindings configuration file. Source: https://code.claude.com/docs/en/keybindings",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-statusline",
+   "concept": "cl-code-config-interface",
+   "label": "Customize your status line",
+   "desc": "Configure a custom status bar to monitor context window usage, costs, and git status in Claude Code Source: https://code.claude.com/docs/en/statusline",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-terminal-config",
+   "concept": "cl-code-config-interface",
+   "label": "Configure your terminal for Claude Code",
+   "desc": "Fix Shift+Enter for newlines, get a terminal bell when Claude finishes, configure tmux, match the color theme, and enable Vim mode in the Claude Code CLI. Source: https://code.claude.com/docs/en/terminal-config",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-voice-dictation",
+   "concept": "cl-code-config-interface",
+   "label": "Voice dictation",
+   "desc": "Speak your prompts in the Claude Code CLI with hold-to-record or tap-to-record voice dictation. Source: https://code.claude.com/docs/en/voice-dictation",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-advisor",
+   "concept": "cl-code-config-model-and-responses",
+   "label": "Escalate hard decisions with the advisor tool",
+   "desc": "Pair your main model with a stronger advisor model that Claude consults at key moments during a task. Source: https://code.claude.com/docs/en/advisor",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-fast-mode",
+   "concept": "cl-code-config-model-and-responses",
+   "label": "Speed up responses with fast mode",
+   "desc": "Get faster Opus responses in Claude Code by toggling fast mode. Source: https://code.claude.com/docs/en/fast-mode",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-model-config",
+   "concept": "cl-code-config-model-and-responses",
+   "label": "Model configuration",
+   "desc": "Configure which model Claude Code uses, effort levels, extended context, and the auto-compact window Source: https://code.claude.com/docs/en/model-config",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-output-styles",
+   "concept": "cl-code-config-model-and-responses",
+   "label": "Output styles",
+   "desc": "Change Claude Code's role, tone, and response format with a built-in output style such as Concise or Explanatory, or write a custom style. Source: https://code.claude.com/docs/en/output-styles",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-auto-mode-classifier-billing",
+   "concept": "cl-code-config-permissions-and-sandboxing",
+   "label": "Auto mode classifier request charges",
+   "desc": "Resolve the Claude Code notice saying this session isn't eligible for auto mode's no-charge classifier requests: what it means, why it appears, and what to do. Source: https://code.claude.com/docs/en/auto-mode-classifier-billing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-permission-modes",
+   "concept": "cl-code-config-permissions-and-sandboxing",
+   "label": "Choose a permission mode",
+   "desc": "Control whether Claude asks before acting. Switch permission modes with Shift+Tab in the CLI, the mode indicator in VS Code, or the mode selector in Desktop. Source: https://code.claude.com/docs/en/permission-modes",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-permissions",
+   "concept": "cl-code-config-permissions-and-sandboxing",
+   "label": "Configure permissions",
+   "desc": "Control what Claude Code can access and do with fine-grained permission rules, modes, and managed policies. Source: https://code.claude.com/docs/en/permissions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-sandbox-environments",
+   "concept": "cl-code-config-permissions-and-sandboxing",
+   "label": "Choose a sandbox environment",
+   "desc": "Compare Claude Code sandbox options: the built-in sandboxed Bash tool, sandbox runtime, dev containers, Docker, and VMs. Choose the right isolation for your threat model. Source: https://code.claude.com/docs/en/sandbox-environments",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-sandboxing",
+   "concept": "cl-code-config-permissions-and-sandboxing",
+   "label": "Configure the sandboxed Bash tool",
+   "desc": "Restrict the files and network hosts Claude Code's shell commands can reach with the built-in sandbox. Turn it on, set the boundary, and fix what it breaks. Source: https://code.claude.com/docs/en/sandboxing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Self-hosted environments",
+   "desc": "Run Claude Code cloud sessions on infrastructure you control: set up a self-hosted environment, deploy runners, and route sessions to your own compute. Source: https://code.claude.com/docs/en/self-hosted-environments",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments-configuration",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Customize sessions in self-hosted environments",
+   "desc": "Customize self-hosted environment sessions with wrapper scripts for per-session credentials, lifecycle hooks, and on-demand runner spawning. Source: https://code.claude.com/docs/en/self-hosted-environments-configuration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments-deploy",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Deploy self-hosted environments to production",
+   "desc": "Run self-hosted runners in production: security hardening, network egress control, git credentials, Kubernetes and Compose recipes, and troubleshooting. Source: https://code.claude.com/docs/en/self-hosted-environments-deploy",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments-identity",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Verify session identity in self-hosted environments",
+   "desc": "Verify the CLAUDE_CODE_SESSION_ACCESS_TOKEN JWT so services on your network can trust requests from sessions in your self-hosted environment. Source: https://code.claude.com/docs/en/self-hosted-environments-identity",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments-quickstart",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Self-hosted environments quickstart",
+   "desc": "Set up your first self-hosted environment: install Claude Code, create the environment, start a runner, and route a session to it. Source: https://code.claude.com/docs/en/self-hosted-environments-quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments-reference",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Self-hosted environments reference",
+   "desc": "Complete reference for the self-hosted runner and orchestrator: CLI flags, environment variables, and Prometheus metrics. Source: https://code.claude.com/docs/en/self-hosted-environments-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-self-hosted-environments-testing",
+   "concept": "cl-code-config-self-hosted-environments",
+   "label": "Test self-hosted environments end to end",
+   "desc": "Verify a self-hosted runner image from CI: dispatch a session with the CLI, read Claude's replies through a Stop hook, and script the full loop. Source: https://code.claude.com/docs/en/self-hosted-environments-testing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-settings",
+   "concept": "cl-code-config-settings",
+   "label": "Settings files and precedence",
+   "desc": "Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places. Source: https://code.claude.com/docs/en/settings",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-settings-example",
+   "concept": "cl-code-config-settings",
+   "label": "Example settings files",
+   "desc": "Realistic settings.json files for a developer, a team, and an organization: copy one, keep the keys you want, and change the values. Source: https://code.claude.com/docs/en/settings-example",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  },
+  {
+   "id": "cl-code-en-settings-reference",
+   "concept": "cl-code-config-settings",
+   "label": "All settings",
+   "desc": "Complete reference for every Claude Code settings.json key: where each one goes, its type and default, and a paste-ready example, with an index of every key. Source: https://code.claude.com/docs/en/settings-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-config"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1789",
+   "name": "Claude Code Configuration Specialist",
+   "legacy_key": "ClaudeCodeConfigSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1790",
+   "name": "Claude Code Configuration Reviewer",
+   "legacy_key": "ClaudeCodeConfigReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1790",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-code-config",
+   "score": 0.1666,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-code-config"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-code-config"
+ ]
+}

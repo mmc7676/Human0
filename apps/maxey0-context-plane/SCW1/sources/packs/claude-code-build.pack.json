@@ -1,0 +1,593 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-build",
+ "topic": {
+  "id": "claude-code-build",
+  "label": "Claude Code: Building with Agents, MCP and Skills",
+  "desc": "Building with Claude Code: subagents and parallel work, MCP, skills, artifacts, automation and routines, guides and troubleshooting."
+ },
+ "concepts": [
+  [
+   "cl-code-build-agents-and-parallel-work",
+   "Agents and parallel work",
+   "claude-code-build",
+   "Agents and parallel work (Claude Code: Building with Agents, MCP and Skills): 7 documentation pages.",
+   [
+    "with",
+    "sessions",
+    "agents",
+    "parallel",
+    "subagents",
+    "orchestrate"
+   ]
+  ],
+  [
+   "cl-code-build-mcp",
+   "MCP",
+   "claude-code-build",
+   "MCP (Claude Code: Building with Agents, MCP and Skills): 2 documentation pages.",
+   [
+    "connect",
+    "servers",
+    "claude",
+    "code",
+    "tools"
+   ]
+  ],
+  [
+   "cl-code-build-skills",
+   "Skills (Claude Code building)",
+   "claude-code-build",
+   "Skills (Claude Code building) (Claude Code: Building with Agents, MCP and Skills): 1 documentation page.",
+   [
+    "extend",
+    "claude",
+    "with",
+    "skills"
+   ]
+  ],
+  [
+   "cl-code-build-artifacts",
+   "Artifacts",
+   "claude-code-build",
+   "Artifacts (Claude Code: Building with Agents, MCP and Skills): 1 documentation page.",
+   [
+    "share",
+    "session",
+    "output",
+    "artifacts"
+   ]
+  ],
+  [
+   "cl-code-build-automation",
+   "Automation",
+   "claude-code-build",
+   "Automation (Claude Code: Building with Agents, MCP and Skills): 6 documentation pages.",
+   [
+    "with",
+    "claude",
+    "automate",
+    "actions",
+    "hooks",
+    "push"
+   ]
+  ],
+  [
+   "cl-code-build-guides",
+   "Guides",
+   "claude-code-build",
+   "Guides (Claude Code: Building with Agents, MCP and Skills): 1 documentation page.",
+   [
+    "claude",
+    "code",
+    "monorepo",
+    "large",
+    "codebase"
+   ]
+  ],
+  [
+   "cl-code-build-troubleshooting",
+   "Troubleshooting (Claude Code building)",
+   "claude-code-build",
+   "Troubleshooting (Claude Code building) (Claude Code: Building with Agents, MCP and Skills): 4 documentation pages.",
+   [
+    "troubleshoot",
+    "installation",
+    "login",
+    "troubleshooting",
+    "debug",
+    "your"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-code-en-agents",
+   "cl-code-build-agents-and-parallel-work",
+   "Run agents in parallel",
+   "Compare the ways Claude Code can take on multiple tasks at once: subagents, agent view, agent teams, dynamic workflows, and projects. Source: https://code.claude.com/docs/en/agents",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-sub-agents",
+   "cl-code-build-agents-and-parallel-work",
+   "Create custom subagents",
+   "Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management. Source: https://code.claude.com/docs/en/sub-agents",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-view",
+   "cl-code-build-agents-and-parallel-work",
+   "Manage multiple agents with agent view",
+   "Dispatch and manage many Claude Code sessions from one screen. Agent view shows what every session is doing and which ones need your input. Source: https://code.claude.com/docs/en/agent-view",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-agent-teams",
+   "cl-code-build-agents-and-parallel-work",
+   "Orchestrate teams of Claude Code sessions",
+   "Coordinate multiple Claude Code instances working together as a team, with shared tasks, inter-agent messaging, and centralized management. Source: https://code.claude.com/docs/en/agent-teams",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-cross-session-messaging",
+   "cl-code-build-agents-and-parallel-work",
+   "Message your other Claude Code sessions",
+   "Let Claude list and message your other Claude Code sessions on this machine, and reach your sessions on other machines or in the cloud. Source: https://code.claude.com/docs/en/cross-session-messaging",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-workflows",
+   "cl-code-build-agents-and-parallel-work",
+   "Orchestrate subagents at scale with dynamic workflows",
+   "Dynamic workflows orchestrate many subagents from a script Claude writes and you can rerun. Use them for codebase audits, large migrations, and cross-checked research. Source: https://code.claude.com/docs/en/workflows",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-worktrees",
+   "cl-code-build-agents-and-parallel-work",
+   "Run parallel sessions with worktrees",
+   "Isolate parallel Claude Code sessions in separate git worktrees so changes don't collide. Covers the `--worktree` flag, subagent isolation, `.worktreeinclude`, cleanup, and non-git VCS hooks. Source: https://code.claude.com/docs/en/worktrees",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-mcp-quickstart",
+   "cl-code-build-mcp",
+   "Connect to MCP servers",
+   "Add an MCP server to Claude Code, verify the connection, and find the configuration on disk. Source: https://code.claude.com/docs/en/mcp-quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-mcp",
+   "cl-code-build-mcp",
+   "Connect Claude Code to tools via MCP",
+   "Learn how to connect Claude Code to your tools with the Model Context Protocol. Source: https://code.claude.com/docs/en/mcp",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-skills",
+   "cl-code-build-skills",
+   "Extend Claude with skills",
+   "Create, manage, and share skills to extend Claude's capabilities in Claude Code. Includes custom commands and bundled skills. Source: https://code.claude.com/docs/en/skills",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-artifacts",
+   "cl-code-build-artifacts",
+   "Share session output as artifacts",
+   "Artifacts turn Claude Code's work into live, interactive pages on claude.ai that you can keep private, share with your organization, or publish to a public link. Source: https://code.claude.com/docs/en/artifacts",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-hooks-guide",
+   "cl-code-build-automation",
+   "Automate actions with hooks",
+   "Run shell commands automatically when Claude Code edits files, finishes tasks, or needs input. Format code, send notifications, validate commands, and enforce project rules. Source: https://code.claude.com/docs/en/hooks-guide",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-channels",
+   "cl-code-build-automation",
+   "Push events into a running session with channels",
+   "Use channels to push messages, alerts, and webhooks into your Claude Code session from an MCP server. Forward CI results, chat messages, and monitoring events so Claude can react while you're away. Source: https://code.claude.com/docs/en/channels",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-scheduled-tasks",
+   "cl-code-build-automation",
+   "Run prompts on a schedule",
+   "Use /loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session. Source: https://code.claude.com/docs/en/scheduled-tasks",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-goal",
+   "cl-code-build-automation",
+   "Keep Claude working toward a goal",
+   "Set a completion condition with /goal and Claude keeps working until it's met, a model judges it impossible, or an error you have to fix clears the goal. Source: https://code.claude.com/docs/en/goal",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-headless",
+   "cl-code-build-automation",
+   "Run Claude Code programmatically",
+   "Use the Agent SDK to run Claude Code programmatically from the CLI, Python, or TypeScript. Source: https://code.claude.com/docs/en/headless",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-deep-links",
+   "cl-code-build-automation",
+   "Launch sessions from links",
+   "Open a Claude Code terminal session from a URL. Embed `claude-cli://` links in runbooks, alerts, and dashboards so a click opens Claude Code in the right repo with the right prompt. Source: https://code.claude.com/docs/en/deep-links",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-large-codebases",
+   "cl-code-build-guides",
+   "Set up Claude Code in a monorepo or large codebase",
+   "Configure Claude Code for monorepos and large single-tree codebases with nested CLAUDE.md files, sparse worktrees, code intelligence, and per-package skills so Claude stays focused on the code you're working in. Source: https://code.claude.com/docs/en/large-codebases",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-troubleshoot-install",
+   "cl-code-build-troubleshooting",
+   "Troubleshoot installation and login",
+   "Fix command not found, PATH, permission, network, and authentication errors when installing or signing in to Claude Code. Source: https://code.claude.com/docs/en/troubleshoot-install",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-troubleshooting",
+   "cl-code-build-troubleshooting",
+   "Troubleshooting",
+   "Fix high CPU or memory usage, hangs, auto-compact thrashing, and search problems in Claude Code, and find the right page for other issues. Source: https://code.claude.com/docs/en/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-debug-your-config",
+   "cl-code-build-troubleshooting",
+   "Debug your configuration",
+   "Diagnose why CLAUDE.md, settings, hooks, MCP servers, or skills aren't taking effect. Use /context, /doctor, /hooks, and /mcp to see what actually loaded. Source: https://code.claude.com/docs/en/debug-your-config",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-errors",
+   "cl-code-build-troubleshooting",
+   "Error reference",
+   "Look up Claude Code runtime error messages with what each one means and how to fix it. Source: https://code.claude.com/docs/en/errors",
+   "procedural",
+   [
+    [
+     "ClaudeCodeBuildSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeBuildReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeCodeBuildSpecialist": "Claude Code: Building with Agents, MCP and Skills Specialist",
+  "ClaudeCodeBuildReviewer": "Claude Code: Building with Agents, MCP and Skills Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

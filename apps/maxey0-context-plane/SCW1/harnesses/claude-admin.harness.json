@@ -1,0 +1,1710 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-admin",
+  "label": "Claude Platform Administration",
+  "desc": "Claude Platform Administration: Compliance security posture, Data residency and retention, CMEK and encryption, Identity and access, Usage, cost and limits, Workspaces, hooks and integrations, Compliance API, Opentelemetry (Claude Platform) and Wif providers."
+ },
+ "concepts": [
+  {
+   "id": "cl-admin-cmek-and-encryption",
+   "label": "CMEK and encryption",
+   "desc": "CMEK and encryption (Claude Platform Administration): 13 documentation pages.",
+   "keywords": [
+    "claude",
+    "platform",
+    "coverage",
+    "admin",
+    "data",
+    "retention"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": []
+  },
+  {
+   "id": "cl-admin-compliance-api",
+   "label": "Compliance API",
+   "desc": "Compliance API (Claude Platform Administration): 9 documentation pages.",
+   "keywords": [
+    "compliance",
+    "overview",
+    "design",
+    "your",
+    "integration",
+    "errors"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": [
+    "cl-api-reference-api",
+    "cl-api-reference-api-resources-compliance",
+    "cl-api-reference-api-resources-overview"
+   ]
+  },
+  {
+   "id": "cl-admin-compliance-security-posture",
+   "label": "Compliance security posture",
+   "desc": "Compliance security posture (Claude Platform Administration): 7 documentation pages.",
+   "keywords": [
+    "events",
+    "results",
+    "reference",
+    "overview",
+    "security",
+    "posture"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": [
+    "cl-apps-governmen-security",
+    "cl-code-admin-security-and-data"
+   ]
+  },
+  {
+   "id": "cl-admin-data-residency-and-retention",
+   "label": "Data residency and retention",
+   "desc": "Data residency and retention (Claude Platform Administration): 4 documentation pages.",
+   "keywords": [
+    "transparency",
+    "data",
+    "overview",
+    "access",
+    "retention",
+    "residency"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": []
+  },
+  {
+   "id": "cl-admin-identity-and-access",
+   "label": "Identity and access",
+   "desc": "Identity and access (Claude Platform Administration): 10 documentation pages.",
+   "keywords": [
+    "admin",
+    "user",
+    "attest",
+    "create",
+    "allowlisting",
+    "beta"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": []
+  },
+  {
+   "id": "cl-admin-opentelemetry",
+   "label": "Opentelemetry (Claude Platform)",
+   "desc": "Opentelemetry (Claude Platform) (Claude Platform Administration): 2 documentation pages.",
+   "keywords": [
+    "claude",
+    "spans"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": [
+    "cl-api-reference-opentelemetry"
+   ]
+  },
+  {
+   "id": "cl-admin-usage-cost-and-limits",
+   "label": "Usage, cost and limits",
+   "desc": "Usage, cost and limits (Claude Platform Administration): 6 documentation pages.",
+   "keywords": [
+    "analytics",
+    "limits",
+    "usage",
+    "cost",
+    "apis",
+    "claude"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": [
+    "cl-code-admin-usage-and-costs"
+   ]
+  },
+  {
+   "id": "cl-admin-wif-providers",
+   "label": "Wif providers",
+   "desc": "Wif providers (Claude Platform Administration): 7 documentation pages.",
+   "keywords": [
+    "github",
+    "actions",
+    "google",
+    "cloud",
+    "kubernetes",
+    "microsoft"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": []
+  },
+  {
+   "id": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Workspaces, hooks and integrations",
+   "desc": "Workspaces, hooks and integrations (Claude Platform Administration): 8 documentation pages.",
+   "keywords": [
+    "claude",
+    "inference",
+    "hooks",
+    "overview",
+    "configure",
+    "build"
+   ],
+   "topic": "claude-admin",
+   "source": "claude-admin",
+   "source_topic": "claude-admin",
+   "related": [
+    "cl-code-start-platforms-and-integrations"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-manage-claude-cmek",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Overview: Customer-managed encryption keys",
+   "desc": "Customer-managed encryption keys Source: https://platform.claude.com/docs/en/manage-claude/cmek",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-admin-api",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Admin API",
+   "desc": "Add and attach an encryption key with the Admin API Source: https://platform.claude.com/docs/en/manage-claude/cmek-admin-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-aws-kms",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "AWS KMS",
+   "desc": "Set up CMEK with AWS KMS Source: https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-aws-kms-workspaces",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Limit key to workspaces",
+   "desc": "Limit an AWS KMS key to specific workspaces Source: https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms-workspaces",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-azure-key-vault",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Azure Key Vault",
+   "desc": "Set up CMEK with Azure Key Vault Source: https://platform.claude.com/docs/en/manage-claude/cmek-azure-key-vault",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-claude-platform-on-aws",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Claude Platform on AWS",
+   "desc": "Set up CMEK on Claude Platform on AWS Source: https://platform.claude.com/docs/en/manage-claude/cmek-claude-platform-on-aws",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-coverage-claude-enterprise",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Coverage: Claude Enterprise",
+   "desc": "What CMEK covers on Claude Enterprise Source: https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-enterprise",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-coverage-claude-platform",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Coverage: Claude Platform",
+   "desc": "What CMEK covers on Claude Platform Source: https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-platform",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-data-retention",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Data retention and ZDR",
+   "desc": "CMEK, data retention, and ZDR Source: https://platform.claude.com/docs/en/manage-claude/cmek-data-retention",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-google-cloud-kms",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Google Cloud KMS",
+   "desc": "Set up CMEK with Google Cloud KMS Source: https://platform.claude.com/docs/en/manage-claude/cmek-google-cloud-kms",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-how-it-works",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "How it works",
+   "desc": "How CMEK works Source: https://platform.claude.com/docs/en/manage-claude/cmek-how-it-works",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-key-lifecycle",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Rotate, disable, delete",
+   "desc": "What happens when you rotate, disable, or delete your encryption key Source: https://platform.claude.com/docs/en/manage-claude/cmek-key-lifecycle",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-cmek-troubleshooting",
+   "concept": "cl-admin-cmek-and-encryption",
+   "label": "Troubleshooting",
+   "desc": "Troubleshoot CMEK Source: https://platform.claude.com/docs/en/manage-claude/cmek-troubleshooting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-activity-feed",
+   "concept": "cl-admin-compliance-api",
+   "label": "Activity Feed",
+   "desc": "Query the Activity Feed Source: https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-api",
+   "concept": "cl-admin-compliance-api",
+   "label": "Overview: Compliance API",
+   "desc": "Compliance API Source: https://platform.claude.com/docs/en/manage-claude/compliance-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-api-access",
+   "concept": "cl-admin-compliance-api",
+   "label": "Set up the Compliance API",
+   "desc": "Set up the Compliance API (Compliance API) Source: https://platform.claude.com/docs/en/manage-claude/compliance-api-access",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-content-data",
+   "concept": "cl-admin-compliance-api",
+   "label": "Chats, files, and projects",
+   "desc": "Retrieve and delete chats, files, and projects Source: https://platform.claude.com/docs/en/manage-claude/compliance-content-data",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-errors",
+   "concept": "cl-admin-compliance-api",
+   "label": "Errors",
+   "desc": "Handle Compliance API errors Source: https://platform.claude.com/docs/en/manage-claude/compliance-errors",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-faq",
+   "concept": "cl-admin-compliance-api",
+   "label": "FAQ",
+   "desc": "Compliance API FAQ Source: https://platform.claude.com/docs/en/manage-claude/compliance-faq",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-integration-patterns",
+   "concept": "cl-admin-compliance-api",
+   "label": "Design your integration",
+   "desc": "Design your compliance integration Source: https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-org-data",
+   "concept": "cl-admin-compliance-api",
+   "label": "Organizations, users, roles, groups, and settings",
+   "desc": "List organizations, users, roles, groups, and settings Source: https://platform.claude.com/docs/en/manage-claude/compliance-org-data",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-sessions",
+   "concept": "cl-admin-compliance-api",
+   "label": "Session transcripts",
+   "desc": "Retrieve session transcripts Source: https://platform.claude.com/docs/en/manage-claude/compliance-sessions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-check",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Check events against results",
+   "desc": "Check stored Security posture events against current results Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/check-events-against-results",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-detect",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Detect changes",
+   "desc": "Detect changes in Security posture Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/detect-changes",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-events",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Events reference",
+   "desc": "Security posture events reference Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/events-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-ocsf-m",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Map events to OCSF",
+   "desc": "Map Security posture events to OCSF Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/ocsf-mapping",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-overvi",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Overview: Security posture in the Compliance API",
+   "desc": "Security posture in the Compliance API Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-result",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Results reference",
+   "desc": "Security posture results reference Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/results-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-compliance-security-posture-send-e",
+   "concept": "cl-admin-compliance-security-posture",
+   "label": "Send events to your SIEM",
+   "desc": "Send Security posture events to your SIEM Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/send-events",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-access-transparency",
+   "concept": "cl-admin-data-residency-and-retention",
+   "label": "Overview: Access Transparency",
+   "desc": "Access Transparency Source: https://platform.claude.com/docs/en/manage-claude/access-transparency",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-access-transparency-log",
+   "concept": "cl-admin-data-residency-and-retention",
+   "label": "Transparency log (beta)",
+   "desc": "Verify Access Transparency events with the transparency log Source: https://platform.claude.com/docs/en/manage-claude/access-transparency-log",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-api-and-data-retention",
+   "concept": "cl-admin-data-residency-and-retention",
+   "label": "API and data retention",
+   "desc": "API and data retention (Data residency and retention) Source: https://platform.claude.com/docs/en/manage-claude/api-and-data-retention",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-data-residency",
+   "concept": "cl-admin-data-residency-and-retention",
+   "label": "Data residency",
+   "desc": "Data residency (Data residency and retention) Source: https://platform.claude.com/docs/en/manage-claude/data-residency",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-admin-api",
+   "concept": "cl-admin-identity-and-access",
+   "label": "Admin API",
+   "desc": "Admin API (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/admin-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-admin-api-keys",
+   "concept": "cl-admin-identity-and-access",
+   "label": "Create an Admin API key",
+   "desc": "Create an Admin API key (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/admin-api-keys",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-app-attest",
+   "concept": "cl-admin-identity-and-access",
+   "label": "App Attest",
+   "desc": "App Attest for iOS and macOS apps Source: https://platform.claude.com/docs/en/manage-claude/app-attest",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-ip-allowlist",
+   "concept": "cl-admin-identity-and-access",
+   "label": "IP allowlisting (beta)",
+   "desc": "IP allowlisting Source: https://platform.claude.com/docs/en/manage-claude/ip-allowlist",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-user-management",
+   "concept": "cl-admin-identity-and-access",
+   "label": "User management",
+   "desc": "User management (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/user-management",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-user-profiles",
+   "concept": "cl-admin-identity-and-access",
+   "label": "User profiles",
+   "desc": "User profiles for end-customer attribution Source: https://platform.claude.com/docs/en/manage-claude/user-profiles",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-user-profiles-verification-portal",
+   "concept": "cl-admin-identity-and-access",
+   "label": "Verification Portal links",
+   "desc": "Send an end customer a link to the Verification Portal Source: https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-admin-api",
+   "concept": "cl-admin-identity-and-access",
+   "label": "Manage WIF with the Admin API",
+   "desc": "Manage WIF with the Admin API (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/wif-admin-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-reference",
+   "concept": "cl-admin-identity-and-access",
+   "label": "WIF reference",
+   "desc": "WIF reference (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/wif-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-workload-identity-federation",
+   "concept": "cl-admin-identity-and-access",
+   "label": "Workload Identity Federation",
+   "desc": "Workload Identity Federation (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/workload-identity-federation",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-opentelemetry-api",
+   "concept": "cl-admin-opentelemetry",
+   "label": "Get Claude API spans",
+   "desc": "Set up OpenTelemetry with the Claude API Source: https://platform.claude.com/docs/en/manage-claude/opentelemetry/api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-opentelemetry-sdk",
+   "concept": "cl-admin-opentelemetry",
+   "label": "Get Claude SDK spans",
+   "desc": "Set up OpenTelemetry with the Claude SDK Source: https://platform.claude.com/docs/en/manage-claude/opentelemetry/sdk",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-analytics-api",
+   "concept": "cl-admin-usage-cost-and-limits",
+   "label": "Analytics APIs",
+   "desc": "Analytics APIs (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/analytics-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-claude-code-analytics-api",
+   "concept": "cl-admin-usage-cost-and-limits",
+   "label": "Claude Code Analytics API",
+   "desc": "Claude Code Analytics API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-rate-limits-api",
+   "concept": "cl-admin-usage-cost-and-limits",
+   "label": "Rate Limits API",
+   "desc": "Rate Limits API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/rate-limits-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-spend-limits-api",
+   "concept": "cl-admin-usage-cost-and-limits",
+   "label": "Spend Limits API",
+   "desc": "Spend Limits API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/spend-limits-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-usage-cost-analytics-api",
+   "concept": "cl-admin-usage-cost-and-limits",
+   "label": "Usage and Cost Analytics API",
+   "desc": "Usage and Cost Analytics API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-usage-cost-api",
+   "concept": "cl-admin-usage-cost-and-limits",
+   "label": "Usage and Cost API (legacy)",
+   "desc": "Usage and Cost API Source: https://platform.claude.com/docs/en/manage-claude/usage-cost-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-aws",
+   "concept": "cl-admin-wif-providers",
+   "label": "AWS",
+   "desc": "Use WIF with AWS Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/aws",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-azure",
+   "concept": "cl-admin-wif-providers",
+   "label": "Microsoft Entra ID",
+   "desc": "Use WIF with Microsoft Entra ID Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/azure",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-gcp",
+   "concept": "cl-admin-wif-providers",
+   "label": "Google Cloud",
+   "desc": "Use WIF with Google Cloud Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/gcp",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-github-actions",
+   "concept": "cl-admin-wif-providers",
+   "label": "GitHub Actions",
+   "desc": "Use WIF with GitHub Actions Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/github-actions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-kubernetes",
+   "concept": "cl-admin-wif-providers",
+   "label": "Kubernetes",
+   "desc": "Use WIF with Kubernetes Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/kubernetes",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-okta",
+   "concept": "cl-admin-wif-providers",
+   "label": "Okta",
+   "desc": "Use WIF with Okta Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/okta",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-wif-providers-spiffe",
+   "concept": "cl-admin-wif-providers",
+   "label": "SPIFFE",
+   "desc": "Use WIF with SPIFFE Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/spiffe",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-claude-tag-api",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Claude Tag API",
+   "desc": "Claude Tag API (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/claude-tag-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-inference-hooks",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Overview: Inference hooks",
+   "desc": "Inference hooks Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-inference-hooks-configuration",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Configure Inference hooks",
+   "desc": "Configure Inference hooks (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks-configuration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-inference-hooks-endpoint",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Build an integration",
+   "desc": "Develop an Inference hooks integration Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-opentelemetry",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Overview: OpenTelemetry tracing for the Claude API",
+   "desc": "OpenTelemetry tracing for the Claude API Source: https://platform.claude.com/docs/en/manage-claude/opentelemetry",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-organization-webhooks",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Organization webhooks (beta)",
+   "desc": "Organization webhooks Source: https://platform.claude.com/docs/en/manage-claude/organization-webhooks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-plugins-api",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Plugins API",
+   "desc": "Plugins API (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/plugins-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-workspaces",
+   "concept": "cl-admin-workspaces-hooks-and-integrati",
+   "label": "Workspaces",
+   "desc": "Workspaces (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/workspaces",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-admin"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1764",
+   "name": "Claude Platform Administration Specialist",
+   "legacy_key": "ClaudeAdminSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1765",
+   "name": "Claude Platform Administration Reviewer",
+   "legacy_key": "ClaudeAdminReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  },
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1765",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-admin",
+   "score": 0.2551,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-admin"
+  },
+  {
+   "agent": "Maxey1766",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-admin",
+   "score": 0.3514,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-admin"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-admin"
+ ]
+}

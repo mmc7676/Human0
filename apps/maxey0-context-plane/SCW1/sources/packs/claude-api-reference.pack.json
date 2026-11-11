@@ -1,0 +1,962 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-api-reference",
+ "topic": {
+  "id": "claude-api-reference",
+  "label": "Claude API Reference",
+  "desc": "The Claude API reference: overview, errors, rate limits, versioning, beta headers, service tiers, regions, OpenTelemetry spans, and every API resource (messages, sessions, agents, environments, files, skills, organization, compliance and more)."
+ },
+ "concepts": [
+  [
+   "cl-api-reference-api",
+   "API",
+   "claude-api-reference",
+   "API (Claude API Reference): 11 documentation pages.",
+   [
+    "features",
+    "overview",
+    "beta",
+    "headers",
+    "errors",
+    "actions"
+   ]
+  ],
+  [
+   "cl-api-reference-opentelemetry",
+   "Opentelemetry (Claude API reference)",
+   "claude-api-reference",
+   "Opentelemetry (Claude API reference) (Claude API Reference): 1 documentation page.",
+   [
+    "spans"
+   ]
+  ],
+  [
+   "cl-api-reference-claude-code",
+   "Claude code",
+   "claude-api-reference",
+   "Claude code (Claude API Reference): 1 documentation page.",
+   [
+    "trigger",
+    "routine"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-environments",
+   "API resources: environments",
+   "claude-api-reference",
+   "API resources: environments (Claude API Reference): 16 documentation pages.",
+   [
+    "beta",
+    "work",
+    "environment",
+    "environments",
+    "item",
+    "list"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-user-profiles",
+   "API resources: user profiles",
+   "claude-api-reference",
+   "API resources: user profiles (Claude API Reference): 17 documentation pages.",
+   [
+    "user",
+    "beta",
+    "profile",
+    "create",
+    "action",
+    "profiles"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-compliance",
+   "API resources: compliance",
+   "claude-api-reference",
+   "API resources: compliance (Claude API Reference): 67 documentation pages.",
+   [
+    "list",
+    "compliance",
+    "project",
+    "messages",
+    "code",
+    "delete"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-organization",
+   "API resources: organization",
+   "claude-api-reference",
+   "API resources: organization (Claude API Reference): 325 documentation pages.",
+   [
+    "beta",
+    "list",
+    "workspace",
+    "service",
+    "federation",
+    "update"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-sessions",
+   "API resources: sessions",
+   "claude-api-reference",
+   "API resources: sessions (Claude API Reference): 24 documentation pages.",
+   [
+    "beta",
+    "session",
+    "events",
+    "list",
+    "resource",
+    "thread"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-agents",
+   "API resources: agents",
+   "claude-api-reference",
+   "API resources: agents (Claude API Reference): 8 documentation pages.",
+   [
+    "beta",
+    "agent",
+    "agents",
+    "list",
+    "versions",
+    "archive"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-vaults",
+   "API resources: vaults",
+   "claude-api-reference",
+   "API resources: vaults (Claude API Reference): 15 documentation pages.",
+   [
+    "beta",
+    "credential",
+    "vault",
+    "archive",
+    "create",
+    "credentials"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-dreams",
+   "API resources: dreams",
+   "claude-api-reference",
+   "API resources: dreams (Claude API Reference): 6 documentation pages.",
+   [
+    "beta",
+    "dream",
+    "dreams",
+    "archive",
+    "cancel",
+    "create"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-memory-stores",
+   "API resources: memory stores",
+   "claude-api-reference",
+   "API resources: memory stores (Claude API Reference): 17 documentation pages.",
+   [
+    "beta",
+    "memory",
+    "store",
+    "list",
+    "retrieve",
+    "create"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-deployments",
+   "API resources: deployments",
+   "claude-api-reference",
+   "API resources: deployments (Claude API Reference): 9 documentation pages.",
+   [
+    "beta",
+    "deployment",
+    "deployments",
+    "archive",
+    "create",
+    "list"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-tunnels",
+   "API resources: tunnels",
+   "claude-api-reference",
+   "API resources: tunnels (Claude API Reference): 12 documentation pages.",
+   [
+    "beta",
+    "tunnel",
+    "certificate",
+    "archive",
+    "certificates",
+    "create"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-messages",
+   "API resources: messages",
+   "claude-api-reference",
+   "API resources: messages (Claude API Reference): 20 documentation pages.",
+   [
+    "message",
+    "beta",
+    "batch",
+    "batches",
+    "create",
+    "retrieve"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-overview",
+   "API resources: overview",
+   "claude-api-reference",
+   "API resources: overview (Claude API Reference): 1 documentation page.",
+   [
+    "beta"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-skills",
+   "API resources: skills",
+   "claude-api-reference",
+   "API resources: skills (Claude API Reference): 21 documentation pages.",
+   [
+    "skill",
+    "beta",
+    "version",
+    "create",
+    "delete",
+    "list"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-files",
+   "API resources: files",
+   "claude-api-reference",
+   "API resources: files (Claude API Reference): 12 documentation pages.",
+   [
+    "file",
+    "beta",
+    "files",
+    "delete",
+    "download",
+    "metadata"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-deployment-runs",
+   "API resources: deployment runs",
+   "claude-api-reference",
+   "API resources: deployment runs (Claude API Reference): 3 documentation pages.",
+   [
+    "deployment",
+    "beta",
+    "runs",
+    "list"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-models",
+   "API resources: models",
+   "claude-api-reference",
+   "API resources: models (Claude API Reference): 6 documentation pages.",
+   [
+    "models",
+    "beta",
+    "model",
+    "list"
+   ]
+  ],
+  [
+   "cl-api-reference-api-resources-webhooks",
+   "API resources: webhooks",
+   "claude-api-reference",
+   "API resources: webhooks (Claude API Reference): 1 documentation page.",
+   [
+    "webhooks",
+    "beta"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-platform-en-api-overview",
+   "cl-api-reference-api",
+   "Features overview",
+   "API overview Source: https://platform.claude.com/docs/en/api/overview",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-beta-headers",
+   "cl-api-reference-api",
+   "Beta headers",
+   "Beta headers (API) Source: https://platform.claude.com/docs/en/api/beta-headers",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-errors",
+   "cl-api-reference-api",
+   "Errors",
+   "Claude API errors Source: https://platform.claude.com/docs/en/api/errors",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-claude-platform-on-aws-iam-actions",
+   "cl-api-reference-api",
+   "AWS IAM actions",
+   "IAM actions for Claude Platform on AWS Source: https://platform.claude.com/docs/en/api/claude-platform-on-aws-iam-actions",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-claude-models-on-google-cloud-anthropic-mana",
+   "cl-api-reference-api",
+   "Google Cloud IAM permissions",
+   "IAM permissions for Claude Models on Google Cloud (Anthropic managed) Source: https://platform.claude.com/docs/en/api/claude-models-on-google-cloud-anthropic-managed-iam-permissions",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-ip-addresses",
+   "cl-api-reference-api",
+   "IP addresses",
+   "IP addresses (API) Source: https://platform.claude.com/docs/en/api/ip-addresses",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-migration-2026-10-21",
+   "cl-api-reference-api",
+   "Migrating to API version 2026-10-21",
+   "Migrating to API version 2026-10-21 (API) Source: https://platform.claude.com/docs/en/api/migration-2026-10-21",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-rate-limits",
+   "cl-api-reference-api",
+   "Rate limits",
+   "Rate limits (API) Source: https://platform.claude.com/docs/en/api/rate-limits",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-service-tiers",
+   "cl-api-reference-api",
+   "Service tiers",
+   "Service tiers (API) Source: https://platform.claude.com/docs/en/api/service-tiers",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-supported-regions",
+   "cl-api-reference-api",
+   "Supported regions",
+   "Supported regions (API) Source: https://platform.claude.com/docs/en/api/supported-regions",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-versioning",
+   "cl-api-reference-api",
+   "Versions",
+   "Versions (API) Source: https://platform.claude.com/docs/en/api/versioning",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-opentelemetry-spans",
+   "cl-api-reference-opentelemetry",
+   "Spans",
+   "OpenTelemetry span reference Source: https://platform.claude.com/docs/en/api/opentelemetry/spans",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-api-claude-code-routines-fire",
+   "cl-api-reference-claude-code",
+   "Trigger a routine",
+   "Trigger a routine through the API Source: https://platform.claude.com/docs/en/api/claude-code/routines-fire",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-environments-api",
+   "cl-api-reference-api-resources-environments",
+   "Claude API: environments",
+   "Call the Claude API environments resource: Acknowledge Work (Beta); Archive Environment (Beta); Create Environment (Beta); Delete Environment (Beta); Environments (Beta); Get Environment (Beta); Get Queue Statistics (Beta); Get Work Item (Beta); List Environments (Beta); List Work Items (Beta); Poll for Work (Beta); Record Heartbeat (Beta); Stop Work (Beta); Update Environment (Beta); Update Work Item (Beta); Work (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-user-profiles-api",
+   "cl-api-reference-api-resources-user-profiles",
+   "Claude API: user profiles",
+   "Call the Claude API user profiles resource: Action URLs; Action URLs (Beta); Create Action URL; Create Action URL (Beta); Create Enrollment URL (Beta); Create User Profile; Create User Profile (Beta); Delete User Profile; Delete User Profile (Beta); Get User Profile; Get User Profile (Beta); List User Profiles; List User Profiles (Beta); Update User Profile; Update User Profile (Beta); User Profiles; User Profiles (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-compliance-api",
+   "cl-api-reference-api-resources-compliance",
+   "Claude API: compliance",
+   "Call the Claude API compliance resource: Activities; Apps; Artifacts; Attachments; Chats; Code; Collaborators; Compliance API; Delete Code Artifact; Delete chat; Delete file; Delete project; Delete project document; Documents; Download Code Artifact Content; Download Code Artifact Version Content; Download a Claude-generated file; Download artifact content; Download file content; Files; Generated Files; Get Claude-generated file metadata; Get Compliance Group; Get Compliance Role; Get an organization's security posture; Get artifact metadata; Get chat messages; Get effective organization setti",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-organization-api",
+   "cl-api-reference-api-resources-organization",
+   "Claude API: organization",
+   "Call the Claude API organization resource: API Keys; API Keys (Beta); Add Federation Rule Workspace; Add Federation Rule Workspace (Beta); Add RBAC Group Member; Add RBAC Group Member (Beta); Add Workspace To Service Account; Add Workspace To Service Account (Beta); Add a Telemetry Destination Workspace (Beta); Analytics; Analytics (Beta); Approve Spend Limit Increase Request; Approve Spend Limit Increase Request (Beta); Apps; Apps (Beta); Archive Federation Issuer; Archive Federation Issuer (Beta); Archive Federation Rule; Archive Federation Rule (Beta); Archive Service Account; Archive Servi",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-sessions-api",
+   "cl-api-reference-api-resources-sessions",
+   "Claude API: sessions",
+   "Call the Claude API sessions resource: Add Session Resource (Beta); Archive Session (Beta); Archive Session Thread (Beta); Create Session (Beta); Delete Session (Beta); Delete Session Resource (Beta); Events (Beta); Get Session (Beta); Get Session Resource (Beta); Get Session Thread (Beta); List Events (Beta); List Session Resources (Beta); List Session Thread Events (Beta); List Session Threads (Beta); List Sessions (Beta); Resources (Beta); Send Events (Beta); Sessions (Beta); Stream Events (Beta); Stream Session Thread Events (Beta); Threads (Beta); Update Session (Beta); Update Session Res",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-agents-api",
+   "cl-api-reference-api-resources-agents",
+   "Claude API: agents",
+   "Call the Claude API agents resource: Agents (Beta); Archive Agent (Beta); Create Agent (Beta); Get Agent (Beta); List Agent Versions (Beta); List Agents (Beta); Update Agent (Beta); Versions (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-vaults-api",
+   "cl-api-reference-api-resources-vaults",
+   "Claude API: vaults",
+   "Call the Claude API vaults resource: Archive a Credential (Beta); Archive a Vault (Beta); Create a Credential (Beta); Create a Vault (Beta); Credentials (Beta); Delete a Credential (Beta); Delete a Vault (Beta); List Credentials (Beta); List Vaults (Beta); Retrieve a Credential (Beta); Retrieve a Vault (Beta); Update a Credential (Beta); Update a Vault (Beta); Validate an MCP OAuth Credential (Beta); Vaults (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-dreams-api",
+   "cl-api-reference-api-resources-dreams",
+   "Claude API: dreams",
+   "Call the Claude API dreams resource: Archive a Dream (Beta); Cancel a Dream (Beta); Create a Dream (Beta); Dreams (Beta); Get a Dream (Beta); List Dreams (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-memory-stores-api",
+   "cl-api-reference-api-resources-memory-stores",
+   "Claude API: memory stores",
+   "Call the Claude API memory stores resource: Archive a Memory Store (Beta); Create a Memory (Beta); Create a Memory Store (Beta); Delete a Memory (Beta); Delete a Memory Store (Beta); List Memories (Beta); List Memory Stores (Beta); List Memory Versions (Beta); Memories (Beta); Memory Stores (Beta); Memory Versions (Beta); Redact a Memory Version (Beta); Retrieve a Memory (Beta); Retrieve a Memory Store (Beta); Retrieve a Memory Version (Beta); Update a Memory (Beta); Update a Memory Store (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-deployments-api",
+   "cl-api-reference-api-resources-deployments",
+   "Claude API: deployments",
+   "Call the Claude API deployments resource: Archive Deployment (Beta); Create Deployment (Beta); Deployments (Beta); Get Deployment (Beta); List Deployments (Beta); Pause Deployment (Beta); Run Deployment Now (Beta); Unpause Deployment (Beta); Update Deployment (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-tunnels-api",
+   "cl-api-reference-api-resources-tunnels",
+   "Claude API: tunnels",
+   "Call the Claude API tunnels resource: Archive Tunnel (Beta); Archive Tunnel Certificate (Beta); Certificates (Beta); Create Tunnel (Beta); Create Tunnel Certificate (Beta); Get Tunnel (Beta); Get Tunnel Certificate (Beta); List Tunnel Certificates (Beta); List Tunnels (Beta); Reveal Tunnel Token (Beta); Rotate Tunnel Token (Beta); Tunnels (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-messages-api",
+   "cl-api-reference-api-resources-messages",
+   "Claude API: messages",
+   "Call the Claude API messages resource: Batches; Batches (Beta); Cancel a Message Batch; Cancel a Message Batch (Beta); Count tokens in a Message; Count tokens in a Message (Beta); Create a Message; Create a Message (Beta); Create a Message Batch; Create a Message Batch (Beta); Delete a Message Batch; Delete a Message Batch (Beta); List Message Batches; List Message Batches (Beta); Messages; Messages (Beta); Retrieve Message Batch results; Retrieve Message Batch results (Beta); Retrieve a Message Batch; Retrieve a Message Batch (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-overview-api",
+   "cl-api-reference-api-resources-overview",
+   "Claude API: overview",
+   "Call the Claude API overview resource: Beta (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-skills-api",
+   "cl-api-reference-api-resources-skills",
+   "Claude API: skills",
+   "Call the Claude API skills resource: Create Skill; Create Skill (Beta); Create Skill Version; Create Skill Version (Beta); Delete Skill; Delete Skill (Beta); Delete Skill Version; Delete Skill Version (Beta); Download Skill Version Content (Beta); Get Skill; Get Skill (Beta); Get Skill Version; Get Skill Version (Beta); List Skill Versions; List Skill Versions (Beta); List Skills; List Skills (Beta); Skills; Skills (Beta); Versions; Versions (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-files-api",
+   "cl-api-reference-api-resources-files",
+   "Claude API: files",
+   "Call the Claude API files resource: Delete File; Delete File (Beta); Download File; Download File (Beta); Files; Files (Beta); Get File Metadata; Get File Metadata (Beta); List Files; List Files (Beta); Upload File; Upload File (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-deployment-runs-api",
+   "cl-api-reference-api-resources-deployment-runs",
+   "Claude API: deployment runs",
+   "Call the Claude API deployment runs resource: Deployment Runs (Beta); Get Deployment Run (Beta); List Deployment Runs (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-models-api",
+   "cl-api-reference-api-resources-models",
+   "Claude API: models",
+   "Call the Claude API models resource: Get a Model; Get a Model (Beta); List Models; List Models (Beta); Models; Models (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-webhooks-api",
+   "cl-api-reference-api-resources-webhooks",
+   "Claude API: webhooks",
+   "Call the Claude API webhooks resource: Webhooks (Beta)",
+   "reference",
+   [
+    [
+     "ClaudeApiReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeApiReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeApiReferenceSpecialist": "Claude API Reference Specialist",
+  "ClaudeApiReferenceReviewer": "Claude API Reference Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

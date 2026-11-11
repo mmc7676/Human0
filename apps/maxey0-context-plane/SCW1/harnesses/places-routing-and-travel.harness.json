@@ -474,7 +474,6 @@
    "legacy_key": "loc-checker",
    "mcp": [
     "local:google-maps-mcp",
-    "local:mapbox-mcp-server",
     "local:openstreetmap-mcp"
    ]
   },
@@ -666,7 +665,7 @@
    "agent": "Maxey1630",
    "mcp": "local:google-maps-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.2478,
+   "score": 0.2571,
    "basis": "derived:tfidf-cosine",
    "source_topic": "location"
   },
@@ -674,7 +673,7 @@
    "agent": "Maxey1630",
    "mcp": "local:openstreetmap-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.3473,
+   "score": 0.35,
    "basis": "derived:tfidf-cosine",
    "source_topic": "location"
   },
@@ -682,15 +681,7 @@
    "agent": "Maxey1631",
    "mcp": "local:google-maps-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.2457,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "location"
-  },
-  {
-   "agent": "Maxey1631",
-   "mcp": "local:mapbox-mcp-server",
-   "topic": "places-routing-and-travel",
-   "score": 0.1421,
+   "score": 0.2546,
    "basis": "derived:tfidf-cosine",
    "source_topic": "location"
   },
@@ -698,7 +689,7 @@
    "agent": "Maxey1631",
    "mcp": "local:openstreetmap-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.3919,
+   "score": 0.3968,
    "basis": "derived:tfidf-cosine",
    "source_topic": "location"
   },
@@ -706,7 +697,7 @@
    "agent": "Maxey1666",
    "mcp": "local:google-maps-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.2213,
+   "score": 0.2304,
    "basis": "derived:tfidf-cosine",
    "source_topic": "travel-outdoors"
   },
@@ -714,7 +705,7 @@
    "agent": "Maxey1666",
    "mcp": "local:openstreetmap-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.1437,
+   "score": 0.1424,
    "basis": "derived:tfidf-cosine",
    "source_topic": "travel-outdoors"
   },
@@ -722,7 +713,7 @@
    "agent": "Maxey1668",
    "mcp": "local:google-maps-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.2272,
+   "score": 0.2368,
    "basis": "derived:tfidf-cosine",
    "source_topic": "travel-outdoors"
   },
@@ -730,7 +721,7 @@
    "agent": "Maxey1668",
    "mcp": "local:openstreetmap-mcp",
    "topic": "places-routing-and-travel",
-   "score": 0.1475,
+   "score": 0.1464,
    "basis": "derived:tfidf-cosine",
    "source_topic": "travel-outdoors"
   }

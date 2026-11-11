@@ -1,21 +1,21 @@
 {
  "before_sources": {
-  "topics": 127,
-  "concepts": 735,
-  "skills": 2000,
-  "agents": 1030,
-  "mcp_rows": 363
+  "topics": 147,
+  "concepts": 894,
+  "skills": 2821,
+  "agents": 1090,
+  "mcp_rows": 383
  },
  "after": {
-  "domains": 11,
-  "topics": 128,
-  "concepts": 711,
-  "skills": 1998,
-  "agents": 1021,
-  "mcp_servers": 117,
-  "agent_mcp_links": 556,
-  "related_links": 13,
-  "mcp_without_agent": 21
+  "domains": 12,
+  "topics": 148,
+  "concepts": 870,
+  "skills": 2819,
+  "agents": 1062,
+  "mcp_servers": 115,
+  "agent_mcp_links": 574,
+  "related_links": 120,
+  "mcp_without_agent": 20
  },
  "removed_topics": {
   "digestion": "v0.5 one-off for a friend; reads as a concept, not a topic",
@@ -523,7 +523,7 @@
   }
  ],
  "maxey_keys": {
-  "from_registry": 954,
+  "from_registry": 995,
   "newly_assigned": []
  },
  "skill_agent_overrides": [
@@ -539,6 +539,10 @@
   {
    "id": "116f9db2-2c37-4b1b-89de-c5519a95ae9c",
    "name": "Elastic Cloud Serverless"
+  },
+  {
+   "id": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "name": "JupiterOne"
   },
   {
    "id": "63125588-06e1-4567-8130-f5a26ed1d20f",
@@ -577,6 +581,10 @@
    "name": "MongoDB Atlas"
   },
   {
+   "id": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "name": "Cloudflare Developer Platform"
+  },
+  {
    "id": "cd12e050-6c36-4d6a-8865-95e7d2743c41",
    "name": "CloudBees Unify MCP Server"
   },
@@ -613,6 +621,10 @@
    "name": "Google Drive"
   },
   {
+   "id": "48ba489e-160f-4965-913b-667cce063da2",
+   "name": "Chatbase"
+  },
+  {
    "id": "session:Claude_Docs",
    "name": "Claude Docs"
   },
@@ -622,8 +634,8 @@
   }
  ],
  "regroup": {
-  "domains": 11,
-  "topics": 128,
-  "from_topics": 121
+  "domains": 12,
+  "topics": 148,
+  "from_topics": 141
  }
 }

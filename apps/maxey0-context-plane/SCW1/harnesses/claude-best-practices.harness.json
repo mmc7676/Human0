@@ -1,0 +1,839 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-best-practices",
+  "label": "Prompting, Evaluation and Claude API Guidance",
+  "desc": "Prompting, Evaluation and Claude API Guidance: Use case guides, Prompt engineering, About Claude, Test and evaluate, Strengthen guardrails (Claude API guidance), Agent skills (Claude API guidance), Release notes and Getting started (Claude API guidance)."
+ },
+ "concepts": [
+  {
+   "id": "cl-best-practices-about-claude",
+   "label": "About Claude",
+   "desc": "About Claude (Prompting, Evaluation and Claude API Guidance): 2 documentation pages.",
+   "keywords": [
+    "additional",
+    "resources",
+    "glossary"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": []
+  },
+  {
+   "id": "cl-best-practices-agent-skills",
+   "label": "Agent skills (Claude API guidance)",
+   "desc": "Agent skills (Claude API guidance) (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   "keywords": [
+    "overview",
+    "claude",
+    "skill"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": [
+    "cl-api-reference-api-resources-skills",
+    "cl-apps-extend-skills",
+    "cl-code-build-skills",
+    "cl-messages-agent-skills",
+    "cl-messages-agents-and-tools",
+    "cl-messages-manage-claude"
+   ]
+  },
+  {
+   "id": "cl-best-practices-getting-started",
+   "label": "Getting started (Claude API guidance)",
+   "desc": "Getting started (Claude API guidance) (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   "keywords": [
+    "usage",
+    "primer",
+    "claude"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": [
+    "cl-code-start-claude-code-on-desktop",
+    "cl-code-start-getting-started",
+    "cl-messages-getting-started"
+   ]
+  },
+  {
+   "id": "cl-best-practices-prompt-engineering",
+   "label": "Prompt engineering",
+   "desc": "Prompt engineering (Prompting, Evaluation and Claude API Guidance): 11 documentation pages.",
+   "keywords": [
+    "prompting",
+    "claude",
+    "fable",
+    "opus",
+    "overview",
+    "sonnet"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": []
+  },
+  {
+   "id": "cl-best-practices-release-notes",
+   "label": "Release notes",
+   "desc": "Release notes (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   "keywords": [
+    "overview",
+    "claude",
+    "platform",
+    "release",
+    "notes"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": []
+  },
+  {
+   "id": "cl-best-practices-strengthen-guardrails",
+   "label": "Strengthen guardrails (Claude API guidance)",
+   "desc": "Strengthen guardrails (Claude API guidance) (Prompting, Evaluation and Claude API Guidance): 5 documentation pages.",
+   "keywords": [
+    "reduce",
+    "increase",
+    "output",
+    "consistency",
+    "mitigate",
+    "jailbreaks"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": [
+    "cl-messages-strengthen-guardrails"
+   ]
+  },
+  {
+   "id": "cl-best-practices-test-and-evaluate",
+   "label": "Test and evaluate",
+   "desc": "Test and evaluate (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   "keywords": [
+    "define",
+    "success",
+    "build",
+    "evaluations"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": []
+  },
+  {
+   "id": "cl-best-practices-use-case-guides",
+   "label": "Use case guides",
+   "desc": "Use case guides (Prompting, Evaluation and Claude API Guidance): 6 documentation pages.",
+   "keywords": [
+    "agent",
+    "overview",
+    "guides",
+    "common",
+    "cases",
+    "commerce"
+   ],
+   "topic": "claude-best-practices",
+   "source": "claude-best-practices",
+   "source_topic": "claude-best-practices",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-about-claude-additional-resources",
+   "concept": "cl-best-practices-about-claude",
+   "label": "Additional resources",
+   "desc": "Additional resources (About Claude) Source: https://platform.claude.com/docs/en/about-claude/additional-resources",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-glossary",
+   "concept": "cl-best-practices-about-claude",
+   "label": "Glossary",
+   "desc": "Glossary (About Claude) Source: https://platform.claude.com/docs/en/about-claude/glossary",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-agent-skills-claude-api-skill",
+   "concept": "cl-best-practices-agent-skills",
+   "label": "Overview: Claude API skill",
+   "desc": "Claude API skill Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-claude-api-primer",
+   "concept": "cl-best-practices-getting-started",
+   "label": "API usage primer for Claude",
+   "desc": "API usage primer for Claude (Getting started) Source: https://platform.claude.com/docs/en/claude_api_primer",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-claude-prom",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting best practices",
+   "desc": "Prompting best practices (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-overview",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Overview: Prompt engineering overview",
+   "desc": "Prompt engineering overview Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Fable 5",
+   "desc": "Prompting Claude Fable 5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Fable 5.1",
+   "desc": "Prompting Claude Fable 5.1 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Fable 5.2",
+   "desc": "Prompting Claude Fable 5.2 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Haiku 5.5",
+   "desc": "Prompting Claude Haiku 5.5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Opus 4.8",
+   "desc": "Prompting Claude Opus 4.8 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Opus 5",
+   "desc": "Prompting Claude Opus 5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Opus 5.5",
+   "desc": "Prompting Claude Opus 5.5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Sonnet 5",
+   "desc": "Prompting Claude Sonnet 5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x-x-x-x",
+   "concept": "cl-best-practices-prompt-engineering",
+   "label": "Prompting Claude Sonnet 5.5",
+   "desc": "Prompting Claude Sonnet 5.5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-release-notes-overview",
+   "concept": "cl-best-practices-release-notes",
+   "label": "Overview: Claude Platform release notes",
+   "desc": "Claude Platform release notes Source: https://platform.claude.com/docs/en/release-notes/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-strengthen-guardrails-increase",
+   "concept": "cl-best-practices-strengthen-guardrails",
+   "label": "Increase output consistency",
+   "desc": "Increase output consistency (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-strengthen-guardrails-mitigate",
+   "concept": "cl-best-practices-strengthen-guardrails",
+   "label": "Mitigate jailbreaks",
+   "desc": "Mitigate jailbreaks and prompt injections Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-strengthen-guardrails-reduce-h",
+   "concept": "cl-best-practices-strengthen-guardrails",
+   "label": "Reduce hallucinations",
+   "desc": "Reduce hallucinations (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-strengthen-guardrails-reduce-l",
+   "concept": "cl-best-practices-strengthen-guardrails",
+   "label": "Reducing latency",
+   "desc": "Reducing latency (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-strengthen-guardrails-reduce-p",
+   "concept": "cl-best-practices-strengthen-guardrails",
+   "label": "Reduce prompt leak",
+   "desc": "Reduce prompt leak (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-develop-tests",
+   "concept": "cl-best-practices-test-and-evaluate",
+   "label": "Define success and build evaluations",
+   "desc": "Define success criteria and build evaluations Source: https://platform.claude.com/docs/en/test-and-evaluate/develop-tests",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-use-case-guides-commerce-agents",
+   "concept": "cl-best-practices-use-case-guides",
+   "label": "Commerce agent",
+   "desc": "Commerce agent (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-use-case-guides-content-moderation",
+   "concept": "cl-best-practices-use-case-guides",
+   "label": "Content moderation",
+   "desc": "Content moderation (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-use-case-guides-customer-support-ch",
+   "concept": "cl-best-practices-use-case-guides",
+   "label": "Customer support agent",
+   "desc": "Customer support agent (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-use-case-guides-legal-summarization",
+   "concept": "cl-best-practices-use-case-guides",
+   "label": "Legal summarization",
+   "desc": "Legal summarization (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-use-case-guides-overview",
+   "concept": "cl-best-practices-use-case-guides",
+   "label": "Overview: Guides to common use cases",
+   "desc": "Guides to common use cases Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  },
+  {
+   "id": "cl-platform-en-about-claude-use-case-guides-ticket-routing",
+   "concept": "cl-best-practices-use-case-guides",
+   "label": "Ticket routing",
+   "desc": "Ticket routing (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-best-practices"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1781",
+   "name": "Prompting, Evaluation and Claude API Guidance Specialist",
+   "legacy_key": "ClaudeBestPracticesSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1782",
+   "name": "Prompting, Evaluation and Claude API Guidance Reviewer",
+   "legacy_key": "ClaudeBestPracticesReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1782",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-best-practices",
+   "score": 0.2073,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-best-practices"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-best-practices"
+ ]
+}

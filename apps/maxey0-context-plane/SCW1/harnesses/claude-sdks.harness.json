@@ -1,0 +1,525 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-sdks",
+  "label": "Claude SDKs, CLI and Libraries",
+  "desc": "Claude SDKs, CLI and Libraries: Cli, Cli sdks libraries, Libraries and Sdks."
+ },
+ "concepts": [
+  {
+   "id": "cl-sdks-cli",
+   "label": "Cli",
+   "desc": "Cli (Claude SDKs, CLI and Libraries): 6 documentation pages.",
+   "keywords": [
+    "quickstart",
+    "authentication",
+    "options",
+    "scripting",
+    "automation",
+    "connect"
+   ],
+   "topic": "claude-sdks",
+   "source": "claude-sdks",
+   "source_topic": "claude-sdks",
+   "related": []
+  },
+  {
+   "id": "cl-sdks-cli-sdks-libraries",
+   "label": "Cli sdks libraries",
+   "desc": "Cli sdks libraries (Claude SDKs, CLI and Libraries): 2 documentation pages.",
+   "keywords": [
+    "overview",
+    "sdks",
+    "libraries",
+    "middleware"
+   ],
+   "topic": "claude-sdks",
+   "source": "claude-sdks",
+   "source_topic": "claude-sdks",
+   "related": []
+  },
+  {
+   "id": "cl-sdks-libraries",
+   "label": "Libraries",
+   "desc": "Libraries (Claude SDKs, CLI and Libraries): 2 documentation pages.",
+   "keywords": [
+    "apple",
+    "foundation",
+    "models",
+    "openai",
+    "compatibility"
+   ],
+   "topic": "claude-sdks",
+   "source": "claude-sdks",
+   "source_topic": "claude-sdks",
+   "related": []
+  },
+  {
+   "id": "cl-sdks-sdks",
+   "label": "Sdks",
+   "desc": "Sdks (Claude SDKs, CLI and Libraries): 7 documentation pages.",
+   "keywords": [
+    "java",
+    "python",
+    "ruby",
+    "typescript"
+   ],
+   "topic": "claude-sdks",
+   "source": "claude-sdks",
+   "source_topic": "claude-sdks",
+   "related": [
+    "cl-code-agent-sdk-sdk-references"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-cli-apply",
+   "concept": "cl-sdks-cli",
+   "label": "Manage resources as code",
+   "desc": "Manage resources as code with ant apply Source: https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-cli-authentication",
+   "concept": "cl-sdks-cli",
+   "label": "Authentication options",
+   "desc": "CLI authentication options Source: https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-cli-quickstart",
+   "concept": "cl-sdks-cli",
+   "label": "Quickstart: CLI quickstart",
+   "desc": "CLI quickstart Source: https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-cli-scripting",
+   "concept": "cl-sdks-cli",
+   "label": "Scripting and automation",
+   "desc": "CLI scripting and automation Source: https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-cli-sessions-connect",
+   "concept": "cl-sdks-cli",
+   "label": "Connect to a Managed Agents session",
+   "desc": "Connect to a Managed Agents session from your terminal Source: https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-cli-using",
+   "concept": "cl-sdks-cli",
+   "label": "Using the CLI",
+   "desc": "Using the CLI (Cli) Source: https://platform.claude.com/docs/en/cli-sdks-libraries/cli/using",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-middleware",
+   "concept": "cl-sdks-cli-sdks-libraries",
+   "label": "Middleware",
+   "desc": "SDK middleware Source: https://platform.claude.com/docs/en/cli-sdks-libraries/middleware",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-overview",
+   "concept": "cl-sdks-cli-sdks-libraries",
+   "label": "Overview: SDKs, CLI, and libraries",
+   "desc": "SDKs, CLI, and libraries Source: https://platform.claude.com/docs/en/cli-sdks-libraries/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-libraries-apple-foundation-mo",
+   "concept": "cl-sdks-libraries",
+   "label": "Apple Foundation Models",
+   "desc": "Apple Foundation Models (Libraries) Source: https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-libraries-openai-sdk",
+   "concept": "cl-sdks-libraries",
+   "label": "OpenAI SDK compatibility",
+   "desc": "OpenAI SDK compatibility (Libraries) Source: https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/openai-sdk",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-csharp",
+   "concept": "cl-sdks-sdks",
+   "label": "C#",
+   "desc": "C# SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/csharp",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-go",
+   "concept": "cl-sdks-sdks",
+   "label": "Go",
+   "desc": "Go SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/go",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-java",
+   "concept": "cl-sdks-sdks",
+   "label": "Java",
+   "desc": "Java SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/java",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-php",
+   "concept": "cl-sdks-sdks",
+   "label": "PHP",
+   "desc": "PHP SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-python",
+   "concept": "cl-sdks-sdks",
+   "label": "Python",
+   "desc": "Python SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/python",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-ruby",
+   "concept": "cl-sdks-sdks",
+   "label": "Ruby",
+   "desc": "Ruby SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/ruby",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  },
+  {
+   "id": "cl-platform-en-cli-sdks-libraries-sdks-typescript",
+   "concept": "cl-sdks-sdks",
+   "label": "TypeScript",
+   "desc": "TypeScript SDK Source: https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1803",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1804",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-sdks"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1803",
+   "name": "Claude SDKs, CLI and Libraries Specialist",
+   "legacy_key": "ClaudeSdksSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1804",
+   "name": "Claude SDKs, CLI and Libraries Reviewer",
+   "legacy_key": "ClaudeSdksReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1804",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-sdks",
+   "score": 0.166,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-sdks"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-sdks"
+ ]
+}

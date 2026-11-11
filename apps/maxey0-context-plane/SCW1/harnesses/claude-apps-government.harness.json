@@ -1,0 +1,1250 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-apps-government",
+  "label": "Claude for Government",
+  "desc": "Claude for Government: Overview (Claude for Government), Tenant admin, Org admin, Config, Connectors (Claude for Government), Security, Deploy desktop, Deploy microsoft 365, Desktop, Deploy claude code and Account."
+ },
+ "concepts": [
+  {
+   "id": "cl-apps-governmen-account",
+   "label": "Account",
+   "desc": "Account (Claude for Government): 4 documentation pages.",
+   "keywords": [
+    "account",
+    "your",
+    "usage",
+    "sessions"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": []
+  },
+  {
+   "id": "cl-apps-governmen-config",
+   "label": "Config",
+   "desc": "Config (Claude for Government): 3 documentation pages.",
+   "keywords": [
+    "config",
+    "works",
+    "available",
+    "settings",
+    "manage",
+    "plugins"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": []
+  },
+  {
+   "id": "cl-apps-governmen-connectors",
+   "label": "Connectors (Claude for Government)",
+   "desc": "Connectors (Claude for Government) (Claude for Government): 2 documentation pages.",
+   "keywords": [
+    "connectors",
+    "microsoft",
+    "connector"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": [
+    "cl-apps-extend-build-for-claude",
+    "cl-apps-extend-connectors",
+    "cl-apps-extend-connectors-building",
+    "cl-apps-extend-connectors-custom",
+    "cl-apps-extend-connectors-github",
+    "cl-apps-extend-connectors-microsoft",
+    "cl-apps-extend-connectors-slack",
+    "cl-apps-extend-extend-claude",
+    "cl-apps-science-compute-data-and-connectors"
+   ]
+  },
+  {
+   "id": "cl-apps-governmen-deploy-claude-code",
+   "label": "Deploy claude code",
+   "desc": "Deploy claude code (Claude for Government): 1 documentation page.",
+   "keywords": [
+    "claude",
+    "connect",
+    "code",
+    "government"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": [
+    "cl-code-build-mcp"
+   ]
+  },
+  {
+   "id": "cl-apps-governmen-deploy-desktop",
+   "label": "Deploy desktop",
+   "desc": "Deploy desktop (Claude for Government): 2 documentation pages.",
+   "keywords": [
+    "claude",
+    "connect",
+    "desktop",
+    "government",
+    "windows",
+    "fleet"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": []
+  },
+  {
+   "id": "cl-apps-governmen-deploy-microsoft-365",
+   "label": "Deploy microsoft 365",
+   "desc": "Deploy microsoft 365 (Claude for Government): 1 documentation page.",
+   "keywords": [
+    "claude",
+    "deploy",
+    "microsoft",
+    "government"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": [
+    "cl-apps-extend-connectors-microsoft"
+   ]
+  },
+  {
+   "id": "cl-apps-governmen-desktop",
+   "label": "Desktop",
+   "desc": "Desktop (Claude for Government): 5 documentation pages.",
+   "keywords": [
+    "claude",
+    "desktop",
+    "video",
+    "walkthroughs",
+    "import",
+    "your"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": []
+  },
+  {
+   "id": "cl-apps-governmen-org-admin",
+   "label": "Org admin",
+   "desc": "Org admin (Claude for Government): 11 documentation pages.",
+   "keywords": [
+    "organization",
+    "administration",
+    "setup",
+    "wizard",
+    "readiness",
+    "users"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": []
+  },
+  {
+   "id": "cl-apps-governmen-overview",
+   "label": "Overview (Claude for Government)",
+   "desc": "Overview (Claude for Government) (Claude for Government): 4 documentation pages.",
+   "keywords": [
+    "claude",
+    "government",
+    "administrator",
+    "guide",
+    "moving",
+    "from"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": [
+    "cl-apps-tag-overview"
+   ]
+  },
+  {
+   "id": "cl-apps-governmen-security",
+   "label": "Security",
+   "desc": "Security (Claude for Government): 1 documentation page.",
+   "keywords": [
+    "security",
+    "data",
+    "handling"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": [
+    "cl-admin-compliance-security-posture",
+    "cl-code-admin-security-and-data",
+    "cl-code-start-security-scans",
+    "cl-managed-agents-deployment-and-security"
+   ]
+  },
+  {
+   "id": "cl-apps-governmen-tenant-admin",
+   "label": "Tenant admin",
+   "desc": "Tenant admin (Claude for Government): 10 documentation pages.",
+   "keywords": [
+    "tenant",
+    "administration",
+    "setup",
+    "wizard",
+    "readiness",
+    "organizations"
+   ],
+   "topic": "claude-apps-government",
+   "source": "claude-apps-government",
+   "source_topic": "claude-apps-government",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-apps-government-account-overview",
+   "concept": "cl-apps-governmen-account",
+   "label": "Your account",
+   "desc": "Check your own account details, usage limits, and active sessions. Source: https://claude.com/docs/government/account/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-account-profile",
+   "concept": "cl-apps-governmen-account",
+   "label": "Account",
+   "desc": "Use this page to confirm that you are signed in as the right person and to see what access you have been given. Source: https://claude.com/docs/government/account/profile",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-account-sessions",
+   "concept": "cl-apps-governmen-account",
+   "label": "Sessions",
+   "desc": "Use this page to see every place you are currently signed in to Claude for Government and to sign out of any of them remotely. Source: https://claude.com/docs/government/account/sessions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-account-usage",
+   "concept": "cl-apps-governmen-account",
+   "label": "Usage",
+   "desc": "Use this page to see how much of your Claude allowance you have used and when it refreshes. Source: https://claude.com/docs/government/account/usage",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-config-overview",
+   "concept": "cl-apps-governmen-config",
+   "label": "How Config works",
+   "desc": "Understand how product settings in Claude for Government are resolved across the tenant, directory groups, and organizations, and how to find, change, compare, and lock them. Source: https://claude.com/docs/government/config/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-config-plugins-and-connectors",
+   "concept": "cl-apps-governmen-config",
+   "label": "Manage plugins and connectors",
+   "desc": "Choose between plugins and connectors in Claude for Government, prepare plugin archives for upload, decide how plugins install for members, update and remove plugins, and understand how connector tool policies apply to members. Source: https://claude.com/docs/government/config/plugins-and-connectors",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-config-settings",
+   "concept": "cl-apps-governmen-config",
+   "label": "Available settings",
+   "desc": "Config page settings in Claude for Government, such as session timeouts, network and folder access, tool approvals, connectors, plugins, telemetry, and updates. Source: https://claude.com/docs/government/config/settings",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-connectors-microsoft-365",
+   "concept": "cl-apps-governmen-connectors",
+   "label": "Set up the Microsoft 365 connector",
+   "desc": "Register an application in your Microsoft Entra tenant so that Claude Desktop can read your agency's Outlook, OneDrive, SharePoint, and Teams content on each member's behalf. Source: https://claude.com/docs/government/connectors/microsoft-365",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-connectors-overview",
+   "concept": "cl-apps-governmen-connectors",
+   "label": "Connectors",
+   "desc": "Add Model Context Protocol servers for your own systems, choose which Claude products receive each one, and set which of their tools are available to members. Source: https://claude.com/docs/government/connectors/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-deploy-claude-code-configure",
+   "concept": "cl-apps-governmen-deploy-claude-code",
+   "label": "Connect Claude Code to Claude for Government",
+   "desc": "Deploy the managed settings that send the Claude Code command-line tool to Claude for Government sign-in, limit what it contacts before a user signs in, and verify the result on macOS, Windows, and Linux. Source: https://claude.com/docs/government/deploy-claude-code/configure",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-deploy-desktop-configure",
+   "concept": "cl-apps-governmen-deploy-desktop",
+   "label": "Connect Claude Desktop to Claude for Government",
+   "desc": "Choose between single-machine setup and fleet deployment, understand the administrator requirements for each, and connect Claude Desktop to Claude for Government. Source: https://claude.com/docs/government/deploy-desktop/configure",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-deploy-desktop-windows-checklist",
+   "concept": "cl-apps-governmen-deploy-desktop",
+   "label": "Windows fleet checklist",
+   "desc": "Device, installer, virtualization, policy, network, and account prerequisites to confirm before deploying Claude Desktop across a Windows fleet for Claude for Government. Source: https://claude.com/docs/government/deploy-desktop/windows-checklist",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-deploy-microsoft-365-configure",
+   "concept": "cl-apps-governmen-deploy-microsoft-365",
+   "label": "Deploy Claude for Microsoft 365 in Claude for Government",
+   "desc": "Download the Claude for Microsoft 365 manifest from your Claude for Government host and deploy the add-in to users from the Microsoft 365 admin center. Source: https://claude.com/docs/government/deploy-microsoft-365/configure",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-desktop-import",
+   "concept": "cl-apps-governmen-desktop",
+   "label": "Import your data from Claude for Government Web",
+   "desc": "Copy your conversations, projects, and files from Claude for Government Web into Claude Desktop. Source: https://claude.com/docs/government/desktop/import",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-desktop-models",
+   "concept": "cl-apps-governmen-desktop",
+   "label": "Models in Claude Desktop",
+   "desc": "Switch models in Claude Desktop on Claude for Government, see what the 1M context window does, and find what controls which models you see. Source: https://claude.com/docs/government/desktop/models",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-desktop-plugins",
+   "concept": "cl-apps-governmen-desktop",
+   "label": "Plugins in Claude Desktop",
+   "desc": "Find, install, create, and remove plugins in Claude Desktop for Claude for Government, and understand what plugins add in this deployment. Source: https://claude.com/docs/government/desktop/plugins",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-desktop-skills",
+   "concept": "cl-apps-governmen-desktop",
+   "label": "Skills in Claude Desktop",
+   "desc": "What skills are in Claude for Government, where they come from, how to create and manage your own, and how administrators distribute skills to members. Source: https://claude.com/docs/government/desktop/skills",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-desktop-video-walkthroughs",
+   "concept": "cl-apps-governmen-desktop",
+   "label": "Video walkthroughs for Claude Desktop",
+   "desc": "Watch short narrated walkthroughs of signing in to Claude Desktop with Claude for Government, bringing your work over, and finding your way around the app. Source: https://claude.com/docs/government/desktop/video-walkthroughs",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-analytics",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Analytics",
+   "desc": "Use this page to review requests, tokens, spend, top users, and credit balance over time across your organization, and to download the data as CSV files for offline reporting. Source: https://claude.com/docs/government/org-admin/analytics",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-billing",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Billing",
+   "desc": "Use this page to see the balance your organization spends from and any spend caps set on it, and to adjust your organization's seat allocation. Source: https://claude.com/docs/government/org-admin/billing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-compliance-api",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Compliance API",
+   "desc": "Stream your organization's audit events into a SIEM or log management system. Source: https://claude.com/docs/government/org-admin/compliance-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-configuration",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Config at the organization level",
+   "desc": "View and change the product settings that apply to everyone in your organization, and see where each effective value comes from. Source: https://claude.com/docs/government/org-admin/configuration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-overview",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Organization administration",
+   "desc": "Manage the people, seats, and settings for a single organization within your agency. Source: https://claude.com/docs/government/org-admin/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-provisioning",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Group mappings",
+   "desc": "Use this page to map the groups pushed from your identity provider to seat tiers and roles in this organization. Source: https://claude.com/docs/government/org-admin/provisioning",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-readiness",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Readiness",
+   "desc": "Use this page to see everything that is stopping people in your organization from using Claude, and where each blocker is resolved. Source: https://claude.com/docs/government/org-admin/readiness",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-seat-tiers",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Seat tiers",
+   "desc": "Use this page to see the models and spend limits attached to each tier and, when permitted, to create and edit self-managed tiers. Source: https://claude.com/docs/government/org-admin/seat-tiers",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-seats",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Seats",
+   "desc": "Use this page to check your organization's seat counts at a glance before assigning or reclaiming seats on the Users page. Source: https://claude.com/docs/government/org-admin/seats",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-setup-wizard",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Setup wizard",
+   "desc": "Walk through the steps that get your organization ready for users after a tenant administrator creates it. Source: https://claude.com/docs/government/org-admin/setup-wizard",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-org-admin-users",
+   "concept": "cl-apps-governmen-org-admin",
+   "label": "Users",
+   "desc": "Use this page to find a user, change their role or seat tier, check how close they are to their usage limits, and reset those limits when needed. Source: https://claude.com/docs/government/org-admin/users",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-changelog",
+   "concept": "cl-apps-governmen-overview",
+   "label": "Claude for Government changelog",
+   "desc": "Release notes for Claude for Government Source: https://claude.com/docs/government/changelog",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-moving-from-web",
+   "concept": "cl-apps-governmen-overview",
+   "label": "Moving from Claude for Government Web",
+   "desc": "Find answers to the questions agencies ask most often when moving from Claude for Government Web to Claude Desktop. Source: https://claude.com/docs/government/moving-from-web",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-overview",
+   "concept": "cl-apps-governmen-overview",
+   "label": "Claude for Government administrator guide",
+   "desc": "Set up and manage Claude for Government for your agency: how tenants, organizations, users, seats, and credits fit together. Source: https://claude.com/docs/government/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-video-walkthroughs",
+   "concept": "cl-apps-governmen-overview",
+   "label": "Video walkthroughs for administrators",
+   "desc": "Watch short narrated walkthroughs of setting up and running Claude for Government for your agency. Source: https://claude.com/docs/government/video-walkthroughs",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-security-security-and-data-handling",
+   "concept": "cl-apps-governmen-security",
+   "label": "Security and data handling",
+   "desc": "Answers for agency security review: sandbox isolation, network egress and required domains, approvals, connector credentials, telemetry, and where data is stored. Source: https://claude.com/docs/government/security/security-and-data-handling",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-admins",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Admins",
+   "desc": "Use this page to view, add, and remove the people who can use the tenant admin portal. Source: https://claude.com/docs/government/tenant-admin/admins",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-configuration",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Config at the tenant level",
+   "desc": "Set tenant-wide defaults for product behavior, lock settings so organizations can't change them, and preview how a change affects each organization. Source: https://claude.com/docs/government/tenant-admin/configuration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-credits",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Billing",
+   "desc": "Use this page to see each billing account's balance and to set per-organization spend caps. Source: https://claude.com/docs/government/tenant-admin/credits",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-identity-and-access",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Identity and access",
+   "desc": "Connect single sign-on, manage SCIM provisioning, and write the routing rules that place users into organizations. Source: https://claude.com/docs/government/tenant-admin/identity-and-access",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-organizations",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Organizations",
+   "desc": "Use this page to see every organization in your tenant, open any organization's admin view, and create new organizations. Source: https://claude.com/docs/government/tenant-admin/organizations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-overview",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Tenant administration",
+   "desc": "Manage the settings that apply across your whole agency: organizations, identity and sign-in, and how seats are distributed and spend caps are set. Source: https://claude.com/docs/government/tenant-admin/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-readiness",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Readiness",
+   "desc": "Use this page to see everything that is blocking your organizations from using Claude, and to find the one place where each blocker is resolved. Source: https://claude.com/docs/government/tenant-admin/readiness",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-seats",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Seats",
+   "desc": "Use this page to divide each billing account's seat pool among the organizations that account funds. Source: https://claude.com/docs/government/tenant-admin/seats",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-setup-wizard",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Tenant setup wizard",
+   "desc": "Walk through the guided setup that takes a brand new tenant from first sign-in to ready for users. Source: https://claude.com/docs/government/tenant-admin/setup-wizard",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  },
+  {
+   "id": "cl-apps-government-tenant-admin-tenant-restrictions",
+   "concept": "cl-apps-governmen-tenant-admin",
+   "label": "Tenant restrictions",
+   "desc": "Restrict which Claude for Government tenants can be reached from your agency's network by having your network proxy inject an allowlist header. Source: https://claude.com/docs/government/tenant-admin/tenant-restrictions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1771",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1772",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-government"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1771",
+   "name": "Claude for Government Specialist",
+   "legacy_key": "ClaudeAppsGovernmentSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1772",
+   "name": "Claude for Government Reviewer",
+   "legacy_key": "ClaudeAppsGovernmentReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1772",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-apps-government",
+   "score": 0.1304,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-apps-government"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-apps-government"
+ ]
+}

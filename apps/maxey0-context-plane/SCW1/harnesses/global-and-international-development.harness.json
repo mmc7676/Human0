@@ -705,13 +705,16 @@
    "key": "Maxey1335",
    "name": "Global Environment Analyst",
    "legacy_key": "glob-environment",
-   "mcp": []
+   "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9"
+   ]
   },
   {
    "key": "Maxey1336",
    "name": "Global Governance Analyst",
    "legacy_key": "glob-governance",
    "mcp": [
+    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
     "ff091334-0f12-4d0e-a973-c00467dd3818"
    ]
   },
@@ -720,7 +723,6 @@
    "name": "Globalization Theorist",
    "legacy_key": "glob-theorist",
    "mcp": [
-    "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
     "ff091334-0f12-4d0e-a973-c00467dd3818"
    ]
   },
@@ -1056,15 +1058,19 @@
    "agent": "Maxey1332",
    "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
    "topic": "global-and-international-development",
-   "score": 0.2465,
-   "basis": "derived:tfidf-cosine",
+   "score": 0.2589,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1335",
+    "skill": "glob-climate-negotiation-brief"
+   },
    "source_topic": "global-studies"
   },
   {
    "agent": "Maxey1332",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "global-and-international-development",
-   "score": 0.2784,
+   "score": 0.2776,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey1338",
@@ -1076,35 +1082,43 @@
    "agent": "Maxey1334",
    "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
    "topic": "global-and-international-development",
-   "score": 0.2523,
+   "score": 0.2646,
    "basis": "derived:tfidf-cosine",
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1335",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "global-and-international-development",
+   "score": 0.2589,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "global-studies"
+  },
+  {
+   "agent": "Maxey1336",
+   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
+   "topic": "global-and-international-development",
+   "score": 0.2589,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1335",
+    "skill": "glob-conflict-analysis"
+   },
    "source_topic": "global-studies"
   },
   {
    "agent": "Maxey1336",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "global-and-international-development",
-   "score": 0.2775,
+   "score": 0.2763,
    "basis": "derived:tfidf-cosine",
-   "source_topic": "global-studies"
-  },
-  {
-   "agent": "Maxey1338",
-   "mcp": "9133bf4a-0a23-402b-8b04-bd0a400fd5f9",
-   "topic": "global-and-international-development",
-   "score": 0.2465,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey1332",
-    "skill": "glob-scholarship-search"
-   },
    "source_topic": "global-studies"
   },
   {
    "agent": "Maxey1338",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "global-and-international-development",
-   "score": 0.2784,
+   "score": 0.2776,
    "basis": "derived:tfidf-cosine",
    "source_topic": "global-studies"
   }

@@ -1072,31 +1072,31 @@
    "agent": "Maxey1391",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "phonetics-pronunciation-and-writing-systems",
-   "score": 0.1136,
-   "basis": "derived:tfidf-cosine",
+   "score": 0.114,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1395",
+    "skill": "jpn-history-briefing"
+   },
    "source_topic": "japanese"
   },
   {
    "agent": "Maxey1395",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "phonetics-pronunciation-and-writing-systems",
-   "score": 0.1158,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey1393",
-    "skill": "jpn-localization"
-   },
+   "score": 0.114,
+   "basis": "derived:tfidf-cosine",
    "source_topic": "japanese"
   },
   {
    "agent": "Maxey1407",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "phonetics-pronunciation-and-writing-systems",
-   "score": 0.1011,
+   "score": 0.1032,
    "basis": "inherited:checker-of-primary",
    "via": {
-    "primary": "Maxey1409",
-    "skill": "kor-translate"
+    "primary": "Maxey1410",
+    "skill": "kor-formal-writing"
    },
    "source_topic": "korean"
   },
@@ -1104,7 +1104,7 @@
    "agent": "Maxey1413",
    "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
    "topic": "phonetics-pronunciation-and-writing-systems",
-   "score": 0.1011,
+   "score": 0.105,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey1409",

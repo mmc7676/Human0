@@ -973,6 +973,7 @@
    "name": "Citation Verifier Agent",
    "legacy_key": "rs-citation-verifier",
    "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
     "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
     "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
     "ff091334-0f12-4d0e-a973-c00467dd3818"
@@ -983,6 +984,7 @@
    "name": "Literature Search Agent",
    "legacy_key": "rs-librarian",
    "mcp": [
+    "43edc307-1d33-44f5-94a2-6e9c3e64a538",
     "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
     "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
    ]
@@ -997,9 +999,7 @@
    "key": "Maxey959",
    "name": "Research Question Agent",
    "legacy_key": "rs-question-agent",
-   "mcp": [
-    "43edc307-1d33-44f5-94a2-6e9c3e64a538"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey960",
@@ -1200,7 +1200,7 @@
    "agent": "Maxey950",
    "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
    "topic": "research-methods-and-evidence",
-   "score": 0.2398,
+   "score": 0.2505,
    "basis": "derived:tfidf-cosine",
    "source_topic": "research"
   },
@@ -1208,7 +1208,7 @@
    "agent": "Maxey950",
    "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
    "topic": "research-methods-and-evidence",
-   "score": 0.1524,
+   "score": 0.1574,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey957",
@@ -1220,7 +1220,7 @@
    "agent": "Maxey950",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "research-methods-and-evidence",
-   "score": 0.1358,
+   "score": 0.1451,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey957",
@@ -1232,7 +1232,7 @@
    "agent": "Maxey950",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "research-methods-and-evidence",
-   "score": 0.1152,
+   "score": 0.1214,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey960",
@@ -1244,7 +1244,7 @@
    "agent": "Maxey952",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "research-methods-and-evidence",
-   "score": 0.1089,
+   "score": 0.1166,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey956",
@@ -1256,7 +1256,7 @@
    "agent": "Maxey952",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "research-methods-and-evidence",
-   "score": 0.1081,
+   "score": 0.1135,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey956",
@@ -1266,9 +1266,21 @@
   },
   {
    "agent": "Maxey956",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "research-methods-and-evidence",
+   "score": 0.168,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey957",
+    "skill": "rs-annotated-bibliography"
+   },
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey956",
    "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
    "topic": "research-methods-and-evidence",
-   "score": 0.1524,
+   "score": 0.1574,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey957",
@@ -1280,7 +1292,7 @@
    "agent": "Maxey956",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "research-methods-and-evidence",
-   "score": 0.1089,
+   "score": 0.1166,
    "basis": "derived:tfidf-cosine",
    "source_topic": "research"
   },
@@ -1288,7 +1300,15 @@
    "agent": "Maxey956",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "research-methods-and-evidence",
-   "score": 0.1081,
+   "score": 0.1135,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "research"
+  },
+  {
+   "agent": "Maxey957",
+   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "topic": "research-methods-and-evidence",
+   "score": 0.168,
    "basis": "derived:tfidf-cosine",
    "source_topic": "research"
   },
@@ -1296,7 +1316,7 @@
    "agent": "Maxey957",
    "mcp": "7f750eb6-c3cb-47d7-9269-d35c43fe9925",
    "topic": "research-methods-and-evidence",
-   "score": 0.1524,
+   "score": 0.1574,
    "basis": "derived:tfidf-cosine",
    "source_topic": "research"
   },
@@ -1304,15 +1324,7 @@
    "agent": "Maxey957",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "research-methods-and-evidence",
-   "score": 0.1358,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "research"
-  },
-  {
-   "agent": "Maxey959",
-   "mcp": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
-   "topic": "research-methods-and-evidence",
-   "score": 0.1596,
+   "score": 0.1451,
    "basis": "derived:tfidf-cosine",
    "source_topic": "research"
   },
@@ -1320,7 +1332,7 @@
    "agent": "Maxey960",
    "mcp": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
    "topic": "research-methods-and-evidence",
-   "score": 0.1089,
+   "score": 0.1166,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey956",
@@ -1332,7 +1344,7 @@
    "agent": "Maxey960",
    "mcp": "ff091334-0f12-4d0e-a973-c00467dd3818",
    "topic": "research-methods-and-evidence",
-   "score": 0.1152,
+   "score": 0.1214,
    "basis": "derived:tfidf-cosine",
    "source_topic": "research"
   }

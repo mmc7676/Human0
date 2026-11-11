@@ -1,0 +1,1017 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-code-admin",
+  "label": "Claude Code Administration",
+  "desc": "Claude Code Administration: Setup and access, Deployment (Claude Code admin), Gateways, Claude apps gateway, Other gateways, Usage and costs, Security and data and Adoption."
+ },
+ "concepts": [
+  {
+   "id": "cl-code-admin-adoption",
+   "label": "Adoption",
+   "desc": "Adoption (Claude Code Administration): 2 documentation pages.",
+   "keywords": [
+    "communications",
+    "champion"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": []
+  },
+  {
+   "id": "cl-code-admin-claude-apps-gateway",
+   "label": "Claude apps gateway",
+   "desc": "Claude apps gateway (Claude Code Administration): 6 documentation pages.",
+   "keywords": [
+    "claude",
+    "apps",
+    "gateway",
+    "google",
+    "cloud",
+    "deploy"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": []
+  },
+  {
+   "id": "cl-code-admin-deployment",
+   "label": "Deployment (Claude Code admin)",
+   "desc": "Deployment (Claude Code admin) (Claude Code Administration): 9 documentation pages.",
+   "keywords": [
+    "claude",
+    "code",
+    "enterprise",
+    "platform",
+    "deployment",
+    "overview"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": [
+    "cl-api-reference-api-resources-deployment-runs",
+    "cl-api-reference-api-resources-deployments"
+   ]
+  },
+  {
+   "id": "cl-code-admin-gateways",
+   "label": "Gateways",
+   "desc": "Gateways (Claude Code Administration): 1 documentation page.",
+   "keywords": [
+    "claude",
+    "code",
+    "through",
+    "gateway"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": []
+  },
+  {
+   "id": "cl-code-admin-other-gateways",
+   "label": "Other gateways",
+   "desc": "Other gateways (Claude Code Administration): 4 documentation pages.",
+   "keywords": [
+    "gateway",
+    "claude",
+    "code",
+    "other",
+    "gateways",
+    "connect"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": []
+  },
+  {
+   "id": "cl-code-admin-security-and-data",
+   "label": "Security and data",
+   "desc": "Security and data (Claude Code Administration): 4 documentation pages.",
+   "keywords": [
+    "data",
+    "security",
+    "usage",
+    "zero",
+    "retention",
+    "claude"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": [
+    "cl-admin-compliance-security-posture",
+    "cl-apps-governmen-security",
+    "cl-code-start-security-scans"
+   ]
+  },
+  {
+   "id": "cl-code-admin-setup-and-access",
+   "label": "Setup and access",
+   "desc": "Setup and access (Claude Code Administration): 7 documentation pages.",
+   "keywords": [
+    "your",
+    "organization",
+    "managed",
+    "settings",
+    "configure",
+    "server"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": []
+  },
+  {
+   "id": "cl-code-admin-usage-and-costs",
+   "label": "Usage and costs",
+   "desc": "Usage and costs (Claude Code Administration): 3 documentation pages.",
+   "keywords": [
+    "monitoring",
+    "manage",
+    "costs",
+    "effectively",
+    "track",
+    "team"
+   ],
+   "topic": "claude-code-admin",
+   "source": "claude-code-admin",
+   "source_topic": "claude-code-admin",
+   "related": [
+    "cl-admin-usage-cost-and-limits"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-code-en-champion-kit",
+   "concept": "cl-code-admin-adoption",
+   "label": "Champion kit",
+   "desc": "A playbook for engineers advocating Claude Code internally: what to share, how to answer questions, and how to grow adoption on your team. Source: https://code.claude.com/docs/en/champion-kit",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-communications-kit",
+   "concept": "cl-code-admin-adoption",
+   "label": "Communications kit",
+   "desc": "Launch announcements, drip-campaign messages, and FAQ responses for rolling Claude Code out to your engineering organization. Source: https://code.claude.com/docs/en/communications-kit",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-apps-gateway",
+   "concept": "cl-code-admin-claude-apps-gateway",
+   "label": "Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry",
+   "desc": "Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or Microsoft Foundry behind a self-hosted gateway with SSO sign-in, per-group model access, and OTLP telemetry. Source: https://code.claude.com/docs/en/claude-apps-gateway",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-apps-gateway-config",
+   "concept": "cl-code-admin-claude-apps-gateway",
+   "label": "Claude apps gateway configuration",
+   "desc": "Reference for every gateway.yaml option: listener and TLS, OIDC, session, Postgres store, Amazon Bedrock, Claude Platform on AWS, Google Cloud's Agent Platform, and Microsoft Foundry upstreams, model routing, managed policies, and telemetry. Source: https://code.claude.com/docs/en/claude-apps-gateway-config",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-apps-gateway-deploy",
+   "concept": "cl-code-admin-claude-apps-gateway",
+   "label": "Claude apps gateway deployment and operations",
+   "desc": "Register the gateway with your IdP, build the container, deploy on Kubernetes or Cloud Run, and operate it: health checks, secret rotation, upgrades, and security. Source: https://code.claude.com/docs/en/claude-apps-gateway-deploy",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-apps-gateway-on-aws",
+   "concept": "cl-code-admin-claude-apps-gateway",
+   "label": "Deploy Claude apps gateway on AWS",
+   "desc": "A worked example of running Claude apps gateway on AWS: ECS Fargate or EKS, Amazon RDS for PostgreSQL, AWS Secrets Manager, and IAM-role auth to Amazon Bedrock. Source: https://code.claude.com/docs/en/claude-apps-gateway-on-aws",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-apps-gateway-on-gcp",
+   "concept": "cl-code-admin-claude-apps-gateway",
+   "label": "Deploy Claude apps gateway on Google Cloud",
+   "desc": "A worked example of running Claude apps gateway on Google Cloud: Cloud Run or GKE, Cloud SQL for PostgreSQL, Secret Manager, and service-account auth to Google Cloud's Agent Platform. Source: https://code.claude.com/docs/en/claude-apps-gateway-on-gcp",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-apps-gateway-spend-limits",
+   "concept": "cl-code-admin-claude-apps-gateway",
+   "label": "Claude apps gateway spend limits",
+   "desc": "Cap each developer's spend through the Claude apps gateway by day, week, or month. Set limits with an Admin API and the gateway enforces them live on every request. Source: https://code.claude.com/docs/en/claude-apps-gateway-spend-limits",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-amazon-bedrock",
+   "concept": "cl-code-admin-deployment",
+   "label": "Claude Code on Amazon Bedrock",
+   "desc": "Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting. Source: https://code.claude.com/docs/en/amazon-bedrock",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-claude-platform-on-aws",
+   "concept": "cl-code-admin-deployment",
+   "label": "Claude Code on Claude Platform on AWS",
+   "desc": "Configure Claude Code to use the Anthropic-operated Claude API with AWS authentication, IAM access control, and AWS Marketplace billing. Source: https://code.claude.com/docs/en/claude-platform-on-aws",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-corporate-launcher",
+   "concept": "cl-code-admin-deployment",
+   "label": "Run Claude Code behind a corporate launcher",
+   "desc": "Route the processes Claude Code starts from its own binary, including the background service and every agent view session, through a required launcher with CLAUDE_CODE_PROCESS_WRAPPER or the processWrapper setting. Source: https://code.claude.com/docs/en/corporate-launcher",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-devcontainer",
+   "concept": "cl-code-admin-deployment",
+   "label": "Development containers",
+   "desc": "Run Claude Code inside a dev container for consistent, isolated environments across your team. Source: https://code.claude.com/docs/en/devcontainer",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-feature-availability",
+   "concept": "cl-code-admin-deployment",
+   "label": "Feature availability",
+   "desc": "Compare which Claude Code features are available across Anthropic subscription plans, the Anthropic Console, Amazon Bedrock, Claude Platform on AWS, Google Cloud's Agent Platform, and Microsoft Foundry. Source: https://code.claude.com/docs/en/feature-availability",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-google-vertex-ai",
+   "concept": "cl-code-admin-deployment",
+   "label": "Claude Code on Google Cloud's Agent Platform",
+   "desc": "Learn about configuring Claude Code through Google Cloud's Agent Platform, formerly Vertex AI, including setup, IAM configuration, and troubleshooting. Source: https://code.claude.com/docs/en/google-vertex-ai",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-microsoft-foundry",
+   "concept": "cl-code-admin-deployment",
+   "label": "Claude Code on Microsoft Foundry",
+   "desc": "Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting. Source: https://code.claude.com/docs/en/microsoft-foundry",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-network-config",
+   "concept": "cl-code-admin-deployment",
+   "label": "Enterprise network configuration",
+   "desc": "Configure Claude Code for enterprise environments with proxy servers, custom Certificate Authorities (CA), and mutual Transport Layer Security (mTLS) authentication. Source: https://code.claude.com/docs/en/network-config",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-third-party-integrations",
+   "concept": "cl-code-admin-deployment",
+   "label": "Enterprise deployment overview",
+   "desc": "Learn how Claude Code can integrate with various third-party services and infrastructure to meet enterprise deployment requirements. Source: https://code.claude.com/docs/en/third-party-integrations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-gateways",
+   "concept": "cl-code-admin-gateways",
+   "label": "Run Claude Code through a gateway",
+   "desc": "Route Claude Code through a self-hosted gateway for centralized credentials, usage tracking, and cost controls. Covers the architecture, Anthropic's Claude apps gateway, and using other gateway products. Source: https://code.claude.com/docs/en/gateways",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-llm-gateway",
+   "concept": "cl-code-admin-other-gateways",
+   "label": "Other LLM gateways",
+   "desc": "Route Claude Code through an LLM gateway your organization already runs. Covers connecting Claude Code to a gateway, rolling one out for your organization, and what Claude Code sends to a gateway. Source: https://code.claude.com/docs/en/llm-gateway",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-llm-gateway-connect",
+   "concept": "cl-code-admin-other-gateways",
+   "label": "Connect Claude Code to an LLM gateway",
+   "desc": "Point Claude Code at your organization's LLM gateway. Check whether your admin already configured it, or set the base URL and credential yourself, then verify the connection and fix gateway errors. Source: https://code.claude.com/docs/en/llm-gateway-connect",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-llm-gateway-protocol",
+   "concept": "cl-code-admin-other-gateways",
+   "label": "Claude Code gateway compatibility guide",
+   "desc": "Keep an LLM gateway compatible with Claude Code: the endpoints it calls, the headers and body fields to forward, and what breaks when they're stripped. Source: https://code.claude.com/docs/en/llm-gateway-protocol",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-llm-gateway-rollout",
+   "concept": "cl-code-admin-other-gateways",
+   "label": "Roll out an LLM gateway for your organization",
+   "desc": "Deploy a gateway product for Claude Code: configure it to forward what Claude Code sends, issue developer credentials, distribute the configuration through managed settings, and verify the rollout. Source: https://code.claude.com/docs/en/llm-gateway-rollout",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-data-usage",
+   "concept": "cl-code-admin-security-and-data",
+   "label": "Data usage",
+   "desc": "Learn about Anthropic's data usage policies for Claude Source: https://code.claude.com/docs/en/data-usage",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-hipaa-setup",
+   "concept": "cl-code-admin-security-and-data",
+   "label": "Set up Claude Code (local mode) for a HIPAA-ready organization",
+   "desc": "Prepare developers' computers to run Claude Code (local mode) under the HIPAA configuration. Covers versions, network access, managed settings, and local data. Source: https://code.claude.com/docs/en/hipaa-setup",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-security",
+   "concept": "cl-code-admin-security-and-data",
+   "label": "Security",
+   "desc": "Learn about Claude Code's security safeguards and best practices for safe usage. Source: https://code.claude.com/docs/en/security",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-zero-data-retention",
+   "concept": "cl-code-admin-security-and-data",
+   "label": "Zero data retention",
+   "desc": "Learn about Zero Data Retention (ZDR) for Claude Code, available to qualified accounts on Claude for Enterprise, including scope, disabled features, and how to request enablement. Source: https://code.claude.com/docs/en/zero-data-retention",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-admin-setup",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Set up Claude Code for your organization",
+   "desc": "A decision map for administrators deploying Claude Code, covering API providers, managed settings, policy enforcement, usage monitoring, and data handling. Source: https://code.claude.com/docs/en/admin-setup",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-authentication",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Authentication",
+   "desc": "Log in to Claude Code and configure authentication for individuals, teams, and organizations. Source: https://code.claude.com/docs/en/authentication",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-auto-mode-config",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Configure auto mode",
+   "desc": "Tell the auto mode classifier which repos, buckets, and domains your organization trusts. Set environment context, override the default block and allow rules, and inspect your effective config with the auto-mode CLI subcommands. Source: https://code.claude.com/docs/en/auto-mode-config",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-managed-mcp",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Control MCP server access for your organization",
+   "desc": "Restrict which MCP servers users can add or connect to, or provide servers to every user, with managed configuration files, managed settings, allowlists, and denylists. Source: https://code.claude.com/docs/en/managed-mcp",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-managed-settings",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Deploy managed settings",
+   "desc": "Deploy managed settings to every developer's machine: delivery mechanisms per OS, how Claude Code combines managed sources, and how to verify enforcement. Source: https://code.claude.com/docs/en/managed-settings",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-server-managed-settings",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Configure server-managed settings",
+   "desc": "Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure. Source: https://code.claude.com/docs/en/server-managed-settings",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-setup",
+   "concept": "cl-code-admin-setup-and-access",
+   "label": "Advanced setup",
+   "desc": "System requirements, platform-specific installation, version management, and uninstallation for Claude Code. Source: https://code.claude.com/docs/en/setup",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-analytics",
+   "concept": "cl-code-admin-usage-and-costs",
+   "label": "Track team usage with analytics",
+   "desc": "View Claude Code usage metrics, track adoption, and measure engineering velocity in the analytics dashboard. Source: https://code.claude.com/docs/en/analytics",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-costs",
+   "concept": "cl-code-admin-usage-and-costs",
+   "label": "Manage costs effectively",
+   "desc": "Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and preprocessing hooks. Source: https://code.claude.com/docs/en/costs",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  },
+  {
+   "id": "cl-code-en-monitoring-usage",
+   "concept": "cl-code-admin-usage-and-costs",
+   "label": "Monitoring",
+   "desc": "Learn how to enable and configure OpenTelemetry for Claude Code. Source: https://code.claude.com/docs/en/monitoring-usage",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1783",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1784",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-admin"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1783",
+   "name": "Claude Code Administration Specialist",
+   "legacy_key": "ClaudeCodeAdminSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1784",
+   "name": "Claude Code Administration Reviewer",
+   "legacy_key": "ClaudeCodeAdminReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1784",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-code-admin",
+   "score": 0.2161,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-code-admin"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-code-admin"
+ ]
+}

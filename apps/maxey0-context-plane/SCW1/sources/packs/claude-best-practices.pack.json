@@ -1,0 +1,727 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-best-practices",
+ "topic": {
+  "id": "claude-best-practices",
+  "label": "Prompting, Evaluation and Claude API Guidance",
+  "desc": "Prompt engineering, testing and evaluation, the Claude API skill, release notes, glossary and resources for building with Claude."
+ },
+ "concepts": [
+  [
+   "cl-best-practices-use-case-guides",
+   "Use case guides",
+   "claude-best-practices",
+   "Use case guides (Prompting, Evaluation and Claude API Guidance): 6 documentation pages.",
+   [
+    "agent",
+    "overview",
+    "guides",
+    "common",
+    "cases",
+    "commerce"
+   ]
+  ],
+  [
+   "cl-best-practices-prompt-engineering",
+   "Prompt engineering",
+   "claude-best-practices",
+   "Prompt engineering (Prompting, Evaluation and Claude API Guidance): 11 documentation pages.",
+   [
+    "prompting",
+    "claude",
+    "fable",
+    "opus",
+    "overview",
+    "sonnet"
+   ]
+  ],
+  [
+   "cl-best-practices-about-claude",
+   "About Claude",
+   "claude-best-practices",
+   "About Claude (Prompting, Evaluation and Claude API Guidance): 2 documentation pages.",
+   [
+    "additional",
+    "resources",
+    "glossary"
+   ]
+  ],
+  [
+   "cl-best-practices-test-and-evaluate",
+   "Test and evaluate",
+   "claude-best-practices",
+   "Test and evaluate (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   [
+    "define",
+    "success",
+    "build",
+    "evaluations"
+   ]
+  ],
+  [
+   "cl-best-practices-strengthen-guardrails",
+   "Strengthen guardrails (Claude API guidance)",
+   "claude-best-practices",
+   "Strengthen guardrails (Claude API guidance) (Prompting, Evaluation and Claude API Guidance): 5 documentation pages.",
+   [
+    "reduce",
+    "increase",
+    "output",
+    "consistency",
+    "mitigate",
+    "jailbreaks"
+   ]
+  ],
+  [
+   "cl-best-practices-agent-skills",
+   "Agent skills (Claude API guidance)",
+   "claude-best-practices",
+   "Agent skills (Claude API guidance) (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   [
+    "overview",
+    "claude",
+    "skill"
+   ]
+  ],
+  [
+   "cl-best-practices-release-notes",
+   "Release notes",
+   "claude-best-practices",
+   "Release notes (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   [
+    "overview",
+    "claude",
+    "platform",
+    "release",
+    "notes"
+   ]
+  ],
+  [
+   "cl-best-practices-getting-started",
+   "Getting started (Claude API guidance)",
+   "claude-best-practices",
+   "Getting started (Claude API guidance) (Prompting, Evaluation and Claude API Guidance): 1 documentation page.",
+   [
+    "usage",
+    "primer",
+    "claude"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-platform-en-about-claude-use-case-guides-overview",
+   "cl-best-practices-use-case-guides",
+   "Overview: Guides to common use cases",
+   "Guides to common use cases Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/overview",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-use-case-guides-commerce-agents",
+   "cl-best-practices-use-case-guides",
+   "Commerce agent",
+   "Commerce agent (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-use-case-guides-content-moderation",
+   "cl-best-practices-use-case-guides",
+   "Content moderation",
+   "Content moderation (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-use-case-guides-customer-support-ch",
+   "cl-best-practices-use-case-guides",
+   "Customer support agent",
+   "Customer support agent (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-use-case-guides-legal-summarization",
+   "cl-best-practices-use-case-guides",
+   "Legal summarization",
+   "Legal summarization (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-use-case-guides-ticket-routing",
+   "cl-best-practices-use-case-guides",
+   "Ticket routing",
+   "Ticket routing (Use case guides) Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-overview",
+   "cl-best-practices-prompt-engineering",
+   "Overview: Prompt engineering overview",
+   "Prompt engineering overview Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-claude-prom",
+   "cl-best-practices-prompt-engineering",
+   "Prompting best practices",
+   "Prompting best practices (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Fable 5",
+   "Prompting Claude Fable 5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Fable 5.1",
+   "Prompting Claude Fable 5.1 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Fable 5.2",
+   "Prompting Claude Fable 5.2 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Haiku 5.5",
+   "Prompting Claude Haiku 5.5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Opus 4.8",
+   "Prompting Claude Opus 4.8 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Opus 5",
+   "Prompting Claude Opus 5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Opus 5.5",
+   "Prompting Claude Opus 5.5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Sonnet 5",
+   "Prompting Claude Sonnet 5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-engineering-prompting-c-x-x-x-x-x-x-x-x",
+   "cl-best-practices-prompt-engineering",
+   "Prompting Claude Sonnet 5.5",
+   "Prompting Claude Sonnet 5.5 (Prompt engineering) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-additional-resources",
+   "cl-best-practices-about-claude",
+   "Additional resources",
+   "Additional resources (About Claude) Source: https://platform.claude.com/docs/en/about-claude/additional-resources",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-about-claude-glossary",
+   "cl-best-practices-about-claude",
+   "Glossary",
+   "Glossary (About Claude) Source: https://platform.claude.com/docs/en/about-claude/glossary",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-develop-tests",
+   "cl-best-practices-test-and-evaluate",
+   "Define success and build evaluations",
+   "Define success criteria and build evaluations Source: https://platform.claude.com/docs/en/test-and-evaluate/develop-tests",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-strengthen-guardrails-increase",
+   "cl-best-practices-strengthen-guardrails",
+   "Increase output consistency",
+   "Increase output consistency (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-strengthen-guardrails-mitigate",
+   "cl-best-practices-strengthen-guardrails",
+   "Mitigate jailbreaks",
+   "Mitigate jailbreaks and prompt injections Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-strengthen-guardrails-reduce-h",
+   "cl-best-practices-strengthen-guardrails",
+   "Reduce hallucinations",
+   "Reduce hallucinations (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-strengthen-guardrails-reduce-p",
+   "cl-best-practices-strengthen-guardrails",
+   "Reduce prompt leak",
+   "Reduce prompt leak (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-strengthen-guardrails-reduce-l",
+   "cl-best-practices-strengthen-guardrails",
+   "Reducing latency",
+   "Reducing latency (Strengthen guardrails) Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-agent-skills-claude-api-skill",
+   "cl-best-practices-agent-skills",
+   "Overview: Claude API skill",
+   "Claude API skill Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-release-notes-overview",
+   "cl-best-practices-release-notes",
+   "Overview: Claude Platform release notes",
+   "Claude Platform release notes Source: https://platform.claude.com/docs/en/release-notes/overview",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-claude-api-primer",
+   "cl-best-practices-getting-started",
+   "API usage primer for Claude",
+   "API usage primer for Claude (Getting started) Source: https://platform.claude.com/docs/en/claude_api_primer",
+   "procedural",
+   [
+    [
+     "ClaudeBestPracticesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeBestPracticesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeBestPracticesSpecialist": "Prompting, Evaluation and Claude API Guidance Specialist",
+  "ClaudeBestPracticesReviewer": "Prompting, Evaluation and Claude API Guidance Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

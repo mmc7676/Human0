@@ -1,0 +1,664 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-config",
+ "topic": {
+  "id": "claude-code-config",
+  "label": "Claude Code Configuration",
+  "desc": "Configuring Claude Code: settings, permissions and sandboxing, environments, model and responses, interface."
+ },
+ "concepts": [
+  [
+   "cl-code-config-settings",
+   "Settings",
+   "claude-code-config",
+   "Settings (Claude Code Configuration): 3 documentation pages.",
+   [
+    "settings",
+    "files",
+    "precedence",
+    "example"
+   ]
+  ],
+  [
+   "cl-code-config-permissions-and-sandboxing",
+   "Permissions and sandboxing",
+   "claude-code-config",
+   "Permissions and sandboxing (Claude Code Configuration): 5 documentation pages.",
+   [
+    "configure",
+    "choose",
+    "mode",
+    "permissions",
+    "permission",
+    "auto"
+   ]
+  ],
+  [
+   "cl-code-config-environments",
+   "Environments",
+   "claude-code-config",
+   "Environments (Claude Code Configuration): 1 documentation page.",
+   [
+    "configure",
+    "cloud",
+    "environments"
+   ]
+  ],
+  [
+   "cl-code-config-self-hosted-environments",
+   "Self-hosted environments",
+   "claude-code-config",
+   "Self-hosted environments (Claude Code Configuration): 7 documentation pages.",
+   [
+    "self",
+    "hosted",
+    "environments",
+    "quickstart",
+    "deploy",
+    "production"
+   ]
+  ],
+  [
+   "cl-code-config-model-and-responses",
+   "Model and responses",
+   "claude-code-config",
+   "Model and responses (Claude Code Configuration): 4 documentation pages.",
+   [
+    "with",
+    "model",
+    "configuration",
+    "speed",
+    "responses",
+    "fast"
+   ]
+  ],
+  [
+   "cl-code-config-interface",
+   "Interface",
+   "claude-code-config",
+   "Interface (Claude Code Configuration): 6 documentation pages.",
+   [
+    "your",
+    "claude",
+    "code",
+    "customize",
+    "configure",
+    "terminal"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-code-en-settings",
+   "cl-code-config-settings",
+   "Settings files and precedence",
+   "Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places. Source: https://code.claude.com/docs/en/settings",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-settings-reference",
+   "cl-code-config-settings",
+   "All settings",
+   "Complete reference for every Claude Code settings.json key: where each one goes, its type and default, and a paste-ready example, with an index of every key. Source: https://code.claude.com/docs/en/settings-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-settings-example",
+   "cl-code-config-settings",
+   "Example settings files",
+   "Realistic settings.json files for a developer, a team, and an organization: copy one, keep the keys you want, and change the values. Source: https://code.claude.com/docs/en/settings-example",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-permissions",
+   "cl-code-config-permissions-and-sandboxing",
+   "Configure permissions",
+   "Control what Claude Code can access and do with fine-grained permission rules, modes, and managed policies. Source: https://code.claude.com/docs/en/permissions",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-permission-modes",
+   "cl-code-config-permissions-and-sandboxing",
+   "Choose a permission mode",
+   "Control whether Claude asks before acting. Switch permission modes with Shift+Tab in the CLI, the mode indicator in VS Code, or the mode selector in Desktop. Source: https://code.claude.com/docs/en/permission-modes",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-auto-mode-classifier-billing",
+   "cl-code-config-permissions-and-sandboxing",
+   "Auto mode classifier request charges",
+   "Resolve the Claude Code notice saying this session isn't eligible for auto mode's no-charge classifier requests: what it means, why it appears, and what to do. Source: https://code.claude.com/docs/en/auto-mode-classifier-billing",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-sandboxing",
+   "cl-code-config-permissions-and-sandboxing",
+   "Configure the sandboxed Bash tool",
+   "Restrict the files and network hosts Claude Code's shell commands can reach with the built-in sandbox. Turn it on, set the boundary, and fix what it breaks. Source: https://code.claude.com/docs/en/sandboxing",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-sandbox-environments",
+   "cl-code-config-permissions-and-sandboxing",
+   "Choose a sandbox environment",
+   "Compare Claude Code sandbox options: the built-in sandboxed Bash tool, sandbox runtime, dev containers, Docker, and VMs. Choose the right isolation for your threat model. Source: https://code.claude.com/docs/en/sandbox-environments",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-cloud-environments",
+   "cl-code-config-environments",
+   "Configure cloud environments",
+   "Configure cloud environments for Claude Code cloud sessions: network access levels, environment variables, setup scripts, and environment caching. Source: https://code.claude.com/docs/en/cloud-environments",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments",
+   "cl-code-config-self-hosted-environments",
+   "Self-hosted environments",
+   "Run Claude Code cloud sessions on infrastructure you control: set up a self-hosted environment, deploy runners, and route sessions to your own compute. Source: https://code.claude.com/docs/en/self-hosted-environments",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments-quickstart",
+   "cl-code-config-self-hosted-environments",
+   "Self-hosted environments quickstart",
+   "Set up your first self-hosted environment: install Claude Code, create the environment, start a runner, and route a session to it. Source: https://code.claude.com/docs/en/self-hosted-environments-quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments-deploy",
+   "cl-code-config-self-hosted-environments",
+   "Deploy self-hosted environments to production",
+   "Run self-hosted runners in production: security hardening, network egress control, git credentials, Kubernetes and Compose recipes, and troubleshooting. Source: https://code.claude.com/docs/en/self-hosted-environments-deploy",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments-configuration",
+   "cl-code-config-self-hosted-environments",
+   "Customize sessions in self-hosted environments",
+   "Customize self-hosted environment sessions with wrapper scripts for per-session credentials, lifecycle hooks, and on-demand runner spawning. Source: https://code.claude.com/docs/en/self-hosted-environments-configuration",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments-testing",
+   "cl-code-config-self-hosted-environments",
+   "Test self-hosted environments end to end",
+   "Verify a self-hosted runner image from CI: dispatch a session with the CLI, read Claude's replies through a Stop hook, and script the full loop. Source: https://code.claude.com/docs/en/self-hosted-environments-testing",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments-reference",
+   "cl-code-config-self-hosted-environments",
+   "Self-hosted environments reference",
+   "Complete reference for the self-hosted runner and orchestrator: CLI flags, environment variables, and Prometheus metrics. Source: https://code.claude.com/docs/en/self-hosted-environments-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-self-hosted-environments-identity",
+   "cl-code-config-self-hosted-environments",
+   "Verify session identity in self-hosted environments",
+   "Verify the CLAUDE_CODE_SESSION_ACCESS_TOKEN JWT so services on your network can trust requests from sessions in your self-hosted environment. Source: https://code.claude.com/docs/en/self-hosted-environments-identity",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-model-config",
+   "cl-code-config-model-and-responses",
+   "Model configuration",
+   "Configure which model Claude Code uses, effort levels, extended context, and the auto-compact window Source: https://code.claude.com/docs/en/model-config",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-fast-mode",
+   "cl-code-config-model-and-responses",
+   "Speed up responses with fast mode",
+   "Get faster Opus responses in Claude Code by toggling fast mode. Source: https://code.claude.com/docs/en/fast-mode",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-advisor",
+   "cl-code-config-model-and-responses",
+   "Escalate hard decisions with the advisor tool",
+   "Pair your main model with a stronger advisor model that Claude consults at key moments during a task. Source: https://code.claude.com/docs/en/advisor",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-output-styles",
+   "cl-code-config-model-and-responses",
+   "Output styles",
+   "Change Claude Code's role, tone, and response format with a built-in output style such as Concise or Explanatory, or write a custom style. Source: https://code.claude.com/docs/en/output-styles",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-terminal-config",
+   "cl-code-config-interface",
+   "Configure your terminal for Claude Code",
+   "Fix Shift+Enter for newlines, get a terminal bell when Claude finishes, configure tmux, match the color theme, and enable Vim mode in the Claude Code CLI. Source: https://code.claude.com/docs/en/terminal-config",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-fullscreen",
+   "cl-code-config-interface",
+   "Fullscreen rendering",
+   "Enable a smoother, flicker-free rendering mode with mouse support and stable memory usage in long conversations. Source: https://code.claude.com/docs/en/fullscreen",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-accessibility",
+   "cl-code-config-interface",
+   "Use Claude Code with a screen reader",
+   "Set up Claude Code for screen readers such as VoiceOver and NVDA, plus settings for screen magnifiers, reduced motion, and colorblind-friendly themes. Source: https://code.claude.com/docs/en/accessibility",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-voice-dictation",
+   "cl-code-config-interface",
+   "Voice dictation",
+   "Speak your prompts in the Claude Code CLI with hold-to-record or tap-to-record voice dictation. Source: https://code.claude.com/docs/en/voice-dictation",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-statusline",
+   "cl-code-config-interface",
+   "Customize your status line",
+   "Configure a custom status bar to monitor context window usage, costs, and git status in Claude Code Source: https://code.claude.com/docs/en/statusline",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-keybindings",
+   "cl-code-config-interface",
+   "Customize keyboard shortcuts",
+   "Customize keyboard shortcuts in Claude Code with a keybindings configuration file. Source: https://code.claude.com/docs/en/keybindings",
+   "procedural",
+   [
+    [
+     "ClaudeCodeConfigSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeConfigReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeCodeConfigSpecialist": "Claude Code Configuration Specialist",
+  "ClaudeCodeConfigReviewer": "Claude Code Configuration Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

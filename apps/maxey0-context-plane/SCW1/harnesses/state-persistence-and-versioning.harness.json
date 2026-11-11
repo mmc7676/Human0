@@ -298,9 +298,7 @@
    "key": "Maxey1639",
    "name": "Versioning Agent",
    "legacy_key": "sta-version",
-   "mcp": [
-    "local:redis-mcp"
-   ]
+   "mcp": []
   }
  ],
  "mcp": [
@@ -351,15 +349,7 @@
    "agent": "Maxey1636",
    "mcp": "local:redis-mcp",
    "topic": "state-persistence-and-versioning",
-   "score": 0.1247,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "state"
-  },
-  {
-   "agent": "Maxey1639",
-   "mcp": "local:redis-mcp",
-   "topic": "state-persistence-and-versioning",
-   "score": 0.105,
+   "score": 0.1201,
    "basis": "derived:tfidf-cosine",
    "source_topic": "state"
   }

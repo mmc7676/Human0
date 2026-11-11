@@ -79,8 +79,10 @@ test("spec decisions are reflected", () => {
   for (const t of Object.keys(spec.removed_topics)) assert.ok(!T.has(t), t);
   // regroup: domains written from scratch; every concept in exactly one regrouped topic of 3-8 concepts
   assert.deepEqual(g.domains.map((d) => d.id), spec.regroup.domains.map((d) => d.id));
-  const placed = spec.regroup.topics.flatMap((t) => t.concepts);
-  assert.equal(new Set(placed).size, g.concepts.length);
+  const placed = spec.regroup.topics.flatMap((t) => t.concepts), packTopics = new Set(Object.keys(spec.regroup.pack_domains || {}));
+  // concepts of topic packs added after the regroup stay in their own topic, in the domain regroup.pack_domains names
+  assert.equal(new Set(placed).size + g.concepts.filter((c) => packTopics.has(c.topic)).length, g.concepts.length);
+  for (const [t, d] of Object.entries(spec.regroup.pack_domains || {})) assert.equal(T.get(t).domain, d, t);
   for (const t of spec.regroup.topics) { assert.equal(T.get(t.id).domain, t.domain, t.id); for (const c of t.concepts) assert.equal(C.get(c).topic, t.id, c); }
   for (const [src, dst] of Object.entries(spec.concept_merges)) { assert.ok(!C.has(src), src); assert.ok(C.has(dst), dst); }
   for (const s of Object.keys(spec.dropped_skills)) assert.ok(!S.has(s), s);

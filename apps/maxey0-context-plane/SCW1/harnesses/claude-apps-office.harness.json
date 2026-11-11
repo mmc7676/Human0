@@ -1,0 +1,599 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-apps-office",
+  "label": "Claude for Microsoft 365, Office Agents and Cowork",
+  "desc": "Claude for Microsoft 365, Office Agents and Cowork: Office agents overview, Office apps and Enterprise and operations."
+ },
+ "concepts": [
+  {
+   "id": "cl-apps-office-enterprise-and-operations",
+   "label": "Enterprise and operations",
+   "desc": "Enterprise and operations (Claude for Microsoft 365, Office Agents and Cowork): 6 documentation pages.",
+   "keywords": [
+    "security",
+    "admin",
+    "auditability",
+    "analytics",
+    "configure",
+    "custom"
+   ],
+   "topic": "claude-apps-office",
+   "source": "claude-apps-office",
+   "source_topic": "claude-apps-office",
+   "related": []
+  },
+  {
+   "id": "cl-apps-office-office-agents-overview",
+   "label": "Office agents overview",
+   "desc": "Office agents overview (Claude for Microsoft 365, Office Agents and Cowork): 9 documentation pages.",
+   "keywords": [
+    "overview",
+    "with",
+    "changelog",
+    "tasks",
+    "background",
+    "dispatch"
+   ],
+   "topic": "claude-apps-office",
+   "source": "claude-apps-office",
+   "source_topic": "claude-apps-office",
+   "related": []
+  },
+  {
+   "id": "cl-apps-office-office-apps",
+   "label": "Office apps",
+   "desc": "Office apps (Claude for Microsoft 365, Office Agents and Cowork): 6 documentation pages.",
+   "keywords": [
+    "claude",
+    "m365",
+    "excel",
+    "powerpoint",
+    "word",
+    "outlook"
+   ],
+   "topic": "claude-apps-office",
+   "source": "claude-apps-office",
+   "source_topic": "claude-apps-office",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-apps-office-agents-data-storage",
+   "concept": "cl-apps-office-enterprise-and-operations",
+   "label": "Data storage and retention",
+   "desc": "Where Claude for M365 stores chat history, skills, and credentials on each user's device, why reinstalling or switching add-ins keeps that data, and how long it is kept. Source: https://claude.com/docs/office-agents/data-storage",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-enterprise-readiness",
+   "concept": "cl-apps-office-enterprise-and-operations",
+   "label": "Security, admin auditability, and analytics",
+   "desc": "Security architecture diagrams, OpenTelemetry audit, usage analytics, and spend tracking for enterprise admins deploying Claude for M365. Source: https://claude.com/docs/office-agents/enterprise-readiness",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-fsi-plugins",
+   "concept": "cl-apps-office-enterprise-and-operations",
+   "label": "Install financial services plugins for Cowork",
+   "desc": "Add the open-source financial services plugin set to Cowork for workflows such as financial modeling, equity research, investment banking, and private equity. Source: https://claude.com/docs/office-agents/fsi-plugins",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-opentelemetry",
+   "concept": "cl-apps-office-enterprise-and-operations",
+   "label": "Configure a custom OpenTelemetry collector",
+   "desc": "Route the full Claude for M365 audit trail, including prompts, tool inputs and outputs, and document references, to an OpenTelemetry collector you operate. Source: https://claude.com/docs/office-agents/opentelemetry",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-performance",
+   "concept": "cl-apps-office-enterprise-and-operations",
+   "label": "Performance and limits",
+   "desc": "How Claude for M365 works with a busy Office app, the size limits to know, and what to do when Office slows down or stops responding. Source: https://claude.com/docs/office-agents/performance",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-third-party-platforms",
+   "concept": "cl-apps-office-enterprise-and-operations",
+   "label": "Use Claude for M365 with third-party platforms",
+   "desc": "Deploy the Office add-ins through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, without individual Claude accounts. Source: https://claude.com/docs/office-agents/third-party-platforms",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-changelog",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Changelog",
+   "desc": "Release notes for Claude Desktop Source: https://claude.com/docs/cowork/changelog",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-guide-dispatch",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Run tasks in the background with Dispatch",
+   "desc": "Assign work to a Dispatch agent that plans, runs, and reports on tasks while you do something else, on this computer or from your phone. Source: https://claude.com/docs/cowork/guide/dispatch",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-guide-plugins",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Install plugins",
+   "desc": "Add packaged skills, connectors, and agents to Cowork from the plugin marketplace or a file. Source: https://claude.com/docs/cowork/guide/plugins",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-guide-projects",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Organize work with projects",
+   "desc": "Group folders, instructions, and context into a Cowork project so Claude starts each session with the right setup. Source: https://claude.com/docs/cowork/guide/projects",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-hipaa-setup",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Set up Cowork (local mode) for a HIPAA-ready organization",
+   "desc": "Prepare members' computers to run Cowork (local mode) under the HIPAA configuration. Covers the Claude Desktop policy, network limits, and local data. Source: https://claude.com/docs/cowork/hipaa-setup",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-monitoring",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Monitoring",
+   "desc": "Track Cowork usage and activity across your organization with OpenTelemetry Source: https://claude.com/docs/cowork/monitoring",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-cowork-overview",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Overview",
+   "desc": "Learn about Cowork, Anthropic's agentic workspace Source: https://claude.com/docs/cowork/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-connectors-and-skills",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Connectors and Skills",
+   "desc": "Extend Claude for Excel, PowerPoint, Word, and Outlook with external context and reusable task recipes. Source: https://claude.com/docs/office-agents/connectors-and-skills",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-overview",
+   "concept": "cl-apps-office-office-agents-overview",
+   "label": "Claude for M365 overview",
+   "desc": "Claude for Excel, PowerPoint, Word, and Outlook. Source: https://claude.com/docs/office-agents/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-dictation",
+   "concept": "cl-apps-office-office-apps",
+   "label": "Use dictation in Claude for M365",
+   "desc": "Speak your prompts instead of typing them in Claude for Excel, PowerPoint, Word, and Outlook. Source: https://claude.com/docs/office-agents/dictation",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-excel",
+   "concept": "cl-apps-office-office-apps",
+   "label": "Use Claude for Excel",
+   "desc": "An Excel add-in that integrates Claude into your spreadsheet workflow, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/excel",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-outlook",
+   "concept": "cl-apps-office-office-apps",
+   "label": "Use Claude for Outlook",
+   "desc": "An Outlook add-in that integrates Claude into your inbox and calendar, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/outlook",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-powerpoint",
+   "concept": "cl-apps-office-office-apps",
+   "label": "Use Claude for PowerPoint",
+   "desc": "A PowerPoint add-in that integrates Claude into your presentation workflow, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/powerpoint",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-word",
+   "concept": "cl-apps-office-office-apps",
+   "label": "Use Claude for Word",
+   "desc": "A Word add-in that integrates Claude into your document workflow, for Pro, Max, Team, and Enterprise plans. Source: https://claude.com/docs/office-agents/word",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  },
+  {
+   "id": "cl-apps-office-agents-work-across-apps",
+   "concept": "cl-apps-office-office-apps",
+   "label": "Work across M365 apps",
+   "desc": "Let Claude read from one Microsoft 365 app and make changes in another in a single conversation. Source: https://claude.com/docs/office-agents/work-across-apps",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1773",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1774",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-office"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1773",
+   "name": "Claude for Microsoft 365, Office Agents and Cowork Specialist",
+   "legacy_key": "ClaudeAppsOfficeSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1774",
+   "name": "Claude for Microsoft 365, Office Agents and Cowork Reviewer",
+   "legacy_key": "ClaudeAppsOfficeReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1774",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-apps-office",
+   "score": 0.1506,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-apps-office"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-apps-office"
+ ]
+}

@@ -1,0 +1,1751 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-apps-tag",
+ "topic": {
+  "id": "claude-apps-tag",
+  "label": "Claude Tag",
+  "desc": "Claude Tag, Claude in Slack: how it works, agent identity, connectors, routines, admin setup and use."
+ },
+ "concepts": [
+  [
+   "cl-apps-tag-overview",
+   "Overview (Claude Tag)",
+   "claude-apps-tag",
+   "Overview (Claude Tag) (Claude Tag): 1 documentation page.",
+   [
+    "work",
+    "with",
+    "claude"
+   ]
+  ],
+  [
+   "cl-apps-tag-concepts",
+   "Concepts",
+   "claude-apps-tag",
+   "Concepts (Claude Tag): 8 documentation pages.",
+   [
+    "claude",
+    "works",
+    "data",
+    "glossary",
+    "agent",
+    "identity"
+   ]
+  ],
+  [
+   "cl-apps-tag-admins",
+   "Admins",
+   "claude-apps-tag",
+   "Admins (Claude Tag): 46 documentation pages.",
+   [
+    "connect",
+    "claude",
+    "access",
+    "configure",
+    "federated",
+    "agent"
+   ]
+  ],
+  [
+   "cl-apps-tag-users",
+   "Users",
+   "claude-apps-tag",
+   "Users (Claude Tag): 24 documentation pages.",
+   [
+    "claude",
+    "your",
+    "with",
+    "library",
+    "work",
+    "docs"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-apps-claude-tag-overview",
+   "cl-apps-tag-overview",
+   "Work with Claude Tag",
+   "Claude Tag puts Claude in your Slack channels with admin-governed access. See what to hand it, how setup works, and where to start as an admin or end user. Source: https://claude.com/docs/claude-tag/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-how-it-works",
+   "cl-apps-tag-concepts",
+   "How Claude Tag works",
+   "Each Claude Tag thread in Slack runs a working session in a sandbox. See how progress shows in the thread, how to steer mid-task, what survives between turns, and how memory is scoped. Source: https://claude.com/docs/claude-tag/concepts/how-it-works",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-glossary",
+   "cl-apps-tag-concepts",
+   "Glossary",
+   "Claude Tag terms defined in one place, including agent identity, bundle, connector, personal connector, scope, Agent Proxy, routine, and session. Source: https://claude.com/docs/claude-tag/concepts/glossary",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-agent-identity",
+   "cl-apps-tag-concepts",
+   "How agent identity works",
+   "Claude Tag acts under its own service accounts in Slack channels, not as you. See how channel access is bounded, how credentials reach it, how Claude uses your personal connectors for your own tasks in a channel, and why DMs differ. Source: https://claude.com/docs/claude-tag/concepts/agent-identity",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-personal-connectors",
+   "cl-apps-tag-concepts",
+   "Personal connectors in channels",
+   "Claude can use your own claude.ai connectors, called personal connectors, for your tasks in a Slack channel. See how you approve connector use, when Claude asks you to review a result before posting it, and what other people in the channel can reach. Source: https://claude.com/docs/claude-tag/concepts/personal-connectors",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-security-and-data",
+   "cl-apps-tag-concepts",
+   "Security and data handling",
+   "How Claude Tag keeps credentials out of the sandbox, limits where a channel session's requests can go, and controls who can see artifacts and invoke Claude. Source: https://claude.com/docs/claude-tag/concepts/security-and-data",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-data-lifecycle",
+   "cl-apps-tag-concepts",
+   "Data lifecycle and deletion",
+   "What Claude Tag stores on Anthropic's side, how long session transcripts and memory are kept, and what disconnecting a workspace, uninstalling the app, deleting a Slack channel, removing a scope, or leaving the organization does to that data. Source: https://claude.com/docs/claude-tag/concepts/data-lifecycle",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-settings-map",
+   "cl-apps-tag-concepts",
+   "Claude Tag settings map",
+   "Claude Tag settings map: the admin page for access and behavior, the usage page for spend limits, the in-Slack Configure link for channel instructions, and personal connectors for DMs and your own tasks in channels. Claude Managed Agents is configured separately on the Claude Platform. Source: https://claude.com/docs/claude-tag/concepts/settings-map",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-concepts-for-claude-code-users",
+   "cl-apps-tag-concepts",
+   "Claude Tag for Claude Code users",
+   "Which parts of a Claude Code setup carry into Claude Tag, which move to admin settings, and how Slack threads map to sessions. Source: https://claude.com/docs/claude-tag/concepts/for-claude-code-users",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-for-slack-admins",
+   "cl-apps-tag-admins",
+   "What the Claude Slack app can access",
+   "What the Claude app reads and posts in Slack, the OAuth scopes it requests, and what installing it does not grant. Written for the Slack admin approving the install. Source: https://claude.com/docs/claude-tag/admins/for-slack-admins",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-setup-overview",
+   "cl-apps-tag-admins",
+   "Set up Claude Tag",
+   "Set up Claude Tag for your organization: pair your Slack workspace, add Claude to channels, launch, give Claude access to your tools, and check that it works. Source: https://claude.com/docs/claude-tag/admins/setup-overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-add-connections",
+   "cl-apps-tag-admins",
+   "Give Claude access to your tools",
+   "Add connectors so Claude Tag acts in your tools with its own credentials. Covers service accounts, bundles, allowed websites, domain entries, and plugins. Source: https://claude.com/docs/claude-tag/admins/add-connections",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-configure-github",
+   "cl-apps-tag-admins",
+   "Configure GitHub access",
+   "Give Claude its own GitHub identity through the Claude GitHub App. Covers linking your GitHub organization, granting repositories, and GitHub Actions. Source: https://claude.com/docs/claude-tag/admins/configure-github",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-configure-gitlab",
+   "cl-apps-tag-admins",
+   "Configure GitLab access",
+   "Give Claude its own GitLab identity to read projects, manage issues, review merge requests, and check pipelines. Covers the account, token, and connector. Source: https://claude.com/docs/claude-tag/admins/configure-gitlab",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-set-spend-limit",
+   "cl-apps-tag-admins",
+   "Set a spend limit",
+   "Claude Tag channel work bills to your organization's usage balance. Set the spend limit and see what happens when it's reached. Source: https://claude.com/docs/claude-tag/admins/set-spend-limit",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-setup-oncall",
+   "cl-apps-tag-admins",
+   "Set up Claude Tag for on-call",
+   "Put Claude on call for incident response in Slack: run setup at claude.ai/oncall, pick or auto-join incident channels, cap spend, and deploy. Source: https://claude.com/docs/claude-tag/admins/setup-oncall",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-overview",
+   "cl-apps-tag-admins",
+   "Per-service connection guides",
+   "Step-by-step setup for each tool Claude Tag can connect to. Each guide covers the dedicated account to create, the credential to enter, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-custom",
+   "cl-apps-tag-admins",
+   "Connect a service that isn't in the list",
+   "Connect a tool that isn't in Claude Tag's connector list. Covers credential types, what each form field means, and how to add a custom MCP server. Source: https://claude.com/docs/claude-tag/admins/connections/custom",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-amplitude",
+   "cl-apps-tag-admins",
+   "Connect Amplitude",
+   "Connect Amplitude to Claude Tag with a project API key and secret key, or by signing in with Amplitude, so Claude can answer product-analytics questions. Source: https://claude.com/docs/claude-tag/admins/connections/amplitude",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-asana",
+   "cl-apps-tag-admins",
+   "Connect Asana",
+   "Connect Asana to Claude Tag so it can file tasks and read project status. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/asana",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-atlassian",
+   "cl-apps-tag-admins",
+   "Connect Jira and Confluence",
+   "Connect Atlassian Cloud to Claude Tag so it can read and update Jira issues and search Confluence pages. Source: https://claude.com/docs/claude-tag/admins/connections/atlassian",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-bigquery",
+   "cl-apps-tag-admins",
+   "Connect BigQuery",
+   "Connect BigQuery to Claude Tag so it can run read-only queries on your datasets, using a GCP service-account key. Source: https://claude.com/docs/claude-tag/admins/connections/bigquery",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-datadog",
+   "cl-apps-tag-admins",
+   "Connect Datadog",
+   "Connect Datadog to Claude Tag so it can query metrics, logs, and monitors. Covers the dedicated account to create, the API key fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/datadog",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-gitlab",
+   "cl-apps-tag-admins",
+   "Connect GitLab",
+   "Connect GitLab to Claude Tag so it can read code, manage issues, comment on merge requests, and check pipelines through the GitLab API. Covers token permissions, self-managed hostnames, and how it differs from GitHub. Source: https://claude.com/docs/claude-tag/admins/connections/gitlab",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-gong",
+   "cl-apps-tag-admins",
+   "Connect Gong",
+   "Connect Gong to Claude Tag so it can pull call summaries and deal context. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/gong",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-google",
+   "cl-apps-tag-admins",
+   "Connect Google Drive, Calendar, and Gmail",
+   "Connect Google Drive, Calendar, and Gmail to Claude Tag so it can read docs, sheets, events, and email. Covers OAuth setup, the service-account option, and what each grants. Source: https://claude.com/docs/claude-tag/admins/connections/google",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-hubspot",
+   "cl-apps-tag-admins",
+   "Connect HubSpot",
+   "Connect HubSpot to Claude Tag so it can read pipeline, deal, and contact data. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/hubspot",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-linear",
+   "cl-apps-tag-admins",
+   "Connect Linear",
+   "Connect Linear to Claude Tag so it can file tickets and post status updates. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/linear",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-notion",
+   "cl-apps-tag-admins",
+   "Connect Notion",
+   "Connect Notion to Claude Tag so it can read and search your Notion workspace. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/notion",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-pagerduty",
+   "cl-apps-tag-admins",
+   "Connect PagerDuty",
+   "Connect PagerDuty to Claude Tag so it can read incidents and on-call schedules. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/pagerduty",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-salesforce",
+   "cl-apps-tag-admins",
+   "Connect Salesforce",
+   "Connect Salesforce to Claude Tag so it can read and update CRM records. Covers the connected app to create, the client credential fields, and the host to allow. Source: https://claude.com/docs/claude-tag/admins/connections/salesforce",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-sentry",
+   "cl-apps-tag-admins",
+   "Connect Sentry",
+   "Connect Sentry to Claude Tag so it can pull errors and stack traces into threads. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/sentry",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-snowflake",
+   "cl-apps-tag-admins",
+   "Connect Snowflake",
+   "Connect Snowflake to Claude Tag so it can run read-only queries on your warehouse. Covers the dedicated user to create, the access token field, and the host to allow. Source: https://claude.com/docs/claude-tag/admins/connections/snowflake",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-stripe",
+   "cl-apps-tag-admins",
+   "Connect Stripe",
+   "Connect Stripe to Claude Tag so it can answer billing and subscription questions. Covers the dedicated account to create, the key fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/stripe",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-connections-vercel",
+   "cl-apps-tag-admins",
+   "Connect Vercel",
+   "Connect Vercel to Claude Tag so it can check deployment status and logs. Covers the dedicated account to create, the token fields, and the URL to allow. Source: https://claude.com/docs/claude-tag/admins/connections/vercel",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-overview",
+   "cl-apps-tag-admins",
+   "Federated agent access",
+   "Claude Tag proves its identity to your systems with a short-lived signed token instead of a credential stored in Claude. Learn how the token works and which of the four connection types to use. Source: https://claude.com/docs/claude-tag/admins/federated-access/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-connect-a-gateway",
+   "cl-apps-tag-admins",
+   "Connect a gateway",
+   "Connect a gateway you run so Claude Tag can call your internal services with a short-lived identity token instead of a stored credential. Covers what the gateway must check, how to register it in the console, and how to verify the connection. Source: https://claude.com/docs/claude-tag/admins/federated-access/connect-a-gateway",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-aws",
+   "cl-apps-tag-admins",
+   "Connect an AWS role",
+   "Let Claude sign in to an IAM role in your AWS account with a short-lived identity token instead of stored access keys. Covers the identity provider and trust policy to create in AWS, how to connect the role in the console, and how to verify the connection in CloudTrail. Source: https://claude.com/docs/claude-tag/admins/federated-access/aws",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-gcp",
+   "cl-apps-tag-admins",
+   "Connect a Google Cloud identity",
+   "Let Claude call Google Cloud through workload identity federation with a short-lived identity token instead of a service account key. Covers the pool, provider, and IAM grants to create, with or without a service account, and how to connect the identity in the console. Source: https://claude.com/docs/claude-tag/admins/federated-access/gcp",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-authorization-server",
+   "cl-apps-tag-admins",
+   "Connect an authorization server",
+   "Let Claude exchange a short-lived identity token for an access token from an OAuth 2.0 authorization server you run, then call your APIs with it. Covers what your token endpoint receives and must check, what it returns, and how to register it in the console. Source: https://claude.com/docs/claude-tag/admins/federated-access/authorization-server",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-token-reference",
+   "cl-apps-tag-admins",
+   "Identity token reference",
+   "The claims, issuer, signing keys, lifetime, and subject format of the identity token Claude Tag presents to a gateway, cloud provider, or authorization server. Source: https://claude.com/docs/claude-tag/admins/federated-access/token-reference",
+   "reference",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-limits",
+   "cl-apps-tag-admins",
+   "Limits for federated agent access",
+   "Counts, lengths, lifetimes, and unsupported configurations for Claude Tag's federated agent access: gateways, AWS roles, Google Cloud identities, and authorization servers. Source: https://claude.com/docs/claude-tag/admins/federated-access/limits",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-federated-access-troubleshooting",
+   "cl-apps-tag-admins",
+   "Troubleshoot federated agent access",
+   "Errors from Claude Tag's federated agent access and what fixes each: console dialog messages, requests Claude reports as blocked or failed, and rejections your gateway, AWS, Google Cloud, or authorization server records. Source: https://claude.com/docs/claude-tag/admins/federated-access/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-attach-to-scope",
+   "cl-apps-tag-admins",
+   "Configure per-channel access",
+   "Choose which Slack workspaces and channels a Claude Tag bundle applies to, attach bundles to channels by name, and see how access stacks when bundles overlap. Source: https://claude.com/docs/claude-tag/admins/attach-to-scope",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-restrict-access",
+   "cl-apps-tag-admins",
+   "Restrict where Claude Tag operates",
+   "Claude Tag responds only where it has been added and addressed. See who can invoke it, what changes in guest and Slack Connect channels, the per-scope version setting, how to limit it to chosen channels, how to delegate administration or a channel's setup, and how to quiet or remove it. Source: https://claude.com/docs/claude-tag/admins/restrict-access",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-workspaces",
+   "cl-apps-tag-admins",
+   "Manage workspaces and versions",
+   "Connect more Slack workspaces or an Enterprise Grid to Claude Tag, choose which Claude Tag version each channel uses, and disconnect a workspace. Source: https://claude.com/docs/claude-tag/admins/workspaces",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-healthcare",
+   "cl-apps-tag-admins",
+   "Use Claude Tag at a healthcare organization",
+   "Claude Tag is not covered by Anthropic's Business Associate Agreement. Configure it so protected health information never reaches a channel, direct message, or tool Claude can read: limit Claude to approved channels, turn off direct messages, and connect only PHI-free tools. Also covers what to do i… Source: https://claude.com/docs/claude-tag/admins/healthcare",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-customize",
+   "cl-apps-tag-admins",
+   "Customize Claude Tag",
+   "Claude Tag is customized per channel and workspace (a scope), not per user. See what admins set in claude.ai, what anyone can change from the channel, and what stays fixed. Source: https://claude.com/docs/claude-tag/admins/customize",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-managed-by",
+   "cl-apps-tag-admins",
+   "Manage a channel's instructions from another channel",
+   "Managed by lets a central team write a Slack channel's standing Claude instructions from its own channel. Covers setup, the Confirm card, and limits. Source: https://claude.com/docs/claude-tag/admins/managed-by",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-skills-repo",
+   "cl-apps-tag-admins",
+   "Set up a skills repository Claude can update",
+   "Put your org's Claude Tag skills in a git repository with auto-sync, grant Claude write access, and Claude can open pull requests to improve its own skills from what it learns in channels. Source: https://claude.com/docs/claude-tag/admins/skills-repo",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-audit",
+   "cl-apps-tag-admins",
+   "Review what Claude Tag has done",
+   "Claude Tag actions appear under its own service accounts in each connected tool's audit log. See what the Activity page covers, how to trace an action to its source, and where each connected tool keeps logs. Source: https://claude.com/docs/claude-tag/admins/audit",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-attribute-costs",
+   "cl-apps-tag-admins",
+   "Attribute costs to users",
+   "Pull channel spend per Slack user from the Claude Enterprise Analytics API for showback or chargeback reporting, and see how Claude's work is attributed to people. Source: https://claude.com/docs/claude-tag/admins/attribute-costs",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-troubleshooting",
+   "cl-apps-tag-admins",
+   "Troubleshoot Claude Tag setup",
+   "Error messages from Claude Tag setup and what fixes each. Covers permission mismatches, GitHub access gaps, session start failures, and account errors. Source: https://claude.com/docs/claude-tag/admins/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-network-requirements",
+   "cl-apps-tag-admins",
+   "Network requirements",
+   "Claude Tag reaches your services from a published egress range, over HTTP and HTTPS only. See the IP block to allowlist and how the allowlist relates to the allowed-websites setting on a connection. Source: https://claude.com/docs/claude-tag/admins/network-requirements",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-admins-migrate-from-earlier",
+   "cl-apps-tag-admins",
+   "Migrate from the earlier Claude in Slack",
+   "Claude Tag replaces the earlier per-user Claude in Slack app in place. See what changes, what stays, how the version is chosen per channel, and what existing users notice. Source: https://claude.com/docs/claude-tag/admins/migrate-from-earlier",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-getting-started",
+   "cl-apps-tag-users",
+   "Get started",
+   "Claude Tag works in your Slack channels. See how to check it's on, send your first message, what it can read, and why DMs work differently. Source: https://claude.com/docs/claude-tag/users/getting-started",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-commands",
+   "cl-apps-tag-users",
+   "Commands Claude Tag understands",
+   "A few exact, bang-prefixed words after an @-mention run a fixed action instead of starting a normal turn: see the command list, get the link to a channel's settings page, restart a stuck or wrong-context session, check whether Claude is still working in a thread or channel, mute or unmute a thread,… Source: https://claude.com/docs/claude-tag/users/commands",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-when-claude-responds",
+   "cl-apps-tag-users",
+   "Control when Claude Tag responds",
+   "What Claude Tag does with a channel message nobody tagged it in, and how to turn unprompted replies off for a thread or a channel. Read this if Claude is replying too much, or went quiet. Source: https://claude.com/docs/claude-tag/users/when-claude-responds",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-group-dms",
+   "cl-apps-tag-users",
+   "Use Claude Tag in a group DM",
+   "Add Claude to a Slack group DM to share a task with a few people. See whose access and billing apply, when Claude replies, and what differs from a channel. Source: https://claude.com/docs/claude-tag/users/group-dms",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-good-habits",
+   "cl-apps-tag-users",
+   "Good habits for working with Claude Tag",
+   "Name the outcome, give every task a definition of done, and pick the right channel. See how to write tasks Claude can finish and how to keep many threads reviewable. Source: https://claude.com/docs/claude-tag/users/good-habits",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-proactivity",
+   "cl-apps-tag-users",
+   "Set up routines",
+   "Claude Tag runs routines you set up from a channel. See scheduled jobs, channel watching, pull request subscriptions, where results post, and how to pause them. Source: https://claude.com/docs/claude-tag/users/proactivity",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-memory",
+   "cl-apps-tag-users",
+   "What Claude Tag remembers",
+   "Claude Tag memory belongs to the channel, not to you. See what each channel keeps, which notes are shared across the workspace, and how to check or correct them. Source: https://claude.com/docs/claude-tag/users/memory",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-models",
+   "cl-apps-tag-users",
+   "Choose the model Claude Tag uses",
+   "Ask Claude to switch models in a Slack thread, set a channel's default model, pick the model for your direct messages, or run a thread in fast mode. See which models you can use and how to confirm which one replied. Source: https://claude.com/docs/claude-tag/users/models",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-prompt-library",
+   "cl-apps-tag-users",
+   "Prompt library",
+   "Copy-paste prompts for Claude Tag in Slack, each with why it works. See first messages, handoffs, channel rules, memory checks, routines, fan-out, and steering. Source: https://claude.com/docs/claude-tag/users/prompt-library",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-troubleshooting",
+   "cl-apps-tag-users",
+   "Troubleshoot Claude Tag in channels and DMs",
+   "Fixes for common Claude Tag problems in Slack. See no reply after a reaction, queued or failed sessions, lost work, missing connections, blocked links and websites, and DM or account errors. Source: https://claude.com/docs/claude-tag/users/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases",
+   "cl-apps-tag-users",
+   "Use case library",
+   "Shapes of work teams hand Claude Tag in Slack, each with prompts to paste. See triage, catch-up, docs and tickets, project tracking, data, deals, monitoring, and bug fixes. Source: https://claude.com/docs/claude-tag/users/use-cases",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-triage-requests",
+   "cl-apps-tag-users",
+   "Triage requests",
+   "Claude Tag triages a Slack request channel with two setup messages. See in-thread answers, duplicate flags, owner routing, weekly theme rollups, optional ticket filing, and runbooks of standing answers. Source: https://claude.com/docs/claude-tag/users/use-cases/triage-requests",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-catch-up",
+   "cl-apps-tag-users",
+   "Catch up",
+   "Claude Tag summarizes Slack threads and channels on demand. See one-off recaps, a scheduled morning rollup of open threads, and what's waiting on you. Source: https://claude.com/docs/claude-tag/users/use-cases/catch-up",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-your-own-channel",
+   "cl-apps-tag-users",
+   "Work from your own channel",
+   "Create a Slack channel for you and Claude Tag alone and run your work from it. See scratch questions, digests of channels you don't follow, a weekly status digest, follow-ups chased until they close, and a handoff that covers your time away. Source: https://claude.com/docs/claude-tag/users/use-cases/your-own-channel",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-create-artifacts",
+   "cl-apps-tag-users",
+   "Turn threads into docs and tickets",
+   "Claude Tag turns a Slack discussion into the artifact you name. See replies you can send, decision docs, status memos, filed tickets, hosted web pages, page comments that reach Claude, and a capture-channel pattern. Source: https://claude.com/docs/claude-tag/users/use-cases/create-artifacts",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-track-projects",
+   "cl-apps-tag-users",
+   "Track projects and chase approvals",
+   "Claude Tag posts project digests no one has to compile. See standing status updates and follow-ups on contracts, design reviews, and pull requests until they close. Source: https://claude.com/docs/claude-tag/users/use-cases/track-projects",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-answer-data-questions",
+   "cl-apps-tag-users",
+   "Answer data questions",
+   "Claude Tag answers data questions in the Slack thread. See warehouse queries with charts, scheduled metric reports, and charts built from channel history alone. Source: https://claude.com/docs/claude-tag/users/use-cases/answer-data-questions",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-find-answers",
+   "cl-apps-tag-users",
+   "Find answers in your docs",
+   "Claude Tag finds answers in connected docs and replies in the thread. See policy lookups, runbook checks, prior decisions, and answers from the Slack channel alone. Source: https://claude.com/docs/claude-tag/users/use-cases/find-answers",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-review-documents",
+   "cl-apps-tag-users",
+   "Review documents against a checklist",
+   "Claude Tag reviews documents in a connected tool against a checklist or policy and posts findings in the thread. See single-document checks, batch reviews, filing lists, comparisons with past reviews, and a scheduled weekly sweep. Source: https://claude.com/docs/claude-tag/users/use-cases/review-documents",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-pull-deal-state",
+   "cl-apps-tag-users",
+   "Pull deal and account state",
+   "Claude Tag pulls account and deal state into the Slack channel. See in-thread account answers, pre-call briefs, and a scheduled weekly pipeline digest. Source: https://claude.com/docs/claude-tag/users/use-cases/pull-deal-state",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-marketing-team",
+   "cl-apps-tag-users",
+   "Claude Tag for marketing teams",
+   "Claude Tag recipes for marketing teams in Slack. See policy answers in an intake channel, campaign channel recaps and send-ready drafts, lead and campaign state from the CRM, a weekly metrics digest, and brand voice rules saved to channel memory. Source: https://claude.com/docs/claude-tag/users/use-cases/marketing-team",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-watch-monitors",
+   "cl-apps-tag-users",
+   "Watch monitors and alerts",
+   "Claude Tag watches dashboards and alert channels so you see one line per issue. See scheduled checks, alert investigation before anyone asks, and the prompts to set both up. Source: https://claude.com/docs/claude-tag/users/use-cases/watch-monitors",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-fix-bugs",
+   "cl-apps-tag-users",
+   "Fix bugs",
+   "Claude Tag takes a bug report from Slack to a draft pull request. See reproducing the issue, watching a bug channel, root-cause digs, and following CI to green. Source: https://claude.com/docs/claude-tag/users/use-cases/fix-bugs",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-claude-tag-users-use-cases-work-with-github",
+   "cl-apps-tag-users",
+   "Work with your GitHub repositories",
+   "Claude Tag works with your GitHub repositories from Slack: answer questions in-thread, subscribe to pull requests, and hand back chores as draft pull requests. Source: https://claude.com/docs/claude-tag/users/use-cases/work-with-github",
+   "procedural",
+   [
+    [
+     "ClaudeAppsTagSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsTagReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeAppsTagSpecialist": "Claude Tag Specialist",
+  "ClaudeAppsTagReviewer": "Claude Tag Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

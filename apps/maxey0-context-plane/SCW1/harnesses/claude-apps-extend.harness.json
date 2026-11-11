@@ -1,0 +1,1532 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-apps-extend",
+  "label": "Claude Apps: Connectors, Skills and Plugins",
+  "desc": "Claude Apps: Connectors, Skills and Plugins: Welcome, Extend Claude, Plugins (Claude apps), Connectors (Claude apps), Connectors: custom, Connectors: google, Connectors: microsoft, Connectors: github, Connectors: slack, Skills (Claude apps), Connectors: mcp tunnels, Build for Claude, Connectors: building and Directory."
+ },
+ "concepts": [
+  {
+   "id": "cl-apps-extend-build-for-claude",
+   "label": "Build for Claude",
+   "desc": "Build for Claude (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "build",
+    "claude"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-third-par-connectors-and-extensions",
+    "cl-code-agent-sdk-build-agents",
+    "cl-code-plugins-build",
+    "cl-code-plugins-plugins",
+    "cl-messages-build-with-claude"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors",
+   "label": "Connectors (Claude apps)",
+   "desc": "Connectors (Claude apps) (Claude Apps: Connectors, Skills and Plugins): 3 documentation pages.",
+   "keywords": [
+    "connectors",
+    "started",
+    "with",
+    "directory",
+    "connector",
+    "verification"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-third-par-connectors-and-extensions"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors-building",
+   "label": "Connectors: building",
+   "desc": "Connectors: building (Claude Apps: Connectors, Skills and Plugins): 22 documentation pages.",
+   "keywords": [
+    "your",
+    "connectors",
+    "connector",
+    "build",
+    "server",
+    "claude"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-science-compute-data-and-connectors",
+    "cl-apps-third-par-connectors-and-extensions",
+    "cl-code-build-mcp",
+    "cl-code-build-skills"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors-custom",
+   "label": "Connectors: custom",
+   "desc": "Connectors: custom (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "connector",
+    "that",
+    "directory"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-science-compute-data-and-connectors",
+    "cl-apps-third-par-connectors-and-extensions"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors-github",
+   "label": "Connectors: github",
+   "desc": "Connectors: github (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "github",
+    "integration"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-third-par-connectors-and-extensions"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors-google",
+   "label": "Connectors: google",
+   "desc": "Connectors: google (Claude Apps: Connectors, Skills and Plugins): 3 documentation pages.",
+   "keywords": [
+    "google",
+    "drive",
+    "gmail",
+    "calendar"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": []
+  },
+  {
+   "id": "cl-apps-extend-connectors-mcp-tunnels",
+   "label": "Connectors: mcp tunnels",
+   "desc": "Connectors: mcp tunnels (Claude Apps: Connectors, Skills and Plugins): 4 documentation pages.",
+   "keywords": [
+    "tunnels",
+    "tunnel",
+    "authenticate",
+    "servers",
+    "behind",
+    "troubleshoot"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-messages-mcp-tunnels"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors-microsoft",
+   "label": "Connectors: microsoft",
+   "desc": "Connectors: microsoft (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "microsoft",
+    "connector"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-governmen-deploy-microsoft-365",
+    "cl-apps-third-par-connectors-and-extensions"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-connectors-slack",
+   "label": "Connectors: slack",
+   "desc": "Connectors: slack (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "slack",
+    "integration"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-third-par-connectors-and-extensions"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-directory",
+   "label": "Directory",
+   "desc": "Directory (Claude Apps: Connectors, Skills and Plugins): 2 documentation pages.",
+   "keywords": [
+    "directory",
+    "publish",
+    "track",
+    "your",
+    "submission"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": []
+  },
+  {
+   "id": "cl-apps-extend-extend-claude",
+   "label": "Extend Claude",
+   "desc": "Extend Claude (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "connectors",
+    "skills",
+    "plugins"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-governmen-connectors",
+    "cl-apps-third-par-connectors-and-extensions",
+    "cl-code-agent-sdk-extend-with-tools",
+    "cl-code-build-skills",
+    "cl-code-plugins-plugins"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-plugins",
+   "label": "Plugins (Claude apps)",
+   "desc": "Plugins (Claude apps) (Claude Apps: Connectors, Skills and Plugins): 11 documentation pages.",
+   "keywords": [
+    "plugin",
+    "your",
+    "plugins",
+    "organization",
+    "with",
+    "create"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-apps-third-par-connectors-and-extensions",
+    "cl-code-plugins-create-plugins",
+    "cl-code-plugins-manage-plugins-for-your-organi",
+    "cl-code-plugins-plugins",
+    "cl-code-plugins-reference",
+    "cl-code-plugins-troubleshooting",
+    "cl-code-plugins-use-plugins"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-skills",
+   "label": "Skills (Claude apps)",
+   "desc": "Skills (Claude apps) (Claude Apps: Connectors, Skills and Plugins): 2 documentation pages.",
+   "keywords": [
+    "skills",
+    "overview",
+    "create",
+    "custom"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": [
+    "cl-api-reference-api-resources-skills",
+    "cl-apps-third-par-connectors-and-extensions",
+    "cl-best-practices-agent-skills",
+    "cl-code-build-skills",
+    "cl-messages-agent-skills"
+   ]
+  },
+  {
+   "id": "cl-apps-extend-welcome",
+   "label": "Welcome",
+   "desc": "Welcome (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   "keywords": [
+    "welcome"
+   ],
+   "topic": "claude-apps-extend",
+   "source": "claude-apps-extend",
+   "source_topic": "claude-apps-extend",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-apps-build-overview",
+   "concept": "cl-apps-extend-build-for-claude",
+   "label": "Build for Claude",
+   "desc": "Build a plugin people use inside Claude: an MCP connector to your product, skills for your workflows, optional MCP Apps UI, and a listing in the directory. Source: https://claude.com/docs/build/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-directory",
+   "concept": "cl-apps-extend-connectors",
+   "label": "Connectors directory",
+   "desc": "Browse verified and community MCP connectors in the Connectors Directory, one catalog for claude.ai, Claude Desktop, mobile, Claude Code, and Cowork Source: https://claude.com/docs/connectors/directory",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-getting-started",
+   "concept": "cl-apps-extend-connectors",
+   "label": "Get started with connectors",
+   "desc": "Connect Claude to an app or service from the Connectors directory, turn the connector on in a conversation, and manage or disconnect it later. Source: https://claude.com/docs/connectors/getting-started",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-verification",
+   "concept": "cl-apps-extend-connectors",
+   "label": "Connector verification",
+   "desc": "How Anthropic reviews connectors in the directory, what the Verified, Community, and Custom labels mean, and how to stay safe with third-party connectors. Source: https://claude.com/docs/connectors/verification",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-after-publishing",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Manage your listing after publishing",
+   "desc": "Update your MCP server, plugin, and directory listing after publication, keep your listing URL stable, and delist when you need to. Source: https://claude.com/docs/connectors/building/after-publishing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-authentication",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Authentication for connectors",
+   "desc": "Meet Claude's OAuth requirements for remote MCP servers: supported authentication types, client registration, discovery, callback URLs, and token refresh. Source: https://claude.com/docs/connectors/building/authentication",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-directory-vs-custom",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Directory connectors vs custom connectors",
+   "desc": "Compare directory-listed and custom connectors: Anthropic review, in-product discovery, install links, Suggested Connectors, and per-tenant URL listings. Source: https://claude.com/docs/connectors/building/directory-vs-custom",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-enterprise-managed-auth",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Enterprise Managed Auth for connectors",
+   "desc": "Accept identity assertions from a customer's identity provider or Claude so users connect to your MCP server without an OAuth consent step. Source: https://claude.com/docs/connectors/building/enterprise-managed-auth",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-index",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Build an MCP server for Claude",
+   "desc": "Build a remote MCP server that people use as a connector in Claude: where it runs, authentication, what it exposes, size and timeout limits, and distribution. Source: https://claude.com/docs/connectors/building/index",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-lazy-authentication",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Lazy authentication for MCP servers",
+   "desc": "Let users call public tools immediately and defer OAuth until a protected tool is actually invoked. Source: https://claude.com/docs/connectors/building/lazy-authentication",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-managing-your-listing",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Manage your directory listing",
+   "desc": "Track submissions, monitor server health and usage metrics, and edit your directory listing Source: https://claude.com/docs/connectors/building/managing-your-listing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Model Context Protocol (MCP)",
+   "desc": "Get oriented to the Model Context Protocol, the open standard behind Claude's connectors: local and remote servers, tools, resources, and prompts. Source: https://claude.com/docs/connectors/building/mcp",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-design-guidelines",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Design guidelines",
+   "desc": "Design MCP Apps that feel native to Claude: display modes, mobile layout, visual style, interaction patterns, and the host's style variables. Source: https://claude.com/docs/connectors/building/mcp-apps/design-guidelines",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-external-links",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Open external links from MCP Apps",
+   "desc": "Declare allowed link destinations so ui/open-link requests from your directory connector's MCP App open without Claude's confirmation modal. Source: https://claude.com/docs/connectors/building/mcp-apps/external-links",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-getting-started",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Get started with MCP Apps",
+   "desc": "Try example MCP Apps in Claude Desktop, then use the MCP Apps SDK, examples, and agent skills to add interactive UI to your own MCP server. Source: https://claude.com/docs/connectors/building/mcp-apps/getting-started",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-instance-supersession",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Supersede older widget instances",
+   "desc": "Keep only the newest copy of an MCP App widget active when Claude calls its tool more than once in a conversation, using a server key and BroadcastChannel. Source: https://claude.com/docs/connectors/building/mcp-apps/instance-supersession",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-quickstart",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Add an interactive UI to your MCP server",
+   "desc": "Add an MCP App to the quickstart MCP server: register a ui:// resource with the MCP Apps SDK, link it to a tool, and check that the server advertises the UI. Source: https://claude.com/docs/connectors/building/mcp-apps/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-transparent-theming",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Blend your MCP App with Claude's theme",
+   "desc": "Make your MCP App's background transparent and style it with Claude's host style variables so it blends into the conversation in light and dark mode. Source: https://claude.com/docs/connectors/building/mcp-apps/transparent-theming",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcp-apps-troubleshooting",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Troubleshoot MCP Apps",
+   "desc": "Debug MCP Apps in Claude with developer tools on desktop and iOS, and fix invisible apps, large tool results, iOS-only request failures, and ui.domain errors. Source: https://claude.com/docs/connectors/building/mcp-apps/troubleshooting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-mcpb",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Build a desktop extension with MCPB",
+   "desc": "Package a local MCP server as a single-click .mcpb install for Claude Desktop: when to build one, the CLI quickstart, manifest.json, and how users install it. Source: https://claude.com/docs/connectors/building/mcpb",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-quickstart",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Build your first MCP server for Claude",
+   "desc": "Build a minimal MCP server with one tool in JavaScript, run it on your machine, and connect it to Claude Code so Claude calls your tool. Source: https://claude.com/docs/connectors/building/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-review-criteria",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Connector pre-submission checklist",
+   "desc": "Check your MCP connector against what Anthropic reviewers test, including tool design, prompt-injection patterns, and functional quality, before you submit. Source: https://claude.com/docs/connectors/building/review-criteria",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-submission",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Submit a connector to the directory",
+   "desc": "Submit a remote MCP server or MCP App to the Connectors Directory through the developer portal: requirements, screenshot specs, and what each step asks for. Source: https://claude.com/docs/connectors/building/submission",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-testing",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Test your connector",
+   "desc": "Test your MCP server against Claude as a custom connector before you submit it to the directory, including a local server exposed through a tunnel. Source: https://claude.com/docs/connectors/building/testing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-troubleshooting",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Troubleshoot your connector",
+   "desc": "Diagnose and resolve common connection, authorization, and tool-call failures for custom and directory MCP connectors Source: https://claude.com/docs/connectors/building/troubleshooting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-building-what-to-build",
+   "concept": "cl-apps-extend-connectors-building",
+   "label": "Decide what to include in your plugin",
+   "desc": "Decide which pieces your Claude plugin needs: an MCP connector backed by a server you host, skills, commands, agents, or UI, and how they're listed together. Source: https://claude.com/docs/connectors/building/what-to-build",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-custom-add-unlisted",
+   "concept": "cl-apps-extend-connectors-custom",
+   "label": "Add a connector that isn't in the directory",
+   "desc": "Connect Claude to an MCP server that isn't in the Connectors Directory, by its URL or as a local desktop extension. Source: https://claude.com/docs/connectors/custom/add-unlisted",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-github-index",
+   "concept": "cl-apps-extend-connectors-github",
+   "label": "GitHub integration",
+   "desc": "Add a GitHub repository to a conversation, or files and folders from a repository to a project, so Claude can read your code Source: https://claude.com/docs/connectors/github/index",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-google-calendar",
+   "concept": "cl-apps-extend-connectors-google",
+   "label": "Google Calendar",
+   "desc": "Connect the Google Calendar connector so Claude can answer questions about your meetings, attendees, and availability. Source: https://claude.com/docs/connectors/google/calendar",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-google-drive",
+   "concept": "cl-apps-extend-connectors-google",
+   "label": "Google Drive",
+   "desc": "Connect the Google Drive connector so Claude can search your Drive, read Docs, Sheets, Slides, and PDFs, and use Drive files in chats and projects. Source: https://claude.com/docs/connectors/google/drive",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-google-gmail",
+   "concept": "cl-apps-extend-connectors-google",
+   "label": "Gmail",
+   "desc": "Connect the Gmail connector so Claude can search your email and answer questions from your messages, with citations back to each one. Source: https://claude.com/docs/connectors/google/gmail",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-mcp-tunnels-oauth",
+   "concept": "cl-apps-extend-connectors-mcp-tunnels",
+   "label": "Authenticate to MCP servers behind a tunnel",
+   "desc": "Make OAuth sign-in work for MCP servers reached through an MCP tunnel when the authorization server or identity provider is inside your network. Source: https://claude.com/docs/connectors/mcp-tunnels/oauth",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-mcp-tunnels-overview",
+   "concept": "cl-apps-extend-connectors-mcp-tunnels",
+   "label": "MCP tunnels",
+   "desc": "Connect Claude to MCP servers inside your private network without opening inbound firewall ports or exposing the servers to the internet. Source: https://claude.com/docs/connectors/mcp-tunnels/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-mcp-tunnels-setup",
+   "concept": "cl-apps-extend-connectors-mcp-tunnels",
+   "label": "Set up an MCP tunnel",
+   "desc": "Create a Tunnels API key, deploy the MCP tunnel stack with Helm or Docker Compose, verify the connection, and add tunneled MCP servers as custom connectors. Source: https://claude.com/docs/connectors/mcp-tunnels/setup",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-mcp-tunnels-troubleshooting",
+   "concept": "cl-apps-extend-connectors-mcp-tunnels",
+   "label": "Troubleshoot MCP tunnels",
+   "desc": "Fix MCP tunnel problems: cloudflared won't connect, tools don't appear, routing and IP validation errors, TLS and certificate failures, and OAuth errors. Source: https://claude.com/docs/connectors/mcp-tunnels/troubleshooting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-microsoft-365",
+   "concept": "cl-apps-extend-connectors-microsoft",
+   "label": "Microsoft 365 connector",
+   "desc": "Connect SharePoint, OneDrive, Outlook, and Teams to Claude so it can search, analyze, and act on your Microsoft 365 information Source: https://claude.com/docs/connectors/microsoft/365",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-connectors-slack-index",
+   "concept": "cl-apps-extend-connectors-slack",
+   "label": "Slack integration",
+   "desc": "Use Claude directly in your Slack workspace with the Claude in Slack app, and let Claude search Slack with the Slack connector Source: https://claude.com/docs/connectors/slack/index",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-directory-publish",
+   "concept": "cl-apps-extend-directory",
+   "label": "Publish to the directory",
+   "desc": "Submit a plugin or MCP connector to Anthropic's directory: the two submission kinds, who can submit, what review involves, and where to start. Source: https://claude.com/docs/directory/publish",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-directory-submission-status",
+   "concept": "cl-apps-extend-directory",
+   "label": "Track your directory submission",
+   "desc": "Look up the status the developer portal shows for a plugin bundle or MCP connector submission: what it means, who acts next, and who to contact. Source: https://claude.com/docs/directory/submission-status",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-extend-overview",
+   "concept": "cl-apps-extend-extend-claude",
+   "label": "Connectors, skills, and plugins",
+   "desc": "Choose how to customize Claude: MCP connectors give it access to your tools, skills teach it how you do a task, and plugins package both as one install. Source: https://claude.com/docs/extend/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-admin",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Manage plugins for your organization",
+   "desc": "Control which plugins members of your Team or Enterprise organization can use in claude.ai and Cowork: see what you have, add your own, and set availability. Source: https://claude.com/docs/plugins/admin",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-build",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Plugin structure and testing",
+   "desc": "Reference for the plugin folder: what each file is, the manifest fields every app reads, bundling an MCP connector with its skill, and testing on each app. Source: https://claude.com/docs/plugins/build",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-create-with-claude",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Create a plugin with Claude",
+   "desc": "Make a plugin for your own workflow from claude.ai or the desktop app without writing files: choose Create with Claude and answer Claude's questions. Source: https://claude.com/docs/plugins/create-with-claude",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-org-rollout",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Roll out a plugin to your whole organization",
+   "desc": "Get your organization's plugin to members in claude.ai and Cowork and to developers in Claude Code by using organization settings and managed settings together. Source: https://claude.com/docs/plugins/org-rollout",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-org-sync",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Sync your organization's plugins from a repository",
+   "desc": "Distribute your organization's plugins from a GitHub or GitLab repository through organization settings, including repository requirements and GitLab setup. Source: https://claude.com/docs/plugins/org-sync",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-overview",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Plugins",
+   "desc": "Add plugins to Claude: what a plugin adds, where to find and install one, and where it's available across chat, Cowork, and Claude Code. Source: https://claude.com/docs/plugins/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-platform-support",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Plugin feature support across platforms",
+   "desc": "Look up which plugin components and install paths work in claude.ai chat, Cowork, and Claude Code, and why a plugin behaves differently on each. Source: https://claude.com/docs/plugins/platform-support",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-pre-submission-checklist",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Plugin pre-submission checklist",
+   "desc": "Fix every finding before you submit a plugin to the Claude plugin directory: what the developer portal's validation and scan check, and what each result means. Source: https://claude.com/docs/plugins/pre-submission-checklist",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-quickstart",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Build your first plugin",
+   "desc": "Build a plugin with one skill and an optional MCP connector, test it in Claude Code, validate it, and push it to GitHub, ready to submit your own. Source: https://claude.com/docs/plugins/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-share",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Share a plugin with teammates",
+   "desc": "Share a plugin you made with specific people in your Team or Enterprise organization, or publish it to your organization's library. Source: https://claude.com/docs/plugins/share",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-plugins-submit",
+   "concept": "cl-apps-extend-plugins",
+   "label": "Submit your plugin",
+   "desc": "Submit a plugin from a GitHub repository to Anthropic's directory through the developer portal, follow its review, publish it, and release updates. Source: https://claude.com/docs/plugins/submit",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-skills-how-to",
+   "concept": "cl-apps-extend-skills",
+   "label": "Create custom skills",
+   "desc": "Create a custom skill for Claude: write the SKILL.md file, add resources and scripts, package the skill, and test it. Source: https://claude.com/docs/skills/how-to",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-skills-overview",
+   "concept": "cl-apps-extend-skills",
+   "label": "Skills overview",
+   "desc": "Find, turn on, and use skills: directories of instructions, scripts, and resources that Claude loads to handle specific tasks Source: https://claude.com/docs/skills/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  },
+  {
+   "id": "cl-apps-index",
+   "concept": "cl-apps-extend-welcome",
+   "label": "Welcome",
+   "desc": "Connect Claude to your tools, teach it how your team works, and put it to work in Slack, on your desktop, in Microsoft 365, or through the Claude API. Source: https://claude.com/docs/index",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1769",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1770",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-extend"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1769",
+   "name": "Claude Apps: Connectors, Skills and Plugins Specialist",
+   "legacy_key": "ClaudeAppsExtendSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1770",
+   "name": "Claude Apps: Connectors, Skills and Plugins Reviewer",
+   "legacy_key": "ClaudeAppsExtendReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1770",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-apps-extend",
+   "score": 0.2423,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-apps-extend"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-apps-extend"
+ ]
+}

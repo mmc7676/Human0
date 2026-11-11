@@ -1,0 +1,272 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-reference",
+ "topic": {
+  "id": "claude-code-reference",
+  "label": "Claude Code Reference",
+  "desc": "Claude Code reference: CLI, commands, environment variables, tools, interactive mode, checkpointing, hooks, channels and glossary."
+ },
+ "concepts": [
+  [
+   "cl-code-reference-cli-commands-and-settings",
+   "CLI, commands and settings",
+   "claude-code-reference",
+   "CLI, commands and settings (Claude Code Reference): 3 documentation pages.",
+   [
+    "reference",
+    "commands",
+    "environment",
+    "variables"
+   ]
+  ],
+  [
+   "cl-code-reference-tools-hooks-and-channels",
+   "Tools, hooks and channels",
+   "claude-code-reference",
+   "Tools, hooks and channels (Claude Code Reference): 3 documentation pages.",
+   [
+    "reference",
+    "tools",
+    "hooks",
+    "channels"
+   ]
+  ],
+  [
+   "cl-code-reference-sessions-and-interaction",
+   "Sessions and interaction",
+   "claude-code-reference",
+   "Sessions and interaction (Claude Code Reference): 2 documentation pages.",
+   [
+    "interactive",
+    "mode",
+    "checkpointing"
+   ]
+  ],
+  [
+   "cl-code-reference-glossary",
+   "Glossary",
+   "claude-code-reference",
+   "Glossary (Claude Code Reference): 1 documentation page.",
+   [
+    "glossary"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-code-en-cli-reference",
+   "cl-code-reference-cli-commands-and-settings",
+   "CLI reference",
+   "Complete reference for Claude Code command-line interface, including commands and flags. Source: https://code.claude.com/docs/en/cli-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-commands",
+   "cl-code-reference-cli-commands-and-settings",
+   "Commands",
+   "Complete reference for commands available in Claude Code, including built-in commands and bundled skills. Source: https://code.claude.com/docs/en/commands",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-env-vars",
+   "cl-code-reference-cli-commands-and-settings",
+   "Environment variables",
+   "Reference for environment variables that control Claude Code behavior. Source: https://code.claude.com/docs/en/env-vars",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-tools-reference",
+   "cl-code-reference-tools-hooks-and-channels",
+   "Tools reference",
+   "Complete reference for the tools Claude Code can use, including permission requirements and per-tool behavior. Source: https://code.claude.com/docs/en/tools-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-hooks",
+   "cl-code-reference-tools-hooks-and-channels",
+   "Hooks reference",
+   "Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, HTTP hooks, prompt hooks, and MCP tool hooks. Source: https://code.claude.com/docs/en/hooks",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-channels-reference",
+   "cl-code-reference-tools-hooks-and-channels",
+   "Channels reference",
+   "Build an MCP server that pushes webhooks, alerts, and chat messages into a Claude Code session. Reference for the channel contract: capability declaration, notification events, reply tools, sender gating, and permission relay. Source: https://code.claude.com/docs/en/channels-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-interactive-mode",
+   "cl-code-reference-sessions-and-interaction",
+   "Interactive mode",
+   "Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions. Source: https://code.claude.com/docs/en/interactive-mode",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-checkpointing",
+   "cl-code-reference-sessions-and-interaction",
+   "Checkpointing",
+   "Track, rewind, and summarize Claude's edits and conversation to manage session state. Source: https://code.claude.com/docs/en/checkpointing",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-glossary",
+   "cl-code-reference-glossary",
+   "Glossary",
+   "Definitions for Claude Code terminology. Learn what agentic loop, compaction, CLAUDE.md, hooks, subagents, MCP, and other core concepts mean. Source: https://code.claude.com/docs/en/glossary",
+   "reference",
+   [
+    [
+     "ClaudeCodeReferenceSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodeReferenceReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeCodeReferenceSpecialist": "Claude Code Reference Specialist",
+  "ClaudeCodeReferenceReviewer": "Claude Code Reference Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

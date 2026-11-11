@@ -1,0 +1,1547 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-admin",
+ "topic": {
+  "id": "claude-admin",
+  "label": "Claude Platform Administration",
+  "desc": "Running a Claude Console organization: Admin API and keys, workspaces, users, workload identity federation, usage and cost APIs, spend and rate limits, compliance API, CMEK, data residency, inference hooks and webhooks."
+ },
+ "concepts": [
+  [
+   "cl-admin-compliance-security-posture",
+   "Compliance security posture",
+   "claude-admin",
+   "Compliance security posture (Claude Platform Administration): 7 documentation pages.",
+   [
+    "events",
+    "results",
+    "reference",
+    "overview",
+    "security",
+    "posture"
+   ]
+  ],
+  [
+   "cl-admin-data-residency-and-retention",
+   "Data residency and retention",
+   "claude-admin",
+   "Data residency and retention (Claude Platform Administration): 4 documentation pages.",
+   [
+    "transparency",
+    "data",
+    "overview",
+    "access",
+    "retention",
+    "residency"
+   ]
+  ],
+  [
+   "cl-admin-cmek-and-encryption",
+   "CMEK and encryption",
+   "claude-admin",
+   "CMEK and encryption (Claude Platform Administration): 13 documentation pages.",
+   [
+    "claude",
+    "platform",
+    "coverage",
+    "admin",
+    "data",
+    "retention"
+   ]
+  ],
+  [
+   "cl-admin-identity-and-access",
+   "Identity and access",
+   "claude-admin",
+   "Identity and access (Claude Platform Administration): 10 documentation pages.",
+   [
+    "admin",
+    "user",
+    "attest",
+    "create",
+    "allowlisting",
+    "beta"
+   ]
+  ],
+  [
+   "cl-admin-usage-cost-and-limits",
+   "Usage, cost and limits",
+   "claude-admin",
+   "Usage, cost and limits (Claude Platform Administration): 6 documentation pages.",
+   [
+    "analytics",
+    "limits",
+    "usage",
+    "cost",
+    "apis",
+    "claude"
+   ]
+  ],
+  [
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Workspaces, hooks and integrations",
+   "claude-admin",
+   "Workspaces, hooks and integrations (Claude Platform Administration): 8 documentation pages.",
+   [
+    "claude",
+    "inference",
+    "hooks",
+    "overview",
+    "configure",
+    "build"
+   ]
+  ],
+  [
+   "cl-admin-compliance-api",
+   "Compliance API",
+   "claude-admin",
+   "Compliance API (Claude Platform Administration): 9 documentation pages.",
+   [
+    "compliance",
+    "overview",
+    "design",
+    "your",
+    "integration",
+    "errors"
+   ]
+  ],
+  [
+   "cl-admin-opentelemetry",
+   "Opentelemetry (Claude Platform)",
+   "claude-admin",
+   "Opentelemetry (Claude Platform) (Claude Platform Administration): 2 documentation pages.",
+   [
+    "claude",
+    "spans"
+   ]
+  ],
+  [
+   "cl-admin-wif-providers",
+   "Wif providers",
+   "claude-admin",
+   "Wif providers (Claude Platform Administration): 7 documentation pages.",
+   [
+    "github",
+    "actions",
+    "google",
+    "cloud",
+    "kubernetes",
+    "microsoft"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-overvi",
+   "cl-admin-compliance-security-posture",
+   "Overview: Security posture in the Compliance API",
+   "Security posture in the Compliance API Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-check",
+   "cl-admin-compliance-security-posture",
+   "Check events against results",
+   "Check stored Security posture events against current results Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/check-events-against-results",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-detect",
+   "cl-admin-compliance-security-posture",
+   "Detect changes",
+   "Detect changes in Security posture Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/detect-changes",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-ocsf-m",
+   "cl-admin-compliance-security-posture",
+   "Map events to OCSF",
+   "Map Security posture events to OCSF Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/ocsf-mapping",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-events",
+   "cl-admin-compliance-security-posture",
+   "Events reference",
+   "Security posture events reference Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/events-reference",
+   "reference",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-result",
+   "cl-admin-compliance-security-posture",
+   "Results reference",
+   "Security posture results reference Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/results-reference",
+   "reference",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-security-posture-send-e",
+   "cl-admin-compliance-security-posture",
+   "Send events to your SIEM",
+   "Send Security posture events to your SIEM Source: https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/send-events",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-access-transparency",
+   "cl-admin-data-residency-and-retention",
+   "Overview: Access Transparency",
+   "Access Transparency Source: https://platform.claude.com/docs/en/manage-claude/access-transparency",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-api-and-data-retention",
+   "cl-admin-data-residency-and-retention",
+   "API and data retention",
+   "API and data retention (Data residency and retention) Source: https://platform.claude.com/docs/en/manage-claude/api-and-data-retention",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-data-residency",
+   "cl-admin-data-residency-and-retention",
+   "Data residency",
+   "Data residency (Data residency and retention) Source: https://platform.claude.com/docs/en/manage-claude/data-residency",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-access-transparency-log",
+   "cl-admin-data-residency-and-retention",
+   "Transparency log (beta)",
+   "Verify Access Transparency events with the transparency log Source: https://platform.claude.com/docs/en/manage-claude/access-transparency-log",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-admin-api",
+   "cl-admin-cmek-and-encryption",
+   "Admin API",
+   "Add and attach an encryption key with the Admin API Source: https://platform.claude.com/docs/en/manage-claude/cmek-admin-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-data-retention",
+   "cl-admin-cmek-and-encryption",
+   "Data retention and ZDR",
+   "CMEK, data retention, and ZDR Source: https://platform.claude.com/docs/en/manage-claude/cmek-data-retention",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek",
+   "cl-admin-cmek-and-encryption",
+   "Overview: Customer-managed encryption keys",
+   "Customer-managed encryption keys Source: https://platform.claude.com/docs/en/manage-claude/cmek",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-how-it-works",
+   "cl-admin-cmek-and-encryption",
+   "How it works",
+   "How CMEK works Source: https://platform.claude.com/docs/en/manage-claude/cmek-how-it-works",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-aws-kms-workspaces",
+   "cl-admin-cmek-and-encryption",
+   "Limit key to workspaces",
+   "Limit an AWS KMS key to specific workspaces Source: https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms-workspaces",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-claude-platform-on-aws",
+   "cl-admin-cmek-and-encryption",
+   "Claude Platform on AWS",
+   "Set up CMEK on Claude Platform on AWS Source: https://platform.claude.com/docs/en/manage-claude/cmek-claude-platform-on-aws",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-aws-kms",
+   "cl-admin-cmek-and-encryption",
+   "AWS KMS",
+   "Set up CMEK with AWS KMS Source: https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-azure-key-vault",
+   "cl-admin-cmek-and-encryption",
+   "Azure Key Vault",
+   "Set up CMEK with Azure Key Vault Source: https://platform.claude.com/docs/en/manage-claude/cmek-azure-key-vault",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-google-cloud-kms",
+   "cl-admin-cmek-and-encryption",
+   "Google Cloud KMS",
+   "Set up CMEK with Google Cloud KMS Source: https://platform.claude.com/docs/en/manage-claude/cmek-google-cloud-kms",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-troubleshooting",
+   "cl-admin-cmek-and-encryption",
+   "Troubleshooting",
+   "Troubleshoot CMEK Source: https://platform.claude.com/docs/en/manage-claude/cmek-troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-coverage-claude-enterprise",
+   "cl-admin-cmek-and-encryption",
+   "Coverage: Claude Enterprise",
+   "What CMEK covers on Claude Enterprise Source: https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-enterprise",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-coverage-claude-platform",
+   "cl-admin-cmek-and-encryption",
+   "Coverage: Claude Platform",
+   "What CMEK covers on Claude Platform Source: https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-platform",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-cmek-key-lifecycle",
+   "cl-admin-cmek-and-encryption",
+   "Rotate, disable, delete",
+   "What happens when you rotate, disable, or delete your encryption key Source: https://platform.claude.com/docs/en/manage-claude/cmek-key-lifecycle",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-admin-api",
+   "cl-admin-identity-and-access",
+   "Admin API",
+   "Admin API (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/admin-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-app-attest",
+   "cl-admin-identity-and-access",
+   "App Attest",
+   "App Attest for iOS and macOS apps Source: https://platform.claude.com/docs/en/manage-claude/app-attest",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-admin-api-keys",
+   "cl-admin-identity-and-access",
+   "Create an Admin API key",
+   "Create an Admin API key (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/admin-api-keys",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-ip-allowlist",
+   "cl-admin-identity-and-access",
+   "IP allowlisting (beta)",
+   "IP allowlisting Source: https://platform.claude.com/docs/en/manage-claude/ip-allowlist",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-admin-api",
+   "cl-admin-identity-and-access",
+   "Manage WIF with the Admin API",
+   "Manage WIF with the Admin API (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/wif-admin-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-user-profiles-verification-portal",
+   "cl-admin-identity-and-access",
+   "Verification Portal links",
+   "Send an end customer a link to the Verification Portal Source: https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-user-management",
+   "cl-admin-identity-and-access",
+   "User management",
+   "User management (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/user-management",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-user-profiles",
+   "cl-admin-identity-and-access",
+   "User profiles",
+   "User profiles for end-customer attribution Source: https://platform.claude.com/docs/en/manage-claude/user-profiles",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-reference",
+   "cl-admin-identity-and-access",
+   "WIF reference",
+   "WIF reference (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/wif-reference",
+   "reference",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-workload-identity-federation",
+   "cl-admin-identity-and-access",
+   "Workload Identity Federation",
+   "Workload Identity Federation (Identity and access) Source: https://platform.claude.com/docs/en/manage-claude/workload-identity-federation",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-analytics-api",
+   "cl-admin-usage-cost-and-limits",
+   "Analytics APIs",
+   "Analytics APIs (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/analytics-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-claude-code-analytics-api",
+   "cl-admin-usage-cost-and-limits",
+   "Claude Code Analytics API",
+   "Claude Code Analytics API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-rate-limits-api",
+   "cl-admin-usage-cost-and-limits",
+   "Rate Limits API",
+   "Rate Limits API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/rate-limits-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-spend-limits-api",
+   "cl-admin-usage-cost-and-limits",
+   "Spend Limits API",
+   "Spend Limits API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/spend-limits-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-usage-cost-analytics-api",
+   "cl-admin-usage-cost-and-limits",
+   "Usage and Cost Analytics API",
+   "Usage and Cost Analytics API (Usage, cost and limits) Source: https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-usage-cost-api",
+   "cl-admin-usage-cost-and-limits",
+   "Usage and Cost API (legacy)",
+   "Usage and Cost API Source: https://platform.claude.com/docs/en/manage-claude/usage-cost-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-claude-tag-api",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Claude Tag API",
+   "Claude Tag API (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/claude-tag-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-inference-hooks-configuration",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Configure Inference hooks",
+   "Configure Inference hooks (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks-configuration",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-inference-hooks-endpoint",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Build an integration",
+   "Develop an Inference hooks integration Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-inference-hooks",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Overview: Inference hooks",
+   "Inference hooks Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-opentelemetry",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Overview: OpenTelemetry tracing for the Claude API",
+   "OpenTelemetry tracing for the Claude API Source: https://platform.claude.com/docs/en/manage-claude/opentelemetry",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-organization-webhooks",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Organization webhooks (beta)",
+   "Organization webhooks Source: https://platform.claude.com/docs/en/manage-claude/organization-webhooks",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-plugins-api",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Plugins API",
+   "Plugins API (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/plugins-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-workspaces",
+   "cl-admin-workspaces-hooks-and-integrati",
+   "Workspaces",
+   "Workspaces (Workspaces, hooks and integrations) Source: https://platform.claude.com/docs/en/manage-claude/workspaces",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-api",
+   "cl-admin-compliance-api",
+   "Overview: Compliance API",
+   "Compliance API Source: https://platform.claude.com/docs/en/manage-claude/compliance-api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-faq",
+   "cl-admin-compliance-api",
+   "FAQ",
+   "Compliance API FAQ Source: https://platform.claude.com/docs/en/manage-claude/compliance-faq",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-integration-patterns",
+   "cl-admin-compliance-api",
+   "Design your integration",
+   "Design your compliance integration Source: https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-errors",
+   "cl-admin-compliance-api",
+   "Errors",
+   "Handle Compliance API errors Source: https://platform.claude.com/docs/en/manage-claude/compliance-errors",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-org-data",
+   "cl-admin-compliance-api",
+   "Organizations, users, roles, groups, and settings",
+   "List organizations, users, roles, groups, and settings Source: https://platform.claude.com/docs/en/manage-claude/compliance-org-data",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-activity-feed",
+   "cl-admin-compliance-api",
+   "Activity Feed",
+   "Query the Activity Feed Source: https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-content-data",
+   "cl-admin-compliance-api",
+   "Chats, files, and projects",
+   "Retrieve and delete chats, files, and projects Source: https://platform.claude.com/docs/en/manage-claude/compliance-content-data",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-sessions",
+   "cl-admin-compliance-api",
+   "Session transcripts",
+   "Retrieve session transcripts Source: https://platform.claude.com/docs/en/manage-claude/compliance-sessions",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-compliance-api-access",
+   "cl-admin-compliance-api",
+   "Set up the Compliance API",
+   "Set up the Compliance API (Compliance API) Source: https://platform.claude.com/docs/en/manage-claude/compliance-api-access",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-opentelemetry-api",
+   "cl-admin-opentelemetry",
+   "Get Claude API spans",
+   "Set up OpenTelemetry with the Claude API Source: https://platform.claude.com/docs/en/manage-claude/opentelemetry/api",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-opentelemetry-sdk",
+   "cl-admin-opentelemetry",
+   "Get Claude SDK spans",
+   "Set up OpenTelemetry with the Claude SDK Source: https://platform.claude.com/docs/en/manage-claude/opentelemetry/sdk",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-aws",
+   "cl-admin-wif-providers",
+   "AWS",
+   "Use WIF with AWS Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/aws",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-github-actions",
+   "cl-admin-wif-providers",
+   "GitHub Actions",
+   "Use WIF with GitHub Actions Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/github-actions",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-gcp",
+   "cl-admin-wif-providers",
+   "Google Cloud",
+   "Use WIF with Google Cloud Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/gcp",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-kubernetes",
+   "cl-admin-wif-providers",
+   "Kubernetes",
+   "Use WIF with Kubernetes Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/kubernetes",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-azure",
+   "cl-admin-wif-providers",
+   "Microsoft Entra ID",
+   "Use WIF with Microsoft Entra ID Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/azure",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-okta",
+   "cl-admin-wif-providers",
+   "Okta",
+   "Use WIF with Okta Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/okta",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-wif-providers-spiffe",
+   "cl-admin-wif-providers",
+   "SPIFFE",
+   "Use WIF with SPIFFE Source: https://platform.claude.com/docs/en/manage-claude/wif-providers/spiffe",
+   "procedural",
+   [
+    [
+     "ClaudeAdminSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAdminReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeAdminSpecialist": "Claude Platform Administration Specialist",
+  "ClaudeAdminReviewer": "Claude Platform Administration Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

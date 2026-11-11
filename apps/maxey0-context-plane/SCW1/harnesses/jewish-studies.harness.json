@@ -532,7 +532,9 @@
    "key": "Maxey1399",
    "name": "Textual and Historical Accuracy Checker",
    "legacy_key": "jwst-checker",
-   "mcp": []
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
   },
   {
    "key": "Maxey1400",
@@ -550,7 +552,9 @@
    "key": "Maxey1402",
    "name": "Hebrew and Yiddish Language Agent",
    "legacy_key": "jwst-linguist",
-   "mcp": []
+   "mcp": [
+    "6281926c-b9be-42d6-80eb-1d38c8c766ae"
+   ]
   },
   {
    "key": "Maxey1403",
@@ -674,7 +678,28 @@
   "6281926c-b9be-42d6-80eb-1d38c8c766ae",
   "ff091334-0f12-4d0e-a973-c00467dd3818"
  ],
- "agent_mcp": [],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1399",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "jewish-studies",
+   "score": 0.1047,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey1402",
+    "skill": "jwst-root-analysis"
+   },
+   "source_topic": "jewish-studies"
+  },
+  {
+   "agent": "Maxey1402",
+   "mcp": "6281926c-b9be-42d6-80eb-1d38c8c766ae",
+   "topic": "jewish-studies",
+   "score": 0.1047,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "jewish-studies"
+  }
+ ],
  "lexicon": {
   "jwst-scripture": "tanakh torah prophets exegesis biblical canon",
   "jwst-rabbinic": "mishnah talmud midrash halakha responsa",

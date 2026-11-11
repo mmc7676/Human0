@@ -821,9 +821,7 @@
   {
    "key": "Maxey14",
    "name": "Retrieval Orchestrator",
-   "mcp": [
-    "254e954c-da06-44e1-8f83-e0c599a1a495"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey187",
@@ -873,7 +871,7 @@
    "key": "Maxey66",
    "name": "API Gateway Agent",
    "mcp": [
-    "2d60210c-dd92-4be0-b09c-3662f10445c9"
+    "9ed5afff-a8dc-4f68-b97b-61dae12de3a5"
    ]
   },
   {
@@ -916,7 +914,6 @@
    "legacy_key": "ca-reviewer",
    "mcp": [
     "09103c21-59c7-480e-8fb4-69914bfa311e",
-    "46d6322a-5f75-4822-b739-f49261805e9c",
     "local:github"
    ]
   },
@@ -925,23 +922,23 @@
    "name": "Test and Debug Agent",
    "legacy_key": "ca-tester",
    "mcp": [
-    "09103c21-59c7-480e-8fb4-69914bfa311e",
-    "46d6322a-5f75-4822-b739-f49261805e9c"
+    "09103c21-59c7-480e-8fb4-69914bfa311e"
    ]
   },
   {
    "key": "Maxey805",
    "name": "Repository Analyst Agent",
    "legacy_key": "ca-repo-analyst",
-   "mcp": []
+   "mcp": [
+    "46d6322a-5f75-4822-b739-f49261805e9c"
+   ]
   },
   {
    "key": "Maxey806",
    "name": "Technical Writer Agent",
    "legacy_key": "ca-technical-writer",
    "mcp": [
-    "46d6322a-5f75-4822-b739-f49261805e9c",
-    "local:github"
+    "46d6322a-5f75-4822-b739-f49261805e9c"
    ]
   },
   {
@@ -950,17 +947,14 @@
    "legacy_key": "ca-evaluator",
    "mcp": [
     "09103c21-59c7-480e-8fb4-69914bfa311e",
-    "46d6322a-5f75-4822-b739-f49261805e9c",
-    "local:github"
+    "46d6322a-5f75-4822-b739-f49261805e9c"
    ]
   },
   {
    "key": "Maxey808",
    "name": "Coding Orchestrator Agent",
    "legacy_key": "ca-orchestrator",
-   "mcp": [
-    "09103c21-59c7-480e-8fb4-69914bfa311e"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey809",
@@ -980,14 +974,14 @@
    "key": "Maxey811",
    "name": "Sandbox Engineer Agent",
    "legacy_key": "ca-sandbox-engineer",
-   "mcp": []
+   "mcp": [
+    "local:github"
+   ]
   },
   {
    "key": "Maxey85",
    "name": "Security Scanner",
    "mcp": [
-    "2d60210c-dd92-4be0-b09c-3662f10445c9",
-    "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
     "c703ddc2-743d-4677-b37e-4f58476c6a60"
    ]
   },
@@ -1042,40 +1036,6 @@
    "id": "09103c21-59c7-480e-8fb4-69914bfa311e",
    "origins": [
     "coding-agents"
-   ]
-  },
-  {
-   "uuid": "254e954c-da06-44e1-8f83-e0c599a1a495",
-   "name": "Control Plane",
-   "desc": "Deploy, scale, and debug cloud apps from one platform",
-   "tools": [
-    "add_database",
-    "build_image",
-    "convert_to_terraform",
-    "allow_workload_access"
-   ],
-   "state": "registry",
-   "source": "Maxey0 base graph MCP table",
-   "id": "254e954c-da06-44e1-8f83-e0c599a1a495",
-   "origins": [
-    "maxey0_base"
-   ]
-  },
-  {
-   "uuid": "2d60210c-dd92-4be0-b09c-3662f10445c9",
-   "name": "Cloudflare Developer Platform",
-   "desc": "Build applications with compute, storage, and AI",
-   "tools": [
-    "workers_list",
-    "kv_namespaces_list",
-    "r2_buckets_list",
-    "d1_databases_list"
-   ],
-   "state": "connected",
-   "source": "Maxey0 base graph MCP table",
-   "id": "2d60210c-dd92-4be0-b09c-3662f10445c9",
-   "origins": [
-    "maxey0_base"
    ]
   },
   {
@@ -1329,78 +1289,75 @@
    "agent": "Maxey10",
    "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
    "topic": null,
-   "score": 0.1046,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey14",
-   "mcp": "254e954c-da06-44e1-8f83-e0c599a1a495",
-   "topic": null,
-   "score": 0.1526,
+   "score": 0.1003,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey30",
    "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
    "topic": null,
-   "score": 0.1894,
+   "score": 0.144,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey54",
    "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
    "topic": null,
-   "score": 0.1672,
+   "score": 0.1612,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey66",
-   "mcp": "2d60210c-dd92-4be0-b09c-3662f10445c9",
+   "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
    "topic": null,
-   "score": 0.1323,
+   "score": 0.1587,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey70",
    "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
    "topic": null,
-   "score": 0.1529,
+   "score": 0.1569,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "3119bc71-0dfd-48f8-a764-c2fca895325c",
    "topic": null,
-   "score": 0.3032,
+   "score": 0.2801,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "b9049585-f39b-45e8-8626-6ca78d9d7d22",
    "topic": null,
-   "score": 0.1885,
+   "score": 0.1482,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey71",
    "mcp": "d0585e82-4190-4588-ab31-b1afd254cf0f",
    "topic": null,
-   "score": 0.1249,
+   "score": 0.1134,
    "basis": "derived:tfidf-cosine"
   },
   {
    "agent": "Maxey802",
    "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1173,
-   "basis": "derived:tfidf-cosine",
+   "score": 0.129,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey805",
+    "skill": "ca-code-search"
+   },
    "source_topic": "coding-agents"
   },
   {
    "agent": "Maxey803",
    "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.172,
+   "score": 0.1784,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey804",
@@ -1410,21 +1367,9 @@
   },
   {
    "agent": "Maxey803",
-   "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
-   "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1173,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey802",
-    "skill": "ca-minimal-diff-editor"
-   },
-   "source_topic": "coding-agents"
-  },
-  {
-   "agent": "Maxey803",
    "mcp": "local:github",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1746,
+   "score": 0.1718,
    "basis": "derived:tfidf-cosine",
    "source_topic": "coding-agents"
   },
@@ -1432,35 +1377,23 @@
    "agent": "Maxey804",
    "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.172,
+   "score": 0.1784,
    "basis": "derived:tfidf-cosine",
    "source_topic": "coding-agents"
   },
   {
-   "agent": "Maxey804",
+   "agent": "Maxey805",
    "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1173,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey802",
-    "skill": "ca-spec-to-code-generator"
-   },
+   "score": 0.129,
+   "basis": "derived:tfidf-cosine",
    "source_topic": "coding-agents"
   },
   {
    "agent": "Maxey806",
    "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1183,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "coding-agents"
-  },
-  {
-   "agent": "Maxey806",
-   "mcp": "local:github",
-   "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1208,
+   "score": 0.1294,
    "basis": "derived:tfidf-cosine",
    "source_topic": "coding-agents"
   },
@@ -1468,77 +1401,47 @@
    "agent": "Maxey807",
    "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1014,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey808",
-    "skill": "ca-task-decomposer"
-   },
+   "score": 0.1051,
+   "basis": "derived:tfidf-cosine",
    "source_topic": "coding-agents"
   },
   {
    "agent": "Maxey807",
    "mcp": "46d6322a-5f75-4822-b739-f49261805e9c",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1183,
+   "score": 0.1294,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey806",
     "skill": "ca-handoff-reporter"
    },
-   "source_topic": "coding-agents"
-  },
-  {
-   "agent": "Maxey807",
-   "mcp": "local:github",
-   "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1208,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey806",
-    "skill": "ca-handoff-reporter"
-   },
-   "source_topic": "coding-agents"
-  },
-  {
-   "agent": "Maxey808",
-   "mcp": "09103c21-59c7-480e-8fb4-69914bfa311e",
-   "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1014,
-   "basis": "derived:tfidf-cosine",
    "source_topic": "coding-agents"
   },
   {
    "agent": "Maxey810",
    "mcp": "local:github",
    "topic": "agent-harnesses-and-tool-use",
-   "score": 0.1746,
+   "score": 0.1388,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "coding-agents"
+  },
+  {
+   "agent": "Maxey811",
+   "mcp": "local:github",
+   "topic": "agent-harnesses-and-tool-use",
+   "score": 0.1388,
    "basis": "inherited:checker-of-primary",
    "via": {
-    "primary": "Maxey803",
-    "skill": "ca-pull-request-reviewer"
+    "primary": "Maxey810",
+    "skill": "ca-secrets-guard"
    },
    "source_topic": "coding-agents"
   },
   {
    "agent": "Maxey85",
-   "mcp": "2d60210c-dd92-4be0-b09c-3662f10445c9",
-   "topic": null,
-   "score": 0.1332,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey85",
-   "mcp": "9ed5afff-a8dc-4f68-b97b-61dae12de3a5",
-   "topic": null,
-   "score": 0.1526,
-   "basis": "derived:tfidf-cosine"
-  },
-  {
-   "agent": "Maxey85",
    "mcp": "c703ddc2-743d-4677-b37e-4f58476c6a60",
    "topic": null,
-   "score": 0.2082,
+   "score": 0.1259,
    "basis": "derived:tfidf-cosine"
   }
  ],

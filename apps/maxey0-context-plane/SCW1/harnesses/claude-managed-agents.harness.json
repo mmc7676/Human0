@@ -1,0 +1,1121 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-managed-agents",
+  "label": "Claude Managed Agents",
+  "desc": "Claude Managed Agents: Get started, Tools, files and memory, Environments and sandboxes, Agents and orchestration, Sessions, events and streaming, Deployment and security and Reference and other."
+ },
+ "concepts": [
+  {
+   "id": "cl-managed-agents-agents-and-orchestration",
+   "label": "Agents and orchestration",
+   "desc": "Agents and orchestration (Claude Managed Agents): 5 documentation pages.",
+   "keywords": [
+    "define",
+    "outcomes",
+    "agent",
+    "setup",
+    "dreams",
+    "multiagent"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": []
+  },
+  {
+   "id": "cl-managed-agents-deployment-and-security",
+   "label": "Deployment and security",
+   "desc": "Deployment and security (Claude Managed Agents): 5 documentation pages.",
+   "keywords": [
+    "permission",
+    "policies",
+    "review",
+    "monitor",
+    "sessions",
+    "scheduled"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": [
+    "cl-apps-governmen-security"
+   ]
+  },
+  {
+   "id": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Environments and sandboxes",
+   "desc": "Environments and sandboxes (Claude Managed Agents): 10 documentation pages.",
+   "keywords": [
+    "environment",
+    "cloud",
+    "reference",
+    "choose",
+    "setup",
+    "sandbox"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": [
+    "cl-api-reference-api-resources-environments",
+    "cl-code-config-environments"
+   ]
+  },
+  {
+   "id": "cl-managed-agents-get-started",
+   "label": "Get started",
+   "desc": "Get started (Claude Managed Agents): 4 documentation pages.",
+   "keywords": [
+    "overview",
+    "claude",
+    "managed",
+    "agents",
+    "quickstart",
+    "started"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": [
+    "cl-apps-science-get-started-and-use",
+    "cl-code-agent-sdk-agent-sdk",
+    "cl-code-start-claude-code-on-desktop",
+    "cl-code-start-getting-started",
+    "cl-messages-agent-skills",
+    "cl-messages-getting-started"
+   ]
+  },
+  {
+   "id": "cl-managed-agents-reference-and-other",
+   "label": "Reference and other",
+   "desc": "Reference and other (Claude Managed Agents): 3 documentation pages.",
+   "keywords": [
+    "managed",
+    "agents",
+    "reference",
+    "subscribe",
+    "webhooks",
+    "workflow"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": [
+    "cl-api-reference-api-resources-webhooks"
+   ]
+  },
+  {
+   "id": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Sessions, events and streaming",
+   "desc": "Sessions, events and streaming (Claude Managed Agents): 6 documentation pages.",
+   "keywords": [
+    "session",
+    "event",
+    "inspect",
+    "track",
+    "usage",
+    "deltas"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": []
+  },
+  {
+   "id": "cl-managed-agents-tools-files-and-memory",
+   "label": "Tools, files and memory",
+   "desc": "Tools, files and memory (Claude Managed Agents): 8 documentation pages.",
+   "keywords": [
+    "access",
+    "github",
+    "attach",
+    "download",
+    "files",
+    "authenticate"
+   ],
+   "topic": "claude-managed-agents",
+   "source": "claude-managed-agents",
+   "source_topic": "claude-managed-agents",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-managed-agents-agent-setup",
+   "concept": "cl-managed-agents-agents-and-orchestration",
+   "label": "Agent setup",
+   "desc": "Define your agent Source: https://platform.claude.com/docs/en/managed-agents/agent-setup",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-budgets",
+   "concept": "cl-managed-agents-agents-and-orchestration",
+   "label": "Session budgets",
+   "desc": "Session budgets (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/budgets",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-define-outcomes",
+   "concept": "cl-managed-agents-agents-and-orchestration",
+   "label": "Define outcomes",
+   "desc": "Define outcomes (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-dreams",
+   "concept": "cl-managed-agents-agents-and-orchestration",
+   "label": "Dreams",
+   "desc": "Dreams (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/dreams",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-multiagent-orchestration",
+   "concept": "cl-managed-agents-agents-and-orchestration",
+   "label": "Multiagent orchestration",
+   "desc": "Multiagent orchestration (Agents and orchestration) Source: https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-permission-policies",
+   "concept": "cl-managed-agents-deployment-and-security",
+   "label": "Permission policies",
+   "desc": "Permission policies (Deployment and security) Source: https://platform.claude.com/docs/en/managed-agents/permission-policies",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-scheduled-deployments",
+   "concept": "cl-managed-agents-deployment-and-security",
+   "label": "Scheduled deployments",
+   "desc": "Scheduled deployments (Deployment and security) Source: https://platform.claude.com/docs/en/managed-agents/scheduled-deployments",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-secure-deployment",
+   "concept": "cl-managed-agents-deployment-and-security",
+   "label": "Secure your deployment",
+   "desc": "Secure your Managed Agents deployment Source: https://platform.claude.com/docs/en/managed-agents/secure-deployment",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-secure-deployment-monitoring",
+   "concept": "cl-managed-agents-deployment-and-security",
+   "label": "Review and monitor sessions",
+   "desc": "Review and monitor agent sessions Source: https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-secure-deployment-risks",
+   "concept": "cl-managed-agents-deployment-and-security",
+   "label": "Risks and boundaries",
+   "desc": "Security risks and sandbox boundaries Source: https://platform.claude.com/docs/en/managed-agents/secure-deployment-risks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-choosing-an-environment",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Choose an environment",
+   "desc": "Choosing an agent environment Source: https://platform.claude.com/docs/en/managed-agents/choosing-an-environment",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-cloud-sandboxes-reference",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Cloud sandbox reference",
+   "desc": "Cloud sandbox reference (Environments and sandboxes) Source: https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-environments",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Cloud environment setup",
+   "desc": "Cloud environment setup (Environments and sandboxes) Source: https://platform.claude.com/docs/en/managed-agents/environments",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Overview and quickstart",
+   "desc": "Self-hosted sandboxes Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes-custom-tool",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Custom tools and MCP servers",
+   "desc": "Custom tools in self-hosted sandboxes Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes-memory",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Memory stores",
+   "desc": "Memory stores in self-hosted sandboxes Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes-operations",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Monitor and troubleshoot",
+   "desc": "Monitor and troubleshoot self-hosted workers Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes-reference",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Worker reference",
+   "desc": "Self-hosted worker reference Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes-security",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Security model",
+   "desc": "Security model (Environments and sandboxes) Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-self-hosted-sandboxes-workers",
+   "concept": "cl-managed-agents-environments-and-sandboxes",
+   "label": "Deploy workers",
+   "desc": "Deploy self-hosted workers Source: https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-migration",
+   "concept": "cl-managed-agents-get-started",
+   "label": "Migration",
+   "desc": "Migration (Get started) Source: https://platform.claude.com/docs/en/managed-agents/migration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-onboarding",
+   "concept": "cl-managed-agents-get-started",
+   "label": "Build in Console",
+   "desc": "Build in Console (Get started) Source: https://platform.claude.com/docs/en/managed-agents/onboarding",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-overview",
+   "concept": "cl-managed-agents-get-started",
+   "label": "Overview: Claude Managed Agents overview",
+   "desc": "Claude Managed Agents overview Source: https://platform.claude.com/docs/en/managed-agents/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-quickstart",
+   "concept": "cl-managed-agents-get-started",
+   "label": "Quickstart: Get started with Claude Managed Agents",
+   "desc": "Get started with Claude Managed Agents Source: https://platform.claude.com/docs/en/managed-agents/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-reference",
+   "concept": "cl-managed-agents-reference-and-other",
+   "label": "Managed Agents reference",
+   "desc": "Reference Source: https://platform.claude.com/docs/en/managed-agents/reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-webhooks",
+   "concept": "cl-managed-agents-reference-and-other",
+   "label": "Subscribe to webhooks",
+   "desc": "Subscribe to webhooks (Reference and other) Source: https://platform.claude.com/docs/en/managed-agents/webhooks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-workflow-runs",
+   "concept": "cl-managed-agents-reference-and-other",
+   "label": "Workflow runs",
+   "desc": "Workflow runs (Reference and other) Source: https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-event-deltas",
+   "concept": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Event deltas",
+   "desc": "Preview responses with event deltas Source: https://platform.claude.com/docs/en/managed-agents/event-deltas",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-events-and-streaming",
+   "concept": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Session event stream",
+   "desc": "Session event stream (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/events-and-streaming",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-session-observability",
+   "concept": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Inspect and track usage",
+   "desc": "Inspect sessions and track usage Source: https://platform.claude.com/docs/en/managed-agents/session-observability",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-session-operations",
+   "concept": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Session operations",
+   "desc": "Session operations (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/session-operations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-session-threads",
+   "concept": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Session threads",
+   "desc": "Session threads (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/session-threads",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-sessions",
+   "concept": "cl-managed-agents-sessions-events-and-streaming",
+   "label": "Start a session",
+   "desc": "Start a session (Sessions, events and streaming) Source: https://platform.claude.com/docs/en/managed-agents/sessions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-files",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Attach and download files",
+   "desc": "Adding files Source: https://platform.claude.com/docs/en/managed-agents/files",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-github",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Access GitHub",
+   "desc": "Accessing GitHub Source: https://platform.claude.com/docs/en/managed-agents/github",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-mcp-connector",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "MCP connector",
+   "desc": "MCP connector (Tools, files and memory) Source: https://platform.claude.com/docs/en/managed-agents/mcp-connector",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-memory",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Memory stores",
+   "desc": "Using agent memory Source: https://platform.claude.com/docs/en/managed-agents/memory",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-skills",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Agent Skills",
+   "desc": "Skills Source: https://platform.claude.com/docs/en/managed-agents/skills",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-tools",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Tools",
+   "desc": "Tools (Tools, files and memory) Source: https://platform.claude.com/docs/en/managed-agents/tools",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-tools-web-restrictions",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Web tool restrictions",
+   "desc": "Restrict web search and web fetch domains Source: https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  },
+  {
+   "id": "cl-platform-en-managed-agents-vaults",
+   "concept": "cl-managed-agents-tools-files-and-memory",
+   "label": "Authenticate with vaults",
+   "desc": "Authenticate with vaults (Tools, files and memory) Source: https://platform.claude.com/docs/en/managed-agents/vaults",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-managed-agents"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1797",
+   "name": "Claude Managed Agents Specialist",
+   "legacy_key": "ClaudeManagedAgentsSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1798",
+   "name": "Claude Managed Agents Reviewer",
+   "legacy_key": "ClaudeManagedAgentsReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1798",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-managed-agents",
+   "score": 0.2953,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-managed-agents"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-managed-agents"
+ ]
+}

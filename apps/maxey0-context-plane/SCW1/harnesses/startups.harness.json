@@ -635,7 +635,9 @@
    "key": "Maxey979",
    "name": "Growth Analyst Agent",
    "legacy_key": "su-growth-analyst",
-   "mcp": []
+   "mcp": [
+    "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b"
+   ]
   },
   {
    "key": "Maxey980",
@@ -796,7 +798,7 @@
    "agent": "Maxey1590",
    "mcp": "e7952077-b4e6-49f7-8670-ca53f8d50c40",
    "topic": "startups",
-   "score": 0.2415,
+   "score": 0.254,
    "basis": "derived:tfidf-cosine",
    "source_topic": "startups"
   },
@@ -804,7 +806,7 @@
    "agent": "Maxey973",
    "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
    "topic": "startups",
-   "score": 0.1141,
+   "score": 0.1283,
    "basis": "derived:tfidf-cosine",
    "source_topic": "startups"
   },
@@ -812,7 +814,7 @@
    "agent": "Maxey973",
    "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
    "topic": "startups",
-   "score": 0.323,
+   "score": 0.3064,
    "basis": "derived:tfidf-cosine",
    "source_topic": "startups"
   },
@@ -820,7 +822,7 @@
    "agent": "Maxey974",
    "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
    "topic": "startups",
-   "score": 0.1141,
+   "score": 0.1283,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey973",
@@ -832,7 +834,7 @@
    "agent": "Maxey974",
    "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
    "topic": "startups",
-   "score": 0.323,
+   "score": 0.3064,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey973",
@@ -844,7 +846,7 @@
    "agent": "Maxey976",
    "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
    "topic": "startups",
-   "score": 0.3321,
+   "score": 0.3154,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey981",
@@ -856,11 +858,11 @@
    "agent": "Maxey978",
    "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
    "topic": "startups",
-   "score": 0.1141,
+   "score": 0.1018,
    "basis": "inherited:checker-of-primary",
    "via": {
-    "primary": "Maxey973",
-    "skill": "su-okr-planner"
+    "primary": "Maxey979",
+    "skill": "su-funnel-analyst"
    },
    "source_topic": "startups"
   },
@@ -868,7 +870,7 @@
    "agent": "Maxey978",
    "mcp": "e7952077-b4e6-49f7-8670-ca53f8d50c40",
    "topic": "startups",
-   "score": 0.2392,
+   "score": 0.2516,
    "basis": "derived:tfidf-cosine",
    "source_topic": "startups"
   },
@@ -876,7 +878,7 @@
    "agent": "Maxey978",
    "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
    "topic": "startups",
-   "score": 0.323,
+   "score": 0.3064,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey973",
@@ -885,10 +887,18 @@
    "source_topic": "startups"
   },
   {
+   "agent": "Maxey979",
+   "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
+   "topic": "startups",
+   "score": 0.1018,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "startups"
+  },
+  {
    "agent": "Maxey980",
    "mcp": "de127013-63f1-43d0-8dd2-b6cb5b4e5d1b",
    "topic": "startups",
-   "score": 0.1141,
+   "score": 0.1283,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey973",
@@ -900,7 +910,7 @@
    "agent": "Maxey980",
    "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
    "topic": "startups",
-   "score": 0.323,
+   "score": 0.3064,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey973",
@@ -912,7 +922,7 @@
    "agent": "Maxey981",
    "mcp": "fa50c30c-9f62-4f94-b851-217868185db6",
    "topic": "startups",
-   "score": 0.3321,
+   "score": 0.3154,
    "basis": "derived:tfidf-cosine",
    "source_topic": "startups"
   }

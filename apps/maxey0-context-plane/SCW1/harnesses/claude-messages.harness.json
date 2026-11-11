@@ -1,0 +1,2377 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-messages",
+  "label": "Claude API: Messages, Tools and Agent Skills",
+  "desc": "Claude API: Messages, Tools and Agent Skills: Getting started (Claude API), Agent skills (Claude API), Claude models on google cloud, Build with Claude, Mcp tunnels, Tool use, Manage Claude, Strengthen guardrails (Claude API) and Agents and tools."
+ },
+ "concepts": [
+  {
+   "id": "cl-messages-agent-skills",
+   "label": "Agent skills (Claude API)",
+   "desc": "Agent skills (Claude API) (Claude API: Messages, Tools and Agent Skills): 4 documentation pages.",
+   "keywords": [
+    "skills",
+    "agent",
+    "overview",
+    "quickstart",
+    "started",
+    "with"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-api-reference-api-resources-agents",
+    "cl-api-reference-api-resources-overview",
+    "cl-api-reference-api-resources-skills",
+    "cl-apps-extend-skills",
+    "cl-best-practices-agent-skills",
+    "cl-code-agent-sdk-agent-sdk",
+    "cl-code-build-mcp",
+    "cl-code-build-skills",
+    "cl-managed-agents-get-started"
+   ]
+  },
+  {
+   "id": "cl-messages-agents-and-tools",
+   "label": "Agents and tools",
+   "desc": "Agents and tools (Claude API: Messages, Tools and Agent Skills): 2 documentation pages.",
+   "keywords": [
+    "connector",
+    "remote",
+    "servers"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-apps-science-compute-data-and-connectors",
+    "cl-best-practices-agent-skills",
+    "cl-code-agent-sdk-extend-with-tools",
+    "cl-code-build-mcp"
+   ]
+  },
+  {
+   "id": "cl-messages-build-with-claude",
+   "label": "Build with Claude",
+   "desc": "Build with Claude (Claude API: Messages, Tools and Agent Skills): 45 documentation pages.",
+   "keywords": [
+    "thinking",
+    "overview",
+    "fallback",
+    "messages",
+    "mode",
+    "amazon"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-apps-extend-build-for-claude"
+   ]
+  },
+  {
+   "id": "cl-messages-claude-models-on-google-cloud",
+   "label": "Claude models on google cloud",
+   "desc": "Claude models on google cloud (Claude API: Messages, Tools and Agent Skills): 3 documentation pages.",
+   "keywords": [
+    "google",
+    "managed",
+    "overview",
+    "claude",
+    "models",
+    "cloud"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": []
+  },
+  {
+   "id": "cl-messages-getting-started",
+   "label": "Getting started (Claude API)",
+   "desc": "Getting started (Claude API) (Claude API: Messages, Tools and Agent Skills): 4 documentation pages.",
+   "keywords": [
+    "claude",
+    "documentation",
+    "quickstart",
+    "started",
+    "with",
+    "intro"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-apps-science-get-started-and-use",
+    "cl-best-practices-getting-started",
+    "cl-code-start-claude-code-in-the-cloud",
+    "cl-code-start-claude-code-on-desktop",
+    "cl-code-start-getting-started",
+    "cl-code-start-platforms-and-integrations",
+    "cl-code-start-use-claude-code",
+    "cl-managed-agents-get-started"
+   ]
+  },
+  {
+   "id": "cl-messages-manage-claude",
+   "label": "Manage Claude",
+   "desc": "Manage Claude (Claude API: Messages, Tools and Agent Skills): 1 documentation page.",
+   "keywords": [
+    "authentication"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-best-practices-agent-skills",
+    "cl-code-build-mcp"
+   ]
+  },
+  {
+   "id": "cl-messages-mcp-tunnels",
+   "label": "Mcp tunnels",
+   "desc": "Mcp tunnels (Claude API: Messages, Tools and Agent Skills): 9 documentation pages.",
+   "keywords": [
+    "tunnels",
+    "quickstart",
+    "deploy",
+    "with",
+    "reference",
+    "overview"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-api-reference-api-resources-tunnels",
+    "cl-apps-extend-connectors-mcp-tunnels",
+    "cl-code-build-mcp"
+   ]
+  },
+  {
+   "id": "cl-messages-strengthen-guardrails",
+   "label": "Strengthen guardrails (Claude API)",
+   "desc": "Strengthen guardrails (Claude API) (Claude API: Messages, Tools and Agent Skills): 1 documentation page.",
+   "keywords": [
+    "streaming",
+    "refusals"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-best-practices-strengthen-guardrails"
+   ]
+  },
+  {
+   "id": "cl-messages-tool-use",
+   "label": "Tool use",
+   "desc": "Tool use (Claude API: Messages, Tools and Agent Skills): 27 documentation pages.",
+   "keywords": [
+    "tool",
+    "with",
+    "browser",
+    "computer",
+    "tools",
+    "search"
+   ],
+   "topic": "claude-messages",
+   "source": "claude-messages",
+   "source_topic": "claude-messages",
+   "related": [
+    "cl-code-agent-sdk-extend-with-tools",
+    "cl-code-build-mcp"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-agents-and-tools-agent-skills-best-practices",
+   "concept": "cl-messages-agent-skills",
+   "label": "Best practices",
+   "desc": "Skill authoring best practices Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-agent-skills-enterprise",
+   "concept": "cl-messages-agent-skills",
+   "label": "Skills for enterprise",
+   "desc": "Skills for enterprise (Agent skills) Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-agent-skills-overview",
+   "concept": "cl-messages-agent-skills",
+   "label": "Overview: Agent Skills",
+   "desc": "Agent Skills Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-agent-skills-quickstart",
+   "concept": "cl-messages-agent-skills",
+   "label": "Quickstart: Get started with Agent Skills in the API",
+   "desc": "Get started with Agent Skills in the API Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-connector",
+   "concept": "cl-messages-agents-and-tools",
+   "label": "MCP connector",
+   "desc": "MCP connector (Agents and tools) Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-connector",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-remote-mcp-servers",
+   "concept": "cl-messages-agents-and-tools",
+   "label": "Remote MCP servers",
+   "desc": "Remote MCP servers (Agents and tools) Source: https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-batch-processing",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Batch processing",
+   "desc": "Batch processing (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-cache-diagnostics",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Cache diagnostics",
+   "desc": "Cache diagnostics (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-citations",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Citations",
+   "desc": "Citations (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/citations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-in-amazon-bedrock",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Amazon Bedrock (Opus 4.7 and later)",
+   "desc": "Claude in Amazon Bedrock (Opus 4.7 and later) Source: https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-in-microsoft-foundry",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Microsoft Foundry",
+   "desc": "Claude in Microsoft Foundry Source: https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-on-amazon-bedrock-legac",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Amazon Bedrock (Opus 4.6 and earlier)",
+   "desc": "Claude on Amazon Bedrock (Opus 4.6 and earlier) Source: https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-platform-on-aws",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Claude Platform on AWS",
+   "desc": "Claude Platform on AWS (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-compaction",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Compaction",
+   "desc": "Compaction overview Source: https://platform.claude.com/docs/en/build-with-claude/compaction",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-compaction-background",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Compact in the background",
+   "desc": "Compaction in the background Source: https://platform.claude.com/docs/en/build-with-claude/compaction-background",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-compaction-keep-recent-turns",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Keep recent turns",
+   "desc": "Compaction that keeps recent turns Source: https://platform.claude.com/docs/en/build-with-claude/compaction-keep-recent-turns",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-compaction-on-demand",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Compact on demand",
+   "desc": "Compaction on demand Source: https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-compaction-thinking-blocks",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Keep thinking blocks valid",
+   "desc": "Compaction and preserved thinking Source: https://platform.claude.com/docs/en/build-with-claude/compaction-thinking-blocks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-compaction-threshold",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Threshold compaction",
+   "desc": "Compaction at a token threshold Source: https://platform.claude.com/docs/en/build-with-claude/compaction-threshold",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-context-editing",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Context editing",
+   "desc": "Context editing (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/context-editing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-context-windows",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Context windows",
+   "desc": "Context windows (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/context-windows",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-effort",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Effort",
+   "desc": "Effort (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/effort",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-embeddings",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Embeddings",
+   "desc": "Embeddings (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/embeddings",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-extended-thinking",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Extended thinking (legacy)",
+   "desc": "Extended thinking Source: https://platform.claude.com/docs/en/build-with-claude/extended-thinking",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-fallback-credit",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Fallback credit",
+   "desc": "Fallback credit (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/fallback-credit",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-fast-mode",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Fast mode",
+   "desc": "Fast mode (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-files",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Files API",
+   "desc": "Files API (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/files",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-handling-stop-reasons",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Stop reasons and fallback",
+   "desc": "Stop reasons and fallback (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-message-threads",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Message threads",
+   "desc": "Message threads (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/message-threads",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-mid-conversation-effort-exampl",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Build an orchestration mode",
+   "desc": "Build an orchestration mode (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-mid-conversation-system-messag",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Mid-conversation messages",
+   "desc": "Mid-conversation system messages and tool changes Source: https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-multilingual-support",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Multilingual support",
+   "desc": "Multilingual support (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/multilingual-support",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-overview",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Features overview",
+   "desc": "Features overview (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-pdf-support",
+   "concept": "cl-messages-build-with-claude",
+   "label": "PDF support",
+   "desc": "PDF support (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/pdf-support",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-preserved-thinking",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Preserved thinking",
+   "desc": "Preserved thinking (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/preserved-thinking",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-prompt-caching",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Prompt caching",
+   "desc": "Prompt caching (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-refusals-and-fallback",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Refusals and fallback",
+   "desc": "Refusals and fallback (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-search-results",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Search results",
+   "desc": "Search results (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/search-results",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-skills-guide",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Skills in the API",
+   "desc": "Using Agent Skills with the API Source: https://platform.claude.com/docs/en/build-with-claude/skills-guide",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-streaming",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Streaming Messages",
+   "desc": "Streaming messages Source: https://platform.claude.com/docs/en/build-with-claude/streaming",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-structured-outputs",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Structured outputs",
+   "desc": "Structured outputs (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-task-budgets",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Task budgets (beta)",
+   "desc": "Task budgets Source: https://platform.claude.com/docs/en/build-with-claude/task-budgets",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-text-watermark",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Text watermark",
+   "desc": "Text watermark (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/text-watermark",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-thinking",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Overview: Thinking",
+   "desc": "Thinking Source: https://platform.claude.com/docs/en/build-with-claude/thinking",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-thinking-steering-and-cost",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Steering and cost control",
+   "desc": "Steering thinking Source: https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-thinking-tool-workflows",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Tool and multi-turn workflows",
+   "desc": "Thinking in tool and multi-turn workflows Source: https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-thinking-troubleshooting",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Troubleshooting",
+   "desc": "Troubleshooting thinking Source: https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-token-counting",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Token counting",
+   "desc": "Token counting (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/token-counting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-vision",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Overview: Vision",
+   "desc": "Vision Source: https://platform.claude.com/docs/en/build-with-claude/vision",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-vision-coordinates",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Coordinates and bounding boxes",
+   "desc": "Coordinates and bounding boxes (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/vision-coordinates",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-working-with-messages",
+   "concept": "cl-messages-build-with-claude",
+   "label": "Using the Messages API",
+   "desc": "Using the Messages API (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/working-with-messages",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-models-on-google-cloud",
+   "concept": "cl-messages-claude-models-on-google-cloud",
+   "label": "Overview: Claude Models on Google Cloud",
+   "desc": "Claude Models on Google Cloud Source: https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-models-on-google-cloud-x",
+   "concept": "cl-messages-claude-models-on-google-cloud",
+   "label": "Anthropic-managed",
+   "desc": "Claude Models on Google Cloud (Anthropic managed) Source: https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-build-with-claude-claude-models-on-google-cloud-x-x",
+   "concept": "cl-messages-claude-models-on-google-cloud",
+   "label": "Google-managed",
+   "desc": "Claude Models on Google Cloud (Google managed) Source: https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/google-managed",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-get-api-key",
+   "concept": "cl-messages-getting-started",
+   "label": "Get your API key",
+   "desc": "Get your Claude API key Source: https://platform.claude.com/docs/en/get-api-key",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-get-started",
+   "concept": "cl-messages-getting-started",
+   "label": "Quickstart: Get started with Claude",
+   "desc": "Get started with Claude Source: https://platform.claude.com/docs/en/get-started",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-home",
+   "concept": "cl-messages-getting-started",
+   "label": "Documentation",
+   "desc": "Documentation (Getting started) Source: https://platform.claude.com/docs/en/home",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-intro",
+   "concept": "cl-messages-getting-started",
+   "label": "Intro to Claude",
+   "desc": "Intro to Claude (Getting started) Source: https://platform.claude.com/docs/en/intro",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-manage-claude-authentication",
+   "concept": "cl-messages-manage-claude",
+   "label": "Authentication",
+   "desc": "Authentication (Manage Claude) Source: https://platform.claude.com/docs/en/manage-claude/authentication",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-concepts",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Architecture and components",
+   "desc": "Architecture and components (Mcp tunnels) Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/concepts",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-console",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Manage in the Console",
+   "desc": "Manage tunnels in the Claude Console Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/console",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-deploy-compose",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Deploy with Docker Compose",
+   "desc": "Deploy MCP tunnels with Docker Compose Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-deploy-helm",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Deploy with Helm",
+   "desc": "Deploy MCP tunnels with Helm Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-overview",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Overview: MCP tunnels",
+   "desc": "MCP tunnels Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-quickstart",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Quickstart: MCP tunnels quickstart",
+   "desc": "MCP tunnels quickstart Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/quickstart",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-reference",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Reference: MCP tunnels reference",
+   "desc": "MCP tunnels reference Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-security",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Security",
+   "desc": "MCP tunnels security Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-mcp-tunnels-troubleshooting",
+   "concept": "cl-messages-mcp-tunnels",
+   "label": "Troubleshooting",
+   "desc": "Troubleshoot MCP tunnels Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/troubleshooting",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-test-and-evaluate-strengthen-guardrails-handle-s",
+   "concept": "cl-messages-strengthen-guardrails",
+   "label": "Streaming refusals",
+   "desc": "Handle streaming refusals Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-advisor-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Advisor tool",
+   "desc": "Advisor tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-bash-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Bash tool",
+   "desc": "Bash tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-browser-use-sdk",
+   "concept": "cl-messages-tool-use",
+   "label": "Browser and computer use (SDK)",
+   "desc": "Browser and computer use with the SDK toolsets Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-browser-use-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Browser use tool",
+   "desc": "Browser use tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-build-a-tool-using-age",
+   "concept": "cl-messages-tool-use",
+   "label": "Tutorial: Build a tool-using agent",
+   "desc": "Tutorial: Build a tool-using agent (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-code-execution-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Code execution tool",
+   "desc": "Code execution tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-computer-use-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Computer use tool",
+   "desc": "Computer use tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-define-tools",
+   "concept": "cl-messages-tool-use",
+   "label": "Define tools",
+   "desc": "Define tools (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-fine-grained-tool-stre",
+   "concept": "cl-messages-tool-use",
+   "label": "Fine-grained tool streaming",
+   "desc": "Fine-grained tool streaming (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-handle-tool-calls",
+   "concept": "cl-messages-tool-use",
+   "label": "Handle tool calls",
+   "desc": "Handle tool calls (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-how-tool-use-works",
+   "concept": "cl-messages-tool-use",
+   "label": "How tool use works",
+   "desc": "How tool use works (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-manage-tool-context",
+   "concept": "cl-messages-tool-use",
+   "label": "Manage tool context",
+   "desc": "Manage tool context (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-memory-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Memory tool",
+   "desc": "Memory tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-overview",
+   "concept": "cl-messages-tool-use",
+   "label": "Overview: Tool use with Claude",
+   "desc": "Tool use with Claude Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-parallel-tool-use",
+   "concept": "cl-messages-tool-use",
+   "label": "Parallel tool use",
+   "desc": "Parallel tool use (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-programmatic-tool-call",
+   "concept": "cl-messages-tool-use",
+   "label": "Programmatic tool calling",
+   "desc": "Programmatic tool calling (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-server-tools",
+   "concept": "cl-messages-tool-use",
+   "label": "Server tools",
+   "desc": "Server tools (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-strict-tool-use",
+   "concept": "cl-messages-tool-use",
+   "label": "Strict tool use",
+   "desc": "Strict tool use (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-text-editor-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Text editor tool",
+   "desc": "Text editor tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-tool-combinations",
+   "concept": "cl-messages-tool-use",
+   "label": "Tool combinations",
+   "desc": "Tool combinations (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-combinations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-tool-reference",
+   "concept": "cl-messages-tool-use",
+   "label": "Tool reference",
+   "desc": "Tool reference (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-tool-runner",
+   "concept": "cl-messages-tool-use",
+   "label": "Tool runner (SDK)",
+   "desc": "Tool runner (SDK) (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-runner",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-tool-search-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Tool search tool",
+   "desc": "Tool search tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-tool-use-with-prompt-c",
+   "concept": "cl-messages-tool-use",
+   "label": "Tool use with prompt caching",
+   "desc": "Tool use with prompt caching (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-troubleshooting-tool-u",
+   "concept": "cl-messages-tool-use",
+   "label": "Troubleshooting",
+   "desc": "Troubleshooting tool use Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-web-fetch-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Web fetch tool",
+   "desc": "Web fetch tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  },
+  {
+   "id": "cl-platform-en-agents-and-tools-tool-use-web-search-tool",
+   "concept": "cl-messages-tool-use",
+   "label": "Web search tool",
+   "desc": "Web search tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-messages"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1799",
+   "name": "Claude API: Messages, Tools and Agent Skills Specialist",
+   "legacy_key": "ClaudeMessagesSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1800",
+   "name": "Claude API: Messages, Tools and Agent Skills Reviewer",
+   "legacy_key": "ClaudeMessagesReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1800",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-messages",
+   "score": 0.3184,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-messages"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-messages"
+ ]
+}

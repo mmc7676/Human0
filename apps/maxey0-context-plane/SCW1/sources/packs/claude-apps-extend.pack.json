@@ -1,0 +1,1337 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-apps-extend",
+ "topic": {
+  "id": "claude-apps-extend",
+  "label": "Claude Apps: Connectors, Skills and Plugins",
+  "desc": "Extending Claude in claude.ai, desktop and mobile: MCP connectors and the Connectors directory, custom connectors, skills, plugins and building for Claude."
+ },
+ "concepts": [
+  [
+   "cl-apps-extend-welcome",
+   "Welcome",
+   "claude-apps-extend",
+   "Welcome (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "welcome"
+   ]
+  ],
+  [
+   "cl-apps-extend-extend-claude",
+   "Extend Claude",
+   "claude-apps-extend",
+   "Extend Claude (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "connectors",
+    "skills",
+    "plugins"
+   ]
+  ],
+  [
+   "cl-apps-extend-plugins",
+   "Plugins (Claude apps)",
+   "claude-apps-extend",
+   "Plugins (Claude apps) (Claude Apps: Connectors, Skills and Plugins): 11 documentation pages.",
+   [
+    "plugin",
+    "your",
+    "plugins",
+    "organization",
+    "with",
+    "create"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors",
+   "Connectors (Claude apps)",
+   "claude-apps-extend",
+   "Connectors (Claude apps) (Claude Apps: Connectors, Skills and Plugins): 3 documentation pages.",
+   [
+    "connectors",
+    "started",
+    "with",
+    "directory",
+    "connector",
+    "verification"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-custom",
+   "Connectors: custom",
+   "claude-apps-extend",
+   "Connectors: custom (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "connector",
+    "that",
+    "directory"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-google",
+   "Connectors: google",
+   "claude-apps-extend",
+   "Connectors: google (Claude Apps: Connectors, Skills and Plugins): 3 documentation pages.",
+   [
+    "google",
+    "drive",
+    "gmail",
+    "calendar"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-microsoft",
+   "Connectors: microsoft",
+   "claude-apps-extend",
+   "Connectors: microsoft (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "microsoft",
+    "connector"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-github",
+   "Connectors: github",
+   "claude-apps-extend",
+   "Connectors: github (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "github",
+    "integration"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-slack",
+   "Connectors: slack",
+   "claude-apps-extend",
+   "Connectors: slack (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "slack",
+    "integration"
+   ]
+  ],
+  [
+   "cl-apps-extend-skills",
+   "Skills (Claude apps)",
+   "claude-apps-extend",
+   "Skills (Claude apps) (Claude Apps: Connectors, Skills and Plugins): 2 documentation pages.",
+   [
+    "skills",
+    "overview",
+    "create",
+    "custom"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-mcp-tunnels",
+   "Connectors: mcp tunnels",
+   "claude-apps-extend",
+   "Connectors: mcp tunnels (Claude Apps: Connectors, Skills and Plugins): 4 documentation pages.",
+   [
+    "tunnels",
+    "tunnel",
+    "authenticate",
+    "servers",
+    "behind",
+    "troubleshoot"
+   ]
+  ],
+  [
+   "cl-apps-extend-build-for-claude",
+   "Build for Claude",
+   "claude-apps-extend",
+   "Build for Claude (Claude Apps: Connectors, Skills and Plugins): 1 documentation page.",
+   [
+    "build",
+    "claude"
+   ]
+  ],
+  [
+   "cl-apps-extend-connectors-building",
+   "Connectors: building",
+   "claude-apps-extend",
+   "Connectors: building (Claude Apps: Connectors, Skills and Plugins): 22 documentation pages.",
+   [
+    "your",
+    "connectors",
+    "connector",
+    "build",
+    "server",
+    "claude"
+   ]
+  ],
+  [
+   "cl-apps-extend-directory",
+   "Directory",
+   "claude-apps-extend",
+   "Directory (Claude Apps: Connectors, Skills and Plugins): 2 documentation pages.",
+   [
+    "directory",
+    "publish",
+    "track",
+    "your",
+    "submission"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-apps-index",
+   "cl-apps-extend-welcome",
+   "Welcome",
+   "Connect Claude to your tools, teach it how your team works, and put it to work in Slack, on your desktop, in Microsoft 365, or through the Claude API. Source: https://claude.com/docs/index",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-extend-overview",
+   "cl-apps-extend-extend-claude",
+   "Connectors, skills, and plugins",
+   "Choose how to customize Claude: MCP connectors give it access to your tools, skills teach it how you do a task, and plugins package both as one install. Source: https://claude.com/docs/extend/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-overview",
+   "cl-apps-extend-plugins",
+   "Plugins",
+   "Add plugins to Claude: what a plugin adds, where to find and install one, and where it's available across chat, Cowork, and Claude Code. Source: https://claude.com/docs/plugins/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-create-with-claude",
+   "cl-apps-extend-plugins",
+   "Create a plugin with Claude",
+   "Make a plugin for your own workflow from claude.ai or the desktop app without writing files: choose Create with Claude and answer Claude's questions. Source: https://claude.com/docs/plugins/create-with-claude",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-share",
+   "cl-apps-extend-plugins",
+   "Share a plugin with teammates",
+   "Share a plugin you made with specific people in your Team or Enterprise organization, or publish it to your organization's library. Source: https://claude.com/docs/plugins/share",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-admin",
+   "cl-apps-extend-plugins",
+   "Manage plugins for your organization",
+   "Control which plugins members of your Team or Enterprise organization can use in claude.ai and Cowork: see what you have, add your own, and set availability. Source: https://claude.com/docs/plugins/admin",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-org-sync",
+   "cl-apps-extend-plugins",
+   "Sync your organization's plugins from a repository",
+   "Distribute your organization's plugins from a GitHub or GitLab repository through organization settings, including repository requirements and GitLab setup. Source: https://claude.com/docs/plugins/org-sync",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-org-rollout",
+   "cl-apps-extend-plugins",
+   "Roll out a plugin to your whole organization",
+   "Get your organization's plugin to members in claude.ai and Cowork and to developers in Claude Code by using organization settings and managed settings together. Source: https://claude.com/docs/plugins/org-rollout",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-quickstart",
+   "cl-apps-extend-plugins",
+   "Build your first plugin",
+   "Build a plugin with one skill and an optional MCP connector, test it in Claude Code, validate it, and push it to GitHub, ready to submit your own. Source: https://claude.com/docs/plugins/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-build",
+   "cl-apps-extend-plugins",
+   "Plugin structure and testing",
+   "Reference for the plugin folder: what each file is, the manifest fields every app reads, bundling an MCP connector with its skill, and testing on each app. Source: https://claude.com/docs/plugins/build",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-platform-support",
+   "cl-apps-extend-plugins",
+   "Plugin feature support across platforms",
+   "Look up which plugin components and install paths work in claude.ai chat, Cowork, and Claude Code, and why a plugin behaves differently on each. Source: https://claude.com/docs/plugins/platform-support",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-pre-submission-checklist",
+   "cl-apps-extend-plugins",
+   "Plugin pre-submission checklist",
+   "Fix every finding before you submit a plugin to the Claude plugin directory: what the developer portal's validation and scan check, and what each result means. Source: https://claude.com/docs/plugins/pre-submission-checklist",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-plugins-submit",
+   "cl-apps-extend-plugins",
+   "Submit your plugin",
+   "Submit a plugin from a GitHub repository to Anthropic's directory through the developer portal, follow its review, publish it, and release updates. Source: https://claude.com/docs/plugins/submit",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-getting-started",
+   "cl-apps-extend-connectors",
+   "Get started with connectors",
+   "Connect Claude to an app or service from the Connectors directory, turn the connector on in a conversation, and manage or disconnect it later. Source: https://claude.com/docs/connectors/getting-started",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-directory",
+   "cl-apps-extend-connectors",
+   "Connectors directory",
+   "Browse verified and community MCP connectors in the Connectors Directory, one catalog for claude.ai, Claude Desktop, mobile, Claude Code, and Cowork Source: https://claude.com/docs/connectors/directory",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-verification",
+   "cl-apps-extend-connectors",
+   "Connector verification",
+   "How Anthropic reviews connectors in the directory, what the Verified, Community, and Custom labels mean, and how to stay safe with third-party connectors. Source: https://claude.com/docs/connectors/verification",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-custom-add-unlisted",
+   "cl-apps-extend-connectors-custom",
+   "Add a connector that isn't in the directory",
+   "Connect Claude to an MCP server that isn't in the Connectors Directory, by its URL or as a local desktop extension. Source: https://claude.com/docs/connectors/custom/add-unlisted",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-google-drive",
+   "cl-apps-extend-connectors-google",
+   "Google Drive",
+   "Connect the Google Drive connector so Claude can search your Drive, read Docs, Sheets, Slides, and PDFs, and use Drive files in chats and projects. Source: https://claude.com/docs/connectors/google/drive",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-google-gmail",
+   "cl-apps-extend-connectors-google",
+   "Gmail",
+   "Connect the Gmail connector so Claude can search your email and answer questions from your messages, with citations back to each one. Source: https://claude.com/docs/connectors/google/gmail",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-google-calendar",
+   "cl-apps-extend-connectors-google",
+   "Google Calendar",
+   "Connect the Google Calendar connector so Claude can answer questions about your meetings, attendees, and availability. Source: https://claude.com/docs/connectors/google/calendar",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-microsoft-365",
+   "cl-apps-extend-connectors-microsoft",
+   "Microsoft 365 connector",
+   "Connect SharePoint, OneDrive, Outlook, and Teams to Claude so it can search, analyze, and act on your Microsoft 365 information Source: https://claude.com/docs/connectors/microsoft/365",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-github-index",
+   "cl-apps-extend-connectors-github",
+   "GitHub integration",
+   "Add a GitHub repository to a conversation, or files and folders from a repository to a project, so Claude can read your code Source: https://claude.com/docs/connectors/github/index",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-slack-index",
+   "cl-apps-extend-connectors-slack",
+   "Slack integration",
+   "Use Claude directly in your Slack workspace with the Claude in Slack app, and let Claude search Slack with the Slack connector Source: https://claude.com/docs/connectors/slack/index",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-skills-overview",
+   "cl-apps-extend-skills",
+   "Skills overview",
+   "Find, turn on, and use skills: directories of instructions, scripts, and resources that Claude loads to handle specific tasks Source: https://claude.com/docs/skills/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-skills-how-to",
+   "cl-apps-extend-skills",
+   "Create custom skills",
+   "Create a custom skill for Claude: write the SKILL.md file, add resources and scripts, package the skill, and test it. Source: https://claude.com/docs/skills/how-to",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-mcp-tunnels-overview",
+   "cl-apps-extend-connectors-mcp-tunnels",
+   "MCP tunnels",
+   "Connect Claude to MCP servers inside your private network without opening inbound firewall ports or exposing the servers to the internet. Source: https://claude.com/docs/connectors/mcp-tunnels/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-mcp-tunnels-setup",
+   "cl-apps-extend-connectors-mcp-tunnels",
+   "Set up an MCP tunnel",
+   "Create a Tunnels API key, deploy the MCP tunnel stack with Helm or Docker Compose, verify the connection, and add tunneled MCP servers as custom connectors. Source: https://claude.com/docs/connectors/mcp-tunnels/setup",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-mcp-tunnels-oauth",
+   "cl-apps-extend-connectors-mcp-tunnels",
+   "Authenticate to MCP servers behind a tunnel",
+   "Make OAuth sign-in work for MCP servers reached through an MCP tunnel when the authorization server or identity provider is inside your network. Source: https://claude.com/docs/connectors/mcp-tunnels/oauth",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-mcp-tunnels-troubleshooting",
+   "cl-apps-extend-connectors-mcp-tunnels",
+   "Troubleshoot MCP tunnels",
+   "Fix MCP tunnel problems: cloudflared won't connect, tools don't appear, routing and IP validation errors, TLS and certificate failures, and OAuth errors. Source: https://claude.com/docs/connectors/mcp-tunnels/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-build-overview",
+   "cl-apps-extend-build-for-claude",
+   "Build for Claude",
+   "Build a plugin people use inside Claude: an MCP connector to your product, skills for your workflows, optional MCP Apps UI, and a listing in the directory. Source: https://claude.com/docs/build/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-what-to-build",
+   "cl-apps-extend-connectors-building",
+   "Decide what to include in your plugin",
+   "Decide which pieces your Claude plugin needs: an MCP connector backed by a server you host, skills, commands, agents, or UI, and how they're listed together. Source: https://claude.com/docs/connectors/building/what-to-build",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-index",
+   "cl-apps-extend-connectors-building",
+   "Build an MCP server for Claude",
+   "Build a remote MCP server that people use as a connector in Claude: where it runs, authentication, what it exposes, size and timeout limits, and distribution. Source: https://claude.com/docs/connectors/building/index",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-quickstart",
+   "cl-apps-extend-connectors-building",
+   "Build your first MCP server for Claude",
+   "Build a minimal MCP server with one tool in JavaScript, run it on your machine, and connect it to Claude Code so Claude calls your tool. Source: https://claude.com/docs/connectors/building/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-authentication",
+   "cl-apps-extend-connectors-building",
+   "Authentication for connectors",
+   "Meet Claude's OAuth requirements for remote MCP servers: supported authentication types, client registration, discovery, callback URLs, and token refresh. Source: https://claude.com/docs/connectors/building/authentication",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-lazy-authentication",
+   "cl-apps-extend-connectors-building",
+   "Lazy authentication for MCP servers",
+   "Let users call public tools immediately and defer OAuth until a protected tool is actually invoked. Source: https://claude.com/docs/connectors/building/lazy-authentication",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-enterprise-managed-auth",
+   "cl-apps-extend-connectors-building",
+   "Enterprise Managed Auth for connectors",
+   "Accept identity assertions from a customer's identity provider or Claude so users connect to your MCP server without an OAuth consent step. Source: https://claude.com/docs/connectors/building/enterprise-managed-auth",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-testing",
+   "cl-apps-extend-connectors-building",
+   "Test your connector",
+   "Test your MCP server against Claude as a custom connector before you submit it to the directory, including a local server exposed through a tunnel. Source: https://claude.com/docs/connectors/building/testing",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-troubleshooting",
+   "cl-apps-extend-connectors-building",
+   "Troubleshoot your connector",
+   "Diagnose and resolve common connection, authorization, and tool-call failures for custom and directory MCP connectors Source: https://claude.com/docs/connectors/building/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcpb",
+   "cl-apps-extend-connectors-building",
+   "Build a desktop extension with MCPB",
+   "Package a local MCP server as a single-click .mcpb install for Claude Desktop: when to build one, the CLI quickstart, manifest.json, and how users install it. Source: https://claude.com/docs/connectors/building/mcpb",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp",
+   "cl-apps-extend-connectors-building",
+   "Model Context Protocol (MCP)",
+   "Get oriented to the Model Context Protocol, the open standard behind Claude's connectors: local and remote servers, tools, resources, and prompts. Source: https://claude.com/docs/connectors/building/mcp",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-getting-started",
+   "cl-apps-extend-connectors-building",
+   "Get started with MCP Apps",
+   "Try example MCP Apps in Claude Desktop, then use the MCP Apps SDK, examples, and agent skills to add interactive UI to your own MCP server. Source: https://claude.com/docs/connectors/building/mcp-apps/getting-started",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-quickstart",
+   "cl-apps-extend-connectors-building",
+   "Add an interactive UI to your MCP server",
+   "Add an MCP App to the quickstart MCP server: register a ui:// resource with the MCP Apps SDK, link it to a tool, and check that the server advertises the UI. Source: https://claude.com/docs/connectors/building/mcp-apps/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-design-guidelines",
+   "cl-apps-extend-connectors-building",
+   "Design guidelines",
+   "Design MCP Apps that feel native to Claude: display modes, mobile layout, visual style, interaction patterns, and the host's style variables. Source: https://claude.com/docs/connectors/building/mcp-apps/design-guidelines",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-transparent-theming",
+   "cl-apps-extend-connectors-building",
+   "Blend your MCP App with Claude's theme",
+   "Make your MCP App's background transparent and style it with Claude's host style variables so it blends into the conversation in light and dark mode. Source: https://claude.com/docs/connectors/building/mcp-apps/transparent-theming",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-instance-supersession",
+   "cl-apps-extend-connectors-building",
+   "Supersede older widget instances",
+   "Keep only the newest copy of an MCP App widget active when Claude calls its tool more than once in a conversation, using a server key and BroadcastChannel. Source: https://claude.com/docs/connectors/building/mcp-apps/instance-supersession",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-external-links",
+   "cl-apps-extend-connectors-building",
+   "Open external links from MCP Apps",
+   "Declare allowed link destinations so ui/open-link requests from your directory connector's MCP App open without Claude's confirmation modal. Source: https://claude.com/docs/connectors/building/mcp-apps/external-links",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-mcp-apps-troubleshooting",
+   "cl-apps-extend-connectors-building",
+   "Troubleshoot MCP Apps",
+   "Debug MCP Apps in Claude with developer tools on desktop and iOS, and fix invisible apps, large tool results, iOS-only request failures, and ui.domain errors. Source: https://claude.com/docs/connectors/building/mcp-apps/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-directory-vs-custom",
+   "cl-apps-extend-connectors-building",
+   "Directory connectors vs custom connectors",
+   "Compare directory-listed and custom connectors: Anthropic review, in-product discovery, install links, Suggested Connectors, and per-tenant URL listings. Source: https://claude.com/docs/connectors/building/directory-vs-custom",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-review-criteria",
+   "cl-apps-extend-connectors-building",
+   "Connector pre-submission checklist",
+   "Check your MCP connector against what Anthropic reviewers test, including tool design, prompt-injection patterns, and functional quality, before you submit. Source: https://claude.com/docs/connectors/building/review-criteria",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-submission",
+   "cl-apps-extend-connectors-building",
+   "Submit a connector to the directory",
+   "Submit a remote MCP server or MCP App to the Connectors Directory through the developer portal: requirements, screenshot specs, and what each step asks for. Source: https://claude.com/docs/connectors/building/submission",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-after-publishing",
+   "cl-apps-extend-connectors-building",
+   "Manage your listing after publishing",
+   "Update your MCP server, plugin, and directory listing after publication, keep your listing URL stable, and delist when you need to. Source: https://claude.com/docs/connectors/building/after-publishing",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-connectors-building-managing-your-listing",
+   "cl-apps-extend-connectors-building",
+   "Manage your directory listing",
+   "Track submissions, monitor server health and usage metrics, and edit your directory listing Source: https://claude.com/docs/connectors/building/managing-your-listing",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-directory-publish",
+   "cl-apps-extend-directory",
+   "Publish to the directory",
+   "Submit a plugin or MCP connector to Anthropic's directory: the two submission kinds, who can submit, what review involves, and where to start. Source: https://claude.com/docs/directory/publish",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-directory-submission-status",
+   "cl-apps-extend-directory",
+   "Track your directory submission",
+   "Look up the status the developer portal shows for a plugin bundle or MCP connector submission: what it means, who acts next, and who to contact. Source: https://claude.com/docs/directory/submission-status",
+   "procedural",
+   [
+    [
+     "ClaudeAppsExtendSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsExtendReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeAppsExtendSpecialist": "Claude Apps: Connectors, Skills and Plugins Specialist",
+  "ClaudeAppsExtendReviewer": "Claude Apps: Connectors, Skills and Plugins Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

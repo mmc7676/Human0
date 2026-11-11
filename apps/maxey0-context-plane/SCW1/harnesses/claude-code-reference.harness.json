@@ -1,0 +1,345 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-code-reference",
+  "label": "Claude Code Reference",
+  "desc": "Claude Code Reference: CLI, commands and settings, Tools, hooks and channels, Sessions and interaction and Glossary."
+ },
+ "concepts": [
+  {
+   "id": "cl-code-reference-cli-commands-and-settings",
+   "label": "CLI, commands and settings",
+   "desc": "CLI, commands and settings (Claude Code Reference): 3 documentation pages.",
+   "keywords": [
+    "reference",
+    "commands",
+    "environment",
+    "variables"
+   ],
+   "topic": "claude-code-reference",
+   "source": "claude-code-reference",
+   "source_topic": "claude-code-reference",
+   "related": [
+    "cl-code-plugins-reference"
+   ]
+  },
+  {
+   "id": "cl-code-reference-glossary",
+   "label": "Glossary",
+   "desc": "Glossary (Claude Code Reference): 1 documentation page.",
+   "keywords": [
+    "glossary"
+   ],
+   "topic": "claude-code-reference",
+   "source": "claude-code-reference",
+   "source_topic": "claude-code-reference",
+   "related": [
+    "cl-apps-science-reference-and-support",
+    "cl-apps-tag-concepts"
+   ]
+  },
+  {
+   "id": "cl-code-reference-sessions-and-interaction",
+   "label": "Sessions and interaction",
+   "desc": "Sessions and interaction (Claude Code Reference): 2 documentation pages.",
+   "keywords": [
+    "interactive",
+    "mode",
+    "checkpointing"
+   ],
+   "topic": "claude-code-reference",
+   "source": "claude-code-reference",
+   "source_topic": "claude-code-reference",
+   "related": []
+  },
+  {
+   "id": "cl-code-reference-tools-hooks-and-channels",
+   "label": "Tools, hooks and channels",
+   "desc": "Tools, hooks and channels (Claude Code Reference): 3 documentation pages.",
+   "keywords": [
+    "reference",
+    "tools",
+    "hooks",
+    "channels"
+   ],
+   "topic": "claude-code-reference",
+   "source": "claude-code-reference",
+   "source_topic": "claude-code-reference",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-code-en-cli-reference",
+   "concept": "cl-code-reference-cli-commands-and-settings",
+   "label": "CLI reference",
+   "desc": "Complete reference for Claude Code command-line interface, including commands and flags. Source: https://code.claude.com/docs/en/cli-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-commands",
+   "concept": "cl-code-reference-cli-commands-and-settings",
+   "label": "Commands",
+   "desc": "Complete reference for commands available in Claude Code, including built-in commands and bundled skills. Source: https://code.claude.com/docs/en/commands",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-env-vars",
+   "concept": "cl-code-reference-cli-commands-and-settings",
+   "label": "Environment variables",
+   "desc": "Reference for environment variables that control Claude Code behavior. Source: https://code.claude.com/docs/en/env-vars",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-glossary",
+   "concept": "cl-code-reference-glossary",
+   "label": "Glossary",
+   "desc": "Definitions for Claude Code terminology. Learn what agentic loop, compaction, CLAUDE.md, hooks, subagents, MCP, and other core concepts mean. Source: https://code.claude.com/docs/en/glossary",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-checkpointing",
+   "concept": "cl-code-reference-sessions-and-interaction",
+   "label": "Checkpointing",
+   "desc": "Track, rewind, and summarize Claude's edits and conversation to manage session state. Source: https://code.claude.com/docs/en/checkpointing",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-interactive-mode",
+   "concept": "cl-code-reference-sessions-and-interaction",
+   "label": "Interactive mode",
+   "desc": "Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions. Source: https://code.claude.com/docs/en/interactive-mode",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-channels-reference",
+   "concept": "cl-code-reference-tools-hooks-and-channels",
+   "label": "Channels reference",
+   "desc": "Build an MCP server that pushes webhooks, alerts, and chat messages into a Claude Code session. Reference for the channel contract: capability declaration, notification events, reply tools, sender gating, and permission relay. Source: https://code.claude.com/docs/en/channels-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-hooks",
+   "concept": "cl-code-reference-tools-hooks-and-channels",
+   "label": "Hooks reference",
+   "desc": "Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, HTTP hooks, prompt hooks, and MCP tool hooks. Source: https://code.claude.com/docs/en/hooks",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  },
+  {
+   "id": "cl-code-en-tools-reference",
+   "concept": "cl-code-reference-tools-hooks-and-channels",
+   "label": "Tools reference",
+   "desc": "Complete reference for the tools Claude Code can use, including permission requirements and per-tool behavior. Source: https://code.claude.com/docs/en/tools-reference",
+   "type": "reference",
+   "agents": [
+    {
+     "key": "Maxey1793",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1794",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-reference"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1793",
+   "name": "Claude Code Reference Specialist",
+   "legacy_key": "ClaudeCodeReferenceSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1794",
+   "name": "Claude Code Reference Reviewer",
+   "legacy_key": "ClaudeCodeReferenceReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1794",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-code-reference",
+   "score": 0.1454,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-code-reference"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-code-reference"
+ ]
+}

@@ -362,7 +362,7 @@
    "agent": "Maxey1619",
    "mcp": "local:cloudflare-mcp",
    "topic": "deployment-environments",
-   "score": 0.218,
+   "score": 0.2258,
    "basis": "derived:tfidf-cosine",
    "source_topic": "environments"
   },
@@ -370,7 +370,7 @@
    "agent": "Maxey1619",
    "mcp": "local:docker-mcp-gateway",
    "topic": "deployment-environments",
-   "score": 0.2144,
+   "score": 0.19,
    "basis": "derived:tfidf-cosine",
    "source_topic": "environments"
   },
@@ -378,7 +378,7 @@
    "agent": "Maxey1620",
    "mcp": "local:cloudflare-mcp",
    "topic": "deployment-environments",
-   "score": 0.2511,
+   "score": 0.2542,
    "basis": "derived:tfidf-cosine",
    "source_topic": "environments"
   },
@@ -386,7 +386,7 @@
    "agent": "Maxey1620",
    "mcp": "local:docker-mcp-gateway",
    "topic": "deployment-environments",
-   "score": 0.2144,
+   "score": 0.19,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey1619",
@@ -398,7 +398,7 @@
    "agent": "Maxey1620",
    "mcp": "local:github-mcp-server",
    "topic": "deployment-environments",
-   "score": 0.1317,
+   "score": 0.1206,
    "basis": "derived:tfidf-cosine",
    "source_topic": "environments"
   },
@@ -406,7 +406,7 @@
    "agent": "Maxey1622",
    "mcp": "local:github-mcp-server",
    "topic": "deployment-environments",
-   "score": 0.1318,
+   "score": 0.1207,
    "basis": "derived:tfidf-cosine",
    "source_topic": "environments"
   },
@@ -414,7 +414,7 @@
    "agent": "Maxey1623",
    "mcp": "local:docker-mcp-gateway",
    "topic": "deployment-environments",
-   "score": 0.2149,
+   "score": 0.1918,
    "basis": "derived:tfidf-cosine",
    "source_topic": "environments"
   }

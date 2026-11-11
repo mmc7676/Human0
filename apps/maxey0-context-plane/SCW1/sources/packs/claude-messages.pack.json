@@ -1,0 +1,2169 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-messages",
+ "topic": {
+  "id": "claude-messages",
+  "label": "Claude API: Messages, Tools and Agent Skills",
+  "desc": "Building on the Claude Messages API: tool use, server tools, MCP connector and tunnels, Agent Skills, files, batches, prompt caching, streaming, context windows, vision, citations and platform availability (Claude Developer Platform docs)."
+ },
+ "concepts": [
+  [
+   "cl-messages-getting-started",
+   "Getting started (Claude API)",
+   "claude-messages",
+   "Getting started (Claude API) (Claude API: Messages, Tools and Agent Skills): 4 documentation pages.",
+   [
+    "claude",
+    "documentation",
+    "quickstart",
+    "started",
+    "with",
+    "intro"
+   ]
+  ],
+  [
+   "cl-messages-agent-skills",
+   "Agent skills (Claude API)",
+   "claude-messages",
+   "Agent skills (Claude API) (Claude API: Messages, Tools and Agent Skills): 4 documentation pages.",
+   [
+    "skills",
+    "agent",
+    "overview",
+    "quickstart",
+    "started",
+    "with"
+   ]
+  ],
+  [
+   "cl-messages-claude-models-on-google-cloud",
+   "Claude models on google cloud",
+   "claude-messages",
+   "Claude models on google cloud (Claude API: Messages, Tools and Agent Skills): 3 documentation pages.",
+   [
+    "google",
+    "managed",
+    "overview",
+    "claude",
+    "models",
+    "cloud"
+   ]
+  ],
+  [
+   "cl-messages-build-with-claude",
+   "Build with Claude",
+   "claude-messages",
+   "Build with Claude (Claude API: Messages, Tools and Agent Skills): 45 documentation pages.",
+   [
+    "thinking",
+    "overview",
+    "fallback",
+    "messages",
+    "mode",
+    "amazon"
+   ]
+  ],
+  [
+   "cl-messages-mcp-tunnels",
+   "Mcp tunnels",
+   "claude-messages",
+   "Mcp tunnels (Claude API: Messages, Tools and Agent Skills): 9 documentation pages.",
+   [
+    "tunnels",
+    "quickstart",
+    "deploy",
+    "with",
+    "reference",
+    "overview"
+   ]
+  ],
+  [
+   "cl-messages-tool-use",
+   "Tool use",
+   "claude-messages",
+   "Tool use (Claude API: Messages, Tools and Agent Skills): 27 documentation pages.",
+   [
+    "tool",
+    "with",
+    "browser",
+    "computer",
+    "tools",
+    "search"
+   ]
+  ],
+  [
+   "cl-messages-manage-claude",
+   "Manage Claude",
+   "claude-messages",
+   "Manage Claude (Claude API: Messages, Tools and Agent Skills): 1 documentation page.",
+   [
+    "authentication"
+   ]
+  ],
+  [
+   "cl-messages-strengthen-guardrails",
+   "Strengthen guardrails (Claude API)",
+   "claude-messages",
+   "Strengthen guardrails (Claude API) (Claude API: Messages, Tools and Agent Skills): 1 documentation page.",
+   [
+    "streaming",
+    "refusals"
+   ]
+  ],
+  [
+   "cl-messages-agents-and-tools",
+   "Agents and tools",
+   "claude-messages",
+   "Agents and tools (Claude API: Messages, Tools and Agent Skills): 2 documentation pages.",
+   [
+    "connector",
+    "remote",
+    "servers"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-platform-en-home",
+   "cl-messages-getting-started",
+   "Documentation",
+   "Documentation (Getting started) Source: https://platform.claude.com/docs/en/home",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-get-started",
+   "cl-messages-getting-started",
+   "Quickstart: Get started with Claude",
+   "Get started with Claude Source: https://platform.claude.com/docs/en/get-started",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-intro",
+   "cl-messages-getting-started",
+   "Intro to Claude",
+   "Intro to Claude (Getting started) Source: https://platform.claude.com/docs/en/intro",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-get-api-key",
+   "cl-messages-getting-started",
+   "Get your API key",
+   "Get your Claude API key Source: https://platform.claude.com/docs/en/get-api-key",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-agent-skills-overview",
+   "cl-messages-agent-skills",
+   "Overview: Agent Skills",
+   "Agent Skills Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-agent-skills-quickstart",
+   "cl-messages-agent-skills",
+   "Quickstart: Get started with Agent Skills in the API",
+   "Get started with Agent Skills in the API Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-agent-skills-best-practices",
+   "cl-messages-agent-skills",
+   "Best practices",
+   "Skill authoring best practices Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-agent-skills-enterprise",
+   "cl-messages-agent-skills",
+   "Skills for enterprise",
+   "Skills for enterprise (Agent skills) Source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-models-on-google-cloud",
+   "cl-messages-claude-models-on-google-cloud",
+   "Overview: Claude Models on Google Cloud",
+   "Claude Models on Google Cloud Source: https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/overview",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-models-on-google-cloud-x",
+   "cl-messages-claude-models-on-google-cloud",
+   "Anthropic-managed",
+   "Claude Models on Google Cloud (Anthropic managed) Source: https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-models-on-google-cloud-x-x",
+   "cl-messages-claude-models-on-google-cloud",
+   "Google-managed",
+   "Claude Models on Google Cloud (Google managed) Source: https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/google-managed",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-overview",
+   "cl-messages-build-with-claude",
+   "Features overview",
+   "Features overview (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/overview",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-batch-processing",
+   "cl-messages-build-with-claude",
+   "Batch processing",
+   "Batch processing (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-mid-conversation-effort-exampl",
+   "cl-messages-build-with-claude",
+   "Build an orchestration mode",
+   "Build an orchestration mode (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-cache-diagnostics",
+   "cl-messages-build-with-claude",
+   "Cache diagnostics",
+   "Cache diagnostics (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-citations",
+   "cl-messages-build-with-claude",
+   "Citations",
+   "Citations (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/citations",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-in-amazon-bedrock",
+   "cl-messages-build-with-claude",
+   "Amazon Bedrock (Opus 4.7 and later)",
+   "Claude in Amazon Bedrock (Opus 4.7 and later) Source: https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-in-microsoft-foundry",
+   "cl-messages-build-with-claude",
+   "Microsoft Foundry",
+   "Claude in Microsoft Foundry Source: https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-on-amazon-bedrock-legac",
+   "cl-messages-build-with-claude",
+   "Amazon Bedrock (Opus 4.6 and earlier)",
+   "Claude on Amazon Bedrock (Opus 4.6 and earlier) Source: https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-claude-platform-on-aws",
+   "cl-messages-build-with-claude",
+   "Claude Platform on AWS",
+   "Claude Platform on AWS (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-compaction-thinking-blocks",
+   "cl-messages-build-with-claude",
+   "Keep thinking blocks valid",
+   "Compaction and preserved thinking Source: https://platform.claude.com/docs/en/build-with-claude/compaction-thinking-blocks",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-compaction-threshold",
+   "cl-messages-build-with-claude",
+   "Threshold compaction",
+   "Compaction at a token threshold Source: https://platform.claude.com/docs/en/build-with-claude/compaction-threshold",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-compaction-background",
+   "cl-messages-build-with-claude",
+   "Compact in the background",
+   "Compaction in the background Source: https://platform.claude.com/docs/en/build-with-claude/compaction-background",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-compaction-on-demand",
+   "cl-messages-build-with-claude",
+   "Compact on demand",
+   "Compaction on demand Source: https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-compaction",
+   "cl-messages-build-with-claude",
+   "Compaction",
+   "Compaction overview Source: https://platform.claude.com/docs/en/build-with-claude/compaction",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-compaction-keep-recent-turns",
+   "cl-messages-build-with-claude",
+   "Keep recent turns",
+   "Compaction that keeps recent turns Source: https://platform.claude.com/docs/en/build-with-claude/compaction-keep-recent-turns",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-context-editing",
+   "cl-messages-build-with-claude",
+   "Context editing",
+   "Context editing (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/context-editing",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-context-windows",
+   "cl-messages-build-with-claude",
+   "Context windows",
+   "Context windows (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/context-windows",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-vision-coordinates",
+   "cl-messages-build-with-claude",
+   "Coordinates and bounding boxes",
+   "Coordinates and bounding boxes (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/vision-coordinates",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-effort",
+   "cl-messages-build-with-claude",
+   "Effort",
+   "Effort (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/effort",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-embeddings",
+   "cl-messages-build-with-claude",
+   "Embeddings",
+   "Embeddings (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/embeddings",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-extended-thinking",
+   "cl-messages-build-with-claude",
+   "Extended thinking (legacy)",
+   "Extended thinking Source: https://platform.claude.com/docs/en/build-with-claude/extended-thinking",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-fallback-credit",
+   "cl-messages-build-with-claude",
+   "Fallback credit",
+   "Fallback credit (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/fallback-credit",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-fast-mode",
+   "cl-messages-build-with-claude",
+   "Fast mode",
+   "Fast mode (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-files",
+   "cl-messages-build-with-claude",
+   "Files API",
+   "Files API (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/files",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-message-threads",
+   "cl-messages-build-with-claude",
+   "Message threads",
+   "Message threads (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/message-threads",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-mid-conversation-system-messag",
+   "cl-messages-build-with-claude",
+   "Mid-conversation messages",
+   "Mid-conversation system messages and tool changes Source: https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-multilingual-support",
+   "cl-messages-build-with-claude",
+   "Multilingual support",
+   "Multilingual support (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/multilingual-support",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-pdf-support",
+   "cl-messages-build-with-claude",
+   "PDF support",
+   "PDF support (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/pdf-support",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-preserved-thinking",
+   "cl-messages-build-with-claude",
+   "Preserved thinking",
+   "Preserved thinking (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/preserved-thinking",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-prompt-caching",
+   "cl-messages-build-with-claude",
+   "Prompt caching",
+   "Prompt caching (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-refusals-and-fallback",
+   "cl-messages-build-with-claude",
+   "Refusals and fallback",
+   "Refusals and fallback (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-search-results",
+   "cl-messages-build-with-claude",
+   "Search results",
+   "Search results (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/search-results",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-thinking-steering-and-cost",
+   "cl-messages-build-with-claude",
+   "Steering and cost control",
+   "Steering thinking Source: https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-handling-stop-reasons",
+   "cl-messages-build-with-claude",
+   "Stop reasons and fallback",
+   "Stop reasons and fallback (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-streaming",
+   "cl-messages-build-with-claude",
+   "Streaming Messages",
+   "Streaming messages Source: https://platform.claude.com/docs/en/build-with-claude/streaming",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-structured-outputs",
+   "cl-messages-build-with-claude",
+   "Structured outputs",
+   "Structured outputs (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-task-budgets",
+   "cl-messages-build-with-claude",
+   "Task budgets (beta)",
+   "Task budgets Source: https://platform.claude.com/docs/en/build-with-claude/task-budgets",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-text-watermark",
+   "cl-messages-build-with-claude",
+   "Text watermark",
+   "Text watermark (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/text-watermark",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-thinking",
+   "cl-messages-build-with-claude",
+   "Overview: Thinking",
+   "Thinking Source: https://platform.claude.com/docs/en/build-with-claude/thinking",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-thinking-tool-workflows",
+   "cl-messages-build-with-claude",
+   "Tool and multi-turn workflows",
+   "Thinking in tool and multi-turn workflows Source: https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-token-counting",
+   "cl-messages-build-with-claude",
+   "Token counting",
+   "Token counting (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/token-counting",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-thinking-troubleshooting",
+   "cl-messages-build-with-claude",
+   "Troubleshooting",
+   "Troubleshooting thinking Source: https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-skills-guide",
+   "cl-messages-build-with-claude",
+   "Skills in the API",
+   "Using Agent Skills with the API Source: https://platform.claude.com/docs/en/build-with-claude/skills-guide",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-working-with-messages",
+   "cl-messages-build-with-claude",
+   "Using the Messages API",
+   "Using the Messages API (Build with Claude) Source: https://platform.claude.com/docs/en/build-with-claude/working-with-messages",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-build-with-claude-vision",
+   "cl-messages-build-with-claude",
+   "Overview: Vision",
+   "Vision Source: https://platform.claude.com/docs/en/build-with-claude/vision",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-overview",
+   "cl-messages-mcp-tunnels",
+   "Overview: MCP tunnels",
+   "MCP tunnels Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-quickstart",
+   "cl-messages-mcp-tunnels",
+   "Quickstart: MCP tunnels quickstart",
+   "MCP tunnels quickstart Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/quickstart",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-concepts",
+   "cl-messages-mcp-tunnels",
+   "Architecture and components",
+   "Architecture and components (Mcp tunnels) Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/concepts",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-deploy-compose",
+   "cl-messages-mcp-tunnels",
+   "Deploy with Docker Compose",
+   "Deploy MCP tunnels with Docker Compose Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-deploy-helm",
+   "cl-messages-mcp-tunnels",
+   "Deploy with Helm",
+   "Deploy MCP tunnels with Helm Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-console",
+   "cl-messages-mcp-tunnels",
+   "Manage in the Console",
+   "Manage tunnels in the Claude Console Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/console",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-reference",
+   "cl-messages-mcp-tunnels",
+   "Reference: MCP tunnels reference",
+   "MCP tunnels reference Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/reference",
+   "reference",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-security",
+   "cl-messages-mcp-tunnels",
+   "Security",
+   "MCP tunnels security Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-tunnels-troubleshooting",
+   "cl-messages-mcp-tunnels",
+   "Troubleshooting",
+   "Troubleshoot MCP tunnels Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-overview",
+   "cl-messages-tool-use",
+   "Overview: Tool use with Claude",
+   "Tool use with Claude Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-advisor-tool",
+   "cl-messages-tool-use",
+   "Advisor tool",
+   "Advisor tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-bash-tool",
+   "cl-messages-tool-use",
+   "Bash tool",
+   "Bash tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-browser-use-sdk",
+   "cl-messages-tool-use",
+   "Browser and computer use (SDK)",
+   "Browser and computer use with the SDK toolsets Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-browser-use-tool",
+   "cl-messages-tool-use",
+   "Browser use tool",
+   "Browser use tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-code-execution-tool",
+   "cl-messages-tool-use",
+   "Code execution tool",
+   "Code execution tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-computer-use-tool",
+   "cl-messages-tool-use",
+   "Computer use tool",
+   "Computer use tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-define-tools",
+   "cl-messages-tool-use",
+   "Define tools",
+   "Define tools (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-fine-grained-tool-stre",
+   "cl-messages-tool-use",
+   "Fine-grained tool streaming",
+   "Fine-grained tool streaming (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-handle-tool-calls",
+   "cl-messages-tool-use",
+   "Handle tool calls",
+   "Handle tool calls (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-how-tool-use-works",
+   "cl-messages-tool-use",
+   "How tool use works",
+   "How tool use works (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-manage-tool-context",
+   "cl-messages-tool-use",
+   "Manage tool context",
+   "Manage tool context (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-memory-tool",
+   "cl-messages-tool-use",
+   "Memory tool",
+   "Memory tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-parallel-tool-use",
+   "cl-messages-tool-use",
+   "Parallel tool use",
+   "Parallel tool use (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-programmatic-tool-call",
+   "cl-messages-tool-use",
+   "Programmatic tool calling",
+   "Programmatic tool calling (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-server-tools",
+   "cl-messages-tool-use",
+   "Server tools",
+   "Server tools (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-strict-tool-use",
+   "cl-messages-tool-use",
+   "Strict tool use",
+   "Strict tool use (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-text-editor-tool",
+   "cl-messages-tool-use",
+   "Text editor tool",
+   "Text editor tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-tool-combinations",
+   "cl-messages-tool-use",
+   "Tool combinations",
+   "Tool combinations (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-combinations",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-tool-reference",
+   "cl-messages-tool-use",
+   "Tool reference",
+   "Tool reference (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference",
+   "reference",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-tool-runner",
+   "cl-messages-tool-use",
+   "Tool runner (SDK)",
+   "Tool runner (SDK) (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-runner",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-tool-search-tool",
+   "cl-messages-tool-use",
+   "Tool search tool",
+   "Tool search tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-tool-use-with-prompt-c",
+   "cl-messages-tool-use",
+   "Tool use with prompt caching",
+   "Tool use with prompt caching (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-troubleshooting-tool-u",
+   "cl-messages-tool-use",
+   "Troubleshooting",
+   "Troubleshooting tool use Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-build-a-tool-using-age",
+   "cl-messages-tool-use",
+   "Tutorial: Build a tool-using agent",
+   "Tutorial: Build a tool-using agent (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-web-fetch-tool",
+   "cl-messages-tool-use",
+   "Web fetch tool",
+   "Web fetch tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-tool-use-web-search-tool",
+   "cl-messages-tool-use",
+   "Web search tool",
+   "Web search tool (Tool use) Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-manage-claude-authentication",
+   "cl-messages-manage-claude",
+   "Authentication",
+   "Authentication (Manage Claude) Source: https://platform.claude.com/docs/en/manage-claude/authentication",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-test-and-evaluate-strengthen-guardrails-handle-s",
+   "cl-messages-strengthen-guardrails",
+   "Streaming refusals",
+   "Handle streaming refusals Source: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-mcp-connector",
+   "cl-messages-agents-and-tools",
+   "MCP connector",
+   "MCP connector (Agents and tools) Source: https://platform.claude.com/docs/en/agents-and-tools/mcp-connector",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-platform-en-agents-and-tools-remote-mcp-servers",
+   "cl-messages-agents-and-tools",
+   "Remote MCP servers",
+   "Remote MCP servers (Agents and tools) Source: https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers",
+   "procedural",
+   [
+    [
+     "ClaudeMessagesSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeMessagesReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeMessagesSpecialist": "Claude API: Messages, Tools and Agent Skills Specialist",
+  "ClaudeMessagesReviewer": "Claude API: Messages, Tools and Agent Skills Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

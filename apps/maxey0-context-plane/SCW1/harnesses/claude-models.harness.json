@@ -1,0 +1,1466 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-models",
+  "label": "Claude Models and Pricing",
+  "desc": "Claude Models and Pricing: Claude Fable and Mythos, Claude Haiku, Claude Opus, Claude Sonnet and Pricing, choosing and deprecations."
+ },
+ "concepts": [
+  {
+   "id": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Fable and Mythos",
+   "desc": "Claude Fable and Mythos (Claude Models and Pricing): 8 documentation pages.",
+   "keywords": [
+    "claude",
+    "fable",
+    "mythos",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models",
+   "source": "claude-models",
+   "source_topic": "claude-models",
+   "related": []
+  },
+  {
+   "id": "cl-models-claude-haiku",
+   "label": "Claude Haiku",
+   "desc": "Claude Haiku (Claude Models and Pricing): 4 documentation pages.",
+   "keywords": [
+    "claude",
+    "haiku",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models",
+   "source": "claude-models",
+   "source_topic": "claude-models",
+   "related": []
+  },
+  {
+   "id": "cl-models-claude-opus",
+   "label": "Claude Opus",
+   "desc": "Claude Opus (Claude Models and Pricing): 8 documentation pages.",
+   "keywords": [
+    "claude",
+    "opus",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models",
+   "source": "claude-models",
+   "source_topic": "claude-models",
+   "related": []
+  },
+  {
+   "id": "cl-models-claude-sonnet",
+   "label": "Claude Sonnet",
+   "desc": "Claude Sonnet (Claude Models and Pricing): 6 documentation pages.",
+   "keywords": [
+    "claude",
+    "sonnet",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models",
+   "source": "claude-models",
+   "source_topic": "claude-models",
+   "related": []
+  },
+  {
+   "id": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Pricing, choosing and deprecations",
+   "desc": "Pricing, choosing and deprecations (Claude Models and Pricing): 33 documentation pages.",
+   "keywords": [
+    "claude",
+    "opus",
+    "sonnet",
+    "model",
+    "haiku",
+    "fable"
+   ],
+   "topic": "claude-models",
+   "source": "claude-models",
+   "source_topic": "claude-models",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-platform-en-models-fable-5-1-overview",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Fable 5.1",
+   "desc": "Claude Fable 5.1 (Claude Fable and Mythos) Source: https://platform.claude.com/docs/en/models/fable-5-1/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-fable-5-2-migration-guide",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Migration guide",
+   "desc": "Claude Fable 5.2 and Claude Mythos 5.2 migration guide Source: https://platform.claude.com/docs/en/models/fable-5-2/migration-guide",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-fable-5-2-overview",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Fable 5.2",
+   "desc": "Claude Fable 5.2 (Claude Fable and Mythos) Source: https://platform.claude.com/docs/en/models/fable-5-2/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-fable-5-2-whats-new-fable-5-2",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "What's new",
+   "desc": "What's new in Claude Fable 5.2 Source: https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-fable-5-overview",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Fable 5",
+   "desc": "Claude Fable 5 (Claude Fable and Mythos) Source: https://platform.claude.com/docs/en/models/fable-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-mythos-5-1-overview",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Mythos 5.1",
+   "desc": "Claude Mythos 5.1 (Claude Fable and Mythos) Source: https://platform.claude.com/docs/en/models/mythos-5-1/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-mythos-5-2-overview",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Mythos 5.2",
+   "desc": "Claude Mythos 5.2 (Claude Fable and Mythos) Source: https://platform.claude.com/docs/en/models/mythos-5-2/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-mythos-5-overview",
+   "concept": "cl-models-claude-fable-and-mythos",
+   "label": "Claude Mythos 5",
+   "desc": "Claude Mythos 5 (Claude Fable and Mythos) Source: https://platform.claude.com/docs/en/models/mythos-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-haiku-4-5-overview",
+   "concept": "cl-models-claude-haiku",
+   "label": "Claude Haiku 4.5",
+   "desc": "Claude Haiku 4.5 (Claude Haiku) Source: https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-haiku-5-5-migration-guide",
+   "concept": "cl-models-claude-haiku",
+   "label": "Migration guide",
+   "desc": "Claude Haiku 5.5 migration guide Source: https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-haiku-5-5-overview",
+   "concept": "cl-models-claude-haiku",
+   "label": "Claude Haiku 5.5",
+   "desc": "Claude Haiku 5.5 (Claude Haiku) Source: https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-haiku-5-5-whats-new-haiku-5-5",
+   "concept": "cl-models-claude-haiku",
+   "label": "What's new",
+   "desc": "What's new in Claude Haiku 5.5 Source: https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-4-5-overview",
+   "concept": "cl-models-claude-opus",
+   "label": "Claude Opus 4.5",
+   "desc": "Claude Opus 4.5 (Claude Opus) Source: https://platform.claude.com/docs/en/models/opus-4-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-4-6-overview",
+   "concept": "cl-models-claude-opus",
+   "label": "Claude Opus 4.6",
+   "desc": "Claude Opus 4.6 (Claude Opus) Source: https://platform.claude.com/docs/en/models/opus-4-6/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-4-7-overview",
+   "concept": "cl-models-claude-opus",
+   "label": "Claude Opus 4.7",
+   "desc": "Claude Opus 4.7 (Claude Opus) Source: https://platform.claude.com/docs/en/models/opus-4-7/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-4-8-overview",
+   "concept": "cl-models-claude-opus",
+   "label": "Claude Opus 4.8",
+   "desc": "Claude Opus 4.8 (Claude Opus) Source: https://platform.claude.com/docs/en/models/opus-4-8/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-5-5-migration-guide",
+   "concept": "cl-models-claude-opus",
+   "label": "Migration guide",
+   "desc": "Claude Opus 5.5 migration guide Source: https://platform.claude.com/docs/en/models/opus-5-5/migration-guide",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-5-5-overview",
+   "concept": "cl-models-claude-opus",
+   "label": "Claude Opus 5.5",
+   "desc": "Claude Opus 5.5 (Claude Opus) Source: https://platform.claude.com/docs/en/models/opus-5-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-5-5-whats-new-opus-5-5",
+   "concept": "cl-models-claude-opus",
+   "label": "What's new",
+   "desc": "What's new in Claude Opus 5.5 Source: https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-opus-5-overview",
+   "concept": "cl-models-claude-opus",
+   "label": "Claude Opus 5",
+   "desc": "Claude Opus 5 (Claude Opus) Source: https://platform.claude.com/docs/en/models/opus-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-sonnet-4-5-overview",
+   "concept": "cl-models-claude-sonnet",
+   "label": "Claude Sonnet 4.5",
+   "desc": "Claude Sonnet 4.5 (Claude Sonnet) Source: https://platform.claude.com/docs/en/models/sonnet-4-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-sonnet-4-6-overview",
+   "concept": "cl-models-claude-sonnet",
+   "label": "Claude Sonnet 4.6",
+   "desc": "Claude Sonnet 4.6 (Claude Sonnet) Source: https://platform.claude.com/docs/en/models/sonnet-4-6/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-sonnet-5-5-migration-guide",
+   "concept": "cl-models-claude-sonnet",
+   "label": "Migration guide",
+   "desc": "Claude Sonnet 5.5 migration guide Source: https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-sonnet-5-5-overview",
+   "concept": "cl-models-claude-sonnet",
+   "label": "Claude Sonnet 5.5",
+   "desc": "Claude Sonnet 5.5 (Claude Sonnet) Source: https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-sonnet-5-5-whats-new-sonnet-5-5",
+   "concept": "cl-models-claude-sonnet",
+   "label": "What's new",
+   "desc": "What's new in Claude Sonnet 5.5 Source: https://platform.claude.com/docs/en/models/sonnet-5-5/whats-new-sonnet-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-sonnet-5-overview",
+   "concept": "cl-models-claude-sonnet",
+   "label": "Claude Sonnet 5",
+   "desc": "Claude Sonnet 5 (Claude Sonnet) Source: https://platform.claude.com/docs/en/models/sonnet-5/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-api-credits-for-subscribers",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "API credits for subscribers",
+   "desc": "API credits for Max, Ultra, and Team plans Source: https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-model-deprecations",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Model deprecations",
+   "desc": "Model deprecations (Pricing, choosing and deprecations) Source: https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-models-choosing-a-model",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Choosing a model",
+   "desc": "Choosing the right model Source: https://platform.claude.com/docs/en/about-claude/models/choosing-a-model",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-models-migration-guide",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Upgrade between model versions",
+   "desc": "Migration guides Source: https://platform.claude.com/docs/en/about-claude/models/migration-guide",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-models-model-ids-and-versions",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Model IDs and versioning",
+   "desc": "Model IDs and versioning (Pricing, choosing and deprecations) Source: https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-models-optimizing-for-cost-and-inte",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Optimizing for cost and intelligence",
+   "desc": "Optimizing for cost and intelligence (Pricing, choosing and deprecations) Source: https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-about-claude-pricing",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Pricing",
+   "desc": "Pricing (Pricing, choosing and deprecations) Source: https://platform.claude.com/docs/en/about-claude/pricing",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-models-overview",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Models overview",
+   "desc": "Models overview (Pricing, choosing and deprecations) Source: https://platform.claude.com/docs/en/models/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-fable-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Fable 5",
+   "desc": "Claude Fable 5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-fable-5-1",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Fable 5.1",
+   "desc": "Claude Fable 5.1 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5-1",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-fable-5-2",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Fable 5.2",
+   "desc": "Claude Fable 5.2 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5-2",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-haiku-3",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Haiku 3",
+   "desc": "Claude Haiku 3 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-3",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-haiku-3-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Haiku 3.5",
+   "desc": "Claude Haiku 3.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-3-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-haiku-4-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Haiku 4.5",
+   "desc": "Claude Haiku 4.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-4-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-haiku-5-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Haiku 5.5",
+   "desc": "Claude Haiku 5.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-3",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 3",
+   "desc": "Claude Opus 3 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-3",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-4",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 4",
+   "desc": "Claude Opus 4 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-4-1",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 4.1",
+   "desc": "Claude Opus 4.1 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-1",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-4-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 4.5",
+   "desc": "Claude Opus 4.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-4-6",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 4.6",
+   "desc": "Claude Opus 4.6 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-6",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-4-7",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 4.7",
+   "desc": "Claude Opus 4.7 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-7",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-4-8",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 4.8",
+   "desc": "Claude Opus 4.8 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-8",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 5",
+   "desc": "Claude Opus 5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-opus-5-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Opus 5.5",
+   "desc": "Claude Opus 5.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-3-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 3.5",
+   "desc": "Claude Sonnet 3.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-3-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-3-7",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 3.7",
+   "desc": "Claude Sonnet 3.7 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-3-7",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-4",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 4",
+   "desc": "Claude Sonnet 4 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-4-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 4.5",
+   "desc": "Claude Sonnet 4.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-4-6",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 4.6",
+   "desc": "Claude Sonnet 4.6 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4-6",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 5",
+   "desc": "Claude Sonnet 5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-claude-sonnet-5-5",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Claude Sonnet 5.5",
+   "desc": "Claude Sonnet 5.5 system prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5-5",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-release-notes-system-prompts-overview",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Overview: System prompts",
+   "desc": "System prompts Source: https://platform.claude.com/docs/en/release-notes/system-prompts/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  },
+  {
+   "id": "cl-platform-en-resources-overview",
+   "concept": "cl-models-pricing-choosing-and-deprecati",
+   "label": "Model cards",
+   "desc": "Model cards (Pricing, choosing and deprecations) Source: https://platform.claude.com/docs/en/resources/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1801",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1802",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1801",
+   "name": "Claude Models and Pricing Specialist",
+   "legacy_key": "ClaudeModelsSpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1802",
+   "name": "Claude Models and Pricing Reviewer",
+   "legacy_key": "ClaudeModelsReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1802",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-models",
+   "score": 0.1937,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-models"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-models"
+ ]
+}

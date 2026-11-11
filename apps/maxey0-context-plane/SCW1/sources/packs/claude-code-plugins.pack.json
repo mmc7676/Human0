@@ -1,0 +1,818 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-plugins",
+ "topic": {
+  "id": "claude-code-plugins",
+  "label": "Claude Code Plugins and Marketplaces",
+  "desc": "Using, creating, testing and distributing Claude Code plugins and mods, running a marketplace and managing plugins for an organization."
+ },
+ "concepts": [
+  [
+   "cl-code-plugins-plugins",
+   "Plugins (Claude Code plugins)",
+   "claude-code-plugins",
+   "Plugins (Claude Code plugins) (Claude Code Plugins and Marketplaces): 1 documentation page.",
+   [
+    "plugins",
+    "overview"
+   ]
+  ],
+  [
+   "cl-code-plugins-use-plugins",
+   "Use plugins",
+   "claude-code-plugins",
+   "Use plugins (Claude Code Plugins and Marketplaces): 4 documentation pages.",
+   [
+    "plugins",
+    "install",
+    "manage",
+    "anthropic",
+    "marketplaces",
+    "code"
+   ]
+  ],
+  [
+   "cl-code-plugins-create-plugins",
+   "Create plugins",
+   "claude-code-plugins",
+   "Create plugins (Claude Code Plugins and Marketplaces): 7 documentation pages.",
+   [
+    "plugin",
+    "your",
+    "create",
+    "claude",
+    "code",
+    "components"
+   ]
+  ],
+  [
+   "cl-code-plugins-mods",
+   "Mods",
+   "claude-code-plugins",
+   "Mods (Claude Code Plugins and Marketplaces): 3 documentation pages.",
+   [
+    "mods",
+    "overview",
+    "create",
+    "reference"
+   ]
+  ],
+  [
+   "cl-code-plugins-build",
+   "Build",
+   "claude-code-plugins",
+   "Build (Claude Code Plugins and Marketplaces): 4 documentation pages.",
+   [
+    "interface",
+    "with",
+    "mods",
+    "draw",
+    "gallery",
+    "react"
+   ]
+  ],
+  [
+   "cl-code-plugins-test-and-troubleshoot",
+   "Test and troubleshoot",
+   "claude-code-plugins",
+   "Test and troubleshoot (Claude Code Plugins and Marketplaces): 2 documentation pages.",
+   [
+    "test",
+    "troubleshoot"
+   ]
+  ],
+  [
+   "cl-code-plugins-run-a-marketplace",
+   "Run a marketplace",
+   "claude-code-plugins",
+   "Run a marketplace (Claude Code Plugins and Marketplaces): 3 documentation pages.",
+   [
+    "marketplace",
+    "create",
+    "host",
+    "maintain",
+    "recommend",
+    "plugins"
+   ]
+  ],
+  [
+   "cl-code-plugins-manage-plugins-for-your-organi",
+   "Manage plugins for your organization",
+   "claude-code-plugins",
+   "Manage plugins for your organization (Claude Code Plugins and Marketplaces): 2 documentation pages.",
+   [
+    "manage",
+    "your",
+    "organization",
+    "claude",
+    "code",
+    "plugins"
+   ]
+  ],
+  [
+   "cl-code-plugins-troubleshooting",
+   "Troubleshooting (Claude Code plugins)",
+   "claude-code-plugins",
+   "Troubleshooting (Claude Code plugins) (Claude Code Plugins and Marketplaces): 2 documentation pages.",
+   [
+    "troubleshoot",
+    "plugins",
+    "plugin",
+    "loading",
+    "reference"
+   ]
+  ],
+  [
+   "cl-code-plugins-reference",
+   "Reference (Claude Code plugins)",
+   "claude-code-plugins",
+   "Reference (Claude Code plugins) (Claude Code Plugins and Marketplaces): 3 documentation pages.",
+   [
+    "reference",
+    "plugin",
+    "manifest",
+    "marketplace",
+    "commands"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-code-en-plugins-overview",
+   "cl-code-plugins-plugins",
+   "Plugins overview",
+   "Understand what a Claude Code plugin is, when you need one instead of a standalone skill or MCP server, and which page to read to install or create one. Source: https://code.claude.com/docs/en/plugins/overview",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-install",
+   "cl-code-plugins-use-plugins",
+   "Install and manage plugins",
+   "Install Claude Code plugins from a marketplace on any surface you use, choose an install scope, and update or remove them later. Source: https://code.claude.com/docs/en/plugins/install",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-anthropic-marketplaces",
+   "cl-code-plugins-use-plugins",
+   "Anthropic's marketplaces",
+   "Anthropic's official and community plugin marketplaces for Claude Code: their names, repositories, how you add each, and where to browse their plugins. Source: https://code.claude.com/docs/en/plugins/anthropic-marketplaces",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-code-intelligence",
+   "cl-code-plugins-use-plugins",
+   "Code intelligence plugins",
+   "Install a language server plugin so Claude sees type errors after edits and navigates code by symbol, and answer the LSP plugin recommendation dialog. Source: https://code.claude.com/docs/en/plugins/code-intelligence",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-security",
+   "cl-code-plugins-use-plugins",
+   "Plugin security and trust",
+   "Decide whether to trust a plugin before you install it, from what a plugin can do on your machine to how to review one and remove it. Source: https://code.claude.com/docs/en/plugins/security",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-create",
+   "cl-code-plugins-create-plugins",
+   "Create a Claude Code plugin",
+   "Build your first Claude Code plugin from an empty directory, test it without a marketplace, and convert an existing .claude/ setup. Source: https://code.claude.com/docs/en/plugins/create",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-components",
+   "cl-code-plugins-create-plugins",
+   "Add components to a plugin",
+   "Add skills, hooks, MCP servers, and every other component type to a Claude Code plugin, with an example that validates for each. Source: https://code.claude.com/docs/en/plugins/components",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-dependencies",
+   "cl-code-plugins-create-plugins",
+   "Plugin dependencies",
+   "Declare the plugins your plugin depends on, with version ranges such as ^1.2, and see how Claude Code installs, resolves, and prunes them. Source: https://code.claude.com/docs/en/plugins/dependencies",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugin-evals",
+   "cl-code-plugins-create-plugins",
+   "Test plugins with evals",
+   "Write eval cases for your Claude Code plugin, run them with claude plugin eval, grade the results, compare against a no-plugin baseline, and gate CI on the score. Source: https://code.claude.com/docs/en/plugin-evals",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-publish",
+   "cl-code-plugins-create-plugins",
+   "Publish and distribute a plugin",
+   "Publish a Claude Code plugin through your own marketplace or Anthropic's directory, with a pre-release checklist and how users get updates. Source: https://code.claude.com/docs/en/plugins/publish",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-measure",
+   "cl-code-plugins-create-plugins",
+   "Measure plugin cost and usage",
+   "Measure a Claude Code plugin's token cost, find out whether people still use it, and pick the telemetry events for organization-wide plugin questions. Source: https://code.claude.com/docs/en/plugins/measure",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-cli-hints",
+   "cl-code-plugins-create-plugins",
+   "Recommend your plugin from your CLI",
+   "Prompt Claude Code users to install your official-marketplace plugin by emitting a claude-code-hint tag from your CLI or SDK. Source: https://code.claude.com/docs/en/plugins/cli-hints",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-overview",
+   "cl-code-plugins-mods",
+   "Mods overview",
+   "Add panes, commands, and tool call rules to Claude Code with a mod. See what a mod can do, how to make or install one, and where mods run. Source: https://code.claude.com/docs/en/plugins/mods/overview",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-create",
+   "cl-code-plugins-mods",
+   "Create a mod",
+   "Have Claude write a Claude Code mod from a description, or write one yourself that counts tool calls and adds a command. Learn the reload and validate loop. Source: https://code.claude.com/docs/en/plugins/mods/create",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-reference",
+   "cl-code-plugins-mods",
+   "Mods reference",
+   "Complete reference for Claude Code mods: hooks module layout, events, mods API methods, render sites, elements by surface, limits, and settings. Source: https://code.claude.com/docs/en/plugins/mods/reference",
+   "reference",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-interface",
+   "cl-code-plugins-build",
+   "Draw in the interface with a mod",
+   "Draw panes, a band above the prompt, buttons, and text fields from a Claude Code mod, handle presses and input, and keep state between redraws and sessions. Source: https://code.claude.com/docs/en/plugins/mods/interface",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-gallery",
+   "cl-code-plugins-build",
+   "Interface gallery for mods",
+   "See the interface elements a Claude Code mod can draw, such as text, buttons, fields, Markdown, code, and diffs, with sample code and terminal screenshots. Source: https://code.claude.com/docs/en/plugins/mods/gallery",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-events",
+   "cl-code-plugins-build",
+   "React to events with a mod",
+   "Handle Claude Code events from a mod: observe, rewrite, or answer tool calls, prompts, and turns, filter which events a hook handles, and plan for other mods. Source: https://code.claude.com/docs/en/plugins/mods/events",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-api",
+   "cl-code-plugins-build",
+   "Use the mods API",
+   "Call the mods API from a Claude Code mod to add commands and tools, call a model, run work on a timer, message other sessions, and reach files and the network. Source: https://code.claude.com/docs/en/plugins/mods/api",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-test",
+   "cl-code-plugins-test-and-troubleshoot",
+   "Test a mod",
+   "Write automated tests for a Claude Code mod that fire events, stub Claude Code's answers, and press buttons, with no session, sign-in, or network. Source: https://code.claude.com/docs/en/plugins/mods/test",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-troubleshoot",
+   "cl-code-plugins-test-and-troubleshoot",
+   "Troubleshoot a mod",
+   "Find out why a Claude Code mod does nothing: match the symptom or message to its cause, look up refusal messages, and read the debug log. Source: https://code.claude.com/docs/en/plugins/mods/troubleshoot",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-create-marketplace",
+   "cl-code-plugins-run-a-marketplace",
+   "Create a marketplace",
+   "Build a plugin marketplace from a marketplace.json file and test it locally before you host it. Source: https://code.claude.com/docs/en/plugins/create-marketplace",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-host-marketplace",
+   "cl-code-plugins-run-a-marketplace",
+   "Host and maintain a marketplace",
+   "Publish a plugin marketplace where users can reach it, grant access to a private one, and release updates and renames without breaking installs. Source: https://code.claude.com/docs/en/plugins/host-marketplace",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-relevance",
+   "cl-code-plugins-run-a-marketplace",
+   "Recommend plugins for your org",
+   "Add a relevance block to marketplace plugin entries so Claude Code suggests them when a user's work matches, and allowlist the marketplace in managed settings. Source: https://code.claude.com/docs/en/plugins/relevance",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-org",
+   "cl-code-plugins-manage-plugins-for-your-organi",
+   "Manage Claude Code plugins for your organization",
+   "Control which plugins Claude Code installs and allows across your organization through managed settings. Source: https://code.claude.com/docs/en/plugins/org",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-mods-admin",
+   "cl-code-plugins-manage-plugins-for-your-organi",
+   "Manage mods for your organization",
+   "Control Claude Code mods with managed settings: stop user-installed mods, allow only your own, review what a mod can do, and enforce policy with your own mod. Source: https://code.claude.com/docs/en/plugins/mods/admin",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-troubleshooting",
+   "cl-code-plugins-troubleshooting",
+   "Troubleshoot plugins",
+   "Fix plugin errors in Claude Code. Find the exact message you saw, grouped by stage from where /plugin runs through install and org policy. Source: https://code.claude.com/docs/en/plugins/troubleshooting",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-loading",
+   "cl-code-plugins-troubleshooting",
+   "Plugin loading reference",
+   "Trace where Claude Code loads each plugin from, which settings file decides whether it loads, and why an update changed nothing. Source: https://code.claude.com/docs/en/plugins/loading",
+   "procedural",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-manifest-reference",
+   "cl-code-plugins-reference",
+   "Plugin manifest reference",
+   "Complete reference for plugin.json: every field with its type and default, accepted path forms, and the userConfig and environment variable schemas. Source: https://code.claude.com/docs/en/plugins/manifest-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-marketplace-reference",
+   "cl-code-plugins-reference",
+   "Marketplace reference",
+   "Complete reference for marketplace.json fields, plugin entries, and the plugin and marketplace source objects, with where each is valid. Source: https://code.claude.com/docs/en/plugins/marketplace-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-code-en-plugins-cli-reference",
+   "cl-code-plugins-reference",
+   "Plugin commands reference",
+   "Reference for the claude plugin shell commands, /plugin and /reload-plugins in a session, and the flags that load a plugin for one session. Source: https://code.claude.com/docs/en/plugins/cli-reference",
+   "reference",
+   [
+    [
+     "ClaudeCodePluginsSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeCodePluginsReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeCodePluginsSpecialist": "Claude Code Plugins and Marketplaces Specialist",
+  "ClaudeCodePluginsReviewer": "Claude Code Plugins and Marketplaces Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

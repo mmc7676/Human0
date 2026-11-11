@@ -1,0 +1,1105 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-apps-government",
+ "topic": {
+  "id": "claude-apps-government",
+  "label": "Claude for Government",
+  "desc": "Claude for government tenants: tenant administration, organizations, credits and compliance."
+ },
+ "concepts": [
+  [
+   "cl-apps-governmen-overview",
+   "Overview (Claude for Government)",
+   "claude-apps-government",
+   "Overview (Claude for Government) (Claude for Government): 4 documentation pages.",
+   [
+    "claude",
+    "government",
+    "administrator",
+    "guide",
+    "moving",
+    "from"
+   ]
+  ],
+  [
+   "cl-apps-governmen-tenant-admin",
+   "Tenant admin",
+   "claude-apps-government",
+   "Tenant admin (Claude for Government): 10 documentation pages.",
+   [
+    "tenant",
+    "administration",
+    "setup",
+    "wizard",
+    "readiness",
+    "organizations"
+   ]
+  ],
+  [
+   "cl-apps-governmen-org-admin",
+   "Org admin",
+   "claude-apps-government",
+   "Org admin (Claude for Government): 11 documentation pages.",
+   [
+    "organization",
+    "administration",
+    "setup",
+    "wizard",
+    "readiness",
+    "users"
+   ]
+  ],
+  [
+   "cl-apps-governmen-config",
+   "Config",
+   "claude-apps-government",
+   "Config (Claude for Government): 3 documentation pages.",
+   [
+    "config",
+    "works",
+    "available",
+    "settings",
+    "manage",
+    "plugins"
+   ]
+  ],
+  [
+   "cl-apps-governmen-connectors",
+   "Connectors (Claude for Government)",
+   "claude-apps-government",
+   "Connectors (Claude for Government) (Claude for Government): 2 documentation pages.",
+   [
+    "connectors",
+    "microsoft",
+    "connector"
+   ]
+  ],
+  [
+   "cl-apps-governmen-security",
+   "Security",
+   "claude-apps-government",
+   "Security (Claude for Government): 1 documentation page.",
+   [
+    "security",
+    "data",
+    "handling"
+   ]
+  ],
+  [
+   "cl-apps-governmen-deploy-desktop",
+   "Deploy desktop",
+   "claude-apps-government",
+   "Deploy desktop (Claude for Government): 2 documentation pages.",
+   [
+    "claude",
+    "connect",
+    "desktop",
+    "government",
+    "windows",
+    "fleet"
+   ]
+  ],
+  [
+   "cl-apps-governmen-deploy-microsoft-365",
+   "Deploy microsoft 365",
+   "claude-apps-government",
+   "Deploy microsoft 365 (Claude for Government): 1 documentation page.",
+   [
+    "claude",
+    "deploy",
+    "microsoft",
+    "government"
+   ]
+  ],
+  [
+   "cl-apps-governmen-desktop",
+   "Desktop",
+   "claude-apps-government",
+   "Desktop (Claude for Government): 5 documentation pages.",
+   [
+    "claude",
+    "desktop",
+    "video",
+    "walkthroughs",
+    "import",
+    "your"
+   ]
+  ],
+  [
+   "cl-apps-governmen-deploy-claude-code",
+   "Deploy claude code",
+   "claude-apps-government",
+   "Deploy claude code (Claude for Government): 1 documentation page.",
+   [
+    "claude",
+    "connect",
+    "code",
+    "government"
+   ]
+  ],
+  [
+   "cl-apps-governmen-account",
+   "Account",
+   "claude-apps-government",
+   "Account (Claude for Government): 4 documentation pages.",
+   [
+    "account",
+    "your",
+    "usage",
+    "sessions"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cl-apps-government-overview",
+   "cl-apps-governmen-overview",
+   "Claude for Government administrator guide",
+   "Set up and manage Claude for Government for your agency: how tenants, organizations, users, seats, and credits fit together. Source: https://claude.com/docs/government/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-moving-from-web",
+   "cl-apps-governmen-overview",
+   "Moving from Claude for Government Web",
+   "Find answers to the questions agencies ask most often when moving from Claude for Government Web to Claude Desktop. Source: https://claude.com/docs/government/moving-from-web",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-video-walkthroughs",
+   "cl-apps-governmen-overview",
+   "Video walkthroughs for administrators",
+   "Watch short narrated walkthroughs of setting up and running Claude for Government for your agency. Source: https://claude.com/docs/government/video-walkthroughs",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-changelog",
+   "cl-apps-governmen-overview",
+   "Claude for Government changelog",
+   "Release notes for Claude for Government Source: https://claude.com/docs/government/changelog",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-overview",
+   "cl-apps-governmen-tenant-admin",
+   "Tenant administration",
+   "Manage the settings that apply across your whole agency: organizations, identity and sign-in, and how seats are distributed and spend caps are set. Source: https://claude.com/docs/government/tenant-admin/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-setup-wizard",
+   "cl-apps-governmen-tenant-admin",
+   "Tenant setup wizard",
+   "Walk through the guided setup that takes a brand new tenant from first sign-in to ready for users. Source: https://claude.com/docs/government/tenant-admin/setup-wizard",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-readiness",
+   "cl-apps-governmen-tenant-admin",
+   "Readiness",
+   "Use this page to see everything that is blocking your organizations from using Claude, and to find the one place where each blocker is resolved. Source: https://claude.com/docs/government/tenant-admin/readiness",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-organizations",
+   "cl-apps-governmen-tenant-admin",
+   "Organizations",
+   "Use this page to see every organization in your tenant, open any organization's admin view, and create new organizations. Source: https://claude.com/docs/government/tenant-admin/organizations",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-identity-and-access",
+   "cl-apps-governmen-tenant-admin",
+   "Identity and access",
+   "Connect single sign-on, manage SCIM provisioning, and write the routing rules that place users into organizations. Source: https://claude.com/docs/government/tenant-admin/identity-and-access",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-tenant-restrictions",
+   "cl-apps-governmen-tenant-admin",
+   "Tenant restrictions",
+   "Restrict which Claude for Government tenants can be reached from your agency's network by having your network proxy inject an allowlist header. Source: https://claude.com/docs/government/tenant-admin/tenant-restrictions",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-seats",
+   "cl-apps-governmen-tenant-admin",
+   "Seats",
+   "Use this page to divide each billing account's seat pool among the organizations that account funds. Source: https://claude.com/docs/government/tenant-admin/seats",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-credits",
+   "cl-apps-governmen-tenant-admin",
+   "Billing",
+   "Use this page to see each billing account's balance and to set per-organization spend caps. Source: https://claude.com/docs/government/tenant-admin/credits",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-configuration",
+   "cl-apps-governmen-tenant-admin",
+   "Config at the tenant level",
+   "Set tenant-wide defaults for product behavior, lock settings so organizations can't change them, and preview how a change affects each organization. Source: https://claude.com/docs/government/tenant-admin/configuration",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-tenant-admin-admins",
+   "cl-apps-governmen-tenant-admin",
+   "Admins",
+   "Use this page to view, add, and remove the people who can use the tenant admin portal. Source: https://claude.com/docs/government/tenant-admin/admins",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-overview",
+   "cl-apps-governmen-org-admin",
+   "Organization administration",
+   "Manage the people, seats, and settings for a single organization within your agency. Source: https://claude.com/docs/government/org-admin/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-setup-wizard",
+   "cl-apps-governmen-org-admin",
+   "Setup wizard",
+   "Walk through the steps that get your organization ready for users after a tenant administrator creates it. Source: https://claude.com/docs/government/org-admin/setup-wizard",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-readiness",
+   "cl-apps-governmen-org-admin",
+   "Readiness",
+   "Use this page to see everything that is stopping people in your organization from using Claude, and where each blocker is resolved. Source: https://claude.com/docs/government/org-admin/readiness",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-users",
+   "cl-apps-governmen-org-admin",
+   "Users",
+   "Use this page to find a user, change their role or seat tier, check how close they are to their usage limits, and reset those limits when needed. Source: https://claude.com/docs/government/org-admin/users",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-seats",
+   "cl-apps-governmen-org-admin",
+   "Seats",
+   "Use this page to check your organization's seat counts at a glance before assigning or reclaiming seats on the Users page. Source: https://claude.com/docs/government/org-admin/seats",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-seat-tiers",
+   "cl-apps-governmen-org-admin",
+   "Seat tiers",
+   "Use this page to see the models and spend limits attached to each tier and, when permitted, to create and edit self-managed tiers. Source: https://claude.com/docs/government/org-admin/seat-tiers",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-provisioning",
+   "cl-apps-governmen-org-admin",
+   "Group mappings",
+   "Use this page to map the groups pushed from your identity provider to seat tiers and roles in this organization. Source: https://claude.com/docs/government/org-admin/provisioning",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-analytics",
+   "cl-apps-governmen-org-admin",
+   "Analytics",
+   "Use this page to review requests, tokens, spend, top users, and credit balance over time across your organization, and to download the data as CSV files for offline reporting. Source: https://claude.com/docs/government/org-admin/analytics",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-compliance-api",
+   "cl-apps-governmen-org-admin",
+   "Compliance API",
+   "Stream your organization's audit events into a SIEM or log management system. Source: https://claude.com/docs/government/org-admin/compliance-api",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-billing",
+   "cl-apps-governmen-org-admin",
+   "Billing",
+   "Use this page to see the balance your organization spends from and any spend caps set on it, and to adjust your organization's seat allocation. Source: https://claude.com/docs/government/org-admin/billing",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-org-admin-configuration",
+   "cl-apps-governmen-org-admin",
+   "Config at the organization level",
+   "View and change the product settings that apply to everyone in your organization, and see where each effective value comes from. Source: https://claude.com/docs/government/org-admin/configuration",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-config-overview",
+   "cl-apps-governmen-config",
+   "How Config works",
+   "Understand how product settings in Claude for Government are resolved across the tenant, directory groups, and organizations, and how to find, change, compare, and lock them. Source: https://claude.com/docs/government/config/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-config-settings",
+   "cl-apps-governmen-config",
+   "Available settings",
+   "Config page settings in Claude for Government, such as session timeouts, network and folder access, tool approvals, connectors, plugins, telemetry, and updates. Source: https://claude.com/docs/government/config/settings",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-config-plugins-and-connectors",
+   "cl-apps-governmen-config",
+   "Manage plugins and connectors",
+   "Choose between plugins and connectors in Claude for Government, prepare plugin archives for upload, decide how plugins install for members, update and remove plugins, and understand how connector tool policies apply to members. Source: https://claude.com/docs/government/config/plugins-and-connectors",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-connectors-overview",
+   "cl-apps-governmen-connectors",
+   "Connectors",
+   "Add Model Context Protocol servers for your own systems, choose which Claude products receive each one, and set which of their tools are available to members. Source: https://claude.com/docs/government/connectors/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-connectors-microsoft-365",
+   "cl-apps-governmen-connectors",
+   "Set up the Microsoft 365 connector",
+   "Register an application in your Microsoft Entra tenant so that Claude Desktop can read your agency's Outlook, OneDrive, SharePoint, and Teams content on each member's behalf. Source: https://claude.com/docs/government/connectors/microsoft-365",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-security-security-and-data-handling",
+   "cl-apps-governmen-security",
+   "Security and data handling",
+   "Answers for agency security review: sandbox isolation, network egress and required domains, approvals, connector credentials, telemetry, and where data is stored. Source: https://claude.com/docs/government/security/security-and-data-handling",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-deploy-desktop-configure",
+   "cl-apps-governmen-deploy-desktop",
+   "Connect Claude Desktop to Claude for Government",
+   "Choose between single-machine setup and fleet deployment, understand the administrator requirements for each, and connect Claude Desktop to Claude for Government. Source: https://claude.com/docs/government/deploy-desktop/configure",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-deploy-desktop-windows-checklist",
+   "cl-apps-governmen-deploy-desktop",
+   "Windows fleet checklist",
+   "Device, installer, virtualization, policy, network, and account prerequisites to confirm before deploying Claude Desktop across a Windows fleet for Claude for Government. Source: https://claude.com/docs/government/deploy-desktop/windows-checklist",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-deploy-microsoft-365-configure",
+   "cl-apps-governmen-deploy-microsoft-365",
+   "Deploy Claude for Microsoft 365 in Claude for Government",
+   "Download the Claude for Microsoft 365 manifest from your Claude for Government host and deploy the add-in to users from the Microsoft 365 admin center. Source: https://claude.com/docs/government/deploy-microsoft-365/configure",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-desktop-video-walkthroughs",
+   "cl-apps-governmen-desktop",
+   "Video walkthroughs for Claude Desktop",
+   "Watch short narrated walkthroughs of signing in to Claude Desktop with Claude for Government, bringing your work over, and finding your way around the app. Source: https://claude.com/docs/government/desktop/video-walkthroughs",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-desktop-import",
+   "cl-apps-governmen-desktop",
+   "Import your data from Claude for Government Web",
+   "Copy your conversations, projects, and files from Claude for Government Web into Claude Desktop. Source: https://claude.com/docs/government/desktop/import",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-desktop-plugins",
+   "cl-apps-governmen-desktop",
+   "Plugins in Claude Desktop",
+   "Find, install, create, and remove plugins in Claude Desktop for Claude for Government, and understand what plugins add in this deployment. Source: https://claude.com/docs/government/desktop/plugins",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-desktop-skills",
+   "cl-apps-governmen-desktop",
+   "Skills in Claude Desktop",
+   "What skills are in Claude for Government, where they come from, how to create and manage your own, and how administrators distribute skills to members. Source: https://claude.com/docs/government/desktop/skills",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-desktop-models",
+   "cl-apps-governmen-desktop",
+   "Models in Claude Desktop",
+   "Switch models in Claude Desktop on Claude for Government, see what the 1M context window does, and find what controls which models you see. Source: https://claude.com/docs/government/desktop/models",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-deploy-claude-code-configure",
+   "cl-apps-governmen-deploy-claude-code",
+   "Connect Claude Code to Claude for Government",
+   "Deploy the managed settings that send the Claude Code command-line tool to Claude for Government sign-in, limit what it contacts before a user signs in, and verify the result on macOS, Windows, and Linux. Source: https://claude.com/docs/government/deploy-claude-code/configure",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-account-overview",
+   "cl-apps-governmen-account",
+   "Your account",
+   "Check your own account details, usage limits, and active sessions. Source: https://claude.com/docs/government/account/overview",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-account-profile",
+   "cl-apps-governmen-account",
+   "Account",
+   "Use this page to confirm that you are signed in as the right person and to see what access you have been given. Source: https://claude.com/docs/government/account/profile",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-account-usage",
+   "cl-apps-governmen-account",
+   "Usage",
+   "Use this page to see how much of your Claude allowance you have used and when it refreshes. Source: https://claude.com/docs/government/account/usage",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cl-apps-government-account-sessions",
+   "cl-apps-governmen-account",
+   "Sessions",
+   "Use this page to see every place you are currently signed in to Claude for Government and to sign out of any of them remotely. Source: https://claude.com/docs/government/account/sessions",
+   "procedural",
+   [
+    [
+     "ClaudeAppsGovernmentSpecialist",
+     "primary"
+    ],
+    [
+     "ClaudeAppsGovernmentReviewer",
+     "checker"
+    ],
+    [
+     "ClaudeDocsResearcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "ClaudeAppsGovernmentSpecialist": "Claude for Government Specialist",
+  "ClaudeAppsGovernmentReviewer": "Claude for Government Reviewer",
+  "ClaudeDocsResearcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Developer Platform docs",
+   null,
+   "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   [],
+   "web-listed",
+   "https://platform.claude.com/docs/llms.txt"
+  ]
+ ],
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-11",
+  "notes": "Domain Claude, built from Anthropic's public documentation indexes (llms.txt) fetched on 2026-11-11: concepts are documentation sections or URL groups, skills are documentation pages (API Reference: one skill per API resource). Agents are role holders per topic, to be refined. MCP: the official Claude docs MCP server listed in platform.claude.com/docs/llms.txt; its tool names are not listed there, so none are given."
+ }
+}

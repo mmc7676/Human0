@@ -303,6 +303,11 @@
     "id": "humanities-arts",
     "label": "Humanities and Arts",
     "desc": "Humanities and the arts: philosophy, history, classics, religion, archaeology, art history, studio art, design, music, dance, theater, film and media."
+   },
+   {
+    "id": "claude",
+    "label": "Claude",
+    "desc": "Anthropic's Claude: the Claude Developer Platform (Messages API, tools, Agent Skills, Managed Agents, administration, models, SDKs and API reference), Claude Code (use, agents, MCP, skills, plugins, configuration, administration, Agent SDK) and the Claude apps (connectors, skills, plugins, Claude Tag, Microsoft 365 and Cowork, Claude Science, government, third-party platforms). Built from Anthropic's documentation indexes."
    }
   ],
   "topics": [
@@ -1914,7 +1919,28 @@
     ]
    }
   ],
-  "pack_domains": {},
+  "pack_domains": {
+   "claude-best-practices": "claude",
+   "claude-apps-tag": "claude",
+   "claude-code-agent-sdk": "claude",
+   "claude-apps-extend": "claude",
+   "claude-apps-third-party": "claude",
+   "claude-admin": "claude",
+   "claude-code-plugins": "claude",
+   "claude-api-reference": "claude",
+   "claude-apps-government": "claude",
+   "claude-models": "claude",
+   "claude-code-config": "claude",
+   "claude-apps-science": "claude",
+   "claude-apps-office": "claude",
+   "claude-code-start": "claude",
+   "claude-messages": "claude",
+   "claude-code-reference": "claude",
+   "claude-managed-agents": "claude",
+   "claude-code-build": "claude",
+   "claude-code-admin": "claude",
+   "claude-sdks": "claude"
+  },
   "pack_domains_rule": "A topic pack added after the regroup keeps its own topic; list it here as topic_id -> domain_id. The build fails for any unplaced topic."
  }
 }

@@ -525,7 +525,8 @@
    "legacy_key": "pr-security-reviewer",
    "mcp": [
     "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
-    "5f441d92-3d5d-42e9-8387-cd20bb3218e6"
+    "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
+    "a133f422-ff03-478f-a208-ddc460db8826"
    ]
   },
   {
@@ -534,7 +535,8 @@
    "legacy_key": "pr-skeptic",
    "mcp": [
     "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
-    "5f441d92-3d5d-42e9-8387-cd20bb3218e6"
+    "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
+    "a133f422-ff03-478f-a208-ddc460db8826"
    ]
   },
   {
@@ -555,7 +557,8 @@
    "legacy_key": "pr-conformance-tester",
    "mcp": [
     "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
-    "5f441d92-3d5d-42e9-8387-cd20bb3218e6"
+    "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
+    "a133f422-ff03-478f-a208-ddc460db8826"
    ]
   },
   {
@@ -666,7 +669,7 @@
    "agent": "Maxey926",
    "mcp": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1531,
+   "score": 0.1391,
    "basis": "derived:tfidf-cosine",
    "source_topic": "protocol"
   },
@@ -674,7 +677,7 @@
    "agent": "Maxey926",
    "mcp": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1335,
+   "score": 0.1242,
    "basis": "derived:tfidf-cosine",
    "source_topic": "protocol"
   },
@@ -682,7 +685,7 @@
    "agent": "Maxey927",
    "mcp": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1732,
+   "score": 0.1579,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey932",
@@ -694,7 +697,7 @@
    "agent": "Maxey927",
    "mcp": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1429,
+   "score": 0.1336,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey932",
@@ -703,10 +706,18 @@
    "source_topic": "protocol"
   },
   {
+   "agent": "Maxey927",
+   "mcp": "a133f422-ff03-478f-a208-ddc460db8826",
+   "topic": "apis-protocols-and-mcp-contracts",
+   "score": 0.1007,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "protocol"
+  },
+  {
    "agent": "Maxey928",
    "mcp": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1531,
+   "score": 0.1391,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey926",
@@ -718,7 +729,7 @@
    "agent": "Maxey928",
    "mcp": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1335,
+   "score": 0.1242,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey926",
@@ -727,10 +738,22 @@
    "source_topic": "protocol"
   },
   {
+   "agent": "Maxey928",
+   "mcp": "a133f422-ff03-478f-a208-ddc460db8826",
+   "topic": "apis-protocols-and-mcp-contracts",
+   "score": 0.1007,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey927",
+    "skill": "pr-oauth-flow-designer"
+   },
+   "source_topic": "protocol"
+  },
+  {
    "agent": "Maxey931",
    "mcp": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1531,
+   "score": 0.1391,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey926",
@@ -742,11 +765,23 @@
    "agent": "Maxey931",
    "mcp": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1335,
+   "score": 0.1242,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey926",
     "skill": "pr-json-schema-author"
+   },
+   "source_topic": "protocol"
+  },
+  {
+   "agent": "Maxey931",
+   "mcp": "a133f422-ff03-478f-a208-ddc460db8826",
+   "topic": "apis-protocols-and-mcp-contracts",
+   "score": 0.1007,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey927",
+    "skill": "pr-secret-handling-checker"
    },
    "source_topic": "protocol"
   },
@@ -754,7 +789,7 @@
    "agent": "Maxey932",
    "mcp": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1732,
+   "score": 0.1579,
    "basis": "derived:tfidf-cosine",
    "source_topic": "protocol"
   },
@@ -762,7 +797,7 @@
    "agent": "Maxey932",
    "mcp": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1429,
+   "score": 0.1336,
    "basis": "derived:tfidf-cosine",
    "source_topic": "protocol"
   },
@@ -770,7 +805,7 @@
    "agent": "Maxey933",
    "mcp": "3a931cc2-bfb7-463f-a2a5-dea7d1254d1e",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1531,
+   "score": 0.1391,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey926",
@@ -782,7 +817,7 @@
    "agent": "Maxey933",
    "mcp": "5f441d92-3d5d-42e9-8387-cd20bb3218e6",
    "topic": "apis-protocols-and-mcp-contracts",
-   "score": 0.1335,
+   "score": 0.1242,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey926",

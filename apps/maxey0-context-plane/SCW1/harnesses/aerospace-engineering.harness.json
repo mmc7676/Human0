@@ -530,7 +530,9 @@
    "key": "Maxey982",
    "name": "Aerodynamics Analyst",
    "legacy_key": "aero-aerodynamicist",
-   "mcp": []
+   "mcp": [
+    "local:mavlinkmcp"
+   ]
   },
   {
    "key": "Maxey983",
@@ -544,9 +546,7 @@
    "key": "Maxey984",
    "name": "Aerospace Literature Reviewer",
    "legacy_key": "aero-literature",
-   "mcp": [
-    "local:mavlinkmcp"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey985",
@@ -564,17 +564,13 @@
    "key": "Maxey987",
    "name": "Aerospace Structures Analyst",
    "legacy_key": "aero-structures",
-   "mcp": [
-    "local:mavlinkmcp"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey988",
    "name": "Spacecraft Systems Engineer",
    "legacy_key": "aero-systems",
-   "mcp": [
-    "local:mavlinkmcp"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey989",
@@ -698,42 +694,22 @@
  ],
  "agent_mcp": [
   {
+   "agent": "Maxey982",
+   "mcp": "local:mavlinkmcp",
+   "topic": "aerospace-engineering",
+   "score": 0.4407,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey989",
+    "skill": "aero-autopilot-design"
+   },
+   "source_topic": "aeronautics-and-astronautics"
+  },
+  {
    "agent": "Maxey983",
    "mcp": "local:mavlinkmcp",
    "topic": "aerospace-engineering",
-   "score": 0.4333,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "aeronautics-and-astronautics"
-  },
-  {
-   "agent": "Maxey984",
-   "mcp": "local:mavlinkmcp",
-   "topic": "aerospace-engineering",
-   "score": 0.43,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey988",
-    "skill": "aero-mission-review"
-   },
-   "source_topic": "aeronautics-and-astronautics"
-  },
-  {
-   "agent": "Maxey987",
-   "mcp": "local:mavlinkmcp",
-   "topic": "aerospace-engineering",
-   "score": 0.43,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey988",
-    "skill": "aero-power-budget"
-   },
-   "source_topic": "aeronautics-and-astronautics"
-  },
-  {
-   "agent": "Maxey988",
-   "mcp": "local:mavlinkmcp",
-   "topic": "aerospace-engineering",
-   "score": 0.43,
+   "score": 0.442,
    "basis": "derived:tfidf-cosine",
    "source_topic": "aeronautics-and-astronautics"
   },
@@ -741,12 +717,8 @@
    "agent": "Maxey989",
    "mcp": "local:mavlinkmcp",
    "topic": "aerospace-engineering",
-   "score": 0.4333,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey983",
-    "skill": "aero-drone-mission"
-   },
+   "score": 0.4407,
+   "basis": "derived:tfidf-cosine",
    "source_topic": "aeronautics-and-astronautics"
   }
  ],

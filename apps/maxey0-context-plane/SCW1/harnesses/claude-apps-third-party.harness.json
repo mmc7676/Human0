@@ -1,0 +1,1084 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-apps-third-party",
+  "label": "Claude Apps on Third-Party Platforms",
+  "desc": "Claude Apps on Third-Party Platforms: Install and administer, Inference providers and models, Configuration, Connectors and extensions and Using Claude Desktop and operations."
+ },
+ "concepts": [
+  {
+   "id": "cl-apps-third-par-configuration",
+   "label": "Configuration",
+   "desc": "Configuration (Claude Apps on Third-Party Platforms): 3 documentation pages.",
+   "keywords": [
+    "configuration",
+    "implementation",
+    "reference",
+    "changelog"
+   ],
+   "topic": "claude-apps-third-party",
+   "source": "claude-apps-third-party",
+   "source_topic": "claude-apps-third-party",
+   "related": []
+  },
+  {
+   "id": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Connectors and extensions",
+   "desc": "Connectors and extensions (Claude Apps on Third-Party Platforms): 11 documentation pages.",
+   "keywords": [
+    "connect",
+    "built",
+    "plugins",
+    "skills",
+    "hooks",
+    "sign"
+   ],
+   "topic": "claude-apps-third-party",
+   "source": "claude-apps-third-party",
+   "source_topic": "claude-apps-third-party",
+   "related": [
+    "cl-apps-extend-build-for-claude",
+    "cl-apps-extend-connectors",
+    "cl-apps-extend-connectors-building",
+    "cl-apps-extend-connectors-custom",
+    "cl-apps-extend-connectors-github",
+    "cl-apps-extend-connectors-microsoft",
+    "cl-apps-extend-connectors-slack",
+    "cl-apps-extend-extend-claude",
+    "cl-apps-extend-plugins",
+    "cl-apps-extend-skills"
+   ]
+  },
+  {
+   "id": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Inference providers and models",
+   "desc": "Inference providers and models (Claude Apps on Third-Party Platforms): 7 documentation pages.",
+   "keywords": [
+    "claude",
+    "deploy",
+    "desktop",
+    "with",
+    "amazon",
+    "bedrock"
+   ],
+   "topic": "claude-apps-third-party",
+   "source": "claude-apps-third-party",
+   "source_topic": "claude-apps-third-party",
+   "related": []
+  },
+  {
+   "id": "cl-apps-third-par-install-and-administer",
+   "label": "Install and administer",
+   "desc": "Install and administer (Claude Apps on Third-Party Platforms): 11 documentation pages.",
+   "keywords": [
+    "deploy",
+    "with",
+    "claude",
+    "enterprise",
+    "from",
+    "overview"
+   ],
+   "topic": "claude-apps-third-party",
+   "source": "claude-apps-third-party",
+   "source_topic": "claude-apps-third-party",
+   "related": []
+  },
+  {
+   "id": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Using Claude Desktop and operations",
+   "desc": "Using Claude Desktop and operations (Claude Apps on Third-Party Platforms): 9 documentation pages.",
+   "keywords": [
+    "claude",
+    "desktop",
+    "unified",
+    "chat",
+    "code",
+    "remote"
+   ],
+   "topic": "claude-apps-third-party",
+   "source": "claude-apps-third-party",
+   "source_topic": "claude-apps-third-party",
+   "related": [
+    "cl-code-start-claude-code-on-desktop"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cl-apps-third-party-claude-desktop-configuration",
+   "concept": "cl-apps-third-par-configuration",
+   "label": "Configuration reference",
+   "desc": "Every managed-configuration key Claude Desktop on 3P supports, what it controls, and recommended security profiles Source: https://claude.com/docs/third-party/claude-desktop/configuration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-configuration-changelog",
+   "concept": "cl-apps-third-par-configuration",
+   "label": "Configuration changelog",
+   "desc": "Managed configuration keys by the Claude Desktop release they first shipped in Source: https://claude.com/docs/third-party/claude-desktop/configuration-changelog",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-configuration-format",
+   "concept": "cl-apps-third-par-configuration",
+   "label": "Configuration implementation",
+   "desc": "Compare where Claude Desktop on 3P reads configuration in each kind of deployment, and write values for a profile, the registry, or the Linux file Source: https://claude.com/docs/third-party/claude-desktop/configuration-format",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-browser",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Built-in browser and Claude in Chrome",
+   "desc": "Configuring Claude in Chrome and the built-in browser in Cowork and Code for Claude Desktop 3P Source: https://claude.com/docs/third-party/claude-desktop/browser",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-built-in-connectors",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Built-in connectors",
+   "desc": "MCP servers bundled inside Claude Desktop on 3P: which servers ship in the app, how built-in entries work, and where each one is documented Source: https://claude.com/docs/third-party/claude-desktop/built-in-connectors",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-connectors-box",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Connect to Box",
+   "desc": "Give Claude access to your organization's Box content through Box's remote MCP server, with an OAuth client a Box admin creates and a client secret helper script on each device. Source: https://claude.com/docs/third-party/claude-desktop/connectors-box",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-connectors-github",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Connect to GitHub",
+   "desc": "Give Claude access to your organization's GitHub repositories, issues, and pull requests, either through GitHub's hosted MCP server or a server built into the desktop app. Source: https://claude.com/docs/third-party/claude-desktop/connectors-github",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-connectors-google-cloud",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Connect to Google Cloud",
+   "desc": "Give Claude access to BigQuery and Google's other remote MCP servers with an OAuth client from your own Google Cloud project, set up in the Enterprise Admin Console. Source: https://claude.com/docs/third-party/claude-desktop/connectors-google-cloud",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-connectors-m365",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Connect to Microsoft 365",
+   "desc": "Give Claude access to your organization's Outlook, OneDrive, SharePoint, and Teams data through a connector you register in your own Microsoft Entra tenant. Source: https://claude.com/docs/third-party/claude-desktop/connectors-m365",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-connectors-salesforce",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Connect to Salesforce",
+   "desc": "Give Claude access to your Salesforce org through Salesforce's plugin and hosted MCP server, set up in the Enterprise Admin Console or your managed configuration with an OAuth client that a Salesforce admin creates. Source: https://claude.com/docs/third-party/claude-desktop/connectors-salesforce",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-extensions",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "MCP, plugins, skills, and hooks",
+   "desc": "Extend Claude Desktop on 3P with connectors, plugin marketplaces, organization plugins, skills, and hooks for administrators and end users Source: https://claude.com/docs/third-party/claude-desktop/extensions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-local-access",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Desktop and filesystem access",
+   "desc": "How Claude Desktop on 3P reads and writes files on the user's machine, and how to constrain it Source: https://claude.com/docs/third-party/claude-desktop/local-access",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-mcp-sign-in",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Set up sign-in for managed MCP servers",
+   "desc": "Decide whether a managed MCP server needs an OAuth client that you register and whether it also needs that client's secret, fill in the OAuth fields, and read the sign-in error messages. Source: https://claude.com/docs/third-party/claude-desktop/mcp-sign-in",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-web-tools",
+   "concept": "cl-apps-third-par-connectors-and-extensions",
+   "label": "Web search and web fetch",
+   "desc": "How Claude Desktop on 3P reaches the internet, which providers support search, and how to control or disable web access Source: https://claude.com/docs/third-party/claude-desktop/web-tools",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-bedrock",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Deploy Claude Desktop on 3P with Amazon Bedrock",
+   "desc": "Set up AWS, choose an authentication path for your organization, and configure Claude Desktop on 3P to use Claude models on Amazon Bedrock Source: https://claude.com/docs/third-party/claude-desktop/bedrock",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-claude-api",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Deploy Claude Desktop on 3P with the Claude API",
+   "desc": "Configure Claude Desktop on 3P to send inference directly to Anthropic's Claude API instead of a cloud-provider-hosted Claude deployment Source: https://claude.com/docs/third-party/claude-desktop/claude-api",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-foundry",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Deploy Claude Desktop on 3P with Microsoft Foundry",
+   "desc": "Set up Microsoft Foundry, choose an authentication path for your organization, and configure Claude Desktop on 3P to use Claude models on Microsoft Foundry Source: https://claude.com/docs/third-party/claude-desktop/foundry",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-gateway",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Deploy Claude Desktop on 3P with an LLM gateway",
+   "desc": "Configure Claude Desktop on 3P to use Claude models on a self-hosted gateway that implements the Anthropic Messages API Source: https://claude.com/docs/third-party/claude-desktop/gateway",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-mantle",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Deploy Claude Desktop on 3P with Amazon Bedrock Mantle",
+   "desc": "Configure Claude Desktop on 3P to use Claude models through Amazon Bedrock Mantle's Anthropic-native API surface Source: https://claude.com/docs/third-party/claude-desktop/mantle",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-models",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Models and effort levels",
+   "desc": "Which models Claude Desktop on 3P offers, the default model and its starting effort level, per-model effort caps, display names, and 1M-context variants Source: https://claude.com/docs/third-party/claude-desktop/models",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-vertex",
+   "concept": "cl-apps-third-par-inference-providers-and-models",
+   "label": "Deploy Claude Desktop on 3P with Google Cloud's Agent Platform",
+   "desc": "Set up Google Cloud, choose an authentication path for your organization, and configure Claude Desktop on 3P to use Claude models on Google Cloud's Agent Platform Source: https://claude.com/docs/third-party/claude-desktop/vertex",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-admin-console",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Deploy with Enterprise Admin Console",
+   "desc": "Manage your organization's Claude Desktop 3P configuration centrally with the Enterprise Admin Console, hosted by Anthropic Source: https://claude.com/docs/third-party/claude-desktop/admin-console",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-bootstrap",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Deploy with a bootstrap server",
+   "desc": "Host an HTTPS endpoint that returns each user's configuration, for organizations without MDM or with role-based configuration too complex for per-group profiles Source: https://claude.com/docs/third-party/claude-desktop/bootstrap",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-credential-helper",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Write a credential helper",
+   "desc": "Supply Claude Desktop on 3P with a short-lived inference token by running an executable you provide Source: https://claude.com/docs/third-party/claude-desktop/credential-helper",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-entra-broker",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Sign in through the OS identity broker",
+   "desc": "Use the operating system's native Microsoft Entra sign-in broker so Claude Desktop on 3P satisfies device-based Conditional Access policies Source: https://claude.com/docs/third-party/claude-desktop/entra-broker",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-feature-matrix",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Features",
+   "desc": "Feature comparison between Claude Enterprise and Claude Desktop on third-party (3P) Source: https://claude.com/docs/third-party/claude-desktop/feature-matrix",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-import",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Import history from claude.ai",
+   "desc": "Bring conversations, projects, and local Cowork and Code sessions into Claude Desktop on 3P from a claude.ai workspace or an earlier install Source: https://claude.com/docs/third-party/claude-desktop/import",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-in-app-configuration",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "In-app configuration",
+   "desc": "Build, test, and export a Claude Desktop on 3P configuration from inside the app, with validation and per-provider guidance Source: https://claude.com/docs/third-party/claude-desktop/in-app-configuration",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-installation",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Installation and setup",
+   "desc": "Install Claude Desktop on 3P, check device readiness, and choose whether configuration reaches your devices through the Enterprise Admin Console, an MDM profile, or a bootstrap server Source: https://claude.com/docs/third-party/claude-desktop/installation",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-mdm",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Deploy with MDM",
+   "desc": "Author a full configuration in the app, export it as a profile, and deploy it fleet-wide with Jamf, Intune, Group Policy, or any MDM Source: https://claude.com/docs/third-party/claude-desktop/mdm",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-move-to-claude-enterprise",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Migrate Claude Desktop from a cloud provider to Claude Enterprise",
+   "desc": "Migrate Claude Desktop from a cloud provider such as Amazon Bedrock to Claude Enterprise and keep each user's local chats, sessions, projects, tasks, and skills Source: https://claude.com/docs/third-party/claude-desktop/move-to-claude-enterprise",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-overview",
+   "concept": "cl-apps-third-par-install-and-administer",
+   "label": "Overview",
+   "desc": "Run Claude Desktop against your own cloud inference provider Source: https://claude.com/docs/third-party/claude-desktop/overview",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-chat",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Chat in Claude Desktop on 3P",
+   "desc": "What Chat can and cannot do in Claude Desktop on 3P, and how to configure it Source: https://claude.com/docs/third-party/claude-desktop/chat",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-code",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Code in Claude Desktop on 3P",
+   "desc": "How Claude Desktop on 3P configuration applies to the embedded Claude Code engine Source: https://claude.com/docs/third-party/claude-desktop/code",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-data-storage",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "User identity and local data",
+   "desc": "How Claude Desktop on 3P identifies users and where it stores conversations, settings, and credentials on disk Source: https://claude.com/docs/third-party/claude-desktop/data-storage",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-legal",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Legal and compliance",
+   "desc": "Legal agreements, compliance, and security information for Claude Desktop on 3P Source: https://claude.com/docs/third-party/claude-desktop/legal",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-network-proxy",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Network proxy",
+   "desc": "How Claude Desktop on 3P and the Claude Code engine it runs use your network proxy: the default behavior, pinning a proxy from managed configuration, what is and is not routed through it, and how to troubleshoot. Source: https://claude.com/docs/third-party/claude-desktop/network-proxy",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-ssh-remote-sessions",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "SSH remote sessions in Claude Desktop on 3P",
+   "desc": "How Code sessions run on a remote host over SSH in Claude Desktop on 3P, the sshHostAllowlist key that enables them, which inference credentials work on a remote host, and what to check before turning them on Source: https://claude.com/docs/third-party/claude-desktop/ssh-remote-sessions",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-status-line",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Show a status line",
+   "desc": "Show a status line above the message box in Claude Desktop on 3P: one line of your organization's own text, such as budget used, from a program you install Source: https://claude.com/docs/third-party/claude-desktop/status-line",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-telemetry",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Telemetry and egress",
+   "desc": "What Claude Desktop on 3P sends to Anthropic, how to disable it, and the network paths your firewall needs to allow Source: https://claude.com/docs/third-party/claude-desktop/telemetry",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  },
+  {
+   "id": "cl-apps-third-party-claude-desktop-unified-claude",
+   "concept": "cl-apps-third-par-using-claude-desktop-and-opera",
+   "label": "Unified Claude in Claude Desktop on 3P",
+   "desc": "Unified Claude combines Chat and Cowork into one experience, with Cowork's agentic capabilities. Source: https://claude.com/docs/third-party/claude-desktop/unified-claude",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1779",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1780",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-apps-third-party"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "ClaudeDocsResearcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1779",
+   "name": "Claude Apps on Third-Party Platforms Specialist",
+   "legacy_key": "ClaudeAppsThirdPartySpecialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1780",
+   "name": "Claude Apps on Third-Party Platforms Reviewer",
+   "legacy_key": "ClaudeAppsThirdPartyReviewer",
+   "mcp": [
+    "local:claude-developer-platform-docs"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": null,
+   "name": "Claude Developer Platform docs",
+   "desc": "Anthropic's official MCP server for searching and reading the Claude Developer Platform documentation (Streamable HTTP at https://platform.claude.com/docs/mcp).",
+   "tools": [],
+   "state": "web-listed",
+   "source": "https://platform.claude.com/docs/llms.txt",
+   "id": "local:claude-developer-platform-docs",
+   "origins": [
+    "claude-admin",
+    "claude-api-reference",
+    "claude-apps-extend",
+    "claude-apps-government",
+    "claude-apps-office",
+    "claude-apps-science",
+    "claude-apps-tag",
+    "claude-apps-third-party",
+    "claude-best-practices",
+    "claude-code-admin",
+    "claude-code-agent-sdk",
+    "claude-code-build",
+    "claude-code-config",
+    "claude-code-plugins",
+    "claude-code-reference",
+    "claude-code-start",
+    "claude-managed-agents",
+    "claude-messages",
+    "claude-models",
+    "claude-sdks"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "local:claude-developer-platform-docs"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1780",
+   "mcp": "local:claude-developer-platform-docs",
+   "topic": "claude-apps-third-party",
+   "score": 0.2017,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-apps-third-party"
+  }
+ ],
+ "lexicon": {},
+ "sources": [
+  "claude-apps-third-party"
+ ]
+}
