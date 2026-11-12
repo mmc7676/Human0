@@ -1,11 +1,18 @@
 {
   "name": "human0",
-  "owner": { "name": "Human0" },
+  "owner": {
+    "name": "Human0"
+  },
   "plugins": [
     {
       "name": "maxey0-context-plane-graph",
       "source": "./apps/maxey0-context-plane/plugin/maxey0-context-plane-graph",
       "description": "Route any task to its topic, skill, MaxeyN agents and MCP servers, and explore the Maxey0 Context Plane as an interactive 3D graph inside Claude."
+    },
+    {
+      "name": "full-example",
+      "source": "./plugins/full-example",
+      "description": "/full-example: a complete, copy-paste worked example for any app, setup or build: every field value, every step in order, what you should see after each step, and sample files."
     }
   ]
 }
