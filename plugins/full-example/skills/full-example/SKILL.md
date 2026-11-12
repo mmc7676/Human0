@@ -11,7 +11,7 @@ having to decide anything themselves.
 
 Examples:
 
-- `/full-example Maxey0-Chat App` gives a workflow to paste, agents, world names, files to attach, and the run, using every section of the dashboard.
+- `/full-example Build a FastAPI todo API with tests` gives every file in full, the install and run commands, and the exact responses you should get back.
 - `/full-example LinkedIn profile set-up` gives every sign-up and profile field, with an example value for each and the order to fill them in.
 - `/full-example Build a Cloudflare MCP server and wrap it as a connector in Claude` gives complete code files, terminal commands, config, deploy, and the connector setup in Claude.
 
@@ -39,8 +39,8 @@ mistake, and skip effort where something already can.
 
 ### 1. Pin the target
 
-Name the exact thing, version and surface: "Maxey0-Chat dashboard at commit
-4551647 on mobile", not "Maxey0". If the user gave no version, use the current
+Name the exact thing, version and surface: "FastAPI 0.115.6 on Python 3.13,
+run locally", not "a Python API". If the user gave no version, use the current
 one and say which.
 
 ### 2. Inspect the real thing
@@ -125,10 +125,10 @@ The process is the same in every mode. What changes is what "inspect" and
 
 | Request | Inspect | Values are | Verify by |
 |---|---|---|---|
-| Use an app ("Maxey0-Chat App") | Source code, UI markup, handlers | Text to paste, names, files, settings | Running the app's parser or logic; source-derived labels |
+| Use an app ("a project dashboard") | Source code, UI markup, handlers | Text to paste, names, files, settings | Running the app's parser or logic; source-derived labels |
 | Account or profile setup ("LinkedIn profile set-up") | Current official help pages for each form | Field-by-field example values with limits | Character limits and required fields from docs; human boundary at sign-up and verification |
 | Build and deploy ("Cloudflare MCP server + Claude connector") | Current docs for each tool and the API | Complete files, commands, config, connector fields | Local install, tests and a dev-server request; deploy and live checks reported only if actually done |
 
-`references/maxey0-chat-example.md` is a complete worked answer for the
-app-usage mode, with the record of how it was built. Read it the first time you
+`references/fastapi-todo-example.md` is a complete worked answer for the
+build mode, with the record of how it was built and verified. Read it the first time you
 use this skill, to calibrate the level of detail.

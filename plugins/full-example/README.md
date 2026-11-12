@@ -27,7 +27,7 @@ In Claude Code: `/plugin marketplace add mmc7676/Human0` then `/plugin install f
 
 - `skills/full-example/SKILL.md` — the skill
 - `skills/full-example/references/output-format.md` — the answer layout
-- `skills/full-example/references/maxey0-chat-example.md` — one complete answer, kept as a reference
+- `skills/full-example/references/fastapi-todo-example.md — worked build example (FastAPI todo API, verified run)
 
 ## License
 
