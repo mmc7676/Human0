@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+'use strict';
+const {McpServer}=require('@modelcontextprotocol/sdk/server/mcp.js');
+const {StdioServerTransport}=require('@modelcontextprotocol/sdk/server/stdio.js');
+const {z}=require('zod');
+const M=require('./model.js');
+const APP_HTML=require('./app-html.js');
+const APP_URI='ui://scw-modeler/app.html';
+const server=new McpServer({name:'scw-modeler',version:'0.1.0'});
+const model=z.record(z.string(),z.any()).describe('SCW model: {title, structural_note?, scws:[{id:"SCW-<name>", name, parent?, relation?, tag?, role, holds?, evidence?, laws?:[{text,state:on|off|inherit}], data?:[{value?,source,evidence?}]}], tables?:[{title,columns,rows}], one_line?, context?:{path?,agents?,mcp?:[{name,why?}]}, notes?}');
+const j=o=>({content:[{type:'text',text:typeof o==='string'?o:JSON.stringify(o,null,1)}]});
+const fail=e=>({isError:true,content:[{type:'text',text:String(e&&e.message||e)}]});
+const check=m=>{const v=M.validate(m);if(!v.ok)throw new Error('Invalid SCW model:\n- '+v.errors.join('\n- '));return m};
+server.registerTool('scw_relations',{description:'List the SCW relation types (contains, superposes, passes-through, signals, shares-gravity, feeds, governs), evidence labels and law states a model may use. Call before building a model.',inputSchema:{}},async()=>j({relations:M.RELATIONS,evidence:M.EVIDENCE,law_states:M.LAW_STATES,id_pattern:'SCW-<name>'}));
+server.registerTool('validate_scw_model',{description:'Check an SCW model: one root, every child names a known parent and a relation type, unique ids, no cycles, laws carry on/off/inherit, every data row names its source.',inputSchema:{model}},async({model:m})=>j(M.validate(m)));
+server.registerTool('scw_model_text',{description:'Render a validated SCW model as text: the SCW tree, what each SCW holds, how they interact, tables, data sources, the Context Plane route and the one-line answer. Use for "/scw-modeler text".',inputSchema:{model}},async({model:m})=>{try{return j(M.toText(check(m)))}catch(e){return fail(e)}});
+server.registerResource('scw-modeler-app',APP_URI,{description:'SCW Modeler graph view (MCP App)',mimeType:'text/html;profile=mcp-app'},async(uri)=>({contents:[{uri:uri.href,mimeType:'text/html;profile=mcp-app',text:APP_HTML,_meta:{ui:{csp:{connectDomains:[],resourceDomains:[]},prefersBorder:false}}}]}));
+server.registerTool('render_scw_model',{description:'Show a validated SCW model inline as an interactive graph: each SCW drawn inside its SCW boundary, contained children nested, superposed terms overlapping in one field, other relations as typed edges, and the Context Plane route and data servers as an outer ring. Use for "/scw-modeler viz".',inputSchema:{model},_meta:{ui:{resourceUri:APP_URI},'ui/resourceUri':APP_URI}},async({model:m})=>{try{check(m);const text=M.toText(m);return{content:[{type:'text',text:'SCW graph shown inline. Text version:\n\n'+text}],structuredContent:{model:m,text}}}catch(e){return fail(e)}});
+server.registerTool('scw_model_html',{description:'Return the graph view as one standalone HTML file with the model embedded, to save, share or publish when the inline view is not available.',inputSchema:{model}},async({model:m})=>{try{check(m);const data=JSON.stringify(Object.assign({},m,{text:M.toText(m)})).replace(/</g,'\\u003c');return j(APP_HTML.replace('<script>','<script>window.__SCW_MODEL__='+data+';</script><script>'))}catch(e){return fail(e)}});
+if(require.main===module)server.connect(new StdioServerTransport());
+module.exports={server};
