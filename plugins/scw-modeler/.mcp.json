@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "scw-modeler": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/server.bundle.js"]
+    },
+    "maxey0-context-plane": {
+      "type": "http",
+      "url": "https://maxey0-context-plane-mcp.maxey0.workers.dev/mcp"
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+ "title": "Sgr A*, the Milky Way, the Sun and dark matter",
+ "structural_note": "With no disk, bulge or cluster nodes, the Milky Way SCW has to own the ordinary matter itself: stars and gas, about 53% of the pull at the Sun. That is the one structural difference from the full build.",
+ "scws": [
+  {
+   "id": "SCW-MW",
+   "name": "Milky Way",
+   "tag": "container; holds the ordinary (baryonic) field itself",
+   "role": "the frame, and the sum of the field",
+   "holds": "galactocentric frame (kpc), its own baryonic field, and Φ_total = Φ_MW + Φ_SgrA + Φ_DM",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "G1: no central body, every orbit follows the summed field",
+     "state": "on"
+    },
+    {
+     "text": "Kepler",
+     "state": "off"
+    }
+   ],
+   "data": [
+    {
+     "value": "231.2 km/s circular speed at the Sun",
+     "source": "space-at-scale galaxy_field (gala MilkyWayPotential v1)",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-SgrA",
+   "name": "Sagittarius A*",
+   "parent": "SCW-MW",
+   "relation": "superposes",
+   "tag": "field component, horizon",
+   "role": "one term in the sum, not the center",
+   "holds": "4.3 million solar masses, at the origin",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "Kepler inside 3.69 pc, where it leads the pull",
+     "state": "on"
+    },
+    {
+     "text": "Newton inside its horizon",
+     "state": "off"
+    },
+    {
+     "text": "interior gated",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "leads the pull inside 3.69 pc",
+     "source": "space-at-scale galaxy_field",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-DM",
+   "name": "Dark matter",
+   "parent": "SCW-MW",
+   "relation": "superposes",
+   "tag": "field component, inferred",
+   "role": "one term in the sum, filling the same space as the Milky Way",
+   "holds": "NFW profile (density falling smoothly with radius); inferred from motion, never detected",
+   "evidence": "FACT",
+   "laws": [],
+   "data": [
+    {
+     "value": "41.4% of the pull at the Sun; over half beyond 11.14 kpc",
+     "source": "space-at-scale galaxy_field",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Sun",
+   "name": "the Sun",
+   "parent": "SCW-MW",
+   "relation": "contains",
+   "tag": "bound child",
+   "role": "bound child",
+   "holds": "position and velocity; boundary = Jacobi radius 1.37 pc",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "inherits Φ_total from its parent and moves in it",
+     "state": "inherit"
+    }
+   ],
+   "data": [
+    {
+     "value": "Jacobi radius 1.37 pc",
+     "source": "space-at-scale galaxy_field",
+     "evidence": "EXEC"
+    },
+    {
+     "value": "one orbit about every 230 Myr",
+     "source": "2π × 8.178 kpc / 231.2 km/s",
+     "evidence": "DERIVED"
+    }
+   ]
+  }
+ ],
+ "tables": [
+  {
+   "title": "Share of the pull at the Sun",
+   "columns": [
+    "Component",
+    "Share"
+   ],
+   "rows": [
+    [
+     "Milky Way ordinary matter",
+     "about 53% (rounded)"
+    ],
+    [
+     "Dark matter",
+     "41.4%"
+    ],
+    [
+     "Sgr A*",
+     "about 0.0004%"
+    ],
+    [
+     "Circular speed",
+     "231.2 km/s"
+    ]
+   ]
+  },
+  {
+   "title": "Who leads, by radius",
+   "columns": [
+    "Radius",
+    "Leads the pull",
+    "Source"
+   ],
+   "rows": [
+    [
+     "inside 3.69 pc",
+     "Sgr A*",
+     "computed by the full model"
+    ],
+    [
+     "3.69 pc to about 10 kpc",
+     "Milky Way ordinary matter, where the Sun sits",
+     "10.29 kpc in the full model; moves somewhat inward when merged (not computed)"
+    ],
+    [
+     "beyond 11.14 kpc",
+     "dark matter supplies over half the pull",
+     "computed by the full model"
+    ]
+   ]
+  }
+ ],
+ "one_line": "Sgr A* and dark matter are both superposes children of the Milky Way: two terms added to its own field, neither of them the center. The Sun is the only contains child, bound by the sum of all three. Sgr A* is in charge only within 3.69 pc, and dark matter is never seen, only felt.",
+ "context": {
+  "path": "math-physical-sciences → classical-physics → astrophysics-cosmology → cosmology-distance-calculator (score 0.329; candidate, not an authorization)",
+  "agents": [
+   "Maxey1479 Astronomer Agent (primary)",
+   "Maxey1480 Theorist Agent (checker)",
+   "Maxey1481 Units Checker Agent (support)",
+   "Maxey1617 Data Analyst Agent (support)"
+  ],
+  "mcp": [
+   {
+    "name": "space-at-scale",
+    "why": "computed the field shares (EXEC)"
+   },
+   {
+    "name": "astro_mcp",
+    "why": "Context Plane gate, web-listed"
+   },
+   {
+    "name": "alphaXiv",
+    "why": "Context Plane gate, registry"
+   }
+  ],
+  "routed": "2026-11-15 via route_task (domain math-physical-sciences)"
+ }
+}
