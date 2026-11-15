@@ -8,17 +8,17 @@
 
 A Human0 app · runs inline in Claude as an MCP App, or offline as one HTML file
 
-<img src="docs/images/saturn-centered.jpg" alt="Saturn centered in Space at Scale, with its live specs panel" width="100%">
+<img src="docs/images/milky-way-hero.jpg" alt="Space at Scale: the Milky Way with Sgr A*, the dark matter ring, globular cluster orbits and pulsars" width="100%">
 
 </div>
 
 ## Three scales, one view
 
-| | |
+| Scale | |
 |---|---|
-| <img src="docs/images/inner-solar-system.jpg" alt="Inner solar system with planets, asteroids and spacecraft"> | **Solar system, in AU.** 132 bodies and human-made objects on real orbits: the 8 planets, their major moons, the largest asteroids, KBOs, Halley's Comet and 72 spacecraft. Spacecraft follow their routes, appear on their launch dates and disappear before them. Rewind it 4.567 billion years, to the formation of the solar system. |
-| <img src="docs/images/local-bubble.jpg" alt="Local Bubble: every naked-eye star within 1,000 light years"> | **Local Bubble, in light years.** Every naked-eye star (V ≤ 5.8) within 1,000 ly, 3,665 stars in all, moving on its measured space velocity, inside the Zucker et al. 2022 bubble model. Its expansion origin and stellar barycenter are marked. The five escape craft head outward on their real directions. Runs 30 million years each way. |
-| <img src="docs/images/milky-way.jpg" alt="Milky Way: disk, dark matter halo, clusters, satellites and pulsars"> | **Milky Way, in thousands of light years.** Sgr A* and 44 S-star orbits, the dark matter halo, 161 globular clusters and 50 satellite galaxies on measured orbits, 3,563 pulsars, supernova light shells, gravitational-wave fronts and 391 GWOSC events. Turn dark matter off and watch the satellites escape. Runs back to the Big Bang. |
+| **Solar system** | **In AU.** 132 bodies and human-made objects on real orbits: the 8 planets, their major moons, the largest asteroids, KBOs, Halley's Comet and 72 spacecraft. Spacecraft follow their routes, appear on their launch dates and disappear before them. Rewind it 4.567 billion years, to the formation of the solar system. |
+| **Local Bubble** | **In light years.** Every naked-eye star (V ≤ 5.8) within 1,000 ly, 3,665 stars in all, moving on its measured space velocity, inside the Zucker et al. 2022 bubble model. Its expansion origin and stellar barycenter are marked. The five escape craft head outward on their real directions. Runs 30 million years each way. |
+| **Milky Way** | **In thousands of light years.** Sgr A* and 44 S-star orbits, the dark matter halo, 161 globular clusters and 50 satellite galaxies on measured orbits, 3,563 pulsars, supernova light shells, gravitational-wave fronts and 391 GWOSC events. Turn dark matter off and watch the satellites escape. Runs back to the Big Bang. |
 
 Click any dot for live specs, then **Center** to follow it. Zoom past the Oort Cloud and the view hands off to the Local Bubble. Zoom past 15,000 ly and it hands off to the galaxy.
 
