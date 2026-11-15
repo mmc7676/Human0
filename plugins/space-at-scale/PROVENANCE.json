@@ -1,0 +1,418 @@
+{
+ "plugin": "space-at-scale",
+ "version": "0.14.0",
+ "built_utc": "2026-11-15T10:03:09.037Z",
+ "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
+ "artifacts": [
+  {
+   "path": ".claude-plugin/plugin.json",
+   "sha256": "e306956dff0cdcb561dae57f4981007cbb3d4fc806863c0b8337a583bde930ee",
+   "bytes": 632
+  },
+  {
+   "path": ".mcp.json",
+   "sha256": "9c9edb434852f71c2fee0b5f897ebb009fdb5d8c1e2c151e2a8516e7938adbfb",
+   "bytes": 181
+  },
+  {
+   "path": "DATA-LICENSES.md",
+   "sha256": "551cb5be26238a854128e521c28201ec19f174bfad07c5150dd91f5c8582a59e",
+   "bytes": 1274
+  },
+  {
+   "path": "INTEGRATION.md",
+   "sha256": "021fbfd210fe22d070a0713f68b459eac956fd63973f9d8c1ab4c7904e1dfd3d",
+   "bytes": 14058
+  },
+  {
+   "path": "README.md",
+   "sha256": "2ed7092495a32e95f2e866b0e763b265e8b8a34a03eebc8deb143bacc5c5cf3d",
+   "bytes": 5568
+  },
+  {
+   "path": "release.js",
+   "sha256": "9617a59643f309e6c121241be0a57bcff028a227455b100f20a44d04049caa64",
+   "bytes": 5922
+  },
+  {
+   "path": "scw828/SCW828.md",
+   "sha256": "bc8254d735ef82692fe0c6419731ecb81f66bcd71490dad199947d22a072c5b9",
+   "bytes": 10107
+  },
+  {
+   "path": "scw828/SCW828a.md",
+   "sha256": "59693ded9e4788274a88ac653febee0632ce3bc7929b6ef96dcacecbc8baf659",
+   "bytes": 1417
+  },
+  {
+   "path": "scw828/SCW828b.md",
+   "sha256": "8c716d0e32e5cbb2c79cda6b33028ea8842ef86df3db6daa6b123ed664e50495",
+   "bytes": 1178
+  },
+  {
+   "path": "scw828/SCW828c.md",
+   "sha256": "30949eaac0e388482cbdac0a307495daf16ce930f3ea82079ed25d3527de19f0",
+   "bytes": 1237
+  },
+  {
+   "path": "scw828/SCW828d.md",
+   "sha256": "7b58cf016315b890ede0a825b5f4f4b9d5164a39a1f6f2e2e221b132f89bd63c",
+   "bytes": 1094
+  },
+  {
+   "path": "scw828/SCW828e.md",
+   "sha256": "d1533f7d29e9b0681809a39a517177e632b4feba8868bf12ae93f0607131338f",
+   "bytes": 1001
+  },
+  {
+   "path": "scw828/SCW828f.md",
+   "sha256": "9b2e08c029145b233fc0114b1ab95479c49150b3652a111b945e5d162b2030e1",
+   "bytes": 1004
+  },
+  {
+   "path": "scw828/SCW828g.md",
+   "sha256": "fb20ffac5b2e8313565ba91cec685cb9bde887f8b978a650beafc13e33f4562e",
+   "bytes": 1033
+  },
+  {
+   "path": "scw828/SCW828h.md",
+   "sha256": "5ab399e10f51ae6912e96e707f5e18b6f1ad5c7c3e9c101034f487f507b71893",
+   "bytes": 963
+  },
+  {
+   "path": "scw828/SCW828i.md",
+   "sha256": "a97a17682aae1ec7631a2f45f85e58abc235e31c52bf34922cd00f98c5b89feb",
+   "bytes": 1703
+  },
+  {
+   "path": "scw828/SCW828j.md",
+   "sha256": "d1c2436713602fa4cea8cbb1893f258346f88b283f1ac3f628ed5705d7795e84",
+   "bytes": 777
+  },
+  {
+   "path": "scw828/SCW828k.md",
+   "sha256": "48eaa81ebe8351095f4a7df2c7b0fda58513c67a0f4d743d41761237bdcb1273",
+   "bytes": 853
+  },
+  {
+   "path": "scw828/SCW828l.md",
+   "sha256": "e8d0351fd9cf229ba2020de1f3f7ede93ee3ec733629bdb5b1ccac8018e8a8bf",
+   "bytes": 721
+  },
+  {
+   "path": "scw828/data/gwosc-events.csv",
+   "sha256": "1ddd28f263b1817d434b95c75518f340145477a8a0c55be47bf15b5baf83010d",
+   "bytes": 109667
+  },
+  {
+   "path": "scw828/topic-pack-gpa.json",
+   "sha256": "a6b3f9fdb6abf2624c6492afb1a3750236ecb858e45fedac9359833d30e98bf2",
+   "bytes": 7065
+  },
+  {
+   "path": "server/.dockerignore",
+   "sha256": "b4f0becc324ed9171f22cdc8340f076c5ec88d3c377988b49aef4bc3957e72eb",
+   "bytes": 38
+  },
+  {
+   "path": "server/Dockerfile",
+   "sha256": "e96b8f331d7e84bae363f747692760d2ba77b31f1d7068922d17608704c9f693",
+   "bytes": 216
+  },
+  {
+   "path": "server/app/OrbitControls.js",
+   "sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2",
+   "bytes": 26375
+  },
+  {
+   "path": "server/app/app.js",
+   "sha256": "5495189fe187a7b33550d59a7c08bdf1ca11d2886c37115a224fe8bece5f2b34",
+   "bytes": 65671
+  },
+  {
+   "path": "server/app/galaxy-view.js",
+   "sha256": "7397d7e2283e2177362ff93d74391521505fa2e813477631563c3e433f9d091c",
+   "bytes": 43055
+  },
+  {
+   "path": "server/app/index.html",
+   "sha256": "f6dfcac9ef50a4c9df8c7fe395bbaa4c87a541c13508151a3de6034febfbdf69",
+   "bytes": 267517
+  },
+  {
+   "path": "server/app/three.min.js",
+   "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2",
+   "bytes": 603445
+  },
+  {
+   "path": "server/build-app.js",
+   "sha256": "85c8030f063b42965c4631e281d11323cd37d5077a5592db837b71fd64c739be",
+   "bytes": 2428
+  },
+  {
+   "path": "server/dist/space-at-scale.html",
+   "sha256": "b06f7f0e4137789650531c8517592290e785df202a2112a1eae8254b4b2eed03",
+   "bytes": 2261114
+  },
+  {
+   "path": "server/galaxy-core.js",
+   "sha256": "2d544ddab277b48870dee05ab09dbb69648d12d39c0eab39dcb465a1bf5c6279",
+   "bytes": 27582
+  },
+  {
+   "path": "server/galaxy.json",
+   "sha256": "e4f76c738ec15cd8e849be092a484f2332f446afab6729b5e3a15902310cc9cb",
+   "bytes": 445729
+  },
+  {
+   "path": "server/http.js",
+   "sha256": "82431e0fd8a54ed3b057adfe0e29c6f3fdfdfaa24050bc04f26b26cfa56bd385",
+   "bytes": 1651
+  },
+  {
+   "path": "server/package-lock.json",
+   "sha256": "0ec15ab90b5e3666bd8bd2aa81beb53606000cad52c03ca946bb808b34116ac4",
+   "bytes": 43128
+  },
+  {
+   "path": "server/package.json",
+   "sha256": "3f46f68083c14668ed87de64c278d7342fb8c8c306c93fcd3ed3052bc4af8701",
+   "bytes": 394
+  },
+  {
+   "path": "server/physics-core.js",
+   "sha256": "f3b52d2975927ed09c63e6e28928133363c7267fcb0c9314e9b2f482e9b00515",
+   "bytes": 69137
+  },
+  {
+   "path": "server/server.bundle.js",
+   "sha256": "e950bcbafb43239a19fda7349adfbabfeb0ac7063c90216addc3324764125fab",
+   "bytes": 3228626
+  },
+  {
+   "path": "server/server.js",
+   "sha256": "3b636b31aa9e7abf0d33afb3672aabf72479bdd30df1432e8cd2b6142a7440d6",
+   "bytes": 13967
+  },
+  {
+   "path": "server/stars.json",
+   "sha256": "5eea66611e160d98cc3175afc48a122962d56c4dae7fc00082b8b8beb634e4fc",
+   "bytes": 711996
+  },
+  {
+   "path": "server/test-http.js",
+   "sha256": "667aa2dea889a4a00335bf1ad92334ab0d9d4d2b11e0539c32a801969fbebc81",
+   "bytes": 2935
+  },
+  {
+   "path": "server/test.js",
+   "sha256": "d112be36a8035e77b8b8e9804660effc30612d96cb39023d6a2f5005e8bfe205",
+   "bytes": 18543
+  },
+  {
+   "path": "server/tools/build-galaxy.js",
+   "sha256": "123d95ecfb5e5d4e6c35a58d43ceba98854e2f2e48be509aa51c03ea223663fd",
+   "bytes": 17757
+  },
+  {
+   "path": "server/universe.js",
+   "sha256": "a965238824b4481d1d1d023a67e8a31295de04e45d78a25104b02c7efef26fde",
+   "bytes": 46518
+  },
+  {
+   "path": "skills/space-at-scale/SKILL.md",
+   "sha256": "907024f9a9d60448c37cddb42ef5edc0fed069ee9643ad16832cb0f1c6d0920e",
+   "bytes": 2558
+  }
+ ],
+ "mirrors": [
+  {
+   "canonical": "index.html",
+   "mirror": "server/app/index.html",
+   "sha256": "f6dfcac9ef50a4c9df8c7fe395bbaa4c87a541c13508151a3de6034febfbdf69",
+   "bytes": 267517,
+   "identical": true
+  },
+  {
+   "canonical": "app.js",
+   "mirror": "server/app/app.js",
+   "sha256": "5495189fe187a7b33550d59a7c08bdf1ca11d2886c37115a224fe8bece5f2b34",
+   "bytes": 65671,
+   "identical": true
+  },
+  {
+   "canonical": "galaxy-view.js",
+   "mirror": "server/app/galaxy-view.js",
+   "sha256": "7397d7e2283e2177362ff93d74391521505fa2e813477631563c3e433f9d091c",
+   "bytes": 43055,
+   "identical": true
+  },
+  {
+   "canonical": "three.min.js",
+   "mirror": "server/app/three.min.js",
+   "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2",
+   "bytes": 603445,
+   "identical": true
+  },
+  {
+   "canonical": "OrbitControls.js",
+   "mirror": "server/app/OrbitControls.js",
+   "sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2",
+   "bytes": 26375,
+   "identical": true
+  },
+  {
+   "canonical": "physics-core.js",
+   "mirror": "server/physics-core.js",
+   "sha256": "f3b52d2975927ed09c63e6e28928133363c7267fcb0c9314e9b2f482e9b00515",
+   "bytes": 69137,
+   "identical": true
+  },
+  {
+   "canonical": "galaxy-core.js",
+   "mirror": "server/galaxy-core.js",
+   "sha256": "2d544ddab277b48870dee05ab09dbb69648d12d39c0eab39dcb465a1bf5c6279",
+   "bytes": 27582,
+   "identical": true
+  },
+  {
+   "canonical": "stars.json",
+   "mirror": "server/stars.json",
+   "sha256": "5eea66611e160d98cc3175afc48a122962d56c4dae7fc00082b8b8beb634e4fc",
+   "bytes": 711996,
+   "identical": true
+  },
+  {
+   "canonical": "galaxy.json",
+   "mirror": "server/galaxy.json",
+   "sha256": "e4f76c738ec15cd8e849be092a484f2332f446afab6729b5e3a15902310cc9cb",
+   "bytes": 445729,
+   "identical": true
+  }
+ ],
+ "embeds": [
+  {
+   "file": "server/physics-core.js",
+   "sha256": "f3b52d2975927ed09c63e6e28928133363c7267fcb0c9314e9b2f482e9b00515",
+   "embedded_byte_for_byte_in_app_html": true
+  },
+  {
+   "file": "server/galaxy-core.js",
+   "sha256": "2d544ddab277b48870dee05ab09dbb69648d12d39c0eab39dcb465a1bf5c6279",
+   "embedded_byte_for_byte_in_app_html": true
+  },
+  {
+   "file": "server/galaxy.json",
+   "sha256": "e4f76c738ec15cd8e849be092a484f2332f446afab6729b5e3a15902310cc9cb",
+   "embedded_byte_for_byte_in_app_html": true
+  },
+  {
+   "file": "server/stars.json",
+   "sha256": "5eea66611e160d98cc3175afc48a122962d56c4dae7fc00082b8b8beb634e4fc",
+   "embedded_byte_for_byte_in_app_html": true
+  }
+ ],
+ "data_sources": [
+  {
+   "id": "galpy",
+   "what": "globular clusters and satellite galaxies with full 3D position and velocity",
+   "file": "galpy/orbit/named_objects.json",
+   "url": "https://github.com/jobovy/galpy",
+   "license": "BSD-3-Clause (galpy); data from Vasiliev & Baumgardt 2021, Baumgardt et al. 2019, Baumgardt & Vasiliev 2021, Pace et al. 2022, Gaia Collaboration (Helmi et al.) 2018",
+   "sha256": "1c66dad1054dbd2243d538f55a2dba471212a155a3ffd1e62fe32ee4932ed522",
+   "bytes": 115612,
+   "used": 211,
+   "excluded": ""
+  },
+  {
+   "id": "stellarium-pulsars",
+   "what": "pulsars: position, distance, spin, binary period",
+   "file": "plugins/Pulsars/resources/pulsars.json",
+   "url": "https://github.com/Stellarium/stellarium",
+   "license": "GPL-2.0-or-later (Stellarium); derived from the ATNF Pulsar Catalogue v2.9.0 (Manchester et al. 2005)",
+   "sha256": "6589d0c3b9769a6e4448bc1533196449dd9d6611d8717cb8124496df45335755",
+   "bytes": 829035,
+   "used": 3563,
+   "excluded": "97 without a distance",
+   "note": "distance = independent estimate when listed, else dispersion-measure estimate (typical error 20 to 40%); 231 pulsars ride with a globular cluster or satellite they sit in; 426 carry their measured proper motion (line-of-sight part assumed equal to local rotation, since pulsar radial velocities cannot be measured); characteristic age = P/(2 Pdot), kept only between 100 yr and 13 Gyr (58 implausible values dropped)"
+  },
+  {
+   "id": "stellarium-supernovae",
+   "what": "historical supernovae: date, position, distance",
+   "file": "plugins/Supernovae/resources/supernovae.json",
+   "url": "https://github.com/Stellarium/stellarium",
+   "license": "GPL-2.0-or-later (Stellarium)",
+   "sha256": "f8cc424ec8e8bc50f2b9ab73f4aa1d76ba9de3bedf37f6c41c6e2f53b5faad7a",
+   "bytes": 7520,
+   "used": 9,
+   "excluded": "393A (source lists 34 kly; published distances of its likely remnant RX J1713.7-3946 are near 3.3 kly; conflict, not plotted); 1885A (outside the Milky Way system, 2400 kly); 1972E (outside the Milky Way system, 10900 kly)",
+   "note": "remnant distances are uncertain by 20 to 50%"
+  },
+  {
+   "id": "gala",
+   "what": "Milky Way mass model parameters",
+   "file": "src/gala/potential/potential/builtin/special.py (_setup_mwp_v1)",
+   "url": "https://github.com/adrn/gala",
+   "license": "MIT (gala)",
+   "sha256": "8f6664e32a12e5f19841e562b6c6275ed49d50cf9a00c269f2b80e545d931021",
+   "bytes": 13787,
+   "used": 4
+  },
+  {
+   "id": "s-stars",
+   "what": "orbital elements of stars around Sgr A*",
+   "url": "https://en.wikipedia.org/wiki/Sagittarius_A*_cluster",
+   "license": "CC BY-SA 4.0 (Wikipedia table); values from Gillessen et al. 2017, GRAVITY Collaboration, Peissker et al. 2020, Abd El Dayem et al. 2026",
+   "accessed": "2026-11-15",
+   "used": 44,
+   "excluded": "S4713 (a^3/P^2 gives 0.10 x the black hole mass; inconsistent row, not plotted)",
+   "note": "S301 has two possible orientations; the first is used. The S47xx stars are disputed"
+  },
+  {
+   "id": "black-holes",
+   "what": "nearest known stellar black holes",
+   "url": "https://en.wikipedia.org/wiki/List_of_nearest_known_black_holes",
+   "license": "CC BY-SA 4.0 (Wikipedia list)",
+   "accessed": "2026-11-15",
+   "used": 20,
+   "note": "masses and distances as listed there; six entries are candidates"
+  },
+  {
+   "id": "sgr-a",
+   "what": "Sgr A* mass and distance",
+   "url": "https://www.aanda.org/articles/aa/abs/2022/01/aa42465-21/aa42465-21.html",
+   "license": "CC BY 4.0 (A&A open access)",
+   "accessed": "2026-11-15",
+   "used": 1,
+   "note": "R0 = 8.277 kpc, M = 4.297e6 Msun (GRAVITY Collaboration 2022)"
+  },
+  {
+   "id": "gwosc-events",
+   "what": "gravitational-wave event catalog: time, source masses, distance, final mass",
+   "file": "events.csv (Gravitational Wave Open Science Center event portal export, supplied by the owner 2026-11-15)",
+   "url": "https://gwosc.org",
+   "license": "CC BY 4.0 (GWOSC data policy); cite the GWTC papers",
+   "sha256": "1ddd28f263b1817d434b95c75518f340145477a8a0c55be47bf15b5baf83010d",
+   "bytes": 109667,
+   "used": 391,
+   "note": "radiated energy = (m1 + m2 - final mass) c^2 in the source frame, for 276 events; left blank for 3 where the separate median values give zero or less (each column is its own median, so their difference is only an estimate); GPS time to UTC uses the 18 s leap-second offset valid since 2017 (up to 1 s early for the 2015-2016 events); no sky positions in this file"
+  },
+  {
+   "id": "recalled",
+   "what": "GWTC-1 event values, binary pulsar masses, solar motion, pattern speed and pitch, measured ranges used as eval bands",
+   "license": "literature values",
+   "note": "recalled from the cited papers, not re-fetched this session; the binary pulsar masses are cross-checked by the orbital-decay eval"
+  }
+ ],
+ "galaxy_counts": {
+  "globular_clusters": 161,
+  "satellite_galaxies": 50,
+  "pulsars": 3563,
+  "black_holes": 21,
+  "supernovae": 9,
+  "s_stars": 44,
+  "gw_events": 391,
+  "sun": 1,
+  "total": 4240
+ }
+}
