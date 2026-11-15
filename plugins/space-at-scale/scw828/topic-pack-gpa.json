@@ -1,0 +1,385 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "gpa",
+ "topic": {
+  "id": "gpa",
+  "label": "Galactic phase-space data assurance",
+  "desc": "Closing data and model gaps in a galaxy-scale simulation: sources, velocities, uncertainty, model limits, signal catalogs, release audit."
+ },
+ "concepts": [
+  [
+   "gpa-source-pinning",
+   "Source pinning",
+   "gpa",
+   "Every constant and table row traces to a primary source with a stored hash.",
+   [
+    "primary",
+    "citation",
+    "hash",
+    "pin",
+    "transcription"
+   ]
+  ],
+  [
+   "gpa-kinematics",
+   "Phase-space reconstruction",
+   "gpa",
+   "Building position and velocity from proper motion, parallax and radial velocity.",
+   [
+    "proper",
+    "motion",
+    "parallax",
+    "radial",
+    "velocity",
+    "kick"
+   ]
+  ],
+  [
+   "gpa-uncertainty",
+   "Uncertainty carrying",
+   "gpa",
+   "Keeping the measurement method and error with each value through to the display.",
+   [
+    "error",
+    "distance",
+    "dispersion",
+    "method",
+    "band"
+   ]
+  ],
+  [
+   "gpa-model-validity",
+   "Model validity bounds",
+   "gpa",
+   "Stating and testing where a mass model stops being true.",
+   [
+    "potential",
+    "epoch",
+    "accretion",
+    "static",
+    "evolving"
+   ]
+  ],
+  [
+   "gpa-signal-catalogs",
+   "Signal catalogs",
+   "gpa",
+   "Catalogs of gravitational-wave events and supernova remnants with localization.",
+   [
+    "catalog",
+    "event",
+    "remnant",
+    "localization",
+    "wavefront"
+   ]
+  ],
+  [
+   "gpa-release-audit",
+   "Release audit",
+   "gpa",
+   "License, surface and parity checks before a version ships.",
+   [
+    "license",
+    "surface",
+    "parity",
+    "audit",
+    "attribution"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "gpa-pin-constants",
+   "gpa-source-pinning",
+   "Pin constants to papers",
+   "Use when a number came from memory: fetch the paper, store value, citation and quoted sentence.",
+   "procedural",
+   [
+    [
+     "gpa-retriever",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-auditor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-diff-tables",
+   "gpa-source-pinning",
+   "Diff tables against primary",
+   "Use when rows came from a secondary page: compare row by row with the primary table.",
+   "procedural",
+   [
+    [
+     "gpa-retriever",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-auditor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-build-6d",
+   "gpa-kinematics",
+   "Build six-dimensional rows",
+   "Use when an object has proper motion or parallax on file but starts on an assumed orbit.",
+   "procedural",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-kick-model",
+   "gpa-kinematics",
+   "Fill unmeasured velocity",
+   "Use when one velocity component cannot be measured and a labelled assumption is needed.",
+   "semantic",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-rank-distance",
+   "gpa-uncertainty",
+   "Rank distance methods",
+   "Use when several distance estimates exist for one object.",
+   "semantic",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-show-error",
+   "gpa-uncertainty",
+   "Carry error to display",
+   "Use when a displayed value has an error that the display hides.",
+   "procedural",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-bound-model",
+   "gpa-model-validity",
+   "Bound a mass model",
+   "Use when a fixed model is run far from the epoch it was fitted at.",
+   "semantic",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-evolve-model",
+   "gpa-model-validity",
+   "Add time evolution",
+   "Use when a potential must change with epoch or include a moving satellite.",
+   "procedural",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-import-events",
+   "gpa-signal-catalogs",
+   "Import event catalog",
+   "Use when the event list is partial and an official catalog exists.",
+   "procedural",
+   [
+    [
+     "gpa-retriever",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-auditor",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-localize",
+   "gpa-signal-catalogs",
+   "Decide what can be drawn",
+   "Use when an event sky area may be too wide to give a direction.",
+   "semantic",
+   [
+    [
+     "gpa-builder",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-retriever",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-license-table",
+   "gpa-release-audit",
+   "Generate license table",
+   "Use before packaging: derive licenses from the provenance block.",
+   "procedural",
+   [
+    [
+     "gpa-auditor",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-builder",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "gpa-surface-check",
+   "gpa-release-audit",
+   "Verify on real surfaces",
+   "Use after packaging: run the fixed check on each surface and record results.",
+   "procedural",
+   [
+    [
+     "gpa-auditor",
+     "primary"
+    ],
+    [
+     "gpa-verifier",
+     "checker"
+    ],
+    [
+     "gpa-builder",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "gpa-retriever": "Source Retriever",
+  "gpa-builder": "Kinematics and Model Builder",
+  "gpa-verifier": "Independent Verifier",
+  "gpa-auditor": "Release Auditor"
+ },
+ "mcp": [
+  [
+   "alphaXiv",
+   "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "Fast search and full-text access over arXiv pre-prints",
+   [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "registry",
+   "SearchMcpRegistry, 2026-11-15"
+  ]
+ ],
+ "lexicon": {
+  "astrometry": "proper motion parallax velocity",
+  "sourcing": "primary citation pin paper table",
+  "dynamics": "potential epoch satellite",
+  "signals": "catalog event"
+ },
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-15",
+  "mcp_notes": "Two registry searches. One relevant server (alphaXiv, not installed, needs sign-in). No server found for Gaia, SIMBAD, VizieR, ATNF psrcat or GWOSC; none invented. Existence verified; working order not.",
+  "limitations": "Concepts, skills and agents are generated hypotheses, not curated knowledge. Pack not run through the Human0 app validator."
+ }
+}

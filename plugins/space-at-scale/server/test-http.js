@@ -1,0 +1,20 @@
+'use strict';
+const {spawn}=require('child_process');
+const {Client}=require('@modelcontextprotocol/sdk/client/index.js');
+const {StreamableHTTPClientTransport}=require('@modelcontextprotocol/sdk/client/streamableHttp.js');
+let fails=0;const ok=(c,m)=>{console.log((c?'PASS ':'FAIL ')+m);if(!c)fails++};
+const TOKEN='test-'+require('crypto').randomBytes(8).toString('hex'),PORT=18080+Math.floor(Math.random()*500),URLS='http://127.0.0.1:'+PORT;
+(async()=>{const srv=spawn('node',[__dirname+'/http.js'],{env:{...process.env,PORT:String(PORT),MCP_TOKEN:TOKEN},stdio:['ignore','ignore','pipe']});
+ await new Promise((r,j)=>{srv.stderr.on('data',d=>{if(/on :/.test(d))r()});setTimeout(()=>j(new Error('server did not start')),8000)});
+ try{const h=await (await fetch(URLS+'/healthz')).json();ok(h.ok&&h.auth==='bearer','healthz: '+h.scws+' SCWs, auth '+h.auth);
+  const noauth=await fetch(URLS+'/mcp',{method:'POST',headers:{'content-type':'application/json',accept:'application/json, text/event-stream'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/list'})});ok(noauth.status===401,'Request without token rejected with 401');
+  const bad=await fetch(URLS+'/mcp',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer wrong'},body:'{}'});ok(bad.status===401,'Wrong token rejected with 401');
+  const g=await fetch(URLS+'/mcp');ok(g.status===405,'GET /mcp returns 405');
+  const c=new Client({name:'http-test',version:'1'});await c.connect(new StreamableHTTPClientTransport(new URL(URLS+'/mcp'),{requestInit:{headers:{Authorization:'Bearer '+TOKEN}}}));
+  const tools=(await c.listTools()).tools;ok(tools.length===25,'25 tools over HTTP');const gf=JSON.parse((await c.callTool({name:'galaxy_field',arguments:{r_kpc:8.277}})).content[0].text);ok(gf.governor==='stellar disk','galaxy_field over HTTP: '+gf.governor+' leads at the Sun');
+  const r=await c.callTool({name:'plan_trip',arguments:{request:'design a trip to Mars',jd:2461356.5}});ok(JSON.parse(r.content[0].text).launch_windows_utc[0]==='2026-12-04','plan_trip over HTTP: Mars window 2026-12-04');
+  const e=await c.callTool({name:'run_evals',arguments:{id:'SCW0'}}),ed=JSON.parse(e.content[0].text);ok(ed.passed===ed.total,'run_evals over HTTP: '+ed.passed+'/'+ed.total);
+  const g2=await c.callTool({name:'generate_universe',arguments:{seed:7}});const c2=new Client({name:'http-test-2',version:'1'});await c2.connect(new StreamableHTTPClientTransport(new URL(URLS+'/mcp'),{requestInit:{headers:{Authorization:'Bearer '+TOKEN}}}));
+  const kids=JSON.parse((await c2.callTool({name:'scw_children',arguments:{id:'SCW0'}})).content[0].text);ok(kids.some(k=>k.id==='SCW1:psi-7'),'State persists across separate HTTP clients (universe Ψ-7 visible to a second client)');
+  await c.close();await c2.close()}catch(err){ok(false,'exception: '+err.message)}finally{srv.kill()}
+ console.log(fails?fails+' FAILED':'ALL PASSED');process.exit(fails?1:0)})();
