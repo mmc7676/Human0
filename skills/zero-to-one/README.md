@@ -2,6 +2,8 @@
 
 By Human0. Turns "how do I set up / use / build X?" into one worked example you can follow start to finish by copying values.
 
+Named for the engineering sense of zero to one: from nothing to a first working result.
+
 ## What you get
 
 - **Every field, with a value.** Sign-up forms, settings pages, config files: each field named, with an example value and the order to fill them in.
