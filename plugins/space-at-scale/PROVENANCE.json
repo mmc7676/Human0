@@ -1,7 +1,7 @@
 {
  "plugin": "space-at-scale",
  "version": "0.14.0",
- "built_utc": "2026-11-15T08:55:31.261Z",
+ "built_utc": "2026-11-15T10:03:09.037Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
@@ -26,8 +26,8 @@
   },
   {
    "path": "README.md",
-   "sha256": "6458e2364cc4951e66d180c642da1ceaa9df50a965652a4aad968d81acfcccc9",
-   "bytes": 2128
+   "sha256": "2ed7092495a32e95f2e866b0e763b265e8b8a34a03eebc8deb143bacc5c5cf3d",
+   "bytes": 5568
   },
   {
    "path": "release.js",
@@ -126,13 +126,13 @@
   },
   {
    "path": "server/app/app.js",
-   "sha256": "d70b257d76d998cd3115f15719a7c009c77fd6df646c61b73b90255c44776451",
-   "bytes": 65591
+   "sha256": "5495189fe187a7b33550d59a7c08bdf1ca11d2886c37115a224fe8bece5f2b34",
+   "bytes": 65671
   },
   {
    "path": "server/app/galaxy-view.js",
-   "sha256": "afc4f6aafe8ddb125df08d86720501e52ffcf09aa77f53fcf5c772278cd1ae1f",
-   "bytes": 43049
+   "sha256": "7397d7e2283e2177362ff93d74391521505fa2e813477631563c3e433f9d091c",
+   "bytes": 43055
   },
   {
    "path": "server/app/index.html",
@@ -151,8 +151,8 @@
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "d20e86f111c718fdca93bd5954d47f96bdb7770910bf824716769b1e0816cd12",
-   "bytes": 2261028
+   "sha256": "b06f7f0e4137789650531c8517592290e785df202a2112a1eae8254b4b2eed03",
+   "bytes": 2261114
   },
   {
    "path": "server/galaxy-core.js",
@@ -236,15 +236,15 @@
   {
    "canonical": "app.js",
    "mirror": "server/app/app.js",
-   "sha256": "d70b257d76d998cd3115f15719a7c009c77fd6df646c61b73b90255c44776451",
-   "bytes": 65591,
+   "sha256": "5495189fe187a7b33550d59a7c08bdf1ca11d2886c37115a224fe8bece5f2b34",
+   "bytes": 65671,
    "identical": true
   },
   {
    "canonical": "galaxy-view.js",
    "mirror": "server/app/galaxy-view.js",
-   "sha256": "afc4f6aafe8ddb125df08d86720501e52ffcf09aa77f53fcf5c772278cd1ae1f",
-   "bytes": 43049,
+   "sha256": "7397d7e2283e2177362ff93d74391521505fa2e813477631563c3e433f9d091c",
+   "bytes": 43055,
    "identical": true
   },
   {
