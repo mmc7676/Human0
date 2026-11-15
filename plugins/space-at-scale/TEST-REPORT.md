@@ -1,6 +1,6 @@
 # Test report
 
-Built 2026-11-15T10:19:03.769Z · version 0.14.0
+Built 2026-11-15T23:19:41.044Z · version 0.14.0
 
 ## test.js: 87 passed, 0 failed, 0 not run
 
@@ -43,7 +43,7 @@ PASS Mars trip: first window 2026-12-04, 259 days, 6.32 km/s
 PASS Europa resolves to the Jovian moon
 PASS Non-trip request rejected with guidance
 PASS open_space_at_scale declares its MCP App view
-PASS App resource is self-contained HTML (2.16 MB, mcp-app profile)
+PASS App resource is self-contained HTML (2.36 MB, mcp-app profile)
 PASS open_space_at_scale returns its text fallback
 PASS All evals pass with all three universes: 96/96
 PASS Milky Way children are typed: superposes 5, contains 5, passes-through 1, signals 1
