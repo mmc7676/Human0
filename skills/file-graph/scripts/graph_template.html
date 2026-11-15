@@ -1,0 +1,398 @@
+<title>File Graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: console bar · graph canvas beside an inspector · full index of files grouped by chat below */
+:root {
+  --bg: #f2f4f5; --surface: #ffffff; --fg: #172227; --muted: #5b6a71; --line: #d5dde0;
+  --chat: #0e6e72; --project: #a8620b; --file: #6b7c84; --unlinked: #98a4aa; --focus: #1c5fd6;
+  --e1: #2f6fbe; --e2: #8a4fb8; --e3: #2e8a57; --e4: #c0503a; --e5: #b08a12; --e6: #3b8fa0;
+  --font-ui: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1518; --surface: #162026; --fg: #e2e9ec; --muted: #93a3aa; --line: #26343b;
+  --chat: #4fb6b9; --project: #e0a04d; --file: #8d9ea6; --unlinked: #5e6d74; --focus: #7aa7ff;
+  --e1: #6aa3ef; --e2: #b78ae0; --e3: #5cc28a; --e4: #ee8670; --e5: #e1c050; --e6: #6cc3d3; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0f1518; --surface: #162026; --fg: #e2e9ec; --muted: #93a3aa; --line: #26343b;
+  --chat: #4fb6b9; --project: #e0a04d; --file: #8d9ea6; --unlinked: #5e6d74; --focus: #7aa7ff;
+  --e1: #6aa3ef; --e2: #b78ae0; --e3: #5cc28a; --e4: #ee8670; --e5: #e1c050; --e6: #6cc3d3; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 14px/1.5 var(--font-ui); }
+.wrap { padding: 16px; padding-block: 16px 40px; max-width: 1400px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+h1 { font-size: 20px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+.pat { font: 500 13px var(--font-data); padding: 3px 9px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
+.stats { color: var(--muted); font-variant-numeric: tabular-nums; flex: 1 1 280px; min-width: 0; }
+.stats b { color: var(--fg); font-weight: 600; }
+.search { display: flex; gap: 8px; align-items: center; }
+.search label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+input[type=search] { font: 13px var(--font-data); padding: 6px 10px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--surface); color: var(--fg); width: min(260px, 60vw); }
+button { font: 500 13px var(--font-ui); padding: 6px 12px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--surface); color: var(--fg); cursor: pointer; }
+button:hover { border-color: var(--muted); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.notice { border-left: 3px solid var(--project); padding: 8px 12px; background: var(--surface); color: var(--fg); font-size: 13px; }
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; min-height: 0; }
+@media (max-width: 860px) { .main { grid-template-columns: 1fr; } }
+.stage { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; height: min(70vh, 680px); min-height: 380px; overflow: hidden; }
+canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+canvas.dragging { cursor: grabbing; }
+.tools { position: absolute; top: 10px; left: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+.legend { position: absolute; bottom: 10px; left: 10px; right: 10px; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.sw.sq { border-radius: 2px; }
+.tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font: 12px var(--font-data); padding: 4px 8px; border-radius: 4px; max-width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+aside { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; min-width: 0; max-height: min(70vh, 680px); overflow: auto; }
+@media (max-width: 860px) { aside { max-height: none; } }
+.kind { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; }
+aside h2 { font-size: 16px; margin: 0 0 10px; text-wrap: balance; overflow-wrap: anywhere; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0 0 14px; font-size: 13px; }
+dt { color: var(--muted); }
+dd { margin: 0; font-family: var(--font-data); font-size: 12px; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+a { color: var(--chat); text-underline-offset: 2px; }
+a.open { display: inline-block; font-weight: 600; margin: 0 0 12px; }
+ul.flist { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+ul.flist li { display: flex; justify-content: space-between; gap: 10px; font: 12px var(--font-data); padding: 3px 0; border-bottom: 1px solid var(--line); }
+ul.flist li span:first-child { overflow-wrap: anywhere; min-width: 0; }
+ul.flist li span:last-child { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.linkish { background: none; border: 0; padding: 0; color: var(--chat); text-align: left; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.bars { display: grid; gap: 4px; margin: 0 0 14px; }
+.bar { display: grid; grid-template-columns: 70px 1fr 40px; gap: 8px; align-items: center; font: 12px var(--font-data); }
+.bar i { display: block; height: 8px; border-radius: 2px; background: var(--file); }
+.bar em { font-style: normal; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+section.index h2 { font-size: 16px; margin: 8px 0 10px; }
+.group { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; margin-bottom: 10px; }
+.group > .gh { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.gh .t { font-weight: 600; overflow-wrap: anywhere; min-width: 0; }
+.gh .m { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+td { padding: 5px 14px; border-bottom: 1px solid var(--line); font-family: var(--font-data); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.n { overflow-wrap: anywhere; }
+td.r { text-align: right; white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+.empty { padding: 40px 16px; text-align: center; color: var(--muted); }
+footer { color: var(--muted); font-size: 12px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<script id="fg-data" type="application/json">/*__FILE_GRAPH_DATA__*/</script>
+
+<div class="wrap">
+  <header>
+    <h1>File Graph</h1>
+    <span class="pat" id="pat"></span>
+    <div class="stats" id="stats"></div>
+    <div class="search">
+      <label for="q">Narrow</label>
+      <input type="search" id="q" placeholder="*.pdf, maxey0*, resume" autocomplete="off" spellcheck="false">
+    </div>
+  </header>
+  <div class="notice" id="notice" hidden></div>
+  <div class="main">
+    <div class="stage" id="stage">
+      <canvas id="cv" aria-label="Graph of uploaded files linked to the chats and projects they were uploaded to"></canvas>
+      <div class="tools"><button id="fit" type="button">Fit</button><button id="relayout" type="button">Re-layout</button></div>
+      <div class="legend" id="legend"></div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside id="panel" aria-live="polite"></aside>
+  </div>
+  <section class="index" aria-labelledby="idx-h">
+    <h2 id="idx-h">All matches by chat</h2>
+    <div id="index"></div>
+  </section>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const D = JSON.parse(document.getElementById("fg-data").textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmtSize = (b) => b == null ? "—" : b < 1024 ? b + " B" : b < 1048576 ? (b / 1024).toFixed(1) + " KB" : (b / 1048576).toFixed(1) + " MB";
+  const fmtDate = (s) => s ? String(s).slice(0, 10) : "—";
+  const SURF = { chat: "Chat", session: "Code / Cowork", project: "Project", unknown: "Unknown" };
+
+  // Same rule as collect.js / build_graph.py: wildcard -> anchored glob, else substring; case-insensitive.
+  function compile(p) {
+    p = (p || "").trim();
+    if (p === "" || p === "*") return () => true;
+    if (/[*?]/.test(p)) {
+      const re = new RegExp("^" + p.replace(/[.+^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*").replace(/\?/g, ".") + "$", "is");
+      return (n) => re.test(n);
+    }
+    const k = p.toLowerCase();
+    return (n) => n.toLowerCase().includes(k);
+  }
+
+  // ---------- extension families -> colour token
+  const FAM = [
+    ["e1", ["png", "jpg", "jpeg", "gif", "webp", "svg", "bmp", "heic"]],
+    ["e2", ["pdf", "docx", "doc", "pptx", "rtf", "odt", "epub"]],
+    ["e3", ["csv", "xlsx", "xls", "json", "jsonl", "tsv", "parquet", "xml", "yaml", "yml"]],
+    ["e4", ["tsx", "ts", "jsx", "js", "py", "html", "css", "sh", "go", "rs", "java", "c", "cpp", "sql", "ipynb"]],
+    ["e5", ["zip", "tar", "gz", "7z", "rar", "whl"]],
+    ["e6", ["txt", "md", "log", "kml", "kmz"]],
+  ];
+  const FAM_LABEL = { e1: "Images", e2: "Documents", e3: "Data", e4: "Code", e5: "Archives", e6: "Text", file: "Other" };
+  const famOf = (ext) => (FAM.find(([, xs]) => xs.includes(ext)) || ["file"])[0];
+
+  let C = {};
+  function readColors() {
+    const cs = getComputedStyle(document.documentElement);
+    for (const k of ["bg", "surface", "fg", "muted", "line", "chat", "project", "file", "unlinked", "focus", "e1", "e2", "e3", "e4", "e5", "e6"]) C[k] = cs.getPropertyValue("--" + k).trim();
+  }
+  readColors();
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { readColors(); draw(); });
+  new MutationObserver(() => { readColors(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  // ---------- graph model
+  const nodes = [], byId = new Map(), edges = [];
+  const add = (n) => { n.x = 0; n.y = 0; n.vx = 0; n.vy = 0; n.deg = 0; n.nb = new Set(); nodes.push(n); byId.set(n.id, n); return n; };
+  for (const [id, c] of Object.entries(D.chats)) add({ id: "c:" + id, type: "chat", key: id, label: c.title, data: c });
+  for (const [id, p] of Object.entries(D.projects)) add({ id: "p:" + id, type: "project", key: id, label: p.name, data: p });
+  const UNL = add({ id: "u", type: "unlinked", label: "No linked chat", data: {} });
+  for (const f of D.files) add({ id: "f:" + f.id, type: "file", label: f.name, data: f, fam: famOf(f.ext) });
+  const link = (a, b, kind) => { if (!a || !b) return; edges.push({ a, b, kind }); a.deg++; b.deg++; a.nb.add(b); b.nb.add(a); };
+  for (const f of D.files) {
+    const fn = byId.get("f:" + f.id);
+    for (const c of f.chats) link(fn, byId.get("c:" + c), "upload");
+    if (f.project) link(fn, byId.get("p:" + f.project), "upload");
+    if (!f.chats.length && !f.project) link(fn, UNL, "none");
+  }
+  for (const [id, c] of Object.entries(D.chats)) if (c.project) link(byId.get("c:" + id), byId.get("p:" + c.project), "in");
+  if (!UNL.deg) { nodes.splice(nodes.indexOf(UNL), 1); byId.delete("u"); }
+  const radius = (n) => n.type === "file" ? 4.5 : Math.min(26, 8 + Math.sqrt(n.deg) * 2.6);
+
+  // ---------- layout: deterministic seed, then force relaxation (grid-bucketed repulsion)
+  function seed() {
+    const anchors = nodes.filter((n) => n.type !== "file").sort((a, b) => b.deg - a.deg);
+    const GA = Math.PI * (3 - Math.sqrt(5));
+    anchors.forEach((n, i) => { const r = 70 * Math.sqrt(i + 0.5); n.x = Math.cos(i * GA) * r; n.y = Math.sin(i * GA) * r; });
+    const ring = new Map();
+    for (const n of nodes) if (n.type === "file") {
+      const home = [...n.nb][0];
+      const k = ring.get(home) || 0; ring.set(home, k + 1);
+      const rr = radius(home) + 14 + 7 * Math.sqrt(k), a = k * 2.4;
+      n.x = (home ? home.x : 0) + Math.cos(a) * rr; n.y = (home ? home.y : 0) + Math.sin(a) * rr;
+    }
+    for (const n of nodes) { n.vx = n.vy = 0; n.pinned = false; }
+  }
+  let alpha = 1, running = false;
+  function tick() {
+    const cell = 48, grid = new Map();
+    for (const n of nodes) { const k = Math.floor(n.x / cell) + "," + Math.floor(n.y / cell); (grid.get(k) || grid.set(k, []).get(k)).push(n); }
+    for (const n of nodes) {
+      const gx = Math.floor(n.x / cell), gy = Math.floor(n.y / cell);
+      for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+        const b = grid.get((gx + dx) + "," + (gy + dy)); if (!b) continue;
+        for (const m of b) { if (m === n) continue;
+          let x = n.x - m.x, y = n.y - m.y, d2 = x * x + y * y || 0.01;
+          const min = radius(n) + radius(m) + 6;
+          if (d2 < cell * cell) { const d = Math.sqrt(d2), f = (d < min ? 1.2 : 0.35) * (cell - d) / d * alpha * 0.08; n.vx += x * f; n.vy += y * f; } }
+      }
+    }
+    for (const e of edges) {
+      const want = e.kind === "in" ? 160 : radius(e.b) + 26;
+      let x = e.b.x - e.a.x, y = e.b.y - e.a.y; const d = Math.hypot(x, y) || 0.01, f = (d - want) / d * 0.06 * alpha;
+      const wa = e.a.type === "file" ? 0.9 : 0.1, wb = e.b.type === "file" ? 0.9 : 0.1;
+      e.a.vx += x * f * wa; e.a.vy += y * f * wa; e.b.vx -= x * f * wb; e.b.vy -= y * f * wb;
+    }
+    for (const n of nodes) {
+      if (n.type !== "file") { n.vx -= n.x * 0.0015 * alpha; n.vy -= n.y * 0.0015 * alpha; }
+      if (n.pinned) { n.vx = n.vy = 0; continue; }
+      n.vx *= 0.6; n.vy *= 0.6; n.x += n.vx; n.y += n.vy;
+    }
+    alpha *= 0.985;
+  }
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function settle(animate) {
+    alpha = 1;
+    if (!animate) { for (let i = 0; i < 260 && alpha > 0.02; i++) tick(); fit(); draw(); return; }
+    if (running) return; running = true;
+    const step = () => { for (let i = 0; i < 4; i++) tick(); draw(); if (alpha > 0.02) requestAnimationFrame(step); else { running = false; fit(); draw(); } };
+    requestAnimationFrame(step);
+  }
+
+  // ---------- canvas
+  const cv = $("cv"), ctx = cv.getContext("2d"), stage = $("stage"), tip = $("tip");
+  let W = 0, H = 0, dpr = 1, view = { x: 0, y: 0, k: 1 };
+  function resize() { dpr = window.devicePixelRatio || 1; W = stage.clientWidth; H = stage.clientHeight; cv.width = W * dpr; cv.height = H * dpr; draw(); }
+  function fit() {
+    const vis = nodes.filter((n) => n.visible !== false); if (!vis.length) return;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const n of vis) { x0 = Math.min(x0, n.x); y0 = Math.min(y0, n.y); x1 = Math.max(x1, n.x); y1 = Math.max(y1, n.y); }
+    const pad = 60; view.k = Math.min(2.2, Math.min((W - pad * 2) / (x1 - x0 || 1), (H - pad * 2) / (y1 - y0 || 1)));
+    view.x = W / 2 - (x0 + x1) / 2 * view.k; view.y = H / 2 - (y0 + y1) / 2 * view.k;
+  }
+  const toScreen = (n) => [n.x * view.k + view.x, n.y * view.k + view.y];
+  let hover = null, selected = null;
+  function colorOf(n) { return n.type === "chat" ? C.chat : n.type === "project" ? C.project : n.type === "unlinked" ? C.unlinked : (C[n.fam] || C.file); }
+  function draw() {
+    if (!W) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+    const focus = hover || selected, hot = focus ? new Set([focus, ...focus.nb]) : null;
+    ctx.lineWidth = 1;
+    for (const e of edges) {
+      if (e.a.visible === false || e.b.visible === false) continue;
+      const lit = hot && hot.has(e.a) && hot.has(e.b);
+      ctx.strokeStyle = lit ? colorOf(e.b.type === "file" ? e.a : e.b) : C.line;
+      ctx.globalAlpha = hot && !lit ? 0.25 : e.kind === "none" ? 0.5 : 0.9;
+      ctx.setLineDash(e.kind === "in" ? [5, 4] : []);
+      const [ax, ay] = toScreen(e.a), [bx, by] = toScreen(e.b);
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    const labelFiles = view.k > 1.7;
+    for (const n of nodes) {
+      if (n.visible === false) continue;
+      const [x, y] = toScreen(n), r = radius(n) * Math.max(0.7, Math.min(view.k, 1.6));
+      if (x < -60 || y < -60 || x > W + 60 || y > H + 60) continue;
+      ctx.globalAlpha = hot && !hot.has(n) ? 0.22 : 1;
+      ctx.fillStyle = colorOf(n);
+      ctx.beginPath();
+      if (n.type === "chat") { ctx.roundRect(x - r, y - r, r * 2, r * 2, 4); }
+      else if (n.type === "project") { for (let i = 0; i < 6; i++) { const a = Math.PI / 6 + i * Math.PI / 3; ctx[i ? "lineTo" : "moveTo"](x + Math.cos(a) * r * 1.15, y + Math.sin(a) * r * 1.15); } ctx.closePath(); }
+      else { ctx.arc(x, y, r, 0, Math.PI * 2); }
+      ctx.fill();
+      if (n === selected) { ctx.strokeStyle = C.focus; ctx.lineWidth = 2.5; ctx.stroke(); ctx.lineWidth = 1; }
+      if (n.type !== "file" || labelFiles || (hot && hot.has(n) && focus.type !== "unlinked")) {
+        const t = n.label.length > 42 ? n.label.slice(0, 40) + "…" : n.label;
+        ctx.font = (n.type === "file" ? "11px " : "600 12px ") + (n.type === "file" ? getComputedStyle(document.body).getPropertyValue("--font-data") || "monospace" : "system-ui, sans-serif");
+        ctx.fillStyle = C.fg; ctx.textBaseline = "middle";
+        ctx.lineWidth = 3; ctx.strokeStyle = C.surface; ctx.strokeText(t, x + r + 5, y); ctx.fillText(t, x + r + 5, y); ctx.lineWidth = 1;
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+  function pick(px, py) {
+    let best = null, bd = Infinity;
+    for (const n of nodes) { if (n.visible === false) continue;
+      const [x, y] = toScreen(n), r = radius(n) * Math.max(0.7, Math.min(view.k, 1.6)) + 4, d = Math.hypot(x - px, y - py);
+      if (d < r && d < bd) { best = n; bd = d; } }
+    return best;
+  }
+  let drag = null;
+  cv.addEventListener("pointerdown", (ev) => {
+    const r = cv.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top, n = pick(px, py);
+    drag = { n, px, py, vx: view.x, vy: view.y, moved: false }; cv.setPointerCapture(ev.pointerId); cv.classList.add("dragging");
+  });
+  cv.addEventListener("pointermove", (ev) => {
+    const r = cv.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top;
+    if (drag) {
+      if (Math.hypot(px - drag.px, py - drag.py) > 3) drag.moved = true;
+      if (drag.n) { drag.n.x = (px - view.x) / view.k; drag.n.y = (py - view.y) / view.k; drag.n.pinned = true; }
+      else { view.x = drag.vx + px - drag.px; view.y = drag.vy + py - drag.py; }
+      draw(); return;
+    }
+    const n = pick(px, py);
+    if (n !== hover) { hover = n; draw(); }
+    if (n) { tip.hidden = false; tip.textContent = n.type === "file" ? `${n.label} · ${fmtSize(n.data.size)} · ${fmtDate(n.data.created)}` : `${n.label} · ${n.deg} links`;
+      tip.style.left = Math.min(px + 14, W - 200) + "px"; tip.style.top = (py + 14) + "px"; }
+    else tip.hidden = true;
+  });
+  const endDrag = (ev) => { if (!drag) return; const d = drag; drag = null; cv.classList.remove("dragging");
+    if (!d.moved) { select(d.n); } };
+  cv.addEventListener("pointerup", endDrag);
+  cv.addEventListener("pointercancel", () => { drag = null; cv.classList.remove("dragging"); });
+  cv.addEventListener("pointerleave", () => { if (!drag) { hover = null; tip.hidden = true; draw(); } });
+  cv.addEventListener("wheel", (ev) => { ev.preventDefault();
+    const r = cv.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top, f = Math.exp(-ev.deltaY * 0.0015);
+    const k = Math.max(0.1, Math.min(8, view.k * f)); view.x = px - (px - view.x) * (k / view.k); view.y = py - (py - view.y) * (k / view.k); view.k = k; draw(); }, { passive: false });
+  $("fit").onclick = () => { fit(); draw(); };
+  $("relayout").onclick = () => { seed(); settle(!reduce); };
+  new ResizeObserver(resize).observe(stage);
+
+  // ---------- inspector
+  const panel = $("panel");
+  function chatLink(id) { const c = D.chats[id]; if (!c) return esc(id);
+    return c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)} ↗</a>` : esc(c.title); }
+  function projLink(id) { const p = D.projects[id]; if (!p) return esc(id);
+    return p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)} ↗</a>` : esc(p.name); }
+  function fileList(ns) {
+    return `<ul class="flist">${ns.sort((a, b) => String(b.data.created).localeCompare(String(a.data.created))).map((n) =>
+      `<li><span><button type="button" class="linkish" data-node="${esc(n.id)}">${esc(n.label)}</button></span><span>${fmtDate(n.data.created)}</span></li>`).join("")}</ul>`;
+  }
+  function summary() {
+    const s = D.stats, ext = Object.entries(s.by_ext).slice(0, 8), max = Math.max(1, ...ext.map(([, v]) => v));
+    return `<p class="kind">Summary</p><h2>${s.matched} file${s.matched === 1 ? "" : "s"} matching <code>${esc(D.pattern)}</code></h2>
+      <div class="bars">${ext.map(([k, v]) => `<div class="bar"><span>.${esc(k)}</span><i style="width:${(v / max * 100).toFixed(1)}%;background:${C[famOf(k)] || C.file}"></i><em>${v}</em></div>`).join("")}</div>
+      <dl>${Object.entries(s.by_surface).map(([k, v]) => `<dt>${esc(SURF[k] || k)}</dt><dd>${v}</dd>`).join("")}
+      <dt>No linked chat</dt><dd>${s.unlinked}</dd></dl>
+      <p class="kind">How to use</p><p style="margin:0;color:var(--muted);font-size:13px">Select a square to open that chat. Select a dot to see one file. Drag to pan, scroll to zoom, drag a node to pin it.</p>`;
+  }
+  function select(n) {
+    selected = n || null; draw();
+    if (!n) { panel.innerHTML = summary(); return; }
+    const files = [...n.nb].filter((m) => m.type === "file");
+    if (n.type === "chat") {
+      const c = n.data;
+      panel.innerHTML = `<p class="kind">Chat${c.archived ? " · archived" : ""}</p><h2>${esc(c.title)}</h2>
+        ${c.url ? `<a class="open" href="${esc(c.url)}" target="_blank" rel="noopener">Open chat ↗</a>` : `<p class="notice">${esc(c.note || "No URL available.")}</p>`}
+        <dl>${c.project ? `<dt>Project</dt><dd>${projLink(c.project)}</dd>` : ""}<dt>Updated</dt><dd>${fmtDate(c.updated)}</dd><dt>Files</dt><dd>${files.length}</dd>
+        ${c.url ? `<dt>URL</dt><dd>${esc(c.url)}</dd>` : ""}</dl>${fileList(files)}`;
+    } else if (n.type === "project") {
+      panel.innerHTML = `<p class="kind">Project</p><h2>${esc(n.data.name)}</h2>
+        ${n.data.url ? `<a class="open" href="${esc(n.data.url)}" target="_blank" rel="noopener">Open project ↗</a>` : ""}
+        <dl><dt>Project files</dt><dd>${files.length}</dd><dt>Chats shown</dt><dd>${[...n.nb].filter((m) => m.type === "chat").length}</dd></dl>${fileList(files)}`;
+    } else if (n.type === "unlinked") {
+      panel.innerHTML = `<p class="kind">Group</p><h2>No linked chat</h2><p style="color:var(--muted);font-size:13px;margin:0 0 12px">The upload record lists no chat or project. Usually the chat was deleted, or the file came from a Code or Cowork session.</p>${fileList(files)}`;
+    } else {
+      const f = n.data;
+      panel.innerHTML = `<p class="kind">File · .${esc(f.ext)}</p><h2>${esc(f.name)}</h2>
+        <dl><dt>Uploaded</dt><dd>${esc(f.created ? String(f.created).replace("T", " ").slice(0, 16) : "—")}</dd><dt>Size</dt><dd>${fmtSize(f.size)}</dd>
+        <dt>Surface</dt><dd>${esc(SURF[f.surface] || f.surface)}</dd>${f.mime ? `<dt>Type</dt><dd>${esc(f.mime)}</dd>` : ""}
+        ${f.chats.map((c) => `<dt>Chat</dt><dd>${chatLink(c)}</dd>`).join("")}${f.project ? `<dt>Project</dt><dd>${projLink(f.project)}</dd>` : ""}
+        ${!f.chats.length && !f.project ? `<dt>Chat</dt><dd>none recorded</dd>` : ""}</dl>`;
+    }
+  }
+  document.addEventListener("click", (ev) => { const b = ev.target.closest("[data-node]"); if (!b) return;
+    const n = byId.get(b.dataset.node); if (n) { select(n); const [x, y] = toScreen(n); if (x < 0 || y < 0 || x > W || y > H) { view.x += W / 2 - x; view.y += H / 2 - y; draw(); } if (b.closest(".index") && stage.scrollIntoView) stage.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" }); } });
+
+  // ---------- index (grouped list) + narrowing
+  function renderIndex(match) {
+    const groups = new Map();
+    const put = (key, head, f) => { if (!groups.has(key)) groups.set(key, { head, files: [] }); groups.get(key).files.push(f); };
+    for (const f of D.files) { if (!match(f.name)) continue;
+      for (const c of f.chats) put("c:" + c, { kind: "chat", id: c }, f);
+      if (f.project) put("p:" + f.project, { kind: "project", id: f.project }, f);
+      if (!f.chats.length && !f.project) put("u", { kind: "none" }, f); }
+    const order = [...groups.entries()].sort(([ka, a], [kb, b]) => (ka === "u") - (kb === "u") || b.files.length - a.files.length);
+    if (!order.length) { $("index").innerHTML = `<div class="empty">No files match. Clear the Narrow box or try a wildcard such as <code>*.pdf</code>.</div>`; return; }
+    $("index").innerHTML = order.map(([key, g]) => {
+      const t = g.head.kind === "chat" ? chatLink(g.head.id) : g.head.kind === "project" ? "Project: " + projLink(g.head.id) : "No linked chat";
+      const sel = key === "u" ? "u" : key;
+      return `<div class="group"><div class="gh"><span class="t">${t}</span><span class="m">${g.files.length} file${g.files.length === 1 ? "" : "s"} · <button type="button" class="linkish" data-node="${esc(sel)}">show in graph</button></span></div>
+        <div class="tbl"><table><tbody>${g.files.map((f) => `<tr><td class="n"><button type="button" class="linkish" data-node="f:${esc(f.id)}">${esc(f.name)}</button></td><td class="r">${fmtSize(f.size)}</td><td class="r">${fmtDate(f.created)}</td></tr>`).join("")}</tbody></table></div></div>`;
+    }).join("");
+  }
+  function applyNarrow() {
+    const q = $("q").value, m = compile(q);
+    for (const n of nodes) if (n.type === "file") n.visible = m(n.label);
+    for (const n of nodes) if (n.type !== "file") n.visible = !q.trim() || [...n.nb].some((x) => x.type === "file" && x.visible !== false);
+    renderIndex(m); draw();
+  }
+  $("q").addEventListener("input", applyNarrow);
+
+  // ---------- header
+  const s = D.stats;
+  $("pat").textContent = D.pattern;
+  $("stats").innerHTML = `<b>${s.matched}</b> of ${s.all_files} uploads · <b>${s.chats}</b> chats · <b>${s.projects}</b> projects · <b>${s.unlinked}</b> with no linked chat`;
+  if (!D.has_urls) { $("notice").hidden = false; $("notice").textContent = "Built from the copy/paste CSV, which loses the Open chat links. Files are grouped by surface and location. Run the collector for real, clickable chat nodes."; }
+  else if (D.truncated) { $("notice").hidden = false; $("notice").textContent = "The collector hit its page limit, so older uploads may be missing."; }
+  $("legend").innerHTML = `<span><i class="sw sq" style="background:var(--chat)"></i>Chat</span><span><i class="sw sq" style="background:var(--project)"></i>Project</span>` +
+    Object.entries(FAM_LABEL).filter(([k]) => nodes.some((n) => n.fam === k)).map(([k, l]) => `<span><i class="sw" style="background:var(--${k === "file" ? "file" : k})"></i>${l}</span>`).join("") +
+    (byId.has("u") ? `<span><i class="sw" style="background:var(--unlinked)"></i>No linked chat</span>` : "");
+  $("foot").textContent = `Source: ${D.source}${D.generated_at ? " · collected " + String(D.generated_at).replace("T", " ").slice(0, 16) + " UTC" : ""} · built ${D.built_at.replace("T", " ").slice(0, 16)} UTC`;
+
+  resize(); seed(); settle(false); select(null); renderIndex(() => true);
+  if (!nodes.length) { stage.insertAdjacentHTML("beforeend", `<div class="empty" style="position:absolute;inset:0;display:grid;place-items:center">No uploads match <code>${esc(D.pattern)}</code>.</div>`); }
+})();
+</script>

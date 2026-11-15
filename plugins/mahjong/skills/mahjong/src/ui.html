@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Human0 Mahjong — American Mah Jongg Coach</title>
+<style>
+:root{--mat:#c9dcef;--mat2:#b7cfe8;--navy:#1f3a8a;--ink:#1b2440;--ivory:#fffdf6;--ivory2:#ece4cf;--red:#c0262d;--green:#1f7a3c;--blue:#1d4fa8;--tw:clamp(24px,5.7vw,46px);--sw:clamp(15px,3vw,26px);--gold:#f2c14e}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#efe9df;color:var(--ink)}
+button{font-family:inherit;cursor:pointer}
+#app{max-width:1280px;margin:0 auto;padding:8px}
+header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 4px}
+header h1{font-size:clamp(17px,2.6vw,24px);margin:0;letter-spacing:.5px}
+header h1 small{display:block;font-size:12px;font-weight:normal;color:#5a6178;letter-spacing:0}
+#logo{height:44px;width:44px;border-radius:8px;object-fit:cover;display:none}
+.badge{background:var(--navy);color:#fff;border-radius:999px;padding:3px 10px;font-size:12px}
+.spacer{flex:1}
+.hbtn{background:#fff;border:1px solid #c8bfa9;border-radius:8px;padding:6px 10px;font-size:13px}
+#scores{display:flex;gap:6px;font-size:12px;flex-wrap:wrap}
+#scores span{background:#fff;border-radius:6px;padding:2px 7px;border:1px solid #ddd}
+main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:10px}
+@media(max-width:980px){main{grid-template-columns:1fr}}
+/* ---- table / mat ---- */
+#table{position:relative;background:radial-gradient(circle at 50% 50%,#f4f8fc 0 17%,var(--mat) 17.5% 100%);border-radius:22px;border:3px solid var(--navy);box-shadow:inset 0 0 0 10px var(--mat2),0 6px 18px rgba(0,0,0,.18);display:grid;grid-template-columns:minmax(52px,auto) 1fr minmax(52px,auto);grid-template-rows:auto 1fr auto;gap:6px;padding:10px;min-height:560px;overflow:hidden}
+#table::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+ radial-gradient(circle at 12% 12%,rgba(31,58,138,.16) 0 4%,transparent 4.5%),radial-gradient(circle at 88% 12%,rgba(31,58,138,.16) 0 4%,transparent 4.5%),
+ radial-gradient(circle at 12% 88%,rgba(31,58,138,.16) 0 4%,transparent 4.5%),radial-gradient(circle at 88% 88%,rgba(31,58,138,.16) 0 4%,transparent 4.5%)}
+.seat{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;z-index:1}
+#pos2{grid-column:1/4;grid-row:1}
+#pos1{grid-column:3;grid-row:2;justify-content:center}
+#pos3{grid-column:1;grid-row:2;justify-content:center}
+#pos0{grid-column:1/4;grid-row:3}
+#center{grid-column:2;grid-row:2;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:1;min-height:230px}
+.nameplate{font-size:12px;background:rgba(255,255,255,.85);border:1px solid var(--navy);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.nameplate b{color:var(--navy)}
+.nameplate.turn{background:var(--gold);box-shadow:0 0 0 3px rgba(242,193,78,.45)}
+.scwtag{font-size:10px;color:#fff;background:var(--navy);border-radius:4px;padding:0 4px;margin-left:4px;font-family:monospace}
+/* ---- racks ---- */
+.rack{position:relative;background:linear-gradient(#2c4fa8,#18306f);border-radius:8px;padding:5px 7px 9px;box-shadow:0 4px 8px rgba(0,0,0,.3),inset 0 2px 0 rgba(255,255,255,.25);display:flex;flex-direction:column;gap:4px;max-width:100%}
+.rack::after{content:"";position:absolute;left:6px;right:6px;bottom:2px;height:4px;border-radius:2px;background:linear-gradient(#e7d9a6,#b89c55);}
+.shelf{display:flex;gap:5px;flex-wrap:wrap;min-height:6px;justify-content:center}
+.meld{display:flex;background:rgba(255,255,255,.14);padding:2px;border-radius:5px}
+.row{display:flex;gap:2px;flex-wrap:nowrap;justify-content:center}
+.side .rack{padding:7px 5px}
+.side .row{flex-direction:column}
+.side .shelf{flex-direction:column}
+.side .meld{flex-direction:column}
+/* ---- tiles ---- */
+.t{--w:var(--tw);width:var(--w);height:calc(var(--w)*1.36);background:linear-gradient(160deg,var(--ivory),var(--ivory2));border-radius:calc(var(--w)*.13);box-shadow:0 calc(var(--w)*.06) 0 #cbbf9f,0 calc(var(--w)*.09) calc(var(--w)*.12) rgba(0,0,0,.3);position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 auto;user-select:none;transition:transform .12s;overflow:hidden}
+.t.sm{--w:var(--sw)}
+.t.xs{--w:calc(var(--sw)*.8);display:inline-flex;vertical-align:middle;margin:1px}
+.t .c{position:absolute;top:2%;left:7%;font:bold calc(var(--w)*.24) Arial,sans-serif;color:var(--red);line-height:1}
+.t .big{font-size:calc(var(--w)*.5);line-height:1;font-family:"Songti SC","SimSun","Noto Serif CJK SC",serif}
+.crak{display:flex;flex-direction:column;align-items:center;line-height:.95}
+.crak .cn{font-size:calc(var(--w)*.4);color:#111;font-family:"Songti SC","SimSun",serif}
+.crak .wan{font-size:calc(var(--w)*.42);color:var(--red);font-family:"Songti SC","SimSun",serif}
+.pips{display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:calc(var(--w)*.04);width:82%;height:80%;margin-top:10%}
+.bam{width:calc(var(--w)*.13);height:calc(var(--w)*.3);border-radius:calc(var(--w)*.05);background:linear-gradient(90deg,#155a2b,#2fa05a,#155a2b);box-shadow:inset 0 calc(var(--w)*.13) 0 -1px rgba(255,255,255,.18)}
+.bam.r{background:linear-gradient(90deg,#8d1a1f,#d9474d,#8d1a1f)}
+.dot{width:calc(var(--w)*.2);height:calc(var(--w)*.2);border-radius:50%;border:calc(var(--w)*.03) solid #1d4fa8;background:radial-gradient(circle,#fff 0 22%,#1d4fa8 24% 34%,#fff 36%)}
+.dot.g{border-color:var(--green);background:radial-gradient(circle,#fff 0 22%,var(--green) 24% 34%,#fff 36%)}
+.dot.r{border-color:var(--red);background:radial-gradient(circle,#fff 0 22%,var(--red) 24% 34%,#fff 36%)}
+.dot.one{width:calc(var(--w)*.62);height:calc(var(--w)*.62);border-width:calc(var(--w)*.06);border-color:var(--green);background:radial-gradient(circle,var(--red) 0 18%,#fff 20% 36%,#1d4fa8 38% 46%,#fff 48%)}
+.bird{font-size:calc(var(--w)*.55);color:var(--green)}
+.soap{width:66%;height:72%;border:calc(var(--w)*.06) double #1d4fa8;border-radius:3px;outline:calc(var(--w)*.03) solid #1d4fa8;outline-offset:calc(var(--w)*.04)}
+.joker{display:flex;flex-direction:column;align-items:center}
+.joker .jt{font:bold calc(var(--w)*.19) Arial,sans-serif;color:var(--red);letter-spacing:-.5px}
+.joker .js{font-size:calc(var(--w)*.48);color:#222}
+.t.back{background:linear-gradient(160deg,#2a8b63,#16583e);box-shadow:0 calc(var(--w)*.06) 0 #f1ead6,0 calc(var(--w)*.09) calc(var(--w)*.12) rgba(0,0,0,.3)}
+.t.back::after{content:"";position:absolute;inset:16%;border:1px solid rgba(255,255,255,.25);border-radius:3px}
+.side .t.back{width:calc(var(--sw)*1.3);height:var(--sw)}
+.hand .t{cursor:pointer}
+.hand .t:hover{transform:translateY(-3px)}
+.t.sel{transform:translateY(-12px)!important;box-shadow:0 0 0 3px var(--gold),0 6px 10px rgba(0,0,0,.35)}
+.t.sugg::before{content:"";position:absolute;top:3px;right:3px;width:9px;height:9px;border-radius:50%;background:#e2483d;box-shadow:0 0 0 2px #fff;z-index:2}
+.t.keep{outline:2px solid rgba(31,122,60,.6);outline-offset:-2px}
+.t.new{animation:pop .5s}
+@keyframes pop{0%{transform:translateY(-20px);opacity:.2}100%{transform:none;opacity:1}}
+.t.last{box-shadow:0 0 0 3px #e2483d,0 4px 8px rgba(0,0,0,.4)}
+/* ---- wall & discards ---- */
+.wallrow{display:flex;gap:1px;justify-content:center;min-height:9px}
+.stk{width:7px;height:10px;background:linear-gradient(#f6f0de,#d9cfb4);border-radius:1.5px;box-shadow:0 2px 0 #2a8b63}
+.wallcol{display:flex;flex-direction:column;gap:1px;position:absolute;top:50%;transform:translateY(-50%)}
+.wallcol .stk{width:10px;height:7px;box-shadow:2px 0 0 #2a8b63}
+#discards{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;align-content:flex-start;max-width:min(520px,92%);max-height:200px;overflow:auto;padding:6px;border-radius:12px;background:rgba(255,255,255,.55)}
+#announce{font-size:14px;background:#fff;border:2px solid var(--navy);border-radius:10px;padding:5px 10px;text-align:center;max-width:92%;box-shadow:0 3px 8px rgba(0,0,0,.15)}
+#wallcount{font-size:11px;color:#334}
+.windmark{position:absolute;font-size:44px;color:rgba(31,58,138,.25);font-family:"Songti SC","SimSun",serif;pointer-events:none}
+/* ---- actions ---- */
+#actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:8px;position:sticky;bottom:0;background:linear-gradient(rgba(239,233,223,0),#efe9df 30%);z-index:5}
+.btn{border:none;border-radius:10px;padding:10px 16px;font-size:15px;background:var(--navy);color:#fff;box-shadow:0 3px 0 #0f2260}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+.btn.win{background:#c0262d;box-shadow:0 3px 0 #7a1418;animation:glow 1s infinite alternate}
+.btn.gold{background:#d9a21b;box-shadow:0 3px 0 #8a6610}
+@keyframes glow{to{box-shadow:0 0 16px 4px rgba(192,38,45,.55)}}
+/* ---- side panel ---- */
+aside{background:#fff;border-radius:14px;border:1px solid #d8cfbb;display:flex;flex-direction:column;min-height:300px;max-height:calc(100vh - 90px);position:sticky;top:8px}
+@media(max-width:980px){aside{max-height:none;position:static}}
+.tabs{display:flex;border-bottom:1px solid #e4dccb}
+.tabs button{flex:1;border:none;background:none;padding:9px 2px;font-size:13px;border-bottom:3px solid transparent}
+.tabs button.on{border-color:var(--navy);font-weight:bold;color:var(--navy)}
+.pane{padding:10px 12px;overflow:auto;font-size:14px;line-height:1.45;display:none}
+.pane.on{display:block}
+.coachbox{background:#f3f7fd;border-left:4px solid var(--navy);border-radius:6px;padding:8px 10px;margin-bottom:8px}
+.coachbox h3{margin:0 0 4px;font-size:15px;color:var(--navy)}
+.tip{background:#fff8e5;border-left:4px solid var(--gold);border-radius:6px;padding:6px 9px;margin:6px 0;font-size:13px}
+.prog{display:flex;align-items:center;gap:6px;margin:6px 0}
+.bar{flex:1;height:8px;background:#e8e2d3;border-radius:5px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#4fc27b)}
+.handline{font:bold 14px "Courier New",monospace;letter-spacing:.5px}
+.handline .a{color:var(--green)}.handline .b{color:var(--red)}.handline .c{color:var(--blue)}.handline .n{color:#222}
+.cardrow{border-bottom:1px dashed #e2dacb;padding:6px 2px;cursor:pointer}
+.cardrow:hover{background:#faf6ec}
+.cardrow.pin{background:#fff3cf}
+.cardrow .meta{font-size:12px;color:#666;display:flex;justify-content:space-between;gap:6px}
+.cat{margin:10px 0 2px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--navy);font-weight:bold}
+#log div{font-size:12.5px;padding:3px 0;border-bottom:1px solid #f0ebe0}
+#log .tag{font:10px monospace;background:#e6ecf8;color:var(--navy);border-radius:3px;padding:0 4px;margin-right:4px}
+.scw{border:1px solid #c9d3ea;border-radius:8px;padding:6px 8px;margin:6px 0;font-size:12.5px}
+.scw.root{border:2px solid var(--navy)}
+.scw .h{font:bold 12px monospace;color:var(--navy)}
+.minitiles{display:flex;flex-wrap:wrap;gap:2px;margin-top:3px}
+/* ---- overlay ---- */
+#overlay{position:fixed;inset:0;background:rgba(20,28,50,.55);display:none;align-items:center;justify-content:center;z-index:20;padding:12px}
+#overlay.on{display:flex}
+.modal{background:#fffdf7;border-radius:16px;max-width:620px;width:100%;max-height:92vh;overflow:auto;padding:18px 20px;box-shadow:0 12px 40px rgba(0,0,0,.4);border:3px solid var(--navy)}
+.modal h2{margin:0 0 6px;color:var(--navy)}
+.choice{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.choice button{flex:1;min-width:150px;text-align:left;border:2px solid #cfc6b0;background:#fff;border-radius:10px;padding:9px 11px;font-size:14px}
+.choice button.on{border-color:var(--navy);background:#eef3fc}
+.choice button small{display:block;color:#666;font-size:12px;margin-top:2px}
+.payrow{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:3px 0}
+.legend{display:flex;gap:4px;flex-wrap:wrap;align-items:center;font-size:12px}
+.hide{display:none!important}
+@media(max-width:600px){#table{grid-template-columns:34px 1fr 34px;padding:6px;min-height:480px}.side .t.back{width:16px;height:11px}.side .rack{padding:4px 3px 8px}.side .nameplate{writing-mode:vertical-rl;padding:6px 1px}.nameplate{font-size:11px}}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <img id="logo" alt="Human0">
+    <h1>Mahjong <small>American Mah Jongg · NMJL-style rules · learn as you play</small></h1>
+    <span class="badge" id="lvlBadge">Beginner</span>
+    <div class="spacer"></div>
+    <div id="scores"></div>
+    <button class="hbtn" id="newBtn">New game</button>
+  </header>
+  <main>
+    <section id="table">
+      <div class="seat" id="pos2"></div>
+      <div class="seat side" id="pos3"></div>
+      <div id="center">
+        <div class="wallrow" id="wallTop"></div>
+        <div id="announce">Welcome! Choose a level to start.</div>
+        <div id="discards"></div>
+        <div id="wallcount"></div>
+        <div class="wallrow" id="wallBottom"></div>
+        <div class="wallcol" id="wallLeft" style="left:0"></div>
+        <div class="wallcol" id="wallRight" style="right:0"></div>
+      </div>
+      <div class="seat side" id="pos1"></div>
+      <div class="seat" id="pos0"></div>
+    </section>
+    <aside>
+      <div class="tabs">
+        <button data-p="coach" class="on">Coach</button><button data-p="card">Card</button><button data-p="log">Log</button><button data-p="scw">SCW</button><button data-p="rules">Rules</button>
+      </div>
+      <div class="pane on" id="p-coach"></div>
+      <div class="pane" id="p-card"></div>
+      <div class="pane" id="p-log"><div id="log"></div></div>
+      <div class="pane" id="p-scw"></div>
+      <div class="pane" id="p-rules"></div>
+    </aside>
+  </main>
+  <div id="actions"></div>
+</div>
+<div id="overlay"><div class="modal" id="modal"></div></div>
+
+<script>
+/*ENGINE*/
+</script>
+<script>
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const U=0; // the user's physical seat is always the bottom of the table
+const BOT_NAMES=['You','Rose','Pearl','Hazel'];
+const CN=['','一','二','三','四','五','六','七','八','九'];
+const WCH={E:'東',S:'南',W:'西',N:'北'};
+const LEVEL_INFO={
+  beginner:{label:'Beginner',desc:'Gentle bots. The coach explains every step, marks a suggested discard, and highlights tiles to keep.',hints:Infinity,auto:true},
+  intermediate:{label:'Intermediate',desc:'Bots aim for the best hand and call tiles. Tap Hint whenever you want advice.',hints:Infinity,auto:false},
+  advanced:{label:'Advanced',desc:'Strong, defensive bots that swap jokers and call aggressively. 3 hints per game.',hints:3,auto:false}};
+const store={get(k,d){try{const v=localStorage.getItem('h0mj.'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('h0mj.'+k,JSON.stringify(v))}catch(e){}}};
+
+let G=null;
+let S={level:store.get('level','beginner'),speed:store.get('speed',800),eastMode:'you',scores:store.get('scores',[0,0,0,0]),games:store.get('games',0),wins:store.get('wins',0),dealer:0};
+let ui={mode:'start',sel:new Set(),stage:0,pinned:null,hintsLeft:3,hintOn:false,call:null,lastDrawId:null,busy:false,log:[],seenRules:false};
+const STAGES=[{dir:'right',label:'1st Charleston · pass 1 of 3'},{dir:'across',label:'1st Charleston · pass 2 of 3'},{dir:'left',label:'1st Charleston · pass 3 of 3'},
+              {dir:'left',label:'2nd Charleston · pass 1 of 3'},{dir:'across',label:'2nd Charleston · pass 2 of 3'},{dir:'right',label:'2nd Charleston · pass 3 of 3'}];
+
+const name=s=>BOT_NAMES[s];
+const windOf=s=>G?MJ.WIND_NAME[G.windOf(s)]:'';
+const who=s=>s===U?'You':`${name(s)} (${windOf(s)})`;
+const tn=k=>MJ.tileName(k);
+const target=(s,dir)=>(s+MJ.DIRS[dir])%4;
+
+/* ---------- tile rendering ---------- */
+function tileInner(k){
+  if(k==='J')return '<div class="joker"><span class="jt">JOKER</span><span class="js">✪</span></div>';
+  if(k==='F')return '<span class="c">F</span><span class="big" style="color:#c2457a">✿</span>';
+  if(k==='XR')return '<span class="c">R</span><span class="big" style="color:var(--red)">龍</span>';
+  if(k==='XG')return '<span class="c" style="color:var(--green)">G</span><span class="big" style="color:var(--green)">龍</span>';
+  if(k==='XW')return '<div class="soap"></div>';
+  if(k[0]==='W')return `<span class="c">${k[1]}</span><span class="big" style="color:#111">${WCH[k[1]]}</span>`;
+  const s=k[0],n=+k[1];
+  if(s==='C')return `<span class="c">${n}</span><div class="crak"><span class="cn">${CN[n]}</span><span class="wan">萬</span></div>`;
+  if(s==='B'){
+    if(n===1)return '<span class="c">1</span><span class="bird">🕊︎</span>';
+    let p='';for(let i=0;i<n;i++)p+=`<i class="bam${(n===5||n===7||n===9)&&i===Math.floor(n/2)?' r':''}"></i>`;
+    return `<span class="c">${n}</span><div class="pips">${p}</div>`;
+  }
+  if(n===1)return '<span class="c">1</span><i class="dot one"></i>';
+  let p='';const col=['','g','r'];for(let i=0;i<n;i++)p+=`<i class="dot ${col[(i+n)%3]}"></i>`;
+  return `<span class="c">${n}</span><div class="pips">${p}</div>`;
+}
+function tileHTML(t,cls,attrs){return `<div class="t ${cls||''}" title="${esc(tn(t.k))}" ${attrs||''}>${tileInner(t.k)}</div>`;}
+function backHTML(cls){return `<div class="t back ${cls||''}"></div>`;}
+
+/* ---------- logging ---------- */
+function log(text,scw){ui.log.unshift({text,scw:scw||'SCW0'});if(ui.log.length>300)ui.log.pop();renderLog();}
+function announce(html){$('#announce').innerHTML=html;}
+
+/* ---------- start / overlay ---------- */
+function showStart(){
+  const lv=Object.entries(LEVEL_INFO).map(([k,v])=>`<button data-lv="${k}" class="${S.level===k?'on':''}"><b>${v.label}</b><small>${v.desc}</small></button>`).join('');
+  const sp=[[1300,'Relaxed'],[800,'Normal'],[350,'Quick']].map(([v,l])=>`<button data-sp="${v}" class="${S.speed===v?'on':''}"><b>${l}</b></button>`).join('');
+  modal(`<h2>🀄 American Mah Jongg</h2>
+  <p>Play against three computer players — <b>Rose</b>, <b>Pearl</b> and <b>Hazel</b> — who can win too. The coach teaches you as you go.</p>
+  <div class="cat">Level</div><div class="choice" id="lvls">${lv}</div>
+  <div class="cat">Bot speed</div><div class="choice" id="spds">${sp}</div>
+  <div class="cat">Who is East (dealer)?</div><div class="choice" id="east"><button data-e="you" class="on"><b>Me</b><small>You discard first — great for learning.</small></button><button data-e="dice"><b>Roll the dice</b><small>Highest roll is East, like at a real table.</small></button></div>
+  <div class="tip">New to Mah Jongg? Open the <b>Rules</b> tab any time. Your goal: match your 14 tiles to one hand on the <b>Card</b>.</div>
+  <div style="text-align:right"><button class="btn" id="go">Deal the tiles</button></div>`);
+  const pick=(sel,attr,fn)=>$(sel).querySelectorAll('button').forEach(b=>b.onclick=()=>{$(sel).querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');fn(b.dataset[attr]);});
+  pick('#lvls','lv',v=>S.level=v);pick('#spds','sp',v=>S.speed=+v);pick('#east','e',v=>S.eastMode=v);
+  $('#go').onclick=()=>{store.set('level',S.level);store.set('speed',S.speed);closeModal();newGame(true);};
+}
+function modal(html){$('#modal').innerHTML=html;$('#overlay').classList.add('on');}
+function closeModal(){$('#overlay').classList.remove('on');}
+
+/* ---------- game lifecycle ---------- */
+function newGame(first){
+  if(first&&S.eastMode==='dice'){
+    const rolls=[0,1,2,3].map(()=>2+Math.floor(Math.random()*6)+Math.floor(Math.random()*6));
+    let best=0;rolls.forEach((r,i)=>{if(r>rolls[best])best=i;});S.dealer=best;
+    log(`Dice rolls — ${rolls.map((r,i)=>name(i)+': '+r).join(', ')}. ${name(best)} is East.`);
+  }else if(first)S.dealer=U;
+  G=new MJ.Game({level:S.level,userSeat:U,dealer:S.dealer});
+  ui=Object.assign(ui,{mode:'charleston',sel:new Set(),stage:0,hintsLeft:LEVEL_INFO[S.level].hints,hintOn:LEVEL_INFO[S.level].auto,call:null,lastDrawId:null,busy:false,pinned:null});
+  $('#lvlBadge').textContent=LEVEL_INFO[S.level].label;
+  log(`New game. ${who(S.dealer)} is East (SCW1). The wall is built and the tiles are dealt: East 14, everyone else 13.`);
+  announce(`<b>Charleston time!</b> Pick 3 tiles to pass <b>right</b> to ${who(target(U,'right'))}.`);
+  render();
+}
+function nextTurn(){
+  if(G.result)return showResult();
+  const s=G.turn;
+  if(s===U)return userTurn();
+  ui.mode='bots';render();
+  setTimeout(()=>botTurn(s),S.speed);
+}
+function userTurn(){
+  if(G.total(U)===13){
+    const t=G.draw(U);
+    if(!t)return showResult();
+    ui.lastDrawId=t.id;log(`You drew ${tn(t.k)}.`,G.scwOf(U));
+  }
+  ui.mode='discard';ui.sel.clear();
+  const win=G.isWin(U);
+  announce(win?'<b>You have Mah Jongg!</b> Press the red <b>Mah Jongg!</b> button.':'<b>Your turn.</b> Tap a tile you don’t need, then tap <b>Discard</b> (or tap it twice).');
+  render();
+}
+function botTurn(s){
+  if(G.total(s)===13){
+    const t=G.draw(s);
+    if(!t)return showResult();
+    if(G.isWin(s)){G.finish(s,{self:true});log(`${who(s)} drew ${tn(t.k)} and declared Mah Jongg!`,G.scwOf(s));return showResult();}
+  }
+  const before=G.events.length;const n=G.botSwaps(s);
+  if(n)for(const e of G.events.slice(before))log(`${who(s)}: ${e.text.replace(/^\w+ /,'')}`,G.scwOf(s));
+  const t=G.discard(s,G.chooseDiscard(s).id);
+  log(`${who(s)} discarded ${tn(t.k)}.`,G.scwOf(s));
+  afterDiscard(s);
+}
+function afterDiscard(by){
+  const key=G.lastDiscard.t.k;
+  announce(`${who(by)} discarded <b>${tn(key)}</b>${key==='J'?' — a discarded Joker is dead and can’t be called.':''}`);
+  if(by!==U){
+    const co=G.callOptions(U,key);
+    if(co.mahjong||co.expose.length){ui.mode='call';ui.call=co;render();return;}
+  }
+  render();
+  setTimeout(()=>resolveCalls(null),by===U?Math.min(500,S.speed):Math.min(450,S.speed/2));
+}
+function resolveCalls(dec){
+  ui.call=null;
+  const by=G.lastDiscard.by,key=G.lastDiscard.t.k;
+  const claim=G.resolveCalls(dec);
+  if(!claim){G.turn=(by+1)%4;return nextTurn();}
+  const nm={3:'Pung',4:'Kong',5:'Quint',6:'Sextet'}[claim.size];
+  if(dec&&claim.seat!==U)log(`${who(claim.seat)} had priority on that tile.`);
+  G.applyCall(claim.seat,claim.kind,claim.size);
+  if(claim.kind==='mahjong'){log(`${who(claim.seat)} called ${tn(key)} for Mah Jongg!`,G.scwOf(claim.seat));return showResult();}
+  log(`${who(claim.seat)} called ${tn(key)} and exposed a ${nm}.`,G.scwOf(claim.seat));
+  announce(`<b>${who(claim.seat)}</b> called the ${tn(key)} — exposed a ${nm}.`);
+  if(claim.seat===U){ui.mode='discard';announce(`You exposed a ${nm}. Now discard a tile.`);render();return;}
+  render();setTimeout(()=>nextTurn(),S.speed);
+}
+
+/* ---------- user actions ---------- */
+function clickTile(id){
+  const t=G.players[U].hand.find(x=>x.id===id);if(!t)return;
+  if(ui.mode==='charleston'||ui.mode==='courtesy'){
+    if(t.k==='J'){announce('Jokers can never be passed in the Charleston — keep them, they are your best friends!');return;}
+    const max=3;
+    if(ui.sel.has(id))ui.sel.delete(id);else if(ui.sel.size<max)ui.sel.add(id);
+    render();return;
+  }
+  if(ui.mode==='discard'){
+    if(ui.sel.has(id)){userDiscard(id);return;}
+    ui.sel.clear();ui.sel.add(id);render();
+  }
+}
+function userDiscard(id){
+  ui.sel.clear();ui.lastDrawId=null;
+  const t=G.discard(U,id);log(`You discarded ${tn(t.k)}.`,G.scwOf(U));
+  ui.mode='bots';afterDiscard(U);
+}
+function doCharleston(){
+  const st=STAGES[ui.stage];
+  const picks={};for(let s=0;s<4;s++)picks[s]=s===U?[...ui.sel]:G.pickTiles(s,3,{style:G.level});
+  G.charlestonPass(st.dir,picks);
+  log(`Charleston: you passed 3 tiles ${st.dir} to ${who(target(U,st.dir))}; every player passed ${st.dir}.`);
+  ui.sel.clear();ui.stage++;
+  if(ui.stage===3){ui.mode='ask2';announce('First Charleston done! Do you want a <b>second Charleston</b>? (Any player may stop it.)');}
+  else if(ui.stage===6){toCourtesy();}
+  else announce(`Now pass 3 tiles <b>${STAGES[ui.stage].dir}</b> to ${who(target(U,STAGES[ui.stage].dir))}.`);
+  render();
+}
+function answerSecond(yes){
+  if(!yes){log('You chose to stop after the first Charleston.');return toCourtesy();}
+  const refuse=[1,2,3].filter(s=>!G.botAgreeSecond(s));
+  if(refuse.length){log(`${refuse.map(name).join(' and ')} chose to stop the Charleston — it only continues if everyone agrees.`);return toCourtesy();}
+  log('Everyone agreed to a second Charleston (left, across, right).');
+  ui.mode='charleston';announce(`Second Charleston: pass 3 tiles <b>left</b> to ${who(target(U,'left'))}.`);render();
+}
+function toCourtesy(){
+  ui.mode='courtesy';ui.sel.clear();
+  announce(`Optional <b>courtesy pass</b>: trade 0–3 tiles with ${who(target(U,'across'))} across from you. Select tiles (or none) and press the button.`);
+  render();
+}
+function doCourtesy(){
+  const across=target(U,'across');const n=Math.min(ui.sel.size,Math.max(1,G.courtesyWant(across)));
+  const mine=[...ui.sel].slice(0,n);
+  const picks={};picks[U]=mine;picks[across]=G.pickTiles(across,n,{style:G.level});
+  const a=(U+1)%4,b=(U+3)%4;const m=Math.min(G.courtesyWant(a),G.courtesyWant(b));
+  picks[a]=G.pickTiles(a,m,{style:G.level});picks[b]=G.pickTiles(b,m,{style:G.level});
+  if(n||m){
+    const off={};off[U]=picks[U];off[across]=picks[across];
+    if(n)G.charlestonPass('across',{[U]:picks[U],[across]:picks[across]});
+    if(m)G.charlestonPass('across',{[a]:picks[a],[b]:picks[b]});
+  }
+  log(n?`Courtesy pass: you and ${name(across)} traded ${n} tile${n>1?'s':''}.`:(ui.sel.size?`${name(across)} wanted no courtesy trade, so nothing was passed.`:'You skipped the courtesy pass.'));
+  ui.sel.clear();startPlay();
+}
+function startPlay(){
+  G.phase='play';G.turn=G.dealer;
+  log(`The Charleston is over. ${who(G.dealer)} (East) starts by discarding the 14th tile.`);
+  nextTurn();
+}
+function userCall(kind,size){
+  ui.mode='bots';
+  resolveCalls({kind,size});
+}
+function userSwap(){
+  const sw=G.jokerSwaps(U)[0];if(!sw)return;
+  G.doSwap(U,sw);log(`You swapped your ${tn(sw.key)} for the Joker in ${who(sw.owner)}’s exposure.`,G.scwOf(U));
+  announce('Joker captured! Jokers can fill any Pung, Kong, Quint or Sextet in your hand.');
+  render();
+}
+function userMahjong(){
+  if(!G.isWin(U)){announce('Not yet — your 14 tiles don’t match a hand on the card. (Declaring in error would make your hand dead!)');return;}
+  G.finish(U,{self:true});log('You declared Mah Jongg!',G.scwOf(U));showResult();
+}
+function useHint(){
+  if(ui.hintsLeft<=0)return;
+  if(ui.hintsLeft!==Infinity)ui.hintsLeft--;
+  ui.hintOn=true;render();
+  document.querySelector('.tabs [data-p=coach]').click();
+}
+
+/* ---------- coach (uses only YOUR rack + public tiles: same information you have) ---------- */
+function coachData(){
+  const per=G.bestPerHand(U);
+  const pinned=ui.pinned&&per.find(e=>e.conc.hand.id===ui.pinned);
+  const top=pinned?[pinned,...per.filter(e=>e!==pinned).slice(0,2)]:per.slice(0,3);
+  const opt={style:'coach',handId:ui.pinned||undefined};
+  let disc=null,keep=new Set();
+  if(G.total(U)===14&&G.players[U].hand.length){disc=G.chooseDiscard(U,opt);}
+  if(top[0]){const used=Object.assign({},G.counts(U));for(const k of top[0].left)used[k]--;for(const t of G.players[U].hand)if(used[t.k]>0)keep.add(t.id);}
+  return {top,disc,keep};
+}
+function handLine(h){
+  return h.groups.map(([tok,c])=>{
+    const v=(tok.match(/([abc])$/)||[])[1];
+    let ch=tok==='Z'?'0':tok==='F'?'F':/^[NESW]$/.test(tok)?tok:tok[0]==='D'?'D':tok[0];
+    if(tok[0]==='k')ch=['x','x+1','x+2','x+3','x+4','x+5'][+(tok.length===3?tok[1]:0)];
+    const txt=tok[0]==='k'?Array(c).fill(ch).join('·'):ch.repeat(c);
+    return `<span class="${v||'n'}">${txt}</span>`;
+  }).join(' ');
+}
+function missingHTML(e){
+  return e.missing.map(m=>`${m.n}× ${tileHTML({k:m.key},'xs')}${m.jokerOk?'':'<sup title="Pairs and singles need real tiles">*</sup>'}`).join(' ');
+}
+function renderCoach(){
+  const el=$('#p-coach');
+  if(!G){el.innerHTML='<div class="coachbox"><h3>Welcome</h3>Press <b>New game</b> to start.</div>';return;}
+  const lv=LEVEL_INFO[S.level];let h='';
+  const phase={charleston:'The Charleston',ask2:'Second Charleston?',courtesy:'Courtesy pass',discard:'Your turn',call:'Call or pass?',bots:'Watching the table',over:'Game over'}[ui.mode]||'';
+  h+=`<div class="coachbox"><h3>${phase}</h3>${explain()}</div>`;
+  const show=ui.hintOn||lv.auto;
+  if(!show){
+    h+=`<div class="tip">${ui.hintsLeft===Infinity?'Tap <b>Hint</b> for advice on your best hands and discards.':`Hints left this game: <b>${ui.hintsLeft}</b>. Tap <b>Hint</b> to use one.`}</div>`;
+  }else if(G.phase!=='over'){
+    const {top,disc}=coachData();
+    h+='<div class="cat">Your closest hands</div>';
+    for(const e of top){
+      const need=e.dist,pct=Math.round(100*(14-need)/14);
+      h+=`<div class="cardrow ${ui.pinned===e.conc.hand.id?'pin':''}" data-pin="${e.conc.hand.id}"><div class="handline">${handLine(e.conc.hand)}</div>
+      <div class="meta"><span>${esc(e.conc.hand.cat)} · ${esc(e.conc.hand.name)} · ${esc(e.conc.hand.note)}</span><span>${e.conc.hand.conc?'C':'X'}${e.conc.hand.val}</span></div>
+      <div class="prog"><div class="bar"><i style="width:${pct}%"></i></div><span style="font-size:12px">${need===0?'<b>Mah Jongg!</b>':need+' away'}</span></div>
+      ${need?`<div style="font-size:12px">Still need: ${missingHTML(e)}</div>`:''}</div>`;
+    }
+    if(disc&&ui.mode==='discard')h+=`<div class="tip">Suggested discard: ${tileHTML(disc,'xs')} <b>${tn(disc.k)}</b> — it doesn’t fit ${ui.pinned?'your pinned hand':'your closest hands'}${G.exposedByOthers(U,disc.k)?'':' and it isn’t feeding anyone’s exposed set'}.</div>`;
+    if(ui.mode==='call'&&ui.call){
+      const c=ui.call;
+      h+=`<div class="tip">${c.mahjong?'Calling this tile completes your hand — <b>call Mah Jongg!</b>':`Calling would expose a ${['','','','Pung','Kong','Quint','Sextet'][c.expose[0].size]} for “${esc(c.expose[0].opt.conc.hand.name)}” (${c.expose[0].opt.dist} away after). Exposing shows your hand to others and locks you out of concealed (C) hands.`}</div>`;
+    }
+    if(G.jokerSwaps(U).length&&ui.mode==='discard')h+='<div class="tip">You can <b>swap</b> a real tile for a Joker sitting in someone’s exposure. Free joker!</div>';
+    if(!lv.auto)h+='<div style="font-size:12px;color:#777">Hint is on for the rest of this turn.</div>';
+  }
+  h+=`<div class="cat">Tile key</div><div class="legend">${['B5','C5','D5','XG','XR','XW','WE','F','J'].map(k=>tileHTML({k},'xs')+'<span>'+tn(k).replace(' (Soap)','')+'</span>').join(' ')}</div>
+  <p style="font-size:12px;color:#666">Bams = green sticks · Craks = 萬 characters · Dots = circles. Dragons match suits: Green↔Bam, Red↔Crak, Soap↔Dot. The Soap also counts as “0”.</p>`;
+  el.innerHTML=h;
+  el.querySelectorAll('[data-pin]').forEach(r=>r.onclick=()=>{ui.pinned=ui.pinned===r.dataset.pin?null:r.dataset.pin;render();});
+}
+function explain(){
+  const m=ui.mode;
+  if(m==='charleston'){const st=STAGES[ui.stage];return `${st.label}. Everyone passes 3 tiles <b>${st.dir}</b> at the same time. Pick 3 tiles that don’t fit any hand you like — you’ll receive 3 from ${who((U+4-MJ.DIRS[st.dir])%4)}. <i>Jokers can never be passed.</i>`;}
+  if(m==='ask2')return 'The second Charleston goes left → across → right. It’s optional: if <b>anyone</b> says stop, it’s skipped. Say yes if your hand still needs lots of help.';
+  if(m==='courtesy')return 'Last chance to trade: you and the player across may swap 0, 1, 2 or 3 tiles. If you choose more than they want, you trade the smaller number.';
+  if(m==='discard')return G.isWin(U)?'Your tiles match a hand on the card. Declare it!':'You hold 14 tiles. Discard one so you have 13. Keep tiles that build your target hand; let go of tiles that don’t fit.';
+  if(m==='call')return `${who(G.lastDiscard.by)} threw a tile you can use. You may <b>call</b> it to finish a Pung (3), Kong (4), Quint (5) or Sextet (6) — that group is then shown on your rack — or to win. You can’t call a tile just for a single or a pair, unless it wins.`;
+  if(m==='bots')return `${who(G.turn)} is playing. Watch the discards: tiles that are already thrown are “dead” and safe-ish to throw yourself.`;
+  if(m==='over')return 'Game over — see the results. Every game teaches you something!';
+  return '';
+}
+
+/* ---------- card / rules / scw / log ---------- */
+function renderCard(){
+  const per=G?Object.fromEntries(G.bestPerHand(U).map(e=>[e.conc.hand.id,e])):{};
+  let h=`<p style="font-size:12.5px">This is the <b>Human0 Practice Card</b>: original hands written in the same style as the NMJL card. Colors show suits: <span class="handline"><span class="a">green</span>, <span class="b">red</span>, <span class="c">blue</span></span> = different suits (any suits you like). <b>0</b> = White Dragon, <b>D</b> = dragon, <b>F</b> = flower, <b>N/E/W/S</b> = winds, <b>x, x+1…</b> = any consecutive numbers (x is your choice). <b>X</b> = may be exposed, <b>C</b> = must stay concealed. Tap a hand to make it your target.</p>`;
+  let cat='';
+  for(const hd of MJ.HANDS){
+    if(hd.cat!==cat){cat=hd.cat;h+=`<div class="cat">${esc(cat)}</div>`;}
+    const e=per[hd.id];
+    h+=`<div class="cardrow ${ui.pinned===hd.id?'pin':''}" data-pin="${hd.id}"><div class="handline">${handLine(hd)}</div><div class="meta"><span>${esc(hd.note)}</span><span>${e&&G.phase!=='over'&&(ui.hintOn||LEVEL_INFO[S.level].auto)?(e.dist===0?'✔ ':e.dist+' away · '):''}${hd.conc?'C':'X'} ${hd.val}</span></div></div>`;
+  }
+  h+='<div class="tip">Playing with your real 2026 NMJL card? The rules here are the same — only the list of hands differs. Use this card to practice the skills: reading a card, planning, Charleston, calling and joker play.</div>';
+  $('#p-card').innerHTML=h;
+  $('#p-card').querySelectorAll('[data-pin]').forEach(r=>r.onclick=()=>{ui.pinned=ui.pinned===r.dataset.pin?null:r.dataset.pin;render();});
+}
+function renderRules(){
+  $('#p-rules').innerHTML=`
+<div class="cat">Goal</div><p>Be first to make your 14 tiles match one hand on the card exactly, then declare <b>“Mah Jongg!”</b></p>
+<div class="cat">The tiles (152)</div><p>Three suits 1–9 (Bams, Craks, Dots), four of each · 3 dragons (Green, Red, White “Soap”) × 4 · 4 winds × 4 · 8 Flowers · 8 Jokers.</p>
+<div class="cat">Words</div><p><b>Pair</b> 2 alike · <b>Pung</b> 3 · <b>Kong</b> 4 · <b>Quint</b> 5 · <b>Sextet</b> 6. Matching dragons: Craks↔Red, Bams↔Green, Dots↔Soap. The Soap may be used as a zero with any suit.</p>
+<div class="cat">Setup</div><p>Tiles are washed and built into four walls. East rolls the dice to break the wall. East gets 14 tiles, everyone else 13.</p>
+<div class="cat">The Charleston</div><p>1st Charleston (required): pass 3 tiles <b>right, across, left</b>. 2nd Charleston (optional, any player may stop it): <b>left, across, right</b>. Then an optional courtesy pass of 0–3 tiles across. <b>Jokers may never be passed.</b> (Table rule note: “blind passes” are not simulated here.)</p>
+<div class="cat">Play</div><p>East discards first. Play moves to the right (counterclockwise). On your turn: take a tile from the wall, then discard one. Name your discards out loud at a real table.</p>
+<div class="cat">Calling a discard</div><p>You may claim the most recent discard to complete a Pung, Kong, Quint or Sextet — then you must expose it on your rack and discard. You may <b>not</b> call for a single or pair, except to win. Mah Jongg beats a call for exposure; between equal calls, the player next in turn wins the tile. Once the next player has drawn and racked, it’s too late to call.</p>
+<div class="cat">Jokers</div><p>Jokers replace any tile in a Pung, Kong, Quint or Sextet — never in a single or pair, and never in a pair-style hand. A discarded Joker is dead (no one may call it). On your turn you may swap a real tile for a Joker in anyone’s exposure.</p>
+<div class="cat">Mistakes</div><p>Declaring Mah Jongg in error, or a hand with too many/too few tiles, makes a hand <b>dead</b>: the player stops playing (but still pays). This app checks your hand for you so you can learn safely.</p>
+<div class="cat">Scoring</div><p>The hand’s value is paid by each player. Winning on your own drawn tile: everyone pays double. Winning on a discard: the discarder pays double. No Jokers in the hand (except Singles & Pairs hands): double again. If the wall runs out, it’s a “wall game” — no one is paid.</p>
+<div class="cat">Strategy</div><p>• Pick 2–3 possible hands after the deal, narrow to one by the end of the Charleston.<br>• Keep Jokers. Never feed a player an exposed tile they need.<br>• Concealed hands (C) score more but you can’t call tiles.<br>• Watch the discards: many thrown 4s means hands needing 4s are unlikely.</p>
+<p style="font-size:12px;color:#666">Rules summarized in our own words, following 2026 National Mah Jongg League standard play. The official card and rule book are sold by the League.</p>`;
+}
+function renderSCW(){
+  if(!G){$('#p-scw').innerHTML='';return;}
+  const v=G.scwView(U);
+  let h=`<div class="scw root"><div class="h">SCW0 · Game container</div>Phase: ${esc(v.phase)} · Level: ${esc(v.level)} · Wall: ${v.wall} · Turn: ${v.turn}<br>Discards: ${v.discards.length}<br><span style="font-size:11.5px;color:#555">Shared, public state only. Each player’s rack lives in its own child SCW and is private to it. The coach reads SCW0 + your SCW — the same information you have.</span></div>`;
+  for(const c of v.children){
+    const p=G.players[c.seat];
+    h+=`<div class="scw" style="margin-left:14px"><div class="h">${c.scw} · ${c.wind} · ${esc(name(c.seat))}${c.seat===G.turn?' ◀ turn':''}</div>${c.tiles} tiles · ${c.exposures.length} exposure(s)
+    <div class="minitiles">${p.exp.map(e=>e.tiles.map(t=>tileHTML(t,'xs')).join('')).join('<span style="width:6px"></span>')}</div>
+    <div style="font-size:11.5px;color:#555">Rack: ${Array.isArray(c.rack)?'visible to you':esc(c.rack)}</div></div>`;
+  }
+  h+='<button class="hbtn" id="scwExport">Copy SCW state (JSON)</button>';
+  $('#p-scw').innerHTML=h;
+  $('#scwExport').onclick=()=>{const txt=JSON.stringify(G.scwView(U),null,2);try{navigator.clipboard.writeText(txt);$('#scwExport').textContent='Copied ✓';}catch(e){modal('<pre style="white-space:pre-wrap;font-size:11px">'+esc(txt)+'</pre><button class="btn" onclick="document.getElementById(\'overlay\').classList.remove(\'on\')">Close</button>');}};
+}
+function renderLog(){$('#log').innerHTML=ui.log.map(l=>`<div><span class="tag">${l.scw}</span>${esc(l.text)}</div>`).join('');}
+function renderScores(){
+  $('#scores').innerHTML=S.scores.map((v,i)=>`<span>${name(i)} ${v>=0?'+':''}${v}</span>`).join('')+`<span>Games ${S.games} · Your wins ${S.wins}</span>`;
+}
+
+/* ---------- table render ---------- */
+function renderSeat(s){
+  const pos=(s-U+4)%4,el=$('#pos'+pos),p=G.players[s];
+  const turn=G.turn===s&&G.phase==='play'&&!G.result;
+  const plate=`<div class="nameplate ${turn?'turn':''}"><b>${esc(name(s))}</b> · ${windOf(s)} ${WCH[G.windOf(s)]}<span class="scwtag">${G.scwOf(s)}</span>${p.exp.length?'':''}</div>`;
+  const side=pos===1||pos===3;const sz=pos===0?'':'sm';
+  const melds=p.exp.map(e=>`<div class="meld">${e.tiles.map(t=>tileHTML(t,side?'xs':'sm')).join('')}</div>`).join('');
+  let row;
+  if(s===U){
+    const cd=(ui.hintOn||LEVEL_INFO[S.level].auto)&&G.phase!=='over'&&ui.mode==='discard'?coachData():null;
+    row=p.hand.map(t=>{
+      let cls='';if(ui.sel.has(t.id))cls+=' sel';if(t.id===ui.lastDrawId)cls+=' new';
+      if(cd){if(cd.disc&&cd.disc.id===t.id)cls+=' sugg';else if(cd.keep.has(t.id))cls+=' keep';}
+      return tileHTML(t,cls,`data-id="${t.id}"`);}).join('');
+  }else if(G.phase==='over'){row=p.hand.map(t=>tileHTML(t,side?'xs':'sm')).join('');}
+  else row=p.hand.map(()=>backHTML(side?'':'sm')).join('');
+  el.innerHTML=(pos===0?'':plate)+`<div class="rack"><div class="shelf">${melds}</div><div class="row ${s===U?'hand':''}">${row}</div></div>`+(pos===0?plate:'');
+  if(s===U)el.querySelectorAll('[data-id]').forEach(d=>d.onclick=()=>clickTile(+d.dataset.id));
+}
+function renderWall(){
+  const R=G.wall.length;const order=[0,3,2,1];const ids={0:'#wallBottom',1:'#wallRight',2:'#wallTop',3:'#wallLeft'};
+  order.forEach((pos,j)=>{const rem=Math.max(0,Math.min(38,R-38*(3-j)));$(ids[pos]).innerHTML='<i class="stk"></i>'.repeat(Math.ceil(rem/2));});
+  $('#wallcount').textContent=`Wall: ${R} tiles left`;
+}
+function renderDiscards(){
+  const last=G.lastDiscard&&G.lastDiscard.t.id;
+  $('#discards').innerHTML=G.discards.map(d=>tileHTML(d.t,'sm'+(d.t.id===last?' last':''))).join('')||'<span style="font-size:12px;color:#557">Discards appear here</span>';
+  const el=$('#discards');el.scrollTop=el.scrollHeight;
+}
+function renderActions(){
+  const a=$('#actions');let h='';const lv=LEVEL_INFO[S.level];
+  const hintBtn=!lv.auto&&G&&G.phase!=='over'?`<button class="btn alt" id="aHint" ${ui.hintsLeft<=0?'disabled':''}>💡 Hint${ui.hintsLeft===Infinity?'':' ('+ui.hintsLeft+')'}</button>`:'';
+  if(!G){a.innerHTML='';return;}
+  if(ui.mode==='charleston'){const st=STAGES[ui.stage];h=`<button class="btn" id="aPass" ${ui.sel.size===3?'':'disabled'}>Pass 3 ${st.dir} → ${esc(name(target(U,st.dir)))} (${ui.sel.size}/3)</button>${hintBtn}`;}
+  else if(ui.mode==='ask2')h='<button class="btn" id="aYes">Yes, 2nd Charleston</button><button class="btn alt" id="aNo">Stop the Charleston</button>';
+  else if(ui.mode==='courtesy')h=`<button class="btn" id="aCour">${ui.sel.size?`Offer ${ui.sel.size} across`:'Skip courtesy pass'}</button>${hintBtn}`;
+  else if(ui.mode==='discard'){
+    const win=G.isWin(U),sw=G.jokerSwaps(U).length;
+    h=`${win?'<button class="btn win" id="aMJ">🀄 Mah Jongg!</button>':''}<button class="btn" id="aDisc" ${ui.sel.size===1?'':'disabled'}>Discard</button>${sw?'<button class="btn gold" id="aSwap">Swap for Joker</button>':''}${hintBtn}<button class="btn alt" id="aMJ2" title="Declare only if you are sure!">Declare</button>`;
+  }else if(ui.mode==='call'){
+    const c=ui.call;const nm={3:'Pung',4:'Kong',5:'Quint',6:'Sextet'};
+    h=(c.mahjong?'<button class="btn win" id="aCallMJ">Call — Mah Jongg!</button>':'')+c.expose.map(x=>`<button class="btn gold" data-sz="${x.size}">Call for ${nm[x.size]}</button>`).join('')+`<button class="btn alt" id="aPassCall">Pass</button>${hintBtn}`;
+  }else if(ui.mode==='over')h='<button class="btn" id="aNext">Next game</button><button class="btn alt" id="aLvl">Change level</button>';
+  else h=`<span style="font-size:13px;color:#555">${G.phase==='play'?esc(who(G.turn))+' is playing…':''}</span>`;
+  a.innerHTML=h;
+  const on=(id,fn)=>{const b=$(id);if(b)b.onclick=fn;};
+  on('#aPass',doCharleston);on('#aYes',()=>answerSecond(true));on('#aNo',()=>answerSecond(false));on('#aCour',doCourtesy);
+  on('#aDisc',()=>userDiscard([...ui.sel][0]));on('#aMJ',userMahjong);on('#aMJ2',userMahjong);on('#aSwap',userSwap);on('#aHint',useHint);
+  on('#aCallMJ',()=>userCall('mahjong'));on('#aPassCall',()=>{ui.mode='bots';resolveCalls(null);});
+  a.querySelectorAll('[data-sz]').forEach(b=>b.onclick=()=>userCall('expose',+b.dataset.sz));
+  on('#aNext',()=>{S.dealer=(S.dealer+1)%4;newGame(false);});on('#aLvl',showStart);
+}
+function render(){
+  if(!G)return;
+  for(let s=0;s<4;s++)renderSeat(s);
+  renderWall();renderDiscards();renderActions();renderCoach();renderCard();renderSCW();renderScores();
+  const tbl=$('#table');tbl.querySelectorAll('.windmark').forEach(x=>x.remove());
+}
+
+/* ---------- results ---------- */
+function showResult(){
+  ui.mode='over';const r=G.result;S.games++;
+  let h='';
+  if(r.wall){h='<h2>Wall game</h2><p>The wall ran out and nobody completed a hand. This happens a lot in real games too — no one pays.</p>';log('Wall game — nobody won.');}
+  else{
+    const w=r.winner,p=G.players[w],hd=r.opt.conc.hand;
+    for(let i=0;i<4;i++)S.scores[i]+=r.pay[i];
+    if(w===U)S.wins++;
+    h=`<h2>${w===U?'🎉 You won!':esc(who(w))+' won'}</h2>
+    <p><b>${esc(hd.name)}</b> (${esc(hd.cat)}) — value ${hd.val}${r.jokerless?' · <b>jokerless, doubled</b>':''} · ${r.self?'won on a self-drawn tile (everyone pays double)':'won on '+esc(who(r.from))+'’s discard (discarder pays double)'}</p>
+    <div class="handline" style="margin:6px 0">${handLine(hd)}</div>
+    <div class="minitiles">${p.exp.map(e=>'<div class="meld">'+e.tiles.map(t=>tileHTML(t,'sm')).join('')+'</div>').join('')}${p.hand.map(t=>tileHTML(t,'sm')).join('')}</div>
+    <div class="cat">Payments</div>${r.pay.map((v,i)=>`<div class="payrow"><span>${esc(who(i))}</span><b style="color:${v<0?'#b22':'#1a7a3a'}">${v>0?'+':''}${v}</b></div>`).join('')}`;
+    if(w!==U){const best=G.bestPerHand(U)[0];if(best)h+=`<div class="tip">You were <b>${best.dist}</b> tile${best.dist===1?'':'s'} away from “${esc(best.conc.hand.name)}”. ${best.dist<=2?'So close — keep at it!':'Try choosing a target hand earlier, during the Charleston.'}</div>`;}
+  }
+  store.set('scores',S.scores);store.set('games',S.games);store.set('wins',S.wins);
+  h+='<div style="text-align:right;margin-top:10px"><button class="btn alt" id="mLook">Look at the table</button> <button class="btn" id="mNext">Next game</button></div>';
+  render();modal(h);
+  $('#mNext').onclick=()=>{closeModal();S.dealer=(S.dealer+1)%4;newGame(false);};
+  $('#mLook').onclick=closeModal;
+}
+
+/* ---------- boot ---------- */
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#p-'+b.dataset.p).classList.add('on');});
+$('#newBtn').onclick=showStart;
+const logo=/*LOGO*/'';if(logo){$('#logo').src=logo;$('#logo').style.display='block';}
+renderRules();renderCoach();renderScores();showStart();
+window.__mj={get G(){return G},get ui(){return ui},render,clickTile,doCharleston};
+})();
+</script>
+</body>
+</html>

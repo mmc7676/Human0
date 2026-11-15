@@ -1,0 +1,38 @@
+![Human0](human0-logo.png)
+
+# Zero to One (`/zero-to-one`)
+
+By Human0. Turns "how do I set up / use / build X?" into one worked example you can follow start to finish by copying values.
+
+Named for the engineering sense of zero to one: from nothing to a first working result.
+
+## What you get
+
+- **Every field, with a value.** Sign-up forms, settings pages, config files: each field named, with an example value and the order to fill them in.
+- **Every step, in order, with what you should see.** Commands with their expected output, screens with what appears after each click.
+- **Complete sample files.** Code, config and data files in full, not fragments or placeholders.
+- **Stated defaults.** When you specify little, it picks sensible defaults, states them in one line at the top and continues; it asks only when a wrong guess would waste the work.
+
+## Use it
+
+```
+/zero-to-one LinkedIn profile set-up
+/zero-to-one Build a Cloudflare MCP server and wrap it as a connector in Claude
+/zero-to-one Claude Managed Agents with skills, a vault and a scheduled deployment
+```
+
+Or just ask for "a zero-to-one example of …". The more you specify (versions, platform, device, your own data), the more precise the example.
+
+## Install
+
+In Claude Code: `/plugin marketplace add mmc7676/Human0` then `/plugin install zero-to-one@human0`.
+
+## Contents
+
+- `SKILL.md` — the skill
+- `references/output-format.md` — the answer layout
+- `references/fastapi-todo-example.md` — worked build example (FastAPI todo API, verified run)
+
+## License
+
+Apache-2.0. Contact: human@maxey0.com

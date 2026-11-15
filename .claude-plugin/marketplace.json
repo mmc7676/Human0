@@ -10,16 +10,6 @@
       "description": "Route any task to its topic, skill, MaxeyN agents and MCP servers, and explore the Maxey0 Context Plane as an interactive 3D graph inside Claude."
     },
     {
-      "name": "full-example",
-      "source": "./plugins/full-example",
-      "description": "/full-example: a complete, copy-paste worked example for any app, setup or build: every field value, every step in order, what you should see after each step, and sample files."
-    },
-    {
-      "name": "zero-to-one",
-      "source": "./skills/zero-to-one",
-      "description": "/zero-to-one: a complete, copy-paste worked example for any app, setup or build: every field value, every step in order, what you should see after each step, and sample files."
-    },
-    {
       "name": "space-at-scale",
       "source": "./plugins/space-at-scale",
       "description": "Space at Scale by Human0: an inline 3D simulation at three scales (solar system, Local Bubble, Milky Way) with forward and reverse time, 4,240 galaxy systems, gravitational-wave catalog, and a dark matter hypothesis lab."
@@ -28,6 +18,182 @@
       "name": "scw-modeler",
       "source": "./plugins/scw-modeler",
       "description": "/scw-modeler: model any system in SCW architecture and return it as text or as an inline graph, with the Context Plane route and data servers around it."
+    },
+    {
+      "name": "coverage-testing-artifact-parity",
+      "source": "./plugins/coverage-testing-artifact-parity",
+      "description": "Build requirement-to-artifact traceability, meaningful tests, provenance records, and exact byte-parity checks for generated artifacts.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "data-ingestion-state-sync",
+      "source": "./plugins/data-ingestion-state-sync",
+      "description": "Implement reusable multi-source ingestion, normalization, deduplication, versioned state synchronization, and stale-derived-data invalidation.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "definition-grounded-relation-inference",
+      "source": "./plugins/definition-grounded-relation-inference",
+      "description": "Infer reviewable candidate edges from verbs, adjectives, and adverbs to entity nodes using uploaded definitions and explicit lexical evidence.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "effort-optimizer",
+      "source": "./plugins/effort-optimizer",
+      "description": "Calibrates reasoning and execution effort to a task's actual stakes before acting on it \u2014 fast and low-verification for mechanical, reversible steps; slow and directly verified for anything touching auth, security, production, or a claim the user will act on without double-checking it. Use when the user invokes it or asks for effort matched to stakes, before taking an action or processing data. It applies to the turn in which it is invoked and does not stay on by itself; invoke it again for each later turn where you want it.",
+      "version": "1.0.3",
+      "category": "productivity"
+    },
+    {
+      "name": "evidence-based-relation-inference",
+      "source": "./plugins/evidence-based-relation-inference",
+      "description": "Infer reviewable relationships between typed graph nodes from definitions, metadata, rules, compatible embeddings, or domain-specific evidence.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "exam-prep",
+      "source": "./plugins/exam-prep",
+      "description": "Build a verified Human0 Test Prep app and study-guide PDF for a certification exam from its official URL. Use for /exam-prep URL plus exam name, or any request to make exam or certification prep.",
+      "version": "1.0.0",
+      "category": "education"
+    },
+    {
+      "name": "file-graph",
+      "source": "./plugins/file-graph",
+      "description": "Find files the user uploaded to Claude by name or wildcard (maxey0.csv, maxey0*, *.tsx) and return a clickable graph of each file linked to the chat or project it was uploaded to. Use for /file-graph, \"which chat did I upload X to\", or browsing uploads beyond Settings > Privacy > Uploaded files.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "find-concepts",
+      "source": "./plugins/find-concepts",
+      "description": "Choose the optimal fixed set of 5-8 durable concepts for a topic, each with 2-4 skills' worth of scope, with coverage and traceability checks.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "find-mcp",
+      "source": "./plugins/find-mcp",
+      "description": "Find and verify the right MCP servers for a skill, concept or topic from the live registry, with tools, uuids and human-approval flags; never invents servers.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "find-skills",
+      "source": "./plugins/find-skills",
+      "description": "Design the optimal fixed slate of durable skills (or, with level=, of topics/concepts/agents/MCP servers) for an agent or domain, with per-level coverage, traceability and parity checks.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "find-subagents",
+      "source": "./plugins/find-subagents",
+      "description": "Determine the optimal fixed count and exact fixed set of durable subagent roles for a language model, AI assistant, or agent runtime. ALWAYS use this before designing any multi-agent system, agentic workflow, or complex task architecture. Use when the user asks to choose a durable subagent slate, decide how many durable agents a system should have, compare candidate subagent counts, define fixed agent contracts, or derive a stable multi-agent topology. This skill should be the default first step for all agentic architecture work \u2014 always search for the best agentic architecture, pattern, and workflow before executing complex tasks.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "full-example",
+      "source": "./plugins/full-example",
+      "description": "Generates a complete, copy-paste worked example for any app, setup or build the user names \u2014 every field value, every step in order, what the user should see after each step, and any sample files. Use for /full-example, \"full example of X\", or a request to show every field and step needed to use, set up or build something.",
+      "version": "1.0.2",
+      "category": "productivity"
+    },
+    {
+      "name": "interactive-graph-app-builder",
+      "source": "./plugins/interactive-graph-app-builder",
+      "description": "Build interactive graph dashboards whose node types, layers, ingestion controls, relations, and visual styles are configuration-driven.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "lexicon-sync-embedding-refresh",
+      "source": "./plugins/lexicon-sync-embedding-refresh",
+      "description": "Normalize staged lexical lists and refresh the embedding field for the complete current node set after every accepted change.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "linktree-search",
+      "source": "./plugins/linktree-search",
+      "description": "Build, maintain, or use the LINKTREE method for deterministic hierarchical URL crawling and indexing. Use when an agent needs to turn a root URL into a level-preserving tree plus normalized graph, scaffold or modify a LINKTREE crawler/dashboard/artifact, enforce sitemap-first same-origin traversal, or keep crawl outputs compliant, bounded, and reproducible.",
+      "version": "1.0.3",
+      "category": "development"
+    },
+    {
+      "name": "mahjong",
+      "source": "./plugins/mahjong",
+      "description": "Launch a single-player American Mah Jongg game (NMJL-style 2026 rules) inline in chat against three computer players who can also win, with Beginner/Intermediate/Advanced levels and a built-in coach. Use for /mahjong or \"play mahjong\".",
+      "version": "1.0.0",
+      "category": "entertainment"
+    },
+    {
+      "name": "modular-system-integrator",
+      "source": "./plugins/modular-system-integrator",
+      "description": "Decompose and integrate arbitrary projects into reusable skills, domain objects, executable instructions, SCWs, and testable artifacts without coupling the workflow to one application domain.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "semantic-graph-validation-and-parity",
+      "source": "./plugins/semantic-graph-validation-and-parity",
+      "description": "Validate SWG behavior, provenance, and byte-identical source parity across Maxey0 artifacts and SCW records.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "semantic-word-graph-builder",
+      "source": "./plugins/semantic-word-graph-builder",
+      "description": "Build or revise the Maxey0 Semantic Word Graph as a staged, evidence-labelled, four-plane lexical graph.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "starting-five",
+      "source": "./plugins/starting-five",
+      "description": "NBA Collect Starting 5 Contest: picks the max-expected Topps-rubric player at PG, SG, SF, PF and C for the current NBA slate, with live injuries, matchups, pace and blowout/back-to-back minutes. Use for /starting-five.",
+      "version": "1.0.0",
+      "category": "entertainment"
+    },
+    {
+      "name": "supersystem-integrate",
+      "source": "./plugins/supersystem-integrate",
+      "description": "Generative engineering skill for discovering the intent and feasibility of a new model, protocol, idea, or capability, integrating it modularly into an existing system, validating the result, and shipping the completed artifact.",
+      "version": "1.0.3",
+      "category": "development"
+    },
+    {
+      "name": "topic-graph-generator",
+      "source": "./plugins/topic-graph-generator",
+      "description": "Generate a full-level Human0 topic pack (Topic \u2192 Concepts \u2192 Skills \u2192 Agents \u2192 MCP + lexicon) from a named topic/concept, building on existing topics, with real MCP servers verified this session.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "typed-graph-modeler",
+      "source": "./plugins/typed-graph-modeler",
+      "description": "Model arbitrary graphs with configurable node classes, layers, definitions, typed edges, and provenance.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "winning-pattern",
+      "source": "./plugins/winning-pattern",
+      "description": "Perfect one user-acknowledged object (repo, file, app, skill, concept, SCW\u2026) in its own sandboxed SCW: mine the user's context for every issue, win the easiest first, reuse each win as the harness for the next.",
+      "version": "1.0.0",
+      "category": "development"
+    },
+    {
+      "name": "zero-to-one",
+      "source": "./plugins/zero-to-one",
+      "description": "Generates a complete, copy-paste worked example for any app, setup or build the user names \u2014 every field value, every step in order, what the user should see after each step, and any sample files. Use for /zero-to-one, \"full example of X\", \"take me from zero to one on X\", or a request to show every field and step needed to use, set up or build something.",
+      "version": "1.0.2",
+      "category": "productivity"
     }
-  ]
+  ],
+  "description": "Human0 skills and plugins: directory-ready packages built from skills/, plus hand-built plugins with MCP apps."
 }

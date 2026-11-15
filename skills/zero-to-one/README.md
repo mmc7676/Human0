@@ -1,3 +1,5 @@
+![Human0](../../assets/human0-logo.png)
+
 # Zero to One (`/zero-to-one`)
 
 By Human0. Turns "how do I set up / use / build X?" into one worked example you can follow start to finish by copying values.
@@ -27,9 +29,9 @@ In Claude Code: `/plugin marketplace add mmc7676/Human0` then `/plugin install z
 
 ## Contents
 
-- `skills/zero-to-one/SKILL.md` — the skill
-- `skills/zero-to-one/references/output-format.md` — the answer layout
-- `skills/zero-to-one/references/fastapi-todo-example.md` — worked build example (FastAPI todo API, verified run)
+- `SKILL.md` — the skill
+- `references/output-format.md` — the answer layout
+- `references/fastapi-todo-example.md` — worked build example (FastAPI todo API, verified run)
 
 ## License
 

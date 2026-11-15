@@ -1,3 +1,5 @@
+![Human0](human0-logo.png)
+
 # Full Example (`/full-example`)
 
 By Human0. Turns "how do I set up / use / build X?" into one worked example you can follow start to finish by copying values.
@@ -25,9 +27,9 @@ In Claude Code: `/plugin marketplace add mmc7676/Human0` then `/plugin install f
 
 ## Contents
 
-- `skills/full-example/SKILL.md` — the skill
-- `skills/full-example/references/output-format.md` — the answer layout
-- `skills/full-example/references/fastapi-todo-example.md` — worked build example (FastAPI todo API, verified run)
+- `SKILL.md` — the skill
+- `references/output-format.md` — the answer layout
+- `references/fastapi-todo-example.md` — worked build example (FastAPI todo API, verified run)
 
 ## License
 
