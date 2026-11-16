@@ -1,13 +1,13 @@
 {
  "plugin": "space-at-scale",
  "version": "0.15.1",
- "built_utc": "2026-11-16T04:43:18.419Z",
+ "built_utc": "2026-11-16T22:34:36.845Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
    "path": ".claude-plugin/plugin.json",
-   "sha256": "0c9957781b4848a32e41eda4c8bfa447d31e85204db3b96cd9a3872b0395c40b",
-   "bytes": 633
+   "sha256": "edd84f1690659892de27cbb389a5638955b07a3a67b3c0e4e666601658747dfc",
+   "bytes": 996
   },
   {
    "path": ".mcp.json",
@@ -25,9 +25,49 @@
    "bytes": 15348
   },
   {
+   "path": "LICENSE",
+   "sha256": "6d58e3ac0430a126088a8c4e8e5e7bd47c61e8f777d00f68b85adb9eec2e68ee",
+   "bytes": 1167
+  },
+  {
+   "path": "PRIVACY.md",
+   "sha256": "42674d6dc2bbaae26363540d93f42ada204cf7cbf0fbbc74b71547bb24eba098",
+   "bytes": 728
+  },
+  {
    "path": "README.md",
    "sha256": "3c73e306d743497df0b7013e28a48101e00cab913a129c59111d28617e1ed629",
    "bytes": 5292
+  },
+  {
+   "path": "docs/images/human0-logo.png",
+   "sha256": "81d49d23eed87cfcdfc3817cd5b9a27b9249cdf6dd3fa78c8d0a8d5ea8933f21",
+   "bytes": 22357
+  },
+  {
+   "path": "docs/images/milky-way-hero.jpg",
+   "sha256": "bf6ea0d923c7f0f3045fd8feb1dd6a5c8bfc158b05a734f72ed3df30399e5dee",
+   "bytes": 261851
+  },
+  {
+   "path": "docs/scw-model/BUILD-PLAN.md",
+   "sha256": "ce5d4cb88ceaf9a3178344e3c0a2c19fb7eb66ebcba7c08b102484f6f16c0c67",
+   "bytes": 3623
+  },
+  {
+   "path": "docs/scw-model/graph.html",
+   "sha256": "e73057c72321d1b137c4a2da8d1ca67c21ec82460879a1440452088be2d004dd",
+   "bytes": 75358
+  },
+  {
+   "path": "docs/scw-model/model.json",
+   "sha256": "9ec09c8c7f6f1aae4d8f8994fb08ccb5a02a7952eda8e18025bafa1f1164b901",
+   "bytes": 17599
+  },
+  {
+   "path": "docs/scw-model/scw-model.md",
+   "sha256": "701406bee7e2e9efb4282ef561e091bf2b2d86b57a7ce5ee0b122a69e59aa5aa",
+   "bytes": 15611
   },
   {
    "path": "release.js",
@@ -186,13 +226,13 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "3721864fec182220bdcf35748c2df6a944acbd647e0c771288478a5f2e1f7954",
-   "bytes": 3228626
+   "sha256": "04d6ca596e3f56b5b3211322e2196c442db776e3a365a8b01c5cee164dba20a4",
+   "bytes": 3231262
   },
   {
    "path": "server/server.js",
-   "sha256": "507be213336b23bf0ea27172978936dfeb9be98e1fcdef1640531292c61de1b4",
-   "bytes": 13967
+   "sha256": "db1294eba921c5100defcd48281fd8c3dfe8052042e0e6098f4a7e1367885ead",
+   "bytes": 16328
   },
   {
    "path": "server/stars.json",
@@ -225,71 +265,7 @@
    "bytes": 2558
   }
  ],
- "mirrors": [
-  {
-   "canonical": "index.html",
-   "mirror": "server/app/index.html",
-   "sha256": "b2044e6f04c0619e4c4b3e069549d5134ea29786bae131942b7bcb68b70980c8",
-   "bytes": 487925,
-   "identical": true
-  },
-  {
-   "canonical": "app.js",
-   "mirror": "server/app/app.js",
-   "sha256": "5495189fe187a7b33550d59a7c08bdf1ca11d2886c37115a224fe8bece5f2b34",
-   "bytes": 65671,
-   "identical": true
-  },
-  {
-   "canonical": "galaxy-view.js",
-   "mirror": "server/app/galaxy-view.js",
-   "sha256": "9d923586df4dd1485f1232d199d5fe6bdc766cb12a76f86145284c80102e6063",
-   "bytes": 43161,
-   "identical": true
-  },
-  {
-   "canonical": "three.min.js",
-   "mirror": "server/app/three.min.js",
-   "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2",
-   "bytes": 603445,
-   "identical": true
-  },
-  {
-   "canonical": "OrbitControls.js",
-   "mirror": "server/app/OrbitControls.js",
-   "sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2",
-   "bytes": 26375,
-   "identical": true
-  },
-  {
-   "canonical": "physics-core.js",
-   "mirror": "server/physics-core.js",
-   "sha256": "f3b52d2975927ed09c63e6e28928133363c7267fcb0c9314e9b2f482e9b00515",
-   "bytes": 69137,
-   "identical": true
-  },
-  {
-   "canonical": "galaxy-core.js",
-   "mirror": "server/galaxy-core.js",
-   "sha256": "65e71a7e21ed37ad78ceca9b5df90bcd095e4f76a129f5bd6f311e70960da478",
-   "bytes": 27582,
-   "identical": true
-  },
-  {
-   "canonical": "stars.json",
-   "mirror": "server/stars.json",
-   "sha256": "5eea66611e160d98cc3175afc48a122962d56c4dae7fc00082b8b8beb634e4fc",
-   "bytes": 711996,
-   "identical": true
-  },
-  {
-   "canonical": "galaxy.json",
-   "mirror": "server/galaxy.json",
-   "sha256": "e4f76c738ec15cd8e849be092a484f2332f446afab6729b5e3a15902310cc9cb",
-   "bytes": 445729,
-   "identical": true
-  }
- ],
+ "mirrors": [],
  "embeds": [
   {
    "file": "server/physics-core.js",
