@@ -13,18 +13,14 @@ The SCW model of this server is in `model.json` (validated with SCW Modeler), `s
 
 ## Phase 1: hosted connector
 
-No-sign-in ("authless") connectors are supported by default; the server must be reachable over HTTPS on port 443.
+Host: Cloudflare Workers, the platform the Maxey0 Context Plane already runs on. No Google Cloud account is assumed.
 
-1. Human0 deploys (Google Cloud account and billing):
-   ```
-   cd ~
-   git clone https://github.com/mmc7676/Human0.git
-   cd Human0/plugins/space-at-scale/server
-   gcloud run deploy space-at-scale --source . --region us-west1 --allow-unauthenticated --set-env-vars SCW_PUBLIC=1
-   ```
-   Expected: `Service URL: https://space-at-scale-....run.app`
-2. Human0 adds it in claude.ai: Customize > Connectors > + Add > Add custom connector. Name `Space-at-Scale`; URL `<Service URL>/mcp`; Authentication "No sign in".
-3. Claude verifies the live URL: 25 tools listed; `run_evals` all passing.
+1. Human0 confirms the Workers plan. Free allows 10 ms of CPU per request; `run_evals` measured 70 ms cold and 17 ms warm, so heavy tools need Workers Paid (5 min per request, $5/month minimum).
+2. Claude adds a Workers entry point (web-standard MCP transport from SDK 1.32.2) and `wrangler.jsonc`, and tests it locally against the evals.
+3. Human0 deploys with Wrangler (Cloudflare sign-in is the owner's), then adds the connector in claude.ai: Customize > Connectors > + Add > Add custom connector; Authentication "No sign in".
+4. Claude verifies the live URL: 25 tools listed; `run_evals` all passing.
+
+The `Dockerfile` remains valid for any container host.
 
 ## Phase 2: SCW-MWField (dark matter field as instruction carrier)
 
