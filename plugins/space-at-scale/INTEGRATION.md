@@ -146,3 +146,9 @@ App: Dark matter source menu (halo, simple H, mirror H); tooltips, markers, repo
 - Control board: nebula banner background; **Collapse controls** keeps the title row plus the first three rows; a drag handle under the board resizes it like a split screen (also arrow keys, and double-click to toggle). The 3D view grows by the height the board gives up.
 - **Info on/off** hides the explanatory text (star and galaxy counts, the how-to footer and the data credits). The setting and the board height persist per viewer where browser storage is available.
 - **Reset everything** also restores the full board and turns Info back on.
+
+## v0.15.1: hosting fixes and naming
+
+- `Dockerfile` now copies `galaxy-core.js`, `galaxy.json` and `dist/`. Without them a hosted server could not start (the galaxy core and the app view are required at load). Verified by running `http.js` from exactly the files the image copies, with production dependencies only: 74/74 evals pass and the app resource loads.
+- Name styled as "Space-at-Scale" in the display name, README, skill and app title. The plugin id stays `space-at-scale`.
+- `docs/scw-model/` holds the SCW model of this server and the build plan.

@@ -6,7 +6,7 @@ const {z}=require('zod');
 const M=require('./model.js');
 const APP_HTML=require('./app-html.js');
 const APP_URI='ui://scw-modeler/app.html';
-const server=new McpServer({name:'scw-modeler',version:'0.1.0'});
+const server=new McpServer({name:'scw-modeler',version:'0.1.1'});
 const model=z.record(z.string(),z.any()).describe('SCW model: {title, structural_note?, scws:[{id:"SCW-<name>", name, parent?, relation?, tag?, role, holds?, evidence?, laws?:[{text,state:on|off|inherit}], data?:[{value?,source,evidence?}]}], tables?:[{title,columns,rows}], one_line?, context?:{path?,agents?,mcp?:[{name,why?}]}, notes?}');
 const j=o=>({content:[{type:'text',text:typeof o==='string'?o:JSON.stringify(o,null,1)}]});
 const fail=e=>({isError:true,content:[{type:'text',text:String(e&&e.message||e)}]});

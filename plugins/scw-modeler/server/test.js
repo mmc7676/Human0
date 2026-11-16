@@ -30,4 +30,6 @@ const clone=o=>JSON.parse(JSON.stringify(o));
  const res=(await c.readResource({uri:'ui://scw-modeler/app.html'})).contents[0];ok('App resource is self-contained mcp-app HTML',res.mimeType==='text/html;profile=mcp-app'&&!/src="http|href="http/.test(res.text),Math.round(res.text.length/1024)+' KB');
  ok('App carries the Human0 logo, byte-identical',res.text.includes(fs.readFileSync(path.join(__dirname,'..','docs','human0-logo.png')).toString('base64')));
  const html=(await c.callTool({name:'scw_model_html',arguments:{model:EX}})).content[0].text;fs.writeFileSync('/tmp/scw-modeler-example.html',html);ok('Standalone HTML embeds the model',html.includes('window.__SCW_MODEL__=')&&html.includes('SCW-SgrA'));
+ // the embedded app script must parse (catches render-breaking edits the unit tests would miss)
+ const scr=html.split('<script>').slice(-1)[0].split('</script>')[0];let parsed=true;try{new Function(scr)}catch(e){parsed=e.message}ok('App script has no syntax errors (runtime is checked by test-render.js)',parsed===true,String(parsed));
  await c.close();console.log((fail?'FAILED ':'ALL PASSED ')+pass+' passed, '+fail+' failed');process.exit(fail?1:0)})().catch(e=>{console.error(e);process.exit(1)});

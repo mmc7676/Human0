@@ -1,4 +1,4 @@
-/* galaxy-core.js: Space at Scale shared core for the Galaxy scale (SCW4), the calendar, signals and the
+/* galaxy-core.js: Space-at-Scale shared core for the Galaxy scale (SCW4), the calendar, signals and the
    energy + matter ledger. The app and the SCW universe server load this exact file (byte-identical, SHA-256 checked). */
 (function(root){
 'use strict';

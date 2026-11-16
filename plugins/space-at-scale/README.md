@@ -2,13 +2,13 @@
 
 <img src="docs/images/human0-logo.png" width="96" alt="Human0">
 
-# Space at Scale
+# Space-at-Scale
 
 **The solar system, the Local Bubble and the Milky Way at true scale, in one 3D view that runs forward and backward in time.**
 
 A Human0 app · runs inline in Claude as an MCP App, or offline as one HTML file
 
-<img src="docs/images/milky-way-hero.jpg" alt="Space at Scale: the Milky Way with Sgr A*, the dark matter ring, globular cluster orbits and pulsars" width="100%">
+<img src="docs/images/milky-way-hero.jpg" alt="Space-at-Scale: the Milky Way with Sgr A*, the dark matter ring, globular cluster orbits and pulsars" width="100%">
 
 </div>
 
@@ -37,7 +37,7 @@ Click any dot for live specs, then **Center** to follow it. Zoom past the Oort C
 /plugin install space-at-scale@human0
 ```
 
-Then ask: *"open Space at Scale"*, *"plan a trip to Mars"* or *"which asteroids have the most platinum within 5 AU?"*.
+Then ask: *"open Space-at-Scale"*, *"plan a trip to Mars"* or *"which asteroids have the most platinum within 5 AU?"*.
 
 Requires Node 18 or later. The server ships as one bundled file (`server/server.bundle.js`), so there is nothing else to install.
 
@@ -74,8 +74,8 @@ HYG Database v4.1, the ATNF Pulsar Catalogue (via Stellarium), galpy, gala `Milk
 
 ## Privacy
 
-Space at Scale collects and stores no user data. Public mode persists nothing, and the inline app makes no network requests.
+Space-at-Scale collects and stores no user data. Public mode persists nothing, and the inline app makes no network requests.
 
 ---
 
-<sub>Space at Scale by Human0 · github.com/mmc7676/Human0 · MIT for code; data licenses in DATA-LICENSES.md</sub>
+<sub>Space-at-Scale by Human0 · github.com/mmc7676/Human0 · MIT for code; data licenses in DATA-LICENSES.md</sub>

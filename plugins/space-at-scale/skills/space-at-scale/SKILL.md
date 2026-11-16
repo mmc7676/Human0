@@ -1,9 +1,9 @@
 ---
 name: space-at-scale
-description: Opens and drives Space at Scale, an inline 3D simulation at three scales (solar system in AU, Local Bubble in light years, Milky Way in thousands of light years) with forward and reverse time. Use when the user says /space-at-scale, asks to see or play with the solar system, orbits, a comet, spacecraft, nearby stars, the galaxy, black holes, dark matter, supernovae, gravitational waves, asteroid mining, or a space trip plan.
+description: Opens and drives Space-at-Scale, an inline 3D simulation at three scales (solar system in AU, Local Bubble in light years, Milky Way in thousands of light years) with forward and reverse time. Use when the user says /space-at-scale, asks to see or play with the solar system, orbits, a comet, spacecraft, nearby stars, the galaxy, black holes, dark matter, supernovae, gravitational waves, asteroid mining, or a space trip plan.
 ---
 
-# Space at Scale
+# Space-at-Scale
 
 1. Call `open_space_at_scale` first (pass `focus` if the user named a body). It renders the app inline; never rebuild it by hand.
 2. Answer questions from the server's tools, not memory:

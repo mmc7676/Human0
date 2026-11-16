@@ -24,19 +24,20 @@ pre#text{display:none;margin:0;padding:14px;height:100%;overflow:auto;font:12px/
 #logo{height:26px;border-radius:4px}
 @media (max-width:720px){#side{display:none}}
 </style></head><body>
-<div id="top"><img id="logo" alt="Human0" src="data:image/png;base64,__LOGO__"><h1 id="ttl">SCW Modeler</h1><button id="vg" aria-pressed="true">Graph</button><button id="vt" aria-pressed="false">Text</button><button id="fit">Fit view</button></div>
-<div id="main"><div id="stage"><svg id="svg" xmlns="http://www.w3.org/2000/svg"><g id="vp"></g></svg><pre id="text"></pre><div id="legend"></div><div id="empty">Waiting for an SCW model from Claude…</div></div><aside id="side"><div class="sub">Click any SCW to see what it holds, its laws and its data sources.</div></aside></div>
+<div id="top"><img id="logo" alt="Human0" src="data:image/png;base64,__LOGO__"><h1 id="ttl">SCW Modeler</h1><button id="vg" aria-pressed="true">Graph</button><button id="vt" aria-pressed="false">Text</button><label for="lv" style="color:var(--dim);font-size:12px">Levels</label><select id="lv" style="font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:7px;padding:3px 6px"><option value="99">All</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select><button id="fit">Fit view</button></div>
+<div id="main"><div id="stage"><svg id="svg" xmlns="http://www.w3.org/2000/svg"><g id="vp"></g></svg><pre id="text"></pre><div id="legend"></div><div id="empty">Waiting for an SCW model from Claude…</div></div><aside id="side"><div class="sub">Click any SCW to see what it holds, its laws and its data sources. Double-click to zoom to it; use Levels to fold deep nesting.</div></aside></div>
 <script>
 'use strict';
 const REL={contains:{c:'#e0915a',d:'',t:'contains: bound inside, boundary computed'},superposes:{c:'#7fa3bd',d:'',t:'superposes: one additive term in the same space'},'passes-through':{c:'#a58bd6',d:'6 4',t:'passes-through: a pattern members move through'},signals:{c:'#e6c36a',d:'2 4',t:'signals: arrives only when its signal does'},'shares-gravity':{c:'#d4537e',d:'10 4 2 4',t:'shares-gravity: influence adds, nothing observable crosses'},feeds:{c:'#5dcaa5',d:'',t:'feeds: one-way flow into the parent'},governs:{c:'#c9c6c0',d:'1 3',t:'governs: sets laws for the parent'}};
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-let M=null,view={x:0,y:0,k:1},boxes=[];
+let M=null,view={x:0,y:0,k:1},boxes=[],maxD=99;
 function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function kids(id){return M.scws.filter(s=>s.parent===id)}
+function desc(id){return kids(id).reduce((a,c)=>a+1+desc(c.id),0)}
 // size of an SCW box: contained children nest inside; field terms overlap a shared field disc; others sit in a side column.
-function measure(s){const k=kids(s.id),inner=k.filter(c=>c.relation==='contains'),field=k.filter(c=>c.relation==='superposes'),side=k.filter(c=>!['contains','superposes'].includes(c.relation));
- inner.forEach(measure);side.forEach(measure);
+function measure(s,d){d=d||0;const k=d+1>=maxD?[]:kids(s.id);s._hid=d+1>=maxD?desc(s.id):0;const inner=k.filter(c=>c.relation==='contains'),field=k.filter(c=>c.relation==='superposes'),side=k.filter(c=>!['contains','superposes'].includes(c.relation));
+ inner.forEach(c=>measure(c,d+1));side.forEach(c=>measure(c,d+1));
  const fr=46,fieldH=field.length?fr*2+70:0,fieldW=field.length?fr*2*(1+(field.length-1)*0.72)+90:0;
  const cols=Math.min(3,Math.max(1,inner.length)),rows=Math.ceil(inner.length/cols);
  let iw=0,ih=0;for(let r=0;r<rows;r++){const row=inner.slice(r*cols,r*cols+cols);iw=Math.max(iw,row.reduce((a,c)=>a+c.w+20,0)-20);ih+=Math.max(...row.map(c=>c.h))+20}
@@ -51,6 +52,7 @@ function draw(s,x,y,g,depth){const isRoot=!s.parent;s._x=x;s._y=y;
  const t=el('text',{x:x+14,y:y+22,fill:'#e8e6e1','font-size':isRoot?15:13,'font-weight':600},grp);t.textContent=s.name;
  const t2=el('text',{x:x+14,y:y+38,fill:'#9a978f','font-size':10.5},grp);t2.textContent=s.id+(s.tag?'  ·  '+s.tag:'');
  boxes.push(s);
+ if(s._hid){const hb=el('text',{x:x+s.w-12,y:y+22,'text-anchor':'end',fill:'#e0915a','font-size':10.5},grp);hb.textContent='+'+s._hid+' inside';}
  let cy=y+52;
  if(s._field.length){const cx=x+20+s._bodyW/2,R=s._fieldH/2-8,fy=cy+s._fieldH/2;
   el('ellipse',{cx,cy:fy,rx:s._bodyW/2-14,ry:R+4,fill:'rgba(127,163,189,.06)',stroke:'#7fa3bd','stroke-opacity':.35},grp);
@@ -78,12 +80,13 @@ function contextRing(root,g){const C=M.context;if(!C)return;const lab='Context P
  if(ms.length){const l=el('text',{x:mx+4,y:y+h-16,fill:'#9a978f','font-size':10},g);l.textContent='data servers (MCP)'}}
 function render(){const vp=$('vp');vp.innerHTML='';boxes=[];
  const defs=el('defs',{},vp);const mk=el('marker',{id:'ar',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:7,markerHeight:7,orient:'auto'},defs);el('path',{d:'M0 0L10 5L0 10z',fill:'#9a978f'},mk);
- const root=M.scws.find(s=>!s.parent);measure(root);draw(root,40,90,vp,0);contextRing(root,vp);
- vp.querySelectorAll('g.scw').forEach(g=>{const f=e=>{e.stopPropagation();select(g.dataset.id)};g.addEventListener('click',f);g.addEventListener('keydown',e=>{if(e.key==='Enter')f(e)})});
+ const root=M.scws.find(s=>!s.parent);measure(root,0);draw(root,40,90,vp,0);contextRing(root,vp);
+ vp.querySelectorAll('g.scw').forEach(g=>{const f=e=>{e.stopPropagation();select(g.dataset.id)};g.addEventListener('click',f);g.addEventListener('dblclick',e=>{e.stopPropagation();zoomTo(g.dataset.id)});g.addEventListener('keydown',e=>{if(e.key==='Enter')f(e)})});
  const used=[...new Set(M.scws.filter(s=>s.relation).map(s=>s.relation))];
  $('legend').innerHTML=used.map(r=>'<div><span class="sw" style="border-color:'+REL[r].c+(REL[r].d?';border-top-style:dashed':'')+'"></span>'+esc(REL[r].t)+'</div>').join('')+(M.context?'<div><span class="sw" style="border-color:#5dcaa5;border-top-style:dashed"></span>Context Plane route and data servers</div>':'');
  fit();select(root.id)}
 function fit(){const vp=$('vp'),b=vp.getBBox(),r=$('svg').getBoundingClientRect();if(!b.width)return;const lh=$('legend').offsetHeight+20,k=Math.min(r.width/(b.width+40),(r.height-lh)/(b.height+40),1.6);view={k,x:(r.width-b.width*k)/2-b.x*k,y:(r.height-lh-b.height*k)/2-b.y*k};apply()}
+function zoomTo(id){const s=M.scws.find(x=>x.id===id);if(!s||s._x==null)return;const r=$('svg').getBoundingClientRect(),k=Math.min(r.width/(s.w+60),r.height/(s.h+60),6);view={k,x:r.width/2-(s._x+s.w/2)*k,y:r.height/2-(s._y+s.h/2)*k};apply()}
 function apply(){$('vp').setAttribute('transform','translate('+view.x+','+view.y+') scale('+view.k+')')}
 function select(id){const s=M.scws.find(x=>x.id===id);if(!s)return;const p=M.scws.find(x=>x.id===s.parent);
  let h='<h2>'+esc(s.name)+'</h2><div class="sub">'+esc(s.id)+(p?' · '+esc(s.relation)+' of '+esc(p.name):' · root')+(s.evidence?' · <span class="ev">'+esc(s.evidence)+'</span>':'')+'</div>';
@@ -98,7 +101,7 @@ function load(m){if(!m||!Array.isArray(m.scws))return;M=m;$('empty').style.displ
 (()=>{const s=$('svg');let d=null;s.addEventListener('pointerdown',e=>{d={x:e.clientX-view.x,y:e.clientY-view.y}});addEventListener('pointerup',()=>d=null);
  s.addEventListener('pointermove',e=>{if(d){view.x=e.clientX-d.x;view.y=e.clientY-d.y;apply()}});
  s.addEventListener('wheel',e=>{e.preventDefault();const r=s.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,f=Math.exp(-e.deltaY*0.0015),k=Math.min(6,Math.max(.15,view.k*f));view.x=mx-(mx-view.x)*k/view.k;view.y=my-(my-view.y)*k/view.k;view.k=k;apply()},{passive:false})})();
-$('fit').onclick=fit;
+$('fit').onclick=fit;$('lv').onchange=e=>{maxD=+e.target.value;if(M)render()};
 function mode(t){$('vg').setAttribute('aria-pressed',!t);$('vt').setAttribute('aria-pressed',t);$('svg').style.display=t?'none':'block';$('legend').style.display=t?'none':'block';$('text').style.display=t?'block':'none'}
 $('vg').onclick=()=>mode(false);$('vt').onclick=()=>mode(true);addEventListener('resize',()=>M&&fit());
 // Model sources: embedded copy (standalone file) or the MCP Apps host (tool input or tool result).

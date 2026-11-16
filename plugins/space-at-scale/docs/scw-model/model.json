@@ -1,0 +1,647 @@
+{
+ "title": "Space-at-Scale MCP Server as SCWs",
+ "structural_note": "The server is the bounded object. Data feeds it the way energy fills a universe; the law registry and the field SCWs tell each region how to turn that data into structure. Everything marked PROPOSED is Human0's design for the next build: a massless instruction field located at each galaxy, with dark matter used as its carrier. The rest exists in v0.15.0.",
+ "scws": [
+  {
+   "id": "SCW-Server",
+   "name": "Space-at-Scale MCP Server",
+   "tag": "bounded object; hosts the multiverse",
+   "role": "the container every SCW runs inside; nothing in it can be told apart without the server",
+   "holds": "server.js (25 tools), universe.js (SCW graph), physics-core.js and galaxy-core.js (shared byte-for-byte with the app), stdio and HTTP transports, public mode",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "Public mode: return generated state, persist nothing",
+     "state": "on"
+    },
+    {
+     "text": "App and server load the same physics bytes",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "25 tools; 87/87 stdio and 9/9 HTTP tests",
+     "source": "server.js; TEST-REPORT.md v0.15.0",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Laws",
+   "name": "Law registry",
+   "parent": "SCW-Server",
+   "relation": "governs",
+   "tag": "instructions, not mass",
+   "role": "sets which laws apply in each SCW and whether each is inherited or locally checked",
+   "holds": "20 laws: Q1-Q3 quantum, S0-S1 structural, P1-P5 physical, C1-C2 chemistry, E1-E4 and G1-G3 emergent; inherit or local rules",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "inherit laws pass down every parent chain",
+     "state": "on"
+    },
+    {
+     "text": "local laws are re-checked in each SCW",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "scw_laws, scw_inheritance_rules",
+     "source": "universe.js LAWS, PROPERTY_RULES",
+     "evidence": "FACT"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Data",
+   "name": "Catalog data",
+   "parent": "SCW-Server",
+   "relation": "feeds",
+   "tag": "the energy",
+   "role": "raw matter for every scale; built deterministically from published catalogs",
+   "holds": "galaxy.json (4,240 systems, 391 GW events), stars.json (3,665 stars), solar elements and routes in physics-core.js; build-galaxy.js",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "every value carries its source; inconsistent rows are dropped, not repaired",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "SHA-256 of every file",
+     "source": "PROVENANCE.json",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Evals",
+   "name": "Evals and parity",
+   "parent": "SCW-Server",
+   "relation": "governs",
+   "tag": "the checker",
+   "role": "refuses any state that breaks a law or the byte parity between app and server",
+   "holds": "run_evals (77/77 in our universe, 96/96 with three), validate_app_dropin, release.js provenance check",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "no release unless every eval passes",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "77/77 and 96/96",
+     "source": "run_evals",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Interface",
+   "name": "Tool and view surface",
+   "parent": "SCW-Server",
+   "relation": "contains",
+   "tag": "how agents and people enter",
+   "role": "the 25 tools and the MCP App view; the only doors into the graph",
+   "holds": "open_space_at_scale (view); scw_get, scw_children, scw_search, scw_relations (graph); sim_state, sim_clock, events, remove_state (state)",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "tools read the graph; only state tools change it, and every change is removable",
+     "state": "on"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Multiverse",
+   "name": "SCW0 multiverse harness",
+   "parent": "SCW-Server",
+   "relation": "contains",
+   "tag": "quantum laws only",
+   "role": "holds universes; shares quantum laws, never physical constants",
+   "holds": "generate_universe, generate_exotic_universe, hidden universes",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "Q1-Q3 unitarity, superposition, uncertainty",
+     "state": "on"
+    },
+    {
+     "text": "physical constants",
+     "state": "off"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Universe",
+   "name": "SCW1 our universe",
+   "parent": "SCW-Multiverse",
+   "relation": "contains",
+   "tag": "constants live here",
+   "role": "the universe Space-at-Scale simulates",
+   "holds": "G, c, solar mass, chemistry; age 13.787 Gyr; Hubble tension recorded as unresolved",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "P1-P5 constants, conservation, GR, thermodynamics, light-speed signals",
+     "state": "on"
+    },
+    {
+     "text": "E1 Newtonian approximation where v/c is small",
+     "state": "on"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Hidden",
+   "name": "Hidden universe H",
+   "parent": "SCW-Universe",
+   "relation": "shares-gravity",
+   "tag": "hypothesis",
+   "role": "dark matter as another universe's gravity; light does not cross",
+   "holds": "simple H (7/7 checks) and mirror H (0/7)",
+   "evidence": "HYPOTHESIS",
+   "data": [
+    {
+     "value": "7/7 and 0/7",
+     "source": "link_hidden_universe",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Generated",
+   "name": "Generated universes",
+   "parent": "SCW-Multiverse",
+   "relation": "contains",
+   "tag": "what-ifs",
+   "role": "universes with other constants or chemistries",
+   "holds": "seeded universes and exotic universes; psi mining",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "horizon interiors gated here too",
+     "state": "on"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Laniakea",
+   "name": "SCW2 Laniakea",
+   "parent": "SCW-Universe",
+   "relation": "contains",
+   "tag": "reference node",
+   "role": "supercluster path from the universe to our galaxy",
+   "holds": "diameter 520 Mly, Great Attractor",
+   "evidence": "FACT"
+  },
+  {
+   "id": "SCW-LocalGroup",
+   "name": "SCW3 Local Group",
+   "parent": "SCW-Laniakea",
+   "relation": "contains",
+   "tag": "reference node",
+   "role": "galaxy group holding the Milky Way",
+   "holds": "M31 at 2.5 Mly, approaching at about 110 km/s",
+   "evidence": "FACT"
+  },
+  {
+   "id": "SCW-MW",
+   "name": "SCW4 Milky Way",
+   "parent": "SCW-LocalGroup",
+   "relation": "contains",
+   "tag": "no central body",
+   "role": "the galaxy frame; orbits follow the summed field",
+   "holds": "galactocentric frame (kpc); gala MilkyWayPotential v1 + Sgr A*",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "G1 no central body",
+     "state": "on"
+    },
+    {
+     "text": "G2 bound children end at their Jacobi radius",
+     "state": "on"
+    },
+    {
+     "text": "G3 arms are patterns",
+     "state": "on"
+    },
+    {
+     "text": "E2 Kepler",
+     "state": "off"
+    }
+   ],
+   "data": [
+    {
+     "value": "231.2 km/s at the Sun",
+     "source": "galaxy_field",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-MWField",
+   "name": "Dark matter field (instruction carrier)",
+   "parent": "SCW-MW",
+   "relation": "governs",
+   "tag": "PROPOSED; massless, located at the galactic center",
+   "role": "holds the local instructions for how gravity turns data into the Milky Way and Sgr A*, so an agent writing into SCW4 knows the data types, recursion limits and output contract",
+   "holds": "location: galactocentric origin; mass: none; instruction set for SCW4 and Sgr A*: data types, units, integrator and step limits, balance checks (energy, angular momentum, bound fraction) that stop a bang, pop or poof",
+   "evidence": "HYPOTHESIS",
+   "laws": [
+    {
+     "text": "carries no mass; acts only by setting laws",
+     "state": "on"
+    },
+    {
+     "text": "reject any write that unbalances energy or angular momentum beyond tolerance",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "design choice, not physics",
+     "source": "Human0, 2026-11-16",
+     "evidence": "HYPOTHESIS"
+    }
+   ]
+  },
+  {
+   "id": "SCW-SgrA",
+   "name": "Sagittarius A*",
+   "parent": "SCW-MW",
+   "relation": "superposes",
+   "tag": "horizon",
+   "role": "one field term; leads only within 3.69 pc",
+   "holds": "4.297 million solar masses; 44 S-star orbits",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "Kepler inside 3.69 pc",
+     "state": "on"
+    },
+    {
+     "text": "Newton inside the horizon",
+     "state": "off"
+    },
+    {
+     "text": "interior gated",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "S2 period 16.07 yr",
+     "source": "galaxy_object",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Halo",
+   "name": "Dark matter halo (mass term)",
+   "parent": "SCW-MW",
+   "relation": "superposes",
+   "tag": "inferred",
+   "role": "NFW mass term; 41.4% of the pull at the Sun",
+   "holds": "NFW profile; over half the pull beyond 11.14 kpc",
+   "evidence": "FACT",
+   "data": [
+    {
+     "value": "41.4% at the Sun",
+     "source": "galaxy_field",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Baryons",
+   "name": "Nucleus, bulge and disk",
+   "parent": "SCW-MW",
+   "relation": "superposes",
+   "tag": "ordinary matter",
+   "role": "the baryonic field terms",
+   "holds": "nuclear star cluster, bulge, stellar disk (53% of the pull at the Sun)",
+   "evidence": "FACT"
+  },
+  {
+   "id": "SCW-Populations",
+   "name": "Galactic populations",
+   "parent": "SCW-MW",
+   "relation": "contains",
+   "tag": "bound members",
+   "role": "objects integrated in the summed field",
+   "holds": "161 globular clusters, 50 satellite galaxies, 3,563 pulsars, 21 stellar black holes",
+   "evidence": "FACT",
+   "data": [
+    {
+     "value": "209 of 211 clusters and satellites bound",
+     "source": "galaxy_field",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Spiral",
+   "name": "Spiral pattern",
+   "parent": "SCW-MW",
+   "relation": "passes-through",
+   "tag": "density wave",
+   "role": "arms with their own pattern speed; own no members",
+   "holds": "four-arm schematic pattern",
+   "evidence": "FACT"
+  },
+  {
+   "id": "SCW-Signals",
+   "name": "Signals layer",
+   "parent": "SCW-MW",
+   "relation": "signals",
+   "tag": "light cones",
+   "role": "supernova light and gravitational waves arriving at c",
+   "holds": "9 supernova shells, 391 GW events, GW170817 front",
+   "evidence": "FACT"
+  },
+  {
+   "id": "SCW-Bubble",
+   "name": "SCW5 Local Bubble",
+   "parent": "SCW-MW",
+   "relation": "contains",
+   "tag": "light years",
+   "role": "the Sun's neighborhood",
+   "holds": "3,665 naked-eye stars on measured velocities; Zucker et al. 2022 bubble model",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "E4 straight-line motion within 30 Myr",
+     "state": "on"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Solar",
+   "name": "SCW6 Solar System",
+   "parent": "SCW-Bubble",
+   "relation": "contains",
+   "tag": "AU",
+   "role": "bodies on orbital elements; formation dates",
+   "holds": "132 bodies and spacecraft; rewind to 4.567 Gyr",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "E2 Kepler",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "Voyager 1 at 172.33 AU",
+     "source": "sim_state",
+     "evidence": "EXEC"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Bodies",
+   "name": "SCW7 planet and body systems",
+   "parent": "SCW-Solar",
+   "relation": "contains",
+   "tag": "one SCW per planet, asteroid, KBO or comet",
+   "role": "each body's own frame; planets hold their moons",
+   "holds": "planets (Pluto as dwarf planet), main-belt and near-Earth asteroids, trans-Neptunian objects, Halley's Comet; asteroid analog compositions for mining",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "E2 Kepler around the Sun",
+     "state": "inherit"
+    }
+   ],
+   "data": [
+    {
+     "value": "SCW7:<body> nodes",
+     "source": "universe.js lines 87-88",
+     "evidence": "FACT"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Moons",
+   "name": "SCW8 moons",
+   "parent": "SCW-Bodies",
+   "relation": "contains",
+   "tag": "bound inside each planet's Hill sphere",
+   "role": "major moons on orbits around their planet",
+   "holds": "moons with period and semi-major axis; Io inherits its laws through nine levels",
+   "evidence": "FACT",
+   "laws": [
+    {
+     "text": "E2 Kepler around the parent planet",
+     "state": "on"
+    }
+   ],
+   "data": [
+    {
+     "value": "SCW8:<planet>/<moon> nodes",
+     "source": "universe.js line 89",
+     "evidence": "FACT"
+    }
+   ]
+  },
+  {
+   "id": "SCW-Missions",
+   "name": "Human-made objects",
+   "parent": "SCW-Solar",
+   "relation": "contains",
+   "tag": "routes",
+   "role": "72 objects on dated anchor routes; hidden before launch",
+   "holds": "escape, cruise, orbiter, Lagrange, rover and planned classes; plan_trip, plan_mission",
+   "evidence": "FACT"
+  },
+  {
+   "id": "SCW-Mining",
+   "name": "Mining and extraction",
+   "parent": "SCW-Solar",
+   "relation": "passes-through",
+   "tag": "process",
+   "role": "finds targets and runs campaigns across the solar system",
+   "holds": "find_mining_targets (and parallel), run_extraction_campaign, inject_interstellar_comet; prices are model estimates",
+   "evidence": "FACT"
+  }
+ ],
+ "tables": [
+  {
+   "title": "Tool map: which tools read or change each SCW",
+   "columns": [
+    "SCW",
+    "Reads",
+    "Changes"
+   ],
+   "rows": [
+    [
+     "SCW-Interface",
+     "open_space_at_scale",
+     "none"
+    ],
+    [
+     "SCW-Laws",
+     "scw_laws, scw_inheritance_rules",
+     "none (laws are code)"
+    ],
+    [
+     "SCW-Evals",
+     "run_evals, validate_app_dropin",
+     "none"
+    ],
+    [
+     "SCW-Multiverse, SCW-Generated",
+     "scw_get, scw_children, scw_search",
+     "generate_universe, generate_exotic_universe, remove_state"
+    ],
+    [
+     "SCW-Universe, SCW-Hidden",
+     "scw_relations, energy_ledger",
+     "link_hidden_universe, remove_state"
+    ],
+    [
+     "SCW-MW and its field terms",
+     "galaxy_field, galaxy_object, energy_ledger, scw_relations",
+     "none (data rebuilt by build-galaxy.js)"
+    ],
+    [
+     "SCW-Bubble",
+     "sim_state",
+     "none"
+    ],
+    [
+     "SCW-Solar, SCW-Bodies, SCW-Moons",
+     "sim_state, sim_clock, events",
+     "inject_interstellar_comet, remove_state"
+    ],
+    [
+     "SCW-Missions",
+     "plan_trip, plan_mission",
+     "none"
+    ],
+    [
+     "SCW-Mining",
+     "find_mining_targets, find_mining_targets_parallel",
+     "run_extraction_campaign (returns results; public mode stores nothing)"
+    ]
+   ]
+  },
+  {
+   "title": "Specialist loops by SCW (Context Plane, routed 2026-11-16)",
+   "columns": [
+    "SCW",
+    "Best route (score)",
+    "Primary / checker agents",
+    "Fit"
+   ],
+   "rows": [
+    [
+     "SCW-Interface, SCW-Evals",
+     "agentic-systems → pr-mcp → MCP Server Builder (0.44)",
+     "Maxey932 MCP Engineer / Maxey931 Conformance Tester",
+     "strong"
+    ],
+    [
+     "SCW-Solar, SCW-Missions",
+     "classical-physics → cl-mechanics → Orbital Mechanics Calculator (0.34)",
+     "Maxey1485 Mechanics / Maxey1486 Conservation Law Checker",
+     "strong"
+    ],
+    [
+     "SCW-Universe, SCW-Signals",
+     "classical-physics → astrophysics-cosmology → Cosmology Distance Calculator (0.33)",
+     "Maxey1479 Astronomer / Maxey1480 Theorist",
+     "usable"
+    ],
+    [
+     "SCW-Data, SCW-Bubble",
+     "data-science → Classifier Builder (0.22)",
+     "Maxey1613 ML / Maxey1451 Statistician",
+     "weak: no astrometry skill"
+    ],
+    [
+     "SCW-Mining",
+     "commodities → Metals Driver Explainer (0.18)",
+     "Maxey1691 Metals / Maxey1689 Commodities Checker",
+     "weak: no space-resources skill"
+    ],
+    [
+     "SCW-MW, SCW-MWField, SCW-Halo, SCW-SgrA",
+     "routed to Hydrogen Atom Solver (0.17)",
+     "none suitable",
+     "gap: no galactic-dynamics skill"
+    ]
+   ]
+  },
+  {
+   "title": "Data sources each SCW will need beyond the directory",
+   "columns": [
+    "SCW",
+    "Source",
+    "Access"
+   ],
+   "rows": [
+    [
+     "SCW-Bubble, SCW-Data",
+     "Gaia DR3 (ESA archive, TAP/ADQL)",
+     "public API, no MCP server found yet"
+    ],
+    [
+     "SCW-Solar, SCW-Missions",
+     "NASA JPL Horizons and Small-Body Database",
+     "public API"
+    ],
+    [
+     "SCW-Signals",
+     "GWOSC event catalogs",
+     "public API"
+    ],
+    [
+     "SCW-MW, SCW-Halo, SCW-SgrA",
+     "gala / galpy potentials; GRAVITY Collaboration orbits",
+     "Python libraries and papers"
+    ],
+    [
+     "SCW-Universe",
+     "Planck 2018 cosmological parameters",
+     "published tables"
+    ],
+    [
+     "SCW-Populations",
+     "ATNF Pulsar Catalogue; Vasiliev and Baumgardt 2021",
+     "public downloads"
+    ],
+    [
+     "research, all SCWs",
+     "alphaXiv (Context Plane gate, registry)",
+     "MCP server"
+    ]
+   ]
+  }
+ ],
+ "one_line": "The Space-at-Scale server is one bounded SCW: catalog data feeds it, the law registry and evals govern it, and SCW0 holds our universe down to the solar system. The proposed dark matter field is a massless SCW at the galactic center that governs how the Milky Way and Sgr A* are built from that data. Three of the six specialist areas have no good Context Plane skill yet, so a Space-at-Scale topic pack comes before the agent loops.",
+ "context": {
+  "path": "six routes on the Maxey0 Context Plane (see the specialist table); candidates, not authorizations",
+  "mcp": [
+   {
+    "name": "space-at-scale",
+    "why": "the server being modeled (EXEC values)"
+   },
+   {
+    "name": "maxey0-context-plane",
+    "why": "specialist routing"
+   },
+   {
+    "name": "alphaXiv",
+    "why": "research gate"
+   }
+  ]
+ }
+}

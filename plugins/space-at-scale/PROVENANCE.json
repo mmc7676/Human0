@@ -1,13 +1,13 @@
 {
  "plugin": "space-at-scale",
- "version": "0.15.0",
- "built_utc": "2026-11-16T00:27:20.629Z",
+ "version": "0.15.1",
+ "built_utc": "2026-11-16T04:43:18.419Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
    "path": ".claude-plugin/plugin.json",
-   "sha256": "b8de11346a6f5258ac7f348a06b0f925226bbb2326f2ed4e3652163dd089ad8c",
-   "bytes": 632
+   "sha256": "0c9957781b4848a32e41eda4c8bfa447d31e85204db3b96cd9a3872b0395c40b",
+   "bytes": 633
   },
   {
    "path": ".mcp.json",
@@ -21,12 +21,12 @@
   },
   {
    "path": "INTEGRATION.md",
-   "sha256": "404f8b9e8cdf9f17dc83b9c301eacc6cb4f8790c94dd1647733058d5af027db3",
-   "bytes": 14788
+   "sha256": "561daf2294eada5176f86b1cda53e4c01f2f732b0c8b5d3bf0015500cdd44502",
+   "bytes": 15348
   },
   {
    "path": "README.md",
-   "sha256": "652173cc4d8d4dc1177aa0c44b2a88dd58dd17b7298c83b1e42670452977732e",
+   "sha256": "3c73e306d743497df0b7013e28a48101e00cab913a129c59111d28617e1ed629",
    "bytes": 5292
   },
   {
@@ -116,8 +116,8 @@
   },
   {
    "path": "server/Dockerfile",
-   "sha256": "e96b8f331d7e84bae363f747692760d2ba77b31f1d7068922d17608704c9f693",
-   "bytes": 216
+   "sha256": "6b32c1b90e1fcedee4b29ed9450744880022e338a8ccd281adbd33f4fa857e64",
+   "bytes": 260
   },
   {
    "path": "server/app/OrbitControls.js",
@@ -131,12 +131,12 @@
   },
   {
    "path": "server/app/galaxy-view.js",
-   "sha256": "2132e0714c7272c12454091f7d47f1e151100dd14ce6ee28ca0aebb8e28c1fd5",
+   "sha256": "9d923586df4dd1485f1232d199d5fe6bdc766cb12a76f86145284c80102e6063",
    "bytes": 43161
   },
   {
    "path": "server/app/index.html",
-   "sha256": "ec353e77ccb580bdf1f8b83939048f5ef812ab9c158e70c7dc697d66e726a42c",
+   "sha256": "b2044e6f04c0619e4c4b3e069549d5134ea29786bae131942b7bcb68b70980c8",
    "bytes": 487925
   },
   {
@@ -146,17 +146,17 @@
   },
   {
    "path": "server/build-app.js",
-   "sha256": "a7415adf97e195eb177bacc931bce20dd5f3327c9b41da66fa8928a68b7738f4",
+   "sha256": "3c00b75bff539fc8f417582d87a2facbca8df42ce63061c2971757e3763ce200",
    "bytes": 2428
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "52d129b560fa915933be0664a948e2e88d4993c8b6588f787f791ca787f9ba9f",
+   "sha256": "44167aece8e3079cc7d2667f09fa556e1cdd592022a2a41286c5300431fe9fc3",
    "bytes": 2481628
   },
   {
    "path": "server/galaxy-core.js",
-   "sha256": "2d544ddab277b48870dee05ab09dbb69648d12d39c0eab39dcb465a1bf5c6279",
+   "sha256": "65e71a7e21ed37ad78ceca9b5df90bcd095e4f76a129f5bd6f311e70960da478",
    "bytes": 27582
   },
   {
@@ -176,7 +176,7 @@
   },
   {
    "path": "server/package.json",
-   "sha256": "dd959d0061c94e7bd7ad5cc3af96b82a2f1e9e2ff4deeee5778ba346fc6a6fcb",
+   "sha256": "7a7975103c0dbebddb1f3aa199a342a615c1430847436da74fe0e557db157ba9",
    "bytes": 394
   },
   {
@@ -186,12 +186,12 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "c9d97e4f7cb644410b117df8c756c9dd33c5f23173c08c22a4a11c49341988fb",
+   "sha256": "3721864fec182220bdcf35748c2df6a944acbd647e0c771288478a5f2e1f7954",
    "bytes": 3228626
   },
   {
    "path": "server/server.js",
-   "sha256": "a24c2026659e0846e9d0b0e49232d81124532f7ea582675d21699304d639d5e4",
+   "sha256": "507be213336b23bf0ea27172978936dfeb9be98e1fcdef1640531292c61de1b4",
    "bytes": 13967
   },
   {
@@ -206,7 +206,7 @@
   },
   {
    "path": "server/test.js",
-   "sha256": "d112be36a8035e77b8b8e9804660effc30612d96cb39023d6a2f5005e8bfe205",
+   "sha256": "480a3e79790d550185f073ef9b464e5fce307623d398d42f92e76284429a6308",
    "bytes": 18543
   },
   {
@@ -221,7 +221,7 @@
   },
   {
    "path": "skills/space-at-scale/SKILL.md",
-   "sha256": "907024f9a9d60448c37cddb42ef5edc0fed069ee9643ad16832cb0f1c6d0920e",
+   "sha256": "0669ed633676272d026e99d6c18e6bd7a8393a65806d0919ac4e63c25724a92d",
    "bytes": 2558
   }
  ],
@@ -229,7 +229,7 @@
   {
    "canonical": "index.html",
    "mirror": "server/app/index.html",
-   "sha256": "ec353e77ccb580bdf1f8b83939048f5ef812ab9c158e70c7dc697d66e726a42c",
+   "sha256": "b2044e6f04c0619e4c4b3e069549d5134ea29786bae131942b7bcb68b70980c8",
    "bytes": 487925,
    "identical": true
   },
@@ -243,7 +243,7 @@
   {
    "canonical": "galaxy-view.js",
    "mirror": "server/app/galaxy-view.js",
-   "sha256": "2132e0714c7272c12454091f7d47f1e151100dd14ce6ee28ca0aebb8e28c1fd5",
+   "sha256": "9d923586df4dd1485f1232d199d5fe6bdc766cb12a76f86145284c80102e6063",
    "bytes": 43161,
    "identical": true
   },
@@ -271,7 +271,7 @@
   {
    "canonical": "galaxy-core.js",
    "mirror": "server/galaxy-core.js",
-   "sha256": "2d544ddab277b48870dee05ab09dbb69648d12d39c0eab39dcb465a1bf5c6279",
+   "sha256": "65e71a7e21ed37ad78ceca9b5df90bcd095e4f76a129f5bd6f311e70960da478",
    "bytes": 27582,
    "identical": true
   },
@@ -298,7 +298,7 @@
   },
   {
    "file": "server/galaxy-core.js",
-   "sha256": "2d544ddab277b48870dee05ab09dbb69648d12d39c0eab39dcb465a1bf5c6279",
+   "sha256": "65e71a7e21ed37ad78ceca9b5df90bcd095e4f76a129f5bd6f311e70960da478",
    "embedded_byte_for_byte_in_app_html": true
   },
   {

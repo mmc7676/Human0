@@ -43,7 +43,7 @@ r=await call('plan_trip',{request:'fly to Europa',jd:2461356.5});ok(r.data.kind=
 r=await call('plan_trip',{request:'tell me a joke'});ok(r.err,'Non-trip request rejected with guidance');
 const app=(await c.listTools()).tools.find(x=>x.name==='open_space_at_scale');ok(app&&app._meta&&app._meta.ui&&app._meta.ui.resourceUri==='ui://space-at-scale/app.html','open_space_at_scale declares its MCP App view');
 const res=await c.readResource({uri:'ui://space-at-scale/app.html'});ok(res.contents[0].mimeType==='text/html;profile=mcp-app'&&res.contents[0].text.length>1e6&&!/<script src=/.test(res.contents[0].text),'App resource is self-contained HTML ('+(res.contents[0].text.length/1048576).toFixed(2)+' MB, mcp-app profile)');
-r=await call('open_space_at_scale',{focus:'Mars'});ok(/Space at Scale is open/.test(r.data||'')||!r.err,'open_space_at_scale returns its text fallback');
+r=await call('open_space_at_scale',{focus:'Mars'});ok(/Space-at-Scale is open/.test(r.data||'')||!r.err,'open_space_at_scale returns its text fallback');
 r=await call('run_evals',{id:'SCW0'});ok(r.data.passed===r.data.total,'All evals pass with all three universes: '+r.data.passed+'/'+r.data.total);
 // ---- Galaxy scale (SCW4): structure, field, objects, signals, ledger ----
 const near=(a,b,tol)=>Math.abs(a-b)<=tol;

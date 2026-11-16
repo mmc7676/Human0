@@ -45885,7 +45885,7 @@ var { StdioServerTransport } = require_stdio2();
 var { z } = require_zod();
 var U = require_universe();
 function buildServer() {
-  const server = new McpServer({ name: "scw-universe", version: "0.15.0" });
+  const server = new McpServer({ name: "scw-universe", version: "0.15.1" });
   const j = (o) => ({ content: [{ type: "text", text: JSON.stringify(o, null, 2) }] });
   const err = (e) => ({ isError: true, content: [{ type: "text", text: String(e.message || e) }] });
   const nodeView = (n) => ({ id: n.id, level: n.level, name: n.name, type: n.type, parent: n.parent || null, relation_to_parent: n.parent ? n.rel : null, dims: n.dims === Infinity ? "unbounded (harness)" : n.dims, units: n.units, frame: n.frame, props: n.props || {}, observability: n.observability || { full: true }, children: n.children, member_count: n.members.length, note: n.note });
@@ -45949,7 +45949,7 @@ function buildServer() {
     }
   });
   server.registerTool("events", { description: "State-change log of the live simulation.", inputSchema: { since_version: z.number().optional() } }, async ({ since_version }) => j(U.sim.events.filter((e) => e.version > (since_version || 0))));
-  server.registerTool("validate_app_dropin", { description: "Check whether an app (e.g. Space at Scale) can be dropped into an SCW without physics or unit flaws.", inputSchema: { scw_id: z.string(), name: z.string(), units: z.string(), gm_sun_au3_d2: z.number().optional(), ly_in_au: z.number().optional(), physics_core_sha256: z.string().optional() } }, async (m) => {
+  server.registerTool("validate_app_dropin", { description: "Check whether an app (e.g. Space-at-Scale) can be dropped into an SCW without physics or unit flaws.", inputSchema: { scw_id: z.string(), name: z.string(), units: z.string(), gm_sun_au3_d2: z.number().optional(), ly_in_au: z.number().optional(), physics_core_sha256: z.string().optional() } }, async (m) => {
     try {
       return j(U.appDropIn(m));
     } catch (e) {
@@ -46047,8 +46047,8 @@ function buildServer() {
     }
   });
   const APP_URI = "ui://space-at-scale/app.html", APP_HTML = require("fs").readFileSync(require("path").join(__dirname, "dist", "space-at-scale.html"), "utf8");
-  server.registerResource("space-at-scale-app", APP_URI, { description: "Space at Scale interactive view (MCP App)", mimeType: "text/html;profile=mcp-app" }, async (uri) => ({ contents: [{ uri: uri.href, mimeType: "text/html;profile=mcp-app", text: APP_HTML, _meta: { ui: { csp: { connectDomains: [], resourceDomains: [] }, prefersBorder: false } } }] }));
-  server.registerTool("open_space_at_scale", { description: "Open Space at Scale inline: a real-time 3D simulation at three scales. Solar system in AU (planets, moons, asteroids, KBOs, spacecraft, mining search, trip planner); Local Bubble in light years (3,665 stars); Milky Way in thousands of light years (black hole Sgr A* and its S-stars, dark matter halo, 161 globular clusters, 50 satellite galaxies, 3,563 pulsars, supernova light shells, gravitational-wave fronts). Each scale runs forward and backward in time to its physical limits. Use when the user asks to show, open, play or explore the solar system, space, the galaxy, black holes, dark matter or Space at Scale.", inputSchema: { focus: z.string().optional().describe("Optional body to mention, e.g. Mars") }, _meta: { ui: { resourceUri: APP_URI }, "ui/resourceUri": APP_URI } }, async ({ focus }) => ({ content: [{ type: "text", text: "Space at Scale is open" + (focus ? " (look for " + focus + " in the Primary menu or click it in the view)" : "") + '. Drag to orbit, scroll or pinch to zoom, click any dot for live specs. Try the task bar: "plan a trip to Mars" or "$3,000,000 of platinum within 5 AU".' }] }));
+  server.registerResource("space-at-scale-app", APP_URI, { description: "Space-at-Scale interactive view (MCP App)", mimeType: "text/html;profile=mcp-app" }, async (uri) => ({ contents: [{ uri: uri.href, mimeType: "text/html;profile=mcp-app", text: APP_HTML, _meta: { ui: { csp: { connectDomains: [], resourceDomains: [] }, prefersBorder: false } } }] }));
+  server.registerTool("open_space_at_scale", { description: "Open Space-at-Scale inline: a real-time 3D simulation at three scales. Solar system in AU (planets, moons, asteroids, KBOs, spacecraft, mining search, trip planner); Local Bubble in light years (3,665 stars); Milky Way in thousands of light years (black hole Sgr A* and its S-stars, dark matter halo, 161 globular clusters, 50 satellite galaxies, 3,563 pulsars, supernova light shells, gravitational-wave fronts). Each scale runs forward and backward in time to its physical limits. Use when the user asks to show, open, play or explore the solar system, space, the galaxy, black holes, dark matter or Space-at-Scale.", inputSchema: { focus: z.string().optional().describe("Optional body to mention, e.g. Mars") }, _meta: { ui: { resourceUri: APP_URI }, "ui/resourceUri": APP_URI } }, async ({ focus }) => ({ content: [{ type: "text", text: "Space-at-Scale is open" + (focus ? " (look for " + focus + " in the Primary menu or click it in the view)" : "") + '. Drag to orbit, scroll or pinch to zoom, click any dot for live specs. Try the task bar: "plan a trip to Mars" or "$3,000,000 of platinum within 5 AU".' }] }));
   server.registerResource("graph", "scw://graph", { description: "The full SCW universe graph (nodes and edges)", mimeType: "application/json" }, async (uri) => ({ contents: [{ uri: uri.href, mimeType: "application/json", text: JSON.stringify([...U.nodes.values()].map(nodeView)) }] }));
   return server;
 }

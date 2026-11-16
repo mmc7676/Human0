@@ -1,4 +1,4 @@
-// galaxy-view.js: the Galaxy scale (SCW4) of Space at Scale. Loads after three.js, physics-core.js, galaxy-core.js and app.js.
+// galaxy-view.js: the Galaxy scale (SCW4) of Space-at-Scale. Loads after three.js, physics-core.js, galaxy-core.js and app.js.
 const KLY=GXC.C.kpc_kly,NOWY=2026.87,GFLOOR=-13.787e9,GCAP=5e9,KMS=GXC.C.kms_kpcMyr;
 const gx={src:'halo',mk:true,on:false,t:0,pend:0,d:null,sel:null,view:{k:'gc'},dm:true,flash:[],era:'',ready:false,merge:{},mcen:{},alive:0};
 const gxScene=new THREE.Scene();gxScene.background=new THREE.Color(0x000000);
