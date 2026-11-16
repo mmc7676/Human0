@@ -8,7 +8,7 @@ const before=app;app=app.replace("fetch('stars.json').then(r=>r.json())","Promis
 const bridge=`(function(){if(window.parent===window)return;let id=1;const send=m=>window.parent.postMessage(m,'*');
 window.addEventListener('message',e=>{const m=e.data;if(m&&m.id===1&&m.result){send({jsonrpc:'2.0',method:'ui/notifications/initialized'});size()}});
 const size=()=>send({jsonrpc:'2.0',method:'ui/notifications/size-changed',params:{height:Math.ceil(document.documentElement.scrollHeight)}});
-send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.14.0'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
+send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.15.0'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
 new ResizeObserver(size).observe(document.body)})();`;
 const parts={'<script src="three.min.js"></script>':'<script>'+esc(rd('app/three.min.js'))+'</script>','<script src="OrbitControls.js"></script>':'<script>'+esc(rd('app/OrbitControls.js'))+'</script>','<script src="physics-core.js"></script>':'<script>'+esc(rd('physics-core.js'))+'</script>','<script src="galaxy-core.js"></script>':'<script>'+esc(rd('galaxy-core.js'))+'</script>','<script src="galaxy-view.js"></script>':'<script>window.__GALAXY='+esc(rd('galaxy.json'))+';</script>\n<script>'+esc(gview)+'</script>','<script src="app.js"></script>':'<script>window.__STARS='+esc(rd('stars.json'))+';</script>\n<script>'+esc(app)+'</script>'};
 html=html.replace('</body>','<script>'+bridge+'</script>\n</body>');

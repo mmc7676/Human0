@@ -1,12 +1,12 @@
 {
  "plugin": "space-at-scale",
- "version": "0.14.0",
- "built_utc": "2026-11-15T23:19:41.044Z",
+ "version": "0.15.0",
+ "built_utc": "2026-11-16T00:27:20.629Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
    "path": ".claude-plugin/plugin.json",
-   "sha256": "e306956dff0cdcb561dae57f4981007cbb3d4fc806863c0b8337a583bde930ee",
+   "sha256": "b8de11346a6f5258ac7f348a06b0f925226bbb2326f2ed4e3652163dd089ad8c",
    "bytes": 632
   },
   {
@@ -21,8 +21,8 @@
   },
   {
    "path": "INTEGRATION.md",
-   "sha256": "021fbfd210fe22d070a0713f68b459eac956fd63973f9d8c1ab4c7904e1dfd3d",
-   "bytes": 14058
+   "sha256": "404f8b9e8cdf9f17dc83b9c301eacc6cb4f8790c94dd1647733058d5af027db3",
+   "bytes": 14788
   },
   {
    "path": "README.md",
@@ -131,13 +131,13 @@
   },
   {
    "path": "server/app/galaxy-view.js",
-   "sha256": "7397d7e2283e2177362ff93d74391521505fa2e813477631563c3e433f9d091c",
-   "bytes": 43055
+   "sha256": "2132e0714c7272c12454091f7d47f1e151100dd14ce6ee28ca0aebb8e28c1fd5",
+   "bytes": 43161
   },
   {
    "path": "server/app/index.html",
-   "sha256": "2e862ec5eecc40c693edd298754475b78f1caa1523174c6516337d632d423a2f",
-   "bytes": 485103
+   "sha256": "ec353e77ccb580bdf1f8b83939048f5ef812ab9c158e70c7dc697d66e726a42c",
+   "bytes": 487925
   },
   {
    "path": "server/app/three.min.js",
@@ -146,13 +146,13 @@
   },
   {
    "path": "server/build-app.js",
-   "sha256": "85c8030f063b42965c4631e281d11323cd37d5077a5592db837b71fd64c739be",
+   "sha256": "a7415adf97e195eb177bacc931bce20dd5f3327c9b41da66fa8928a68b7738f4",
    "bytes": 2428
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "ce5c2f4703450a71810a3e1366455f3d4d8829060dbdd3e3d903614b47095006",
-   "bytes": 2478700
+   "sha256": "52d129b560fa915933be0664a948e2e88d4993c8b6588f787f791ca787f9ba9f",
+   "bytes": 2481628
   },
   {
    "path": "server/galaxy-core.js",
@@ -176,7 +176,7 @@
   },
   {
    "path": "server/package.json",
-   "sha256": "3f46f68083c14668ed87de64c278d7342fb8c8c306c93fcd3ed3052bc4af8701",
+   "sha256": "dd959d0061c94e7bd7ad5cc3af96b82a2f1e9e2ff4deeee5778ba346fc6a6fcb",
    "bytes": 394
   },
   {
@@ -186,12 +186,12 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "e950bcbafb43239a19fda7349adfbabfeb0ac7063c90216addc3324764125fab",
+   "sha256": "c9d97e4f7cb644410b117df8c756c9dd33c5f23173c08c22a4a11c49341988fb",
    "bytes": 3228626
   },
   {
    "path": "server/server.js",
-   "sha256": "3b636b31aa9e7abf0d33afb3672aabf72479bdd30df1432e8cd2b6142a7440d6",
+   "sha256": "a24c2026659e0846e9d0b0e49232d81124532f7ea582675d21699304d639d5e4",
    "bytes": 13967
   },
   {
@@ -229,8 +229,8 @@
   {
    "canonical": "index.html",
    "mirror": "server/app/index.html",
-   "sha256": "2e862ec5eecc40c693edd298754475b78f1caa1523174c6516337d632d423a2f",
-   "bytes": 485103,
+   "sha256": "ec353e77ccb580bdf1f8b83939048f5ef812ab9c158e70c7dc697d66e726a42c",
+   "bytes": 487925,
    "identical": true
   },
   {
@@ -243,8 +243,8 @@
   {
    "canonical": "galaxy-view.js",
    "mirror": "server/app/galaxy-view.js",
-   "sha256": "7397d7e2283e2177362ff93d74391521505fa2e813477631563c3e433f9d091c",
-   "bytes": 43055,
+   "sha256": "2132e0714c7272c12454091f7d47f1e151100dd14ce6ee28ca0aebb8e28c1fd5",
+   "bytes": 43161,
    "identical": true
   },
   {

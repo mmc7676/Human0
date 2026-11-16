@@ -45885,7 +45885,7 @@ var { StdioServerTransport } = require_stdio2();
 var { z } = require_zod();
 var U = require_universe();
 function buildServer() {
-  const server = new McpServer({ name: "scw-universe", version: "0.14.0" });
+  const server = new McpServer({ name: "scw-universe", version: "0.15.0" });
   const j = (o) => ({ content: [{ type: "text", text: JSON.stringify(o, null, 2) }] });
   const err = (e) => ({ isError: true, content: [{ type: "text", text: String(e.message || e) }] });
   const nodeView = (n) => ({ id: n.id, level: n.level, name: n.name, type: n.type, parent: n.parent || null, relation_to_parent: n.parent ? n.rel : null, dims: n.dims === Infinity ? "unbounded (harness)" : n.dims, units: n.units, frame: n.frame, props: n.props || {}, observability: n.observability || { full: true }, children: n.children, member_count: n.members.length, note: n.note });

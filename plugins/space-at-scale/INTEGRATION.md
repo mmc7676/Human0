@@ -139,3 +139,10 @@ Hypothesis (Human0): our universe is encoded on a horizon (holographic picture);
 | Mirror H | its own light and chemistry, so it cools into a disk (5.36 times our ordinary mass, Planck 2018 ratio) | 0 of 7: 446 km/s at the Sun, 19 GeV/cm3 local density, disk axis ratio 0.09, LMC unbound, self-interaction 5e7 cm2/g against the Bullet Cluster limit 1.25 |
 
 App: Dark matter source menu (halo, simple H, mirror H); tooltips, markers, report and evals follow it. Server: `link_hidden_universe`, removable with `remove_state`. Recalled, not fetched: the Planck densities, the Bullet Cluster limit, the measured bands.
+
+## v0.15.0: control board
+
+- Removed the Year count selector. The app always uses the year-0 scale (0 CE is year zero); the historians' count stays in `galaxy-core.js` and its eval.
+- Control board: nebula banner background; **Collapse controls** keeps the title row plus the first three rows; a drag handle under the board resizes it like a split screen (also arrow keys, and double-click to toggle). The 3D view grows by the height the board gives up.
+- **Info on/off** hides the explanatory text (star and galaxy counts, the how-to footer and the data credits). The setting and the board height persist per viewer where browser storage is available.
+- **Reset everything** also restores the full board and turns Info back on.

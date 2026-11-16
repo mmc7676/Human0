@@ -118,7 +118,7 @@ function enterGX(auto){if(!gx.ready){note('Galaxy data is still loading. Try aga
 function exitGX(){gx.on=false;gxCtl.enabled=false;ctl.enabled=true;tip.style.display='none';$('gxb').textContent='Galaxy off';$('units').textContent='AU';cs.value='Sun';ctl.target.set(0,0,0);cam.position.set(0,45,75);center='Sun';note('Back in the solar system. Units are AU.')}
 $('gxb').onclick=()=>{if(psiOn||exOn){note('The Galaxy scale belongs to our universe. Switch Universe back to SCW1 first.');return}gx.on?exitGX():enterGX(false)};
 $('gxspd').onchange=e=>{if(!play&&e.target.value!=='0'){play=true;$('play').textContent='Pause';$('play').setAttribute('aria-label','Pause')}};
-$('yrc').onchange=e=>{GXC.setEraStyle(e.target.value);note(e.target.value==='hist'?'Historians\' count: there is no year 0, so the year before 1 CE is 1 BCE and every BCE year reads one higher.':'Year-0 scale: 0 CE comes between 1 BCE and 1 CE.')};
+if($('yrc'))$('yrc').onchange=e=>{GXC.setEraStyle(e.target.value);note(e.target.value==='hist'?'Historians\' count: there is no year 0, so the year before 1 CE is 1 BCE and every BCE year reads one higher.':'Year-0 scale: 0 CE comes between 1 BCE and 1 CE.')};
 $('gxv').onchange=e=>{if(e.target.value!=='obj'){gx.view={k:e.target.value,i:0};gxCtl.target.set(0,0,0)}};
 $('gxz').onchange=e=>{if(!gx.on)enterGX(false);gxZoom(e.target.value)};
 $('gxdm').onclick=e=>{gx.dm=!gx.dm;e.currentTarget.textContent=gx.dm?'Dark matter on':'Dark matter off';e.currentTarget.setAttribute('aria-pressed',String(gx.dm));note(gx.dm?'Dark matter is back. Whatever has not escaped is held again. Use Reset galaxy to restore today\'s positions.':'Dark matter removed from the model. Run Galaxy time forward at 10 Myr/s: the outer disk, clusters and satellites drift away, the inner disk barely changes.')};
@@ -170,10 +170,10 @@ $('xcomc').onclick=()=>{const n=comets.length;comets.length=0;note(n?'Removed '+
 function resetAll(){if(fsOn)setFS(false);if(gx.on)exitGX();if(lb.on)exitLB();const u=$('uni');if(u.value!=='ours'){u.value='ours';u.onchange({target:u})}
  comets.length=0;$('taskc').click();$('gdate').value='';$('gderr').textContent='';jd=Date.now()/864e5+2440587.5;dir=1;$('rev').textContent='Reverse';$('rev').setAttribute('aria-pressed','false');spd.value='2592000';play=true;$('play').textContent='Pause';$('play').setAttribute('aria-label','Pause');
  lbReset();if(gx.ready)gxResetState();gx.dm=true;gx.src='halo';$('gxsrc').value='halo';gxApplySrc();$('gxdm').textContent='Dark matter on';$('gxdm').setAttribute('aria-pressed','true');$('gxspd').value='0';gx.mk=true;$('gxmk').textContent='Galaxy-Scale Markers On';$('gxmk').setAttribute('aria-pressed','true');gx.sel=null;gx.view={k:'gc'};$('gxv').value='gc';$('gxz').value='disk';
- if(!labels)$('lab').click();if(!mmOn)$('mm').click();if(!pathsOn)$('orb').click();if(!beltP.visible)$('blt').click();$('sz').value='1';mult=1;$('yrc').value='astro';GXC.setEraStyle('astro');
+ if(!labels)$('lab').click();if(!mmOn)$('mm').click();if(!pathsOn)$('orb').click();if(!beltP.visible)$('blt').click();$('sz').value='1';mult=1;if($('yrc'))$('yrc').value='astro';GXC.setEraStyle('astro');
  $('evals').style.display='none';$('evb').textContent='Run physics evals';sel=null;tip.style.display='none';cs.value='Sun';setCenter('Sun');cam.position.set(0,45,75);ctl.target.set(0,0,0);
  note('Everything reset: solar system at today running forward at 30 days/s; Bubble and Galaxy at today and frozen; dark matter and markers on; comets, task and evals cleared; our universe.')}
-$('resetall').onclick=resetAll;
+$('resetall').onclick=()=>{resetAll();if(window.sasBoard){sasBoard.setInfo(true);sasBoard.set(sasBoard.full())}};
 setInterval(fsSync,250);
 
 // ---- Fit view: frame everything visible in the active scale, keeping the current viewing direction
