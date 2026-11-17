@@ -378,6 +378,17 @@ export default {
         endpoints: { "/mcp": "all domains", ...Object.fromEntries(SCOPES.map((d) => ["/mcp/" + d, d + " only"])) },
         ...GRAPHS.all.snapshot() });
     }
+    // Human0 apps: single-file browser apps in server/public/apps/<slug>/ (Workers static assets; free, no Worker CPU for the app itself).
+    // Space-at-Scale runs entirely in the visitor's browser; its optional Claude panel calls api.anthropic.com with the visitor's own key.
+    if (/^\/(?:human0-apps\/|apps\/)?space-at-scale\/?$/i.test(url.pathname) && url.pathname !== "/apps/space-at-scale/")
+      return Response.redirect(url.origin + "/apps/space-at-scale/" + url.search, 301);
+    if (env.ASSETS && /^\/apps\/space-at-scale\/(?:privacy(?:\.html)?)?$/.test(url.pathname) && (req.method === "GET" || req.method === "HEAD")) {
+      const r = await env.ASSETS.fetch(req);
+      const h = new Headers(r.headers);
+      h.set("content-security-policy", "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://api.anthropic.com; frame-ancestors 'self'");
+      h.set("referrer-policy", "no-referrer");
+      return new Response(r.body, { status: r.status, headers: h });
+    }
     // /docs and /research: static pages and files built by tools/site/build_site.py (server/public, Workers static assets)
     if (env.ASSETS && /^\/(docs|research)(\/|$)/.test(url.pathname) && (req.method === "GET" || req.method === "HEAD")) return env.ASSETS.fetch(req);
     return new Response("not found", { status: 404 });

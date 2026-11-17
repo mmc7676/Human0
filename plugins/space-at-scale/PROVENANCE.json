@@ -1,12 +1,12 @@
 {
  "plugin": "space-at-scale",
- "version": "0.15.2",
- "built_utc": "2026-11-17T06:52:20.465Z",
+ "version": "0.15.3",
+ "built_utc": "2026-11-17T07:16:25.624Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
    "path": ".claude-plugin/plugin.json",
-   "sha256": "ead3483652700bf5e87e2accaf32ffc9d754e6aab95e55f64539a2ec8cffe3f3",
+   "sha256": "dcbfa378da3b6a48b3c8f89c84e2fc67e9c06059abbb7a3f5964012471efd0da",
    "bytes": 996
   },
   {
@@ -21,8 +21,8 @@
   },
   {
    "path": "INTEGRATION.md",
-   "sha256": "090947e4a98e25620a156e13f8f6f11c4d0e0ecf9b60ba5dfbfdefda0f4a348b",
-   "bytes": 15940
+   "sha256": "dfd5519939451433559589f45b56f6a87822760ebc9b78feccf1fe292e238f85",
+   "bytes": 16580
   },
   {
    "path": "LICENSE",
@@ -36,8 +36,8 @@
   },
   {
    "path": "README.md",
-   "sha256": "3c73e306d743497df0b7013e28a48101e00cab913a129c59111d28617e1ed629",
-   "bytes": 5292
+   "sha256": "2eb5a1d6bbe474e454a8f7e376f5dbe2568e961d9b105053357fbc6775521dad",
+   "bytes": 5759
   },
   {
    "path": "release.js",
@@ -146,8 +146,8 @@
   },
   {
    "path": "server/app/index.html",
-   "sha256": "94b3878ac4de679443dca64022e425b0648286034d7a12dd2e532bbfb21d4a67",
-   "bytes": 488097
+   "sha256": "6fb58ed626c78ee369372af9a0e43e23f5fed0b3e570c82320a31ab82ebd591a",
+   "bytes": 488137
   },
   {
    "path": "server/app/three.min.js",
@@ -156,13 +156,13 @@
   },
   {
    "path": "server/build-app.js",
-   "sha256": "b978000ffd757a9c58b45ed106762c3d6f40b50ac4df87d6c72d3dc2a8874377",
-   "bytes": 2428
+   "sha256": "76dbdd0c5baedc64dfa494c24664ffd1ed2a07f0fecffe46c286e0a12ea53bf3",
+   "bytes": 3289
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "fa70538fb68b2a97b65dcd2212c0919a7cf890c9884507a46a7d7b4ecee65008",
-   "bytes": 2483851
+   "sha256": "9deb7e6cba2c7cfbc0adacdc030115613219a8af478e3fc0efe75080fb35b2b3",
+   "bytes": 2483852
   },
   {
    "path": "server/galaxy-core.js",
@@ -186,7 +186,7 @@
   },
   {
    "path": "server/package.json",
-   "sha256": "ba80bb804e43ff6fd7bef6bbc82b3a23ba59bd5fbba64f5efb1e656a62786bd7",
+   "sha256": "81939d7852936cb6ece59d927dc17673b43aa8ed2c09a25d656c298181163ab0",
    "bytes": 394
   },
   {
@@ -196,12 +196,12 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "3a1c8ee442efe4cbb5727844f827fc345a70121c3f1bdf024884109c4a392bf9",
+   "sha256": "8a2b9d0f572ae62b5632399e26e24e12c023d45b2f30d289b2ffe376487e2d22",
    "bytes": 3231262
   },
   {
    "path": "server/server.js",
-   "sha256": "e5c2cb4cf24636d72823c6953a3e50f594c6368bcabc05fd580b9f04f855c21b",
+   "sha256": "f78d6451f79aea5ae0feabb598c2cc3c2281ab7fc8e248f1c8e131ec7139ec06",
    "bytes": 16328
   },
   {
@@ -239,8 +239,8 @@
   {
    "canonical": "index.html",
    "mirror": "server/app/index.html",
-   "sha256": "94b3878ac4de679443dca64022e425b0648286034d7a12dd2e532bbfb21d4a67",
-   "bytes": 488097,
+   "sha256": "6fb58ed626c78ee369372af9a0e43e23f5fed0b3e570c82320a31ab82ebd591a",
+   "bytes": 488137,
    "identical": true
   },
   {

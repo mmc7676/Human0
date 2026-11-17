@@ -2208,6 +2208,7 @@ $('fit').onclick=fitView;$('fsfit').onclick=fitView;
  window.syncToggles=syncToggles;requestAnimationFrame(syncToggles);
 })();
 </script>
+
 <script>
 (()=>{const B=document.getElementById('board'),Hd=document.getElementById('bdh'),Wp=document.getElementById('wrap'),bc=document.getElementById('bdc'),ib=document.getElementById('infob'),base=620;
  const full=()=>{const m=B.style.maxHeight;B.style.maxHeight='none';const h=B.scrollHeight;B.style.maxHeight=m;return h};
@@ -2229,7 +2230,7 @@ $('fit').onclick=fitView;$('fsfit').onclick=fitView;
 <script>(function(){if(window.parent===window)return;let id=1;const send=m=>window.parent.postMessage(m,'*');
 window.addEventListener('message',e=>{const m=e.data;if(m&&m.id===1&&m.result){send({jsonrpc:'2.0',method:'ui/notifications/initialized'});size()}});
 const size=()=>send({jsonrpc:'2.0',method:'ui/notifications/size-changed',params:{height:Math.ceil(document.documentElement.scrollHeight)}});
-send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.15.2'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
+send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.15.3'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
 new ResizeObserver(size).observe(document.body)})();</script>
 </body>
 </html>

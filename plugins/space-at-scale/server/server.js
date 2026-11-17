@@ -4,7 +4,7 @@ const {McpServer}=require('@modelcontextprotocol/sdk/server/mcp.js');
 const {StdioServerTransport}=require('@modelcontextprotocol/sdk/server/stdio.js');
 const {z}=require('zod');
 const U=require('./universe.js');
-function buildServer(){const server=new McpServer({name:'scw-universe',version:'0.15.2'});
+function buildServer(){const server=new McpServer({name:'scw-universe',version:'0.15.3'});
 const j=o=>({content:[{type:'text',text:JSON.stringify(o,null,2)}]});
 const err=e=>({isError:true,content:[{type:'text',text:String(e.message||e)}]});
 const nodeView=n=>({id:n.id,level:n.level,name:n.name,type:n.type,parent:n.parent||null,relation_to_parent:n.parent?n.rel:null,dims:n.dims===Infinity?'unbounded (harness)':n.dims,units:n.units,frame:n.frame,props:n.props||{},observability:n.observability||{full:true},children:n.children,member_count:n.members.length,note:n.note});

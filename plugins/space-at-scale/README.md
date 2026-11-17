@@ -30,6 +30,10 @@ Click any dot for live specs, then **Center** to follow it. Zoom past the Oort C
 - **A dark-matter hypothesis lab.** Model dark matter as the gravity of a hidden universe that shares gravity but not light, and test it against seven observations, side by side with the standard halo.
 - **Fully reversible.** Everything you add can be removed, from comets and generated universes to toggles and time. **Reset everything** restores the starting state.
 
+## Play it on the web
+
+https://app.maxey0.com/apps/space-at-scale/ runs the same simulation in any browser, with nothing to install. The web version adds an optional Claude panel: enter your own Anthropic API key to ask Claude about the view, and Claude answers by calling the simulation's own functions in your browser. The key stays in the page's memory and goes only to api.anthropic.com. The plugin's app below has no Claude panel and makes no network requests.
+
 ## Install in Claude
 
 ```

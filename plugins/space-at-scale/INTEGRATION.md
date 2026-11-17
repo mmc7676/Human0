@@ -156,3 +156,7 @@ App: Dark matter source menu (halo, simple H, mirror H); tooltips, markers, repo
 ## v0.15.2: one toggle convention
 
 Every toggle reads "Name: State", where State is what is happening now (Time: Running, Direction: Forward, Galaxy view: Off), and is lit when the feature is on. One-time actions (Jump to now, Go to date, Fit view, Reset everything) stay as verbs. Labels are derived from the live state variables every frame, so no code path can leave a label out of step. Verified in headless Chrome on the built app: all 14 toggles plus the 3 floating full-screen controls flip label and lit state consistently; Reset everything restores the defaults; no console errors.
+
+## v0.15.3: web build
+
+`server/build-app.js` now makes two builds from one source. The plugin's app (`dist/space-at-scale.html`) is unchanged: no Claude panel and no network code; the build fails if `api.anthropic.com` appears in it. With `WEB_OUT` set, it also writes the web build for app.maxey0.com/apps/space-at-scale/, which adds `claude-panel.js` (kept outside the plugin package, in the app sources). The panel is hidden inside Claude, hidden on the web until a visitor enters and checks their own API key, and offers seven in-page tools (get_view, body_position, find_mining_targets, plan_trip, galaxy_field, center_on, set_date).

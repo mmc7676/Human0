@@ -35,11 +35,11 @@ ol{margin:0;padding-left:20px;color:var(--dim)}footer{margin-top:40px;color:var(
 <div class="stat"><b>${n(s.concepts)}</b><span>concepts</span></div><div class="stat"><b>${n(s.skills)}</b><span>skills</span></div>
 <div class="stat"><b>${n(s.agents)}</b><span>agents</span></div><div class="stat"><b>${n(s.mcp)}</b><span>MCP servers</span></div></div>
 <div class="grid">
-<section class="card"><h2>Use it here</h2><p>The full map runs in your browser: routing, the observer lens, drift, embeddings, search. No account, nothing to install.</p><a href="/app">Open the app →</a></section>
+<section class="card"><h2>Space-at-Scale</h2><p>A Human0 app: the solar system, the Local Bubble and the Milky Way at true scale, running forward and backward in time, in your browser. Optional: ask Claude about the view with your own API key.</p><a href="/apps/space-at-scale/">Open Space-at-Scale →</a></section> <section class="card"><h2>Use it here</h2><p>The full map runs in your browser: routing, the observer lens, drift, embeddings, search. No account, nothing to install.</p><a href="/app">Open the app →</a></section>
 <section class="card" id="claude"><h2>Use it inside Claude</h2><p>Add Maxey0 as a custom connector, then ask Claude to route a task or open the graph.</p>
 <ol><li>In Claude: <b>Customize → Connectors → + Add → Add custom connector</b></li><li>Name: <code>Maxey0 Context Plane</code></li><li>URL: <code>${origin}/mcp</code></li><li>Sign-in: none — the server is read-only</li></ol></section>
 <section class="card"><h2>Build it with Claude Code</h2><p>Route a task in the app, then <b>Send to Claude Code</b>: you get a project folder with the route, one subagent per chosen agent and the build instructions. Run <code>claude</code> in it.</p></section>
 </div>
-<footer>Maxey0 Context Plane v${version} - Prefederation · read-only · routes are candidates, not authorizations · concepts, skills and agents are generated and structurally checked, MCP servers are real · <a href="${repo}">Apache-2.0</a> · <a href="/docs">docs</a> · <a href="/research">research</a> · <a href="/graph.json">graph.json</a> · <a href="/?format=json">server info</a></footer>
+<footer>Maxey0 Context Plane v${version} - Prefederation · read-only · routes are candidates, not authorizations · concepts, skills and agents are generated and structurally checked, MCP servers are real · <a href="${repo}">Apache-2.0</a> · <a href="/docs">docs</a> · <a href="/research">research</a> · <a href="/apps/space-at-scale/">space-at-scale</a> · <a href="/graph.json">graph.json</a> · <a href="/?format=json">server info</a></footer>
 </main></body></html>`;
 }
