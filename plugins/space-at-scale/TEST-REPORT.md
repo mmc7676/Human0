@@ -1,6 +1,6 @@
 # Test report
 
-Built 2026-11-16T22:34:36.845Z · version 0.15.1
+Built 2026-11-17T06:52:20.465Z · version 0.15.2
 
 ## test.js: 87 passed, 0 failed, 0 not run
 
@@ -77,7 +77,7 @@ PASS The inline app embeds the exact galaxy data the server serves
 PASS The inline app loads no remote script
 PASS galaxy.json was built with the same mass model and frame as the core
 PASS Galaxy data counts: {"globular_clusters":161,"satellite_galaxies":50,"pulsars":3563,"black_holes":21,"supernovae":9,"s_stars":44,"gw_events":391,"sun":1,"total":4240}
-PASS PROVENANCE.json: 52 artifacts match their recorded SHA-256 and byte length
+PASS PROVENANCE.json: 46 artifacts match their recorded SHA-256 and byte length
 PASS Comet Human0-1 removed
 PASS Milky Way no longer sees the removed comet
 PASS Parallel universe 2026 removed: SCW1:psi-2026 (34 SCWs)

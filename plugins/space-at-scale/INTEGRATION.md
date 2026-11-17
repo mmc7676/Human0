@@ -152,3 +152,7 @@ App: Dark matter source menu (halo, simple H, mirror H); tooltips, markers, repo
 - `Dockerfile` now copies `galaxy-core.js`, `galaxy.json` and `dist/`. Without them a hosted server could not start (the galaxy core and the app view are required at load). Verified by running `http.js` from exactly the files the image copies, with production dependencies only: 74/74 evals pass and the app resource loads.
 - Name styled as "Space-at-Scale" in the display name, README, skill and app title. The plugin id stays `space-at-scale`.
 - `docs/scw-model/` holds the SCW model of this server and the build plan.
+
+## v0.15.2: one toggle convention
+
+Every toggle reads "Name: State", where State is what is happening now (Time: Running, Direction: Forward, Galaxy view: Off), and is lit when the feature is on. One-time actions (Jump to now, Go to date, Fit view, Reset everything) stay as verbs. Labels are derived from the live state variables every frame, so no code path can leave a label out of step. Verified in headless Chrome on the built app: all 14 toggles plus the 3 floating full-screen controls flip label and lit state consistently; Reset everything restores the defaults; no console errors.

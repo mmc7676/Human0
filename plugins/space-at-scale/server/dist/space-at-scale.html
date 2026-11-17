@@ -36,6 +36,7 @@ label,.muted{color:var(--text-secondary)}
 #bdh{height:14px;margin:-6px 0 4px;display:flex;align-items:center;justify-content:center;cursor:ns-resize;touch-action:none}
 #bdh span{width:64px;height:5px;border-radius:3px;background:rgba(255,176,120,.55)}#bdh:hover span,#bdh:focus-visible span{background:#ffb27a}
 body.noinfo .info{display:none!important}
+button[aria-pressed="true"]{border-color:#ffb27a!important;background:rgba(255,120,40,.30)!important;color:#fff!important;box-shadow:0 0 0 1px rgba(255,178,122,.35) inset}
 </style>
 </head>
 <body>
@@ -2174,6 +2175,38 @@ function fitView(){let r;
  else{const list=exOn?exBodies:psiOn?psiBodies:B.filter(b=>!b.gone&&!(b.kind==='Spacecraft'&&!mmOn));r=fitCam(cam,ctl,list.map(b=>b.w).filter(Boolean));if(r)note('Fit view: every visible body in frame ('+(r<0.01?(r*149597870.7).toFixed(0)+' km':r.toFixed(r<10?2:0)+' AU')+' from '+(exOn?'the medium center':psiOn?(psiCenter||'the star'):center)+').')}
  if(!r)note('Nothing visible to fit yet.')}
 $('fit').onclick=fitView;$('fsfit').onclick=fitView;
+
+// Toggle labels: one convention everywhere. Each toggle reads "Name: State", where State is what is
+// happening now, and the button is lit (aria-pressed) when that feature is on. Labels are derived
+// from the live state variables every frame, so no code path can leave a label out of step.
+(function(){
+ const T=[
+  ['play',()=>[ 'Time', play?'Running':'Paused', play]],
+  ['fsplay',()=>['Time', play?'Running':'Paused', play]],
+  ['rev',()=>['Direction', dir<0?'Reverse':'Forward', null]],
+  ['fsdir',()=>['Direction', dir<0?'Reverse':'Forward', null]],
+  ['lab',()=>['Labels', labels?'On':'Off', labels]],
+  ['mm',()=>['Spacecraft', mmOn?'On':'Off', mmOn]],
+  ['orb',()=>['Orbital paths', pathsOn?'On':'Off', pathsOn]],
+  ['blt',()=>['Belt', beltP.visible?'On':'Off', beltP.visible]],
+  ['lbb',()=>['Local Bubble view', lb.on?'On':'Off', lb.on]],
+  ['gxb',()=>['Galaxy view', gx.on?'On':'Off', gx.on]],
+  ['evb',()=>{const s=$('evals').style.display==='block';return ['Physics evals', s?'Shown':'Hidden', s]}],
+  ['fsb',()=>['Full screen', fsOn?'On':'Off', fsOn]],
+  ['gxdm',()=>['Dark matter', gx.dm?'On':'Off', gx.dm]],
+  ['gxmk',()=>['Galaxy markers', gx.mk?'On':'Off', gx.mk]],
+  ['fsmin',()=>{const m=$('fsp').classList.contains('min');return ['Controls', m?'Hidden':'Shown', !m]}],
+  ['infob',()=>{const on=!document.body.classList.contains('noinfo');return ['Info', on?'On':'Off', on]}],
+  ['bdc',()=>{const open=$('bdc').getAttribute('aria-expanded')==='true';return ['Control board', open?'Full':'Collapsed', null]}]
+ ];
+ function syncToggles(){
+  for(const [id,f] of T){const el=$(id);if(!el)continue;let r;try{r=f()}catch(e){continue}
+   const t=r[0]+': '+r[1];if(el.textContent!==t)el.textContent=t;
+   if(r[2]===null)el.removeAttribute('aria-pressed');else{const v=String(!!r[2]);if(el.getAttribute('aria-pressed')!==v)el.setAttribute('aria-pressed',v)}
+   if(id==='play'||id==='fsplay')el.setAttribute('aria-label',t)}
+  requestAnimationFrame(syncToggles)}
+ window.syncToggles=syncToggles;requestAnimationFrame(syncToggles);
+})();
 </script>
 <script>
 (()=>{const B=document.getElementById('board'),Hd=document.getElementById('bdh'),Wp=document.getElementById('wrap'),bc=document.getElementById('bdc'),ib=document.getElementById('infob'),base=620;
@@ -2196,7 +2229,7 @@ $('fit').onclick=fitView;$('fsfit').onclick=fitView;
 <script>(function(){if(window.parent===window)return;let id=1;const send=m=>window.parent.postMessage(m,'*');
 window.addEventListener('message',e=>{const m=e.data;if(m&&m.id===1&&m.result){send({jsonrpc:'2.0',method:'ui/notifications/initialized'});size()}});
 const size=()=>send({jsonrpc:'2.0',method:'ui/notifications/size-changed',params:{height:Math.ceil(document.documentElement.scrollHeight)}});
-send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.15.1'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
+send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.15.2'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
 new ResizeObserver(size).observe(document.body)})();</script>
 </body>
 </html>

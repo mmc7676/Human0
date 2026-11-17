@@ -187,3 +187,35 @@ function fitView(){let r;
  else{const list=exOn?exBodies:psiOn?psiBodies:B.filter(b=>!b.gone&&!(b.kind==='Spacecraft'&&!mmOn));r=fitCam(cam,ctl,list.map(b=>b.w).filter(Boolean));if(r)note('Fit view: every visible body in frame ('+(r<0.01?(r*149597870.7).toFixed(0)+' km':r.toFixed(r<10?2:0)+' AU')+' from '+(exOn?'the medium center':psiOn?(psiCenter||'the star'):center)+').')}
  if(!r)note('Nothing visible to fit yet.')}
 $('fit').onclick=fitView;$('fsfit').onclick=fitView;
+
+// Toggle labels: one convention everywhere. Each toggle reads "Name: State", where State is what is
+// happening now, and the button is lit (aria-pressed) when that feature is on. Labels are derived
+// from the live state variables every frame, so no code path can leave a label out of step.
+(function(){
+ const T=[
+  ['play',()=>[ 'Time', play?'Running':'Paused', play]],
+  ['fsplay',()=>['Time', play?'Running':'Paused', play]],
+  ['rev',()=>['Direction', dir<0?'Reverse':'Forward', null]],
+  ['fsdir',()=>['Direction', dir<0?'Reverse':'Forward', null]],
+  ['lab',()=>['Labels', labels?'On':'Off', labels]],
+  ['mm',()=>['Spacecraft', mmOn?'On':'Off', mmOn]],
+  ['orb',()=>['Orbital paths', pathsOn?'On':'Off', pathsOn]],
+  ['blt',()=>['Belt', beltP.visible?'On':'Off', beltP.visible]],
+  ['lbb',()=>['Local Bubble view', lb.on?'On':'Off', lb.on]],
+  ['gxb',()=>['Galaxy view', gx.on?'On':'Off', gx.on]],
+  ['evb',()=>{const s=$('evals').style.display==='block';return ['Physics evals', s?'Shown':'Hidden', s]}],
+  ['fsb',()=>['Full screen', fsOn?'On':'Off', fsOn]],
+  ['gxdm',()=>['Dark matter', gx.dm?'On':'Off', gx.dm]],
+  ['gxmk',()=>['Galaxy markers', gx.mk?'On':'Off', gx.mk]],
+  ['fsmin',()=>{const m=$('fsp').classList.contains('min');return ['Controls', m?'Hidden':'Shown', !m]}],
+  ['infob',()=>{const on=!document.body.classList.contains('noinfo');return ['Info', on?'On':'Off', on]}],
+  ['bdc',()=>{const open=$('bdc').getAttribute('aria-expanded')==='true';return ['Control board', open?'Full':'Collapsed', null]}]
+ ];
+ function syncToggles(){
+  for(const [id,f] of T){const el=$(id);if(!el)continue;let r;try{r=f()}catch(e){continue}
+   const t=r[0]+': '+r[1];if(el.textContent!==t)el.textContent=t;
+   if(r[2]===null)el.removeAttribute('aria-pressed');else{const v=String(!!r[2]);if(el.getAttribute('aria-pressed')!==v)el.setAttribute('aria-pressed',v)}
+   if(id==='play'||id==='fsplay')el.setAttribute('aria-label',t)}
+  requestAnimationFrame(syncToggles)}
+ window.syncToggles=syncToggles;requestAnimationFrame(syncToggles);
+})();
