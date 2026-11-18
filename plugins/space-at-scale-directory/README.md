@@ -32,7 +32,7 @@ The hosted server offers 22 tools on its current plan. Three heavier tools (`run
 
 ## Privacy
 
-Nothing is stored and no sign-in is needed. See [PRIVACY.md](PRIVACY.md).
+Nothing is stored and no account is needed. See [PRIVACY.md](PRIVACY.md).
 
 ## Source and licenses
 
