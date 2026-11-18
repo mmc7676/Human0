@@ -1,0 +1,9 @@
+{
+  "_note": "Which tools the hosted server offers on each Cloudflare plan. free = fits the Workers Free 10 ms CPU limit per call; paid = needs Workers Paid. Measured CPU (best of 3, Node, November 17, 2026): run_evals 18.2 ms, generate_universe 9.4 ms, find_mining_targets_parallel generates a universe first. Every other tool measured under 5 ms. The local plugin always registers every tool.",
+  "default": "free",
+  "tools": {
+    "run_evals": "paid",
+    "generate_universe": "paid",
+    "find_mining_targets_parallel": "paid"
+  }
+}

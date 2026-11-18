@@ -1,12 +1,12 @@
 {
  "plugin": "space-at-scale",
- "version": "0.15.3",
- "built_utc": "2026-11-17T07:16:25.624Z",
+ "version": "0.16.0",
+ "built_utc": "2026-11-18T06:38:06.697Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
    "path": ".claude-plugin/plugin.json",
-   "sha256": "dcbfa378da3b6a48b3c8f89c84e2fc67e9c06059abbb7a3f5964012471efd0da",
+   "sha256": "e1def8bc0d4368328c59cb80143d83411cb3446abb96f8a38ec0d4cfd250bdbb",
    "bytes": 996
   },
   {
@@ -31,8 +31,8 @@
   },
   {
    "path": "PRIVACY.md",
-   "sha256": "42674d6dc2bbaae26363540d93f42ada204cf7cbf0fbbc74b71547bb24eba098",
-   "bytes": 728
+   "sha256": "0fc813052a74220436303651fef817bbe87d58dee369e7c6db715e95aff3b0fa",
+   "bytes": 1025
   },
   {
    "path": "README.md",
@@ -186,7 +186,7 @@
   },
   {
    "path": "server/package.json",
-   "sha256": "81939d7852936cb6ece59d927dc17673b43aa8ed2c09a25d656c298181163ab0",
+   "sha256": "dfbc8bb8ddc6cf01fbb6167caac666b0056265bf4d8674ae1e5203270dc4ec62",
    "bytes": 394
   },
   {
@@ -196,13 +196,13 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "8a2b9d0f572ae62b5632399e26e24e12c023d45b2f30d289b2ffe376487e2d22",
-   "bytes": 3231262
+   "sha256": "cb2a3b68d2bb0ee93b1a358364fb597d5de70a7a6f1facf10db1e94dbc23c058",
+   "bytes": 3231974
   },
   {
    "path": "server/server.js",
-   "sha256": "f78d6451f79aea5ae0feabb598c2cc3c2281ab7fc8e248f1c8e131ec7139ec06",
-   "bytes": 16328
+   "sha256": "777b305e552ac59dacf66567ccd00e0c0eeba4b6a12606875658e0c9d36f0963",
+   "bytes": 16564
   },
   {
    "path": "server/stars.json",
@@ -216,8 +216,13 @@
   },
   {
    "path": "server/test.js",
-   "sha256": "480a3e79790d550185f073ef9b464e5fce307623d398d42f92e76284429a6308",
-   "bytes": 18543
+   "sha256": "8a6acaf9d53414417da3de5742f46b53a26077199562efe9671ba1a76533a631",
+   "bytes": 19050
+  },
+  {
+   "path": "server/tiers.json",
+   "sha256": "f35e095cd0df99cce08df9c17a2f16e74ab495f2b4d974fbd4dc38e69f5b7cb1",
+   "bytes": 538
   },
   {
    "path": "server/tools/build-galaxy.js",
@@ -226,8 +231,8 @@
   },
   {
    "path": "server/universe.js",
-   "sha256": "a965238824b4481d1d1d023a67e8a31295de04e45d78a25104b02c7efef26fde",
-   "bytes": 46518
+   "sha256": "f3f3567fba6782c22b284d2d66f31eca7563b980f5ec11d06a228b23e865cece",
+   "bytes": 46636
   },
   {
    "path": "skills/space-at-scale/SKILL.md",

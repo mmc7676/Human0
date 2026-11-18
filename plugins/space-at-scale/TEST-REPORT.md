@@ -1,8 +1,8 @@
 # Test report
 
-Built 2026-11-17T07:16:25.624Z · version 0.15.3
+Built 2026-11-18T06:38:06.697Z · version 0.16.0
 
-## test.js: 87 passed, 0 failed, 0 not run
+## test.js: 89 passed, 0 failed, 0 not run
 
 ```
 PASS 25 tools listed: scw_get, scw_children, scw_search, scw_laws, scw_inheritance_rules, sim_state, sim_clock, run_evals, inject_interstellar_comet, events, validate_app_dropin, find_mining_targets, plan_mission, generate_universe, find_mining_targets_parallel, generate_exotic_universe, run_extraction_campaign, plan_trip, link_hidden_universe, remove_state, galaxy_field, galaxy_object, energy_ledger, scw_relations, open_space_at_scale
@@ -77,7 +77,7 @@ PASS The inline app embeds the exact galaxy data the server serves
 PASS The inline app loads no remote script
 PASS galaxy.json was built with the same mass model and frame as the core
 PASS Galaxy data counts: {"globular_clusters":161,"satellite_galaxies":50,"pulsars":3563,"black_holes":21,"supernovae":9,"s_stars":44,"gw_events":391,"sun":1,"total":4240}
-PASS PROVENANCE.json: 46 artifacts match their recorded SHA-256 and byte length
+PASS PROVENANCE.json: 47 artifacts match their recorded SHA-256 and byte length
 PASS Comet Human0-1 removed
 PASS Milky Way no longer sees the removed comet
 PASS Parallel universe 2026 removed: SCW1:psi-2026 (34 SCWs)
@@ -92,6 +92,8 @@ PASS H relates to the harness by shares-gravity
 PASS Mirror H removed
 PASS Clear all removes the simple H too
 PASS All evals still pass after clearing: 74/74
+PASS Tiers: paid registers 25 tools, free registers 22
+PASS Tiers: every paid-only tool (run_evals, generate_universe, find_mining_targets_parallel) is left out of free
 ALL PASSED
 ```
 

@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "space-at-scale-mcp",
+  "main": "dist/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // dist/worker.js is already bundled by build.mjs.
+  "no_bundle": true,
+  "rules": [{ "type": "ESModule", "globs": ["**/*.js"] }],
+  "vars": {
+    // "free": tools that fit Workers Free (10 ms CPU per request). "paid": every tool; set this only after
+    // switching the Cloudflare account to Workers Paid. The list lives in plugins/space-at-scale/server/tiers.json.
+    "SCW_TIER": "free",
+    "ALLOWED_ORIGINS": "https://claude.ai,https://claude.com"
+  },
+  // Public URL: https://space-at-scale-mcp.maxey0.workers.dev/mcp (no DNS change needed).
+  "workers_dev": true,
+  // No request logs are kept by this Worker (see plugins/space-at-scale-directory/PRIVACY.md).
+  "observability": { "enabled": false }
+}

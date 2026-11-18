@@ -95,4 +95,7 @@ r=await call('run_evals',{id:'SCW4'});ok(r.data.suites.galaxy.length===29&&r.dat
  r=await call('scw_get',{id:'SCW1:hidden-simple'});ok(r.data.relation_to_parent==='shares-gravity','H relates to the harness by shares-gravity');
  r=await call('remove_state',{kind:'hidden_universe',id:'mirror'});ok(!r.err,'Mirror H removed');r=await call('remove_state',{kind:'all'});ok(!r.err&&/hidden-simple/.test(r.data.removed.join(' ')),'Clear all removes the simple H too');
 r=await call('run_evals',{id:'SCW0'});ok(r.data.passed===r.data.total,'All evals still pass after clearing: '+r.data.passed+'/'+r.data.total)}
+{const S=require('./server.js'),names=t=>{const n=[];S.buildServer({tier:t,appHtml:'',recorder:{registerTool:x=>n.push(x),registerResource:()=>{}}});return n};const f=names('free'),p=names('paid');
+ok(p.length===25&&f.length===p.length-Object.keys(S.TIERS.tools).length,'Tiers: paid registers '+p.length+' tools, free registers '+f.length);
+ok(Object.keys(S.TIERS.tools).every(k=>p.includes(k)&&!f.includes(k)),'Tiers: every paid-only tool ('+Object.keys(S.TIERS.tools).join(', ')+') is left out of free')}
 await c.close();console.log(fails?fails+' FAILED':'ALL PASSED');process.exit(fails?1:0)})();

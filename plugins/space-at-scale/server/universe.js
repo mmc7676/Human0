@@ -154,7 +154,7 @@ function appDropIn(m){const id=m.scw_id,n=nodes.get(id);if(!n)throw new Error('U
  add('App declares units this SCW supports',[n.units,'AU','ly','km','pc'].includes(m.units),'app '+m.units+' / SCW '+n.units);
  if(m.gm_sun_au3_d2!==undefined)add('App gravitational parameter matches SCW1 constants',Math.abs(m.gm_sun_au3_d2-core.GMS)/core.GMS<1e-9,String(m.gm_sun_au3_d2));
  if(m.ly_in_au!==undefined)add('App light-year conversion matches SCW1 constants',Math.abs(m.ly_in_au-LY_AU)<0.01,String(m.ly_in_au));
- if(m.physics_core_sha256)add('App runs the same physics core as the harness',m.physics_core_sha256===require('crypto').createHash('sha256').update(require('fs').readFileSync(__dirname+'/physics-core.js')).digest('hex'),m.physics_core_sha256.slice(0,12)+'…');
+ if(m.physics_core_sha256)add('App runs the same physics core as the harness',m.physics_core_sha256===(process.env.SCW_PHYSICS_SHA||require('crypto').createHash('sha256').update(require('fs').readFileSync(__dirname+'/physics-core.js')).digest('hex')),m.physics_core_sha256.slice(0,12)+'…');
  const ev=runEvals(id),f=Object.values(ev.suites).flat().filter(r=>!r.pass);add('All physics evals for '+id+' and the SCWs below it pass',f.length===0,ev.passed+'/'+ev.total+(f.length?' failing: '+f.map(r=>r.name).join('; '):''));
  return{scw:id,app:m.name,compatible:R.every(r=>r.pass),checks:R}}
 const universes=new Map();
@@ -172,7 +172,7 @@ function generateExoticSCW(seed){if(!(Number.isInteger(seed)&&seed>=1&&seed<=1e9
  LAWS.push({id:'X1-omega-'+seed,kind:'physical',scope:id,rule:'inherit',law:'Gravity inside the continuous medium is Newtonian (g ∝ r); the medium forms no horizon. Compact black holes keep Schwarzschild horizons. Nothing moves faster than light.',status:'exotic, declared'});
  X.bhs.forEach(b=>add({id:'SCW2:omega-'+seed+'/'+slug(b.name),level:2,parent:id,name:b.name,type:'horizon',dims:4,units:'km',frame:b.name+'-centered',observability:{exterior:'full',interior:'none'},props:{mass_msun:b.mass_msun,fate:b.fate,density_kg_m3:b.density_kg_m3}}));
  log('state_change',{action:'generate_exotic_universe',id,seed,medium_density:X.medium_density_kg_m3,black_holes:X.bhs.length});return{universe:X,created:true}}
-function psiMining(seed,task,jd){const U=universes.get(seed);if(!U)throw new Error('Universe seed '+seed+' not generated yet; call generate_universe first');const r=core.psiMiningSearch(U,typeof task==='string'?core.parseTask(task):task,jd||nowJD());r.targets=r.targets.slice(0,10);return r}
+function psiMining(seed,task,jd){const U=universes.get(seed)||(PUBLIC&&Number.isInteger(seed)&&seed>=1&&seed<=1e9?core.generateUniverse(seed):null);if(!U)throw new Error('Universe seed '+seed+' not generated yet; call generate_universe first');const r=core.psiMiningSearch(U,typeof task==='string'?core.parseTask(task):task,jd||nowJD());r.targets=r.targets.slice(0,10);return r}
 function miningSearch(task,jd){const q=typeof task==='string'?core.parseTask(task):task;const r=core.findMiningTargets(q,jd||nowJD());r.targets=r.targets.slice(0,10).map(t=>({...t,scw:'SCW7:'+slug(t.name),mission:core.planMission(t.name,jd||nowJD())}));return r}
 // ---- galaxy tools ----
 function galaxyField(r,mass){if(!(r>0&&r<=5000))throw new Error('r_kpc must be greater than 0 and at most 5000');const p=GXC.vc2parts(r),vc=GXC.vcirc(r),sh={};GXC.COMP.forEach(k=>sh[GXC.LABEL[k]]=+(p[k]/(vc*vc)).toFixed(5));
