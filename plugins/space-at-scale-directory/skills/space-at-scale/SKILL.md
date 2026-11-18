@@ -5,7 +5,7 @@ description: Opens and drives Space-at-Scale, an inline 3D simulation at three s
 
 # Space-at-Scale
 
-1. Call `open_space_at_scale` first (pass `focus` if the user named a body). It renders the app inline; never rebuild it by hand.
+1. Call `open_space_at_scale` first (set `focus` to the body the user named, if any). It renders the app inline; never rebuild it by hand.
 2. Answer questions from the server's tools, not memory:
    - solar system positions and time: `sim_state`, `sim_clock`
    - hierarchy and laws: `scw_get`, `scw_children`, `scw_search`, `scw_laws`, `scw_relations`
