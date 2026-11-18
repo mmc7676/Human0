@@ -12,7 +12,7 @@
 import S from "../../../plugins/space-at-scale/server/server.js";
 import APP_HTML from "../../../plugins/space-at-scale/server/dist/space-at-scale.html";
 
-const VERSION = "0.16.0";
+const VERSION = "0.17.0";
 const SERVER_INFO = { name: "space-at-scale", title: "Space-at-Scale", version: VERSION };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];

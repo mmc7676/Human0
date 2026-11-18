@@ -1,0 +1,12 @@
+{
+  "description": "Routes in-app Space-at-Scale trigger messages to the right agent.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/route-trigger.js\"", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}

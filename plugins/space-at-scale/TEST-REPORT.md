@@ -1,11 +1,11 @@
 # Test report
 
-Built 2026-11-18T06:38:06.697Z · version 0.16.0
+Built 2026-11-18T08:12:42.172Z · version 0.17.0
 
-## test.js: 89 passed, 0 failed, 0 not run
+## test.js: 94 passed, 0 failed, 0 not run
 
 ```
-PASS 25 tools listed: scw_get, scw_children, scw_search, scw_laws, scw_inheritance_rules, sim_state, sim_clock, run_evals, inject_interstellar_comet, events, validate_app_dropin, find_mining_targets, plan_mission, generate_universe, find_mining_targets_parallel, generate_exotic_universe, run_extraction_campaign, plan_trip, link_hidden_universe, remove_state, galaxy_field, galaxy_object, energy_ledger, scw_relations, open_space_at_scale
+PASS 29 tools listed: scw_get, scw_children, scw_search, scw_laws, scw_inheritance_rules, sim_state, sim_clock, run_evals, inject_interstellar_comet, events, validate_app_dropin, find_mining_targets, plan_mission, generate_universe, find_mining_targets_parallel, generate_exotic_universe, run_extraction_campaign, plan_trip, link_hidden_universe, remove_state, galaxy_field, galaxy_object, energy_ledger, scw_relations, exoplanet_system, densify_region, build_galaxy, sky_check, open_space_at_scale
 PASS graph resource has 152 SCWs
 PASS Jupiter system SCW holds 4 moons + Juno
 PASS Io inherits laws through 9 levels; Newtonian approximation valid
@@ -43,7 +43,7 @@ PASS Mars trip: first window 2026-12-04, 259 days, 6.32 km/s
 PASS Europa resolves to the Jovian moon
 PASS Non-trip request rejected with guidance
 PASS open_space_at_scale declares its MCP App view
-PASS App resource is self-contained HTML (2.37 MB, mcp-app profile)
+PASS App resource is self-contained HTML (2.38 MB, mcp-app profile)
 PASS open_space_at_scale returns its text fallback
 PASS All evals pass with all three universes: 96/96
 PASS Milky Way children are typed: superposes 5, contains 5, passes-through 1, signals 1
@@ -77,7 +77,7 @@ PASS The inline app embeds the exact galaxy data the server serves
 PASS The inline app loads no remote script
 PASS galaxy.json was built with the same mass model and frame as the core
 PASS Galaxy data counts: {"globular_clusters":161,"satellite_galaxies":50,"pulsars":3563,"black_holes":21,"supernovae":9,"s_stars":44,"gw_events":391,"sun":1,"total":4240}
-PASS PROVENANCE.json: 47 artifacts match their recorded SHA-256 and byte length
+PASS PROVENANCE.json: 54 artifacts match their recorded SHA-256 and byte length
 PASS Comet Human0-1 removed
 PASS Milky Way no longer sees the removed comet
 PASS Parallel universe 2026 removed: SCW1:psi-2026 (34 SCWs)
@@ -92,8 +92,13 @@ PASS H relates to the harness by shares-gravity
 PASS Mirror H removed
 PASS Clear all removes the simple H too
 PASS All evals still pass after clearing: 74/74
-PASS Tiers: paid registers 25 tools, free registers 22
-PASS Tiers: every paid-only tool (run_evals, generate_universe, find_mining_targets_parallel) is left out of free
+PASS Tiers: paid registers 29 tools, free registers 25
+PASS Tiers: every paid-only tool (run_evals, generate_universe, find_mining_targets_parallel, build_galaxy) is left out of free
+PASS Agent: exoplanet_system returns Eta Cet b and c from the archive extract
+PASS Agent: densify_region draws 326 generated stars at local density
+PASS Agent: build_galaxy places M31 769 kpc from the Galactic center
+PASS Agent: sky_check Phaethon on October 5, 5 BCE is V 17.3, not naked-eye
+PASS Agent: sky_check rejects a bad date
 ALL PASSED
 ```
 
@@ -104,7 +109,7 @@ PASS healthz: 152 SCWs, auth bearer
 PASS Request without token rejected with 401
 PASS Wrong token rejected with 401
 PASS GET /mcp returns 405
-PASS 25 tools over HTTP
+PASS 29 tools over HTTP
 PASS galaxy_field over HTTP: stellar disk leads at the Sun
 PASS plan_trip over HTTP: Mars window 2026-12-04
 PASS run_evals over HTTP: 74/74

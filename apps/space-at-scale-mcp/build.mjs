@@ -12,5 +12,7 @@ await build({
   external: ["@modelcontextprotocol/sdk/*", "express"],
   define: { "process.env.SCW_PUBLIC": '"1"', "process.env.SCW_PHYSICS_SHA": JSON.stringify(sha) },
   logLevel: "warning",
+  // Resolve the plugin server's dependencies (zod) from this package, so a build needs only `npm ci` here.
+  nodePaths: [new URL("node_modules", import.meta.url).pathname],
 });
 console.log("built dist/worker.js " + statSync("dist/worker.js").size + " bytes; physics-core sha256 " + sha.slice(0, 12));

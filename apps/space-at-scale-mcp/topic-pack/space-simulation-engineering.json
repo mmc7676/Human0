@@ -1,0 +1,415 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "space-simulation-engineering",
+ "topic": {
+  "id": "space-simulation-engineering",
+  "label": "Space Simulation Engineering",
+  "desc": "Engineering on-demand space simulations with SCWs and agents: scale worlds, catalog substrate, on-demand generation, agent triggers, sky experiments and verification. Built as the physical-space counterpart of Maxey0 latent space engineering."
+ },
+ "concepts": [
+  [
+   "sse-scale-worlds",
+   "Scale Worlds",
+   "space-simulation-engineering",
+   "Each simulation scale is a Structured Context World: solar system in AU, Local Bubble in light years, Milky Way in kiloparsecs, with typed relations between parent and child worlds. Mirrors latent world construction in Maxey0.",
+   [
+    "scale",
+    "world",
+    "scw",
+    "hierarchy",
+    "frame"
+   ]
+  ],
+  [
+   "sse-catalog-substrate",
+   "Catalog Substrate",
+   "space-simulation-engineering",
+   "The measured data every scale stands on: star, exoplanet, cluster, pulsar and orbit catalogs with provenance, units and epochs. Mirrors latent space engineering: the substrate all measurement depends on.",
+   [
+    "catalog",
+    "provenance",
+    "epoch",
+    "units",
+    "archive"
+   ]
+  ],
+  [
+   "sse-on-demand-generation",
+   "On-Demand Generation",
+   "space-simulation-engineering",
+   "Objects created when a user action asks for them, not stored permanently: densified regions, galaxy particle models, exoplanet orbits. Generated objects are labeled and deterministic per seed.",
+   [
+    "densify",
+    "generate",
+    "seed",
+    "particle",
+    "region"
+   ]
+  ],
+  [
+   "sse-agent-triggers",
+   "Agent Triggers",
+   "space-simulation-engineering",
+   "In-app events (select a star, open a menu, set a date) mapped to actions: a direct tool call or a structured message that hands the job to an agent. The trigger table is data, so new triggers need no code.",
+   [
+    "trigger",
+    "event",
+    "hook",
+    "agent",
+    "message"
+   ]
+  ],
+  [
+   "sse-sky-experiments",
+   "Sky Experiments",
+   "space-simulation-engineering",
+   "Scientific and historical experiments run inside the simulation: whether a comet was visible on a past date, what crossed a region of sky, how a galaxy would look from here. Calendar conventions and model limits are part of the answer.",
+   [
+    "experiment",
+    "historical",
+    "calendar",
+    "visibility",
+    "magnitude"
+   ]
+  ],
+  [
+   "sse-verification",
+   "Verification and Evals",
+   "space-simulation-engineering",
+   "Independent checking of every generated or computed result: physics evals, unit and frame checks, catalog-versus-generated labels and CPU budgets for hosted tools.",
+   [
+    "verify",
+    "eval",
+    "checker",
+    "budget",
+    "label"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "sse-scale-handoff",
+   "sse-scale-worlds",
+   "Scale Handoff",
+   "Hand a view from one scale world to the next (Oort Cloud to Local Bubble, 15,000 ly to the galaxy) keeping frames and units consistent.",
+   "procedural",
+   [
+    [
+     "sse-architect",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-cartographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-world-relations",
+   "sse-scale-worlds",
+   "World Relations",
+   "Type the relation between a child world and its parent: contains, superposes, passes-through or signals.",
+   "semantic",
+   [
+    [
+     "sse-cartographer",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-catalog-ingest",
+   "sse-catalog-substrate",
+   "Catalog Ingest",
+   "Bring a catalog extract (stars, exoplanets, clusters, pulsars) into a scale with its source, epoch and units recorded.",
+   "procedural",
+   [
+    [
+     "sse-cartographer",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-generator",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-provenance-labels",
+   "sse-catalog-substrate",
+   "Provenance Labels",
+   "Mark every value as catalog data, model output or generated, and carry the source with it.",
+   "semantic",
+   [
+    [
+     "sse-cartographer",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-region-densify",
+   "sse-on-demand-generation",
+   "Region Densify",
+   "Fill a region with stars at the local stellar density and spectral mix, seeded and labeled as generated.",
+   "procedural",
+   [
+    [
+     "sse-generator",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-galaxy-build",
+   "sse-on-demand-generation",
+   "Galaxy Build",
+   "Place a particle model of a named galaxy at its measured position, distance and orientation.",
+   "procedural",
+   [
+    [
+     "sse-generator",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-cartographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-exoplanet-systems",
+   "sse-on-demand-generation",
+   "Exoplanet Systems",
+   "Add a star's confirmed planets from the archive when the star is selected, with orbits drawn to a stated enlargement.",
+   "procedural",
+   [
+    [
+     "sse-architect",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-cartographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-trigger-table",
+   "sse-agent-triggers",
+   "Trigger Table",
+   "Define app events and the actions they fire: automatic direct tool calls, buttons, or agent messages.",
+   "semantic",
+   [
+    [
+     "sse-trigger-router",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-agent-routing",
+   "sse-agent-triggers",
+   "Agent Routing",
+   "Route a trigger message to the right agent with a prompt hook and return the agent's summary to the conversation.",
+   "procedural",
+   [
+    [
+     "sse-trigger-router",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-historian",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-historical-visibility",
+   "sse-sky-experiments",
+   "Historical Visibility",
+   "Compute distance, elongation and apparent magnitude of a small body on a past date with the correct calendar and era convention.",
+   "procedural",
+   [
+    [
+     "sse-historian",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-cartographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-experiment-design",
+   "sse-sky-experiments",
+   "Experiment Design",
+   "Turn a question about the sky into runs over candidate bodies and dates, including both readings of an ambiguous year.",
+   "semantic",
+   [
+    [
+     "sse-historian",
+     "primary"
+    ],
+    [
+     "sse-checker",
+     "checker"
+    ],
+    [
+     "sse-architect",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-physics-evals",
+   "sse-verification",
+   "Physics Evals",
+   "Run the physics and structure evals for a world and everything below it, and report passed over total.",
+   "procedural",
+   [
+    [
+     "sse-checker",
+     "primary"
+    ],
+    [
+     "sse-architect",
+     "checker"
+    ],
+    [
+     "sse-cartographer",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "sse-cpu-budget",
+   "sse-verification",
+   "CPU Budget",
+   "Measure each hosted tool against the per-request CPU limit and assign it to the free or paid tier.",
+   "procedural",
+   [
+    [
+     "sse-checker",
+     "primary"
+    ],
+    [
+     "sse-generator",
+     "checker"
+    ],
+    [
+     "sse-trigger-router",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "sse-architect": "Space Architect",
+  "sse-historian": "Sky Historian",
+  "sse-checker": "SCW Checker",
+  "sse-cartographer": "Catalog Cartographer",
+  "sse-trigger-router": "Trigger Router",
+  "sse-generator": "Procedural Generator"
+ },
+ "mcp": [
+  [
+   "Space-at-Scale",
+   null,
+   "Space-at-Scale MCP server: three-scale space simulation with SCW graph, mining, trips, galaxy field, and agent builders (exoplanet systems, region densify, galaxy build, sky check).",
+   [
+    "open_space_at_scale",
+    "scw_get",
+    "scw_search",
+    "sim_state",
+    "galaxy_field",
+    "galaxy_object",
+    "exoplanet_system",
+    "densify_region",
+    "build_galaxy",
+    "sky_check",
+    "run_evals"
+   ],
+   "web-listed",
+   "https://github.com/mmc7676/Human0/tree/main/plugins/space-at-scale"
+  ]
+ ],
+ "lexicon": {
+  "astro-scales": "scale world frame hierarchy handoff",
+  "astro-catalogs": "catalog provenance epoch archive ingest",
+  "astro-generation": "densify seed particle region galaxy",
+  "astro-triggers": "trigger event hook message routing",
+  "astro-history": "historical calendar visibility magnitude experiment",
+  "astro-checks": "eval checker budget labels physics"
+ },
+ "provenance": {
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "mcp_checked_at": "2026-11-18",
+  "mcp_notes": "Only the Space-at-Scale server is listed: its repository was opened and its tools exercised this session. No other astronomy MCP server was verified, so none is listed.",
+  "derived_from": "agentic-systems / maxey0-context-architecture / mx-latent (latent-space-engineering, latent-world-construction, latent-triangulation, latent-feature-attribution)",
+  "limitations": "Concepts, skills and agents are generated hypotheses mapped from the latent-space harness, not curated knowledge."
+ }
+}

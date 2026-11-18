@@ -5,13 +5,9 @@ const rd=f=>fs.readFileSync(path.join(D,f),'utf8'),esc=s=>s.replace(/<\/script/g
 let html=rd('app/index.html'),app=rd('app/app.js'),gview=rd('app/galaxy-view.js');
 {const g0=gview;gview=gview.replace("fetch('galaxy.json').then(r=>r.json())","Promise.resolve(window.__GALAXY)");if(gview===g0)throw new Error('galaxy fetch hook not found in galaxy-view.js')}
 const before=app;app=app.replace("fetch('stars.json').then(r=>r.json())","Promise.resolve(window.__STARS)");if(app===before)throw new Error('stars fetch hook not found in app.js');
-const bridge=`(function(){if(window.parent===window)return;let id=1;const send=m=>window.parent.postMessage(m,'*');
-window.addEventListener('message',e=>{const m=e.data;if(m&&m.id===1&&m.result){send({jsonrpc:'2.0',method:'ui/notifications/initialized'});size()}});
-const size=()=>send({jsonrpc:'2.0',method:'ui/notifications/size-changed',params:{height:Math.ceil(document.documentElement.scrollHeight)}});
-send({jsonrpc:'2.0',id:id++,method:'ui/initialize',params:{appInfo:{name:'space-at-scale',version:'0.15.3'},appCapabilities:{availableDisplayModes:['inline','fullscreen']},protocolVersion:'2026-01-26'}});
-new ResizeObserver(size).observe(document.body)})();`;
-const parts={'<script src="three.min.js"></script>':'<script>'+esc(rd('app/three.min.js'))+'</script>','<script src="OrbitControls.js"></script>':'<script>'+esc(rd('app/OrbitControls.js'))+'</script>','<script src="physics-core.js"></script>':'<script>'+esc(rd('physics-core.js'))+'</script>','<script src="galaxy-core.js"></script>':'<script>'+esc(rd('galaxy-core.js'))+'</script>','<script src="galaxy-view.js"></script>':'<script>window.__GALAXY='+esc(rd('galaxy.json'))+';</script>\n<script>'+esc(gview)+'</script>','<script src="app.js"></script>':'<script>window.__STARS='+esc(rd('stars.json'))+';</script>\n<script>'+esc(app)+'</script>'};
-html=html.replace('</body>','<script>'+bridge+'</script>\n</body>');
+// Host bridge, trigger table and agent overlays live in app/agent-bridge.js (canonical: lb-site/agent-bridge.js).
+
+const parts={'<script src="three.min.js"></script>':'<script>'+esc(rd('app/three.min.js'))+'</script>','<script src="OrbitControls.js"></script>':'<script>'+esc(rd('app/OrbitControls.js'))+'</script>','<script src="physics-core.js"></script>':'<script>'+esc(rd('physics-core.js'))+'</script>','<script src="galaxy-core.js"></script>':'<script>'+esc(rd('galaxy-core.js'))+'</script>','<script src="galaxy-view.js"></script>':'<script>window.__GALAXY='+esc(rd('galaxy.json'))+';</script>\n<script>'+esc(gview)+'</script>','<script src="agent-bridge.js"></script>':'<script>'+esc(rd('app/agent-bridge.js'))+'</script>','<script src="app.js"></script>':'<script>window.__STARS='+esc(rd('stars.json'))+';</script>\n<script>'+esc(app)+'</script>'};
 for(const [k,v] of Object.entries(parts)){if(!html.includes(k))throw new Error('missing tag '+k);html=html.split(k).join(v)}
 // Two builds from one source. The plugin's app has no Claude panel and no network code (its PRIVACY.md depends on that);
 // the web build (app.maxey0.com/apps/space-at-scale/) adds the bring-your-own-key Claude panel.
