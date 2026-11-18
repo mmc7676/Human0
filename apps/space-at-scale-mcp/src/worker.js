@@ -25,6 +25,9 @@ const INSTRUCTIONS =
   "Numbers are computed by the simulation; mining prices are model estimates, not market quotes.";
 
 // ---- collect definitions once per isolate ----
+const TITLES = { scw_get: "Get SCW", scw_children: "SCW children", scw_search: "Search SCWs", scw_laws: "SCW laws", scw_inheritance_rules: "SCW inheritance rules",
+  scw_relations: "SCW relations", sim_state: "Simulation state", sim_clock: "Simulation clock", run_evals: "Run evals", open_space_at_scale: "Open Space-at-Scale",
+  find_mining_targets_parallel: "Find mining targets (parallel universe)", validate_app_dropin: "Validate app drop-in" };
 const { z } = S;
 function collect(tier) {
   const tools = [], resources = [];
@@ -35,9 +38,11 @@ function collect(tier) {
         const schema = z.object(config.inputSchema || {});
         const json = z.toJSONSchema(schema, { io: "input" });
         delete json.$schema;
+        // Directory connectors require a title on every tool; derive it from the name unless one is given.
+        const title = config.title || TITLES[name] || name.replace(/_/g, " ").replace(/^./, (c) => c.toUpperCase());
         tools.push({ name, config, handler, schema, listed: {
-          name, description: config.description, inputSchema: json,
-          ...(config.annotations ? { annotations: config.annotations } : {}),
+          name, title, description: config.description, inputSchema: json,
+          annotations: { title, ...(config.annotations || {}) },
           ...(config._meta ? { _meta: config._meta } : {}) } });
       },
       registerResource(name, uri, meta, handler) { resources.push({ name, uri, meta, handler }); },
