@@ -51,6 +51,19 @@ function collect(tier) {
   return { tools, byName: new Map(tools.map((t) => [t.name, t])), resources };
 }
 const TIERS = { free: collect("free"), paid: collect("paid") };
+
+// The full app is 2.5 MB. Hosts may not show a ui:// resource that large, so the resource is a small loader that
+// fetches /app.html from this Worker (allowed by the resource's CSP connectDomains) and replaces its own document.
+const APP_URI = "ui://space-at-scale/app.html";
+const loaderHtml = (origin) => `<!doctype html><html><head><meta charset="utf-8"><title>Space-at-Scale</title>
+<style>html,body{margin:0;height:100%;background:#05070d;color:#cfe3ff;font:14px system-ui,sans-serif}#m{padding:24px}</style></head>
+<body><div id="m">Loading Space-at-Scale…</div><script>
+fetch(${JSON.stringify(origin + "/app.html?v=" + VERSION)}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.text()})
+.then(function(h){document.open();document.write(h);document.close()})
+.catch(function(e){document.getElementById("m").textContent="Space-at-Scale could not load ("+e.message+").";});
+</script></body></html>`;
+const loaderContents = (origin) => [{ uri: APP_URI, mimeType: "text/html;profile=mcp-app", text: loaderHtml(origin),
+  _meta: { ui: { csp: { connectDomains: [origin], resourceDomains: [] }, prefersBorder: false } } }];
 const tierOf = (env) => (env && env.SCW_TIER === "paid" ? "paid" : "free");
 
 class RpcError { constructor(code, message, http = 200, data) { this.code = code; this.message = message; this.http = http; this.data = data; } }
@@ -58,7 +71,7 @@ const json = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json", ...extra } });
 const capabilities = () => ({ tools: { listChanged: false }, resources: { listChanged: false, subscribe: false } });
 
-async function dispatch(set, method, p, modern) {
+async function dispatch(set, method, p, modern, origin) {
   const cache = modern ? { ttlMs: LIST_TTL_MS, cacheScope: "public" } : {};
   switch (method) {
     case "server/discover":
@@ -93,6 +106,7 @@ async function dispatch(set, method, p, modern) {
       return { resourceTemplates: [], ...cache };
     case "resources/read": {
       const uri = String(p.uri ?? "");
+      if (uri === APP_URI) return { contents: loaderContents(origin), ...cache };
       const r = set.resources.find((x) => x.uri === uri);
       if (!r) throw new RpcError(modern ? -32602 : -32002, `resource not found: ${uri}`, 200, { uri });
       return { ...(await r.handler(new URL(uri))), ...cache };
@@ -143,7 +157,7 @@ async function handleMcp(req, env) {
     } else if (hdrVersion !== null && !LEGACY.includes(hdrVersion) && method !== "initialize") {
       throw new RpcError(-32022, "Unsupported protocol version", 400, { supported: SUPPORTED, requested: hdrVersion });
     }
-    const result = await dispatch(TIERS[tierOf(env)], method, params, modern);
+    const result = await dispatch(TIERS[tierOf(env)], method, params, modern, new URL(req.url).origin);
     if (modern) { result.resultType = "complete"; result._meta = { ...(result._meta ?? {}), [META("serverInfo")]: SERVER_INFO }; }
     return json({ jsonrpc: "2.0", id, result });
   } catch (e) {
@@ -156,6 +170,8 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     if (url.pathname === "/mcp") return handleMcp(req, env || {});
+    if (url.pathname === "/app.html") return new Response(APP_HTML, { headers: { "content-type": "text/html; charset=utf-8",
+      "access-control-allow-origin": "*", "cache-control": "public, max-age=300" } });
     if (url.pathname === "/healthz") {
       const t = tierOf(env);
       return json({ ok: true, server: SERVER_INFO, tier: t, tools: TIERS[t].tools.length, all_tools: TIERS.paid.tools.length,

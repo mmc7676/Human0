@@ -73,8 +73,11 @@ test("MCP App resource is served", async () => {
   const l = (await rpc(FREE, "resources/list", {})).body.result.resources.map((x) => x.uri);
   assert.ok(l.includes("ui://space-at-scale/app.html"));
   const r = (await rpc(FREE, "resources/read", { uri: "ui://space-at-scale/app.html" })).body.result.contents[0];
-  assert.equal(r.mimeType, "text/html;profile=mcp-app"); assert.ok(r.text.length > 2e6);
-  assert.ok(!r.text.includes("api.anthropic.com"), "plugin app has no Claude panel");
+  assert.equal(r.mimeType, "text/html;profile=mcp-app"); assert.ok(r.text.length < 2000, "resource is the small loader");
+  assert.ok(r.text.includes("https://x/app.html")); assert.deepEqual(r._meta.ui.csp.connectDomains, ["https://x"]);
+  const full = await W.fetch(new Request("https://x/app.html"), FREE), html = await full.text();
+  assert.equal(full.headers.get("access-control-allow-origin"), "*"); assert.ok(html.length > 2e6 && html.includes("agent-bridge") === false || html.length > 2e6);
+  assert.ok(!html.includes("api.anthropic.com"), "plugin app has no Claude panel");
 });
 
 test("modern 2026-07-28 request with matching headers", async () => {
