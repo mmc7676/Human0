@@ -169,13 +169,6 @@ aside.rail .chip:disabled { opacity: .6; }
 .card.anim-pour .wine-btl .btl { transform-box: view-box; transform-origin: 17px 46px; animation: btlTilt .32s ease-in forwards; }
 @keyframes btlTilt { to { transform: rotate(90deg); } }
 .card.anim-pour .wine-btl .splash { transform-box: view-box; transform-origin: 63px 46px; animation: splashOut .36s ease-out .28s forwards; }
-/* beer cards: the country's flag appears in the middle of the card and turns one full circle */
-.card.anim-flag { position: relative; z-index: 4; }
-.flag-pop { position: absolute; left: 50%; top: 50%; width: 84px; margin: -28px 0 0 -42px; pointer-events: none;
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,.35)); animation: flagSpin .74s ease-in-out forwards; }
-.flag-pop svg { display: block; width: 100%; height: auto; border-radius: 3px; outline: 1px solid rgba(0,0,0,.18); }
-@keyframes flagSpin { 0% { transform: scale(.2) rotate(0deg); opacity: 0; } 18% { transform: scale(1) rotate(30deg); opacity: 1; }
-  100% { transform: scale(1) rotate(360deg); opacity: 1; } }
 @keyframes splashOut { 0% { opacity: 0; transform: scale(.15); } 35% { opacity: 1; } 100% { opacity: 1; transform: scale(1); } }
 .vr { display: inline-flex; align-items: baseline; gap: 3px; font-family: var(--font-data); font-size: .84rem; font-weight: 600; white-space: nowrap; }
 .vr .star { color: var(--star); font-size: 1em; }
@@ -881,52 +874,23 @@ button.opt:hover { border-color: var(--accent); }
     $("view").innerHTML = v === "table" ? viewTable(rows) : v === "groups" ? viewGroups(rows) : v === "prices" ? viewPrices(rows) : viewGrid(rows);
   }
 
-  /* ---------- card open animations ---------- */
-  // Flags for the countries named on beer pages, drawn as SVG (flag emoji show as letters on Windows).
-  var FLAGS = {
-    "United States": '<svg viewBox="0 0 76 40"><rect width="76" height="40" fill="#b22234"/>' +
-      [1, 3, 5, 7, 9, 11].map(function (i) { return '<rect y="' + (i * 40 / 13).toFixed(2) + '" width="76" height="' + (40 / 13).toFixed(2) + '" fill="#fff"/>'; }).join("") +
-      '<rect width="30.4" height="21.54" fill="#3c3b6e"/>' +
-      [0, 1, 2, 3, 4].map(function (row) { return [0, 1, 2, 3, 4, 5].map(function (col) {
-        return '<circle cx="' + (2.6 + col * 5) + '" cy="' + (2.4 + row * 4.2) + '" r="1" fill="#fff"/>'; }).join(""); }).join("") + '</svg>',
-    "Mexico": '<svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#006847"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ce1126"/>' +
-      '<ellipse cx="30" cy="20" rx="5" ry="5.5" fill="#8c6a2e"/><path d="M25.5 23c2 2.5 7 2.5 9 0" stroke="#006847" stroke-width="1.2" fill="none"/></svg>',
-    "Belgium": '<svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#000"/><rect x="20" width="20" height="40" fill="#fdda24"/><rect x="40" width="20" height="40" fill="#ef3340"/></svg>',
-    "Germany": '<svg viewBox="0 0 60 40"><rect width="60" height="13.34" fill="#000"/><rect y="13.33" width="60" height="13.34" fill="#dd0000"/><rect y="26.66" width="60" height="13.34" fill="#ffce00"/></svg>',
-    "United Kingdom": '<svg viewBox="0 0 60 30"><clipPath id="ukT"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><rect width="60" height="30" fill="#012169"/>' +
-      '<path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#ukT)" stroke="#c8102e" stroke-width="4"/>' +
-      '<path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></svg>',
-    "Italy": '<svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#009246"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ce2b37"/></svg>',
-    "Denmark": '<svg viewBox="0 0 37 28"><rect width="37" height="28" fill="#c8102e"/><rect x="12" width="4" height="28" fill="#fff"/><rect y="12" width="37" height="4" fill="#fff"/></svg>',
-    "Japan": '<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"/><circle cx="30" cy="20" r="12" fill="#bc002d"/></svg>'
-  };
+  /* ---------- wine open animation ---------- */
   var animBusy = false;
-  // One hook for every card: wine bottles pop or pour, beers spin the flag of the country they are made in.
   function animateThenOpen(card, id) {
     if (animBusy) return;
-    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var svg = card.querySelector("svg.wine-btl");
-    var row = D.byId[id];
-    var flag = !svg && mode === "beer" && row && FLAGS[row.country];
-    if (reduce || (!svg && !flag)) { openDetail(id); return; }
-    var cls = svg ? (svg.getAttribute("data-anim") === "pop" ? "anim-pop" : "anim-pour") : "anim-flag";
-    var ms = { "anim-pop": 470, "anim-pour": 680, "anim-flag": 760 }[cls];
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!svg || reduce) { openDetail(id); return; }
+    var cls = svg.getAttribute("data-anim") === "pop" ? "anim-pop" : "anim-pour";
     animBusy = true;
-    card.classList.remove("anim-pop", "anim-pour", "anim-flag");
-    var old = card.querySelector(".flag-pop"); if (old) old.remove();
-    if (flag) {
-      var f = document.createElement("span");
-      f.className = "flag-pop"; f.setAttribute("aria-hidden", "true"); f.title = row.country; f.innerHTML = flag;
-      card.appendChild(f);
-    }
+    card.classList.remove("anim-pop", "anim-pour");
     void card.getBoundingClientRect(); // restart the animation if the same card is clicked again
     card.classList.add(cls);
     setTimeout(function () {
       animBusy = false;
       openDetail(id);
       card.classList.remove(cls);
-      var fp = card.querySelector(".flag-pop"); if (fp) fp.remove();
-    }, ms);
+    }, cls === "anim-pop" ? 470 : 680);
   }
 
   /* ---------- events ---------- */
