@@ -11,7 +11,7 @@ const TOKEN='test-'+require('crypto').randomBytes(8).toString('hex'),PORT=18080+
   const bad=await fetch(URLS+'/mcp',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer wrong'},body:'{}'});ok(bad.status===401,'Wrong token rejected with 401');
   const g=await fetch(URLS+'/mcp');ok(g.status===405,'GET /mcp returns 405');
   const c=new Client({name:'http-test',version:'1'});await c.connect(new StreamableHTTPClientTransport(new URL(URLS+'/mcp'),{requestInit:{headers:{Authorization:'Bearer '+TOKEN}}}));
-  const tools=(await c.listTools()).tools;ok(tools.length===31,'31 tools over HTTP');const gf=JSON.parse((await c.callTool({name:'galaxy_field',arguments:{r_kpc:8.277}})).content[0].text);ok(gf.governor==='stellar disk','galaxy_field over HTTP: '+gf.governor+' leads at the Sun');
+  const tools=(await c.listTools()).tools;ok(tools.length===32,'32 tools over HTTP');const gf=JSON.parse((await c.callTool({name:'galaxy_field',arguments:{r_kpc:8.277}})).content[0].text);ok(gf.governor==='stellar disk','galaxy_field over HTTP: '+gf.governor+' leads at the Sun');
   const r=await c.callTool({name:'plan_trip',arguments:{request:'design a trip to Mars',jd:2461356.5}});ok(JSON.parse(r.content[0].text).launch_windows_utc[0]==='2026-12-04','plan_trip over HTTP: Mars window 2026-12-04');
   const e=await c.callTool({name:'run_evals',arguments:{id:'SCW0'}}),ed=JSON.parse(e.content[0].text);ok(ed.passed===ed.total,'run_evals over HTTP: '+ed.passed+'/'+ed.total);
   const g2=await c.callTool({name:'generate_universe',arguments:{seed:7}});const c2=new Client({name:'http-test-2',version:'1'});await c2.connect(new StreamableHTTPClientTransport(new URL(URLS+'/mcp'),{requestInit:{headers:{Authorization:'Bearer '+TOKEN}}}));

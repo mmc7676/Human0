@@ -121,6 +121,7 @@
   }
   function onResult(result, source) {
     const sc = result && result.structuredContent, render = sc && sc.render;
+    if (sc && sc.eyepiece) { showEyepiece(sc.eyepiece, (sc.resolved_as ? sc.resolved_as.trim() + ' · ' : '') + sc.instrument); return; }
     if (!render) return;
     if (render.scale === 'galaxy') { if (!gx.on) enterGX(false); } else if (!lb.on) enterLB(false);
     drawLayer(render);
@@ -153,6 +154,111 @@
     requestAnimationFrame(follow);
   })();
 
+
+  // ---------- magnification (eyepiece) ----------
+  // Drag a box on any view while Magnify is on: the box center becomes a sky direction (RA/Dec), its height the field
+  // of view; the eyepiece shows real Gaia stars to the chosen limiting magnitude over a survey image of that field.
+  const EPS = 23.43928 * Math.PI / 180;
+  let EQ_FROM_GAL = null;
+  function galToEq(g) {
+    if (!EQ_FROM_GAL) EQ_FROM_GAL = [GXC.galHelio(0, 0, 1), GXC.galHelio(90, 0, 1), GXC.galHelio(0, 90, 1)];
+    return EQ_FROM_GAL.map((b) => b[0] * g[0] + b[1] * g[1] + b[2] * g[2]);
+  }
+  function sceneDirToRaDec(d, frame) {
+    let e;
+    if (frame === 'ecliptic') { const x = d.x, y = -d.z, z = d.y; e = [x, y * Math.cos(EPS) - z * Math.sin(EPS), y * Math.sin(EPS) + z * Math.cos(EPS)]; }
+    else e = galToEq([d.x, -d.z, d.y]);
+    const n = Math.hypot(e[0], e[1], e[2]);
+    return { ra: ((Math.atan2(e[1], e[0]) * 180 / Math.PI) + 360) % 360, dec: Math.asin(e[2] / n) * 180 / Math.PI };
+  }
+  const activeView = () => (gx.on ? { cam: gxCam, frame: 'galactic', ctl: gxCtl } : lb.on ? { cam: lbCam, frame: 'galactic', ctl: lbCtl } : { cam, frame: 'ecliptic', ctl });
+  const mag = { on: false, box: null, start: null, ep: null, req: 0 };
+  const boxDiv = document.createElement('div');
+  boxDiv.style.cssText = 'position:absolute;border:1px solid #7fd3ff;background:rgba(127,211,255,0.08);pointer-events:none;display:none;z-index:6';
+  (document.getElementById('wrap') || document.body).appendChild(boxDiv);
+  const cv = ren.domElement;
+  function setMagnify(on) {
+    mag.on = on; [ctl, lbCtl, gxCtl].forEach((c) => { if (c) c.enabled = !on; });
+    cv.style.cursor = on ? 'crosshair' : '';
+  }
+  cv.addEventListener('pointerdown', (e) => { if (!mag.on) return; const r = cv.getBoundingClientRect(); mag.start = [e.clientX - r.left, e.clientY - r.top]; boxDiv.style.display = 'block'; e.stopPropagation(); }, true);
+  cv.addEventListener('pointermove', (e) => {
+    if (!mag.on || !mag.start) return; const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, s = mag.start;
+    Object.assign(boxDiv.style, { left: (cv.offsetLeft + Math.min(s[0], x)) + 'px', top: (cv.offsetTop + Math.min(s[1], y)) + 'px', width: Math.abs(x - s[0]) + 'px', height: Math.abs(y - s[1]) + 'px' });
+  }, true);
+  cv.addEventListener('pointerup', (e) => {
+    if (!mag.on || !mag.start) return;
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, s = mag.start; mag.start = null; boxDiv.style.display = 'none';
+    const cx = (s[0] + x) / 2, cy = (s[1] + y) / 2, h = Math.max(Math.abs(y - s[1]), Math.abs(x - s[0]));
+    const v = activeView(), rc = new THREE.Raycaster();
+    rc.setFromCamera(new THREE.Vector2(cx / r.width * 2 - 1, -(cy / r.height) * 2 + 1), v.cam);
+    const sky = sceneDirToRaDec(rc.ray.direction, v.frame);
+    const fov = Math.min(10, Math.max(0.05, h < 8 ? 1 : h / r.height * v.cam.fov));
+    setMagnify(false);
+    openEyepiece({ ra: sky.ra, dec: sky.dec, fov_deg: +fov.toFixed(3), mag_limit: 9.5 });
+    e.stopPropagation();
+  }, true);
+
+  const ep = document.createElement('div');
+  ep.style.cssText = 'position:absolute;top:44px;right:8px;width:500px;max-width:92%;background:rgba(5,8,16,0.96);border:1px solid #2a3b55;border-radius:8px;padding:8px;z-index:7;display:none;color:#cfe3ff;font:12px system-ui,sans-serif';
+  ep.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px"><b id="ep-title">Eyepiece</b><button id="ep-x" title="Close">×</button></div>' +
+    '<div id="ep-steps" style="display:flex;gap:4px;flex-wrap:wrap;margin:6px 0"></div><canvas id="ep-cv" width="480" height="480" style="width:100%;background:#000;border-radius:4px"></canvas>' +
+    '<div style="display:flex;gap:6px;margin-top:6px;align-items:center"><button id="ep-stars">Stars: On</button><button id="ep-img">Image: On</button><span id="ep-info"></span></div><div id="ep-credit" style="opacity:.7;margin-top:4px"></div>';
+  (document.getElementById('wrap') || document.body).appendChild(ep);
+  const $e = (id) => ep.querySelector('#' + id), IMG_ALPHA = [0, 0.35, 0.6, 0.85, 1];
+  const epState = { data: null, bitmap: null, showStars: true, showImg: true };
+  $e('ep-x').onclick = () => { ep.style.display = 'none'; };
+  $e('ep-stars').onclick = () => { epState.showStars = !epState.showStars; $e('ep-stars').textContent = 'Stars: ' + (epState.showStars ? 'On' : 'Off'); drawEyepiece(); };
+  $e('ep-img').onclick = () => { epState.showImg = !epState.showImg; $e('ep-img').textContent = 'Image: ' + (epState.showImg ? 'On' : 'Off'); drawEyepiece(); };
+  const COLORS = [[-0.3, '#9bb2ff'], [0.3, '#cad7ff'], [0.8, '#fff4ea'], [1.2, '#ffd2a1'], [2.0, '#ffb56b'], [9, '#ff8a4a']];
+  const colorOf = (c) => (c === null || c === undefined ? '#ffffff' : COLORS.find(([v]) => c <= v)[1]);
+  function drawEyepiece() {
+    const d = epState.data; if (!d) return;
+    const g = $e('ep-cv').getContext('2d'), W = 480, half = Math.tan(d.fov_deg / 2 * Math.PI / 180), D = Math.PI / 180;
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, W);
+    const stepIdx = d.steps.findIndex((s) => s[1] === d.mag_limit);
+    if (epState.showImg && epState.bitmap) { g.globalAlpha = IMG_ALPHA[stepIdx < 0 ? 2 : stepIdx]; g.drawImage(epState.bitmap, 0, 0, W, W); g.globalAlpha = 1; }
+    const a0 = d.ra * D, d0 = d.dec * D, sd0 = Math.sin(d0), cd0 = Math.cos(d0);
+    const proj = (ra, dec) => { const a = ra * D - a0, dd = dec * D, c = sd0 * Math.sin(dd) + cd0 * Math.cos(dd) * Math.cos(a); if (c <= 0) return null;
+      const X = Math.cos(dd) * Math.sin(a) / c, Y = (cd0 * Math.sin(dd) - sd0 * Math.cos(dd) * Math.cos(a)) / c; return [W / 2 - X / half * W / 2, W / 2 - Y / half * W / 2]; };
+    if (epState.showStars) {
+      const all = d.stars.concat(d.bright);
+      for (const s of all) { const p = proj(s[0], s[1]); if (!p || p[0] < -4 || p[0] > W + 4 || p[1] < -4 || p[1] > W + 4) continue;
+        const r = Math.max(0.7, (d.mag_limit - s[2]) * 0.55 + 0.7); g.fillStyle = colorOf(s[3]); g.beginPath(); g.arc(p[0], p[1], r, 0, 2 * Math.PI); g.fill();
+        if (s[4]) { g.fillStyle = '#cfe3ff'; g.fillText(s[4], p[0] + r + 3, p[1] + 3); } }
+    }
+    $e('ep-info').textContent = (d.stars.length + d.bright.length).toLocaleString() + ' stars to mag ' + d.mag_limit + ' · field ' + d.fov_deg + '°';
+  }
+  function renderSteps(d) {
+    const box = $e('ep-steps'); box.innerHTML = '';
+    d.steps.forEach(([label, m]) => { const b = document.createElement('button'); b.textContent = label + ' (' + m + ')';
+      b.setAttribute('aria-pressed', String(m === d.mag_limit)); if (m === d.mag_limit) b.style.outline = '1px solid #7fd3ff';
+      b.onclick = () => openEyepiece({ ra: d.ra, dec: d.dec, fov_deg: d.fov_deg, mag_limit: m, image: !epState.bitmap }); box.appendChild(b); });
+  }
+  async function showEyepiece(d, title) {
+    epState.data = d; ep.style.display = 'block';
+    $e('ep-title').textContent = title || ('RA ' + d.ra.toFixed(3) + '°, Dec ' + d.dec.toFixed(3) + '°');
+    $e('ep-credit').textContent = d.credit + (d.image ? ' · Image shown dimmer at lower magnification.' : '');
+    if (d.image && d.image.base64) {
+      try { const bin = atob(d.image.base64), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i);
+        epState.bitmap = await createImageBitmap(new Blob([u], { type: d.image.mime })); } catch (e) { epState.bitmap = null; }
+    }
+    renderSteps(d); drawEyepiece();
+  }
+  async function openEyepiece(args) {
+    if (!inHost) return;
+    const my = ++mag.req; ep.style.display = 'block'; $e('ep-info').textContent = 'Looking…';
+    if (args.image !== false) epState.bitmap = null;
+    try {
+      const r = await callTool('sky_region', args);
+      if (my !== mag.req) return;
+      const sc = r && r.structuredContent;
+      if (!sc || r.isError) { $e('ep-info').textContent = (r && r.content && r.content[0] && r.content[0].text) || 'No result'; return; }
+      showEyepiece(sc.eyepiece, (sc.resolved_as ? sc.resolved_as.trim() + ' · ' : '') + sc.instrument);
+      if (sc.notes && sc.notes.length) note(sc.notes.join(' '));
+    } catch (e) { $e('ep-info').textContent = e.message; }
+  }
+
   // ---------- hooks into the existing views ----------
   // Local Bubble: a star selection fires 'star.select'; manual triggers become buttons in the star's panel.
   const baseTip = window.lbTip;
@@ -172,6 +278,9 @@
   const toggle = document.createElement('button'); toggle.id = 'agentb';
   toggle.onclick = () => { agentState.on = !agentState.on; };
   bar.appendChild(toggle);
+  const magBtn = document.createElement('button'); magBtn.id = 'magb';
+  magBtn.onclick = () => setMagnify(!mag.on);
+  bar.appendChild(magBtn);
   const search = document.createElement('input');
   search.placeholder = 'Find star…'; search.style.cssText = 'font-size:12px;width:110px;padding:2px 6px';
   search.onkeydown = (e) => {
@@ -193,9 +302,10 @@
     const t = 'Agent: ' + (agentState.on ? 'On' : 'Off');
     if (toggle.textContent !== t) toggle.textContent = t;
     toggle.setAttribute('aria-pressed', String(agentState.on));
+    const mt = 'Magnify: ' + (mag.on ? 'On' : 'Off'); if (magBtn.textContent !== mt) magBtn.textContent = mt; magBtn.setAttribute('aria-pressed', String(mag.on));
     menuBtns.forEach(([t, b]) => { const show = agentState.on && (t.event === 'galaxy.menu' ? gx.on : true); b.style.display = show ? '' : 'none'; });
     requestAnimationFrame(sync);
   })();
 
-  window.SAS_AGENT = { TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
+  window.SAS_AGENT = { openEyepiece, showEyepiece, sceneDirToRaDec, setMagnify, TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
 })();

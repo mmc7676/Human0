@@ -38,8 +38,8 @@ test("initialize and health", async () => {
 test("tools/list per plan", async () => {
   const f = (await rpc(FREE, "tools/list", {})).body.result.tools.map((t) => t.name);
   const p = (await rpc(PAID, "tools/list", {})).body.result.tools.map((t) => t.name);
-  assert.equal(p.length, 31);
-  for (const t of (await rpc(PAID, "tools/list", {})).body.result.tools) { assert.ok(t.title && t.annotations.title === t.title && t.name.length <= 64, t.name + " needs a title"); assert.ok(typeof t.annotations.readOnlyHint === "boolean", t.name + " needs readOnlyHint"); } assert.equal(f.length, 31 - PAID_ONLY.length);
+  assert.equal(p.length, 32);
+  for (const t of (await rpc(PAID, "tools/list", {})).body.result.tools) { assert.ok(t.title && t.annotations.title === t.title && t.name.length <= 64, t.name + " needs a title"); assert.ok(typeof t.annotations.readOnlyHint === "boolean", t.name + " needs readOnlyHint"); } assert.equal(f.length, 32 - PAID_ONLY.length);
   for (const k of PAID_ONLY) { assert.ok(p.includes(k)); assert.ok(!f.includes(k)); }
   const u = (await rpc(undefined, "tools/list", {})).body.result.tools.length;
   assert.equal(u, f.length, "no SCW_TIER means free");

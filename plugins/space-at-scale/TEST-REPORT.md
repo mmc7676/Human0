@@ -1,11 +1,11 @@
 # Test report
 
-Built 2026-11-20T01:42:16.178Z · version 0.17.0
+Built 2026-11-20T02:46:03.804Z · version 0.17.0
 
-## test.js: 99 passed, 0 failed, 0 not run
+## test.js: 101 passed, 0 failed, 0 not run
 
 ```
-PASS 31 tools listed: scw_get, scw_children, scw_search, scw_laws, scw_inheritance_rules, sim_state, sim_clock, run_evals, inject_interstellar_comet, events, validate_app_dropin, find_mining_targets, plan_mission, generate_universe, find_mining_targets_parallel, generate_exotic_universe, run_extraction_campaign, plan_trip, link_hidden_universe, remove_state, galaxy_field, galaxy_object, energy_ledger, scw_relations, exoplanet_system, densify_region, build_galaxy, sky_check, stream_catalog_region, route_trigger, open_space_at_scale
+PASS 32 tools listed: scw_get, scw_children, scw_search, scw_laws, scw_inheritance_rules, sim_state, sim_clock, run_evals, inject_interstellar_comet, events, validate_app_dropin, find_mining_targets, plan_mission, generate_universe, find_mining_targets_parallel, generate_exotic_universe, run_extraction_campaign, plan_trip, link_hidden_universe, remove_state, galaxy_field, galaxy_object, energy_ledger, scw_relations, exoplanet_system, densify_region, build_galaxy, sky_check, stream_catalog_region, route_trigger, sky_region, open_space_at_scale
 PASS graph resource has 152 SCWs
 PASS Jupiter system SCW holds 4 moons + Juno
 PASS Io inherits laws through 9 levels; Newtonian approximation valid
@@ -43,7 +43,7 @@ PASS Mars trip: first window 2026-12-04, 259 days, 6.32 km/s
 PASS Europa resolves to the Jovian moon
 PASS Non-trip request rejected with guidance
 PASS open_space_at_scale declares its MCP App view
-PASS App resource is self-contained HTML (2.38 MB, mcp-app profile)
+PASS App resource is self-contained HTML (2.39 MB, mcp-app profile)
 PASS open_space_at_scale returns its text fallback
 PASS All evals pass with all three universes: 96/96
 PASS Milky Way children are typed: superposes 5, contains 5, passes-through 1, signals 1
@@ -92,7 +92,7 @@ PASS H relates to the harness by shares-gravity
 PASS Mirror H removed
 PASS Clear all removes the simple H too
 PASS All evals still pass after clearing: 74/74
-PASS Tiers: paid registers 31 tools, free registers 27
+PASS Tiers: paid registers 32 tools, free registers 28
 PASS Tiers: every paid-only tool (run_evals, generate_universe, find_mining_targets_parallel, build_galaxy) is left out of free
 PASS Agent: exoplanet_system returns Eta Cet b and c from the archive extract
 PASS Agent: densify_region draws 326 generated stars at local density
@@ -104,6 +104,8 @@ PASS Catalog stream: VizieR column names parse the same way
 PASS Catalog stream: both services down gives a clear error
 PASS Hook: route_trigger names the agent for an app trigger
 PASS Hook: route_trigger returns nothing for ordinary messages
+PASS Magnify: sky_region resolves M42, returns Gaia stars, the bright stars Gaia saturates on, and the survey image
+PASS Magnify: services down are reported in notes, not thrown
 ALL PASSED
 ```
 
@@ -114,7 +116,7 @@ PASS healthz: 152 SCWs, auth bearer
 PASS Request without token rejected with 401
 PASS Wrong token rejected with 401
 PASS GET /mcp returns 405
-PASS 31 tools over HTTP
+PASS 32 tools over HTTP
 PASS galaxy_field over HTTP: stellar disk leads at the Sun
 PASS plan_trip over HTTP: Mars window 2026-12-04
 PASS run_evals over HTTP: 74/74

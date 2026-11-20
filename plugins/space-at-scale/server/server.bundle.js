@@ -46110,7 +46110,101 @@ var require_agent_tools = __commonJS({
       if (!m || !AGENTS.includes(m[2])) return "";
       return "This message was sent by a button in the Space-at-Scale app (event " + m[1] + "). It is a task for the space-at-scale:" + m[2] + " agent, which uses only Space-at-Scale tools for numbers and reports which results are catalog data and which are generated.";
     }
-    module2.exports = { streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
+    var STEPS = [["Naked eye", 6], ["Binoculars", 9.5], ["Small telescope", 13], ["Large telescope", 16], ["Gaia limit", 19]];
+    var D2R = Math.PI / 180;
+    async function resolveName(name, f) {
+      const url = "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/SNV?" + encodeURIComponent(name);
+      const res = await f(url, { signal: AbortSignal.timeout(1e4) });
+      if (!res.ok) throw new Error("Name service (CDS Sesame) returned HTTP " + res.status);
+      const x = await res.text(), ra = /<jradeg>([-\d.]+)<\/jradeg>/.exec(x), de = /<jdedeg>([-\d.]+)<\/jdedeg>/.exec(x);
+      if (!ra || !de) throw new Error('CDS Sesame could not resolve "' + name + '".');
+      const oname = /<oname>([^<]+)<\/oname>/.exec(x);
+      return { ra: +ra[1], dec: +de[1], resolved_as: oname ? oname[1].trim() : name };
+    }
+    function angSep(ra1, de1, ra2, de2) {
+      const a = Math.sin((de2 - de1) * D2R / 2) ** 2 + Math.cos(de1 * D2R) * Math.cos(de2 * D2R) * Math.sin((ra2 - ra1) * D2R / 2) ** 2;
+      return 2 * Math.asin(Math.min(1, Math.sqrt(a))) / D2R;
+    }
+    function toBase64(buf) {
+      if (typeof Buffer !== "undefined") return Buffer.from(buf).toString("base64");
+      let s = "";
+      const b = new Uint8Array(buf);
+      for (let i = 0; i < b.length; i += 32768) s += String.fromCharCode.apply(null, b.subarray(i, i + 32768));
+      return btoa(s);
+    }
+    async function skyRegion({ target, ra, dec, fov_deg = 1, mag_limit = 9.5, max_stars = 1500, image = true }, fetchImpl) {
+      const f = fetchImpl || fetch, notes = [];
+      if (!(fov_deg >= 0.05 && fov_deg <= 10)) throw new Error("fov_deg must be between 0.05 and 10 degrees.");
+      let where = { ra, dec, resolved_as: null };
+      if (target) where = await resolveName(target, f);
+      if (!(where.ra >= 0 && where.ra < 360 && where.dec >= -90 && where.dec <= 90)) throw new Error("Give a target name, or ra (0-360) and dec (-90 to 90) in degrees.");
+      const rad = fov_deg / Math.SQRT2;
+      const starsJob = (async () => {
+        const errs = [];
+        for (const t of TAP) {
+          const q = "SELECT TOP " + Math.min(Math.max(50, max_stars | 0), 3e3) + " " + [t.id, t.ra, t.dec, t.g, t.bprp].join(", ") + " FROM " + t.table + " WHERE " + t.g + " < " + mag_limit + " AND 1 = CONTAINS(POINT('ICRS', " + t.ra + ", " + t.dec + "), CIRCLE('ICRS', " + where.ra.toFixed(5) + ", " + where.dec.toFixed(5) + ", " + rad.toFixed(4) + ")) ORDER BY " + t.g + " ASC";
+          try {
+            const res = await f(t.url + "?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=" + encodeURIComponent(q), { signal: AbortSignal.timeout(2e4) });
+            if (!res.ok) {
+              errs.push(t.name + ": HTTP " + res.status);
+              continue;
+            }
+            const { head, rows } = parseCsv(await res.text()), ix = (re) => head.findIndex((h) => re.test(h));
+            const iRa = ix(/^(ra|RA_ICRS)$/i), iDe = ix(/^(dec|DE_ICRS)$/i), iG = ix(/^(phot_g_mean_mag|Gmag)$/i), iC = ix(/^(bp_rp|BP-RP)$/i);
+            return { service: t.name, stars: rows.map((r) => [+(+r[iRa]).toFixed(5), +(+r[iDe]).toFixed(5), +(+r[iG]).toFixed(2), iC >= 0 && r[iC] !== "" ? +(+r[iC]).toFixed(2) : null]) };
+          } catch (e) {
+            errs.push(t.name + ": " + (e.name === "TimeoutError" ? "timed out" : e.message));
+          }
+        }
+        notes.push("Gaia stars unavailable (" + errs.join("; ") + ").");
+        return { service: null, stars: [] };
+      })();
+      const imageJob = image ? (async () => {
+        const url = "https://alasky.cds.unistra.fr/hips-image-services/hips2fits?hips=" + encodeURIComponent("CDS/P/DSS2/color") + "&width=512&height=512&fov=" + fov_deg + "&projection=TAN&coordsys=icrs&ra=" + where.ra.toFixed(5) + "&dec=" + where.dec.toFixed(5) + "&format=jpg";
+        try {
+          const res = await f(url, { signal: AbortSignal.timeout(2e4) });
+          if (!res.ok) {
+            notes.push("Survey image unavailable (CDS hips2fits HTTP " + res.status + ").");
+            return null;
+          }
+          return { mime: "image/jpeg", base64: toBase64(await res.arrayBuffer()), survey: "DSS2 color (CDS/P/DSS2/color)", width: 512, height: 512 };
+        } catch (e) {
+          notes.push("Survey image unavailable (" + e.message + ").");
+          return null;
+        }
+      })() : Promise.resolve(null);
+      const [st, img] = await Promise.all([starsJob, imageJob]);
+      const bright = STARS.stars.filter((s) => s[COL.V] < mag_limit && angSep(where.ra, where.dec, s[COL.ra_h] * 15, s[COL.dec_deg]) < rad).filter((s) => !st.stars.some((g) => angSep(g[0], g[1], s[COL.ra_h] * 15, s[COL.dec_deg]) < 2e-3)).map((s) => [+(s[COL.ra_h] * 15).toFixed(5), +s[COL.dec_deg].toFixed(5), +s[COL.V], s[COL.BV] === "" ? null : +s[COL.BV], s[COL.name]]);
+      const step = STEPS.reduce((a, b) => Math.abs(b[1] - mag_limit) < Math.abs(a[1] - mag_limit) ? b : a);
+      return {
+        target: target || null,
+        resolved_as: where.resolved_as,
+        ra_deg: +where.ra.toFixed(5),
+        dec_deg: +where.dec.toFixed(5),
+        fov_deg,
+        mag_limit,
+        instrument: step[0],
+        stars_found: st.stars.length + bright.length,
+        gaia_service: st.service,
+        capped: st.stars.length >= Math.min(Math.max(50, max_stars | 0), 3e3),
+        brightest: [...bright, ...st.stars].sort((a, b) => a[2] - b[2]).slice(0, 5).map((s) => ({ name: s[4] || null, mag: s[2], ra: s[0], dec: s[1] })),
+        image: img ? { survey: img.survey } : null,
+        notes,
+        eyepiece: {
+          ra: where.ra,
+          dec: where.dec,
+          fov_deg,
+          mag_limit,
+          steps: STEPS,
+          stars: st.stars,
+          bright,
+          image: img,
+          credit: "Stars: ESA/Gaia/DPAC (CC BY-SA 3.0 IGO) via " + (st.service || "-") + ". Image: DSS2 via CDS hips2fits (Digitized Sky Survey, STScI/NASA)."
+        },
+        provenance: { stars: "catalog (Gaia DR3; bright stars from the base catalog)", image: "survey photograph (DSS2), shown dimmer at lower magnification to suggest what each instrument reveals; it is not an instrument simulation" }
+      };
+    }
+    module2.exports = { skyRegion, resolveName, STEPS, streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
   }
 });
 
@@ -46461,6 +46555,15 @@ function buildServer(opts = {}) {
     }
   });
   reg("route_trigger", { title: "Route app trigger", annotations: RO, description: "Internal: used by the plugin hook to recognize messages sent by buttons in the Space-at-Scale app and name the agent that should handle them. Returns an empty string for any other message.", inputSchema: { prompt: z.string().default("") } }, async (a) => ({ content: [{ type: "text", text: AT.routeTrigger(a) }] }));
+  reg("sky_region", { title: "Magnify sky region", annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true }, description: 'Magnification view of a patch of sky, like looking through binoculars or a telescope: real Gaia DR3 stars down to mag_limit (6 naked eye, 9.5 binoculars, 13 small telescope, 16 large telescope, 19 Gaia limit) plus a DSS2 survey image of the field. Give a target name (e.g. "M42", "Andromeda Galaxy", resolved by CDS Sesame) or ra/dec in degrees. Opens the eyepiece in the app.', inputSchema: { target: z.string().optional(), ra: z.number().min(0).max(360).optional(), dec: z.number().min(-90).max(90).optional(), fov_deg: z.number().min(0.05).max(10).default(1), mag_limit: z.number().min(3).max(19).default(9.5), max_stars: z.number().int().min(50).max(3e3).default(1500), image: z.boolean().default(true) }, _meta: AMETA }, async (a) => {
+    try {
+      const o = await AT.skyRegion(a);
+      const { eyepiece, ...summary } = o;
+      return { content: [{ type: "text", text: JSON.stringify(summary, null, 2) }], structuredContent: o };
+    } catch (e) {
+      return err(e);
+    }
+  });
   const APP_URI = "ui://space-at-scale/app.html", APP_HTML = opts.appHtml !== void 0 ? opts.appHtml : require("fs").readFileSync(require("path").join(__dirname, "dist", "space-at-scale.html"), "utf8");
   server.registerResource("space-at-scale-app", APP_URI, { description: "Space-at-Scale interactive view (MCP App)", mimeType: "text/html;profile=mcp-app" }, async (uri) => ({ contents: [{ uri: uri.href, mimeType: "text/html;profile=mcp-app", text: APP_HTML, _meta: { ui: { csp: { connectDomains: [], resourceDomains: [] }, prefersBorder: false } } }] }));
   reg("open_space_at_scale", { annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false }, description: "Open Space-at-Scale inline: a real-time 3D simulation at three scales. Solar system in AU (planets, moons, asteroids, KBOs, spacecraft, mining search, trip planner); Local Bubble in light years (3,665 stars); Milky Way in thousands of light years (black hole Sgr A* and its S-stars, dark matter halo, 161 globular clusters, 50 satellite galaxies, 3,563 pulsars, supernova light shells, gravitational-wave fronts). Each scale runs forward and backward in time to its physical limits. Use when the user asks to show, open, play or explore the solar system, space, the galaxy, black holes, dark matter or Space-at-Scale.", inputSchema: { focus: z.string().optional().describe("Optional body to mention, e.g. Mars") }, _meta: { ui: { resourceUri: APP_URI }, "ui/resourceUri": APP_URI } }, async ({ focus }) => ({ content: [{ type: "text", text: "Space-at-Scale is open" + (focus ? " (look for " + focus + " in the Primary menu or click it in the view)" : "") + '. Drag to orbit, scroll or pinch to zoom, click any dot for live specs. Try the task bar: "plan a trip to Mars" or "$3,000,000 of platinum within 5 AU".' }] }));

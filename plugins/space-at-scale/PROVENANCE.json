@@ -1,7 +1,7 @@
 {
  "plugin": "space-at-scale",
  "version": "0.17.0",
- "built_utc": "2026-11-20T01:42:16.178Z",
+ "built_utc": "2026-11-20T02:46:03.804Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
@@ -151,8 +151,8 @@
   },
   {
    "path": "server/agent-tools.js",
-   "sha256": "b2c7a78f817845d6c9cc330fe98a05b4027476d41ac9656261c055d3e2b3f0f3",
-   "bytes": 20371
+   "sha256": "ae840e0f1de04e9743900ffb2b16a380a3d13ab976a0c4172eb0034e4ef76cc6",
+   "bytes": 26480
   },
   {
    "path": "server/app/OrbitControls.js",
@@ -161,8 +161,8 @@
   },
   {
    "path": "server/app/agent-bridge.js",
-   "sha256": "343f8ea46d54910397b65dcb154939f5fccd68e3a22570d58dbe8726016c57f1",
-   "bytes": 13052
+   "sha256": "d4d4ba1bb1af5b23a93c1519c3cd1c1b2da1d71a02fddb99356ff76b1f850ef6",
+   "bytes": 21781
   },
   {
    "path": "server/app/app.js",
@@ -191,8 +191,8 @@
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "e39ab498532439a5bb8ba49d05dd7c7f310e2b164898bda55c4f648de6d36402",
-   "bytes": 2496253
+   "sha256": "fcd47a9b12c0a091246c6ef8a52df2b32cf8e1dd90541b4cd73dec5bc3bb8728",
+   "bytes": 2504982
   },
   {
    "path": "server/galaxy-core.js",
@@ -226,13 +226,13 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "ba2c1a1878587a485219f8d815e4a3eabf2b87b0a1ae5aa4f11de85b99cccd24",
-   "bytes": 3256446
+   "sha256": "d75cb307324aa66e6e6c2a12031dabc180166df5f7ff8ab4d6437cf78713c12d",
+   "bytes": 3263759
   },
   {
    "path": "server/server.js",
-   "sha256": "9fec72b9c770057804c0a0fe6c5b78774959d989643b0430a719a7f89c57e04d",
-   "bytes": 20299
+   "sha256": "420dbb478f22ce901255b6e81572744999ca517ba7a4582a692c025ca4190e27",
+   "bytes": 21347
   },
   {
    "path": "server/stars.json",
@@ -241,13 +241,13 @@
   },
   {
    "path": "server/test-http.js",
-   "sha256": "476439179253a9920fc942970b5556dd686ac930d87c40ba9ad63972b37e7e95",
+   "sha256": "2dc45e7236987f72332d4cb9fb92cf22166c602ba7d206016339647b0732f350",
    "bytes": 2935
   },
   {
    "path": "server/test.js",
-   "sha256": "48f6eb89d3e6e61b54e7a6a1f59b60c1a6a674c47205657e3b243a2c8852bb65",
-   "bytes": 21319
+   "sha256": "93e7022e118ac867b5285787015430f2610374eb90033025a3a80d0e4cafb0bf",
+   "bytes": 22273
   },
   {
    "path": "server/tiers.json",
@@ -266,8 +266,8 @@
   },
   {
    "path": "skills/space-at-scale/SKILL.md",
-   "sha256": "b5c32d4cfa7ae7dddda2226012c088a178980aff6247c055ccee190405815bf7",
-   "bytes": 3211
+   "sha256": "203b7bcfa397e5a9d57f9aed0cba57ce01c1d6d34d03870a41a8309d9f88d3e9",
+   "bytes": 3489
   }
  ],
  "mirrors": [
@@ -295,8 +295,8 @@
   {
    "canonical": "agent-bridge.js",
    "mirror": "server/app/agent-bridge.js",
-   "sha256": "343f8ea46d54910397b65dcb154939f5fccd68e3a22570d58dbe8726016c57f1",
-   "bytes": 13052,
+   "sha256": "d4d4ba1bb1af5b23a93c1519c3cd1c1b2da1d71a02fddb99356ff76b1f850ef6",
+   "bytes": 21781,
    "identical": true
   },
   {
