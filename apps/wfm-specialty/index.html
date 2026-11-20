@@ -110,6 +110,26 @@ main { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
 .search { flex: 1 1 260px; position: relative; min-width: 0; }
 .search input { width: 100%; padding: 10px 12px 10px 36px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+/* margarita search bar and sort dropdown: lime green drink inside a heavily salted rim (coarse crystals drawn with layered gradients) */
+.search, #sortWrap { padding: 6px; border-radius: 16px; background-color: #f2efe6;
+  background-image:
+    radial-gradient(circle at 20% 30%, #ffffff 0 1.4px, transparent 1.9px),
+    radial-gradient(circle at 70% 65%, #e3ded0 0 1.1px, transparent 1.6px),
+    radial-gradient(circle at 45% 85%, #ffffff 0 1.8px, transparent 2.3px),
+    radial-gradient(circle at 85% 15%, #d6d0c0 0 .9px, transparent 1.3px),
+    radial-gradient(circle at 10% 75%, #faf8f2 0 1.2px, transparent 1.7px);
+  background-size: 9px 9px, 7px 11px, 13px 10px, 6px 8px, 11px 7px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.10), inset 0 1px 2px rgba(255,255,255,.9), 0 2px 6px rgba(0,0,0,.18); }
+.search input, #sort { border: 0; border-radius: 11px; color: #1d300f; font-weight: 500;
+  background: radial-gradient(ellipse at 28% 18%, rgba(255,255,255,.5), rgba(255,255,255,0) 60%), linear-gradient(180deg, #c9e47e 0%, #a9cf55 100%);
+  box-shadow: inset 0 2px 4px rgba(40,70,10,.25), inset 0 -1px 0 rgba(255,255,255,.35); }
+.search input::placeholder { color: #3d5a1c; opacity: 1; }
+.search input:focus-visible, #sort:focus-visible { outline: 3px solid #ffffff; outline-offset: 1px; box-shadow: 0 0 0 5px #4f7d1a; }
+.search svg { left: 17px; color: #2f4a14; z-index: 1; }
+#sortWrap { padding-left: 12px; }
+#sortWrap .hint { color: #2f4a14; font-weight: 700; }
+#sort { padding: 8px 10px; cursor: pointer; }
+#sort option { background: #ffffff; color: #1a2420; }
 .count { color: var(--muted); }
 .count strong { color: var(--fg); font-family: var(--font-data); }
 .active { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -140,6 +160,23 @@ aside.rail .chip:disabled { opacity: .6; }
 .na { background: var(--surface-2); color: var(--muted); border-radius: 999px; padding: 1px 7px; font-size: .72rem; font-weight: 600; }
 
 .bottle { width: 34px; height: 92px; display: block; }
+/* open animations on wine cards: sparkling pops its cork up and out of the card, other wines tilt right and pour */
+.wine-btl { overflow: visible; }
+.wine-btl .splash { opacity: 0; }
+.card.anim-pop, .card.anim-pour { position: relative; z-index: 4; }
+.card.anim-pop .wine-btl .cork { transform-box: view-box; transform-origin: 17px 6px; animation: corkPop .48s cubic-bezier(.2,.75,.35,1) forwards; }
+@keyframes corkPop { 0% { transform: translateY(0); } 12% { transform: translateY(2px); } 100% { transform: translateY(-220px) rotate(-280deg); opacity: 0; } }
+.card.anim-pour .wine-btl .btl { transform-box: view-box; transform-origin: 17px 46px; animation: btlTilt .32s ease-in forwards; }
+@keyframes btlTilt { to { transform: rotate(90deg); } }
+.card.anim-pour .wine-btl .splash { transform-box: view-box; transform-origin: 63px 46px; animation: splashOut .36s ease-out .28s forwards; }
+/* beer cards: the country's flag appears in the middle of the card and turns one full circle */
+.card.anim-flag { position: relative; z-index: 4; }
+.flag-pop { position: absolute; left: 50%; top: 50%; width: 84px; margin: -28px 0 0 -42px; pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.35)); animation: flagSpin .74s ease-in-out forwards; }
+.flag-pop svg { display: block; width: 100%; height: auto; border-radius: 3px; outline: 1px solid rgba(0,0,0,.18); }
+@keyframes flagSpin { 0% { transform: scale(.2) rotate(0deg); opacity: 0; } 18% { transform: scale(1) rotate(30deg); opacity: 1; }
+  100% { transform: scale(1) rotate(360deg); opacity: 1; } }
+@keyframes splashOut { 0% { opacity: 0; transform: scale(.15); } 35% { opacity: 1; } 100% { opacity: 1; transform: scale(1); } }
 .vr { display: inline-flex; align-items: baseline; gap: 3px; font-family: var(--font-data); font-size: .84rem; font-weight: 600; white-space: nowrap; }
 .vr .star { color: var(--star); font-size: 1em; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -360,11 +397,16 @@ button.opt:hover { border-color: var(--accent); }
   function bottleSVG(r) {
     var fill = wineColor(r.color);
     var spark = r.color === "sparkling";
-    return '<svg class="bottle" viewBox="0 0 34 92" aria-hidden="true">' +
+    // data-anim picks the open animation: sparkling pops its cork, every other wine tilts and pours
+    return '<svg class="bottle wine-btl" data-anim="' + (spark ? "pop" : "pour") + '" viewBox="0 0 34 92" aria-hidden="true"><g class="btl">' +
       '<path d="M13 2h8v20c0 4 9 8 9 18v46a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V40c0-10 9-14 9-18z" fill="' + fill + '"/>' +
-      (spark ? '<rect x="12" y="0" width="10" height="12" rx="2" fill="var(--w-white)"/>' : '<rect x="13" y="0" width="8" height="6" rx="1.5" fill="var(--fg)" opacity=".55"/>') +
+      (spark ? '<rect class="cork" x="12" y="0" width="10" height="12" rx="2" fill="var(--w-white)"/>' : '<rect x="13" y="0" width="8" height="6" rx="1.5" fill="var(--fg)" opacity=".55"/>') +
       '<rect x="7" y="50" width="20" height="22" rx="2" fill="var(--surface)" opacity=".82"/>' +
       (r.non_alcoholic ? '<text x="17" y="64" text-anchor="middle" font-size="8" font-family="Inter, sans-serif" font-weight="700" fill="var(--muted)">0%</text>' : '') +
+      '</g>' +
+      // the splash sits where the mouth lands once the bottle has turned 90 degrees right, in the wine's own color
+      (spark ? '' : '<g class="splash" fill="' + fill + '"><path d="M62 43c7 0 11 5 11 13s-2 14-4 20h-5c1-6 2-12 1-18s-2-9-6-10z"/>' +
+        '<circle cx="71" cy="80" r="2.2"/><circle cx="65" cy="83" r="1.6"/><circle cx="77" cy="84" r="1.8"/><ellipse cx="70" cy="88" rx="11" ry="2.6"/></g>') +
       '</svg>';
   }
 
@@ -839,12 +881,64 @@ button.opt:hover { border-color: var(--accent); }
     $("view").innerHTML = v === "table" ? viewTable(rows) : v === "groups" ? viewGroups(rows) : v === "prices" ? viewPrices(rows) : viewGrid(rows);
   }
 
+  /* ---------- card open animations ---------- */
+  // Flags for the countries named on beer pages, drawn as SVG (flag emoji show as letters on Windows).
+  var FLAGS = {
+    "United States": '<svg viewBox="0 0 76 40"><rect width="76" height="40" fill="#b22234"/>' +
+      [1, 3, 5, 7, 9, 11].map(function (i) { return '<rect y="' + (i * 40 / 13).toFixed(2) + '" width="76" height="' + (40 / 13).toFixed(2) + '" fill="#fff"/>'; }).join("") +
+      '<rect width="30.4" height="21.54" fill="#3c3b6e"/>' +
+      [0, 1, 2, 3, 4].map(function (row) { return [0, 1, 2, 3, 4, 5].map(function (col) {
+        return '<circle cx="' + (2.6 + col * 5) + '" cy="' + (2.4 + row * 4.2) + '" r="1" fill="#fff"/>'; }).join(""); }).join("") + '</svg>',
+    "Mexico": '<svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#006847"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ce1126"/>' +
+      '<ellipse cx="30" cy="20" rx="5" ry="5.5" fill="#8c6a2e"/><path d="M25.5 23c2 2.5 7 2.5 9 0" stroke="#006847" stroke-width="1.2" fill="none"/></svg>',
+    "Belgium": '<svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#000"/><rect x="20" width="20" height="40" fill="#fdda24"/><rect x="40" width="20" height="40" fill="#ef3340"/></svg>',
+    "Germany": '<svg viewBox="0 0 60 40"><rect width="60" height="13.34" fill="#000"/><rect y="13.33" width="60" height="13.34" fill="#dd0000"/><rect y="26.66" width="60" height="13.34" fill="#ffce00"/></svg>',
+    "United Kingdom": '<svg viewBox="0 0 60 30"><clipPath id="ukT"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><rect width="60" height="30" fill="#012169"/>' +
+      '<path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#ukT)" stroke="#c8102e" stroke-width="4"/>' +
+      '<path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></svg>',
+    "Italy": '<svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#009246"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ce2b37"/></svg>',
+    "Denmark": '<svg viewBox="0 0 37 28"><rect width="37" height="28" fill="#c8102e"/><rect x="12" width="4" height="28" fill="#fff"/><rect y="12" width="37" height="4" fill="#fff"/></svg>',
+    "Japan": '<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff"/><circle cx="30" cy="20" r="12" fill="#bc002d"/></svg>'
+  };
+  var animBusy = false;
+  // One hook for every card: wine bottles pop or pour, beers spin the flag of the country they are made in.
+  function animateThenOpen(card, id) {
+    if (animBusy) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var svg = card.querySelector("svg.wine-btl");
+    var row = D.byId[id];
+    var flag = !svg && mode === "beer" && row && FLAGS[row.country];
+    if (reduce || (!svg && !flag)) { openDetail(id); return; }
+    var cls = svg ? (svg.getAttribute("data-anim") === "pop" ? "anim-pop" : "anim-pour") : "anim-flag";
+    var ms = { "anim-pop": 470, "anim-pour": 680, "anim-flag": 760 }[cls];
+    animBusy = true;
+    card.classList.remove("anim-pop", "anim-pour", "anim-flag");
+    var old = card.querySelector(".flag-pop"); if (old) old.remove();
+    if (flag) {
+      var f = document.createElement("span");
+      f.className = "flag-pop"; f.setAttribute("aria-hidden", "true"); f.title = row.country; f.innerHTML = flag;
+      card.appendChild(f);
+    }
+    void card.getBoundingClientRect(); // restart the animation if the same card is clicked again
+    card.classList.add(cls);
+    setTimeout(function () {
+      animBusy = false;
+      openDetail(id);
+      card.classList.remove(cls);
+      var fp = card.querySelector(".flag-pop"); if (fp) fp.remove();
+    }, ms);
+  }
+
   /* ---------- events ---------- */
   document.addEventListener("click", function (e) {
     var t = e.target.closest("[data-open],[data-field],[data-remove],[data-preset],[data-abv],[data-sort],[data-group]");
     if (!t || !D || !D.loaded) return;
     var st = D.st;
-    if (t.dataset.open) { openDetail(t.dataset.open); return; }
+    if (t.dataset.open) {
+      // a pointer click on a wine card plays its animation first; keyboard (detail 0) and reduced motion open at once
+      if (e.detail > 0 && t.classList.contains("card")) animateThenOpen(t, t.dataset.open); else openDetail(t.dataset.open);
+      return;
+    }
     if (t.dataset.field && t.tagName === "BUTTON") { setToggle(t.dataset.field, t.dataset.value); return; }
     if (t.dataset.preset !== undefined) {
       var p = M.presets[+t.dataset.preset];
