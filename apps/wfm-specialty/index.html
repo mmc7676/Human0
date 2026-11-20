@@ -1,0 +1,922 @@
+<title>WFM-Specialty</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: shelf-style workspace. Sticky header, filter rail on the left, results on the right; rail stacks above results on phones. */
+:root {
+  --bg: #f4f6f3;
+  --surface: #ffffff;
+  --surface-2: #e9efeb;
+  --fg: #1a2420;
+  --muted: #56635d;
+  --line: #d4ddd8;
+  --accent: #00674b;
+  --accent-soft: #e1efe9;
+  --on-accent: #ffffff;
+  --sale: #b4540f;
+  --sale-soft: #fbeadb;
+  --star: #c8102e;
+  --w-red: #8c1c2e;
+  --w-white: #d8c26a;
+  --w-rose: #e396a6;
+  --w-sparkling: #b9c79a;
+  --w-orange: #d98633;
+  --w-dessert: #9a5a22;
+  --w-none: #9aa1ad;
+  --shadow: 0 1px 2px rgba(20, 24, 33, .06), 0 6px 18px rgba(20, 24, 33, .06);
+  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --header-bg: #00563f;
+  --h-green: #00563f;
+  --header-band: #1d6b52;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1714; --surface: #16211c; --surface-2: #1e2c26; --fg: #e6efea; --muted: #9fb2a9; --line: #2c3d35;
+    --accent: #4fc79a; --accent-soft: #1a3a2e; --on-accent: #06150f; --sale: #f0a35e; --sale-soft: #3a2715; --header-bg: #0b3d2d; --header-band: #155a43; --star: #ff5c6c;
+    --w-red: #c2384f; --w-white: #e2cf7f; --w-rose: #eba3b2; --w-sparkling: #c3d1a4; --w-orange: #e6994d; --w-dessert: #c27d3e; --w-none: #7d8492;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1714; --surface: #16211c; --surface-2: #1e2c26; --fg: #e6efea; --muted: #9fb2a9; --line: #2c3d35;
+  --accent: #4fc79a; --accent-soft: #1a3a2e; --on-accent: #06150f; --sale: #f0a35e; --sale-soft: #3a2715; --header-bg: #0b3d2d; --header-band: #155a43; --star: #ff5c6c;
+  --w-red: #c2384f; --w-white: #e2cf7f; --w-rose: #eba3b2; --w-sparkling: #c3d1a4; --w-orange: #e6994d; --w-dessert: #c27d3e; --w-none: #7d8492;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 14px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; color: #ffffff;
+  /* desert photo banner under a light green wash so the white lettering stays readable */
+  background: linear-gradient(180deg, rgba(0, 52, 38, .58) 0%, rgba(0, 52, 38, .30) 100%), url("banner.jpg") center 38% / cover no-repeat, var(--header-bg);
+  border-bottom: 5px solid var(--h-green);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 10px;
+}
+.top-inner { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; max-width: 1480px; margin: 0 auto; }
+.brandmark { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.brandmark img { width: 56px; height: 56px; border-radius: 8px; display: block; }
+.brandmark h1 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; margin: 0; letter-spacing: -.01em; color: #ffffff;
+  text-shadow: 1px 1px 0 var(--h-green), 2px 2px 0 var(--h-green), 0 2px 6px rgba(0,0,0,.55); }
+.brandmark img { box-shadow: 0 0 0 2px #ffffff, 3px 3px 0 2px var(--h-green); }
+.h0 { display: inline-block; margin-top: 2px; font-family: var(--font-display); font-weight: 800; font-size: 2.1rem; line-height: 1; letter-spacing: .01em; color: #ffffff; transform: rotate(-3deg); transform-origin: left center;
+  text-shadow: 1px 1px 0 #d6efe4, 2px 2px 0 #a9dcc5, 3px 3px 0 #7cc8a6, 4px 4px 0 #4fae86, 5px 5px 0 #2a8a65, 6px 6px 0 #14684a, 8px 9px 10px rgba(0,0,0,.4); }
+@media (prefers-reduced-motion: no-preference) { .h0 { animation: h0bob 3.2s ease-in-out infinite; } @keyframes h0bob { 0%,100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(-1deg) translateY(-2px); } } }
+.brandmark p { margin: 0; color: var(--muted); font-size: .8rem; }
+.views { display: flex; gap: 4px; margin-left: auto; background: rgba(0, 86, 63, .78); border: 1px solid rgba(255,255,255,.55); padding: 3px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+.views a { text-decoration: none; padding: 6px 12px; border-radius: 8px; color: #ffffff; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,.45); }
+.views a:hover { background: rgba(255,255,255,.16); }
+.views a[aria-current="page"] { background: #ffffff; color: var(--h-green); text-shadow: none; box-shadow: var(--shadow); }
+
+.shell { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 20px; max-width: 1480px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 18px 40px; }
+aside.rail { display: flex; flex-direction: column; gap: 16px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 80px); align-self: start;
+  max-height: calc(100vh - 100px); overflow-y: auto; padding-right: 4px; }
+.rail-head { display: flex; justify-content: space-between; align-items: baseline; }
+.rail-head h2 { font-family: var(--font-display); font-size: 1rem; margin: 0; }
+.linkbtn { background: none; border: 0; color: var(--accent); cursor: pointer; padding: 2px 0; font-weight: 500; }
+.linkbtn:disabled { color: var(--muted); cursor: default; }
+fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+legend, .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: 4px; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 10px; cursor: pointer; font-size: .82rem; }
+.chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.chip .ct { color: var(--muted); font-family: var(--font-data); font-size: .74rem; }
+.chip:disabled { opacity: .45; cursor: default; }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; border: 1px solid rgba(0,0,0,.15); }
+.checklist { display: flex; flex-direction: column; gap: 2px; max-height: 210px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 6px; }
+.checklist label { display: flex; align-items: center; gap: 8px; padding: 3px 4px; border-radius: 6px; cursor: pointer; font-size: .85rem; }
+.checklist label:hover { background: var(--surface-2); }
+.checklist label .ct { margin-left: auto; color: var(--muted); font-family: var(--font-data); font-size: .74rem; }
+.checklist label.zero { color: var(--muted); }
+.mini-search { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); margin-bottom: 4px; }
+.pricebox { display: grid; grid-template-columns: 1fr auto 1fr; gap: 6px; align-items: center; }
+.pricebox input { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+select.plain { padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+
+main { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.search { flex: 1 1 260px; position: relative; min-width: 0; }
+.search input { width: 100%; padding: 10px 12px 10px 36px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.count { color: var(--muted); }
+.count strong { color: var(--fg); font-family: var(--font-data); }
+.active { display: flex; flex-wrap: wrap; gap: 6px; }
+.active .chip { background: var(--accent-soft); border-color: transparent; }
+.filters-toggle { display: none; }
+/* side Filters rail, and the backdrop behind the cards, in the banner green; chips, lists, inputs and cards stay light */
+aside.rail { background: var(--h-green); color: #ffffff; padding: 14px 12px; border-radius: 12px; box-shadow: var(--shadow); }
+aside.rail legend, aside.rail .label, aside.rail .hint, aside.rail .rail-head h2 { color: #ffffff; }
+aside.rail .linkbtn { color: #ffffff; text-decoration: underline; }
+aside.rail .linkbtn:disabled { color: rgba(255,255,255,.6); text-decoration: none; }
+aside.rail .chip, aside.rail .checklist, aside.rail input, aside.rail select { color: var(--fg); }
+aside.rail .chip:disabled { opacity: .6; }
+#view { background: var(--h-green); padding: 14px; border-radius: 12px; }
+#view .groupbar .hint { color: rgba(255,255,255,.9); }
+#view .card { border-color: rgba(255,255,255,.25); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 4px 12px; text-align: left; cursor: pointer; align-content: start; }
+.card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+.card .bottle { grid-row: span 4; }
+.card .b { font-size: .78rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; overflow-wrap: anywhere; }
+.card .n { font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+.card .meta { color: var(--muted); font-size: .8rem; }
+.card .pr { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; margin-top: 4px; }
+.price { font-family: var(--font-data); font-weight: 500; font-size: 1rem; }
+.was { font-family: var(--font-data); color: var(--muted); text-decoration: line-through; font-size: .8rem; }
+.off { background: var(--sale-soft); color: var(--sale); border-radius: 999px; padding: 1px 7px; font-size: .74rem; font-weight: 600; }
+.na { background: var(--surface-2); color: var(--muted); border-radius: 999px; padding: 1px 7px; font-size: .72rem; font-weight: 600; }
+
+.bottle { width: 34px; height: 92px; display: block; }
+.vr { display: inline-flex; align-items: baseline; gap: 3px; font-family: var(--font-data); font-size: .84rem; font-weight: 600; white-space: nowrap; }
+.vr .star { color: var(--star); font-size: 1em; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.vr .cnt { color: var(--muted); font-weight: 400; font-size: .74rem; }
+.viv { margin: 4px 0 8px; display: flex; flex-direction: column; gap: 6px; }
+.viv a { color: var(--accent); font-size: .8rem; }
+.cloud { display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; line-height: 1.15; padding: 8px 10px; background: var(--surface-2); border-radius: 10px; }
+.cloud span { color: var(--fg); }
+.cloud .w1 { color: var(--muted); }
+.cloud-empty { font-size: .8rem; color: var(--muted); padding: 6px 10px; border: 1px dashed var(--line); border-radius: 10px; }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 980px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { position: sticky; top: 0; background: var(--surface-2); font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); white-space: nowrap; }
+th button { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; }
+th button[aria-sort] { color: var(--fg); }
+td.r, th.r { text-align: right; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--surface-2); }
+td .cell-name { font-weight: 500; }
+
+.groupbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.groups { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.grow { display: grid; grid-template-columns: minmax(120px, 220px) 60px minmax(0, 1fr) 150px; gap: 12px; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--line); cursor: pointer; background: none; border-left: 0; border-right: 0; border-top: 0; width: 100%; text-align: left; }
+.grow:hover { background: var(--surface-2); }
+.grow:last-child { border-bottom: 0; }
+.grow .gk { font-weight: 500; overflow-wrap: anywhere; display: flex; align-items: center; gap: 8px; }
+.grow .gc { font-family: var(--font-data); text-align: right; }
+.grow .gr { font-family: var(--font-data); color: var(--muted); font-size: .8rem; text-align: right; }
+.grow svg { width: 100%; height: 22px; display: block; }
+.ghead { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; background: var(--surface-2); cursor: default; }
+.ghead:hover { background: var(--surface-2); }
+
+.chartcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; overflow-x: auto; }
+.chartcard svg { display: block; min-width: 620px; width: 100%; }
+.chartcard text { fill: var(--muted); font-family: var(--font-data); font-size: 11px; }
+.chartcard .lane { fill: var(--fg); font-family: var(--font-body); font-size: 12px; font-weight: 500; }
+.chartcard .gridline { stroke: var(--line); stroke-width: 1; }
+.chartcard circle.pt { cursor: pointer; stroke: var(--surface); stroke-width: 1; }
+.chartcard circle.pt:hover { stroke: var(--fg); stroke-width: 2; }
+.chartcard .med { stroke: var(--fg); stroke-width: 2; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: .8rem; margin-top: 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.hint { color: var(--muted); font-size: .82rem; margin: 0; }
+
+.empty { padding: 40px 20px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; }
+
+dialog { border: 0; padding: 0; background: var(--surface); color: var(--fg); width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 48px); border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+dialog::backdrop { background: rgba(10, 12, 18, .5); }
+.dlg { display: flex; flex-direction: column; max-height: calc(100vh - 48px); }
+.dlg-head { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 14px; padding: 18px 18px 14px; border-bottom: 1px solid var(--line); align-items: start; }
+.dlg-head h2 { font-family: var(--font-display); font-size: 1.3rem; margin: 2px 0 4px; line-height: 1.2; text-wrap: balance; }
+.dlg-head .b { font-size: .78rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.close { background: var(--surface-2); border: 0; border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 1.1rem; }
+.dlg-body { overflow-y: auto; padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 16px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px 16px; }
+.facts div { min-width: 0; }
+.facts dt { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+.facts dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.prose h3 { font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; }
+.prose p { margin: 0; max-width: 65ch; }
+.prose ul { margin: 0; padding-left: 18px; max-width: 65ch; }
+.prose li + li { margin-top: 4px; }
+.kv { width: 100%; min-width: 0; border-collapse: collapse; }
+.kv th { position: static; background: none; width: 40%; }
+.kv td, .kv th { padding: 5px 8px; font-size: .85rem; }
+.btn { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: var(--on-accent); text-decoration: none; padding: 8px 14px; border-radius: 9px; font-weight: 600; align-self: flex-start; }
+.src { color: var(--muted); font-size: .78rem; font-family: var(--font-data); overflow-wrap: anywhere; }
+
+footer.note { max-width: 1480px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 32px; color: var(--muted); font-size: .8rem; }
+footer.note p { margin: 0 0 4px; max-width: 90ch; }
+
+@media (max-width: 860px) {
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  aside.rail { position: static; max-height: none; overflow: visible; padding-right: 0; }
+  aside.rail.collapsed > :not(.rail-head) { display: none; }
+  .filters-toggle { display: inline-flex; }
+  .views { margin-left: 0; width: 100%; }
+  .views a { flex: 1; text-align: center; padding: 6px 4px; }
+  .grow { grid-template-columns: minmax(0, 1fr) 44px; }
+  .grow svg, .grow .gr { grid-column: 1 / -1; text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card, .chip, .grow { transition: border-color .12s, background-color .12s, box-shadow .12s; }
+}
+/* Wine | Beer switch over the photo banner: white letters on green pills, the current one boxed in white. */
+.modes { display: flex; align-items: center; gap: 6px; margin-left: 8px; }
+.modes a { color: #ffffff; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; padding: 4px 14px; border-radius: 10px; line-height: 1.2;
+  background: rgba(0, 86, 63, .72); border: 2px solid rgba(255,255,255,.35); text-shadow: 1px 1px 0 var(--h-green), 0 1px 4px rgba(0,0,0,.5); box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+.modes a:hover { background: rgba(0, 86, 63, .9); border-color: rgba(255,255,255,.7); }
+.modes a[aria-current="page"] { font-weight: 800; border-color: #ffffff; background: var(--h-green); }
+.modes .sep { color: #ffffff; font-size: 1.35rem; font-weight: 300; opacity: .95; text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+.unit { color: var(--muted); font-family: var(--font-data); font-size: .76rem; }
+.abvtag { font-family: var(--font-data); font-size: .76rem; color: var(--muted); }
+.opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.opt { display: inline-flex; gap: 6px; align-items: baseline; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-size: .82rem; background: var(--surface); }
+.opt[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+button.opt { cursor: pointer; }
+button.opt:hover { border-color: var(--accent); }
+.warn { color: var(--sale); font-size: .8rem; }
+@media (max-width: 860px) { .modes { margin-left: 0; } }
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brandmark">
+      <img src="human0-logo.jpg" alt="Human0 logo" width="44" height="44">
+      <div>
+        <h1>WFM-Specialty</h1>
+        <span class="h0" aria-label="Human0">Human0</span>
+      </div>
+    </div>
+    <nav class="modes" aria-label="Department">
+      <a href="#beer/grid" data-mode="beer">Beer</a><span class="sep" aria-hidden="true">|</span><a href="#grid" data-mode="wine">Wine</a>
+    </nav>
+    <nav class="views" aria-label="Views">
+      <a href="#grid" data-view="grid">Grid</a>
+      <a href="#table" data-view="table">Table</a>
+      <a href="#groups" data-view="groups">Groups</a>
+      <a href="#prices" data-view="prices">Prices</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="rail collapsed" id="rail" aria-label="Filters">
+    <div class="rail-head">
+      <h2>Filters</h2>
+      <div style="display:flex;gap:12px">
+        <button class="linkbtn" id="clearAll" type="button">Clear all</button>
+        <button class="linkbtn filters-toggle" id="railToggle" type="button" aria-expanded="false" aria-controls="rail">Show</button>
+      </div>
+    </div>
+    <fieldset><legend>Type</legend><div class="chips" id="f-type"></div></fieldset>
+    <fieldset>
+      <legend>Price (USD)</legend>
+      <div class="pricebox">
+        <input id="pmin" type="number" inputmode="decimal" min="0" step="1" placeholder="Min" aria-label="Minimum price">
+        <span class="hint">to</span>
+        <input id="pmax" type="number" inputmode="decimal" min="0" step="1" placeholder="Max" aria-label="Maximum price">
+      </div>
+      <div class="chips" id="pricePresets"></div>
+    </fieldset>
+    <fieldset id="abvSet" data-only="beer">
+      <legend>ABV</legend>
+      <div class="chips" id="abvPresets"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Alcohol</legend>
+      <label class="toggle">Alcohol
+        <select class="plain" id="alcohol"></select>
+      </label>
+    </fieldset>
+    <fieldset id="vivinoSet" data-only="wine">
+      <legend>Vivino rating</legend>
+      <label class="toggle">Minimum
+        <select class="plain" id="minRating">
+          <option value="">Any rating</option>
+          <option value="3.5">3.5 and up</option>
+          <option value="3.8">3.8 and up</option>
+          <option value="4">4.0 and up</option>
+          <option value="4.2">4.2 and up</option>
+        </select>
+      </label>
+      <label class="toggle">Vivino match
+        <select class="plain" id="vivino">
+          <option value="any">All wines</option>
+          <option value="matched">Matched on Vivino</option>
+          <option value="unmatched">Not matched</option>
+        </select>
+      </label>
+    </fieldset>
+    <div id="lists" style="display:flex;flex-direction:column;gap:16px"></div>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search" aria-label="Search">
+      </div>
+      <label class="toggle" id="sortWrap"><span class="hint">Sort</span>
+        <select class="plain" id="sort"></select>
+      </label>
+    </div>
+    <div class="toolbar">
+      <div class="count" id="count" aria-live="polite"></div>
+      <div class="active" id="active"></div>
+    </div>
+    <section id="view" aria-live="polite"></section>
+  </main>
+</div>
+
+<footer class="note" id="footer"></footer>
+
+<dialog id="detail" aria-labelledby="dTitle"><div class="dlg" id="dlgInner"></div></dialog>
+
+<script src="core.js"></script>
+<script>
+(function () {
+  "use strict";
+  var C = window.ShelfCore, NONE = C.NONE;
+  var VIEWS = ["grid", "table", "groups", "prices"];
+  var DESC_FIRST = ["off", "abv", "rating", "ratings", "pack"];
+  var $ = function (id) { return document.getElementById(id); };
+
+  function money(v) { return v === null || v === undefined ? "" : "$" + v.toFixed(2); }
+  function esc(s) { return String(s === null || s === undefined ? "" : s).replace(/[&<>"']/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]; }); }
+  function has(v) { return v !== null && v !== undefined; }
+
+  /* ---------- wine look ---------- */
+  var COLOR_VAR = { "red": "--w-red", "white": "--w-white", "rosé": "--w-rose", "sparkling": "--w-sparkling", "orange": "--w-orange", "dessert": "--w-dessert" };
+  var COLOR_LABEL = { "red": "Red", "white": "White", "rosé": "Rosé", "sparkling": "Sparkling", "orange": "Orange", "dessert": "Dessert" };
+  function wineColor(c) { return "var(" + (COLOR_VAR[c] || "--w-none") + ")"; }
+  function colorLabel(c) { return COLOR_LABEL[c] || NONE; }
+
+  function bottleSVG(r) {
+    var fill = wineColor(r.color);
+    var spark = r.color === "sparkling";
+    return '<svg class="bottle" viewBox="0 0 34 92" aria-hidden="true">' +
+      '<path d="M13 2h8v20c0 4 9 8 9 18v46a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V40c0-10 9-14 9-18z" fill="' + fill + '"/>' +
+      (spark ? '<rect x="12" y="0" width="10" height="12" rx="2" fill="var(--w-white)"/>' : '<rect x="13" y="0" width="8" height="6" rx="1.5" fill="var(--fg)" opacity=".55"/>') +
+      '<rect x="7" y="50" width="20" height="22" rx="2" fill="var(--surface)" opacity=".82"/>' +
+      (r.non_alcoholic ? '<text x="17" y="64" text-anchor="middle" font-size="8" font-family="Inter, sans-serif" font-weight="700" fill="var(--muted)">0%</text>' : '') +
+      '</svg>';
+  }
+
+  /* ---------- beer look ---------- */
+  var FAMILY_COLOR = { "IPA": "#c9822b", "Pale ale": "#d9a441", "Lager & pilsner": "#e8c547", "Wheat": "#f0dc8a", "Blonde & other ale": "#dcb04c",
+    "Belgian & farmhouse": "#b5652a", "Stout & porter": "#3b2418", "Fruit, sour & radler": "#b8325a", "Variety pack": "#7a8f5a",
+    "Cider": "#9cbf4a", "Hard seltzer": "#8fc6d9", "Kombucha, tea & other": "#c77fb0", "Sake & rice wine": "#e8dcc0" };
+  function familyColor(f) { return FAMILY_COLOR[f] || "var(--w-none)"; }
+  function abvText(r) { return r.abv_lt ? "under " + r.abv + "%" : has(r.abv) ? r.abv + "%" : ""; }
+
+  function beerSVG(r) {
+    var fill = familyColor(r.family);
+    var pack = r.pack_count && r.pack_count > 1 ? '<text x="17" y="' + (r.container === "Can" ? 57 : 61) + '" text-anchor="middle" font-size="9" font-family="Inter, sans-serif" font-weight="700" fill="var(--fg)">×' + r.pack_count + '</text>' : '';
+    var na = r.non_alcoholic ? '<text x="17" y="' + (r.container === "Can" ? 67 : 71) + '" text-anchor="middle" font-size="8" font-family="Inter, sans-serif" font-weight="700" fill="var(--muted)">0%</text>' : '';
+    if (r.container === "Can") {
+      return '<svg class="bottle" viewBox="0 0 34 92" aria-hidden="true">' +
+        '<rect x="8" y="16" width="18" height="5" rx="2" fill="var(--muted)" opacity=".6"/>' +
+        '<rect x="5" y="20" width="24" height="66" rx="5" fill="' + fill + '"/>' +
+        '<rect x="7" y="46" width="20" height="26" rx="2" fill="var(--surface)" opacity=".82"/>' + pack + na + '</svg>';
+    }
+    return '<svg class="bottle" viewBox="0 0 34 92" aria-hidden="true">' +
+      '<rect x="13" y="0" width="8" height="6" rx="1.5" fill="var(--fg)" opacity=".55"/>' +
+      '<path d="M14 4h6v20c0 5 9 9 9 17v45a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V41c0-8 9-12 9-17z" fill="' + fill + '"/>' +
+      '<rect x="7" y="50" width="20" height="26" rx="2" fill="var(--surface)" opacity=".82"/>' + pack + na + '</svg>';
+  }
+
+  /* ---------- per-department settings ---------- */
+  var FACT_LABELS = { country_of_origin: "Country of origin", type_of_wine: "Type of wine", alcohol_by_volume: "Alcohol by volume", type_of_blend: "Type of blend",
+    varietal: "Varietal", alcohol_content: "Alcohol content", "import": "Import", appellation: "Appellation", country_string: "Country", abv: "ABV", grapes: "Grapes" };
+
+  var MODES = {
+    wine: {
+      core: C.WINE, file: "wines.json", one: "wine", many: "wines", Many: "Wines",
+      search: "Search brand, wine, varietal, region, tasting notes",
+      lists: [["varietal", "Varietal", true], ["country", "Country"], ["brand", "Brand", true], ["size", "Size"]],
+      presets: [[null, 15, "Under $15"], [15, 25, "$15 to $25"], [25, 40, "$25 to $40"], [40, null, "$40 and up"]],
+      sorts: [["store:asc", "Store order"], ["price:asc", "Price, low to high"], ["price:desc", "Price, high to low"], ["off:desc", "Biggest discount"],
+        ["brand:asc", "Brand A to Z"], ["name:asc", "Wine name A to Z"], ["varietal:asc", "Varietal A to Z"], ["abv:desc", "ABV, high to low"],
+        ["rating:desc", "Vivino rating, high to low"], ["ratings:desc", "Most Vivino ratings"]],
+      groupBy: "varietal", lane: "color",
+      groups: [["varietal", "Varietal"], ["country", "Country"], ["color", "Type"], ["brand", "Brand"], ["size", "Size"], ["aisle", "In-store location"]],
+      lanes: [["color", "Type"], ["varietal", "Varietal (top 14)"], ["country", "Country"], ["size", "Size"]],
+      typeColor: function (v) { return wineColor(v === NONE ? null : v); }, typeLabel: function (v) { return v === NONE ? NONE : colorLabel(v); },
+      rowColor: function (r) { return wineColor(r.color); },
+      icon: bottleSVG,
+      meta: function (r) { return [r.varietal || null, r.country || null, r.size || NONE].filter(Boolean).join(" · "); },
+      extraPrice: function (r) { return ratingHTML(r, true); },
+      cols: [
+        ["brand", "Brand", "", function (r) { return esc(r.brand); }],
+        ["name", "Wine", "", function (r) { return '<span class="cell-name">' + esc(r.name) + '</span>' + (r.non_alcoholic ? ' <span class="na">0%</span>' : ''); }],
+        ["varietal", "Varietal", "", function (r) { return esc(r.varietal || ""); }],
+        ["color", "Type", "", function (r) { return '<span style="display:inline-flex;gap:6px;align-items:center"><span class="dot" style="background:' + wineColor(r.color) + '"></span>' + esc(r.color ? colorLabel(r.color) : "") + '</span>'; }],
+        ["country", "Country", "", function (r) { return esc(r.country || ""); }],
+        ["size", "Size", "num", function (r) { return esc(r.size || ""); }],
+        ["price", "Price", "r num", function (r) { return money(r.price) + (r.list_price ? '<br><span class="was">' + money(r.list_price) + '</span>' : ''); }],
+        ["off", "Off", "r num", function (r) { return r.off_pct ? r.off_pct + "%" : ""; }],
+        ["abv", "ABV", "r num", function (r) { return has(r.abv) ? r.abv + "%" : ""; }],
+        ["rating", "Vivino", "r", function (r) { return ratingHTML(r, false); }],
+        ["aisle", "In store", "", function (r) { return esc(r.aisle || ""); }]
+      ],
+      detail: wineDetail,
+      footer: function (n) {
+        return '<p>Snapshot of the Whole Foods wine MCP server\'s data: ' + n + ' wines from the "wine" search at Whole Foods Market, shown for delivery to 92211, captured November 19, 2026. Prices and discounts are as listed that day. This page reads that saved data; it does not stream live from the server.</p>' +
+          '<p>Country is worked out from each bottle\'s label and description text and is blank where neither names one. The store pages did not expose bottle photo addresses, so bottles are drawn in their wine color.</p>' +
+          '<p>Vivino ratings were read from each wine\'s page on vivino.com on November 19, 2026, and cover all vintages. A rating is shown only when the Vivino page names the same producer and the same wine. The word cloud counts words from up to 10 Vivino reviews per wine, with reviewer names left out.</p>';
+      }
+    },
+    beer: {
+      core: C.BEER, file: "beers.json", one: "beer", many: "beers", Many: "Beers",
+      search: "Search brand, beer, style, flavor, ingredients",
+      lists: [["style", "Style", true], ["brand", "Brand", true], ["pack", "Pack size"], ["container", "Container"], ["country", "Country"]],
+      presets: [[null, 10, "Under $10"], [10, 15, "$10 to $15"], [15, 20, "$15 to $20"], [20, null, "$20 and up"]],
+      abv: [[null, 5, "Under 5%"], [5, 7, "5% to 7%"], [7, null, "7% and up"]],
+      sorts: [["store:asc", "Store order"], ["price:asc", "Price, low to high"], ["price:desc", "Price, high to low"],
+        ["per_oz:asc", "Price per fl oz, low to high"], ["per_unit:asc", "Price per can or bottle, low to high"], ["off:desc", "Biggest discount"],
+        ["brand:asc", "Brand A to Z"], ["name:asc", "Beer name A to Z"], ["style:asc", "Style A to Z"], ["abv:desc", "ABV, high to low"], ["pack:desc", "Biggest pack"]],
+      groupBy: "family", lane: "family",
+      groups: [["family", "Type"], ["style", "Style"], ["brand", "Brand"], ["pack", "Pack size"], ["container", "Container"], ["country", "Country"], ["aisle", "In-store location"]],
+      lanes: [["family", "Type"], ["style", "Style (top 14)"], ["pack", "Pack size"], ["container", "Container"], ["brand", "Brand (top 14)"]],
+      typeColor: function (v) { return familyColor(v); }, typeLabel: function (v) { return v; },
+      rowColor: function (r) { return familyColor(r.family); },
+      icon: beerSVG,
+      meta: function (r) { return [r.style || null, r.pack || null, r.container_label || null].filter(Boolean).join(" · "); },
+      extraPrice: function (r) {
+        return (r.pack_count > 1 && has(r.per_unit) ? '<span class="unit">' + money(r.per_unit) + ' each</span>' : '') +
+          (has(r.abv) ? '<span class="abvtag">' + esc(abvText(r)) + ' ABV</span>' : '');
+      },
+      cols: [
+        ["brand", "Brand", "", function (r) { return esc(r.brand); }],
+        ["name", "Beer", "", function (r) { return '<span class="cell-name">' + esc(r.name) + '</span>' + (r.non_alcoholic ? ' <span class="na">0%</span>' : ''); }],
+        ["style", "Style", "", function (r) { return esc(r.style || ""); }],
+        ["family", "Type", "", function (r) { return '<span style="display:inline-flex;gap:6px;align-items:center"><span class="dot" style="background:' + familyColor(r.family) + '"></span>' + esc(r.family || "") + '</span>'; }],
+        ["pack", "Pack", "num", function (r) { return esc(r.pack || ""); }],
+        ["container", "Container", "num", function (r) { return esc(r.container_label || ""); }],
+        ["price", "Price", "r num", function (r) { return money(r.price) + (r.list_price ? '<br><span class="was">' + money(r.list_price) + '</span>' : ''); }],
+        ["per_unit", "Each", "r num", function (r) { return money(r.per_unit); }],
+        ["per_oz", "Per fl oz", "r num", function (r) { return has(r.per_oz) ? "$" + r.per_oz.toFixed(3) : ""; }],
+        ["off", "Off", "r num", function (r) { return r.off_pct ? r.off_pct + "%" : ""; }],
+        ["abv", "ABV", "r num", function (r) { return esc(abvText(r)); }],
+        ["aisle", "In store", "", function (r) { return esc(r.aisle || ""); }]
+      ],
+      detail: beerDetail,
+      footer: function (n) {
+        return '<p>Snapshot of the Whole Foods beer MCP server\'s data: ' + n + ' drinks from the "beer" search at Whole Foods Market, shown for delivery to 92211, captured November 20, 2026. Prices and discounts are as listed that day. This page reads that saved data; it does not stream live from the server.</p>' +
+          '<p>Items in that search that are not beer or a hard drink sold with it (sodas, ginger beers, mocktails, wine and sake) are left out. Each pack size and flavor is its own store listing, so it has its own card.</p>' +
+          '<p>Pack count, can or bottle size, ABV, style and country are read from each listing\'s own title and description. Price per can or bottle and per fl oz are worked out from the listed price. The store pages did not expose photo addresses, so cans and bottles are drawn in their type color.</p>';
+      }
+    }
+  };
+
+  /* ---------- state ---------- */
+  var DATA = {}, mode = null, M = null, D = null;
+
+  function parseHash() {
+    var parts = (location.hash || "").replace(/^#/, "").split("/");
+    var m = parts[0] === "beer" || parts[0] === "wine" ? parts.shift() : "wine";
+    return { mode: m, view: VIEWS.indexOf(parts[0]) !== -1 ? parts[0] : "grid" };
+  }
+  function hashFor(m, v) { return "#" + (m === "beer" ? "beer/" : "") + v; }
+
+  function load(m) {
+    var d = DATA[m];
+    if (d.loading || d.loaded) return;
+    d.loading = true;
+    fetch(MODES[m].file).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).then(function (rows) {
+      d.rows = rows; d.loaded = true; d.loading = false;
+      rows.forEach(function (r) { d.byId[r.id] = r; if (r.asin) d.byAsin[r.asin] = r; });
+      if (mode === m) render();
+    }).catch(function (err) {
+      d.loading = false; d.error = err.message;
+      if (mode === m) render();
+    });
+  }
+
+  function setMode(m) {
+    mode = m; M = MODES[m];
+    C.configure(M.core);
+    if (!DATA[m]) DATA[m] = { rows: [], byId: {}, byAsin: {}, st: C.emptyState(), sortKey: "store", sortDir: "asc", groupBy: M.groupBy, lane: M.lane, lists: {} };
+    D = DATA[m];
+    document.querySelectorAll("[data-only]").forEach(function (el) { el.hidden = el.dataset.only !== m; });
+    $("alcohol").innerHTML = '<option value="any">All ' + M.many + '</option><option value="exclude_na">Hide non-alcoholic</option><option value="only_na">Non-alcoholic only</option>';
+    $("sort").innerHTML = M.sorts.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join("");
+    $("lists").innerHTML = M.lists.map(function (l) {
+      return '<fieldset><legend>' + l[1] + '</legend>' +
+        (l[2] ? '<input class="mini-search" id="s-' + l[0] + '" data-list="' + l[0] + '" placeholder="Find a ' + l[1].toLowerCase() + '" aria-label="Find a ' + l[1].toLowerCase() + '">' : '') +
+        '<div class="checklist" id="f-' + l[0] + '"></div></fieldset>';
+    }).join("");
+    M.lists.forEach(function (l) { if (l[2]) $("s-" + l[0]).value = D.lists[l[0]] || ""; });
+    $("q").value = D.st.q; $("q").placeholder = M.search; $("q").setAttribute("aria-label", "Search " + M.many);
+    $("pmin").value = has(D.st.priceMin) ? D.st.priceMin : ""; $("pmax").value = has(D.st.priceMax) ? D.st.priceMax : "";
+    $("alcohol").value = D.st.alcohol;
+    if (m === "wine") { $("minRating").value = has(D.st.minRating) ? String(D.st.minRating) : ""; $("vivino").value = D.st.vivino; }
+    $("footer").innerHTML = "";
+    load(m);
+  }
+
+  /* ---------- filters rail ---------- */
+  function setToggle(field, value) {
+    var arr = D.st[field], i = arr.indexOf(value);
+    if (i === -1) arr.push(value); else arr.splice(i, 1);
+    render();
+  }
+
+  function renderTypeChips() {
+    var f = C.cfg().typeField, counts = C.facetCounts(D.rows, D.st, f);
+    $("f-type").innerHTML = C.facetValues(D.rows, f).map(function (x) {
+      var n = counts[x.value] || 0, on = D.st[f].indexOf(x.value) !== -1;
+      return '<button type="button" class="chip" data-field="' + f + '" data-value="' + esc(x.value) + '" aria-pressed="' + on + '"' + (n || on ? "" : " disabled") + '>' +
+        '<span class="dot" style="background:' + M.typeColor(x.value) + '"></span>' + esc(M.typeLabel(x.value)) +
+        ' <span class="ct">' + n + '</span></button>';
+    }).join("");
+  }
+
+  function renderChecklist(field) {
+    var box = $("f-" + field); if (!box) return;
+    var counts = C.facetCounts(D.rows, D.st, field);
+    var ft = (D.lists[field] || "").toLowerCase();
+    var items = C.facetValues(D.rows, field).filter(function (f) {
+      return !ft || f.value.toLowerCase().indexOf(ft) !== -1 || D.st[field].indexOf(f.value) !== -1;
+    });
+    // Selected values first so they stay visible.
+    items.sort(function (a, b) { return (D.st[field].indexOf(b.value) !== -1) - (D.st[field].indexOf(a.value) !== -1); });
+    box.innerHTML = items.length ? items.map(function (f, i) {
+      var n = counts[f.value] || 0, on = D.st[field].indexOf(f.value) !== -1, id = "cb-" + field + "-" + i;
+      return '<label class="' + (n ? "" : "zero") + '" for="' + id + '"><input type="checkbox" id="' + id + '" data-field="' + field + '" data-value="' + esc(f.value) + '"' + (on ? " checked" : "") + '>' +
+        '<span>' + esc(f.value) + '</span><span class="ct">' + n + '</span></label>';
+    }).join("") : '<span class="hint" style="padding:4px">No match</span>';
+  }
+
+  function renderPresets() {
+    $("pricePresets").innerHTML = M.presets.map(function (p, i) {
+      var on = D.st.priceMin === p[0] && D.st.priceMax === p[1];
+      return '<button type="button" class="chip" data-preset="' + i + '" aria-pressed="' + on + '">' + p[2] + '</button>';
+    }).join("");
+    if (M.abv) {
+      $("abvPresets").innerHTML = M.abv.map(function (p, i) {
+        var on = D.st.abvMin === p[0] && D.st.abvMax === p[1];
+        return '<button type="button" class="chip" data-abv="' + i + '" aria-pressed="' + on + '">' + p[2] + '</button>';
+      }).join("");
+    }
+  }
+
+  function renderActive() {
+    var bits = [], st = D.st, tf = C.cfg().typeField;
+    if (st.q) bits.push(['q', null, 'Search: "' + st.q + '"']);
+    C.cfg().setFields.forEach(function (f) {
+      st[f].forEach(function (v) { bits.push([f, v, f === tf ? M.typeLabel(v) : v]); });
+    });
+    if (st.priceMin !== null || st.priceMax !== null) {
+      bits.push(["price", null, st.priceMin !== null && st.priceMax !== null ? money(st.priceMin) + " to " + money(st.priceMax) :
+        st.priceMin !== null ? money(st.priceMin) + " and up" : "Up to " + money(st.priceMax)]);
+    }
+    if (mode === "beer" && (st.abvMin !== null || st.abvMax !== null)) {
+      bits.push(["abv", null, st.abvMin !== null && st.abvMax !== null ? "ABV " + st.abvMin + "% to " + st.abvMax + "%" :
+        st.abvMin !== null ? "ABV " + st.abvMin + "% and up" : "ABV under " + st.abvMax + "%"]);
+    }
+    if (st.alcohol !== "any") bits.push(["alcohol", null, st.alcohol === "only_na" ? "Non-alcoholic only" : "Hiding non-alcoholic"]);
+    if (mode === "wine") {
+      if (st.minRating !== null) bits.push(["minRating", null, "Vivino " + st.minRating.toFixed(1) + " and up"]);
+      if (st.vivino !== "any") bits.push(["vivino", null, st.vivino === "matched" ? "Matched on Vivino" : "Not matched on Vivino"]);
+    }
+    $("active").innerHTML = bits.map(function (b) {
+      return '<button type="button" class="chip" data-remove="' + b[0] + '" data-value="' + esc(b[1] === null ? "" : b[1]) + '" aria-label="Remove filter ' + esc(b[2]) + '">' + esc(b[2]) + ' <span aria-hidden="true">×</span></button>';
+    }).join("");
+    $("clearAll").disabled = !bits.length;
+  }
+
+  /* ---------- Vivino (wine only) ---------- */
+  function ratingHTML(r, withCount) {
+    if (r.v_rating === null || r.v_rating === undefined) return "";
+    return '<span class="vr" title="Vivino rating"><span class="star" aria-hidden="true">★</span>' + r.v_rating.toFixed(1) +
+      '<span class="sr">Vivino rating</span>' +
+      (withCount && r.v_count ? '<span class="cnt">(' + r.v_count.toLocaleString("en-US") + ')</span>' : '') + '</span>';
+  }
+  function vivinoBlock(r) {
+    var cloud;
+    if (r.v_status !== "matched") {
+      cloud = '<div class="cloud-empty" data-cloud="none">No Vivino match for this wine, so there is no word cloud.</div>';
+    } else if (!r.v_cloud || !r.v_cloud.length) {
+      cloud = '<div class="cloud-empty" data-cloud="empty">No Vivino reviews stored for this wine yet, so the word cloud is empty.</div>';
+    } else {
+      var max = r.v_cloud[0][1], min = r.v_cloud[r.v_cloud.length - 1][1];
+      cloud = '<div class="cloud" data-cloud="words" aria-label="Words used most in Vivino reviews">' + r.v_cloud.map(function (c) {
+        var t = max === min ? 0.5 : (c[1] - min) / (max - min);
+        return '<span class="' + (t < 0.2 ? "w1" : "") + '" style="font-size:' + (0.8 + t * 0.9).toFixed(2) + 'rem;font-weight:' + (t > 0.6 ? 700 : t > 0.3 ? 600 : 400) + '" title="' + c[1] + ' mentions">' + esc(c[0]) + '</span>';
+      }).join("") + '</div>';
+    }
+    var head = r.v_status === "matched" ?
+      '<div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap">' +
+        (r.v_rating !== null && r.v_rating !== undefined ? ratingHTML(r, true) : '<span class="hint">Vivino shows no average rating yet</span>') +
+        (r.v_url ? '<a href="' + esc(r.v_url) + '" target="_blank" rel="noopener noreferrer">Vivino page ↗</a>' : '') +
+        (r.v_winery_url ? '<a href="' + esc(r.v_winery_url) + '" target="_blank" rel="noopener noreferrer">' + esc(r.v_winery || "Winery") + ' on Vivino ↗</a>' : '') +
+      '</div>' : '';
+    return '<div class="viv">' + head + cloud + '</div>';
+  }
+
+  /* ---------- views ---------- */
+  function viewGrid(rows) {
+    return '<div class="grid">' + rows.map(function (r) {
+      return '<button type="button" class="card" data-open="' + r.id + '">' + M.icon(r) +
+        '<span class="b">' + esc(r.brand) + '</span>' +
+        '<span class="n">' + esc(r.name) + '</span>' +
+        '<span class="meta">' + esc(M.meta(r)) + '</span>' +
+        '<span class="pr"><span class="price">' + money(r.price) + '</span>' +
+        (r.list_price ? '<span class="was">' + money(r.list_price) + '</span>' : '') +
+        (r.off_pct ? '<span class="off">' + r.off_pct + '% off</span>' : '') +
+        (r.non_alcoholic ? '<span class="na">Non-alcoholic</span>' : '') + M.extraPrice(r) + '</span></button>';
+    }).join("") + '</div>';
+  }
+
+  function viewTable(rows) {
+    var head = M.cols.map(function (c) {
+      var active = D.sortKey === c[0];
+      return '<th class="' + (c[2].indexOf("r") === 0 ? "r" : "") + '" scope="col"><button type="button" data-sort="' + c[0] + '"' + (active ? ' aria-sort="' + (D.sortDir === "asc" ? "ascending" : "descending") + '"' : "") + '>' +
+        c[1] + (active ? (D.sortDir === "asc" ? " ↑" : " ↓") : "") + '</button></th>';
+    }).join("");
+    var body = rows.map(function (r) {
+      return '<tr data-open="' + r.id + '" tabindex="0">' + M.cols.map(function (c) {
+        return '<td' + (c[2] ? ' class="' + c[2] + '"' : '') + '>' + c[3](r) + '</td>';
+      }).join("") + '</tr>';
+    }).join("");
+    return '<div class="tablewrap"><table><thead><tr>' + head + '</tr></thead><tbody>' + body + '</tbody></table></div>';
+  }
+
+  function axis() {
+    var maxPrice = Math.max.apply(null, D.rows.map(function (r) { return r.price || 0; }));
+    var step = maxPrice > 80 ? 10 : 5;
+    return { max: Math.ceil(maxPrice / step) * step, step: step };
+  }
+
+  function viewGroups(rows) {
+    var groupBy = D.groupBy, tf = C.cfg().typeField;
+    var groups = C.groupRows(rows, groupBy);
+    var axisMax = axis().max;
+    var opts = M.groups.map(function (g) { return '<option value="' + g[0] + '"' + (g[0] === groupBy ? " selected" : "") + '>' + g[1] + '</option>'; }).join("");
+    var clickable = C.cfg().setFields.indexOf(groupBy) !== -1;
+    var html = '<div class="groupbar"><label class="toggle"><span class="hint">Group by</span><select class="plain" id="groupBy">' + opts + '</select></label>' +
+      '<p class="hint">Bar shows the price spread from lowest to highest. Scale $0 to $' + axisMax + '.' + (clickable ? ' Select a group to filter to it.' : '') + '</p></div>';
+    html += '<div class="groups"><div class="grow ghead"><span>' + esc(M.groups.filter(function (g) { return g[0] === groupBy; })[0][1]) + '</span><span class="gc">' + M.Many + '</span><span>Price spread</span><span class="gr">Low · median · high</span></div>';
+    html += groups.map(function (g) {
+      var x = function (v) { return (v / axisMax * 100).toFixed(2); };
+      var label = groupBy === tf ? M.typeLabel(g.key) : g.key;
+      var dot = groupBy === tf ? '<span class="dot" style="background:' + M.typeColor(g.key) + '"></span>' : "";
+      var tag = clickable ? "button" : "div";
+      return '<' + tag + (clickable ? ' type="button" data-group="' + esc(g.key) + '"' : "") + ' class="grow"><span class="gk">' + dot + esc(label) + '</span><span class="gc">' + g.count + '</span>' +
+        '<svg viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true">' +
+        '<line x1="0" y1="11" x2="100" y2="11" stroke="var(--line)" stroke-width="1" vector-effect="non-scaling-stroke"/>' +
+        '<line x1="' + x(g.min) + '" y1="11" x2="' + x(g.max) + '" y2="11" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>' +
+        '</svg>' +
+        '<span class="gr">' + money(g.min) + ' · ' + money(g.median) + ' · ' + money(g.max) + '</span></' + tag + '>';
+    }).join("");
+    return html + '</div>';
+  }
+
+  function viewPrices(rows) {
+    var laneField = D.lane, tf = C.cfg().typeField;
+    var groups = C.groupRows(rows, laneField);
+    if (laneField !== tf && groups.length > 14) groups = groups.slice(0, 14);
+    var W = 900, laneH = 46, top = 16, left = 150, right = 20, bottom = 34;
+    var H = top + groups.length * laneH + bottom;
+    var ax = axis(), axisMax = ax.max;
+    var sx = function (v) { return left + (v / axisMax) * (W - left - right); };
+    var ticks = [];
+    for (var t = 0; t <= axisMax; t += ax.step) ticks.push(t);
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Price of each ' + M.one + ' by ' + laneField + '">';
+    ticks.forEach(function (t) {
+      svg += '<line class="gridline" x1="' + sx(t) + '" y1="' + top + '" x2="' + sx(t) + '" y2="' + (H - bottom) + '"/>' +
+        '<text x="' + sx(t) + '" y="' + (H - bottom + 16) + '" text-anchor="middle">$' + t + '</text>';
+    });
+    groups.forEach(function (g, gi) {
+      var cy = top + gi * laneH + laneH / 2;
+      var label = laneField === tf ? M.typeLabel(g.key) : g.key;
+      svg += '<text class="lane" x="' + (left - 12) + '" y="' + (cy + 4) + '" text-anchor="end">' + esc(label.length > 20 ? label.slice(0, 19) + "…" : label) + ' (' + g.count + ')</text>';
+      g.rows.forEach(function (r) {
+        // Deterministic jitter from the record position keeps dots stable between renders.
+        var j = (((r.pos * 2654435761) % 1000) / 1000 - 0.5) * (laneH - 16);
+        svg += '<circle class="pt" data-open="' + r.id + '" cx="' + sx(r.price).toFixed(1) + '" cy="' + (cy + j).toFixed(1) + '" r="4.5" fill="' + M.rowColor(r) + '"><title>' + esc(r.brand + " · " + r.name + " · " + money(r.price)) + '</title></circle>';
+      });
+      svg += '<line class="med" x1="' + sx(g.median) + '" y1="' + (cy - laneH / 2 + 4) + '" x2="' + sx(g.median) + '" y2="' + (cy + laneH / 2 - 4) + '"/>';
+    });
+    svg += '</svg>';
+    var present = {};
+    D.rows.forEach(function (r) { present[String(C.val(r, tf))] = 1; });
+    var legend = '<div class="legend">' + C.cfg().typeOrder.filter(function (c) { return c !== NONE && present[c]; }).map(function (c) {
+      return '<span><span class="dot" style="background:' + M.typeColor(c) + '"></span>' + esc(M.typeLabel(c)) + '</span>';
+    }).join("") + '<span><span style="display:inline-block;width:2px;height:12px;background:var(--fg)"></span>Median price</span></div>';
+    var opts = M.lanes.map(function (o) {
+      return '<option value="' + o[0] + '"' + (o[0] === laneField ? " selected" : "") + '>' + o[1] + '</option>';
+    }).join("");
+    return '<div class="groupbar"><label class="toggle"><span class="hint">Rows</span><select class="plain" id="priceLane">' + opts + '</select></label>' +
+      '<p class="hint">Each dot is one listing at its price. Select a dot to open it.</p></div>' +
+      '<div class="chartcard">' + svg + legend + '</div>';
+  }
+
+  /* ---------- detail ---------- */
+  function sectionsHTML(r) {
+    var lf = Object.keys(r.label_facts || {});
+    var labelTable = lf.length ? '<div class="prose"><h3>Label facts</h3><table class="kv">' + lf.map(function (k) {
+      return '<tr><th scope="row">' + esc(FACT_LABELS[k] || k.replace(/_/g, " ")) + '</th><td>' + esc(r.label_facts[k]) + '</td></tr>';
+    }).join("") + '</table></div>' : "";
+    var secs = Object.keys(r.sections || {}).map(function (k) {
+      var v = r.sections[k];
+      return '<div class="prose"><h3>' + esc(k) + '</h3>' + (Array.isArray(v) ? '<ul>' + v.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ul>' : '<p>' + esc(typeof v === "string" ? v : JSON.stringify(v)) + '</p>') + '</div>';
+    }).join("");
+    var bullets = (r.bullets && r.bullets.length) ? '<div class="prose"><h3>Full description from the store page</h3><ul>' + r.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join("") + '</ul></div>' : "";
+    return labelTable + secs + bullets;
+  }
+  function factsHTML(facts) { return '<dl class="facts">' + facts.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + esc(f[1]) + '</dd></div>'; }).join("") + '</dl>'; }
+  function priceLine(r, extra) {
+    return '<div class="pr" style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span class="price">' + money(r.price) + '</span>' + (r.list_price ? '<span class="was">' + money(r.list_price) + '</span>' : '') +
+      (r.off_pct ? '<span class="off">' + r.off_pct + '% off</span>' : '') + '<span class="hint">' + esc(extra || "") + '</span></div>';
+  }
+
+  function wineDetail(r) {
+    var facts = [
+      ["Price", money(r.price) + (r.list_price ? " (was " + money(r.list_price) + ")" : "")],
+      ["Discount", r.off_pct ? r.off_pct + "% off" : "None listed"],
+      ["Type", r.color ? colorLabel(r.color) : NONE], ["Varietal", r.varietal || NONE],
+      ["Country", r.country || NONE], ["Region or origin text", r.location || NONE],
+      ["Size", r.size_raw || r.size || NONE], ["ABV", has(r.abv) ? r.abv + "%" : NONE],
+      ["Non-alcoholic", r.non_alcoholic ? "Yes" : "No"], ["Vintage", r.vintage || NONE],
+      ["In store", r.aisle || NONE], ["Sizes offered", r.variants || "One listed"],
+      ["Store list position", "#" + r.pos], ["Record", r.id], ["Product id (ASIN)", r.asin]
+    ];
+    var prose = [["Tasting notes", r.tasting], ["Winemaking", r.winemaking], ["Pairing (producer's words)", r.pairing], ["Other notes", r.other]]
+      .filter(function (p) { return p[1]; })
+      .map(function (p) { return '<div class="prose"><h3>' + p[0] + '</h3><p>' + esc(p[1]) + '</p></div>'; }).join("");
+    return { head: vivinoBlock(r) + priceLine(r, r.size_raw || r.size), body: factsHTML(facts) + prose + sectionsHTML(r) };
+  }
+
+  function optionsHTML(title, list) {
+    if (!list || !list.length) return "";
+    return '<div class="prose"><h3>' + title + '</h3><div class="opts">' + list.map(function (o) {
+      var sib = o.asin && D.byAsin[o.asin];
+      var inner = esc(o.label) + (o.price ? ' <span class="num">' + esc(o.price) + '</span>' : '');
+      if (o.selected) return '<span class="opt" aria-current="true">' + inner + '</span>';
+      return sib ? '<button type="button" class="opt" data-open="' + sib.id + '">' + inner + '</button>' : '<span class="opt">' + inner + '</span>';
+    }).join("") + '</div></div>';
+  }
+
+  function beerDetail(r) {
+    var facts = [
+      ["Price", money(r.price) + (r.list_price ? " (was " + money(r.list_price) + ")" : "")],
+      ["Discount", r.off_pct ? r.off_pct + "% off" : "None listed"],
+      ["Type", r.family || NONE], ["Style", r.style || NONE],
+      ["Pack", r.pack_count ? (r.pack_count === 1 ? "Single" : r.pack_count + " " + (r.container ? r.container.toLowerCase() + "s" : "containers")) : NONE],
+      ["Container", r.container_label || NONE],
+      ["Total volume", has(r.total_oz) ? r.total_oz + " fl oz" : NONE],
+      ["Price per can or bottle", has(r.per_unit) ? money(r.per_unit) : NONE],
+      ["Price per fl oz", has(r.per_oz) ? "$" + r.per_oz.toFixed(3) : NONE],
+      ["ABV", has(r.abv) ? abvText(r) : NONE], ["Calories", has(r.calories) ? String(r.calories) : NONE],
+      ["Non-alcoholic", r.non_alcoholic ? "Yes" : "No"], ["Country", r.country || NONE],
+      ["Flavor", r.flavor || NONE], ["In store", r.aisle || NONE], ["Sizes and flavors offered", r.variants || "One listed"],
+      ["Store list position", "#" + r.pos], ["Record", r.id], ["Product id (ASIN)", r.asin]
+    ];
+    var warn = r.abv_conflict ? '<p class="warn">The store page gives more than one ABV for this listing (' + esc((r.abv_all || []).join("%, ") + "%") + '). The one in the title is shown.</p>' : "";
+    var ingr = r.ingredients ? '<div class="prose"><h3>Ingredients</h3><p>' + esc(r.ingredients) + '</p></div>' : "";
+    var body = factsHTML(facts) + warn + optionsHTML("Sizes on the store page", r.size_options) + optionsHTML("Flavors on the store page", r.flavor_options) + ingr + sectionsHTML(r);
+    return { head: priceLine(r, [r.pack, r.container_label].filter(Boolean).join(" · ")), body: body };
+  }
+
+  function openDetail(id) {
+    var r = D.byId[id]; if (!r) return;
+    var parts = M.detail(r);
+    $("dlgInner").innerHTML =
+      '<div class="dlg-head">' + M.icon(r) + '<div><div class="b">' + esc(r.brand) + '</div><h2 id="dTitle">' + esc(r.name) + '</h2>' + parts.head + '</div>' +
+      '<button class="close" type="button" id="dClose" aria-label="Close">×</button></div>' +
+      '<div class="dlg-body">' + parts.body +
+      '<a class="btn" href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">View on Whole Foods Market ↗</a>' +
+      '<div class="src">Store page title: ' + esc(r.page_title) + '</div></div>';
+    $("dClose").addEventListener("click", function () { $("detail").close(); });
+    var d = $("detail");
+    if (typeof d.showModal === "function") { if (!d.open) d.showModal(); } else d.setAttribute("open", "");
+    $("dlgInner").querySelector(".dlg-body").scrollTop = 0;
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    var h = parseHash();
+    if (h.mode !== mode) setMode(h.mode);
+    var v = h.view;
+    document.querySelectorAll(".modes a").forEach(function (a) {
+      a.href = hashFor(a.dataset.mode, v);
+      if (a.dataset.mode === mode) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    document.querySelectorAll(".views a").forEach(function (a) {
+      a.href = hashFor(mode, a.dataset.view);
+      if (a.dataset.view === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    $("sortWrap").hidden = v === "groups" || v === "prices";
+    if (!D.loaded) {
+      $("count").textContent = ""; $("active").innerHTML = "";
+      $("view").innerHTML = D.error ? '<div class="empty">The ' + M.one + ' data file did not load (' + esc(D.error) + '). Reload the page to try again.</div>' : '<div class="empty">Loading ' + M.many + '…</div>';
+      return;
+    }
+    if (!$("footer").innerHTML) $("footer").innerHTML = M.footer(D.rows.length);
+    renderTypeChips();
+    M.lists.forEach(function (l) { renderChecklist(l[0]); });
+    renderPresets();
+    renderActive();
+    var rows = C.sortRows(C.filterRows(D.rows, D.st), D.sortKey, D.sortDir);
+    $("count").innerHTML = '<strong>' + rows.length + '</strong> of ' + D.rows.length + ' ' + M.many;
+    var sel = D.sortKey + ":" + D.sortDir, sortEl = $("sort");
+    if (Array.prototype.some.call(sortEl.options, function (o) { return o.value === sel; })) sortEl.value = sel;
+    if (!rows.length) {
+      $("view").innerHTML = '<div class="empty">No ' + M.many + ' match these filters. Remove a filter above or select Clear all.</div>';
+      return;
+    }
+    $("view").innerHTML = v === "table" ? viewTable(rows) : v === "groups" ? viewGroups(rows) : v === "prices" ? viewPrices(rows) : viewGrid(rows);
+  }
+
+  /* ---------- events ---------- */
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-open],[data-field],[data-remove],[data-preset],[data-abv],[data-sort],[data-group]");
+    if (!t || !D || !D.loaded) return;
+    var st = D.st;
+    if (t.dataset.open) { openDetail(t.dataset.open); return; }
+    if (t.dataset.field && t.tagName === "BUTTON") { setToggle(t.dataset.field, t.dataset.value); return; }
+    if (t.dataset.preset !== undefined) {
+      var p = M.presets[+t.dataset.preset];
+      var on = st.priceMin === p[0] && st.priceMax === p[1];
+      st.priceMin = on ? null : p[0]; st.priceMax = on ? null : p[1];
+      $("pmin").value = st.priceMin === null ? "" : st.priceMin; $("pmax").value = st.priceMax === null ? "" : st.priceMax;
+      render(); return;
+    }
+    if (t.dataset.abv !== undefined) {
+      var a = M.abv[+t.dataset.abv];
+      var aon = st.abvMin === a[0] && st.abvMax === a[1];
+      st.abvMin = aon ? null : a[0]; st.abvMax = aon ? null : a[1];
+      render(); return;
+    }
+    if (t.dataset.sort) {
+      if (D.sortKey === t.dataset.sort) D.sortDir = D.sortDir === "asc" ? "desc" : "asc";
+      else { D.sortKey = t.dataset.sort; D.sortDir = DESC_FIRST.indexOf(t.dataset.sort) !== -1 ? "desc" : "asc"; }
+      render(); return;
+    }
+    if (t.dataset.group !== undefined) {
+      st[D.groupBy] = [t.dataset.group];
+      location.hash = hashFor(mode, "grid"); render(); return;
+    }
+    if (t.dataset.remove) {
+      var k = t.dataset.remove, val = t.dataset.value;
+      if (k === "q") { st.q = ""; $("q").value = ""; }
+      else if (k === "price") { st.priceMin = st.priceMax = null; $("pmin").value = ""; $("pmax").value = ""; }
+      else if (k === "abv") { st.abvMin = st.abvMax = null; }
+      else if (k === "alcohol") { st.alcohol = "any"; $("alcohol").value = "any"; }
+      else if (k === "minRating") { st.minRating = null; $("minRating").value = ""; }
+      else if (k === "vivino") { st.vivino = "any"; $("vivino").value = "any"; }
+      else { var i = st[k].indexOf(val); if (i !== -1) st[k].splice(i, 1); }
+      render();
+    }
+  });
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (!D) return;
+    if (t.matches("input[type=checkbox][data-field]")) { setToggle(t.dataset.field, t.dataset.value); return; }
+    if (t.id === "sort") { var p = t.value.split(":"); D.sortKey = p[0]; D.sortDir = p[1]; render(); }
+    if (t.id === "groupBy") { D.groupBy = t.value; render(); }
+    if (t.id === "priceLane") { D.lane = t.value; render(); }
+    if (t.id === "alcohol") { D.st.alcohol = t.value; render(); }
+    if (t.id === "minRating") { D.st.minRating = t.value === "" ? null : parseFloat(t.value); render(); }
+    if (t.id === "vivino") { D.st.vivino = t.value; render(); }
+  });
+  document.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.matches(".mini-search[data-list]") && D) { D.lists[t.dataset.list] = t.value; renderChecklist(t.dataset.list); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.target.matches("tr[data-open]")) openDetail(e.target.dataset.open);
+  });
+  var qTimer;
+  $("q").addEventListener("input", function () { clearTimeout(qTimer); qTimer = setTimeout(function () { D.st.q = $("q").value.trim(); render(); }, 120); });
+  function readPrice(el) { var v = parseFloat(el.value); return isNaN(v) ? null : v; }
+  $("pmin").addEventListener("input", function () { D.st.priceMin = readPrice(this); render(); });
+  $("pmax").addEventListener("input", function () { D.st.priceMax = readPrice(this); render(); });
+  $("clearAll").addEventListener("click", function () {
+    D.st = C.emptyState(); D.lists = {};
+    ["q", "pmin", "pmax"].forEach(function (id) { $(id).value = ""; });
+    document.querySelectorAll(".mini-search").forEach(function (el) { el.value = ""; });
+    $("alcohol").value = "any"; $("minRating").value = ""; $("vivino").value = "any";
+    render();
+  });
+  $("railToggle").addEventListener("click", function () {
+    var rail = $("rail"), collapsed = rail.classList.toggle("collapsed");
+    this.textContent = collapsed ? "Show" : "Hide";
+    this.setAttribute("aria-expanded", String(!collapsed));
+  });
+  $("detail").addEventListener("click", function (e) { if (e.target === this) this.close(); });
+  window.addEventListener("hashchange", render);
+  render();
+})();
+</script>
