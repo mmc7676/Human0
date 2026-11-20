@@ -148,6 +148,7 @@
   }
   function onResult(result, source) {
     const sc = result && result.structuredContent, render = sc && sc.render;
+    if (sc && sc.starsystem && window.SAS_SYSTEM) { window.SAS_SYSTEM.showSystem(sc); return; }
     if (sc && sc.catalog) {
       if (!lb.on) enterLB(false);
       const go = () => { const n = appendStars(sc.catalog.stars); if (Number.isInteger(sc.catalog.focus)) focusStar(sc.catalog.focus); note(sc.catalog.note + (n < sc.catalog.stars.length ? ' (' + (sc.catalog.stars.length - n) + ' were already shown)' : '')); };
@@ -387,8 +388,11 @@
   search.placeholder = 'Find star…'; search.style.cssText = 'font-size:12px;width:110px;padding:2px 6px';
   search.onkeydown = (e) => {
     if (e.key !== 'Enter') return;
-    if (!lb.on) enterLB(false);
-    const go = () => { const i = findStarIndex(search.value); if (i < 0) note('No naked-eye star named "' + search.value + '".'); else focusStar(i); };
+    const q = search.value;
+    // 1. the nearest stars, in the solar system view; 2. naked-eye stars in the Local Bubble; 3. any known star system
+    const N = window.SAS_NEAR, ni = N ? N.find(q) : -1;
+    if (ni >= 0 && !gx.on) { if (lb.on && typeof exitLB === 'function') exitLB(); N.select(ni); if (N.data) { setTimeout(() => { const tc = document.getElementById('tipc'); if (tc) tc.dispatchEvent(new PointerEvent('pointerdown')); }, 50); } return; }
+    const go = () => { const i = findStarIndex(q); if (i >= 0) { if (!lb.on) enterLB(false); focusStar(i); return; } if (window.SAS_SYSTEM) window.SAS_SYSTEM.openSystem(q); else note('No star named "' + q + '".'); };
     lb.data ? go() : setTimeout(go, 1500);
   };
   bar.appendChild(search);
@@ -409,5 +413,5 @@
     requestAnimationFrame(sync);
   })();
 
-  window.SAS_AGENT = { appendStars, openPlanetFrame, planetInBox, magLevel, openEyepiece, showEyepiece, sceneDirToRaDec, setMagnify, TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
+  window.SAS_AGENT = { magnifyOn: () => mag.on, appendStars, openPlanetFrame, planetInBox, magLevel, openEyepiece, showEyepiece, sceneDirToRaDec, setMagnify, TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
 })();

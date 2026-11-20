@@ -16,7 +16,7 @@ const ARGS = { scw_get: { id: "SCW6" }, scw_children: { id: "SCW6" }, scw_search
   generate_exotic_universe: { seed: 7 }, run_extraction_campaign: {}, plan_trip: { request: "plan a trip to Mars" }, link_hidden_universe: { model: "mirror" },
   remove_state: { kind: "all" }, galaxy_field: { r_kpc: 8.277, mass_msun: 1e5 }, galaxy_object: { name: "Sgr A*", t_myr: -1 }, energy_ledger: {},
   scw_relations: {}, open_space_at_scale: { focus: "Mars" },
-  exoplanet_system: { star: "Eta Cet" }, densify_region: { center: "Vega", radius_ly: 30 }, build_galaxy: { name: "Andromeda" }, sky_check: { body: "Phaethon", date: "October 5, 5 BCE" }, route_trigger: { prompt: "hello" } };
+  exoplanet_system: { star: "Eta Cet" }, densify_region: { center: "Vega", radius_ly: 30 }, build_galaxy: { name: "Andromeda" }, sky_check: { body: "Phaethon", date: "October 5, 5 BCE" }, route_trigger: { prompt: "hello" }, star_system: { name: "Alpha Centauri" } };
 // stream_catalog_region needs the network (Gaia); it is tested with fixtures in the plugin server tests.
 let n = 0;
 async function rpc(env, method, params, headers = {}) {
@@ -38,8 +38,8 @@ test("initialize and health", async () => {
 test("tools/list per plan", async () => {
   const f = (await rpc(FREE, "tools/list", {})).body.result.tools.map((t) => t.name);
   const p = (await rpc(PAID, "tools/list", {})).body.result.tools.map((t) => t.name);
-  assert.equal(p.length, 32);
-  for (const t of (await rpc(PAID, "tools/list", {})).body.result.tools) { assert.ok(t.title && t.annotations.title === t.title && t.name.length <= 64, t.name + " needs a title"); assert.ok(typeof t.annotations.readOnlyHint === "boolean", t.name + " needs readOnlyHint"); } assert.equal(f.length, 32 - PAID_ONLY.length);
+  assert.equal(p.length, 33);
+  for (const t of (await rpc(PAID, "tools/list", {})).body.result.tools) { assert.ok(t.title && t.annotations.title === t.title && t.name.length <= 64, t.name + " needs a title"); assert.ok(typeof t.annotations.readOnlyHint === "boolean", t.name + " needs readOnlyHint"); } assert.equal(f.length, 33 - PAID_ONLY.length);
   for (const k of PAID_ONLY) { assert.ok(p.includes(k)); assert.ok(!f.includes(k)); }
   const u = (await rpc(undefined, "tools/list", {})).body.result.tools.length;
   assert.equal(u, f.length, "no SCW_TIER means free");

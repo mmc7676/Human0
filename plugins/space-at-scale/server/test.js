@@ -4,7 +4,7 @@ const {StdioClientTransport}=require('@modelcontextprotocol/sdk/client/stdio.js'
 const crypto=require('crypto'),fs=require('fs');let fails=0;const ok=(c,m)=>{console.log((c?'PASS ':'FAIL ')+m);if(!c)fails++};
 (async()=>{const c=new Client({name:'scw-test',version:'1'});await c.connect(new StdioClientTransport({command:'node',args:[__dirname+'/server.bundle.js']}));
 const call=async(name,args)=>{const r=await c.callTool({name,arguments:args||{}});let data;try{data=r.isError?r.content[0].text:JSON.parse(r.content[0].text)}catch(e){data=r.content[0].text}return{err:!!r.isError,data}};
-const tools=(await c.listTools()).tools.map(t=>t.name);ok(tools.length===32,'32 tools listed: '+tools.join(', '));
+const tools=(await c.listTools()).tools.map(t=>t.name);ok(tools.length===33,'33 tools listed: '+tools.join(', '));
 const g=await c.readResource({uri:'scw://graph'});ok(JSON.parse(g.contents[0].text).length>=150,'graph resource has '+JSON.parse(g.contents[0].text).length+' SCWs');
 let r=await call('scw_get',{id:'SCW7:jupiter'});ok(r.data.members.length===5&&r.data.members.some(m=>m.name==='Juno'),'Jupiter system SCW holds 4 moons + Juno');
 r=await call('scw_laws',{id:'SCW8:jupiter/io'});ok(r.data.chain.length===9&&r.data.laws.find(l=>l.id==='E1').applies,'Io inherits laws through 9 levels; Newtonian approximation valid');
@@ -96,7 +96,7 @@ r=await call('run_evals',{id:'SCW4'});ok(r.data.suites.galaxy.length===29&&r.dat
  r=await call('remove_state',{kind:'hidden_universe',id:'mirror'});ok(!r.err,'Mirror H removed');r=await call('remove_state',{kind:'all'});ok(!r.err&&/hidden-simple/.test(r.data.removed.join(' ')),'Clear all removes the simple H too');
 r=await call('run_evals',{id:'SCW0'});ok(r.data.passed===r.data.total,'All evals still pass after clearing: '+r.data.passed+'/'+r.data.total)}
 {const S=require('./server.js'),names=t=>{const n=[];S.buildServer({tier:t,appHtml:'',recorder:{registerTool:x=>n.push(x),registerResource:()=>{}}});return n};const f=names('free'),p=names('paid');
-ok(p.length===32&&f.length===p.length-Object.keys(S.TIERS.tools).length,'Tiers: paid registers '+p.length+' tools, free registers '+f.length);
+ok(p.length===33&&f.length===p.length-Object.keys(S.TIERS.tools).length,'Tiers: paid registers '+p.length+' tools, free registers '+f.length);
 ok(Object.keys(S.TIERS.tools).every(k=>p.includes(k)&&!f.includes(k)),'Tiers: every paid-only tool ('+Object.keys(S.TIERS.tools).join(', ')+') is left out of free')}
 {let r=await call('exoplanet_system',{star:'Eta Cet'});ok(!r.err&&r.data.count===2&&r.data.planets[0].a_au===1.27,'Agent: exoplanet_system returns Eta Cet b and c from the archive extract');
 r=await call('densify_region',{center:'Vega',radius_ly:30,seed:7});ok(!r.err&&r.data.drawn===r.data.expected_stars&&/generated/.test(r.data.provenance.stars),'Agent: densify_region draws '+r.data.drawn+' generated stars at local density');
@@ -119,4 +119,9 @@ const f=async(u)=>u.includes('sesame')?{ok:true,text:async()=>'<oname>M  42</ona
 const r=await AT.skyRegion({target:'Orion Nebula',fov_deg:1.5,mag_limit:9.5},f);
 ok(r.resolved_as.trim()==='M  42'.trim()&&r.eyepiece.stars.length===2&&r.eyepiece.bright.some(s=>s[4]==='42 Ori')&&r.instrument==='Binoculars'&&r.eyepiece.image.base64==='/9j/','Magnify: sky_region resolves M42, returns Gaia stars, the bright stars Gaia saturates on, and the survey image');
 const d=await AT.skyRegion({ra:83.8,dec:-5.4},async()=>({ok:false,status:500}));ok(d.notes.length===2&&d.eyepiece.image===null,'Magnify: services down are reported in notes, not thrown')}
+{let r=await call('star_system',{name:'Alpha Centauri B'});ok(!r.err&&r.data.system==='Alpha Centauri'&&r.data.stars.length===3&&r.data.planets.some(p=>p.name==='Proxima Centauri b'&&p.status==='confirmed'),'Systems: "Alpha Centauri B" opens the Alpha Centauri system (A, B, Proxima) with Proxima b confirmed');
+r=await call('star_system',{name:'TRAPPIST-1'});ok(!r.err&&r.data.confirmed===7,'Systems: TRAPPIST-1 has 7 confirmed planets');
+r=await call('star_system',{name:'Planet Zorgon'});ok(r.err,'Systems: unknown names are a clear error');
+const N=require('./neighborhood.json');ok(N.nearby.length===250&&N.nearby[0].name==='Proxima Centauri'&&N.nearby.some(s=>s.aliases.includes('Alpha Centauri A'))&&N.sky.length>15000,'Neighborhood: 250 nearest stars (Proxima first, Alpha Centauri A findable) and '+N.sky.length+' real sky stars');
+const px=N.nearby[0],d=Math.hypot(...px.pos)/63241.077;ok(Math.abs(d-4.24)<0.02,'Neighborhood: Proxima sits '+d.toFixed(3)+' ly from the Sun in the solar system frame')}
 await c.close();console.log(fails?fails+' FAILED':'ALL PASSED');process.exit(fails?1:0)})();

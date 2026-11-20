@@ -1,7 +1,7 @@
 {
  "plugin": "space-at-scale",
  "version": "0.17.0",
- "built_utc": "2026-11-20T03:24:53.582Z",
+ "built_utc": "2026-11-20T04:04:03.887Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
@@ -61,8 +61,8 @@
   },
   {
    "path": "release.js",
-   "sha256": "b693365c4789974266b7e297f1326444c5f2983df6d9ce529795af8006434a81",
-   "bytes": 5971
+   "sha256": "f143d662562d4d0ce96e2b33919555a0e75b1b3df733365a6903f522ccacc5ff",
+   "bytes": 6089
   },
   {
    "path": "scw828/SCW828.md",
@@ -151,8 +151,8 @@
   },
   {
    "path": "server/agent-tools.js",
-   "sha256": "dc32534e262d82b36405e3c1468cf1be640eb175e81781922f4b3d4b97d2965e",
-   "bytes": 29413
+   "sha256": "8c2feb58b63eb4da50f717a7950f5b1c05625e3d0260501d6d6f8c26ab9b3bc1",
+   "bytes": 31791
   },
   {
    "path": "server/app/OrbitControls.js",
@@ -161,8 +161,8 @@
   },
   {
    "path": "server/app/agent-bridge.js",
-   "sha256": "0e617b642b59cd9f9ae0e3da93d7aed574a17c7954ec1b1b3161439d79222e21",
-   "bytes": 31105
+   "sha256": "13bc49d5538091211d3be5fb025c2c2e568a05edcf96384359cc16c87a8bc489",
+   "bytes": 31715
   },
   {
    "path": "server/app/app.js",
@@ -176,8 +176,13 @@
   },
   {
    "path": "server/app/index.html",
-   "sha256": "5f7744c467e07463d1977a15c861b5eb1faf607e47ec3c19d3b5ce5787dc9d91",
-   "bytes": 488177
+   "sha256": "0d2315740c24e6956c82bb6dd959188980a1d730180b18711c2e5e799beb40fb",
+   "bytes": 488217
+  },
+  {
+   "path": "server/app/neighborhood.js",
+   "sha256": "8b744d10c53bca5e8a98f48a92a2cadc729c169163af240a5f1acd20ef40d28c",
+   "bytes": 17203
   },
   {
    "path": "server/app/three.min.js",
@@ -186,13 +191,18 @@
   },
   {
    "path": "server/build-app.js",
-   "sha256": "5a573fdcfa5d75dada9163e3e1f0bfe2ca32b77e050bb373ba4c7376339e4fa6",
-   "bytes": 2764
+   "sha256": "61dce5b20a588224f13e576e4d92512c9c9c43fec2bc509a1ba3ab2ed684cb7c",
+   "bytes": 2934
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "df20c9c3db5cc58e2b1106ea9db7c96ab23a828c94fb6314598d5dbe6d4a2a16",
-   "bytes": 2514306
+   "sha256": "501e648d380f0cbda5d1cc3dce0d228d72c0730c7a2da1f8a5bfdfaa1720c189",
+   "bytes": 3044583
+  },
+  {
+   "path": "server/exo_systems.json",
+   "sha256": "a7c85396a7bb21fd33582206b9d331db5cad2270c485259af3bc3ed7eb231603",
+   "bytes": 2873738
   },
   {
    "path": "server/galaxy-core.js",
@@ -208,6 +218,11 @@
    "path": "server/http.js",
    "sha256": "82431e0fd8a54ed3b057adfe0e29c6f3fdfdfaa24050bc04f26b26cfa56bd385",
    "bytes": 1651
+  },
+  {
+   "path": "server/neighborhood.json",
+   "sha256": "5f5afe10b1ef11b99147075bcd3d7a00608ac22b7c80c8506594bcaa11653401",
+   "bytes": 512405
   },
   {
    "path": "server/package-lock.json",
@@ -226,13 +241,13 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "6bf0ec01eac141ee44a004b4d65b68d2a8249935af152065d47d6138541bd886",
-   "bytes": 3266205
+   "sha256": "d15676a629f99ac33a21b7f113a432ec00004b8ba66c98d959a5c18786a88e91",
+   "bytes": 6208307
   },
   {
    "path": "server/server.js",
-   "sha256": "06594f0e6d357efb34cebd02534772b3d7e238e94bef63d1bd5af2b1b3637c2e",
-   "bytes": 21741
+   "sha256": "2507f8a0f360b3bbf4ba3af08c30ff3c7a3b647fc04c325dfb7e934009b28326",
+   "bytes": 22447
   },
   {
    "path": "server/stars.json",
@@ -241,13 +256,13 @@
   },
   {
    "path": "server/test-http.js",
-   "sha256": "2dc45e7236987f72332d4cb9fb92cf22166c602ba7d206016339647b0732f350",
+   "sha256": "569b3961cb4640726ed023048fa9161727b8267f7282fa9dc93ede6498e291b1",
    "bytes": 2935
   },
   {
    "path": "server/test.js",
-   "sha256": "d2b280cf82b0bd4b040c75339bfbbbdef8654698512fd5b426a8767b123a4104",
-   "bytes": 23188
+   "sha256": "05c8d06defe64f2cafba50e68b3846c626ee0bf2c51c65f9c45209d76133a62f",
+   "bytes": 24199
   },
   {
    "path": "server/tiers.json",
@@ -260,22 +275,27 @@
    "bytes": 17757
   },
   {
+   "path": "server/tools/build-neighborhood.py",
+   "sha256": "ccd67f1b8a0480ffaa71b32bfd141f852e923c232ca4df4a47b127d62f014707",
+   "bytes": 9417
+  },
+  {
    "path": "server/universe.js",
    "sha256": "f3f3567fba6782c22b284d2d66f31eca7563b980f5ec11d06a228b23e865cece",
    "bytes": 46636
   },
   {
    "path": "skills/space-at-scale/SKILL.md",
-   "sha256": "203b7bcfa397e5a9d57f9aed0cba57ce01c1d6d34d03870a41a8309d9f88d3e9",
-   "bytes": 3489
+   "sha256": "e67b930cfcc5c0d9c6880ec2af0275ed86c43ef399575d639bdfebd8b5f1c309",
+   "bytes": 3880
   }
  ],
  "mirrors": [
   {
    "canonical": "index.html",
    "mirror": "server/app/index.html",
-   "sha256": "5f7744c467e07463d1977a15c861b5eb1faf607e47ec3c19d3b5ce5787dc9d91",
-   "bytes": 488177,
+   "sha256": "0d2315740c24e6956c82bb6dd959188980a1d730180b18711c2e5e799beb40fb",
+   "bytes": 488217,
    "identical": true
   },
   {
@@ -295,8 +315,22 @@
   {
    "canonical": "agent-bridge.js",
    "mirror": "server/app/agent-bridge.js",
-   "sha256": "0e617b642b59cd9f9ae0e3da93d7aed574a17c7954ec1b1b3161439d79222e21",
-   "bytes": 31105,
+   "sha256": "13bc49d5538091211d3be5fb025c2c2e568a05edcf96384359cc16c87a8bc489",
+   "bytes": 31715,
+   "identical": true
+  },
+  {
+   "canonical": "neighborhood.js",
+   "mirror": "server/app/neighborhood.js",
+   "sha256": "8b744d10c53bca5e8a98f48a92a2cadc729c169163af240a5f1acd20ef40d28c",
+   "bytes": 17203,
+   "identical": true
+  },
+  {
+   "canonical": "neighborhood.json",
+   "mirror": "server/neighborhood.json",
+   "sha256": "5f5afe10b1ef11b99147075bcd3d7a00608ac22b7c80c8506594bcaa11653401",
+   "bytes": 512405,
    "identical": true
   },
   {
@@ -361,6 +395,11 @@
   {
    "file": "server/stars.json",
    "sha256": "5eea66611e160d98cc3175afc48a122962d56c4dae7fc00082b8b8beb634e4fc",
+   "embedded_byte_for_byte_in_app_html": true
+  },
+  {
+   "file": "server/neighborhood.json",
+   "sha256": "5f5afe10b1ef11b99147075bcd3d7a00608ac22b7c80c8506594bcaa11653401",
    "embedded_byte_for_byte_in_app_html": true
   }
  ],

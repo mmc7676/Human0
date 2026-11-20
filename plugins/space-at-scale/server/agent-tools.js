@@ -351,4 +351,36 @@ async function skyRegion({ target, ra, dec, fov_deg = 1, mag_limit = 9.5, max_st
   };
 }
 
-module.exports = { starRow, skyRegion, resolveName, STEPS, streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
+// ---- 8. star_system: any known star system (Open Exoplanet Catalogue) for the system frame ----
+// Nested binaries, stars and planets with their orbital elements; the app animates them in the same simulation time.
+let EXO = null;
+const exoKey = (n) => String(n || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]/g, '');
+function exo() {
+  if (!EXO) {
+    const d = require('./exo_systems.json'), index = new Map();
+    d.systems.forEach((s, i) => s.all_names.forEach((n) => { const k = exoKey(n); if (k && !index.has(k)) index.set(k, i); }));
+    EXO = { d, index };
+  }
+  return EXO;
+}
+const ALIASES = { alphacentauri: 'Alpha Centauri', alphacentauria: 'Alpha Centauri A', alphacentaurib: 'Alpha Centauri B', alphacentauric: 'Proxima Centauri', alphacen: 'Alpha Centauri', proxima: 'Proxima Centauri' };
+function starSystem({ name }) {
+  const { d, index } = exo(), k = exoKey(name), k2 = ALIASES[k] ? exoKey(ALIASES[k]) : k;
+  let i = index.has(k) ? index.get(k) : index.get(k2);
+  if (i === undefined) { // loose match: a system name that starts with what was typed
+    for (const [kk, v] of index) if (kk.startsWith(k) && k.length >= 4) { i = v; break; }
+  }
+  if (i === undefined) throw new Error('No system named "' + name + '" in the Open Exoplanet Catalogue (' + d.systems.length.toLocaleString() + ' systems).');
+  const s = d.systems[i], planets = [], stars = [];
+  (function walk(n) { for (const c of n.kids || []) { if (c.type === 'planet') planets.push(c); if (c.type === 'star') stars.push(c); walk(c); } })(s);
+  return {
+    system: s.name, aliases: s.aliases.slice(0, 6), ra_deg: s.ra, dec_deg: s.dec, distance_ly: s.dist_pc ? +(s.dist_pc * 3.26156).toFixed(3) : null,
+    stars: stars.map((x) => ({ name: x.names[0], spect: x.spect || null, mass_msun: x.mass || null })),
+    planets: planets.map((p) => ({ name: p.names[0], status: p.status, a_au: p.a || null, period_days: p.P || null, e: p.e ?? null, mass_mjup: p.mass || null, radius_rjup: p.radius || null, method: p.method || null, year: p.year || null })),
+    confirmed: planets.filter((p) => p.status === 'confirmed').length,
+    starsystem: { name: s.name, dist_pc: s.dist_pc, kids: s.kids },
+    provenance: { data: 'Open Exoplanet Catalogue (MIT), snapshot in exo_systems.json; planet status from its lists (confirmed, controversial, retracted, candidate)' },
+  };
+}
+
+module.exports = { starSystem, exoKey, starRow, skyRegion, resolveName, STEPS, streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
