@@ -48,10 +48,10 @@
   const TRIGGERS = [
     { id: 'exoplanets-on-select', event: 'star.select', when: (c) => c.planets > 0, auto: true,
       action: { kind: 'tool', tool: 'exoplanet_system', args: (c) => ({ star: c.name }) } },
-    { id: 'catalog-fill', event: 'star.select', label: 'Fill region', action: { kind: 'tool', tool: 'stream_catalog_region', args: (c) => ({ center: c.name, radius_ly: 20 }) } },
-    { id: 'census-estimate', event: 'star.select', label: 'Census estimate', action: { kind: 'tool', tool: 'densify_region', args: (c) => ({ center: c.name, radius_ly: 20 }) } },
-    // Zoom hook: when the camera comes within 40 ly of the star the view is centered on, stream that region once.
-    { id: 'catalog-on-zoom', event: 'zoom.region', auto: true, action: { kind: 'tool', tool: 'stream_catalog_region', args: (c) => ({ center: c.name, radius_ly: 20 }) } },
+    // Selecting a star is a magnification target: the button adds the real Gaia stars around it at the current magnification.
+    { id: 'catalog-fill', event: 'star.select', label: 'Show nearby stars', action: { kind: 'tool', tool: 'stream_catalog_region', args: (c) => ({ center: c.name, radius_ly: 15, mag_limit: magLevel() }) } },
+    // Zoom hook: when the camera comes within 40 ly of the star the view is centered on, its neighborhood streams in once per magnification level.
+    { id: 'catalog-on-zoom', event: 'zoom.region', auto: true, action: { kind: 'tool', tool: 'stream_catalog_region', args: (c) => ({ center: c.name, radius_ly: 15, mag_limit: magLevel() }) } },
     { id: 'agent-star', event: 'star.select', label: 'Ask agent', action: { kind: 'agent', agent: 'space-architect',
       text: (c) => 'Investigate the star ' + c.name + ' (' + c.distance + ' ly). Add what the catalogs and models support: its planets, the crowded region around it, and anything notable about it.' } },
     { id: 'build-andromeda', event: 'galaxy.menu', label: 'Build Andromeda', action: { kind: 'tool', tool: 'build_galaxy', args: () => ({ name: 'Andromeda' }) } },
@@ -81,10 +81,37 @@
     const manual = [];
     for (const t of TRIGGERS) {
       if (t.event !== event || (t.when && !t.when(ctx))) continue;
-      if (t.auto) { const key = t.id + ':' + JSON.stringify(ctx.name || ''); if (!agentState.seen.has(key)) { agentState.seen.add(key); run(t, ctx); } }
+      if (t.auto) { const key = t.id + ':' + JSON.stringify(ctx.name || '') + ':' + magLevel(); if (!agentState.seen.has(key)) { agentState.seen.add(key); run(t, ctx); } }
       else manual.push(t);
     }
     return manual;
+  }
+
+
+  // ---------- real catalog stars added to the Local Bubble ----------
+  // Streamed Gaia stars become rows of lb.data.stars: the existing picker selects them, Center works, they move with
+  // the Bubble clock, and the star count line counts them. Nothing is generated.
+  const MAG_LEVELS = [['Naked eye', 6], ['Binoculars', 9.5], ['Small telescope', 13], ['Large telescope', 16], ['Gaia limit', 19]];
+  let magIdx = 1; const magLevel = () => MAG_LEVELS[magIdx][1];
+  const added = { start: -1, names: new Set(), pts: null, baseText: null };
+  function appendStars(rows) {
+    if (!lb.data) return 0;
+    const S = lb.data.stars; if (added.start < 0) { added.start = S.length; S.forEach((s) => added.names.add(s[0])); }
+    let n = 0; for (const r of rows) if (!added.names.has(r[0])) { added.names.add(r[0]); S.push(r); n++; }
+    const cnt = S.length - added.start, pos = new Float32Array(cnt * 3), col = new Float32Array(cnt * 3), c = new THREE.Color();
+    for (let k = 0; k < cnt; k++) { const s = S[added.start + k]; c.set(typeof bvColor === 'function' && s[9] !== '' ? bvColor(parseFloat(s[9])) : 0xffffff); col.set([c.r, c.g, c.b], 3 * k); }
+    if (added.pts) { lbScene.remove(added.pts); added.pts.geometry.dispose(); }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    added.pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 1.6, sizeAttenuation: false, vertexColors: true, depthWrite: false })); added.pts.frustumCulled = false; lbScene.add(added.pts);
+    const lc = document.getElementById('lbcount');
+    if (lc) { if (added.baseText === null) added.baseText = lc.textContent; lc.textContent = added.baseText + ' · +' + cnt.toLocaleString() + ' Gaia DR3 stars added'; }
+    return n;
+  }
+  function updateAdded() {
+    if (!added.pts || !lb.data) return;
+    const S = lb.data.stars, a = added.pts.geometry.attributes.position, O = lbOrigin();
+    for (let k = 0; k < a.count; k++) { const p = starPos(S[added.start + k]); a.setXYZ(k, p[0] - O[0], p[2] - O[2], -(p[1] - O[1])); }
+    a.needsUpdate = true;
   }
 
   // ---------- 3. overlays ----------
@@ -121,6 +148,11 @@
   }
   function onResult(result, source) {
     const sc = result && result.structuredContent, render = sc && sc.render;
+    if (sc && sc.catalog) {
+      if (!lb.on) enterLB(false);
+      const go = () => { const n = appendStars(sc.catalog.stars); if (Number.isInteger(sc.catalog.focus)) focusStar(sc.catalog.focus); note(sc.catalog.note + (n < sc.catalog.stars.length ? ' (' + (sc.catalog.stars.length - n) + ' were already shown)' : '')); };
+      lb.data ? go() : setTimeout(go, 1500); return;
+    }
     if (sc && sc.eyepiece) { showEyepiece(sc.eyepiece, (sc.resolved_as ? sc.resolved_as.trim() + ' · ' : '') + sc.instrument); return; }
     if (!render) return;
     if (render.scale === 'galaxy') { if (!gx.on) enterGX(false); } else if (!lb.on) enterLB(false);
@@ -145,7 +177,7 @@
   }
   // Keep overlay roots aligned with whatever the view is centered on.
   (function follow() {
-    const O = lbOrigin(); bubbleRoot.position.set(-O[0], -O[2], O[1]);
+    const O = lbOrigin(); bubbleRoot.position.set(-O[0], -O[2], O[1]); if (lb.on) updateAdded();
     if (lb.on && lb.data && lb.view.startsWith('star:') && lbCam.position.length() < 40) {
       const i = +lb.view.slice(5), s = lb.data.stars[i];
       if (s) fire('zoom.region', { name: s[0] });
@@ -195,7 +227,13 @@
     const sky = sceneDirToRaDec(rc.ray.direction, v.frame);
     const fov = Math.min(10, Math.max(0.05, h < 8 ? 1 : h / r.height * v.cam.fov));
     setMagnify(false);
-    openEyepiece({ ra: sky.ra, dec: sky.dec, fov_deg: +fov.toFixed(3), mag_limit: 9.5 });
+    const box = [Math.min(s[0], x), Math.min(s[1], y), Math.max(s[0], x), Math.max(s[1], y)];
+    if (lb.on && !gx.on) { // Local Bubble: add the real stars along that line of sight
+      run({ id: 'magnify-cone', label: 'Magnify', action: { kind: 'tool', tool: 'stream_catalog_region', args: () => ({ ra: +sky.ra.toFixed(4), dec: +sky.dec.toFixed(4), radius_deg: +Math.min(10, Math.max(0.1, fov / 2)).toFixed(3), max_distance_ly: 1000, mag_limit: magLevel() }) } }, {});
+    } else if (!lb.on && !gx.on) { // Solar system: a planet inside the box opens its system; otherwise look at the sky there
+      const planet = planetInBox(box, r);
+      if (planet) openPlanetFrame(planet); else openEyepiece({ ra: sky.ra, dec: sky.dec, fov_deg: +fov.toFixed(3), mag_limit: magLevel() });
+    } else openEyepiece({ ra: sky.ra, dec: sky.dec, fov_deg: +fov.toFixed(3), mag_limit: magLevel() });
     e.stopPropagation();
   }, true);
 
@@ -259,6 +297,67 @@
     } catch (e) { $e('ep-info').textContent = e.message; }
   }
 
+
+  // ---------- planet system frame (solar system magnification) ----------
+  // A closeable frame with its own renderer: the planet, its rings and its moons at true relative scale, in the same
+  // simulation time as the main view (moon phases use the same circular-orbit model as the solar system scale).
+  const RINGS = { Saturn: [[1.24, 2.27, 0xcbb98f, 0.75]], Jupiter: [[1.72, 1.81, 0x8a7a6a, 0.25]], Uranus: [[1.64, 2.0, 0x8fa7b3, 0.35]], Neptune: [[1.69, 2.54, 0x8f9fc0, 0.25]] };
+  function planetInBox(box, r) {
+    const v = new THREE.Vector3(); let best = null, bd = 1e9;
+    Object.keys(MO).forEach((name) => { const b = byName[name]; if (!b || !b.mesh || b.gone) return; v.copy(b.w).project(cam); if (v.z > 1) return;
+      const px = (v.x + 1) / 2 * r.width, py = (1 - v.y) / 2 * r.height; if (px < box[0] - 6 || px > box[2] + 6 || py < box[1] - 6 || py > box[3] + 6) return;
+      const d = Math.hypot(px - (box[0] + box[2]) / 2, py - (box[1] + box[3]) / 2); if (d < bd) { bd = d; best = name; } });
+    return best;
+  }
+  const pf = { name: null, ren: null, scene: null, cam: null, ctl: null, moons: [], div: null };
+  function openPlanetFrame(name) {
+    if (!pf.div) {
+      pf.div = document.createElement('div');
+      pf.div.style.cssText = 'position:absolute;top:44px;right:8px;width:520px;max-width:92%;background:rgba(5,8,16,0.97);border:1px solid #2a3b55;border-radius:8px;padding:8px;z-index:8;color:#cfe3ff;font:12px system-ui,sans-serif';
+      pf.div.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center"><b id="pf-title"></b><button id="pf-x" title="Close">×</button></div><div id="pf-host" style="height:380px;margin-top:6px;overflow:hidden;border-radius:4px"></div><div id="pf-info" style="opacity:.8;margin-top:4px"></div>';
+      (document.getElementById('wrap') || document.body).appendChild(pf.div);
+      pf.div.querySelector('#pf-x').onclick = () => { pf.div.style.display = 'none'; pf.name = null; };
+      pf.ren = new THREE.WebGLRenderer({ antialias: true }); pf.ren.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+      pf.ren.domElement.style.display = 'block'; pf.div.querySelector('#pf-host').appendChild(pf.ren.domElement);
+      pf.cam = new THREE.PerspectiveCamera(45, 1, 1e-3, 1e6); pf.ctl = new THREE.OrbitControls(pf.cam, pf.ren.domElement);
+    }
+    pf.div.style.display = 'block'; pf.name = name;
+    const b = byName[name], R = b.rkm / 1000, tl = (TILT[name] || 0) * D; // scene unit: 1,000 km
+    pf.scene = new THREE.Scene(); pf.scene.add(new THREE.AmbientLight(0xffffff, 0.35)); const sun = new THREE.DirectionalLight(0xffffff, 1.1); pf.scene.add(sun); pf.sun = sun;
+    const col = b.mesh && b.mesh.material && b.mesh.material.color ? b.mesh.material.color.getHex() : 0xbbbbbb;
+    const planet = new THREE.Mesh(new THREE.SphereGeometry(R, 48, 32), new THREE.MeshStandardMaterial({ color: col, roughness: 1 })); pf.scene.add(planet);
+    (RINGS[name] || []).forEach(([a, c, color, op]) => { const ring = new THREE.Mesh(new THREE.RingGeometry(a * R, c * R, 128), new THREE.MeshStandardMaterial({ color, side: THREE.DoubleSide, transparent: true, opacity: op, roughness: 1 }));
+      ring.rotation.x = -Math.PI / 2 + tl; pf.scene.add(ring); });
+    pf.moons = MO[name].map((m, k) => {
+      const a = m[2] / 1000, orbit = [];
+      for (let i = 0; i <= 128; i++) { const th = i / 128 * 2 * Math.PI; orbit.push(new THREE.Vector3(a * Math.cos(th), a * Math.sin(th) * Math.sin(tl), -a * Math.sin(th) * Math.cos(tl))); }
+      pf.scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(orbit), new THREE.LineBasicMaterial({ color: 0x3d5a80 })));
+      const mesh = new THREE.Mesh(new THREE.SphereGeometry(Math.max(m[3] / 1000, R * 0.01), 24, 16), new THREE.MeshStandardMaterial({ color: 0xcccccc, roughness: 1 })); pf.scene.add(mesh);
+      const lab = textSprite(m[0]); pf.scene.add(lab);
+      return { m, k, a, mesh, lab };
+    });
+    const far = Math.max(...pf.moons.map((x) => x.a), 3 * R);
+    pf.cam.position.set(0, far * 0.9, far * 1.6); pf.ctl.target.set(0, 0, 0); pf.ctl.update();
+    pf.div.querySelector('#pf-title').textContent = name + ' system · true scale';
+    pf.div.querySelector('#pf-info').textContent = MO[name].length + ' moons shown (' + MO[name].map((m) => m[0]).join(', ') + ') · same simulation time as the solar system · drag to orbit, scroll to zoom';
+  }
+  (function pfLoop() {
+    if (pf.name && pf.div && pf.div.style.display !== 'none') {
+      const host = pf.div.querySelector('#pf-host'), w = host.clientWidth || 500, h = host.clientHeight || 380;
+      if (pf.ren.domElement.width !== Math.floor(w * pf.ren.getPixelRatio())) { pf.ren.setSize(w, h); pf.cam.aspect = w / h; pf.cam.updateProjectionMatrix(); }
+      const tl = (TILT[pf.name] || 0) * D;
+      pf.moons.forEach(({ m, k, a, mesh, lab }) => {
+        let u;
+        if (m[0] === 'Moon' && typeof moonGeo === 'function') { const g = moonGeo(jd), r = Math.hypot(...g); u = g.map((c) => c / r); }
+        else { const th = 2 * Math.PI * ((jd - 2451545) / m[1] % 1) + k * 1.3; u = [Math.cos(th), Math.sin(th) * Math.cos(tl), Math.sin(th) * Math.sin(tl)]; }
+        mesh.position.set(u[0] * a, u[2] * a, -u[1] * a); lab.position.copy(mesh.position);
+      });
+      const p = byName[pf.name].w; if (p) pf.sun.position.set(-p.x, -p.y, -p.z).normalize();
+      pf.ctl.update(); pf.ren.render(pf.scene, pf.cam);
+    }
+    requestAnimationFrame(pfLoop);
+  })();
+
   // ---------- hooks into the existing views ----------
   // Local Bubble: a star selection fires 'star.select'; manual triggers become buttons in the star's panel.
   const baseTip = window.lbTip;
@@ -281,6 +380,9 @@
   const magBtn = document.createElement('button'); magBtn.id = 'magb';
   magBtn.onclick = () => setMagnify(!mag.on);
   bar.appendChild(magBtn);
+  const magSel = document.createElement('select'); magSel.title = 'Magnification: how faint a star you can see';
+  MAG_LEVELS.forEach(([l, m], i) => { const o = document.createElement('option'); o.value = i; o.textContent = l + ' (mag ' + m + ')'; magSel.appendChild(o); });
+  magSel.value = String(magIdx); magSel.onchange = () => { magIdx = +magSel.value; }; bar.appendChild(magSel);
   const search = document.createElement('input');
   search.placeholder = 'Find star…'; search.style.cssText = 'font-size:12px;width:110px;padding:2px 6px';
   search.onkeydown = (e) => {
@@ -307,5 +409,5 @@
     requestAnimationFrame(sync);
   })();
 
-  window.SAS_AGENT = { openEyepiece, showEyepiece, sceneDirToRaDec, setMagnify, TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
+  window.SAS_AGENT = { appendStars, openPlanetFrame, planetInBox, magLevel, openEyepiece, showEyepiece, sceneDirToRaDec, setMagnify, TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
 })();

@@ -1,8 +1,8 @@
 # Test report
 
-Built 2026-11-20T02:46:03.804Z · version 0.17.0
+Built 2026-11-20T03:24:53.582Z · version 0.17.0
 
-## test.js: 101 passed, 0 failed, 0 not run
+## test.js: 104 passed, 0 failed, 0 not run
 
 ```
 PASS 32 tools listed: scw_get, scw_children, scw_search, scw_laws, scw_inheritance_rules, sim_state, sim_clock, run_evals, inject_interstellar_comet, events, validate_app_dropin, find_mining_targets, plan_mission, generate_universe, find_mining_targets_parallel, generate_exotic_universe, run_extraction_campaign, plan_trip, link_hidden_universe, remove_state, galaxy_field, galaxy_object, energy_ledger, scw_relations, exoplanet_system, densify_region, build_galaxy, sky_check, stream_catalog_region, route_trigger, sky_region, open_space_at_scale
@@ -43,7 +43,7 @@ PASS Mars trip: first window 2026-12-04, 259 days, 6.32 km/s
 PASS Europa resolves to the Jovian moon
 PASS Non-trip request rejected with guidance
 PASS open_space_at_scale declares its MCP App view
-PASS App resource is self-contained HTML (2.39 MB, mcp-app profile)
+PASS App resource is self-contained HTML (2.40 MB, mcp-app profile)
 PASS open_space_at_scale returns its text fallback
 PASS All evals pass with all three universes: 96/96
 PASS Milky Way children are typed: superposes 5, contains 5, passes-through 1, signals 1
@@ -100,8 +100,11 @@ PASS Agent: build_galaxy places M31 769 kpc from the Galactic center
 PASS Agent: sky_check Phaethon on October 5, 5 BCE is V 17.3, not naked-eye
 PASS Agent: sky_check rejects a bad date
 PASS Catalog stream: Gaia rows convert to the catalog frame and keep only stars inside the sphere (2 of 3)
+PASS Catalog stream: space velocity from Gaia proper motion and RV matches the catalog velocity of Eta Cet within 5%
+PASS Catalog stream: streamed stars are full base-catalog rows (selectable in the app)
 PASS Catalog stream: VizieR column names parse the same way
 PASS Catalog stream: both services down gives a clear error
+PASS Catalog stream: a Magnify cone returns catalog rows
 PASS Hook: route_trigger names the agent for an app trigger
 PASS Hook: route_trigger returns nothing for ordinary messages
 PASS Magnify: sky_region resolves M42, returns Gaia stars, the bright stars Gaia saturates on, and the survey image

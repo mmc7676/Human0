@@ -174,11 +174,11 @@ function skyCheck({ body, date, albedo }) {
 // Gaia data: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO. Primary service: ESA Gaia archive; fallback: CDS VizieR (same Gaia DR3 table).
 const LY_PER_MAS = 3261.56; // distance in ly = 3261.56 / parallax(mas)
 const TAP = [
-  { name: 'ESA Gaia Archive', url: 'https://gea.esac.esa.int/tap-server/tap/sync', table: 'gaiadr3.gaia_source', id: 'source_id', ra: 'ra', dec: 'dec', plx: 'parallax', plxe: 'parallax_over_error', g: 'phot_g_mean_mag', bprp: 'bp_rp' },
-  { name: 'CDS VizieR', url: 'https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync', table: '"I/355/gaiadr3"', id: 'Source', ra: 'RA_ICRS', dec: 'DE_ICRS', plx: 'Plx', plxe: 'RPlx', g: 'Gmag', bprp: '"BP-RP"' },
+  { name: 'ESA Gaia Archive', url: 'https://gea.esac.esa.int/tap-server/tap/sync', table: 'gaiadr3.gaia_source', id: 'source_id', ra: 'ra', dec: 'dec', plx: 'parallax', plxe: 'parallax_over_error', g: 'phot_g_mean_mag', bprp: 'bp_rp', pmra: 'pmra', pmdec: 'pmdec', rv: 'radial_velocity' },
+  { name: 'CDS VizieR', url: 'https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync', table: '"I/355/gaiadr3"', id: 'Source', ra: 'RA_ICRS', dec: 'DE_ICRS', plx: 'Plx', plxe: 'RPlx', g: 'Gmag', bprp: '"BP-RP"', pmra: 'pmRA', pmdec: 'pmDE', rv: 'RV' },
 ];
 function regionQuery(t, ra, dec, radDeg, plxMin, plxMax, gMax, top) {
-  return 'SELECT TOP ' + top + ' ' + [t.id, t.ra, t.dec, t.plx, t.g, t.bprp].join(', ') + ' FROM ' + t.table +
+  return 'SELECT TOP ' + top + ' ' + [t.id, t.ra, t.dec, t.plx, t.g, t.bprp, t.pmra, t.pmdec, t.rv].join(', ') + ' FROM ' + t.table +
     ' WHERE ' + t.plx + ' BETWEEN ' + plxMin.toFixed(4) + ' AND ' + plxMax.toFixed(4) + ' AND ' + t.plxe + ' > 10 AND ' + t.g + ' < ' + gMax +
     (radDeg < 180 ? ' AND 1 = CONTAINS(POINT(\'ICRS\', ' + t.ra + ', ' + t.dec + '), CIRCLE(\'ICRS\', ' + ra.toFixed(5) + ', ' + dec.toFixed(5) + ', ' + radDeg.toFixed(4) + '))' : '') +
     ' ORDER BY ' + t.g + ' ASC';
@@ -196,46 +196,75 @@ function bprpColor(bprp) {
   return '#ff8a4a';
 }
 // Pure conversion step, exported for tests: CSV text from either service -> stars in the catalog frame.
-function gaiaRowsToStars(csvText, centerPos, radiusLy) {
+// Pure conversion step, exported for tests: CSV text from either service -> stars in the catalog frame,
+// with space velocity from proper motion (+ radial velocity when Gaia has it) so they move with the Bubble clock.
+const KMS_TO_LYYR = 1 / 299792.458; // 1 km/s in light years per year
+function gaiaRowsToStars(csvText, inside) {
   const { head, rows } = parseCsv(csvText), ix = (re) => head.findIndex((h) => re.test(h));
   const iId = ix(/^(source_id|Source)$/i), iRa = ix(/^(ra|RA_ICRS)$/i), iDe = ix(/^(dec|DE_ICRS)$/i), iP = ix(/^(parallax|Plx)$/i), iG = ix(/^(phot_g_mean_mag|Gmag)$/i), iC = ix(/^(bp_rp|BP-RP)$/i);
+  const iPa = ix(/^(pmra|pmRA)$/i), iPd = ix(/^(pmdec|pmDE)$/i), iRv = ix(/^(radial_velocity|RV)$/i);
   if ([iId, iRa, iDe, iP, iG].some((i) => i < 0)) throw new Error('Unexpected columns from the catalog service: ' + head.join(', '));
   const out = [];
   for (const r of rows) {
     const plx = +r[iP]; if (!(plx > 0)) continue;
-    const d = LY_PER_MAS / plx, p = GXC.galHelio(+r[iRa], +r[iDe], d);
-    if (Math.hypot(p[0] - centerPos[0], p[1] - centerPos[1], p[2] - centerPos[2]) > radiusLy) continue;
-    out.push({ id: 'Gaia DR3 ' + r[iId], pos: p, G: +r[iG], bprp: iC >= 0 && r[iC] !== '' ? +r[iC] : null, d_ly: d });
+    const ra = +r[iRa], dec = +r[iDe], d = LY_PER_MAS / plx, p = GXC.galHelio(ra, dec, d);
+    if (inside && !inside(p)) continue;
+    // velocity: tangential from proper motion, radial from RV (0 when missing), rotated with the same equatorial->galactic map
+    const dpc = 1000 / plx, pa = iPa >= 0 ? +r[iPa] || 0 : 0, pd = iPd >= 0 ? +r[iPd] || 0 : 0, rv = iRv >= 0 && r[iRv] !== '' ? +r[iRv] : 0;
+    const va = 4.74047 * pa / 1000 * dpc, vd = 4.74047 * pd / 1000 * dpc, a = ra * Math.PI / 180, de = dec * Math.PI / 180;
+    const eq = [-Math.sin(a) * va - Math.sin(de) * Math.cos(a) * vd + Math.cos(de) * Math.cos(a) * rv,
+      Math.cos(a) * va - Math.sin(de) * Math.sin(a) * vd + Math.cos(de) * Math.sin(a) * rv, Math.cos(de) * vd + Math.sin(de) * rv];
+    const ux = GXC.galHelio(0, 0, 1), uy = GXC.galHelio(90, 0, 1), uz = GXC.galHelio(0, 90, 1);
+    const vg = [0, 1, 2].map((k) => (ux[k] * eq[0] + uy[k] * eq[1] + uz[k] * eq[2]) * KMS_TO_LYYR);
+    const G = +r[iG], bprp = iC >= 0 && r[iC] !== '' ? +r[iC] : null;
+    out.push({ id: 'Gaia DR3 ' + r[iId], ra, dec, pos: p, G, bprp, d_ly: d, v: vg, rv: iRv >= 0 && r[iRv] !== '' ? rv : null });
   }
   return out;
 }
-async function streamCatalogRegion({ center = 'Sun', radius_ly = 20, mag_limit = 13, max_stars = 800 }, fetchImpl) {
-  if (!(radius_ly > 0 && radius_ly <= 100)) throw new Error('radius_ly must be greater than 0 and at most 100.');
-  const st = findStar(center), D = Math.hypot(...st.pos), R = radius_ly;
-  const ra = st.s ? st.s[COL.ra_h] * 15 : 0, dec = st.s ? st.s[COL.dec_deg] : 0;
-  const radDeg = D > R ? Math.asin(R / D) * (180 / Math.PI) : 180;
-  const plxMax = D > R ? LY_PER_MAS / (D - R) : 1e6, plxMin = LY_PER_MAS / (D + R);
+// A streamed star as a row in the base catalog's column order, so the app can add it to the Local Bubble
+// (selectable, centerable, moving with the Bubble clock). V and B-V are approximated from Gaia G and BP-RP.
+function starRow(g) {
+  const absV = g.G + 5 - 5 * Math.log10(g.d_ly / 3.26156), bv = g.bprp === null ? '' : (0.85 * g.bprp - 0.05).toFixed(2);
+  return [g.id, g.id + ' · G ' + g.G.toFixed(2) + (g.bprp === null ? '' : ' · BP-RP ' + g.bprp.toFixed(2)) + ' · ' + (g.rv === null ? 'no RV' : 'RV ' + g.rv.toFixed(1) + ' km/s'), '',
+    +g.pos[0].toFixed(3), +g.pos[1].toFixed(3), +g.pos[2].toFixed(3), +g.G.toFixed(2), +absV.toFixed(2), 'Gaia', bv,
+    +(g.ra / 15).toFixed(6), +g.dec.toFixed(5), g.rv === null ? '' : g.rv.toFixed(1), +Math.pow(10, (4.83 - absV) / 2.5).toPrecision(4),
+    g.v.map((x) => +x.toPrecision(6)), 0, '', []];
+}
+// Two shapes: a sphere around a star (center + radius_ly), or a cone along a sky direction (ra, dec, radius_deg,
+// out to max_distance_ly) — the cone is what a Magnify box selects. Stars come back as base-catalog rows.
+async function streamCatalogRegion({ center, radius_ly = 20, ra, dec, radius_deg, max_distance_ly = 1000, mag_limit = 13, max_stars = 800 }, fetchImpl) {
+  const f = fetchImpl || fetch, cone = ra !== undefined && dec !== undefined;
+  let q0, inside, label, focus = null;
   const top = Math.min(Math.max(50, max_stars | 0), 2000) * 2;
-  const f = fetchImpl || fetch;
+  if (cone) {
+    if (!(radius_deg > 0 && radius_deg <= 10)) throw new Error('radius_deg must be greater than 0 and at most 10.');
+    if (!(max_distance_ly > 0 && max_distance_ly <= 5000)) throw new Error('max_distance_ly must be greater than 0 and at most 5,000.');
+    q0 = { ra, dec, radDeg: radius_deg, plxMin: LY_PER_MAS / max_distance_ly, plxMax: 1e6 };
+    inside = null; label = 'RA ' + ra.toFixed(2) + '°, Dec ' + dec.toFixed(2) + '° (' + radius_deg + '° cone to ' + max_distance_ly + ' ly)';
+  } else {
+    if (!(radius_ly > 0 && radius_ly <= 100)) throw new Error('radius_ly must be greater than 0 and at most 100.');
+    const st = findStar(center || 'Sun'), D = Math.hypot(...st.pos), R = radius_ly;
+    q0 = { ra: st.s ? st.s[COL.ra_h] * 15 : 0, dec: st.s ? st.s[COL.dec_deg] : 0, radDeg: D > R ? Math.asin(R / D) * 180 / Math.PI : 180,
+      plxMin: LY_PER_MAS / (D + R), plxMax: D > R ? LY_PER_MAS / (D - R) : 1e6 };
+    inside = (p) => Math.hypot(p[0] - st.pos[0], p[1] - st.pos[1], p[2] - st.pos[2]) <= R;
+    label = R + ' ly around ' + st.name; focus = st.index >= 0 ? st.index : null;
+  }
   const errors = [];
   for (const t of TAP) {
-    const q = regionQuery(t, ra, dec, radDeg, plxMin, plxMax, mag_limit, top);
+    const q = regionQuery(t, q0.ra, q0.dec, q0.radDeg, q0.plxMin, q0.plxMax, mag_limit, top);
     const url = t.url + '?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=' + encodeURIComponent(q);
     try {
-      const res = await f(url, { signal: AbortSignal.timeout(20000), headers: { accept: 'text/csv' } });
+      const res = await f(url, { signal: AbortSignal.timeout(12000), headers: { accept: 'text/csv' } });
       if (!res.ok) { errors.push(t.name + ': HTTP ' + res.status); continue; }
-      let stars = gaiaRowsToStars(await res.text(), st.pos, R);
+      let stars = gaiaRowsToStars(await res.text(), inside);
+      const returned = stars.length;
       // Skip stars the base naked-eye catalog already has (within 1 ly).
-      const near = STARS.stars.filter((s) => Math.hypot(s[COL.x_ly] - st.pos[0], s[COL.y_ly] - st.pos[1], s[COL.z_ly] - st.pos[2]) <= R + 1);
-      const before = stars.length;
-      stars = stars.filter((g) => !near.some((s) => Math.hypot(s[COL.x_ly] - g.pos[0], s[COL.y_ly] - g.pos[1], s[COL.z_ly] - g.pos[2]) < 1)).slice(0, max_stars);
+      stars = stars.filter((g) => !STARS.stars.some((s) => Math.abs(s[COL.x_ly] - g.pos[0]) < 1 && Math.hypot(s[COL.x_ly] - g.pos[0], s[COL.y_ly] - g.pos[1], s[COL.z_ly] - g.pos[2]) < 1)).slice(0, max_stars);
       return {
-        center: st.name, radius_ly: R, mag_limit_G: mag_limit, service: t.name, returned: before, already_in_base_catalog: before - stars.length > 0 ? before - stars.length : 0, added: stars.length,
+        region: label, mag_limit_G: mag_limit, service: t.name, returned, already_in_base_catalog: returned - stars.length, added: stars.length,
         brightest: stars.slice(0, 5).map((g) => ({ id: g.id, G: g.G, distance_ly: +g.d_ly.toFixed(1) })),
-        render: { layer: 'gaia:' + st.name + ':' + R, scale: 'bubble', frame: 'helio_ly', label: 'Gaia DR3 stars around ' + st.name, focus: st.index >= 0 ? st.index : null,
-          note: stars.length + ' catalog stars from Gaia DR3 (G < ' + mag_limit + ') within ' + R + ' ly of ' + st.name + '. Data: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO.',
-          points: stars.map((g) => [+g.pos[0].toFixed(3), +g.pos[1].toFixed(3), +g.pos[2].toFixed(3), bprpColor(g.bprp), g.G < 8 ? 2.2 : 1.6]), labels: [], rings: [] },
-        provenance: { stars: 'catalog (Gaia DR3 via ' + t.name + ')', license: 'ESA/Gaia/DPAC, CC BY-SA 3.0 IGO', query: q },
+        catalog: { kind: 'gaia-dr3', focus, stars: stars.map(starRow), note: stars.length + ' real Gaia DR3 stars (G < ' + mag_limit + ') added: ' + label + '. Data: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO.' },
+        provenance: { stars: 'catalog (Gaia DR3 via ' + t.name + '); V and B-V approximated from G and BP-RP; motion from Gaia proper motion and radial velocity (0 when Gaia has none)', license: 'ESA/Gaia/DPAC, CC BY-SA 3.0 IGO', query: q },
       };
     } catch (e) { errors.push(t.name + ': ' + (e.name === 'TimeoutError' ? 'timed out' : e.message)); }
   }
@@ -287,7 +316,7 @@ async function skyRegion({ target, ra, dec, fov_deg = 1, mag_limit = 9.5, max_st
       const q = 'SELECT TOP ' + Math.min(Math.max(50, max_stars | 0), 3000) + ' ' + [t.id, t.ra, t.dec, t.g, t.bprp].join(', ') + ' FROM ' + t.table + ' WHERE ' + t.g + ' < ' + mag_limit +
         ' AND 1 = CONTAINS(POINT(\'ICRS\', ' + t.ra + ', ' + t.dec + '), CIRCLE(\'ICRS\', ' + where.ra.toFixed(5) + ', ' + where.dec.toFixed(5) + ', ' + rad.toFixed(4) + ')) ORDER BY ' + t.g + ' ASC';
       try {
-        const res = await f(t.url + '?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=' + encodeURIComponent(q), { signal: AbortSignal.timeout(20000) });
+        const res = await f(t.url + '?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=' + encodeURIComponent(q), { signal: AbortSignal.timeout(12000) });
         if (!res.ok) { errs.push(t.name + ': HTTP ' + res.status); continue; }
         const { head, rows } = parseCsv(await res.text()), ix = (re) => head.findIndex((h) => re.test(h));
         const iRa = ix(/^(ra|RA_ICRS)$/i), iDe = ix(/^(dec|DE_ICRS)$/i), iG = ix(/^(phot_g_mean_mag|Gmag)$/i), iC = ix(/^(bp_rp|BP-RP)$/i);
@@ -300,7 +329,7 @@ async function skyRegion({ target, ra, dec, fov_deg = 1, mag_limit = 9.5, max_st
     const url = 'https://alasky.cds.unistra.fr/hips-image-services/hips2fits?hips=' + encodeURIComponent('CDS/P/DSS2/color') + '&width=512&height=512&fov=' + fov_deg +
       '&projection=TAN&coordsys=icrs&ra=' + where.ra.toFixed(5) + '&dec=' + where.dec.toFixed(5) + '&format=jpg';
     try {
-      const res = await f(url, { signal: AbortSignal.timeout(20000) });
+      const res = await f(url, { signal: AbortSignal.timeout(12000) });
       if (!res.ok) { notes.push('Survey image unavailable (CDS hips2fits HTTP ' + res.status + ').'); return null; }
       return { mime: 'image/jpeg', base64: toBase64(await res.arrayBuffer()), survey: 'DSS2 color (CDS/P/DSS2/color)', width: 512, height: 512 };
     } catch (e) { notes.push('Survey image unavailable (' + e.message + ').'); return null; }
@@ -322,4 +351,4 @@ async function skyRegion({ target, ra, dec, fov_deg = 1, mag_limit = 9.5, max_st
   };
 }
 
-module.exports = { skyRegion, resolveName, STEPS, streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
+module.exports = { starRow, skyRegion, resolveName, STEPS, streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };

@@ -103,11 +103,15 @@ r=await call('densify_region',{center:'Vega',radius_ly:30,seed:7});ok(!r.err&&r.
 r=await call('build_galaxy',{name:'M31',particles:500});ok(!r.err&&Math.abs(Math.hypot(...r.data.center_galcen_kpc)-769)<10,'Agent: build_galaxy places M31 '+Math.hypot(...r.data.center_galcen_kpc).toFixed(0)+' kpc from the Galactic center');
 r=await call('sky_check',{body:'Phaethon',date:'October 5, 5 BCE'});ok(!r.err&&r.data.astronomical_year===-4&&r.data.calendar==='Julian'&&r.data.naked_eye===false,'Agent: sky_check Phaethon on October 5, 5 BCE is V '+r.data.apparent_magnitude_V+', not naked-eye');
 r=await call('sky_check',{body:'Phaethon',date:'Smarch 40, 5 BCE'});ok(r.err,'Agent: sky_check rejects a bad date')}
-{const AT=require('./agent-tools.js'),st=AT.findStar('Eta Cet');
-const csv='source_id,ra,dec,parallax,phot_g_mean_mag,bp_rp\n1,17.30,-10.50,26.80,9.12,0.95\n2,16.90,-9.90,25.90,11.40,1.85\n3,40.00,30.00,26.00,10.00,0.70';
-const g=AT.gaiaRowsToStars(csv,st.pos,20);ok(g.length===2&&g[0].id==='Gaia DR3 1','Catalog stream: Gaia rows convert to the catalog frame and keep only stars inside the sphere ('+g.length+' of 3)');
-const v=AT.gaiaRowsToStars('Source,RA_ICRS,DE_ICRS,Plx,Gmag,BP-RP\n9,17.30,-10.50,26.80,9.12,0.95',st.pos,20);ok(v.length===1,'Catalog stream: VizieR column names parse the same way');
+{const AT=require('./agent-tools.js'),st=AT.findStar('Eta Cet'),inS=p=>Math.hypot(p[0]-st.pos[0],p[1]-st.pos[1],p[2]-st.pos[2])<=20;
+const csv='source_id,ra,dec,parallax,phot_g_mean_mag,bp_rp,pmra,pmdec,radial_velocity\n1,17.30,-10.50,26.80,9.12,0.95,100,-50,12\n2,16.90,-9.90,25.90,11.40,1.85,20,30,\n3,40.00,30.00,26.00,10.00,0.70,0,0,';
+const g=AT.gaiaRowsToStars(csv,inS);ok(g.length===2&&g[0].id==='Gaia DR3 1','Catalog stream: Gaia rows convert to the catalog frame and keep only stars inside the sphere ('+g.length+' of 3)');
+const e=AT.gaiaRowsToStars('source_id,ra,dec,parallax,phot_g_mean_mag,bp_rp,pmra,pmdec,radial_velocity\n9,17.1474,-10.18226,26.32,3.2,1.3,216.8,-138.1,11.8')[0].v;
+ok(e.every((x,k)=>Math.abs(x-st.s[14][k])<0.05*Math.abs(st.s[14][k])+3e-6),'Catalog stream: space velocity from Gaia proper motion and RV matches the catalog velocity of Eta Cet within 5%');
+const row=AT.starRow(g[0]);ok(row.length===18&&Array.isArray(row[14])&&Array.isArray(row[17])&&row[0]==='Gaia DR3 1','Catalog stream: streamed stars are full base-catalog rows (selectable in the app)');
+const v=AT.gaiaRowsToStars('Source,RA_ICRS,DE_ICRS,Plx,Gmag,BP-RP,pmRA,pmDE,RV\n9,17.30,-10.50,26.80,9.12,0.95,1,1,',inS);ok(v.length===1,'Catalog stream: VizieR column names parse the same way');
 let r=await AT.streamCatalogRegion({center:'Eta Cet'},async()=>({ok:false,status:503})).then(()=>null,e=>e.message);ok(/No catalog service answered/.test(r),'Catalog stream: both services down gives a clear error');
+r=await AT.streamCatalogRegion({ra:17.1,dec:-10.2,radius_deg:2,max_distance_ly:200},async()=>({ok:true,text:async()=>csv}));ok(r.catalog.stars.length===3&&/cone/.test(r.region),'Catalog stream: a Magnify cone returns catalog rows');
 r=await call('route_trigger',{prompt:'[Space-at-Scale trigger] event=star.select agent=sky-historian\nx'});ok(/sky-historian/.test(typeof r.data==='string'?r.data:''),'Hook: route_trigger names the agent for an app trigger');
 r=await call('route_trigger',{prompt:'what is Mars'});ok(!(typeof r.data==='string'?r.data:'x').trim(),'Hook: route_trigger returns nothing for ordinary messages')}
 {const AT=require('./agent-tools.js');const csv='source_id,ra,dec,phot_g_mean_mag,bp_rp\n1,83.80,-5.40,8.1,0.4\n2,83.85,-5.35,9.0,1.2';
