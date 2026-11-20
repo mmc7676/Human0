@@ -1,11 +1,11 @@
 # Space-at-Scale — Privacy Policy
 
-Last updated: November 17, 2026
+Last updated: November 19, 2026
 
 Space-at-Scale runs a local MCP server (Node.js) on your computer and renders an inline 3D app in Claude.
 
 - It does not collect, store, or transmit personal data.
-- The server makes no network requests and writes no files. Simulation changes (comets, generated universes, clock) live in memory and end when the server stops.
+- The server writes no files. It makes one kind of network request, only when you or Claude use the stream_catalog_region tool (the Fill region button): a star-catalog query to the ESA Gaia Archive (gea.esac.esa.int) or, if that fails, CDS VizieR (tapvizier.cds.unistra.fr). The query contains only sky coordinates, a distance range and a brightness limit, never anything about you. Simulation changes (comets, generated universes, clock) live in memory and end when the server stops.
 - The app loads no remote resources; its links to papers and catalogs open only when you click them.
 - No data is sent to Human0 or any third party.
 - The separate web version at https://app.maxey0.com/apps/space-at-scale/ is not part of this plugin. It has its own privacy page (https://app.maxey0.com/apps/space-at-scale/privacy) and an optional bring-your-own-key Claude panel that sends your requests directly from your browser to Anthropic.

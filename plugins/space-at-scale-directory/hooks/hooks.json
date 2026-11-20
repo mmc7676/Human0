@@ -1,0 +1,18 @@
+{
+  "description": "Routes messages sent by buttons in the Space-at-Scale app to the agent they name. Calls the plugin's own MCP server; runs no shell command.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:space-at-scale:space-at-scale",
+            "tool": "route_trigger",
+            "input": { "prompt": "${prompt}" },
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

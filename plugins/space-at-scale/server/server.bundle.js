@@ -25673,7 +25673,7 @@ var require_universe = __commonJS({
 var require_tiers = __commonJS({
   "tiers.json"(exports2, module2) {
     module2.exports = {
-      _note: "Which tools the hosted server offers on each Cloudflare plan. free = fits the Workers Free 10 ms CPU limit per call; paid = needs Workers Paid. Measured CPU (best of 3, Node, November 17, 2026): run_evals 18.2 ms, generate_universe 9.4 ms, find_mining_targets_parallel generates a universe first. Every other tool measured under 5 ms. The local plugin always registers every tool. Agent tools (November 18, 2026): exoplanet_system 0.2 ms, densify_region 3.8 ms at 50 ly, sky_check 0.03 ms, build_galaxy 6.4 ms at 2,500 particles (paid).",
+      _note: "Which tools the hosted server offers on each Cloudflare plan. free = fits the Workers Free 10 ms CPU limit per call; paid = needs Workers Paid. Measured CPU (best of 3, Node, November 17, 2026): run_evals 18.2 ms, generate_universe 9.4 ms, find_mining_targets_parallel generates a universe first. Every other tool measured under 5 ms. The local plugin always registers every tool. Agent tools (November 18, 2026): exoplanet_system 0.2 ms, densify_region 3.8 ms at 50 ly, sky_check 0.03 ms, build_galaxy 6.4 ms at 2,500 particles (paid). stream_catalog_region (November 19, 2026): network wait is not CPU; parsing up to 2,000 rows measured separately.",
       default: "free",
       tools: {
         run_evals: "paid",
@@ -45842,6 +45842,7 @@ var require_agent_tools = __commonJS({
           scale: "bubble",
           frame: "helio_ly",
           label: st.name + " planets",
+          focus: st.index,
           note: "Orbits enlarged " + Math.round(scale2 * AU_PER_LY).toLocaleString() + " times so they show at light-year scale.",
           points: [],
           labels: planets.filter((p) => p.a_au).map((p) => [p.name, st.pos[0] + p.a_au * scale2, st.pos[1], st.pos[2]]),
@@ -45881,7 +45882,8 @@ var require_agent_tools = __commonJS({
           layer: "dense:" + st.name + ":" + radius_ly,
           scale: "bubble",
           frame: "helio_ly",
-          label: "Synthetic stars around " + st.name,
+          label: "Census estimate around " + st.name,
+          focus: st.index >= 0 ? st.index : null,
           note: "Statistical fill: " + n + " stars drawn at the local density (0.1 per cubic parsec). They are not catalog stars.",
           points: pts,
           labels: [],
@@ -46015,7 +46017,100 @@ var require_agent_tools = __commonJS({
         assumptions: ["Present-day orbit propagated two-body; planetary perturbations over centuries are ignored, so positions far from today are indicative.", "Albedo " + p + " and H-G slope 0.15; cometary activity (outbursts, dust) is not modeled.", "Dates before 1582 use the Julian calendar; BCE years are historians' years (1 BCE = astronomical year 0)."]
       };
     }
-    module2.exports = { exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
+    var LY_PER_MAS = 3261.56;
+    var TAP = [
+      { name: "ESA Gaia Archive", url: "https://gea.esac.esa.int/tap-server/tap/sync", table: "gaiadr3.gaia_source", id: "source_id", ra: "ra", dec: "dec", plx: "parallax", plxe: "parallax_over_error", g: "phot_g_mean_mag", bprp: "bp_rp" },
+      { name: "CDS VizieR", url: "https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync", table: '"I/355/gaiadr3"', id: "Source", ra: "RA_ICRS", dec: "DE_ICRS", plx: "Plx", plxe: "RPlx", g: "Gmag", bprp: '"BP-RP"' }
+    ];
+    function regionQuery(t, ra, dec, radDeg, plxMin, plxMax, gMax, top) {
+      return "SELECT TOP " + top + " " + [t.id, t.ra, t.dec, t.plx, t.g, t.bprp].join(", ") + " FROM " + t.table + " WHERE " + t.plx + " BETWEEN " + plxMin.toFixed(4) + " AND " + plxMax.toFixed(4) + " AND " + t.plxe + " > 10 AND " + t.g + " < " + gMax + (radDeg < 180 ? " AND 1 = CONTAINS(POINT('ICRS', " + t.ra + ", " + t.dec + "), CIRCLE('ICRS', " + ra.toFixed(5) + ", " + dec.toFixed(5) + ", " + radDeg.toFixed(4) + "))" : "") + " ORDER BY " + t.g + " ASC";
+    }
+    function parseCsv(text) {
+      const rows = [], lines = text.trim().split(/\r?\n/);
+      const head = lines.shift().split(",").map((h) => h.replace(/"/g, "").trim());
+      for (const l of lines) {
+        const c = l.split(",");
+        if (c.length >= head.length) rows.push(c.map((v) => v.replace(/"/g, "").trim()));
+      }
+      return { head, rows };
+    }
+    function bprpColor(bprp) {
+      if (!(bprp > -1)) return "#ffffff";
+      const stops = [[-0.3, "#9bb2ff"], [0.3, "#cad7ff"], [0.8, "#fff4ea"], [1.2, "#ffd2a1"], [2, "#ffb56b"], [3.5, "#ff8a4a"]];
+      for (const [v, c] of stops) if (bprp <= v) return c;
+      return "#ff8a4a";
+    }
+    function gaiaRowsToStars(csvText, centerPos, radiusLy) {
+      const { head, rows } = parseCsv(csvText), ix = (re) => head.findIndex((h) => re.test(h));
+      const iId = ix(/^(source_id|Source)$/i), iRa = ix(/^(ra|RA_ICRS)$/i), iDe = ix(/^(dec|DE_ICRS)$/i), iP = ix(/^(parallax|Plx)$/i), iG = ix(/^(phot_g_mean_mag|Gmag)$/i), iC = ix(/^(bp_rp|BP-RP)$/i);
+      if ([iId, iRa, iDe, iP, iG].some((i) => i < 0)) throw new Error("Unexpected columns from the catalog service: " + head.join(", "));
+      const out = [];
+      for (const r of rows) {
+        const plx = +r[iP];
+        if (!(plx > 0)) continue;
+        const d = LY_PER_MAS / plx, p = GXC.galHelio(+r[iRa], +r[iDe], d);
+        if (Math.hypot(p[0] - centerPos[0], p[1] - centerPos[1], p[2] - centerPos[2]) > radiusLy) continue;
+        out.push({ id: "Gaia DR3 " + r[iId], pos: p, G: +r[iG], bprp: iC >= 0 && r[iC] !== "" ? +r[iC] : null, d_ly: d });
+      }
+      return out;
+    }
+    async function streamCatalogRegion({ center = "Sun", radius_ly = 20, mag_limit = 13, max_stars = 800 }, fetchImpl) {
+      if (!(radius_ly > 0 && radius_ly <= 100)) throw new Error("radius_ly must be greater than 0 and at most 100.");
+      const st = findStar(center), D2 = Math.hypot(...st.pos), R = radius_ly;
+      const ra = st.s ? st.s[COL.ra_h] * 15 : 0, dec = st.s ? st.s[COL.dec_deg] : 0;
+      const radDeg = D2 > R ? Math.asin(R / D2) * (180 / Math.PI) : 180;
+      const plxMax = D2 > R ? LY_PER_MAS / (D2 - R) : 1e6, plxMin = LY_PER_MAS / (D2 + R);
+      const top = Math.min(Math.max(50, max_stars | 0), 2e3) * 2;
+      const f = fetchImpl || fetch;
+      const errors = [];
+      for (const t of TAP) {
+        const q = regionQuery(t, ra, dec, radDeg, plxMin, plxMax, mag_limit, top);
+        const url = t.url + "?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=" + encodeURIComponent(q);
+        try {
+          const res = await f(url, { signal: AbortSignal.timeout(2e4), headers: { accept: "text/csv" } });
+          if (!res.ok) {
+            errors.push(t.name + ": HTTP " + res.status);
+            continue;
+          }
+          let stars = gaiaRowsToStars(await res.text(), st.pos, R);
+          const near = STARS.stars.filter((s) => Math.hypot(s[COL.x_ly] - st.pos[0], s[COL.y_ly] - st.pos[1], s[COL.z_ly] - st.pos[2]) <= R + 1);
+          const before = stars.length;
+          stars = stars.filter((g) => !near.some((s) => Math.hypot(s[COL.x_ly] - g.pos[0], s[COL.y_ly] - g.pos[1], s[COL.z_ly] - g.pos[2]) < 1)).slice(0, max_stars);
+          return {
+            center: st.name,
+            radius_ly: R,
+            mag_limit_G: mag_limit,
+            service: t.name,
+            returned: before,
+            already_in_base_catalog: before - stars.length > 0 ? before - stars.length : 0,
+            added: stars.length,
+            brightest: stars.slice(0, 5).map((g) => ({ id: g.id, G: g.G, distance_ly: +g.d_ly.toFixed(1) })),
+            render: {
+              layer: "gaia:" + st.name + ":" + R,
+              scale: "bubble",
+              frame: "helio_ly",
+              label: "Gaia DR3 stars around " + st.name,
+              focus: st.index >= 0 ? st.index : null,
+              note: stars.length + " catalog stars from Gaia DR3 (G < " + mag_limit + ") within " + R + " ly of " + st.name + ". Data: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO.",
+              points: stars.map((g) => [+g.pos[0].toFixed(3), +g.pos[1].toFixed(3), +g.pos[2].toFixed(3), bprpColor(g.bprp), g.G < 8 ? 2.2 : 1.6]),
+              labels: [],
+              rings: []
+            },
+            provenance: { stars: "catalog (Gaia DR3 via " + t.name + ")", license: "ESA/Gaia/DPAC, CC BY-SA 3.0 IGO", query: q }
+          };
+        } catch (e) {
+          errors.push(t.name + ": " + (e.name === "TimeoutError" ? "timed out" : e.message));
+        }
+      }
+      throw new Error("No catalog service answered (" + errors.join("; ") + ").");
+    }
+    var AGENTS = ["space-architect", "sky-historian", "scw-checker"];
+    function routeTrigger({ prompt = "" }) {
+      const m = /^\[Space-at-Scale trigger\]\s+event=(\S+)\s+agent=(\S+)/.exec(String(prompt));
+      if (!m || !AGENTS.includes(m[2])) return "";
+      return "This message was sent by a button in the Space-at-Scale app (event " + m[1] + "). It is a task for the space-at-scale:" + m[2] + " agent, which uses only Space-at-Scale tools for numbers and reports which results are catalog data and which are generated.";
+    }
+    module2.exports = { streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
   }
 });
 
@@ -46358,6 +46453,14 @@ function buildServer(opts = {}) {
       return err(e);
     }
   });
+  reg("stream_catalog_region", { title: "Stream catalog region", annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true }, description: "Fill a region with real catalog stars: queries Gaia DR3 (ESA Gaia Archive, falling back to CDS VizieR) for stars within radius_ly of a named star or the Sun, brighter than mag_limit (Gaia G), skips stars already in the base catalog, and draws them in the Local Bubble. Makes one request to a public catalog service; nothing is stored.", inputSchema: { center: z.string().default("Sun"), radius_ly: z.number().positive().max(100).default(20), mag_limit: z.number().min(3).max(19).default(13), max_stars: z.number().int().min(50).max(2e3).default(800) }, _meta: AMETA }, async (a) => {
+    try {
+      return sj(await AT.streamCatalogRegion(a));
+    } catch (e) {
+      return err(e);
+    }
+  });
+  reg("route_trigger", { title: "Route app trigger", annotations: RO, description: "Internal: used by the plugin hook to recognize messages sent by buttons in the Space-at-Scale app and name the agent that should handle them. Returns an empty string for any other message.", inputSchema: { prompt: z.string().default("") } }, async (a) => ({ content: [{ type: "text", text: AT.routeTrigger(a) }] }));
   const APP_URI = "ui://space-at-scale/app.html", APP_HTML = opts.appHtml !== void 0 ? opts.appHtml : require("fs").readFileSync(require("path").join(__dirname, "dist", "space-at-scale.html"), "utf8");
   server.registerResource("space-at-scale-app", APP_URI, { description: "Space-at-Scale interactive view (MCP App)", mimeType: "text/html;profile=mcp-app" }, async (uri) => ({ contents: [{ uri: uri.href, mimeType: "text/html;profile=mcp-app", text: APP_HTML, _meta: { ui: { csp: { connectDomains: [], resourceDomains: [] }, prefersBorder: false } } }] }));
   reg("open_space_at_scale", { annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false }, description: "Open Space-at-Scale inline: a real-time 3D simulation at three scales. Solar system in AU (planets, moons, asteroids, KBOs, spacecraft, mining search, trip planner); Local Bubble in light years (3,665 stars); Milky Way in thousands of light years (black hole Sgr A* and its S-stars, dark matter halo, 161 globular clusters, 50 satellite galaxies, 3,563 pulsars, supernova light shells, gravitational-wave fronts). Each scale runs forward and backward in time to its physical limits. Use when the user asks to show, open, play or explore the solar system, space, the galaxy, black holes, dark matter or Space-at-Scale.", inputSchema: { focus: z.string().optional().describe("Optional body to mention, e.g. Mars") }, _meta: { ui: { resourceUri: APP_URI }, "ui/resourceUri": APP_URI } }, async ({ focus }) => ({ content: [{ type: "text", text: "Space-at-Scale is open" + (focus ? " (look for " + focus + " in the Primary menu or click it in the view)" : "") + '. Drag to orbit, scroll or pinch to zoom, click any dot for live specs. Try the task bar: "plan a trip to Mars" or "$3,000,000 of platinum within 5 AU".' }] }));

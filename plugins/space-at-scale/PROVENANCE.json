@@ -1,7 +1,7 @@
 {
  "plugin": "space-at-scale",
  "version": "0.17.0",
- "built_utc": "2026-11-18T08:12:42.172Z",
+ "built_utc": "2026-11-20T01:42:16.178Z",
  "rule": "SHA-256 and byte length of every shipped file. A matching hash shows the bytes are the same; it does not show the content is correct.",
  "artifacts": [
   {
@@ -31,8 +31,8 @@
   },
   {
    "path": "PRIVACY.md",
-   "sha256": "0fc813052a74220436303651fef817bbe87d58dee369e7c6db715e95aff3b0fa",
-   "bytes": 1025
+   "sha256": "7e88ddcec05108ff0e6a035f525df49ec13f70fdb4ef2ed2cfb253a6794f0dd1",
+   "bytes": 1348
   },
   {
    "path": "README.md",
@@ -56,13 +56,8 @@
   },
   {
    "path": "hooks/hooks.json",
-   "sha256": "1f3fd68bc27c1c89384d6dd0a6ec7d079ea30e5504c21f581045340017ba0e75",
-   "bytes": 299
-  },
-  {
-   "path": "hooks/route-trigger.js",
-   "sha256": "c655cf0b80577a0642e449c2b8c650dca541a5cc04aa80cf73c6155ecbc9a78d",
-   "bytes": 917
+   "sha256": "fa5be131059b28746e3cb989187b09deb7adce9e151c0951b7c26cfa6549f9ba",
+   "bytes": 487
   },
   {
    "path": "release.js",
@@ -156,8 +151,8 @@
   },
   {
    "path": "server/agent-tools.js",
-   "sha256": "d985d0771d0c0afc1e3570d1af30c325bfc45efea84b410ffd92b91e462d8c9e",
-   "bytes": 14029
+   "sha256": "b2c7a78f817845d6c9cc330fe98a05b4027476d41ac9656261c055d3e2b3f0f3",
+   "bytes": 20371
   },
   {
    "path": "server/app/OrbitControls.js",
@@ -166,8 +161,8 @@
   },
   {
    "path": "server/app/agent-bridge.js",
-   "sha256": "8784f9027c69a387fc0fb9c1c321e8659bcc535709c93d845b0d6e99da092032",
-   "bytes": 10942
+   "sha256": "343f8ea46d54910397b65dcb154939f5fccd68e3a22570d58dbe8726016c57f1",
+   "bytes": 13052
   },
   {
    "path": "server/app/app.js",
@@ -196,8 +191,8 @@
   },
   {
    "path": "server/dist/space-at-scale.html",
-   "sha256": "b44dac1500c5304b2f4a466dc5806cba46c6f730369f341e28fe9634f928fcb7",
-   "bytes": 2494143
+   "sha256": "e39ab498532439a5bb8ba49d05dd7c7f310e2b164898bda55c4f648de6d36402",
+   "bytes": 2496253
   },
   {
    "path": "server/galaxy-core.js",
@@ -231,13 +226,13 @@
   },
   {
    "path": "server/server.bundle.js",
-   "sha256": "6eecb7c66a6924f9273dae2324e381068fe6e5ac7f6c6cf0ca596d250a2eadde",
-   "bytes": 3248752
+   "sha256": "ba2c1a1878587a485219f8d815e4a3eabf2b87b0a1ae5aa4f11de85b99cccd24",
+   "bytes": 3256446
   },
   {
    "path": "server/server.js",
-   "sha256": "492bfdc375db80138f1d87e509b4669a7fef99f01d8ce48a9333d8a83ac42391",
-   "bytes": 19120
+   "sha256": "9fec72b9c770057804c0a0fe6c5b78774959d989643b0430a719a7f89c57e04d",
+   "bytes": 20299
   },
   {
    "path": "server/stars.json",
@@ -246,18 +241,18 @@
   },
   {
    "path": "server/test-http.js",
-   "sha256": "9a089df2e45e6f02934f17dd5465242c1e81966eff61af401c518ead20c9da61",
+   "sha256": "476439179253a9920fc942970b5556dd686ac930d87c40ba9ad63972b37e7e95",
    "bytes": 2935
   },
   {
    "path": "server/test.js",
-   "sha256": "8333ee3da5a9734445af33b59d983c0c5b825c61d14d927933dc56851096caa4",
-   "bytes": 20106
+   "sha256": "48f6eb89d3e6e61b54e7a6a1f59b60c1a6a674c47205657e3b243a2c8852bb65",
+   "bytes": 21319
   },
   {
    "path": "server/tiers.json",
-   "sha256": "7bc84a44a31e331eb7d83c4cc691af0837c167b7e81f0be0e0060fc04c314bbf",
-   "bytes": 721
+   "sha256": "3aac5f298a22abc627aec0a8ef55e9974abdb7c9eebd287dd72117a4a32e91e2",
+   "bytes": 835
   },
   {
    "path": "server/tools/build-galaxy.js",
@@ -300,8 +295,8 @@
   {
    "canonical": "agent-bridge.js",
    "mirror": "server/app/agent-bridge.js",
-   "sha256": "8784f9027c69a387fc0fb9c1c321e8659bcc535709c93d845b0d6e99da092032",
-   "bytes": 10942,
+   "sha256": "343f8ea46d54910397b65dcb154939f5fccd68e3a22570d58dbe8726016c57f1",
+   "bytes": 13052,
    "identical": true
   },
   {

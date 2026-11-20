@@ -48,7 +48,10 @@
   const TRIGGERS = [
     { id: 'exoplanets-on-select', event: 'star.select', when: (c) => c.planets > 0, auto: true,
       action: { kind: 'tool', tool: 'exoplanet_system', args: (c) => ({ star: c.name }) } },
-    { id: 'densify-star', event: 'star.select', label: 'Fill region', action: { kind: 'tool', tool: 'densify_region', args: (c) => ({ center: c.name, radius_ly: 25 }) } },
+    { id: 'catalog-fill', event: 'star.select', label: 'Fill region', action: { kind: 'tool', tool: 'stream_catalog_region', args: (c) => ({ center: c.name, radius_ly: 20 }) } },
+    { id: 'census-estimate', event: 'star.select', label: 'Census estimate', action: { kind: 'tool', tool: 'densify_region', args: (c) => ({ center: c.name, radius_ly: 20 }) } },
+    // Zoom hook: when the camera comes within 40 ly of the star the view is centered on, stream that region once.
+    { id: 'catalog-on-zoom', event: 'zoom.region', auto: true, action: { kind: 'tool', tool: 'stream_catalog_region', args: (c) => ({ center: c.name, radius_ly: 20 }) } },
     { id: 'agent-star', event: 'star.select', label: 'Ask agent', action: { kind: 'agent', agent: 'space-architect',
       text: (c) => 'Investigate the star ' + c.name + ' (' + c.distance + ' ly). Add what the catalogs and models support: its planets, the crowded region around it, and anything notable about it.' } },
     { id: 'build-andromeda', event: 'galaxy.menu', label: 'Build Andromeda', action: { kind: 'tool', tool: 'build_galaxy', args: () => ({ name: 'Andromeda' }) } },
@@ -60,7 +63,7 @@
 
   async function run(trigger, ctx) {
     const a = trigger.action;
-    if (!inHost) { note('Agent actions run inside Claude. Open Space-at-Scale from a conversation to use them.'); return; }
+    if (!inHost) return; // outside Claude there is no server or chat to reach
     try {
       if (a.kind === 'tool') {
         note('Agent: ' + (trigger.label || trigger.id) + '…');
@@ -121,11 +124,31 @@
     if (!render) return;
     if (render.scale === 'galaxy') { if (!gx.on) enterGX(false); } else if (!lb.on) enterLB(false);
     drawLayer(render);
+    if (render.scale !== 'galaxy' && Number.isInteger(render.focus) && lb.data && lb.data.stars[render.focus]) focusStar(render.focus);
     note((source === 'claude' ? 'Agent result: ' : '') + (render.note || render.label));
+  }
+  // Center the Local Bubble view on a catalog star and open its panel.
+  function focusStar(i) {
+    lb.view = 'star:' + i; lbCtl.target.set(0, 0, 0); lb.sel = { i }; lb.starIdx = i;
+    const sel = document.getElementById('lbv'); if (sel && [...sel.options].some((o) => o.value === lb.view)) sel.value = lb.view;
+    try { lbTip(); } catch (e) {}
+  }
+  function findStarIndex(q) {
+    if (!lb.data) return -1;
+    const n = String(q).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); if (!n) return -1;
+    const S = lb.data.stars, norm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    let i = S.findIndex((s) => norm(s[0]) === n);
+    if (i < 0) i = S.findIndex((s) => (' ' + norm(s[1]) + ' ').includes(' ' + n + ' '));
+    if (i < 0) i = S.findIndex((s) => norm(s[0]).includes(n));
+    return i;
   }
   // Keep overlay roots aligned with whatever the view is centered on.
   (function follow() {
     const O = lbOrigin(); bubbleRoot.position.set(-O[0], -O[2], O[1]);
+    if (lb.on && lb.data && lb.view.startsWith('star:') && lbCam.position.length() < 40) {
+      const i = +lb.view.slice(5), s = lb.data.stars[i];
+      if (s) fire('zoom.region', { name: s[0] });
+    }
     if (gx.on) { const G = gxOrigin(); galaxyRoot.position.set(-G[0] * KLY_PER_KPC, -G[2] * KLY_PER_KPC, G[1] * KLY_PER_KPC); }
     requestAnimationFrame(follow);
   })();
@@ -149,6 +172,15 @@
   const toggle = document.createElement('button'); toggle.id = 'agentb';
   toggle.onclick = () => { agentState.on = !agentState.on; };
   bar.appendChild(toggle);
+  const search = document.createElement('input');
+  search.placeholder = 'Find star…'; search.style.cssText = 'font-size:12px;width:110px;padding:2px 6px';
+  search.onkeydown = (e) => {
+    if (e.key !== 'Enter') return;
+    if (!lb.on) enterLB(false);
+    const go = () => { const i = findStarIndex(search.value); if (i < 0) note('No naked-eye star named "' + search.value + '".'); else focusStar(i); };
+    lb.data ? go() : setTimeout(go, 1500);
+  };
+  bar.appendChild(search);
   const menuBtns = [];
   TRIGGERS.filter((t) => t.event.endsWith('.menu')).forEach((t) => {
     const b = document.createElement('button'); b.textContent = t.label; b.style.fontSize = '12px';
@@ -165,5 +197,5 @@
     requestAnimationFrame(sync);
   })();
 
-  window.SAS_AGENT = { TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, layers, state: agentState };
+  window.SAS_AGENT = { TRIGGERS, fire, run, callTool, askAgent, drawLayer, onResult, focusStar, findStarIndex, layers, state: agentState };
 })();

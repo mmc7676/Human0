@@ -52,7 +52,7 @@ function exoplanetSystem({ star }) {
     star: st.name, ids: st.s[COL.ids], distance_ly: +Math.hypot(...st.pos).toFixed(1), spectral_type: st.s[COL.spect], planets,
     count: planets.length,
     note: planets.length ? undefined : 'No confirmed planets in the archive extract for this star.',
-    render: { layer: 'exo:' + st.name, scale: 'bubble', frame: 'helio_ly', label: st.name + ' planets',
+    render: { layer: 'exo:' + st.name, scale: 'bubble', frame: 'helio_ly', label: st.name + ' planets', focus: st.index,
       note: 'Orbits enlarged ' + Math.round(scale * AU_PER_LY).toLocaleString() + ' times so they show at light-year scale.',
       points: [], labels: planets.filter((p) => p.a_au).map((p) => [p.name, st.pos[0] + p.a_au * scale, st.pos[1], st.pos[2]]), rings },
     provenance: { planets: 'catalog (NASA Exoplanet Archive extract shipped in stars.json)', orbit_drawing: 'enlarged for visibility' },
@@ -76,7 +76,7 @@ function densifyRegion({ center = 'Sun', radius_ly = 20, max_stars = 1500, seed 
   }
   return {
     center: st.name, radius_ly, expected_stars: Math.round(expected), drawn: n, capped: n < Math.round(expected), by_type: counts,
-    render: { layer: 'dense:' + st.name + ':' + radius_ly, scale: 'bubble', frame: 'helio_ly', label: 'Synthetic stars around ' + st.name,
+    render: { layer: 'dense:' + st.name + ':' + radius_ly, scale: 'bubble', frame: 'helio_ly', label: 'Census estimate around ' + st.name, focus: st.index >= 0 ? st.index : null,
       note: 'Statistical fill: ' + n + ' stars drawn at the local density (0.1 per cubic parsec). They are not catalog stars.', points: pts, labels: [], rings: [] },
     provenance: { stars: 'generated (seeded, deterministic per seed)', density: 'local stellar density ~0.1 pc^-3', mix: 'solar-neighborhood spectral census (approximate)' },
   };
@@ -170,4 +170,85 @@ function skyCheck({ body, date, albedo }) {
   };
 }
 
-module.exports = { exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };
+// ---- 5. stream_catalog_region: real Gaia DR3 stars around a star, streamed from a public TAP service ----
+// Gaia data: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO. Primary service: ESA Gaia archive; fallback: CDS VizieR (same Gaia DR3 table).
+const LY_PER_MAS = 3261.56; // distance in ly = 3261.56 / parallax(mas)
+const TAP = [
+  { name: 'ESA Gaia Archive', url: 'https://gea.esac.esa.int/tap-server/tap/sync', table: 'gaiadr3.gaia_source', id: 'source_id', ra: 'ra', dec: 'dec', plx: 'parallax', plxe: 'parallax_over_error', g: 'phot_g_mean_mag', bprp: 'bp_rp' },
+  { name: 'CDS VizieR', url: 'https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync', table: '"I/355/gaiadr3"', id: 'Source', ra: 'RA_ICRS', dec: 'DE_ICRS', plx: 'Plx', plxe: 'RPlx', g: 'Gmag', bprp: '"BP-RP"' },
+];
+function regionQuery(t, ra, dec, radDeg, plxMin, plxMax, gMax, top) {
+  return 'SELECT TOP ' + top + ' ' + [t.id, t.ra, t.dec, t.plx, t.g, t.bprp].join(', ') + ' FROM ' + t.table +
+    ' WHERE ' + t.plx + ' BETWEEN ' + plxMin.toFixed(4) + ' AND ' + plxMax.toFixed(4) + ' AND ' + t.plxe + ' > 10 AND ' + t.g + ' < ' + gMax +
+    (radDeg < 180 ? ' AND 1 = CONTAINS(POINT(\'ICRS\', ' + t.ra + ', ' + t.dec + '), CIRCLE(\'ICRS\', ' + ra.toFixed(5) + ', ' + dec.toFixed(5) + ', ' + radDeg.toFixed(4) + '))' : '') +
+    ' ORDER BY ' + t.g + ' ASC';
+}
+function parseCsv(text) {
+  const rows = [], lines = text.trim().split(/\r?\n/);
+  const head = lines.shift().split(',').map((h) => h.replace(/"/g, '').trim());
+  for (const l of lines) { const c = l.split(','); if (c.length >= head.length) rows.push(c.map((v) => v.replace(/"/g, '').trim())); }
+  return { head, rows };
+}
+function bprpColor(bprp) {
+  if (!(bprp > -1)) return '#ffffff';
+  const stops = [[-0.3, '#9bb2ff'], [0.3, '#cad7ff'], [0.8, '#fff4ea'], [1.2, '#ffd2a1'], [2.0, '#ffb56b'], [3.5, '#ff8a4a']];
+  for (const [v, c] of stops) if (bprp <= v) return c;
+  return '#ff8a4a';
+}
+// Pure conversion step, exported for tests: CSV text from either service -> stars in the catalog frame.
+function gaiaRowsToStars(csvText, centerPos, radiusLy) {
+  const { head, rows } = parseCsv(csvText), ix = (re) => head.findIndex((h) => re.test(h));
+  const iId = ix(/^(source_id|Source)$/i), iRa = ix(/^(ra|RA_ICRS)$/i), iDe = ix(/^(dec|DE_ICRS)$/i), iP = ix(/^(parallax|Plx)$/i), iG = ix(/^(phot_g_mean_mag|Gmag)$/i), iC = ix(/^(bp_rp|BP-RP)$/i);
+  if ([iId, iRa, iDe, iP, iG].some((i) => i < 0)) throw new Error('Unexpected columns from the catalog service: ' + head.join(', '));
+  const out = [];
+  for (const r of rows) {
+    const plx = +r[iP]; if (!(plx > 0)) continue;
+    const d = LY_PER_MAS / plx, p = GXC.galHelio(+r[iRa], +r[iDe], d);
+    if (Math.hypot(p[0] - centerPos[0], p[1] - centerPos[1], p[2] - centerPos[2]) > radiusLy) continue;
+    out.push({ id: 'Gaia DR3 ' + r[iId], pos: p, G: +r[iG], bprp: iC >= 0 && r[iC] !== '' ? +r[iC] : null, d_ly: d });
+  }
+  return out;
+}
+async function streamCatalogRegion({ center = 'Sun', radius_ly = 20, mag_limit = 13, max_stars = 800 }, fetchImpl) {
+  if (!(radius_ly > 0 && radius_ly <= 100)) throw new Error('radius_ly must be greater than 0 and at most 100.');
+  const st = findStar(center), D = Math.hypot(...st.pos), R = radius_ly;
+  const ra = st.s ? st.s[COL.ra_h] * 15 : 0, dec = st.s ? st.s[COL.dec_deg] : 0;
+  const radDeg = D > R ? Math.asin(R / D) * (180 / Math.PI) : 180;
+  const plxMax = D > R ? LY_PER_MAS / (D - R) : 1e6, plxMin = LY_PER_MAS / (D + R);
+  const top = Math.min(Math.max(50, max_stars | 0), 2000) * 2;
+  const f = fetchImpl || fetch;
+  const errors = [];
+  for (const t of TAP) {
+    const q = regionQuery(t, ra, dec, radDeg, plxMin, plxMax, mag_limit, top);
+    const url = t.url + '?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=' + encodeURIComponent(q);
+    try {
+      const res = await f(url, { signal: AbortSignal.timeout(20000), headers: { accept: 'text/csv' } });
+      if (!res.ok) { errors.push(t.name + ': HTTP ' + res.status); continue; }
+      let stars = gaiaRowsToStars(await res.text(), st.pos, R);
+      // Skip stars the base naked-eye catalog already has (within 1 ly).
+      const near = STARS.stars.filter((s) => Math.hypot(s[COL.x_ly] - st.pos[0], s[COL.y_ly] - st.pos[1], s[COL.z_ly] - st.pos[2]) <= R + 1);
+      const before = stars.length;
+      stars = stars.filter((g) => !near.some((s) => Math.hypot(s[COL.x_ly] - g.pos[0], s[COL.y_ly] - g.pos[1], s[COL.z_ly] - g.pos[2]) < 1)).slice(0, max_stars);
+      return {
+        center: st.name, radius_ly: R, mag_limit_G: mag_limit, service: t.name, returned: before, already_in_base_catalog: before - stars.length > 0 ? before - stars.length : 0, added: stars.length,
+        brightest: stars.slice(0, 5).map((g) => ({ id: g.id, G: g.G, distance_ly: +g.d_ly.toFixed(1) })),
+        render: { layer: 'gaia:' + st.name + ':' + R, scale: 'bubble', frame: 'helio_ly', label: 'Gaia DR3 stars around ' + st.name, focus: st.index >= 0 ? st.index : null,
+          note: stars.length + ' catalog stars from Gaia DR3 (G < ' + mag_limit + ') within ' + R + ' ly of ' + st.name + '. Data: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO.',
+          points: stars.map((g) => [+g.pos[0].toFixed(3), +g.pos[1].toFixed(3), +g.pos[2].toFixed(3), bprpColor(g.bprp), g.G < 8 ? 2.2 : 1.6]), labels: [], rings: [] },
+        provenance: { stars: 'catalog (Gaia DR3 via ' + t.name + ')', license: 'ESA/Gaia/DPAC, CC BY-SA 3.0 IGO', query: q },
+      };
+    } catch (e) { errors.push(t.name + ': ' + (e.name === 'TimeoutError' ? 'timed out' : e.message)); }
+  }
+  throw new Error('No catalog service answered (' + errors.join('; ') + ').');
+}
+
+// ---- 6. route_trigger: used by the plugin's mcp_tool hook (UserPromptSubmit) to route in-app trigger messages ----
+const AGENTS = ['space-architect', 'sky-historian', 'scw-checker'];
+function routeTrigger({ prompt = '' }) {
+  const m = /^\[Space-at-Scale trigger\]\s+event=(\S+)\s+agent=(\S+)/.exec(String(prompt));
+  if (!m || !AGENTS.includes(m[2])) return '';
+  return 'This message was sent by a button in the Space-at-Scale app (event ' + m[1] + '). It is a task for the space-at-scale:' + m[2] +
+    ' agent, which uses only Space-at-Scale tools for numbers and reports which results are catalog data and which are generated.';
+}
+
+module.exports = { streamCatalogRegion, gaiaRowsToStars, regionQuery, routeTrigger, exoplanetSystem, densifyRegion, buildGalaxy, skyCheck, parseDate, findStar, GALAXIES };

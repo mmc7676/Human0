@@ -26,9 +26,13 @@ Type `/space-at-scale`, or ask "show me the Milky Way", "plan a trip to Mars" or
 | **Local Bubble** | **In light years.** 3,665 naked-eye stars within 1,000 ly on measured space velocities, 30 million years each way. |
 | **Milky Way** | **In thousands of light years.** Sgr A* and 44 S-stars, the dark matter halo, 161 globular clusters, 50 satellite galaxies, 3,563 pulsars and 391 gravitational-wave events, back to the Big Bang. |
 
+## Agents and hooks
+
+Three agents (`space-architect`, `sky-historian`, `scw-checker`) build the simulation out on demand: a star's exoplanets, real Gaia DR3 stars filling a region, galaxy models, historical sky checks. Buttons in the app and zooming into a star send tasks to them. The plugin's one hook (`UserPromptSubmit`, type `mcp_tool`) calls the server's `route_trigger` tool to recognize those app messages; it runs no shell command.
+
 ## Tools
 
-The hosted server offers 22 tools on its current plan. Three heavier tools (`run_evals`, `generate_universe`, `find_mining_targets_parallel`) need more computing time per call than the current hosting plan allows and are not offered yet. The full local edition with every tool is in [`plugins/space-at-scale`](../space-at-scale).
+The hosted server offers 27 tools on its current plan. Four heavier tools (`run_evals`, `generate_universe`, `find_mining_targets_parallel`, `build_galaxy`) need more computing time per call than the current hosting plan allows and are not offered yet. The full local edition with every tool is in [`plugins/space-at-scale`](../space-at-scale).
 
 ## Privacy
 

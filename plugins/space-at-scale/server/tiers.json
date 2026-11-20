@@ -1,5 +1,5 @@
 {
-  "_note": "Which tools the hosted server offers on each Cloudflare plan. free = fits the Workers Free 10 ms CPU limit per call; paid = needs Workers Paid. Measured CPU (best of 3, Node, November 17, 2026): run_evals 18.2 ms, generate_universe 9.4 ms, find_mining_targets_parallel generates a universe first. Every other tool measured under 5 ms. The local plugin always registers every tool. Agent tools (November 18, 2026): exoplanet_system 0.2 ms, densify_region 3.8 ms at 50 ly, sky_check 0.03 ms, build_galaxy 6.4 ms at 2,500 particles (paid).",
+  "_note": "Which tools the hosted server offers on each Cloudflare plan. free = fits the Workers Free 10 ms CPU limit per call; paid = needs Workers Paid. Measured CPU (best of 3, Node, November 17, 2026): run_evals 18.2 ms, generate_universe 9.4 ms, find_mining_targets_parallel generates a universe first. Every other tool measured under 5 ms. The local plugin always registers every tool. Agent tools (November 18, 2026): exoplanet_system 0.2 ms, densify_region 3.8 ms at 50 ly, sky_check 0.03 ms, build_galaxy 6.4 ms at 2,500 particles (paid). stream_catalog_region (November 19, 2026): network wait is not CPU; parsing up to 2,000 rows measured separately.",
   "default": "free",
   "tools": {
     "run_evals": "paid",
