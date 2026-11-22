@@ -50,3 +50,19 @@ if(process.argv[4]){
   R.pack_order=C.facetValues(B,'pack').map(x=>x.value);
   console.log(JSON.stringify(R));
 }
+// Cheese: node test_core.js core.js wines.json beers.json cheeses.json
+if(process.argv[5]){
+  C.configure(C.CHEESE);const K=JSON.parse(fs.readFileSync(process.argv[5]));const S3=o=>Object.assign(C.emptyState(),o);const Q={};
+  Q.total=C.filterRows(K,S3({})).length;
+  Q.style=C.facetCounts(K,S3({}),'style');Q.milk=C.facetCounts(K,S3({}),'milk');Q.form=C.facetCounts(K,S3({}),'form');
+  Q.blue_fr=C.filterRows(K,S3({style:['Blue'],country:['France']})).length;
+  Q.under15=C.filterRows(K,S3({priceMax:15})).length;Q.p20_30=C.filterRows(K,S3({priceMin:20,priceMax:30})).length;
+  Q.q_truffle=C.filterRows(K,S3({q:'truffle'})).length;Q.q_comte=C.filterRows(K,S3({q:'comte'})).length;
+  Q.no_alcohol_state=!('abvMin' in C.emptyState())&&!('minRating' in C.emptyState());
+  Q.facet_milk_given_blue=C.facetCounts(K,S3({style:['Blue']}),'milk');
+  const sp=C.sortRows(K,'price','desc').map(r=>r.price);Q.price_desc_ok=sp.every((v,i)=>!i||sp[i-1]>=v);
+  const ss=C.sortRows(K,'style','asc').map(r=>C.CHEESE.typeOrder.indexOf(C.val(r,'style')));Q.style_sort_ok=ss.every((v,i)=>!i||ss[i-1]<=v);
+  const g=C.groupRows(K,'style');Q.group_sum=g.reduce((a,x)=>a+x.count,0);Q.group_order=g.map(x=>x.key);
+  Q.form_order=C.facetValues(K,'form').map(x=>x.value);
+  console.log(JSON.stringify(Q));
+}

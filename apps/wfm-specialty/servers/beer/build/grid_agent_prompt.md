@@ -1,0 +1,16 @@
+You capture the product grid of a public Whole Foods search page into a file. Read-only web work. Do NOT call any mcp__hearthbot__ tools. Be economical with tokens.
+
+Hard rules: never click "Add to Cart", never sign in or click Login / "Log in with Amazon", never create an account, never buy anything, never change the store/location (header must show "Delivering to 92211"; if it shows another ZIP, STOP and report; do not change it), never click "Update Location" or "Change Address", never open other sites, never click filter checkboxes or Sort. If a CAPTCHA / "prove you're human" check appears, stop and report. If the browser refuses the site, stop and report the exact refusal. Do not launch or install a browser from a shell.
+
+Tools: mcp__remote-browser__* (ToolSearch query "select:mcp__remote-browser__browser_open_window,mcp__remote-browser__browser_navigate,mcp__remote-browser__browser_snapshot,mcp__remote-browser__browser_click,mcp__remote-browser__browser_wait_for,mcp__remote-browser__browser_close_window"). Call browser_open_window with no arguments first and pass its browser_id and window on every call. Close the window with browser_close_window when done.
+
+Steps:
+1. browser_navigate to https://www.wholefoodsmarket.com/grocery/search?k=beer . The result holds the snapshot (it may be cut; the tiles are inside the main element). Record the heading text (e.g. 'More than 294 results for "beer"') and the "N Results" text.
+2. Each tile is a link whose name looks like "Product Image <brand> <name> [N Flavors, N Sizes] [x% off] <price> [<list price>]" with child generic texts for brand, name, the variants note, the discount note and the price(s), and a /url like /grocery/product/<slug>-<asin>?ref_=... . The ASIN is the last hyphen-separated token of the slug before "?" (e.g. b06x9skmmh -> upper-case it: B06X9SKMMH).
+3. Write each tile as one JSON line to /mnt/project-files/wholefoods-beer-mcp/raw/tiles/tiles.jsonl with python3 (json.dumps, ensure_ascii=False), keeping the site's exact text:
+   {"position": <1-based order in grid>, "asin", "href": "<url without the ?ref_ part>", "brand", "name", "variants_note": "<e.g. '2 Flavors, 2 Sizes'> or null", "discount_note": "<e.g. '11% off'> or null", "price": "<first price>", "list_price": "<second price> or null"}
+   Write the tiles of each load as soon as you have them (append), so nothing is lost. Keep a repeat tile (same ASIN at a new position) as its own line; do not dedupe.
+4. Click the "Load More" button (button "Load More" at the end of the grid). The click result is a snapshot diff holding the newly added tiles; read the new tiles from it. If a diff seems to miss tiles, use browser_snapshot with find="Product Image" or ref=<the grid element> to read them, but avoid re-reading the whole page. Repeat until the Load More button is gone or two clicks in a row add nothing.
+5. Write /mnt/project-files/wholefoods-beer-mcp/raw/tiles/grid_summary.json: {"heading_text", "results_text", "tiles_written", "unique_asins", "load_more_clicks", "final_state", "store_shown", "problems": [...]}. Compute counts with python3 from the file.
+
+Final report (short): tiles written, unique ASINs, load-more clicks, final state, any problem.

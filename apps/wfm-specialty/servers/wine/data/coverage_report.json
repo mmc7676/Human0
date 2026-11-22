@@ -1,0 +1,1014 @@
+{
+ "generated": "2026-11-20",
+ "grid": {
+  "heading_text": "More than 512 results for \"wine\"",
+  "results_text": "512 Results",
+  "tiles_written": 501,
+  "unique_asins": 405,
+  "load_more_clicks": 18,
+  "final_state": "Load More button gone after the 18th load; tile count stopped at 501 (501 'Add to Cart' buttons, no placeholders left); page says 512 Results",
+  "store_shown": "Delivering to 92211",
+  "problems": [
+   "Grid holds only 501 tiles although the page says 512 Results; Load More disappeared at 501.",
+   "Many repeated products: 501 tiles but only 405 unique ASINs (96 repeat tiles across 59 ASINs), interleaved at different grid positions.",
+   "Grid includes non-wine items, e.g. 365 white wine vinegar, El Trigal Manchego ($25.99/lb), Kerrygold cheese slices, De Nigris balsamic vinegar, Briannas vinaigrette, La Colombe coffee, Eden mirin, plus spirits, sake, beer, cider and canned cocktails.",
+   "Some brand labels are in Japanese (e.g. フレイ ヴィンヤード, ドメーヌ・カーネロス, 白鶴, アーガイル); their product slugs start with '-'.",
+   "Tiles lazy-render as 'status' placeholders right after each Load More; waited for them to render before reading.",
+   "One discount reads '20% off with Prime' (De Nigris balsamic vinegar); recorded as a single discount_note string.",
+   "Six tiles show a variants line (e.g. '2 Flavors, 1 Sizes', '3 Sizes'), recorded in variants_note (positions 6, 272, 284, 321, 372, 443)."
+  ]
+ },
+ "tiles_captured": 502,
+ "extra_tiles_from_other_searches": [
+  {
+   "asin": "B084HHMM72",
+   "found_in": "beer search (k=beer), grid position 210"
+  }
+ ],
+ "duplicate_tiles_dropped": [
+  {
+   "asin": "B002N64QPE",
+   "position": 91
+  },
+  {
+   "asin": "B0DLKRRQM7",
+   "position": 92
+  },
+  {
+   "asin": "B0087PAGGS",
+   "position": 94
+  },
+  {
+   "asin": "B0016H39HC",
+   "position": 95
+  },
+  {
+   "asin": "B003UBD418",
+   "position": 96
+  },
+  {
+   "asin": "B0016GZUTS",
+   "position": 97
+  },
+  {
+   "asin": "B00DM5OIJ4",
+   "position": 98
+  },
+  {
+   "asin": "B0061XWWI8",
+   "position": 99
+  },
+  {
+   "asin": "B086RM3BJ2",
+   "position": 100
+  },
+  {
+   "asin": "B08DX581VZ",
+   "position": 102
+  },
+  {
+   "asin": "B06XHCVM3B",
+   "position": 103
+  },
+  {
+   "asin": "B0016H395E",
+   "position": 104
+  },
+  {
+   "asin": "B009MMIPLI",
+   "position": 123
+  },
+  {
+   "asin": "B06XHCVM3B",
+   "position": 124
+  },
+  {
+   "asin": "B0016H395E",
+   "position": 125
+  },
+  {
+   "asin": "B07G4V6PVT",
+   "position": 126
+  },
+  {
+   "asin": "B07G4N7MJW",
+   "position": 127
+  },
+  {
+   "asin": "B00BL79W8W",
+   "position": 128
+  },
+  {
+   "asin": "B071V5P2R6",
+   "position": 129
+  },
+  {
+   "asin": "B07X37GDXL",
+   "position": 130
+  },
+  {
+   "asin": "B06XDQ41H2",
+   "position": 131
+  },
+  {
+   "asin": "B005ZV8JQ6",
+   "position": 133
+  },
+  {
+   "asin": "B0DJBZX3X4",
+   "position": 135
+  },
+  {
+   "asin": "B07N36JTKP",
+   "position": 136
+  },
+  {
+   "asin": "B08HP7MJS4",
+   "position": 139
+  },
+  {
+   "asin": "B0BFK8S17F",
+   "position": 140
+  },
+  {
+   "asin": "B079N9H8DD",
+   "position": 141
+  },
+  {
+   "asin": "B001DII3RK",
+   "position": 144
+  },
+  {
+   "asin": "B01CG9VC4K",
+   "position": 145
+  },
+  {
+   "asin": "B005HQZIYU",
+   "position": 146
+  },
+  {
+   "asin": "B07X148WNJ",
+   "position": 150
+  },
+  {
+   "asin": "B07X37GDXL",
+   "position": 151
+  },
+  {
+   "asin": "B005ZV8JQ6",
+   "position": 153
+  },
+  {
+   "asin": "B07N36JTKP",
+   "position": 154
+  },
+  {
+   "asin": "B0DJBZX3X4",
+   "position": 155
+  },
+  {
+   "asin": "B08HP7MJS4",
+   "position": 156
+  },
+  {
+   "asin": "B06XDNCRN3",
+   "position": 157
+  },
+  {
+   "asin": "B079N9H8DD",
+   "position": 158
+  },
+  {
+   "asin": "B005HQQRT0",
+   "position": 160
+  },
+  {
+   "asin": "B0BFK8S17F",
+   "position": 161
+  },
+  {
+   "asin": "B001DII3RK",
+   "position": 163
+  },
+  {
+   "asin": "B08973PR8P",
+   "position": 164
+  },
+  {
+   "asin": "B01CG9VC4K",
+   "position": 165
+  },
+  {
+   "asin": "B08LNPQQ4V",
+   "position": 166
+  },
+  {
+   "asin": "B005HQZIYU",
+   "position": 167
+  },
+  {
+   "asin": "B07G4F2LH3",
+   "position": 169
+  },
+  {
+   "asin": "B09Y65JT3P",
+   "position": 170
+  },
+  {
+   "asin": "B0DP1K5T97",
+   "position": 175
+  },
+  {
+   "asin": "B07X148WNJ",
+   "position": 179
+  },
+  {
+   "asin": "B0BFK8S17F",
+   "position": 181
+  },
+  {
+   "asin": "B001DII3RK",
+   "position": 182
+  },
+  {
+   "asin": "B08LNPQQ4V",
+   "position": 183
+  },
+  {
+   "asin": "B005HQZIYU",
+   "position": 184
+  },
+  {
+   "asin": "B01CG9VC4K",
+   "position": 185
+  },
+  {
+   "asin": "B08973PR8P",
+   "position": 186
+  },
+  {
+   "asin": "B0DFYCX2KV",
+   "position": 190
+  },
+  {
+   "asin": "B09Y65JT3P",
+   "position": 191
+  },
+  {
+   "asin": "B07G4F2LH3",
+   "position": 192
+  },
+  {
+   "asin": "B00B4TRLPS",
+   "position": 193
+  },
+  {
+   "asin": "B001NMZ55Y",
+   "position": 196
+  },
+  {
+   "asin": "B0CV17SDPJ",
+   "position": 197
+  },
+  {
+   "asin": "B0DP1K5T97",
+   "position": 199
+  },
+  {
+   "asin": "B07RRPLZS9",
+   "position": 200
+  },
+  {
+   "asin": "B07S18X167",
+   "position": 202
+  },
+  {
+   "asin": "B005HQVNYO",
+   "position": 203
+  },
+  {
+   "asin": "B01N9CJ9YB",
+   "position": 205
+  },
+  {
+   "asin": "B07X148WNJ",
+   "position": 208
+  },
+  {
+   "asin": "B00576KXC2",
+   "position": 210
+  },
+  {
+   "asin": "B00B4TRLPS",
+   "position": 212
+  },
+  {
+   "asin": "B0775N3VNC",
+   "position": 213
+  },
+  {
+   "asin": "B08H6G2H7R",
+   "position": 215
+  },
+  {
+   "asin": "B0CV17SDPJ",
+   "position": 216
+  },
+  {
+   "asin": "B001NMZ55Y",
+   "position": 217
+  },
+  {
+   "asin": "B07DKTC15C",
+   "position": 218
+  },
+  {
+   "asin": "B07RRPLZS9",
+   "position": 219
+  },
+  {
+   "asin": "B0DP1K5T97",
+   "position": 221
+  },
+  {
+   "asin": "B086RM5RF7",
+   "position": 222
+  },
+  {
+   "asin": "B07S18X167",
+   "position": 223
+  },
+  {
+   "asin": "B005HQVNYO",
+   "position": 225
+  },
+  {
+   "asin": "B0D6W3CH95",
+   "position": 226
+  },
+  {
+   "asin": "B01N9CJ9YB",
+   "position": 228
+  },
+  {
+   "asin": "B079NJ3YM4",
+   "position": 229
+  },
+  {
+   "asin": "B07X148WNJ",
+   "position": 231
+  },
+  {
+   "asin": "B07DC4BYVJ",
+   "position": 232
+  },
+  {
+   "asin": "B07GY7YDDG",
+   "position": 236
+  },
+  {
+   "asin": "B00576KXC2",
+   "position": 239
+  },
+  {
+   "asin": "B07X148WNJ",
+   "position": 241
+  },
+  {
+   "asin": "B07DC4BYVJ",
+   "position": 242
+  },
+  {
+   "asin": "B0BX72FS8K",
+   "position": 243
+  },
+  {
+   "asin": "B07G5T99XJ",
+   "position": 244
+  },
+  {
+   "asin": "B005J0NO36",
+   "position": 245
+  },
+  {
+   "asin": "B07GVV64RB",
+   "position": 246
+  },
+  {
+   "asin": "B07GY7YDDG",
+   "position": 247
+  },
+  {
+   "asin": "B0GSVX7J7C",
+   "position": 248
+  },
+  {
+   "asin": "B00576KXC2",
+   "position": 249
+  },
+  {
+   "asin": "B001TSSZM2",
+   "position": 250
+  }
+ ],
+ "unique_products": 406,
+ "level2_ok": 362,
+ "level2_failed": [
+  {
+   "asin": "B07NRLZ6Z4",
+   "position": 272,
+   "href": "/grocery/product/365-by-whole-foods-market-white-wine-vinegar-16-9-fl-oz-b07nrlz6z4",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0787W3QTD",
+   "position": 276,
+   "href": "/grocery/product/el-trigal-el-trigal-6-month-aged-manchego-b0787w3qtd",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0DFMRMSRV",
+   "position": 280,
+   "href": "/grocery/product/on-the-rocks-on-the-rocks-cocktail-lemon-drop-martini-375ml-375-ml-b0dfmrmsrv",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0GTQ4LVZT",
+   "position": 288,
+   "href": "/grocery/product/zocalo-cocktails-zocalo-cocktails-mango-agave-margarita-cocktail-1lt-1-lt-b0gtq4lvzt",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0019JRIN8",
+   "position": 293,
+   "href": "/grocery/product/eden-mirin-rice-cooking-wine-10-1-oz-10-1-fl-oz-pack-of-1-b0019jrin8",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0GTQ21TX5",
+   "position": 305,
+   "href": "/grocery/product/zocalo-cocktails-zocalo-cocktails-classic-agave-margarita-cocktail-1lt-1-lt-b0gtq21tx5",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0GZHSWNJ5",
+   "position": 314,
+   "href": "/grocery/product/presto-presto-sparkling-spritz-hugo-cocktail-4pk-cans-250-ml-b0gzhswnj5",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07G4RNLBH",
+   "position": 325,
+   "href": "/grocery/product/st-germain-st-germain-elderflower-liqueur-375ml-b07g4rnlbh",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B002TAJM8K",
+   "position": 326,
+   "href": "/grocery/product/four-roses-four-roses-bourbon-whiskey-750ml-b002tajm8k",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0051LRZ60",
+   "position": 329,
+   "href": "/grocery/product/cazadores-cazadores-reposado-tequila-750-ml-b0051lrz60",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07RFLTKXP",
+   "position": 338,
+   "href": "/grocery/product/paulaner-munchen-paulaner-lager-munich-4pk-16-9-fl-oz-cans-b07rfltkxp",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07B9LWRY6",
+   "position": 343,
+   "href": "/grocery/product/empress-1908-empress-1908-gin-750ml-b07b9lwry6",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B09RTSDXJ1",
+   "position": 356,
+   "href": "/grocery/product/lalo-lalo-blanco-tequila-750ml-b09rtsdxj1",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0CL3JNXZV",
+   "position": 359,
+   "href": "/grocery/product/blind-tiger-spirit-free-cocktails-blind-tiger-non-alcoholic-sparkling-mocktails-crafted-with-natural-ingredients-mixers-cocktails-mocktails-8-4-fl-oz-cans-4-pack-lavender-french-75-b0cl3jnxzv",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B000SRGQSK",
+   "position": 372,
+   "href": "/grocery/product/briannas-briannas-home-style-blush-wine-vinaigrette-dressing-fine-salad-dressing-made-with-premium-ingredients-gluten-free-kosher-vegan-12-oz-bottle-b000srgqsk",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B08DWFZTHJ",
+   "position": 374,
+   "href": "/grocery/product/makku-makgeolli-mango-4pk-12-fl-oz-cans-6-abv-b08dwfzthj",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005HQPBL0",
+   "position": 378,
+   "href": "/grocery/product/disaronno-disaronno-originale-amaretto-liqueur-750ml-b005hqpbl0",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0061T8ECU",
+   "position": 386,
+   "href": "/grocery/product/erdinger-erdinger-non-alcoholic-weisse-6pk-11-3-oz-bottles-na-l-b0061t8ecu",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B076YLRY6B",
+   "position": 393,
+   "href": "/grocery/product/st-r-my-st-remy-vsop-750ml-b076ylry6b",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0C2GFKKKS",
+   "position": 403,
+   "href": "/grocery/product/kerrygold-kerrygold-cheddar-dubliner-sliced-6-ounce-b0c2gfkkks",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005HQSNUQ",
+   "position": 409,
+   "href": "/grocery/product/blue-ice-blue-ice-potato-vodka-750ml-b005hqsnuq",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0CMB8GT78",
+   "position": 416,
+   "href": "/grocery/product/de-nigris-de-nigris-truffle-sweet-balsamic-vinegar-8-5-fz-b0cmb8gt78",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B01CD7W5JG",
+   "position": 417,
+   "href": "/grocery/product/-hakutsuru-draft-sake-300ml-b01cd7w5jg",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B002TAEBKE",
+   "position": 420,
+   "href": "/grocery/product/don-julio-tequila-blanco-750ml-b002taebke",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07CX3JSNF",
+   "position": 443,
+   "href": "/grocery/product/la-colombe-la-colombe-corsica-dark-roast-whole-bean-coffee-12-oz-pack-of-1-notes-of-baker-s-chocolate-red-wine-spices-b07cx3jsnf",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005Z6SRHW",
+   "position": 450,
+   "href": "/grocery/product/kikusui-naitmsad-kikusui-organic-junmai-ginjo-300-ml-b005z6srhw",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005J6LFMC",
+   "position": 451,
+   "href": "/grocery/product/bacard-bacardi-rum-superior-light-750ml-b005j6lfmc",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07F17JNQ5",
+   "position": 467,
+   "href": "/grocery/product/manotsuru-manotsuru-demon-slayer-300-ml-b07f17jnq5",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0084H9KCU",
+   "position": 477,
+   "href": "/grocery/product/kikusui-kikusui-junmai-ginjo-720-ml-b0084h9kcu",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005CJUZCW",
+   "position": 479,
+   "href": "/grocery/product/reyka-reyka-vodka-750ml-b005cjuzcw",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B08FS4SXPS",
+   "position": 488,
+   "href": "/grocery/product/redwood-empire-redwood-empire-pipe-dream-bourbon-750-ml-b08fs4sxps",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0FB8HXV91",
+   "position": 489,
+   "href": "/grocery/product/svedka-svedka-vodka-750-ml-b0fb8hxv91",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B001PBFJ1S",
+   "position": 490,
+   "href": "/grocery/product/tozai-tozai-living-jewel-junmai-300-ml-b001pbfj1s",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0844MGPFL",
+   "position": 491,
+   "href": "/grocery/product/400-conejos-mezcal-espadin-750ml-80-proof-b0844mgpfl",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0C9V75L74",
+   "position": 492,
+   "href": "/grocery/product/casamigos-tequila-cristalino-750-ml-b0c9v75l74",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005Z6OT3I",
+   "position": 493,
+   "href": "/grocery/product/st-george-spirits-st-george-terroir-gin-90-proof-750-ml-b005z6ot3i",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0GQ3J8QBH",
+   "position": 494,
+   "href": "/grocery/product/fierce-and-kind-spirits-fierce-and-kind-spirits-american-vodka-750-ml-b0gq3j8qbh",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B071KT7Y79",
+   "position": 495,
+   "href": "/grocery/product/silverlake-wine-el-destilador-blanco-tequila-80-00-proof-1-ltr-b071kt7y79",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07GLKHNNK",
+   "position": 496,
+   "href": "/grocery/product/five-farms-five-farms-irsh-cream-liqueur-750-ml-34-proof-34-00-proof-0-7500-liter-b07glkhnnk",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07Y2NLTQQ",
+   "position": 497,
+   "href": "/grocery/product/paumaui-pau-vodka-750-ml-b07y2nltqq",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B07XW39FKG",
+   "position": 498,
+   "href": "/grocery/product/ace-cider-company-cider-pineapple-19-2-fl-oz-can-b07xw39fkg",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B005VTZANC",
+   "position": 499,
+   "href": "/grocery/product/fernet-branca-fernet-branca-amaro-750-ml-b005vtzanc",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B0BKRXLHSK",
+   "position": 500,
+   "href": "/grocery/product/clase-azul-clase-azul-tequila-reposado-750-ml-b0bkrxlhsk",
+   "reason": "non-wine item: product page skipped by design"
+  },
+  {
+   "asin": "B079LHRMV8",
+   "position": 501,
+   "href": "/grocery/product/la-gritona-la-gritona-tequila-reposado-750-ml-b079lhrmv8",
+   "reason": "non-wine item: product page skipped by design"
+  }
+ ],
+ "records": 406,
+ "wines": 362,
+ "non_wine_records": [
+  {
+   "asin": "B07NRLZ6Z4",
+   "title": "365 by Whole Foods Market | White Wine Vinegar, 16.9 fl oz",
+   "reason": "name mentions 'vinegar'"
+  },
+  {
+   "asin": "B0787W3QTD",
+   "title": "El Trigal | El Trigal 6 Month Aged Manchego",
+   "reason": "non-wine producer 'el trigal'"
+  },
+  {
+   "asin": "B0DFMRMSRV",
+   "title": "On The Rocks | Lemon Drop Martini, 375ml",
+   "reason": "name mentions 'martini'"
+  },
+  {
+   "asin": "B0GTQ4LVZT",
+   "title": "Zocalo Cocktails | Zocalo Cocktails Mango Agave Margarita Cocktail 1lt, 1 LT",
+   "reason": "name mentions 'margarita'"
+  },
+  {
+   "asin": "B0019JRIN8",
+   "title": "Eden | Mirin Rice Cooking Wine, 10oz",
+   "reason": "name mentions 'mirin'"
+  },
+  {
+   "asin": "B0GTQ21TX5",
+   "title": "Zocalo Cocktails | Zocalo Cocktails Classic Agave Margarita Cocktail 1lt, 1 LT",
+   "reason": "name mentions 'margarita'"
+  },
+  {
+   "asin": "B0GZHSWNJ5",
+   "title": "Presto | Presto Sparkling Spritz Hugo Cocktail 4pk Cans, 250 mL",
+   "reason": "name mentions 'cocktail'"
+  },
+  {
+   "asin": "B07G4RNLBH",
+   "title": "St-Germain | St Germain Elderflower Liqueur - 375ml",
+   "reason": "name mentions 'liqueur'"
+  },
+  {
+   "asin": "B002TAJM8K",
+   "title": "Four Roses | Four Roses Bourbon, 750ml",
+   "reason": "name mentions 'bourbon'"
+  },
+  {
+   "asin": "B0051LRZ60",
+   "title": "Cazadores | Reposado Tequila, 750mL",
+   "reason": "name mentions 'tequila'"
+  },
+  {
+   "asin": "B07RFLTKXP",
+   "title": "Paulaner Munchen | Paulaner, Lager Munich, 4pk, 16.9 Fl Oz Cans",
+   "reason": "name mentions 'lager'"
+  },
+  {
+   "asin": "B07B9LWRY6",
+   "title": "Empress 1908 | Empress 1908 Gin - 750ml",
+   "reason": "name mentions 'gin'"
+  },
+  {
+   "asin": "B09RTSDXJ1",
+   "title": "LALO | LALO Blanco Tequila, 750mL",
+   "reason": "name mentions 'tequila'"
+  },
+  {
+   "asin": "B0CL3JNXZV",
+   "title": "Blind Tiger Spirit-Free Cocktails | Blind Tiger Non-Alcoholic Sparkling Mocktails | Crafted with Natural Ingredients | Mixers, Cocktails, Mocktails | 8.4 fl oz Cans | (4-Pack, Lavender French 75)",
+   "reason": "name mentions 'cocktails'"
+  },
+  {
+   "asin": "B000SRGQSK",
+   "title": "BRIANNAS | Blush Wine Vinaigrette, 12oz",
+   "reason": "name mentions 'vinaigrette'"
+  },
+  {
+   "asin": "B08DWFZTHJ",
+   "title": "Makku | Makgeolli Mango, 4pk, 12 Fl Oz Cans, 6% ABV",
+   "reason": "name mentions 'makgeolli'"
+  },
+  {
+   "asin": "B005HQPBL0",
+   "title": "Disaronno | Amaretto Liqueur, 750ml",
+   "reason": "name mentions 'liqueur'"
+  },
+  {
+   "asin": "B0061T8ECU",
+   "title": "Erdinger | Erdinger Non-alcoholic Weisse, 6pk, 11.3 Oz Bottles, Na, L",
+   "reason": "name mentions 'weisse'"
+  },
+  {
+   "asin": "B076YLRY6B",
+   "title": "St-Rémy | St Remy, VSOP, 750mL",
+   "reason": "name mentions 'vsop'"
+  },
+  {
+   "asin": "B0C2GFKKKS",
+   "title": "kerrygold | Dubliner Cheese Slices, 6oz",
+   "reason": "non-wine producer 'kerrygold'"
+  },
+  {
+   "asin": "B005HQSNUQ",
+   "title": "Blue Ice | Blue Ice Potato Vodka - 750ml",
+   "reason": "name mentions 'vodka'"
+  },
+  {
+   "asin": "B0CMB8GT78",
+   "title": "de nigris | De Nigris Truffle Sweet Balsamic Vinegar, 8.5 FZ",
+   "reason": "name mentions 'vinegar'"
+  },
+  {
+   "asin": "B01CD7W5JG",
+   "title": "白鶴 | Hakutsuru Draft Sake, 300ML",
+   "reason": "non-wine producer '白鶴'"
+  },
+  {
+   "asin": "B002TAEBKE",
+   "title": "Don Julio | Don Julio Blanco Tequila, 750ml",
+   "reason": "name mentions 'tequila'"
+  },
+  {
+   "asin": "B07CX3JSNF",
+   "title": "La Colombe | Corsica Dark Roast Coffee, 12oz",
+   "reason": "non-wine producer 'la colombe'"
+  },
+  {
+   "asin": "B005Z6SRHW",
+   "title": "Kikusui | Naitmsad KIKUSUI Organic Junmai Ginjo, 300 ML",
+   "reason": "non-wine producer 'kikusui'"
+  },
+  {
+   "asin": "B005J6LFMC",
+   "title": "BACARDÍ | Bacardi, Rum Superior Light, 750mL",
+   "reason": "name mentions 'rum'"
+  },
+  {
+   "asin": "B07F17JNQ5",
+   "title": "Manotsuru | Manotsuru Demon Slayer, 300 ML",
+   "reason": "non-wine producer 'manotsuru'"
+  },
+  {
+   "asin": "B0084H9KCU",
+   "title": "Kikusui | Kikusui Junmai Ginjo, 720 ML",
+   "reason": "non-wine producer 'kikusui'"
+  },
+  {
+   "asin": "B005CJUZCW",
+   "title": "Reyka | Reyka Vodka - 750ml",
+   "reason": "name mentions 'vodka'"
+  },
+  {
+   "asin": "B08FS4SXPS",
+   "title": "Redwood Empire | Redwood Empire Pipe Dream Bourbon, 750 ML",
+   "reason": "name mentions 'bourbon'"
+  },
+  {
+   "asin": "B0FB8HXV91",
+   "title": "SVEDKA | SVEDKA Vodka, 750 mL",
+   "reason": "name mentions 'vodka'"
+  },
+  {
+   "asin": "B001PBFJ1S",
+   "title": "Tozai | Tozai Living Jewel Junmai 300 ml",
+   "reason": "non-wine producer 'tozai'"
+  },
+  {
+   "asin": "B0844MGPFL",
+   "title": "400 Conejos | Mezcal Espadin, 750mL, 80 Proof",
+   "reason": "name mentions 'mezcal'"
+  },
+  {
+   "asin": "B0C9V75L74",
+   "title": "Casamigos | Tequila Cristalino, 750 mL",
+   "reason": "name mentions 'tequila'"
+  },
+  {
+   "asin": "B005Z6OT3I",
+   "title": "St. George Spirits | St George Terroir Gin 90 Proof, 750 Ml",
+   "reason": "name mentions 'gin'"
+  },
+  {
+   "asin": "B0GQ3J8QBH",
+   "title": "Fierce and Kind Spirits | Fierce and Kind Spirits American Vodka, 750 ML",
+   "reason": "name mentions 'vodka'"
+  },
+  {
+   "asin": "B071KT7Y79",
+   "title": "silverlake wine | El Destilador Blanco Tequila, 80.00 Proof, 1 Ltr",
+   "reason": "name mentions 'tequila'"
+  },
+  {
+   "asin": "B07GLKHNNK",
+   "title": "Five Farms | Five Farms Irsh Cream Liqueur, 750 ml, 34 Proof, 34.00 Proof, 0.7500 Liter",
+   "reason": "name mentions 'liqueur'"
+  },
+  {
+   "asin": "B07Y2NLTQQ",
+   "title": "paumaui | PAU Vodka, 750 Ml",
+   "reason": "name mentions 'vodka'"
+  },
+  {
+   "asin": "B07XW39FKG",
+   "title": "Ace Cider Company | Cider Pineapple, 19.2 Fl Oz Can",
+   "reason": "name mentions 'cider'"
+  },
+  {
+   "asin": "B005VTZANC",
+   "title": "Fernet Branca | Fernet Branca Amaro, 750 ML",
+   "reason": "name mentions 'amaro'"
+  },
+  {
+   "asin": "B0BKRXLHSK",
+   "title": "Clase Azul | Clase Azul Tequila Reposado, 750 ML",
+   "reason": "name mentions 'tequila'"
+  },
+  {
+   "asin": "B079LHRMV8",
+   "title": "La Gritona | La Gritona Tequila Reposado, 750 ML",
+   "reason": "name mentions 'tequila'"
+  }
+ ],
+ "image_match_confirmed": 362,
+ "field_coverage_wines_only": {
+  "brand": {
+   "count": 362,
+   "pct": 100.0
+  },
+  "product_name": {
+   "count": 362,
+   "pct": 100.0
+  },
+  "size": {
+   "count": 358,
+   "pct": 98.9
+  },
+  "price": {
+   "count": 362,
+   "pct": 100.0
+  },
+  "vineyard_location": {
+   "count": 280,
+   "pct": 77.3
+  },
+  "winemaking": {
+   "count": 118,
+   "pct": 32.6
+  },
+  "tasting_notes": {
+   "count": 166,
+   "pct": 45.9
+  },
+  "pairing": {
+   "count": 131,
+   "pct": 36.2
+  },
+  "vintage": {
+   "count": 72,
+   "pct": 19.9
+  },
+  "other_notes": {
+   "count": 157,
+   "pct": 43.4
+  },
+  "varietal": {
+   "count": 331,
+   "pct": 91.4
+  },
+  "color": {
+   "count": 360,
+   "pct": 99.4
+  }
+ },
+ "field_coverage_all_records": {
+  "brand": {
+   "count": 406,
+   "pct": 100.0
+  },
+  "product_name": {
+   "count": 406,
+   "pct": 100.0
+  },
+  "size": {
+   "count": 399,
+   "pct": 98.3
+  },
+  "price": {
+   "count": 406,
+   "pct": 100.0
+  },
+  "vineyard_location": {
+   "count": 280,
+   "pct": 69.0
+  },
+  "winemaking": {
+   "count": 118,
+   "pct": 29.1
+  },
+  "tasting_notes": {
+   "count": 166,
+   "pct": 40.9
+  },
+  "pairing": {
+   "count": 131,
+   "pct": 32.3
+  },
+  "vintage": {
+   "count": 72,
+   "pct": 17.7
+  },
+  "other_notes": {
+   "count": 157,
+   "pct": 38.7
+  },
+  "varietal": {
+   "count": 335,
+   "pct": 82.5
+  },
+  "color": {
+   "count": 367,
+   "pct": 90.4
+  }
+ },
+ "parity": {
+  "unique_tiles == records": true,
+  "wine_records == wine_level2_ok": true,
+  "wine_records == wine_image_match_confirmed": true,
+  "scw_files == records + 1 (SCW0)": true,
+  "every_record_has_asin_url_price": true
+ }
+}

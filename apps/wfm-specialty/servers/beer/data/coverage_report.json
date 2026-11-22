@@ -1,0 +1,147 @@
+{
+ "source": {
+  "site": "https://www.wholefoodsmarket.com",
+  "search_url": "https://www.wholefoodsmarket.com/grocery/search?k=beer",
+  "delivery_zip": "92211",
+  "captured": "2026-11-20",
+  "heading_text": "More than 294 results for \"beer\"",
+  "results_text": "294 Results",
+  "grid_tiles": 290,
+  "unique_products": 215,
+  "drinks_read": 193,
+  "non_beer_skipped": 22,
+  "notes": [
+   "Text copied from store pages verbatim; style, pack, container, ABV and country are parsed from that text.",
+   "Image URLs were not exposed to the capture tools, so image_url is null."
+  ]
+ },
+ "records": 193,
+ "queued": 193,
+ "missing_pages": [],
+ "field_coverage": {
+  "style": 193,
+  "pack_count": 193,
+  "container": 189,
+  "container_fl_oz": 189,
+  "abv_pct": 155,
+  "country": 34,
+  "ingredients": 65,
+  "calories": 20,
+  "in_store_location": 187,
+  "price_usd": 193
+ },
+ "by_product_type": {
+  "beer": 169,
+  "hard_kombucha": 9,
+  "hard_cider": 7,
+  "hard_seltzer": 3,
+  "hard_tea": 2,
+  "rice_wine": 2,
+  "hard_other": 1
+ },
+ "by_type_family": {
+  "Lager & pilsner": 62,
+  "IPA": 48,
+  "Blonde & other ale": 13,
+  "Kombucha, tea & other": 12,
+  "Belgian & farmhouse": 11,
+  "Variety pack": 11,
+  "Fruit, sour & radler": 9,
+  "Cider": 7,
+  "Wheat": 7,
+  "Pale ale": 5,
+  "Hard seltzer": 3,
+  "Stout & porter": 3,
+  "Sake & rice wine": 2
+ },
+ "by_style": {
+  "IPA": 32,
+  "Lager": 25,
+  "Mexican-style lager": 15,
+  "Variety pack": 11,
+  "Pilsner": 10,
+  "Blonde & golden ale": 10,
+  "Belgian ale": 9,
+  "Light lager": 9,
+  "Hard kombucha": 9,
+  "Double IPA": 9,
+  "Wheat": 7,
+  "Cider": 7,
+  "Hazy IPA": 7,
+  "Pale ale": 5,
+  "Lambic & sour": 5,
+  "Hard seltzer": 3,
+  "Dark lager": 3,
+  "Hard tea": 2,
+  "Cocktail-style brew": 2,
+  "Saison": 2,
+  "Stout": 2,
+  "Radler": 2,
+  "Other hard drink": 1,
+  "Sake": 1,
+  "Makgeolli": 1,
+  "Other ale": 1,
+  "Amber & red ale": 1,
+  "Porter": 1,
+  "Kölsch": 1
+ },
+ "by_pack_count": {
+  "6": 75,
+  "4": 54,
+  "12": 38,
+  "1": 22,
+  "8": 4
+ },
+ "by_container": {
+  "Can": 138,
+  "Bottle": 51,
+  "null": 4
+ },
+ "non_alcoholic": 28,
+ "problems": [
+  {
+   "asin": "B07X3YF5QW",
+   "issue": "ABV differs between page texts",
+   "detail": {
+    "page_title": "7.5% ABV",
+    "description": "5% ABV",
+    "grid_title": null
+   }
+  },
+  {
+   "asin": "B0016LT3AU",
+   "issue": "ABV differs between page texts",
+   "detail": {
+    "page_title": "7% ABV",
+    "description": "8.5% ABV",
+    "grid_title": null
+   }
+  },
+  {
+   "asin": "B08BH4C3YF",
+   "issue": "ABV differs between page texts",
+   "detail": {
+    "page_title": "6% ABV",
+    "description": "7% ABV",
+    "grid_title": null
+   }
+  },
+  {
+   "asin": "B07DHY6L38",
+   "issue": "size written in fl oz but reads as millilitres",
+   "detail": {
+    "as_written": "355 FZ",
+    "read_as_fl_oz": 12.0
+   }
+  },
+  {
+   "asin": "B07FWM1PQS",
+   "issue": "ABV differs between page texts",
+   "detail": {
+    "page_title": "4.8 % Abv",
+    "description": "4.7% ABV",
+    "grid_title": "4.8 % Abv"
+   }
+  }
+ ]
+}

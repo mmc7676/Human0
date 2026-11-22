@@ -1,4 +1,4 @@
-/* Shelf browser core: pure filter, sort, facet and grouping logic (no DOM), shared by the Wine and Beer pages.
+/* Shelf browser core: pure filter, sort, facet and grouping logic (no DOM), shared by the Wine, Beer and Cheese pages.
    Call configure(cfg) with a mode's fields before using the other functions. */
 (function (root) {
   "use strict";
@@ -34,6 +34,17 @@
       return true;
     },
     extraState: function () { return { abvMin: null, abvMax: null }; }
+  };
+
+  var CHEESE = {
+    typeField: "style",
+    typeOrder: ["Soft-ripened", "Washed rind", "Blue", "Goat", "Sheep", "Fresh & brined", "Semi-soft", "Alpine & Swiss",
+      "Cheddar & British", "Gouda & Dutch", "Spanish", "Hard Italian", "Hard & aged", "Other", NONE],
+    setFields: ["style", "milk", "country", "form", "brand"],
+    orders: { form: ["Wedge", "Cubes", "Grated", "Rinds"] },
+    hayFields: ["brand", "name", "style", "milk", "country", "form", "flavors", "asin", "id"],
+    extra: function () { return true; },
+    extraState: function () { return {}; }
   };
 
   function configure(c) { cfg = c; }
@@ -131,7 +142,9 @@
     brand: function (r) { return norm(r.brand); },
     name: function (r) { return norm(r.name); },
     varietal: function (r) { return norm(val(r, "varietal")); },
-    style: function (r) { return norm(val(r, "style")); },
+    style: function (r) { return cfg.typeField === "style" ? cfg.typeOrder.indexOf(val(r, "style")) : norm(val(r, "style")); },
+    milk: function (r) { return norm(val(r, "milk")); },
+    form: function (r) { return norm(val(r, "form")); },
     color: function (r) { return cfg.typeOrder.indexOf(val(r, "color")); },
     family: function (r) { return cfg.typeOrder.indexOf(val(r, "family")); },
     country: function (r) { return norm(val(r, "country")); },
@@ -183,7 +196,7 @@
     });
   }
 
-  var api = { NONE: NONE, WINE: WINE, BEER: BEER, configure: configure, val: val, emptyState: emptyState,
+  var api = { NONE: NONE, WINE: WINE, BEER: BEER, CHEESE: CHEESE, configure: configure, val: val, emptyState: emptyState,
     filterRows: filterRows, facetCounts: facetCounts, facetValues: facetValues, sortRows: sortRows,
     groupRows: groupRows, median: median, cfg: function () { return cfg; } };
   configure(WINE);

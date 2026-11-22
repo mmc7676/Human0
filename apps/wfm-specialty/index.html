@@ -160,6 +160,7 @@ aside.rail .chip:disabled { opacity: .6; }
 .na { background: var(--surface-2); color: var(--muted); border-radius: 999px; padding: 1px 7px; font-size: .72rem; font-weight: 600; }
 
 .bottle { width: 34px; height: 92px; display: block; }
+.per { font-size: .72em; font-weight: 500; color: var(--muted); margin-left: 1px; }
 /* open animations on wine cards: sparkling pops its cork up and out of the card, other wines tilt right and pour */
 .wine-btl { overflow: visible; }
 .wine-btl .splash { opacity: 0; }
@@ -272,6 +273,7 @@ button.opt { cursor: pointer; }
 button.opt:hover { border-color: var(--accent); }
 .warn { color: var(--sale); font-size: .8rem; }
 @media (max-width: 860px) { .modes { margin-left: 0; } }
+@media (max-width: 480px) { .modes { gap: 4px; } .modes a { font-size: 1.12rem; padding: 4px 10px; } .modes .sep { font-size: 1.12rem; } }
 </style>
 
 <header class="top">
@@ -284,7 +286,7 @@ button.opt:hover { border-color: var(--accent); }
       </div>
     </div>
     <nav class="modes" aria-label="Department">
-      <a href="#beer/grid" data-mode="beer">Beer</a><span class="sep" aria-hidden="true">|</span><a href="#grid" data-mode="wine">Wine</a>
+      <a href="#beer/grid" data-mode="beer">Beer</a><span class="sep" aria-hidden="true">|</span><a href="#grid" data-mode="wine">Wine</a><span class="sep" aria-hidden="true">|</span><a href="#cheese/grid" data-mode="cheese">Cheese</a>
     </nav>
     <nav class="views" aria-label="Views">
       <a href="#grid" data-view="grid">Grid</a>
@@ -306,7 +308,7 @@ button.opt:hover { border-color: var(--accent); }
     </div>
     <fieldset><legend>Type</legend><div class="chips" id="f-type"></div></fieldset>
     <fieldset>
-      <legend>Price (USD)</legend>
+      <legend id="priceLegend">Price (USD)</legend>
       <div class="pricebox">
         <input id="pmin" type="number" inputmode="decimal" min="0" step="1" placeholder="Min" aria-label="Minimum price">
         <span class="hint">to</span>
@@ -318,7 +320,7 @@ button.opt:hover { border-color: var(--accent); }
       <legend>ABV</legend>
       <div class="chips" id="abvPresets"></div>
     </fieldset>
-    <fieldset>
+    <fieldset id="alcoholSet" data-only="wine beer">
       <legend>Alcohol</legend>
       <label class="toggle">Alcohol
         <select class="plain" id="alcohol"></select>
@@ -378,6 +380,7 @@ button.opt:hover { border-color: var(--accent); }
   var $ = function (id) { return document.getElementById(id); };
 
   function money(v) { return v === null || v === undefined ? "" : "$" + v.toFixed(2); }
+  function per() { return M && M.per ? '<span class="per">' + M.per + '</span>' : ""; }
   function esc(s) { return String(s === null || s === undefined ? "" : s).replace(/[&<>"']/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]; }); }
   function has(v) { return v !== null && v !== undefined; }
 
@@ -426,6 +429,43 @@ button.opt:hover { border-color: var(--accent); }
       '<rect x="7" y="50" width="20" height="26" rx="2" fill="var(--surface)" opacity=".82"/>' + pack + na + '</svg>';
   }
 
+  /* ---------- cheese look ---------- */
+  var STYLE_COLOR = { "Soft-ripened": "#e8d49a", "Washed rind": "#d98a3d", "Blue": "#5f7f9e", "Goat": "#cfc8b2", "Sheep": "#c9a86a",
+    "Fresh & brined": "#b9c8c9", "Semi-soft": "#e3bf5a", "Alpine & Swiss": "#e2b43c", "Cheddar & British": "#e8902a",
+    "Gouda & Dutch": "#c8443a", "Spanish": "#b98a4e", "Hard Italian": "#cfa25a", "Hard & aged": "#b8732e", "Other": "#9a9a8a" };
+  function styleColor(v) { return STYLE_COLOR[v] || "var(--w-none)"; }
+  function ageText(r) { return has(r.age_months) ? r.age_months + " months" : ""; }
+
+  // A wedge cut from a wheel: the top face, the cut face and the rind, in the style's color.
+  function cheeseSVG(r) {
+    var fill = styleColor(r.style);
+    var marks = "";
+    if (r.style === "Alpine & Swiss") marks = '<circle cx="12" cy="74" r="2.6"/><circle cx="22" cy="80" r="2"/><circle cx="24" cy="69" r="1.6"/>';
+    if (r.style === "Blue") marks = '<path d="M7 76l4 -2 3 3M16 72l4 3 3 -2M12 82l5 -2 4 2" fill="none" stroke="#24384d" stroke-width="1.4" stroke-linecap="round"/>';
+    var tag = r.form && r.form !== "Wedge" ? '<text x="17" y="48" text-anchor="middle" font-size="7.5" font-family="Inter, sans-serif" font-weight="700" fill="var(--muted)">' + esc(r.form.toUpperCase()) + '</text>' : "";
+    return '<svg class="bottle cheese" viewBox="0 0 34 92" aria-hidden="true">' + tag +
+      '<path d="M3 70L31 58l-4-5L1 66z" fill="' + fill + '"/><path d="M3 70L31 58l-4-5L1 66z" fill="#fff" opacity=".38"/>' +
+      '<path d="M3 70L31 58v28H3z" fill="' + fill + '"/>' +
+      '<path d="M28 59.3l3-1.3v28h-3z" fill="#000" opacity=".22"/>' +
+      '<g fill="var(--surface)" opacity=".75">' + (r.style === "Blue" ? "" : marks) + '</g>' + (r.style === "Blue" ? marks : "") +
+      '<path d="M3 70L31 58v28H3z" fill="none" stroke="var(--fg)" stroke-opacity=".25" stroke-width=".8"/></svg>';
+  }
+
+  function cheeseDetail(r) {
+    var facts = [
+      ["Price per pound", money(r.price) + (r.list_price ? " (was " + money(r.list_price) + ")" : "")],
+      ["Discount", r.off_pct ? r.off_pct + "% off" + (r.discount_note ? " (" + r.discount_note + ")" : "") : "None listed"],
+      ["How it is sold", "By weight, cut to order at the cheese counter"],
+      ["Style", r.style || NONE], ["Milk", r.milk || "Not certain"],
+      ["Country", r.country ? r.country + (r.origin_basis === "PDO name" ? " (protected name)" : " (maker's home country)") : "Not certain"],
+      ["Form", r.form || NONE], ["Age", ageText(r) || "Not in the name"],
+      ["Flavor", r.flavors && r.flavors.length ? r.flavors.join(", ") : "Plain"],
+      ["Store list position", "#" + r.pos], ["Record", r.id], ["Product id (ASIN)", r.asin]
+    ];
+    var note = '<p class="hint">You pay for the weight that is cut, so the total depends on the piece. Style, milk and country are worked out from the cheese\'s name and maker, and are left as not certain when those do not settle it.</p>';
+    return { head: priceLine(r, [r.style, r.form].filter(Boolean).join(" · ")), body: factsHTML(facts) + note };
+  }
+
   /* ---------- per-department settings ---------- */
   var FACT_LABELS = { country_of_origin: "Country of origin", type_of_wine: "Type of wine", alcohol_by_volume: "Alcohol by volume", type_of_blend: "Type of blend",
     varietal: "Varietal", alcohol_content: "Alcohol content", "import": "Import", appellation: "Appellation", country_string: "Country", abv: "ABV", grapes: "Grapes" };
@@ -462,7 +502,7 @@ button.opt:hover { border-color: var(--accent); }
       ],
       detail: wineDetail,
       footer: function (n) {
-        return '<p>Snapshot of the Whole Foods wine MCP server\'s data: ' + n + ' wines from the "wine" search at Whole Foods Market, shown for delivery to 92211, captured November 19, 2026. Prices and discounts are as listed that day. This page reads that saved data; it does not stream live from the server.</p>' +
+        return '<p>Snapshot of the Whole Foods wine MCP server\'s data: ' + n + ' wines from the "wine" search at Whole Foods Market, shown for delivery to 92211, captured November 19, 2026 and completed from the full price-sorted listing on November 22, 2026. Prices and discounts are as listed on those days. Wines added November 22 show list details only, without tasting notes or a Vivino rating yet. This page reads that saved data; it does not stream live from the server.</p>' +
           '<p>Country is worked out from each bottle\'s label and description text and is blank where neither names one. The store pages did not expose bottle photo addresses, so bottles are drawn in their wine color.</p>' +
           '<p>Vivino ratings were read from each wine\'s page on vivino.com on November 19, 2026, and cover all vintages. A rating is shown only when the Vivino page names the same producer and the same wine. The word cloud counts words from up to 10 Vivino reviews per wine, with reviewer names left out.</p>';
       }
@@ -503,9 +543,42 @@ button.opt:hover { border-color: var(--accent); }
       ],
       detail: beerDetail,
       footer: function (n) {
-        return '<p>Snapshot of the Whole Foods beer MCP server\'s data: ' + n + ' drinks from the "beer" search at Whole Foods Market, shown for delivery to 92211, captured November 20, 2026. Prices and discounts are as listed that day. This page reads that saved data; it does not stream live from the server.</p>' +
-          '<p>Items in that search that are not beer or a hard drink sold with it (sodas, ginger beers, mocktails, wine and sake) are left out. Each pack size and flavor is its own store listing, so it has its own card.</p>' +
+        return '<p>Snapshot of the Whole Foods beer MCP server\'s data: ' + n + ' drinks from the "beer" search at Whole Foods Market, shown for delivery to 92211, captured November 20, 2026 and completed from the full price-sorted listing on November 22, 2026. Prices and discounts are as listed on those days. Drinks added November 22 show list details only, without a description or store aisle. This page reads that saved data; it does not stream live from the server.</p>' +
+          '<p>Items in that search that are not beer or a hard drink sold with it (sodas, ginger and root beers, mocktails, mixers, hop water and wine) are left out. Sake and makgeolli listed in that search are kept under Sake &amp; rice wine. Each pack size and flavor is its own store listing, so it has its own card.</p>' +
           '<p>Pack count, can or bottle size, ABV, style and country are read from each listing\'s own title and description. Price per can or bottle and per fl oz are worked out from the listed price. The store pages did not expose photo addresses, so cans and bottles are drawn in their type color.</p>';
+      }
+    },
+    cheese: {
+      core: C.CHEESE, file: "cheeses.json", one: "cheese", many: "cheeses", Many: "Cheeses", per: "/lb",
+      search: "Search cheese, maker, style, milk, country, flavor",
+      lists: [["milk", "Milk"], ["country", "Country"], ["form", "Form"], ["brand", "Brand", true]],
+      presets: [[null, 15, "Under $15/lb"], [15, 20, "$15 to $20/lb"], [20, 30, "$20 to $30/lb"], [30, null, "$30/lb and up"]],
+      sorts: [["store:asc", "Store order"], ["price:asc", "Price per lb, low to high"], ["price:desc", "Price per lb, high to low"], ["off:desc", "Biggest discount"],
+        ["brand:asc", "Brand A to Z"], ["name:asc", "Cheese name A to Z"], ["style:asc", "Style"], ["milk:asc", "Milk A to Z"], ["country:asc", "Country A to Z"]],
+      groupBy: "style", lane: "style",
+      groups: [["style", "Style"], ["milk", "Milk"], ["country", "Country"], ["form", "Form"], ["brand", "Brand"]],
+      lanes: [["style", "Style"], ["milk", "Milk"], ["country", "Country"], ["brand", "Brand (top 14)"]],
+      typeColor: function (v) { return styleColor(v); }, typeLabel: function (v) { return v; },
+      rowColor: function (r) { return styleColor(r.style); },
+      icon: cheeseSVG,
+      meta: function (r) { return [r.milk || null, r.country || null, r.form !== "Wedge" ? r.form : null, ageText(r) || null].filter(Boolean).join(" · "); },
+      extraPrice: function () { return ""; },
+      cols: [
+        ["brand", "Brand", "", function (r) { return esc(r.brand); }],
+        ["name", "Cheese", "", function (r) { return '<span class="cell-name">' + esc(r.name) + '</span>'; }],
+        ["style", "Style", "", function (r) { return '<span style="display:inline-flex;gap:6px;align-items:center"><span class="dot" style="background:' + styleColor(r.style) + '"></span>' + esc(r.style || "") + '</span>'; }],
+        ["milk", "Milk", "", function (r) { return esc(r.milk || ""); }],
+        ["country", "Country", "", function (r) { return esc(r.country || ""); }],
+        ["form", "Form", "", function (r) { return esc(r.form || ""); }],
+        ["price", "Per lb", "r num", function (r) { return money(r.price) + (r.list_price ? '<br><span class="was">' + money(r.list_price) + '</span>' : ''); }],
+        ["off", "Off", "r num", function (r) { return r.off_pct ? r.off_pct + "%" : ""; }]
+      ],
+      detail: cheeseDetail,
+      src: function (r) { return "Name and price as shown on the store's search results for cheese"; },
+      footer: function (n) {
+        return '<p>Snapshot of the Whole Foods cheese MCP server\'s data: ' + n + ' cheeses cut to order at the cheese counter, from the "cheese" search at Whole Foods Market, shown for delivery to 92211, captured November 22, 2026. Prices per pound and discounts are as listed that day. This page reads that saved data; it does not stream live from the server.</p>' +
+          '<p>Only cheeses sold by weight (priced per pound) are included. Packaged shelf cheeses sold at a fixed price, and cheeses sliced at the deli counter, are left out.</p>' +
+          '<p>Style, milk and country are worked out from each cheese\'s name and maker and are left blank where those do not settle them. The store pages did not expose photo addresses, so each cheese is drawn as a wedge in its style color.</p>';
       }
     }
   };
@@ -515,10 +588,10 @@ button.opt:hover { border-color: var(--accent); }
 
   function parseHash() {
     var parts = (location.hash || "").replace(/^#/, "").split("/");
-    var m = parts[0] === "beer" || parts[0] === "wine" ? parts.shift() : "wine";
+    var m = MODES.hasOwnProperty(parts[0]) ? parts.shift() : "wine";
     return { mode: m, view: VIEWS.indexOf(parts[0]) !== -1 ? parts[0] : "grid" };
   }
-  function hashFor(m, v) { return "#" + (m === "beer" ? "beer/" : "") + v; }
+  function hashFor(m, v) { return "#" + (m === "wine" ? "" : m + "/") + v; }
 
   function load(m) {
     var d = DATA[m];
@@ -542,7 +615,7 @@ button.opt:hover { border-color: var(--accent); }
     C.configure(M.core);
     if (!DATA[m]) DATA[m] = { rows: [], byId: {}, byAsin: {}, st: C.emptyState(), sortKey: "store", sortDir: "asc", groupBy: M.groupBy, lane: M.lane, lists: {} };
     D = DATA[m];
-    document.querySelectorAll("[data-only]").forEach(function (el) { el.hidden = el.dataset.only !== m; });
+    document.querySelectorAll("[data-only]").forEach(function (el) { el.hidden = el.dataset.only.split(" ").indexOf(m) === -1; });
     $("alcohol").innerHTML = '<option value="any">All ' + M.many + '</option><option value="exclude_na">Hide non-alcoholic</option><option value="only_na">Non-alcoholic only</option>';
     $("sort").innerHTML = M.sorts.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join("");
     $("lists").innerHTML = M.lists.map(function (l) {
@@ -551,6 +624,7 @@ button.opt:hover { border-color: var(--accent); }
         '<div class="checklist" id="f-' + l[0] + '"></div></fieldset>';
     }).join("");
     M.lists.forEach(function (l) { if (l[2]) $("s-" + l[0]).value = D.lists[l[0]] || ""; });
+    $("priceLegend").textContent = M.per ? "Price per pound (USD)" : "Price (USD)";
     $("q").value = D.st.q; $("q").placeholder = M.search; $("q").setAttribute("aria-label", "Search " + M.many);
     $("pmin").value = has(D.st.priceMin) ? D.st.priceMin : ""; $("pmax").value = has(D.st.priceMax) ? D.st.priceMax : "";
     $("alcohol").value = D.st.alcohol;
@@ -666,8 +740,8 @@ button.opt:hover { border-color: var(--accent); }
         '<span class="b">' + esc(r.brand) + '</span>' +
         '<span class="n">' + esc(r.name) + '</span>' +
         '<span class="meta">' + esc(M.meta(r)) + '</span>' +
-        '<span class="pr"><span class="price">' + money(r.price) + '</span>' +
-        (r.list_price ? '<span class="was">' + money(r.list_price) + '</span>' : '') +
+        '<span class="pr"><span class="price">' + money(r.price) + per() + '</span>' +
+        (r.list_price ? '<span class="was">' + money(r.list_price) + per() + '</span>' : '') +
         (r.off_pct ? '<span class="off">' + r.off_pct + '% off</span>' : '') +
         (r.non_alcoholic ? '<span class="na">Non-alcoholic</span>' : '') + M.extraPrice(r) + '</span></button>';
     }).join("") + '</div>';
@@ -700,7 +774,7 @@ button.opt:hover { border-color: var(--accent); }
     var opts = M.groups.map(function (g) { return '<option value="' + g[0] + '"' + (g[0] === groupBy ? " selected" : "") + '>' + g[1] + '</option>'; }).join("");
     var clickable = C.cfg().setFields.indexOf(groupBy) !== -1;
     var html = '<div class="groupbar"><label class="toggle"><span class="hint">Group by</span><select class="plain" id="groupBy">' + opts + '</select></label>' +
-      '<p class="hint">Bar shows the price spread from lowest to highest. Scale $0 to $' + axisMax + '.' + (clickable ? ' Select a group to filter to it.' : '') + '</p></div>';
+      '<p class="hint">Bar shows the price spread from lowest to highest. Scale $0 to $' + axisMax + (M.per ? " per lb" : "") + '.' + (clickable ? ' Select a group to filter to it.' : '') + '</p></div>';
     html += '<div class="groups"><div class="grow ghead"><span>' + esc(M.groups.filter(function (g) { return g[0] === groupBy; })[0][1]) + '</span><span class="gc">' + M.Many + '</span><span>Price spread</span><span class="gr">Low · median · high</span></div>';
     html += groups.map(function (g) {
       var x = function (v) { return (v / axisMax * 100).toFixed(2); };
@@ -712,7 +786,7 @@ button.opt:hover { border-color: var(--accent); }
         '<line x1="0" y1="11" x2="100" y2="11" stroke="var(--line)" stroke-width="1" vector-effect="non-scaling-stroke"/>' +
         '<line x1="' + x(g.min) + '" y1="11" x2="' + x(g.max) + '" y2="11" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>' +
         '</svg>' +
-        '<span class="gr">' + money(g.min) + ' · ' + money(g.median) + ' · ' + money(g.max) + '</span></' + tag + '>';
+        '<span class="gr">' + money(g.min) + ' · ' + money(g.median) + ' · ' + money(g.max) + per() + '</span></' + tag + '>';
     }).join("");
     return html + '</div>';
   }
@@ -727,7 +801,7 @@ button.opt:hover { border-color: var(--accent); }
     var sx = function (v) { return left + (v / axisMax) * (W - left - right); };
     var ticks = [];
     for (var t = 0; t <= axisMax; t += ax.step) ticks.push(t);
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Price of each ' + M.one + ' by ' + laneField + '">';
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Price' + (M.per ? " per pound" : "") + ' of each ' + M.one + ' by ' + laneField + '">';
     ticks.forEach(function (t) {
       svg += '<line class="gridline" x1="' + sx(t) + '" y1="' + top + '" x2="' + sx(t) + '" y2="' + (H - bottom) + '"/>' +
         '<text x="' + sx(t) + '" y="' + (H - bottom + 16) + '" text-anchor="middle">$' + t + '</text>';
@@ -739,7 +813,7 @@ button.opt:hover { border-color: var(--accent); }
       g.rows.forEach(function (r) {
         // Deterministic jitter from the record position keeps dots stable between renders.
         var j = (((r.pos * 2654435761) % 1000) / 1000 - 0.5) * (laneH - 16);
-        svg += '<circle class="pt" data-open="' + r.id + '" cx="' + sx(r.price).toFixed(1) + '" cy="' + (cy + j).toFixed(1) + '" r="4.5" fill="' + M.rowColor(r) + '"><title>' + esc(r.brand + " · " + r.name + " · " + money(r.price)) + '</title></circle>';
+        svg += '<circle class="pt" data-open="' + r.id + '" cx="' + sx(r.price).toFixed(1) + '" cy="' + (cy + j).toFixed(1) + '" r="4.5" fill="' + M.rowColor(r) + '"><title>' + esc(r.brand + " · " + r.name + " · " + money(r.price) + (M.per || "")) + '</title></circle>';
       });
       svg += '<line class="med" x1="' + sx(g.median) + '" y1="' + (cy - laneH / 2 + 4) + '" x2="' + sx(g.median) + '" y2="' + (cy + laneH / 2 - 4) + '"/>';
     });
@@ -753,7 +827,7 @@ button.opt:hover { border-color: var(--accent); }
       return '<option value="' + o[0] + '"' + (o[0] === laneField ? " selected" : "") + '>' + o[1] + '</option>';
     }).join("");
     return '<div class="groupbar"><label class="toggle"><span class="hint">Rows</span><select class="plain" id="priceLane">' + opts + '</select></label>' +
-      '<p class="hint">Each dot is one listing at its price. Select a dot to open it.</p></div>' +
+      '<p class="hint">Each dot is one listing at its price' + (M.per ? " per pound" : "") + '. Select a dot to open it.</p></div>' +
       '<div class="chartcard">' + svg + legend + '</div>';
   }
 
@@ -772,7 +846,7 @@ button.opt:hover { border-color: var(--accent); }
   }
   function factsHTML(facts) { return '<dl class="facts">' + facts.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + esc(f[1]) + '</dd></div>'; }).join("") + '</dl>'; }
   function priceLine(r, extra) {
-    return '<div class="pr" style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span class="price">' + money(r.price) + '</span>' + (r.list_price ? '<span class="was">' + money(r.list_price) + '</span>' : '') +
+    return '<div class="pr" style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span class="price">' + money(r.price) + per() + '</span>' + (r.list_price ? '<span class="was">' + money(r.list_price) + per() + '</span>' : '') +
       (r.off_pct ? '<span class="off">' + r.off_pct + '% off</span>' : '') + '<span class="hint">' + esc(extra || "") + '</span></div>';
   }
 
@@ -832,7 +906,7 @@ button.opt:hover { border-color: var(--accent); }
       '<button class="close" type="button" id="dClose" aria-label="Close">×</button></div>' +
       '<div class="dlg-body">' + parts.body +
       '<a class="btn" href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">View on Whole Foods Market ↗</a>' +
-      '<div class="src">Store page title: ' + esc(r.page_title) + '</div></div>';
+      '<div class="src">' + (M.src ? M.src(r) : 'Store page title: ' + esc(r.page_title)) + '</div></div>';
     $("dClose").addEventListener("click", function () { $("detail").close(); });
     var d = $("detail");
     if (typeof d.showModal === "function") { if (!d.open) d.showModal(); } else d.setAttribute("open", "");
