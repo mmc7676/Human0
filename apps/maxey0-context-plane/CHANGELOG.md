@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — 2026-11-21
+- **Domain views.** The view row's single Domains toggle becomes three buttons. **All** shows every domain. **None** turns the domain level off (domain nodes, rings and labels). **Task domain** shows only the domain(s) the chosen topic(s) came from, plus everything under them: Domain → Topic → Concept → Skill → Agent → MCP server. The chosen topics are the routed task's (lens topics, else the top skill's topic); with no task, the selected node's; with nothing selected, the Domain filter's. If none of these exists, the view shows all domains and says so. Saved in the app state (`observer.domView`).
+- **Estimate Costs button** in the view row, next to Spread path. On, it shows the cost labels on routed skills, agents (orange) and MCP servers (yellow). Off, it hides them; the cost line under the task stays. It stays in sync with the Cost checkbox in the task panel and is saved in the app state (`observer.cost`).
+
 ## v1.2.0 - Prefederation — 2026-11-11
 - **Coverage after every route.** Under the route: which words of the task the chosen path covers, which the map knows but this route skipped (with the concept that fits them), and which are not covered.
 - **Where the hierarchy breaks.** For the uncovered part (with its neighboring word, e.g. "android app") the app walks down the levels with the observer lens: no topic fits (best TF-IDF score below 0.2) → propose a new topic in the best domain; a topic fits but no concept → propose a new concept under it. No model and no network: it runs in the dashboard for everyone.

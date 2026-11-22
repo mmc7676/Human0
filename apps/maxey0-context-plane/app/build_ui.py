@@ -932,6 +932,55 @@ def main():
     h = once(h, '<div id="lensOut" class="cpnote" hidden></div>', '<div class="cpsig"><label title="Show estimated token cost on each routed skill, agent and MCP server"><input type="checkbox" id="cpCostChk" checked> Cost</label> <select id="cpCostModel" aria-label="Model for the cost estimate"><option value="claude-sonnet-5-5">Sonnet 5.5</option><option value="claude-opus-5-5">Opus 5.5</option><option value="claude-haiku-5-5">Haiku 5.5</option><option value="claude-fable-5-1">Fable 5.1</option></select> <label title="Maker → checker rounds">Loops <input type="number" id="cpCostLoops" min="1" max="10" value="1" style="width:3.2em"></label> <button type="button" id="cpCCBtn" title="Download this route as a Claude Code project: CLAUDE.md, one subagent per chosen agent, .mcp.json, route.json">Send to Claude Code</button> <span id="cpCCMsg" role="status"></span><div id="cpCost" class="cpnote" role="status">Cost estimate: route a task to see what its harness would cost.</div><span hidden></span><br><label title="Route on the server with TF-IDF + bge-m3 embeddings when its dense index is ready; off = TF-IDF only, in the page"><input type="checkbox" id="cpDenseChk" checked> Dense signal</label> <span id="cpSignal">Signal: TF-IDF</span></div><div id="lensOut" class="cpnote" hidden></div>', "dense signal toggle + readout")
     h = once(h, '<button type="button" id="cpDragBtn"', '<button type="button" id="cpColorBtn" class="on" aria-pressed="true" title="With an observer in the graph and Embedding field on: color nodes by observer value (how much of each node the observer explains). Off: color by level">Observer color</button><button type="button" id="cpDragBtn"', "observer color button")
 
+    # v1.2.x: domain views (All / None / Task domain) and an Estimate Costs button in the view row
+    h = once(h, "let cpDomOn=true,cpLensKey='',cpLensPos=null,cpObsLabel='above the graph';",
+             "let cpDomOn=true,cpLensKey='',cpLensPos=null,cpObsLabel='above the graph';\n"
+             "// Domain view: 'all' every domain; 'none' no domain level (rings, labels and domain nodes off); 'task' only the domain(s)\n"
+             "// the chosen topic(s) came from and everything under them, Domain -> Topic -> Concept -> Skill -> Agent -> MCP server.\n"
+             "// Chosen topics: the routed task (lens topics, else the top skill's topic), else the selected node, else the Domain filter.\n"
+             "let cpDomView='all',cpDomKeep=null,cpDomKeepKey='';\n"
+             "function cpTaskDoms(){const s=new Set(),addT=t=>{if(!t)return;const d=__CP.tDom[String(t).replace(/^t:/,'')];if(d)s.add(d)};\n"
+             " if(typeof task!=='undefined'&&task&&task.matched){if(task.lens&&task.lens.chain)for(const l of task.lens.chain)if(l.level==='topic')for(const x of l.selected)addT(x.app);\n"
+             "  if(!s.size&&task.skills&&task.skills.length){const k=N[task.skills[0][0]];if(k)addT(cTopic[k.concept])}}\n"
+             " if(!s.size&&sel&&N[sel]){const n=N[sel];if(n.kind==='domain')s.add(n.raw);else if(n.kind==='topic')addT(n.id);else if(n.kind==='concept')addT(cTopic[n.id.slice(2)]);else if(n.kind==='skill')addT(cTopic[n.concept])}\n"
+             " if(!s.size&&typeof V3!=='undefined'&&V3.bf&&V3.bf.domain)s.add(V3.bf.domain);return [...s].sort()}\n"
+             "function cpDomKeepSet(){if(cpDomView!=='task')return null;const ds=cpTaskDoms(),key=ds.join(',')+'|'+E.length+'|'+G.length+'|'+Object.keys(N).length;if(key===cpDomKeepKey)return cpDomKeep;cpDomKeepKey=key;\n"
+             " if(!ds.length){cpDomKeep=null;return null}const out=new Set(),q=[];for(const d of ds){const id='d:'+d;if(N[id]){out.add(id);q.push(id)}}\n"
+             " while(q.length){const x=q.shift();for(const e of E)if(e.a===x&&(e.kind==='tree'||e.kind==='agent')&&N[e.b]&&N[e.b].kind!=='domain'&&!out.has(e.b)){out.add(e.b);q.push(e.b)}\n"
+             "  if(N[x]&&N[x].kind==='agent')for(const g of G)if(g.a===x&&!out.has(g.b)){out.add(g.b);q.push(g.b)}}\n"
+             " cpDomKeep=out;return out}\n"
+             "function cpDomHide(id){const k=cpDomKeepSet();return !!k&&!k.has(id)}\n"
+             "function cpDomSet(v){cpDomView=v==='none'||v==='task'?v:'all';cpDomOn=cpDomView!=='none';vis.domain=cpDomOn;cpDomKeepKey='';\n"
+             " const lv=$('cpLive');if(lv)lv.textContent=cpDomView==='task'?(cpTaskDoms().length?'Task domain: '+cpTaskDoms().map(d=>((__CP.domains.find(x=>x.id===d)||{}).label||d)).join(', '):'Task domain: route a task or select a topic first; showing all domains'):cpDomView==='none'?'No domains':'All domains'}",
+             "domain view state")
+    h = once(h, '<button type="button" id="cpDomBtn" class="on" aria-pressed="true" title="Show each topic\'s domain as a coloured ring and label each domain where its topics are">Domains</button>',
+             '<span class="cplbl">Domains</span><button type="button" id="cpDomBtn" class="on" aria-pressed="true" title="Every domain: each topic\'s domain as a colored ring and a label where its topics are">All</button>'
+             '<button type="button" id="cpDomNoneBtn" aria-pressed="false" title="No domain level: domain nodes, rings and labels off">None</button>'
+             '<button type="button" id="cpDomTaskBtn" aria-pressed="false" title="Only the domain(s) the chosen topic(s) came from, isolated from Domain down to MCP server. Chosen topics: the routed task, else the selected node, else the Domain filter">Task domain</button>',
+             "domain view buttons")
+    h = once(h, '>Spread path</button>',
+             '>Spread path</button><button type="button" id="cpCostBtn" class="on" aria-pressed="true" title="Show the estimated cost labels on the routed skills, agents (orange) and MCP servers (yellow). Off hides them; the cost line under the task stays">Estimate Costs</button>',
+             "estimate costs button")
+    h = once(h, "||(cpOnlyNew&&!cpNewSet().has(n.id)))continue;cpCnt[n.kind]",
+             "||(cpOnlyNew&&!cpNewSet().has(n.id))||cpDomHide(n.id))continue;cpCnt[n.kind]", "domain view: counts")
+    h = once(h, "if(cpOnlyNew&&!cpNewSet().has(n.id))continue;", "if(cpOnlyNew&&!cpNewSet().has(n.id))continue;if(cpDomHide(n.id))continue;", "domain view: nodes")
+    h = once(h, "if(cpOnlyNew&&!(cpNewSet().has(e.a)&&cpNewSet().has(e.b)))continue;",
+             "if(cpOnlyNew&&!(cpNewSet().has(e.a)&&cpNewSet().has(e.b)))continue;if(cpDomHide(e.a)||cpDomHide(e.b))continue;", "domain view: edges")
+    h = once(h, "&&!(cpOnlyNew&&!cpNewSet().has(n.id))).sort(", "&&!(cpOnlyNew&&!cpNewSet().has(n.id))&&!cpDomHide(n.id)).sort(", "domain view: keyboard list")
+    h = once(h, "for(const o of pts){if(!match(o.n))continue;const d=Math.hypot(o.sx-x,o.sy-y)",
+             "for(const o of pts){if(!match(o.n)||cpDomHide(o.n.id))continue;const d=Math.hypot(o.sx-x,o.sy-y)", "domain view: picking")
+    h = once(h, "for(const d in acc){if(!cpField&&d!==sel)continue;", "for(const d in acc){if(cpDomHide('d:'+d))continue;if(!cpField&&d!==sel&&cpDomView!=='task')continue;", "domain view: labels")
+    h = once(h, "t('cpDomBtn',cpDomOn);",
+             "t('cpDomBtn',cpDomView==='all');t('cpDomNoneBtn',cpDomView==='none');t('cpDomTaskBtn',cpDomView==='task');try{t('cpCostBtn',cpCostOn)}catch(e){}", "buttons reflect domain view + cost")
+    h = once(h, "on('cpDomBtn',()=>{cpDomOn=!cpDomOn;vis.domain=cpDomOn});",
+             "on('cpDomBtn',()=>cpDomSet('all'));on('cpDomNoneBtn',()=>cpDomSet('none'));on('cpDomTaskBtn',()=>cpDomSet('task'));on('cpCostBtn',()=>{cpCostOn=!cpCostOn;const c=$('cpCostChk');if(c)c.checked=cpCostOn});",
+             "domain view + cost wiring")
+    h = once(h, "if(ck)ck.onchange=()=>{cpCostOn=ck.checked;draw()};", "if(ck)ck.onchange=()=>{cpCostOn=ck.checked;cpSetBtns();draw()};", "cost checkbox syncs the button")
+    h = once(h, "domains:cpDomOn,", "domains:cpDomOn,domView:cpDomView,cost:cpCostOn,", "state: save domain view + cost")
+    h = once(h, "cpDomOn=ob.domains!==false;vis.domain=cpDomOn;",
+             "cpDomOn=ob.domains!==false;vis.domain=cpDomOn;if(ob.domView)cpDomSet(ob.domView);else cpDomSet(cpDomOn?'all':'none');if(typeof ob.cost==='boolean'){cpCostOn=ob.cost;if($('cpCostChk'))$('cpCostChk').checked=cpCostOn}",
+             "state: restore domain view + cost")
+
     for gone in ("DV0", "DVKEYS", "cs_app2", "cs_app3", "cs_app4", "fgUI", "pongUI", "renderDev", "fsBtnWhole", "MCP APPS", "'human0','main'", "Weak match", "graph vocabulary"):
         if gone in h:
             sys.exit(f"FAIL still present: {gone!r}")
