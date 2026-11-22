@@ -95,8 +95,14 @@ Maxey0 returned "SCW limit reached", so the SCWs are stored as files:
   are wine and were added; 41 are spirits, beer, ready-to-drink cocktails,
   kombucha, makgeolli or mixers and were added as `is_wine: false`; one is a cheese
   sold by the pound and was left out. The script is `build/add_missing.py`.
-- The 110 new wines have no Vivino search yet (`vivino: null`), and their country
-  is blank unless the name states one.
+- The 110 new wines got a first Vivino pass on Nov 22, 2026 (`build/merge_vivino_2026_11_22.py`,
+  inputs in raw/vivino/): 14 matched with a rating (4 reuse the match of the same wine in another
+  bottle size), 3 low confidence and held back, 2 not found, and 91 not searched yet to limit usage
+  (`match_status: "not_searched"`). The 10 newly searched matches have no word cloud, because
+  Vivino's reviews feed refused the browser; no review text was read. Frank Family Cabernet's
+  rating is for the 2022 vintage, not all vintages (`rating_scope` says so).
+- Country comes from the Whole Foods text first, then from the Vivino region for matched wines
+  only (`country_source`), via `build/countries.py`.
 
 `data/coverage_report.json` holds the checks from the November 19 build.
 

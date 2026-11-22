@@ -62,6 +62,7 @@ def summary(w):
         "price": w["price"],
         "color": w["color"],
         "varietal": w["varietal"],
+        "country": w.get("country"),
         "vineyard_location": w["vineyard_location"],
         "url": w["url"],
         "vivino_rating": _viv(w).get("rating"),
@@ -102,6 +103,8 @@ def _filter(args):
         if args.get("region") and not _contains(
                 f'{w.get("vineyard_location") or ""} {w["product_name"]} {w.get("other_notes") or ""}',
                 args["region"]):
+            continue
+        if args.get("country") and _norm(w.get("country")) != _norm(args["country"]):
             continue
         if args.get("brand") and not _contains(w["brand"], args["brand"]):
             continue
@@ -258,6 +261,7 @@ COMMON_FILTERS = {
     "color": {"type": "string", "enum": ["red", "white", "rosé", "sparkling", "dessert", "orange", "other"],
               "description": "Wine color/style class"},
     "region": {"type": "string", "description": "Place text, e.g. 'Napa', 'France', 'Marlborough'"},
+    "country": {"type": "string", "description": "Exact country, e.g. 'France', 'United States' (from the Whole Foods listing, else the matched Vivino page's region)"},
     "brand": {"type": "string", "description": "Vineyard/brand substring"},
     "size": {"type": "string", "description": "Exact size, e.g. '750 mL', '1.5 L'"},
     "min_price": {"type": "number", "description": "Minimum current price in USD"},
