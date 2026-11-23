@@ -49,7 +49,11 @@ def vivino_fields(w):
         out.update(v_rating=v.get("rating"), v_count=v.get("ratings_count"), v_url=v.get("url"),
                    v_winery=page.get("page_winery"), v_winery_url=page.get("page_winery_url"),
                    v_title=page.get("page_h1"), v_reviews=v.get("reviews_counted", 0),
-                   v_cloud=[[c["word"], c["count"]] for c in (v.get("word_cloud") or [])])
+                   v_cloud=[[c["word"], c["count"]] for c in (v.get("word_cloud") or [])],
+                   v_cloud_src=("taste" if v.get("word_cloud_source") == "vivino_taste_summary" else
+                                "reviews" if v.get("word_cloud") else
+                                "none_shown" if v.get("captured") == "2026-11-22" and not v.get("reused_from") else None),
+                   v_taste_n=(v.get("taste_summary") or {}).get("based_on_reviews"))
     return out
 
 

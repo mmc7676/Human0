@@ -95,12 +95,16 @@ Maxey0 returned "SCW limit reached", so the SCWs are stored as files:
   are wine and were added; 41 are spirits, beer, ready-to-drink cocktails,
   kombucha, makgeolli or mixers and were added as `is_wine: false`; one is a cheese
   sold by the pound and was left out. The script is `build/add_missing.py`.
-- The 110 new wines got a first Vivino pass on Nov 22, 2026 (`build/merge_vivino_2026_11_22.py`,
-  inputs in raw/vivino/): 14 matched with a rating (4 reuse the match of the same wine in another
-  bottle size), 3 low confidence and held back, 2 not found, and 91 not searched yet to limit usage
-  (`match_status: "not_searched"`). The 10 newly searched matches have no word cloud, because
-  Vivino's reviews feed refused the browser; no review text was read. Frank Family Cabernet's
-  rating is for the 2022 vintage, not all vintages (`rating_scope` says so).
+- The 110 new wines got a Vivino pass on Nov 22 and 23, 2026 (`build/merge_vivino_2026_11_22.py`,
+  inputs in raw/vivino/): 4 reuse the match of the same wine in another bottle size, and of the
+  106 others, 88 matched (87 with a rating), 7 were held back as low confidence with no rating,
+  10 were not found, and 1 was not searched because the listing gives no producer
+  (`match_status: "not_searched"`). Each wine was searched on its own, one at a time.
+- Word clouds for those 88 matches come from the "Wine lovers taste summary" on each Vivino wine
+  page: every flavor keyword is sized by its group's mention count, and `taste_summary` keeps the
+  groups and how many reviews they are based on (`word_cloud_source: "vivino_taste_summary"`).
+  Vivino's reviews feed refused the browser, so no review text was read. 82 have a cloud; 6 pages
+  show no taste summary, so those wines have none. Keywords that Vivino cut short were left out.
 - Country comes from the Whole Foods text first, then from the Vivino region for matched wines
   only (`country_source`), via `build/countries.py`.
 
@@ -112,7 +116,7 @@ Captured November 19, 2026 from vivino.com public pages (no sign-in). Each of th
 
 - **Match:** 312 matched, 42 low confidence, 7 not found. A match needs the Vivino page's producer and wine name to agree with the Whole Foods listing; low-confidence records keep a `reason` and show no rating or cloud.
 - **Rating:** the average and ratings count shown on the Vivino page header. 306 matched wines have one; 6 matched wines show no average on Vivino and stay null. No rating is estimated.
-- **Word cloud:** descriptor terms (flavor, texture, style, value, occasion) counted across up to 10 of the most recent English reviews per wine, capped at 10 by design. Only term counts and the number of reviews counted are stored; no review text, user name or profile detail is kept. A term is kept only if it appears in Vivino's raw review JSON for that wine. 310 matched wines have a cloud.
+- **Word cloud:** descriptor terms (flavor, texture, style, value, occasion) counted across up to 10 of the most recent English reviews per wine, capped at 10 by design. Only term counts and the number of reviews counted are stored; no review text, user name or profile detail is kept. A term is kept only if it appears in Vivino's raw review JSON for that wine. 310 matched wines have a cloud. Wines rated Nov 22 and 23 use the taste-summary cloud described above, for 392 rated wines with a cloud in all.
 - **Tools:** `list_wines` takes `min_rating`, `has_vivino` and `sort=rating_desc`; `get_vivino` returns one wine's Vivino record.
 - **Rebuild:** `build/parse_fetch_agents.py`, then `build/vivino_fetch_to_extract.py`, `build/enrich_vivino.py`, and `ui/build_ui_data.py`.
 

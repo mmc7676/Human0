@@ -502,9 +502,9 @@ button.opt:hover { border-color: var(--accent); }
       ],
       detail: wineDetail,
       footer: function (n) {
-        return '<p>Snapshot of the Whole Foods wine MCP server\'s data: ' + n + ' wines from the "wine" search at Whole Foods Market, shown for delivery to 92211, captured November 19, 2026 and completed from the full price-sorted listing on November 22, 2026. Prices and discounts are as listed on those days. Wines added November 22 show list details only, without tasting notes; 14 of them have a Vivino rating so far. This page reads that saved data; it does not stream live from the server.</p>' +
+        return '<p>Snapshot of the Whole Foods wine MCP server\'s data: ' + n + ' wines from the "wine" search at Whole Foods Market, shown for delivery to 92211, captured November 19, 2026 and completed from the full price-sorted listing on November 22, 2026. Prices and discounts are as listed on those days. Wines added November 22 show list details only, without tasting notes. This page reads that saved data; it does not stream live from the server.</p>' +
           '<p>Country is worked out from each bottle\'s label and description text and is blank where neither names one. The store pages did not expose bottle photo addresses, so bottles are drawn in their wine color.</p>' +
-          '<p>Vivino ratings were read from each wine\'s page on vivino.com on November 19 and 22, 2026, and cover all vintages except where the wine notes say otherwise. A rating is shown only when Vivino names the same producer and the same wine. The word cloud counts words from up to 10 Vivino reviews per wine, with reviewer names left out; wines first rated November 22 have no word cloud yet.</p>';
+          '<p>Vivino ratings were read from each wine\'s page on vivino.com on November 19 and 22, 2026, and cover all vintages except where the wine notes say otherwise. A rating is shown only when Vivino names the same producer and the same wine. For wines rated November 19, the word cloud counts words from up to 10 Vivino reviews per wine, with reviewer names left out. For wines rated November 22, it shows the flavors in each wine page\'s Vivino taste summary, sized by how many reviews mention them; no review text was read.</p>';
       }
     },
     beer: {
@@ -716,13 +716,17 @@ button.opt:hover { border-color: var(--accent); }
     if (r.v_status !== "matched") {
       cloud = '<div class="cloud-empty" data-cloud="none">No Vivino match for this wine, so there is no word cloud.</div>';
     } else if (!r.v_cloud || !r.v_cloud.length) {
-      cloud = '<div class="cloud-empty" data-cloud="empty">No Vivino reviews stored for this wine yet, so the word cloud is empty.</div>';
+      cloud = r.v_cloud_src === "none_shown" ?
+        '<div class="cloud-empty" data-cloud="empty">Vivino shows no taste summary for this wine, so there is no word cloud.</div>' :
+        '<div class="cloud-empty" data-cloud="empty">No Vivino reviews stored for this wine yet, so the word cloud is empty.</div>';
     } else {
       var max = r.v_cloud[0][1], min = r.v_cloud[r.v_cloud.length - 1][1];
-      cloud = '<div class="cloud" data-cloud="words" aria-label="Words used most in Vivino reviews">' + r.v_cloud.map(function (c) {
+      var taste = r.v_cloud_src === "taste";
+      cloud = '<div class="cloud" data-cloud="words" aria-label="' + (taste ? "Flavors in the Vivino taste summary" : "Words used most in Vivino reviews") + '">' + r.v_cloud.map(function (c) {
         var t = max === min ? 0.5 : (c[1] - min) / (max - min);
         return '<span class="' + (t < 0.2 ? "w1" : "") + '" style="font-size:' + (0.8 + t * 0.9).toFixed(2) + 'rem;font-weight:' + (t > 0.6 ? 700 : t > 0.3 ? 600 : 400) + '" title="' + c[1] + ' mentions">' + esc(c[0]) + '</span>';
-      }).join("") + '</div>';
+      }).join("") + '</div>' +
+        (taste ? '<div class="hint" data-cloud-src="taste">Vivino taste summary based on ' + (r.v_taste_n || 0).toLocaleString("en-US") + ' user reviews</div>' : '');
     }
     var head = r.v_status === "matched" ?
       '<div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap">' +
