@@ -116,4 +116,9 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    rc = main()
+    if not rc:  # keep data/wines.json in Vivino schema v2
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import standardize_vivino
+        standardize_vivino.main()
+    sys.exit(rc)

@@ -112,13 +112,24 @@ Maxey0 returned "SCW limit reached", so the SCWs are stored as files:
 
 ## Vivino ratings and word clouds
 
-Captured November 19, 2026 from vivino.com public pages (no sign-in). Each of the 361 wines from that build carries a `vivino` field; wines added later carry `vivino: null`.
+Captured November 19, 2026 from vivino.com public pages (no sign-in). Each of the 361 wines from that build carries a `vivino` field; wines added later got theirs on Nov 22 and 23 (above). Items that are not wine carry `vivino: null`.
 
 - **Match:** 312 matched, 42 low confidence, 7 not found. A match needs the Vivino page's producer and wine name to agree with the Whole Foods listing; low-confidence records keep a `reason` and show no rating or cloud.
 - **Rating:** the average and ratings count shown on the Vivino page header. 306 matched wines have one; 6 matched wines show no average on Vivino and stay null. No rating is estimated.
 - **Word cloud:** descriptor terms (flavor, texture, style, value, occasion) counted across up to 10 of the most recent English reviews per wine, capped at 10 by design. Only term counts and the number of reviews counted are stored; no review text, user name or profile detail is kept. A term is kept only if it appears in Vivino's raw review JSON for that wine. 310 matched wines have a cloud. Wines rated Nov 22 and 23 use the taste-summary cloud described above, for 392 rated wines with a cloud in all.
 - **Tools:** `list_wines` takes `min_rating`, `has_vivino` and `sort=rating_desc`; `get_vivino` returns one wine's Vivino record.
-- **Rebuild:** `build/parse_fetch_agents.py`, then `build/vivino_fetch_to_extract.py`, `build/enrich_vivino.py`, and `ui/build_ui_data.py`.
+- **Rebuild:** `build/parse_fetch_agents.py`, then `build/vivino_fetch_to_extract.py`, `build/enrich_vivino.py`, `build/merge_vivino_2026_11_22.py` (which runs `build/standardize_vivino.py` at the end), `build/countries.py data/wines.json --write`, and `ui/build_ui_data.py data/wines.json ui/wines.json`.
+
+## Vivino record layout (schema v2, Nov 26, 2026)
+
+Every wine's `vivino` block has the same fields, whichever pass wrote it; `data/wines.json` lists them under `vivino_schema`. `build/standardize_vivino.py` enforces this and is safe to rerun.
+
+- A field the pass did not record is `null`; `word_cloud` is `[]` when empty, and `page` always has its six fields.
+- `word_cloud_source` is `vivino_reviews` (Nov 19 review terms), `vivino_taste_summary` (Nov 22 taste summary) or `null`.
+- `taste_summary` is `null` when none was captured, else `{based_on_reviews, groups}`. Each group has `group`, `group_source`, `keywords` (always a list), `keywords_truncated` and `mentions`.
+- `group_source` is `vivino_page` for the 62 groups whose name was saved from the page (Nov 19). The Nov 22 pass saved keywords without group names, so 924 groups were named by keyword match against those page groups (`keyword_lookup`, an inference, not read from the page). 10 groups matched nothing and keep `group: null`.
+- `keywords_truncated` is true or false for Nov 19 and `null` for Nov 22, where it was not recorded.
+- The standardization changed no rating, match, cloud or page value; the app's data file came out identical.
 
 ## Install and run
 
