@@ -54,6 +54,16 @@ The Worker bundles the map and the app page at deploy time; rebuild both first w
 
 MCP server rows must be real projects whose existence you have checked; record where in the pack's `provenance.mcp_notes`.
 
+## Add a runnable skill
+
+A runnable skill is an Agent Skill that an agent can follow, not only a label in the map.
+
+1. Create `SCW1/skills/<skill id>/SKILL.md`. The folder name is the skill id: lowercase letters, digits and single hyphens, at most 64 characters.
+2. Start it with frontmatter: `name` (equal to the folder name), `description` (1 to 1,024 characters, no `<` or `>`; it is also the text routing scores), and a `metadata` block with `context-plane-concept` (an existing concept id), `context-plane-label`, `context-plane-type` and `context-plane-agents` (space-separated `MaxeyN:role` items, with exactly one `primary` and one `checker`).
+3. Write the body: inputs, steps with exact commands and values, a check for the checker agent, boundaries, and the sources you read with the date.
+4. Build. The build fails on any rule above and on a concept that isn't in the graph. The skill joins its concept, `get_skill` serves the file, and routes to it are marked `runnable`.
+5. Route the tasks it is for and check that it comes first; if it doesn't, sharpen the label or the description.
+
 ## Release
 
 Raise the server version in `server/src/index.ts`, the plugin version in `plugin/maxey0-context-plane-graph/.claude-plugin/plugin.json`, and add an entry to `CHANGELOG.md`.

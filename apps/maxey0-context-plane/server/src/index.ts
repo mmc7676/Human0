@@ -19,7 +19,7 @@ import type { DenseSignal } from "./lens";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "1.3.0", release: "Maxey0 Context Plane v1.3.0 - Prefederation" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "1.4.0", release: "Maxey0 Context Plane v1.4.0 - Prefederation" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -84,7 +84,7 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ topic_id: STR }, ["topic_id"]), run: (g, a) => g.get_harness(a as never) },
   { name: "get_concept", title: "Get concept", description: "One concept with its path (domain/topic), related concepts, and its skills with agents and their MCP servers.",
     inputSchema: obj({ concept_id: STR }, ["concept_id"]), run: (g, a) => g.get_concept(a as never) },
-  { name: "get_skill", title: "Get skill", description: "One skill with its path and its agents (role primary/checker/support) and each agent's MCP servers. Each MCP link has a basis: 'derived' (TF-IDF cosine, needs >= 0.10), 'inherited' (the agent is the checker on the skill named in 'via' and holds that skill's primary's servers so it can re-run the work; carries the primary's score. Links belong to the agent, so an agent shown in another role here may hold servers inherited as checker elsewhere) or 'declared' (set in the ontology spec, no score).",
+  { name: "get_skill", title: "Get skill", description: "One skill with its path and its agents (role primary/checker/support) and each agent's MCP servers. A runnable skill (runnable: true) also returns skill_md: its SKILL.md (name, description, Markdown body with the steps, inputs, checks and sources, sha256), the instructions to run it. Each MCP link has a basis: 'derived' (TF-IDF cosine, needs >= 0.10), 'inherited' (the agent is the checker on the skill named in 'via' and holds that skill's primary's servers so it can re-run the work; carries the primary's score. Links belong to the agent, so an agent shown in another role here may hold servers inherited as checker elsewhere) or 'declared' (set in the ontology spec, no score).",
     inputSchema: obj({ skill_id: STR }, ["skill_id"]), run: (g, a) => g.get_skill(a as never) },
   { name: "get_agent", title: "Get agent", description: "One agent: the topics and skills it serves (with role) and its MCP links. Each MCP link has a basis: 'derived' (TF-IDF cosine, needs >= 0.10), 'inherited' (the agent is the checker on the skill named in 'via' and holds that skill's primary's servers so it can re-run the work; carries the primary's score. Links belong to the agent, so an agent shown in another role here may hold servers inherited as checker elsewhere) or 'declared' (set in the ontology spec, no score).",
     inputSchema: obj({ agent_key: STR }, ["agent_key"]), run: (g, a) => g.get_agent(a as never) },
@@ -92,7 +92,7 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ mcp_id: STR }, ["mcp_id"]), run: (g, a) => g.get_mcp_server(a as never) },
   { name: "search", title: "Search", description: "Keyword search over concepts and skills; each hit carries its domain/topic/concept path. Optional domain filter.",
     inputSchema: obj({ query: STR, limit: INT, domain: DOM, use_priority: PRIO, ...DENSE_ARGS }, ["query"]), run: (g, a) => g.search(a as never) },
-  { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP, by flat ranking (default) or by observer lens (mode: lens: topic -> concept -> skill -> the chosen skills' agents -> their gated MCP servers, with a drift record per node, per level and around the path). Candidates, not an authorization.",
+  { name: "route_task", title: "Route task", description: "Map a task to candidate paths domain -> topic -> concept -> skill -> agents -> MCP, by flat ranking (default) or by observer lens (mode: lens: topic -> concept -> skill -> the chosen skills' agents -> their gated MCP servers, with a drift record per node, per level and around the path). A path whose skill has SKILL.md instructions carries runnable: true; get_skill returns them. Candidates, not an authorization.",
     inputSchema: obj({ task: STR, limit: INT, domain: DOM, use_priority: PRIO,
       mode: { type: "string", enum: ["flat", "lens"], description: "flat (default): rank every skill against the task. lens: choose topics, then read concepts and skills from the chosen nodes, with signed support and the full observer chain" },
       domains: { type: "array", items: { type: "string" }, description: "lens mode: start the observer at these domains (superposed when more than one)" }, ...DENSE_ARGS }, ["task"]), run: (g, a) => g.route_task(a as never) },

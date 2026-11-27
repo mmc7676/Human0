@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.4.0 - Prefederation — 2026-11-27
+- **Runnable skills.** A skill can now be a real Agent Skill: `SCW1/skills/<id>/SKILL.md`, with frontmatter (`name`, `description`, and `metadata` naming its concept and its MaxeyN agents) and a body of steps, checks and sources. The build checks each file strictly and adds it as a skill of the concept it names; `get_skill` returns the whole file as `skill_md` with `runnable: true`, routes to it are marked `runnable`, and the totals count `runnable_skills`.
+- **First three**, each built from the current docs and reviewed by an independent checker before release:
+  - `ccuse-review-a-pull-request-for-security-bugs`: `/security-review` for a quick pass, the Claude Security plugin for a verified scan, including the `origin/HEAD` fixes.
+  - `cpadm-set-up-single-sign-on`: domain verification, the Console merge, the IdP connection, requiring SSO and provisioning, with the lockout warnings.
+  - `ob-trace-kubernetes-workloads-with-opentelemetry`: cert-manager v1.21.3, OpenTelemetry Operator v0.164.0 and the Kubernetes Collector distribution 0.164.0, with RBAC, Instrumentation resources and inject annotations.
+- Routing: "review this pull request for security bugs", "set up single sign-on for my company" and "kubernetes observability traces" each now route first to their runnable skill, flat and with the lens.
+- 2,842 → 2,845 skills. TF-IDF weights are shared, so derived scores shift slightly; one agent → MCP link is new (Container Platform Agent → Cloudflare, 561 → 562 links).
+
 ## v1.3.0 - Prefederation — 2026-11-27
 - **Claude domain.** A 12th domain, `claude`, with 21 topics, 133 concepts, 844 skills and 43 new MaxeyN agents (Maxey1764 to Maxey1806), from Human0's Claude docs map (Claude apps, Claude Code, Claude Platform; 1,383 pages) plus a Claude Duet topic. Served at `/mcp/claude` like every domain.
   - Built by `tools/claude_domain/build_claude_packs.py` from `claude_domain.csv` into 21 topic packs (`SCW1/sources/packs/`), filed under the domain with `regroup.pack_domains`. Each pack passes the server's `validate_topic_pack`.

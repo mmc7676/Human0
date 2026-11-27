@@ -441,3 +441,35 @@ test("performance budget (server CPU per route, in-process): flat under 15 ms, l
   console.log("# perf server", JSON.stringify({ flat_ms: +flat.toFixed(1), lens_ms: +lens.toFixed(1) }));
   assert.ok(flat < 15, "flat " + flat.toFixed(1) + " ms"); assert.ok(lens < 60, "lens " + lens.toFixed(1) + " ms");
 });
+
+test("runnable skills: SKILL.md in SCW1/skills is served by get_skill, flagged on routes, and the three first-pass tasks land on it", async () => {
+  const { createHash } = await import("node:crypto");
+  const { readdirSync, existsSync } = await import("node:fs");
+  const root = join(here, "..", "..");
+  const dirs = readdirSync(join(root, "SCW1", "skills"), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort();
+  assert.ok(dirs.length >= 3);
+  for (const id of dirs) {
+    const file = join(root, "SCW1", "skills", id, "SKILL.md");
+    assert.ok(existsSync(file), file);
+    const s = (await call("get_skill", { skill_id: id })).structuredContent;
+    assert.equal(s.skill.runnable, true, id);
+    assert.equal(s.skill_md.name, id);
+    assert.equal(s.skill_md.description, s.skill.desc, "the node's desc is the SKILL.md description");
+    assert.equal(s.skill_md.path, `SCW1/skills/${id}/SKILL.md`);
+    assert.equal(s.skill_md.sha256, createHash("sha256").update(readFileSync(file)).digest("hex"), "bundle matches the file on disk");
+    assert.ok(s.skill_md.body.includes("## Steps") && s.skill_md.body.includes("## Sources"), id);
+    assert.ok(s.skill.agents.some((a) => a.role === "primary") && s.skill.agents.some((a) => a.role === "checker"), id);
+  }
+  // a skill without SKILL.md is not runnable and carries no skill_md
+  const plain = (await call("get_skill", { skill_id: "ca-pull-request-reviewer" })).structuredContent;
+  assert.equal(plain.skill.runnable, undefined); assert.equal(plain.skill_md, undefined);
+  // re-route: each first-pass task's best flat path is its runnable skill (TF-IDF, no dense)
+  const want = { "review this pull request for security bugs": "ccuse-review-a-pull-request-for-security-bugs",
+    "set up single sign-on for my company": "cpadm-set-up-single-sign-on",
+    "kubernetes observability traces": "ob-trace-kubernetes-workloads-with-opentelemetry" };
+  for (const [task, id] of Object.entries(want)) {
+    const r = (await call("route_task", { task, limit: 3, dense: false })).structuredContent;
+    assert.equal(r.paths[0].skill, id, task);
+    assert.equal(r.paths[0].runnable, true, task);
+  }
+});

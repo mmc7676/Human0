@@ -36,12 +36,12 @@ All tools are read-only (`readOnlyHint: true`, `destructiveHint: false`, `idempo
 | `get_topic` | `topic_id` | Domain, priority, concepts with skill counts, related concepts in other topics, listed MCP servers |
 | `get_harness` | `topic_id` | The complete topic: every concept, skill, agent, server and link (about 49 KB) |
 | `get_concept` | `concept_id` | The concept and all its skills with their agents |
-| `get_skill` | `skill_id` | The skill, its path, its agents by role and each agent's servers with score, basis and source |
+| `get_skill` | `skill_id` | The skill, its path, its agents by role and each agent's servers with score, basis and source. A runnable skill also carries `runnable: true` and `skill_md`: the whole `SKILL.md` (path, sha256, name, description, body) |
 | `get_agent` | `agent_key` | One MaxeyN agent: the skills it serves in each role and the servers it holds |
 | `get_mcp_server` | `mcp_id` | One server: description, source, the topics that list it and the agents that hold it |
 | `search` | `query`, `limit?`, `domain?`, `use_priority?` | Matching nodes with their paths and scores |
 | `nearest` | `node_id` or `text`, `level?`, `limit?` | Nearest nodes in the shared six-level embedding field, with scores and field locations |
-| `route_task` | `task`, `limit?`, `domain?`, `use_priority?`, `mode?` (`flat` · `lens`), `domains?` | `matched`, and candidate paths domain → topic → concept → skill → agents → servers. With `mode: "lens"`: the observer chain `lens` (per level: selected nodes, weights, each branch's signed contribution, suppressed candidates) and `remaining_task` |
+| `route_task` | `task`, `limit?`, `domain?`, `use_priority?`, `mode?` (`flat` · `lens`), `domains?` | `matched`, and candidate paths domain → topic → concept → skill → agents → servers; a path whose skill is runnable carries `runnable: true`. With `mode: "lens"`: the observer chain `lens` (per level: selected nodes, weights, each branch's signed contribution, suppressed candidates) and `remaining_task` |
 | `children` | `level`, `parent_id?` | The children of a node at the next level |
 | `trace` | `node_id` | The chain from the domain down to that node |
 | `open_context_plane_graph` | `task?`, `topic_id?` | Opens the graph app (MCP App). Also returns `app_url`, and the best route when a task is given |

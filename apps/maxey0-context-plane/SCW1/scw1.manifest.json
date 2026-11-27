@@ -4,15 +4,16 @@
  "schema": "maxey0.topic-harness/3",
  "graph_schema": "maxey0.scw1-graph/3",
  "spec": "ontology.spec.json",
- "snapshot_digest": "sha256:50a706cafb6eb99f35d605caafaa4abb1f8fef82ccff248dc342e771f5e05252",
+ "snapshot_digest": "sha256:88e42fbb6299045cc3eaa210995f519b9ff603280befc2fd6a9cfd8f20b8ed9d",
  "totals": {
   "domains": 12,
   "topics": 149,
   "concepts": 844,
-  "skills": 2842,
+  "skills": 2845,
+  "runnable_skills": 3,
   "agents": 1064,
   "mcp_servers": 116,
-  "agent_mcp_links": 561,
+  "agent_mcp_links": 562,
   "related_links": 32,
   "mcp_without_agent": 21
  },
@@ -27,7 +28,7 @@
     "agents": 15,
     "mcp": 6
    },
-   "digest": "sha256:123b6cfa87145e82bdc436421174889b3f5d809ccefe6928de72573b902c5ec9"
+   "digest": "sha256:81759d3523c2e705c811ea5321a3c4f2bb3846c335470dead26203aba59518ae"
   },
   {
    "id": "agent-harnesses-and-tool-use",
@@ -39,7 +40,7 @@
     "agents": 32,
     "mcp": 14
    },
-   "digest": "sha256:5674b189fbd446f02c369f3890e76f812ba2f5d3878d756d48362eb7bc308d51"
+   "digest": "sha256:66b334d4157ce42701d09040a52f591fc6236971562714e88fd698daa5c2c0fe"
   },
   {
    "id": "apis-protocols-and-mcp-contracts",
@@ -51,7 +52,7 @@
     "agents": 8,
     "mcp": 4
    },
-   "digest": "sha256:760b16e814d409b568da04336ec1880f8a3e6fa5b0f4014bb1bc2f3505fa4612"
+   "digest": "sha256:b732a7ba5a276209bf2fbec633ed75686646b9e09bb34039afe75a1fa0a4e0fa"
   },
   {
    "id": "cloud-infrastructure-and-devops",
@@ -63,7 +64,7 @@
     "agents": 6,
     "mcp": 4
    },
-   "digest": "sha256:334af8fe084da6444edf8f9816c8151ca2689e3c25b7abfdbd7bc6166557ea91"
+   "digest": "sha256:73bf01218bb004354d82ea2ac62c6a1eb9ec1ee07f8ef03c90f11103fd6d8eab"
   },
   {
    "id": "code-generation-review-and-testing",
@@ -87,7 +88,7 @@
     "agents": 19,
     "mcp": 8
    },
-   "digest": "sha256:750ac9d9294c501b5aeb06978cee89c3c627d2467e1802debd4f903999b76b9c"
+   "digest": "sha256:109af2cacc39dee6d57ace0b58fd394008e515c801632c6234cf11534ea28f1a"
   },
   {
    "id": "deployment-environments",
@@ -99,7 +100,7 @@
     "agents": 5,
     "mcp": 3
    },
-   "digest": "sha256:d71fabfc8f34b1b453ee1471e68f7061540ad16ffafaaec79aa423df7f045547"
+   "digest": "sha256:08c59a3d1b6b1731edfe5cf736256bf91b78a8ad8d18c7b4d019cd4ef0a891f8"
   },
   {
    "id": "front-end-and-ui-engineering",
@@ -111,7 +112,7 @@
     "agents": 6,
     "mcp": 2
    },
-   "digest": "sha256:ee2e4bc9f540df3baa0314f4e7fb2e64f84936c23562f1d895c3e6a1e09e6251"
+   "digest": "sha256:fb9e1805ae7fda243361ea0a7d169caf9b7c5e5ee1a3a546825a38ddc07d375f"
   },
   {
    "id": "identity-secrets-and-threat-modeling",
@@ -123,7 +124,7 @@
     "agents": 10,
     "mcp": 6
    },
-   "digest": "sha256:6fa5e6a28d789535547f39c0b92ca0a8731fb11146ab2b308209625ba5a55bc4"
+   "digest": "sha256:e356037785d1084d1c367f71a30e22c79eec53d50097d2c29729d3145779b8a3"
   },
   {
    "id": "knowledge-graphs-and-ontology",
@@ -135,7 +136,7 @@
     "agents": 9,
     "mcp": 3
    },
-   "digest": "sha256:b4f257bb43a67826a802c7b1c7334b28fad6a497b10cf36817f3713a29cebe49"
+   "digest": "sha256:90e79766fa92ddd6ee188e116cc5620b46a929277123bdc54ea7ca228b2e5096"
   },
   {
    "id": "maxey0-context-architecture",
@@ -147,7 +148,7 @@
     "agents": 60,
     "mcp": 12
    },
-   "digest": "sha256:b7594fdfeb782e98ae6361579587c3d9baa6a054817883cdf0685a3bdd513f84"
+   "digest": "sha256:d16be722d2e9cec5f52018a5251c0b40441cb4e6099765eb3d7cbb4aa38202d3"
   },
   {
    "id": "observability",
@@ -155,11 +156,11 @@
    "label": "Observability",
    "counts": {
     "concepts": 8,
-    "skills": 32,
-    "agents": 15,
+    "skills": 33,
+    "agents": 16,
     "mcp": 5
    },
-   "digest": "sha256:5fd0eef44b0102c5347aaacc168aa5063cf28d35f44e1de89eb9c9507900933f"
+   "digest": "sha256:c5ed4d243f0e098f152c07372729f26e2ee7237d4650095db385c7d452016b8d"
   },
   {
    "id": "programming-languages",
@@ -231,7 +232,7 @@
     "agents": 7,
     "mcp": 5
    },
-   "digest": "sha256:b8047ccac7d8c1e754296058939eb3a3043ddb1d7aebd2db55fae5da960e50bc"
+   "digest": "sha256:b08c588088d67c34f7dbe2da4672ab7b5879081fd457d0e7accb0ef469e13b47"
   },
   {
    "id": "data-visualization-and-ml-datasets",
@@ -291,7 +292,7 @@
     "agents": 15,
     "mcp": 4
    },
-   "digest": "sha256:e604ef1d231456ae2619c8ef4dfed86b0bc886d6f1b4e2e801d10df0f4f07542"
+   "digest": "sha256:4d14ef152e7cad447ae9bc8030c3cee1250f4588fd3916c5af59a0269aac6b12"
   },
   {
    "id": "statistics-and-causal-inference",
@@ -303,7 +304,7 @@
     "agents": 25,
     "mcp": 12
    },
-   "digest": "sha256:fdd693a33c9cc6e3a43039a99522ecbe8d766ca722c489831e3f035d9a3ef778"
+   "digest": "sha256:d803a65f7ca34a15a9e5066cfde209dbe297843b32523d5aae1162349c7baa79"
   },
   {
    "id": "algebra-calculus-and-discrete-mathematics",
@@ -315,7 +316,7 @@
     "agents": 12,
     "mcp": 6
    },
-   "digest": "sha256:569b0b69d30b18e953768b645addc9123373ba76231000a7a6a52d49ab2a7610"
+   "digest": "sha256:329058af13f826cd74cd67a8af2e1637967c8ab1d7d894733b4a7b9fb5f353e7"
   },
   {
    "id": "chemistry",
@@ -339,7 +340,7 @@
     "agents": 24,
     "mcp": 9
    },
-   "digest": "sha256:ea8fe8eeef461521ecc474db269158dd336fbbc78f1740c4072179ce9c640e87"
+   "digest": "sha256:f6d10f8cec6cd11a56182a2497ce145dc8ea5060d449d52e3bc99774626f6d9f"
   },
   {
    "id": "instrumentation-and-condensed-matter",
@@ -351,7 +352,7 @@
     "agents": 10,
     "mcp": 4
    },
-   "digest": "sha256:50a118fc710043946e5162079e7a4dd441260f4a8979d891dd4d280d70d1298b"
+   "digest": "sha256:89f10b4446e2ee182eb8c74e6a82bf11bfe234f1b719503b64f6640d24023a14"
   },
   {
    "id": "linear-algebra-and-geometry",
@@ -375,7 +376,7 @@
     "agents": 9,
     "mcp": 5
    },
-   "digest": "sha256:d7d39d9f3b24993ec38060cff4e61f21971b9c327b1a0cbc7e9b374cb476d060"
+   "digest": "sha256:9498606c2de92a803032836be4f1bc7055eed8d67b92c38b8a6c5c0aa6bf12d3"
   },
   {
    "id": "optics-photonics-and-plasma",
@@ -387,7 +388,7 @@
     "agents": 15,
     "mcp": 10
    },
-   "digest": "sha256:b69a869745eb2c63e03429c01848d561149528b0c0ff94603cd29fab6f1c8e92"
+   "digest": "sha256:3a2e00aa86659cd279d94604d148d8753345cd92273b1fa21158b4768460e6b4"
   },
   {
    "id": "quantum-physics",
@@ -399,7 +400,7 @@
     "agents": 17,
     "mcp": 10
    },
-   "digest": "sha256:610cffdad0f86ab8057c1d43bcd64c3cbd480c0331acd05b975ad52801e4af8e"
+   "digest": "sha256:13c362d77bc414ec6fd2b6253d61abd581d684c10fddeb0b02c833ce98bcf393"
   },
   {
    "id": "simulation-and-digital-twins",
@@ -411,7 +412,7 @@
     "agents": 4,
     "mcp": 2
    },
-   "digest": "sha256:bb4fd242e904eed4d92e70320692e163175789c65dba7edee33ebe3372365a4a"
+   "digest": "sha256:1a1d9ed22b54b0a73f297af6b2c1bb2ac0f15014481709d250665e0fc8c69082"
   },
   {
    "id": "aerospace-engineering",
@@ -423,7 +424,7 @@
     "agents": 8,
     "mcp": 3
    },
-   "digest": "sha256:07a9c03657769c6741cf513488fcec37eadb13eb21e1a1ef053cccbd0d3d5086"
+   "digest": "sha256:39e9121555d56cdd255b44fd692844684193cff62d3f0a22c72e92fb088dd31c"
   },
   {
    "id": "chemical-engineering",
@@ -471,7 +472,7 @@
     "agents": 9,
     "mcp": 1
    },
-   "digest": "sha256:ffabcc6d0582418a20d6bf609071bdac7713c36ccb06a8768b34929ce33f7ee8"
+   "digest": "sha256:f1ba34d19a1213b8d359eaf30fa0902f308fdd684da30258bfa2481e2d3e9d23"
   },
   {
    "id": "electrical-engineering",
@@ -495,7 +496,7 @@
     "agents": 12,
     "mcp": 5
    },
-   "digest": "sha256:2f4f64ae7c7f695fc9021c37274fe7af6505ed500fbbaf64ec7f2a8cf736cba8"
+   "digest": "sha256:ea477a2d5f5549e2fa425f9fa1aec48beb3af80a4cd7658cc5bf7d65ee9900b7"
   },
   {
    "id": "mechanical-engineering",
@@ -507,7 +508,7 @@
     "agents": 7,
     "mcp": 4
    },
-   "digest": "sha256:48864d097d089d52f3072def82ee268b758910392d848a7cf676f2e25637a53d"
+   "digest": "sha256:60a2e884b4ce807fdc282a11dcaa982c6adc03d68b29252d646df1139e225a26"
   },
   {
    "id": "robotics",
@@ -543,7 +544,7 @@
     "agents": 18,
     "mcp": 8
    },
-   "digest": "sha256:c9a6462d7758d46d77d3e0dc60a1c53ba95cb51da704ea98c512aee098ce8e48"
+   "digest": "sha256:ccdf3f7c8764c81a2128fffe4d816369fdfdf7eabadc4118ac1f7d81d00a9da2"
   },
   {
    "id": "biomechanics",
@@ -567,7 +568,7 @@
     "agents": 7,
     "mcp": 5
    },
-   "digest": "sha256:0d0d9dcef86491353f091043cca3d097c4f00d7bf540bd1a83fe0aaa568c705e"
+   "digest": "sha256:2aee474599818b4b449dbe72c1fd5c9e63cddd965c659f4213d33f0ffebff693"
   },
   {
    "id": "cell-molecular-and-organismal-biology",
@@ -579,7 +580,7 @@
     "agents": 14,
     "mcp": 5
    },
-   "digest": "sha256:b70dc8e1bdc64fe7dc55ae81fcdaee6d5cd3c120b9b02093863bdf04d84162d4"
+   "digest": "sha256:2c9c5aa1a8486a35a2366d99288f3fd3cd0f3dff92a00786dce24c08bd168285"
   },
   {
    "id": "cognitive-science-and-computational-models-of-mind",
@@ -591,7 +592,7 @@
     "agents": 10,
     "mcp": 7
    },
-   "digest": "sha256:f2b49daf6d54148d6608f18c6ae40c253b50f9876c402e487e8b0c57c117f747"
+   "digest": "sha256:d11fb2f9566451c5ada3655d44a9d792b2e92fc2916d93f5299574a2c4f09495"
   },
   {
    "id": "genetics-evolution-and-human-variation",
@@ -615,7 +616,7 @@
     "agents": 6,
     "mcp": 3
    },
-   "digest": "sha256:1f369894eedf9738cdf58c9ec4f23a1312821f1d94583e575113d724753d700c"
+   "digest": "sha256:e3b9a0aa6c6a6af470548496ad33271d8f7624017db6994cebc433c48b6e73ab"
   },
   {
    "id": "psychology",
@@ -627,7 +628,7 @@
     "agents": 9,
     "mcp": 7
    },
-   "digest": "sha256:9c2897473f23baab5ff67759599f82c5e2089886189aadb6ade15579755194c9"
+   "digest": "sha256:30a66fb73d7726beec7b317420c9909982c3efc8419c42fe631e51cf556f0cbd"
   },
   {
    "id": "public-health-and-prevention-research",
@@ -651,7 +652,7 @@
     "agents": 14,
     "mcp": 5
    },
-   "digest": "sha256:c3dce1109f66a5e7d5d785d23619200d7488ca9a9536ea54fbdb8ce6c0552b3e"
+   "digest": "sha256:289d167f9e5cb7291c86bf1b1e5152f5f34ead10e9501dac93fb7b1a7173d7aa"
   },
   {
    "id": "energy-emissions-and-air-quality-policy",
@@ -675,7 +676,7 @@
     "agents": 8,
     "mcp": 3
    },
-   "digest": "sha256:be7b909e1c0b77bde9c46d1d33bdfc0e7a1e4be61d3c4c9576dedb0e7807961d"
+   "digest": "sha256:26c51ee2b7707cc77ea6a9ca5e1ac74ae9366a7d39f7908c52b52ceb7ad6a417"
   },
   {
    "id": "hydrology-and-water-resources",
@@ -711,7 +712,7 @@
     "agents": 10,
     "mcp": 6
    },
-   "digest": "sha256:6d468cba6e23ea4aaa8903db7d6d8828851bc6204b0bd2faa2d21202d47429d1"
+   "digest": "sha256:daffccf618a18544ab92ebee831ba9b8dc44be20e50405cec3c6da34e4311910"
   },
   {
    "id": "urban-studies",
@@ -723,7 +724,7 @@
     "agents": 9,
     "mcp": 4
    },
-   "digest": "sha256:fc44aef560afc2bb17d0ba566a723a22a56153fa15f6f76db0956102c5c69359"
+   "digest": "sha256:83b30ec9b9a4e72b6f7a6d3ab7a2c6a37b4f2dbf72148bcd9c9969c0d70a5938"
   },
   {
    "id": "waste-and-water-treatment",
@@ -735,7 +736,7 @@
     "agents": 7,
     "mcp": 3
    },
-   "digest": "sha256:73d1116b595e789088582b04c91f3a92bb1c11cc9429059d144a06c5bec357ff"
+   "digest": "sha256:63484eda8a88cbe1394356cfd7ca91db7033491b4401519a11204a7da75d2feb"
   },
   {
    "id": "accounting-and-audit",
@@ -747,7 +748,7 @@
     "agents": 6,
     "mcp": 1
    },
-   "digest": "sha256:a61c0074800e15aa42d53b3f9463e00456395a88efb0d4682a77adb5a5e3db64"
+   "digest": "sha256:c55e9bbeba508fa09185ff2165302fdb3950bf7ccb6a82e0bf887fb40cbc224f"
   },
   {
    "id": "banking-payments-and-insurance",
@@ -759,7 +760,7 @@
     "agents": 9,
     "mcp": 3
    },
-   "digest": "sha256:e6b5ebe39593ff092d3025dd7414c6455241426a111aabfed4b3d56655a01315"
+   "digest": "sha256:76b7d5237fa9abc9b947bbcde94231ac1034f1ffb788ce3605c82a31c8b2132d"
   },
   {
    "id": "capital-markets-and-trading",
@@ -771,7 +772,7 @@
     "agents": 6,
     "mcp": 3
    },
-   "digest": "sha256:b319f0c1db513ef6df0f05a01aca400616714d84a538e2b4e69ab46d12050576"
+   "digest": "sha256:3584c616458d14e514051ba5d57d9d0647f2fc708f2caba84d7f8447d38d0350"
   },
   {
    "id": "commodities",
@@ -795,7 +796,7 @@
     "agents": 6,
     "mcp": 2
    },
-   "digest": "sha256:2678bb0b99c74aa9489fdaab5c5e58abfb16c8425160d6da3459f5ff968707c7"
+   "digest": "sha256:209f762e522bc81c69a96d750dd78a214c05d70e21ddc91a89d93448fbef3358"
   },
   {
    "id": "crypto-and-digital-assets",
@@ -807,7 +808,7 @@
     "agents": 6,
     "mcp": 2
    },
-   "digest": "sha256:6e29712bb45ce8e4d41726aa13e521e313772369059209df7ac80b7373a708bc"
+   "digest": "sha256:57b58ecab6d7282539fdcc3871a0d802f229bd23abb0b5521b7b5005b3db1e26"
   },
   {
    "id": "currencies-and-fx",
@@ -855,7 +856,7 @@
     "agents": 5,
     "mcp": 3
    },
-   "digest": "sha256:ed4dc18870e8c0a0d67854a0f5e8865fc99119cace59c38de06ca5cfb9db20e7"
+   "digest": "sha256:aa67838c4ad611480fa14359ea4be3ca3e635bbfd01b0c73cb072ce8eefdced7"
   },
   {
    "id": "financial-and-economic-data",
@@ -867,7 +868,7 @@
     "agents": 9,
     "mcp": 5
    },
-   "digest": "sha256:5702efde8504abed12b7996644646e675bd3c141b25d3f10ae3b17479e6f448c"
+   "digest": "sha256:c919b733883114cac312e29d21850bc31d2dcebc3783fc31ed656e285a65d3e9"
   },
   {
    "id": "financial-regulation-and-aml",
@@ -927,7 +928,7 @@
     "agents": 13,
     "mcp": 5
    },
-   "digest": "sha256:a11a3c5317bf4b1cd95e2a0624f6bfa39010479a0d59d275eb1d169b929e6e99"
+   "digest": "sha256:5da67c73be81419aaa781cbe6342d1f7675ab075ed37da8eda1a366d22020ef6"
   },
   {
    "id": "marketing",
@@ -939,7 +940,7 @@
     "agents": 11,
     "mcp": 7
    },
-   "digest": "sha256:078e9008a83d77afd18c31192cdedbc23e71a98bc4ab75b8d78d339e2f41170e"
+   "digest": "sha256:03f6d55742e2ae5d0b653b66301521e5a9e341810535935f049c53fbe98ed0fc"
   },
   {
    "id": "real-estate",
@@ -975,7 +976,7 @@
     "agents": 10,
     "mcp": 6
    },
-   "digest": "sha256:e19bac0a4e45fc78caccab3eeb7a5c9f1b554488901fff972c98ee7887b83e66"
+   "digest": "sha256:d6e8585c19e06a4a3b09067b7009e0ebfeef5605bb4adc56254ba6f160a8c5f2"
   },
   {
    "id": "taxes-and-personal-finance",
@@ -1035,7 +1036,7 @@
     "agents": 18,
     "mcp": 5
    },
-   "digest": "sha256:7a660763c1ae98f9104cfdab407024afdc7dcba880f24eb4462ac74579626fee"
+   "digest": "sha256:eae6715b6dd9cecbceb46fd076aeea078702d326f72485adb9ea9bf0d9285333"
   },
   {
    "id": "global-and-international-development",
@@ -1047,7 +1048,7 @@
     "agents": 24,
     "mcp": 8
    },
-   "digest": "sha256:ad27ac1086f14c63916908d4b228d6e3852a0a514182cf597349c4168df2ca4c"
+   "digest": "sha256:93f68b7c4165e9e580f18d9c9c3f4a8a981b7282ff202096b62d99ad29aefe3f"
   },
   {
    "id": "human-rights",
@@ -1083,7 +1084,7 @@
     "agents": 9,
     "mcp": 4
    },
-   "digest": "sha256:1fd3e48f5a64639bf8e767742d5a67a5b9664da55eb4f68cfdae4fe6479c65fc"
+   "digest": "sha256:91cfee339c5bb1307d29a3092ee69b7a980eb692be4d85ef219abe54dd5872c1"
   },
   {
    "id": "public-policy-and-government",
@@ -1119,7 +1120,7 @@
     "agents": 9,
     "mcp": 3
    },
-   "digest": "sha256:819987b2c515b748b8972f507ab824c66ea4394a1f524d601395c7c7d75c2faa"
+   "digest": "sha256:2220b3e329e3416f5c4ab834f8c78530bf435b953020d33268c1c33a3d43c6c1"
   },
   {
    "id": "communication-studies-and-rhetoric",
@@ -1179,7 +1180,7 @@
     "agents": 18,
     "mcp": 4
    },
-   "digest": "sha256:ca9f62ca0cf9dd1b22d47ccdb171e2c658dff6e92d72ed957bbc2cfa8da839dc"
+   "digest": "sha256:701697123470e03a3c882a8e4810ea3688facc2a6c84a51007990a303f7f0e64"
   },
   {
    "id": "literary-theory-and-comparative-literature",
@@ -1203,7 +1204,7 @@
     "agents": 30,
     "mcp": 5
    },
-   "digest": "sha256:83cc16103ad33c1effa69c5b99079e9aed9de948d09da45d38565716b3bf6c5d"
+   "digest": "sha256:5f28a548e112b0632cb89c3ced78e12e8f68e08fdddaabd1824f58c9bb26c249"
   },
   {
    "id": "sociolinguistics-and-computational-linguistics",
@@ -1275,7 +1276,7 @@
     "agents": 12,
     "mcp": 4
    },
-   "digest": "sha256:45740a15daf0085ceb178d2a01ad2bae3582ef7a61188159b55015f2d405da28"
+   "digest": "sha256:f7bc4720f938c30ec3e1cef121430aa9bbf60ea3842547df60447348cdc41cb1"
   },
   {
    "id": "american-studies",
@@ -1323,7 +1324,7 @@
     "agents": 8,
     "mcp": 3
    },
-   "digest": "sha256:91cac09562087ccacf8236a48367b223cebdba028a3400f1b59d7a6d0db77202"
+   "digest": "sha256:2c87a753424d6fde6ec70bd4e7805e7e3eaf8ffb5dd6f50a73f78ab0b7a931b6"
   },
   {
    "id": "european-studies",
@@ -1335,7 +1336,7 @@
     "agents": 8,
     "mcp": 2
    },
-   "digest": "sha256:54ec9f4bcea952d8301b7183de5583cffd6f2867b96f811c205d8a144d994cd4"
+   "digest": "sha256:1365c907bddd8e22213d335eeef2ddf99ba43fa71c756840040d705f48174285"
   },
   {
    "id": "french-and-german-studies",
@@ -1347,7 +1348,7 @@
     "agents": 14,
     "mcp": 2
    },
-   "digest": "sha256:7c5d33d13a856bd946a156ba69c28646f4ef10bacb2f46ef3a10bfbb8b31af34"
+   "digest": "sha256:e0d22c3a670bf2cc32297f5673300ed9a633f9ea86d94756608f9685ff6f814c"
   },
   {
    "id": "gender-and-sexuality-studies",
@@ -1359,7 +1360,7 @@
     "agents": 8,
     "mcp": 1
    },
-   "digest": "sha256:b34e54a58728c21a8811217a05e5dba1498cbe8651a387ae5df83f7b49f90a5a"
+   "digest": "sha256:5377d877a6adc48c2ce8a7187ef4c92fae64a43005e3d92e0531484816f8a589"
   },
   {
    "id": "italian-and-latin-american-visual-culture",
@@ -1371,7 +1372,7 @@
     "agents": 13,
     "mcp": 2
    },
-   "digest": "sha256:6c677f7bb29cd0d5c13c9b823e292df9fbe18984a30cb9b8b98f05bccc81fb0f"
+   "digest": "sha256:e76d84359b72f1fa15f3160ad87a9b01c27aa5c762cd4d2e5f86ce9b469ce960"
   },
   {
    "id": "jewish-studies",
@@ -1395,7 +1396,7 @@
     "agents": 20,
     "mcp": 3
    },
-   "digest": "sha256:df040a5eb24cb2f472994c1eca70fdff3fd3b4f7aee51f3b894a55a72c974d80"
+   "digest": "sha256:9253c73c632d32c5d06b17aba108cf154d00d647c3379804ac7581cda59fe1c6"
   },
   {
    "id": "slavic-studies",
@@ -1479,7 +1480,7 @@
     "agents": 13,
     "mcp": 2
    },
-   "digest": "sha256:81df75fcd6870ece66fbb305122bcd3546eac34d1bdcdbb12f1002afaa6ffa54"
+   "digest": "sha256:23751231200410055e1991b6f5344b1db5f19304e7c19f56163085ce3a4eb532"
   },
   {
    "id": "history",
@@ -1515,7 +1516,7 @@
     "agents": 18,
     "mcp": 7
    },
-   "digest": "sha256:ae4d8477c983fb09b1f40719627182a349d88b0c2dbf4e2b652c46eae24cbde4"
+   "digest": "sha256:886bd0cf72be48b58d1d8d5094b61d5b5aebaaa71c3301854fbeb469bc204d63"
   },
   {
    "id": "religious-studies",
@@ -1575,7 +1576,7 @@
     "agents": 3,
     "mcp": 1
    },
-   "digest": "sha256:ab87702cf6fc455aad8805868754002a77f9f4fcf209727b72eed96c37f36ed9"
+   "digest": "sha256:1388afe5df389c406c76f3a7499d7881bfe10cfa4e2ae7122ea3bdf326152b6c"
   },
   {
    "id": "claude-api-reference",
@@ -1587,7 +1588,7 @@
     "agents": 3,
     "mcp": 1
    },
-   "digest": "sha256:521f4f7f15fc4a05461326584ebb103ea14fefc5ad9dd9e6f4ddf0535b27db12"
+   "digest": "sha256:57b9149ee6177f2312cfbfba786aab656da7afbc43edf678bfb9cf7940075636"
   },
   {
    "id": "claude-apps-connectors-skills-and-plugins",
@@ -1655,11 +1656,11 @@
    "label": "Claude Code: Getting Started and Everyday Use",
    "counts": {
     "concepts": 8,
-    "skills": 46,
+    "skills": 47,
     "agents": 3,
     "mcp": 0
    },
-   "digest": "sha256:13965bc07a9fbdd09f2947a8440b78216d15681c789fe6a25c576a8dc0dda77e"
+   "digest": "sha256:5cf8a04d5d8b8e49830e7666c5e371bf643b73248e4f04caefd7d03ee348bb10"
   },
   {
    "id": "claude-code-plugins-and-marketplaces",
@@ -1731,7 +1732,7 @@
     "agents": 3,
     "mcp": 1
    },
-   "digest": "sha256:0accee09a6d529d912bb4ab4520c31e7f5bce973a914c6893f85f6c8db6856f9"
+   "digest": "sha256:71850d51aede8d4c76a37f5f3878ff16f8714704efc5e69f3dd4cfe25dcb89c9"
   },
   {
    "id": "claude-models-and-pricing",
@@ -1743,7 +1744,7 @@
     "agents": 3,
     "mcp": 1
    },
-   "digest": "sha256:9057b8c158a83c996bc38b78e4199d4908eb55d6ae0aeb38748a8b5f689d3bc3"
+   "digest": "sha256:36b919abd3cbdd7a5349909633cf19cca7f7feee264e0c3d61f50be0dc73dfb5"
   },
   {
    "id": "claude-platform-administration",
@@ -1751,11 +1752,11 @@
    "label": "Claude Platform Administration",
    "counts": {
     "concepts": 8,
-    "skills": 67,
+    "skills": 68,
     "agents": 3,
     "mcp": 1
    },
-   "digest": "sha256:15f6e4aff9cb7bbc867302c3e9328ffa759f45e83a4420f2e38fa7e55b0d7e2e"
+   "digest": "sha256:bb5c72091691625cd4260cab3385799e8bc43186588be8294d7da19ae77317be"
   },
   {
    "id": "claude-science",
@@ -1803,7 +1804,7 @@
     "agents": 3,
     "mcp": 1
    },
-   "digest": "sha256:a5388bfdc2aa635919db2c1eff16d6283eab395cc8ed222308b822cbd82b41f9"
+   "digest": "sha256:67584323f695543a49cf25fa2e811d21ba5e33d7e43b7c23ba98a94f918415b7"
   }
  ]
 }

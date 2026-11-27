@@ -32,7 +32,7 @@ import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "source", "Human0 - Context Plane Control Graph v0.6.html")
 OUT = os.path.join(HERE, "maxey0-context-plane-graph.html")
-VERSION = "1.3.0"
+VERSION = "1.4.0"
 DEFAULT_API = "https://maxey0-context-plane-mcp.maxey0.workers.dev"
 
 

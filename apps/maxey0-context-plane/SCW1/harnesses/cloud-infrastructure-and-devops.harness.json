@@ -377,6 +377,7 @@
    "name": "Container Platform Agent",
    "legacy_key": "inf-container",
    "mcp": [
+    "local:cloudflare-mcp",
     "local:kubernetes-mcp-server"
    ]
   },
@@ -451,7 +452,7 @@
    "agent": "Maxey1624",
    "mcp": "local:kubernetes-mcp-server",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.2772,
+   "score": 0.274,
    "basis": "derived:tfidf-cosine",
    "source_topic": "infrastructure"
   },
@@ -459,7 +460,7 @@
    "agent": "Maxey1625",
    "mcp": "local:aws-mcp-servers",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.177,
+   "score": 0.1772,
    "basis": "derived:tfidf-cosine",
    "source_topic": "infrastructure"
   },
@@ -467,7 +468,7 @@
    "agent": "Maxey1625",
    "mcp": "local:cloudflare-mcp",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.1232,
+   "score": 0.1235,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey1626",
@@ -479,7 +480,7 @@
    "agent": "Maxey1625",
    "mcp": "local:kubernetes-mcp-server",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.2622,
+   "score": 0.356,
    "basis": "inherited:checker-of-primary",
    "via": {
     "primary": "Maxey1628",
@@ -491,7 +492,7 @@
    "agent": "Maxey1625",
    "mcp": "local:terraform-mcp",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.3013,
+   "score": 0.3016,
    "basis": "derived:tfidf-cosine",
    "source_topic": "infrastructure"
   },
@@ -507,7 +508,15 @@
    "agent": "Maxey1626",
    "mcp": "local:cloudflare-mcp",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.1232,
+   "score": 0.1235,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "infrastructure"
+  },
+  {
+   "agent": "Maxey1628",
+   "mcp": "local:cloudflare-mcp",
+   "topic": "cloud-infrastructure-and-devops",
+   "score": 0.1079,
    "basis": "derived:tfidf-cosine",
    "source_topic": "infrastructure"
   },
@@ -515,7 +524,7 @@
    "agent": "Maxey1628",
    "mcp": "local:kubernetes-mcp-server",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.2622,
+   "score": 0.356,
    "basis": "derived:tfidf-cosine",
    "source_topic": "infrastructure"
   },
@@ -523,7 +532,7 @@
    "agent": "Maxey1629",
    "mcp": "local:terraform-mcp",
    "topic": "cloud-infrastructure-and-devops",
-   "score": 0.3285,
+   "score": 0.3288,
    "basis": "derived:tfidf-cosine",
    "source_topic": "infrastructure"
   }

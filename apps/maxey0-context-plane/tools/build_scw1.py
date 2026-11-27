@@ -4,8 +4,12 @@
   import  copy raw sources into SCW1/sources once (pack files, the physics pack
           embedded in the Context Plane html, and the original Maxey0 base graph
           `const D` / `M` / `LEX` from the html). Removed topics are not copied.
-  build   SCW1/sources + spec -> SCW1/scw1.graph.json, SCW1/harnesses/*.json,
+  build   SCW1/sources + SCW1/skills + spec -> SCW1/scw1.graph.json, SCW1/harnesses/*.json,
           SCW1/scw1.manifest.json, SCW1/build_report.json, server/src/scw1.bundle.json
+
+Runnable skills: SCW1/skills/<skill id>/SKILL.md is an Agent Skill (name, description, body) whose
+metadata places it in the graph (context-plane-concept, -label, -type, -agents). The build adds it as
+a skill node whose desc is the SKILL.md description and carries the file itself as skill_md.
 
 Graph shape (every thread):  Domain -> Topic -> Concept -> Skill   (one parent each)
 Differentiation below skill: Skill -> Agents (primary/checker/support) -> MCP servers
@@ -22,6 +26,7 @@ PACK_SCHEMA = "human0.topic-pack/1"
 HARNESS_SCHEMA = "maxey0.topic-harness/3"
 GRAPH_SCHEMA = "maxey0.scw1-graph/3"
 ROLE_RANK = {"primary": 0, "checker": 1, "support": 2}
+SKILLS_DIR = os.path.join(SCW, "skills")
 STOP = set("a an and the of in on for to with by from as at or into over across its their this that is are be "
            "using use used via per each all any not no new data".split())
 
@@ -116,6 +121,55 @@ def raw_after(h, marker):
     if i < 0:
         fail(f"'{marker}' not found")
     return json.JSONDecoder().raw_decode(h, i + len(marker))[0]
+
+
+def read_skill_md(path):
+    """Strict reader for SKILL.md: '---' frontmatter with name, description and a metadata block of
+    'key: value' strings (Agent Skills format), then a non-empty Markdown body. Anything else fails."""
+    raw = open(path, "rb").read()
+    text = raw.decode("utf-8")
+    if "\r" in text or not text.startswith("---\n"):
+        fail(f"{path}: must start with a '---' frontmatter line and use LF line endings")
+    end = text.find("\n---\n", 3)
+    if end < 0:
+        fail(f"{path}: frontmatter is not closed with '---'")
+    fm, body = text[4:end].split("\n"), text[end + 5:].strip("\n")
+    top, meta, in_meta = {}, {}, False
+    for ln in fm:
+        m = re.fullmatch(r"  ([a-z0-9-]+): (.+)", ln) if in_meta else None
+        if m:
+            meta[m.group(1)] = m.group(2).strip(); continue
+        m = re.fullmatch(r"([a-z-]+):(?: (.+))?", ln)
+        if not m:
+            fail(f"{path}: unreadable frontmatter line {ln!r}")
+        in_meta = m.group(1) == "metadata" and m.group(2) is None
+        if not in_meta:
+            if m.group(2) is None:
+                fail(f"{path}: frontmatter key {m.group(1)} has no value")
+            top[m.group(1)] = m.group(2).strip()
+    name, desc = top.get("name", ""), top.get("description", "")
+    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", name) or len(name) > 64:
+        fail(f"{path}: name must be lowercase letters, digits and single hyphens, at most 64 characters")
+    if os.path.basename(os.path.dirname(path)) != name:
+        fail(f"{path}: name {name} must equal its folder name")
+    if not desc or len(desc) > 1024 or re.search(r"[<>\x00-\x1f]", desc):
+        fail(f"{path}: description must be 1-1024 characters with no '<', '>' or control characters")
+    for k in ("context-plane-concept", "context-plane-label", "context-plane-type", "context-plane-agents"):
+        if not meta.get(k):
+            fail(f"{path}: metadata {k} is missing")
+    if re.search(r"[<>]", meta["context-plane-label"]):
+        fail(f"{path}: label must not contain '<' or '>'")
+    roles = [tuple(x.split(":", 1)) for x in meta["context-plane-agents"].split()]
+    if any(len(r) != 2 or r[1] not in ROLE_RANK for r in roles):
+        fail(f"{path}: context-plane-agents must be 'MaxeyN:role' items, roles primary, checker or support")
+    if [r for _, r in roles].count("primary") != 1 or [r for _, r in roles].count("checker") != 1:
+        fail(f"{path}: needs exactly one primary and one checker agent")
+    if not body.strip():
+        fail(f"{path}: body is empty")
+    return {"id": name, "concept": meta["context-plane-concept"], "label": meta["context-plane-label"], "desc": desc,
+            "type": meta["context-plane-type"], "agents": [list(r) for r in roles],
+            "skill_md": {"path": os.path.relpath(path, ROOT).replace(os.sep, "/"), "sha256": hashlib.sha256(raw).hexdigest(),
+                         "name": name, "description": desc, "body": body}}
 
 
 def cmd_import(a):
@@ -291,6 +345,20 @@ def cmd_build(a):
             fail(f"rename: concept {cid} missing")
         log["concept_renames"].append({"id": cid, "from": concepts[cid]["label"], "to": lab})
         concepts[cid]["label"] = lab
+
+    # runnable skills (SCW1/skills/<id>/SKILL.md) join the concept their metadata names
+    # (agents are named by their published MaxeyN key; maxey_registry.json maps it back to the source key)
+    log["runnable_skills"] = []
+    reg_file = os.path.join(SCW, "maxey_registry.json")
+    by_key = {v: k for k, v in (json.load(open(reg_file, encoding="utf-8")) if os.path.exists(reg_file) else {}).items()}
+    for f in sorted(glob.glob(os.path.join(SKILLS_DIR, "*", "SKILL.md"))):
+        r = read_skill_md(f)
+        if r["concept"] not in concepts:
+            fail(f"{f}: concept {r['concept']} is not in the graph")
+        add_skill([r["id"], r["concept"], r["label"], r["desc"], r["type"], r["agents"]], "skill_md",
+                  lambda k: k if k in agents else by_key.get(k, k))
+        skills[r["id"]]["skill_md"] = r["skill_md"]
+        log["runnable_skills"].append({"id": r["id"], "concept": r["concept"], "path": r["skill_md"]["path"], "sha256": r["skill_md"]["sha256"]})
 
     # same-name agents that now serve skills in a common topic (concept merges move skills,
     # with their agents, across topics) are one agent: union-find, first key in build order wins
@@ -628,7 +696,7 @@ def cmd_build(a):
     }
     graph["snapshot_digest"] = digest({k: v for k, v in graph.items() if k != "snapshot_digest"})
     totals = {"domains": len(spec["domains"]), "topics": len(topics), "concepts": len(concepts), "skills": len(skills),
-              "agents": len(agents), "mcp_servers": len(mcp), "agent_mcp_links": len(links), "related_links": len(related),
+              "runnable_skills": len([s_ for s_ in skills.values() if "skill_md" in s_]), "agents": len(agents), "mcp_servers": len(mcp), "agent_mcp_links": len(links), "related_links": len(related),
               "mcp_without_agent": len([u for u in mcp if u not in {l["mcp"] for l in links}])}
 
     hdir = os.path.join(SCW, "harnesses")

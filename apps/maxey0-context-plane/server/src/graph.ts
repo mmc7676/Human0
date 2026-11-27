@@ -6,7 +6,9 @@ export interface Domain { id: string; label: string; desc: string }
 export interface Topic { id: string; label: string; desc: string; domain: string; sources: string[]; priority: number }
 export interface Concept { id: string; label: string; desc: string; keywords: string[]; topic: string; source: string }
 export interface SkillAgent { key: string; role: string }
-export interface Skill { id: string; concept: string; label: string; desc: string; type: string; agents: SkillAgent[]; source: string }
+/** A runnable skill carries its SKILL.md (SCW1/skills/<id>/SKILL.md): the instructions an orchestrator runs. */
+export interface SkillMd { path: string; sha256: string; name: string; description: string; body: string }
+export interface Skill { id: string; concept: string; label: string; desc: string; type: string; agents: SkillAgent[]; source: string; skill_md?: SkillMd }
 export interface Agent { key: string; name: string; legacy_key?: string }
 export interface Mcp { id: string; uuid: string | null; name: string; desc: string; tools: string[]; state: string; source: string; origins: string[] }
 export interface AgentMcp { agent: string; mcp: string; topic: string | null; score: number | null; basis: string; via?: { primary: string; skill: string } }
@@ -96,7 +98,8 @@ export class Graph {
     return { key, name: a.name, ...(a.legacy_key ? { legacy_key: a.legacy_key } : {}), ...(role ? { role } : {}), mcp: (this.linksByAgent.get(key) ?? []).map((l) => ({ id: l.mcp, name: this.mcp.get(l.mcp)!.name, score: l.score, basis: l.basis, ...(l.via ? { via: l.via } : {}) })) };
   }
   private skillOut(s: Skill) {
-    return { id: s.id, concept: s.concept, label: s.label, desc: s.desc, type: s.type, agents: s.agents.map((a) => this.agentOut(a.key, a.role)) };
+    return { id: s.id, concept: s.concept, label: s.label, desc: s.desc, type: s.type, ...(s.skill_md ? { runnable: true, skill_md_path: s.skill_md.path } : {}),
+      agents: s.agents.map((a) => this.agentOut(a.key, a.role)) };
   }
   private path(conceptId: string) {
     const t = this.topicOf(conceptId);
@@ -152,7 +155,7 @@ export class Graph {
 
   get_skill(a: { skill_id: string }) {
     const s = this.need(this.skill, a.skill_id, "skill", "Use search or get_concept to find skill ids.");
-    return { ...this.path(s.concept), skill: this.skillOut(s) };
+    return { ...this.path(s.concept), skill: this.skillOut(s), ...(s.skill_md ? { skill_md: s.skill_md } : {}) };
   }
 
   get_agent(a: { agent_key: string }) {
@@ -216,7 +219,7 @@ export class Graph {
       const sk = h.kind === "concept" ? (this.skillsByConcept.get(h.id) ?? [])[0] : this.skill.get(h.id)!;
       if (!sk || seen.has(sk.id)) continue;
       seen.add(sk.id);
-      out.push({ ...this.path(sk.concept), skill: sk.id, label: sk.label, score: h.score, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) });
+      out.push({ ...this.path(sk.concept), skill: sk.id, label: sk.label, score: h.score, ...(sk.skill_md ? { runnable: true } : {}), agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) });
       if (out.length >= limit) break;
     }
     return { task: a.task, note: a._dense ? "candidate paths ranked by TF-IDF cosine + dense " + a._dense.model + " (beta " + a._dense.beta + "); not an authorization" : "candidate paths ranked by TF-IDF cosine; not an authorization",
@@ -236,7 +239,7 @@ export class Graph {
       { level: "mcp", prefix: "m", ids: [], children: (ak) => this.gatesOf(ak) }],
       doms.length ? (id) => doms.includes(this.topic.get(id)!.domain) : undefined, {}, a._dense);
     const paths = r.skills.map((id) => { const sk = this.skill.get(id)!;
-      return { ...this.path(sk.concept), skill: sk.id, label: sk.label, agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) }; });
+      return { ...this.path(sk.concept), skill: sk.id, label: sk.label, ...(sk.skill_md ? { runnable: true } : {}), agents: sk.agents.map((x) => this.agentOut(x.key, x.role)) }; });
     return { task: a.task, mode: "lens", observer_start: doms.length ? { domains: doms } : "above the topic plane", lambda: LAMBDA,
       note: "observer-lens routing: each level is valued from the nodes selected above it (signed support, ranked by psi, selected only when psi > 0); candidates, not an authorization",
       signal: a._dense ? { tfidf: 1 - a._dense.beta, dense: a._dense.beta, model: a._dense.model, shortlist: r.dense!.shortlist } : { tfidf: 1 }, ...(a._dense_status ? { dense_status: a._dense_status } : {}),
@@ -348,7 +351,8 @@ export class Graph {
   snapshot() {
     return { scw: this.g.scw, schema: this.g.schema, snapshot_digest: this.g.snapshot_digest,
       totals: { domains: this.g.domains.length, topics: this.g.topics.length, concepts: this.g.concepts.length, skills: this.g.skills.length,
-        agents: this.g.agents.length, mcp_servers: this.g.mcp.length, agent_mcp_links: this.g.agent_mcp.length, related_links: this.g.related.length } };
+        agents: this.g.agents.length, mcp_servers: this.g.mcp.length, agent_mcp_links: this.g.agent_mcp.length, related_links: this.g.related.length,
+        runnable_skills: this.g.skills.filter((s) => s.skill_md).length } };
   }
 
   level(lv: string) {

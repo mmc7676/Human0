@@ -19,7 +19,7 @@ Give Maxey0 a task. It places it on one path (domain → topic → concept → s
 
 ---
 
-**Maxey0** is a context plane for agent systems. Before an agent acts on a task it has to answer *what kind of work is this?* and *who, with which tools, should do it?* Maxey0 answers both from one structured, versioned map of **11 domains, 128 topics, 711 concepts, 1,998 skills, 1,021 agents and 117 real MCP servers**, every node embedded in one shared space. It returns a candidate path, never an authorization: nothing runs until your orchestrator decides.
+**Maxey0** is a context plane for agent systems. Before an agent acts on a task it has to answer *what kind of work is this?* and *who, with which tools, should do it?* Maxey0 answers both from one structured, versioned map of **12 domains, 149 topics, 844 concepts, 2,845 skills, 1,064 agents and 116 real MCP servers**, every node embedded in one shared space. It returns a candidate path, never an authorization: nothing runs until your orchestrator decides.
 
 ## Why Maxey0?
 
@@ -64,9 +64,9 @@ The papers behind Maxey0 (the Context Plane, Structured Context Worlds, System O
 |---|---|
 | **12 domains** | Agentic Systems and Software Engineering · Data Science and Quantitative Methods · Mathematical and Physical Sciences · Engineering · Life, Health and Mind Sciences · Earth, Environment and Place · Business, Finance and Economics · Society, Governance and Ethics · Languages, Literatures and Communication · Area and Identity Studies · Humanities and Arts · Claude |
 | **149 topics** | formed from the concepts up, from Agent Harnesses and MCP Contracts to Derivatives, Quantum Physics and Translation Studies; the Claude domain's 21 topics come from the Claude, Claude Code, Claude Platform and Claude Duet docs |
-| **844 concepts · 2,842 skills** | 3–8 concepts per topic, 1–46 skills per concept (a Claude skill is one docs page) |
+| **844 concepts · 2,845 skills** | 3–8 concepts per topic, 1–46 skills per concept (a Claude skill is one docs page); 3 skills are runnable: a full `SKILL.md` with steps, checks and sources, served by `get_skill` |
 | **1,064 agents** | every one a permanent **MaxeyN** key (Maxey0 is the orchestrator); each skill has a primary, a checker and support agents |
-| **116 MCP servers · 561 links** | real, existence-checked servers, linked to the agents whose skills they fit |
+| **116 MCP servers · 562 links** | real, existence-checked servers, linked to the agents whose skills they fit |
 
 Agents in the map are **context records**: a role, the skills it serves and the tools it would hold. They are not running agents.
 
