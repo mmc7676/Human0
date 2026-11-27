@@ -1,0 +1,1148 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-for-government",
+  "label": "Claude for Government",
+  "desc": "Claude for Government: Overview (Claude for Government), Tenant admin, Org admin, Config, Security, Deploy desktop, Microsoft 365 and Claude Code, Desktop and Account."
+ },
+ "concepts": [
+  {
+   "id": "cgov-account",
+   "label": "Account",
+   "desc": "Account: Your account, Account, Usage, Sessions.",
+   "keywords": [
+    "account",
+    "your",
+    "usage",
+    "session"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-config",
+   "label": "Config",
+   "desc": "Config: How Config works, Available settings, Manage plugins and connectors, Connectors, Set up the Microsoft 365 connector.",
+   "keywords": [
+    "config",
+    "connector",
+    "how",
+    "work",
+    "available",
+    "setting"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "label": "Deploy desktop, Microsoft 365 and Claude Code",
+   "desc": "Deploy desktop, Microsoft 365 and Claude Code: Connect Claude Desktop to Claude for Government, Windows fleet checklist, Deploy Claude for Microsoft 365 in Claude for Government, Connect Claude Code to Claude for Government.",
+   "keywords": [
+    "deploy",
+    "desktop",
+    "microsoft",
+    "365",
+    "code",
+    "government"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-desktop",
+   "label": "Desktop",
+   "desc": "Desktop: Video walkthroughs for Claude Desktop, Import your data from Claude for Government Web, Plugins in Claude Desktop, Skills in Claude Desktop, Models in Claude Desktop.",
+   "keywords": [
+    "desktop",
+    "video",
+    "walkthrough",
+    "import",
+    "your",
+    "government"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-org-admin",
+   "label": "Org admin",
+   "desc": "Org admin: Organization administration, Setup wizard, Readiness, Users, Seats, Seat tiers, Group mappings, Analytics, Compliance API, Billing, Config at the organization level.",
+   "keywords": [
+    "org",
+    "admin",
+    "organization",
+    "seat",
+    "administration",
+    "setup"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-overview-claude-for-government",
+   "label": "Overview (Claude for Government)",
+   "desc": "Overview (Claude for Government): Claude for Government administrator guide, Moving from Claude for Government Web, Video walkthroughs for administrators, Claude for Government changelog.",
+   "keywords": [
+    "government",
+    "administrator",
+    "guide",
+    "moving",
+    "web",
+    "video"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-security",
+   "label": "Security",
+   "desc": "Security: Security and data handling.",
+   "keywords": [
+    "security",
+    "handling"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  },
+  {
+   "id": "cgov-tenant-admin",
+   "label": "Tenant admin",
+   "desc": "Tenant admin: Tenant administration, Tenant setup wizard, Readiness, Organizations, Identity and access, Tenant restrictions, Seats, Billing, Config at the tenant level, Admins.",
+   "keywords": [
+    "tenant",
+    "admin",
+    "administration",
+    "setup",
+    "wizard",
+    "readiness"
+   ],
+   "topic": "claude-for-government",
+   "source": "claude-for-government",
+   "source_topic": "claude-for-government",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cgov-account-2",
+   "concept": "cgov-account",
+   "label": "Account",
+   "desc": "Check the email, organization, role, and seat tier on your Claude for Government account, who to ask to change each one, and what to do with no seat.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-sessions",
+   "concept": "cgov-account",
+   "label": "Sessions",
+   "desc": "See every place you are signed in to Claude for Government, sign any of them out, and check how long sessions last and what ends them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-usage",
+   "concept": "cgov-account",
+   "label": "Usage",
+   "desc": "Check how much of your Claude allowance you have used and when it resets, and what to do when you hit a usage limit or your organization runs out of credits.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-your-account",
+   "concept": "cgov-account",
+   "label": "Your account",
+   "desc": "Check your own account details, usage limits, and active sessions in the Claude for Government web portal.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-available-settings",
+   "concept": "cgov-config",
+   "label": "Available settings",
+   "desc": "Config page settings in Claude for Government, such as session timeouts, network and folder access, tool approvals, connectors, plugins, telemetry, and updates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-connectors",
+   "concept": "cgov-config",
+   "label": "Connectors",
+   "desc": "Connectors let tenant administrators and organization owners add their agency's MCP servers: who gets them, authentication, OAuth redirect URIs, tool policy.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-how-config-works",
+   "concept": "cgov-config",
+   "label": "How Config works",
+   "desc": "Config levels in Claude for Government: how tenant, directory group, and organization settings combine, what locks do, and when changes reach members.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-manage-plugins-and-connectors",
+   "concept": "cgov-config",
+   "label": "Manage plugins and connectors",
+   "desc": "Upload plugins and skills in Claude for Government: archive rules, size limits, the Runs code marker, install behavior, updates, and removal.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-set-up-the-microsoft-365-connector",
+   "concept": "cgov-config",
+   "label": "Set up the Microsoft 365 connector",
+   "desc": "Register a Microsoft Entra application for the Microsoft 365 connector in Claude Desktop, choose its read and write permissions, and fix sign-in errors.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-connect-claude-code-to-claude-for-government",
+   "concept": "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "label": "Connect Claude Code to Claude for Government",
+   "desc": "Connect the Claude Code command-line tool to Claude for Government with managed settings on macOS, Windows, and Linux, and confirm a device is set up.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-connect-claude-desktop-to-claude-for-government",
+   "concept": "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "label": "Connect Claude Desktop to Claude for Government",
+   "desc": "Connect Claude Desktop to Claude for Government: the bootstrap URL, device profiles for macOS, Windows, and Linux, network hosts, updates, and troubleshooting.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-deploy-claude-for-microsoft-365-in-claude-for-government",
+   "concept": "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "label": "Deploy Claude for Microsoft 365 in Claude for Government",
+   "desc": "Download the Claude for Microsoft 365 manifest from your Claude for Government host and deploy the add-in to users from the Microsoft 365 admin center.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-windows-fleet-checklist",
+   "concept": "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "label": "Windows fleet checklist",
+   "desc": "Windows device, MSIX installer, application control, and virtualization checks to make before you deploy Claude Desktop for Claude for Government.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-import-your-data-from-claude-for-government-web",
+   "concept": "cgov-desktop",
+   "label": "Import your data from Claude for Government Web",
+   "desc": "Copy your conversations, projects, and files from Claude for Government Web into Claude Desktop, or move your Claude Desktop data to another computer.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-models-in-claude-desktop",
+   "concept": "cgov-desktop",
+   "label": "Models in Claude Desktop",
+   "desc": "Switch models in Claude Desktop on Claude for Government, see what the 1M context window does, and find what controls which models you see.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-plugins-in-claude-desktop",
+   "concept": "cgov-desktop",
+   "label": "Plugins in Claude Desktop",
+   "desc": "Find, install, create, and remove plugins in Claude Desktop for Claude for Government, and understand what plugins add in this deployment.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-skills-in-claude-desktop",
+   "concept": "cgov-desktop",
+   "label": "Skills in Claude Desktop",
+   "desc": "Skills in Claude Desktop for Claude for Government: where they come from, how to create and manage your own, and how administrators distribute them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-video-walkthroughs-for-claude-desktop",
+   "concept": "cgov-desktop",
+   "label": "Video walkthroughs for Claude Desktop",
+   "desc": "Watch short narrated walkthroughs of signing in to Claude Desktop with Claude for Government, bringing your work over, and finding your way around the app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-analytics",
+   "concept": "cgov-org-admin",
+   "label": "Analytics",
+   "desc": "Review your organization's requests, tokens, spend, active users, top users, and credit balance over time, and download the data as CSV files for reporting.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-billing-2",
+   "concept": "cgov-org-admin",
+   "label": "Billing",
+   "desc": "See the balance your organization spends from, the spend caps set on it, and its seats, and what happens as the billing account's balance runs low.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-compliance-api",
+   "concept": "cgov-org-admin",
+   "label": "Compliance API",
+   "desc": "Stream your organization's audit events into a SIEM or log management system.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-config-at-the-organization-level",
+   "concept": "cgov-org-admin",
+   "label": "Config at the organization level",
+   "desc": "Set product settings for everyone in your organization on the Config page, and see how connectors and plugins inherited from your tenant behave there.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-group-mappings",
+   "concept": "cgov-org-admin",
+   "label": "Group mappings",
+   "desc": "Map directory groups to seat tiers and roles in your organization, and see how mappings are applied and what a deactivation in your directory does.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-organization-administration",
+   "concept": "cgov-org-admin",
+   "label": "Organization administration",
+   "desc": "Manage the people, seats, and settings for a single organization within your agency: users, roles, seat tiers, usage, billing, and Config.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-readiness-2",
+   "concept": "cgov-org-admin",
+   "label": "Readiness",
+   "desc": "Readiness checks for your organization: what the checks on credits, spend caps, seats, seat tiers, models, and products mean, and who can clear each one.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-seat-tiers",
+   "concept": "cgov-org-admin",
+   "label": "Seat tiers",
+   "desc": "Seat tiers set which Claude models a user can access and how much they can spend. Organization owners create and manage their own seat tiers.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-seats-2",
+   "concept": "cgov-org-admin",
+   "label": "Seats",
+   "desc": "See how many seats of each tier your organization holds and how many are assigned, and how new and unassigned users get a seat tier.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-setup-wizard",
+   "concept": "cgov-org-admin",
+   "label": "Setup wizard",
+   "desc": "Setup wizard for a new organization: how to open it, and what the seat tiers, seats and credits, products, and finish steps cover.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-users",
+   "concept": "cgov-org-admin",
+   "label": "Users",
+   "desc": "Find a user, change their role or seat tier, sign them out everywhere, deactivate or reactivate them, reset their usage limits, and see what each role can do.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-claude-for-government-administrator-guide",
+   "concept": "cgov-overview-claude-for-government",
+   "label": "Claude for Government administrator guide",
+   "desc": "Set up and manage Claude for Government for your agency: how tenants, organizations, users, seats, and credits fit together.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-claude-for-government-changelog",
+   "concept": "cgov-overview-claude-for-government",
+   "label": "Claude for Government changelog",
+   "desc": "Release notes for Claude for Government",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-moving-from-claude-for-government-web",
+   "concept": "cgov-overview-claude-for-government",
+   "label": "Moving from Claude for Government Web",
+   "desc": "Find answers to the questions agencies ask most often when moving from Claude for Government Web to Claude Desktop.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-video-walkthroughs-for-administrators",
+   "concept": "cgov-overview-claude-for-government",
+   "label": "Video walkthroughs for administrators",
+   "desc": "Watch short narrated walkthroughs of setting up and running Claude for Government for your agency.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-security-and-data-handling",
+   "concept": "cgov-security",
+   "label": "Security and data handling",
+   "desc": "Review how Claude for Government handles data: sandbox isolation, network traffic, approvals, connector credentials, telemetry, web search, and local storage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-admins",
+   "concept": "cgov-tenant-admin",
+   "label": "Admins",
+   "desc": "Tenant administrator access: what it grants, who can be added, how to add or remove an administrator, and the safeguards on the list.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-billing",
+   "concept": "cgov-tenant-admin",
+   "label": "Billing",
+   "desc": "See each billing account's credit balance and set per-organization spend caps, with what a cap counts, what it stops, and when a change takes effect.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-config-at-the-tenant-level",
+   "concept": "cgov-tenant-admin",
+   "label": "Config at the tenant level",
+   "desc": "Set tenant-wide defaults for product behavior, lock settings so organizations can't change them, and preview how a change affects each organization.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-identity-and-access",
+   "concept": "cgov-tenant-admin",
+   "label": "Identity and access",
+   "desc": "Verify domains, connect single sign-on and SCIM, write the routing rules that place people in organizations, and look up what a sign-in error page means.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-organizations",
+   "concept": "cgov-tenant-admin",
+   "label": "Organizations",
+   "desc": "See every organization in your tenant, open an organization's admin view, add an organization and get it ready for people, and copy user email addresses.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-readiness",
+   "concept": "cgov-tenant-admin",
+   "label": "Readiness",
+   "desc": "Readiness checks for your tenant and its organizations: what the checks on domains, routing rules, sign-in failures, and billing mean, and who clears them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-seats",
+   "concept": "cgov-tenant-admin",
+   "label": "Seats",
+   "desc": "Divide each billing account's seat pool among the organizations it funds, and see who can change an allocation and why a change is refused.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-tenant-administration",
+   "concept": "cgov-tenant-admin",
+   "label": "Tenant administration",
+   "desc": "Manage the settings that apply across your whole agency: organizations, identity and sign-in, and how seats are distributed and spend caps are set.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-tenant-restrictions",
+   "concept": "cgov-tenant-admin",
+   "label": "Tenant restrictions",
+   "desc": "Restrict which Claude for Government tenants can be reached from your agency's network by having your network proxy inject an allowlist header.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  },
+  {
+   "id": "cgov-tenant-setup-wizard",
+   "concept": "cgov-tenant-admin",
+   "label": "Tenant setup wizard",
+   "desc": "Set up a new tenant in order: verify a domain, connect single sign-on, add an organization, give it seats, and add the routing rule that lets people sign in.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1789",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1790",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-for-government"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1789",
+   "name": "Claude for Government Specialist",
+   "legacy_key": "claude-for-government-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1790",
+   "name": "Claude for Government Reviewer",
+   "legacy_key": "claude-for-government-reviewer",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "government": "government administrator moving video walkthrough changelog",
+  "tenantadmin": "tenant admin administration billing readiness restriction",
+  "orgadmin": "seat organization mapping tier wizard config",
+  "config": "connector available microsoft setting manage set",
+  "security5": "security handling",
+  "deploydesktop": "connect deploy desktop code fleet window",
+  "desktop": "import web model skill plugin",
+  "account": "account usage session"
+ },
+ "sources": [
+  "claude-for-government"
+ ]
+}

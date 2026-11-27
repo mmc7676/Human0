@@ -18,13 +18,13 @@ dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim
 <a href="https://app.maxey0.com/app">App</a><a href="/docs">Docs</a><a href="/research">Research</a><a href="https://github.com/mmc7676/Human0/tree/main/apps/maxey0-context-plane">Source</a></nav>
 <div class="dl"><a href="/docs/architecture.pdf" download>Download PDF</a><a class="alt" href="/docs/architecture.md" download>Download .md</a></div><h1 id="architecture">Architecture</h1>
 <p>One data set, built once, served three ways.</p>
-<pre><code> SCW1/sources/packs/*.pack.json ─┐
- SCW1/sources/maxey0_base.json ──┤
- SCW1/ontology.spec.json ────────┤   tools/build_scw1.py
+<pre><code> SCW3/sources/packs/*.pack.json ─┐
+ SCW3/sources/maxey0_base.json ──┤
+ SCW3/ontology.spec.json ────────┤   tools/build_scw3.py
                                  ▼
-          SCW1/scw1.graph.json · SCW1/harnesses/*.harness.json · SCW1/maxey_registry.json
+          SCW3/scw3.graph.json · SCW3/harnesses/*.harness.json · SCW3/maxey_registry.json
                                  │
-                                 ▼   server/src/scw1.bundle.json (graph + TF-IDF index)
+                                 ▼   server/src/scw3.bundle.json (graph + TF-IDF index)
  ┌───────────────────── Cloudflare Worker (server/) ──────────────────────┐
  │  /mcp, /mcp/&lt;domain&gt;   MCP tools · prompt · resources · ui:// app       │
  │  /graph.json           the map for browser apps                          │
@@ -38,15 +38,15 @@ dl.qa dt{font-weight:700;margin-top:12px}dl.qa dd{margin:4px 0 0;color:var(--dim
 <h3 id="sources">Sources</h3>
 <p>Each topic starts as a <strong>topic pack</strong> (<code>human0.topic-pack/1</code>): a topic, its concepts, skills with their agents and roles, agent names, MCP server rows, a lexicon and provenance. The Maxey0 base graph adds the Maxey0 system's own concepts and agents. Sources are inputs and are never edited by the build.</p>
 <h3 id="the-ontology-spec">The ontology spec</h3>
-<p><code>SCW1/ontology.spec.json</code> holds every structural decision: which domain each topic belongs to, topics and concepts that are merged, moved, renamed or dropped, id rules, the similarity method and its thresholds, declared links, topic priority, role overrides, and open questions. Changing the map means changing the spec or a pack and rebuilding.</p>
+<p><code>SCW3/ontology.spec.json</code> holds every structural decision: which domain each topic belongs to, topics and concepts that are merged, moved, renamed or dropped, id rules, the similarity method and its thresholds, declared links, topic priority, role overrides, and open questions. Changing the map means changing the spec or a pack and rebuilding.</p>
 <h3 id="the-builder">The builder</h3>
-<p><code>tools/build_scw1.py build</code> applies the spec to the sources and refuses to write anything if a rule breaks. It checks, among others:</p>
+<p><code>tools/build_scw3.py build</code> applies the spec to the sources and refuses to write anything if a rule breaks. It checks, among others:</p>
 <ul>
 <li>every node has exactly one parent, and every thread reaches the skill level;</li>
 <li>each topic has 3–8 concepts and no concept is named like a topic;</li>
 <li>labels and ids are unique;</li>
 <li>every skill has a primary agent;</li>
-<li>every agent key is a MaxeyN key from <code>SCW1/maxey_registry.json</code>, which keeps keys permanent across builds (new agents get the next free number);</li>
+<li>every agent key is a MaxeyN key from <code>SCW3/maxey_registry.json</code>, which keeps keys permanent across builds (new agents get the next free number);</li>
 <li>every link meets its threshold.</li>
 </ul>
 <p>It writes the graph, one harness per topic, a manifest and build report, and the server bundle. The graph carries a SHA-256 digest; the app records it in saved state.</p>

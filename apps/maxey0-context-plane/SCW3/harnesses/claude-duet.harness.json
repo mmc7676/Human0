@@ -1,0 +1,684 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-duet",
+  "label": "Claude Duet",
+  "desc": "Claude Duet: Main chat and replies (Claude Duet), Task threads, Channels (Claude Duet), Tasks page, Morning brief and check-ins, Routines and reminders, Memory and standing rules (Claude Duet) and Connected apps, drafts and approvals."
+ },
+ "concepts": [
+  {
+   "id": "cduet-apps-approvals",
+   "label": "Connected apps, drafts and approvals",
+   "desc": "Mail, calendar, chat and file connectors and a browser for websites, with drafts the person approves before anything is sent, paid, signed or deleted, and pages or docs as results.",
+   "keywords": [
+    "connector",
+    "draft",
+    "approval",
+    "browser",
+    "send"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-brief-checkins",
+   "label": "Morning brief and check-ins",
+   "desc": "A short brief when quiet hours end, and check-ins through the day when something in the connected apps needs the person.",
+   "keywords": [
+    "brief",
+    "morning",
+    "check-in",
+    "quiet",
+    "hours"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-channels",
+   "label": "Channels (Claude Duet)",
+   "desc": "A separate chat for one lasting subject, such as a project or a move, with its own tasks, files and notes.",
+   "keywords": [
+    "channel",
+    "project",
+    "subject",
+    "folder",
+    "files"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-main-chat",
+   "label": "Main chat and replies (Claude Duet)",
+   "desc": "The one ongoing conversation the person texts or talks to: a short answer first, or a line that longer work has started on a task.",
+   "keywords": [
+    "chat",
+    "message",
+    "reply",
+    "voice",
+    "request"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-memory-rules",
+   "label": "Memory and standing rules (Claude Duet)",
+   "desc": "What Claude keeps about the person between sessions: goals, rules in their own words, preferences and open loops, which they can ask to see, correct or forget.",
+   "keywords": [
+    "memory",
+    "rule",
+    "goal",
+    "preference",
+    "forget"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-routines-reminders",
+   "label": "Routines and reminders",
+   "desc": "Work that runs on a schedule: routines that repeat, one-time reminders, and watches that look at set times.",
+   "keywords": [
+    "routine",
+    "reminder",
+    "schedule",
+    "watch",
+    "recurring"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-task-threads",
+   "label": "Task threads",
+   "desc": "Longer work on one task runs in its own thread, with a live status checklist and a report when the work stops for the person or finishes.",
+   "keywords": [
+    "thread",
+    "task",
+    "status",
+    "checklist",
+    "report"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  },
+  {
+   "id": "cduet-tasks-page",
+   "label": "Tasks page",
+   "desc": "Where every task stands: working, ready for the person, stopped, or resolved, with its steps, its question and its outcome.",
+   "keywords": [
+    "tasks",
+    "page",
+    "ready",
+    "stopped",
+    "resolved"
+   ],
+   "topic": "claude-duet",
+   "source": "claude-duet",
+   "source_topic": "claude-duet",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cduet-approve-draft",
+   "concept": "cduet-apps-approvals",
+   "label": "Approve a draft before it is sent",
+   "desc": "Look at a drafted message with every recipient, edit it if needed, and press Send; nothing in your name goes out, gets paid or gets deleted without your yes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-connect-app",
+   "concept": "cduet-apps-approvals",
+   "label": "Connect an app",
+   "desc": "Connect mail, calendar, chat, files or a work tool so Claude can read them and draft for you.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-get-page-or-doc",
+   "concept": "cduet-apps-approvals",
+   "label": "Get a page or a doc as the result",
+   "desc": "Ask for a document, plan or report and get it as a doc or page you can open, edit and share.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-read-morning-brief",
+   "concept": "cduet-brief-checkins",
+   "label": "Read the morning brief",
+   "desc": "Read the brief that arrives when quiet hours end: what needs the person today, from mail, calendar and open tasks.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-set-quiet-hours",
+   "concept": "cduet-brief-checkins",
+   "label": "Set quiet hours and the time zone",
+   "desc": "Choose the hours when no brief or check-in arrives, and the time zone that times are read in.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-turn-off-checkins",
+   "concept": "cduet-brief-checkins",
+   "label": "Turn the brief and check-ins off or on",
+   "desc": "Switch the morning brief and check-ins off when unasked messages are not wanted, and back on later.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-keep-channel-files",
+   "concept": "cduet-channels",
+   "label": "Keep a project's files in its channel",
+   "desc": "Keep the files for a subject in its channel's folder, where every task in that channel can read them.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-start-channel",
+   "concept": "cduet-channels",
+   "label": "Start a channel for a project",
+   "desc": "Ask for a channel for one task or project so its conversation, tasks and notes stay apart from the main chat.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-answer-with-tapback",
+   "concept": "cduet-main-chat",
+   "label": "Answer a yes or no question with a reaction",
+   "desc": "Use a thumbs-up or thumbs-down on a yes or no question as the answer; a step that spends money or deletes for good still needs a yes in words.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-ask-in-main-chat",
+   "concept": "cduet-main-chat",
+   "label": "Ask in the main chat",
+   "desc": "Send a request by text or voice in the main chat and get the answer, or one line saying the work has started and on which task.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-steer-running-work",
+   "concept": "cduet-main-chat",
+   "label": "Steer work already under way",
+   "desc": "Send a follow-up about work already started, such as a change of scope or a new detail, so it reaches that task without starting a new one.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-ask-what-remembered",
+   "concept": "cduet-memory-rules",
+   "label": "Ask what Claude remembers",
+   "desc": "Ask what Claude knows about you and your work, and get it in plain words.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-correct-or-forget",
+   "concept": "cduet-memory-rules",
+   "label": "Correct or forget a memory",
+   "desc": "Correct a wrong note or ask Claude to forget something, and it is changed or removed and not brought back.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-give-standing-rule",
+   "concept": "cduet-memory-rules",
+   "label": "Give Claude a standing rule",
+   "desc": "Say a rule in your own words, such as never booking before 10, and Claude says it back and works by it from then on.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-schedule-routine",
+   "concept": "cduet-routines-reminders",
+   "label": "Schedule a routine",
+   "desc": "Ask for work that repeats on a schedule, such as a weekly preview, and say what each run should look at and post.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-set-reminder",
+   "concept": "cduet-routines-reminders",
+   "label": "Set a one-time reminder",
+   "desc": "Ask for a reminder at a set time; it arrives once as a message in the chat.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-watch-something",
+   "concept": "cduet-routines-reminders",
+   "label": "Watch for something at set times",
+   "desc": "Ask Claude to look for a change, such as a reply or a price, at set times, and be told when it happens.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-follow-task-thread",
+   "concept": "cduet-task-threads",
+   "label": "Follow a task thread",
+   "desc": "Open the thread of a task to see its status checklist grow step by step while the work runs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-read-thread-report",
+   "concept": "cduet-task-threads",
+   "label": "Read a task report",
+   "desc": "Read the report a task leaves when it stops: the answer or what is needed, what was done in the person's name, what could not be checked, and the one thing to tap or answer.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-write-in-thread",
+   "concept": "cduet-task-threads",
+   "label": "Write to a task in its thread",
+   "desc": "Write in a task's own thread to answer its question, add a detail or redirect it, and get a reply there.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-mark-task-done",
+   "concept": "cduet-tasks-page",
+   "label": "Mark a task done",
+   "desc": "Mark a finished task done, or say it is not done yet so the work goes on.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-review-ready-task",
+   "concept": "cduet-tasks-page",
+   "label": "Review a task that is ready for you",
+   "desc": "Open a task marked ready for you, look at the draft, result or question, and answer or act on it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  },
+  {
+   "id": "cduet-unblock-stopped-task",
+   "concept": "cduet-tasks-page",
+   "label": "Unblock a stopped task",
+   "desc": "Read why a task stopped, such as an app to connect or a reply from someone else, and give what it waits on.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1787",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1788",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-duet"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1787",
+   "name": "Claude Duet Specialist",
+   "legacy_key": "claude-duet-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1788",
+   "name": "Claude Duet Reviewer",
+   "legacy_key": "claude-duet-reviewer",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "mainchat": "answer main chat started task already",
+  "taskthread": "thread report step statu stop write",
+  "channelduet": "channel project file subject note keep",
+  "taskpage": "stopped done ready mark question resolved",
+  "morningbrief": "brief check ins hour morning quiet",
+  "routinereminder": "time set reminder routine schedule look",
+  "memorystanding": "rule ask correct forget word standing",
+  "connectedapp": "draft page doc deleted paid sent"
+ },
+ "sources": [
+  "claude-duet"
+ ]
+}

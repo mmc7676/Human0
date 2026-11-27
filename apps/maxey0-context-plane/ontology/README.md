@@ -1,6 +1,6 @@
 # Maxey0 Context Plane — OWL 2 + SHACL (build 6.3.0)
 
-The same plane as `SCW1/scw1.graph.json`, in standard knowledge-graph form.
+The same plane as `SCW3/scw3.graph.json`, in standard knowledge-graph form.
 
 | File | What it is |
 |---|---|
@@ -12,7 +12,7 @@ The same plane as `SCW1/scw1.graph.json`, in standard knowledge-graph form.
 Rebuild (needs `pip install rdflib pyshacl owlrl`):
 
 ```
-python tools/owl/build_owl.py SCW1/scw1.graph.json SCW1/scw1.graph.json ontology ontology/examples/run-1-drift-scw.json
+python tools/owl/build_owl.py SCW3/scw3.graph.json SCW3/scw3.graph.json ontology ontology/examples/run-1-drift-scw.json
 ```
 
 The second argument can be the live `https://maxey0-context-plane-mcp.maxey0.workers.dev/graph.json` (saved to a file) to check live/local parity. The RDF/XML form and the OWL 2 RL closure (`*.owl`, `*.inferred.ttl`) are written too but not committed (regenerable, 4.7 MB and 7.7 MB).

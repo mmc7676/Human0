@@ -381,7 +381,7 @@ Install it from the plugin directory when listed, or from this repository (see t
 | **MaxeyN** | A specialised agent's permanent key, such as Maxey1498 |
 | **Context plane** | The map an orchestrator reads before acting: what kinds of work exist and who handles each |
 | **SCW** | Structured Context Window: a bounded workspace for one piece of work; in the graph, the boundary around an agent and its servers |
-| **SCW1** | The SCW that holds this map |
+| **SCW3** | The SCW that holds this map |
 | **Topic harness** | Everything about one topic in one document: its concepts, skills, agents and servers |
 | **Topic pack** | The JSON format for a topic, used to build the map and to add generated topics |
 | **Gate** | A link from an agent to an MCP server |

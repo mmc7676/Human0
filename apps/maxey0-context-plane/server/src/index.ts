@@ -1,4 +1,4 @@
-// maxey0-context-plane: a read-only MCP server over the SCW1 topic-harness set,
+// maxey0-context-plane: a read-only MCP server over the SCW3 topic-harness set,
 // for Cloudflare Workers (Streamable HTTP, single POST endpoint at /mcp).
 //
 // Protocol: dual-era.
@@ -9,8 +9,8 @@
 //   legacy  2025-11-25, 2025-06-18, 2025-03-26   answered via `initialize`;
 //                       no Mcp-Session-Id is ever minted (sessions are optional
 //                       in those revisions), so every request stands alone.
-import bundleJson from "./scw1.bundle.json";
-import ontology from "../../SCW1/ontology.spec.json";
+import bundleJson from "./scw3.bundle.json";
+import ontology from "../../SCW3/ontology.spec.json";
 import { Graph, GraphData, ToolError, scopeTo, DENSE_DEFAULT } from "./graph";
 import { landingHtml } from "./landing";
 import { LOGO_PNG_B64 } from "./logo";
@@ -19,7 +19,7 @@ import type { DenseSignal } from "./lens";
 import { GENERATOR_PROMPT, generatorText, validatePack } from "./generator";
 import { APP_RESOURCE, APP_URI, appHtml, appResourceContents } from "./app";
 
-const SERVER_INFO = { name: "maxey0-context-plane", version: "1.4.0", release: "Maxey0 Context Plane v1.4.0 - Prefederation" };
+const SERVER_INFO = { name: "maxey0-context-plane", version: "1.4.1", release: "Maxey0 Context Plane v1.4.1 - Prefederation" };
 const MODERN = "2026-07-28";
 const LEGACY = ["2025-11-25", "2025-06-18", "2025-03-26"];
 const SUPPORTED = [MODERN, ...LEGACY];
@@ -35,7 +35,7 @@ const GRAPH_JSON = JSON.stringify({ ...FULL, similarity: { method: FULL.similari
 const GRAPH_JSON_INDEX = JSON.stringify(FULL);   // ?index=1: with idf + vectors, so a browser can score tasks the same way
 
 const instructions = (scope: string) =>
-  "Maxey0 Context Plane (SCW1), served by Maxey0 and feeding the Human0 app. " +
+  "Maxey0 Context Plane (SCW3), served by Maxey0 and feeding the Human0 app. " +
   (scope === "all" ? "This endpoint serves all " + SCOPES.length + " domains (" + GRAPHS.all.g.topics.length + " topics). "
     : "This endpoint serves only the '" + scope + "' domain (" + GRAPHS[scope].g.topics.length + " topics); /mcp serves all domains. ") +
   "Every thread is domain -> topic -> concept -> skill; each skill has MaxeyN agents (primary/checker/support) and agents hold MCP servers. " +
@@ -80,7 +80,7 @@ const TOOLS: ToolDef[] = [
     inputSchema: obj({ query: STR, domain: DOM }), run: (g, a) => g.list_topics(a as never) },
   { name: "get_topic", title: "Get topic", description: "One topic: domain, priority, concepts (with skill counts) and MCP servers the topic lists. 'related' links a concept to similar concepts in OTHER topics (cosine >= 0.40); concepts within one topic are not cross-linked, so an empty list is normal.",
     inputSchema: obj({ topic_id: STR }, ["topic_id"]), run: (g, a) => g.get_topic(a as never) },
-  { name: "get_harness", title: "Get full topic harness", description: "One topic in full (SCW1 topic harness, maxey0.topic-harness/3): every concept, skill, agent and MCP server in the topic, about 49 KB.",
+  { name: "get_harness", title: "Get full topic harness", description: "One topic in full (SCW3 topic harness, maxey0.topic-harness/3): every concept, skill, agent and MCP server in the topic, about 49 KB.",
     inputSchema: obj({ topic_id: STR }, ["topic_id"]), run: (g, a) => g.get_harness(a as never) },
   { name: "get_concept", title: "Get concept", description: "One concept with its path (domain/topic), related concepts, and its skills with agents and their MCP servers.",
     inputSchema: obj({ concept_id: STR }, ["concept_id"]), run: (g, a) => g.get_concept(a as never) },
@@ -123,8 +123,8 @@ function validateArgs(schema: Json, args: Json): string | null {
 
 // ---------------------------------------------------------------- resources
 const RESOURCES = [
-  { uri: "ctxplane://snapshot", name: "snapshot", title: "SCW1 snapshot", mimeType: "application/json",
-    description: "Counts, snapshot digest and topic ids of the served SCW1 harness set." },
+  { uri: "ctxplane://snapshot", name: "snapshot", title: "SCW3 snapshot", mimeType: "application/json",
+    description: "Counts, snapshot digest and topic ids of the served SCW3 harness set." },
   { uri: "ctxplane://ontology", name: "ontology", title: "Maxey0 Context Plane ontology spec", mimeType: "application/json",
     description: "Every structural decision the graph was built from (domains, merges, trims, id rules, MCP linking rule)." },
   ...["domain", "topic", "concept", "skill", "agent", "mcp"].map((lv) => ({

@@ -1,7 +1,7 @@
 """Maxey0 Context Plane graph -> OWL 2 ontology + SHACL shapes, with parity checks, SHACL validation, a negative control
 and OWL 2 RL reasoning. Also defines the drift vocabulary (path / level / node SCWs of an observer-lens route) and
 validates a drift record against it.
-Usage: python3 tools/owl/build_owl.py <scw1.graph.json> <live graph.json or the same file> <out dir> [drift-scw.json ...]
+Usage: python3 tools/owl/build_owl.py <scw3.graph.json> <live graph.json or the same file> <out dir> [drift-scw.json ...]
 Outputs: <out>/maxey0-context-plane.owl.ttl, .owl (RDF/XML), .shapes.ttl, .inferred.ttl, drift-*.ttl, build_log.json"""
 import json, sys, hashlib, time, re
 from collections import Counter

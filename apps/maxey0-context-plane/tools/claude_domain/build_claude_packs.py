@@ -11,7 +11,7 @@ Inputs (this folder):
   claude-duet.source.json   the Claude Duet topic harness (generated concepts and skills, no agents or lexicon).
 
 Outputs:
-  SCW1/sources/packs/<topic id>.pack.json   one pack per topic, domain "claude" (regroup.pack_domains in the spec)
+  SCW3/sources/packs/<topic id>.pack.json   one pack per topic, domain "claude" (regroup.pack_domains in the spec)
   <report-dir>/claude_domain_merged.csv     the merged domain, one row per page (Duet: one row per skill)
   <report-dir>/merge_report.json            counts before and after, every merge, and the checks below
 
@@ -23,10 +23,10 @@ import argparse, collections, csv, hashlib, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.dirname(HERE))
-from build_scw1 import tokens  # the one tokenizer, so keywords and lexicon terms match what the graph indexes
+from build_scw3 import tokens  # the one tokenizer, so keywords and lexicon terms match what the graph indexes
 
-PACKS = os.path.join(ROOT, "SCW1", "sources", "packs")
-GRAPH = os.path.join(ROOT, "SCW1", "scw1.graph.json")
+PACKS = os.path.join(ROOT, "SCW3", "sources", "packs")
+GRAPH = os.path.join(ROOT, "SCW3", "scw3.graph.json")
 COLS = ["domain", "topic", "concept", "skill", "page_title", "url", "source",
         "agent_primary", "agent_checker", "agent_support", "mcp_server"]
 APP_DOMAINS = {"memory", "graph", "vector", "observability", "security", "data", "runtime", "orchestration",

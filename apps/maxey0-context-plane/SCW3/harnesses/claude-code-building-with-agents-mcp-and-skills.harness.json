@@ -1,0 +1,653 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-code-building-with-agents-mcp-and-skills",
+  "label": "Claude Code: Building with Agents, MCP and Skills",
+  "desc": "Claude Code: Building with Agents, MCP and Skills: Agents and parallel work, MCP, Skills (Claude Code building), Artifacts, Automation, Guides and Troubleshooting (Claude Code building)."
+ },
+ "concepts": [
+  {
+   "id": "ccbuild-agents-and-parallel-work",
+   "label": "Agents and parallel work",
+   "desc": "Agents and parallel work: Run agents in parallel, Create custom subagents, Manage multiple agents with agent view, Orchestrate teams of Claude Code sessions, Message your other Claude Code sessions, Orchestrate subagents at scale with dynamic workflows, Run parallel sessions with worktrees.",
+   "keywords": [
+    "agent",
+    "parallel",
+    "work",
+    "session",
+    "run",
+    "subagent"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": []
+  },
+  {
+   "id": "ccbuild-artifacts",
+   "label": "Artifacts",
+   "desc": "Artifacts: Share session output as artifacts.",
+   "keywords": [
+    "artifact",
+    "share",
+    "session",
+    "output"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": []
+  },
+  {
+   "id": "ccbuild-automation",
+   "label": "Automation",
+   "desc": "Automation: Automate actions with hooks, Push events into a running session with channels, Run prompts on a schedule, Keep Claude working toward a goal, Run Claude Code programmatically, Launch sessions from links.",
+   "keywords": [
+    "automation",
+    "session",
+    "run",
+    "automate",
+    "action",
+    "hook"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": []
+  },
+  {
+   "id": "ccbuild-guides",
+   "label": "Guides",
+   "desc": "Guides: Set up Claude Code in a monorepo or large codebase.",
+   "keywords": [
+    "guide",
+    "set",
+    "code",
+    "monorepo",
+    "large",
+    "codebase"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": []
+  },
+  {
+   "id": "ccbuild-mcp",
+   "label": "MCP",
+   "desc": "MCP: Connect to MCP servers, Connect Claude Code to tools via MCP.",
+   "keywords": [
+    "mcp",
+    "connect",
+    "server",
+    "code",
+    "tool"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": [
+    "capi-agents-and-tools"
+   ]
+  },
+  {
+   "id": "ccbuild-skills-claude-code-building",
+   "label": "Skills (Claude Code building)",
+   "desc": "Skills (Claude Code building): Extend Claude with skills.",
+   "keywords": [
+    "skill",
+    "code",
+    "building",
+    "extend"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": [
+    "capps-extend-claude"
+   ]
+  },
+  {
+   "id": "ccbuild-troubleshooting-claude-code-building",
+   "label": "Troubleshooting (Claude Code building)",
+   "desc": "Troubleshooting (Claude Code building): Troubleshoot installation and login, Troubleshooting, Debug your configuration, Error reference.",
+   "keywords": [
+    "troubleshooting",
+    "code",
+    "building",
+    "troubleshoot",
+    "installation",
+    "login"
+   ],
+   "topic": "claude-code-building-with-agents-mcp-and-skills",
+   "source": "claude-code-building-with-agents-mcp-and-skills",
+   "source_topic": "claude-code-building-with-agents-mcp-and-skills",
+   "related": [
+    "ccplug-troubleshooting-claude-code-plugins"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "ccbuild-create-custom-subagents",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Create custom subagents",
+   "desc": "Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-manage-multiple-agents-with-agent-view",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Manage multiple agents with agent view",
+   "desc": "Dispatch and manage many Claude Code sessions from one screen. Agent view shows what every session is doing and which ones need your input.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-message-your-other-claude-code-sessions",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Message your other Claude Code sessions",
+   "desc": "Let Claude list and message your other Claude Code sessions on this machine, and reach your sessions on other machines or in the cloud.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-orchestrate-subagents-at-scale-with-dynamic-workflows",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Orchestrate subagents at scale with dynamic workflows",
+   "desc": "Dynamic workflows orchestrate many subagents from a script Claude writes and you can rerun. Use them for codebase audits, large migrations, and cross-checked research.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-orchestrate-teams-of-claude-code-sessions",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Orchestrate teams of Claude Code sessions",
+   "desc": "Coordinate multiple Claude Code instances working together as a team, with shared tasks, inter-agent messaging, and centralized management.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-run-agents-in-parallel",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Run agents in parallel",
+   "desc": "Compare the ways Claude Code can take on multiple tasks at once: subagents, agent view, agent teams, dynamic workflows, and projects.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-run-parallel-sessions-with-worktrees",
+   "concept": "ccbuild-agents-and-parallel-work",
+   "label": "Run parallel sessions with worktrees",
+   "desc": "Isolate parallel Claude Code sessions in separate git worktrees so changes don't collide. Covers the --worktree flag, subagent isolation, .worktreeinclude, cleanup, and non-git VCS hooks.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-share-session-output-as-artifacts",
+   "concept": "ccbuild-artifacts",
+   "label": "Share session output as artifacts",
+   "desc": "Artifacts turn Claude Code's work into live, interactive pages on claude.ai that you can keep private, share with your organization, or publish to a public link.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-automate-actions-with-hooks",
+   "concept": "ccbuild-automation",
+   "label": "Automate actions with hooks",
+   "desc": "Run shell commands automatically when Claude Code edits files, finishes tasks, or needs input. Format code, send notifications, validate commands, and enforce project rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-keep-claude-working-toward-a-goal",
+   "concept": "ccbuild-automation",
+   "label": "Keep Claude working toward a goal",
+   "desc": "Set a completion condition with /goal and Claude keeps working until it's met, a model judges it impossible, or an error you have to fix clears the goal.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-launch-sessions-from-links",
+   "concept": "ccbuild-automation",
+   "label": "Launch sessions from links",
+   "desc": "Open a Claude Code terminal session from a URL. Embed claude-cli:// links in runbooks, alerts, and dashboards so a click opens Claude Code in the right repo with the right prompt.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-push-events-into-a-running-session-with-channels",
+   "concept": "ccbuild-automation",
+   "label": "Push events into a running session with channels",
+   "desc": "Use channels to push messages, alerts, and webhooks into your Claude Code session from an MCP server. Forward CI results, chat messages, and monitoring events so Claude can react while you're away.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-run-claude-code-programmatically",
+   "concept": "ccbuild-automation",
+   "label": "Run Claude Code programmatically",
+   "desc": "Use the Agent SDK to run Claude Code programmatically from the CLI, Python, or TypeScript.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-run-prompts-on-a-schedule",
+   "concept": "ccbuild-automation",
+   "label": "Run prompts on a schedule",
+   "desc": "Use /loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-set-up-claude-code-in-a-monorepo-or-large-codebase",
+   "concept": "ccbuild-guides",
+   "label": "Set up Claude Code in a monorepo or large codebase",
+   "desc": "Configure Claude Code for monorepos and large single-tree codebases with nested CLAUDE.md files, sparse worktrees, code intelligence, and per-package skills so Claude stays focused on the code you're working in.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-connect-claude-code-to-tools-via-mcp",
+   "concept": "ccbuild-mcp",
+   "label": "Connect Claude Code to tools via MCP",
+   "desc": "Learn how to connect Claude Code to your tools with the Model Context Protocol.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-connect-to-mcp-servers",
+   "concept": "ccbuild-mcp",
+   "label": "Connect to MCP servers",
+   "desc": "Add an MCP server to Claude Code, verify the connection, and find the configuration on disk.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-extend-claude-with-skills",
+   "concept": "ccbuild-skills-claude-code-building",
+   "label": "Extend Claude with skills",
+   "desc": "Create, manage, and share skills to extend Claude's capabilities in Claude Code. Includes custom commands and bundled skills.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-debug-your-configuration",
+   "concept": "ccbuild-troubleshooting-claude-code-building",
+   "label": "Debug your configuration",
+   "desc": "Diagnose why CLAUDE.md, settings, hooks, MCP servers, or skills aren't taking effect. Use /context, /doctor, /hooks, and /mcp to see what actually loaded.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-error-reference",
+   "concept": "ccbuild-troubleshooting-claude-code-building",
+   "label": "Error reference",
+   "desc": "Look up Claude Code runtime error messages with what each one means and how to fix it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-troubleshoot-installation-and-login",
+   "concept": "ccbuild-troubleshooting-claude-code-building",
+   "label": "Troubleshoot installation and login",
+   "desc": "Fix command not found, PATH, permission, network, and authentication errors when installing or signing in to Claude Code.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  },
+  {
+   "id": "ccbuild-troubleshooting",
+   "concept": "ccbuild-troubleshooting-claude-code-building",
+   "label": "Troubleshooting",
+   "desc": "Fix high CPU or memory usage, hangs, auto-compact thrashing, and search problems in Claude Code, and find the right page for other issues.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1777",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1778",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-building-with-agents-mcp-and-skills"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1777",
+   "name": "Claude Code: Building with Agents, MCP and Skills Specialist",
+   "legacy_key": "claude-code-building-with-agents-mcp-and-skills-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1778",
+   "name": "Claude Code: Building with Agents, MCP and Skills Reviewer",
+   "legacy_key": "claude-code-building-with-agents-mcp-and-skills-reviewer",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "agentparallel": "agent session parallel orchestrate subagent run",
+  "mcp": "mcp connect server tool code",
+  "skillcode": "skill extend building",
+  "artifact": "artifact share output",
+  "automation": "goal launch programmatically push running toward",
+  "guide": "large monorepo codebase set guide",
+  "troubleshootingcode": "troubleshooting debug login error installation configuration"
+ },
+ "sources": [
+  "claude-code-building-with-agents-mcp-and-skills"
+ ]
+}

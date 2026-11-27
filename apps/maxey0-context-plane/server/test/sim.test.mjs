@@ -8,7 +8,7 @@ import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
-const g = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "scw1.graph.json"), "utf8"));
+const g = JSON.parse(readFileSync(join(here, "..", "..", "SCW3", "scw3.graph.json"), "utf8"));
 let sim;
 before(async () => {
   const out = join(mkdtempSync(join(tmpdir(), "sim-")), "s.mjs");

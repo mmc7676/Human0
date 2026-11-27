@@ -1,0 +1,770 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "engineering",
+ "topic": {
+  "id": "chemical-engineering",
+  "label": "Chemical Engineering",
+  "desc": "Chemical Engineering: Chemical Thermodynamics, Chemical Reaction Engineering, Separation Processes, Process Design, Economics and Safety and Physical Chemistry."
+ },
+ "concepts": [
+  {
+   "id": "chem-physical-chemistry",
+   "label": "Physical Chemistry",
+   "desc": "Thermodynamics, kinetics and quantum mechanics applied to chemical systems.",
+   "keywords": [
+    "physical",
+    "thermodynamics",
+    "kinetics",
+    "quantum",
+    "spectroscopy",
+    "rate constant",
+    "entropy",
+    "equilibrium"
+   ],
+   "topic": "chemical-engineering",
+   "source": "chemistry",
+   "source_topic": "chemistry",
+   "related": []
+  },
+  {
+   "id": "cheme-process-design-safety",
+   "label": "Process Design, Economics and Safety",
+   "desc": "Flowsheet synthesis, cost estimation and hazard analysis for plants.",
+   "keywords": [
+    "process design",
+    "flowsheet",
+    "economics",
+    "cost",
+    "hazard",
+    "hazop",
+    "safety",
+    "sustainability"
+   ],
+   "topic": "chemical-engineering",
+   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
+   "related": []
+  },
+  {
+   "id": "cheme-reaction-engineering",
+   "label": "Chemical Reaction Engineering",
+   "desc": "Kinetics and reactor design for batch, CSTR and plug flow reactors.",
+   "keywords": [
+    "reactor",
+    "kinetics",
+    "rate law",
+    "conversion",
+    "cstr",
+    "plug flow",
+    "catalyst",
+    "selectivity"
+   ],
+   "topic": "chemical-engineering",
+   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
+   "related": []
+  },
+  {
+   "id": "cheme-separations",
+   "label": "Separation Processes",
+   "desc": "Distillation, absorption, extraction and membranes for purifying products.",
+   "keywords": [
+    "separation",
+    "distillation",
+    "absorption",
+    "extraction",
+    "membrane",
+    "column",
+    "stage",
+    "purity"
+   ],
+   "topic": "chemical-engineering",
+   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
+   "related": []
+  },
+  {
+   "id": "cheme-thermodynamics",
+   "label": "Chemical Thermodynamics",
+   "desc": "Phase equilibrium, equations of state and reaction equilibrium for mixtures.",
+   "keywords": [
+    "thermodynamics",
+    "equilibrium",
+    "phase",
+    "fugacity",
+    "equation of state",
+    "activity",
+    "enthalpy",
+    "gibbs"
+   ],
+   "topic": "chemical-engineering",
+   "source": "chemical-engineering",
+   "source_topic": "chemical-engineering",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "chem-quantum-levels",
+   "concept": "chem-physical-chemistry",
+   "label": "Quantum Energy Level Calculator",
+   "desc": "Computes energy levels for model systems, checked against spectroscopic transitions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1116",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-rate-law",
+   "concept": "chem-physical-chemistry",
+   "label": "Rate Law Determination",
+   "desc": "Determines reaction order and rate constants from kinetic data, checked by linearized fits.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1110",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "chem-thermo-calc",
+   "concept": "chem-physical-chemistry",
+   "label": "Thermochemistry Calculator",
+   "desc": "Computes enthalpy, entropy and Gibbs energy changes, checked by Hess law consistency.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1112",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1111",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1117",
+     "role": "support"
+    }
+   ],
+   "source": "chemistry"
+  },
+  {
+   "id": "cheme-cost-estimate",
+   "concept": "cheme-process-design-safety",
+   "label": "Plant Cost Estimate",
+   "desc": "Estimates capital and operating cost and payback, checked against stated cost indices.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1104",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1103",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-hazop-review",
+   "concept": "cheme-process-design-safety",
+   "label": "HAZOP Review",
+   "desc": "Runs a guideword hazard and operability review of a node, checked for deviations, causes and safeguards.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1103",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1102",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-mass-energy-balance",
+   "concept": "cheme-process-design-safety",
+   "label": "Flowsheet Mass and Energy Balance",
+   "desc": "Solves mass and energy balances across a flowsheet, checked by overall closure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1104",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1107",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-catalyst-selectivity",
+   "concept": "cheme-reaction-engineering",
+   "label": "Catalyst and Selectivity Analysis",
+   "desc": "Analyses catalyst choice and selectivity for parallel reactions, checked against cited data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1108",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1103",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1107",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-kinetics-fit",
+   "concept": "cheme-reaction-engineering",
+   "label": "Kinetic Parameter Fitting",
+   "desc": "Fits rate laws and Arrhenius parameters to data, checked by residual analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1108",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1106",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-reactor-sizing",
+   "concept": "cheme-reaction-engineering",
+   "label": "Reactor Sizing",
+   "desc": "Sizes CSTR and plug flow reactors for target conversion, checked by mole balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1108",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1107",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-absorber-design",
+   "concept": "cheme-separations",
+   "label": "Absorber Design",
+   "desc": "Sizes an absorption column for a removal target, checked by operating line and equilibrium.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1106",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-distillation-design",
+   "concept": "cheme-separations",
+   "label": "Distillation Column Design",
+   "desc": "Determines stages and reflux with McCabe-Thiele or shortcut methods, checked by component balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1107",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-separation-choice",
+   "concept": "cheme-separations",
+   "label": "Separation Method Selection",
+   "desc": "Chooses a separation method from property differences, checked against selection heuristics.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1109",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1107",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-model-selection",
+   "concept": "cheme-thermodynamics",
+   "label": "Thermodynamic Model Selection",
+   "desc": "Selects a property model for a mixture, checked against polarity and pressure guidelines.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1107",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1104",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1109",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-reaction-equilibrium",
+   "concept": "cheme-thermodynamics",
+   "label": "Reaction Equilibrium Solver",
+   "desc": "Solves equilibrium conversion from Gibbs energy, checked by element balance.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1107",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1108",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  },
+  {
+   "id": "cheme-vle-calc",
+   "concept": "cheme-thermodynamics",
+   "label": "Vapor-Liquid Equilibrium Calculator",
+   "desc": "Computes bubble and dew points with activity or equation-of-state models, checked by data comparison.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1107",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1105",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1109",
+     "role": "support"
+    }
+   ],
+   "source": "chemical-engineering"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1102",
+   "name": "Process Control Engineer",
+   "legacy_key": "cheme-control",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1103",
+   "name": "Process Safety Reviewer",
+   "legacy_key": "cheme-safety",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1104",
+   "name": "Process Design Engineer",
+   "legacy_key": "cheme-design",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1105",
+   "name": "Mass and Energy Balance Checker",
+   "legacy_key": "cheme-balance",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1106",
+   "name": "Transport Phenomena Engineer",
+   "legacy_key": "cheme-transport",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1107",
+   "name": "Chemical Thermodynamics Analyst",
+   "legacy_key": "cheme-thermo",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1108",
+   "name": "Reaction Engineer",
+   "legacy_key": "cheme-reactor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1109",
+   "name": "Separations Process Engineer",
+   "legacy_key": "cheme-separations",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1110",
+   "name": "Analytical Chemist",
+   "legacy_key": "chem-analytical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1111",
+   "name": "Stoichiometry and Units Checker",
+   "legacy_key": "chem-checker",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1112",
+   "name": "Physical Chemist",
+   "legacy_key": "chem-physical",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1116",
+   "name": "Computational Chemist",
+   "legacy_key": "chem-computational",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1117",
+   "name": "Inorganic Chemist",
+   "legacy_key": "chem-inorganic",
+   "mcp": []
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "name": "SandboxAQ",
+   "desc": "Large Quantitative Models for scientific discovery",
+   "tools": [
+    "AQCat",
+    "AqpotencyPotency",
+    "AqpotencyScreen",
+    "AqpotencyScan",
+    "AqpotencySelectivity",
+    "Check_Job_Status",
+    "Check_Job_Results"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "171e28f5-9105-4a1b-8474-73a40df68cb6",
+   "origins": [
+    "chemistry",
+    "materials-science-and-engineering",
+    "physics",
+    "quantum-physics"
+   ]
+  },
+  {
+   "uuid": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "name": "SciSpace",
+   "desc": "Discover scientific research papers",
+   "tools": [
+    "search-papers",
+    "add-column"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "communication",
+    "comparative-studies-in-race-and-ethnicity",
+    "education",
+    "english",
+    "environmental-systems-engineering",
+    "history",
+    "linguistics",
+    "materials-science-and-engineering",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "sociology",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "name": "PubMed",
+   "desc": "Search biomedical literature from PubMed",
+   "tools": [
+    "search_articles",
+    "get_article_metadata",
+    "find_related_articles",
+    "lookup_article_by_citation",
+    "convert_article_ids",
+    "get_full_text_article",
+    "get_copyright_status"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "81cc5080-a204-4aa1-a694-fa868a3c8721",
+   "origins": [
+    "anthropology",
+    "bioengineering",
+    "biology",
+    "biomechanical-engineering",
+    "biomedical-computation",
+    "chemistry",
+    "community-health-and-prevention-research",
+    "human-biology",
+    "psychology"
+   ]
+  },
+  {
+   "uuid": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "name": "Wolfram",
+   "desc": "Inject precise, real-time computation and knowledge",
+   "tools": [
+    "WolframContext",
+    "WolframLanguageEvaluator",
+    "WolframAlpha"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-22)",
+   "id": "de1d1dc7-ec10-459d-b511-797982834b43",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "bioengineering",
+    "biomechanical-engineering",
+    "chemical-engineering",
+    "chemistry",
+    "civil-engineering",
+    "classical-physics",
+    "earth-systems",
+    "economics",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "environmental-systems-engineering",
+    "geophysics",
+    "management-science-and-engineering",
+    "materials-science-and-engineering",
+    "math",
+    "mathematical-and-computational-science",
+    "mechanical-engineering",
+    "physics",
+    "reasoning",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "name": "alphaXiv",
+   "desc": "Fast search and full-text access over arXiv pre-prints",
+   "tools": [
+    "answer_pdf_queries",
+    "get_paper_content",
+    "read_files_from_github",
+    "embedding_similarity_search",
+    "full_text_papers_search",
+    "agentic_paper_retrieval"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "fa0fb2e1-c3ba-4486-b576-0881432c5a4e",
+   "origins": [
+    "aeronautics-and-astronautics",
+    "applied-physics",
+    "atmosphere-energy",
+    "biomechanical-engineering",
+    "chemistry",
+    "computer-science",
+    "data-science",
+    "earth-systems",
+    "electrical-engineering",
+    "energy-science-and-engineering",
+    "engineering-physics",
+    "ethics-and-technology",
+    "geophysics",
+    "linguistics",
+    "materials-science-and-engineering",
+    "mathematical-and-computational-science",
+    "maxey0_base",
+    "physics",
+    "research",
+    "science-technology-and-society",
+    "symbolic-systems"
+   ]
+  },
+  {
+   "uuid": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "name": "Wiley Scholar Gateway",
+   "desc": "Enhance responses with scholarly research and citations",
+   "tools": [
+    "search_wiley_fulltext",
+    "getUsageLimit"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "ff091334-0f12-4d0e-a973-c00467dd3818",
+   "origins": [
+    "african-and-african-american-studies",
+    "african-studies",
+    "american-studies",
+    "anthropology",
+    "archaeology",
+    "art-history",
+    "asian-american-studies",
+    "chemical-engineering",
+    "chicana-o-latina-o-studies",
+    "china-studies",
+    "classics",
+    "communication",
+    "comparative-literature",
+    "comparative-studies-in-race-and-ethnicity",
+    "economics",
+    "education",
+    "english",
+    "ethics-and-technology",
+    "european-studies",
+    "feminist-gender-and-sexuality-studies",
+    "film-and-media-studies",
+    "french",
+    "german-studies",
+    "global-studies",
+    "history",
+    "human-rights",
+    "iberian-and-latin-american-cultures",
+    "international-relations",
+    "jewish-studies",
+    "knowledge",
+    "materials-science-and-engineering",
+    "music",
+    "philosophy",
+    "psychology",
+    "public-policy",
+    "religious-studies",
+    "research",
+    "science-technology-and-society",
+    "slavic-languages-and-literatures",
+    "sociology",
+    "spanish",
+    "theater-and-performance-studies"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "de1d1dc7-ec10-459d-b511-797982834b43",
+  "ff091334-0f12-4d0e-a973-c00467dd3818",
+  "43edc307-1d33-44f5-94a2-6e9c3e64a538",
+  "171e28f5-9105-4a1b-8474-73a40df68cb6",
+  "81cc5080-a204-4aa1-a694-fa868a3c8721",
+  "fa0fb2e1-c3ba-4486-b576-0881432c5a4e"
+ ],
+ "agent_mcp": [],
+ "lexicon": {
+  "cheme-thermodynamics": "thermodynamics equilibrium phase fugacity equation state activity enthalpy gibbs",
+  "cheme-reaction": "reactor kinetics rate law conversion cstr plug flow catalyst selectivity",
+  "cheme-transport": "transport heat transfer mass fluid diffusion exchanger viscosity momentum",
+  "cheme-separations": "separation distillation absorption extraction membrane column stage purity",
+  "cheme-process": "control dynamics feedback pid function stability tuning setpoint",
+  "cheme-processdesig": "process design flowsheet economics cost hazard hazop safety sustainability",
+  "chem-organic": "organic functional group mechanism synthesis stereochemistry nucleophile carbonyl retrosynthesis",
+  "chem-inorganic": "inorganic coordination ligand transition metal crystal field oxidation state solid periodic",
+  "chem-physical": "physical thermodynamics kinetics quantum spectroscopy rate constant entropy equilibrium",
+  "chem-analytical": "analytical chromatography mass spectrometry nmr calibration titration detection limit spectrum",
+  "chem-computational": "computational dft molecular dynamics cheminformatics basis set conformer simulation property",
+  "chem-biochemistry": "biochemistry enzyme protein metabolism nucleic acid michaelis buffer lipid"
+ },
+ "sources": [
+  "chemical-engineering",
+  "chemistry"
+ ]
+}

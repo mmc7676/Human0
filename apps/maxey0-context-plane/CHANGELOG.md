@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.4.1 - Prefederation — 2026-11-27
+
+- **The Context Plane is SCW3.** The Maxey0 workspace numbers the SCWs under SCW0 as SCW1 Space-at-Scale App + Agents, SCW2 Space-at-Scale MCP Server, SCW3 Maxey0 Context Plane Graph + Server and SCW4 WFM-Specialty App. This app used the name SCW1, which belongs to Space at Scale, so every name now says SCW3:
+  - the folder `SCW1/` is now `SCW3/`, with `scw3.graph.json` and `scw3.manifest.json`;
+  - the builder is `tools/build_scw3.py`, and the bundle is `server/src/scw3.bundle.json`;
+  - the graph, harness and manifest records say `"scw": "SCW3"`, and the schemas are `maxey0.scw3-graph/3` and `maxey0.scw3-ontology/3`. The graph app accepts both `scw1-graph` and `scw3-graph`;
+  - the server's instructions, the snapshot resource, the docs, the plugin skills and the tests use the new name.
+- **Line endings.** The repository's `.gitattributes` keeps `SCW3/skills/**/SKILL.md` LF on every checkout. On Windows, Git had checked these files out with CRLF, so their hash no longer matched the bundle and the runnable-skills test failed.
+- No change to the map itself: 12 domains, 149 topics, 844 concepts, 2,845 skills (3 runnable), 1,064 agents, 116 MCP servers, 562 links. The snapshot digest changes because the SCW name is part of the hashed records.
+- `ontology/maxey0-context-plane.owl.ttl` is an older export and keeps the schema name it was built from. `tools/owl/build_owl.py` now reads `SCW3/scw3.graph.json`.
+
 ## v1.4.0 - Prefederation — 2026-11-27
 - **Runnable skills.** A skill can now be a real Agent Skill: `SCW1/skills/<id>/SKILL.md`, with frontmatter (`name`, `description`, and `metadata` naming its concept and its MaxeyN agents) and a body of steps, checks and sources. The build checks each file strictly and adds it as a skill of the concept it names; `get_skill` returns the whole file as `skill_md` with `runnable: true`, routes to it are marked `runnable`, and the totals count `runnable_skills`.
 - **First three**, each built from the current docs and reviewed by an independent checker before release:

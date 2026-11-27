@@ -1,0 +1,1459 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-models-and-pricing",
+  "label": "Claude Models and Pricing",
+  "desc": "Claude Models and Pricing: Claude Fable and Mythos, Claude Haiku, Claude Opus, Claude Sonnet and Pricing, choosing and deprecations."
+ },
+ "concepts": [
+  {
+   "id": "cmp-claude-fable-and-mythos",
+   "label": "Claude Fable and Mythos",
+   "desc": "Claude Fable and Mythos: Claude Fable 5, Claude Fable 5.1, Claude Fable 5.2, Claude Mythos 5, Claude Mythos 5.1, Claude Mythos 5.2, Migration guide, What's new.",
+   "keywords": [
+    "fable",
+    "mytho",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models-and-pricing",
+   "source": "claude-models-and-pricing",
+   "source_topic": "claude-models-and-pricing",
+   "related": []
+  },
+  {
+   "id": "cmp-claude-haiku",
+   "label": "Claude Haiku",
+   "desc": "Claude Haiku: Claude Haiku 4.5, Claude Haiku 5.5, Migration guide, What's new.",
+   "keywords": [
+    "haiku",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models-and-pricing",
+   "source": "claude-models-and-pricing",
+   "source_topic": "claude-models-and-pricing",
+   "related": []
+  },
+  {
+   "id": "cmp-claude-opus",
+   "label": "Claude Opus",
+   "desc": "Claude Opus: Claude Opus 4.5, Claude Opus 4.6, Claude Opus 4.7, Claude Opus 4.8, Claude Opus 5, Claude Opus 5.5, Migration guide, What's new.",
+   "keywords": [
+    "opu",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models-and-pricing",
+   "source": "claude-models-and-pricing",
+   "source_topic": "claude-models-and-pricing",
+   "related": []
+  },
+  {
+   "id": "cmp-claude-sonnet",
+   "label": "Claude Sonnet",
+   "desc": "Claude Sonnet: Claude Sonnet 4.5, Claude Sonnet 4.6, Claude Sonnet 5, Claude Sonnet 5.5, Migration guide, What's new.",
+   "keywords": [
+    "sonnet",
+    "migration",
+    "guide",
+    "what"
+   ],
+   "topic": "claude-models-and-pricing",
+   "source": "claude-models-and-pricing",
+   "source_topic": "claude-models-and-pricing",
+   "related": []
+  },
+  {
+   "id": "cmp-pricing-choosing-and-deprecations",
+   "label": "Pricing, choosing and deprecations",
+   "desc": "Pricing, choosing and deprecations: Model cards, Models overview, Overview: System prompts, API credits for subscribers, Choosing a model, Claude Fable 5, Claude Fable 5.1, Claude Fable 5.2, Claude Haiku 3, Claude Haiku 3.5, Claude Haiku 4.5, Claude Haiku 5.5 and 21 more.",
+   "keywords": [
+    "pricing",
+    "choosing",
+    "deprecation",
+    "opu",
+    "sonnet",
+    "model"
+   ],
+   "topic": "claude-models-and-pricing",
+   "source": "claude-models-and-pricing",
+   "source_topic": "claude-models-and-pricing",
+   "related": [
+    "cpe-prompt-engineering"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "cmp-claude-fable-5",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Claude Fable 5",
+   "desc": "\"Claude Fable 5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Fable 5 is a legacy model, and Claude Fable 5.2 is the current Fable model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-fable-5-1",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Claude Fable 5.1",
+   "desc": "\"Claude Fable 5.1 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Fable 5.1 is a legacy model, and Claude Fable 5.2 is the current Fable model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-fable-5-2",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Claude Fable 5.2",
+   "desc": "\"An overview of Claude Fable 5.2: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and resources for building with it.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-mythos-5",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Claude Mythos 5",
+   "desc": "\"Claude Mythos 5 reference: the same model as Claude Fable 5, offered for defensive cybersecurity work to organizations verified through Anthropic's verification programs. Model IDs, specifications, pricing, and migration resources. Claude Mythos 5.2 is the current Mythos model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-mythos-5-1",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Claude Mythos 5.1",
+   "desc": "\"Claude Mythos 5.1 reference: the same model as Claude Fable 5.1, available only to organizations verified through Anthropic's verification programs. Model IDs, specifications, pricing, and migration resources. Claude Mythos 5.2 is the current Mythos model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-mythos-5-2",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Claude Mythos 5.2",
+   "desc": "Claude Mythos 5.2 is the same model as Claude Fable 5.2, available only to organizations verified through Anthropic's verification programs. Model IDs, specifications, pricing, and how to request access.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-migration-guide",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "Migration guide",
+   "desc": "Switch to Claude Fable 5.2 and Claude Mythos 5.2 from Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, or an earlier Claude Fable, Claude Mythos, or Claude Opus model with this migration guide. The guidance to enable Claude Fable 5.2 and Claude Mythos 5.2 includes model IDs, breaking changes, and migration checklists.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-what-s-new",
+   "concept": "cmp-claude-fable-and-mythos",
+   "label": "What's new",
+   "desc": "Breaking changes, feature support, pricing, and availability for Claude Fable 5.2 and Claude Mythos 5.2, compared with Claude Fable 5.1 and Claude Mythos 5.1.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-haiku-4-5",
+   "concept": "cmp-claude-haiku",
+   "label": "Claude Haiku 4.5",
+   "desc": "\"Claude Haiku 4.5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Haiku 4.5 is a legacy model; Claude Haiku 5.5 is the current Haiku model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-haiku-5-5",
+   "concept": "cmp-claude-haiku",
+   "label": "Claude Haiku 5.5",
+   "desc": "\"An overview of Claude Haiku 5.5: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and the guides and resources for building with it.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-migration-guide-2",
+   "concept": "cmp-claude-haiku",
+   "label": "Migration guide",
+   "desc": "Switch to Claude Haiku 5.5 from earlier Haiku models with this migration guide. The guidance to enable Claude Haiku 5.5 includes the new model ID, settings that return errors, thinking changes, and a checklist for each starting model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-what-s-new-2",
+   "concept": "cmp-claude-haiku",
+   "label": "What's new",
+   "desc": "Overview of new capabilities, breaking changes, and behavior changes in Claude Haiku 5.5, with a link to each feature's guide and to the migration guide for code changes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-5",
+   "concept": "cmp-claude-opus",
+   "label": "Claude Opus 4.5",
+   "desc": "\"Claude Opus 4.5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.5 is a deprecated model on the Claude API; Claude Opus 5.5 is the current Opus model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-6",
+   "concept": "cmp-claude-opus",
+   "label": "Claude Opus 4.6",
+   "desc": "\"Claude Opus 4.6 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.6 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-7",
+   "concept": "cmp-claude-opus",
+   "label": "Claude Opus 4.7",
+   "desc": "\"Claude Opus 4.7 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.7 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-8",
+   "concept": "cmp-claude-opus",
+   "label": "Claude Opus 4.8",
+   "desc": "\"Claude Opus 4.8 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.8 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-5",
+   "concept": "cmp-claude-opus",
+   "label": "Claude Opus 5",
+   "desc": "\"Claude Opus 5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 5 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-5-5",
+   "concept": "cmp-claude-opus",
+   "label": "Claude Opus 5.5",
+   "desc": "\"An overview of Claude Opus 5.5: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and the guides and resources for building with it.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-migration-guide-3",
+   "concept": "cmp-claude-opus",
+   "label": "Migration guide",
+   "desc": "Switch to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5 with this migration guide. The guidance to enable Claude Opus 5.5 includes request settings that return errors, thinking blocks in every response, and a checklist for each starting model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-what-s-new-3",
+   "concept": "cmp-claude-opus",
+   "label": "What's new",
+   "desc": "Overview of breaking changes, feature support, and behavior differences in Claude Opus 5.5.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-4-5",
+   "concept": "cmp-claude-sonnet",
+   "label": "Claude Sonnet 4.5",
+   "desc": "\"Claude Sonnet 4.5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Sonnet 4.5 is a deprecated model; Claude Sonnet 5.5 is the current Sonnet model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-4-6",
+   "concept": "cmp-claude-sonnet",
+   "label": "Claude Sonnet 4.6",
+   "desc": "\"Claude Sonnet 4.6 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Sonnet 4.6 is a legacy model; Claude Sonnet 5.5 is the current Sonnet model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-5",
+   "concept": "cmp-claude-sonnet",
+   "label": "Claude Sonnet 5",
+   "desc": "\"Claude Sonnet 5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Sonnet 5 is a legacy model; Claude Sonnet 5.5 is the current Sonnet model.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-5-5",
+   "concept": "cmp-claude-sonnet",
+   "label": "Claude Sonnet 5.5",
+   "desc": "\"An overview of Claude Sonnet 5.5: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and the guides and resources for building with it.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-migration-guide-4",
+   "concept": "cmp-claude-sonnet",
+   "label": "Migration guide",
+   "desc": "Switch to Claude Sonnet 5.5 from earlier Sonnet models or Claude Haiku 4.5 with this migration guide. The guidance to enable Claude Sonnet 5.5 includes settings that return errors, thinking changes, and a checklist for each starting model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-what-s-new-4",
+   "concept": "cmp-claude-sonnet",
+   "label": "What's new",
+   "desc": "\"What changes when you move from Claude Sonnet 5 to Claude Sonnet 5.5: breaking changes, feature support, behavior differences, pricing, and availability.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-api-credits-for-subscribers",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "API credits for subscribers",
+   "desc": "Claim the monthly Claude Platform credits included with Claude Max, Ultra, and Team plans, and learn what they cover.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-choosing-a-model",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Choosing a model",
+   "desc": "Choosing a Claude model means balancing capabilities, speed, and cost. This guide covers the questions to ask, two ways to pick a starting model, and how to test the choice.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-fable-5-1-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Fable 5.1",
+   "desc": "See updates to the core system prompt for Claude Fable 5.1 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-fable-5-2-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Fable 5.2",
+   "desc": "See updates to the core system prompt for Claude Fable 5.2 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-fable-5-3",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Fable 5",
+   "desc": "See updates to the core system prompt for Claude Fable 5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-haiku-3",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Haiku 3",
+   "desc": "See updates to the core system prompt for Claude Haiku 3 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-haiku-3-5",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Haiku 3.5",
+   "desc": "See updates to the core system prompt for Claude Haiku 3.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-haiku-4-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Haiku 4.5",
+   "desc": "See updates to the core system prompt for Claude Haiku 4.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-haiku-5-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Haiku 5.5",
+   "desc": "See updates to the core system prompt for Claude Haiku 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-3",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 3",
+   "desc": "See updates to the core system prompt for Claude Opus 3 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 4",
+   "desc": "See updates to the core system prompt for Claude Opus 4 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-1",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 4.1",
+   "desc": "See updates to the core system prompt for Claude Opus 4.1 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 4.5",
+   "desc": "See updates to the core system prompt for Claude Opus 4.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-6-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 4.6",
+   "desc": "See updates to the core system prompt for Claude Opus 4.6 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-7-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 4.7",
+   "desc": "See updates to the core system prompt for Claude Opus 4.7 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-4-8-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 4.8",
+   "desc": "See updates to the core system prompt for Claude Opus 4.8 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 5",
+   "desc": "See updates to the core system prompt for Claude Opus 5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-opus-5-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Opus 5.5",
+   "desc": "See updates to the core system prompt for Claude Opus 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-3-5",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 3.5",
+   "desc": "See updates to the core system prompt for Claude Sonnet 3.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-3-7",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 3.7",
+   "desc": "See updates to the core system prompt for Claude Sonnet 3.7 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-4",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 4",
+   "desc": "See updates to the core system prompt for Claude Sonnet 4 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-4-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 4.5",
+   "desc": "See updates to the core system prompt for Claude Sonnet 4.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-4-6-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 4.6",
+   "desc": "See updates to the core system prompt for Claude Sonnet 4.6 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 5",
+   "desc": "See updates to the core system prompt for Claude Sonnet 5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-claude-sonnet-5-5-2",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Claude Sonnet 5.5",
+   "desc": "See updates to the core system prompt for Claude Sonnet 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-model-cards",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Model cards",
+   "desc": "Model cards with detailed documentation for Claude models.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-model-deprecations",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Model deprecations",
+   "desc": "See which Claude models are active, deprecated, or retired, and find retirement dates and recommended replacements for models and API parameters.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-model-ids-and-versioning",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Model IDs and versioning",
+   "desc": "How Claude model IDs are structured and versioned, including the dateless format introduced with the Claude 4.6 generation and what it means for stability.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-models-overview",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Models overview",
+   "desc": "Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their performance.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-optimizing-for-cost-and-intelligence",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Optimizing for cost and intelligence",
+   "desc": "Balance cost and intelligence on the Claude Platform, with measured results for prompt caching, effort, model choice, output caps, and multimodel strategies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-overview-system-prompts",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Overview: System prompts",
+   "desc": "See updates to the core system prompts on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-pricing",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Pricing",
+   "desc": "Learn about Anthropic's pricing structure for models and features",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  },
+  {
+   "id": "cmp-upgrade-between-model-versions",
+   "concept": "cmp-pricing-choosing-and-deprecations",
+   "label": "Upgrade between model versions",
+   "desc": "Guides for migrating to the latest Claude models from previous Claude versions",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1795",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1796",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-models-and-pricing"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1795",
+   "name": "Claude Models and Pricing Specialist",
+   "legacy_key": "claude-models-and-pricing-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1796",
+   "name": "Claude Models and Pricing Reviewer",
+   "legacy_key": "claude-models-and-pricing-reviewer",
+   "mcp": [
+    "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "name": "Claude Platform Docs",
+   "desc": "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   "tools": [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27",
+   "id": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "origins": [
+    "claude-api-messages-tools-and-agent-skills",
+    "claude-api-reference",
+    "claude-managed-agents",
+    "claude-models-and-pricing",
+    "claude-platform-administration",
+    "claude-sdks-cli-and-libraries",
+    "prompting-evaluation-and-claude-api-guidance"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1796",
+   "mcp": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "topic": "claude-models-and-pricing",
+   "score": 0.1262,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-models-and-pricing"
+  }
+ ],
+ "lexicon": {
+  "fablemytho": "mytho fable migration guide",
+  "pricingchoosing": "opu sonnet model haiku choosing deprecation"
+ },
+ "sources": [
+  "claude-models-and-pricing"
+ ]
+}

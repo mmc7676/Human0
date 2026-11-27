@@ -1,0 +1,1231 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-code-getting-started-and-everyday-use",
+  "label": "Claude Code: Getting Started and Everyday Use",
+  "desc": "Claude Code: Getting Started and Everyday Use: Getting started (Claude Code), Core concepts (Claude Code), Use Claude Code, Platforms and integrations, Claude Code in the cloud, Claude Code on desktop, Code review and pull requests and Run Claude in your own CI."
+ },
+ "concepts": [
+  {
+   "id": "ccuse-claude-code-in-the-cloud",
+   "label": "Claude Code in the cloud",
+   "desc": "Claude Code in the cloud: Get started with Claude Code in the cloud, Use Claude Code in the cloud, Automate work with scheduled tasks.",
+   "keywords": [
+    "code",
+    "cloud",
+    "get",
+    "started",
+    "automate",
+    "work"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": []
+  },
+  {
+   "id": "ccuse-claude-code-on-desktop",
+   "label": "Claude Code on desktop",
+   "desc": "Claude Code on desktop: Get started with the desktop app, Desktop application, Claude Desktop on Linux (beta), Claude Code Desktop in WSL, Schedule recurring tasks in Claude Code Desktop, Test iOS apps in the simulator.",
+   "keywords": [
+    "code",
+    "desktop",
+    "app",
+    "get",
+    "started",
+    "application"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": []
+  },
+  {
+   "id": "ccuse-code-review-and-pull-requests",
+   "label": "Code review and pull requests",
+   "desc": "Code review and pull requests: Review locally with /code-review, Find bugs with ultrareview, Claude Code with GitHub Enterprise Server, Code Review, Set up Code Review, Customize Code Review, Read and request reviews on a pull request, Code Review costs and usage, Troubleshoot Code Review, Catch security issues as Claude writes code, Scan your codebase for vulnerabilities.",
+   "keywords": [
+    "code",
+    "review",
+    "pull",
+    "request",
+    "locally",
+    "find"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": []
+  },
+  {
+   "id": "ccuse-core-concepts-claude-code",
+   "label": "Core concepts (Claude Code)",
+   "desc": "Core concepts (Claude Code): How Claude Code works, Extend Claude Code, Explore the .claude directory, Explore the context window, How Claude Code uses prompt caching.",
+   "keywords": [
+    "core",
+    "concept",
+    "code",
+    "how",
+    "explore",
+    "work"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": [
+    "casdk-core-concepts-agent-sdk"
+   ]
+  },
+  {
+   "id": "ccuse-getting-started-claude-code",
+   "label": "Getting started (Claude Code)",
+   "desc": "Getting started (Claude Code): Overview, Quickstart, Claude Code changelog.",
+   "keywords": [
+    "getting",
+    "started",
+    "code",
+    "quickstart",
+    "changelog"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": [
+    "capi-getting-started-claude-api",
+    "cma-get-started"
+   ]
+  },
+  {
+   "id": "ccuse-platforms-and-integrations",
+   "label": "Platforms and integrations",
+   "desc": "Platforms and integrations: Platforms and integrations, Continue local sessions from any device with Remote Control, Let Claude coordinate ongoing work with Projects, Claude Code on mobile, Use Claude Code with Chrome, Let Claude use your computer from the CLI, Use Claude Code in VS Code, JetBrains IDEs, Claude Code in Slack, Claude Tag.",
+   "keywords": [
+    "platform",
+    "integration",
+    "code",
+    "let",
+    "continue",
+    "local"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": []
+  },
+  {
+   "id": "ccuse-run-claude-in-your-own-ci",
+   "label": "Run Claude in your own CI",
+   "desc": "Run Claude in your own CI: Claude Code GitHub Actions, Use Claude Code GitHub Actions with cloud providers, Claude Code GitLab CI/CD.",
+   "keywords": [
+    "run",
+    "your",
+    "own",
+    "code",
+    "github",
+    "action"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": []
+  },
+  {
+   "id": "ccuse-use-claude-code",
+   "label": "Use Claude Code",
+   "desc": "Use Claude Code: How Claude remembers your project, Manage sessions, Common workflows, Prompt library, Best practices for Claude Code.",
+   "keywords": [
+    "code",
+    "how",
+    "remember",
+    "your",
+    "project",
+    "manage"
+   ],
+   "topic": "claude-code-getting-started-and-everyday-use",
+   "source": "claude-code-getting-started-and-everyday-use",
+   "source_topic": "claude-code-getting-started-and-everyday-use",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ccuse-automate-work-with-scheduled-tasks",
+   "concept": "ccuse-claude-code-in-the-cloud",
+   "label": "Automate work with scheduled tasks",
+   "desc": "Put Claude Code on autopilot. Create scheduled tasks, formerly routines, that run in the cloud on a schedule, on API calls, or on GitHub events.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-get-started-with-claude-code-in-the-cloud",
+   "concept": "ccuse-claude-code-in-the-cloud",
+   "label": "Get started with Claude Code in the cloud",
+   "desc": "Run Claude Code in the cloud from your browser or phone. Connect a GitHub repository, submit a task, and review the PR without local setup.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-use-claude-code-in-the-cloud",
+   "concept": "ccuse-claude-code-in-the-cloud",
+   "label": "Use Claude Code in the cloud",
+   "desc": "Run Claude Code sessions in the cloud from your browser, phone, Desktop app, or terminal, move them with --cloud and --teleport, and auto-fix pull requests.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-desktop-in-wsl",
+   "concept": "ccuse-claude-code-on-desktop",
+   "label": "Claude Code Desktop in WSL",
+   "desc": "Run Code sessions inside a WSL 2 distribution on Windows",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-desktop-on-linux-beta",
+   "concept": "ccuse-claude-code-on-desktop",
+   "label": "Claude Desktop on Linux (beta)",
+   "desc": "Install and update the Claude desktop app on Ubuntu and Debian",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-desktop-application",
+   "concept": "ccuse-claude-code-on-desktop",
+   "label": "Desktop application",
+   "desc": "Get more out of Claude Code Desktop: parallel sessions with Git isolation, drag-and-drop pane layout, integrated terminal and file editor, side chats, computer use, Dispatch sessions from your phone, visual diff review, app previews, PR monitoring, connectors, and enterprise configuration.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-get-started-with-the-desktop-app",
+   "concept": "ccuse-claude-code-on-desktop",
+   "label": "Get started with the desktop app",
+   "desc": "Install the Claude desktop app, open the Code tab, and start your first Claude Code session on a project folder on your computer.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-schedule-recurring-tasks-in-claude-code-desktop",
+   "concept": "ccuse-claude-code-on-desktop",
+   "label": "Schedule recurring tasks in Claude Code Desktop",
+   "desc": "Set up scheduled tasks in Claude Code Desktop to run Claude automatically on a recurring basis for daily code reviews, dependency audits, or morning briefings.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-test-ios-apps-in-the-simulator",
+   "concept": "ccuse-claude-code-on-desktop",
+   "label": "Test iOS apps in the simulator",
+   "desc": "Claude Code Desktop opens your app in the iOS Simulator pane when Claude builds, runs, or checks it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-catch-security-issues-as-claude-writes-code",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Catch security issues as Claude writes code",
+   "desc": "Install the security-guidance plugin to have Claude review its own code changes for vulnerabilities and fix them in the same session.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-with-github-enterprise-server",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Claude Code with GitHub Enterprise Server",
+   "desc": "Connect Claude Code to your self-hosted GitHub Enterprise Server instance for cloud sessions, code review, and plugin marketplaces.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-code-review",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Code Review",
+   "desc": "Catch bugs in GitHub pull requests with Code Review: Claude reviews each change, verifies its findings, and comments inline. For Team and Enterprise plans",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-code-review-costs-and-usage",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Code Review costs and usage",
+   "desc": "Estimate and cap what your organization spends on Claude Code Review: how reviews are billed through usage credits, what drives cost, and where to track usage.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-customize-code-review",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Customize Code Review",
+   "desc": "Tune what Code Review flags on your pull requests with REVIEW.md and CLAUDE.md: recalibrate severity, skip paths, add checks, and see which copy applies.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-find-bugs-with-ultrareview",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Find bugs with ultrareview",
+   "desc": "Run a deep, multi-agent code review in the cloud with /code-review ultra to find and verify bugs before you merge.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-read-and-request-reviews-on-a-pull-request",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Read and request reviews on a pull request",
+   "desc": "Read Code Review findings on your GitHub pull request, respond to or dismiss them, and request a review with @claude review.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-review-a-pull-request-for-security-bugs",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Review a pull request for security bugs",
+   "desc": "Reviews a pull request for security bugs with Claude Code. It checks out the pull request's branch, runs the built-in /security-review command for a quick pass or the Claude Security plugin for a scan whose findings are independently verified, and reports each finding with its file, line, severity, exploit scenario and fix. Use when asked to review a pull request, PR, branch or diff for security bugs, vulnerabilities, injection, authentication or authorization issues, or data exposure.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "skill_md",
+   "skill_md": {
+    "path": "SCW3/skills/ccuse-review-a-pull-request-for-security-bugs/SKILL.md",
+    "sha256": "dac0a5e2013e63dd4371d91dc8a769a325e624cac47e9ab18d0af069dd3391e5",
+    "name": "ccuse-review-a-pull-request-for-security-bugs",
+    "description": "Reviews a pull request for security bugs with Claude Code. It checks out the pull request's branch, runs the built-in /security-review command for a quick pass or the Claude Security plugin for a scan whose findings are independently verified, and reports each finding with its file, line, severity, exploit scenario and fix. Use when asked to review a pull request, PR, branch or diff for security bugs, vulnerabilities, injection, authentication or authorization issues, or data exposure.",
+    "body": "# Review a pull request for security bugs\n\nRun this in Claude Code, in a local clone of the repository that holds the pull request. Scan only code that you own or have permission to test.\n\n## Inputs\n\n- **Repository:** a local clone with an `origin` remote.\n- **Pull request:** its branch name, such as `feature-auth`, or its number when it comes from a fork, and its base branch.\n- **Depth:** `quick` (the built-in `/security-review` command) or `verified` (the Claude Security plugin). Use `verified` when the change touches sign-in, permissions, input parsing, file or network access, cryptography or secrets, and before a release.\n\n## Steps\n\n1. **Put your own work aside.** Run `git status`. If it lists uncommitted changes, commit them or run `git stash -u`, and note which branch you were on so you can go back to it afterwards.\n2. **Check out the pull request.** Run `git fetch origin`, then `git checkout <branch>` with the pull request's branch name. For a pull request from a fork, run `gh pr checkout <number>` with the GitHub CLI instead.\n3. **Make sure `origin/HEAD` exists.** `/security-review` diffs your branch against `origin/HEAD`, the ref that records origin's default branch. If the review stops with `fatal: ambiguous argument 'origin/HEAD...'`, run `git fetch origin` and then `git remote set-head origin --auto`. If that fails with `error: Cannot determine remote HEAD`, name the default branch instead: `git remote set-head origin <default-branch>`. If it fails with `error: Not a valid ref`, as in a single-branch clone, fetch the default branch first: `git remote set-branches --add origin <default-branch>`, then `git fetch origin`, then run the set-head command again.\n4. **Quick pass.** Start Claude Code with `claude` in the repository and run `/security-review`. It analyzes the changes on the current branch against origin's default branch and identifies risks such as injection, authentication issues and data exposure. When the pull request targets a base other than the default branch, that diff isn't the pull request's diff: compare the findings with `git diff --name-only <base-branch>...HEAD`, or use the verified pass.\n5. **Verified pass** (when the depth is `verified`):\n   1. Check the prerequisites: a paid plan, Anthropic API access or a third-party provider; Python 3.9 or later on `PATH` as `python3` (check with `python3 --version`); Git.\n   2. Install the plugin once, at the Claude Code prompt: `/plugin install claude-security@claude-plugins-official`, and choose user scope to have it in every project.\n   3. Make sure the edits you want scanned are committed and nothing else is left uncommitted (`git status`). A change scan reads commits, not uncommitted edits.\n   4. Run `/claude-security scan my branch`. For a deeper pass run `/claude-security scan my branch at high`. `/claude-security scan my branch --change-scan-effort high` is the most thorough change scan; it costs several times as much and also lists vulnerabilities older than the change.\n   5. Read the results in the `CLAUDE-SECURITY-<timestamp>/` directory in the folder where Claude Code started: `CLAUDE-SECURITY-RESULTS.md` (each finding's ID such as `F1`, impact, exploit scenario, severity, confidence and recommendation), `CLAUDE-SECURITY-RESULTS.jsonl`, `CLAUDE-SECURITY-RESULTS.sarif` and `CLAUDE-SECURITY-REVISION-<commit>.json`.\n6. **Report.** For each finding give its ID, file and line, severity, confidence, exploit scenario and the fix. Name the tool that produced it. Say what was not examined: the plugin report's coverage section states this. No findings is a result, not proof that the change is safe: scans are nondeterministic, and two scans of the same code can surface different findings.\n7. **Fixes, only on request.** Patches are never applied automatically. Ask the plugin to \"fix finding F3\" or pick **Suggest patches** from the `/claude-security` menu. Each patch is written to the report's `patches/` folder as `F<n>.patch` with a note; apply one from the repository root with `git apply`, in its own pull request. Run `git status` when a patch job ends.\n8. **Restore your work.** Run `git checkout` with the branch you were on, then `git stash pop` if you stashed in step 1.\n\n## Check (checker role)\n\n- The scanned commit is the pull request's head: the commit in the name `CLAUDE-SECURITY-REVISION-<commit>.json` matches the start of `git rev-parse HEAD`. A scan outside version control stamps `UNVERSIONED` in its place, which means it didn't scan a commit at all.\n- Every finding points to a file and line in the pull request's diff, or is marked as older than the change.\n- The report says which depth ran and what was not examined.\n\n## Boundaries\n\n- Posting review comments on the pull request, pushing fixes or applying patches needs the user's yes.\n- In CI, the plugin's GitHub Actions job can scan each pull request, post a review and block the merge. Use it only in a repository where you trust everyone who can push: anyone who adds text or code to a pull request's branch can steer the scan. In a public repository its review can disclose a live vulnerability, so scan in a session instead.\n\n## Sources\n\nRead on November 27, 2026:\n\n- https://code.claude.com/docs/en/commands (the `/security-review` row)\n- https://code.claude.com/docs/en/errors (`/security-review` fails without `origin/HEAD`, including the single-branch fix)\n- https://code.claude.com/docs/en/claude-security (prerequisites, install, change scans, scan effort, results, fixes, GitHub Actions, the revision stamp)\n- `gh pr checkout --help` from the GitHub CLI (checking out a pull request by number)"
+   }
+  },
+  {
+   "id": "ccuse-review-locally-with-code-review",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Review locally with /code-review",
+   "desc": "Run /code-review in a Claude Code session to find bugs in your branch's changes, point the review at a pull request or path, and have Claude apply the fixes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-scan-your-codebase-for-vulnerabilities",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Scan your codebase for vulnerabilities",
+   "desc": "Install the Claude Security plugin to scan your codebase for vulnerabilities in a Claude Code session and turn findings into patches you review and apply.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-set-up-code-review",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Set up Code Review",
+   "desc": "Turn on Code Review for your Claude organization: connect GitHub, install the Claude GitHub App, choose repositories, and set when reviews run",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-troubleshoot-code-review",
+   "concept": "ccuse-code-review-and-pull-requests",
+   "label": "Troubleshoot Code Review",
+   "desc": "Fix a Code Review that didn't start, failed, or was skipped for budget, find missing findings, and resolve setup and REVIEW.md problems.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-explore-the-claude-directory",
+   "concept": "ccuse-core-concepts-claude-code",
+   "label": "Explore the .claude directory",
+   "desc": "Where Claude Code reads CLAUDE.md, settings.json, hooks, skills, commands, subagents, workflows, rules, and auto memory. Explore the .claude directory in your project and ~/.claude in your home directory.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-explore-the-context-window",
+   "concept": "ccuse-core-concepts-claude-code",
+   "label": "Explore the context window",
+   "desc": "An interactive simulation of how Claude Code's context window fills during a session. See what loads automatically, what each file read costs, and when rules and hooks fire.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-extend-claude-code",
+   "concept": "ccuse-core-concepts-claude-code",
+   "label": "Extend Claude Code",
+   "desc": "Understand when to use CLAUDE.md, Skills, subagents, hooks, MCP, and plugins.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-how-claude-code-uses-prompt-caching",
+   "concept": "ccuse-core-concepts-claude-code",
+   "label": "How Claude Code uses prompt caching",
+   "desc": "See why a model switch triggers a slow uncached turn in Claude Code, what /compact costs, and how to check your prompt cache hit rate.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-how-claude-code-works",
+   "concept": "ccuse-core-concepts-claude-code",
+   "label": "How Claude Code works",
+   "desc": "Understand the agentic loop, built-in tools, and how Claude Code interacts with your project.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-changelog",
+   "concept": "ccuse-getting-started-claude-code",
+   "label": "Claude Code changelog",
+   "desc": "Release notes for Claude Code, including new features, improvements, and bug fixes by version.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-overview",
+   "concept": "ccuse-getting-started-claude-code",
+   "label": "Overview",
+   "desc": "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Available in your terminal, IDE, desktop app, and browser.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-quickstart",
+   "concept": "ccuse-getting-started-claude-code",
+   "label": "Quickstart",
+   "desc": "Install Claude Code in your terminal, sign in, and use the CLI to explore your codebase and make your first code change.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-in-slack",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Claude Code in Slack",
+   "desc": "What to use in place of the earlier Claude Code in Slack, on Team, Enterprise, Pro, Max, and Ultra plans.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-on-mobile",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Claude Code on mobile",
+   "desc": "Start, monitor, and steer Claude Code tasks from your phone with the Claude app for iOS and Android.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-tag",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Claude Tag",
+   "desc": "Bring Claude into your team's Slack channels with Claude Tag and find its setup and usage documentation on claude.com.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-continue-local-sessions-from-any-device-with-remote-control",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Continue local sessions from any device with Remote Control",
+   "desc": "Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-jetbrains-ides",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "JetBrains IDEs",
+   "desc": "Use Claude Code with JetBrains IDEs including IntelliJ, PyCharm, WebStorm, and more",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-let-claude-coordinate-ongoing-work-with-projects",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Let Claude coordinate ongoing work with Projects",
+   "desc": "Hand Claude a stream of related tasks in one conversation and let it run them as parallel cloud sessions that share repositories, instructions, and memory.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-let-claude-use-your-computer-from-the-cli",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Let Claude use your computer from the CLI",
+   "desc": "Enable computer use in the Claude Code CLI so Claude can open apps, click, type, and see your screen on macOS. Test native apps, debug visual issues, and automate GUI-only tools without leaving your terminal.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-platforms-and-integrations-2",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Platforms and integrations",
+   "desc": "Choose where to run Claude Code and what to connect it to. Compare the CLI, Desktop, VS Code, JetBrains, web, mobile, and integrations like Chrome, Slack, and CI/CD.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-use-claude-code-in-vs-code",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Use Claude Code in VS Code",
+   "desc": "Install and configure the Claude Code extension for VS Code. Get AI coding assistance with inline diffs, @-mentions, plan review, and keyboard shortcuts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-use-claude-code-with-chrome",
+   "concept": "ccuse-platforms-and-integrations",
+   "label": "Use Claude Code with Chrome",
+   "desc": "Connect Claude Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-github-actions",
+   "concept": "ccuse-run-claude-in-your-own-ci",
+   "label": "Claude Code GitHub Actions",
+   "desc": "Run Claude Code in GitHub Actions workflows to respond to @claude mentions, automate tasks, and turn issues into pull requests",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-claude-code-gitlab-ci-cd",
+   "concept": "ccuse-run-claude-in-your-own-ci",
+   "label": "Claude Code GitLab CI/CD",
+   "desc": "Learn about integrating Claude Code into your development workflow with GitLab CI/CD",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-use-claude-code-github-actions-with-cloud-providers",
+   "concept": "ccuse-run-claude-in-your-own-ci",
+   "label": "Use Claude Code GitHub Actions with cloud providers",
+   "desc": "Run Claude Code GitHub Actions through Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry instead of the Claude API",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-best-practices-for-claude-code",
+   "concept": "ccuse-use-claude-code",
+   "label": "Best practices for Claude Code",
+   "desc": "Get more out of Claude Code: tell Claude what it can't see, give it a check to run, and enforce the rules that can't have exceptions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-common-workflows",
+   "concept": "ccuse-use-claude-code",
+   "label": "Common workflows",
+   "desc": "Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-how-claude-remembers-your-project",
+   "concept": "ccuse-use-claude-code",
+   "label": "How Claude remembers your project",
+   "desc": "Give Claude persistent instructions with CLAUDE.md or AGENTS.md files, and let Claude accumulate learnings automatically with auto memory.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-manage-sessions",
+   "concept": "ccuse-use-claude-code",
+   "label": "Manage sessions",
+   "desc": "Name, resume, branch, and switch between Claude Code conversations. Covers --continue, --resume, --from-pr, the /resume picker, session naming, exporting transcripts, and where transcripts are stored.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  },
+  {
+   "id": "ccuse-prompt-library",
+   "concept": "ccuse-use-claude-code",
+   "label": "Prompt library",
+   "desc": "Copy-paste prompts for Claude Code, tagged by task and role.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1781",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1782",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-code-getting-started-and-everyday-use"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1781",
+   "name": "Claude Code: Getting Started and Everyday Use Specialist",
+   "legacy_key": "claude-code-getting-started-and-everyday-use-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1782",
+   "name": "Claude Code: Getting Started and Everyday Use Reviewer",
+   "legacy_key": "claude-code-getting-started-and-everyday-use-reviewer",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "gettingstarted": "code changelog quickstart getting started",
+  "coreconcept": "explore caching extend window context directory",
+  "code": "common best library practice remember workflow",
+  "platformintegration": "let integration platform continue ide jetbrain",
+  "codecloud": "cloud automate scheduled task",
+  "codedesktop": "desktop app application ios recurring simulator",
+  "codereview": "review request pull issue locally scan",
+  "runyour": "action github gitlab provider own run"
+ },
+ "sources": [
+  "claude-code-getting-started-and-everyday-use"
+ ]
+}

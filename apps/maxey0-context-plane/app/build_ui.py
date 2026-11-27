@@ -32,7 +32,7 @@ import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "source", "Human0 - Context Plane Control Graph v0.6.html")
 OUT = os.path.join(HERE, "maxey0-context-plane-graph.html")
-VERSION = "1.4.0"
+VERSION = "1.4.1"
 DEFAULT_API = "https://maxey0-context-plane-mcp.maxey0.workers.dev"
 
 
@@ -467,7 +467,7 @@ window.__cpLoad = async function () {
     const r = await fetch(API + '/graph.json?index=1', { cache: 'no-cache' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     g = await r.json();
-    if (!/^maxey0\.scw1-graph\//.test(g.schema || '')) throw new Error('unexpected schema ' + g.schema);
+    if (!/^maxey0\.scw[13]-graph\//.test(g.schema || '')) throw new Error('unexpected schema ' + g.schema);
   } catch (e) {
     h0Notice({ id: 'cp-load', tone: 'bad', remember: false,
       text: 'Could not load live data from the Maxey0 Context Plane (' + (e.message || e) + '). This app needs a connection to ' +

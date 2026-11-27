@@ -1,12 +1,12 @@
-// Independent ontology checks on SCW1/scw1.graph.json. Written separately from the
+// Independent ontology checks on SCW3/scw3.graph.json. Written separately from the
 // Python builder's own invariants, so the builder does not grade itself.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "SCW1");
-const g = JSON.parse(readFileSync(join(root, "scw1.graph.json"), "utf8"));
+const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "SCW3");
+const g = JSON.parse(readFileSync(join(root, "scw3.graph.json"), "utf8"));
 const spec = JSON.parse(readFileSync(join(root, "ontology.spec.json"), "utf8"));
 const by = (xs, k) => new Map(xs.map((x) => [x[k], x]));
 const D = by(g.domains, "id"), T = by(g.topics, "id"), C = by(g.concepts, "id"), S = by(g.skills, "id"), A = by(g.agents, "key"), M = by(g.mcp, "id");

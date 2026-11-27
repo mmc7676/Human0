@@ -1,6 +1,6 @@
 ---
 name: maxey0-context-plane
-description: Use the Maxey0 Context Plane MCP server to find where a task belongs and who should handle it. Trigger when the user asks to "route this task", "which agent should handle", "what skill covers", "which MCP server fits", "find the topic/concept for", mentions Maxey0, MaxeyN agents, the Context Plane or SCW1, or wants to browse the Maxey0 domains, topics, concepts, skills, agents or MCP servers.
+description: Use the Maxey0 Context Plane MCP server to find where a task belongs and who should handle it. Trigger when the user asks to "route this task", "which agent should handle", "what skill covers", "which MCP server fits", "find the topic/concept for", mentions Maxey0, MaxeyN agents, the Context Plane or SCW3, or wants to browse the Maxey0 domains, topics, concepts, skills, agents or MCP servers.
 ---
 
 # Maxey0 Context Plane

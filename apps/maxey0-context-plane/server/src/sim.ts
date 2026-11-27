@@ -1,4 +1,4 @@
-// The one similarity method (mirror of tools/build_scw1.py: tokens / Sim).
+// The one similarity method (mirror of tools/build_scw3.py: tokens / Sim).
 // TF-IDF with tf weight 1 + ln(count), idf precomputed by the builder, L2-normalised
 // vectors, cosine = dot product. test/sim.test.mjs checks that this tokenizer and
 // vectoriser reproduce every stored concept and skill vector.

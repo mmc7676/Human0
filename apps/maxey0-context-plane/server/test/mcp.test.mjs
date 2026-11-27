@@ -9,7 +9,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const manifest = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "scw1.manifest.json"), "utf8"));
+const manifest = JSON.parse(readFileSync(join(here, "..", "..", "SCW3", "scw3.manifest.json"), "utf8"));
 let worker;
 const env = { ALLOWED_ORIGINS: "https://claude.ai,https://claude.com" };
 const V = "2026-07-28";
@@ -69,11 +69,11 @@ test("domains and every topic served with manifest counts; removed/merged topics
   assert.equal(d.reduce((n, x) => n + x.topics, 0), r.count);
 });
 
-test("get_harness equals SCW1/harnesses/<id>.harness.json for every topic", async () => {
+test("get_harness equals SCW3/harnesses/<id>.harness.json for every topic", async () => {
   const canon = (o) => JSON.stringify(o, (k, v) => (v && typeof v === "object" && !Array.isArray(v) ? Object.fromEntries(Object.keys(v).sort().map((x) => [x, v[x]])) : v));
   for (const e of manifest.entries) {
     const h = (await call("get_harness", { topic_id: e.id })).structuredContent;
-    const f = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "harnesses", `${e.id}.harness.json`), "utf8"));
+    const f = JSON.parse(readFileSync(join(here, "..", "..", "SCW3", "harnesses", `${e.id}.harness.json`), "utf8"));
     assert.equal(canon(h), canon(f), e.id);
   }
 });
@@ -88,7 +88,7 @@ test("walk domain -> topic -> concept -> skill -> agent -> mcp with children and
   assert.deepEqual([sk.domain, sk.topic, sk.concept], ["agentic-systems", "maxey0-context-architecture", "mx-memory"]);
   const tr = (await call("trace", { node_id: s[0].id })).structuredContent;
   assert.deepEqual(tr.chain.map((x) => x.level), ["domain", "topic", "concept", "skill"]);
-  const g = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "scw1.graph.json"), "utf8"));
+  const g = JSON.parse(readFileSync(join(here, "..", "..", "SCW3", "scw3.graph.json"), "utf8"));
   const counts = {}; for (const l of g.agent_mcp) counts[l.agent] = (counts[l.agent] ?? 0) + 1;
   const multi = Object.keys(counts).find((k) => counts[k] > 1);
   const ag = (await call("get_agent", { agent_key: multi })).structuredContent;
@@ -143,7 +143,7 @@ test("one endpoint per domain plus /mcp: /mcp serves all; /mcp/<domain> serves o
   const route = (await at("/mcp/agentic-systems", "tools/call", { name: "route_task", arguments: { task: "quantum entanglement of two qubits" } })).body.result.structuredContent;
   assert.ok(route.paths.every((p) => p.domain === "agentic-systems"));
   const h = (await at("/mcp/math-physical-sciences", "tools/call", { name: "get_harness", arguments: { topic_id: "quantum-physics" } })).body.result.structuredContent;
-  const f = JSON.parse(readFileSync(join(here, "..", "..", "SCW1", "harnesses", "quantum-physics.harness.json"), "utf8"));
+  const f = JSON.parse(readFileSync(join(here, "..", "..", "SCW3", "harnesses", "quantum-physics.harness.json"), "utf8"));
   assert.equal(JSON.stringify(h.skills), JSON.stringify(f.skills));
   assert.equal((await at("/mcp/nope", "tools/list")).status, 404);
   assert.equal((await at("/mcp/all", "tools/list")).status, 404);
@@ -198,7 +198,7 @@ test("resources: list, ontology, snapshot, topic template, not-found = -32602", 
   const l = (await modern("resources/list")).body.result;
   assert.equal(l.resources.length, 9);   // 8 data resources + the MCP App page
   const o = JSON.parse((await modern("resources/read", { uri: "ctxplane://ontology" })).body.result.contents[0].text);
-  assert.equal(o.spec, "maxey0.scw1-ontology/3");
+  assert.equal(o.spec, "maxey0.scw3-ontology/3");
   const s = JSON.parse((await modern("resources/read", { uri: "ctxplane://snapshot" })).body.result.contents[0].text);
   assert.equal(s.snapshot_digest, manifest.snapshot_digest);
   const t = JSON.parse((await modern("resources/read", { uri: "ctxplane://topic/linear-algebra-and-geometry" })).body.result.contents[0].text);
@@ -296,7 +296,7 @@ test("v4: topic-graph-generator prompt lists existing topics and the rules", asy
 
 test("v4: validate_topic_pack accepts a build pack and rejects broken ones", async () => {
   const fs = await import("node:fs");
-  const good = JSON.parse(fs.readFileSync(new URL("../../SCW1/sources/packs/commodities.pack.json", import.meta.url)));
+  const good = JSON.parse(fs.readFileSync(new URL("../../SCW3/sources/packs/commodities.pack.json", import.meta.url)));
   const fresh = JSON.parse(JSON.stringify(good).replaceAll("cmd-", "cmx-").replaceAll('"commodities"', '"raw-materials"').replace('"Commodities"', '"Raw Materials"'));
   const ok = (await call("validate_topic_pack", { pack: fresh })).structuredContent;
   assert.equal(ok.ok, true, JSON.stringify(ok.problems)); assert.ok(ok.nearest_existing.length);
@@ -442,20 +442,20 @@ test("performance budget (server CPU per route, in-process): flat under 15 ms, l
   assert.ok(flat < 15, "flat " + flat.toFixed(1) + " ms"); assert.ok(lens < 60, "lens " + lens.toFixed(1) + " ms");
 });
 
-test("runnable skills: SKILL.md in SCW1/skills is served by get_skill, flagged on routes, and the three first-pass tasks land on it", async () => {
+test("runnable skills: SKILL.md in SCW3/skills is served by get_skill, flagged on routes, and the three first-pass tasks land on it", async () => {
   const { createHash } = await import("node:crypto");
   const { readdirSync, existsSync } = await import("node:fs");
   const root = join(here, "..", "..");
-  const dirs = readdirSync(join(root, "SCW1", "skills"), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort();
+  const dirs = readdirSync(join(root, "SCW3", "skills"), { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort();
   assert.ok(dirs.length >= 3);
   for (const id of dirs) {
-    const file = join(root, "SCW1", "skills", id, "SKILL.md");
+    const file = join(root, "SCW3", "skills", id, "SKILL.md");
     assert.ok(existsSync(file), file);
     const s = (await call("get_skill", { skill_id: id })).structuredContent;
     assert.equal(s.skill.runnable, true, id);
     assert.equal(s.skill_md.name, id);
     assert.equal(s.skill_md.description, s.skill.desc, "the node's desc is the SKILL.md description");
-    assert.equal(s.skill_md.path, `SCW1/skills/${id}/SKILL.md`);
+    assert.equal(s.skill_md.path, `SCW3/skills/${id}/SKILL.md`);
     assert.equal(s.skill_md.sha256, createHash("sha256").update(readFileSync(file)).digest("hex"), "bundle matches the file on disk");
     assert.ok(s.skill_md.body.includes("## Steps") && s.skill_md.body.includes("## Sources"), id);
     assert.ok(s.skill.agents.some((a) => a.role === "primary") && s.skill.agents.some((a) => a.role === "checker"), id);

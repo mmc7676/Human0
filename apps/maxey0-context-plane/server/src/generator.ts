@@ -1,6 +1,6 @@
 // Topic generation support (read-only). The server never writes to the graph: generation happens in the
 // client model (Claude) using the topic-graph-generator prompt; the result is checked by validate_topic_pack
-// and added in the Human0 app (or proposed for the next SCW1 build). Same pack schema as the build sources.
+// and added in the Human0 app (or proposed for the next SCW3 build). Same pack schema as the build sources.
 import type { Graph } from "./graph";
 
 type Json = Record<string, unknown>;
@@ -105,6 +105,6 @@ export function validatePack(g: Graph, p: unknown): Json {
     extends_existing_topic: !!existingTopic,
     counts: { concepts: concepts.length, skills: skills.length, agents: Object.keys(agents).length, mcp: mcp.length },
     nearest_existing: ((overlap.paths ?? []) as Json[]).map((x) => ({ topic: x.topic, concept: x.concept, skill: x.label })),
-    note: "Validation only; nothing is written. Add the pack in the Maxey0 Context Plane Graph app, or propose it for the next SCW1 build.",
+    note: "Validation only; nothing is written. Add the pack in the Maxey0 Context Plane Graph app, or propose it for the next SCW3 build.",
   };
 }

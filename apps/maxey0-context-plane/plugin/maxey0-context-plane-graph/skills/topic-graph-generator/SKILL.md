@@ -5,7 +5,7 @@ description: Generate a human0.topic-pack/1 (Topic -> Concepts -> Skills -> Maxe
 
 # topic-graph-generator
 
-Produce ONE JSON object, schema `human0.topic-pack/1`, that the Maxey0 Context Plane Graph app adds to its graph (Topics panel -> paste -> Add to graph) and the next SCW1 build can ingest unchanged.
+Produce ONE JSON object, schema `human0.topic-pack/1`, that the Maxey0 Context Plane Graph app adds to its graph (Topics panel -> paste -> Add to graph) and the next SCW3 build can ingest unchanged.
 
 ## Steps
 1. Get the request. If the Maxey0 Context Plane connector is available, get its `topic-graph-generator` prompt with the topic (and the task that had no route); it lists the existing topics. The app's "Build generation request" / "Generate a topic for this task" gives the same request.

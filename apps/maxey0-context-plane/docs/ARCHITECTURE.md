@@ -3,13 +3,13 @@
 One data set, built once, served three ways.
 
 ```
- SCW1/sources/packs/*.pack.json ─┐
- SCW1/sources/maxey0_base.json ──┤
- SCW1/ontology.spec.json ────────┤   tools/build_scw1.py
+ SCW3/sources/packs/*.pack.json ─┐
+ SCW3/sources/maxey0_base.json ──┤
+ SCW3/ontology.spec.json ────────┤   tools/build_scw3.py
                                  ▼
-          SCW1/scw1.graph.json · SCW1/harnesses/*.harness.json · SCW1/maxey_registry.json
+          SCW3/scw3.graph.json · SCW3/harnesses/*.harness.json · SCW3/maxey_registry.json
                                  │
-                                 ▼   server/src/scw1.bundle.json (graph + TF-IDF index)
+                                 ▼   server/src/scw3.bundle.json (graph + TF-IDF index)
  ┌───────────────────── Cloudflare Worker (server/) ──────────────────────┐
  │  /mcp, /mcp/<domain>   MCP tools · prompt · resources · ui:// app       │
  │  /graph.json           the map for browser apps                          │
@@ -28,17 +28,17 @@ Each topic starts as a **topic pack** (`human0.topic-pack/1`): a topic, its conc
 
 ### The ontology spec
 
-`SCW1/ontology.spec.json` holds every structural decision: which domain each topic belongs to, topics and concepts that are merged, moved, renamed or dropped, id rules, the similarity method and its thresholds, declared links, topic priority, role overrides, and open questions. Changing the map means changing the spec or a pack and rebuilding.
+`SCW3/ontology.spec.json` holds every structural decision: which domain each topic belongs to, topics and concepts that are merged, moved, renamed or dropped, id rules, the similarity method and its thresholds, declared links, topic priority, role overrides, and open questions. Changing the map means changing the spec or a pack and rebuilding.
 
 ### The builder
 
-`tools/build_scw1.py build` applies the spec to the sources and refuses to write anything if a rule breaks. It checks, among others:
+`tools/build_scw3.py build` applies the spec to the sources and refuses to write anything if a rule breaks. It checks, among others:
 
 - every node has exactly one parent, and every thread reaches the skill level;
 - each topic has 3–8 concepts and no concept is named like a topic;
 - labels and ids are unique;
 - every skill has a primary agent;
-- every agent key is a MaxeyN key from `SCW1/maxey_registry.json`, which keeps keys permanent across builds (new agents get the next free number);
+- every agent key is a MaxeyN key from `SCW3/maxey_registry.json`, which keeps keys permanent across builds (new agents get the next free number);
 - every link meets its threshold.
 
 It writes the graph, one harness per topic, a manifest and build report, and the server bundle. The graph carries a SHA-256 digest; the app records it in saved state.

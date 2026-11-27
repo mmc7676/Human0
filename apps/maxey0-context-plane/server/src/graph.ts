@@ -1,4 +1,4 @@
-// Read-only query layer over the SCW1 graph (schema human0.scw1-graph/2).
+// Read-only query layer over the SCW3 graph (schema human0.scw3-graph/2).
 // Spine (one parent each): Domain -> Topic -> Concept -> Skill
 // Differentiation:        Skill -> Agents (role) -> MCP servers (derived links)
 
@@ -6,7 +6,7 @@ export interface Domain { id: string; label: string; desc: string }
 export interface Topic { id: string; label: string; desc: string; domain: string; sources: string[]; priority: number }
 export interface Concept { id: string; label: string; desc: string; keywords: string[]; topic: string; source: string }
 export interface SkillAgent { key: string; role: string }
-/** A runnable skill carries its SKILL.md (SCW1/skills/<id>/SKILL.md): the instructions an orchestrator runs. */
+/** A runnable skill carries its SKILL.md (SCW3/skills/<id>/SKILL.md): the instructions an orchestrator runs. */
 export interface SkillMd { path: string; sha256: string; name: string; description: string; body: string }
 export interface Skill { id: string; concept: string; label: string; desc: string; type: string; agents: SkillAgent[]; source: string; skill_md?: SkillMd }
 export interface Agent { key: string; name: string; legacy_key?: string }
@@ -127,7 +127,7 @@ export class Graph {
       mcp_listed: (this.g.topic_mcp[t.id] ?? []).map((id) => ({ id, name: this.mcp.get(id)!.name })) };
   }
 
-  /** Same document as SCW1/harnesses/<id>.harness.json (tested for equality). */
+  /** Same document as SCW3/harnesses/<id>.harness.json (tested for equality). */
   get_harness(a: { topic_id: string }) {
     const t = this.need(this.topic, a.topic_id, "topic", "Call list_topics for valid ids.");
     const cs = this.conceptsByTopic.get(t.id) ?? [];

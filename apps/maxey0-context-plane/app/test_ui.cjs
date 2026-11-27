@@ -600,7 +600,7 @@ const ok = (c, msg) => { if (c) pass++; else { fail++; console.log("FAIL", msg) 
   await p.evaluate(() => { document.getElementById("iso").click(); window.__cpv.select(null); });
 
   // 7. generated topics: add three packs, remove the middle one, keep 1 + 3; details, new-only view, state
-  const base = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "SCW1", "sources", "packs", "commodities.pack.json"), "utf8"));
+  const base = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "SCW3", "sources", "packs", "commodities.pack.json"), "utf8"));
   const mk = (n) => JSON.parse(JSON.stringify(base).replaceAll("cmd", "g" + n + "x").replaceAll('"commodities"', '"gen-topic-' + n + '"').replace('"Commodities"', '"Generated Topic ' + n + '"'));
   const before = await p.evaluate(() => window.__l5.nodes());
   for (const n of [1, 2, 3]) {

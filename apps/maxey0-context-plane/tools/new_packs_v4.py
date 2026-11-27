@@ -1,10 +1,10 @@
-"""Generate the v4 topic packs (Foundations, Finance, and new Work topics) as SCW1/sources/packs/*.pack.json.
+"""Generate the v4 topic packs (Foundations, Finance, and new Work topics) as SCW3/sources/packs/*.pack.json.
 Content is generated (Claude, 2026-10-31) from topic names and direction supplied by Human0. MCP rows: repository
 existence checked with `git ls-remote` on 2026-10-31; descriptions summarise each project's public README as known,
 tool lists not re-read (left empty). Execution-capable servers are listed as context only; the context plane never
 authorizes execution."""
 import json, re, pathlib, sys
-OUT = pathlib.Path(__file__).resolve().parent.parent / "SCW1" / "sources" / "packs"
+OUT = pathlib.Path(__file__).resolve().parent.parent / "SCW3" / "sources" / "packs"
 slug = lambda s: re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 PROC = {"builds", "plans", "computes", "drafts", "runs", "converts", "maps", "checks", "designs", "screens", "prices",
         "reconciles", "calculates", "estimates", "traces", "models", "scores", "files", "prepares", "generates", "sets"}

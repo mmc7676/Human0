@@ -171,7 +171,7 @@ The server is read-only and has no accounts. It stores nothing you send it, and 
 ```
 server/   MCP server (TypeScript, Cloudflare Workers) and its tests
 app/      the graph app: build script, built page, browser tests
-SCW1/     the map: source topic packs, the ontology spec, the built graph and one harness per topic
+SCW3/     the map: source topic packs, the ontology spec, the built graph and one harness per topic
 tools/    the map builder and topic-pack generator (Python)
 plugin/   the Claude plugin
 docs/     user guide, server reference, architecture, development

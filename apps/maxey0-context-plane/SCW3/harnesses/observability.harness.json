@@ -1,0 +1,1270 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW3",
+ "domain": "agentic-systems",
+ "topic": {
+  "id": "observability",
+  "label": "Observability",
+  "desc": "Observability: Debugging and Root Cause Analysis, Metrics, Logs and Traces, Dashboards and Visualisation, Incident Response and Capacity, Agent and LLM Observability, Instrumentation and Collection, Drift, Quality and Regression Monitoring and Alerting and SLOs."
+ },
+ "concepts": [
+  {
+   "id": "ob-agent-tracing",
+   "label": "Agent and LLM Observability",
+   "desc": "Seeing what an agent actually did: traces of model calls, tool calls and handoffs, token and latency cost, prompt versions and user feedback.",
+   "keywords": [
+    "agent",
+    "llm",
+    "tool",
+    "token",
+    "prompt",
+    "latency"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-alerting",
+   "label": "Alerting and SLOs",
+   "desc": "Turning signals into pages worth waking up for: service level objectives, error budgets, burn rates, thresholds and alert routing.",
+   "keywords": [
+    "alert",
+    "slo",
+    "budget",
+    "burn",
+    "threshold",
+    "alerting",
+    "paged",
+    "paging"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-dashboards",
+   "label": "Dashboards and Visualisation",
+   "desc": "Building views that answer questions: choosing charts, queries, panels and layouts for operators and for managers.",
+   "keywords": [
+    "dashboard",
+    "panel",
+    "query",
+    "chart",
+    "layout"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-debugging",
+   "label": "Debugging and Root Cause Analysis",
+   "desc": "Finding why something broke: reading logs and traces, forming and testing hypotheses, bisecting changes and writing the finding down.",
+   "keywords": [
+    "debugging",
+    "root",
+    "cause",
+    "bisect",
+    "hypothesis",
+    "stacktrace"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-drift",
+   "label": "Drift, Quality and Regression Monitoring",
+   "desc": "Noticing when behaviour changes without a deploy: data and output drift, evaluation sets, regression gates and canary comparisons.",
+   "keywords": [
+    "drift",
+    "regression",
+    "canary",
+    "baseline",
+    "evaluation"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-incident",
+   "label": "Incident Response and Capacity",
+   "desc": "Running an incident and planning capacity: severity, roles, status updates, load, saturation, cost and forecasts.",
+   "keywords": [
+    "incident",
+    "severity",
+    "capacity",
+    "saturation",
+    "cost",
+    "stakeholder",
+    "stakeholders"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-instrumentation",
+   "label": "Instrumentation and Collection",
+   "desc": "Adding telemetry to code and pipelines: OpenTelemetry spans, context propagation, collectors and keeping cardinality under control.",
+   "keywords": [
+    "instrumentation",
+    "opentelemetry",
+    "span",
+    "collector",
+    "cardinality"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  },
+  {
+   "id": "ob-signals",
+   "label": "Metrics, Logs and Traces",
+   "desc": "The three telemetry signals: what each answers, how to name and label them, sampling and retention.",
+   "keywords": [
+    "metric",
+    "log",
+    "trace",
+    "label",
+    "sampling"
+   ],
+   "topic": "observability",
+   "source": "observability",
+   "source_topic": "observability",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "ob-agent-feedback-linker",
+   "concept": "ob-agent-tracing",
+   "label": "Feedback to Trace Linker",
+   "desc": "Links user ratings and corrections to the traces that produced them so bad runs can be found and replayed.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-agent-trace-reader",
+   "concept": "ob-agent-tracing",
+   "label": "Agent Trace Reader",
+   "desc": "Reads a trace of an agent run and summarises the model calls, tool calls, errors and handoffs in order, with latency for each step.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-prompt-version-tracker",
+   "concept": "ob-agent-tracing",
+   "label": "Prompt Version Tracker",
+   "desc": "Ties each run to the prompt, model and tool versions used so a behaviour change can be traced to its cause.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-token-cost-analyst",
+   "concept": "ob-agent-tracing",
+   "label": "Token and Cost Analyst",
+   "desc": "Breaks token use, latency and spend down by step, tool and prompt version and shows where the money goes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey898",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey902",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-alert-noise-reducer",
+   "concept": "ob-alerting",
+   "label": "Alert Noise Reducer",
+   "desc": "Finds alerts that fire often without action, groups duplicates and proposes thresholds or routes that cut noise safely.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey903",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-burn-rate-alerter",
+   "concept": "ob-alerting",
+   "label": "Burn Rate Alert Writer",
+   "desc": "Writes multi-window burn-rate alerts for an SLO and shows how fast each alert fires for a given outage.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey903",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-slo-designer",
+   "concept": "ob-alerting",
+   "label": "SLO Designer",
+   "desc": "Defines service level indicators and objectives from user-visible behaviour and sets the error budget and its window.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey903",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-synthetic-probe-designer",
+   "concept": "ob-alerting",
+   "label": "Synthetic Probe Designer",
+   "desc": "Designs scripted checks that exercise a user journey on a schedule and decides what a failure should trigger.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey906",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey903",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-dashboard-designer",
+   "concept": "ob-dashboards",
+   "label": "Dashboard Designer",
+   "desc": "Designs a dashboard around the questions an operator asks first, with the golden signals at the top and links to detail.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-dashboard-reviewer",
+   "concept": "ob-dashboards",
+   "label": "Dashboard Reviewer",
+   "desc": "Reviews an existing dashboard for panels nobody reads, misleading axes and missing context and lists what to remove.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-query-writer",
+   "concept": "ob-dashboards",
+   "label": "PromQL and LogQL Query Writer",
+   "desc": "Writes promql and logql queries over metrics and logs for a stated question and explains what each part of the query filters or aggregates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-service-overview-composer",
+   "concept": "ob-dashboards",
+   "label": "Service Overview Composer",
+   "desc": "Lays out a one-screen view of traffic, errors, latency and saturation with links down to traces and logs.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey907",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey908",
+     "role": "support"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-change-bisector",
+   "concept": "ob-debugging",
+   "label": "Change Bisector",
+   "desc": "Narrows a regression to one change by bisecting versions, flags or configuration and records each step.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey900",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-log-trace-reader",
+   "concept": "ob-debugging",
+   "label": "Log and Stack Trace Reader",
+   "desc": "Reads logs and stack traces for a failure, extracts the first error and lists what must be checked next.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey900",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-root-cause-analyst",
+   "concept": "ob-debugging",
+   "label": "Root Cause Analyst",
+   "desc": "Forms rival explanations for a failure, picks the cheapest test for each and reports which were ruled out.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey900",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey904",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-trace-latency-analyst",
+   "concept": "ob-debugging",
+   "label": "Trace Latency Analyst",
+   "desc": "Reads a distributed trace, finds the span that dominates latency and says whether it is work, waiting or retries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey908",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey900",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey909",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-canary-comparer",
+   "concept": "ob-drift",
+   "label": "Canary Comparer",
+   "desc": "Compares a canary with the baseline on stated metrics and says whether the difference is larger than noise.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey899",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-drift-detector",
+   "concept": "ob-drift",
+   "label": "Drift Detector",
+   "desc": "Compares current inputs and outputs with a baseline and reports which distributions moved and by how much.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey899",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey898",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-log-anomaly-spotter",
+   "concept": "ob-drift",
+   "label": "Log Anomaly Spotter",
+   "desc": "Compares log patterns now with a baseline period and lists new, vanished or sharply changed message types.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey909",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey899",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-regression-gate-builder",
+   "concept": "ob-drift",
+   "label": "Regression Gate Builder",
+   "desc": "Builds an evaluation set and a pass threshold that blocks a release when quality drops, runs a canary first and records every run.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey899",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-capacity-forecaster",
+   "concept": "ob-incident",
+   "label": "Capacity Forecaster",
+   "desc": "Projects load, saturation and cost from usage trends and says when a limit will be reached and with what margin.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey902",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-postmortem-writer",
+   "concept": "ob-incident",
+   "label": "Postmortem Writer",
+   "desc": "Writes the incident timeline, contributing causes, what detection missed and the follow-up actions with owners and dates.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey910",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey904",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-severity-classifier",
+   "concept": "ob-incident",
+   "label": "Incident Severity Classifier",
+   "desc": "Rates an incident by user impact and spread, names the incident commander and lists who must be told.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey904",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey903",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-status-update-writer",
+   "concept": "ob-incident",
+   "label": "Status Update Writer",
+   "desc": "Writes short, dated status updates for stakeholders during an incident that say what is known, what is not, what is being done and when the next update comes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey904",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey900",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-cardinality-auditor",
+   "concept": "ob-instrumentation",
+   "label": "Cardinality Auditor",
+   "desc": "Finds labels and attributes with too many distinct values and proposes bucketing or dropping them before the bill arrives.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey902",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-collector-configurator",
+   "concept": "ob-instrumentation",
+   "label": "Collector Pipeline Configurator",
+   "desc": "Configures receivers, processors and exporters in a collector pipeline and tests that data reaches each backend.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey905",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-log-schema-designer",
+   "concept": "ob-instrumentation",
+   "label": "Structured Log Designer",
+   "desc": "Defines log fields, levels and correlation ids so logs can be searched and joined with traces.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey909",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey911",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-otel-instrumenter",
+   "concept": "ob-instrumentation",
+   "label": "OpenTelemetry Instrumenter",
+   "desc": "Adds spans, attributes and context propagation to a service and checks that a request shows as one connected trace.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey905",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-cardinality-guard",
+   "concept": "ob-signals",
+   "label": "Cardinality and Cost Guard",
+   "desc": "Finds metrics and labels that explode in number, estimates their storage cost and proposes which to drop or aggregate.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey912",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey905",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    },
+    {
+     "key": "Maxey902",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-metric-namer",
+   "concept": "ob-signals",
+   "label": "Metric Naming and Label Designer",
+   "desc": "Designs metric names, units and labels that stay consistent and flags labels that would explode the number of series.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey905",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey911",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-retention-sampler",
+   "concept": "ob-signals",
+   "label": "Retention and Sampling Planner",
+   "desc": "Sets how long each signal is kept and how traces are sampled, with the cost and the evidence that is lost at each setting.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey905",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey902",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey901",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-signal-chooser",
+   "concept": "ob-signals",
+   "label": "Signal Chooser",
+   "desc": "Says whether a question needs a metric, a log line or a trace and what the cheapest signal that answers it is.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey905",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey901",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey911",
+     "role": "support"
+    }
+   ],
+   "source": "observability"
+  },
+  {
+   "id": "ob-trace-kubernetes-workloads-with-opentelemetry",
+   "concept": "ob-signals",
+   "label": "Kubernetes observability: trace workloads with OpenTelemetry",
+   "desc": "Gets distributed traces from services running on Kubernetes with the OpenTelemetry Operator. It installs cert-manager and the Operator, deploys an OpenTelemetry Collector with the Kubernetes attributes processor, creates Instrumentation resources, opts workloads in with inject annotations, and verifies that spans arrive tagged with their pod, namespace and deployment. Use when asked about Kubernetes observability, tracing, traces or spans for pods, deployments or services, or OpenTelemetry auto-instrumentation on a cluster.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey911",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey905",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1628",
+     "role": "support"
+    }
+   ],
+   "source": "skill_md",
+   "skill_md": {
+    "path": "SCW3/skills/ob-trace-kubernetes-workloads-with-opentelemetry/SKILL.md",
+    "sha256": "5634a08aa6301a5da0960ec0086eff77cd4967ed415e7c8b6dd8f6effc5d856d",
+    "name": "ob-trace-kubernetes-workloads-with-opentelemetry",
+    "description": "Gets distributed traces from services running on Kubernetes with the OpenTelemetry Operator. It installs cert-manager and the Operator, deploys an OpenTelemetry Collector with the Kubernetes attributes processor, creates Instrumentation resources, opts workloads in with inject annotations, and verifies that spans arrive tagged with their pod, namespace and deployment. Use when asked about Kubernetes observability, tracing, traces or spans for pods, deployments or services, or OpenTelemetry auto-instrumentation on a cluster.",
+    "body": "# Trace Kubernetes workloads with OpenTelemetry\n\nAuto-instruments .NET, Java, Node.js and Python services on a Kubernetes cluster and sends their traces through an OpenTelemetry Collector. Go services also need the Operator's `enable-go-instrumentation` feature gate (off by default) and extra annotations, and Deno needs its own environment variable and flag; this skill covers neither.\n\nVersions are pinned to the releases that were current on November 27, 2026: cert-manager v1.21.3, OpenTelemetry Operator v0.164.0 and the Kubernetes distribution of the OpenTelemetry Collector 0.164.0. To move to newer ones, change all three together and keep the Collector's version equal to the Operator's.\n\n## Inputs\n\n- **Cluster access:** `kubectl` pointed at the cluster, with rights to install cluster-wide resources (CRDs, a ClusterRole).\n- **App namespace:** the namespace the services run in. Every command below reads it from `APP_NS`, and each `kubectl apply` refuses to run if it isn't set, so set it first in bash, for example `export APP_NS=checkout` for a namespace named `checkout`.\n- **Services and languages:** each Deployment to trace and the language it runs.\n\n## Steps\n\nThe commands are bash. Each heredoc ends with a `YAML` line at the start of the line, so copy each block whole.\n\n### Step 1. Install cert-manager\n\nSkip this if cert-manager already runs on the cluster.\n\n```bash\nkubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.21.3/cert-manager.yaml\nkubectl wait --for=condition=Available deployment --all --namespace cert-manager --timeout=300s\nkubectl get pods --namespace cert-manager\n```\n\nThe `cert-manager`, `cert-manager-cainjector` and `cert-manager-webhook` pods should be `Running`.\n\n### Step 2. Install the OpenTelemetry Operator\n\n```bash\nkubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.164.0/opentelemetry-operator.yaml\nkubectl wait --for=condition=Available deployment/opentelemetry-operator-controller-manager --namespace opentelemetry-operator-system --timeout=300s\n```\n\nWait for this before Step 4. The Operator's webhook has to be up before it accepts a Collector or an Instrumentation resource.\n\n### Step 3. Give the Collector read access to pod metadata\n\nThe Kubernetes attributes processor calls the Kubernetes API, so the Collector runs as a service account bound to this ClusterRole. The cluster-wide names carry the namespace, so a second namespace gets its own.\n\n```bash\n: \"${APP_NS:?set APP_NS to the app namespace first}\" && kubectl apply -f - <<YAML\napiVersion: v1\nkind: ServiceAccount\nmetadata:\n  name: collector\n  namespace: ${APP_NS}\n---\napiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRole\nmetadata:\n  name: otel-collector-${APP_NS}\nrules:\n  - apiGroups: ['']\n    resources: ['pods', 'namespaces']\n    verbs: ['get', 'watch', 'list']\n  - apiGroups: ['apps']\n    resources: ['replicasets']\n    verbs: ['get', 'list', 'watch']\n  - apiGroups: ['extensions']\n    resources: ['replicasets']\n    verbs: ['get', 'list', 'watch']\n---\napiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  name: otel-collector-${APP_NS}\nsubjects:\n  - kind: ServiceAccount\n    name: collector\n    namespace: ${APP_NS}\nroleRef:\n  kind: ClusterRole\n  name: otel-collector-${APP_NS}\n  apiGroup: rbac.authorization.k8s.io\nYAML\n```\n\n### Step 4. Deploy the Collector\n\nThe Operator's default Collector image is the core distribution, which has no Kubernetes attributes processor, so `spec.image` names the Kubernetes distribution, which has it along with the OTLP receiver, the memory limiter and the debug and OTLP exporters. In the default Deployment mode the Operator creates a Deployment and a Service named after the resource plus `-collector`, here `demo-collector`. The `debug` exporter prints spans to the Collector's log at `detailed` verbosity, so you can see traces and their attributes before a backend is connected.\n\n```bash\n: \"${APP_NS:?set APP_NS to the app namespace first}\" && kubectl apply -f - <<YAML\napiVersion: opentelemetry.io/v1beta1\nkind: OpenTelemetryCollector\nmetadata:\n  name: demo\n  namespace: ${APP_NS}\nspec:\n  image: ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:0.164.0\n  serviceAccount: collector\n  config:\n    receivers:\n      otlp:\n        protocols:\n          grpc:\n            endpoint: 0.0.0.0:4317\n          http:\n            endpoint: 0.0.0.0:4318\n    processors:\n      memory_limiter:\n        check_interval: 1s\n        limit_percentage: 75\n        spike_limit_percentage: 15\n      k8sattributes:\n        auth_type: 'serviceAccount'\n        extract:\n          metadata:\n            - k8s.namespace.name\n            - k8s.pod.name\n            - k8s.pod.start_time\n            - k8s.pod.uid\n            - k8s.deployment.name\n            - k8s.node.name\n        pod_association:\n          - sources:\n              - from: resource_attribute\n                name: k8s.pod.ip\n          - sources:\n              - from: resource_attribute\n                name: k8s.pod.uid\n          - sources:\n              - from: connection\n    exporters:\n      debug:\n        verbosity: detailed\n    service:\n      pipelines:\n        traces:\n          receivers: [otlp]\n          processors: [memory_limiter, k8sattributes]\n          exporters: [debug]\nYAML\nkubectl rollout status deployment/demo-collector --namespace \"${APP_NS}\" --timeout=300s\n```\n\nThe rollout should end with `deployment \"demo-collector\" successfully rolled out`. If it doesn't, `kubectl describe deployment/demo-collector -n \"${APP_NS}\"` and `kubectl logs deployment/demo-collector -n \"${APP_NS}\"` show why.\n\n### Step 5. Create the Instrumentation resources before the services restart\n\nOrder matters: a pod started before its Instrumentation resource exists isn't instrumented. .NET, Java and Python send OTLP over HTTP to port 4318 (Python doesn't support gRPC); Node.js sends OTLP over gRPC to port 4317. Create both if the namespace mixes languages.\n\n```bash\n: \"${APP_NS:?set APP_NS to the app namespace first}\" && kubectl apply -f - <<YAML\napiVersion: opentelemetry.io/v1alpha1\nkind: Instrumentation\nmetadata:\n  name: demo-instrumentation\n  namespace: ${APP_NS}\nspec:\n  exporter:\n    endpoint: http://demo-collector:4318\n  propagators:\n    - tracecontext\n    - baggage\n  sampler:\n    type: parentbased_traceidratio\n    argument: \"1\"\n---\napiVersion: opentelemetry.io/v1alpha1\nkind: Instrumentation\nmetadata:\n  name: nodejs-instrumentation\n  namespace: ${APP_NS}\nspec:\n  exporter:\n    endpoint: http://demo-collector:4317\n  propagators:\n    - tracecontext\n    - baggage\n  sampler:\n    type: parentbased_traceidratio\n    argument: \"1\"\nYAML\n```\n\nThe sampler argument `\"1\"` keeps every trace. Lower it, for example to `\"0.25\"`, to keep a quarter of them.\n\n### Step 6. Opt each service in\n\nIn each Deployment's manifest, add the annotation for its language under `spec.template.metadata.annotations`, naming its Instrumentation resource, then apply the manifest again so the pods restart with instrumentation:\n\n```yaml\nspec:\n  template:\n    metadata:\n      annotations:\n        instrumentation.opentelemetry.io/inject-java: \"demo-instrumentation\"\n```\n\nThe keys are `inject-dotnet`, `inject-java`, `inject-python` and `inject-nodejs` (use `\"nodejs-instrumentation\"` for Node.js), each prefixed with `instrumentation.opentelemetry.io/`. The value `\"true\"` injects the Instrumentation resource from the current namespace, so name the resource whenever the namespace has more than one; `\"other-namespace/name\"` picks one from another namespace, and `\"false\"` turns injection off. The annotation can also go on the namespace to opt in every service in it.\n\n### Step 7. Send traces to the real backend\n\nOnce spans show up (see Check), replace `debug` in the traces pipeline with the exporter that your tracing backend documents for the OpenTelemetry Collector, and apply the Collector again. The Kubernetes distribution includes the `otlp` and `otlphttp` exporters.\n\n## Check (checker role)\n\n- `kubectl rollout status deployment/demo-collector -n \"${APP_NS}\"` reports the Collector rolled out, and its pod is `Running`.\n- `kubectl describe otelinst -n \"${APP_NS}\"` lists both Instrumentation resources with the right endpoints.\n- `kubectl get events -n \"${APP_NS}\"` shows `Created container opentelemetry-auto-instrumentation` and `Started container opentelemetry-auto-instrumentation` for each instrumented pod. If not, the pod probably started before its Instrumentation resource: restart it.\n- `kubectl logs -l app.kubernetes.io/name=opentelemetry-operator --container manager -n opentelemetry-operator-system --follow` shows no auto-instrumentation errors.\n- `kubectl logs deployment/demo-collector -n \"${APP_NS}\" --follow`, while you send a request to an instrumented service, shows spans whose resource attributes include `k8s.namespace.name`, `k8s.pod.name` and `k8s.deployment.name`.\n\n## Boundaries\n\n- Installing CRDs, cluster roles and cert-manager changes the whole cluster. On a shared or production cluster, get the cluster owner's yes first.\n- Applying a manifest with a new annotation restarts that Deployment's pods.\n\n## Sources\n\nRead on November 27, 2026:\n\n- https://opentelemetry.io/docs/platforms/kubernetes/operator/ (install, first Collector)\n- https://opentelemetry.io/docs/platforms/kubernetes/operator/automatic/ (Collector, Instrumentation per language, annotations, feature gates, troubleshooting)\n- https://opentelemetry.io/docs/platforms/kubernetes/collector/components/ (Kubernetes attributes processor and its RBAC)\n- https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/api/opentelemetrycollectors.md (`spec.image`, `spec.serviceAccount`)\n- The v0.164.0 Operator manifest (Deployment `opentelemetry-operator-controller-manager`, default Collector image `opentelemetry-collector:0.164.0`) and the Operator's e2e test `tests/e2e/smoke-collector/smoke-collector-deployment/00-assert.yaml` at v0.164.0 (Deployment named `<name>-collector`)\n- `distributions/otelcol-k8s/manifest.yaml` and `distributions/otelcol/manifest.yaml` in opentelemetry-collector-releases at v0.164.0 (the Kubernetes distribution has `k8sattributesprocessor`; the core one doesn't), and the `opentelemetry-collector-k8s:0.164.0` image on ghcr.io\n- https://cert-manager.io/docs/installation/kubectl/ (cert-manager install and check); the latest release resolved to v1.21.3"
+   }
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1628",
+   "name": "Container Platform Agent",
+   "legacy_key": "inf-container",
+   "mcp": []
+  },
+  {
+   "key": "Maxey898",
+   "name": "Agent Observability Agent",
+   "legacy_key": "ob-agent-observer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey899",
+   "name": "Drift and Regression Agent",
+   "legacy_key": "ob-drift-monitor",
+   "mcp": []
+  },
+  {
+   "key": "Maxey900",
+   "name": "Debugging Agent",
+   "legacy_key": "ob-debugger",
+   "mcp": []
+  },
+  {
+   "key": "Maxey901",
+   "name": "Observability Skeptic Agent",
+   "legacy_key": "ob-skeptic",
+   "mcp": [
+    "3392c633-e335-4638-bda7-5b259808c3f7",
+    "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+    "68268024-1a91-4316-a9e1-14ecb814cb18",
+    "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c"
+   ]
+  },
+  {
+   "key": "Maxey902",
+   "name": "Capacity Analyst Agent",
+   "legacy_key": "ob-capacity-analyst",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  },
+  {
+   "key": "Maxey903",
+   "name": "Alerting and SLO Agent",
+   "legacy_key": "ob-alerting-engineer",
+   "mcp": [
+    "3392c633-e335-4638-bda7-5b259808c3f7"
+   ]
+  },
+  {
+   "key": "Maxey904",
+   "name": "Incident Commander Agent",
+   "legacy_key": "ob-incident-commander",
+   "mcp": [
+    "3392c633-e335-4638-bda7-5b259808c3f7",
+    "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+    "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c"
+   ]
+  },
+  {
+   "key": "Maxey905",
+   "name": "Telemetry Signals Agent",
+   "legacy_key": "ob-signal-engineer",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  },
+  {
+   "key": "Maxey906",
+   "name": "Synthetic Monitoring Agent",
+   "legacy_key": "ob-synthetic-tester",
+   "mcp": []
+  },
+  {
+   "key": "Maxey907",
+   "name": "Dashboard Builder Agent",
+   "legacy_key": "ob-dashboard-builder",
+   "mcp": []
+  },
+  {
+   "key": "Maxey908",
+   "name": "Distributed Trace Agent",
+   "legacy_key": "ob-trace-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey909",
+   "name": "Log Analysis Agent",
+   "legacy_key": "ob-log-analyst",
+   "mcp": []
+  },
+  {
+   "key": "Maxey910",
+   "name": "Postmortem Agent",
+   "legacy_key": "ob-postmortem-author",
+   "mcp": []
+  },
+  {
+   "key": "Maxey911",
+   "name": "Instrumentation Engineer Agent",
+   "legacy_key": "ob-instrumentation-engineer",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  },
+  {
+   "key": "Maxey912",
+   "name": "Telemetry Cost Agent",
+   "legacy_key": "ob-cost-analyst",
+   "mcp": [
+    "68268024-1a91-4316-a9e1-14ecb814cb18"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "name": "Grafana Cloud",
+   "desc": "Query metrics, logs, and traces and manage dashboards and alerts",
+   "tools": [
+    "add_activity_to_incident",
+    "alerting_manage_routing",
+    "alerting_manage_rules",
+    "ask_assistant",
+    "create_annotation",
+    "create_folder",
+    "create_incident",
+    "describe_clickhouse_table"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "origins": [
+    "maxey0_base",
+    "observability"
+   ]
+  },
+  {
+   "uuid": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "name": "mcp.betterstack.com",
+   "desc": "Better Stack plugin for Claude: observability for AI agents (logs, metrics, dashboards, uptime, incidents).",
+   "tools": [
+    "acknowledge_incident",
+    "add_chart_to_dashboard",
+    "add_dashboard_section",
+    "application",
+    "applications",
+    "available_incident_escalation_policies",
+    "change_team_member_role",
+    "chart"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "origins": [
+    "observability"
+   ]
+  },
+  {
+   "uuid": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "name": "Datadog",
+   "desc": "Debug and resolve issues using Datadog telemetry",
+   "tools": [
+    "search_datadog_logs",
+    "analyze_datadog_logs",
+    "search_datadog_events",
+    "aggregate_events",
+    "get_datadog_metric",
+    "search_datadog_metrics",
+    "get_datadog_metric_context",
+    "search_datadog_monitors"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "origins": [
+    "maxey0_base",
+    "observability"
+   ]
+  },
+  {
+   "uuid": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "name": "Coralogix",
+   "desc": "Explore and debug your Coralogix observability data",
+   "tools": [
+    "get_alert_event_details_v1",
+    "read_dataprime_intro_docs_v1",
+    "get_logs_v1",
+    "get_traces_v1",
+    "get_schemas_v1",
+    "list_incidents_v1",
+    "get_incident_details_v1",
+    "metrics__list_v1"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "origins": [
+    "observability"
+   ]
+  },
+  {
+   "uuid": "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62",
+   "name": "Bronto",
+   "desc": "Query your Observability data in plain language, then turn what you find into monitors, saved searches, and Investigation Reports.",
+   "tools": [
+    "create_monitor",
+    "create_saved_search",
+    "get_all_datasets_keys",
+    "get_coverage",
+    "get_datasets",
+    "get_datasets_by_name",
+    "get_error_summary",
+    "get_key_values"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-10-23)",
+   "id": "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62",
+   "origins": [
+    "maxey0_base",
+    "observability"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "68268024-1a91-4316-a9e1-14ecb814cb18",
+  "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+  "3392c633-e335-4638-bda7-5b259808c3f7",
+  "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+  "b5c89e56-5e04-4871-9ecd-6bdcf5d6ec62"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey901",
+   "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "topic": "observability",
+   "score": 0.2584,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey903",
+    "skill": "ob-alert-noise-reducer"
+   },
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey901",
+   "mcp": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "topic": "observability",
+   "score": 0.2273,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey901",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1645,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey905",
+    "skill": "ob-signal-chooser"
+   },
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey901",
+   "mcp": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "topic": "observability",
+   "score": 0.2407,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey902",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1645,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey905",
+    "skill": "ob-retention-sampler"
+   },
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey903",
+   "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "topic": "observability",
+   "score": 0.2584,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey904",
+   "mcp": "3392c633-e335-4638-bda7-5b259808c3f7",
+   "topic": "observability",
+   "score": 0.1439,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey904",
+   "mcp": "4d4d6e80-7399-4861-86a4-c31fc98a6da9",
+   "topic": "observability",
+   "score": 0.1954,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey904",
+   "mcp": "a1d8f399-3c9f-44ca-aa70-8959be5c9f9c",
+   "topic": "observability",
+   "score": 0.2009,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey905",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1645,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey911",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1645,
+   "basis": "inherited:checker-of-primary",
+   "via": {
+    "primary": "Maxey905",
+    "skill": "ob-metric-namer"
+   },
+   "source_topic": "observability"
+  },
+  {
+   "agent": "Maxey912",
+   "mcp": "68268024-1a91-4316-a9e1-14ecb814cb18",
+   "topic": "observability",
+   "score": 0.1533,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "observability"
+  }
+ ],
+ "lexicon": {
+  "obsignal": "label unit series golden debugging bisect stacktrace signal chooser cheapest bisector",
+  "obinstr": "opentelemetry exporter receiver propagation attribute instrumentation cardinality collection structured",
+  "obdash": "panel layout operator promql logql chart visualisation existing",
+  "obalert": "noise threshold alerting paged paging visible window synthetic",
+  "obagent": "latency feedback llm reader behaviour traced linker",
+  "obdrift": "baseline canary distribution anomaly",
+  "obincident": "commander status saturation capacity load stakeholder stakeholders cost response classifier timeline contributing"
+ },
+ "sources": [
+  "observability"
+ ]
+}

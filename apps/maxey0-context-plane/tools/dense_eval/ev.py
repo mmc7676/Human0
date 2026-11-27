@@ -1,6 +1,6 @@
 import json, random, sys, urllib.request, concurrent.futures as cf, time
 B = "https://maxey0-context-plane-mcp.maxey0.workers.dev/route"
-g = json.load(open("/home/claude/human0/apps/maxey0-context-plane/SCW1/scw1.graph.json"))
+g = json.load(open("/home/claude/human0/apps/maxey0-context-plane/SCW3/scw3.graph.json"))
 SK = {s["id"]: s for s in g["skills"]}; CT = {c["id"]: c["topic"] for c in g["concepts"]}
 def route(args, tries=4):
     for t in range(tries):
