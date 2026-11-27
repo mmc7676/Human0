@@ -179,6 +179,14 @@ aside.rail .chip:disabled { opacity: .6; }
 .viv a { color: var(--accent); font-size: .8rem; }
 .vgroups { display:flex; flex-wrap:wrap; gap:6px; align-items:baseline; margin-top:8px; }
 .vgroups .label { font-weight:700; margin-right:4px; }
+.wnry { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.wnry h3 { margin: 0; font-size: 1rem; }
+.wnry p { margin: 0; }
+.wnry a { color: var(--accent); font-size: .85rem; }
+.wnry .wstats { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.wnry .wsub { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+.wnry .wsub .label { font-weight: 700; font-size: .85rem; }
+.wnry ul { margin: 0; padding-left: 18px; font-size: .85rem; }
 .vg { border:1px solid currentColor; border-radius:999px; padding:1px 8px; font-size:.8rem; opacity:.9; }
 .vg b { font-weight:700; }
 .cloud { display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; line-height: 1.15; padding: 8px 10px; background: var(--surface-2); border-radius: 10px; }
@@ -478,11 +486,11 @@ button.opt:hover { border-color: var(--accent); }
     wine: {
       core: C.WINE, file: "wines.json", one: "wine", many: "wines", Many: "Wines",
       search: "Search brand, wine, varietal, region, tasting notes",
-      lists: [["varietal", "Varietal", true], ["country", "Country"], ["brand", "Brand", true], ["size", "Size"]],
+      lists: [["varietal", "Varietal", true], ["country", "Country"], ["brand", "Brand", true], ["size", "Size"], ["w_region", "Winery region", true]],
       presets: [[null, 15, "Under $15"], [15, 25, "$15 to $25"], [25, 40, "$25 to $40"], [40, null, "$40 and up"]],
       sorts: [["store:asc", "Store order"], ["price:asc", "Price, low to high"], ["price:desc", "Price, high to low"], ["off:desc", "Biggest discount"],
         ["brand:asc", "Brand A to Z"], ["name:asc", "Wine name A to Z"], ["varietal:asc", "Varietal A to Z"], ["abv:desc", "ABV, high to low"],
-        ["rating:desc", "Vivino rating, high to low"], ["ratings:desc", "Most Vivino ratings"]],
+        ["rating:desc", "Vivino rating, high to low"], ["ratings:desc", "Most Vivino ratings"], ["wrating:desc", "Winery rating, high to low"]],
       groupBy: "varietal", lane: "color",
       groups: [["varietal", "Varietal"], ["country", "Country"], ["color", "Type"], ["brand", "Brand"], ["size", "Size"], ["aisle", "In-store location"]],
       lanes: [["color", "Type"], ["varietal", "Varietal (top 14)"], ["country", "Country"], ["size", "Size"]],
@@ -508,7 +516,8 @@ button.opt:hover { border-color: var(--accent); }
       footer: function (n) {
         return '<p>Snapshot of the Whole Foods wine MCP server\'s data: ' + n + ' wines from the "wine" search at Whole Foods Market, shown for delivery to 92211, captured November 19, 2026 and completed from the full price-sorted listing on November 22, 2026. Prices and discounts are as listed on those days. Wines added November 22 show list details only, without tasting notes. This page reads that saved data; it does not stream live from the server.</p>' +
           '<p>Country is worked out from each bottle\'s label and description text and is blank where neither names one. The store pages did not expose bottle photo addresses, so bottles are drawn in their wine color.</p>' +
-          '<p>Vivino ratings were read from each wine\'s page on vivino.com on November 19 and 22, 2026, and cover all vintages except where the wine notes say otherwise. A rating is shown only when Vivino names the same producer and the same wine. For wines rated November 19, the word cloud counts words from up to 10 Vivino reviews per wine, with reviewer names left out. For wines rated November 22, it shows the flavors in each wine page\'s Vivino taste summary, sized by how many reviews mention them; no review text was read.</p>';
+          '<p>Vivino ratings were read from each wine\'s page on vivino.com on November 19 and 22, 2026, and cover all vintages except where the wine notes say otherwise. A rating is shown only when Vivino names the same producer and the same wine. For wines rated November 19, the word cloud counts words from up to 10 Vivino reviews per wine, with reviewer names left out. For wines rated November 22, it shows the flavors in each wine page\'s Vivino taste summary, sized by how many reviews mention them; no review text was read.</p>' +
+          '<p>Winery details were read from each producer\'s winery page on vivino.com on November 19 and 27, 2026. They are shown only when the page names the same producer; the short description is a summary, not Vivino\'s wording.</p>';
       }
     },
     beer: {
@@ -751,6 +760,35 @@ button.opt:hover { border-color: var(--accent); }
     return '<div class="viv">' + head + cloud + groups + '</div>';
   }
 
+  /* ---------- Winery (wine only, from the Vivino winery pages) ---------- */
+  function wineryBlock(r) {
+    if (r.w_status !== "matched") {
+      return '<div class="wnry" data-winery="' + esc(r.w_status || "not_found") + '"><h3>Winery</h3><p class="hint">' +
+        (r.w_status === "low_confidence" ? "A possible Vivino winery page was found for this producer, but it isn't a confirmed match, so it isn't shown." :
+          "No Vivino winery page was found for this producer.") + '</p></div>';
+    }
+    var place = [r.w_region, r.w_country].filter(Boolean).join(", ");
+    var stats = [];
+    if (has(r.w_rating)) stats.push('<span class="vr"><span class="star" aria-hidden="true">★</span>' + r.w_rating.toFixed(1) + '<span class="sr">Winery rating on Vivino</span>' +
+      (r.w_count ? '<span class="cnt">(' + r.w_count.toLocaleString("en-US") + ')</span>' : '') + '</span>');
+    if (r.w_wines) stats.push('<span class="hint">' + r.w_wines.toLocaleString("en-US") + ' wines on Vivino</span>');
+    if (r.w_owner) stats.push('<span class="hint">Owned by ' + esc(r.w_owner) + '</span>');
+    if (r.w_founded) stats.push('<span class="hint">Founded ' + esc(r.w_founded) + '</span>');
+    var wf = (r.w_wf || []).map(function (id) { return D.byId[id]; }).filter(Boolean);
+    var sib = wf.length ? '<div class="wsub"><span class="label">More from this winery at Whole Foods</span><div class="opts">' + wf.map(function (s) {
+      return '<button type="button" class="opt" data-open="' + s.id + '">' + esc(s.name) + ' <span class="num">' + money(s.price) + '</span></button>';
+    }).join("") + '</div></div>' : '';
+    var more = (r.w_more && r.w_more.length) ? '<div class="wsub"><span class="label">More from this winery on Vivino</span><ul>' + r.w_more.map(function (m) {
+      return '<li><a href="' + esc(m[1]) + '" target="_blank" rel="noopener noreferrer">' + esc(m[0]) + ' ↗</a></li>';
+    }).join("") + '</ul></div>' : '';
+    return '<div class="wnry" data-winery="matched"><h3>Winery: ' + esc(r.w_name || r.brand) + '</h3>' +
+      (place ? '<div class="hint">' + esc(place) + '</div>' : '') +
+      (stats.length ? '<div class="wstats">' + stats.join("") + '</div>' : '') +
+      (r.w_summary ? '<p>' + esc(r.w_summary) + '</p>' : '') +
+      (r.w_url ? '<a href="' + esc(r.w_url) + '" target="_blank" rel="noopener noreferrer">Winery page on Vivino ↗</a>' : '') +
+      sib + more + '</div>';
+  }
+
   /* ---------- views ---------- */
   function viewGrid(rows) {
     return '<div class="grid">' + rows.map(function (r) {
@@ -882,7 +920,7 @@ button.opt:hover { border-color: var(--accent); }
     var prose = [["Tasting notes", r.tasting], ["Winemaking", r.winemaking], ["Pairing (producer's words)", r.pairing], ["Other notes", r.other]]
       .filter(function (p) { return p[1]; })
       .map(function (p) { return '<div class="prose"><h3>' + p[0] + '</h3><p>' + esc(p[1]) + '</p></div>'; }).join("");
-    return { head: vivinoBlock(r) + priceLine(r, r.size_raw || r.size), body: factsHTML(facts) + prose + sectionsHTML(r) };
+    return { head: vivinoBlock(r) + priceLine(r, r.size_raw || r.size), body: wineryBlock(r) + factsHTML(facts) + prose + sectionsHTML(r) };
   }
 
   function optionsHTML(title, list) {

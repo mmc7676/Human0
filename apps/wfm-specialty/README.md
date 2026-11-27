@@ -2,7 +2,7 @@
 
 A one-page shelf browser for the wine, beer and cut-to-order cheese at one Whole Foods Market store, with a **Beer | Wine | Cheese** switch in the header.
 
-- **Wine:** 472 wines. Filter by type, price, alcohol, Vivino rating, varietal, country, brand and size; view as a grid, table, price-spread groups or a price chart. Each wine opens to its page details, Vivino rating and a word cloud of terms from recent reviews. 110 wines added November 22 show list details only, with no Vivino rating or tasting notes yet.
+- **Wine:** 472 wines. Filter by type, price, alcohol, Vivino rating, varietal, country, brand and size; view as a grid, table, price-spread groups or a price chart. Each wine opens to its page details, Vivino rating, a word cloud of terms from recent reviews and a Winery section from the producer's Vivino winery page (region, winery rating, a short summary and the winery's other Whole Foods wines). Filter by winery region or sort by winery rating. 110 wines added November 22 show list details only, with no Vivino rating or tasting notes yet.
 - **Beer:** 258 beers, ciders, seltzers, hard kombucha and tea, sake and makgeolli. Pack count, can or bottle size and flavor are kept as separate fields, with price per can or bottle and per fl oz, and ABV filters. 65 drinks added November 22 show list details only, without a description or store aisle.
 - **Cheese:** 108 cheeses cut to order at the cheese counter (priced per pound, so they come in different weights). Filter by style, milk, country and price per pound. Prepackaged shelf cheese is left out.
 
@@ -52,7 +52,7 @@ It prints the filter, facet and sort counts for each dataset as JSON.
 Server tests:
 
 ```
-python3 servers/wine/tests/test_stdio.py     # 28 checks
+python3 servers/wine/tests/test_stdio.py     # 40 checks
 python3 servers/beer/tests/test_stdio.py     # 22 checks
 python3 servers/beer/tests/test_ui_parity.py # 15 checks
 python3 servers/cheese/tests/test_stdio.py   # 24 checks

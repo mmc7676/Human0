@@ -1,7 +1,9 @@
-"""Build the wine browser's data file from the MCP server's wines.json (wine records only)."""
-import json, re, sys, collections
+"""Build the wine browser's data file from the MCP server's wines.json (wine records only).
+Usage: build_ui_data.py data/wines.json ui/wines.json [data/wineries]"""
+import json, os, re, sys, collections
 
 SRC, OUT = sys.argv[1], sys.argv[2]
+WINERY_DIR = sys.argv[3] if len(sys.argv) > 3 else os.path.join(os.path.dirname(os.path.abspath(SRC)), "wineries")
 doc = json.load(open(SRC))
 wines = [w for w in doc["wines"] if w["is_wine"]]
 
@@ -70,6 +72,42 @@ def taste_groups(ts):
     return sorted(merged.values(), key=lambda m: (-m[1], m[0])) or None
 
 
+VIVINO = re.compile(r"^https://www\.vivino\.com/[^?#\s]*$")
+
+
+def load_wineries(d):
+    """scw_id -> winery profile, from the Vivino winery capture (empty when absent)."""
+    idx_path = os.path.join(d, "wineries.json")
+    if not os.path.exists(idx_path):
+        return {}
+    idx = json.load(open(idx_path, encoding="utf-8"))
+    by_url = {}
+    for row in idx["wineries"]:
+        p = json.load(open(os.path.join(d, row["file"]), encoding="utf-8"))
+        by_url[p["vivino_winery_url"]] = p
+    return {scw: by_url[l["vivino_winery_url"]] for scw, l in idx["wine_to_winery"].items() if l["vivino_winery_url"] in by_url}
+
+
+WINERY_OF = load_wineries(WINERY_DIR)
+
+
+def winery_fields(w):
+    """Slim winery block. Only vivino.com links are kept; the winery's own site and social links stay in the server data."""
+    p = WINERY_OF.get(w["scw_id"])
+    if not p:
+        return {"w_status": "not_found"}
+    if p["match_status"] != "matched":
+        return {"w_status": p["match_status"]}
+    pr = p.get("profile") or {}
+    more = [[x["name"], x["url"]] for x in p.get("wines_on_page") or [] if x.get("url") and VIVINO.match(x["url"])][:6]
+    url = p["vivino_winery_url"] if VIVINO.match(p["vivino_winery_url"]) else None
+    return {"w_status": "matched", "w_conf": p["match_confidence"], "w_name": pr.get("name"), "w_url": url,
+            "w_country": pr.get("country"), "w_region": pr.get("region"), "w_rating": pr.get("avg_rating"),
+            "w_count": pr.get("ratings_count"), "w_wines": pr.get("wines_count"), "w_owner": pr.get("owned_by"),
+            "w_founded": pr.get("founded"), "w_summary": pr.get("description_summary"), "w_more": more or None,
+            "w_wf": [i for i in p.get("wf_wine_ids") or [] if i != w["scw_id"]] or None}
+
+
 rows = []
 for w in wines:
     rows.append({
@@ -85,7 +123,7 @@ for w in wines:
         "vintage": w["vintage"], "winemaking": w["winemaking"], "tasting": w["tasting_notes"],
         "pairing": w["pairing"], "other": w["other_notes"], "label_facts": w["label_facts"] or {},
         "bullets": w["description_bullets"], "sections": w["other_sections"] or {}, "url": w["url"],
-        **vivino_fields(w),
+        **vivino_fields(w), **winery_fields(w),
     })
 rows.sort(key=lambda r: r["pos"])
 with open(OUT, "w") as f:
@@ -94,3 +132,4 @@ print("rows", len(rows), "country", collections.Counter(r["country"] for r in ro
 print("source", json.dumps(doc["source"]))
 print("vivino", collections.Counter(r["v_status"] for r in rows), "rated", sum(1 for r in rows if r.get("v_rating") is not None),
       "with cloud", sum(1 for r in rows if r.get("v_cloud")))
+print("winery", collections.Counter(r["w_status"] for r in rows), "with region", sum(1 for r in rows if r.get("w_region")))

@@ -2,7 +2,8 @@
 """Whole Foods Wine MCP server (stdio, JSON-RPC 2.0, MCP protocol).
 
 Zero third-party dependencies: Python 3.9+ standard library only.
-Serves the standardized dataset in ../data/wines.json (override with WINE_DATA).
+Serves the standardized dataset in ../data/wines.json (override with WINE_DATA)
+and the Vivino winery profiles in ../data/wineries/ (override with WINERY_DATA).
 """
 import json
 import os
@@ -10,7 +11,7 @@ import re
 import sys
 
 SERVER_NAME = "wholefoods-wine"
-SERVER_VERSION = "1.1.0"
+SERVER_VERSION = "1.2.0"
 SUPPORTED_PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"]
 DATA_PATH = os.environ.get(
     "WINE_DATA",
@@ -28,6 +29,32 @@ def load_dataset(path):
 DOC, WINES = load_dataset(DATA_PATH)
 BY_ASIN = {w["asin"].upper(): w for w in WINES}
 BY_SCW = {w["scw_id"].upper(): w for w in WINES}
+
+WINERY_DIR = os.environ.get("WINERY_DATA", os.path.join(os.path.dirname(DATA_PATH), "wineries"))
+
+
+def load_wineries(d):
+    """Winery index, profiles by slug and wine -> winery links. Empty when the folder is absent."""
+    idx_path = os.path.join(d, "wineries.json")
+    if not os.path.exists(idx_path):
+        return None, {}, {}
+    with open(idx_path, encoding="utf-8") as f:
+        idx = json.load(f)
+    profiles = {}
+    for row in idx.get("wineries", []):
+        with open(os.path.join(d, row["file"]), encoding="utf-8") as f:
+            p = json.load(f)
+        profiles[p["winery_slug"]] = p
+    by_url = {p["vivino_winery_url"]: p for p in profiles.values()}
+    links = {}
+    for scw, link in (idx.get("wine_to_winery") or {}).items():
+        p = by_url.get(link.get("vivino_winery_url"))
+        if p:
+            links[scw.upper()] = p
+    return idx, profiles, links
+
+
+WINERY_INDEX, WINERIES, WINE_TO_WINERY = load_wineries(WINERY_DIR)
 
 SEARCH_FIELDS = ("brand", "product_name", "varietal", "color", "vineyard_location",
                  "winemaking", "tasting_notes", "pairing", "vintage", "other_notes")
@@ -256,6 +283,110 @@ def tool_dataset_stats(args):
             "field_coverage_pct": cov, "by_color": by_color}
 
 
+def _need_wineries():
+    if WINERY_INDEX is None:
+        raise ValueError(f"no winery data found in {WINERY_DIR}")
+
+
+def _winery_ok(p, low):
+    return p["match_status"] == "matched" or (low and p["match_status"] == "low_confidence")
+
+
+def winery_summary(p):
+    pr = p.get("profile") or {}
+    return {"slug": p["winery_slug"], "name": pr.get("name"), "vivino_winery_url": p["vivino_winery_url"],
+            "match_status": p["match_status"], "match_confidence": p["match_confidence"],
+            "country": pr.get("country"), "region": pr.get("region"), "avg_rating": pr.get("avg_rating"),
+            "ratings_count": pr.get("ratings_count"), "wines_count": pr.get("wines_count"),
+            "wf_wine_ids": p.get("wf_wine_ids") or []}
+
+
+def _find_winery(args):
+    """Profile for args.slug, or for the winery behind args.scw_id / args.asin."""
+    _need_wineries()
+    slug = (args.get("slug") or "").strip().lower()
+    if slug:
+        p = WINERIES.get(slug)
+        if p is None:
+            raise ValueError(f"no winery with slug {slug!r}")
+        return p
+    w = tool_get_wine(args)
+    p = WINE_TO_WINERY.get(w["scw_id"].upper())
+    if p is None:
+        raise ValueError(f"no Vivino winery was found for {w['scw_id']} ({w['brand']})")
+    return p
+
+
+def tool_get_winery(args):
+    p = _find_winery(args)
+    low = bool(args.get("include_low_confidence", False))
+    if not _winery_ok(p, low):
+        raise ValueError(f"the winery match for {p['winery_slug']!r} is low confidence; "
+                         "pass include_low_confidence=true to see it")
+    out = {k: v for k, v in p.items() if k != "file"}
+    if not args.get("include_links", False):
+        out.pop("links_level2", None)
+        out["links_level2_count"] = len(p.get("links_level2") or [])
+    return out
+
+
+def tool_list_wineries(args):
+    _need_wineries()
+    low = bool(args.get("include_low_confidence", False))
+    q = _norm(args.get("query"))
+    rows = []
+    for p in WINERIES.values():
+        pr = p.get("profile") or {}
+        if not _winery_ok(p, low):
+            continue
+        if args.get("country") and _norm(pr.get("country")) != _norm(args["country"]):
+            continue
+        if args.get("region") and not _contains(pr.get("region"), args["region"]):
+            continue
+        if args.get("min_rating") is not None:
+            r = pr.get("avg_rating")
+            if r is None or r < float(args["min_rating"]):
+                continue
+        if q and q not in _norm(" ".join([pr.get("name") or "", p["winery_slug"]] +
+                                         [x["producer"] for x in p.get("producers") or []])):
+            continue
+        rows.append(winery_summary(p))
+    sort = args.get("sort", "name")
+    keys = {"name": lambda r: _norm(r["name"]),
+            "rating_desc": lambda r: (r["avg_rating"] is None, -(r["avg_rating"] or 0), -(r["ratings_count"] or 0), _norm(r["name"])),
+            "wf_wines_desc": lambda r: (-len(r["wf_wine_ids"]), _norm(r["name"]))}
+    if sort not in keys:
+        raise ValueError(f"sort must be one of {sorted(keys)}")
+    rows.sort(key=keys[sort])
+    try:
+        offset = int(args.get("offset", 0))
+    except (TypeError, ValueError):
+        raise ValueError("offset must be an integer")
+    if offset < 0:
+        raise ValueError("offset must be >= 0")
+    limit = _limit(args, default=50, cap=300)
+    return {"total": len(rows), "offset": offset, "limit": limit,
+            "next_offset": offset + limit if offset + limit < len(rows) else None,
+            "results": rows[offset: offset + limit]}
+
+
+def tool_wines_by_winery(args):
+    p = _find_winery(args)
+    if not _winery_ok(p, bool(args.get("include_low_confidence", False))):
+        raise ValueError(f"the winery match for {p['winery_slug']!r} is low confidence; "
+                         "pass include_low_confidence=true to see it")
+    wines = [BY_SCW[i.upper()] for i in p.get("wf_wine_ids") or [] if i.upper() in BY_SCW]
+    wines.sort(key=lambda w: w["position"])
+    return {"winery": winery_summary(p), "total": len(wines), "results": [summary(w) for w in wines]}
+
+
+def tool_winery_stats(args):
+    _need_wineries()
+    return {"stats": WINERY_INDEX.get("stats"), "captured": WINERY_INDEX.get("finishedAt"),
+            "winery_files": len(WINERIES), "wines_linked": len(WINE_TO_WINERY),
+            "wines_linked_matched": sum(1 for p in WINE_TO_WINERY.values() if p["match_status"] == "matched")}
+
+
 COMMON_FILTERS = {
     "varietal": {"type": "string", "description": "Grape or style, e.g. 'Pinot Noir', 'Prosecco'"},
     "color": {"type": "string", "enum": ["red", "white", "rosé", "sparkling", "dessert", "orange", "other"],
@@ -297,6 +428,33 @@ TOOLS = [
      "description": "Vivino data for one wine by ASIN or SCW id: match status and confidence, Vivino URL, average rating, rating count, up to 10 community review texts (no user names), the review word cloud and the taste summary.",
      "inputSchema": {"type": "object", "properties": {
          "asin": {"type": "string"}, "scw_id": {"type": "string"}}}},
+    {"name": "get_winery",
+     "description": "Vivino winery profile for one winery, by its slug (e.g. 'daou') or by a wine's ASIN or SCW id: name, country, region, average rating, rating count, wine count, owner, website, a short description, page-1 wines and the Whole Foods wines it makes. Matched wineries only unless include_low_confidence is true.",
+     "inputSchema": {"type": "object", "properties": {
+         "slug": {"type": "string", "description": "Vivino winery slug, e.g. 'daou'"},
+         "asin": {"type": "string"}, "scw_id": {"type": "string"},
+         "include_low_confidence": {"type": "boolean", "default": False},
+         "include_links": {"type": "boolean", "default": False,
+                           "description": "Also return every winery-specific link recorded on the Vivino page"}}}},
+    {"name": "list_wineries",
+     "description": "List the Vivino wineries behind Whole Foods wines, filtered by country, region, minimum winery rating or a name query, and sorted.",
+     "inputSchema": {"type": "object", "properties": {
+         "query": {"type": "string", "description": "Winery or producer name substring"},
+         "country": {"type": "string", "description": "Exact country from the Vivino winery page"},
+         "region": {"type": "string", "description": "Region substring from the Vivino winery page"},
+         "min_rating": {"type": "number", "minimum": 0, "maximum": 5},
+         "include_low_confidence": {"type": "boolean", "default": False},
+         "sort": {"type": "string", "enum": ["name", "rating_desc", "wf_wines_desc"], "default": "name"},
+         "offset": {"type": "integer", "minimum": 0, "default": 0},
+         "limit": {"type": "integer", "minimum": 1, "maximum": 300, "default": 50}}}},
+    {"name": "wines_by_winery",
+     "description": "The Whole Foods wines made by one winery, by winery slug or by any of its wines' ASIN or SCW id.",
+     "inputSchema": {"type": "object", "properties": {
+         "slug": {"type": "string"}, "asin": {"type": "string"}, "scw_id": {"type": "string"},
+         "include_low_confidence": {"type": "boolean", "default": False}}}},
+    {"name": "winery_stats",
+     "description": "Coverage of the Vivino winery profiles: producers, match buckets, winery files and wines linked.",
+     "inputSchema": {"type": "object", "properties": {}}},
     {"name": "dataset_stats",
      "description": "Record counts, field coverage percentages and color breakdown of the dataset.",
      "inputSchema": {"type": "object", "properties": {}}},
@@ -309,6 +467,10 @@ HANDLERS = {
     "wines_by_pairing": tool_wines_by_pairing,
     "dataset_stats": tool_dataset_stats,
     "get_vivino": tool_get_vivino,
+    "get_winery": tool_get_winery,
+    "list_wineries": tool_list_wineries,
+    "wines_by_winery": tool_wines_by_winery,
+    "winery_stats": tool_winery_stats,
 }
 
 RESOURCES = [
@@ -327,7 +489,8 @@ def handle(msg):
                 "capabilities": {"tools": {"listChanged": False}, "resources": {"listChanged": False}},
                 "serverInfo": {"name": SERVER_NAME, "version": SERVER_VERSION},
                 "instructions": "Whole Foods wine catalog. Use search_wines / list_wines to browse, "
-                                "get_wine for one record, wines_by_pairing to match food against producer pairing notes."}
+                                "get_wine for one record, wines_by_pairing to match food against producer pairing notes, "
+                                "get_winery / list_wineries / wines_by_winery for the Vivino winery profiles."}
     if method == "ping":
         return {}
     if method == "tools/list":

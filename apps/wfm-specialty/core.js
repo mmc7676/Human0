@@ -8,8 +8,8 @@
   var WINE = {
     typeField: "color",
     typeOrder: ["red", "white", "rosé", "sparkling", "orange", "dessert", NONE],
-    setFields: ["color", "varietal", "country", "brand", "size"],
-    hayFields: ["brand", "name", "varietal", "color", "country", "location", "tasting", "winemaking", "pairing", "other", "asin", "id"],
+    setFields: ["color", "varietal", "country", "brand", "size", "w_region"],
+    hayFields: ["brand", "name", "varietal", "color", "country", "location", "tasting", "winemaking", "pairing", "other", "asin", "id", "w_name", "w_region"],
     extra: function (row, st) {
       if (st.minRating !== null && st.minRating !== undefined &&
           (row.v_rating === null || row.v_rating === undefined || row.v_rating < st.minRating)) return false;
@@ -157,7 +157,8 @@
     per_oz: function (r) { return cheap(r.per_oz); },
     per_unit: function (r) { return cheap(r.per_unit); },
     rating: function (r) { return num(r.v_rating); },
-    ratings: function (r) { return r.v_count || 0; }
+    ratings: function (r) { return r.v_count || 0; },
+    wrating: function (r) { return num(r.w_rating); }
   };
 
   function sortRows(rows, key, dir) {

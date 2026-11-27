@@ -66,3 +66,17 @@ if(process.argv[5]){
   Q.form_order=C.facetValues(K,'form').map(x=>x.value);
   console.log(JSON.stringify(Q));
 }
+// Winery (Vivino winery pages): node test_core.js core.js wines.json
+{
+  C.configure(C.WINE);const S4=o=>Object.assign(C.emptyState(),o);const W={};
+  W.matched=rows.filter(r=>r.w_status==='matched').length;
+  W.region_facet_sum=Object.values(C.facetCounts(rows,S4({}),'w_region')).reduce((a,b)=>a+b,0);
+  W.paso=C.filterRows(rows,S4({w_region:['Paso Robles']})).length;
+  W.paso_ok=C.filterRows(rows,S4({w_region:['Paso Robles']})).every(r=>r.w_region==='Paso Robles');
+  W.q_daou=C.filterRows(rows,S4({q:'daou'})).length;
+  const wr=C.sortRows(rows,'wrating','desc').map(r=>r.w_rating==null?-1:r.w_rating);W.wrating_sorted=wr.every((v,i)=>!i||wr[i-1]>=v);
+  W.no_w_on_unmatched=rows.filter(r=>r.w_status!=='matched'&&(r.w_name||r.w_url)).length===0;
+  W.links_vivino_only=rows.every(r=>(r.w_more||[]).every(m=>m[1].startsWith('https://www.vivino.com/'))&&(!r.w_url||r.w_url.startsWith('https://www.vivino.com/')));
+  W.base_counts_unchanged=C.filterRows(rows,S4({})).length===out.total&&C.filterRows(rows,S4({color:['red'],priceMax:20})).length===out.red_under20;
+  console.log(JSON.stringify(W));
+}

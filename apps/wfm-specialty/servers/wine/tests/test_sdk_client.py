@@ -28,7 +28,12 @@ async def main():
                 print(" -", row["brand"], "|", row["product_name"], "|", row["price"])
             res = await s.call_tool("dataset_stats", {})
             print("stats:", json.loads(res.content[0].text)["records"], "records")
-            assert names == ["dataset_stats", "get_vivino", "get_wine", "list_wines", "search_wines", "wines_by_pairing"]
+            res = await s.call_tool("get_winery", {"slug": "daou"})
+            prof = json.loads(res.content[0].text)["profile"]
+            print("winery:", prof["name"], prof["region"], prof["avg_rating"])
+            assert prof["name"] == "DAOU"
+            assert names == ["dataset_stats", "get_vivino", "get_wine", "get_winery", "list_wineries", "list_wines",
+                             "search_wines", "winery_stats", "wines_by_pairing", "wines_by_winery"]
     print("SDK CLIENT TEST PASSED")
 
 

@@ -79,7 +79,7 @@ def load_records(warnings):
                 # each batch file owns a slice of 29 idx values; a record that landed in another
                 # batch's file (a worker mix-up) only counts when the owning file has none
                 m = re.search(r"match_(\d+)\.jsonl$", path)
-                r["_own_file"] = bool(m) and int(m.group(1)) == r.get("idx", -1) // 29 + 1
+                r["_own_file"] = os.path.basename(path).startswith(("match_retry", "match_new")) or (bool(m) and int(m.group(1)) == r.get("idx", -1) // 29 + 1)
                 prev = recs.get(r.get("idx"))
                 rank = {"matched": 3, "low_confidence": 2, "fetch_failed": 1, "not_found": 0}
                 if prev is None or (r["_own_file"], rank.get(r.get("status"), -1)) >= \
@@ -149,6 +149,10 @@ def main():
         scw_ids = [w["scw_id"] for w in g["wines"]]
         base = {"producer": g["producer"], "brand_fields": g["brand_fields"], "wf_wine_ids": scw_ids,
                 "normalization_notes": g["notes"]}
+        if r is None and g.get("skip_search"):
+            base.update(note="not searched: " + "; ".join(g["notes"]))
+            buckets["not_found"].append(base)
+            continue
         if r is None:
             buckets["not_searched"].append(base)
             continue
@@ -160,6 +164,16 @@ def main():
             buckets["fetch_failed" if status == "fetch_failed" else "not_found"].append(base)
             continue
         page = r.get("page") or {}
+        # description_summary is our own paraphrase, so it follows American spelling
+        # (wine names and page titles stay exactly as Vivino shows them)
+        if page.get("description_summary"):
+            s = page["description_summary"]
+            for uk, us in (("centred", "centered"), ("centre", "center"), ("favourite", "favorite"),
+                           ("flavour", "flavor"), ("colour", "color"), ("honour", "honor"),
+                           ("metres", "meters"), ("organised", "organized"), ("recognised", "recognized")):
+                s = re.sub(r"\b%s" % uk, us, s)
+                s = re.sub(r"\b%s" % uk.capitalize(), us.capitalize(), s)
+            page["description_summary"] = s
         if page.get("website_url"):
             page["website_url"] = canon(page["website_url"])
         wines = wines_of(r)

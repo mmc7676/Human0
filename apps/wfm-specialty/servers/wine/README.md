@@ -118,7 +118,7 @@ Captured November 19, 2026 from vivino.com public pages (no sign-in). Each of th
 - **Rating:** the average and ratings count shown on the Vivino page header. 306 matched wines have one; 6 matched wines show no average on Vivino and stay null. No rating is estimated.
 - **Word cloud:** descriptor terms (flavor, texture, style, value, occasion) counted across up to 10 of the most recent English reviews per wine, capped at 10 by design. Only term counts and the number of reviews counted are stored; no review text, user name or profile detail is kept. A term is kept only if it appears in Vivino's raw review JSON for that wine. 310 matched wines have a cloud. Wines rated Nov 22 and 23 use the taste-summary cloud described above, for 392 rated wines with a cloud in all.
 - **Tools:** `list_wines` takes `min_rating`, `has_vivino` and `sort=rating_desc`; `get_vivino` returns one wine's Vivino record.
-- **Rebuild:** `build/parse_fetch_agents.py`, then `build/vivino_fetch_to_extract.py`, `build/enrich_vivino.py`, `build/merge_vivino_2026_11_22.py` (which runs `build/standardize_vivino.py` at the end), `build/countries.py data/wines.json --write`, and `ui/build_ui_data.py data/wines.json ui/wines.json`.
+- **Rebuild:** `build/parse_fetch_agents.py`, then `build/vivino_fetch_to_extract.py`, `build/enrich_vivino.py`, `build/merge_vivino_2026_11_22.py` (which runs `build/standardize_vivino.py` at the end), `build/countries.py data/wines.json --write`, and `ui/build_ui_data.py data/wines.json ui/wines.json`. Winery profiles: `build/make_winery_queue.py`, `build/build_wineries.py`, then the same `ui/build_ui_data.py` (it reads `data/wineries/` too); see `data/wineries/INTEGRATION.md`.
 
 ## Vivino record layout (schema v2, Nov 26, 2026)
 
@@ -196,6 +196,13 @@ Expected last line: `SDK CLIENT TEST PASSED`.
 | `list_wines` | Page through wines (`offset`, `limit` up to 200, `sort`: position, price_asc, price_desc, brand) |
 | `wines_by_pairing` | Wines whose pairing text matches a food (for the cheese side of the app) |
 | `dataset_stats` | Counts, coverage and wines by color |
+| `get_vivino` | One wine's Vivino record by `asin` or `scw_id` |
+| `get_winery` | One Vivino winery profile by `slug`, or by a wine's `asin` or `scw_id` (`include_links` adds the recorded winery-page links) |
+| `list_wineries` | Wineries filtered by `query`, `country`, `region`, `min_rating`; `sort`: name, rating_desc, wf_wines_desc |
+| `wines_by_winery` | The Whole Foods wines made by one winery |
+| `winery_stats` | Winery coverage: producers, match buckets, files and wines linked |
+
+The winery tools read `data/wineries/` (override with `WINERY_DATA`) and show matched wineries only unless `include_low_confidence` is true. See `data/wineries/INTEGRATION.md`.
 
 Filters shared by the search and list tools: `varietal`, `region`, `brand`,
 `color` (red, white, rosé, sparkling, dessert, orange, other), `size`,

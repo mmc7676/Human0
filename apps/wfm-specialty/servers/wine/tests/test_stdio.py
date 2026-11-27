@@ -59,7 +59,8 @@ def main():
     c.notify("notifications/initialized")
     ok(c.rpc("ping")["result"] == {}, "ping")
     tools = {t["name"] for t in c.rpc("tools/list")["result"]["tools"]}
-    ok(tools == {"search_wines", "get_wine", "list_wines", "wines_by_pairing", "dataset_stats", "get_vivino"}, "tools/list")
+    ok(tools == {"search_wines", "get_wine", "list_wines", "wines_by_pairing", "dataset_stats", "get_vivino",
+                 "get_winery", "list_wineries", "wines_by_winery", "winery_stats"}, "tools/list")
 
     st = c.call("dataset_stats")["structuredContent"]
     ok(st["records"] == len(WINES) and st["wines"] == len(ONLY_WINES), f"dataset_stats counts {st['records']}/{st['wines']}")
@@ -128,6 +129,56 @@ def main():
     ok(gu.get("rating") is None and not gu.get("word_cloud"), "unmatched wine has no rating and no word cloud")
     st = c.call("dataset_stats")["structuredContent"]["vivino"]
     ok(st["rated_wines"] == len(RATED), f"dataset_stats rated_wines {st['rated_wines']}")
+
+    # Wineries: tool answers must equal what data/wineries/ stores
+    WDIR = os.path.join(ROOT, "data", "wineries")
+    WIDX = json.load(open(os.path.join(WDIR, "wineries.json"), encoding="utf-8"))
+    PROF = {r["file"]: json.load(open(os.path.join(WDIR, r["file"]), encoding="utf-8")) for r in WIDX["wineries"]}
+    BYURL = {p["vivino_winery_url"]: p for p in PROF.values()}
+    M_W = [p for p in PROF.values() if p["match_status"] == "matched"]
+    L_W = [p for p in PROF.values() if p["match_status"] == "low_confidence"]
+    lw = c.call("list_wineries", {"limit": 300})["structuredContent"]
+    ok(lw["total"] == len(M_W), f"list_wineries matched only -> {lw['total']} (stored {len(M_W)})")
+    lw2 = c.call("list_wineries", {"limit": 300, "include_low_confidence": True})["structuredContent"]
+    ok(lw2["total"] == len(M_W) + len(L_W), f"list_wineries with low confidence -> {lw2['total']}")
+    us = c.call("list_wineries", {"country": "United States", "limit": 300})["structuredContent"]
+    ok(us["total"] == sum(1 for p in M_W if p["profile"].get("country") == "United States"),
+       f"list_wineries country filter -> {us['total']} US wineries")
+    hi = c.call("list_wineries", {"min_rating": 4.0, "sort": "rating_desc", "limit": 300})["structuredContent"]["results"]
+    rr = [r["avg_rating"] for r in hi]
+    ok(len(hi) == sum(1 for p in M_W if (p["profile"].get("avg_rating") or 0) >= 4.0) and rr == sorted(rr, reverse=True),
+       f"list_wineries min_rating 4.0 sorted high to low ({len(hi)})")
+    errs, checked = 0, 0
+    for scw, link in WIDX["wine_to_winery"].items():
+        if link["match_status"] != "matched":
+            continue
+        g = c.call("get_winery", {"scw_id": scw})["structuredContent"]
+        exp = BYURL[link["vivino_winery_url"]]
+        checked += 1
+        if g["vivino_winery_url"] != exp["vivino_winery_url"] or scw not in g["wf_wine_ids"] or \
+           g["profile"] != exp["profile"] or "links_level2" in g:
+            errs += 1
+    ok(errs == 0 and checked == sum(1 for l in WIDX["wine_to_winery"].values() if l["match_status"] == "matched"),
+       f"get_winery by scw_id returns the stored profile for all {checked} matched wines")
+    low_scw = [s for s, l in WIDX["wine_to_winery"].items() if l["match_status"] == "low_confidence"][0]
+    ok(c.call("get_winery", {"scw_id": low_scw})["isError"] is True, "get_winery low-confidence wine -> isError by default")
+    ok(c.call("get_winery", {"scw_id": low_scw, "include_low_confidence": True})["structuredContent"]["match_status"] == "low_confidence",
+       "get_winery include_low_confidence=true returns it")
+    none_scw = [w["scw_id"] for w in WINES if w["scw_id"] not in WIDX["wine_to_winery"]][0]
+    ok(c.call("get_winery", {"scw_id": none_scw})["isError"] is True, "get_winery wine with no winery -> isError")
+    d = c.call("get_winery", {"slug": "DAOU", "include_links": True})["structuredContent"]
+    ok(d["profile"]["name"] == "DAOU" and len(d["links_level2"]) == len(PROF["daou.json"]["links_level2"]),
+       "get_winery by slug (case-insensitive) with links")
+    errs = 0
+    for p in M_W:
+        wb = c.call("wines_by_winery", {"slug": p["winery_slug"]})["structuredContent"]
+        if sorted(r["scw_id"] for r in wb["results"]) != sorted(p["wf_wine_ids"]):
+            errs += 1
+    ok(errs == 0, f"wines_by_winery returns each matched winery's Whole Foods wines ({len(M_W)} wineries)")
+    ws = c.call("winery_stats")["structuredContent"]
+    ok(ws["winery_files"] == len(PROF) and ws["wines_linked"] == len(WIDX["wine_to_winery"]),
+       f"winery_stats {ws['winery_files']} files, {ws['wines_linked']} wines linked")
+    ok(c.call("get_winery", {"slug": "no-such-winery"})["isError"] is True, "get_winery unknown slug -> isError")
 
     ok(c.call("wines_by_pairing", {"food": ""})["isError"] is True, "wines_by_pairing empty food -> isError")
     ok(c.call("list_wines", {"limit": 0})["isError"] is True, "limit 0 -> isError")
