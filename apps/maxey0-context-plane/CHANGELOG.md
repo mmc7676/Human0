@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.3.0 - Prefederation — 2026-11-27
+- **Claude domain.** A 12th domain, `claude`, with 21 topics, 133 concepts, 844 skills and 43 new MaxeyN agents (Maxey1764 to Maxey1806), from Human0's Claude docs map (Claude apps, Claude Code, Claude Platform; 1,383 pages) plus a Claude Duet topic. Served at `/mcp/claude` like every domain.
+  - Built by `tools/claude_domain/build_claude_packs.py` from `claude_domain.csv` into 21 topic packs (`SCW1/sources/packs/`), filed under the domain with `regroup.pack_domains`. Each pack passes the server's `validate_topic_pack`.
+  - 159 CSV concepts became 133 after 34 declared merges (`merges.json`): cross-topic duplicates, and merges to keep every topic at 8 concepts or fewer.
+  - A single-page skill is described by that page's own one-line description where the site publishes one (802 of 1,383 pages; `page_descriptions.json`, from the sites' llms.txt and llms-full.txt, fetched 2026-11-27). The others are described by their titles.
+  - MCP: the Claude Platform Docs server is listed only for the 7 topics whose pages are all on platform.claude.com, because that server covers those docs only. The other 14 topics list no server.
+  - Every existing domain, topic, concept, skill and agent is unchanged. TF-IDF weights are shared, so derived scores shift: 33 agent → MCP links of existing agents changed to 30 others, and Chatbase and JupiterOne, each held only by links just above the 0.1 threshold, have no link now and leave the map (117 → 116 servers).
+  - The lens fixture (`server/test/lens.fixture.json`) was regenerated on the new map: 5 of its 8 tasks route differently, 3 of them through Claude skills.
+- The dense (bge-m3) index is per graph digest, so it is rebuilt after deploy; routing is TF-IDF only until it is complete.
+
 ## v1.2.0 - Prefederation — 2026-11-11
 - **Coverage after every route.** Under the route: which words of the task the chosen path covers, which the map knows but this route skipped (with the concept that fits them), and which are not covered.
 - **Where the hierarchy breaks.** For the uncovered part (with its neighboring word, e.g. "android app") the app walks down the levels with the observer lens: no topic fits (best TF-IDF score below 0.2) → propose a new topic in the best domain; a topic fits but no concept → propose a new concept under it. No model and no network: it runs in the dashboard for everyone.

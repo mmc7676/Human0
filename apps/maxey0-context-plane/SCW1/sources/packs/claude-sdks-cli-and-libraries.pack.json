@@ -1,0 +1,518 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-sdks-cli-and-libraries",
+ "topic": {
+  "id": "claude-sdks-cli-and-libraries",
+  "label": "Claude SDKs, CLI and Libraries",
+  "desc": "Claude SDKs, CLI and Libraries: Cli, Cli sdks libraries, Libraries, Sdks."
+ },
+ "concepts": [
+  [
+   "csdk-cli",
+   "Cli",
+   "claude-sdks-cli-and-libraries",
+   "Cli: Quickstart: CLI quickstart, Authentication options, Scripting and automation, Connect to a Managed Agents session, Manage resources as code, Using the CLI.",
+   [
+    "cli",
+    "quickstart",
+    "authentication",
+    "option",
+    "scripting",
+    "automation"
+   ]
+  ],
+  [
+   "csdk-cli-sdks-libraries",
+   "Cli sdks libraries",
+   "claude-sdks-cli-and-libraries",
+   "Cli sdks libraries: Overview: SDKs, CLI, and libraries, Middleware.",
+   [
+    "cli",
+    "sdk",
+    "librarie",
+    "middleware"
+   ]
+  ],
+  [
+   "csdk-libraries",
+   "Libraries",
+   "claude-sdks-cli-and-libraries",
+   "Libraries: Apple Foundation Models, OpenAI SDK compatibility.",
+   [
+    "librarie",
+    "apple",
+    "foundation",
+    "model",
+    "openai",
+    "sdk"
+   ]
+  ],
+  [
+   "csdk-sdks",
+   "Sdks",
+   "claude-sdks-cli-and-libraries",
+   "Sdks: C#, Go, Java, PHP, Python, Ruby, TypeScript.",
+   [
+    "sdk",
+    "java",
+    "php",
+    "python",
+    "ruby",
+    "typescript"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "csdk-quickstart-cli-quickstart",
+   "csdk-cli",
+   "Quickstart: CLI quickstart",
+   "Install the ant command-line tool, authenticate, and send your first request to the Claude API.",
+   "procedural",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-authentication-options",
+   "csdk-cli",
+   "Authentication options",
+   "Authenticate the ant CLI with interactive login, API keys, named profiles, and Workload Identity Federation.",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-scripting-and-automation",
+   "csdk-cli",
+   "Scripting and automation",
+   "Version-control API resources as files with ant apply, chain ant CLI commands in scripts, operate on resources from Claude Code, and authenticate curl calls with CLI credentials.",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-connect-to-a-managed-agents-session",
+   "csdk-cli",
+   "Connect to a Managed Agents session",
+   "Attach the ant CLI to a Claude Managed Agents session to follow its transcript live, send messages, allow or deny tool calls, or open the session viewer in your browser.",
+   "procedural",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-manage-resources-as-code",
+   "csdk-cli",
+   "Manage resources as code",
+   "Declare agents, environments, skills, memory stores, deployments, and vaults as files in your repository and keep the API's resources in sync with them using ant apply.",
+   "procedural",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-using-the-cli",
+   "csdk-cli",
+   "Using the CLI",
+   "Command structure, output formats, GJSON transforms, request bodies, and debugging for the ant CLI.",
+   "procedural",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-overview-sdks-cli-and-libraries",
+   "csdk-cli-sdks-libraries",
+   "Overview: SDKs, CLI, and libraries",
+   "\"Official tools for building with the Claude API: client SDKs in seven languages, the ant CLI, and framework-specific libraries.\"",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-middleware",
+   "csdk-cli-sdks-libraries",
+   "Middleware",
+   "Intercept and modify the SDK's requests and responses.",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-apple-foundation-models",
+   "csdk-libraries",
+   "Apple Foundation Models",
+   "Use Claude on Apple platforms through the Foundation Models framework with the Claude for Foundation Models Swift package.",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-openai-sdk-compatibility",
+   "csdk-libraries",
+   "OpenAI SDK compatibility",
+   "Anthropic provides a compatibility layer that lets you use the OpenAI SDK to test the Claude API. With a few code changes, you can evaluate Anthropic model capabilities.",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-c",
+   "csdk-sdks",
+   "C#",
+   "Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-go",
+   "csdk-sdks",
+   "Go",
+   "Install and configure the Anthropic Go SDK with context-based cancellation and functional options",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-java",
+   "csdk-sdks",
+   "Java",
+   "Install and configure the Anthropic Java SDK with builder patterns and async support",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-php",
+   "csdk-sdks",
+   "PHP",
+   "Install and configure the Anthropic PHP SDK with value objects and builder patterns",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-python",
+   "csdk-sdks",
+   "Python",
+   "Install and configure the Anthropic Python SDK with sync and async client support",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-ruby",
+   "csdk-sdks",
+   "Ruby",
+   "Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "csdk-typescript",
+   "csdk-sdks",
+   "TypeScript",
+   "Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments",
+   "semantic",
+   [
+    [
+     "claude-sdks-cli-and-libraries-specialist",
+     "primary"
+    ],
+    [
+     "claude-sdks-cli-and-libraries-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-sdks-cli-and-libraries-specialist": "Claude SDKs, CLI and Libraries Specialist",
+  "claude-sdks-cli-and-libraries-reviewer": "Claude SDKs, CLI and Libraries Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Platform Docs",
+   "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27"
+  ]
+ ],
+ "lexicon": {
+  "cli": "cli quickstart automation option scripting resource",
+  "clisdk": "librarie sdk middleware",
+  "librarie": "apple foundation openai compatibility model",
+  "sdk": "java php ruby python typescript"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV names this server 'Claude Developer Platform docs'; the directory lists it as Claude Platform Docs. Its own instructions say it covers the Claude API, Anthropic SDKs and Claude Managed Agents, not Claude Code or the Agent SDK. Existence and tool names verified 2026-11-27; a search returned platform.claude.com pages.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "csdk-quickstart-cli-quickstart": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart"
+   ],
+   "csdk-authentication-options": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication"
+   ],
+   "csdk-scripting-and-automation": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
+   ],
+   "csdk-connect-to-a-managed-agents-session": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
+   ],
+   "csdk-manage-resources-as-code": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply"
+   ],
+   "csdk-using-the-cli": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/using"
+   ],
+   "csdk-overview-sdks-cli-and-libraries": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/overview"
+   ],
+   "csdk-middleware": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/middleware"
+   ],
+   "csdk-apple-foundation-models": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models"
+   ],
+   "csdk-openai-sdk-compatibility": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/openai-sdk"
+   ],
+   "csdk-c": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/csharp"
+   ],
+   "csdk-go": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/go"
+   ],
+   "csdk-java": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/java"
+   ],
+   "csdk-php": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php"
+   ],
+   "csdk-python": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/python"
+   ],
+   "csdk-ruby": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/ruby"
+   ],
+   "csdk-typescript": [
+    "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript"
+   ]
+  }
+ }
+}

@@ -1,20 +1,20 @@
 {
  "before_sources": {
-  "topics": 127,
-  "concepts": 735,
-  "skills": 2000,
-  "agents": 1030,
-  "mcp_rows": 363
+  "topics": 148,
+  "concepts": 868,
+  "skills": 2844,
+  "agents": 1093,
+  "mcp_rows": 370
  },
  "after": {
-  "domains": 11,
-  "topics": 128,
-  "concepts": 711,
-  "skills": 1998,
-  "agents": 1021,
-  "mcp_servers": 117,
-  "agent_mcp_links": 556,
-  "related_links": 13,
+  "domains": 12,
+  "topics": 149,
+  "concepts": 844,
+  "skills": 2842,
+  "agents": 1064,
+  "mcp_servers": 116,
+  "agent_mcp_links": 561,
+  "related_links": 32,
   "mcp_without_agent": 21
  },
  "removed_topics": {
@@ -523,7 +523,7 @@
   }
  ],
  "maxey_keys": {
-  "from_registry": 954,
+  "from_registry": 997,
   "newly_assigned": []
  },
  "skill_agent_overrides": [
@@ -539,6 +539,10 @@
   {
    "id": "116f9db2-2c37-4b1b-89de-c5519a95ae9c",
    "name": "Elastic Cloud Serverless"
+  },
+  {
+   "id": "a12a9e90-4b84-4dcc-a2c3-146f91e46f25",
+   "name": "JupiterOne"
   },
   {
    "id": "63125588-06e1-4567-8130-f5a26ed1d20f",
@@ -613,6 +617,10 @@
    "name": "Google Drive"
   },
   {
+   "id": "48ba489e-160f-4965-913b-667cce063da2",
+   "name": "Chatbase"
+  },
+  {
    "id": "session:Claude_Docs",
    "name": "Claude Docs"
   },
@@ -622,8 +630,8 @@
   }
  ],
  "regroup": {
-  "domains": 11,
-  "topics": 128,
-  "from_topics": 121
+  "domains": 12,
+  "topics": 149,
+  "from_topics": 142
  }
 }

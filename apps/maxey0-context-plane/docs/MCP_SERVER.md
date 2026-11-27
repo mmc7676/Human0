@@ -11,7 +11,7 @@ https://maxey0-context-plane-mcp.maxey0.workers.dev
 | Path | Method | Serves |
 |---|---|---|
 | `/mcp` | POST | MCP, every domain |
-| `/mcp/<domain id>` (11, e.g. `/mcp/agentic-systems`, `/mcp/business-finance`) | POST | MCP, one domain each: the same tools over a smaller map |
+| `/mcp/<domain id>` (12, e.g. `/mcp/agentic-systems`, `/mcp/business-finance`) | POST | MCP, one domain each: the same tools over a smaller map |
 | `/app` | GET | The Maxey0 Context Plane Graph web app |
 | `/graph.json` | GET | The whole map as JSON for browser apps (any origin may read it), with every node's field location; `?index=1` adds the TF-IDF index (a vector for every node on all six levels) |
 | `/` | GET | Server info, endpoints, counts and the map's digest |

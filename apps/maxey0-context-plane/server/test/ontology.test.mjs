@@ -79,9 +79,14 @@ test("spec decisions are reflected", () => {
   for (const t of Object.keys(spec.removed_topics)) assert.ok(!T.has(t), t);
   // regroup: domains written from scratch; every concept in exactly one regrouped topic of 3-8 concepts
   assert.deepEqual(g.domains.map((d) => d.id), spec.regroup.domains.map((d) => d.id));
+  // topic packs added after the regroup keep their own topic, in the domain regroup.pack_domains declares for it
+  const packDom = spec.regroup.pack_domains ?? {};
   const placed = spec.regroup.topics.flatMap((t) => t.concepts);
-  assert.equal(new Set(placed).size, g.concepts.length);
+  const kept = g.concepts.filter((c) => Object.hasOwn(packDom, c.topic)).map((c) => c.id);
+  assert.equal(new Set([...placed, ...kept]).size, g.concepts.length);
+  assert.equal(placed.filter((c) => kept.includes(c)).length, 0, "a concept is placed once");
   for (const t of spec.regroup.topics) { assert.equal(T.get(t.id).domain, t.domain, t.id); for (const c of t.concepts) assert.equal(C.get(c).topic, t.id, c); }
+  for (const [t, d] of Object.entries(packDom)) { assert.equal(T.get(t).domain, d, t); assert.ok(g.domains.some((x) => x.id === d), d); }
   for (const [src, dst] of Object.entries(spec.concept_merges)) { assert.ok(!C.has(src), src); assert.ok(C.has(dst), dst); }
   for (const s of Object.keys(spec.dropped_skills)) assert.ok(!S.has(s), s);
   // the 8 Maxey0 concepts all sit in Agentic Systems; every former Maxey0 skill survives the concept merges

@@ -587,9 +587,7 @@
    "key": "Maxey1020",
    "name": "Computational Physics Modeler",
    "legacy_key": "apph-modeler",
-   "mcp": [
-    "local:quantum-simulator-mcp"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey1021",
@@ -627,9 +625,7 @@
    "key": "Maxey1026",
    "name": "Photonics Engineer",
    "legacy_key": "apph-photonics",
-   "mcp": [
-    "local:quantum-simulator-mcp"
-   ]
+   "mcp": []
   },
   {
    "key": "Maxey1028",
@@ -650,6 +646,7 @@
    "name": "Applied Mathematics Analyst",
    "legacy_key": "engp-math",
    "mcp": [
+    "local:quantum-simulator-mcp",
     "local:sympy-mcp"
    ]
   },
@@ -967,30 +964,10 @@
  ],
  "agent_mcp": [
   {
-   "agent": "Maxey1020",
-   "mcp": "local:quantum-simulator-mcp",
-   "topic": "optics-photonics-and-plasma",
-   "score": 0.1455,
-   "basis": "inherited:checker-of-primary",
-   "via": {
-    "primary": "Maxey1026",
-    "skill": "engp-waveguide-modeler"
-   },
-   "source_topic": "engineering-physics"
-  },
-  {
    "agent": "Maxey1021",
    "mcp": "local:quantum-simulator-mcp",
    "topic": "optics-photonics-and-plasma",
-   "score": 0.147,
-   "basis": "derived:tfidf-cosine",
-   "source_topic": "engineering-physics"
-  },
-  {
-   "agent": "Maxey1026",
-   "mcp": "local:quantum-simulator-mcp",
-   "topic": "optics-photonics-and-plasma",
-   "score": 0.1455,
+   "score": 0.1525,
    "basis": "derived:tfidf-cosine",
    "source_topic": "engineering-physics"
   },
@@ -998,11 +975,19 @@
    "agent": "Maxey1028",
    "mcp": "local:quantum-simulator-mcp",
    "topic": "optics-photonics-and-plasma",
-   "score": 0.1455,
+   "score": 0.1511,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "engineering-physics"
+  },
+  {
+   "agent": "Maxey1262",
+   "mcp": "local:quantum-simulator-mcp",
+   "topic": "optics-photonics-and-plasma",
+   "score": 0.1511,
    "basis": "inherited:checker-of-primary",
    "via": {
-    "primary": "Maxey1026",
-    "skill": "engp-laser-analyzer"
+    "primary": "Maxey1028",
+    "skill": "engp-dimensional-checker"
    },
    "source_topic": "engineering-physics"
   },
@@ -1010,7 +995,7 @@
    "agent": "Maxey1262",
    "mcp": "local:sympy-mcp",
    "topic": "optics-photonics-and-plasma",
-   "score": 0.175,
+   "score": 0.1775,
    "basis": "derived:tfidf-cosine",
    "source_topic": "engineering-physics"
   }

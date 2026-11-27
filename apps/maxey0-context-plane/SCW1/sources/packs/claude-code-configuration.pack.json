@@ -1,0 +1,747 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-configuration",
+ "topic": {
+  "id": "claude-code-configuration",
+  "label": "Claude Code Configuration",
+  "desc": "Claude Code Configuration: Settings, Permissions and sandboxing, Environments, Self-hosted environments, Model and responses, Interface."
+ },
+ "concepts": [
+  [
+   "cccfg-settings",
+   "Settings",
+   "claude-code-configuration",
+   "Settings: Settings files and precedence, All settings, Example settings files.",
+   [
+    "setting",
+    "file",
+    "precedence",
+    "example"
+   ]
+  ],
+  [
+   "cccfg-permissions-and-sandboxing",
+   "Permissions and sandboxing",
+   "claude-code-configuration",
+   "Permissions and sandboxing: Configure permissions, Choose a permission mode, Auto mode classifier request charges, Configure the sandboxed Bash tool, Choose a sandbox environment.",
+   [
+    "permission",
+    "sandboxing",
+    "configure",
+    "choose",
+    "mode",
+    "auto"
+   ]
+  ],
+  [
+   "cccfg-environments",
+   "Environments",
+   "claude-code-configuration",
+   "Environments: Configure cloud environments.",
+   [
+    "environment",
+    "configure",
+    "cloud"
+   ]
+  ],
+  [
+   "cccfg-self-hosted-environments",
+   "Self-hosted environments",
+   "claude-code-configuration",
+   "Self-hosted environments: Self-hosted environments, Self-hosted environments quickstart, Deploy self-hosted environments to production, Customize sessions in self-hosted environments, Test self-hosted environments end to end, Self-hosted environments reference, Verify session identity in self-hosted environments.",
+   [
+    "self",
+    "hosted",
+    "environment",
+    "session",
+    "end",
+    "quickstart"
+   ]
+  ],
+  [
+   "cccfg-model-and-responses",
+   "Model and responses",
+   "claude-code-configuration",
+   "Model and responses: Model configuration, Speed up responses with fast mode, Escalate hard decisions with the advisor tool, Output styles.",
+   [
+    "model",
+    "response",
+    "configuration",
+    "speed",
+    "fast",
+    "mode"
+   ]
+  ],
+  [
+   "cccfg-interface",
+   "Interface",
+   "claude-code-configuration",
+   "Interface: Configure your terminal for Claude Code, Fullscreen rendering, Use Claude Code with a screen reader, Voice dictation, Customize your status line, Customize keyboard shortcuts.",
+   [
+    "interface",
+    "your",
+    "code",
+    "customize",
+    "configure",
+    "terminal"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cccfg-settings-files-and-precedence",
+   "cccfg-settings",
+   "Settings files and precedence",
+   "Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-all-settings",
+   "cccfg-settings",
+   "All settings",
+   "Reference for Claude Code settings.json keys: where each one goes, its type and default, and a paste-ready example, with an index of keys.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-example-settings-files",
+   "cccfg-settings",
+   "Example settings files",
+   "Realistic settings.json files for a developer, a team, and an organization: copy one, keep the keys you want, and change the values.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-configure-permissions",
+   "cccfg-permissions-and-sandboxing",
+   "Configure permissions",
+   "Control what Claude Code can access and do with fine-grained permission rules, modes, and managed policies.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-choose-a-permission-mode",
+   "cccfg-permissions-and-sandboxing",
+   "Choose a permission mode",
+   "Control whether Claude asks before acting. Switch permission modes with Shift+Tab in the CLI, the mode indicator in VS Code, or the mode selector in Desktop.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-auto-mode-classifier-request-charges",
+   "cccfg-permissions-and-sandboxing",
+   "Auto mode classifier request charges",
+   "Resolve the Claude Code notice saying this session isn't eligible for auto mode's no-charge classifier requests: what it means, why it appears, and what to do.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-configure-the-sandboxed-bash-tool",
+   "cccfg-permissions-and-sandboxing",
+   "Configure the sandboxed Bash tool",
+   "Restrict the files and network hosts Claude Code's shell commands can reach with the built-in sandbox. Turn it on, set the boundary, and fix what it breaks.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-choose-a-sandbox-environment",
+   "cccfg-permissions-and-sandboxing",
+   "Choose a sandbox environment",
+   "Compare Claude Code sandbox options: the built-in sandboxed Bash tool, sandbox runtime, dev containers, Docker, and VMs. Choose the right isolation for your threat model.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-configure-cloud-environments",
+   "cccfg-environments",
+   "Configure cloud environments",
+   "Configure cloud environments for Claude Code cloud sessions: network access levels, environment variables, setup scripts, and environment caching.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-self-hosted-environments-2",
+   "cccfg-self-hosted-environments",
+   "Self-hosted environments",
+   "Run Claude Code cloud sessions on infrastructure you control: set up a self-hosted environment, deploy runners, and route sessions to your own compute.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-self-hosted-environments-quickstart",
+   "cccfg-self-hosted-environments",
+   "Self-hosted environments quickstart",
+   "Set up your first self-hosted environment: install Claude Code, create the environment, start a runner, and route a session to it.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-deploy-self-hosted-environments-to-production",
+   "cccfg-self-hosted-environments",
+   "Deploy self-hosted environments to production",
+   "Run self-hosted runners in production: security hardening, network egress control, git credentials, Kubernetes and Compose recipes, and troubleshooting.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-customize-sessions-in-self-hosted-environments",
+   "cccfg-self-hosted-environments",
+   "Customize sessions in self-hosted environments",
+   "Customize self-hosted environment sessions with wrapper scripts for per-session credentials, lifecycle hooks, and on-demand runner spawning.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-test-self-hosted-environments-end-to-end",
+   "cccfg-self-hosted-environments",
+   "Test self-hosted environments end to end",
+   "Verify a self-hosted runner image from CI: dispatch a session with the CLI, read Claude's replies through a Stop hook, and script the full loop.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-self-hosted-environments-reference",
+   "cccfg-self-hosted-environments",
+   "Self-hosted environments reference",
+   "Reference for the self-hosted runner and orchestrator: CLI flags, environment variables, and Prometheus metrics.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-verify-session-identity-in-self-hosted-environments",
+   "cccfg-self-hosted-environments",
+   "Verify session identity in self-hosted environments",
+   "Verify the CLAUDECODESESSIONACCESSTOKEN JWT so services on your network can trust requests from sessions in your self-hosted environment.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-model-configuration",
+   "cccfg-model-and-responses",
+   "Model configuration",
+   "Configure which model Claude Code uses, effort levels, extended context, and the auto-compact window",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-speed-up-responses-with-fast-mode",
+   "cccfg-model-and-responses",
+   "Speed up responses with fast mode",
+   "Get faster Opus and Fable responses in Claude Code by toggling fast mode with /fast.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-escalate-hard-decisions-with-the-advisor-tool",
+   "cccfg-model-and-responses",
+   "Escalate hard decisions with the advisor tool",
+   "Pair your main model with a stronger advisor model that Claude consults at key moments during a task.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-output-styles",
+   "cccfg-model-and-responses",
+   "Output styles",
+   "Change Claude Code's role, tone, and response format with a built-in output style such as Concise or Explanatory, or write a custom style.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-configure-your-terminal-for-claude-code",
+   "cccfg-interface",
+   "Configure your terminal for Claude Code",
+   "Fix Shift+Enter for newlines, get a terminal bell when Claude finishes, configure tmux, match the color theme, and enable Vim mode in the Claude Code CLI.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-fullscreen-rendering",
+   "cccfg-interface",
+   "Fullscreen rendering",
+   "Enable a smoother, flicker-free rendering mode with mouse support and stable memory usage in long conversations.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-use-claude-code-with-a-screen-reader",
+   "cccfg-interface",
+   "Use Claude Code with a screen reader",
+   "Set up Claude Code for screen readers such as VoiceOver and NVDA, plus settings for screen magnifiers, reduced motion, and colorblind-friendly themes.",
+   "procedural",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-voice-dictation",
+   "cccfg-interface",
+   "Voice dictation",
+   "Speak your prompts in the Claude Code CLI with hold-to-record or tap-to-record voice dictation.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-customize-your-status-line",
+   "cccfg-interface",
+   "Customize your status line",
+   "Configure a custom status bar to monitor context window usage, costs, and git status in Claude Code",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cccfg-customize-keyboard-shortcuts",
+   "cccfg-interface",
+   "Customize keyboard shortcuts",
+   "Customize keyboard shortcuts in Claude Code with a keybindings configuration file.",
+   "semantic",
+   [
+    [
+     "claude-code-configuration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-configuration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-code-configuration-specialist": "Claude Code Configuration Specialist",
+  "claude-code-configuration-reviewer": "Claude Code Configuration Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "setting": "setting file precedence example",
+  "permissionsandboxing": "permission choose mode configure charge classifier",
+  "environment": "environment cloud",
+  "selfhosted": "hosted self end session production verify",
+  "modelresponse": "response model decision escalate hard speed",
+  "interface": "customize code fullscreen keyboard reader rendering"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cccfg-settings-files-and-precedence": [
+    "https://code.claude.com/docs/en/settings"
+   ],
+   "cccfg-all-settings": [
+    "https://code.claude.com/docs/en/settings-reference"
+   ],
+   "cccfg-example-settings-files": [
+    "https://code.claude.com/docs/en/settings-example"
+   ],
+   "cccfg-configure-permissions": [
+    "https://code.claude.com/docs/en/permissions"
+   ],
+   "cccfg-choose-a-permission-mode": [
+    "https://code.claude.com/docs/en/permission-modes"
+   ],
+   "cccfg-auto-mode-classifier-request-charges": [
+    "https://code.claude.com/docs/en/auto-mode-classifier-billing"
+   ],
+   "cccfg-configure-the-sandboxed-bash-tool": [
+    "https://code.claude.com/docs/en/sandboxing"
+   ],
+   "cccfg-choose-a-sandbox-environment": [
+    "https://code.claude.com/docs/en/sandbox-environments"
+   ],
+   "cccfg-configure-cloud-environments": [
+    "https://code.claude.com/docs/en/cloud-environments"
+   ],
+   "cccfg-self-hosted-environments-2": [
+    "https://code.claude.com/docs/en/self-hosted-environments"
+   ],
+   "cccfg-self-hosted-environments-quickstart": [
+    "https://code.claude.com/docs/en/self-hosted-environments-quickstart"
+   ],
+   "cccfg-deploy-self-hosted-environments-to-production": [
+    "https://code.claude.com/docs/en/self-hosted-environments-deploy"
+   ],
+   "cccfg-customize-sessions-in-self-hosted-environments": [
+    "https://code.claude.com/docs/en/self-hosted-environments-configuration"
+   ],
+   "cccfg-test-self-hosted-environments-end-to-end": [
+    "https://code.claude.com/docs/en/self-hosted-environments-testing"
+   ],
+   "cccfg-self-hosted-environments-reference": [
+    "https://code.claude.com/docs/en/self-hosted-environments-reference"
+   ],
+   "cccfg-verify-session-identity-in-self-hosted-environments": [
+    "https://code.claude.com/docs/en/self-hosted-environments-identity"
+   ],
+   "cccfg-model-configuration": [
+    "https://code.claude.com/docs/en/model-config"
+   ],
+   "cccfg-speed-up-responses-with-fast-mode": [
+    "https://code.claude.com/docs/en/fast-mode"
+   ],
+   "cccfg-escalate-hard-decisions-with-the-advisor-tool": [
+    "https://code.claude.com/docs/en/advisor"
+   ],
+   "cccfg-output-styles": [
+    "https://code.claude.com/docs/en/output-styles"
+   ],
+   "cccfg-configure-your-terminal-for-claude-code": [
+    "https://code.claude.com/docs/en/terminal-config"
+   ],
+   "cccfg-fullscreen-rendering": [
+    "https://code.claude.com/docs/en/fullscreen"
+   ],
+   "cccfg-use-claude-code-with-a-screen-reader": [
+    "https://code.claude.com/docs/en/accessibility"
+   ],
+   "cccfg-voice-dictation": [
+    "https://code.claude.com/docs/en/voice-dictation"
+   ],
+   "cccfg-customize-your-status-line": [
+    "https://code.claude.com/docs/en/statusline"
+   ],
+   "cccfg-customize-keyboard-shortcuts": [
+    "https://code.claude.com/docs/en/keybindings"
+   ]
+  }
+ }
+}

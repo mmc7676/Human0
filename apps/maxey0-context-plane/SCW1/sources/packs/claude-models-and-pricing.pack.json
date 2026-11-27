@@ -1,0 +1,1533 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-models-and-pricing",
+ "topic": {
+  "id": "claude-models-and-pricing",
+  "label": "Claude Models and Pricing",
+  "desc": "Claude Models and Pricing: Claude Fable and Mythos, Claude Haiku, Claude Opus, Claude Sonnet, Pricing, choosing and deprecations."
+ },
+ "concepts": [
+  [
+   "cmp-claude-fable-and-mythos",
+   "Claude Fable and Mythos",
+   "claude-models-and-pricing",
+   "Claude Fable and Mythos: Claude Fable 5, Claude Fable 5.1, Claude Fable 5.2, Claude Mythos 5, Claude Mythos 5.1, Claude Mythos 5.2, Migration guide, What's new.",
+   [
+    "fable",
+    "mytho",
+    "migration",
+    "guide",
+    "what"
+   ]
+  ],
+  [
+   "cmp-claude-haiku",
+   "Claude Haiku",
+   "claude-models-and-pricing",
+   "Claude Haiku: Claude Haiku 4.5, Claude Haiku 5.5, Migration guide, What's new.",
+   [
+    "haiku",
+    "migration",
+    "guide",
+    "what"
+   ]
+  ],
+  [
+   "cmp-claude-opus",
+   "Claude Opus",
+   "claude-models-and-pricing",
+   "Claude Opus: Claude Opus 4.5, Claude Opus 4.6, Claude Opus 4.7, Claude Opus 4.8, Claude Opus 5, Claude Opus 5.5, Migration guide, What's new.",
+   [
+    "opu",
+    "migration",
+    "guide",
+    "what"
+   ]
+  ],
+  [
+   "cmp-claude-sonnet",
+   "Claude Sonnet",
+   "claude-models-and-pricing",
+   "Claude Sonnet: Claude Sonnet 4.5, Claude Sonnet 4.6, Claude Sonnet 5, Claude Sonnet 5.5, Migration guide, What's new.",
+   [
+    "sonnet",
+    "migration",
+    "guide",
+    "what"
+   ]
+  ],
+  [
+   "cmp-pricing-choosing-and-deprecations",
+   "Pricing, choosing and deprecations",
+   "claude-models-and-pricing",
+   "Pricing, choosing and deprecations: Model cards, Models overview, Overview: System prompts, API credits for subscribers, Choosing a model, Claude Fable 5, Claude Fable 5.1, Claude Fable 5.2, Claude Haiku 3, Claude Haiku 3.5, Claude Haiku 4.5, Claude Haiku 5.5 and 21 more.",
+   [
+    "pricing",
+    "choosing",
+    "deprecation",
+    "opu",
+    "sonnet",
+    "model"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cmp-claude-fable-5",
+   "cmp-claude-fable-and-mythos",
+   "Claude Fable 5",
+   "\"Claude Fable 5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Fable 5 is a legacy model, and Claude Fable 5.2 is the current Fable model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-fable-5-1",
+   "cmp-claude-fable-and-mythos",
+   "Claude Fable 5.1",
+   "\"Claude Fable 5.1 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Fable 5.1 is a legacy model, and Claude Fable 5.2 is the current Fable model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-fable-5-2",
+   "cmp-claude-fable-and-mythos",
+   "Claude Fable 5.2",
+   "\"An overview of Claude Fable 5.2: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and resources for building with it.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-mythos-5",
+   "cmp-claude-fable-and-mythos",
+   "Claude Mythos 5",
+   "\"Claude Mythos 5 reference: the same model as Claude Fable 5, offered for defensive cybersecurity work to organizations verified through Anthropic's verification programs. Model IDs, specifications, pricing, and migration resources. Claude Mythos 5.2 is the current Mythos model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-mythos-5-1",
+   "cmp-claude-fable-and-mythos",
+   "Claude Mythos 5.1",
+   "\"Claude Mythos 5.1 reference: the same model as Claude Fable 5.1, available only to organizations verified through Anthropic's verification programs. Model IDs, specifications, pricing, and migration resources. Claude Mythos 5.2 is the current Mythos model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-mythos-5-2",
+   "cmp-claude-fable-and-mythos",
+   "Claude Mythos 5.2",
+   "Claude Mythos 5.2 is the same model as Claude Fable 5.2, available only to organizations verified through Anthropic's verification programs. Model IDs, specifications, pricing, and how to request access.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-migration-guide",
+   "cmp-claude-fable-and-mythos",
+   "Migration guide",
+   "Switch to Claude Fable 5.2 and Claude Mythos 5.2 from Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, or an earlier Claude Fable, Claude Mythos, or Claude Opus model with this migration guide. The guidance to enable Claude Fable 5.2 and Claude Mythos 5.2 includes model IDs, breaking changes, and migration checklists.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-what-s-new",
+   "cmp-claude-fable-and-mythos",
+   "What's new",
+   "Breaking changes, feature support, pricing, and availability for Claude Fable 5.2 and Claude Mythos 5.2, compared with Claude Fable 5.1 and Claude Mythos 5.1.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-haiku-4-5",
+   "cmp-claude-haiku",
+   "Claude Haiku 4.5",
+   "\"Claude Haiku 4.5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Haiku 4.5 is a legacy model; Claude Haiku 5.5 is the current Haiku model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-haiku-5-5",
+   "cmp-claude-haiku",
+   "Claude Haiku 5.5",
+   "\"An overview of Claude Haiku 5.5: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and the guides and resources for building with it.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-migration-guide-2",
+   "cmp-claude-haiku",
+   "Migration guide",
+   "Switch to Claude Haiku 5.5 from earlier Haiku models with this migration guide. The guidance to enable Claude Haiku 5.5 includes the new model ID, settings that return errors, thinking changes, and a checklist for each starting model.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-what-s-new-2",
+   "cmp-claude-haiku",
+   "What's new",
+   "Overview of new capabilities, breaking changes, and behavior changes in Claude Haiku 5.5, with a link to each feature's guide and to the migration guide for code changes.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-5",
+   "cmp-claude-opus",
+   "Claude Opus 4.5",
+   "\"Claude Opus 4.5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.5 is a deprecated model on the Claude API; Claude Opus 5.5 is the current Opus model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-6",
+   "cmp-claude-opus",
+   "Claude Opus 4.6",
+   "\"Claude Opus 4.6 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.6 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-7",
+   "cmp-claude-opus",
+   "Claude Opus 4.7",
+   "\"Claude Opus 4.7 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.7 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-8",
+   "cmp-claude-opus",
+   "Claude Opus 4.8",
+   "\"Claude Opus 4.8 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 4.8 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-5",
+   "cmp-claude-opus",
+   "Claude Opus 5",
+   "\"Claude Opus 5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Opus 5 is a legacy model; Claude Opus 5.5 is the current Opus model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-5-5",
+   "cmp-claude-opus",
+   "Claude Opus 5.5",
+   "\"An overview of Claude Opus 5.5: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and the guides and resources for building with it.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-migration-guide-3",
+   "cmp-claude-opus",
+   "Migration guide",
+   "Switch to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5 with this migration guide. The guidance to enable Claude Opus 5.5 includes request settings that return errors, thinking blocks in every response, and a checklist for each starting model.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-what-s-new-3",
+   "cmp-claude-opus",
+   "What's new",
+   "Overview of breaking changes, feature support, and behavior differences in Claude Opus 5.5.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-4-5",
+   "cmp-claude-sonnet",
+   "Claude Sonnet 4.5",
+   "\"Claude Sonnet 4.5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Sonnet 4.5 is a deprecated model; Claude Sonnet 5.5 is the current Sonnet model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-4-6",
+   "cmp-claude-sonnet",
+   "Claude Sonnet 4.6",
+   "\"Claude Sonnet 4.6 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Sonnet 4.6 is a legacy model; Claude Sonnet 5.5 is the current Sonnet model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-5",
+   "cmp-claude-sonnet",
+   "Claude Sonnet 5",
+   "\"Claude Sonnet 5 reference: lifecycle status, model IDs on every platform, context window, output limits, pricing, and migration resources. Claude Sonnet 5 is a legacy model; Claude Sonnet 5.5 is the current Sonnet model.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-5-5",
+   "cmp-claude-sonnet",
+   "Claude Sonnet 5.5",
+   "\"An overview of Claude Sonnet 5.5: what it's for, model IDs on every platform, context window, output limits, pricing, availability, and the guides and resources for building with it.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-migration-guide-4",
+   "cmp-claude-sonnet",
+   "Migration guide",
+   "Switch to Claude Sonnet 5.5 from earlier Sonnet models or Claude Haiku 4.5 with this migration guide. The guidance to enable Claude Sonnet 5.5 includes settings that return errors, thinking changes, and a checklist for each starting model.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-what-s-new-4",
+   "cmp-claude-sonnet",
+   "What's new",
+   "\"What changes when you move from Claude Sonnet 5 to Claude Sonnet 5.5: breaking changes, feature support, behavior differences, pricing, and availability.\"",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-model-cards",
+   "cmp-pricing-choosing-and-deprecations",
+   "Model cards",
+   "Model cards with detailed documentation for Claude models.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-models-overview",
+   "cmp-pricing-choosing-and-deprecations",
+   "Models overview",
+   "Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their performance.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-overview-system-prompts",
+   "cmp-pricing-choosing-and-deprecations",
+   "Overview: System prompts",
+   "See updates to the core system prompts on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-api-credits-for-subscribers",
+   "cmp-pricing-choosing-and-deprecations",
+   "API credits for subscribers",
+   "Claim the monthly Claude Platform credits included with Claude Max, Ultra, and Team plans, and learn what they cover.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-choosing-a-model",
+   "cmp-pricing-choosing-and-deprecations",
+   "Choosing a model",
+   "Choosing a Claude model means balancing capabilities, speed, and cost. This guide covers the questions to ask, two ways to pick a starting model, and how to test the choice.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-fable-5-3",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Fable 5",
+   "See updates to the core system prompt for Claude Fable 5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-fable-5-1-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Fable 5.1",
+   "See updates to the core system prompt for Claude Fable 5.1 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-fable-5-2-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Fable 5.2",
+   "See updates to the core system prompt for Claude Fable 5.2 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-haiku-3",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Haiku 3",
+   "See updates to the core system prompt for Claude Haiku 3 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-haiku-3-5",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Haiku 3.5",
+   "See updates to the core system prompt for Claude Haiku 3.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-haiku-4-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Haiku 4.5",
+   "See updates to the core system prompt for Claude Haiku 4.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-haiku-5-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Haiku 5.5",
+   "See updates to the core system prompt for Claude Haiku 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-3",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 3",
+   "See updates to the core system prompt for Claude Opus 3 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 4",
+   "See updates to the core system prompt for Claude Opus 4 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-1",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 4.1",
+   "See updates to the core system prompt for Claude Opus 4.1 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 4.5",
+   "See updates to the core system prompt for Claude Opus 4.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-6-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 4.6",
+   "See updates to the core system prompt for Claude Opus 4.6 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-7-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 4.7",
+   "See updates to the core system prompt for Claude Opus 4.7 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-4-8-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 4.8",
+   "See updates to the core system prompt for Claude Opus 4.8 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 5",
+   "See updates to the core system prompt for Claude Opus 5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-opus-5-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Opus 5.5",
+   "See updates to the core system prompt for Claude Opus 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-3-5",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 3.5",
+   "See updates to the core system prompt for Claude Sonnet 3.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-3-7",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 3.7",
+   "See updates to the core system prompt for Claude Sonnet 3.7 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-4",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 4",
+   "See updates to the core system prompt for Claude Sonnet 4 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-4-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 4.5",
+   "See updates to the core system prompt for Claude Sonnet 4.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-4-6-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 4.6",
+   "See updates to the core system prompt for Claude Sonnet 4.6 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 5",
+   "See updates to the core system prompt for Claude Sonnet 5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-claude-sonnet-5-5-2",
+   "cmp-pricing-choosing-and-deprecations",
+   "Claude Sonnet 5.5",
+   "See updates to the core system prompt for Claude Sonnet 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-upgrade-between-model-versions",
+   "cmp-pricing-choosing-and-deprecations",
+   "Upgrade between model versions",
+   "Guides for migrating to the latest Claude models from previous Claude versions",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-model-deprecations",
+   "cmp-pricing-choosing-and-deprecations",
+   "Model deprecations",
+   "See which Claude models are active, deprecated, or retired, and find retirement dates and recommended replacements for models and API parameters.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-model-ids-and-versioning",
+   "cmp-pricing-choosing-and-deprecations",
+   "Model IDs and versioning",
+   "How Claude model IDs are structured and versioned, including the dateless format introduced with the Claude 4.6 generation and what it means for stability.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-optimizing-for-cost-and-intelligence",
+   "cmp-pricing-choosing-and-deprecations",
+   "Optimizing for cost and intelligence",
+   "Balance cost and intelligence on the Claude Platform, with measured results for prompt caching, effort, model choice, output caps, and multimodel strategies.",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cmp-pricing",
+   "cmp-pricing-choosing-and-deprecations",
+   "Pricing",
+   "Learn about Anthropic's pricing structure for models and features",
+   "semantic",
+   [
+    [
+     "claude-models-and-pricing-specialist",
+     "primary"
+    ],
+    [
+     "claude-models-and-pricing-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-models-and-pricing-specialist": "Claude Models and Pricing Specialist",
+  "claude-models-and-pricing-reviewer": "Claude Models and Pricing Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Platform Docs",
+   "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27"
+  ]
+ ],
+ "lexicon": {
+  "fablemytho": "mytho fable migration guide",
+  "pricingchoosing": "opu sonnet model haiku choosing deprecation"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV names this server 'Claude Developer Platform docs'; the directory lists it as Claude Platform Docs. Its own instructions say it covers the Claude API, Anthropic SDKs and Claude Managed Agents, not Claude Code or the Agent SDK. Existence and tool names verified 2026-11-27; a search returned platform.claude.com pages.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cmp-claude-fable-5": [
+    "https://platform.claude.com/docs/en/models/fable-5/overview"
+   ],
+   "cmp-claude-fable-5-1": [
+    "https://platform.claude.com/docs/en/models/fable-5-1/overview"
+   ],
+   "cmp-claude-fable-5-2": [
+    "https://platform.claude.com/docs/en/models/fable-5-2/overview"
+   ],
+   "cmp-claude-mythos-5": [
+    "https://platform.claude.com/docs/en/models/mythos-5/overview"
+   ],
+   "cmp-claude-mythos-5-1": [
+    "https://platform.claude.com/docs/en/models/mythos-5-1/overview"
+   ],
+   "cmp-claude-mythos-5-2": [
+    "https://platform.claude.com/docs/en/models/mythos-5-2/overview"
+   ],
+   "cmp-migration-guide": [
+    "https://platform.claude.com/docs/en/models/fable-5-2/migration-guide"
+   ],
+   "cmp-what-s-new": [
+    "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2"
+   ],
+   "cmp-claude-haiku-4-5": [
+    "https://platform.claude.com/docs/en/models/haiku-4-5/overview"
+   ],
+   "cmp-claude-haiku-5-5": [
+    "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
+   ],
+   "cmp-migration-guide-2": [
+    "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide"
+   ],
+   "cmp-what-s-new-2": [
+    "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+   ],
+   "cmp-claude-opus-4-5": [
+    "https://platform.claude.com/docs/en/models/opus-4-5/overview"
+   ],
+   "cmp-claude-opus-4-6": [
+    "https://platform.claude.com/docs/en/models/opus-4-6/overview"
+   ],
+   "cmp-claude-opus-4-7": [
+    "https://platform.claude.com/docs/en/models/opus-4-7/overview"
+   ],
+   "cmp-claude-opus-4-8": [
+    "https://platform.claude.com/docs/en/models/opus-4-8/overview"
+   ],
+   "cmp-claude-opus-5": [
+    "https://platform.claude.com/docs/en/models/opus-5/overview"
+   ],
+   "cmp-claude-opus-5-5": [
+    "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+   ],
+   "cmp-migration-guide-3": [
+    "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide"
+   ],
+   "cmp-what-s-new-3": [
+    "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
+   ],
+   "cmp-claude-sonnet-4-5": [
+    "https://platform.claude.com/docs/en/models/sonnet-4-5/overview"
+   ],
+   "cmp-claude-sonnet-4-6": [
+    "https://platform.claude.com/docs/en/models/sonnet-4-6/overview"
+   ],
+   "cmp-claude-sonnet-5": [
+    "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+   ],
+   "cmp-claude-sonnet-5-5": [
+    "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
+   ],
+   "cmp-migration-guide-4": [
+    "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
+   ],
+   "cmp-what-s-new-4": [
+    "https://platform.claude.com/docs/en/models/sonnet-5-5/whats-new-sonnet-5-5"
+   ],
+   "cmp-model-cards": [
+    "https://platform.claude.com/docs/en/resources/overview"
+   ],
+   "cmp-models-overview": [
+    "https://platform.claude.com/docs/en/models/overview"
+   ],
+   "cmp-overview-system-prompts": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/overview"
+   ],
+   "cmp-api-credits-for-subscribers": [
+    "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers"
+   ],
+   "cmp-choosing-a-model": [
+    "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
+   ],
+   "cmp-claude-fable-5-3": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5"
+   ],
+   "cmp-claude-fable-5-1-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5-1"
+   ],
+   "cmp-claude-fable-5-2-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5-2"
+   ],
+   "cmp-claude-haiku-3": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-3"
+   ],
+   "cmp-claude-haiku-3-5": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-3-5"
+   ],
+   "cmp-claude-haiku-4-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-4-5"
+   ],
+   "cmp-claude-haiku-5-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-5-5"
+   ],
+   "cmp-claude-opus-3": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-3"
+   ],
+   "cmp-claude-opus-4": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4"
+   ],
+   "cmp-claude-opus-4-1": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-1"
+   ],
+   "cmp-claude-opus-4-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-5"
+   ],
+   "cmp-claude-opus-4-6-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-6"
+   ],
+   "cmp-claude-opus-4-7-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-7"
+   ],
+   "cmp-claude-opus-4-8-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-4-8"
+   ],
+   "cmp-claude-opus-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5"
+   ],
+   "cmp-claude-opus-5-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5-5"
+   ],
+   "cmp-claude-sonnet-3-5": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-3-5"
+   ],
+   "cmp-claude-sonnet-3-7": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-3-7"
+   ],
+   "cmp-claude-sonnet-4": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4"
+   ],
+   "cmp-claude-sonnet-4-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4-5"
+   ],
+   "cmp-claude-sonnet-4-6-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-4-6"
+   ],
+   "cmp-claude-sonnet-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5"
+   ],
+   "cmp-claude-sonnet-5-5-2": [
+    "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5-5"
+   ],
+   "cmp-upgrade-between-model-versions": [
+    "https://platform.claude.com/docs/en/about-claude/models/migration-guide"
+   ],
+   "cmp-model-deprecations": [
+    "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+   ],
+   "cmp-model-ids-and-versioning": [
+    "https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions"
+   ],
+   "cmp-optimizing-for-cost-and-intelligence": [
+    "https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence"
+   ],
+   "cmp-pricing": [
+    "https://platform.claude.com/docs/en/about-claude/pricing"
+   ]
+  }
+ }
+}

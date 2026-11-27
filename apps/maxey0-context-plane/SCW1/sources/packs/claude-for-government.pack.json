@@ -1,0 +1,1233 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-for-government",
+ "topic": {
+  "id": "claude-for-government",
+  "label": "Claude for Government",
+  "desc": "Claude for Government: Overview (Claude for Government), Tenant admin, Org admin, Config, Security, Deploy desktop, Microsoft 365 and Claude Code, Desktop, Account."
+ },
+ "concepts": [
+  [
+   "cgov-overview-claude-for-government",
+   "Overview (Claude for Government)",
+   "claude-for-government",
+   "Overview (Claude for Government): Claude for Government administrator guide, Moving from Claude for Government Web, Video walkthroughs for administrators, Claude for Government changelog.",
+   [
+    "government",
+    "administrator",
+    "guide",
+    "moving",
+    "web",
+    "video"
+   ]
+  ],
+  [
+   "cgov-tenant-admin",
+   "Tenant admin",
+   "claude-for-government",
+   "Tenant admin: Tenant administration, Tenant setup wizard, Readiness, Organizations, Identity and access, Tenant restrictions, Seats, Billing, Config at the tenant level, Admins.",
+   [
+    "tenant",
+    "admin",
+    "administration",
+    "setup",
+    "wizard",
+    "readiness"
+   ]
+  ],
+  [
+   "cgov-org-admin",
+   "Org admin",
+   "claude-for-government",
+   "Org admin: Organization administration, Setup wizard, Readiness, Users, Seats, Seat tiers, Group mappings, Analytics, Compliance API, Billing, Config at the organization level.",
+   [
+    "org",
+    "admin",
+    "organization",
+    "seat",
+    "administration",
+    "setup"
+   ]
+  ],
+  [
+   "cgov-config",
+   "Config",
+   "claude-for-government",
+   "Config: How Config works, Available settings, Manage plugins and connectors, Connectors, Set up the Microsoft 365 connector.",
+   [
+    "config",
+    "connector",
+    "how",
+    "work",
+    "available",
+    "setting"
+   ]
+  ],
+  [
+   "cgov-security",
+   "Security",
+   "claude-for-government",
+   "Security: Security and data handling.",
+   [
+    "security",
+    "handling"
+   ]
+  ],
+  [
+   "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "Deploy desktop, Microsoft 365 and Claude Code",
+   "claude-for-government",
+   "Deploy desktop, Microsoft 365 and Claude Code: Connect Claude Desktop to Claude for Government, Windows fleet checklist, Deploy Claude for Microsoft 365 in Claude for Government, Connect Claude Code to Claude for Government.",
+   [
+    "deploy",
+    "desktop",
+    "microsoft",
+    "365",
+    "code",
+    "government"
+   ]
+  ],
+  [
+   "cgov-desktop",
+   "Desktop",
+   "claude-for-government",
+   "Desktop: Video walkthroughs for Claude Desktop, Import your data from Claude for Government Web, Plugins in Claude Desktop, Skills in Claude Desktop, Models in Claude Desktop.",
+   [
+    "desktop",
+    "video",
+    "walkthrough",
+    "import",
+    "your",
+    "government"
+   ]
+  ],
+  [
+   "cgov-account",
+   "Account",
+   "claude-for-government",
+   "Account: Your account, Account, Usage, Sessions.",
+   [
+    "account",
+    "your",
+    "usage",
+    "session"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cgov-claude-for-government-administrator-guide",
+   "cgov-overview-claude-for-government",
+   "Claude for Government administrator guide",
+   "Set up and manage Claude for Government for your agency: how tenants, organizations, users, seats, and credits fit together.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-moving-from-claude-for-government-web",
+   "cgov-overview-claude-for-government",
+   "Moving from Claude for Government Web",
+   "Find answers to the questions agencies ask most often when moving from Claude for Government Web to Claude Desktop.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-video-walkthroughs-for-administrators",
+   "cgov-overview-claude-for-government",
+   "Video walkthroughs for administrators",
+   "Watch short narrated walkthroughs of setting up and running Claude for Government for your agency.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-claude-for-government-changelog",
+   "cgov-overview-claude-for-government",
+   "Claude for Government changelog",
+   "Release notes for Claude for Government",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-tenant-administration",
+   "cgov-tenant-admin",
+   "Tenant administration",
+   "Manage the settings that apply across your whole agency: organizations, identity and sign-in, and how seats are distributed and spend caps are set.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-tenant-setup-wizard",
+   "cgov-tenant-admin",
+   "Tenant setup wizard",
+   "Set up a new tenant in order: verify a domain, connect single sign-on, add an organization, give it seats, and add the routing rule that lets people sign in.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-readiness",
+   "cgov-tenant-admin",
+   "Readiness",
+   "Readiness checks for your tenant and its organizations: what the checks on domains, routing rules, sign-in failures, and billing mean, and who clears them.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-organizations",
+   "cgov-tenant-admin",
+   "Organizations",
+   "See every organization in your tenant, open an organization's admin view, add an organization and get it ready for people, and copy user email addresses.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-identity-and-access",
+   "cgov-tenant-admin",
+   "Identity and access",
+   "Verify domains, connect single sign-on and SCIM, write the routing rules that place people in organizations, and look up what a sign-in error page means.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-tenant-restrictions",
+   "cgov-tenant-admin",
+   "Tenant restrictions",
+   "Restrict which Claude for Government tenants can be reached from your agency's network by having your network proxy inject an allowlist header.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-seats",
+   "cgov-tenant-admin",
+   "Seats",
+   "Divide each billing account's seat pool among the organizations it funds, and see who can change an allocation and why a change is refused.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-billing",
+   "cgov-tenant-admin",
+   "Billing",
+   "See each billing account's credit balance and set per-organization spend caps, with what a cap counts, what it stops, and when a change takes effect.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-config-at-the-tenant-level",
+   "cgov-tenant-admin",
+   "Config at the tenant level",
+   "Set tenant-wide defaults for product behavior, lock settings so organizations can't change them, and preview how a change affects each organization.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-admins",
+   "cgov-tenant-admin",
+   "Admins",
+   "Tenant administrator access: what it grants, who can be added, how to add or remove an administrator, and the safeguards on the list.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-organization-administration",
+   "cgov-org-admin",
+   "Organization administration",
+   "Manage the people, seats, and settings for a single organization within your agency: users, roles, seat tiers, usage, billing, and Config.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-setup-wizard",
+   "cgov-org-admin",
+   "Setup wizard",
+   "Setup wizard for a new organization: how to open it, and what the seat tiers, seats and credits, products, and finish steps cover.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-readiness-2",
+   "cgov-org-admin",
+   "Readiness",
+   "Readiness checks for your organization: what the checks on credits, spend caps, seats, seat tiers, models, and products mean, and who can clear each one.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-users",
+   "cgov-org-admin",
+   "Users",
+   "Find a user, change their role or seat tier, sign them out everywhere, deactivate or reactivate them, reset their usage limits, and see what each role can do.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-seats-2",
+   "cgov-org-admin",
+   "Seats",
+   "See how many seats of each tier your organization holds and how many are assigned, and how new and unassigned users get a seat tier.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-seat-tiers",
+   "cgov-org-admin",
+   "Seat tiers",
+   "Seat tiers set which Claude models a user can access and how much they can spend. Organization owners create and manage their own seat tiers.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-group-mappings",
+   "cgov-org-admin",
+   "Group mappings",
+   "Map directory groups to seat tiers and roles in your organization, and see how mappings are applied and what a deactivation in your directory does.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-analytics",
+   "cgov-org-admin",
+   "Analytics",
+   "Review your organization's requests, tokens, spend, active users, top users, and credit balance over time, and download the data as CSV files for reporting.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-compliance-api",
+   "cgov-org-admin",
+   "Compliance API",
+   "Stream your organization's audit events into a SIEM or log management system.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-billing-2",
+   "cgov-org-admin",
+   "Billing",
+   "See the balance your organization spends from, the spend caps set on it, and its seats, and what happens as the billing account's balance runs low.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-config-at-the-organization-level",
+   "cgov-org-admin",
+   "Config at the organization level",
+   "Set product settings for everyone in your organization on the Config page, and see how connectors and plugins inherited from your tenant behave there.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-how-config-works",
+   "cgov-config",
+   "How Config works",
+   "Config levels in Claude for Government: how tenant, directory group, and organization settings combine, what locks do, and when changes reach members.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-available-settings",
+   "cgov-config",
+   "Available settings",
+   "Config page settings in Claude for Government, such as session timeouts, network and folder access, tool approvals, connectors, plugins, telemetry, and updates.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-manage-plugins-and-connectors",
+   "cgov-config",
+   "Manage plugins and connectors",
+   "Upload plugins and skills in Claude for Government: archive rules, size limits, the Runs code marker, install behavior, updates, and removal.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-connectors",
+   "cgov-config",
+   "Connectors",
+   "Connectors let tenant administrators and organization owners add their agency's MCP servers: who gets them, authentication, OAuth redirect URIs, tool policy.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-set-up-the-microsoft-365-connector",
+   "cgov-config",
+   "Set up the Microsoft 365 connector",
+   "Register a Microsoft Entra application for the Microsoft 365 connector in Claude Desktop, choose its read and write permissions, and fix sign-in errors.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-security-and-data-handling",
+   "cgov-security",
+   "Security and data handling",
+   "Review how Claude for Government handles data: sandbox isolation, network traffic, approvals, connector credentials, telemetry, web search, and local storage.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-connect-claude-desktop-to-claude-for-government",
+   "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "Connect Claude Desktop to Claude for Government",
+   "Connect Claude Desktop to Claude for Government: the bootstrap URL, device profiles for macOS, Windows, and Linux, network hosts, updates, and troubleshooting.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-windows-fleet-checklist",
+   "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "Windows fleet checklist",
+   "Windows device, MSIX installer, application control, and virtualization checks to make before you deploy Claude Desktop for Claude for Government.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-deploy-claude-for-microsoft-365-in-claude-for-government",
+   "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "Deploy Claude for Microsoft 365 in Claude for Government",
+   "Download the Claude for Microsoft 365 manifest from your Claude for Government host and deploy the add-in to users from the Microsoft 365 admin center.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-connect-claude-code-to-claude-for-government",
+   "cgov-deploy-desktop-microsoft-365-and-claude-code",
+   "Connect Claude Code to Claude for Government",
+   "Connect the Claude Code command-line tool to Claude for Government with managed settings on macOS, Windows, and Linux, and confirm a device is set up.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-video-walkthroughs-for-claude-desktop",
+   "cgov-desktop",
+   "Video walkthroughs for Claude Desktop",
+   "Watch short narrated walkthroughs of signing in to Claude Desktop with Claude for Government, bringing your work over, and finding your way around the app.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-import-your-data-from-claude-for-government-web",
+   "cgov-desktop",
+   "Import your data from Claude for Government Web",
+   "Copy your conversations, projects, and files from Claude for Government Web into Claude Desktop, or move your Claude Desktop data to another computer.",
+   "procedural",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-plugins-in-claude-desktop",
+   "cgov-desktop",
+   "Plugins in Claude Desktop",
+   "Find, install, create, and remove plugins in Claude Desktop for Claude for Government, and understand what plugins add in this deployment.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-skills-in-claude-desktop",
+   "cgov-desktop",
+   "Skills in Claude Desktop",
+   "Skills in Claude Desktop for Claude for Government: where they come from, how to create and manage your own, and how administrators distribute them.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-models-in-claude-desktop",
+   "cgov-desktop",
+   "Models in Claude Desktop",
+   "Switch models in Claude Desktop on Claude for Government, see what the 1M context window does, and find what controls which models you see.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-your-account",
+   "cgov-account",
+   "Your account",
+   "Check your own account details, usage limits, and active sessions in the Claude for Government web portal.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-account-2",
+   "cgov-account",
+   "Account",
+   "Check the email, organization, role, and seat tier on your Claude for Government account, who to ask to change each one, and what to do with no seat.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-usage",
+   "cgov-account",
+   "Usage",
+   "Check how much of your Claude allowance you have used and when it resets, and what to do when you hit a usage limit or your organization runs out of credits.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cgov-sessions",
+   "cgov-account",
+   "Sessions",
+   "See every place you are signed in to Claude for Government, sign any of them out, and check how long sessions last and what ends them.",
+   "semantic",
+   [
+    [
+     "claude-for-government-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-government-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-for-government-specialist": "Claude for Government Specialist",
+  "claude-for-government-reviewer": "Claude for Government Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "government": "government administrator moving video walkthrough changelog",
+  "tenantadmin": "tenant admin administration billing readiness restriction",
+  "orgadmin": "seat organization mapping tier wizard config",
+  "config": "connector available microsoft setting manage set",
+  "security5": "security handling",
+  "deploydesktop": "connect deploy desktop code fleet window",
+  "desktop": "import web model skill plugin",
+  "account": "account usage session"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [
+   {
+    "from_topic": "Claude for Government",
+    "from": "Deploy microsoft 365",
+    "into_topic": "Claude for Government",
+    "into": "Deploy desktop",
+    "label": "Deploy desktop, Microsoft 365 and Claude Code",
+    "reason": "limit: three deployment concepts of one or two pages"
+   },
+   {
+    "from_topic": "Claude for Government",
+    "from": "Deploy claude code",
+    "into_topic": "Claude for Government",
+    "into": "Deploy desktop",
+    "label": "Deploy desktop",
+    "reason": "limit: three deployment concepts of one or two pages"
+   },
+   {
+    "from_topic": "Claude for Government",
+    "from": "Connectors (Claude for Government)",
+    "into_topic": "Claude for Government",
+    "into": "Config",
+    "label": "Config",
+    "reason": "limit: Config already manages plugins and connectors"
+   }
+  ],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cgov-claude-for-government-administrator-guide": [
+    "https://claude.com/docs/government/overview"
+   ],
+   "cgov-moving-from-claude-for-government-web": [
+    "https://claude.com/docs/government/moving-from-web"
+   ],
+   "cgov-video-walkthroughs-for-administrators": [
+    "https://claude.com/docs/government/video-walkthroughs"
+   ],
+   "cgov-claude-for-government-changelog": [
+    "https://claude.com/docs/government/changelog"
+   ],
+   "cgov-tenant-administration": [
+    "https://claude.com/docs/government/tenant-admin/overview"
+   ],
+   "cgov-tenant-setup-wizard": [
+    "https://claude.com/docs/government/tenant-admin/setup-wizard"
+   ],
+   "cgov-readiness": [
+    "https://claude.com/docs/government/tenant-admin/readiness"
+   ],
+   "cgov-organizations": [
+    "https://claude.com/docs/government/tenant-admin/organizations"
+   ],
+   "cgov-identity-and-access": [
+    "https://claude.com/docs/government/tenant-admin/identity-and-access"
+   ],
+   "cgov-tenant-restrictions": [
+    "https://claude.com/docs/government/tenant-admin/tenant-restrictions"
+   ],
+   "cgov-seats": [
+    "https://claude.com/docs/government/tenant-admin/seats"
+   ],
+   "cgov-billing": [
+    "https://claude.com/docs/government/tenant-admin/credits"
+   ],
+   "cgov-config-at-the-tenant-level": [
+    "https://claude.com/docs/government/tenant-admin/configuration"
+   ],
+   "cgov-admins": [
+    "https://claude.com/docs/government/tenant-admin/admins"
+   ],
+   "cgov-organization-administration": [
+    "https://claude.com/docs/government/org-admin/overview"
+   ],
+   "cgov-setup-wizard": [
+    "https://claude.com/docs/government/org-admin/setup-wizard"
+   ],
+   "cgov-readiness-2": [
+    "https://claude.com/docs/government/org-admin/readiness"
+   ],
+   "cgov-users": [
+    "https://claude.com/docs/government/org-admin/users"
+   ],
+   "cgov-seats-2": [
+    "https://claude.com/docs/government/org-admin/seats"
+   ],
+   "cgov-seat-tiers": [
+    "https://claude.com/docs/government/org-admin/seat-tiers"
+   ],
+   "cgov-group-mappings": [
+    "https://claude.com/docs/government/org-admin/provisioning"
+   ],
+   "cgov-analytics": [
+    "https://claude.com/docs/government/org-admin/analytics"
+   ],
+   "cgov-compliance-api": [
+    "https://claude.com/docs/government/org-admin/compliance-api"
+   ],
+   "cgov-billing-2": [
+    "https://claude.com/docs/government/org-admin/billing"
+   ],
+   "cgov-config-at-the-organization-level": [
+    "https://claude.com/docs/government/org-admin/configuration"
+   ],
+   "cgov-how-config-works": [
+    "https://claude.com/docs/government/config/overview"
+   ],
+   "cgov-available-settings": [
+    "https://claude.com/docs/government/config/settings"
+   ],
+   "cgov-manage-plugins-and-connectors": [
+    "https://claude.com/docs/government/config/plugins-and-connectors"
+   ],
+   "cgov-connectors": [
+    "https://claude.com/docs/government/connectors/overview"
+   ],
+   "cgov-set-up-the-microsoft-365-connector": [
+    "https://claude.com/docs/government/connectors/microsoft-365"
+   ],
+   "cgov-security-and-data-handling": [
+    "https://claude.com/docs/government/security/security-and-data-handling"
+   ],
+   "cgov-connect-claude-desktop-to-claude-for-government": [
+    "https://claude.com/docs/government/deploy-desktop/configure"
+   ],
+   "cgov-windows-fleet-checklist": [
+    "https://claude.com/docs/government/deploy-desktop/windows-checklist"
+   ],
+   "cgov-deploy-claude-for-microsoft-365-in-claude-for-government": [
+    "https://claude.com/docs/government/deploy-microsoft-365/configure"
+   ],
+   "cgov-connect-claude-code-to-claude-for-government": [
+    "https://claude.com/docs/government/deploy-claude-code/configure"
+   ],
+   "cgov-video-walkthroughs-for-claude-desktop": [
+    "https://claude.com/docs/government/desktop/video-walkthroughs"
+   ],
+   "cgov-import-your-data-from-claude-for-government-web": [
+    "https://claude.com/docs/government/desktop/import"
+   ],
+   "cgov-plugins-in-claude-desktop": [
+    "https://claude.com/docs/government/desktop/plugins"
+   ],
+   "cgov-skills-in-claude-desktop": [
+    "https://claude.com/docs/government/desktop/skills"
+   ],
+   "cgov-models-in-claude-desktop": [
+    "https://claude.com/docs/government/desktop/models"
+   ],
+   "cgov-your-account": [
+    "https://claude.com/docs/government/account/overview"
+   ],
+   "cgov-account-2": [
+    "https://claude.com/docs/government/account/profile"
+   ],
+   "cgov-usage": [
+    "https://claude.com/docs/government/account/usage"
+   ],
+   "cgov-sessions": [
+    "https://claude.com/docs/government/account/sessions"
+   ]
+  }
+ }
+}

@@ -52,9 +52,9 @@ Everything in the map sits on one of six levels, and every thread runs through a
 
 Topics, concepts and skills each have exactly one parent. Agents and MCP servers are shared: one agent can serve skills in several concepts, and one server can be held by several agents.
 
-### The eleven domains
+### The twelve domains
 
-Domains were written from the concepts up: topics were formed from what their concepts, skills, agents and servers have in common, and domains from what their topics have in common.
+Domains were written from the concepts up: topics were formed from what their concepts, skills, agents and servers have in common, and domains from what their topics have in common. The Claude domain was added later as 21 topic packs, filed under it with `regroup.pack_domains`.
 
 | Domain | Topics | Holds |
 |---|---|---|
@@ -69,6 +69,7 @@ Domains were written from the concepts up: topics were formed from what their co
 | **Languages, Literatures and Communication** | 11 | language structure, grammar, pronunciation, translation, linguistics, writing, poetry, rhetoric and literature |
 | **Area and Identity Studies** | 13 | European, Slavic, Chinese, African, American, Latin American and Jewish studies, and the study of race, ethnicity, gender and sexuality |
 | **Humanities and Arts** | 12 | philosophy, history, classics, religion, archaeology, art history, studio art, design, music, dance, theater, film and media |
+| **Claude** | 21 | the Claude apps, connectors, skills and plugins, Claude Duet, Claude Code, the Claude Agent SDK, the Claude API, Managed Agents, models and pricing, and Claude Platform administration; each skill is one docs page |
 
 ### Agents: primary, checker, support
 
@@ -391,7 +392,7 @@ Install it from the plugin directory when listed, or from this repository (see t
 ## Part 15 — App 1.5 additions
 - **Edge toggles.** The toolbar has one button per link level: Domain→Topic, Topic→Concept, Concept→Skill, Skill→Agent, Agent→MCP, plus Related (dashed lines between related concepts, off by default). A path that stops at skills means the Skill→Agent or Agent→MCP toggle is off.
 - **Selecting a domain** shows its topics and their concepts. Skills, agents and servers appear when you select a concept or skill, or route a task.
-- **Domains tab** lists all 11 domains; click one to select it.
+- **Domains tab** lists all 12 domains; click one to select it.
 - **Generated topics** get a suggested domain from the nearest existing topic. When you publish a pack, set `pack_domains` so the server files it under that domain.
 - **Saved state** now includes router mode (flat/lens), the field view, the domain filter, every edge toggle and the browse filters.
 

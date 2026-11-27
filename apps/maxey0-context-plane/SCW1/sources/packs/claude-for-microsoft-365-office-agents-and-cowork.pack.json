@@ -1,0 +1,587 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-for-microsoft-365-office-agents-and-cowork",
+ "topic": {
+  "id": "claude-for-microsoft-365-office-agents-and-cowork",
+  "label": "Claude for Microsoft 365, Office Agents and Cowork",
+  "desc": "Claude for Microsoft 365, Office Agents and Cowork: Office agents overview, Office apps, Enterprise and operations."
+ },
+ "concepts": [
+  [
+   "cm365-office-agents-overview",
+   "Office agents overview",
+   "claude-for-microsoft-365-office-agents-and-cowork",
+   "Office agents overview: Overview, Changelog, Run tasks in the background with Dispatch, Install plugins, Organize work with projects, Monitoring, Set up Cowork (local mode) for a HIPAA-ready organization, Claude for M365 overview, Connectors and Skills.",
+   [
+    "office",
+    "agent",
+    "changelog",
+    "run",
+    "task",
+    "background"
+   ]
+  ],
+  [
+   "cm365-office-apps",
+   "Office apps",
+   "claude-for-microsoft-365-office-agents-and-cowork",
+   "Office apps: Use Claude for Excel, Use Claude for PowerPoint, Use Claude for Word, Use Claude for Outlook, Work across M365 apps, Use dictation in Claude for M365.",
+   [
+    "office",
+    "app",
+    "m365",
+    "excel",
+    "powerpoint",
+    "word"
+   ]
+  ],
+  [
+   "cm365-enterprise-and-operations",
+   "Enterprise and operations",
+   "claude-for-microsoft-365-office-agents-and-cowork",
+   "Enterprise and operations: Security, admin auditability, and analytics, Configure a custom OpenTelemetry collector, Performance and limits, Data storage and retention, Use Claude for M365 with third-party platforms, Install financial services plugins for Cowork.",
+   [
+    "enterprise",
+    "operation",
+    "security",
+    "admin",
+    "auditability",
+    "analytic"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cm365-overview",
+   "cm365-office-agents-overview",
+   "Overview",
+   "Learn about Cowork, Anthropic's agentic workspace",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-changelog",
+   "cm365-office-agents-overview",
+   "Changelog",
+   "Release notes for Claude Desktop",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-run-tasks-in-the-background-with-dispatch",
+   "cm365-office-agents-overview",
+   "Run tasks in the background with Dispatch",
+   "Assign work to a Dispatch agent that plans, runs, and reports on tasks while you do something else, on this computer or from your phone.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-install-plugins",
+   "cm365-office-agents-overview",
+   "Install plugins",
+   "Add packaged skills, connectors, and agents to Cowork from the plugin marketplace or a file.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-organize-work-with-projects",
+   "cm365-office-agents-overview",
+   "Organize work with projects",
+   "Group folders, instructions, and context into a Cowork project so Claude starts each session with the right setup.",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-monitoring",
+   "cm365-office-agents-overview",
+   "Monitoring",
+   "Track Cowork usage and activity across your organization with OpenTelemetry",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-set-up-cowork-local-mode-for-a-hipaa-ready-organization",
+   "cm365-office-agents-overview",
+   "Set up Cowork (local mode) for a HIPAA-ready organization",
+   "Prepare members' computers to run Cowork (local mode) under the HIPAA configuration. Covers the Claude Desktop policy, network limits, and local data.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-claude-for-m365-overview",
+   "cm365-office-agents-overview",
+   "Claude for M365 overview",
+   "Claude for Excel, PowerPoint, Word, and Outlook.",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-connectors-and-skills",
+   "cm365-office-agents-overview",
+   "Connectors and Skills",
+   "Extend Claude for Excel, PowerPoint, Word, and Outlook with external context and reusable task recipes.",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-use-claude-for-excel",
+   "cm365-office-apps",
+   "Use Claude for Excel",
+   "An Excel add-in that integrates Claude into your spreadsheet workflow, for Pro, Max, Team, and Enterprise plans.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-use-claude-for-powerpoint",
+   "cm365-office-apps",
+   "Use Claude for PowerPoint",
+   "A PowerPoint add-in that integrates Claude into your presentation workflow, for Pro, Max, Team, and Enterprise plans.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-use-claude-for-word",
+   "cm365-office-apps",
+   "Use Claude for Word",
+   "A Word add-in that integrates Claude into your document workflow, for Pro, Max, Team, and Enterprise plans.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-use-claude-for-outlook",
+   "cm365-office-apps",
+   "Use Claude for Outlook",
+   "An Outlook add-in that integrates Claude into your inbox and calendar, for Pro, Max, Team, and Enterprise plans.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-work-across-m365-apps",
+   "cm365-office-apps",
+   "Work across M365 apps",
+   "Let Claude read from one Microsoft 365 app and make changes in another in a single conversation.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-use-dictation-in-claude-for-m365",
+   "cm365-office-apps",
+   "Use dictation in Claude for M365",
+   "Speak your prompts instead of typing them in Claude for Excel, PowerPoint, Word, and Outlook.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-security-admin-auditability-and-analytics",
+   "cm365-enterprise-and-operations",
+   "Security, admin auditability, and analytics",
+   "Security architecture diagrams, OpenTelemetry audit, usage analytics, and spend tracking for enterprise admins deploying Claude for M365.",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-configure-a-custom-opentelemetry-collector",
+   "cm365-enterprise-and-operations",
+   "Configure a custom OpenTelemetry collector",
+   "Route the full Claude for M365 audit trail, including prompts, tool inputs and outputs, and document references, to an OpenTelemetry collector you operate.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-performance-and-limits",
+   "cm365-enterprise-and-operations",
+   "Performance and limits",
+   "How Claude for M365 works with a busy Office app, the size limits to know, and what to do when Office slows down or stops responding.",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-data-storage-and-retention",
+   "cm365-enterprise-and-operations",
+   "Data storage and retention",
+   "Where Claude for M365 stores chat history, skills, and credentials on each user's device, why reinstalling or switching add-ins keeps that data, how long it is kept, and why the add-in asks users to sign in again.",
+   "semantic",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-use-claude-for-m365-with-third-party-platforms",
+   "cm365-enterprise-and-operations",
+   "Use Claude for M365 with third-party platforms",
+   "Deploy the Office add-ins through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, without individual Claude accounts.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cm365-install-financial-services-plugins-for-cowork",
+   "cm365-enterprise-and-operations",
+   "Install financial services plugins for Cowork",
+   "Add the open-source financial services plugin set to Cowork for workflows such as financial modeling, equity research, investment banking, and private equity.",
+   "procedural",
+   [
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-specialist",
+     "primary"
+    ],
+    [
+     "claude-for-microsoft-365-office-agents-and-cowork-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-for-microsoft-365-office-agents-and-cowork-specialist": "Claude for Microsoft 365, Office Agents and Cowork Specialist",
+  "claude-for-microsoft-365-office-agents-and-cowork-reviewer": "Claude for Microsoft 365, Office Agents and Cowork Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "officeagent": "dispatch organize background cowork hipaa monitoring",
+  "officeapp": "app excel outlook powerpoint dictation word",
+  "enterpriseoperation": "auditability collector financial party performance third"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cm365-overview": [
+    "https://claude.com/docs/cowork/overview"
+   ],
+   "cm365-changelog": [
+    "https://claude.com/docs/cowork/changelog"
+   ],
+   "cm365-run-tasks-in-the-background-with-dispatch": [
+    "https://claude.com/docs/cowork/guide/dispatch"
+   ],
+   "cm365-install-plugins": [
+    "https://claude.com/docs/cowork/guide/plugins"
+   ],
+   "cm365-organize-work-with-projects": [
+    "https://claude.com/docs/cowork/guide/projects"
+   ],
+   "cm365-monitoring": [
+    "https://claude.com/docs/cowork/monitoring"
+   ],
+   "cm365-set-up-cowork-local-mode-for-a-hipaa-ready-organization": [
+    "https://claude.com/docs/cowork/hipaa-setup"
+   ],
+   "cm365-claude-for-m365-overview": [
+    "https://claude.com/docs/office-agents/overview"
+   ],
+   "cm365-connectors-and-skills": [
+    "https://claude.com/docs/office-agents/connectors-and-skills"
+   ],
+   "cm365-use-claude-for-excel": [
+    "https://claude.com/docs/office-agents/excel"
+   ],
+   "cm365-use-claude-for-powerpoint": [
+    "https://claude.com/docs/office-agents/powerpoint"
+   ],
+   "cm365-use-claude-for-word": [
+    "https://claude.com/docs/office-agents/word"
+   ],
+   "cm365-use-claude-for-outlook": [
+    "https://claude.com/docs/office-agents/outlook"
+   ],
+   "cm365-work-across-m365-apps": [
+    "https://claude.com/docs/office-agents/work-across-apps"
+   ],
+   "cm365-use-dictation-in-claude-for-m365": [
+    "https://claude.com/docs/office-agents/dictation"
+   ],
+   "cm365-security-admin-auditability-and-analytics": [
+    "https://claude.com/docs/office-agents/enterprise-readiness"
+   ],
+   "cm365-configure-a-custom-opentelemetry-collector": [
+    "https://claude.com/docs/office-agents/opentelemetry"
+   ],
+   "cm365-performance-and-limits": [
+    "https://claude.com/docs/office-agents/performance"
+   ],
+   "cm365-data-storage-and-retention": [
+    "https://claude.com/docs/office-agents/data-storage"
+   ],
+   "cm365-use-claude-for-m365-with-third-party-platforms": [
+    "https://claude.com/docs/office-agents/third-party-platforms"
+   ],
+   "cm365-install-financial-services-plugins-for-cowork": [
+    "https://claude.com/docs/office-agents/fsi-plugins"
+   ]
+  }
+ }
+}

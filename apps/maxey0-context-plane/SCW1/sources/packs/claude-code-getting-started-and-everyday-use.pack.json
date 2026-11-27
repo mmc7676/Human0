@@ -1,0 +1,1278 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-getting-started-and-everyday-use",
+ "topic": {
+  "id": "claude-code-getting-started-and-everyday-use",
+  "label": "Claude Code: Getting Started and Everyday Use",
+  "desc": "Claude Code: Getting Started and Everyday Use: Getting started (Claude Code), Core concepts (Claude Code), Use Claude Code, Platforms and integrations, Claude Code in the cloud, Claude Code on desktop, Code review and pull requests, Run Claude in your own CI."
+ },
+ "concepts": [
+  [
+   "ccuse-getting-started-claude-code",
+   "Getting started (Claude Code)",
+   "claude-code-getting-started-and-everyday-use",
+   "Getting started (Claude Code): Overview, Quickstart, Claude Code changelog.",
+   [
+    "getting",
+    "started",
+    "code",
+    "quickstart",
+    "changelog"
+   ]
+  ],
+  [
+   "ccuse-core-concepts-claude-code",
+   "Core concepts (Claude Code)",
+   "claude-code-getting-started-and-everyday-use",
+   "Core concepts (Claude Code): How Claude Code works, Extend Claude Code, Explore the .claude directory, Explore the context window, How Claude Code uses prompt caching.",
+   [
+    "core",
+    "concept",
+    "code",
+    "how",
+    "explore",
+    "work"
+   ]
+  ],
+  [
+   "ccuse-use-claude-code",
+   "Use Claude Code",
+   "claude-code-getting-started-and-everyday-use",
+   "Use Claude Code: How Claude remembers your project, Manage sessions, Common workflows, Prompt library, Best practices for Claude Code.",
+   [
+    "code",
+    "how",
+    "remember",
+    "your",
+    "project",
+    "manage"
+   ]
+  ],
+  [
+   "ccuse-platforms-and-integrations",
+   "Platforms and integrations",
+   "claude-code-getting-started-and-everyday-use",
+   "Platforms and integrations: Platforms and integrations, Continue local sessions from any device with Remote Control, Let Claude coordinate ongoing work with Projects, Claude Code on mobile, Use Claude Code with Chrome, Let Claude use your computer from the CLI, Use Claude Code in VS Code, JetBrains IDEs, Claude Code in Slack, Claude Tag.",
+   [
+    "platform",
+    "integration",
+    "code",
+    "let",
+    "continue",
+    "local"
+   ]
+  ],
+  [
+   "ccuse-claude-code-in-the-cloud",
+   "Claude Code in the cloud",
+   "claude-code-getting-started-and-everyday-use",
+   "Claude Code in the cloud: Get started with Claude Code in the cloud, Use Claude Code in the cloud, Automate work with scheduled tasks.",
+   [
+    "code",
+    "cloud",
+    "get",
+    "started",
+    "automate",
+    "work"
+   ]
+  ],
+  [
+   "ccuse-claude-code-on-desktop",
+   "Claude Code on desktop",
+   "claude-code-getting-started-and-everyday-use",
+   "Claude Code on desktop: Get started with the desktop app, Desktop application, Claude Desktop on Linux (beta), Claude Code Desktop in WSL, Schedule recurring tasks in Claude Code Desktop, Test iOS apps in the simulator.",
+   [
+    "code",
+    "desktop",
+    "app",
+    "get",
+    "started",
+    "application"
+   ]
+  ],
+  [
+   "ccuse-code-review-and-pull-requests",
+   "Code review and pull requests",
+   "claude-code-getting-started-and-everyday-use",
+   "Code review and pull requests: Review locally with /code-review, Find bugs with ultrareview, Claude Code with GitHub Enterprise Server, Code Review, Set up Code Review, Customize Code Review, Read and request reviews on a pull request, Code Review costs and usage, Troubleshoot Code Review, Catch security issues as Claude writes code, Scan your codebase for vulnerabilities.",
+   [
+    "code",
+    "review",
+    "pull",
+    "request",
+    "locally",
+    "find"
+   ]
+  ],
+  [
+   "ccuse-run-claude-in-your-own-ci",
+   "Run Claude in your own CI",
+   "claude-code-getting-started-and-everyday-use",
+   "Run Claude in your own CI: Claude Code GitHub Actions, Use Claude Code GitHub Actions with cloud providers, Claude Code GitLab CI/CD.",
+   [
+    "run",
+    "your",
+    "own",
+    "code",
+    "github",
+    "action"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ccuse-overview",
+   "ccuse-getting-started-claude-code",
+   "Overview",
+   "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Available in your terminal, IDE, desktop app, and browser.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-quickstart",
+   "ccuse-getting-started-claude-code",
+   "Quickstart",
+   "Install Claude Code in your terminal, sign in, and use the CLI to explore your codebase and make your first code change.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-changelog",
+   "ccuse-getting-started-claude-code",
+   "Claude Code changelog",
+   "Release notes for Claude Code, including new features, improvements, and bug fixes by version.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-how-claude-code-works",
+   "ccuse-core-concepts-claude-code",
+   "How Claude Code works",
+   "Understand the agentic loop, built-in tools, and how Claude Code interacts with your project.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-extend-claude-code",
+   "ccuse-core-concepts-claude-code",
+   "Extend Claude Code",
+   "Understand when to use CLAUDE.md, Skills, subagents, hooks, MCP, and plugins.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-explore-the-claude-directory",
+   "ccuse-core-concepts-claude-code",
+   "Explore the .claude directory",
+   "Where Claude Code reads CLAUDE.md, settings.json, hooks, skills, commands, subagents, workflows, rules, and auto memory. Explore the .claude directory in your project and ~/.claude in your home directory.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-explore-the-context-window",
+   "ccuse-core-concepts-claude-code",
+   "Explore the context window",
+   "An interactive simulation of how Claude Code's context window fills during a session. See what loads automatically, what each file read costs, and when rules and hooks fire.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-how-claude-code-uses-prompt-caching",
+   "ccuse-core-concepts-claude-code",
+   "How Claude Code uses prompt caching",
+   "See why a model switch triggers a slow uncached turn in Claude Code, what /compact costs, and how to check your prompt cache hit rate.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-how-claude-remembers-your-project",
+   "ccuse-use-claude-code",
+   "How Claude remembers your project",
+   "Give Claude persistent instructions with CLAUDE.md or AGENTS.md files, and let Claude accumulate learnings automatically with auto memory.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-manage-sessions",
+   "ccuse-use-claude-code",
+   "Manage sessions",
+   "Name, resume, branch, and switch between Claude Code conversations. Covers --continue, --resume, --from-pr, the /resume picker, session naming, exporting transcripts, and where transcripts are stored.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-common-workflows",
+   "ccuse-use-claude-code",
+   "Common workflows",
+   "Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-prompt-library",
+   "ccuse-use-claude-code",
+   "Prompt library",
+   "Copy-paste prompts for Claude Code, tagged by task and role.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-best-practices-for-claude-code",
+   "ccuse-use-claude-code",
+   "Best practices for Claude Code",
+   "Get more out of Claude Code: tell Claude what it can't see, give it a check to run, and enforce the rules that can't have exceptions.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-platforms-and-integrations-2",
+   "ccuse-platforms-and-integrations",
+   "Platforms and integrations",
+   "Choose where to run Claude Code and what to connect it to. Compare the CLI, Desktop, VS Code, JetBrains, web, mobile, and integrations like Chrome, Slack, and CI/CD.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-continue-local-sessions-from-any-device-with-remote-control",
+   "ccuse-platforms-and-integrations",
+   "Continue local sessions from any device with Remote Control",
+   "Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-let-claude-coordinate-ongoing-work-with-projects",
+   "ccuse-platforms-and-integrations",
+   "Let Claude coordinate ongoing work with Projects",
+   "Hand Claude a stream of related tasks in one conversation and let it run them as parallel cloud sessions that share repositories, instructions, and memory.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-on-mobile",
+   "ccuse-platforms-and-integrations",
+   "Claude Code on mobile",
+   "Start, monitor, and steer Claude Code tasks from your phone with the Claude app for iOS and Android.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-use-claude-code-with-chrome",
+   "ccuse-platforms-and-integrations",
+   "Use Claude Code with Chrome",
+   "Connect Claude Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-let-claude-use-your-computer-from-the-cli",
+   "ccuse-platforms-and-integrations",
+   "Let Claude use your computer from the CLI",
+   "Enable computer use in the Claude Code CLI so Claude can open apps, click, type, and see your screen on macOS. Test native apps, debug visual issues, and automate GUI-only tools without leaving your terminal.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-use-claude-code-in-vs-code",
+   "ccuse-platforms-and-integrations",
+   "Use Claude Code in VS Code",
+   "Install and configure the Claude Code extension for VS Code. Get AI coding assistance with inline diffs, @-mentions, plan review, and keyboard shortcuts.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-jetbrains-ides",
+   "ccuse-platforms-and-integrations",
+   "JetBrains IDEs",
+   "Use Claude Code with JetBrains IDEs including IntelliJ, PyCharm, WebStorm, and more",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-in-slack",
+   "ccuse-platforms-and-integrations",
+   "Claude Code in Slack",
+   "What to use in place of the earlier Claude Code in Slack, on Team, Enterprise, Pro, Max, and Ultra plans.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-tag",
+   "ccuse-platforms-and-integrations",
+   "Claude Tag",
+   "Bring Claude into your team's Slack channels with Claude Tag and find its setup and usage documentation on claude.com.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-get-started-with-claude-code-in-the-cloud",
+   "ccuse-claude-code-in-the-cloud",
+   "Get started with Claude Code in the cloud",
+   "Run Claude Code in the cloud from your browser or phone. Connect a GitHub repository, submit a task, and review the PR without local setup.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-use-claude-code-in-the-cloud",
+   "ccuse-claude-code-in-the-cloud",
+   "Use Claude Code in the cloud",
+   "Run Claude Code sessions in the cloud from your browser, phone, Desktop app, or terminal, move them with --cloud and --teleport, and auto-fix pull requests.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-automate-work-with-scheduled-tasks",
+   "ccuse-claude-code-in-the-cloud",
+   "Automate work with scheduled tasks",
+   "Put Claude Code on autopilot. Create scheduled tasks, formerly routines, that run in the cloud on a schedule, on API calls, or on GitHub events.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-get-started-with-the-desktop-app",
+   "ccuse-claude-code-on-desktop",
+   "Get started with the desktop app",
+   "Install the Claude desktop app, open the Code tab, and start your first Claude Code session on a project folder on your computer.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-desktop-application",
+   "ccuse-claude-code-on-desktop",
+   "Desktop application",
+   "Get more out of Claude Code Desktop: parallel sessions with Git isolation, drag-and-drop pane layout, integrated terminal and file editor, side chats, computer use, Dispatch sessions from your phone, visual diff review, app previews, PR monitoring, connectors, and enterprise configuration.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-desktop-on-linux-beta",
+   "ccuse-claude-code-on-desktop",
+   "Claude Desktop on Linux (beta)",
+   "Install and update the Claude desktop app on Ubuntu and Debian",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-desktop-in-wsl",
+   "ccuse-claude-code-on-desktop",
+   "Claude Code Desktop in WSL",
+   "Run Code sessions inside a WSL 2 distribution on Windows",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-schedule-recurring-tasks-in-claude-code-desktop",
+   "ccuse-claude-code-on-desktop",
+   "Schedule recurring tasks in Claude Code Desktop",
+   "Set up scheduled tasks in Claude Code Desktop to run Claude automatically on a recurring basis for daily code reviews, dependency audits, or morning briefings.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-test-ios-apps-in-the-simulator",
+   "ccuse-claude-code-on-desktop",
+   "Test iOS apps in the simulator",
+   "Claude Code Desktop opens your app in the iOS Simulator pane when Claude builds, runs, or checks it.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-review-locally-with-code-review",
+   "ccuse-code-review-and-pull-requests",
+   "Review locally with /code-review",
+   "Run /code-review in a Claude Code session to find bugs in your branch's changes, point the review at a pull request or path, and have Claude apply the fixes.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-find-bugs-with-ultrareview",
+   "ccuse-code-review-and-pull-requests",
+   "Find bugs with ultrareview",
+   "Run a deep, multi-agent code review in the cloud with /code-review ultra to find and verify bugs before you merge.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-with-github-enterprise-server",
+   "ccuse-code-review-and-pull-requests",
+   "Claude Code with GitHub Enterprise Server",
+   "Connect Claude Code to your self-hosted GitHub Enterprise Server instance for cloud sessions, code review, and plugin marketplaces.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-code-review",
+   "ccuse-code-review-and-pull-requests",
+   "Code Review",
+   "Catch bugs in GitHub pull requests with Code Review: Claude reviews each change, verifies its findings, and comments inline. For Team and Enterprise plans",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-set-up-code-review",
+   "ccuse-code-review-and-pull-requests",
+   "Set up Code Review",
+   "Turn on Code Review for your Claude organization: connect GitHub, install the Claude GitHub App, choose repositories, and set when reviews run",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-customize-code-review",
+   "ccuse-code-review-and-pull-requests",
+   "Customize Code Review",
+   "Tune what Code Review flags on your pull requests with REVIEW.md and CLAUDE.md: recalibrate severity, skip paths, add checks, and see which copy applies.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-read-and-request-reviews-on-a-pull-request",
+   "ccuse-code-review-and-pull-requests",
+   "Read and request reviews on a pull request",
+   "Read Code Review findings on your GitHub pull request, respond to or dismiss them, and request a review with @claude review.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-code-review-costs-and-usage",
+   "ccuse-code-review-and-pull-requests",
+   "Code Review costs and usage",
+   "Estimate and cap what your organization spends on Claude Code Review: how reviews are billed through usage credits, what drives cost, and where to track usage.",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-troubleshoot-code-review",
+   "ccuse-code-review-and-pull-requests",
+   "Troubleshoot Code Review",
+   "Fix a Code Review that didn't start, failed, or was skipped for budget, find missing findings, and resolve setup and REVIEW.md problems.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-catch-security-issues-as-claude-writes-code",
+   "ccuse-code-review-and-pull-requests",
+   "Catch security issues as Claude writes code",
+   "Install the security-guidance plugin to have Claude review its own code changes for vulnerabilities and fix them in the same session.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-scan-your-codebase-for-vulnerabilities",
+   "ccuse-code-review-and-pull-requests",
+   "Scan your codebase for vulnerabilities",
+   "Install the Claude Security plugin to scan your codebase for vulnerabilities in a Claude Code session and turn findings into patches you review and apply.",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-github-actions",
+   "ccuse-run-claude-in-your-own-ci",
+   "Claude Code GitHub Actions",
+   "Run Claude Code in GitHub Actions workflows to respond to @claude mentions, automate tasks, and turn issues into pull requests",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-use-claude-code-github-actions-with-cloud-providers",
+   "ccuse-run-claude-in-your-own-ci",
+   "Use Claude Code GitHub Actions with cloud providers",
+   "Run Claude Code GitHub Actions through Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry instead of the Claude API",
+   "procedural",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccuse-claude-code-gitlab-ci-cd",
+   "ccuse-run-claude-in-your-own-ci",
+   "Claude Code GitLab CI/CD",
+   "Learn about integrating Claude Code into your development workflow with GitLab CI/CD",
+   "semantic",
+   [
+    [
+     "claude-code-getting-started-and-everyday-use-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-getting-started-and-everyday-use-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-code-getting-started-and-everyday-use-specialist": "Claude Code: Getting Started and Everyday Use Specialist",
+  "claude-code-getting-started-and-everyday-use-reviewer": "Claude Code: Getting Started and Everyday Use Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "gettingstarted": "code changelog quickstart getting started",
+  "coreconcept": "explore caching extend window context directory",
+  "code": "common best library practice remember workflow",
+  "platformintegration": "let integration platform continue ide jetbrain",
+  "codecloud": "cloud automate scheduled task",
+  "codedesktop": "desktop app application ios recurring simulator",
+  "codereview": "review request pull issue locally scan",
+  "runyour": "action github gitlab provider own run"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [
+   {
+    "from_topic": "Claude Code: Getting Started and Everyday Use",
+    "from": "Code Review",
+    "into_topic": "Claude Code: Getting Started and Everyday Use",
+    "into": "Code review and pull requests",
+    "label": "Code review and pull requests",
+    "reason": "duplicate"
+   },
+   {
+    "from_topic": "Claude Code: Getting Started and Everyday Use",
+    "from": "Security scans",
+    "into_topic": "Claude Code: Getting Started and Everyday Use",
+    "into": "Code review and pull requests",
+    "label": "Code review and pull requests",
+    "reason": "limit: both check code for problems"
+   }
+  ],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "ccuse-overview": [
+    "https://code.claude.com/docs/en/overview"
+   ],
+   "ccuse-quickstart": [
+    "https://code.claude.com/docs/en/quickstart"
+   ],
+   "ccuse-claude-code-changelog": [
+    "https://code.claude.com/docs/en/changelog"
+   ],
+   "ccuse-how-claude-code-works": [
+    "https://code.claude.com/docs/en/how-claude-code-works"
+   ],
+   "ccuse-extend-claude-code": [
+    "https://code.claude.com/docs/en/features-overview"
+   ],
+   "ccuse-explore-the-claude-directory": [
+    "https://code.claude.com/docs/en/claude-directory"
+   ],
+   "ccuse-explore-the-context-window": [
+    "https://code.claude.com/docs/en/context-window"
+   ],
+   "ccuse-how-claude-code-uses-prompt-caching": [
+    "https://code.claude.com/docs/en/prompt-caching"
+   ],
+   "ccuse-how-claude-remembers-your-project": [
+    "https://code.claude.com/docs/en/memory"
+   ],
+   "ccuse-manage-sessions": [
+    "https://code.claude.com/docs/en/sessions"
+   ],
+   "ccuse-common-workflows": [
+    "https://code.claude.com/docs/en/common-workflows"
+   ],
+   "ccuse-prompt-library": [
+    "https://code.claude.com/docs/en/prompt-library"
+   ],
+   "ccuse-best-practices-for-claude-code": [
+    "https://code.claude.com/docs/en/best-practices"
+   ],
+   "ccuse-platforms-and-integrations-2": [
+    "https://code.claude.com/docs/en/platforms"
+   ],
+   "ccuse-continue-local-sessions-from-any-device-with-remote-control": [
+    "https://code.claude.com/docs/en/remote-control"
+   ],
+   "ccuse-let-claude-coordinate-ongoing-work-with-projects": [
+    "https://code.claude.com/docs/en/claude-projects"
+   ],
+   "ccuse-claude-code-on-mobile": [
+    "https://code.claude.com/docs/en/mobile"
+   ],
+   "ccuse-use-claude-code-with-chrome": [
+    "https://code.claude.com/docs/en/chrome"
+   ],
+   "ccuse-let-claude-use-your-computer-from-the-cli": [
+    "https://code.claude.com/docs/en/computer-use"
+   ],
+   "ccuse-use-claude-code-in-vs-code": [
+    "https://code.claude.com/docs/en/vs-code"
+   ],
+   "ccuse-jetbrains-ides": [
+    "https://code.claude.com/docs/en/jetbrains"
+   ],
+   "ccuse-claude-code-in-slack": [
+    "https://code.claude.com/docs/en/slack"
+   ],
+   "ccuse-claude-tag": [
+    "https://code.claude.com/docs/en/claude-tag"
+   ],
+   "ccuse-get-started-with-claude-code-in-the-cloud": [
+    "https://code.claude.com/docs/en/web-quickstart"
+   ],
+   "ccuse-use-claude-code-in-the-cloud": [
+    "https://code.claude.com/docs/en/claude-code-on-the-web"
+   ],
+   "ccuse-automate-work-with-scheduled-tasks": [
+    "https://code.claude.com/docs/en/routines"
+   ],
+   "ccuse-get-started-with-the-desktop-app": [
+    "https://code.claude.com/docs/en/desktop-quickstart"
+   ],
+   "ccuse-desktop-application": [
+    "https://code.claude.com/docs/en/desktop"
+   ],
+   "ccuse-claude-desktop-on-linux-beta": [
+    "https://code.claude.com/docs/en/desktop-linux"
+   ],
+   "ccuse-claude-code-desktop-in-wsl": [
+    "https://code.claude.com/docs/en/desktop-wsl"
+   ],
+   "ccuse-schedule-recurring-tasks-in-claude-code-desktop": [
+    "https://code.claude.com/docs/en/desktop-scheduled-tasks"
+   ],
+   "ccuse-test-ios-apps-in-the-simulator": [
+    "https://code.claude.com/docs/en/desktop-ios-simulator"
+   ],
+   "ccuse-review-locally-with-code-review": [
+    "https://code.claude.com/docs/en/code-review-local"
+   ],
+   "ccuse-find-bugs-with-ultrareview": [
+    "https://code.claude.com/docs/en/ultrareview"
+   ],
+   "ccuse-claude-code-with-github-enterprise-server": [
+    "https://code.claude.com/docs/en/github-enterprise-server"
+   ],
+   "ccuse-code-review": [
+    "https://code.claude.com/docs/en/code-review"
+   ],
+   "ccuse-set-up-code-review": [
+    "https://code.claude.com/docs/en/code-review-setup"
+   ],
+   "ccuse-customize-code-review": [
+    "https://code.claude.com/docs/en/code-review-customize"
+   ],
+   "ccuse-read-and-request-reviews-on-a-pull-request": [
+    "https://code.claude.com/docs/en/code-review-pull-requests"
+   ],
+   "ccuse-code-review-costs-and-usage": [
+    "https://code.claude.com/docs/en/code-review-costs"
+   ],
+   "ccuse-troubleshoot-code-review": [
+    "https://code.claude.com/docs/en/code-review-troubleshooting"
+   ],
+   "ccuse-catch-security-issues-as-claude-writes-code": [
+    "https://code.claude.com/docs/en/security-guidance"
+   ],
+   "ccuse-scan-your-codebase-for-vulnerabilities": [
+    "https://code.claude.com/docs/en/claude-security"
+   ],
+   "ccuse-claude-code-github-actions": [
+    "https://code.claude.com/docs/en/github-actions"
+   ],
+   "ccuse-use-claude-code-github-actions-with-cloud-providers": [
+    "https://code.claude.com/docs/en/github-actions-cloud-providers"
+   ],
+   "ccuse-claude-code-gitlab-ci-cd": [
+    "https://code.claude.com/docs/en/gitlab-ci-cd"
+   ]
+  }
+ }
+}

@@ -60,7 +60,7 @@ test("tools/list: 15 read-only tools, deterministic order, cacheable", async () 
 
 test("domains and every topic served with manifest counts; removed/merged topics absent", async () => {
   const d = (await call("list_domains", {})).structuredContent.domains;
-  assert.deepEqual(d.map((x) => x.id), ["agentic-systems", "data-science", "math-physical-sciences", "engineering", "life-health-mind", "earth-environment-place", "business-finance", "society-governance", "languages-communication", "area-identity-studies", "humanities-arts"]);
+  assert.deepEqual(d.map((x) => x.id), ["agentic-systems", "data-science", "math-physical-sciences", "engineering", "life-health-mind", "earth-environment-place", "business-finance", "society-governance", "languages-communication", "area-identity-studies", "humanities-arts", "claude"]);
   const r = (await call("list_topics", {})).structuredContent;
   assert.equal(r.count, manifest.entries.length);
   const byId = Object.fromEntries(r.topics.map((t) => [t.id, t]));
@@ -129,7 +129,7 @@ async function at(path, method, params = {}) {
 test("one endpoint per domain plus /mcp: /mcp serves all; /mcp/<domain> serves only that domain", async () => {
   const all = (await at("/mcp", "tools/call", { name: "list_topics", arguments: {} })).body.result.structuredContent;
   let sum = 0;
-  for (const d of ["agentic-systems", "data-science", "math-physical-sciences", "engineering", "life-health-mind", "earth-environment-place", "business-finance", "society-governance", "languages-communication", "area-identity-studies", "humanities-arts"]) {
+  for (const d of ["agentic-systems", "data-science", "math-physical-sciences", "engineering", "life-health-mind", "earth-environment-place", "business-finance", "society-governance", "languages-communication", "area-identity-studies", "humanities-arts", "claude"]) {
     const r = (await at("/mcp/" + d, "tools/call", { name: "list_topics", arguments: {} })).body.result.structuredContent;
     assert.ok(r.count > 0 && r.topics.every((t) => t.domain === d), d); sum += r.count;
     const dom = (await at("/mcp/" + d, "tools/call", { name: "list_domains", arguments: {} })).body.result.structuredContent.domains;

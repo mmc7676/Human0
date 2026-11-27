@@ -303,6 +303,11 @@
     "id": "humanities-arts",
     "label": "Humanities and Arts",
     "desc": "Humanities and the arts: philosophy, history, classics, religion, archaeology, art history, studio art, design, music, dance, theater, film and media."
+   },
+   {
+    "id": "claude",
+    "label": "Claude",
+    "desc": "Anthropic's Claude as one domain: the Claude apps (connectors, skills and plugins, Claude Tag, Claude Science, Claude for Government, Claude for Microsoft 365 and Claude on third-party platforms), Claude Duet, Claude Code and the Claude Agent SDK, and the Claude Platform (the Claude API and its reference, Managed Agents, models and pricing, SDKs, administration, and prompting and evaluation guidance)."
    }
   ],
   "topics": [
@@ -1914,7 +1919,29 @@
     ]
    }
   ],
-  "pack_domains": {},
+  "pack_domains": {
+   "claude-agent-sdk": "claude",
+   "claude-api-messages-tools-and-agent-skills": "claude",
+   "claude-api-reference": "claude",
+   "claude-apps-connectors-skills-and-plugins": "claude",
+   "claude-apps-on-third-party-platforms": "claude",
+   "claude-code-administration": "claude",
+   "claude-code-building-with-agents-mcp-and-skills": "claude",
+   "claude-code-configuration": "claude",
+   "claude-code-getting-started-and-everyday-use": "claude",
+   "claude-code-plugins-and-marketplaces": "claude",
+   "claude-code-reference": "claude",
+   "claude-duet": "claude",
+   "claude-for-government": "claude",
+   "claude-for-microsoft-365-office-agents-and-cowork": "claude",
+   "claude-managed-agents": "claude",
+   "claude-models-and-pricing": "claude",
+   "claude-platform-administration": "claude",
+   "claude-science": "claude",
+   "claude-sdks-cli-and-libraries": "claude",
+   "claude-tag": "claude",
+   "prompting-evaluation-and-claude-api-guidance": "claude"
+  },
   "pack_domains_rule": "A topic pack added after the regroup keeps its own topic; list it here as topic_id -> domain_id. The build fails for any unplaced topic."
  }
 }

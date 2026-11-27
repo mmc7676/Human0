@@ -1,0 +1,1141 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-managed-agents",
+ "topic": {
+  "id": "claude-managed-agents",
+  "label": "Claude Managed Agents",
+  "desc": "Claude Managed Agents: Get started, Tools, files and memory, Environments and sandboxes, Agents and orchestration, Sessions, events and streaming, Deployment and security, Reference and other."
+ },
+ "concepts": [
+  [
+   "cma-get-started",
+   "Get started",
+   "claude-managed-agents",
+   "Get started: Overview: Claude Managed Agents overview, Quickstart: Get started with Claude Managed Agents, Build in Console, Migration.",
+   [
+    "get",
+    "started",
+    "managed",
+    "agent",
+    "quickstart",
+    "build"
+   ]
+  ],
+  [
+   "cma-tools-files-and-memory",
+   "Tools, files and memory",
+   "claude-managed-agents",
+   "Tools, files and memory: Access GitHub, Attach and download files, Authenticate with vaults, MCP connector, Web tool restrictions, Agent Skills, Tools, Memory stores.",
+   [
+    "tool",
+    "file",
+    "memory",
+    "access",
+    "github",
+    "attach"
+   ]
+  ],
+  [
+   "cma-environments-and-sandboxes",
+   "Environments and sandboxes",
+   "claude-managed-agents",
+   "Environments and sandboxes: Choose an environment, Cloud environment setup, Cloud sandbox reference, Custom tools and MCP servers, Deploy workers, Memory stores, Monitor and troubleshoot, Security model, Overview and quickstart, Worker reference.",
+   [
+    "environment",
+    "sandboxe",
+    "cloud",
+    "worker",
+    "choose",
+    "setup"
+   ]
+  ],
+  [
+   "cma-agents-and-orchestration",
+   "Agents and orchestration",
+   "claude-managed-agents",
+   "Agents and orchestration: Define outcomes, Agent setup, Dreams, Multiagent orchestration, Session budgets.",
+   [
+    "agent",
+    "orchestration",
+    "define",
+    "outcome",
+    "setup",
+    "dream"
+   ]
+  ],
+  [
+   "cma-sessions-events-and-streaming",
+   "Sessions, events and streaming",
+   "claude-managed-agents",
+   "Sessions, events and streaming: Inspect and track usage, Event deltas, Session event stream, Session operations, Session threads, Start a session.",
+   [
+    "session",
+    "event",
+    "streaming",
+    "inspect",
+    "track",
+    "usage"
+   ]
+  ],
+  [
+   "cma-deployment-and-security",
+   "Deployment and security",
+   "claude-managed-agents",
+   "Deployment and security: Permission policies, Review and monitor sessions, Scheduled deployments, Secure your deployment, Risks and boundaries.",
+   [
+    "deployment",
+    "security",
+    "permission",
+    "policie",
+    "review",
+    "monitor"
+   ]
+  ],
+  [
+   "cma-reference-and-other",
+   "Reference and other",
+   "claude-managed-agents",
+   "Reference and other: Managed Agents reference, Subscribe to webhooks, Workflow runs.",
+   [
+    "other",
+    "managed",
+    "agent",
+    "subscribe",
+    "webhook",
+    "workflow"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cma-overview-claude-managed-agents-overview",
+   "cma-get-started",
+   "Overview: Claude Managed Agents overview",
+   "Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-quickstart-get-started-with-claude-managed-agents",
+   "cma-get-started",
+   "Quickstart: Get started with Claude Managed Agents",
+   "Create your first autonomous agent.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-build-in-console",
+   "cma-get-started",
+   "Build in Console",
+   "Create, test, and iterate on agents visually in the Claude Console, then run them from your code with the API.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-migration",
+   "cma-get-started",
+   "Migration",
+   "Move an existing agent built on the Messages API or the Claude Agent SDK to Claude Managed Agents.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-access-github",
+   "cma-tools-files-and-memory",
+   "Access GitHub",
+   "Connect your agent to GitHub repositories for cloning, reading, and creating pull requests.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-attach-and-download-files",
+   "cma-tools-files-and-memory",
+   "Attach and download files",
+   "Upload files and mount them in your sandbox for reading and processing.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-authenticate-with-vaults",
+   "cma-tools-files-and-memory",
+   "Authenticate with vaults",
+   "Register per-user credentials when creating sessions.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-mcp-connector",
+   "cma-tools-files-and-memory",
+   "MCP connector",
+   "Connect MCP servers to your agents for access to external tools and data sources.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-web-tool-restrictions",
+   "cma-tools-files-and-memory",
+   "Web tool restrictions",
+   "Control which sites an agent's web search and web fetch tools can reach, cap fetched content, and localize search results.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-agent-skills",
+   "cma-tools-files-and-memory",
+   "Agent Skills",
+   "Attach pre-built or custom skills to an agent in Claude Managed Agents to give it reusable, filesystem-based expertise for domain-specific workflows.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-tools",
+   "cma-tools-files-and-memory",
+   "Tools",
+   "Configure tools available to your agent.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-memory-stores",
+   "cma-tools-files-and-memory",
+   "Memory stores",
+   "Give your agents persistent memory that survives across sessions using memory stores.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-choose-an-environment",
+   "cma-environments-and-sandboxes",
+   "Choose an environment",
+   "Decide whether Claude Managed Agents tools and code run in an Anthropic-managed cloud environment or a self-hosted sandbox, and see what changes if you switch.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-cloud-environment-setup",
+   "cma-environments-and-sandboxes",
+   "Cloud environment setup",
+   "Customize cloud sandboxes for your sessions.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-cloud-sandbox-reference",
+   "cma-environments-and-sandboxes",
+   "Cloud sandbox reference",
+   "Pre-installed packages, databases, and utilities available in cloud sandboxes.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-custom-tools-and-mcp-servers",
+   "cma-environments-and-sandboxes",
+   "Custom tools and MCP servers",
+   "Serve custom tools from a self-hosted sandbox worker, and wrap an MCP server inside your network as custom tools without running a tunnel.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-deploy-workers",
+   "cma-environments-and-sandboxes",
+   "Deploy workers",
+   "Choose how self-hosted sandbox workers claim work and where sessions run, then run an always-on worker or trigger workers from webhooks.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-memory-stores-2",
+   "cma-environments-and-sandboxes",
+   "Memory stores",
+   "\"Attach memory stores to Claude Managed Agents sessions that run in self-hosted sandboxes: prepare the host, configure sync, and handle read-only stores and conflicts.\"",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-monitor-and-troubleshoot",
+   "cma-environments-and-sandboxes",
+   "Monitor and troubleshoot",
+   "Read queue depth, stop sessions and workers without losing work, and fix common self-hosted sandbox failures.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-security-model",
+   "cma-environments-and-sandboxes",
+   "Security model",
+   "Shared responsibility model for self-hosted sandbox environments.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-overview-and-quickstart",
+   "cma-environments-and-sandboxes",
+   "Overview and quickstart",
+   "Run Claude Managed Agents sessions in self-hosted sandboxes, keeping tool execution, files, and network egress in your own infrastructure.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-worker-reference",
+   "cma-environments-and-sandboxes",
+   "Worker reference",
+   "\"Reference for self-hosted sandbox workers: ant CLI flags, environment variables, host requirements, filesystem paths, and SDK helper options.\"",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-define-outcomes",
+   "cma-agents-and-orchestration",
+   "Define outcomes",
+   "Tell the agent what 'done' looks like, and let it iterate until it gets there.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-agent-setup",
+   "cma-agents-and-orchestration",
+   "Agent setup",
+   "Create a reusable, versioned agent configuration.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-dreams",
+   "cma-agents-and-orchestration",
+   "Dreams",
+   "Let Claude review past sessions to curate an agent's memory and surface new insights.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-multiagent-orchestration",
+   "cma-agents-and-orchestration",
+   "Multiagent orchestration",
+   "Coordinate multiple agents within a single session.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-session-budgets",
+   "cma-agents-and-orchestration",
+   "Session budgets",
+   "Cap a session's spend with a hard dollar budget enforced at public list rates.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-inspect-and-track-usage",
+   "cma-sessions-events-and-streaming",
+   "Inspect and track usage",
+   "Inspect a session in the Claude Console, read its token usage and list cost, and debug unexpected agent behavior.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-event-deltas",
+   "cma-sessions-events-and-streaming",
+   "Event deltas",
+   "Render the agent's response text as a live preview while the model is still generating it.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-session-event-stream",
+   "cma-sessions-events-and-streaming",
+   "Session event stream",
+   "Send events, stream responses, and interrupt or redirect your session while it runs.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-session-operations",
+   "cma-sessions-events-and-streaming",
+   "Session operations",
+   "Retrieve, list, update, archive, and delete Claude Managed Agents sessions.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-session-threads",
+   "cma-sessions-events-and-streaming",
+   "Session threads",
+   "List, interrupt, and archive the threads of a multiagent session, read their events, and handle tool permissions across them.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-start-a-session",
+   "cma-sessions-events-and-streaming",
+   "Start a session",
+   "Create a session to run your agent and start running tasks.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-permission-policies",
+   "cma-deployment-and-security",
+   "Permission policies",
+   "Control when agent and MCP tools run.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-review-and-monitor-sessions",
+   "cma-deployment-and-security",
+   "Review and monitor sessions",
+   "Optionally review each session's events with an offline job. Watch webhooks for sessions that need attention, and see what Managed Agents keeps and for how long.",
+   "procedural",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-scheduled-deployments",
+   "cma-deployment-and-security",
+   "Scheduled deployments",
+   "\"Create and manage deployments with the Claude API: run an agent on a recurring cron schedule and inspect its run history.\"",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-secure-your-deployment",
+   "cma-deployment-and-security",
+   "Secure your deployment",
+   "The settings that limit what your agents can reach and do, and that protect your Claude API credentials, most important first.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-risks-and-boundaries",
+   "cma-deployment-and-security",
+   "Risks and boundaries",
+   "Why an agent's settings matter for security, and what the Managed Agents sandbox can and cannot do.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-managed-agents-reference",
+   "cma-reference-and-other",
+   "Managed Agents reference",
+   "Event types, self-hosted worker CLI flags, supported MCP server types, rate limits, and branding guidelines for Claude Managed Agents.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-subscribe-to-webhooks",
+   "cma-reference-and-other",
+   "Subscribe to webhooks",
+   "Get notified when major events occur without polling.",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cma-workflow-runs",
+   "cma-reference-and-other",
+   "Workflow runs",
+   "\"Follow an agent's workflow runs: their states and events, when the work is done, requests while a run is open, budgets, and limits.\"",
+   "semantic",
+   [
+    [
+     "claude-managed-agents-specialist",
+     "primary"
+    ],
+    [
+     "claude-managed-agents-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-managed-agents-specialist": "Claude Managed Agents Specialist",
+  "claude-managed-agents-reviewer": "Claude Managed Agents Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Platform Docs",
+   "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27"
+  ]
+ ],
+ "lexicon": {
+  "getstarted": "managed agent started console migration quickstart",
+  "toolfile": "tool memory file attach authenticate restriction",
+  "environmentsandboxe": "environment worker cloud sandbox store monitor",
+  "agentorchestration": "orchestration multiagent outcome budget dream define",
+  "sessionevent": "session event delta inspect operation start",
+  "deploymentsecurity": "deployment boundarie policie risk secure scheduled",
+  "other": "subscribe webhook workflow run other"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV names this server 'Claude Developer Platform docs'; the directory lists it as Claude Platform Docs. Its own instructions say it covers the Claude API, Anthropic SDKs and Claude Managed Agents, not Claude Code or the Agent SDK. Existence and tool names verified 2026-11-27; a search returned platform.claude.com pages.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cma-overview-claude-managed-agents-overview": [
+    "https://platform.claude.com/docs/en/managed-agents/overview"
+   ],
+   "cma-quickstart-get-started-with-claude-managed-agents": [
+    "https://platform.claude.com/docs/en/managed-agents/quickstart"
+   ],
+   "cma-build-in-console": [
+    "https://platform.claude.com/docs/en/managed-agents/onboarding"
+   ],
+   "cma-migration": [
+    "https://platform.claude.com/docs/en/managed-agents/migration"
+   ],
+   "cma-access-github": [
+    "https://platform.claude.com/docs/en/managed-agents/github"
+   ],
+   "cma-attach-and-download-files": [
+    "https://platform.claude.com/docs/en/managed-agents/files"
+   ],
+   "cma-authenticate-with-vaults": [
+    "https://platform.claude.com/docs/en/managed-agents/vaults"
+   ],
+   "cma-mcp-connector": [
+    "https://platform.claude.com/docs/en/managed-agents/mcp-connector"
+   ],
+   "cma-web-tool-restrictions": [
+    "https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions"
+   ],
+   "cma-agent-skills": [
+    "https://platform.claude.com/docs/en/managed-agents/skills"
+   ],
+   "cma-tools": [
+    "https://platform.claude.com/docs/en/managed-agents/tools"
+   ],
+   "cma-memory-stores": [
+    "https://platform.claude.com/docs/en/managed-agents/memory"
+   ],
+   "cma-choose-an-environment": [
+    "https://platform.claude.com/docs/en/managed-agents/choosing-an-environment"
+   ],
+   "cma-cloud-environment-setup": [
+    "https://platform.claude.com/docs/en/managed-agents/environments"
+   ],
+   "cma-cloud-sandbox-reference": [
+    "https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference"
+   ],
+   "cma-custom-tools-and-mcp-servers": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools"
+   ],
+   "cma-deploy-workers": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers"
+   ],
+   "cma-memory-stores-2": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory"
+   ],
+   "cma-monitor-and-troubleshoot": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations"
+   ],
+   "cma-security-model": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security"
+   ],
+   "cma-overview-and-quickstart": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes"
+   ],
+   "cma-worker-reference": [
+    "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference"
+   ],
+   "cma-define-outcomes": [
+    "https://platform.claude.com/docs/en/managed-agents/define-outcomes"
+   ],
+   "cma-agent-setup": [
+    "https://platform.claude.com/docs/en/managed-agents/agent-setup"
+   ],
+   "cma-dreams": [
+    "https://platform.claude.com/docs/en/managed-agents/dreams"
+   ],
+   "cma-multiagent-orchestration": [
+    "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration"
+   ],
+   "cma-session-budgets": [
+    "https://platform.claude.com/docs/en/managed-agents/budgets"
+   ],
+   "cma-inspect-and-track-usage": [
+    "https://platform.claude.com/docs/en/managed-agents/session-observability"
+   ],
+   "cma-event-deltas": [
+    "https://platform.claude.com/docs/en/managed-agents/event-deltas"
+   ],
+   "cma-session-event-stream": [
+    "https://platform.claude.com/docs/en/managed-agents/events-and-streaming"
+   ],
+   "cma-session-operations": [
+    "https://platform.claude.com/docs/en/managed-agents/session-operations"
+   ],
+   "cma-session-threads": [
+    "https://platform.claude.com/docs/en/managed-agents/session-threads"
+   ],
+   "cma-start-a-session": [
+    "https://platform.claude.com/docs/en/managed-agents/sessions"
+   ],
+   "cma-permission-policies": [
+    "https://platform.claude.com/docs/en/managed-agents/permission-policies"
+   ],
+   "cma-review-and-monitor-sessions": [
+    "https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring"
+   ],
+   "cma-scheduled-deployments": [
+    "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
+   ],
+   "cma-secure-your-deployment": [
+    "https://platform.claude.com/docs/en/managed-agents/secure-deployment"
+   ],
+   "cma-risks-and-boundaries": [
+    "https://platform.claude.com/docs/en/managed-agents/secure-deployment-risks"
+   ],
+   "cma-managed-agents-reference": [
+    "https://platform.claude.com/docs/en/managed-agents/reference"
+   ],
+   "cma-subscribe-to-webhooks": [
+    "https://platform.claude.com/docs/en/managed-agents/webhooks"
+   ],
+   "cma-workflow-runs": [
+    "https://platform.claude.com/docs/en/managed-agents/workflow-runs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,1058 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-science",
+  "label": "Claude Science",
+  "desc": "Claude Science: Get started and use, Compute, data and connectors, Example gallery, Reference and support and Administration and networks."
+ },
+ "concepts": [
+  {
+   "id": "csci-administration-and-networks",
+   "label": "Administration and networks",
+   "desc": "Administration and networks: Enable Claude Science, How Claude Science works with your data, Admin controls, Manage Claude Science on devices, Use Claude Science on a corporate network, Network requirements, Monitor Claude Science usage.",
+   "keywords": [
+    "administration",
+    "network",
+    "science",
+    "enable",
+    "how",
+    "work"
+   ],
+   "topic": "claude-science",
+   "source": "claude-science",
+   "source_topic": "claude-science",
+   "related": []
+  },
+  {
+   "id": "csci-compute-data-and-connectors",
+   "label": "Compute, data and connectors",
+   "desc": "Compute, data and connectors: Run on a remote Linux server, Tools and environments, Connectors and skills, Remote compute clusters, Compute providers, Cloud storage, Literature access, Custom connectors.",
+   "keywords": [
+    "compute",
+    "connector",
+    "remote",
+    "run",
+    "linux",
+    "server"
+   ],
+   "topic": "claude-science",
+   "source": "claude-science",
+   "source_topic": "claude-science",
+   "related": [
+    "capi-agents-and-tools"
+   ]
+  },
+  {
+   "id": "csci-example-gallery",
+   "label": "Example gallery",
+   "desc": "Example gallery: Example gallery, Genetic drift in a bottle: Buri's 107 fruit-fly populations, A titration curve from the full equilibrium: which indicator finds the equivalence point?, A first Kaplan–Meier curve: the 1963 leukemia trial of 6-MP, PageRank on a web of 11 pages: why 1 good link beats 6 weak ones, A first finite-element model: a clamped steel ruler bends and vibrates, A first X-ray diffraction pattern: why silicon shows 6 peaks and salt 9, The Ulam spiral: are the primes' diagonal streaks real?, The double slit, one electron at a time, Schelling's segregation model: ask for 30% same-color neighbors, end up with 75%.",
+   "keywords": [
+    "example",
+    "gallery",
+    "first",
+    "curve",
+    "why",
+    "one"
+   ],
+   "topic": "claude-science",
+   "source": "claude-science",
+   "source_topic": "claude-science",
+   "related": []
+  },
+  {
+   "id": "csci-get-started-and-use",
+   "label": "Get started and use",
+   "desc": "Get started and use: Claude Science, Get started, Claude Science in its own window on macOS, Update Claude Science, Core concepts, Auto mode, Use Claude Science on more than one computer, Artifacts in Claude Science, Comments, The reviewer.",
+   "keywords": [
+    "get",
+    "started",
+    "science",
+    "own",
+    "window",
+    "maco"
+   ],
+   "topic": "claude-science",
+   "source": "claude-science",
+   "source_topic": "claude-science",
+   "related": []
+  },
+  {
+   "id": "csci-reference-and-support",
+   "label": "Reference and support",
+   "desc": "Reference and support: Safeguards, Troubleshoot Claude Science, Glossary, Command line settings, Configuration file reference, Claude Science changelog, Legal and compliance.",
+   "keywords": [
+    "support",
+    "science",
+    "safeguard",
+    "troubleshoot",
+    "glossary",
+    "command"
+   ],
+   "topic": "claude-science",
+   "source": "claude-science",
+   "source_topic": "claude-science",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "csci-admin-controls",
+   "concept": "csci-administration-and-networks",
+   "label": "Admin controls",
+   "desc": "Organization settings for Claude Science on Team and Enterprise plans (Featured connectors and skills, custom connectors and skills, access to Claude Science work previously saved on the computer, the network allowlist, package mirror, SSH hosts, Modal, scientific model endpoints, and memory) and wh…",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-enable-claude-science",
+   "concept": "csci-administration-and-networks",
+   "label": "Enable Claude Science",
+   "desc": "Claude Science is a desktop app for scientific research.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-how-claude-science-works-with-your-data",
+   "concept": "csci-administration-and-networks",
+   "label": "How Claude Science works with your data",
+   "desc": "What Claude Science keeps on your computers, what it sends to Anthropic and how long Anthropic keeps it, who can access it, Anthropic's no-training and ownership commitments, and the controls available to your organization.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-manage-claude-science-on-devices",
+   "concept": "csci-administration-and-networks",
+   "label": "Manage Claude Science on devices",
+   "desc": "Claude Science is a desktop application that stores member content locally.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-monitor-claude-science-usage",
+   "concept": "csci-administration-and-networks",
+   "label": "Monitor Claude Science usage",
+   "desc": "Claude Science uses the same seat as the rest of claude.ai. Track its adoption and usage in Analytics and through the Admin API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-network-requirements",
+   "concept": "csci-administration-and-networks",
+   "label": "Network requirements",
+   "desc": "The domains Claude Science connects to, grouped for a proxy or firewall allowlist: the app's connections to Anthropic, the analysis sandbox's package and research domains, the domains a package mirror adds and removes, and the built-in list of domains it always blocks.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-use-claude-science-on-a-corporate-network",
+   "concept": "csci-administration-and-networks",
+   "label": "Use Claude Science on a corporate network",
+   "desc": "How to run Claude Science behind an outbound proxy, a TLS-inspecting proxy, an internal package mirror, and an egress firewall, with the settings your network team needs for each.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-cloud-storage",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Cloud storage",
+   "desc": "Connect Amazon S3, Google Cloud Storage, or Azure Blob Storage so Claude can read data and write results in place, with your permission.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-compute-providers",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Compute providers",
+   "desc": "Claude Science can run jobs on an external cloud provider you control, and connect to model servers that serve scientific models over HTTP.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-connectors-and-skills",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Connectors and skills",
+   "desc": "Connectors give Claude access to external data sources during an analysis.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-custom-connectors",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Custom connectors",
+   "desc": "Add any Model Context Protocol (MCP) server as a Remote (HTTPS web server) or Local command (program on your computer).",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-literature-access",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Literature access",
+   "desc": "Claude retrieves open-access full text without credentials; add publisher keys or a library proxy to reach paywalled text you're entitled to.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-remote-compute-clusters",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Remote compute clusters",
+   "desc": "Connect a machine you can reach over SSH (a lab workstation or an HPC login node) so Claude can run jobs on it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-run-on-a-remote-linux-server",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Run on a remote Linux server",
+   "desc": "Install Claude Science on a cloud VM or lab server and use it from your own browser through an SSH tunnel.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-tools-and-environments",
+   "concept": "csci-compute-data-and-connectors",
+   "label": "Tools and environments",
+   "desc": "Claude writes and runs Python, R, and shell commands.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-a-first-finite-element-model-a-clamped-steel-ruler-bends",
+   "concept": "csci-example-gallery",
+   "label": "A first finite-element model: a clamped steel ruler bends and vibrates",
+   "desc": "Split a 300 mm steel ruler clamped at one end into 4 beam elements and check its bending under 1 N and its first 3 vibration modes against beam theory.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-a-first-kaplan-meier-curve-the-1963-leukemia-trial-of-6-mp",
+   "concept": "csci-example-gallery",
+   "label": "A first Kaplan–Meier curve: the 1963 leukemia trial of 6-MP",
+   "desc": "Compare 6-MP against placebo with Kaplan–Meier curves from 42 remission times typed into the prompt.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-a-first-x-ray-diffraction-pattern-why-silicon-shows-6-peaks",
+   "concept": "csci-example-gallery",
+   "label": "A first X-ray diffraction pattern: why silicon shows 6 peaks and salt 9",
+   "desc": "Simulate the X-ray powder patterns of silicon and table salt and label every peak with Bragg's law.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-a-titration-curve-from-the-full-equilibrium-which-indicator",
+   "concept": "csci-example-gallery",
+   "label": "A titration curve from the full equilibrium: which indicator finds the equivalence point?",
+   "desc": "Solve the full equilibrium for 25.0 mL of 0.100 M acetic acid as 0.100 M NaOH is added, without the usual shortcuts.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-example-gallery-2",
+   "concept": "csci-example-gallery",
+   "label": "Example gallery",
+   "desc": "Browse nine example prompts from nine fields of science, each the start of a complete analysis in Claude Science.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-genetic-drift-in-a-bottle-buri-s-107-fruit-fly-populations",
+   "concept": "csci-example-gallery",
+   "label": "Genetic drift in a bottle: Buri's 107 fruit-fly populations",
+   "desc": "Simulate 107 bottles of 16 fruit flies drifting by chance alone and compare them with Peter Buri's real bottles (1956).",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-pagerank-on-a-web-of-11-pages-why-1-good-link-beats-6-weak",
+   "concept": "csci-example-gallery",
+   "label": "PageRank on a web of 11 pages: why 1 good link beats 6 weak ones",
+   "desc": "Follow a random surfer on Wikipedia's 11-page example until the numbers settle, and reproduce all 11 published values to 0.1 point.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-schelling-s-segregation-model-ask-for-30-same-color",
+   "concept": "csci-example-gallery",
+   "label": "Schelling's segregation model: ask for 30% same-color neighbors, end up with 75%",
+   "desc": "Ask for 30% same-color neighbors, end up with about 75%: the textbook computer version of Thomas Schelling's 1971 idea.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-the-double-slit-one-electron-at-a-time",
+   "concept": "csci-example-gallery",
+   "label": "The double slit, one electron at a time",
+   "desc": "Rebuild the picture of Tonomura's 1989 experiment with an ideal double slit: each electron lands as 1 random dot, yet fringes 10.7 µm apart build up.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-the-ulam-spiral-are-the-primes-diagonal-streaks-real",
+   "concept": "csci-example-gallery",
+   "label": "The Ulam spiral: are the primes' diagonal streaks real?",
+   "desc": "Compare the share of primes per diagonal on Ulam's 1963 spiral of 1 to 40,401 against as many random odd numbers.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-artifacts-in-claude-science",
+   "concept": "csci-get-started-and-use",
+   "label": "Artifacts in Claude Science",
+   "desc": "Artifacts in Claude Science are files Claude saves into a project, such as figures, datasets, and reports. Open, version, trace, and delete them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-auto-mode",
+   "concept": "csci-get-started-and-use",
+   "label": "Auto mode",
+   "desc": "Auto mode lets Claude Science run code and call connectors without stopping to ask about every step.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-claude-science",
+   "concept": "csci-get-started-and-use",
+   "label": "Claude Science",
+   "desc": "Anthropic's AI workbench for rigorous science.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-claude-science-in-its-own-window-on-macos",
+   "concept": "csci-get-started-and-use",
+   "label": "Claude Science in its own window on macOS",
+   "desc": "Keep working when Claude Science switches to its own window on a Mac: open, quit, and update it, and turn macOS permissions back on.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-comments",
+   "concept": "csci-get-started-and-use",
+   "label": "Comments",
+   "desc": "Comments in Claude Science pin a note to a specific part of an artifact, such as selected text or a point on a figure, and send the note to Claude.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-core-concepts",
+   "concept": "csci-get-started-and-use",
+   "label": "Core concepts",
+   "desc": "A project groups related sessions and the artifacts they produce.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-get-started",
+   "concept": "csci-get-started-and-use",
+   "label": "Get started",
+   "desc": "Install Claude Science on macOS, Windows, or Linux, sign in with your Claude account, and run your first analysis.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-the-reviewer",
+   "concept": "csci-get-started-and-use",
+   "label": "The reviewer",
+   "desc": "A built-in verification step that independently re-reads Claude's recent responses, the approved plan, saved artifacts, and the execution record, then checks whether its claims match what ran.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-update-claude-science",
+   "concept": "csci-get-started-and-use",
+   "label": "Update Claude Science",
+   "desc": "Install the latest version of Claude Science on Mac, Windows, or Linux, and get past an Update required message or an update that fails.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-use-claude-science-on-more-than-one-computer",
+   "concept": "csci-get-started-and-use",
+   "label": "Use Claude Science on more than one computer",
+   "desc": "What to expect when you sign in on another computer, or under another sign-in on the same computer.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-claude-science-changelog",
+   "concept": "csci-reference-and-support",
+   "label": "Claude Science changelog",
+   "desc": "Release notes for Claude Science, including new features, improvements, and bug fixes by version.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-command-line-settings",
+   "concept": "csci-reference-and-support",
+   "label": "Command line settings",
+   "desc": "Reference for the claude-science command: its subcommands, the serve flags, the single-use login link, and the environment variables you can set.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-configuration-file-reference",
+   "concept": "csci-reference-and-support",
+   "label": "Configuration file reference",
+   "desc": "Claude Science's config.toml file: where it lives, how it interacts with Settings, and its network, web search, and upload keys.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-glossary",
+   "concept": "csci-reference-and-support",
+   "label": "Glossary",
+   "desc": "One-sentence definitions for the terms you meet in Claude Science, from artifact to workspace.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-legal-and-compliance",
+   "concept": "csci-reference-and-support",
+   "label": "Legal and compliance",
+   "desc": "Legal agreements, compliance certifications, and security information for Claude Science.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-safeguards",
+   "concept": "csci-reference-and-support",
+   "label": "Safeguards",
+   "desc": "What happens when a model's safeguards flag a message, how to switch models automatically, and how to choose a use case under the Life Sciences Verification Program (beta).",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  },
+  {
+   "id": "csci-troubleshoot-claude-science",
+   "concept": "csci-reference-and-support",
+   "label": "Troubleshoot Claude Science",
+   "desc": "Fix errors you see while using Claude Science: being signed out, capacity retries, Agent Failed, environment setup, connectors, git, dictation, and updates.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1799",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1800",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-science"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1799",
+   "name": "Claude Science Specialist",
+   "legacy_key": "claude-science-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1800",
+   "name": "Claude Science Reviewer",
+   "legacy_key": "claude-science-reviewer",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "getstarted": "science started comment concept core maco",
+  "computeconnector": "compute connector remote cluster literature linux",
+  "examplegallery": "first curve why model gallery example",
+  "support": "safeguard legal command glossary line changelog",
+  "administrationnetwork": "network enable corporate device requirement monitor"
+ },
+ "sources": [
+  "claude-science"
+ ]
+}

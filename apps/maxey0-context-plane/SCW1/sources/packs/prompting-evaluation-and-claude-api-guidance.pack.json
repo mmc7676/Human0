@@ -1,0 +1,810 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "prompting-evaluation-and-claude-api-guidance",
+ "topic": {
+  "id": "prompting-evaluation-and-claude-api-guidance",
+  "label": "Prompting, Evaluation and Claude API Guidance",
+  "desc": "Prompting, Evaluation and Claude API Guidance: Strengthen guardrails (Claude API guidance), Use case guides, Prompt engineering, About Claude, Test and evaluate, Release notes."
+ },
+ "concepts": [
+  [
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Strengthen guardrails (Claude API guidance)",
+   "prompting-evaluation-and-claude-api-guidance",
+   "Strengthen guardrails (Claude API guidance): Streaming refusals, Increase output consistency, Mitigate jailbreaks, Reduce hallucinations, Reduce prompt leak, Reducing latency.",
+   [
+    "strengthen",
+    "guardrail",
+    "api",
+    "guidance",
+    "reduce",
+    "streaming"
+   ]
+  ],
+  [
+   "cpe-use-case-guides",
+   "Use case guides",
+   "prompting-evaluation-and-claude-api-guidance",
+   "Use case guides: Overview: Guides to common use cases, Commerce agent, Content moderation, Customer support agent, Legal summarization, Ticket routing.",
+   [
+    "case",
+    "guide",
+    "agent",
+    "common",
+    "commerce",
+    "content"
+   ]
+  ],
+  [
+   "cpe-prompt-engineering",
+   "Prompt engineering",
+   "prompting-evaluation-and-claude-api-guidance",
+   "Prompt engineering: Overview: Prompt engineering overview, Prompting best practices, Prompting Claude Fable 5, Prompting Claude Fable 5.1, Prompting Claude Fable 5.2, Prompting Claude Haiku 5.5, Prompting Claude Opus 4.8, Prompting Claude Opus 5, Prompting Claude Opus 5.5, Prompting Claude Sonnet 5, Prompting Claude Sonnet 5.5.",
+   [
+    "prompt",
+    "engineering",
+    "prompting",
+    "fable",
+    "opu",
+    "sonnet"
+   ]
+  ],
+  [
+   "cpe-about-claude",
+   "About Claude",
+   "prompting-evaluation-and-claude-api-guidance",
+   "About Claude: Additional resources, Glossary.",
+   [
+    "about",
+    "additional",
+    "resource",
+    "glossary"
+   ]
+  ],
+  [
+   "cpe-test-and-evaluate",
+   "Test and evaluate",
+   "prompting-evaluation-and-claude-api-guidance",
+   "Test and evaluate: Define success and build evaluations.",
+   [
+    "test",
+    "evaluate",
+    "define",
+    "success",
+    "build",
+    "evaluation"
+   ]
+  ],
+  [
+   "cpe-release-notes",
+   "Release notes",
+   "prompting-evaluation-and-claude-api-guidance",
+   "Release notes: Overview: Claude Platform release notes.",
+   [
+    "release",
+    "note",
+    "platform"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cpe-streaming-refusals",
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Streaming refusals",
+   "Detect and handle refusal stop reasons in streaming responses, and retry refused requests on a fallback model.",
+   "procedural",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-increase-output-consistency",
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Increase output consistency",
+   "Make Claude's outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.",
+   "procedural",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-mitigate-jailbreaks",
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Mitigate jailbreaks",
+   "Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.",
+   "procedural",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-reduce-hallucinations",
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Reduce hallucinations",
+   "Minimize hallucinations in Claude's outputs by allowing uncertainty, grounding responses in direct quotes, and verifying claims with citations.",
+   "procedural",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-reduce-prompt-leak",
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Reduce prompt leak",
+   "Reduce the risk of prompt leaks by separating context from user queries, filtering Claude's outputs, and auditing prompts, without degrading task performance.",
+   "procedural",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-reducing-latency",
+   "cpe-strengthen-guardrails-claude-api-guidance",
+   "Reducing latency",
+   "Reduce Claude's response latency by choosing a faster model such as Claude Haiku 5.5, trimming prompt and output tokens, and streaming responses.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-overview-guides-to-common-use-cases",
+   "cpe-use-case-guides",
+   "Overview: Guides to common use cases",
+   "\"Explore production guides for building common Claude use cases: ticket routing, customer support agents, content moderation, legal summarization, and commerce agents.\"",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-commerce-agent",
+   "cpe-use-case-guides",
+   "Commerce agent",
+   "Build a shopping agent and a merchant agent on Claude using Claude for commerce, an open-source blueprint with working implementations on the Messages API, the Claude Agent SDK, and Claude Managed Agents.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-content-moderation",
+   "cpe-use-case-guides",
+   "Content moderation",
+   "Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses how Claude can be used to moderate content within your digital application.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-customer-support-agent",
+   "cpe-use-case-guides",
+   "Customer support agent",
+   "Build a customer support chatbot with Claude that answers product questions, stays on topic, and generates quotes through tool use.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-legal-summarization",
+   "cpe-use-case-guides",
+   "Legal summarization",
+   "This guide walks through how to use Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key information and expediting legal research. With Claude, you can streamline the review of contracts, litigation prep, and regulatory work, saving time and ensuring accuracy in your legal processes.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-ticket-routing",
+   "cpe-use-case-guides",
+   "Ticket routing",
+   "Classify customer support tickets by intent, urgency, and other criteria with Claude, then evaluate and improve the routing.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-overview-prompt-engineering-overview",
+   "cpe-prompt-engineering",
+   "Overview: Prompt engineering overview",
+   "Learn when prompt engineering is the right solution, and find Claude prompting techniques and interactive tutorials.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-best-practices",
+   "cpe-prompt-engineering",
+   "Prompting best practices",
+   "Comprehensive guide to prompt engineering techniques for Claude's latest models, covering clarity, examples, XML structuring, thinking, and agentic systems.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-fable-5",
+   "cpe-prompt-engineering",
+   "Prompting Claude Fable 5",
+   "Behavioral differences and prompting patterns for Claude Fable 5 and Claude Mythos 5, covering effort, instruction following, long runs, memory, and scaffolding changes.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-fable-5-1",
+   "cpe-prompt-engineering",
+   "Prompting Claude Fable 5.1",
+   "Behavioral differences and prompting patterns for Claude Fable 5.1 and Claude Mythos 5.1, covering effort, progress updates, tool-call batching, conversation history, writing style, formatting, task completion, compaction summaries, scope and test coverage, search triggering, safeguard false positives, file edits, long outputs, subagents, and vision.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-fable-5-2",
+   "cpe-prompt-engineering",
+   "Prompting Claude Fable 5.2",
+   "\"Prompting patterns specific to Claude Fable 5.2 and Claude Mythos 5.2: effort, early stopping, approvals, code ownership, progress updates, subagents, caution that builds up, prompts and harnesses designed for earlier models, final reports, and refusals.\"",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-haiku-5-5",
+   "cpe-prompt-engineering",
+   "Prompting Claude Haiku 5.5",
+   "\"Prompting patterns specific to Claude Haiku 5.5: effort, search, JSON output with your own tools, early stopping, coding verification, mid-turn user messages, system prompt adherence in chatbots, reasoning in user-facing text, and refusals.\"",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-opus-4-8",
+   "cpe-prompt-engineering",
+   "Prompting Claude Opus 4.8",
+   "Behavioral differences and prompting patterns for Claude Opus 4.8, covering verbosity, effort calibration, tool use, subagents, and frontend defaults.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-opus-5",
+   "cpe-prompt-engineering",
+   "Prompting Claude Opus 5",
+   "Behavioral differences and prompting patterns for Claude Opus 5, covering response verbosity, agentic narration, task scoping, subagent delegation, self-correction, and output artifacts when thinking is disabled.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-opus-5-5",
+   "cpe-prompt-engineering",
+   "Prompting Claude Opus 5.5",
+   "\"Behavioral differences from Claude Opus 5 and the prompting and harness patterns that address them: effort calibration, thinking behavior in API integrations and chat, progress updates, unattended and multiagent tasks, safeguard refusals, frontend design, complex visual inputs, multiapp workflows, and pasted text in user messages.\"",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-sonnet-5",
+   "cpe-prompt-engineering",
+   "Prompting Claude Sonnet 5",
+   "Behavioral differences and prompting patterns for Claude Sonnet 5, covering effort, adaptive thinking defaults, and tool use.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-prompting-claude-sonnet-5-5",
+   "cpe-prompt-engineering",
+   "Prompting Claude Sonnet 5.5",
+   "\"Prompting patterns specific to Claude Sonnet 5.5: effort, initiative and scope, running without up-front thinking, JSON output, progress updates, tool use, mid-turn messages, coding verification, tool calls, visual inputs, and refusals.\"",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-additional-resources",
+   "cpe-about-claude",
+   "Additional resources",
+   "Learning resources and documentation formats optimized for AI ingestion.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-glossary",
+   "cpe-about-claude",
+   "Glossary",
+   "These concepts are not unique to Claude. This page presents a brief summary of key terms.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-define-success-and-build-evaluations",
+   "cpe-test-and-evaluate",
+   "Define success and build evaluations",
+   "Define measurable success criteria for your LLM application and build evaluations to test it, from exact match checks to LLM-based grading.",
+   "procedural",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpe-overview-claude-platform-release-notes",
+   "cpe-release-notes",
+   "Overview: Claude Platform release notes",
+   "Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.",
+   "semantic",
+   [
+    [
+     "prompting-evaluation-and-claude-api-guidance-specialist",
+     "primary"
+    ],
+    [
+     "prompting-evaluation-and-claude-api-guidance-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "prompting-evaluation-and-claude-api-guidance-specialist": "Prompting, Evaluation and Claude API Guidance Specialist",
+  "prompting-evaluation-and-claude-api-guidance-reviewer": "Prompting, Evaluation and Claude API Guidance Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Platform Docs",
+   "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27"
+  ]
+ ],
+ "lexicon": {
+  "strengthenguardrail": "reduce consistency hallucination jailbreak latency leak",
+  "caseguide": "agent case guide commerce moderation routing",
+  "promptengineering": "prompting fable opu sonnet engineering prompt",
+  "about": "additional resource glossary",
+  "testevaluate": "evaluation success define build evaluate test",
+  "releasenote": "release note platform"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [
+   {
+    "from_topic": "Claude API: Messages, Tools and Agent Skills",
+    "from": "Strengthen guardrails (Claude API)",
+    "into_topic": "Prompting, Evaluation and Claude API Guidance",
+    "into": "Strengthen guardrails (Claude API guidance)",
+    "label": "Strengthen guardrails (Claude API guidance)",
+    "reason": "duplicate"
+   },
+   {
+    "from_topic": "Prompting, Evaluation and Claude API Guidance",
+    "from": "Agent skills (Claude API guidance)",
+    "into_topic": "Claude API: Messages, Tools and Agent Skills",
+    "into": "Agent skills (Claude API)",
+    "label": "Agent skills (Claude API)",
+    "reason": "duplicate"
+   },
+   {
+    "from_topic": "Prompting, Evaluation and Claude API Guidance",
+    "from": "Getting started (Claude API guidance)",
+    "into_topic": "Claude API: Messages, Tools and Agent Skills",
+    "into": "Getting started (Claude API)",
+    "label": "Getting started (Claude API)",
+    "reason": "duplicate"
+   }
+  ],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV names this server 'Claude Developer Platform docs'; the directory lists it as Claude Platform Docs. Its own instructions say it covers the Claude API, Anthropic SDKs and Claude Managed Agents, not Claude Code or the Agent SDK. Existence and tool names verified 2026-11-27; a search returned platform.claude.com pages.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cpe-streaming-refusals": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals"
+   ],
+   "cpe-increase-output-consistency": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency"
+   ],
+   "cpe-mitigate-jailbreaks": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks"
+   ],
+   "cpe-reduce-hallucinations": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations"
+   ],
+   "cpe-reduce-prompt-leak": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak"
+   ],
+   "cpe-reducing-latency": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency"
+   ],
+   "cpe-overview-guides-to-common-use-cases": [
+    "https://platform.claude.com/docs/en/about-claude/use-case-guides/overview"
+   ],
+   "cpe-commerce-agent": [
+    "https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents"
+   ],
+   "cpe-content-moderation": [
+    "https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation"
+   ],
+   "cpe-customer-support-agent": [
+    "https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat"
+   ],
+   "cpe-legal-summarization": [
+    "https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization"
+   ],
+   "cpe-ticket-routing": [
+    "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing"
+   ],
+   "cpe-overview-prompt-engineering-overview": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
+   ],
+   "cpe-prompting-best-practices": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+   ],
+   "cpe-prompting-claude-fable-5": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
+   ],
+   "cpe-prompting-claude-fable-5-1": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1"
+   ],
+   "cpe-prompting-claude-fable-5-2": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2"
+   ],
+   "cpe-prompting-claude-haiku-5-5": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5"
+   ],
+   "cpe-prompting-claude-opus-4-8": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8"
+   ],
+   "cpe-prompting-claude-opus-5": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5"
+   ],
+   "cpe-prompting-claude-opus-5-5": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
+   ],
+   "cpe-prompting-claude-sonnet-5": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5"
+   ],
+   "cpe-prompting-claude-sonnet-5-5": [
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5"
+   ],
+   "cpe-additional-resources": [
+    "https://platform.claude.com/docs/en/about-claude/additional-resources"
+   ],
+   "cpe-glossary": [
+    "https://platform.claude.com/docs/en/about-claude/glossary"
+   ],
+   "cpe-define-success-and-build-evaluations": [
+    "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests"
+   ],
+   "cpe-overview-claude-platform-release-notes": [
+    "https://platform.claude.com/docs/en/release-notes/overview"
+   ]
+  }
+ }
+}

@@ -1,0 +1,935 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-agent-sdk",
+ "topic": {
+  "id": "claude-agent-sdk",
+  "label": "Claude Agent SDK",
+  "desc": "Claude Agent SDK: Agent SDK, Core concepts (Agent SDK), Input and output, Extend with tools, Customize behavior, Control and observability, Deployment (Agent SDK), SDK references."
+ },
+ "concepts": [
+  [
+   "casdk-agent-sdk",
+   "Agent SDK",
+   "claude-agent-sdk",
+   "Agent SDK: Agent SDK overview, Quickstart, Migrate to Claude Agent SDK, Troubleshoot the Agent SDK, Configure your agent, Examples.",
+   [
+    "agent",
+    "sdk",
+    "quickstart",
+    "migrate",
+    "troubleshoot",
+    "configure"
+   ]
+  ],
+  [
+   "casdk-core-concepts-agent-sdk",
+   "Core concepts (Agent SDK)",
+   "claude-agent-sdk",
+   "Core concepts (Agent SDK): How the agent loop works, Use Claude Code features in the SDK, Work with sessions, Persist sessions to external storage.",
+   [
+    "core",
+    "concept",
+    "agent",
+    "sdk",
+    "work",
+    "session"
+   ]
+  ],
+  [
+   "casdk-input-and-output",
+   "Input and output",
+   "claude-agent-sdk",
+   "Input and output: Streaming Input, Handle approvals and user input, Stream responses in real-time, Get structured output from agents.",
+   [
+    "input",
+    "output",
+    "streaming",
+    "handle",
+    "approval",
+    "user"
+   ]
+  ],
+  [
+   "casdk-extend-with-tools",
+   "Extend with tools",
+   "claude-agent-sdk",
+   "Extend with tools: Give Claude custom tools, Connect to external tools with MCP, Scale to many tools with tool search, Subagents in the SDK.",
+   [
+    "extend",
+    "tool",
+    "give",
+    "custom",
+    "connect",
+    "external"
+   ]
+  ],
+  [
+   "casdk-customize-behavior",
+   "Customize behavior",
+   "claude-agent-sdk",
+   "Customize behavior: Modifying system prompts, Extend agents with skills, Plugins in the SDK.",
+   [
+    "customize",
+    "behavior",
+    "modifying",
+    "system",
+    "prompt",
+    "extend"
+   ]
+  ],
+  [
+   "casdk-control-and-observability",
+   "Control and observability",
+   "claude-agent-sdk",
+   "Control and observability: Configure permissions, Intercept and control agent behavior with hooks, Rewind file changes with checkpointing, Track cost and usage, Observability with OpenTelemetry, Track todos.",
+   [
+    "control",
+    "observability",
+    "track",
+    "configure",
+    "permission",
+    "intercept"
+   ]
+  ],
+  [
+   "casdk-deployment-agent-sdk",
+   "Deployment (Agent SDK)",
+   "claude-agent-sdk",
+   "Deployment (Agent SDK): Hosting the Agent SDK, Securely deploying AI agents.",
+   [
+    "deployment",
+    "agent",
+    "sdk",
+    "hosting",
+    "securely",
+    "deploying"
+   ]
+  ],
+  [
+   "casdk-sdk-references",
+   "SDK references",
+   "claude-agent-sdk",
+   "SDK references: Agent SDK reference - TypeScript, TypeScript SDK V2 session API (removed), Agent SDK reference - Python.",
+   [
+    "sdk",
+    "agent",
+    "typescript",
+    "session",
+    "api",
+    "removed"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "casdk-agent-sdk-overview",
+   "casdk-agent-sdk",
+   "Agent SDK overview",
+   "Build production AI agents with Claude Code as a library",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-quickstart",
+   "casdk-agent-sdk",
+   "Quickstart",
+   "Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-migrate-to-claude-agent-sdk",
+   "casdk-agent-sdk",
+   "Migrate to Claude Agent SDK",
+   "Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-troubleshoot-the-agent-sdk",
+   "casdk-agent-sdk",
+   "Troubleshoot the Agent SDK",
+   "Fix Agent SDK errors: the Claude Code CLI fails to start or exits, your prompt generator throws, a tool message is too large, or structured output is missing.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-configure-your-agent",
+   "casdk-agent-sdk",
+   "Configure your agent",
+   "Configure Agent SDK sessions: compose the options object, set the model, environment, and limits, and find each feature option's page.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-examples",
+   "casdk-agent-sdk",
+   "Examples",
+   "Find a complete, runnable Agent SDK project or a guided recipe in the Claude Cookbook that matches what you want to build.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-how-the-agent-loop-works",
+   "casdk-core-concepts-agent-sdk",
+   "How the agent loop works",
+   "Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-use-claude-code-features-in-the-sdk",
+   "casdk-core-concepts-agent-sdk",
+   "Use Claude Code features in the SDK",
+   "Load project instructions, skills, hooks, and other Claude Code features into your SDK agents.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-work-with-sessions",
+   "casdk-core-concepts-agent-sdk",
+   "Work with sessions",
+   "How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-persist-sessions-to-external-storage",
+   "casdk-core-concepts-agent-sdk",
+   "Persist sessions to external storage",
+   "Mirror Agent SDK session transcripts to your own object store, key-value store, or database so other hosts can resume your sessions.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-streaming-input",
+   "casdk-input-and-output",
+   "Streaming Input",
+   "Send follow-up messages and images to one Agent SDK session with streaming input, read each response, and interrupt a response to redirect Claude.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-handle-approvals-and-user-input",
+   "casdk-input-and-output",
+   "Handle approvals and user input",
+   "Surface Claude's approval requests and clarifying questions to users, then return their decisions to the SDK.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-stream-responses-in-real-time",
+   "casdk-input-and-output",
+   "Stream responses in real-time",
+   "Get real-time responses from the Agent SDK as text and tool calls stream in",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-get-structured-output-from-agents",
+   "casdk-input-and-output",
+   "Get structured output from agents",
+   "Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. Get type-safe, structured data after multi-turn tool use.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-give-claude-custom-tools",
+   "casdk-extend-with-tools",
+   "Give Claude custom tools",
+   "Define custom tools with the Claude Agent SDK's in-process MCP server so Claude can call your functions, hit your APIs, and perform domain-specific operations.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-connect-to-external-tools-with-mcp",
+   "casdk-extend-with-tools",
+   "Connect to external tools with MCP",
+   "Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error handling.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-scale-to-many-tools-with-tool-search",
+   "casdk-extend-with-tools",
+   "Scale to many tools with tool search",
+   "Scale your agent to thousands of tools by discovering and loading only what's needed, on demand.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-subagents-in-the-sdk",
+   "casdk-extend-with-tools",
+   "Subagents in the SDK",
+   "Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-modifying-system-prompts",
+   "casdk-customize-behavior",
+   "Modifying system prompts",
+   "Choose between the claudecode preset and a custom system prompt, and customize behavior with CLAUDE.md, output styles, append, or a fully custom prompt.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-extend-agents-with-skills",
+   "casdk-customize-behavior",
+   "Extend agents with skills",
+   "Control which skills Claude can invoke in Claude Agent SDK sessions, dispatch commands by name, and author skills your sessions discover",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-plugins-in-the-sdk",
+   "casdk-customize-behavior",
+   "Plugins in the SDK",
+   "Load custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers through the Agent SDK",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-configure-permissions",
+   "casdk-control-and-observability",
+   "Configure permissions",
+   "Control how your agent uses tools with permission modes, hooks, and declarative allow/deny rules.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-intercept-and-control-agent-behavior-with-hooks",
+   "casdk-control-and-observability",
+   "Intercept and control agent behavior with hooks",
+   "Intercept and customize agent behavior at key execution points with hooks",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-rewind-file-changes-with-checkpointing",
+   "casdk-control-and-observability",
+   "Rewind file changes with checkpointing",
+   "Track file changes during agent sessions and restore files to any previous state",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-track-cost-and-usage",
+   "casdk-control-and-observability",
+   "Track cost and usage",
+   "Learn how to track token usage, estimate costs, and configure prompt caching with the Claude Agent SDK.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-observability-with-opentelemetry",
+   "casdk-control-and-observability",
+   "Observability with OpenTelemetry",
+   "Export traces, metrics, and events from the Agent SDK to your observability backend using OpenTelemetry.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-track-todos",
+   "casdk-control-and-observability",
+   "Track todos",
+   "Track todos in Agent SDK sessions and render Claude's progress in your application from structured tool calls",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-hosting-the-agent-sdk",
+   "casdk-deployment-agent-sdk",
+   "Hosting the Agent SDK",
+   "Deploy the Agent SDK in production: subprocess architecture, session persistence, scaling, observability, and multi-tenant isolation for Docker, Kubernetes, and sandbox providers.",
+   "procedural",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-securely-deploying-ai-agents",
+   "casdk-deployment-agent-sdk",
+   "Securely deploying AI agents",
+   "A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-agent-sdk-reference-typescript",
+   "casdk-sdk-references",
+   "Agent SDK reference - TypeScript",
+   "Complete API reference for the TypeScript Agent SDK, including all functions, types, and interfaces.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-typescript-sdk-v2-session-api-removed",
+   "casdk-sdk-references",
+   "TypeScript SDK V2 session API (removed)",
+   "Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "casdk-agent-sdk-reference-python",
+   "casdk-sdk-references",
+   "Agent SDK reference - Python",
+   "Complete API reference for the Python Agent SDK, including all functions, types, and classes.",
+   "semantic",
+   [
+    [
+     "claude-agent-sdk-specialist",
+     "primary"
+    ],
+    [
+     "claude-agent-sdk-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-agent-sdk-specialist": "Claude Agent SDK Specialist",
+  "claude-agent-sdk-reviewer": "Claude Agent SDK Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "agentsdk": "agent sdk example migrate quickstart configure",
+  "coreconcept": "session loop persist storage external feature",
+  "inputoutput": "input output approval handle real response",
+  "extendtool": "tool many scale subagent give search",
+  "customizebehavior": "modifying system extend prompt skill plugin",
+  "controlobservability": "track observability control behavior intercept rewind",
+  "deploymentagent": "deploying hosting securely deployment",
+  "sdk": "typescript python removed api"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [
+   {
+    "from_topic": "Claude Agent SDK",
+    "from": "Build agents",
+    "into_topic": "Claude Agent SDK",
+    "into": "Agent SDK",
+    "label": "Agent SDK",
+    "reason": "limit: both are getting-started pages for the SDK"
+   }
+  ],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "casdk-agent-sdk-overview": [
+    "https://code.claude.com/docs/en/agent-sdk/overview"
+   ],
+   "casdk-quickstart": [
+    "https://code.claude.com/docs/en/agent-sdk/quickstart"
+   ],
+   "casdk-migrate-to-claude-agent-sdk": [
+    "https://code.claude.com/docs/en/agent-sdk/migration-guide"
+   ],
+   "casdk-troubleshoot-the-agent-sdk": [
+    "https://code.claude.com/docs/en/agent-sdk/troubleshooting"
+   ],
+   "casdk-configure-your-agent": [
+    "https://code.claude.com/docs/en/agent-sdk/configuration"
+   ],
+   "casdk-examples": [
+    "https://code.claude.com/docs/en/agent-sdk/examples"
+   ],
+   "casdk-how-the-agent-loop-works": [
+    "https://code.claude.com/docs/en/agent-sdk/agent-loop"
+   ],
+   "casdk-use-claude-code-features-in-the-sdk": [
+    "https://code.claude.com/docs/en/agent-sdk/claude-code-features"
+   ],
+   "casdk-work-with-sessions": [
+    "https://code.claude.com/docs/en/agent-sdk/sessions"
+   ],
+   "casdk-persist-sessions-to-external-storage": [
+    "https://code.claude.com/docs/en/agent-sdk/session-storage"
+   ],
+   "casdk-streaming-input": [
+    "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
+   ],
+   "casdk-handle-approvals-and-user-input": [
+    "https://code.claude.com/docs/en/agent-sdk/user-input"
+   ],
+   "casdk-stream-responses-in-real-time": [
+    "https://code.claude.com/docs/en/agent-sdk/streaming-output"
+   ],
+   "casdk-get-structured-output-from-agents": [
+    "https://code.claude.com/docs/en/agent-sdk/structured-outputs"
+   ],
+   "casdk-give-claude-custom-tools": [
+    "https://code.claude.com/docs/en/agent-sdk/custom-tools"
+   ],
+   "casdk-connect-to-external-tools-with-mcp": [
+    "https://code.claude.com/docs/en/agent-sdk/mcp"
+   ],
+   "casdk-scale-to-many-tools-with-tool-search": [
+    "https://code.claude.com/docs/en/agent-sdk/tool-search"
+   ],
+   "casdk-subagents-in-the-sdk": [
+    "https://code.claude.com/docs/en/agent-sdk/subagents"
+   ],
+   "casdk-modifying-system-prompts": [
+    "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts"
+   ],
+   "casdk-extend-agents-with-skills": [
+    "https://code.claude.com/docs/en/agent-sdk/skills"
+   ],
+   "casdk-plugins-in-the-sdk": [
+    "https://code.claude.com/docs/en/agent-sdk/plugins"
+   ],
+   "casdk-configure-permissions": [
+    "https://code.claude.com/docs/en/agent-sdk/permissions"
+   ],
+   "casdk-intercept-and-control-agent-behavior-with-hooks": [
+    "https://code.claude.com/docs/en/agent-sdk/hooks"
+   ],
+   "casdk-rewind-file-changes-with-checkpointing": [
+    "https://code.claude.com/docs/en/agent-sdk/file-checkpointing"
+   ],
+   "casdk-track-cost-and-usage": [
+    "https://code.claude.com/docs/en/agent-sdk/cost-tracking"
+   ],
+   "casdk-observability-with-opentelemetry": [
+    "https://code.claude.com/docs/en/agent-sdk/observability"
+   ],
+   "casdk-track-todos": [
+    "https://code.claude.com/docs/en/agent-sdk/todo-tracking"
+   ],
+   "casdk-hosting-the-agent-sdk": [
+    "https://code.claude.com/docs/en/agent-sdk/hosting"
+   ],
+   "casdk-securely-deploying-ai-agents": [
+    "https://code.claude.com/docs/en/agent-sdk/secure-deployment"
+   ],
+   "casdk-agent-sdk-reference-typescript": [
+    "https://code.claude.com/docs/en/agent-sdk/typescript"
+   ],
+   "casdk-typescript-sdk-v2-session-api-removed": [
+    "https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview"
+   ],
+   "casdk-agent-sdk-reference-python": [
+    "https://code.claude.com/docs/en/agent-sdk/python"
+   ]
+  }
+ }
+}

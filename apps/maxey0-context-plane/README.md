@@ -62,11 +62,11 @@ The papers behind Maxey0 (the Context Plane, Structured Context Worlds, System O
 
 | | |
 |---|---|
-| **11 domains** | Agentic Systems and Software Engineering · Data Science and Quantitative Methods · Mathematical and Physical Sciences · Engineering · Life, Health and Mind Sciences · Earth, Environment and Place · Business, Finance and Economics · Society, Governance and Ethics · Languages, Literatures and Communication · Area and Identity Studies · Humanities and Arts |
-| **128 topics** | formed from the concepts up, from Agent Harnesses and MCP Contracts to Derivatives, Quantum Physics and Translation Studies |
-| **711 concepts · 1,998 skills** | 3–8 concepts per topic, 1–17 skills per concept |
-| **1,021 agents** | every one a permanent **MaxeyN** key (Maxey0 is the orchestrator); each skill has a primary, a checker and support agents |
-| **117 MCP servers · 556 links** | real, existence-checked servers, linked to the agents whose skills they fit |
+| **12 domains** | Agentic Systems and Software Engineering · Data Science and Quantitative Methods · Mathematical and Physical Sciences · Engineering · Life, Health and Mind Sciences · Earth, Environment and Place · Business, Finance and Economics · Society, Governance and Ethics · Languages, Literatures and Communication · Area and Identity Studies · Humanities and Arts · Claude |
+| **149 topics** | formed from the concepts up, from Agent Harnesses and MCP Contracts to Derivatives, Quantum Physics and Translation Studies; the Claude domain's 21 topics come from the Claude, Claude Code, Claude Platform and Claude Duet docs |
+| **844 concepts · 2,842 skills** | 3–8 concepts per topic, 1–46 skills per concept (a Claude skill is one docs page) |
+| **1,064 agents** | every one a permanent **MaxeyN** key (Maxey0 is the orchestrator); each skill has a primary, a checker and support agents |
+| **116 MCP servers · 561 links** | real, existence-checked servers, linked to the agents whose skills they fit |
 
 Agents in the map are **context records**: a role, the skills it serves and the tools it would hold. They are not running agents.
 

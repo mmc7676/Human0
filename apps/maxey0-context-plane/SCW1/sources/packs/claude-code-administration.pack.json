@@ -1,0 +1,1018 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-code-administration",
+ "topic": {
+  "id": "claude-code-administration",
+  "label": "Claude Code Administration",
+  "desc": "Claude Code Administration: Setup and access, Deployment (Claude Code admin), Gateways, Claude apps gateway, Other gateways, Usage and costs, Security and data, Adoption."
+ },
+ "concepts": [
+  [
+   "ccadm-setup-and-access",
+   "Setup and access",
+   "claude-code-administration",
+   "Setup and access: Set up Claude Code for your organization, Advanced setup, Authentication, Deploy managed settings, Configure server-managed settings, Control MCP server access for your organization, Configure auto mode.",
+   [
+    "setup",
+    "access",
+    "your",
+    "organization",
+    "managed",
+    "setting"
+   ]
+  ],
+  [
+   "ccadm-deployment-claude-code-admin",
+   "Deployment (Claude Code admin)",
+   "claude-code-administration",
+   "Deployment (Claude Code admin): Enterprise deployment overview, Feature availability, Claude Code on Amazon Bedrock, Claude Code on Claude Platform on AWS, Claude Code on Google Cloud's Agent Platform, Claude Code on Microsoft Foundry, Enterprise network configuration, Run Claude Code behind a corporate launcher, Development containers.",
+   [
+    "deployment",
+    "code",
+    "admin",
+    "enterprise",
+    "platform",
+    "feature"
+   ]
+  ],
+  [
+   "ccadm-gateways",
+   "Gateways",
+   "claude-code-administration",
+   "Gateways: Run Claude Code through a gateway.",
+   [
+    "gateway",
+    "run",
+    "code",
+    "through"
+   ]
+  ],
+  [
+   "ccadm-claude-apps-gateway",
+   "Claude apps gateway",
+   "claude-code-administration",
+   "Claude apps gateway: Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry, Claude apps gateway configuration, Claude apps gateway spend limits, Claude apps gateway deployment and operations, Deploy Claude apps gateway on AWS, Deploy Claude apps gateway on Google Cloud.",
+   [
+    "app",
+    "gateway",
+    "aws",
+    "google",
+    "cloud",
+    "deploy"
+   ]
+  ],
+  [
+   "ccadm-other-gateways",
+   "Other gateways",
+   "claude-code-administration",
+   "Other gateways: Other LLM gateways, Connect Claude Code to an LLM gateway, Roll out an LLM gateway for your organization, Claude Code gateway compatibility guide.",
+   [
+    "other",
+    "gateway",
+    "llm",
+    "code",
+    "connect",
+    "roll"
+   ]
+  ],
+  [
+   "ccadm-usage-and-costs",
+   "Usage and costs",
+   "claude-code-administration",
+   "Usage and costs: Monitoring, Manage costs effectively, Track team usage with analytics.",
+   [
+    "usage",
+    "cost",
+    "monitoring",
+    "manage",
+    "effectively",
+    "track"
+   ]
+  ],
+  [
+   "ccadm-security-and-data",
+   "Security and data",
+   "claude-code-administration",
+   "Security and data: Security, Data usage, Zero data retention, Set up Claude Code (local mode) for a HIPAA-ready organization.",
+   [
+    "security",
+    "usage",
+    "zero",
+    "retention",
+    "set",
+    "code"
+   ]
+  ],
+  [
+   "ccadm-adoption",
+   "Adoption",
+   "claude-code-administration",
+   "Adoption: Communications kit, Champion kit.",
+   [
+    "adoption",
+    "kit",
+    "communication",
+    "champion"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "ccadm-set-up-claude-code-for-your-organization",
+   "ccadm-setup-and-access",
+   "Set up Claude Code for your organization",
+   "A decision map for administrators deploying Claude Code, covering API providers, managed settings, policy enforcement, usage monitoring, and data handling.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-advanced-setup",
+   "ccadm-setup-and-access",
+   "Advanced setup",
+   "System requirements, platform-specific installation, version management, and uninstallation for Claude Code.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-authentication",
+   "ccadm-setup-and-access",
+   "Authentication",
+   "Log in to Claude Code and configure authentication for individuals, teams, and organizations.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-deploy-managed-settings",
+   "ccadm-setup-and-access",
+   "Deploy managed settings",
+   "Deploy managed settings to every developer's machine: delivery mechanisms per OS, how Claude Code combines managed sources, and how to verify enforcement.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-configure-server-managed-settings",
+   "ccadm-setup-and-access",
+   "Configure server-managed settings",
+   "Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-control-mcp-server-access-for-your-organization",
+   "ccadm-setup-and-access",
+   "Control MCP server access for your organization",
+   "Restrict which MCP servers users can add or connect to, or provide servers to every user, with managed configuration files, managed settings, allowlists, and denylists.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-configure-auto-mode",
+   "ccadm-setup-and-access",
+   "Configure auto mode",
+   "Tell the auto mode classifier which repos, buckets, and domains your organization trusts, set your own block and allow rules, and inspect your config.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-enterprise-deployment-overview",
+   "ccadm-deployment-claude-code-admin",
+   "Enterprise deployment overview",
+   "Learn how Claude Code can integrate with various third-party services and infrastructure to meet enterprise deployment requirements.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-feature-availability",
+   "ccadm-deployment-claude-code-admin",
+   "Feature availability",
+   "Compare which Claude Code features work on each Anthropic subscription plan, the Anthropic Console, and cloud providers such as Amazon Bedrock and Google Cloud.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-code-on-amazon-bedrock",
+   "ccadm-deployment-claude-code-admin",
+   "Claude Code on Amazon Bedrock",
+   "Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-code-on-claude-platform-on-aws",
+   "ccadm-deployment-claude-code-admin",
+   "Claude Code on Claude Platform on AWS",
+   "Configure Claude Code to use the Anthropic-operated Claude API with AWS authentication, IAM access control, and AWS Marketplace billing.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-code-on-google-cloud-s-agent-platform",
+   "ccadm-deployment-claude-code-admin",
+   "Claude Code on Google Cloud's Agent Platform",
+   "Learn about configuring Claude Code through Google Cloud's Agent Platform, formerly Vertex AI, including setup, IAM configuration, and troubleshooting.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-code-on-microsoft-foundry",
+   "ccadm-deployment-claude-code-admin",
+   "Claude Code on Microsoft Foundry",
+   "Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-enterprise-network-configuration",
+   "ccadm-deployment-claude-code-admin",
+   "Enterprise network configuration",
+   "Configure Claude Code for enterprise environments with proxy servers, custom Certificate Authorities (CA), and mutual Transport Layer Security (mTLS) authentication.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-run-claude-code-behind-a-corporate-launcher",
+   "ccadm-deployment-claude-code-admin",
+   "Run Claude Code behind a corporate launcher",
+   "Route the processes Claude Code starts from its own binary, including the background service and every agent view session, through a required launcher with CLAUDECODEPROCESSWRAPPER or the processWrapper setting.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-development-containers",
+   "ccadm-deployment-claude-code-admin",
+   "Development containers",
+   "Run Claude Code inside a dev container for consistent, isolated environments across your team.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-run-claude-code-through-a-gateway",
+   "ccadm-gateways",
+   "Run Claude Code through a gateway",
+   "Route Claude Code through a self-hosted gateway for centralized credentials, usage tracking, and cost controls. Covers the architecture, Anthropic's Claude apps gateway, and using other gateway products.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-apps-gateway-for-amazon-bedrock-claude-platform-on",
+   "ccadm-claude-apps-gateway",
+   "Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry",
+   "Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or Microsoft Foundry behind a self-hosted gateway with SSO sign-in, per-group model access, and OTLP telemetry.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-apps-gateway-configuration",
+   "ccadm-claude-apps-gateway",
+   "Claude apps gateway configuration",
+   "Reference for every gateway.yaml option: listener and TLS, OIDC, session, Postgres store, Amazon Bedrock, Claude Platform on AWS, Google Cloud's Agent Platform, and Microsoft Foundry upstreams, model routing, managed policies, and telemetry.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-apps-gateway-spend-limits",
+   "ccadm-claude-apps-gateway",
+   "Claude apps gateway spend limits",
+   "Cap each developer's spend through the Claude apps gateway by day, week, or month. Set limits with an Admin API and the gateway enforces them live on every request.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-apps-gateway-deployment-and-operations",
+   "ccadm-claude-apps-gateway",
+   "Claude apps gateway deployment and operations",
+   "Register the gateway with your IdP, build the container, deploy on Kubernetes or Cloud Run, and operate it: health checks, secret rotation, upgrades, and security.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-deploy-claude-apps-gateway-on-aws",
+   "ccadm-claude-apps-gateway",
+   "Deploy Claude apps gateway on AWS",
+   "A worked example of running Claude apps gateway on AWS: ECS Fargate or EKS, Amazon RDS for PostgreSQL, AWS Secrets Manager, and IAM-role auth to Amazon Bedrock.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-deploy-claude-apps-gateway-on-google-cloud",
+   "ccadm-claude-apps-gateway",
+   "Deploy Claude apps gateway on Google Cloud",
+   "A worked example of running Claude apps gateway on Google Cloud: Cloud Run or GKE, Cloud SQL for PostgreSQL, Secret Manager, and service-account auth to Google Cloud's Agent Platform.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-other-llm-gateways",
+   "ccadm-other-gateways",
+   "Other LLM gateways",
+   "Route Claude Code through an LLM gateway your organization already runs. Covers connecting Claude Code to a gateway, rolling one out for your organization, and what Claude Code sends to a gateway.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-connect-claude-code-to-an-llm-gateway",
+   "ccadm-other-gateways",
+   "Connect Claude Code to an LLM gateway",
+   "Point Claude Code at your organization's LLM gateway. Check whether your admin already configured it, or set the base URL and credential yourself, then verify the connection and fix gateway errors.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-roll-out-an-llm-gateway-for-your-organization",
+   "ccadm-other-gateways",
+   "Roll out an LLM gateway for your organization",
+   "Deploy a gateway product for Claude Code: configure it to forward what Claude Code sends, issue developer credentials, distribute the configuration through managed settings, and verify the rollout.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-claude-code-gateway-compatibility-guide",
+   "ccadm-other-gateways",
+   "Claude Code gateway compatibility guide",
+   "Keep an LLM gateway compatible with Claude Code: the endpoints it calls, the headers and body fields to forward, and what breaks when they're stripped.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-monitoring",
+   "ccadm-usage-and-costs",
+   "Monitoring",
+   "Learn how to enable and configure OpenTelemetry for Claude Code.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-manage-costs-effectively",
+   "ccadm-usage-and-costs",
+   "Manage costs effectively",
+   "Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and preprocessing hooks.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-track-team-usage-with-analytics",
+   "ccadm-usage-and-costs",
+   "Track team usage with analytics",
+   "View Claude Code usage metrics, track adoption, and measure engineering velocity in the analytics dashboard.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-security",
+   "ccadm-security-and-data",
+   "Security",
+   "Learn about Claude Code's security safeguards and best practices for safe usage.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-data-usage",
+   "ccadm-security-and-data",
+   "Data usage",
+   "Learn about Anthropic's data usage policies for Claude",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-zero-data-retention",
+   "ccadm-security-and-data",
+   "Zero data retention",
+   "Learn about Zero Data Retention (ZDR) for Claude Code, available to qualified accounts on Claude for Enterprise, including scope, disabled features, and how to request enablement.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-set-up-claude-code-local-mode-for-a-hipaa-ready-organization",
+   "ccadm-security-and-data",
+   "Set up Claude Code (local mode) for a HIPAA-ready organization",
+   "Prepare developers' computers to run Claude Code (local mode) under the HIPAA configuration. Covers versions, network access, managed settings, and local data.",
+   "procedural",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-communications-kit",
+   "ccadm-adoption",
+   "Communications kit",
+   "Launch announcements, drip-campaign messages, and FAQ responses for rolling Claude Code out to your engineering organization.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "ccadm-champion-kit",
+   "ccadm-adoption",
+   "Champion kit",
+   "A playbook for engineers advocating Claude Code internally: what to share, how to answer questions, and how to grow adoption on your team.",
+   "semantic",
+   [
+    [
+     "claude-code-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-code-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-code-administration-specialist": "Claude Code Administration Specialist",
+  "claude-code-administration-reviewer": "Claude Code Administration Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "setupaccess": "managed setting configure server organization setup",
+  "deploymentcode": "code enterprise platform deployment availability container",
+  "gateway": "gateway through run",
+  "appgateway": "app aws google deploy cloud operation",
+  "othergateway": "llm other compatibility roll guide connect",
+  "usagecost": "cost usage effectively monitoring team track",
+  "security7": "security zero hipaa ready retention local",
+  "adoption": "kit champion communication adoption"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "ccadm-set-up-claude-code-for-your-organization": [
+    "https://code.claude.com/docs/en/admin-setup"
+   ],
+   "ccadm-advanced-setup": [
+    "https://code.claude.com/docs/en/setup"
+   ],
+   "ccadm-authentication": [
+    "https://code.claude.com/docs/en/authentication"
+   ],
+   "ccadm-deploy-managed-settings": [
+    "https://code.claude.com/docs/en/managed-settings"
+   ],
+   "ccadm-configure-server-managed-settings": [
+    "https://code.claude.com/docs/en/server-managed-settings"
+   ],
+   "ccadm-control-mcp-server-access-for-your-organization": [
+    "https://code.claude.com/docs/en/managed-mcp"
+   ],
+   "ccadm-configure-auto-mode": [
+    "https://code.claude.com/docs/en/auto-mode-config"
+   ],
+   "ccadm-enterprise-deployment-overview": [
+    "https://code.claude.com/docs/en/third-party-integrations"
+   ],
+   "ccadm-feature-availability": [
+    "https://code.claude.com/docs/en/feature-availability"
+   ],
+   "ccadm-claude-code-on-amazon-bedrock": [
+    "https://code.claude.com/docs/en/amazon-bedrock"
+   ],
+   "ccadm-claude-code-on-claude-platform-on-aws": [
+    "https://code.claude.com/docs/en/claude-platform-on-aws"
+   ],
+   "ccadm-claude-code-on-google-cloud-s-agent-platform": [
+    "https://code.claude.com/docs/en/google-vertex-ai"
+   ],
+   "ccadm-claude-code-on-microsoft-foundry": [
+    "https://code.claude.com/docs/en/microsoft-foundry"
+   ],
+   "ccadm-enterprise-network-configuration": [
+    "https://code.claude.com/docs/en/network-config"
+   ],
+   "ccadm-run-claude-code-behind-a-corporate-launcher": [
+    "https://code.claude.com/docs/en/corporate-launcher"
+   ],
+   "ccadm-development-containers": [
+    "https://code.claude.com/docs/en/devcontainer"
+   ],
+   "ccadm-run-claude-code-through-a-gateway": [
+    "https://code.claude.com/docs/en/gateways"
+   ],
+   "ccadm-claude-apps-gateway-for-amazon-bedrock-claude-platform-on": [
+    "https://code.claude.com/docs/en/claude-apps-gateway"
+   ],
+   "ccadm-claude-apps-gateway-configuration": [
+    "https://code.claude.com/docs/en/claude-apps-gateway-config"
+   ],
+   "ccadm-claude-apps-gateway-spend-limits": [
+    "https://code.claude.com/docs/en/claude-apps-gateway-spend-limits"
+   ],
+   "ccadm-claude-apps-gateway-deployment-and-operations": [
+    "https://code.claude.com/docs/en/claude-apps-gateway-deploy"
+   ],
+   "ccadm-deploy-claude-apps-gateway-on-aws": [
+    "https://code.claude.com/docs/en/claude-apps-gateway-on-aws"
+   ],
+   "ccadm-deploy-claude-apps-gateway-on-google-cloud": [
+    "https://code.claude.com/docs/en/claude-apps-gateway-on-gcp"
+   ],
+   "ccadm-other-llm-gateways": [
+    "https://code.claude.com/docs/en/llm-gateway"
+   ],
+   "ccadm-connect-claude-code-to-an-llm-gateway": [
+    "https://code.claude.com/docs/en/llm-gateway-connect"
+   ],
+   "ccadm-roll-out-an-llm-gateway-for-your-organization": [
+    "https://code.claude.com/docs/en/llm-gateway-rollout"
+   ],
+   "ccadm-claude-code-gateway-compatibility-guide": [
+    "https://code.claude.com/docs/en/llm-gateway-protocol"
+   ],
+   "ccadm-monitoring": [
+    "https://code.claude.com/docs/en/monitoring-usage"
+   ],
+   "ccadm-manage-costs-effectively": [
+    "https://code.claude.com/docs/en/costs"
+   ],
+   "ccadm-track-team-usage-with-analytics": [
+    "https://code.claude.com/docs/en/analytics"
+   ],
+   "ccadm-security": [
+    "https://code.claude.com/docs/en/security"
+   ],
+   "ccadm-data-usage": [
+    "https://code.claude.com/docs/en/data-usage"
+   ],
+   "ccadm-zero-data-retention": [
+    "https://code.claude.com/docs/en/zero-data-retention"
+   ],
+   "ccadm-set-up-claude-code-local-mode-for-a-hipaa-ready-organization": [
+    "https://code.claude.com/docs/en/hipaa-setup"
+   ],
+   "ccadm-communications-kit": [
+    "https://code.claude.com/docs/en/communications-kit"
+   ],
+   "ccadm-champion-kit": [
+    "https://code.claude.com/docs/en/champion-kit"
+   ]
+  }
+ }
+}

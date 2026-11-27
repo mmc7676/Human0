@@ -1,0 +1,1094 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-apps-on-third-party-platforms",
+ "topic": {
+  "id": "claude-apps-on-third-party-platforms",
+  "label": "Claude Apps on Third-Party Platforms",
+  "desc": "Claude Apps on Third-Party Platforms: Install and administer, Inference providers and models, Configuration, Connectors and extensions, Using Claude Desktop and operations."
+ },
+ "concepts": [
+  [
+   "c3p-install-and-administer",
+   "Install and administer",
+   "claude-apps-on-third-party-platforms",
+   "Install and administer: Overview, Features, Installation and setup, Deploy with Enterprise Admin Console, Deploy with MDM, Deploy with a bootstrap server, In-app configuration, Write a credential helper, Import history from claude.ai, Migrate Claude Desktop from a cloud provider to Claude Enterprise, Sign in through the OS identity broker.",
+   [
+    "install",
+    "administer",
+    "deploy",
+    "enterprise",
+    "feature",
+    "installation"
+   ]
+  ],
+  [
+   "c3p-inference-providers-and-models",
+   "Inference providers and models",
+   "claude-apps-on-third-party-platforms",
+   "Inference providers and models: Models and effort levels, Deploy Claude Desktop on 3P with an LLM gateway, Deploy Claude Desktop on 3P with Amazon Bedrock, Deploy Claude Desktop on 3P with Amazon Bedrock Mantle, Deploy Claude Desktop on 3P with Google Cloud's Agent Platform, Deploy Claude Desktop on 3P with Microsoft Foundry, Deploy Claude Desktop on 3P with the Claude API.",
+   [
+    "inference",
+    "provider",
+    "model",
+    "deploy",
+    "desktop",
+    "amazon"
+   ]
+  ],
+  [
+   "c3p-configuration",
+   "Configuration",
+   "claude-apps-on-third-party-platforms",
+   "Configuration: Configuration implementation, Configuration reference, Configuration changelog.",
+   [
+    "configuration",
+    "implementation",
+    "changelog"
+   ]
+  ],
+  [
+   "c3p-connectors-and-extensions",
+   "Connectors and extensions",
+   "claude-apps-on-third-party-platforms",
+   "Connectors and extensions: MCP, plugins, skills, and hooks, Set up sign-in for managed MCP servers, Built-in connectors, Connect to Microsoft 365, Connect to GitHub, Connect to Google Cloud, Connect to Box, Connect to Salesforce, Web search and web fetch, Built-in browser and Claude in Chrome, Desktop and filesystem access.",
+   [
+    "connector",
+    "extension",
+    "connect",
+    "mcp",
+    "built",
+    "web"
+   ]
+  ],
+  [
+   "c3p-using-claude-desktop-and-operations",
+   "Using Claude Desktop and operations",
+   "claude-apps-on-third-party-platforms",
+   "Using Claude Desktop and operations: Unified Claude in Claude Desktop on 3P, Chat in Claude Desktop on 3P, Code in Claude Desktop on 3P, SSH remote sessions in Claude Desktop on 3P, Show a status line, Telemetry and egress, Network proxy, User identity and local data, Legal and compliance.",
+   [
+    "desktop",
+    "operation",
+    "unified",
+    "chat",
+    "code",
+    "ssh"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "c3p-overview",
+   "c3p-install-and-administer",
+   "Overview",
+   "Run Claude Desktop against your own cloud inference provider",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-features",
+   "c3p-install-and-administer",
+   "Features",
+   "Feature comparison between Claude Enterprise and Claude Desktop on third-party (3P)",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-installation-and-setup",
+   "c3p-install-and-administer",
+   "Installation and setup",
+   "Install Claude Desktop on 3P, check device readiness, and choose whether configuration reaches your devices through the Enterprise Admin Console, an MDM profile, or a bootstrap server",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-with-enterprise-admin-console",
+   "c3p-install-and-administer",
+   "Deploy with Enterprise Admin Console",
+   "Manage your organization's Claude Desktop 3P configuration centrally with the Enterprise Admin Console, hosted by Anthropic",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-with-mdm",
+   "c3p-install-and-administer",
+   "Deploy with MDM",
+   "Author a full configuration in the app, export it as a profile, and deploy it fleet-wide with Jamf, Intune, Group Policy, or any MDM",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-with-a-bootstrap-server",
+   "c3p-install-and-administer",
+   "Deploy with a bootstrap server",
+   "Host an HTTPS endpoint that returns each user's configuration, for organizations without MDM or with role-based configuration too complex for per-group profiles",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-in-app-configuration",
+   "c3p-install-and-administer",
+   "In-app configuration",
+   "Build, test, and export a Claude Desktop on 3P configuration from inside the app, with validation and per-provider guidance",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-write-a-credential-helper",
+   "c3p-install-and-administer",
+   "Write a credential helper",
+   "Supply Claude Desktop on 3P with a short-lived inference token by running an executable you provide",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-import-history-from-claude-ai",
+   "c3p-install-and-administer",
+   "Import history from claude.ai",
+   "Bring conversations, projects, and local Cowork and Code sessions into Claude Desktop on 3P from a claude.ai workspace, an earlier install, or another device",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-migrate-claude-desktop-from-a-cloud-provider-to-claude",
+   "c3p-install-and-administer",
+   "Migrate Claude Desktop from a cloud provider to Claude Enterprise",
+   "Migrate Claude Desktop from a cloud provider such as Amazon Bedrock to Claude Enterprise and keep each user's local chats, sessions, projects, tasks, and skills",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-sign-in-through-the-os-identity-broker",
+   "c3p-install-and-administer",
+   "Sign in through the OS identity broker",
+   "Use the operating system's native Microsoft Entra sign-in broker so Claude Desktop on 3P satisfies device-based Conditional Access policies",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-models-and-effort-levels",
+   "c3p-inference-providers-and-models",
+   "Models and effort levels",
+   "Which models Claude Desktop on 3P offers, the default model and its starting effort level, per-model effort caps, display names, and 1M-context variants",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-claude-desktop-on-3p-with-an-llm-gateway",
+   "c3p-inference-providers-and-models",
+   "Deploy Claude Desktop on 3P with an LLM gateway",
+   "Configure Claude Desktop on 3P to use Claude models on a self-hosted gateway that implements the Anthropic Messages API",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-claude-desktop-on-3p-with-amazon-bedrock",
+   "c3p-inference-providers-and-models",
+   "Deploy Claude Desktop on 3P with Amazon Bedrock",
+   "Set up AWS, choose an authentication path for your organization, and configure Claude Desktop on 3P to use Claude models on Amazon Bedrock",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-claude-desktop-on-3p-with-amazon-bedrock-mantle",
+   "c3p-inference-providers-and-models",
+   "Deploy Claude Desktop on 3P with Amazon Bedrock Mantle",
+   "Configure Claude Desktop on 3P to use Claude models through Amazon Bedrock Mantle's Anthropic-native API surface",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-claude-desktop-on-3p-with-google-cloud-s-agent",
+   "c3p-inference-providers-and-models",
+   "Deploy Claude Desktop on 3P with Google Cloud's Agent Platform",
+   "Set up Google Cloud, choose an authentication path for your organization, and configure Claude Desktop on 3P to use Claude models on Google Cloud's Agent Platform",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-claude-desktop-on-3p-with-microsoft-foundry",
+   "c3p-inference-providers-and-models",
+   "Deploy Claude Desktop on 3P with Microsoft Foundry",
+   "Set up Microsoft Foundry, choose an authentication path for your organization, and configure Claude Desktop on 3P to use Claude models on Microsoft Foundry",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-deploy-claude-desktop-on-3p-with-the-claude-api",
+   "c3p-inference-providers-and-models",
+   "Deploy Claude Desktop on 3P with the Claude API",
+   "Configure Claude Desktop on 3P to send inference directly to Anthropic's Claude API instead of a cloud-provider-hosted Claude deployment",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-configuration-implementation",
+   "c3p-configuration",
+   "Configuration implementation",
+   "Compare where Claude Desktop on 3P reads configuration in each kind of deployment, and write values for a profile, the registry, or the Linux file",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-configuration-reference",
+   "c3p-configuration",
+   "Configuration reference",
+   "Every managed-configuration key Claude Desktop on 3P supports, what it controls, and recommended security profiles",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-configuration-changelog",
+   "c3p-configuration",
+   "Configuration changelog",
+   "Managed configuration keys by the Claude Desktop release they first shipped in",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-mcp-plugins-skills-and-hooks",
+   "c3p-connectors-and-extensions",
+   "MCP, plugins, skills, and hooks",
+   "Extend Claude Desktop on 3P with connectors, plugin marketplaces, organization plugins, skills, and hooks for administrators and end users",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-set-up-sign-in-for-managed-mcp-servers",
+   "c3p-connectors-and-extensions",
+   "Set up sign-in for managed MCP servers",
+   "Decide whether a managed MCP server needs an OAuth client that you register and whether it also needs that client's secret, fill in the OAuth fields, and read the sign-in error messages.",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-built-in-connectors",
+   "c3p-connectors-and-extensions",
+   "Built-in connectors",
+   "MCP servers bundled inside Claude Desktop on 3P: which servers ship in the app, how built-in entries work, and where each one is documented",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-connect-to-microsoft-365",
+   "c3p-connectors-and-extensions",
+   "Connect to Microsoft 365",
+   "Give Claude access to your organization's Outlook, OneDrive, SharePoint, and Teams data through a connector you register in your own Microsoft Entra tenant.",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-connect-to-github",
+   "c3p-connectors-and-extensions",
+   "Connect to GitHub",
+   "Give Claude access to your organization's GitHub repositories, issues, and pull requests, either through GitHub's hosted MCP server or a server built into the desktop app.",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-connect-to-google-cloud",
+   "c3p-connectors-and-extensions",
+   "Connect to Google Cloud",
+   "Give Claude access to BigQuery and Google's other remote MCP servers with an OAuth client from your own Google Cloud project, set up in the Enterprise Admin Console.",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-connect-to-box",
+   "c3p-connectors-and-extensions",
+   "Connect to Box",
+   "Give Claude access to your organization's Box content through Box's remote MCP server, with an OAuth client a Box admin creates and a client secret helper script on each device.",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-connect-to-salesforce",
+   "c3p-connectors-and-extensions",
+   "Connect to Salesforce",
+   "Give Claude access to your Salesforce org through Salesforce's plugin and hosted MCP server, set up in the Enterprise Admin Console or your managed configuration with an OAuth client that a Salesforce admin creates.",
+   "procedural",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-web-search-and-web-fetch",
+   "c3p-connectors-and-extensions",
+   "Web search and web fetch",
+   "How Claude Desktop on 3P reaches the internet, which providers support search, and how to control or disable web access",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-built-in-browser-and-claude-in-chrome",
+   "c3p-connectors-and-extensions",
+   "Built-in browser and Claude in Chrome",
+   "Configuring Claude in Chrome and the built-in browser in Cowork and Code for Claude Desktop 3P",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-desktop-and-filesystem-access",
+   "c3p-connectors-and-extensions",
+   "Desktop and filesystem access",
+   "How Claude Desktop on 3P reads and writes files on the user's machine, and how to constrain it",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-unified-claude-in-claude-desktop-on-3p",
+   "c3p-using-claude-desktop-and-operations",
+   "Unified Claude in Claude Desktop on 3P",
+   "Unified Claude combines Chat and Cowork into one experience, with Cowork's agentic capabilities.",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-chat-in-claude-desktop-on-3p",
+   "c3p-using-claude-desktop-and-operations",
+   "Chat in Claude Desktop on 3P",
+   "What Chat can and cannot do in Claude Desktop on 3P, and how to configure it",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-code-in-claude-desktop-on-3p",
+   "c3p-using-claude-desktop-and-operations",
+   "Code in Claude Desktop on 3P",
+   "How Claude Desktop on 3P configuration applies to the embedded Claude Code engine",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-ssh-remote-sessions-in-claude-desktop-on-3p",
+   "c3p-using-claude-desktop-and-operations",
+   "SSH remote sessions in Claude Desktop on 3P",
+   "How Code sessions run on a remote host over SSH in Claude Desktop on 3P, the sshHostAllowlist key that enables them, which inference credentials work on a remote host, and what to check before turning them on",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-show-a-status-line",
+   "c3p-using-claude-desktop-and-operations",
+   "Show a status line",
+   "Show a status line above the message box in Claude Desktop on 3P: one line of your organization's own text, such as budget used, from a program you install",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-telemetry-and-egress",
+   "c3p-using-claude-desktop-and-operations",
+   "Telemetry and egress",
+   "What Claude Desktop on 3P sends to Anthropic, how to disable it, and the network paths your firewall needs to allow",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-network-proxy",
+   "c3p-using-claude-desktop-and-operations",
+   "Network proxy",
+   "How Claude Desktop on 3P and the Claude Code engine it runs use your network proxy: the default behavior, pinning a proxy from managed configuration, what is and is not routed through it, and how to troubleshoot.",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-user-identity-and-local-data",
+   "c3p-using-claude-desktop-and-operations",
+   "User identity and local data",
+   "How Claude Desktop on 3P identifies users and where it stores conversations, settings, and credentials on disk",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "c3p-legal-and-compliance",
+   "c3p-using-claude-desktop-and-operations",
+   "Legal and compliance",
+   "Legal agreements, compliance, and security information for Claude Desktop on 3P",
+   "semantic",
+   [
+    [
+     "claude-apps-on-third-party-platforms-specialist",
+     "primary"
+    ],
+    [
+     "claude-apps-on-third-party-platforms-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-apps-on-third-party-platforms-specialist": "Claude Apps on Third-Party Platforms Specialist",
+  "claude-apps-on-third-party-platforms-reviewer": "Claude Apps on Third-Party Platforms Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "installadminister": "deploy enterprise bootstrap broker helper history",
+  "inferenceprovider": "desktop amazon bedrock model mantle effort",
+  "configuration": "configuration implementation changelog",
+  "connectorextension": "connect built web mcp connector box",
+  "desktopoperation": "egress proxy ssh unified show telemetry"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV lists 'Claude Developer Platform docs' for this topic, but that server (Claude Platform Docs, directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) covers platform.claude.com only, by its own instructions, and a search for 'Claude Code hooks' on 2026-11-27 returned only platform.claude.com pages. No MCP server for these docs was verified, so the pack lists none.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "c3p-overview": [
+    "https://claude.com/docs/third-party/claude-desktop/overview"
+   ],
+   "c3p-features": [
+    "https://claude.com/docs/third-party/claude-desktop/feature-matrix"
+   ],
+   "c3p-installation-and-setup": [
+    "https://claude.com/docs/third-party/claude-desktop/installation"
+   ],
+   "c3p-deploy-with-enterprise-admin-console": [
+    "https://claude.com/docs/third-party/claude-desktop/admin-console"
+   ],
+   "c3p-deploy-with-mdm": [
+    "https://claude.com/docs/third-party/claude-desktop/mdm"
+   ],
+   "c3p-deploy-with-a-bootstrap-server": [
+    "https://claude.com/docs/third-party/claude-desktop/bootstrap"
+   ],
+   "c3p-in-app-configuration": [
+    "https://claude.com/docs/third-party/claude-desktop/in-app-configuration"
+   ],
+   "c3p-write-a-credential-helper": [
+    "https://claude.com/docs/third-party/claude-desktop/credential-helper"
+   ],
+   "c3p-import-history-from-claude-ai": [
+    "https://claude.com/docs/third-party/claude-desktop/import"
+   ],
+   "c3p-migrate-claude-desktop-from-a-cloud-provider-to-claude": [
+    "https://claude.com/docs/third-party/claude-desktop/move-to-claude-enterprise"
+   ],
+   "c3p-sign-in-through-the-os-identity-broker": [
+    "https://claude.com/docs/third-party/claude-desktop/entra-broker"
+   ],
+   "c3p-models-and-effort-levels": [
+    "https://claude.com/docs/third-party/claude-desktop/models"
+   ],
+   "c3p-deploy-claude-desktop-on-3p-with-an-llm-gateway": [
+    "https://claude.com/docs/third-party/claude-desktop/gateway"
+   ],
+   "c3p-deploy-claude-desktop-on-3p-with-amazon-bedrock": [
+    "https://claude.com/docs/third-party/claude-desktop/bedrock"
+   ],
+   "c3p-deploy-claude-desktop-on-3p-with-amazon-bedrock-mantle": [
+    "https://claude.com/docs/third-party/claude-desktop/mantle"
+   ],
+   "c3p-deploy-claude-desktop-on-3p-with-google-cloud-s-agent": [
+    "https://claude.com/docs/third-party/claude-desktop/vertex"
+   ],
+   "c3p-deploy-claude-desktop-on-3p-with-microsoft-foundry": [
+    "https://claude.com/docs/third-party/claude-desktop/foundry"
+   ],
+   "c3p-deploy-claude-desktop-on-3p-with-the-claude-api": [
+    "https://claude.com/docs/third-party/claude-desktop/claude-api"
+   ],
+   "c3p-configuration-implementation": [
+    "https://claude.com/docs/third-party/claude-desktop/configuration-format"
+   ],
+   "c3p-configuration-reference": [
+    "https://claude.com/docs/third-party/claude-desktop/configuration"
+   ],
+   "c3p-configuration-changelog": [
+    "https://claude.com/docs/third-party/claude-desktop/configuration-changelog"
+   ],
+   "c3p-mcp-plugins-skills-and-hooks": [
+    "https://claude.com/docs/third-party/claude-desktop/extensions"
+   ],
+   "c3p-set-up-sign-in-for-managed-mcp-servers": [
+    "https://claude.com/docs/third-party/claude-desktop/mcp-sign-in"
+   ],
+   "c3p-built-in-connectors": [
+    "https://claude.com/docs/third-party/claude-desktop/built-in-connectors"
+   ],
+   "c3p-connect-to-microsoft-365": [
+    "https://claude.com/docs/third-party/claude-desktop/connectors-m365"
+   ],
+   "c3p-connect-to-github": [
+    "https://claude.com/docs/third-party/claude-desktop/connectors-github"
+   ],
+   "c3p-connect-to-google-cloud": [
+    "https://claude.com/docs/third-party/claude-desktop/connectors-google-cloud"
+   ],
+   "c3p-connect-to-box": [
+    "https://claude.com/docs/third-party/claude-desktop/connectors-box"
+   ],
+   "c3p-connect-to-salesforce": [
+    "https://claude.com/docs/third-party/claude-desktop/connectors-salesforce"
+   ],
+   "c3p-web-search-and-web-fetch": [
+    "https://claude.com/docs/third-party/claude-desktop/web-tools"
+   ],
+   "c3p-built-in-browser-and-claude-in-chrome": [
+    "https://claude.com/docs/third-party/claude-desktop/browser"
+   ],
+   "c3p-desktop-and-filesystem-access": [
+    "https://claude.com/docs/third-party/claude-desktop/local-access"
+   ],
+   "c3p-unified-claude-in-claude-desktop-on-3p": [
+    "https://claude.com/docs/third-party/claude-desktop/unified-claude"
+   ],
+   "c3p-chat-in-claude-desktop-on-3p": [
+    "https://claude.com/docs/third-party/claude-desktop/chat"
+   ],
+   "c3p-code-in-claude-desktop-on-3p": [
+    "https://claude.com/docs/third-party/claude-desktop/code"
+   ],
+   "c3p-ssh-remote-sessions-in-claude-desktop-on-3p": [
+    "https://claude.com/docs/third-party/claude-desktop/ssh-remote-sessions"
+   ],
+   "c3p-show-a-status-line": [
+    "https://claude.com/docs/third-party/claude-desktop/status-line"
+   ],
+   "c3p-telemetry-and-egress": [
+    "https://claude.com/docs/third-party/claude-desktop/telemetry"
+   ],
+   "c3p-network-proxy": [
+    "https://claude.com/docs/third-party/claude-desktop/network-proxy"
+   ],
+   "c3p-user-identity-and-local-data": [
+    "https://claude.com/docs/third-party/claude-desktop/data-storage"
+   ],
+   "c3p-legal-and-compliance": [
+    "https://claude.com/docs/third-party/claude-desktop/legal"
+   ]
+  }
+ }
+}

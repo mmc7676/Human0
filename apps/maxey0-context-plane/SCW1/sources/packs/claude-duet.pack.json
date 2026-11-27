@@ -1,0 +1,630 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-duet",
+ "topic": {
+  "id": "claude-duet",
+  "label": "Claude Duet",
+  "desc": "Claude Duet, Anthropic's always-on Claude for one person: a main chat, task threads for longer work, channels for lasting subjects, a Tasks page, a morning brief and check-ins, routines and reminders, memory of goals and rules, and connected apps, with the person's approval before anything is sent, paid, signed or deleted."
+ },
+ "concepts": [
+  [
+   "cduet-main-chat",
+   "Main chat and replies (Claude Duet)",
+   "claude-duet",
+   "The one ongoing conversation the person texts or talks to: a short answer first, or a line that longer work has started on a task.",
+   [
+    "chat",
+    "message",
+    "reply",
+    "voice",
+    "request"
+   ]
+  ],
+  [
+   "cduet-task-threads",
+   "Task threads",
+   "claude-duet",
+   "Longer work on one task runs in its own thread, with a live status checklist and a report when the work stops for the person or finishes.",
+   [
+    "thread",
+    "task",
+    "status",
+    "checklist",
+    "report"
+   ]
+  ],
+  [
+   "cduet-channels",
+   "Channels (Claude Duet)",
+   "claude-duet",
+   "A separate chat for one lasting subject, such as a project or a move, with its own tasks, files and notes.",
+   [
+    "channel",
+    "project",
+    "subject",
+    "folder",
+    "files"
+   ]
+  ],
+  [
+   "cduet-tasks-page",
+   "Tasks page",
+   "claude-duet",
+   "Where every task stands: working, ready for the person, stopped, or resolved, with its steps, its question and its outcome.",
+   [
+    "tasks",
+    "page",
+    "ready",
+    "stopped",
+    "resolved"
+   ]
+  ],
+  [
+   "cduet-brief-checkins",
+   "Morning brief and check-ins",
+   "claude-duet",
+   "A short brief when quiet hours end, and check-ins through the day when something in the connected apps needs the person.",
+   [
+    "brief",
+    "morning",
+    "check-in",
+    "quiet",
+    "hours"
+   ]
+  ],
+  [
+   "cduet-routines-reminders",
+   "Routines and reminders",
+   "claude-duet",
+   "Work that runs on a schedule: routines that repeat, one-time reminders, and watches that look at set times.",
+   [
+    "routine",
+    "reminder",
+    "schedule",
+    "watch",
+    "recurring"
+   ]
+  ],
+  [
+   "cduet-memory-rules",
+   "Memory and standing rules (Claude Duet)",
+   "claude-duet",
+   "What Claude keeps about the person between sessions: goals, rules in their own words, preferences and open loops, which they can ask to see, correct or forget.",
+   [
+    "memory",
+    "rule",
+    "goal",
+    "preference",
+    "forget"
+   ]
+  ],
+  [
+   "cduet-apps-approvals",
+   "Connected apps, drafts and approvals",
+   "claude-duet",
+   "Mail, calendar, chat and file connectors and a browser for websites, with drafts the person approves before anything is sent, paid, signed or deleted, and pages or docs as results.",
+   [
+    "connector",
+    "draft",
+    "approval",
+    "browser",
+    "send"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cduet-ask-in-main-chat",
+   "cduet-main-chat",
+   "Ask in the main chat",
+   "Send a request by text or voice in the main chat and get the answer, or one line saying the work has started and on which task.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-steer-running-work",
+   "cduet-main-chat",
+   "Steer work already under way",
+   "Send a follow-up about work already started, such as a change of scope or a new detail, so it reaches that task without starting a new one.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-answer-with-tapback",
+   "cduet-main-chat",
+   "Answer a yes or no question with a reaction",
+   "Use a thumbs-up or thumbs-down on a yes or no question as the answer; a step that spends money or deletes for good still needs a yes in words.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-follow-task-thread",
+   "cduet-task-threads",
+   "Follow a task thread",
+   "Open the thread of a task to see its status checklist grow step by step while the work runs.",
+   "semantic",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-read-thread-report",
+   "cduet-task-threads",
+   "Read a task report",
+   "Read the report a task leaves when it stops: the answer or what is needed, what was done in the person's name, what could not be checked, and the one thing to tap or answer.",
+   "semantic",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-write-in-thread",
+   "cduet-task-threads",
+   "Write to a task in its thread",
+   "Write in a task's own thread to answer its question, add a detail or redirect it, and get a reply there.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-start-channel",
+   "cduet-channels",
+   "Start a channel for a project",
+   "Ask for a channel for one task or project so its conversation, tasks and notes stay apart from the main chat.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-keep-channel-files",
+   "cduet-channels",
+   "Keep a project's files in its channel",
+   "Keep the files for a subject in its channel's folder, where every task in that channel can read them.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-review-ready-task",
+   "cduet-tasks-page",
+   "Review a task that is ready for you",
+   "Open a task marked ready for you, look at the draft, result or question, and answer or act on it.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-unblock-stopped-task",
+   "cduet-tasks-page",
+   "Unblock a stopped task",
+   "Read why a task stopped, such as an app to connect or a reply from someone else, and give what it waits on.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-mark-task-done",
+   "cduet-tasks-page",
+   "Mark a task done",
+   "Mark a finished task done, or say it is not done yet so the work goes on.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-read-morning-brief",
+   "cduet-brief-checkins",
+   "Read the morning brief",
+   "Read the brief that arrives when quiet hours end: what needs the person today, from mail, calendar and open tasks.",
+   "semantic",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-set-quiet-hours",
+   "cduet-brief-checkins",
+   "Set quiet hours and the time zone",
+   "Choose the hours when no brief or check-in arrives, and the time zone that times are read in.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-turn-off-checkins",
+   "cduet-brief-checkins",
+   "Turn the brief and check-ins off or on",
+   "Switch the morning brief and check-ins off when unasked messages are not wanted, and back on later.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-set-reminder",
+   "cduet-routines-reminders",
+   "Set a one-time reminder",
+   "Ask for a reminder at a set time; it arrives once as a message in the chat.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-schedule-routine",
+   "cduet-routines-reminders",
+   "Schedule a routine",
+   "Ask for work that repeats on a schedule, such as a weekly preview, and say what each run should look at and post.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-watch-something",
+   "cduet-routines-reminders",
+   "Watch for something at set times",
+   "Ask Claude to look for a change, such as a reply or a price, at set times, and be told when it happens.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-give-standing-rule",
+   "cduet-memory-rules",
+   "Give Claude a standing rule",
+   "Say a rule in your own words, such as never booking before 10, and Claude says it back and works by it from then on.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-ask-what-remembered",
+   "cduet-memory-rules",
+   "Ask what Claude remembers",
+   "Ask what Claude knows about you and your work, and get it in plain words.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-correct-or-forget",
+   "cduet-memory-rules",
+   "Correct or forget a memory",
+   "Correct a wrong note or ask Claude to forget something, and it is changed or removed and not brought back.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-connect-app",
+   "cduet-apps-approvals",
+   "Connect an app",
+   "Connect mail, calendar, chat, files or a work tool so Claude can read them and draft for you.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-approve-draft",
+   "cduet-apps-approvals",
+   "Approve a draft before it is sent",
+   "Look at a drafted message with every recipient, edit it if needed, and press Send; nothing in your name goes out, gets paid or gets deleted without your yes.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cduet-get-page-or-doc",
+   "cduet-apps-approvals",
+   "Get a page or a doc as the result",
+   "Ask for a document, plan or report and get it as a doc or page you can open, edit and share.",
+   "procedural",
+   [
+    [
+     "claude-duet-specialist",
+     "primary"
+    ],
+    [
+     "claude-duet-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-duet-specialist": "Claude Duet Specialist",
+  "claude-duet-reviewer": "Claude Duet Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [],
+ "lexicon": {
+  "mainchat": "answer main chat started task already",
+  "taskthread": "thread report step statu stop write",
+  "channelduet": "channel project file subject note keep",
+  "taskpage": "stopped done ready mark question resolved",
+  "morningbrief": "brief check ins hour morning quiet",
+  "routinereminder": "time set reminder routine schedule look",
+  "memorystanding": "rule ask correct forget word standing",
+  "connectedapp": "draft page doc deleted paid sent"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "generated",
+   "skills": "generated",
+   "agents": "generated",
+   "mcp": "real"
+  },
+  "basis": "Generated on 2026-11-27 by Maxey1 from Claude Duet as it presents itself to its user (main chat, task threads, channels, Tasks page, morning brief, check-ins, routines, reminders, memory, connectors, approvals). Agents follow the Claude domain pattern in Human0's claude_domain.csv (topic Specialist, topic Reviewer, Claude Docs Researcher).",
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "No MCP server for Claude Duet was verified. The Claude Platform Docs connector (directory cc6f3470-080c-45b8-84e1-cdc03e9c6ac1) returned no Claude Duet page for the query 'Claude Duet' on 2026-11-27; its own instructions say it covers the Claude API, Anthropic SDKs and Claude Managed Agents.",
+  "limitations": "Concepts and skills are generated hypotheses, not curated documentation. One web search on 2026-11-27 found no official Anthropic help page for Claude Duet, only press coverage that was not opened, so skills carry no documentation URL. Features in a research preview can change."
+ }
+}

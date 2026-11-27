@@ -1,0 +1,894 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-agent-sdk",
+  "label": "Claude Agent SDK",
+  "desc": "Claude Agent SDK: Agent SDK, Core concepts (Agent SDK), Input and output, Extend with tools, Customize behavior, Control and observability, Deployment (Agent SDK) and SDK references."
+ },
+ "concepts": [
+  {
+   "id": "casdk-agent-sdk",
+   "label": "Agent SDK",
+   "desc": "Agent SDK: Agent SDK overview, Quickstart, Migrate to Claude Agent SDK, Troubleshoot the Agent SDK, Configure your agent, Examples.",
+   "keywords": [
+    "agent",
+    "sdk",
+    "quickstart",
+    "migrate",
+    "troubleshoot",
+    "configure"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": []
+  },
+  {
+   "id": "casdk-control-and-observability",
+   "label": "Control and observability",
+   "desc": "Control and observability: Configure permissions, Intercept and control agent behavior with hooks, Rewind file changes with checkpointing, Track cost and usage, Observability with OpenTelemetry, Track todos.",
+   "keywords": [
+    "control",
+    "observability",
+    "track",
+    "configure",
+    "permission",
+    "intercept"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": []
+  },
+  {
+   "id": "casdk-core-concepts-agent-sdk",
+   "label": "Core concepts (Agent SDK)",
+   "desc": "Core concepts (Agent SDK): How the agent loop works, Use Claude Code features in the SDK, Work with sessions, Persist sessions to external storage.",
+   "keywords": [
+    "core",
+    "concept",
+    "agent",
+    "sdk",
+    "work",
+    "session"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": [
+    "ccuse-core-concepts-claude-code"
+   ]
+  },
+  {
+   "id": "casdk-customize-behavior",
+   "label": "Customize behavior",
+   "desc": "Customize behavior: Modifying system prompts, Extend agents with skills, Plugins in the SDK.",
+   "keywords": [
+    "customize",
+    "behavior",
+    "modifying",
+    "system",
+    "prompt",
+    "extend"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": []
+  },
+  {
+   "id": "casdk-deployment-agent-sdk",
+   "label": "Deployment (Agent SDK)",
+   "desc": "Deployment (Agent SDK): Hosting the Agent SDK, Securely deploying AI agents.",
+   "keywords": [
+    "deployment",
+    "agent",
+    "sdk",
+    "hosting",
+    "securely",
+    "deploying"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": []
+  },
+  {
+   "id": "casdk-extend-with-tools",
+   "label": "Extend with tools",
+   "desc": "Extend with tools: Give Claude custom tools, Connect to external tools with MCP, Scale to many tools with tool search, Subagents in the SDK.",
+   "keywords": [
+    "extend",
+    "tool",
+    "give",
+    "custom",
+    "connect",
+    "external"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": []
+  },
+  {
+   "id": "casdk-input-and-output",
+   "label": "Input and output",
+   "desc": "Input and output: Streaming Input, Handle approvals and user input, Stream responses in real-time, Get structured output from agents.",
+   "keywords": [
+    "input",
+    "output",
+    "streaming",
+    "handle",
+    "approval",
+    "user"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": []
+  },
+  {
+   "id": "casdk-sdk-references",
+   "label": "SDK references",
+   "desc": "SDK references: Agent SDK reference - TypeScript, TypeScript SDK V2 session API (removed), Agent SDK reference - Python.",
+   "keywords": [
+    "sdk",
+    "agent",
+    "typescript",
+    "session",
+    "api",
+    "removed"
+   ],
+   "topic": "claude-agent-sdk",
+   "source": "claude-agent-sdk",
+   "source_topic": "claude-agent-sdk",
+   "related": [
+    "csdk-sdks"
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": "casdk-agent-sdk-overview",
+   "concept": "casdk-agent-sdk",
+   "label": "Agent SDK overview",
+   "desc": "Build production AI agents with Claude Code as a library",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-configure-your-agent",
+   "concept": "casdk-agent-sdk",
+   "label": "Configure your agent",
+   "desc": "Configure Agent SDK sessions: compose the options object, set the model, environment, and limits, and find each feature option's page.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-examples",
+   "concept": "casdk-agent-sdk",
+   "label": "Examples",
+   "desc": "Find a complete, runnable Agent SDK project or a guided recipe in the Claude Cookbook that matches what you want to build.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-migrate-to-claude-agent-sdk",
+   "concept": "casdk-agent-sdk",
+   "label": "Migrate to Claude Agent SDK",
+   "desc": "Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-quickstart",
+   "concept": "casdk-agent-sdk",
+   "label": "Quickstart",
+   "desc": "Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-troubleshoot-the-agent-sdk",
+   "concept": "casdk-agent-sdk",
+   "label": "Troubleshoot the Agent SDK",
+   "desc": "Fix Agent SDK errors: the Claude Code CLI fails to start or exits, your prompt generator throws, a tool message is too large, or structured output is missing.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-configure-permissions",
+   "concept": "casdk-control-and-observability",
+   "label": "Configure permissions",
+   "desc": "Control how your agent uses tools with permission modes, hooks, and declarative allow/deny rules.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-intercept-and-control-agent-behavior-with-hooks",
+   "concept": "casdk-control-and-observability",
+   "label": "Intercept and control agent behavior with hooks",
+   "desc": "Intercept and customize agent behavior at key execution points with hooks",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-observability-with-opentelemetry",
+   "concept": "casdk-control-and-observability",
+   "label": "Observability with OpenTelemetry",
+   "desc": "Export traces, metrics, and events from the Agent SDK to your observability backend using OpenTelemetry.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-rewind-file-changes-with-checkpointing",
+   "concept": "casdk-control-and-observability",
+   "label": "Rewind file changes with checkpointing",
+   "desc": "Track file changes during agent sessions and restore files to any previous state",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-track-cost-and-usage",
+   "concept": "casdk-control-and-observability",
+   "label": "Track cost and usage",
+   "desc": "Learn how to track token usage, estimate costs, and configure prompt caching with the Claude Agent SDK.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-track-todos",
+   "concept": "casdk-control-and-observability",
+   "label": "Track todos",
+   "desc": "Track todos in Agent SDK sessions and render Claude's progress in your application from structured tool calls",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-how-the-agent-loop-works",
+   "concept": "casdk-core-concepts-agent-sdk",
+   "label": "How the agent loop works",
+   "desc": "Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-persist-sessions-to-external-storage",
+   "concept": "casdk-core-concepts-agent-sdk",
+   "label": "Persist sessions to external storage",
+   "desc": "Mirror Agent SDK session transcripts to your own object store, key-value store, or database so other hosts can resume your sessions.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-use-claude-code-features-in-the-sdk",
+   "concept": "casdk-core-concepts-agent-sdk",
+   "label": "Use Claude Code features in the SDK",
+   "desc": "Load project instructions, skills, hooks, and other Claude Code features into your SDK agents.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-work-with-sessions",
+   "concept": "casdk-core-concepts-agent-sdk",
+   "label": "Work with sessions",
+   "desc": "How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-extend-agents-with-skills",
+   "concept": "casdk-customize-behavior",
+   "label": "Extend agents with skills",
+   "desc": "Control which skills Claude can invoke in Claude Agent SDK sessions, dispatch commands by name, and author skills your sessions discover",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-modifying-system-prompts",
+   "concept": "casdk-customize-behavior",
+   "label": "Modifying system prompts",
+   "desc": "Choose between the claudecode preset and a custom system prompt, and customize behavior with CLAUDE.md, output styles, append, or a fully custom prompt.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-plugins-in-the-sdk",
+   "concept": "casdk-customize-behavior",
+   "label": "Plugins in the SDK",
+   "desc": "Load custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers through the Agent SDK",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-hosting-the-agent-sdk",
+   "concept": "casdk-deployment-agent-sdk",
+   "label": "Hosting the Agent SDK",
+   "desc": "Deploy the Agent SDK in production: subprocess architecture, session persistence, scaling, observability, and multi-tenant isolation for Docker, Kubernetes, and sandbox providers.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-securely-deploying-ai-agents",
+   "concept": "casdk-deployment-agent-sdk",
+   "label": "Securely deploying AI agents",
+   "desc": "A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-connect-to-external-tools-with-mcp",
+   "concept": "casdk-extend-with-tools",
+   "label": "Connect to external tools with MCP",
+   "desc": "Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error handling.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-give-claude-custom-tools",
+   "concept": "casdk-extend-with-tools",
+   "label": "Give Claude custom tools",
+   "desc": "Define custom tools with the Claude Agent SDK's in-process MCP server so Claude can call your functions, hit your APIs, and perform domain-specific operations.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-scale-to-many-tools-with-tool-search",
+   "concept": "casdk-extend-with-tools",
+   "label": "Scale to many tools with tool search",
+   "desc": "Scale your agent to thousands of tools by discovering and loading only what's needed, on demand.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-subagents-in-the-sdk",
+   "concept": "casdk-extend-with-tools",
+   "label": "Subagents in the SDK",
+   "desc": "Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-get-structured-output-from-agents",
+   "concept": "casdk-input-and-output",
+   "label": "Get structured output from agents",
+   "desc": "Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. Get type-safe, structured data after multi-turn tool use.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-handle-approvals-and-user-input",
+   "concept": "casdk-input-and-output",
+   "label": "Handle approvals and user input",
+   "desc": "Surface Claude's approval requests and clarifying questions to users, then return their decisions to the SDK.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-stream-responses-in-real-time",
+   "concept": "casdk-input-and-output",
+   "label": "Stream responses in real-time",
+   "desc": "Get real-time responses from the Agent SDK as text and tool calls stream in",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-streaming-input",
+   "concept": "casdk-input-and-output",
+   "label": "Streaming Input",
+   "desc": "Send follow-up messages and images to one Agent SDK session with streaming input, read each response, and interrupt a response to redirect Claude.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-agent-sdk-reference-python",
+   "concept": "casdk-sdk-references",
+   "label": "Agent SDK reference - Python",
+   "desc": "Complete API reference for the Python Agent SDK, including all functions, types, and classes.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-agent-sdk-reference-typescript",
+   "concept": "casdk-sdk-references",
+   "label": "Agent SDK reference - TypeScript",
+   "desc": "Complete API reference for the TypeScript Agent SDK, including all functions, types, and interfaces.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  },
+  {
+   "id": "casdk-typescript-sdk-v2-session-api-removed",
+   "concept": "casdk-sdk-references",
+   "label": "TypeScript SDK V2 session API (removed)",
+   "desc": "Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1764",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1765",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-agent-sdk"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1764",
+   "name": "Claude Agent SDK Specialist",
+   "legacy_key": "claude-agent-sdk-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1765",
+   "name": "Claude Agent SDK Reviewer",
+   "legacy_key": "claude-agent-sdk-reviewer",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  }
+ ],
+ "mcp": [],
+ "topic_mcp": [],
+ "agent_mcp": [],
+ "lexicon": {
+  "agentsdk": "agent sdk example migrate quickstart configure",
+  "coreconcept": "session loop persist storage external feature",
+  "inputoutput": "input output approval handle real response",
+  "extendtool": "tool many scale subagent give search",
+  "customizebehavior": "modifying system extend prompt skill plugin",
+  "controlobservability": "track observability control behavior intercept rewind",
+  "deploymentagent": "deploying hosting securely deployment",
+  "sdk": "typescript python removed api"
+ },
+ "sources": [
+  "claude-agent-sdk"
+ ]
+}

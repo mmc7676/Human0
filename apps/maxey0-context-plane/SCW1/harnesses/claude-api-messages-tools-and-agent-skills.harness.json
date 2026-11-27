@@ -1,0 +1,2373 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-api-messages-tools-and-agent-skills",
+  "label": "Claude API: Messages, Tools and Agent Skills",
+  "desc": "Claude API: Messages, Tools and Agent Skills: Getting started (Claude API), Agent skills (Claude API), Claude models on google cloud, Build with Claude, Mcp tunnels, Tool use, Manage Claude and Agents and tools."
+ },
+ "concepts": [
+  {
+   "id": "capi-agent-skills-claude-api",
+   "label": "Agent skills (Claude API)",
+   "desc": "Agent skills (Claude API): Overview: Agent Skills, Quickstart: Get started with Agent Skills in the API, Best practices, Skills for enterprise, Overview: Claude API skill.",
+   "keywords": [
+    "agent",
+    "skill",
+    "api",
+    "quickstart",
+    "get",
+    "started"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": [
+    "capiref-api-resources-messages-models-files-and-skills",
+    "capps-skills-claude-apps",
+    "cma-get-started"
+   ]
+  },
+  {
+   "id": "capi-agents-and-tools",
+   "label": "Agents and tools",
+   "desc": "Agents and tools: MCP connector, Remote MCP servers.",
+   "keywords": [
+    "agent",
+    "tool",
+    "mcp",
+    "connector",
+    "remote",
+    "server"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": [
+    "ccbuild-mcp",
+    "csci-compute-data-and-connectors"
+   ]
+  },
+  {
+   "id": "capi-build-with-claude",
+   "label": "Build with Claude",
+   "desc": "Build with Claude: Features overview, Batch processing, Build an orchestration mode, Cache diagnostics, Citations, Amazon Bedrock (Opus 4.7 and later), Microsoft Foundry, Amazon Bedrock (Opus 4.6 and earlier), Claude Platform on AWS, Keep thinking blocks valid, Threshold compaction, Compact in the background and 33 more.",
+   "keywords": [
+    "build",
+    "thinking",
+    "message",
+    "fallback",
+    "api",
+    "mode"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": []
+  },
+  {
+   "id": "capi-claude-models-on-google-cloud",
+   "label": "Claude models on google cloud",
+   "desc": "Claude models on google cloud: Overview: Claude Models on Google Cloud, Anthropic-managed, Google-managed.",
+   "keywords": [
+    "model",
+    "google",
+    "cloud",
+    "managed"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": []
+  },
+  {
+   "id": "capi-getting-started-claude-api",
+   "label": "Getting started (Claude API)",
+   "desc": "Getting started (Claude API): Documentation, Quickstart: Get started with Claude, Intro to Claude, Get your API key, API usage primer for Claude.",
+   "keywords": [
+    "getting",
+    "started",
+    "api",
+    "get",
+    "documentation",
+    "quickstart"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": [
+    "ccuse-getting-started-claude-code",
+    "cma-get-started"
+   ]
+  },
+  {
+   "id": "capi-manage-claude",
+   "label": "Manage Claude",
+   "desc": "Manage Claude: Authentication.",
+   "keywords": [
+    "manage",
+    "authentication"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": []
+  },
+  {
+   "id": "capi-mcp-tunnels",
+   "label": "Mcp tunnels",
+   "desc": "Mcp tunnels: Overview: MCP tunnels, Quickstart: MCP tunnels quickstart, Architecture and components, Deploy with Docker Compose, Deploy with Helm, Manage in the Console, Reference: MCP tunnels reference, Security, Troubleshooting.",
+   "keywords": [
+    "mcp",
+    "tunnel",
+    "quickstart",
+    "deploy",
+    "architecture",
+    "component"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": [
+    "capps-connectors-mcp-tunnels"
+   ]
+  },
+  {
+   "id": "capi-tool-use",
+   "label": "Tool use",
+   "desc": "Tool use: Overview: Tool use with Claude, Advisor tool, Bash tool, Browser and computer use (SDK), Browser use tool, Code execution tool, Computer use tool, Define tools, Fine-grained tool streaming, Handle tool calls, How tool use works, Manage tool context and 15 more.",
+   "keywords": [
+    "tool",
+    "browser",
+    "computer",
+    "sdk",
+    "search",
+    "web"
+   ],
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "source": "claude-api-messages-tools-and-agent-skills",
+   "source_topic": "claude-api-messages-tools-and-agent-skills",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "capi-best-practices",
+   "concept": "capi-agent-skills-claude-api",
+   "label": "Best practices",
+   "desc": "Learn how to write effective Skills that Claude can discover and use successfully.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-agent-skills",
+   "concept": "capi-agent-skills-claude-api",
+   "label": "Overview: Agent Skills",
+   "desc": "Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts, templates) that Claude uses automatically when relevant.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-claude-api-skill",
+   "concept": "capi-agent-skills-claude-api",
+   "label": "Overview: Claude API skill",
+   "desc": "An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building applications with the Claude API and Claude Managed Agents.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-quickstart-get-started-with-agent-skills-in-the-api",
+   "concept": "capi-agent-skills-claude-api",
+   "label": "Quickstart: Get started with Agent Skills in the API",
+   "desc": "Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-skills-for-enterprise",
+   "concept": "capi-agent-skills-claude-api",
+   "label": "Skills for enterprise",
+   "desc": "Governance, security review, evaluation, and organizational guidance for deploying Agent Skills at enterprise scale.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-mcp-connector",
+   "concept": "capi-agents-and-tools",
+   "label": "MCP connector",
+   "desc": "Connect to remote MCP servers directly from the Messages API without an MCP client, and allowlist, denylist, or configure individual tools.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-remote-mcp-servers",
+   "concept": "capi-agents-and-tools",
+   "label": "Remote MCP servers",
+   "desc": "Connect Claude to third-party remote MCP servers through the MCP connector API. Browse example servers and review the steps to connect.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-amazon-bedrock-opus-4-6-and-earlier",
+   "concept": "capi-build-with-claude",
+   "label": "Amazon Bedrock (Opus 4.6 and earlier)",
+   "desc": "Use Claude models on Amazon Bedrock's bedrock-runtime endpoint, through the InvokeModel and Converse APIs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-amazon-bedrock-opus-4-7-and-later",
+   "concept": "capi-build-with-claude",
+   "label": "Amazon Bedrock (Opus 4.7 and later)",
+   "desc": "Call Claude through the Messages API on Amazon Bedrock's bedrock-mantle endpoint, with AWS-native authentication, billing, and security boundaries.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-batch-processing",
+   "concept": "capi-build-with-claude",
+   "label": "Batch processing",
+   "desc": "Process large volumes of Messages requests asynchronously with the Message Batches API, cutting costs by 50 percent and increasing throughput.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-build-an-orchestration-mode",
+   "concept": "capi-build-with-claude",
+   "label": "Build an orchestration mode",
+   "desc": "Build a session-level mode that grants standing consent for multiagent fan-out, switched on and off with mid-conversation system messages.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-cache-diagnostics",
+   "concept": "capi-build-with-claude",
+   "label": "Cache diagnostics",
+   "desc": "Diagnose unexpected prompt cache misses by comparing consecutive requests and identifying exactly where the prompt prefix diverged.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-citations",
+   "concept": "capi-build-with-claude",
+   "label": "Citations",
+   "desc": "Ground Claude's responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-claude-platform-on-aws",
+   "concept": "capi-build-with-claude",
+   "label": "Claude Platform on AWS",
+   "desc": "Access Claude's full platform capabilities through AWS with Anthropic-managed infrastructure.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-compact-in-the-background",
+   "concept": "capi-build-with-claude",
+   "label": "Compact in the background",
+   "desc": "Request an on-demand compaction summary while the conversation continues on its full history, then swap the block in when it arrives.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-compact-on-demand",
+   "concept": "capi-build-with-claude",
+   "label": "Compact on demand",
+   "desc": "Ask Claude to summarize a conversation when your application chooses, then continue from the summary.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-compaction",
+   "concept": "capi-build-with-claude",
+   "label": "Compaction",
+   "desc": "Learn what compaction does, how compaction on demand and compaction at a token threshold differ, and which page covers your task.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-context-editing",
+   "concept": "capi-build-with-claude",
+   "label": "Context editing",
+   "desc": "Automatically manage conversation context as it grows with context editing.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-context-windows",
+   "concept": "capi-build-with-claude",
+   "label": "Context windows",
+   "desc": "Understand how the context window works, how extended thinking and tool use count toward it, and how to manage context as conversations grow.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-coordinates-and-bounding-boxes",
+   "concept": "capi-build-with-claude",
+   "label": "Coordinates and bounding boxes",
+   "desc": "How Claude resizes images, and how to work with the pixel coordinates it returns for bounding boxes, points, and UI elements.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-effort",
+   "concept": "capi-build-with-claude",
+   "label": "Effort",
+   "desc": "Control how many tokens Claude uses when responding with the effort parameter, trading off between response thoroughness and token efficiency.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-embeddings",
+   "concept": "capi-build-with-claude",
+   "label": "Embeddings",
+   "desc": "Text embeddings are numerical representations of text that let you measure semantic similarity. This guide introduces embeddings, their applications, and how to use embedding models for tasks such as search, recommendations, and anomaly detection.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-extended-thinking-legacy",
+   "concept": "capi-build-with-claude",
+   "label": "Extended thinking (legacy)",
+   "desc": "Configure manual extended thinking with a fixed budgettokens budget on Claude models that support it, and migrate to adaptive thinking.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-fallback-credit",
+   "concept": "capi-build-with-claude",
+   "label": "Fallback credit",
+   "desc": "Avoid paying the prompt-cache cost twice when you retry a refused request on another model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-fast-mode",
+   "concept": "capi-build-with-claude",
+   "label": "Fast mode",
+   "desc": "Get up to 2.5x higher output tokens per second from supported Claude models.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-features-overview",
+   "concept": "capi-build-with-claude",
+   "label": "Features overview",
+   "desc": "Explore Claude's advanced features and capabilities.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-files-api",
+   "concept": "capi-build-with-claude",
+   "label": "Files API",
+   "desc": "Upload files once, reference them by fileid in Messages requests, and download outputs created by skills or the code execution tool.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-keep-recent-turns",
+   "concept": "capi-build-with-claude",
+   "label": "Keep recent turns",
+   "desc": "Summarize the older turns of a conversation with on-demand compaction and send the most recent turns after the summary, word for word.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-keep-thinking-blocks-valid",
+   "concept": "capi-build-with-claude",
+   "label": "Keep thinking blocks valid",
+   "desc": "When thinking in turns kept after compaction, or after your own summary or cut, stays valid on models with preserved thinking, and how to check.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-message-threads",
+   "concept": "capi-build-with-claude",
+   "label": "Message threads",
+   "desc": "Give long-running agents a faster time to first token, especially in long conversations, by sending only the new messages on each request.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-microsoft-foundry",
+   "concept": "capi-build-with-claude",
+   "label": "Microsoft Foundry",
+   "desc": "Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-mid-conversation-messages",
+   "concept": "capi-build-with-claude",
+   "label": "Mid-conversation messages",
+   "desc": "Change system instructions or tool availability partway through a conversation without invalidating the cached prefix that came before them.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-multilingual-support",
+   "concept": "capi-build-with-claude",
+   "label": "Multilingual support",
+   "desc": "Claude excels at tasks across multiple languages, maintaining strong cross-lingual performance relative to English.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-thinking",
+   "concept": "capi-build-with-claude",
+   "label": "Overview: Thinking",
+   "desc": "\"Understand how Claude's thinking works: turn it on, read thinking output, steer thinking depth with effort, and use thinking with tools, caching, and streaming.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-vision",
+   "concept": "capi-build-with-claude",
+   "label": "Overview: Vision",
+   "desc": "Send images to Claude through the API and learn which limits and costs apply.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-pdf-support",
+   "concept": "capi-build-with-claude",
+   "label": "PDF support",
+   "desc": "\"Process PDFs with Claude: extract text, analyze charts, and understand visual content from your documents.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-preserved-thinking",
+   "concept": "capi-build-with-claude",
+   "label": "Preserved thinking",
+   "desc": "On Claude models that run the prefix check, preserved thinking determines whether the model can use a thinking block you send back from an earlier turn.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-prompt-caching",
+   "concept": "capi-build-with-claude",
+   "label": "Prompt caching",
+   "desc": "Cache prompt prefixes with cachecontrol to cut costs and latency, using automatic caching or explicit breakpoints with 5-minute or 1-hour TTLs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-refusals-and-fallback",
+   "concept": "capi-build-with-claude",
+   "label": "Refusals and fallback",
+   "desc": "How Claude Fable models, Claude Opus models, Claude Sonnet 5.5, and Claude Haiku 5.5 return classifier refusals and how to retry refused requests on a fallback model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-search-results",
+   "concept": "capi-build-with-claude",
+   "label": "Search results",
+   "desc": "Get natural citations for RAG applications by providing search results with source attribution",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-skills-in-the-api",
+   "concept": "capi-build-with-claude",
+   "label": "Skills in the API",
+   "desc": "Learn how to use Agent Skills to extend Claude's capabilities through the API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-steering-and-cost-control",
+   "concept": "capi-build-with-claude",
+   "label": "Steering and cost control",
+   "desc": "Steer how often and how deeply Claude thinks with effort levels, system prompt guidance, and per-message steering, and understand thinking's cost and pricing.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-stop-reasons-and-fallback",
+   "concept": "capi-build-with-claude",
+   "label": "Stop reasons and fallback",
+   "desc": "Learn what each stopreason value means and how to handle truncation, tool use, paused turns, and refusals in your application.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-streaming-messages",
+   "concept": "capi-build-with-claude",
+   "label": "Streaming Messages",
+   "desc": "Stream Messages API responses incrementally with server-sent events, including text, tool use, and thinking deltas.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-structured-outputs",
+   "concept": "capi-build-with-claude",
+   "label": "Structured outputs",
+   "desc": "Get validated JSON results from agent workflows",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-task-budgets-beta",
+   "concept": "capi-build-with-claude",
+   "label": "Task budgets (beta)",
+   "desc": "Give Claude an advisory token budget for the full agentic loop to help the model self-regulate on long agentic tasks.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-text-watermark",
+   "concept": "capi-build-with-claude",
+   "label": "Text watermark",
+   "desc": "What Anthropic's text watermark leaves unchanged, where to find the models and platforms it covers, and which sampling parameters to omit if you rely on it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-threshold-compaction",
+   "concept": "capi-build-with-claude",
+   "label": "Threshold compaction",
+   "desc": "Have the API summarize older context automatically, inside an ordinary request, when the conversation reaches a token threshold you set.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-token-counting",
+   "concept": "capi-build-with-claude",
+   "label": "Token counting",
+   "desc": "Count the tokens in a message before you send it to Claude. Use token counts to manage rate limits and costs, make model routing decisions, and fit prompts to a target length.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tool-and-multi-turn-workflows",
+   "concept": "capi-build-with-claude",
+   "label": "Tool and multi-turn workflows",
+   "desc": "Walk through a complete two-turn tool-use round trip that preserves thinking blocks correctly, and see how interleaved thinking changes the flow.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-troubleshooting",
+   "concept": "capi-build-with-claude",
+   "label": "Troubleshooting",
+   "desc": "\"Diagnose and fix thinking failures: configuration 400 errors, empty or missing thinking blocks, maxtokens stops, and cache misses.\"",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-using-the-messages-api",
+   "concept": "capi-build-with-claude",
+   "label": "Using the Messages API",
+   "desc": "Practical patterns and examples for using the Messages API effectively",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-anthropic-managed",
+   "concept": "capi-claude-models-on-google-cloud",
+   "label": "Anthropic-managed",
+   "desc": "Claude Models on Google Cloud (Anthropic managed) is the Claude API, run by Anthropic and reached through your Google Cloud project.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-google-managed",
+   "concept": "capi-claude-models-on-google-cloud",
+   "label": "Google-managed",
+   "desc": "Set up Claude Models on Google Cloud (Google managed), which Google operates as part of Google Cloud's Agent Platform. Then, call Claude with the Anthropic SDK or cURL.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-claude-models-on-google-cloud",
+   "concept": "capi-claude-models-on-google-cloud",
+   "label": "Overview: Claude Models on Google Cloud",
+   "desc": "Compare Claude Models on Google Cloud (Anthropic managed) and Claude Models on Google Cloud (Google managed), and find out which one you use.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-api-usage-primer-for-claude",
+   "concept": "capi-getting-started-claude-api",
+   "label": "API usage primer for Claude",
+   "desc": "This guide is designed to give Claude the basics of using the Claude API. It gives explanation and examples of model IDs/the basic messages API, tool use, streaming, thinking, and nothing else.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-documentation",
+   "concept": "capi-getting-started-claude-api",
+   "label": "Documentation",
+   "desc": "Claude API Documentation",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-get-your-api-key",
+   "concept": "capi-getting-started-claude-api",
+   "label": "Get your API key",
+   "desc": "Find, create, and manage your API keys for the Claude API in the Claude Console.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-intro-to-claude",
+   "concept": "capi-getting-started-claude-api",
+   "label": "Intro to Claude",
+   "desc": "Claude is a highly performant, trustworthy, and intelligent AI platform built by Anthropic. Claude excels at tasks involving language, reasoning, analysis, coding, and more.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-quickstart-get-started-with-claude",
+   "concept": "capi-getting-started-claude-api",
+   "label": "Quickstart: Get started with Claude",
+   "desc": "Make your first API call to Claude and build a simple web search assistant.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-authentication",
+   "concept": "capi-manage-claude",
+   "label": "Authentication",
+   "desc": "\"Choose how your code proves who it is to the Claude API: CLI sign-in, Workload Identity Federation, App Attest, or an API key.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-architecture-and-components",
+   "concept": "capi-mcp-tunnels",
+   "label": "Architecture and components",
+   "desc": "Canonical names for the parts of an MCP tunnel deployment, the two credential-provisioning modes, and the connection model.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-deploy-with-docker-compose",
+   "concept": "capi-mcp-tunnels",
+   "label": "Deploy with Docker Compose",
+   "desc": "Install the MCP tunnel stack on a VM using Docker Compose.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-deploy-with-helm",
+   "concept": "capi-mcp-tunnels",
+   "label": "Deploy with Helm",
+   "desc": "Install the tunnel stack on a Kubernetes cluster using the Anthropic Helm chart.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-manage-in-the-console",
+   "concept": "capi-mcp-tunnels",
+   "label": "Manage in the Console",
+   "desc": "Create tunnels, register CA certificates, retrieve the tunnel token, and attach tunneled MCP servers to agents from the Claude Console.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-mcp-tunnels",
+   "concept": "capi-mcp-tunnels",
+   "label": "Overview: MCP tunnels",
+   "desc": "Securely connect Claude to MCP servers running in your private network without opening inbound ports or exposing services to the public internet.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-quickstart-mcp-tunnels-quickstart",
+   "concept": "capi-mcp-tunnels",
+   "label": "Quickstart: MCP tunnels quickstart",
+   "desc": "Connect Claude to a private MCP server using a local Docker Compose deployment.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-reference-mcp-tunnels-reference",
+   "concept": "capi-mcp-tunnels",
+   "label": "Reference: MCP tunnels reference",
+   "desc": "Proxy configuration fields, the Tunnels REST API, certificate requirements, and the setup component.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-security",
+   "concept": "capi-mcp-tunnels",
+   "label": "Security",
+   "desc": "Hardening guidance, credential rotation, breach response, and teardown for MCP tunnel deployments.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-troubleshooting-2",
+   "concept": "capi-mcp-tunnels",
+   "label": "Troubleshooting",
+   "desc": "Diagnose connectivity, TLS, IP validation, and OAuth routing issues in a tunnel stack.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-advisor-tool",
+   "concept": "capi-tool-use",
+   "label": "Advisor tool",
+   "desc": "Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-bash-tool",
+   "concept": "capi-tool-use",
+   "label": "Bash tool",
+   "desc": "Let Claude request shell commands that your application runs in a persistent bash session and returns as tool results.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-browser-and-computer-use-sdk",
+   "concept": "capi-tool-use",
+   "label": "Browser and computer use (SDK)",
+   "desc": "Run the browser use tool or the computer use tool from the Python or TypeScript SDK. The SDK runs the loop and the checks you configure, and you supply the browser or the desktop.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-browser-use-tool",
+   "concept": "capi-tool-use",
+   "label": "Browser use tool",
+   "desc": "Let Claude navigate, read, and interact with webpages in your own browser environment with the browser use tool.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-code-execution-tool",
+   "concept": "capi-tool-use",
+   "label": "Code execution tool",
+   "desc": "Run Python and Bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-computer-use-tool",
+   "concept": "capi-tool-use",
+   "label": "Computer use tool",
+   "desc": "Give Claude screenshot, mouse, and keyboard control of a desktop environment with the computer use tool, the computertoolset20260801 client toolset.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-define-tools",
+   "concept": "capi-tool-use",
+   "label": "Define tools",
+   "desc": "Specify tool schemas, write effective descriptions, and control when Claude calls your tools.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-fine-grained-tool-streaming",
+   "concept": "capi-tool-use",
+   "label": "Fine-grained tool streaming",
+   "desc": "Stream tool inputs without server-side JSON buffering for latency-sensitive applications.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-handle-tool-calls",
+   "concept": "capi-tool-use",
+   "label": "Handle tool calls",
+   "desc": "Parse tooluse blocks, format toolresult responses, and handle errors with iserror.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-how-tool-use-works",
+   "concept": "capi-tool-use",
+   "label": "How tool use works",
+   "desc": "Understand the tool use loop, where tools run, and when to use tools instead of prose.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-manage-tool-context",
+   "concept": "capi-tool-use",
+   "label": "Manage tool context",
+   "desc": "Choose among tool search, programmatic tool calling, prompt caching, and context editing to manage context bloat.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-memory-tool",
+   "concept": "capi-tool-use",
+   "label": "Memory tool",
+   "desc": "Let Claude store and retrieve information across conversations by implementing the memory tool's file operations in your application.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-overview-tool-use-with-claude",
+   "concept": "capi-tool-use",
+   "label": "Overview: Tool use with Claude",
+   "desc": "Connect Claude to external tools and APIs. See where tools run, when Claude calls them, and which tool fits your task.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-parallel-tool-use",
+   "concept": "capi-tool-use",
+   "label": "Parallel tool use",
+   "desc": "Enable, format, and disable parallel tool calls, with message-history guidance and troubleshooting.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-programmatic-tool-calling",
+   "concept": "capi-tool-use",
+   "label": "Programmatic tool calling",
+   "desc": "Let Claude call your tools from code in the code execution container, cutting model round trips and token use in multi-tool workflows.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-server-tools",
+   "concept": "capi-tool-use",
+   "label": "Server tools",
+   "desc": "\"Work with tools that Anthropic runs: servertooluse blocks, pauseturn continuation, mixed server and client tool turns, and domain filtering.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-strict-tool-use",
+   "concept": "capi-tool-use",
+   "label": "Strict tool use",
+   "desc": "Enforce JSON Schema compliance on Claude's tool inputs with grammar-constrained sampling.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-text-editor-tool",
+   "concept": "capi-tool-use",
+   "label": "Text editor tool",
+   "desc": "Give Claude the Anthropic-defined text editor tool to view, create, and edit files, and handle its view, strreplace, create, and insert commands.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tool-combinations",
+   "concept": "capi-tool-use",
+   "label": "Tool combinations",
+   "desc": "Common Anthropic tool pairings for research agents, coding agents, and long-running agents.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tool-reference",
+   "concept": "capi-tool-use",
+   "label": "Tool reference",
+   "desc": "Directory of Anthropic-provided server tools, client tools, and client toolsets, plus reference for optional tool definition properties.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tool-runner-sdk",
+   "concept": "capi-tool-use",
+   "label": "Tool runner (SDK)",
+   "desc": "Use the SDK's tool runner to handle the agentic loop, error wrapping, and type safety automatically.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tool-search-tool",
+   "concept": "capi-tool-use",
+   "label": "Tool search tool",
+   "desc": "Scale to hundreds or thousands of tools by letting Claude search your tool catalog and load only the tools it needs.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tool-use-with-prompt-caching",
+   "concept": "capi-tool-use",
+   "label": "Tool use with prompt caching",
+   "desc": "Cache tool definitions across turns and understand what invalidates your cache.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-troubleshooting-3",
+   "concept": "capi-tool-use",
+   "label": "Troubleshooting",
+   "desc": "Fix the most common tool-use errors with symptom-to-fix diagnostic tables.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-tutorial-build-a-tool-using-agent",
+   "concept": "capi-tool-use",
+   "label": "Tutorial: Build a tool-using agent",
+   "desc": "A guided walkthrough from a single tool call to a production-ready agentic loop.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-web-fetch-tool",
+   "concept": "capi-tool-use",
+   "label": "Web fetch tool",
+   "desc": "Fetch and read content from specific URLs to augment Claude's context with live web content.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "id": "capi-web-search-tool",
+   "concept": "capi-tool-use",
+   "label": "Web search tool",
+   "desc": "Give Claude access to current web content with cited sources, optional dynamic filtering, and domain controls.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1767",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1768",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-api-messages-tools-and-agent-skills"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": [
+    "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+   ]
+  },
+  {
+   "key": "Maxey1767",
+   "name": "Claude API: Messages, Tools and Agent Skills Specialist",
+   "legacy_key": "claude-api-messages-tools-and-agent-skills-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1768",
+   "name": "Claude API: Messages, Tools and Agent Skills Reviewer",
+   "legacy_key": "claude-api-messages-tools-and-agent-skills-reviewer",
+   "mcp": [
+    "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "name": "Claude Platform Docs",
+   "desc": "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   "tools": [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27",
+   "id": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "origins": [
+    "claude-api-messages-tools-and-agent-skills",
+    "claude-api-reference",
+    "claude-managed-agents",
+    "claude-models-and-pricing",
+    "claude-platform-administration",
+    "claude-sdks-cli-and-libraries",
+    "prompting-evaluation-and-claude-api-guidance"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1766",
+   "mcp": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "score": 0.4356,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-api-messages-tools-and-agent-skills"
+  },
+  {
+   "agent": "Maxey1768",
+   "mcp": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "topic": "claude-api-messages-tools-and-agent-skills",
+   "score": 0.3011,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-api-messages-tools-and-agent-skills"
+  }
+ ],
+ "lexicon": {
+  "gettingstarted": "api started documentation intro primer key",
+  "agentskill": "skill agent best practice enterprise quickstart",
+  "modelgoogle": "google managed model cloud",
+  "build": "thinking message fallback compact compaction keep",
+  "mcptunnel": "tunnel mcp deploy architecture compose docker",
+  "tool": "tool browser computer search web sdk",
+  "manage": "authentication manage",
+  "agenttool": "remote server connector"
+ },
+ "sources": [
+  "claude-api-messages-tools-and-agent-skills"
+ ]
+}

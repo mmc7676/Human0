@@ -1,0 +1,1701 @@
+{
+ "schema": "maxey0.topic-harness/3",
+ "scw": "SCW1",
+ "domain": "claude",
+ "topic": {
+  "id": "claude-platform-administration",
+  "label": "Claude Platform Administration",
+  "desc": "Claude Platform Administration: Compliance security posture, Data residency and retention, CMEK and encryption, Identity and access, Usage, cost and limits, Workspaces, hooks and integrations, Compliance API and Opentelemetry (Claude Platform)."
+ },
+ "concepts": [
+  {
+   "id": "cpadm-cmek-and-encryption",
+   "label": "CMEK and encryption",
+   "desc": "CMEK and encryption: Admin API, Data retention and ZDR, Overview: Customer-managed encryption keys, How it works, Limit key to workspaces, Claude Platform on AWS, AWS KMS, Azure Key Vault, Google Cloud KMS, Troubleshooting, Coverage: Claude Enterprise, Coverage: Claude Platform and 1 more.",
+   "keywords": [
+    "cmek",
+    "encryption",
+    "key",
+    "platform",
+    "aws",
+    "kms"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": []
+  },
+  {
+   "id": "cpadm-compliance-api",
+   "label": "Compliance API",
+   "desc": "Compliance API: Overview: Compliance API, FAQ, Design your integration, Errors, Organizations, users, roles, groups, and settings, Activity Feed, Chats, files, and projects, Session transcripts, Set up the Compliance API.",
+   "keywords": [
+    "compliance",
+    "api",
+    "faq",
+    "design",
+    "your",
+    "integration"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": [
+    "capiref-api-resources-organization-and-compliance"
+   ]
+  },
+  {
+   "id": "cpadm-compliance-security-posture",
+   "label": "Compliance security posture",
+   "desc": "Compliance security posture: Overview: Security posture in the Compliance API, Check events against results, Detect changes, Map events to OCSF, Events reference, Results reference, Send events to your SIEM.",
+   "keywords": [
+    "compliance",
+    "security",
+    "posture",
+    "event",
+    "result",
+    "api"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": []
+  },
+  {
+   "id": "cpadm-data-residency-and-retention",
+   "label": "Data residency and retention",
+   "desc": "Data residency and retention: Overview: Access Transparency, API and data retention, Data residency, Transparency log (beta).",
+   "keywords": [
+    "residency",
+    "retention",
+    "transparency",
+    "access",
+    "api",
+    "log"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": []
+  },
+  {
+   "id": "cpadm-identity-and-access",
+   "label": "Identity and access",
+   "desc": "Identity and access: Admin API, App Attest, Create an Admin API key, IP allowlisting (beta), Manage WIF with the Admin API, Verification Portal links, User management, User profiles, WIF reference, Workload Identity Federation, AWS, GitHub Actions and 5 more.",
+   "keywords": [
+    "identity",
+    "access",
+    "admin",
+    "api",
+    "wif",
+    "user"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": []
+  },
+  {
+   "id": "cpadm-opentelemetry-claude-platform",
+   "label": "Opentelemetry (Claude Platform)",
+   "desc": "Opentelemetry (Claude Platform): Get Claude API spans, Get Claude SDK spans, Spans.",
+   "keywords": [
+    "opentelemetry",
+    "platform",
+    "span",
+    "get",
+    "api",
+    "sdk"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": []
+  },
+  {
+   "id": "cpadm-usage-cost-and-limits",
+   "label": "Usage, cost and limits",
+   "desc": "Usage, cost and limits: Analytics APIs, Claude Code Analytics API, Rate Limits API, Spend Limits API, Usage and Cost Analytics API, Usage and Cost API (legacy).",
+   "keywords": [
+    "usage",
+    "cost",
+    "limit",
+    "api",
+    "analytic",
+    "code"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": [
+    "ccadm-usage-and-costs"
+   ]
+  },
+  {
+   "id": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Workspaces, hooks and integrations",
+   "desc": "Workspaces, hooks and integrations: Claude Tag API, Configure Inference hooks, Build an integration, Overview: Inference hooks, Overview: OpenTelemetry tracing for the Claude API, Organization webhooks (beta), Plugins API, Workspaces.",
+   "keywords": [
+    "workspace",
+    "hook",
+    "integration",
+    "api",
+    "inference",
+    "tag"
+   ],
+   "topic": "claude-platform-administration",
+   "source": "claude-platform-administration",
+   "source_topic": "claude-platform-administration",
+   "related": []
+  }
+ ],
+ "skills": [
+  {
+   "id": "cpadm-admin-api",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Admin API",
+   "desc": "Create, validate, and attach a customer-managed encryption key with three Admin API calls.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-aws-kms",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "AWS KMS",
+   "desc": "Create an AWS KMS key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-azure-key-vault",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Azure Key Vault",
+   "desc": "Create an Azure Key Vault key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-claude-platform-on-aws",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Claude Platform on AWS",
+   "desc": "Create an AWS KMS key in your AWS account and attach it to a workspace on Claude Platform on AWS.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-coverage-claude-enterprise",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Coverage: Claude Enterprise",
+   "desc": "Look up which Claude Enterprise data your key encrypts, what turns off or changes, and what stays under Anthropic's key.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-coverage-claude-platform",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Coverage: Claude Platform",
+   "desc": "Look up which Claude Platform data your key encrypts, what turns off or changes, and what stays under Anthropic's key.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-data-retention-and-zdr",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Data retention and ZDR",
+   "desc": "Why a workspace with a key retains data, what that means for ZDR, and what Anthropic can preserve outside your key.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-google-cloud-kms",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Google Cloud KMS",
+   "desc": "Create a Google Cloud KMS key, give Anthropic access to it, and put it to use in Claude Platform, Claude Enterprise, or Claude Models on Google Cloud (Anthropic managed).",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-how-it-works",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "How it works",
+   "desc": "How your key protects stored data, what one key covers, when it takes effect, and what you can see.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-limit-key-to-workspaces",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Limit key to workspaces",
+   "desc": "Add a key policy condition that names the workspaces allowed to use your AWS KMS key.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-overview-customer-managed-encryption-keys",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Overview: Customer-managed encryption keys",
+   "desc": "Use a key you hold in your own cloud to encrypt data that Claude stores.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-rotate-disable-delete",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Rotate, disable, delete",
+   "desc": "What each action on your key does to your data, how soon, and whether you can undo it.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-troubleshooting",
+   "concept": "cpadm-cmek-and-encryption",
+   "label": "Troubleshooting",
+   "desc": "Find the cause and fix for a CMEK error message, a failed verification, or an unexpected log entry.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-activity-feed",
+   "concept": "cpadm-compliance-api",
+   "label": "Activity Feed",
+   "desc": "Retrieve, filter, and paginate your organization's Compliance API Activity Feed.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-chats-files-and-projects",
+   "concept": "cpadm-compliance-api",
+   "label": "Chats, files, and projects",
+   "desc": "Access chat content, file attachments, and projects for claude.ai organizations through the Compliance API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-design-your-integration",
+   "concept": "cpadm-compliance-api",
+   "label": "Design your integration",
+   "desc": "Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-errors",
+   "concept": "cpadm-compliance-api",
+   "label": "Errors",
+   "desc": "Compliance API error responses by HTTP status code, with the cause and fix for each.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-faq",
+   "concept": "cpadm-compliance-api",
+   "label": "FAQ",
+   "desc": "Answers to common questions about Compliance API access, scopes, retention, and integration.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-organizations-users-roles-groups-and-settings",
+   "concept": "cpadm-compliance-api",
+   "label": "Organizations, users, roles, groups, and settings",
+   "desc": "Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization's effective settings through the Compliance API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-overview-compliance-api",
+   "concept": "cpadm-compliance-api",
+   "label": "Overview: Compliance API",
+   "desc": "Programmatic access to your organization's Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-session-transcripts",
+   "concept": "cpadm-compliance-api",
+   "label": "Session transcripts",
+   "desc": "List the sessions your users run in Claude apps and agents, such as Claude Cowork and Claude Code, and retrieve their transcripts through the Compliance API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-set-up-the-compliance-api",
+   "concept": "cpadm-compliance-api",
+   "label": "Set up the Compliance API",
+   "desc": "Enable the Compliance API for your organization, then create a Compliance Access Key (with scoped permissions) or an Admin API key, and learn which to use.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-check-events-against-results",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Check events against results",
+   "desc": "Once a day, compare the attestation activities your SIEM has stored with the endpoint's current results and decide which mismatches need a person.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-detect-changes",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Detect changes",
+   "desc": "\"Start from sample detection rules for Security posture activities in your SIEM: accepted risks, controls attested as Failed, unexpected editors, bursts of changes, and attestations that end automatically.\"",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-events-reference",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Events reference",
+   "desc": "\"Look up the Activity Feed activities that record changes on the Security posture page: their fields and values, an example of each, and what the feed does not record.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-map-events-to-ocsf",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Map events to OCSF",
+   "desc": "Map each Security posture activity in the Compliance API to its Open Cybersecurity Schema Framework (OCSF) class and attributes before you store it.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-overview-security-posture-in-the-compliance-api",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Overview: Security posture in the Compliance API",
+   "desc": "Understand what the Compliance API exposes about the Security posture page (Security Center) in claude.ai and where to start.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-results-reference",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Results reference",
+   "desc": "\"Look up the Compliance API endpoint that returns an organization's current Security posture results: the request, the response fields, what each status means, and the errors.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-send-events-to-your-siem",
+   "concept": "cpadm-compliance-security-posture",
+   "label": "Send events to your SIEM",
+   "desc": "Request the Security posture activities from the Compliance API Activity Feed, read one of them field by field, and keep your SIEM current with a scheduled read that catches late activities.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-api-and-data-retention",
+   "concept": "cpadm-data-residency-and-retention",
+   "label": "API and data retention",
+   "desc": "Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-data-residency",
+   "concept": "cpadm-data-residency-and-retention",
+   "label": "Data residency",
+   "desc": "Manage where model inference runs and where data is stored with geographic controls.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-overview-access-transparency",
+   "concept": "cpadm-data-residency-and-retention",
+   "label": "Overview: Access Transparency",
+   "desc": "Receive an audit record of human access to your organization's data by Anthropic personnel through the Compliance API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-transparency-log-beta",
+   "concept": "cpadm-data-residency-and-retention",
+   "label": "Transparency log (beta)",
+   "desc": "Use signed checkpoints and Merkle proofs from the Compliance API to verify that no Access Transparency event was removed or altered after it was committed to the log.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-admin-api-2",
+   "concept": "cpadm-identity-and-access",
+   "label": "Admin API",
+   "desc": "Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a personal or service account key.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-app-attest",
+   "concept": "cpadm-identity-and-access",
+   "label": "App Attest",
+   "desc": "Let genuine installations of your iOS or macOS app call the Claude API without shipping an API key or running a proxy, using Apple's App Attest service.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-aws",
+   "concept": "cpadm-identity-and-access",
+   "label": "AWS",
+   "desc": "Authenticate AWS workloads on Lambda, EC2, ECS, or EKS to the Claude API with Workload Identity Federation and STS-issued identity tokens.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-create-an-admin-api-key",
+   "concept": "cpadm-identity-and-access",
+   "label": "Create an Admin API key",
+   "desc": "Create an Admin API key for your Claude Console or Claude Enterprise organization.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-github-actions",
+   "concept": "cpadm-identity-and-access",
+   "label": "GitHub Actions",
+   "desc": "Authenticate GitHub Actions workflows to the Claude API with short-lived identity tokens instead of long-lived API keys.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-google-cloud",
+   "concept": "cpadm-identity-and-access",
+   "label": "Google Cloud",
+   "desc": "Federate Google Cloud workloads (Cloud Run, Cloud Functions, App Engine, GCE, GKE) to the Claude API using Google-signed identity tokens instead of static API keys.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-ip-allowlisting-beta",
+   "concept": "cpadm-identity-and-access",
+   "label": "IP allowlisting (beta)",
+   "desc": "Secure your organization by limiting access to specific IP addresses that you trust.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-kubernetes",
+   "concept": "cpadm-identity-and-access",
+   "label": "Kubernetes",
+   "desc": "Authenticate to the Claude API from self-managed Kubernetes clusters using projected service account tokens.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-manage-wif-with-the-admin-api",
+   "concept": "cpadm-identity-and-access",
+   "label": "Manage WIF with the Admin API",
+   "desc": "Create and manage Workload Identity Federation service accounts, issuers, and rules programmatically for infrastructure-as-code and CI workflows.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-microsoft-entra-id",
+   "concept": "cpadm-identity-and-access",
+   "label": "Microsoft Entra ID",
+   "desc": "Federate Azure managed identities and Entra Workload Identity with the Claude API so your Azure workloads can call Claude without static API keys.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-okta",
+   "concept": "cpadm-identity-and-access",
+   "label": "Okta",
+   "desc": "Federate Okta service application identities to the Claude API with Workload Identity Federation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-spiffe",
+   "concept": "cpadm-identity-and-access",
+   "label": "SPIFFE",
+   "desc": "Authenticate SPIFFE workloads to the Claude API using JWT-SVIDs from SPIRE or any other SPIFFE-conformant issuer.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-user-management",
+   "concept": "cpadm-identity-and-access",
+   "label": "User management",
+   "desc": "\"Manage the people in your Claude Enterprise organization with the Admin API: list members and change roles, send and withdraw invites, manage groups, and read custom roles.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-user-profiles",
+   "concept": "cpadm-identity-and-access",
+   "label": "User profiles",
+   "desc": "Attribute API requests to the end customers your platform serves, so a safety enforcement action can apply to one profile instead of your whole organization.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-verification-portal-links",
+   "concept": "cpadm-identity-and-access",
+   "label": "Verification Portal links",
+   "desc": "Create an enrollment link for a user profile, see what your end customer does in the Verification Portal, and check which programs apply to the profile afterward.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-wif-reference",
+   "concept": "cpadm-identity-and-access",
+   "label": "WIF reference",
+   "desc": "Environment variables, validation rules, profile configuration, and error reference for Workload Identity Federation.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-workload-identity-federation",
+   "concept": "cpadm-identity-and-access",
+   "label": "Workload Identity Federation",
+   "desc": "Authenticate workloads to the Claude API with short-lived identity tokens from your own identity provider instead of long-lived static API keys.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-get-claude-api-spans",
+   "concept": "cpadm-opentelemetry-claude-platform",
+   "label": "Get Claude API spans",
+   "desc": "Add a destination in the Claude Console to send OpenTelemetry traces of your Messages API requests and Managed Agents sessions to your observability platform.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-get-claude-sdk-spans",
+   "concept": "cpadm-opentelemetry-claude-platform",
+   "label": "Get Claude SDK spans",
+   "desc": "Trace the Anthropic SDK's requests and tool uses in Python, TypeScript, C#, Go, Java, PHP, or Ruby, and send the spans to your observability platform.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-spans",
+   "concept": "cpadm-opentelemetry-claude-platform",
+   "label": "Spans",
+   "desc": "The OpenTelemetry spans and span attributes that the Claude API and the Anthropic SDK emit.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-analytics-apis",
+   "concept": "cpadm-usage-cost-and-limits",
+   "label": "Analytics APIs",
+   "desc": "Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement and adoption data.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-claude-code-analytics-api",
+   "concept": "cpadm-usage-cost-and-limits",
+   "label": "Claude Code Analytics API",
+   "desc": "Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-rate-limits-api",
+   "concept": "cpadm-usage-cost-and-limits",
+   "label": "Rate Limits API",
+   "desc": "Programmatically read your organization's API rate limits and set workspace rate limits with the Rate Limits API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-spend-limits-api",
+   "concept": "cpadm-usage-cost-and-limits",
+   "label": "Spend Limits API",
+   "desc": "Set a spend limit on each Claude Enterprise member, see where each member's spend limit is inherited from, and review or act on members' requests for a higher limit.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-usage-and-cost-analytics-api",
+   "concept": "cpadm-usage-cost-and-limits",
+   "label": "Usage and Cost Analytics API",
+   "desc": "Query token usage and cost for your Claude Console or Claude Enterprise organization by model, workspace, API key, actor, and more.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-usage-and-cost-api-legacy",
+   "concept": "cpadm-usage-cost-and-limits",
+   "label": "Usage and Cost API (legacy)",
+   "desc": "The legacy Admin API usage and cost report endpoints. For new integrations, use the Usage and Cost Analytics API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-build-an-integration",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Build an integration",
+   "desc": "Build the AI security server that receives signed Inference hooks requests, verifies them, and returns allow or deny verdicts.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-claude-tag-api",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Claude Tag API",
+   "desc": "\"Manage Claude Tag in Slack for your Claude Enterprise organization from your own systems: read and change settings on Slack channels and workspaces, see which settings apply and why, and attach Access bundles.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-configure-inference-hooks",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Configure Inference hooks",
+   "desc": "Allow Inference hooks for your Claude Enterprise organization, connect your AI security server, and control enforcement, failure handling, and rollout.",
+   "type": "procedural",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-organization-webhooks-beta",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Organization webhooks (beta)",
+   "desc": "Register webhook endpoints for events about your organization's user profiles, customer-managed encryption keys, and customer-owned storage, and respond to each event.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-overview-inference-hooks",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Overview: Inference hooks",
+   "desc": "Send each governed prompt to your organization's AI security server for an allow or deny verdict before inference proceeds.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-overview-opentelemetry-tracing-for-the-claude-api",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Overview: OpenTelemetry tracing for the Claude API",
+   "desc": "Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Anthropic SDK and the Claude API.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-plugins-api",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Plugins API",
+   "desc": "\"Inventory and manage the plugins in your Claude Enterprise organization: upload plugins and versions, choose the version members are served, control who can use each plugin, download plugin files for review, and validate a marketplace before you connect it.\"",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  },
+  {
+   "id": "cpadm-workspaces",
+   "concept": "cpadm-workspaces-hooks-and-integrations",
+   "label": "Workspaces",
+   "desc": "Organize API keys, manage team access, and control costs with workspaces.",
+   "type": "semantic",
+   "agents": [
+    {
+     "key": "Maxey1797",
+     "role": "primary"
+    },
+    {
+     "key": "Maxey1798",
+     "role": "checker"
+    },
+    {
+     "key": "Maxey1766",
+     "role": "support"
+    }
+   ],
+   "source": "claude-platform-administration"
+  }
+ ],
+ "agents": [
+  {
+   "key": "Maxey1766",
+   "name": "Claude Docs Researcher",
+   "legacy_key": "claude-docs-researcher",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1797",
+   "name": "Claude Platform Administration Specialist",
+   "legacy_key": "claude-platform-administration-specialist",
+   "mcp": []
+  },
+  {
+   "key": "Maxey1798",
+   "name": "Claude Platform Administration Reviewer",
+   "legacy_key": "claude-platform-administration-reviewer",
+   "mcp": [
+    "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+   ]
+  }
+ ],
+ "mcp": [
+  {
+   "uuid": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "name": "Claude Platform Docs",
+   "desc": "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   "tools": [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "state": "registry",
+   "source": "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27",
+   "id": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "origins": [
+    "claude-api-messages-tools-and-agent-skills",
+    "claude-api-reference",
+    "claude-managed-agents",
+    "claude-models-and-pricing",
+    "claude-platform-administration",
+    "claude-sdks-cli-and-libraries",
+    "prompting-evaluation-and-claude-api-guidance"
+   ]
+  }
+ ],
+ "topic_mcp": [
+  "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1"
+ ],
+ "agent_mcp": [
+  {
+   "agent": "Maxey1798",
+   "mcp": "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "topic": "claude-platform-administration",
+   "score": 0.2637,
+   "basis": "derived:tfidf-cosine",
+   "source_topic": "claude-platform-administration"
+  }
+ ],
+ "lexicon": {
+  "compliancesecurity": "event result posture compliance security detect",
+  "residencyretention": "transparency residency retention log access api",
+  "cmekencryption": "key coverage kms aws platform encryption",
+  "identityaccess": "admin wif user identity allowlisting attest",
+  "usagecost": "analytic limit cost usage legacy rate",
+  "workspacehook": "hook inference workspace integration tracing opentelemetry",
+  "complianceapi": "faq feed transcript activity design error",
+  "opentelemetryplatform": "span sdk"
+ },
+ "sources": [
+  "claude-platform-administration"
+ ]
+}

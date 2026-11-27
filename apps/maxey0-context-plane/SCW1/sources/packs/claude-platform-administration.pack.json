@@ -1,0 +1,1797 @@
+{
+ "schema": "human0.topic-pack/1",
+ "id": "claude-platform-administration",
+ "topic": {
+  "id": "claude-platform-administration",
+  "label": "Claude Platform Administration",
+  "desc": "Claude Platform Administration: Compliance security posture, Data residency and retention, CMEK and encryption, Identity and access, Usage, cost and limits, Workspaces, hooks and integrations, Compliance API, Opentelemetry (Claude Platform)."
+ },
+ "concepts": [
+  [
+   "cpadm-compliance-security-posture",
+   "Compliance security posture",
+   "claude-platform-administration",
+   "Compliance security posture: Overview: Security posture in the Compliance API, Check events against results, Detect changes, Map events to OCSF, Events reference, Results reference, Send events to your SIEM.",
+   [
+    "compliance",
+    "security",
+    "posture",
+    "event",
+    "result",
+    "api"
+   ]
+  ],
+  [
+   "cpadm-data-residency-and-retention",
+   "Data residency and retention",
+   "claude-platform-administration",
+   "Data residency and retention: Overview: Access Transparency, API and data retention, Data residency, Transparency log (beta).",
+   [
+    "residency",
+    "retention",
+    "transparency",
+    "access",
+    "api",
+    "log"
+   ]
+  ],
+  [
+   "cpadm-cmek-and-encryption",
+   "CMEK and encryption",
+   "claude-platform-administration",
+   "CMEK and encryption: Admin API, Data retention and ZDR, Overview: Customer-managed encryption keys, How it works, Limit key to workspaces, Claude Platform on AWS, AWS KMS, Azure Key Vault, Google Cloud KMS, Troubleshooting, Coverage: Claude Enterprise, Coverage: Claude Platform and 1 more.",
+   [
+    "cmek",
+    "encryption",
+    "key",
+    "platform",
+    "aws",
+    "kms"
+   ]
+  ],
+  [
+   "cpadm-identity-and-access",
+   "Identity and access",
+   "claude-platform-administration",
+   "Identity and access: Admin API, App Attest, Create an Admin API key, IP allowlisting (beta), Manage WIF with the Admin API, Verification Portal links, User management, User profiles, WIF reference, Workload Identity Federation, AWS, GitHub Actions and 5 more.",
+   [
+    "identity",
+    "access",
+    "admin",
+    "api",
+    "wif",
+    "user"
+   ]
+  ],
+  [
+   "cpadm-usage-cost-and-limits",
+   "Usage, cost and limits",
+   "claude-platform-administration",
+   "Usage, cost and limits: Analytics APIs, Claude Code Analytics API, Rate Limits API, Spend Limits API, Usage and Cost Analytics API, Usage and Cost API (legacy).",
+   [
+    "usage",
+    "cost",
+    "limit",
+    "api",
+    "analytic",
+    "code"
+   ]
+  ],
+  [
+   "cpadm-workspaces-hooks-and-integrations",
+   "Workspaces, hooks and integrations",
+   "claude-platform-administration",
+   "Workspaces, hooks and integrations: Claude Tag API, Configure Inference hooks, Build an integration, Overview: Inference hooks, Overview: OpenTelemetry tracing for the Claude API, Organization webhooks (beta), Plugins API, Workspaces.",
+   [
+    "workspace",
+    "hook",
+    "integration",
+    "api",
+    "inference",
+    "tag"
+   ]
+  ],
+  [
+   "cpadm-compliance-api",
+   "Compliance API",
+   "claude-platform-administration",
+   "Compliance API: Overview: Compliance API, FAQ, Design your integration, Errors, Organizations, users, roles, groups, and settings, Activity Feed, Chats, files, and projects, Session transcripts, Set up the Compliance API.",
+   [
+    "compliance",
+    "api",
+    "faq",
+    "design",
+    "your",
+    "integration"
+   ]
+  ],
+  [
+   "cpadm-opentelemetry-claude-platform",
+   "Opentelemetry (Claude Platform)",
+   "claude-platform-administration",
+   "Opentelemetry (Claude Platform): Get Claude API spans, Get Claude SDK spans, Spans.",
+   [
+    "opentelemetry",
+    "platform",
+    "span",
+    "get",
+    "api",
+    "sdk"
+   ]
+  ]
+ ],
+ "skills": [
+  [
+   "cpadm-overview-security-posture-in-the-compliance-api",
+   "cpadm-compliance-security-posture",
+   "Overview: Security posture in the Compliance API",
+   "Understand what the Compliance API exposes about the Security posture page (Security Center) in claude.ai and where to start.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-check-events-against-results",
+   "cpadm-compliance-security-posture",
+   "Check events against results",
+   "Once a day, compare the attestation activities your SIEM has stored with the endpoint's current results and decide which mismatches need a person.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-detect-changes",
+   "cpadm-compliance-security-posture",
+   "Detect changes",
+   "\"Start from sample detection rules for Security posture activities in your SIEM: accepted risks, controls attested as Failed, unexpected editors, bursts of changes, and attestations that end automatically.\"",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-map-events-to-ocsf",
+   "cpadm-compliance-security-posture",
+   "Map events to OCSF",
+   "Map each Security posture activity in the Compliance API to its Open Cybersecurity Schema Framework (OCSF) class and attributes before you store it.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-events-reference",
+   "cpadm-compliance-security-posture",
+   "Events reference",
+   "\"Look up the Activity Feed activities that record changes on the Security posture page: their fields and values, an example of each, and what the feed does not record.\"",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-results-reference",
+   "cpadm-compliance-security-posture",
+   "Results reference",
+   "\"Look up the Compliance API endpoint that returns an organization's current Security posture results: the request, the response fields, what each status means, and the errors.\"",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-send-events-to-your-siem",
+   "cpadm-compliance-security-posture",
+   "Send events to your SIEM",
+   "Request the Security posture activities from the Compliance API Activity Feed, read one of them field by field, and keep your SIEM current with a scheduled read that catches late activities.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-overview-access-transparency",
+   "cpadm-data-residency-and-retention",
+   "Overview: Access Transparency",
+   "Receive an audit record of human access to your organization's data by Anthropic personnel through the Compliance API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-api-and-data-retention",
+   "cpadm-data-residency-and-retention",
+   "API and data retention",
+   "Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-data-residency",
+   "cpadm-data-residency-and-retention",
+   "Data residency",
+   "Manage where model inference runs and where data is stored with geographic controls.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-transparency-log-beta",
+   "cpadm-data-residency-and-retention",
+   "Transparency log (beta)",
+   "Use signed checkpoints and Merkle proofs from the Compliance API to verify that no Access Transparency event was removed or altered after it was committed to the log.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-admin-api",
+   "cpadm-cmek-and-encryption",
+   "Admin API",
+   "Create, validate, and attach a customer-managed encryption key with three Admin API calls.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-data-retention-and-zdr",
+   "cpadm-cmek-and-encryption",
+   "Data retention and ZDR",
+   "Why a workspace with a key retains data, what that means for ZDR, and what Anthropic can preserve outside your key.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-overview-customer-managed-encryption-keys",
+   "cpadm-cmek-and-encryption",
+   "Overview: Customer-managed encryption keys",
+   "Use a key you hold in your own cloud to encrypt data that Claude stores.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-how-it-works",
+   "cpadm-cmek-and-encryption",
+   "How it works",
+   "How your key protects stored data, what one key covers, when it takes effect, and what you can see.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-limit-key-to-workspaces",
+   "cpadm-cmek-and-encryption",
+   "Limit key to workspaces",
+   "Add a key policy condition that names the workspaces allowed to use your AWS KMS key.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-claude-platform-on-aws",
+   "cpadm-cmek-and-encryption",
+   "Claude Platform on AWS",
+   "Create an AWS KMS key in your AWS account and attach it to a workspace on Claude Platform on AWS.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-aws-kms",
+   "cpadm-cmek-and-encryption",
+   "AWS KMS",
+   "Create an AWS KMS key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-azure-key-vault",
+   "cpadm-cmek-and-encryption",
+   "Azure Key Vault",
+   "Create an Azure Key Vault key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-google-cloud-kms",
+   "cpadm-cmek-and-encryption",
+   "Google Cloud KMS",
+   "Create a Google Cloud KMS key, give Anthropic access to it, and put it to use in Claude Platform, Claude Enterprise, or Claude Models on Google Cloud (Anthropic managed).",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-troubleshooting",
+   "cpadm-cmek-and-encryption",
+   "Troubleshooting",
+   "Find the cause and fix for a CMEK error message, a failed verification, or an unexpected log entry.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-coverage-claude-enterprise",
+   "cpadm-cmek-and-encryption",
+   "Coverage: Claude Enterprise",
+   "Look up which Claude Enterprise data your key encrypts, what turns off or changes, and what stays under Anthropic's key.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-coverage-claude-platform",
+   "cpadm-cmek-and-encryption",
+   "Coverage: Claude Platform",
+   "Look up which Claude Platform data your key encrypts, what turns off or changes, and what stays under Anthropic's key.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-rotate-disable-delete",
+   "cpadm-cmek-and-encryption",
+   "Rotate, disable, delete",
+   "What each action on your key does to your data, how soon, and whether you can undo it.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-admin-api-2",
+   "cpadm-identity-and-access",
+   "Admin API",
+   "Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a personal or service account key.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-app-attest",
+   "cpadm-identity-and-access",
+   "App Attest",
+   "Let genuine installations of your iOS or macOS app call the Claude API without shipping an API key or running a proxy, using Apple's App Attest service.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-create-an-admin-api-key",
+   "cpadm-identity-and-access",
+   "Create an Admin API key",
+   "Create an Admin API key for your Claude Console or Claude Enterprise organization.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-ip-allowlisting-beta",
+   "cpadm-identity-and-access",
+   "IP allowlisting (beta)",
+   "Secure your organization by limiting access to specific IP addresses that you trust.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-manage-wif-with-the-admin-api",
+   "cpadm-identity-and-access",
+   "Manage WIF with the Admin API",
+   "Create and manage Workload Identity Federation service accounts, issuers, and rules programmatically for infrastructure-as-code and CI workflows.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-verification-portal-links",
+   "cpadm-identity-and-access",
+   "Verification Portal links",
+   "Create an enrollment link for a user profile, see what your end customer does in the Verification Portal, and check which programs apply to the profile afterward.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-user-management",
+   "cpadm-identity-and-access",
+   "User management",
+   "\"Manage the people in your Claude Enterprise organization with the Admin API: list members and change roles, send and withdraw invites, manage groups, and read custom roles.\"",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-user-profiles",
+   "cpadm-identity-and-access",
+   "User profiles",
+   "Attribute API requests to the end customers your platform serves, so a safety enforcement action can apply to one profile instead of your whole organization.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-wif-reference",
+   "cpadm-identity-and-access",
+   "WIF reference",
+   "Environment variables, validation rules, profile configuration, and error reference for Workload Identity Federation.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-workload-identity-federation",
+   "cpadm-identity-and-access",
+   "Workload Identity Federation",
+   "Authenticate workloads to the Claude API with short-lived identity tokens from your own identity provider instead of long-lived static API keys.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-aws",
+   "cpadm-identity-and-access",
+   "AWS",
+   "Authenticate AWS workloads on Lambda, EC2, ECS, or EKS to the Claude API with Workload Identity Federation and STS-issued identity tokens.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-github-actions",
+   "cpadm-identity-and-access",
+   "GitHub Actions",
+   "Authenticate GitHub Actions workflows to the Claude API with short-lived identity tokens instead of long-lived API keys.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-google-cloud",
+   "cpadm-identity-and-access",
+   "Google Cloud",
+   "Federate Google Cloud workloads (Cloud Run, Cloud Functions, App Engine, GCE, GKE) to the Claude API using Google-signed identity tokens instead of static API keys.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-kubernetes",
+   "cpadm-identity-and-access",
+   "Kubernetes",
+   "Authenticate to the Claude API from self-managed Kubernetes clusters using projected service account tokens.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-microsoft-entra-id",
+   "cpadm-identity-and-access",
+   "Microsoft Entra ID",
+   "Federate Azure managed identities and Entra Workload Identity with the Claude API so your Azure workloads can call Claude without static API keys.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-okta",
+   "cpadm-identity-and-access",
+   "Okta",
+   "Federate Okta service application identities to the Claude API with Workload Identity Federation.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-spiffe",
+   "cpadm-identity-and-access",
+   "SPIFFE",
+   "Authenticate SPIFFE workloads to the Claude API using JWT-SVIDs from SPIRE or any other SPIFFE-conformant issuer.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-analytics-apis",
+   "cpadm-usage-cost-and-limits",
+   "Analytics APIs",
+   "Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement and adoption data.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-claude-code-analytics-api",
+   "cpadm-usage-cost-and-limits",
+   "Claude Code Analytics API",
+   "Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-rate-limits-api",
+   "cpadm-usage-cost-and-limits",
+   "Rate Limits API",
+   "Programmatically read your organization's API rate limits and set workspace rate limits with the Rate Limits API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-spend-limits-api",
+   "cpadm-usage-cost-and-limits",
+   "Spend Limits API",
+   "Set a spend limit on each Claude Enterprise member, see where each member's spend limit is inherited from, and review or act on members' requests for a higher limit.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-usage-and-cost-analytics-api",
+   "cpadm-usage-cost-and-limits",
+   "Usage and Cost Analytics API",
+   "Query token usage and cost for your Claude Console or Claude Enterprise organization by model, workspace, API key, actor, and more.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-usage-and-cost-api-legacy",
+   "cpadm-usage-cost-and-limits",
+   "Usage and Cost API (legacy)",
+   "The legacy Admin API usage and cost report endpoints. For new integrations, use the Usage and Cost Analytics API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-claude-tag-api",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Claude Tag API",
+   "\"Manage Claude Tag in Slack for your Claude Enterprise organization from your own systems: read and change settings on Slack channels and workspaces, see which settings apply and why, and attach Access bundles.\"",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-configure-inference-hooks",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Configure Inference hooks",
+   "Allow Inference hooks for your Claude Enterprise organization, connect your AI security server, and control enforcement, failure handling, and rollout.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-build-an-integration",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Build an integration",
+   "Build the AI security server that receives signed Inference hooks requests, verifies them, and returns allow or deny verdicts.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-overview-inference-hooks",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Overview: Inference hooks",
+   "Send each governed prompt to your organization's AI security server for an allow or deny verdict before inference proceeds.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-overview-opentelemetry-tracing-for-the-claude-api",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Overview: OpenTelemetry tracing for the Claude API",
+   "Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Anthropic SDK and the Claude API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-organization-webhooks-beta",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Organization webhooks (beta)",
+   "Register webhook endpoints for events about your organization's user profiles, customer-managed encryption keys, and customer-owned storage, and respond to each event.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-plugins-api",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Plugins API",
+   "\"Inventory and manage the plugins in your Claude Enterprise organization: upload plugins and versions, choose the version members are served, control who can use each plugin, download plugin files for review, and validate a marketplace before you connect it.\"",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-workspaces",
+   "cpadm-workspaces-hooks-and-integrations",
+   "Workspaces",
+   "Organize API keys, manage team access, and control costs with workspaces.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-overview-compliance-api",
+   "cpadm-compliance-api",
+   "Overview: Compliance API",
+   "Programmatic access to your organization's Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-faq",
+   "cpadm-compliance-api",
+   "FAQ",
+   "Answers to common questions about Compliance API access, scopes, retention, and integration.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-design-your-integration",
+   "cpadm-compliance-api",
+   "Design your integration",
+   "Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-errors",
+   "cpadm-compliance-api",
+   "Errors",
+   "Compliance API error responses by HTTP status code, with the cause and fix for each.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-organizations-users-roles-groups-and-settings",
+   "cpadm-compliance-api",
+   "Organizations, users, roles, groups, and settings",
+   "Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization's effective settings through the Compliance API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-activity-feed",
+   "cpadm-compliance-api",
+   "Activity Feed",
+   "Retrieve, filter, and paginate your organization's Compliance API Activity Feed.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-chats-files-and-projects",
+   "cpadm-compliance-api",
+   "Chats, files, and projects",
+   "Access chat content, file attachments, and projects for claude.ai organizations through the Compliance API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-session-transcripts",
+   "cpadm-compliance-api",
+   "Session transcripts",
+   "List the sessions your users run in Claude apps and agents, such as Claude Cowork and Claude Code, and retrieve their transcripts through the Compliance API.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-set-up-the-compliance-api",
+   "cpadm-compliance-api",
+   "Set up the Compliance API",
+   "Enable the Compliance API for your organization, then create a Compliance Access Key (with scoped permissions) or an Admin API key, and learn which to use.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-get-claude-api-spans",
+   "cpadm-opentelemetry-claude-platform",
+   "Get Claude API spans",
+   "Add a destination in the Claude Console to send OpenTelemetry traces of your Messages API requests and Managed Agents sessions to your observability platform.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-get-claude-sdk-spans",
+   "cpadm-opentelemetry-claude-platform",
+   "Get Claude SDK spans",
+   "Trace the Anthropic SDK's requests and tool uses in Python, TypeScript, C#, Go, Java, PHP, or Ruby, and send the spans to your observability platform.",
+   "procedural",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ],
+  [
+   "cpadm-spans",
+   "cpadm-opentelemetry-claude-platform",
+   "Spans",
+   "The OpenTelemetry spans and span attributes that the Claude API and the Anthropic SDK emit.",
+   "semantic",
+   [
+    [
+     "claude-platform-administration-specialist",
+     "primary"
+    ],
+    [
+     "claude-platform-administration-reviewer",
+     "checker"
+    ],
+    [
+     "claude-docs-researcher",
+     "support"
+    ]
+   ]
+  ]
+ ],
+ "agents": {
+  "claude-platform-administration-specialist": "Claude Platform Administration Specialist",
+  "claude-platform-administration-reviewer": "Claude Platform Administration Reviewer",
+  "claude-docs-researcher": "Claude Docs Researcher"
+ },
+ "mcp": [
+  [
+   "Claude Platform Docs",
+   "cc6f3470-080c-45b8-84e1-cdc03e9c6ac1",
+   "Official documentation for the Claude API, the Anthropic SDKs and Claude Managed Agents: search the guides and the API reference, read a page as markdown, browse the navigation, and look up one API endpoint's parameters and responses.",
+   [
+    "search_docs",
+    "get_doc",
+    "get_navigation",
+    "get_api_endpoint"
+   ],
+   "registry",
+   "Anthropic connector directory (SearchMcpRegistry, 2026-11-27, listed as Claude Platform Docs, connected); tool names and coverage read from the connected server's tool list and its own instructions, 2026-11-27"
+  ]
+ ],
+ "lexicon": {
+  "compliancesecurity": "event result posture compliance security detect",
+  "residencyretention": "transparency residency retention log access api",
+  "cmekencryption": "key coverage kms aws platform encryption",
+  "identityaccess": "admin wif user identity allowlisting attest",
+  "usagecost": "analytic limit cost usage legacy rate",
+  "workspacehook": "hook inference workspace integration tracing opentelemetry",
+  "complianceapi": "faq feed transcript activity design error",
+  "opentelemetryplatform": "span sdk"
+ },
+ "provenance": {
+  "domain": "claude",
+  "levels": {
+   "topic": "user",
+   "concepts": "user",
+   "skills": "user",
+   "agents": "user",
+   "mcp": "real"
+  },
+  "basis": "Human0's claude_domain.csv (sha256 d26d41d8da4ed7dd622b6e6faa18a97dc91d4f3d2af972ae9715d41ee94963cc), converted by tools/claude_domain/build_claude_packs.py on 2026-11-27. Topics, concepts, skills (docs pages) and agent names are Human0's. A single-page skill's description is that page's own one-line description where the site publishes one (page_descriptions.json: llms.txt / llms-full.txt fetched 2026-11-27); concept descriptions, other skill descriptions, keywords, skill types (a verb rule), ids and the lexicon are generated from the CSV text.",
+  "concept_merges": [
+   {
+    "from_topic": "Claude API Reference",
+    "from": "Opentelemetry (Claude API reference)",
+    "into_topic": "Claude Platform Administration",
+    "into": "Opentelemetry (Claude Platform)",
+    "label": "Opentelemetry (Claude Platform)",
+    "reason": "duplicate"
+   },
+   {
+    "from_topic": "Claude Platform Administration",
+    "from": "Wif providers",
+    "into_topic": "Claude Platform Administration",
+    "into": "Identity and access",
+    "label": "Identity and access",
+    "reason": "limit: workload identity federation pages are already in Identity and access"
+   }
+  ],
+  "mcp_checked_at": "2026-11-27",
+  "mcp_notes": "Human0's CSV names this server 'Claude Developer Platform docs'; the directory lists it as Claude Platform Docs. Its own instructions say it covers the Claude API, Anthropic SDKs and Claude Managed Agents, not Claude Code or the Agent SDK. Existence and tool names verified 2026-11-27; a search returned platform.claude.com pages.",
+  "limitations": "Skills without a published page description (API reference endpoints and some guides) are described by their titles only; skill types come from the first word of the title. Docs pages change: the URLs were current in the CSV, not re-checked here.",
+  "sources": {
+   "cpadm-overview-security-posture-in-the-compliance-api": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/overview"
+   ],
+   "cpadm-check-events-against-results": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/check-events-against-results"
+   ],
+   "cpadm-detect-changes": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/detect-changes"
+   ],
+   "cpadm-map-events-to-ocsf": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/ocsf-mapping"
+   ],
+   "cpadm-events-reference": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/events-reference"
+   ],
+   "cpadm-results-reference": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/results-reference"
+   ],
+   "cpadm-send-events-to-your-siem": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/send-events"
+   ],
+   "cpadm-overview-access-transparency": [
+    "https://platform.claude.com/docs/en/manage-claude/access-transparency"
+   ],
+   "cpadm-api-and-data-retention": [
+    "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention"
+   ],
+   "cpadm-data-residency": [
+    "https://platform.claude.com/docs/en/manage-claude/data-residency"
+   ],
+   "cpadm-transparency-log-beta": [
+    "https://platform.claude.com/docs/en/manage-claude/access-transparency-log"
+   ],
+   "cpadm-admin-api": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-admin-api"
+   ],
+   "cpadm-data-retention-and-zdr": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-data-retention"
+   ],
+   "cpadm-overview-customer-managed-encryption-keys": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek"
+   ],
+   "cpadm-how-it-works": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-how-it-works"
+   ],
+   "cpadm-limit-key-to-workspaces": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms-workspaces"
+   ],
+   "cpadm-claude-platform-on-aws": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-claude-platform-on-aws"
+   ],
+   "cpadm-aws-kms": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms"
+   ],
+   "cpadm-azure-key-vault": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-azure-key-vault"
+   ],
+   "cpadm-google-cloud-kms": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-google-cloud-kms"
+   ],
+   "cpadm-troubleshooting": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-troubleshooting"
+   ],
+   "cpadm-coverage-claude-enterprise": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-enterprise"
+   ],
+   "cpadm-coverage-claude-platform": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-platform"
+   ],
+   "cpadm-rotate-disable-delete": [
+    "https://platform.claude.com/docs/en/manage-claude/cmek-key-lifecycle"
+   ],
+   "cpadm-admin-api-2": [
+    "https://platform.claude.com/docs/en/manage-claude/admin-api"
+   ],
+   "cpadm-app-attest": [
+    "https://platform.claude.com/docs/en/manage-claude/app-attest"
+   ],
+   "cpadm-create-an-admin-api-key": [
+    "https://platform.claude.com/docs/en/manage-claude/admin-api-keys"
+   ],
+   "cpadm-ip-allowlisting-beta": [
+    "https://platform.claude.com/docs/en/manage-claude/ip-allowlist"
+   ],
+   "cpadm-manage-wif-with-the-admin-api": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-admin-api"
+   ],
+   "cpadm-verification-portal-links": [
+    "https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal"
+   ],
+   "cpadm-user-management": [
+    "https://platform.claude.com/docs/en/manage-claude/user-management"
+   ],
+   "cpadm-user-profiles": [
+    "https://platform.claude.com/docs/en/manage-claude/user-profiles"
+   ],
+   "cpadm-wif-reference": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-reference"
+   ],
+   "cpadm-workload-identity-federation": [
+    "https://platform.claude.com/docs/en/manage-claude/workload-identity-federation"
+   ],
+   "cpadm-aws": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/aws"
+   ],
+   "cpadm-github-actions": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/github-actions"
+   ],
+   "cpadm-google-cloud": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/gcp"
+   ],
+   "cpadm-kubernetes": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/kubernetes"
+   ],
+   "cpadm-microsoft-entra-id": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/azure"
+   ],
+   "cpadm-okta": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/okta"
+   ],
+   "cpadm-spiffe": [
+    "https://platform.claude.com/docs/en/manage-claude/wif-providers/spiffe"
+   ],
+   "cpadm-analytics-apis": [
+    "https://platform.claude.com/docs/en/manage-claude/analytics-api"
+   ],
+   "cpadm-claude-code-analytics-api": [
+    "https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api"
+   ],
+   "cpadm-rate-limits-api": [
+    "https://platform.claude.com/docs/en/manage-claude/rate-limits-api"
+   ],
+   "cpadm-spend-limits-api": [
+    "https://platform.claude.com/docs/en/manage-claude/spend-limits-api"
+   ],
+   "cpadm-usage-and-cost-analytics-api": [
+    "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
+   ],
+   "cpadm-usage-and-cost-api-legacy": [
+    "https://platform.claude.com/docs/en/manage-claude/usage-cost-api"
+   ],
+   "cpadm-claude-tag-api": [
+    "https://platform.claude.com/docs/en/manage-claude/claude-tag-api"
+   ],
+   "cpadm-configure-inference-hooks": [
+    "https://platform.claude.com/docs/en/manage-claude/inference-hooks-configuration"
+   ],
+   "cpadm-build-an-integration": [
+    "https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint"
+   ],
+   "cpadm-overview-inference-hooks": [
+    "https://platform.claude.com/docs/en/manage-claude/inference-hooks"
+   ],
+   "cpadm-overview-opentelemetry-tracing-for-the-claude-api": [
+    "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
+   ],
+   "cpadm-organization-webhooks-beta": [
+    "https://platform.claude.com/docs/en/manage-claude/organization-webhooks"
+   ],
+   "cpadm-plugins-api": [
+    "https://platform.claude.com/docs/en/manage-claude/plugins-api"
+   ],
+   "cpadm-workspaces": [
+    "https://platform.claude.com/docs/en/manage-claude/workspaces"
+   ],
+   "cpadm-overview-compliance-api": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-api"
+   ],
+   "cpadm-faq": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-faq"
+   ],
+   "cpadm-design-your-integration": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns"
+   ],
+   "cpadm-errors": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-errors"
+   ],
+   "cpadm-organizations-users-roles-groups-and-settings": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
+   ],
+   "cpadm-activity-feed": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed"
+   ],
+   "cpadm-chats-files-and-projects": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-content-data"
+   ],
+   "cpadm-session-transcripts": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-sessions"
+   ],
+   "cpadm-set-up-the-compliance-api": [
+    "https://platform.claude.com/docs/en/manage-claude/compliance-api-access"
+   ],
+   "cpadm-get-claude-api-spans": [
+    "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
+   ],
+   "cpadm-get-claude-sdk-spans": [
+    "https://platform.claude.com/docs/en/manage-claude/opentelemetry/sdk"
+   ],
+   "cpadm-spans": [
+    "https://platform.claude.com/docs/en/api/opentelemetry/spans"
+   ]
+  }
+ }
+}
