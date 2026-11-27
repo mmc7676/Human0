@@ -177,6 +177,10 @@ aside.rail .chip:disabled { opacity: .6; }
 .vr .cnt { color: var(--muted); font-weight: 400; font-size: .74rem; }
 .viv { margin: 4px 0 8px; display: flex; flex-direction: column; gap: 6px; }
 .viv a { color: var(--accent); font-size: .8rem; }
+.vgroups { display:flex; flex-wrap:wrap; gap:6px; align-items:baseline; margin-top:8px; }
+.vgroups .label { font-weight:700; margin-right:4px; }
+.vg { border:1px solid currentColor; border-radius:999px; padding:1px 8px; font-size:.8rem; opacity:.9; }
+.vg b { font-weight:700; }
 .cloud { display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; line-height: 1.15; padding: 8px 10px; background: var(--surface-2); border-radius: 10px; }
 .cloud span { color: var(--fg); }
 .cloud .w1 { color: var(--muted); }
@@ -734,7 +738,17 @@ button.opt:hover { border-color: var(--accent); }
         (r.v_url ? '<a href="' + esc(r.v_url) + '" target="_blank" rel="noopener noreferrer">Vivino page ↗</a>' : '') +
         (r.v_winery_url ? '<a href="' + esc(r.v_winery_url) + '" target="_blank" rel="noopener noreferrer">' + esc(r.v_winery || "Winery") + ' on Vivino ↗</a>' : '') +
       '</div>' : '';
-    return '<div class="viv">' + head + cloud + '</div>';
+    var groups = "";
+    if (r.v_status === "matched" && r.v_groups && r.v_groups.length) {
+      var anyInferred = r.v_groups.some(function (g) { return g[2]; });
+      groups = '<div class="vgroups" data-groups="' + r.v_groups.length + '"><span class="label">Flavor groups</span>' +
+        r.v_groups.map(function (g) {
+          return '<span class="vg" title="' + g[1] + ' mentions' + (g[2] ? ', name matched by keyword' : ', name from the Vivino page') + '">' +
+            esc(g[0]) + (g[2] ? '*' : '') + ' <b>' + g[1].toLocaleString("en-US") + '</b></span>';
+        }).join("") + '</div>' +
+        (anyInferred ? '<div class="hint" data-groups-note="inferred">* Group name matched by keyword; Vivino showed the flavors without the name.</div>' : '');
+    }
+    return '<div class="viv">' + head + cloud + groups + '</div>';
   }
 
   /* ---------- views ---------- */

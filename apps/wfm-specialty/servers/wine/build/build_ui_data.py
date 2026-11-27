@@ -53,8 +53,21 @@ def vivino_fields(w):
                    v_cloud_src=("taste" if v.get("word_cloud_source") == "vivino_taste_summary" else
                                 "reviews" if v.get("word_cloud") else
                                 "none_shown" if v.get("captured") == "2026-11-22" and not v.get("reused_from") else None),
-                   v_taste_n=(v.get("taste_summary") or {}).get("based_on_reviews"))
+                   v_taste_n=(v.get("taste_summary") or {}).get("based_on_reviews"),
+                   v_groups=taste_groups(v.get("taste_summary")))
     return out
+
+
+def taste_groups(ts):
+    """[[group, mentions, inferred], ...] by mentions; inferred is 1 when the name was matched by keyword."""
+    merged = {}
+    for g in (ts or {}).get("groups") or []:
+        if not g.get("group"):
+            continue
+        m = merged.setdefault(g["group"], [g["group"], 0, 0])
+        m[1] += g.get("mentions") or 0
+        m[2] = max(m[2], 1 if g.get("group_source") == "keyword_lookup" else 0)
+    return sorted(merged.values(), key=lambda m: (-m[1], m[0])) or None
 
 
 rows = []
